@@ -3666,6 +3666,120 @@ impl ServiceProfile {
     }
 }
 
+/// <p>The message in downlink queue.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DownlinkQueueMessage {
+    /// <p> The messageId allocated by IoT Wireless for tracing purpose</p>
+    pub message_id: std::option::Option<std::string::String>,
+    /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
+    pub transmit_mode: std::option::Option<i32>,
+    /// <p>The timestamp that Iot Wireless received the message.</p>
+    pub received_at: std::option::Option<std::string::String>,
+    /// <p>LoRaWAN router info.</p>
+    pub lo_ra_wan: std::option::Option<crate::model::LoRaWanSendDataToDevice>,
+}
+impl DownlinkQueueMessage {
+    /// <p> The messageId allocated by IoT Wireless for tracing purpose</p>
+    pub fn message_id(&self) -> std::option::Option<&str> {
+        self.message_id.as_deref()
+    }
+    /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
+    pub fn transmit_mode(&self) -> std::option::Option<i32> {
+        self.transmit_mode
+    }
+    /// <p>The timestamp that Iot Wireless received the message.</p>
+    pub fn received_at(&self) -> std::option::Option<&str> {
+        self.received_at.as_deref()
+    }
+    /// <p>LoRaWAN router info.</p>
+    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::model::LoRaWanSendDataToDevice> {
+        self.lo_ra_wan.as_ref()
+    }
+}
+impl std::fmt::Debug for DownlinkQueueMessage {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DownlinkQueueMessage");
+        formatter.field("message_id", &self.message_id);
+        formatter.field("transmit_mode", &self.transmit_mode);
+        formatter.field("received_at", &self.received_at);
+        formatter.field("lo_ra_wan", &self.lo_ra_wan);
+        formatter.finish()
+    }
+}
+/// See [`DownlinkQueueMessage`](crate::model::DownlinkQueueMessage)
+pub mod downlink_queue_message {
+    /// A builder for [`DownlinkQueueMessage`](crate::model::DownlinkQueueMessage)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message_id: std::option::Option<std::string::String>,
+        pub(crate) transmit_mode: std::option::Option<i32>,
+        pub(crate) received_at: std::option::Option<std::string::String>,
+        pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanSendDataToDevice>,
+    }
+    impl Builder {
+        /// <p> The messageId allocated by IoT Wireless for tracing purpose</p>
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_id = Some(input.into());
+            self
+        }
+        /// <p> The messageId allocated by IoT Wireless for tracing purpose</p>
+        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_id = input;
+            self
+        }
+        /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
+        pub fn transmit_mode(mut self, input: i32) -> Self {
+            self.transmit_mode = Some(input);
+            self
+        }
+        /// <p>The transmit mode to use to send data to the wireless device. Can be: <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
+        pub fn set_transmit_mode(mut self, input: std::option::Option<i32>) -> Self {
+            self.transmit_mode = input;
+            self
+        }
+        /// <p>The timestamp that Iot Wireless received the message.</p>
+        pub fn received_at(mut self, input: impl Into<std::string::String>) -> Self {
+            self.received_at = Some(input.into());
+            self
+        }
+        /// <p>The timestamp that Iot Wireless received the message.</p>
+        pub fn set_received_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.received_at = input;
+            self
+        }
+        /// <p>LoRaWAN router info.</p>
+        pub fn lo_ra_wan(mut self, input: crate::model::LoRaWanSendDataToDevice) -> Self {
+            self.lo_ra_wan = Some(input);
+            self
+        }
+        /// <p>LoRaWAN router info.</p>
+        pub fn set_lo_ra_wan(
+            mut self,
+            input: std::option::Option<crate::model::LoRaWanSendDataToDevice>,
+        ) -> Self {
+            self.lo_ra_wan = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DownlinkQueueMessage`](crate::model::DownlinkQueueMessage)
+        pub fn build(self) -> crate::model::DownlinkQueueMessage {
+            crate::model::DownlinkQueueMessage {
+                message_id: self.message_id,
+                transmit_mode: self.transmit_mode,
+                received_at: self.received_at,
+                lo_ra_wan: self.lo_ra_wan,
+            }
+        }
+    }
+}
+impl DownlinkQueueMessage {
+    /// Creates a new builder-style object to manufacture [`DownlinkQueueMessage`](crate::model::DownlinkQueueMessage)
+    pub fn builder() -> crate::model::downlink_queue_message::Builder {
+        crate::model::downlink_queue_message::Builder::default()
+    }
+}
+
 /// <p>Information about a Sidewalk account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

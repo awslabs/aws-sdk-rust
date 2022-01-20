@@ -1,4 +1,17 @@
 <!-- Do not manually edit this file, use `update-changelogs` -->
+0.5.0 (January 19, 2022)
+========================
+**New this release:**
+- 🎉 ([aws-sdk-rust#348](https://github.com/awslabs/aws-sdk-rust/issues/348)) The docs for fluent builders now have easy links to their corresponding Input, Output, and Error structs
+- 🎉 ([smithy-rs#1051](https://github.com/awslabs/smithy-rs/issues/1051), [aws-sdk-rust#4](https://github.com/awslabs/aws-sdk-rust/issues/4)) Add support for SSO credentials
+- 🐛🎉 ([smithy-rs#1065](https://github.com/awslabs/smithy-rs/issues/1065), [aws-sdk-rust#398](https://github.com/awslabs/aws-sdk-rust/issues/398), @nmoutschen) Silence profile credential warnings in Lambda environment
+- 🐛 ([aws-sdk-rust#405](https://github.com/awslabs/aws-sdk-rust/issues/405), [smithy-rs#1083](https://github.com/awslabs/smithy-rs/issues/1083)) Fixed paginator bug impacting EC2 describe VPCs (and others)
+
+**Contributors**
+Thank you for your contributions! ❤
+- @nmoutschen ([aws-sdk-rust#398](https://github.com/awslabs/aws-sdk-rust/issues/398), [smithy-rs#1065](https://github.com/awslabs/smithy-rs/issues/1065))
+
+
 v0.4.1 (January 10, 2022)
 =========================
 **New this release:**

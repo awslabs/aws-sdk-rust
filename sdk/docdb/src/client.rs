@@ -83,427 +83,782 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddSourceIdentifierToSubscription` operation.
+    /// Constructs a fluent builder for the [`AddSourceIdentifierToSubscription`](crate::client::fluent_builders::AddSourceIdentifierToSubscription) operation.
     ///
-    /// See [`AddSourceIdentifierToSubscription`](crate::client::fluent_builders::AddSourceIdentifierToSubscription) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`subscription_name(impl Into<String>)`](crate::client::fluent_builders::AddSourceIdentifierToSubscription::subscription_name) / [`set_subscription_name(Option<String>)`](crate::client::fluent_builders::AddSourceIdentifierToSubscription::set_subscription_name): <p>The name of the Amazon DocumentDB event notification subscription that you want to add a source identifier to.</p>
+    ///   - [`source_identifier(impl Into<String>)`](crate::client::fluent_builders::AddSourceIdentifierToSubscription::source_identifier) / [`set_source_identifier(Option<String>)`](crate::client::fluent_builders::AddSourceIdentifierToSubscription::set_source_identifier): <p>The identifier of the event source to be added:</p>  <ul>   <li> <p>If the source type is an instance, a <code>DBInstanceIdentifier</code> must be provided.</p> </li>   <li> <p>If the source type is a security group, a <code>DBSecurityGroupName</code> must be provided.</p> </li>   <li> <p>If the source type is a parameter group, a <code>DBParameterGroupName</code> must be provided.</p> </li>   <li> <p>If the source type is a snapshot, a <code>DBSnapshotIdentifier</code> must be provided.</p> </li>  </ul>
+    /// - On success, responds with [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput) with field(s):
+    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::AddSourceIdentifierToSubscriptionOutput::event_subscription): <p>Detailed information about an event to which you have subscribed.</p>
+    /// - On failure, responds with [`SdkError<AddSourceIdentifierToSubscriptionError>`](crate::error::AddSourceIdentifierToSubscriptionError)
     pub fn add_source_identifier_to_subscription(
         &self,
     ) -> fluent_builders::AddSourceIdentifierToSubscription<C, M, R> {
         fluent_builders::AddSourceIdentifierToSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AddTagsToResource` operation.
+    /// Constructs a fluent builder for the [`AddTagsToResource`](crate::client::fluent_builders::AddTagsToResource) operation.
     ///
-    /// See [`AddTagsToResource`](crate::client::fluent_builders::AddTagsToResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::AddTagsToResource::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::AddTagsToResource::set_resource_name): <p>The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::AddTagsToResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::AddTagsToResource::set_tags): <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
+    /// - On success, responds with [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
+
+    /// - On failure, responds with [`SdkError<AddTagsToResourceError>`](crate::error::AddTagsToResourceError)
     pub fn add_tags_to_resource(&self) -> fluent_builders::AddTagsToResource<C, M, R> {
         fluent_builders::AddTagsToResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ApplyPendingMaintenanceAction` operation.
+    /// Constructs a fluent builder for the [`ApplyPendingMaintenanceAction`](crate::client::fluent_builders::ApplyPendingMaintenanceAction) operation.
     ///
-    /// See [`ApplyPendingMaintenanceAction`](crate::client::fluent_builders::ApplyPendingMaintenanceAction) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::ApplyPendingMaintenanceAction::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::ApplyPendingMaintenanceAction::set_resource_identifier): <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to.</p>
+    ///   - [`apply_action(impl Into<String>)`](crate::client::fluent_builders::ApplyPendingMaintenanceAction::apply_action) / [`set_apply_action(Option<String>)`](crate::client::fluent_builders::ApplyPendingMaintenanceAction::set_apply_action): <p>The pending maintenance action to apply to this resource.</p>  <p>Valid values: <code>system-update</code>, <code>db-upgrade</code> </p>
+    ///   - [`opt_in_type(impl Into<String>)`](crate::client::fluent_builders::ApplyPendingMaintenanceAction::opt_in_type) / [`set_opt_in_type(Option<String>)`](crate::client::fluent_builders::ApplyPendingMaintenanceAction::set_opt_in_type): <p>A value that specifies the type of opt-in request or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>   <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource. </p> </li>   <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>  </ul>
+    /// - On success, responds with [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput) with field(s):
+    ///   - [`resource_pending_maintenance_actions(Option<ResourcePendingMaintenanceActions>)`](crate::output::ApplyPendingMaintenanceActionOutput::resource_pending_maintenance_actions): <p>Represents the output of <code>ApplyPendingMaintenanceAction</code>. </p>
+    /// - On failure, responds with [`SdkError<ApplyPendingMaintenanceActionError>`](crate::error::ApplyPendingMaintenanceActionError)
     pub fn apply_pending_maintenance_action(
         &self,
     ) -> fluent_builders::ApplyPendingMaintenanceAction<C, M, R> {
         fluent_builders::ApplyPendingMaintenanceAction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CopyDBClusterParameterGroup` operation.
+    /// Constructs a fluent builder for the [`CopyDBClusterParameterGroup`](crate::client::fluent_builders::CopyDBClusterParameterGroup) operation.
     ///
-    /// See [`CopyDBClusterParameterGroup`](crate::client::fluent_builders::CopyDBClusterParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`source_db_cluster_parameter_group_identifier(impl Into<String>)`](crate::client::fluent_builders::CopyDBClusterParameterGroup::source_db_cluster_parameter_group_identifier) / [`set_source_db_cluster_parameter_group_identifier(Option<String>)`](crate::client::fluent_builders::CopyDBClusterParameterGroup::set_source_db_cluster_parameter_group_identifier): <p>The identifier or Amazon Resource Name (ARN) for the source cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must specify a valid cluster parameter group.</p> </li>   <li> <p>If the source cluster parameter group is in the same Region as the copy, specify a valid parameter group identifier; for example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li>   <li> <p>If the source parameter group is in a different Region than the copy, specify a valid cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p> </li>  </ul>
+    ///   - [`target_db_cluster_parameter_group_identifier(impl Into<String>)`](crate::client::fluent_builders::CopyDBClusterParameterGroup::target_db_cluster_parameter_group_identifier) / [`set_target_db_cluster_parameter_group_identifier(Option<String>)`](crate::client::fluent_builders::CopyDBClusterParameterGroup::set_target_db_cluster_parameter_group_identifier): <p>The identifier for the copied cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Cannot be null, empty, or blank.</p> </li>   <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens. </p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens. </p> </li>  </ul>  <p>Example: <code>my-cluster-param-group1</code> </p>
+    ///   - [`target_db_cluster_parameter_group_description(impl Into<String>)`](crate::client::fluent_builders::CopyDBClusterParameterGroup::target_db_cluster_parameter_group_description) / [`set_target_db_cluster_parameter_group_description(Option<String>)`](crate::client::fluent_builders::CopyDBClusterParameterGroup::set_target_db_cluster_parameter_group_description): <p>A description for the copied cluster parameter group.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CopyDBClusterParameterGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CopyDBClusterParameterGroup::set_tags): <p>The tags that are to be assigned to the parameter group.</p>
+    /// - On success, responds with [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput) with field(s):
+    ///   - [`db_cluster_parameter_group(Option<DbClusterParameterGroup>)`](crate::output::CopyDbClusterParameterGroupOutput::db_cluster_parameter_group): <p>Detailed information about a cluster parameter group. </p>
+    /// - On failure, responds with [`SdkError<CopyDBClusterParameterGroupError>`](crate::error::CopyDBClusterParameterGroupError)
     pub fn copy_db_cluster_parameter_group(
         &self,
     ) -> fluent_builders::CopyDBClusterParameterGroup<C, M, R> {
         fluent_builders::CopyDBClusterParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CopyDBClusterSnapshot` operation.
+    /// Constructs a fluent builder for the [`CopyDBClusterSnapshot`](crate::client::fluent_builders::CopyDBClusterSnapshot) operation.
     ///
-    /// See [`CopyDBClusterSnapshot`](crate::client::fluent_builders::CopyDBClusterSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`source_db_cluster_snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::CopyDBClusterSnapshot::source_db_cluster_snapshot_identifier) / [`set_source_db_cluster_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::CopyDBClusterSnapshot::set_source_db_cluster_snapshot_identifier): <p>The identifier of the cluster snapshot to copy. This parameter is not case sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must specify a valid system snapshot in the <i>available</i> state.</p> </li>   <li> <p>If the source snapshot is in the same Region as the copy, specify a valid snapshot identifier.</p> </li>   <li> <p>If the source snapshot is in a different Region than the copy, specify a valid cluster snapshot ARN.</p> </li>  </ul>  <p>Example: <code>my-cluster-snapshot1</code> </p>
+    ///   - [`target_db_cluster_snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::CopyDBClusterSnapshot::target_db_cluster_snapshot_identifier) / [`set_target_db_cluster_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::CopyDBClusterSnapshot::set_target_db_cluster_snapshot_identifier): <p>The identifier of the new cluster snapshot to create from the source cluster snapshot. This parameter is not case sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens. </p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens. </p> </li>  </ul>  <p>Example: <code>my-cluster-snapshot2</code> </p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CopyDBClusterSnapshot::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CopyDBClusterSnapshot::set_kms_key_id): <p>The KMS key ID for an encrypted cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </p>  <p>If you copy an encrypted cluster snapshot from your account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the cluster snapshot is encrypted with the same KMS key as the source cluster snapshot.</p>  <p>If you copy an encrypted cluster snapshot that is shared from another account, then you must specify a value for <code>KmsKeyId</code>.</p>  <p>To copy an encrypted cluster snapshot to another Region, set <code>KmsKeyId</code> to the KMS key ID that you want to use to encrypt the copy of the cluster snapshot in the destination Region. KMS encryption keys are specific to the Region that they are created in, and you can't use encryption keys from one Region in another Region.</p>  <p>If you copy an unencrypted cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter, an error is returned.</p>
+    ///   - [`pre_signed_url(impl Into<String>)`](crate::client::fluent_builders::CopyDBClusterSnapshot::pre_signed_url) / [`set_pre_signed_url(Option<String>)`](crate::client::fluent_builders::CopyDBClusterSnapshot::set_pre_signed_url): <p>The URL that contains a Signature Version 4 signed request for the<code>CopyDBClusterSnapshot</code> API action in the Region that contains the source cluster snapshot to copy. You must use the <code>PreSignedUrl</code> parameter when copying a cluster snapshot from another Region.</p>  <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Region.</p>  <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Region that contains the cluster snapshot to be copied. The presigned URL request must contain the following parameter values:</p>  <ul>   <li> <p> <code>SourceRegion</code> - The ID of the region that contains the snapshot to be copied.</p> </li>   <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The identifier for the the encrypted cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Region. For example, if you are copying an encrypted cluster snapshot from the us-east-1 Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks something like the following: <code>arn:aws:rds:us-east-1:12345678012:sample-cluster:sample-cluster-snapshot</code>.</p> </li>   <li> <p> <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new cluster snapshot to be created. This parameter isn't case sensitive.</p> </li>  </ul>
+    ///   - [`copy_tags(bool)`](crate::client::fluent_builders::CopyDBClusterSnapshot::copy_tags) / [`set_copy_tags(Option<bool>)`](crate::client::fluent_builders::CopyDBClusterSnapshot::set_copy_tags): <p>Set to <code>true</code> to copy all tags from the source cluster snapshot to the target cluster snapshot, and otherwise <code>false</code>. The default is <code>false</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CopyDBClusterSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CopyDBClusterSnapshot::set_tags): <p>The tags to be assigned to the cluster snapshot.</p>
+    /// - On success, responds with [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput) with field(s):
+    ///   - [`db_cluster_snapshot(Option<DbClusterSnapshot>)`](crate::output::CopyDbClusterSnapshotOutput::db_cluster_snapshot): <p>Detailed information about a cluster snapshot. </p>
+    /// - On failure, responds with [`SdkError<CopyDBClusterSnapshotError>`](crate::error::CopyDBClusterSnapshotError)
     pub fn copy_db_cluster_snapshot(&self) -> fluent_builders::CopyDBClusterSnapshot<C, M, R> {
         fluent_builders::CopyDBClusterSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDBCluster` operation.
+    /// Constructs a fluent builder for the [`CreateDBCluster`](crate::client::fluent_builders::CreateDBCluster) operation.
     ///
-    /// See [`CreateDBCluster`](crate::client::fluent_builders::CreateDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`availability_zones(Vec<String>)`](crate::client::fluent_builders::CreateDBCluster::availability_zones) / [`set_availability_zones(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDBCluster::set_availability_zones): <p>A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
+    ///   - [`backup_retention_period(i32)`](crate::client::fluent_builders::CreateDBCluster::backup_retention_period) / [`set_backup_retention_period(Option<i32>)`](crate::client::fluent_builders::CreateDBCluster::set_backup_retention_period): <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>  <p>Default: 1</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be a value from 1 to 35.</p> </li>  </ul>
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_db_cluster_identifier): <p>The cluster identifier. This parameter is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens. </p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens. </p> </li>  </ul>  <p>Example: <code>my-cluster</code> </p>
+    ///   - [`db_cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::db_cluster_parameter_group_name) / [`set_db_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_db_cluster_parameter_group_name): <p>The name of the cluster parameter group to associate with this cluster.</p>
+    ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateDBCluster::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDBCluster::set_vpc_security_group_ids): <p>A list of EC2 VPC security groups to associate with this cluster. </p>
+    ///   - [`db_subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::db_subnet_group_name) / [`set_db_subnet_group_name(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_db_subnet_group_name): <p>A subnet group to associate with this cluster.</p>  <p>Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>  <p>Example: <code>mySubnetgroup</code> </p>
+    ///   - [`engine(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::engine) / [`set_engine(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_engine): <p>The name of the database engine to be used for this cluster.</p>  <p>Valid values: <code>docdb</code> </p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_engine_version): <p>The version number of the database engine to use. The <code>--engine-version</code> will default to the latest major engine version. For production workloads, we recommend explicitly declaring this parameter with the intended major engine version.</p>
+    ///   - [`port(i32)`](crate::client::fluent_builders::CreateDBCluster::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::CreateDBCluster::set_port): <p>The port number on which the instances in the cluster accept connections.</p>
+    ///   - [`master_username(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::master_username) / [`set_master_username(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_master_username): <p>The name of the master user for the cluster.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be from 1 to 63 letters or numbers.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot be a reserved word for the chosen database engine. </p> </li>  </ul>
+    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_master_user_password): <p>The password for the master database user. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>  <p>Constraints: Must contain from 8 to 100 characters.</p>
+    ///   - [`preferred_backup_window(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::preferred_backup_window) / [`set_preferred_backup_window(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_preferred_backup_window): <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region. </p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>   <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>   <li> <p>Must not conflict with the preferred maintenance window. </p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>  </ul>
+    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>  <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week.</p>  <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>  <p>Constraints: Minimum 30-minute window.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDBCluster::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDBCluster::set_tags): <p>The tags to be assigned to the cluster.</p>
+    ///   - [`storage_encrypted(bool)`](crate::client::fluent_builders::CreateDBCluster::storage_encrypted) / [`set_storage_encrypted(Option<bool>)`](crate::client::fluent_builders::CreateDBCluster::set_storage_encrypted): <p>Specifies whether the cluster is encrypted.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_kms_key_id): <p>The KMS key identifier for an encrypted cluster.</p>  <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>  <p>If an encryption key is not specified in <code>KmsKeyId</code>: </p>  <ul>   <li> <p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key. </p> </li>  </ul>  <p>KMS creates the default encryption key for your account. Your account has a different default encryption key for each Regions.</p>
+    ///   - [`pre_signed_url(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::pre_signed_url) / [`set_pre_signed_url(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_pre_signed_url): <p>Not currently supported. </p>
+    ///   - [`enable_cloudwatch_logs_exports(Vec<String>)`](crate::client::fluent_builders::CreateDBCluster::enable_cloudwatch_logs_exports) / [`set_enable_cloudwatch_logs_exports(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDBCluster::set_enable_cloudwatch_logs_exports): <p>A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon DocumentDB Operations</a>. </p>
+    ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::CreateDBCluster::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::CreateDBCluster::set_deletion_protection): <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
+    ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateDBCluster::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::CreateDBCluster::set_global_cluster_identifier): <p>The cluster identifier of the new global cluster.</p>
+    /// - On success, responds with [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::CreateDbClusterOutput::db_cluster): <p>Detailed information about a cluster. </p>
+    /// - On failure, responds with [`SdkError<CreateDBClusterError>`](crate::error::CreateDBClusterError)
     pub fn create_db_cluster(&self) -> fluent_builders::CreateDBCluster<C, M, R> {
         fluent_builders::CreateDBCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDBClusterParameterGroup` operation.
+    /// Constructs a fluent builder for the [`CreateDBClusterParameterGroup`](crate::client::fluent_builders::CreateDBClusterParameterGroup) operation.
     ///
-    /// See [`CreateDBClusterParameterGroup`](crate::client::fluent_builders::CreateDBClusterParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDBClusterParameterGroup::db_cluster_parameter_group_name) / [`set_db_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::CreateDBClusterParameterGroup::set_db_cluster_parameter_group_name): <p>The name of the cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must not match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>  </ul> <note>   <p>This value is stored as a lowercase string.</p>  </note>
+    ///   - [`db_parameter_group_family(impl Into<String>)`](crate::client::fluent_builders::CreateDBClusterParameterGroup::db_parameter_group_family) / [`set_db_parameter_group_family(Option<String>)`](crate::client::fluent_builders::CreateDBClusterParameterGroup::set_db_parameter_group_family): <p>The cluster parameter group family name.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDBClusterParameterGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDBClusterParameterGroup::set_description): <p>The description for the cluster parameter group.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDBClusterParameterGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDBClusterParameterGroup::set_tags): <p>The tags to be assigned to the cluster parameter group.</p>
+    /// - On success, responds with [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput) with field(s):
+    ///   - [`db_cluster_parameter_group(Option<DbClusterParameterGroup>)`](crate::output::CreateDbClusterParameterGroupOutput::db_cluster_parameter_group): <p>Detailed information about a cluster parameter group. </p>
+    /// - On failure, responds with [`SdkError<CreateDBClusterParameterGroupError>`](crate::error::CreateDBClusterParameterGroupError)
     pub fn create_db_cluster_parameter_group(
         &self,
     ) -> fluent_builders::CreateDBClusterParameterGroup<C, M, R> {
         fluent_builders::CreateDBClusterParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDBClusterSnapshot` operation.
+    /// Constructs a fluent builder for the [`CreateDBClusterSnapshot`](crate::client::fluent_builders::CreateDBClusterSnapshot) operation.
     ///
-    /// See [`CreateDBClusterSnapshot`](crate::client::fluent_builders::CreateDBClusterSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateDBClusterSnapshot::db_cluster_snapshot_identifier) / [`set_db_cluster_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::CreateDBClusterSnapshot::set_db_cluster_snapshot_identifier): <p>The identifier of the cluster snapshot. This parameter is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens. </p> </li>  </ul>  <p>Example: <code>my-cluster-snapshot1</code> </p>
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateDBClusterSnapshot::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::CreateDBClusterSnapshot::set_db_cluster_identifier): <p>The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>  </ul>  <p>Example: <code>my-cluster</code> </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDBClusterSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDBClusterSnapshot::set_tags): <p>The tags to be assigned to the cluster snapshot.</p>
+    /// - On success, responds with [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput) with field(s):
+    ///   - [`db_cluster_snapshot(Option<DbClusterSnapshot>)`](crate::output::CreateDbClusterSnapshotOutput::db_cluster_snapshot): <p>Detailed information about a cluster snapshot. </p>
+    /// - On failure, responds with [`SdkError<CreateDBClusterSnapshotError>`](crate::error::CreateDBClusterSnapshotError)
     pub fn create_db_cluster_snapshot(&self) -> fluent_builders::CreateDBClusterSnapshot<C, M, R> {
         fluent_builders::CreateDBClusterSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDBInstance` operation.
+    /// Constructs a fluent builder for the [`CreateDBInstance`](crate::client::fluent_builders::CreateDBInstance) operation.
     ///
-    /// See [`CreateDBInstance`](crate::client::fluent_builders::CreateDBInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::db_instance_identifier) / [`set_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_db_instance_identifier): <p>The instance identifier. This parameter is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>mydbinstance</code> </p>
+    ///   - [`db_instance_class(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::db_instance_class) / [`set_db_instance_class(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_db_instance_class): <p>The compute and memory capacity of the instance; for example, <code>db.r5.large</code>. </p>
+    ///   - [`engine(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::engine) / [`set_engine(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_engine): <p>The name of the database engine to be used for this instance.</p>  <p>Valid value: <code>docdb</code> </p>
+    ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_availability_zone): <p>The Amazon EC2 Availability Zone that the instance is created in. </p>  <p>Default: A random, system-chosen Availability Zone in the endpoint's Region.</p>  <p>Example: <code>us-east-1d</code> </p>
+    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_preferred_maintenance_window): <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>  <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week. </p>  <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>  <p>Constraints: Minimum 30-minute window.</p>
+    ///   - [`auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::CreateDBInstance::auto_minor_version_upgrade) / [`set_auto_minor_version_upgrade(Option<bool>)`](crate::client::fluent_builders::CreateDBInstance::set_auto_minor_version_upgrade): <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>  <p>Default: <code>false</code> </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDBInstance::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDBInstance::set_tags): <p>The tags to be assigned to the instance. You can assign up to 10 tags to an instance.</p>
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_db_cluster_identifier): <p>The identifier of the cluster that the instance will belong to.</p>
+    ///   - [`promotion_tier(i32)`](crate::client::fluent_builders::CreateDBInstance::promotion_tier) / [`set_promotion_tier(Option<i32>)`](crate::client::fluent_builders::CreateDBInstance::set_promotion_tier): <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>  <p>Default: 1</p>  <p>Valid values: 0-15</p>
+    /// - On success, responds with [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput) with field(s):
+    ///   - [`db_instance(Option<DbInstance>)`](crate::output::CreateDbInstanceOutput::db_instance): <p>Detailed information about an instance. </p>
+    /// - On failure, responds with [`SdkError<CreateDBInstanceError>`](crate::error::CreateDBInstanceError)
     pub fn create_db_instance(&self) -> fluent_builders::CreateDBInstance<C, M, R> {
         fluent_builders::CreateDBInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDBSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`CreateDBSubnetGroup`](crate::client::fluent_builders::CreateDBSubnetGroup) operation.
     ///
-    /// See [`CreateDBSubnetGroup`](crate::client::fluent_builders::CreateDBSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDBSubnetGroup::db_subnet_group_name) / [`set_db_subnet_group_name(Option<String>)`](crate::client::fluent_builders::CreateDBSubnetGroup::set_db_subnet_group_name): <p>The name for the subnet group. This value is stored as a lowercase string.</p>  <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>  <p>Example: <code>mySubnetgroup</code> </p>
+    ///   - [`db_subnet_group_description(impl Into<String>)`](crate::client::fluent_builders::CreateDBSubnetGroup::db_subnet_group_description) / [`set_db_subnet_group_description(Option<String>)`](crate::client::fluent_builders::CreateDBSubnetGroup::set_db_subnet_group_description): <p>The description for the subnet group.</p>
+    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateDBSubnetGroup::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDBSubnetGroup::set_subnet_ids): <p>The Amazon EC2 subnet IDs for the subnet group.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDBSubnetGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDBSubnetGroup::set_tags): <p>The tags to be assigned to the subnet group.</p>
+    /// - On success, responds with [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput) with field(s):
+    ///   - [`db_subnet_group(Option<DbSubnetGroup>)`](crate::output::CreateDbSubnetGroupOutput::db_subnet_group): <p>Detailed information about a subnet group. </p>
+    /// - On failure, responds with [`SdkError<CreateDBSubnetGroupError>`](crate::error::CreateDBSubnetGroupError)
     pub fn create_db_subnet_group(&self) -> fluent_builders::CreateDBSubnetGroup<C, M, R> {
         fluent_builders::CreateDBSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEventSubscription` operation.
+    /// Constructs a fluent builder for the [`CreateEventSubscription`](crate::client::fluent_builders::CreateEventSubscription) operation.
     ///
-    /// See [`CreateEventSubscription`](crate::client::fluent_builders::CreateEventSubscription) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`subscription_name(impl Into<String>)`](crate::client::fluent_builders::CreateEventSubscription::subscription_name) / [`set_subscription_name(Option<String>)`](crate::client::fluent_builders::CreateEventSubscription::set_subscription_name): <p>The name of the subscription.</p>  <p>Constraints: The name must be fewer than 255 characters.</p>
+    ///   - [`sns_topic_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEventSubscription::sns_topic_arn) / [`set_sns_topic_arn(Option<String>)`](crate::client::fluent_builders::CreateEventSubscription::set_sns_topic_arn): <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. Amazon SNS creates the ARN when you create a topic and subscribe to it.</p>
+    ///   - [`source_type(impl Into<String>)`](crate::client::fluent_builders::CreateEventSubscription::source_type) / [`set_source_type(Option<String>)`](crate::client::fluent_builders::CreateEventSubscription::set_source_type): <p>The type of source that is generating the events. For example, if you want to be notified of events generated by an instance, you would set this parameter to <code>db-instance</code>. If this value is not specified, all events are returned.</p>  <p>Valid values: <code>db-instance</code>, <code>db-cluster</code>, <code>db-parameter-group</code>, <code>db-security-group</code>, <code>db-cluster-snapshot</code> </p>
+    ///   - [`event_categories(Vec<String>)`](crate::client::fluent_builders::CreateEventSubscription::event_categories) / [`set_event_categories(Option<Vec<String>>)`](crate::client::fluent_builders::CreateEventSubscription::set_event_categories): <p> A list of event categories for a <code>SourceType</code> that you want to subscribe to. </p>
+    ///   - [`source_ids(Vec<String>)`](crate::client::fluent_builders::CreateEventSubscription::source_ids) / [`set_source_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateEventSubscription::set_source_ids): <p>The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>  <p>Constraints:</p>  <ul>   <li> <p>If <code>SourceIds</code> are provided, <code>SourceType</code> must also be provided.</p> </li>   <li> <p>If the source type is an instance, a <code>DBInstanceIdentifier</code> must be provided.</p> </li>   <li> <p>If the source type is a security group, a <code>DBSecurityGroupName</code> must be provided.</p> </li>   <li> <p>If the source type is a parameter group, a <code>DBParameterGroupName</code> must be provided.</p> </li>   <li> <p>If the source type is a snapshot, a <code>DBSnapshotIdentifier</code> must be provided.</p> </li>  </ul>
+    ///   - [`enabled(bool)`](crate::client::fluent_builders::CreateEventSubscription::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::CreateEventSubscription::set_enabled): <p> A Boolean value; set to <code>true</code> to activate the subscription, set to <code>false</code> to create the subscription but not active it. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEventSubscription::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEventSubscription::set_tags): <p>The tags to be assigned to the event subscription.</p>
+    /// - On success, responds with [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput) with field(s):
+    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::CreateEventSubscriptionOutput::event_subscription): <p>Detailed information about an event to which you have subscribed.</p>
+    /// - On failure, responds with [`SdkError<CreateEventSubscriptionError>`](crate::error::CreateEventSubscriptionError)
     pub fn create_event_subscription(&self) -> fluent_builders::CreateEventSubscription<C, M, R> {
         fluent_builders::CreateEventSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGlobalCluster` operation.
+    /// Constructs a fluent builder for the [`CreateGlobalCluster`](crate::client::fluent_builders::CreateGlobalCluster) operation.
     ///
-    /// See [`CreateGlobalCluster`](crate::client::fluent_builders::CreateGlobalCluster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateGlobalCluster::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::CreateGlobalCluster::set_global_cluster_identifier): <p>The cluster identifier of the new global cluster.</p>
+    ///   - [`source_db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateGlobalCluster::source_db_cluster_identifier) / [`set_source_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::CreateGlobalCluster::set_source_db_cluster_identifier): <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global cluster. This parameter is optional.</p>
+    ///   - [`engine(impl Into<String>)`](crate::client::fluent_builders::CreateGlobalCluster::engine) / [`set_engine(Option<String>)`](crate::client::fluent_builders::CreateGlobalCluster::set_engine): <p>The name of the database engine to be used for this cluster.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateGlobalCluster::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateGlobalCluster::set_engine_version): <p>The engine version of the global cluster.</p>
+    ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::CreateGlobalCluster::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::CreateGlobalCluster::set_deletion_protection): <p>The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled. </p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::CreateGlobalCluster::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::CreateGlobalCluster::set_database_name): <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon DocumentDB will not create a database in the global cluster you are creating.</p>
+    ///   - [`storage_encrypted(bool)`](crate::client::fluent_builders::CreateGlobalCluster::storage_encrypted) / [`set_storage_encrypted(Option<bool>)`](crate::client::fluent_builders::CreateGlobalCluster::set_storage_encrypted): <p>The storage encryption setting for the new global cluster. </p>
+    /// - On success, responds with [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput) with field(s):
+    ///   - [`global_cluster(Option<GlobalCluster>)`](crate::output::CreateGlobalClusterOutput::global_cluster): <p>A data type representing an Amazon DocumentDB global cluster.</p>
+    /// - On failure, responds with [`SdkError<CreateGlobalClusterError>`](crate::error::CreateGlobalClusterError)
     pub fn create_global_cluster(&self) -> fluent_builders::CreateGlobalCluster<C, M, R> {
         fluent_builders::CreateGlobalCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDBCluster` operation.
+    /// Constructs a fluent builder for the [`DeleteDBCluster`](crate::client::fluent_builders::DeleteDBCluster) operation.
     ///
-    /// See [`DeleteDBCluster`](crate::client::fluent_builders::DeleteDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteDBCluster::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::DeleteDBCluster::set_db_cluster_identifier): <p>The cluster identifier for the cluster to be deleted. This parameter isn't case sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match an existing <code>DBClusterIdentifier</code>.</p> </li>  </ul>
+    ///   - [`skip_final_snapshot(bool)`](crate::client::fluent_builders::DeleteDBCluster::skip_final_snapshot) / [`set_skip_final_snapshot(bool)`](crate::client::fluent_builders::DeleteDBCluster::set_skip_final_snapshot): <p> Determines whether a final cluster snapshot is created before the cluster is deleted. If <code>true</code> is specified, no cluster snapshot is created. If <code>false</code> is specified, a cluster snapshot is created before the DB cluster is deleted. </p> <note>   <p>If <code>SkipFinalSnapshot</code> is <code>false</code>, you must specify a <code>FinalDBSnapshotIdentifier</code> parameter.</p>  </note>  <p>Default: <code>false</code> </p>
+    ///   - [`final_db_snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteDBCluster::final_db_snapshot_identifier) / [`set_final_db_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::DeleteDBCluster::set_final_db_snapshot_identifier): <p> The cluster snapshot identifier of the new cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>   <p> Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to <code>true</code> results in an error. </p>  </note>  <p>Constraints:</p>  <ul>   <li> <p>Must be from 1 to 255 letters, numbers, or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
+    /// - On success, responds with [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::DeleteDbClusterOutput::db_cluster): <p>Detailed information about a cluster. </p>
+    /// - On failure, responds with [`SdkError<DeleteDBClusterError>`](crate::error::DeleteDBClusterError)
     pub fn delete_db_cluster(&self) -> fluent_builders::DeleteDBCluster<C, M, R> {
         fluent_builders::DeleteDBCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDBClusterParameterGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteDBClusterParameterGroup`](crate::client::fluent_builders::DeleteDBClusterParameterGroup) operation.
     ///
-    /// See [`DeleteDBClusterParameterGroup`](crate::client::fluent_builders::DeleteDBClusterParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDBClusterParameterGroup::db_cluster_parameter_group_name) / [`set_db_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::DeleteDBClusterParameterGroup::set_db_cluster_parameter_group_name): <p>The name of the cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be the name of an existing cluster parameter group.</p> </li>   <li> <p>You can't delete a default cluster parameter group.</p> </li>   <li> <p>Cannot be associated with any clusters.</p> </li>  </ul>
+    /// - On success, responds with [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDBClusterParameterGroupError>`](crate::error::DeleteDBClusterParameterGroupError)
     pub fn delete_db_cluster_parameter_group(
         &self,
     ) -> fluent_builders::DeleteDBClusterParameterGroup<C, M, R> {
         fluent_builders::DeleteDBClusterParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDBClusterSnapshot` operation.
+    /// Constructs a fluent builder for the [`DeleteDBClusterSnapshot`](crate::client::fluent_builders::DeleteDBClusterSnapshot) operation.
     ///
-    /// See [`DeleteDBClusterSnapshot`](crate::client::fluent_builders::DeleteDBClusterSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteDBClusterSnapshot::db_cluster_snapshot_identifier) / [`set_db_cluster_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::DeleteDBClusterSnapshot::set_db_cluster_snapshot_identifier): <p>The identifier of the cluster snapshot to delete.</p>  <p>Constraints: Must be the name of an existing cluster snapshot in the <code>available</code> state.</p>
+    /// - On success, responds with [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput) with field(s):
+    ///   - [`db_cluster_snapshot(Option<DbClusterSnapshot>)`](crate::output::DeleteDbClusterSnapshotOutput::db_cluster_snapshot): <p>Detailed information about a cluster snapshot. </p>
+    /// - On failure, responds with [`SdkError<DeleteDBClusterSnapshotError>`](crate::error::DeleteDBClusterSnapshotError)
     pub fn delete_db_cluster_snapshot(&self) -> fluent_builders::DeleteDBClusterSnapshot<C, M, R> {
         fluent_builders::DeleteDBClusterSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDBInstance` operation.
+    /// Constructs a fluent builder for the [`DeleteDBInstance`](crate::client::fluent_builders::DeleteDBInstance) operation.
     ///
-    /// See [`DeleteDBInstance`](crate::client::fluent_builders::DeleteDBInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteDBInstance::db_instance_identifier) / [`set_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::DeleteDBInstance::set_db_instance_identifier): <p>The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the name of an existing instance.</p> </li>  </ul>
+    /// - On success, responds with [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput) with field(s):
+    ///   - [`db_instance(Option<DbInstance>)`](crate::output::DeleteDbInstanceOutput::db_instance): <p>Detailed information about an instance. </p>
+    /// - On failure, responds with [`SdkError<DeleteDBInstanceError>`](crate::error::DeleteDBInstanceError)
     pub fn delete_db_instance(&self) -> fluent_builders::DeleteDBInstance<C, M, R> {
         fluent_builders::DeleteDBInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDBSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteDBSubnetGroup`](crate::client::fluent_builders::DeleteDBSubnetGroup) operation.
     ///
-    /// See [`DeleteDBSubnetGroup`](crate::client::fluent_builders::DeleteDBSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDBSubnetGroup::db_subnet_group_name) / [`set_db_subnet_group_name(Option<String>)`](crate::client::fluent_builders::DeleteDBSubnetGroup::set_db_subnet_group_name): <p>The name of the database subnet group to delete.</p> <note>   <p>You can't delete the default subnet group.</p>  </note>  <p>Constraints:</p>  <p>Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>  <p>Example: <code>mySubnetgroup</code> </p>
+    /// - On success, responds with [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDBSubnetGroupError>`](crate::error::DeleteDBSubnetGroupError)
     pub fn delete_db_subnet_group(&self) -> fluent_builders::DeleteDBSubnetGroup<C, M, R> {
         fluent_builders::DeleteDBSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEventSubscription` operation.
+    /// Constructs a fluent builder for the [`DeleteEventSubscription`](crate::client::fluent_builders::DeleteEventSubscription) operation.
     ///
-    /// See [`DeleteEventSubscription`](crate::client::fluent_builders::DeleteEventSubscription) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`subscription_name(impl Into<String>)`](crate::client::fluent_builders::DeleteEventSubscription::subscription_name) / [`set_subscription_name(Option<String>)`](crate::client::fluent_builders::DeleteEventSubscription::set_subscription_name): <p>The name of the Amazon DocumentDB event notification subscription that you want to delete.</p>
+    /// - On success, responds with [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput) with field(s):
+    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::DeleteEventSubscriptionOutput::event_subscription): <p>Detailed information about an event to which you have subscribed.</p>
+    /// - On failure, responds with [`SdkError<DeleteEventSubscriptionError>`](crate::error::DeleteEventSubscriptionError)
     pub fn delete_event_subscription(&self) -> fluent_builders::DeleteEventSubscription<C, M, R> {
         fluent_builders::DeleteEventSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGlobalCluster` operation.
+    /// Constructs a fluent builder for the [`DeleteGlobalCluster`](crate::client::fluent_builders::DeleteGlobalCluster) operation.
     ///
-    /// See [`DeleteGlobalCluster`](crate::client::fluent_builders::DeleteGlobalCluster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteGlobalCluster::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::DeleteGlobalCluster::set_global_cluster_identifier): <p>The cluster identifier of the global cluster being deleted.</p>
+    /// - On success, responds with [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput) with field(s):
+    ///   - [`global_cluster(Option<GlobalCluster>)`](crate::output::DeleteGlobalClusterOutput::global_cluster): <p>A data type representing an Amazon DocumentDB global cluster.</p>
+    /// - On failure, responds with [`SdkError<DeleteGlobalClusterError>`](crate::error::DeleteGlobalClusterError)
     pub fn delete_global_cluster(&self) -> fluent_builders::DeleteGlobalCluster<C, M, R> {
         fluent_builders::DeleteGlobalCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCertificates` operation.
+    /// Constructs a fluent builder for the [`DescribeCertificates`](crate::client::fluent_builders::DescribeCertificates) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeCertificates::into_paginator).
     ///
-    /// See [`DescribeCertificates`](crate::client::fluent_builders::DescribeCertificates) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCertificates::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeCertificates::certificate_identifier) / [`set_certificate_identifier(Option<String>)`](crate::client::fluent_builders::DescribeCertificates::set_certificate_identifier): <p>The user-supplied certificate identifier. If this parameter is specified, information for only the specified certificate is returned. If this parameter is omitted, a list of up to <code>MaxRecords</code> certificates is returned. This parameter is not case sensitive.</p>  <p>Constraints</p>  <ul>   <li> <p>Must match an existing <code>CertificateIdentifier</code>.</p> </li>  </ul>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeCertificates::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeCertificates::set_filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeCertificates::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeCertificates::set_max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints:</p>  <ul>   <li> <p>Minimum: 20</p> </li>   <li> <p>Maximum: 100</p> </li>  </ul>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeCertificates::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeCertificates::set_marker): <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput) with field(s):
+    ///   - [`certificates(Option<Vec<Certificate>>)`](crate::output::DescribeCertificatesOutput::certificates): <p>A list of certificates for this account.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeCertificatesOutput::marker): <p>An optional pagination token provided if the number of records retrieved is greater than <code>MaxRecords</code>. If this parameter is specified, the marker specifies the next record in the list. Including the value of <code>Marker</code> in the next call to <code>DescribeCertificates</code> results in the next page of certificates.</p>
+    /// - On failure, responds with [`SdkError<DescribeCertificatesError>`](crate::error::DescribeCertificatesError)
     pub fn describe_certificates(&self) -> fluent_builders::DescribeCertificates<C, M, R> {
         fluent_builders::DescribeCertificates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBClusterParameterGroups` operation.
+    /// Constructs a fluent builder for the [`DescribeDBClusterParameterGroups`](crate::client::fluent_builders::DescribeDBClusterParameterGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusterParameterGroups::into_paginator).
     ///
-    /// See [`DescribeDBClusterParameterGroups`](crate::client::fluent_builders::DescribeDBClusterParameterGroups) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusterParameterGroups::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusterParameterGroups::db_cluster_parameter_group_name) / [`set_db_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::DescribeDBClusterParameterGroups::set_db_cluster_parameter_group_name): <p>The name of a specific cluster parameter group to return details for.</p>  <p>Constraints:</p>  <ul>   <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>  </ul>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeDBClusterParameterGroups::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeDBClusterParameterGroups::set_filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeDBClusterParameterGroups::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeDBClusterParameterGroups::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusterParameterGroups::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeDBClusterParameterGroups::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbClusterParameterGroupsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`db_cluster_parameter_groups(Option<Vec<DbClusterParameterGroup>>)`](crate::output::DescribeDbClusterParameterGroupsOutput::db_cluster_parameter_groups): <p>A list of cluster parameter groups.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBClusterParameterGroupsError>`](crate::error::DescribeDBClusterParameterGroupsError)
     pub fn describe_db_cluster_parameter_groups(
         &self,
     ) -> fluent_builders::DescribeDBClusterParameterGroups<C, M, R> {
         fluent_builders::DescribeDBClusterParameterGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBClusterParameters` operation.
+    /// Constructs a fluent builder for the [`DescribeDBClusterParameters`](crate::client::fluent_builders::DescribeDBClusterParameters) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusterParameters::into_paginator).
     ///
-    /// See [`DescribeDBClusterParameters`](crate::client::fluent_builders::DescribeDBClusterParameters) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusterParameters::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusterParameters::db_cluster_parameter_group_name) / [`set_db_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::DescribeDBClusterParameters::set_db_cluster_parameter_group_name): <p>The name of a specific cluster parameter group to return parameter details for.</p>  <p>Constraints:</p>  <ul>   <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>  </ul>
+    ///   - [`source(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusterParameters::source) / [`set_source(Option<String>)`](crate::client::fluent_builders::DescribeDBClusterParameters::set_source): <p> A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeDBClusterParameters::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeDBClusterParameters::set_filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeDBClusterParameters::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeDBClusterParameters::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusterParameters::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeDBClusterParameters::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput) with field(s):
+    ///   - [`parameters(Option<Vec<Parameter>>)`](crate::output::DescribeDbClusterParametersOutput::parameters): <p>Provides a list of parameters for the cluster parameter group.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbClusterParametersOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBClusterParametersError>`](crate::error::DescribeDBClusterParametersError)
     pub fn describe_db_cluster_parameters(
         &self,
     ) -> fluent_builders::DescribeDBClusterParameters<C, M, R> {
         fluent_builders::DescribeDBClusterParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBClusters` operation.
+    /// Constructs a fluent builder for the [`DescribeDBClusters`](crate::client::fluent_builders::DescribeDBClusters) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusters::into_paginator).
     ///
-    /// See [`DescribeDBClusters`](crate::client::fluent_builders::DescribeDBClusters) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusters::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusters::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::DescribeDBClusters::set_db_cluster_identifier): <p>The user-provided cluster identifier. If this parameter is specified, information from only the specific cluster is returned. This parameter isn't case sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>If provided, must match an existing <code>DBClusterIdentifier</code>.</p> </li>  </ul>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeDBClusters::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeDBClusters::set_filters): <p>A filter that specifies one or more clusters to describe.</p>  <p>Supported filters:</p>  <ul>   <li> <p> <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list only includes information about the clusters identified by these ARNs.</p> </li>  </ul>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeDBClusters::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeDBClusters::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusters::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeDBClusters::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbClustersOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`db_clusters(Option<Vec<DbCluster>>)`](crate::output::DescribeDbClustersOutput::db_clusters): <p>A list of clusters.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBClustersError>`](crate::error::DescribeDBClustersError)
     pub fn describe_db_clusters(&self) -> fluent_builders::DescribeDBClusters<C, M, R> {
         fluent_builders::DescribeDBClusters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBClusterSnapshotAttributes` operation.
+    /// Constructs a fluent builder for the [`DescribeDBClusterSnapshotAttributes`](crate::client::fluent_builders::DescribeDBClusterSnapshotAttributes) operation.
     ///
-    /// See [`DescribeDBClusterSnapshotAttributes`](crate::client::fluent_builders::DescribeDBClusterSnapshotAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusterSnapshotAttributes::db_cluster_snapshot_identifier) / [`set_db_cluster_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::DescribeDBClusterSnapshotAttributes::set_db_cluster_snapshot_identifier): <p>The identifier for the cluster snapshot to describe the attributes for.</p>
+    /// - On success, responds with [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput) with field(s):
+    ///   - [`db_cluster_snapshot_attributes_result(Option<DbClusterSnapshotAttributesResult>)`](crate::output::DescribeDbClusterSnapshotAttributesOutput::db_cluster_snapshot_attributes_result): <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBClusterSnapshotAttributesError>`](crate::error::DescribeDBClusterSnapshotAttributesError)
     pub fn describe_db_cluster_snapshot_attributes(
         &self,
     ) -> fluent_builders::DescribeDBClusterSnapshotAttributes<C, M, R> {
         fluent_builders::DescribeDBClusterSnapshotAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBClusterSnapshots` operation.
+    /// Constructs a fluent builder for the [`DescribeDBClusterSnapshots`](crate::client::fluent_builders::DescribeDBClusterSnapshots) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusterSnapshots::into_paginator).
     ///
-    /// See [`DescribeDBClusterSnapshots`](crate::client::fluent_builders::DescribeDBClusterSnapshots) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusterSnapshots::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::set_db_cluster_identifier): <p>The ID of the cluster to retrieve the list of cluster snapshots for. This parameter can't be used with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case sensitive. </p>  <p>Constraints:</p>  <ul>   <li> <p>If provided, must match the identifier of an existing <code>DBCluster</code>.</p> </li>  </ul>
+    ///   - [`db_cluster_snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::db_cluster_snapshot_identifier) / [`set_db_cluster_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::set_db_cluster_snapshot_identifier): <p>A specific cluster snapshot identifier to describe. This parameter can't be used with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string. </p>  <p>Constraints:</p>  <ul>   <li> <p>If provided, must match the identifier of an existing <code>DBClusterSnapshot</code>.</p> </li>   <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>  </ul>
+    ///   - [`snapshot_type(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::snapshot_type) / [`set_snapshot_type(Option<String>)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::set_snapshot_type): <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>  <ul>   <li> <p> <code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your account.</p> </li>   <li> <p> <code>manual</code> - Return all cluster snapshots that you have manually created for your account.</p> </li>   <li> <p> <code>shared</code> - Return all manual cluster snapshots that have been shared to your account.</p> </li>   <li> <p> <code>public</code> - Return all cluster snapshots that have been marked as public.</p> </li>  </ul>  <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots are returned. You can include shared cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>  <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::set_filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`include_shared(bool)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::include_shared) / [`set_include_shared(bool)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::set_include_shared): <p>Set to <code>true</code> to include shared manual cluster snapshots from other accounts that this account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
+    ///   - [`include_public(bool)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::include_public) / [`set_include_public(bool)`](crate::client::fluent_builders::DescribeDBClusterSnapshots::set_include_public): <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
+    /// - On success, responds with [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbClusterSnapshotsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`db_cluster_snapshots(Option<Vec<DbClusterSnapshot>>)`](crate::output::DescribeDbClusterSnapshotsOutput::db_cluster_snapshots): <p>Provides a list of cluster snapshots.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBClusterSnapshotsError>`](crate::error::DescribeDBClusterSnapshotsError)
     pub fn describe_db_cluster_snapshots(
         &self,
     ) -> fluent_builders::DescribeDBClusterSnapshots<C, M, R> {
         fluent_builders::DescribeDBClusterSnapshots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBEngineVersions` operation.
+    /// Constructs a fluent builder for the [`DescribeDBEngineVersions`](crate::client::fluent_builders::DescribeDBEngineVersions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDBEngineVersions::into_paginator).
     ///
-    /// See [`DescribeDBEngineVersions`](crate::client::fluent_builders::DescribeDBEngineVersions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBEngineVersions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`engine(impl Into<String>)`](crate::client::fluent_builders::DescribeDBEngineVersions::engine) / [`set_engine(Option<String>)`](crate::client::fluent_builders::DescribeDBEngineVersions::set_engine): <p>The database engine to return.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::DescribeDBEngineVersions::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::DescribeDBEngineVersions::set_engine_version): <p>The database engine version to return.</p>  <p>Example: <code>3.6.0</code> </p>
+    ///   - [`db_parameter_group_family(impl Into<String>)`](crate::client::fluent_builders::DescribeDBEngineVersions::db_parameter_group_family) / [`set_db_parameter_group_family(Option<String>)`](crate::client::fluent_builders::DescribeDBEngineVersions::set_db_parameter_group_family): <p>The name of a specific parameter group family to return details for.</p>  <p>Constraints:</p>  <ul>   <li> <p>If provided, must match an existing <code>DBParameterGroupFamily</code>.</p> </li>  </ul>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeDBEngineVersions::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeDBEngineVersions::set_filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeDBEngineVersions::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeDBEngineVersions::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeDBEngineVersions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeDBEngineVersions::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`default_only(bool)`](crate::client::fluent_builders::DescribeDBEngineVersions::default_only) / [`set_default_only(bool)`](crate::client::fluent_builders::DescribeDBEngineVersions::set_default_only): <p>Indicates that only the default version of the specified engine or engine and major version combination is returned.</p>
+    ///   - [`list_supported_character_sets(bool)`](crate::client::fluent_builders::DescribeDBEngineVersions::list_supported_character_sets) / [`set_list_supported_character_sets(Option<bool>)`](crate::client::fluent_builders::DescribeDBEngineVersions::set_list_supported_character_sets): <p>If this parameter is specified and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version. </p>
+    ///   - [`list_supported_timezones(bool)`](crate::client::fluent_builders::DescribeDBEngineVersions::list_supported_timezones) / [`set_list_supported_timezones(Option<bool>)`](crate::client::fluent_builders::DescribeDBEngineVersions::set_list_supported_timezones): <p>If this parameter is specified and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version. </p>
+    /// - On success, responds with [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbEngineVersionsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`db_engine_versions(Option<Vec<DbEngineVersion>>)`](crate::output::DescribeDbEngineVersionsOutput::db_engine_versions): <p>Detailed information about one or more engine versions.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBEngineVersionsError>`](crate::error::DescribeDBEngineVersionsError)
     pub fn describe_db_engine_versions(
         &self,
     ) -> fluent_builders::DescribeDBEngineVersions<C, M, R> {
         fluent_builders::DescribeDBEngineVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBInstances` operation.
+    /// Constructs a fluent builder for the [`DescribeDBInstances`](crate::client::fluent_builders::DescribeDBInstances) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDBInstances::into_paginator).
     ///
-    /// See [`DescribeDBInstances`](crate::client::fluent_builders::DescribeDBInstances) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBInstances::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeDBInstances::db_instance_identifier) / [`set_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::DescribeDBInstances::set_db_instance_identifier): <p>The user-provided instance identifier. If this parameter is specified, information from only the specific instance is returned. This parameter isn't case sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>If provided, must match the identifier of an existing <code>DBInstance</code>.</p> </li>  </ul>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeDBInstances::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeDBInstances::set_filters): <p>A filter that specifies one or more instances to describe.</p>  <p>Supported filters:</p>  <ul>   <li> <p> <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list includes only the information about the instances that are associated with the clusters that are identified by these ARNs.</p> </li>   <li> <p> <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes only the information about the instances that are identified by these ARNs.</p> </li>  </ul>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeDBInstances::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeDBInstances::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeDBInstances::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeDBInstances::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbInstancesOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`db_instances(Option<Vec<DbInstance>>)`](crate::output::DescribeDbInstancesOutput::db_instances): <p>Detailed information about one or more instances. </p>
+    /// - On failure, responds with [`SdkError<DescribeDBInstancesError>`](crate::error::DescribeDBInstancesError)
     pub fn describe_db_instances(&self) -> fluent_builders::DescribeDBInstances<C, M, R> {
         fluent_builders::DescribeDBInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBSubnetGroups` operation.
+    /// Constructs a fluent builder for the [`DescribeDBSubnetGroups`](crate::client::fluent_builders::DescribeDBSubnetGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDBSubnetGroups::into_paginator).
     ///
-    /// See [`DescribeDBSubnetGroups`](crate::client::fluent_builders::DescribeDBSubnetGroups) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBSubnetGroups::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`db_subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDBSubnetGroups::db_subnet_group_name) / [`set_db_subnet_group_name(Option<String>)`](crate::client::fluent_builders::DescribeDBSubnetGroups::set_db_subnet_group_name): <p>The name of the subnet group to return details for.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeDBSubnetGroups::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeDBSubnetGroups::set_filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeDBSubnetGroups::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeDBSubnetGroups::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeDBSubnetGroups::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeDBSubnetGroups::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbSubnetGroupsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`db_subnet_groups(Option<Vec<DbSubnetGroup>>)`](crate::output::DescribeDbSubnetGroupsOutput::db_subnet_groups): <p>Detailed information about one or more subnet groups.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBSubnetGroupsError>`](crate::error::DescribeDBSubnetGroupsError)
     pub fn describe_db_subnet_groups(&self) -> fluent_builders::DescribeDBSubnetGroups<C, M, R> {
         fluent_builders::DescribeDBSubnetGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEngineDefaultClusterParameters` operation.
+    /// Constructs a fluent builder for the [`DescribeEngineDefaultClusterParameters`](crate::client::fluent_builders::DescribeEngineDefaultClusterParameters) operation.
     ///
-    /// See [`DescribeEngineDefaultClusterParameters`](crate::client::fluent_builders::DescribeEngineDefaultClusterParameters) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_parameter_group_family(impl Into<String>)`](crate::client::fluent_builders::DescribeEngineDefaultClusterParameters::db_parameter_group_family) / [`set_db_parameter_group_family(Option<String>)`](crate::client::fluent_builders::DescribeEngineDefaultClusterParameters::set_db_parameter_group_family): <p>The name of the cluster parameter group family to return the engine parameter information for.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeEngineDefaultClusterParameters::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeEngineDefaultClusterParameters::set_filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeEngineDefaultClusterParameters::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeEngineDefaultClusterParameters::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeEngineDefaultClusterParameters::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeEngineDefaultClusterParameters::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput) with field(s):
+    ///   - [`engine_defaults(Option<EngineDefaults>)`](crate::output::DescribeEngineDefaultClusterParametersOutput::engine_defaults): <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
+    /// - On failure, responds with [`SdkError<DescribeEngineDefaultClusterParametersError>`](crate::error::DescribeEngineDefaultClusterParametersError)
     pub fn describe_engine_default_cluster_parameters(
         &self,
     ) -> fluent_builders::DescribeEngineDefaultClusterParameters<C, M, R> {
         fluent_builders::DescribeEngineDefaultClusterParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEventCategories` operation.
+    /// Constructs a fluent builder for the [`DescribeEventCategories`](crate::client::fluent_builders::DescribeEventCategories) operation.
     ///
-    /// See [`DescribeEventCategories`](crate::client::fluent_builders::DescribeEventCategories) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`source_type(impl Into<String>)`](crate::client::fluent_builders::DescribeEventCategories::source_type) / [`set_source_type(Option<String>)`](crate::client::fluent_builders::DescribeEventCategories::set_source_type): <p>The type of source that is generating the events.</p>  <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code> </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeEventCategories::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeEventCategories::set_filters): <p>This parameter is not currently supported.</p>
+    /// - On success, responds with [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput) with field(s):
+    ///   - [`event_categories_map_list(Option<Vec<EventCategoriesMap>>)`](crate::output::DescribeEventCategoriesOutput::event_categories_map_list): <p>A list of event category maps.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventCategoriesError>`](crate::error::DescribeEventCategoriesError)
     pub fn describe_event_categories(&self) -> fluent_builders::DescribeEventCategories<C, M, R> {
         fluent_builders::DescribeEventCategories::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEvents` operation.
+    /// Constructs a fluent builder for the [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeEvents::into_paginator).
     ///
-    /// See [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEvents::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`source_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeEvents::source_identifier) / [`set_source_identifier(Option<String>)`](crate::client::fluent_builders::DescribeEvents::set_source_identifier): <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>  <p>Constraints:</p>  <ul>   <li> <p>If <code>SourceIdentifier</code> is provided, <code>SourceType</code> must also be provided.</p> </li>   <li> <p>If the source type is <code>DBInstance</code>, a <code>DBInstanceIdentifier</code> must be provided.</p> </li>   <li> <p>If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be provided.</p> </li>   <li> <p>If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be provided.</p> </li>   <li> <p>If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be provided.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
+    ///   - [`source_type(SourceType)`](crate::client::fluent_builders::DescribeEvents::source_type) / [`set_source_type(Option<SourceType>)`](crate::client::fluent_builders::DescribeEvents::set_source_type): <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::DescribeEvents::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeEvents::set_start_time): <p> The beginning of the time interval to retrieve events for, specified in ISO 8601 format. </p>  <p>Example: 2009-07-08T18:00Z</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::DescribeEvents::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeEvents::set_end_time): <p> The end of the time interval for which to retrieve events, specified in ISO 8601 format. </p>  <p>Example: 2009-07-08T18:00Z</p>
+    ///   - [`duration(i32)`](crate::client::fluent_builders::DescribeEvents::duration) / [`set_duration(Option<i32>)`](crate::client::fluent_builders::DescribeEvents::set_duration): <p>The number of minutes to retrieve events for.</p>  <p>Default: 60</p>
+    ///   - [`event_categories(Vec<String>)`](crate::client::fluent_builders::DescribeEvents::event_categories) / [`set_event_categories(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeEvents::set_event_categories): <p>A list of event categories that trigger notifications for an event notification subscription.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeEvents::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeEvents::set_filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeEvents::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeEvents::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeEvents::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeEvents::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeEventsOutput`](crate::output::DescribeEventsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeEventsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`events(Option<Vec<Event>>)`](crate::output::DescribeEventsOutput::events): <p>Detailed information about one or more events. </p>
+    /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::error::DescribeEventsError)
     pub fn describe_events(&self) -> fluent_builders::DescribeEvents<C, M, R> {
         fluent_builders::DescribeEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEventSubscriptions` operation.
+    /// Constructs a fluent builder for the [`DescribeEventSubscriptions`](crate::client::fluent_builders::DescribeEventSubscriptions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeEventSubscriptions::into_paginator).
     ///
-    /// See [`DescribeEventSubscriptions`](crate::client::fluent_builders::DescribeEventSubscriptions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEventSubscriptions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`subscription_name(impl Into<String>)`](crate::client::fluent_builders::DescribeEventSubscriptions::subscription_name) / [`set_subscription_name(Option<String>)`](crate::client::fluent_builders::DescribeEventSubscriptions::set_subscription_name): <p>The name of the Amazon DocumentDB event notification subscription that you want to describe.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeEventSubscriptions::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeEventSubscriptions::set_filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeEventSubscriptions::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeEventSubscriptions::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeEventSubscriptions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeEventSubscriptions::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeEventSubscriptionsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`event_subscriptions_list(Option<Vec<EventSubscription>>)`](crate::output::DescribeEventSubscriptionsOutput::event_subscriptions_list): <p>A list of event subscriptions.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventSubscriptionsError>`](crate::error::DescribeEventSubscriptionsError)
     pub fn describe_event_subscriptions(
         &self,
     ) -> fluent_builders::DescribeEventSubscriptions<C, M, R> {
         fluent_builders::DescribeEventSubscriptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeGlobalClusters` operation.
+    /// Constructs a fluent builder for the [`DescribeGlobalClusters`](crate::client::fluent_builders::DescribeGlobalClusters) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeGlobalClusters::into_paginator).
     ///
-    /// See [`DescribeGlobalClusters`](crate::client::fluent_builders::DescribeGlobalClusters) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeGlobalClusters::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeGlobalClusters::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::DescribeGlobalClusters::set_global_cluster_identifier): <p>The user-supplied cluster identifier. If this parameter is specified, information from only the specific cluster is returned. This parameter isn't case-sensitive.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeGlobalClusters::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeGlobalClusters::set_filters): <p>A filter that specifies one or more global DB clusters to describe.</p>  <p>Supported filters: <code>db-cluster-id</code> accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list will only include information about the clusters identified by these ARNs.</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeGlobalClusters::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeGlobalClusters::set_max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results. </p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeGlobalClusters::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeGlobalClusters::set_marker): <p>An optional pagination token provided by a previous <code>DescribeGlobalClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeGlobalClustersOutput::marker): <p></p>
+    ///   - [`global_clusters(Option<Vec<GlobalCluster>>)`](crate::output::DescribeGlobalClustersOutput::global_clusters): <p></p>
+    /// - On failure, responds with [`SdkError<DescribeGlobalClustersError>`](crate::error::DescribeGlobalClustersError)
     pub fn describe_global_clusters(&self) -> fluent_builders::DescribeGlobalClusters<C, M, R> {
         fluent_builders::DescribeGlobalClusters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOrderableDBInstanceOptions` operation.
+    /// Constructs a fluent builder for the [`DescribeOrderableDBInstanceOptions`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::into_paginator).
     ///
-    /// See [`DescribeOrderableDBInstanceOptions`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`engine(impl Into<String>)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::engine) / [`set_engine(Option<String>)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::set_engine): <p>The name of the engine to retrieve instance options for.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::set_engine_version): <p>The engine version filter value. Specify this parameter to show only the available offerings that match the specified engine version.</p>
+    ///   - [`db_instance_class(impl Into<String>)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::db_instance_class) / [`set_db_instance_class(Option<String>)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::set_db_instance_class): <p>The instance class filter value. Specify this parameter to show only the available offerings that match the specified instance class.</p>
+    ///   - [`license_model(impl Into<String>)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::license_model) / [`set_license_model(Option<String>)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::set_license_model): <p>The license model filter value. Specify this parameter to show only the available offerings that match the specified license model.</p>
+    ///   - [`vpc(bool)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::vpc) / [`set_vpc(Option<bool>)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::set_vpc): <p>The virtual private cloud (VPC) filter value. Specify this parameter to show only the available VPC or non-VPC offerings.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::set_filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput) with field(s):
+    ///   - [`orderable_db_instance_options(Option<Vec<OrderableDbInstanceOption>>)`](crate::output::DescribeOrderableDbInstanceOptionsOutput::orderable_db_instance_options): <p>The options that are available for a particular orderable instance.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeOrderableDbInstanceOptionsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On failure, responds with [`SdkError<DescribeOrderableDBInstanceOptionsError>`](crate::error::DescribeOrderableDBInstanceOptionsError)
     pub fn describe_orderable_db_instance_options(
         &self,
     ) -> fluent_builders::DescribeOrderableDBInstanceOptions<C, M, R> {
         fluent_builders::DescribeOrderableDBInstanceOptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePendingMaintenanceActions` operation.
+    /// Constructs a fluent builder for the [`DescribePendingMaintenanceActions`](crate::client::fluent_builders::DescribePendingMaintenanceActions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribePendingMaintenanceActions::into_paginator).
     ///
-    /// See [`DescribePendingMaintenanceActions`](crate::client::fluent_builders::DescribePendingMaintenanceActions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePendingMaintenanceActions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::set_resource_identifier): <p>The ARN of a resource to return pending maintenance actions for.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::set_filters): <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>  <p>Supported filters:</p>  <ul>   <li> <p> <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list includes only pending maintenance actions for the clusters identified by these ARNs.</p> </li>   <li> <p> <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes only pending maintenance actions for the DB instances identified by these ARNs.</p> </li>  </ul>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    /// - On success, responds with [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput) with field(s):
+    ///   - [`pending_maintenance_actions(Option<Vec<ResourcePendingMaintenanceActions>>)`](crate::output::DescribePendingMaintenanceActionsOutput::pending_maintenance_actions): <p>The maintenance actions to be applied.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribePendingMaintenanceActionsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On failure, responds with [`SdkError<DescribePendingMaintenanceActionsError>`](crate::error::DescribePendingMaintenanceActionsError)
     pub fn describe_pending_maintenance_actions(
         &self,
     ) -> fluent_builders::DescribePendingMaintenanceActions<C, M, R> {
         fluent_builders::DescribePendingMaintenanceActions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `FailoverDBCluster` operation.
+    /// Constructs a fluent builder for the [`FailoverDBCluster`](crate::client::fluent_builders::FailoverDBCluster) operation.
     ///
-    /// See [`FailoverDBCluster`](crate::client::fluent_builders::FailoverDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::FailoverDBCluster::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::FailoverDBCluster::set_db_cluster_identifier): <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>  </ul>
+    ///   - [`target_db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::FailoverDBCluster::target_db_instance_identifier) / [`set_target_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::FailoverDBCluster::set_target_db_instance_identifier): <p>The name of the instance to promote to the primary instance.</p>  <p>You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example, <code>mydbcluster-replica1</code>.</p>
+    /// - On success, responds with [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::FailoverDbClusterOutput::db_cluster): <p>Detailed information about a cluster. </p>
+    /// - On failure, responds with [`SdkError<FailoverDBClusterError>`](crate::error::FailoverDBClusterError)
     pub fn failover_db_cluster(&self) -> fluent_builders::FailoverDBCluster<C, M, R> {
         fluent_builders::FailoverDBCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_name): <p>The Amazon DocumentDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListTagsForResource::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListTagsForResource::set_filters): <p>This parameter is not currently supported.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tag_list): <p>A list of one or more tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyDBCluster` operation.
+    /// Constructs a fluent builder for the [`ModifyDBCluster`](crate::client::fluent_builders::ModifyDBCluster) operation.
     ///
-    /// See [`ModifyDBCluster`](crate::client::fluent_builders::ModifyDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_db_cluster_identifier): <p>The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>  </ul>
+    ///   - [`new_db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::new_db_cluster_identifier) / [`set_new_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_new_db_cluster_identifier): <p>The new cluster identifier for the cluster when renaming a cluster. This value is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>my-cluster2</code> </p>
+    ///   - [`apply_immediately(bool)`](crate::client::fluent_builders::ModifyDBCluster::apply_immediately) / [`set_apply_immediately(bool)`](crate::client::fluent_builders::ModifyDBCluster::set_apply_immediately): <p>A value that specifies whether the changes in this request and any pending changes are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster. If this parameter is set to <code>false</code>, changes to the cluster are applied during the next maintenance window.</p>  <p>The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values. If you set this parameter value to <code>false</code>, the changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>  <p>Default: <code>false</code> </p>
+    ///   - [`backup_retention_period(i32)`](crate::client::fluent_builders::ModifyDBCluster::backup_retention_period) / [`set_backup_retention_period(Option<i32>)`](crate::client::fluent_builders::ModifyDBCluster::set_backup_retention_period): <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>  <p>Default: 1</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be a value from 1 to 35.</p> </li>  </ul>
+    ///   - [`db_cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::db_cluster_parameter_group_name) / [`set_db_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_db_cluster_parameter_group_name): <p>The name of the cluster parameter group to use for the cluster.</p>
+    ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::ModifyDBCluster::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyDBCluster::set_vpc_security_group_ids): <p>A list of virtual private cloud (VPC) security groups that the cluster will belong to.</p>
+    ///   - [`port(i32)`](crate::client::fluent_builders::ModifyDBCluster::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::ModifyDBCluster::set_port): <p>The port number on which the cluster accepts connections.</p>  <p>Constraints: Must be a value from <code>1150</code> to <code>65535</code>. </p>  <p>Default: The same port as the original cluster.</p>
+    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_master_user_password): <p>The password for the master database user. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>  <p>Constraints: Must contain from 8 to 100 characters.</p>
+    ///   - [`preferred_backup_window(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::preferred_backup_window) / [`set_preferred_backup_window(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_preferred_backup_window): <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. </p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region. </p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>   <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>   <li> <p>Must not conflict with the preferred maintenance window.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>  </ul>
+    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>  <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a random day of the week. </p>  <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>  <p>Constraints: Minimum 30-minute window.</p>
+    ///   - [`cloudwatch_logs_export_configuration(CloudwatchLogsExportConfiguration)`](crate::client::fluent_builders::ModifyDBCluster::cloudwatch_logs_export_configuration) / [`set_cloudwatch_logs_export_configuration(Option<CloudwatchLogsExportConfiguration>)`](crate::client::fluent_builders::ModifyDBCluster::set_cloudwatch_logs_export_configuration): <p>The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs are exported (or not exported) to CloudWatch Logs.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::ModifyDBCluster::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::ModifyDBCluster::set_engine_version): <p>The version number of the database engine to which you want to upgrade. Modifying engine version is not supported on Amazon DocumentDB.</p>
+    ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::ModifyDBCluster::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::ModifyDBCluster::set_deletion_protection): <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
+    /// - On success, responds with [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::ModifyDbClusterOutput::db_cluster): <p>Detailed information about a cluster. </p>
+    /// - On failure, responds with [`SdkError<ModifyDBClusterError>`](crate::error::ModifyDBClusterError)
     pub fn modify_db_cluster(&self) -> fluent_builders::ModifyDBCluster<C, M, R> {
         fluent_builders::ModifyDBCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyDBClusterParameterGroup` operation.
+    /// Constructs a fluent builder for the [`ModifyDBClusterParameterGroup`](crate::client::fluent_builders::ModifyDBClusterParameterGroup) operation.
     ///
-    /// See [`ModifyDBClusterParameterGroup`](crate::client::fluent_builders::ModifyDBClusterParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::ModifyDBClusterParameterGroup::db_cluster_parameter_group_name) / [`set_db_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::ModifyDBClusterParameterGroup::set_db_cluster_parameter_group_name): <p>The name of the cluster parameter group to modify.</p>
+    ///   - [`parameters(Vec<Parameter>)`](crate::client::fluent_builders::ModifyDBClusterParameterGroup::parameters) / [`set_parameters(Option<Vec<Parameter>>)`](crate::client::fluent_builders::ModifyDBClusterParameterGroup::set_parameters): <p>A list of parameters in the cluster parameter group to modify.</p>
+    /// - On success, responds with [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput) with field(s):
+    ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::output::ModifyDbClusterParameterGroupOutput::db_cluster_parameter_group_name): <p>The name of a cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul> <note>   <p>This value is stored as a lowercase string.</p>  </note>
+    /// - On failure, responds with [`SdkError<ModifyDBClusterParameterGroupError>`](crate::error::ModifyDBClusterParameterGroupError)
     pub fn modify_db_cluster_parameter_group(
         &self,
     ) -> fluent_builders::ModifyDBClusterParameterGroup<C, M, R> {
         fluent_builders::ModifyDBClusterParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyDBClusterSnapshotAttribute` operation.
+    /// Constructs a fluent builder for the [`ModifyDBClusterSnapshotAttribute`](crate::client::fluent_builders::ModifyDBClusterSnapshotAttribute) operation.
     ///
-    /// See [`ModifyDBClusterSnapshotAttribute`](crate::client::fluent_builders::ModifyDBClusterSnapshotAttribute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBClusterSnapshotAttribute::db_cluster_snapshot_identifier) / [`set_db_cluster_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBClusterSnapshotAttribute::set_db_cluster_snapshot_identifier): <p>The identifier for the cluster snapshot to modify the attributes for.</p>
+    ///   - [`attribute_name(impl Into<String>)`](crate::client::fluent_builders::ModifyDBClusterSnapshotAttribute::attribute_name) / [`set_attribute_name(Option<String>)`](crate::client::fluent_builders::ModifyDBClusterSnapshotAttribute::set_attribute_name): <p>The name of the cluster snapshot attribute to modify.</p>  <p>To manage authorization for other accounts to copy or restore a manual cluster snapshot, set this value to <code>restore</code>.</p>
+    ///   - [`values_to_add(Vec<String>)`](crate::client::fluent_builders::ModifyDBClusterSnapshotAttribute::values_to_add) / [`set_values_to_add(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyDBClusterSnapshotAttribute::set_values_to_add): <p>A list of cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>  <p>To authorize other accounts to copy or restore a manual cluster snapshot, set this list to include one or more account IDs. To make the manual cluster snapshot restorable by any account, set it to <code>all</code>. Do not add the <code>all</code> value for any manual cluster snapshots that contain private information that you don't want to be available to all accounts.</p>
+    ///   - [`values_to_remove(Vec<String>)`](crate::client::fluent_builders::ModifyDBClusterSnapshotAttribute::values_to_remove) / [`set_values_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyDBClusterSnapshotAttribute::set_values_to_remove): <p>A list of cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>  <p>To remove authorization for other accounts to copy or restore a manual cluster snapshot, set this list to include one or more account identifiers. To remove authorization for any account to copy or restore the cluster snapshot, set it to <code>all</code> . If you specify <code>all</code>, an account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual cluster snapshot.</p>
+    /// - On success, responds with [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput) with field(s):
+    ///   - [`db_cluster_snapshot_attributes_result(Option<DbClusterSnapshotAttributesResult>)`](crate::output::ModifyDbClusterSnapshotAttributeOutput::db_cluster_snapshot_attributes_result): <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
+    /// - On failure, responds with [`SdkError<ModifyDBClusterSnapshotAttributeError>`](crate::error::ModifyDBClusterSnapshotAttributeError)
     pub fn modify_db_cluster_snapshot_attribute(
         &self,
     ) -> fluent_builders::ModifyDBClusterSnapshotAttribute<C, M, R> {
         fluent_builders::ModifyDBClusterSnapshotAttribute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyDBInstance` operation.
+    /// Constructs a fluent builder for the [`ModifyDBInstance`](crate::client::fluent_builders::ModifyDBInstance) operation.
     ///
-    /// See [`ModifyDBInstance`](crate::client::fluent_builders::ModifyDBInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::db_instance_identifier) / [`set_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_db_instance_identifier): <p>The instance identifier. This value is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>  </ul>
+    ///   - [`db_instance_class(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::db_instance_class) / [`set_db_instance_class(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_db_instance_class): <p>The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance classes are available in all Regions. </p>  <p>If you modify the instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request. </p>  <p>Default: Uses existing setting.</p>
+    ///   - [`apply_immediately(bool)`](crate::client::fluent_builders::ModifyDBInstance::apply_immediately) / [`set_apply_immediately(bool)`](crate::client::fluent_builders::ModifyDBInstance::set_apply_immediately): <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the instance. </p>  <p> If this parameter is set to <code>false</code>, changes to the instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next reboot.</p>  <p>Default: <code>false</code> </p>
+    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_preferred_maintenance_window): <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter doesn't result in an outage except in the following situation, and the change is asynchronously applied as soon as possible. If there are pending actions that cause a reboot, and the maintenance window is changed to include the current time, changing this parameter causes a reboot of the instance. If you are moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure that pending changes are applied.</p>  <p>Default: Uses existing setting.</p>  <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>  <p>Constraints: Must be at least 30 minutes.</p>
+    ///   - [`auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::ModifyDBInstance::auto_minor_version_upgrade) / [`set_auto_minor_version_upgrade(Option<bool>)`](crate::client::fluent_builders::ModifyDBInstance::set_auto_minor_version_upgrade): <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
+    ///   - [`new_db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::new_db_instance_identifier) / [`set_new_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_new_db_instance_identifier): <p> The new instance identifier for the instance when renaming an instance. When you change the instance identifier, an instance reboot occurs immediately if you set <code>Apply Immediately</code> to <code>true</code>. It occurs during the next maintenance window if you set <code>Apply Immediately</code> to <code>false</code>. This value is stored as a lowercase string. </p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>mydbinstance</code> </p>
+    ///   - [`ca_certificate_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::ca_certificate_identifier) / [`set_ca_certificate_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_ca_certificate_identifier): <p>Indicates the certificate that needs to be associated with the instance.</p>
+    ///   - [`promotion_tier(i32)`](crate::client::fluent_builders::ModifyDBInstance::promotion_tier) / [`set_promotion_tier(Option<i32>)`](crate::client::fluent_builders::ModifyDBInstance::set_promotion_tier): <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>  <p>Default: 1</p>  <p>Valid values: 0-15</p>
+    /// - On success, responds with [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput) with field(s):
+    ///   - [`db_instance(Option<DbInstance>)`](crate::output::ModifyDbInstanceOutput::db_instance): <p>Detailed information about an instance. </p>
+    /// - On failure, responds with [`SdkError<ModifyDBInstanceError>`](crate::error::ModifyDBInstanceError)
     pub fn modify_db_instance(&self) -> fluent_builders::ModifyDBInstance<C, M, R> {
         fluent_builders::ModifyDBInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyDBSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`ModifyDBSubnetGroup`](crate::client::fluent_builders::ModifyDBSubnetGroup) operation.
     ///
-    /// See [`ModifyDBSubnetGroup`](crate::client::fluent_builders::ModifyDBSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::ModifyDBSubnetGroup::db_subnet_group_name) / [`set_db_subnet_group_name(Option<String>)`](crate::client::fluent_builders::ModifyDBSubnetGroup::set_db_subnet_group_name): <p>The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet group. </p>  <p>Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>  <p>Example: <code>mySubnetgroup</code> </p>
+    ///   - [`db_subnet_group_description(impl Into<String>)`](crate::client::fluent_builders::ModifyDBSubnetGroup::db_subnet_group_description) / [`set_db_subnet_group_description(Option<String>)`](crate::client::fluent_builders::ModifyDBSubnetGroup::set_db_subnet_group_description): <p>The description for the subnet group.</p>
+    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::ModifyDBSubnetGroup::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyDBSubnetGroup::set_subnet_ids): <p>The Amazon EC2 subnet IDs for the subnet group.</p>
+    /// - On success, responds with [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput) with field(s):
+    ///   - [`db_subnet_group(Option<DbSubnetGroup>)`](crate::output::ModifyDbSubnetGroupOutput::db_subnet_group): <p>Detailed information about a subnet group. </p>
+    /// - On failure, responds with [`SdkError<ModifyDBSubnetGroupError>`](crate::error::ModifyDBSubnetGroupError)
     pub fn modify_db_subnet_group(&self) -> fluent_builders::ModifyDBSubnetGroup<C, M, R> {
         fluent_builders::ModifyDBSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyEventSubscription` operation.
+    /// Constructs a fluent builder for the [`ModifyEventSubscription`](crate::client::fluent_builders::ModifyEventSubscription) operation.
     ///
-    /// See [`ModifyEventSubscription`](crate::client::fluent_builders::ModifyEventSubscription) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`subscription_name(impl Into<String>)`](crate::client::fluent_builders::ModifyEventSubscription::subscription_name) / [`set_subscription_name(Option<String>)`](crate::client::fluent_builders::ModifyEventSubscription::set_subscription_name): <p>The name of the Amazon DocumentDB event notification subscription.</p>
+    ///   - [`sns_topic_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyEventSubscription::sns_topic_arn) / [`set_sns_topic_arn(Option<String>)`](crate::client::fluent_builders::ModifyEventSubscription::set_sns_topic_arn): <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    ///   - [`source_type(impl Into<String>)`](crate::client::fluent_builders::ModifyEventSubscription::source_type) / [`set_source_type(Option<String>)`](crate::client::fluent_builders::ModifyEventSubscription::set_source_type): <p>The type of source that is generating the events. For example, if you want to be notified of events generated by an instance, set this parameter to <code>db-instance</code>. If this value is not specified, all events are returned.</p>  <p>Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code> </p>
+    ///   - [`event_categories(Vec<String>)`](crate::client::fluent_builders::ModifyEventSubscription::event_categories) / [`set_event_categories(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyEventSubscription::set_event_categories): <p> A list of event categories for a <code>SourceType</code> that you want to subscribe to.</p>
+    ///   - [`enabled(bool)`](crate::client::fluent_builders::ModifyEventSubscription::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::ModifyEventSubscription::set_enabled): <p> A Boolean value; set to <code>true</code> to activate the subscription. </p>
+    /// - On success, responds with [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput) with field(s):
+    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::ModifyEventSubscriptionOutput::event_subscription): <p>Detailed information about an event to which you have subscribed.</p>
+    /// - On failure, responds with [`SdkError<ModifyEventSubscriptionError>`](crate::error::ModifyEventSubscriptionError)
     pub fn modify_event_subscription(&self) -> fluent_builders::ModifyEventSubscription<C, M, R> {
         fluent_builders::ModifyEventSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyGlobalCluster` operation.
+    /// Constructs a fluent builder for the [`ModifyGlobalCluster`](crate::client::fluent_builders::ModifyGlobalCluster) operation.
     ///
-    /// See [`ModifyGlobalCluster`](crate::client::fluent_builders::ModifyGlobalCluster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyGlobalCluster::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::ModifyGlobalCluster::set_global_cluster_identifier): <p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing global cluster.</p> </li>  </ul>
+    ///   - [`new_global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyGlobalCluster::new_global_cluster_identifier) / [`set_new_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::ModifyGlobalCluster::set_new_global_cluster_identifier): <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>  <p>Example: <code>my-cluster2</code> </p>
+    ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::ModifyGlobalCluster::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::ModifyGlobalCluster::set_deletion_protection): <p>Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled. </p>
+    /// - On success, responds with [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput) with field(s):
+    ///   - [`global_cluster(Option<GlobalCluster>)`](crate::output::ModifyGlobalClusterOutput::global_cluster): <p>A data type representing an Amazon DocumentDB global cluster.</p>
+    /// - On failure, responds with [`SdkError<ModifyGlobalClusterError>`](crate::error::ModifyGlobalClusterError)
     pub fn modify_global_cluster(&self) -> fluent_builders::ModifyGlobalCluster<C, M, R> {
         fluent_builders::ModifyGlobalCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RebootDBInstance` operation.
+    /// Constructs a fluent builder for the [`RebootDBInstance`](crate::client::fluent_builders::RebootDBInstance) operation.
     ///
-    /// See [`RebootDBInstance`](crate::client::fluent_builders::RebootDBInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::RebootDBInstance::db_instance_identifier) / [`set_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::RebootDBInstance::set_db_instance_identifier): <p>The instance identifier. This parameter is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing <code>DBInstance</code>.</p> </li>  </ul>
+    ///   - [`force_failover(bool)`](crate::client::fluent_builders::RebootDBInstance::force_failover) / [`set_force_failover(Option<bool>)`](crate::client::fluent_builders::RebootDBInstance::set_force_failover): <p> When <code>true</code>, the reboot is conducted through a Multi-AZ failover. </p>  <p>Constraint: You can't specify <code>true</code> if the instance is not configured for Multi-AZ.</p>
+    /// - On success, responds with [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput) with field(s):
+    ///   - [`db_instance(Option<DbInstance>)`](crate::output::RebootDbInstanceOutput::db_instance): <p>Detailed information about an instance. </p>
+    /// - On failure, responds with [`SdkError<RebootDBInstanceError>`](crate::error::RebootDBInstanceError)
     pub fn reboot_db_instance(&self) -> fluent_builders::RebootDBInstance<C, M, R> {
         fluent_builders::RebootDBInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveFromGlobalCluster` operation.
+    /// Constructs a fluent builder for the [`RemoveFromGlobalCluster`](crate::client::fluent_builders::RemoveFromGlobalCluster) operation.
     ///
-    /// See [`RemoveFromGlobalCluster`](crate::client::fluent_builders::RemoveFromGlobalCluster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`global_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::RemoveFromGlobalCluster::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::client::fluent_builders::RemoveFromGlobalCluster::set_global_cluster_identifier): <p>The cluster identifier to detach from the Amazon DocumentDB global cluster. </p>
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::RemoveFromGlobalCluster::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::RemoveFromGlobalCluster::set_db_cluster_identifier): <p>The Amazon Resource Name (ARN) identifying the cluster that was detached from the Amazon DocumentDB global cluster. </p>
+    /// - On success, responds with [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput) with field(s):
+    ///   - [`global_cluster(Option<GlobalCluster>)`](crate::output::RemoveFromGlobalClusterOutput::global_cluster): <p>A data type representing an Amazon DocumentDB global cluster.</p>
+    /// - On failure, responds with [`SdkError<RemoveFromGlobalClusterError>`](crate::error::RemoveFromGlobalClusterError)
     pub fn remove_from_global_cluster(&self) -> fluent_builders::RemoveFromGlobalCluster<C, M, R> {
         fluent_builders::RemoveFromGlobalCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveSourceIdentifierFromSubscription` operation.
+    /// Constructs a fluent builder for the [`RemoveSourceIdentifierFromSubscription`](crate::client::fluent_builders::RemoveSourceIdentifierFromSubscription) operation.
     ///
-    /// See [`RemoveSourceIdentifierFromSubscription`](crate::client::fluent_builders::RemoveSourceIdentifierFromSubscription) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`subscription_name(impl Into<String>)`](crate::client::fluent_builders::RemoveSourceIdentifierFromSubscription::subscription_name) / [`set_subscription_name(Option<String>)`](crate::client::fluent_builders::RemoveSourceIdentifierFromSubscription::set_subscription_name): <p>The name of the Amazon DocumentDB event notification subscription that you want to remove a source identifier from.</p>
+    ///   - [`source_identifier(impl Into<String>)`](crate::client::fluent_builders::RemoveSourceIdentifierFromSubscription::source_identifier) / [`set_source_identifier(Option<String>)`](crate::client::fluent_builders::RemoveSourceIdentifierFromSubscription::set_source_identifier): <p> The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group. </p>
+    /// - On success, responds with [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput) with field(s):
+    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput::event_subscription): <p>Detailed information about an event to which you have subscribed.</p>
+    /// - On failure, responds with [`SdkError<RemoveSourceIdentifierFromSubscriptionError>`](crate::error::RemoveSourceIdentifierFromSubscriptionError)
     pub fn remove_source_identifier_from_subscription(
         &self,
     ) -> fluent_builders::RemoveSourceIdentifierFromSubscription<C, M, R> {
         fluent_builders::RemoveSourceIdentifierFromSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveTagsFromResource` operation.
+    /// Constructs a fluent builder for the [`RemoveTagsFromResource`](crate::client::fluent_builders::RemoveTagsFromResource) operation.
     ///
-    /// See [`RemoveTagsFromResource`](crate::client::fluent_builders::RemoveTagsFromResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::RemoveTagsFromResource::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::RemoveTagsFromResource::set_resource_name): <p>The Amazon DocumentDB resource that the tags are removed from. This value is an Amazon Resource Name (ARN).</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::RemoveTagsFromResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveTagsFromResource::set_tag_keys): <p>The tag key (name) of the tag to be removed.</p>
+    /// - On success, responds with [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::error::RemoveTagsFromResourceError)
     pub fn remove_tags_from_resource(&self) -> fluent_builders::RemoveTagsFromResource<C, M, R> {
         fluent_builders::RemoveTagsFromResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResetDBClusterParameterGroup` operation.
+    /// Constructs a fluent builder for the [`ResetDBClusterParameterGroup`](crate::client::fluent_builders::ResetDBClusterParameterGroup) operation.
     ///
-    /// See [`ResetDBClusterParameterGroup`](crate::client::fluent_builders::ResetDBClusterParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_parameter_group_name(impl Into<String>)`](crate::client::fluent_builders::ResetDBClusterParameterGroup::db_cluster_parameter_group_name) / [`set_db_cluster_parameter_group_name(Option<String>)`](crate::client::fluent_builders::ResetDBClusterParameterGroup::set_db_cluster_parameter_group_name): <p>The name of the cluster parameter group to reset.</p>
+    ///   - [`reset_all_parameters(bool)`](crate::client::fluent_builders::ResetDBClusterParameterGroup::reset_all_parameters) / [`set_reset_all_parameters(bool)`](crate::client::fluent_builders::ResetDBClusterParameterGroup::set_reset_all_parameters): <p>A value that is set to <code>true</code> to reset all parameters in the cluster parameter group to their default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
+    ///   - [`parameters(Vec<Parameter>)`](crate::client::fluent_builders::ResetDBClusterParameterGroup::parameters) / [`set_parameters(Option<Vec<Parameter>>)`](crate::client::fluent_builders::ResetDBClusterParameterGroup::set_parameters): <p>A list of parameter names in the cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.</p>
+    /// - On success, responds with [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput) with field(s):
+    ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::output::ResetDbClusterParameterGroupOutput::db_cluster_parameter_group_name): <p>The name of a cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be from 1 to 255 letters or numbers.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul> <note>   <p>This value is stored as a lowercase string.</p>  </note>
+    /// - On failure, responds with [`SdkError<ResetDBClusterParameterGroupError>`](crate::error::ResetDBClusterParameterGroupError)
     pub fn reset_db_cluster_parameter_group(
         &self,
     ) -> fluent_builders::ResetDBClusterParameterGroup<C, M, R> {
         fluent_builders::ResetDBClusterParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestoreDBClusterFromSnapshot` operation.
+    /// Constructs a fluent builder for the [`RestoreDBClusterFromSnapshot`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot) operation.
     ///
-    /// See [`RestoreDBClusterFromSnapshot`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`availability_zones(Vec<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::availability_zones) / [`set_availability_zones(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_availability_zones): <p>Provides the list of Amazon EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_db_cluster_identifier): <p>The name of the cluster to create from the snapshot or cluster snapshot. This parameter isn't case sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>my-snapshot-id</code> </p>
+    ///   - [`snapshot_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::snapshot_identifier) / [`set_snapshot_identifier(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_snapshot_identifier): <p>The identifier for the snapshot or cluster snapshot to restore from.</p>  <p>You can use either the name or the Amazon Resource Name (ARN) to specify a cluster snapshot. However, you can use only the ARN to specify a snapshot.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing snapshot.</p> </li>  </ul>
+    ///   - [`engine(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::engine) / [`set_engine(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_engine): <p>The database engine to use for the new cluster.</p>  <p>Default: The same as source.</p>  <p>Constraint: Must be compatible with the engine of the source.</p>
+    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_engine_version): <p>The version of the database engine to use for the new cluster.</p>
+    ///   - [`port(i32)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_port): <p>The port number on which the new cluster accepts connections.</p>  <p>Constraints: Must be a value from <code>1150</code> to <code>65535</code>.</p>  <p>Default: The same port as the original cluster.</p>
+    ///   - [`db_subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::db_subnet_group_name) / [`set_db_subnet_group_name(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_db_subnet_group_name): <p>The name of the subnet group to use for the new cluster.</p>  <p>Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>  <p>Example: <code>mySubnetgroup</code> </p>
+    ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_vpc_security_group_ids): <p>A list of virtual private cloud (VPC) security groups that the new cluster will belong to.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_tags): <p>The tags to be assigned to the restored cluster.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_kms_key_id): <p>The KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.</p>  <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>  <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>  <ul>   <li> <p>If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored cluster is encrypted using the KMS key that was used to encrypt the snapshot or the cluster snapshot.</p> </li>   <li> <p>If the snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p> </li>  </ul>
+    ///   - [`enable_cloudwatch_logs_exports(Vec<String>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::enable_cloudwatch_logs_exports) / [`set_enable_cloudwatch_logs_exports(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_enable_cloudwatch_logs_exports): <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
+    ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot::set_deletion_protection): <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
+    /// - On success, responds with [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::RestoreDbClusterFromSnapshotOutput::db_cluster): <p>Detailed information about a cluster. </p>
+    /// - On failure, responds with [`SdkError<RestoreDBClusterFromSnapshotError>`](crate::error::RestoreDBClusterFromSnapshotError)
     pub fn restore_db_cluster_from_snapshot(
         &self,
     ) -> fluent_builders::RestoreDBClusterFromSnapshot<C, M, R> {
         fluent_builders::RestoreDBClusterFromSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestoreDBClusterToPointInTime` operation.
+    /// Constructs a fluent builder for the [`RestoreDBClusterToPointInTime`](crate::client::fluent_builders::RestoreDBClusterToPointInTime) operation.
     ///
-    /// See [`RestoreDBClusterToPointInTime`](crate::client::fluent_builders::RestoreDBClusterToPointInTime) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_db_cluster_identifier): <p>The name of the new cluster to be created.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
+    ///   - [`source_db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::source_db_cluster_identifier) / [`set_source_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_source_db_cluster_identifier): <p>The identifier of the source cluster from which to restore.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>  </ul>
+    ///   - [`restore_to_time(DateTime)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::restore_to_time) / [`set_restore_to_time(Option<DateTime>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_restore_to_time): <p>The date and time to restore the cluster to.</p>  <p>Valid values: A time in Universal Coordinated Time (UTC) format.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be before the latest restorable time for the instance.</p> </li>   <li> <p>Must be specified if the <code>UseLatestRestorableTime</code> parameter is not provided.</p> </li>   <li> <p>Cannot be specified if the <code>UseLatestRestorableTime</code> parameter is <code>true</code>.</p> </li>   <li> <p>Cannot be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>.</p> </li>  </ul>  <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
+    ///   - [`use_latest_restorable_time(bool)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::use_latest_restorable_time) / [`set_use_latest_restorable_time(bool)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_use_latest_restorable_time): <p>A value that is set to <code>true</code> to restore the cluster to the latest restorable backup time, and <code>false</code> otherwise. </p>  <p>Default: <code>false</code> </p>  <p>Constraints: Cannot be specified if the <code>RestoreToTime</code> parameter is provided.</p>
+    ///   - [`port(i32)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_port): <p>The port number on which the new cluster accepts connections.</p>  <p>Constraints: Must be a value from <code>1150</code> to <code>65535</code>. </p>  <p>Default: The default port for the engine.</p>
+    ///   - [`db_subnet_group_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::db_subnet_group_name) / [`set_db_subnet_group_name(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_db_subnet_group_name): <p>The subnet group name to use for the new cluster.</p>  <p>Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>  <p>Example: <code>mySubnetgroup</code> </p>
+    ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_vpc_security_group_ids): <p>A list of VPC security groups that the new cluster belongs to.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_tags): <p>The tags to be assigned to the restored cluster.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_kms_key_id): <p>The KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.</p>  <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>  <p>You can restore to a new cluster and encrypt the new cluster with an KMS key that is different from the KMS key used to encrypt the source cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>  <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>  <ul>   <li> <p>If the cluster is encrypted, then the restored cluster is encrypted using the KMS key that was used to encrypt the source cluster.</p> </li>   <li> <p>If the cluster is not encrypted, then the restored cluster is not encrypted.</p> </li>  </ul>  <p>If <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then the restore request is rejected.</p>
+    ///   - [`enable_cloudwatch_logs_exports(Vec<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::enable_cloudwatch_logs_exports) / [`set_enable_cloudwatch_logs_exports(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_enable_cloudwatch_logs_exports): <p>A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.</p>
+    ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_deletion_protection): <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
+    /// - On success, responds with [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::RestoreDbClusterToPointInTimeOutput::db_cluster): <p>Detailed information about a cluster. </p>
+    /// - On failure, responds with [`SdkError<RestoreDBClusterToPointInTimeError>`](crate::error::RestoreDBClusterToPointInTimeError)
     pub fn restore_db_cluster_to_point_in_time(
         &self,
     ) -> fluent_builders::RestoreDBClusterToPointInTime<C, M, R> {
         fluent_builders::RestoreDBClusterToPointInTime::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartDBCluster` operation.
+    /// Constructs a fluent builder for the [`StartDBCluster`](crate::client::fluent_builders::StartDBCluster) operation.
     ///
-    /// See [`StartDBCluster`](crate::client::fluent_builders::StartDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::StartDBCluster::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::StartDBCluster::set_db_cluster_identifier): <p>The identifier of the cluster to restart. Example: <code>docdb-2019-05-28-15-24-52</code> </p>
+    /// - On success, responds with [`StartDbClusterOutput`](crate::output::StartDbClusterOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::StartDbClusterOutput::db_cluster): <p>Detailed information about a cluster. </p>
+    /// - On failure, responds with [`SdkError<StartDBClusterError>`](crate::error::StartDBClusterError)
     pub fn start_db_cluster(&self) -> fluent_builders::StartDBCluster<C, M, R> {
         fluent_builders::StartDBCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopDBCluster` operation.
+    /// Constructs a fluent builder for the [`StopDBCluster`](crate::client::fluent_builders::StopDBCluster) operation.
     ///
-    /// See [`StopDBCluster`](crate::client::fluent_builders::StopDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::StopDBCluster::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::StopDBCluster::set_db_cluster_identifier): <p>The identifier of the cluster to stop. Example: <code>docdb-2019-05-28-15-24-52</code> </p>
+    /// - On success, responds with [`StopDbClusterOutput`](crate::output::StopDbClusterOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::StopDbClusterOutput::db_cluster): <p>Detailed information about a cluster. </p>
+    /// - On failure, responds with [`SdkError<StopDBClusterError>`](crate::error::StopDBClusterError)
     pub fn stop_db_cluster(&self) -> fluent_builders::StopDBCluster<C, M, R> {
         fluent_builders::StopDBCluster::new(self.handle.clone())
     }

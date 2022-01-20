@@ -83,161 +83,296 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `DeleteRecommendationPreferences` operation.
+    /// Constructs a fluent builder for the [`DeleteRecommendationPreferences`](crate::client::fluent_builders::DeleteRecommendationPreferences) operation.
     ///
-    /// See [`DeleteRecommendationPreferences`](crate::client::fluent_builders::DeleteRecommendationPreferences) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::DeleteRecommendationPreferences::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::set_resource_type): <p>The target resource type of the recommendation preference to delete.</p>  <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteRecommendationPreferences::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::set_scope): <p>An object that describes the scope of the recommendation preference to delete.</p>  <p>You can delete recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`recommendation_preference_names(Vec<RecommendationPreferenceName>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::recommendation_preference_names) / [`set_recommendation_preference_names(Option<Vec<RecommendationPreferenceName>>)`](crate::client::fluent_builders::DeleteRecommendationPreferences::set_recommendation_preference_names): <p>The name of the recommendation preference to delete.</p>  <p>Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.</p>
+    /// - On success, responds with [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRecommendationPreferencesError>`](crate::error::DeleteRecommendationPreferencesError)
     pub fn delete_recommendation_preferences(
         &self,
     ) -> fluent_builders::DeleteRecommendationPreferences<C, M, R> {
         fluent_builders::DeleteRecommendationPreferences::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRecommendationExportJobs` operation.
+    /// Constructs a fluent builder for the [`DescribeRecommendationExportJobs`](crate::client::fluent_builders::DescribeRecommendationExportJobs) operation.
     ///
-    /// See [`DescribeRecommendationExportJobs`](crate::client::fluent_builders::DescribeRecommendationExportJobs) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_ids(Vec<String>)`](crate::client::fluent_builders::DescribeRecommendationExportJobs::job_ids) / [`set_job_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeRecommendationExportJobs::set_job_ids): <p>The identification numbers of the export jobs to return.</p>  <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>  <p>All export jobs created in the last seven days are returned if this parameter is omitted.</p>
+    ///   - [`filters(Vec<JobFilter>)`](crate::client::fluent_builders::DescribeRecommendationExportJobs::filters) / [`set_filters(Option<Vec<JobFilter>>)`](crate::client::fluent_builders::DescribeRecommendationExportJobs::set_filters): <p>An array of objects to specify a filter that returns a more specific list of export jobs.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeRecommendationExportJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeRecommendationExportJobs::set_next_token): <p>The token to advance to the next page of export jobs.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeRecommendationExportJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeRecommendationExportJobs::set_max_results): <p>The maximum number of export jobs to return with a single request.</p>  <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    /// - On success, responds with [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput) with field(s):
+    ///   - [`recommendation_export_jobs(Option<Vec<RecommendationExportJob>>)`](crate::output::DescribeRecommendationExportJobsOutput::recommendation_export_jobs): <p>An array of objects that describe recommendation export jobs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeRecommendationExportJobsOutput::next_token): <p>The token to use to advance to the next page of export jobs.</p>  <p>This value is null when there are no more pages of export jobs to return.</p>
+    /// - On failure, responds with [`SdkError<DescribeRecommendationExportJobsError>`](crate::error::DescribeRecommendationExportJobsError)
     pub fn describe_recommendation_export_jobs(
         &self,
     ) -> fluent_builders::DescribeRecommendationExportJobs<C, M, R> {
         fluent_builders::DescribeRecommendationExportJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ExportAutoScalingGroupRecommendations` operation.
+    /// Constructs a fluent builder for the [`ExportAutoScalingGroupRecommendations`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations) operation.
     ///
-    /// See [`ExportAutoScalingGroupRecommendations`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations::set_account_ids): <p>The IDs of the Amazon Web Services accounts for which to export Auto Scaling group recommendations.</p>  <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>  <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>  <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>  <p>You can specify multiple account IDs per request.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations::set_filters): <p>An array of objects to specify a filter that exports a more specific set of Auto Scaling group recommendations.</p>
+    ///   - [`fields_to_export(Vec<ExportableAutoScalingGroupField>)`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations::fields_to_export) / [`set_fields_to_export(Option<Vec<ExportableAutoScalingGroupField>>)`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations::set_fields_to_export): <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`s3_destination_config(S3DestinationConfig)`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations::s3_destination_config) / [`set_s3_destination_config(Option<S3DestinationConfig>)`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations::set_s3_destination_config): <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for the export job.</p>  <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permissions policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`file_format(FileFormat)`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations::file_format) / [`set_file_format(Option<FileFormat>)`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations::set_file_format): <p>The format of the export file.</p>  <p>The only export file format currently supported is <code>Csv</code>.</p>
+    ///   - [`include_member_accounts(bool)`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations::include_member_accounts) / [`set_include_member_accounts(bool)`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations::set_include_member_accounts): <p>Indicates whether to include recommendations for resources in all member accounts of the organization if your account is the management account of an organization.</p>  <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>  <p>Recommendations for member accounts of the organization are not included in the export file if this parameter is omitted.</p>  <p>This parameter cannot be specified together with the account IDs parameter. The parameters are mutually exclusive.</p>  <p>Recommendations for member accounts are not included in the export if this parameter, or the account IDs parameter, is omitted.</p>
+    ///   - [`recommendation_preferences(RecommendationPreferences)`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations::recommendation_preferences) / [`set_recommendation_preferences(Option<RecommendationPreferences>)`](crate::client::fluent_builders::ExportAutoScalingGroupRecommendations::set_recommendation_preferences): <p>An object to specify the preferences for the Auto Scaling group recommendations to export.</p>
+    /// - On success, responds with [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::ExportAutoScalingGroupRecommendationsOutput::job_id): <p>The identification number of the export job.</p>  <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
+    ///   - [`s3_destination(Option<S3Destination>)`](crate::output::ExportAutoScalingGroupRecommendationsOutput::s3_destination): <p>An object that describes the destination Amazon S3 bucket of a recommendations export file.</p>
+    /// - On failure, responds with [`SdkError<ExportAutoScalingGroupRecommendationsError>`](crate::error::ExportAutoScalingGroupRecommendationsError)
     pub fn export_auto_scaling_group_recommendations(
         &self,
     ) -> fluent_builders::ExportAutoScalingGroupRecommendations<C, M, R> {
         fluent_builders::ExportAutoScalingGroupRecommendations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ExportEBSVolumeRecommendations` operation.
+    /// Constructs a fluent builder for the [`ExportEBSVolumeRecommendations`](crate::client::fluent_builders::ExportEBSVolumeRecommendations) operation.
     ///
-    /// See [`ExportEBSVolumeRecommendations`](crate::client::fluent_builders::ExportEBSVolumeRecommendations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::ExportEBSVolumeRecommendations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ExportEBSVolumeRecommendations::set_account_ids): <p>The IDs of the Amazon Web Services accounts for which to export Amazon EBS volume recommendations.</p>  <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>  <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>  <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>  <p>You can specify multiple account IDs per request.</p>
+    ///   - [`filters(Vec<EbsFilter>)`](crate::client::fluent_builders::ExportEBSVolumeRecommendations::filters) / [`set_filters(Option<Vec<EbsFilter>>)`](crate::client::fluent_builders::ExportEBSVolumeRecommendations::set_filters): <p>An array of objects to specify a filter that exports a more specific set of Amazon EBS volume recommendations.</p>
+    ///   - [`fields_to_export(Vec<ExportableVolumeField>)`](crate::client::fluent_builders::ExportEBSVolumeRecommendations::fields_to_export) / [`set_fields_to_export(Option<Vec<ExportableVolumeField>>)`](crate::client::fluent_builders::ExportEBSVolumeRecommendations::set_fields_to_export): <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`s3_destination_config(S3DestinationConfig)`](crate::client::fluent_builders::ExportEBSVolumeRecommendations::s3_destination_config) / [`set_s3_destination_config(Option<S3DestinationConfig>)`](crate::client::fluent_builders::ExportEBSVolumeRecommendations::set_s3_destination_config): <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>  <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`file_format(FileFormat)`](crate::client::fluent_builders::ExportEBSVolumeRecommendations::file_format) / [`set_file_format(Option<FileFormat>)`](crate::client::fluent_builders::ExportEBSVolumeRecommendations::set_file_format): <p>The format of the export file.</p>  <p>The only export file format currently supported is <code>Csv</code>.</p>
+    ///   - [`include_member_accounts(bool)`](crate::client::fluent_builders::ExportEBSVolumeRecommendations::include_member_accounts) / [`set_include_member_accounts(bool)`](crate::client::fluent_builders::ExportEBSVolumeRecommendations::set_include_member_accounts): <p>Indicates whether to include recommendations for resources in all member accounts of the organization if your account is the management account of an organization.</p>  <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>  <p>Recommendations for member accounts of the organization are not included in the export file if this parameter is omitted.</p>  <p>This parameter cannot be specified together with the account IDs parameter. The parameters are mutually exclusive.</p>  <p>Recommendations for member accounts are not included in the export if this parameter, or the account IDs parameter, is omitted.</p>
+    /// - On success, responds with [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::ExportEbsVolumeRecommendationsOutput::job_id): <p>The identification number of the export job.</p>  <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
+    ///   - [`s3_destination(Option<S3Destination>)`](crate::output::ExportEbsVolumeRecommendationsOutput::s3_destination): <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
+    /// - On failure, responds with [`SdkError<ExportEBSVolumeRecommendationsError>`](crate::error::ExportEBSVolumeRecommendationsError)
     pub fn export_ebs_volume_recommendations(
         &self,
     ) -> fluent_builders::ExportEBSVolumeRecommendations<C, M, R> {
         fluent_builders::ExportEBSVolumeRecommendations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ExportEC2InstanceRecommendations` operation.
+    /// Constructs a fluent builder for the [`ExportEC2InstanceRecommendations`](crate::client::fluent_builders::ExportEC2InstanceRecommendations) operation.
     ///
-    /// See [`ExportEC2InstanceRecommendations`](crate::client::fluent_builders::ExportEC2InstanceRecommendations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::ExportEC2InstanceRecommendations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ExportEC2InstanceRecommendations::set_account_ids): <p>The IDs of the Amazon Web Services accounts for which to export instance recommendations.</p>  <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>  <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>  <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>  <p>You can specify multiple account IDs per request.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ExportEC2InstanceRecommendations::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ExportEC2InstanceRecommendations::set_filters): <p>An array of objects to specify a filter that exports a more specific set of instance recommendations.</p>
+    ///   - [`fields_to_export(Vec<ExportableInstanceField>)`](crate::client::fluent_builders::ExportEC2InstanceRecommendations::fields_to_export) / [`set_fields_to_export(Option<Vec<ExportableInstanceField>>)`](crate::client::fluent_builders::ExportEC2InstanceRecommendations::set_fields_to_export): <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`s3_destination_config(S3DestinationConfig)`](crate::client::fluent_builders::ExportEC2InstanceRecommendations::s3_destination_config) / [`set_s3_destination_config(Option<S3DestinationConfig>)`](crate::client::fluent_builders::ExportEC2InstanceRecommendations::set_s3_destination_config): <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for the export job.</p>  <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permissions policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`file_format(FileFormat)`](crate::client::fluent_builders::ExportEC2InstanceRecommendations::file_format) / [`set_file_format(Option<FileFormat>)`](crate::client::fluent_builders::ExportEC2InstanceRecommendations::set_file_format): <p>The format of the export file.</p>  <p>The only export file format currently supported is <code>Csv</code>.</p>
+    ///   - [`include_member_accounts(bool)`](crate::client::fluent_builders::ExportEC2InstanceRecommendations::include_member_accounts) / [`set_include_member_accounts(bool)`](crate::client::fluent_builders::ExportEC2InstanceRecommendations::set_include_member_accounts): <p>Indicates whether to include recommendations for resources in all member accounts of the organization if your account is the management account of an organization.</p>  <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>  <p>Recommendations for member accounts of the organization are not included in the export file if this parameter is omitted.</p>  <p>Recommendations for member accounts are not included in the export if this parameter, or the account IDs parameter, is omitted.</p>
+    ///   - [`recommendation_preferences(RecommendationPreferences)`](crate::client::fluent_builders::ExportEC2InstanceRecommendations::recommendation_preferences) / [`set_recommendation_preferences(Option<RecommendationPreferences>)`](crate::client::fluent_builders::ExportEC2InstanceRecommendations::set_recommendation_preferences): <p>An object to specify the preferences for the Amazon EC2 instance recommendations to export.</p>
+    /// - On success, responds with [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::ExportEc2InstanceRecommendationsOutput::job_id): <p>The identification number of the export job.</p>  <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
+    ///   - [`s3_destination(Option<S3Destination>)`](crate::output::ExportEc2InstanceRecommendationsOutput::s3_destination): <p>An object that describes the destination Amazon S3 bucket of a recommendations export file.</p>
+    /// - On failure, responds with [`SdkError<ExportEC2InstanceRecommendationsError>`](crate::error::ExportEC2InstanceRecommendationsError)
     pub fn export_ec2_instance_recommendations(
         &self,
     ) -> fluent_builders::ExportEC2InstanceRecommendations<C, M, R> {
         fluent_builders::ExportEC2InstanceRecommendations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ExportLambdaFunctionRecommendations` operation.
+    /// Constructs a fluent builder for the [`ExportLambdaFunctionRecommendations`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations) operation.
     ///
-    /// See [`ExportLambdaFunctionRecommendations`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations::set_account_ids): <p>The IDs of the Amazon Web Services accounts for which to export Lambda function recommendations.</p>  <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to export recommendations.</p>  <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>  <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>  <p>You can specify multiple account IDs per request.</p>
+    ///   - [`filters(Vec<LambdaFunctionRecommendationFilter>)`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations::filters) / [`set_filters(Option<Vec<LambdaFunctionRecommendationFilter>>)`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations::set_filters): <p>An array of objects to specify a filter that exports a more specific set of Lambda function recommendations.</p>
+    ///   - [`fields_to_export(Vec<ExportableLambdaFunctionField>)`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations::fields_to_export) / [`set_fields_to_export(Option<Vec<ExportableLambdaFunctionField>>)`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations::set_fields_to_export): <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`s3_destination_config(S3DestinationConfig)`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations::s3_destination_config) / [`set_s3_destination_config(Option<S3DestinationConfig>)`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations::set_s3_destination_config): <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>  <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`file_format(FileFormat)`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations::file_format) / [`set_file_format(Option<FileFormat>)`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations::set_file_format): <p>The format of the export file.</p>  <p>The only export file format currently supported is <code>Csv</code>.</p>
+    ///   - [`include_member_accounts(bool)`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations::include_member_accounts) / [`set_include_member_accounts(bool)`](crate::client::fluent_builders::ExportLambdaFunctionRecommendations::set_include_member_accounts): <p>Indicates whether to include recommendations for resources in all member accounts of the organization if your account is the management account of an organization.</p>  <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>  <p>Recommendations for member accounts of the organization are not included in the export file if this parameter is omitted.</p>  <p>This parameter cannot be specified together with the account IDs parameter. The parameters are mutually exclusive.</p>  <p>Recommendations for member accounts are not included in the export if this parameter, or the account IDs parameter, is omitted.</p>
+    /// - On success, responds with [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::ExportLambdaFunctionRecommendationsOutput::job_id): <p>The identification number of the export job.</p>  <p>Use the <code>DescribeRecommendationExportJobs</code> action, and specify the job ID to view the status of an export job.</p>
+    ///   - [`s3_destination(Option<S3Destination>)`](crate::output::ExportLambdaFunctionRecommendationsOutput::s3_destination): <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
+    /// - On failure, responds with [`SdkError<ExportLambdaFunctionRecommendationsError>`](crate::error::ExportLambdaFunctionRecommendationsError)
     pub fn export_lambda_function_recommendations(
         &self,
     ) -> fluent_builders::ExportLambdaFunctionRecommendations<C, M, R> {
         fluent_builders::ExportLambdaFunctionRecommendations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAutoScalingGroupRecommendations` operation.
+    /// Constructs a fluent builder for the [`GetAutoScalingGroupRecommendations`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations) operation.
     ///
-    /// See [`GetAutoScalingGroupRecommendations`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations::set_account_ids): <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>  <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>  <p>Only one account ID can be specified per request.</p>
+    ///   - [`auto_scaling_group_arns(Vec<String>)`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations::auto_scaling_group_arns) / [`set_auto_scaling_group_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations::set_auto_scaling_group_arns): <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations::set_next_token): <p>The token to advance to the next page of Auto Scaling group recommendations.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations::set_max_results): <p>The maximum number of Auto Scaling group recommendations to return with a single request.</p>  <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations::set_filters): <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
+    ///   - [`recommendation_preferences(RecommendationPreferences)`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations::recommendation_preferences) / [`set_recommendation_preferences(Option<RecommendationPreferences>)`](crate::client::fluent_builders::GetAutoScalingGroupRecommendations::set_recommendation_preferences): <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
+    /// - On success, responds with [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetAutoScalingGroupRecommendationsOutput::next_token): <p>The token to use to advance to the next page of Auto Scaling group recommendations.</p>  <p>This value is null when there are no more pages of Auto Scaling group recommendations to return.</p>
+    ///   - [`auto_scaling_group_recommendations(Option<Vec<AutoScalingGroupRecommendation>>)`](crate::output::GetAutoScalingGroupRecommendationsOutput::auto_scaling_group_recommendations): <p>An array of objects that describe Auto Scaling group recommendations.</p>
+    ///   - [`errors(Option<Vec<GetRecommendationError>>)`](crate::output::GetAutoScalingGroupRecommendationsOutput::errors): <p>An array of objects that describe errors of the request.</p>  <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group.</p>
+    /// - On failure, responds with [`SdkError<GetAutoScalingGroupRecommendationsError>`](crate::error::GetAutoScalingGroupRecommendationsError)
     pub fn get_auto_scaling_group_recommendations(
         &self,
     ) -> fluent_builders::GetAutoScalingGroupRecommendations<C, M, R> {
         fluent_builders::GetAutoScalingGroupRecommendations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEBSVolumeRecommendations` operation.
+    /// Constructs a fluent builder for the [`GetEBSVolumeRecommendations`](crate::client::fluent_builders::GetEBSVolumeRecommendations) operation.
     ///
-    /// See [`GetEBSVolumeRecommendations`](crate::client::fluent_builders::GetEBSVolumeRecommendations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`volume_arns(Vec<String>)`](crate::client::fluent_builders::GetEBSVolumeRecommendations::volume_arns) / [`set_volume_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GetEBSVolumeRecommendations::set_volume_arns): <p>The Amazon Resource Name (ARN) of the volumes for which to return recommendations.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetEBSVolumeRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetEBSVolumeRecommendations::set_next_token): <p>The token to advance to the next page of volume recommendations.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetEBSVolumeRecommendations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetEBSVolumeRecommendations::set_max_results): <p>The maximum number of volume recommendations to return with a single request.</p>  <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    ///   - [`filters(Vec<EbsFilter>)`](crate::client::fluent_builders::GetEBSVolumeRecommendations::filters) / [`set_filters(Option<Vec<EbsFilter>>)`](crate::client::fluent_builders::GetEBSVolumeRecommendations::set_filters): <p>An array of objects to specify a filter that returns a more specific list of volume recommendations.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::GetEBSVolumeRecommendations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetEBSVolumeRecommendations::set_account_ids): <p>The ID of the Amazon Web Services account for which to return volume recommendations.</p>  <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return volume recommendations.</p>  <p>Only one account ID can be specified per request.</p>
+    /// - On success, responds with [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetEbsVolumeRecommendationsOutput::next_token): <p>The token to use to advance to the next page of volume recommendations.</p>  <p>This value is null when there are no more pages of volume recommendations to return.</p>
+    ///   - [`volume_recommendations(Option<Vec<VolumeRecommendation>>)`](crate::output::GetEbsVolumeRecommendationsOutput::volume_recommendations): <p>An array of objects that describe volume recommendations.</p>
+    ///   - [`errors(Option<Vec<GetRecommendationError>>)`](crate::output::GetEbsVolumeRecommendationsOutput::errors): <p>An array of objects that describe errors of the request.</p>  <p>For example, an error is returned if you request recommendations for an unsupported volume.</p>
+    /// - On failure, responds with [`SdkError<GetEBSVolumeRecommendationsError>`](crate::error::GetEBSVolumeRecommendationsError)
     pub fn get_ebs_volume_recommendations(
         &self,
     ) -> fluent_builders::GetEBSVolumeRecommendations<C, M, R> {
         fluent_builders::GetEBSVolumeRecommendations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEC2InstanceRecommendations` operation.
+    /// Constructs a fluent builder for the [`GetEC2InstanceRecommendations`](crate::client::fluent_builders::GetEC2InstanceRecommendations) operation.
     ///
-    /// See [`GetEC2InstanceRecommendations`](crate::client::fluent_builders::GetEC2InstanceRecommendations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arns(Vec<String>)`](crate::client::fluent_builders::GetEC2InstanceRecommendations::instance_arns) / [`set_instance_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GetEC2InstanceRecommendations::set_instance_arns): <p>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetEC2InstanceRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetEC2InstanceRecommendations::set_next_token): <p>The token to advance to the next page of instance recommendations.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetEC2InstanceRecommendations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetEC2InstanceRecommendations::set_max_results): <p>The maximum number of instance recommendations to return with a single request.</p>  <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::GetEC2InstanceRecommendations::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::GetEC2InstanceRecommendations::set_filters): <p>An array of objects to specify a filter that returns a more specific list of instance recommendations.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::GetEC2InstanceRecommendations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetEC2InstanceRecommendations::set_account_ids): <p>The ID of the Amazon Web Services account for which to return instance recommendations.</p>  <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return instance recommendations.</p>  <p>Only one account ID can be specified per request.</p>
+    ///   - [`recommendation_preferences(RecommendationPreferences)`](crate::client::fluent_builders::GetEC2InstanceRecommendations::recommendation_preferences) / [`set_recommendation_preferences(Option<RecommendationPreferences>)`](crate::client::fluent_builders::GetEC2InstanceRecommendations::set_recommendation_preferences): <p>An object to specify the preferences for the Amazon EC2 instance recommendations to return in the response.</p>
+    /// - On success, responds with [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetEc2InstanceRecommendationsOutput::next_token): <p>The token to use to advance to the next page of instance recommendations.</p>  <p>This value is null when there are no more pages of instance recommendations to return.</p>
+    ///   - [`instance_recommendations(Option<Vec<InstanceRecommendation>>)`](crate::output::GetEc2InstanceRecommendationsOutput::instance_recommendations): <p>An array of objects that describe instance recommendations.</p>
+    ///   - [`errors(Option<Vec<GetRecommendationError>>)`](crate::output::GetEc2InstanceRecommendationsOutput::errors): <p>An array of objects that describe errors of the request.</p>  <p>For example, an error is returned if you request recommendations for an instance of an unsupported instance family.</p>
+    /// - On failure, responds with [`SdkError<GetEC2InstanceRecommendationsError>`](crate::error::GetEC2InstanceRecommendationsError)
     pub fn get_ec2_instance_recommendations(
         &self,
     ) -> fluent_builders::GetEC2InstanceRecommendations<C, M, R> {
         fluent_builders::GetEC2InstanceRecommendations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEC2RecommendationProjectedMetrics` operation.
+    /// Constructs a fluent builder for the [`GetEC2RecommendationProjectedMetrics`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics) operation.
     ///
-    /// See [`GetEC2RecommendationProjectedMetrics`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics::set_instance_arn): <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation projected metrics.</p>
+    ///   - [`stat(MetricStatistic)`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics::stat) / [`set_stat(Option<MetricStatistic>)`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics::set_stat): <p>The statistic of the projected metrics.</p>
+    ///   - [`period(i32)`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics::period) / [`set_period(i32)`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics::set_period): <p>The granularity, in seconds, of the projected metrics data points.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics::set_start_time): <p>The timestamp of the first projected metrics data point to return.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics::set_end_time): <p>The timestamp of the last projected metrics data point to return.</p>
+    ///   - [`recommendation_preferences(RecommendationPreferences)`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics::recommendation_preferences) / [`set_recommendation_preferences(Option<RecommendationPreferences>)`](crate::client::fluent_builders::GetEC2RecommendationProjectedMetrics::set_recommendation_preferences): <p>An object to specify the preferences for the Amazon EC2 recommendation projected metrics to return in the response.</p>
+    /// - On success, responds with [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput) with field(s):
+    ///   - [`recommended_option_projected_metrics(Option<Vec<RecommendedOptionProjectedMetric>>)`](crate::output::GetEc2RecommendationProjectedMetricsOutput::recommended_option_projected_metrics): <p>An array of objects that describes projected metrics.</p>
+    /// - On failure, responds with [`SdkError<GetEC2RecommendationProjectedMetricsError>`](crate::error::GetEC2RecommendationProjectedMetricsError)
     pub fn get_ec2_recommendation_projected_metrics(
         &self,
     ) -> fluent_builders::GetEC2RecommendationProjectedMetrics<C, M, R> {
         fluent_builders::GetEC2RecommendationProjectedMetrics::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEffectiveRecommendationPreferences` operation.
+    /// Constructs a fluent builder for the [`GetEffectiveRecommendationPreferences`](crate::client::fluent_builders::GetEffectiveRecommendationPreferences) operation.
     ///
-    /// See [`GetEffectiveRecommendationPreferences`](crate::client::fluent_builders::GetEffectiveRecommendationPreferences) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetEffectiveRecommendationPreferences::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetEffectiveRecommendationPreferences::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
+    /// - On success, responds with [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput) with field(s):
+    ///   - [`enhanced_infrastructure_metrics(Option<EnhancedInfrastructureMetrics>)`](crate::output::GetEffectiveRecommendationPreferencesOutput::enhanced_infrastructure_metrics): <p>The status of the enhanced infrastructure metrics recommendation preference. Considers all applicable preferences that you might have set at the resource, account, and organization level.</p>  <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>  <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<GetEffectiveRecommendationPreferencesError>`](crate::error::GetEffectiveRecommendationPreferencesError)
     pub fn get_effective_recommendation_preferences(
         &self,
     ) -> fluent_builders::GetEffectiveRecommendationPreferences<C, M, R> {
         fluent_builders::GetEffectiveRecommendationPreferences::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEnrollmentStatus` operation.
+    /// Constructs a fluent builder for the [`GetEnrollmentStatus`](crate::client::fluent_builders::GetEnrollmentStatus) operation.
     ///
-    /// See [`GetEnrollmentStatus`](crate::client::fluent_builders::GetEnrollmentStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetEnrollmentStatus::send) it.
+
+    /// - On success, responds with [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput) with field(s):
+    ///   - [`status(Option<Status>)`](crate::output::GetEnrollmentStatusOutput::status): <p>The enrollment status of the account.</p>
+    ///   - [`status_reason(Option<String>)`](crate::output::GetEnrollmentStatusOutput::status_reason): <p>The reason for the enrollment status of the account.</p>  <p>For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
+    ///   - [`member_accounts_enrolled(bool)`](crate::output::GetEnrollmentStatusOutput::member_accounts_enrolled): <p>Confirms the enrollment status of member accounts of the organization, if the account is a management account of an organization.</p>
+    ///   - [`last_updated_timestamp(Option<DateTime>)`](crate::output::GetEnrollmentStatusOutput::last_updated_timestamp): <p>The Unix epoch timestamp, in seconds, of when the account enrollment status was last updated.</p>
+    ///   - [`number_of_member_accounts_opted_in(Option<i32>)`](crate::output::GetEnrollmentStatusOutput::number_of_member_accounts_opted_in): <p>The count of organization member accounts that are opted in to the service, if your account is an organization management account.</p>
+    /// - On failure, responds with [`SdkError<GetEnrollmentStatusError>`](crate::error::GetEnrollmentStatusError)
     pub fn get_enrollment_status(&self) -> fluent_builders::GetEnrollmentStatus<C, M, R> {
         fluent_builders::GetEnrollmentStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEnrollmentStatusesForOrganization` operation.
+    /// Constructs a fluent builder for the [`GetEnrollmentStatusesForOrganization`](crate::client::fluent_builders::GetEnrollmentStatusesForOrganization) operation.
     ///
-    /// See [`GetEnrollmentStatusesForOrganization`](crate::client::fluent_builders::GetEnrollmentStatusesForOrganization) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`filters(Vec<EnrollmentFilter>)`](crate::client::fluent_builders::GetEnrollmentStatusesForOrganization::filters) / [`set_filters(Option<Vec<EnrollmentFilter>>)`](crate::client::fluent_builders::GetEnrollmentStatusesForOrganization::set_filters): <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetEnrollmentStatusesForOrganization::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetEnrollmentStatusesForOrganization::set_next_token): <p>The token to advance to the next page of account enrollment statuses.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetEnrollmentStatusesForOrganization::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetEnrollmentStatusesForOrganization::set_max_results): <p>The maximum number of account enrollment statuses to return with a single request. You can specify up to 100 statuses to return with each request.</p>  <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    /// - On success, responds with [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput) with field(s):
+    ///   - [`account_enrollment_statuses(Option<Vec<AccountEnrollmentStatus>>)`](crate::output::GetEnrollmentStatusesForOrganizationOutput::account_enrollment_statuses): <p>An array of objects that describe the enrollment statuses of organization member accounts.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetEnrollmentStatusesForOrganizationOutput::next_token): <p>The token to use to advance to the next page of account enrollment statuses.</p>  <p>This value is null when there are no more pages of account enrollment statuses to return.</p>
+    /// - On failure, responds with [`SdkError<GetEnrollmentStatusesForOrganizationError>`](crate::error::GetEnrollmentStatusesForOrganizationError)
     pub fn get_enrollment_statuses_for_organization(
         &self,
     ) -> fluent_builders::GetEnrollmentStatusesForOrganization<C, M, R> {
         fluent_builders::GetEnrollmentStatusesForOrganization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLambdaFunctionRecommendations` operation.
+    /// Constructs a fluent builder for the [`GetLambdaFunctionRecommendations`](crate::client::fluent_builders::GetLambdaFunctionRecommendations) operation.
     ///
-    /// See [`GetLambdaFunctionRecommendations`](crate::client::fluent_builders::GetLambdaFunctionRecommendations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`function_arns(Vec<String>)`](crate::client::fluent_builders::GetLambdaFunctionRecommendations::function_arns) / [`set_function_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GetLambdaFunctionRecommendations::set_function_arns): <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>  <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::GetLambdaFunctionRecommendations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetLambdaFunctionRecommendations::set_account_ids): <p>The ID of the Amazon Web Services account for which to return function recommendations.</p>  <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return function recommendations.</p>  <p>Only one account ID can be specified per request.</p>
+    ///   - [`filters(Vec<LambdaFunctionRecommendationFilter>)`](crate::client::fluent_builders::GetLambdaFunctionRecommendations::filters) / [`set_filters(Option<Vec<LambdaFunctionRecommendationFilter>>)`](crate::client::fluent_builders::GetLambdaFunctionRecommendations::set_filters): <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetLambdaFunctionRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetLambdaFunctionRecommendations::set_next_token): <p>The token to advance to the next page of function recommendations.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetLambdaFunctionRecommendations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetLambdaFunctionRecommendations::set_max_results): <p>The maximum number of function recommendations to return with a single request.</p>  <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    /// - On success, responds with [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetLambdaFunctionRecommendationsOutput::next_token): <p>The token to use to advance to the next page of function recommendations.</p>  <p>This value is null when there are no more pages of function recommendations to return.</p>
+    ///   - [`lambda_function_recommendations(Option<Vec<LambdaFunctionRecommendation>>)`](crate::output::GetLambdaFunctionRecommendationsOutput::lambda_function_recommendations): <p>An array of objects that describe function recommendations.</p>
+    /// - On failure, responds with [`SdkError<GetLambdaFunctionRecommendationsError>`](crate::error::GetLambdaFunctionRecommendationsError)
     pub fn get_lambda_function_recommendations(
         &self,
     ) -> fluent_builders::GetLambdaFunctionRecommendations<C, M, R> {
         fluent_builders::GetLambdaFunctionRecommendations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRecommendationPreferences` operation.
+    /// Constructs a fluent builder for the [`GetRecommendationPreferences`](crate::client::fluent_builders::GetRecommendationPreferences) operation.
     ///
-    /// See [`GetRecommendationPreferences`](crate::client::fluent_builders::GetRecommendationPreferences) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::GetRecommendationPreferences::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::GetRecommendationPreferences::set_resource_type): <p>The target resource type of the recommendation preference for which to return preferences.</p>  <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetRecommendationPreferences::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetRecommendationPreferences::set_scope): <p>An object that describes the scope of the recommendation preference to return.</p>  <p>You can return recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetRecommendationPreferences::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetRecommendationPreferences::set_next_token): <p>The token to advance to the next page of recommendation preferences.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetRecommendationPreferences::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetRecommendationPreferences::set_max_results): <p>The maximum number of recommendation preferences to return with a single request.</p>  <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    /// - On success, responds with [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetRecommendationPreferencesOutput::next_token): <p>The token to use to advance to the next page of recommendation preferences.</p>  <p>This value is null when there are no more pages of recommendation preferences to return.</p>
+    ///   - [`recommendation_preferences_details(Option<Vec<RecommendationPreferencesDetail>>)`](crate::output::GetRecommendationPreferencesOutput::recommendation_preferences_details): <p>An array of objects that describe recommendation preferences.</p>
+    /// - On failure, responds with [`SdkError<GetRecommendationPreferencesError>`](crate::error::GetRecommendationPreferencesError)
     pub fn get_recommendation_preferences(
         &self,
     ) -> fluent_builders::GetRecommendationPreferences<C, M, R> {
         fluent_builders::GetRecommendationPreferences::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRecommendationSummaries` operation.
+    /// Constructs a fluent builder for the [`GetRecommendationSummaries`](crate::client::fluent_builders::GetRecommendationSummaries) operation.
     ///
-    /// See [`GetRecommendationSummaries`](crate::client::fluent_builders::GetRecommendationSummaries) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::GetRecommendationSummaries::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetRecommendationSummaries::set_account_ids): <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>  <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>  <p>Only one account ID can be specified per request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetRecommendationSummaries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetRecommendationSummaries::set_next_token): <p>The token to advance to the next page of recommendation summaries.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetRecommendationSummaries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetRecommendationSummaries::set_max_results): <p>The maximum number of recommendation summaries to return with a single request.</p>  <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    /// - On success, responds with [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetRecommendationSummariesOutput::next_token): <p>The token to use to advance to the next page of recommendation summaries.</p>  <p>This value is null when there are no more pages of recommendation summaries to return.</p>
+    ///   - [`recommendation_summaries(Option<Vec<RecommendationSummary>>)`](crate::output::GetRecommendationSummariesOutput::recommendation_summaries): <p>An array of objects that summarize a recommendation.</p>
+    /// - On failure, responds with [`SdkError<GetRecommendationSummariesError>`](crate::error::GetRecommendationSummariesError)
     pub fn get_recommendation_summaries(
         &self,
     ) -> fluent_builders::GetRecommendationSummaries<C, M, R> {
         fluent_builders::GetRecommendationSummaries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRecommendationPreferences` operation.
+    /// Constructs a fluent builder for the [`PutRecommendationPreferences`](crate::client::fluent_builders::PutRecommendationPreferences) operation.
     ///
-    /// See [`PutRecommendationPreferences`](crate::client::fluent_builders::PutRecommendationPreferences) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::PutRecommendationPreferences::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_resource_type): <p>The target resource type of the recommendation preference to create.</p>  <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::PutRecommendationPreferences::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_scope): <p>An object that describes the scope of the recommendation preference to create.</p>  <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>   <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>  </note>
+    ///   - [`enhanced_infrastructure_metrics(EnhancedInfrastructureMetrics)`](crate::client::fluent_builders::PutRecommendationPreferences::enhanced_infrastructure_metrics) / [`set_enhanced_infrastructure_metrics(Option<EnhancedInfrastructureMetrics>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_enhanced_infrastructure_metrics): <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>  <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    ///   - [`inferred_workload_types(InferredWorkloadTypesPreference)`](crate::client::fluent_builders::PutRecommendationPreferences::inferred_workload_types) / [`set_inferred_workload_types(Option<InferredWorkloadTypesPreference>)`](crate::client::fluent_builders::PutRecommendationPreferences::set_inferred_workload_types): <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>   <p>The inferred workload type feature is active by default. To deactivate it, create a recommendation preference.</p>  </note>  <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    /// - On success, responds with [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput)
+
+    /// - On failure, responds with [`SdkError<PutRecommendationPreferencesError>`](crate::error::PutRecommendationPreferencesError)
     pub fn put_recommendation_preferences(
         &self,
     ) -> fluent_builders::PutRecommendationPreferences<C, M, R> {
         fluent_builders::PutRecommendationPreferences::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEnrollmentStatus` operation.
+    /// Constructs a fluent builder for the [`UpdateEnrollmentStatus`](crate::client::fluent_builders::UpdateEnrollmentStatus) operation.
     ///
-    /// See [`UpdateEnrollmentStatus`](crate::client::fluent_builders::UpdateEnrollmentStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`status(Status)`](crate::client::fluent_builders::UpdateEnrollmentStatus::status) / [`set_status(Option<Status>)`](crate::client::fluent_builders::UpdateEnrollmentStatus::set_status): <p>The new enrollment status of the account.</p>  <p>The following status options are available:</p>  <ul>   <li> <p> <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing the configuration and utilization metrics of your Amazon Web Services resources after you opt in. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p> </li>   <li> <p> <code>Inactive</code> - Opts out your account from the Compute Optimizer service. Your account's recommendations and related metrics data will be deleted from Compute Optimizer after you opt out.</p> </li>  </ul> <note>   <p>The <code>Pending</code> and <code>Failed</code> options cannot be used to update the enrollment status of an account. They are returned in the response of a request to update the enrollment status of an account.</p>  </note>
+    ///   - [`include_member_accounts(bool)`](crate::client::fluent_builders::UpdateEnrollmentStatus::include_member_accounts) / [`set_include_member_accounts(bool)`](crate::client::fluent_builders::UpdateEnrollmentStatus::set_include_member_accounts): <p>Indicates whether to enroll member accounts of the organization if the account is the management account of an organization.</p>
+    /// - On success, responds with [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput) with field(s):
+    ///   - [`status(Option<Status>)`](crate::output::UpdateEnrollmentStatusOutput::status): <p>The enrollment status of the account.</p>
+    ///   - [`status_reason(Option<String>)`](crate::output::UpdateEnrollmentStatusOutput::status_reason): <p>The reason for the enrollment status of the account. For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
+    /// - On failure, responds with [`SdkError<UpdateEnrollmentStatusError>`](crate::error::UpdateEnrollmentStatusError)
     pub fn update_enrollment_status(&self) -> fluent_builders::UpdateEnrollmentStatus<C, M, R> {
         fluent_builders::UpdateEnrollmentStatus::new(self.handle.clone())
     }
@@ -2464,7 +2599,7 @@ pub mod fluent_builders {
         }
         /// <p>An object that describes the scope of the recommendation preference to create.</p>
         /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>
-        /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified the Auto Scaling group.</p>
+        /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
         /// </note>
         pub fn scope(mut self, input: crate::model::Scope) -> Self {
             self.inner = self.inner.scope(input);
@@ -2472,14 +2607,15 @@ pub mod fluent_builders {
         }
         /// <p>An object that describes the scope of the recommendation preference to create.</p>
         /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>
-        /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified the Auto Scaling group.</p>
+        /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
         /// </note>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
         }
         /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
-        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied.</p>
+        /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
         pub fn enhanced_infrastructure_metrics(
             mut self,
             input: crate::model::EnhancedInfrastructureMetrics,
@@ -2488,12 +2624,37 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
-        /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied.</p>
+        /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
         pub fn set_enhanced_infrastructure_metrics(
             mut self,
             input: std::option::Option<crate::model::EnhancedInfrastructureMetrics>,
         ) -> Self {
             self.inner = self.inner.set_enhanced_infrastructure_metrics(input);
+            self
+        }
+        /// <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>
+        /// <p>The inferred workload type feature is active by default. To deactivate it, create a recommendation preference.</p>
+        /// </note>
+        /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn inferred_workload_types(
+            mut self,
+            input: crate::model::InferredWorkloadTypesPreference,
+        ) -> Self {
+            self.inner = self.inner.inferred_workload_types(input);
+            self
+        }
+        /// <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>
+        /// <p>The inferred workload type feature is active by default. To deactivate it, create a recommendation preference.</p>
+        /// </note>
+        /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
+        pub fn set_inferred_workload_types(
+            mut self,
+            input: std::option::Option<crate::model::InferredWorkloadTypesPreference>,
+        ) -> Self {
+            self.inner = self.inner.set_inferred_workload_types(input);
             self
         }
     }

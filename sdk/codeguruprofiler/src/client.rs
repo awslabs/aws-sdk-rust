@@ -83,174 +83,312 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddNotificationChannels` operation.
+    /// Constructs a fluent builder for the [`AddNotificationChannels`](crate::client::fluent_builders::AddNotificationChannels) operation.
     ///
-    /// See [`AddNotificationChannels`](crate::client::fluent_builders::AddNotificationChannels) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::AddNotificationChannels::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::AddNotificationChannels::set_profiling_group_name): <p>The name of the profiling group that we are setting up notifications for.</p>
+    ///   - [`channels(Vec<Channel>)`](crate::client::fluent_builders::AddNotificationChannels::channels) / [`set_channels(Option<Vec<Channel>>)`](crate::client::fluent_builders::AddNotificationChannels::set_channels): <p>One or 2 channels to report to when anomalies are detected.</p>
+    /// - On success, responds with [`AddNotificationChannelsOutput`](crate::output::AddNotificationChannelsOutput) with field(s):
+    ///   - [`notification_configuration(Option<NotificationConfiguration>)`](crate::output::AddNotificationChannelsOutput::notification_configuration): <p>The new notification configuration for this profiling group.</p>
+    /// - On failure, responds with [`SdkError<AddNotificationChannelsError>`](crate::error::AddNotificationChannelsError)
     pub fn add_notification_channels(&self) -> fluent_builders::AddNotificationChannels<C, M, R> {
         fluent_builders::AddNotificationChannels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetFrameMetricData` operation.
+    /// Constructs a fluent builder for the [`BatchGetFrameMetricData`](crate::client::fluent_builders::BatchGetFrameMetricData) operation.
     ///
-    /// See [`BatchGetFrameMetricData`](crate::client::fluent_builders::BatchGetFrameMetricData) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::BatchGetFrameMetricData::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::BatchGetFrameMetricData::set_profiling_group_name): <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::BatchGetFrameMetricData::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::BatchGetFrameMetricData::set_start_time): <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::BatchGetFrameMetricData::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::BatchGetFrameMetricData::set_end_time): <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    ///   - [`period(impl Into<String>)`](crate::client::fluent_builders::BatchGetFrameMetricData::period) / [`set_period(Option<String>)`](crate::client::fluent_builders::BatchGetFrameMetricData::set_period): <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
+    ///   - [`target_resolution(AggregationPeriod)`](crate::client::fluent_builders::BatchGetFrameMetricData::target_resolution) / [`set_target_resolution(Option<AggregationPeriod>)`](crate::client::fluent_builders::BatchGetFrameMetricData::set_target_resolution): <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>  <ul>   <li> <p> <code>P1D</code> — 1 day </p> </li>   <li> <p> <code>PT1H</code> — 1 hour </p> </li>   <li> <p> <code>PT5M</code> — 5 minutes </p> </li>  </ul>
+    ///   - [`frame_metrics(Vec<FrameMetric>)`](crate::client::fluent_builders::BatchGetFrameMetricData::frame_metrics) / [`set_frame_metrics(Option<Vec<FrameMetric>>)`](crate::client::fluent_builders::BatchGetFrameMetricData::set_frame_metrics): <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
+    /// - On success, responds with [`BatchGetFrameMetricDataOutput`](crate::output::BatchGetFrameMetricDataOutput) with field(s):
+    ///   - [`start_time(Option<DateTime>)`](crate::output::BatchGetFrameMetricDataOutput::start_time): <p> The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    ///   - [`end_time(Option<DateTime>)`](crate::output::BatchGetFrameMetricDataOutput::end_time): <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    ///   - [`resolution(Option<AggregationPeriod>)`](crate::output::BatchGetFrameMetricDataOutput::resolution): <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values. </p>  <ul>   <li> <p> <code>P1D</code> — 1 day </p> </li>   <li> <p> <code>PT1H</code> — 1 hour </p> </li>   <li> <p> <code>PT5M</code> — 5 minutes </p> </li>  </ul>
+    ///   - [`end_times(Option<Vec<TimestampStructure>>)`](crate::output::BatchGetFrameMetricDataOutput::end_times): <p> List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart. </p>
+    ///   - [`unprocessed_end_times(Option<HashMap<String, Vec<TimestampStructure>>>)`](crate::output::BatchGetFrameMetricDataOutput::unprocessed_end_times): <p>List of instances which remained unprocessed. This will create a missing time step in the list of end times.</p>
+    ///   - [`frame_metric_data(Option<Vec<FrameMetricDatum>>)`](crate::output::BatchGetFrameMetricDataOutput::frame_metric_data): <p>Details of the metrics to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
+    /// - On failure, responds with [`SdkError<BatchGetFrameMetricDataError>`](crate::error::BatchGetFrameMetricDataError)
     pub fn batch_get_frame_metric_data(&self) -> fluent_builders::BatchGetFrameMetricData<C, M, R> {
         fluent_builders::BatchGetFrameMetricData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ConfigureAgent` operation.
+    /// Constructs a fluent builder for the [`ConfigureAgent`](crate::client::fluent_builders::ConfigureAgent) operation.
     ///
-    /// See [`ConfigureAgent`](crate::client::fluent_builders::ConfigureAgent) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::ConfigureAgent::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::ConfigureAgent::set_profiling_group_name): <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
+    ///   - [`fleet_instance_id(impl Into<String>)`](crate::client::fluent_builders::ConfigureAgent::fleet_instance_id) / [`set_fleet_instance_id(Option<String>)`](crate::client::fluent_builders::ConfigureAgent::set_fleet_instance_id): <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
+    ///   - [`metadata(HashMap<MetadataField, String>)`](crate::client::fluent_builders::ConfigureAgent::metadata) / [`set_metadata(Option<HashMap<MetadataField, String>>)`](crate::client::fluent_builders::ConfigureAgent::set_metadata): <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>  <ul>   <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li>   <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li>   <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li>   <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li>   <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li>   <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li>   <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li>   <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>   <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>  </ul>
+    /// - On success, responds with [`ConfigureAgentOutput`](crate::output::ConfigureAgentOutput) with field(s):
+    ///   - [`configuration(Option<AgentConfiguration>)`](crate::output::ConfigureAgentOutput::configuration): <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data. </p>
+    /// - On failure, responds with [`SdkError<ConfigureAgentError>`](crate::error::ConfigureAgentError)
     pub fn configure_agent(&self) -> fluent_builders::ConfigureAgent<C, M, R> {
         fluent_builders::ConfigureAgent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProfilingGroup` operation.
+    /// Constructs a fluent builder for the [`CreateProfilingGroup`](crate::client::fluent_builders::CreateProfilingGroup) operation.
     ///
-    /// See [`CreateProfilingGroup`](crate::client::fluent_builders::CreateProfilingGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateProfilingGroup::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::CreateProfilingGroup::set_profiling_group_name): <p>The name of the profiling group to create.</p>
+    ///   - [`compute_platform(ComputePlatform)`](crate::client::fluent_builders::CreateProfilingGroup::compute_platform) / [`set_compute_platform(Option<ComputePlatform>)`](crate::client::fluent_builders::CreateProfilingGroup::set_compute_platform): <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateProfilingGroup::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateProfilingGroup::set_client_token): <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
+    ///   - [`agent_orchestration_config(AgentOrchestrationConfig)`](crate::client::fluent_builders::CreateProfilingGroup::agent_orchestration_config) / [`set_agent_orchestration_config(Option<AgentOrchestrationConfig>)`](crate::client::fluent_builders::CreateProfilingGroup::set_agent_orchestration_config): <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateProfilingGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateProfilingGroup::set_tags): <p> A list of tags to add to the created profiling group. </p>
+    /// - On success, responds with [`CreateProfilingGroupOutput`](crate::output::CreateProfilingGroupOutput) with field(s):
+    ///   - [`profiling_group(Option<ProfilingGroupDescription>)`](crate::output::CreateProfilingGroupOutput::profiling_group): <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group. </p>
+    /// - On failure, responds with [`SdkError<CreateProfilingGroupError>`](crate::error::CreateProfilingGroupError)
     pub fn create_profiling_group(&self) -> fluent_builders::CreateProfilingGroup<C, M, R> {
         fluent_builders::CreateProfilingGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProfilingGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteProfilingGroup`](crate::client::fluent_builders::DeleteProfilingGroup) operation.
     ///
-    /// See [`DeleteProfilingGroup`](crate::client::fluent_builders::DeleteProfilingGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProfilingGroup::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::DeleteProfilingGroup::set_profiling_group_name): <p>The name of the profiling group to delete.</p>
+    /// - On success, responds with [`DeleteProfilingGroupOutput`](crate::output::DeleteProfilingGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteProfilingGroupError>`](crate::error::DeleteProfilingGroupError)
     pub fn delete_profiling_group(&self) -> fluent_builders::DeleteProfilingGroup<C, M, R> {
         fluent_builders::DeleteProfilingGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeProfilingGroup` operation.
+    /// Constructs a fluent builder for the [`DescribeProfilingGroup`](crate::client::fluent_builders::DescribeProfilingGroup) operation.
     ///
-    /// See [`DescribeProfilingGroup`](crate::client::fluent_builders::DescribeProfilingGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProfilingGroup::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::DescribeProfilingGroup::set_profiling_group_name): <p> The name of the profiling group to get information about. </p>
+    /// - On success, responds with [`DescribeProfilingGroupOutput`](crate::output::DescribeProfilingGroupOutput) with field(s):
+    ///   - [`profiling_group(Option<ProfilingGroupDescription>)`](crate::output::DescribeProfilingGroupOutput::profiling_group): <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group. </p>
+    /// - On failure, responds with [`SdkError<DescribeProfilingGroupError>`](crate::error::DescribeProfilingGroupError)
     pub fn describe_profiling_group(&self) -> fluent_builders::DescribeProfilingGroup<C, M, R> {
         fluent_builders::DescribeProfilingGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFindingsReportAccountSummary` operation.
+    /// Constructs a fluent builder for the [`GetFindingsReportAccountSummary`](crate::client::fluent_builders::GetFindingsReportAccountSummary) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetFindingsReportAccountSummary::into_paginator).
     ///
-    /// See [`GetFindingsReportAccountSummary`](crate::client::fluent_builders::GetFindingsReportAccountSummary) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetFindingsReportAccountSummary::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetFindingsReportAccountSummary::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetFindingsReportAccountSummary::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>   <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetFindingsReportAccountSummary::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetFindingsReportAccountSummary::set_max_results): <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.</p>
+    ///   - [`daily_reports_only(bool)`](crate::client::fluent_builders::GetFindingsReportAccountSummary::daily_reports_only) / [`set_daily_reports_only(Option<bool>)`](crate::client::fluent_builders::GetFindingsReportAccountSummary::set_daily_reports_only): <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
+    /// - On success, responds with [`GetFindingsReportAccountSummaryOutput`](crate::output::GetFindingsReportAccountSummaryOutput) with field(s):
+    ///   - [`report_summaries(Option<Vec<FindingsReportSummary>>)`](crate::output::GetFindingsReportAccountSummaryOutput::report_summaries): <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetFindingsReportAccountSummaryOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<GetFindingsReportAccountSummaryError>`](crate::error::GetFindingsReportAccountSummaryError)
     pub fn get_findings_report_account_summary(
         &self,
     ) -> fluent_builders::GetFindingsReportAccountSummary<C, M, R> {
         fluent_builders::GetFindingsReportAccountSummary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetNotificationConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetNotificationConfiguration`](crate::client::fluent_builders::GetNotificationConfiguration) operation.
     ///
-    /// See [`GetNotificationConfiguration`](crate::client::fluent_builders::GetNotificationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::GetNotificationConfiguration::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::GetNotificationConfiguration::set_profiling_group_name): <p>The name of the profiling group we want to get the notification configuration for.</p>
+    /// - On success, responds with [`GetNotificationConfigurationOutput`](crate::output::GetNotificationConfigurationOutput) with field(s):
+    ///   - [`notification_configuration(Option<NotificationConfiguration>)`](crate::output::GetNotificationConfigurationOutput::notification_configuration): <p>The current notification configuration for this profiling group.</p>
+    /// - On failure, responds with [`SdkError<GetNotificationConfigurationError>`](crate::error::GetNotificationConfigurationError)
     pub fn get_notification_configuration(
         &self,
     ) -> fluent_builders::GetNotificationConfiguration<C, M, R> {
         fluent_builders::GetNotificationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPolicy` operation.
+    /// Constructs a fluent builder for the [`GetPolicy`](crate::client::fluent_builders::GetPolicy) operation.
     ///
-    /// See [`GetPolicy`](crate::client::fluent_builders::GetPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::GetPolicy::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::GetPolicy::set_profiling_group_name): <p>The name of the profiling group.</p>
+    /// - On success, responds with [`GetPolicyOutput`](crate::output::GetPolicyOutput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::output::GetPolicyOutput::policy): <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::GetPolicyOutput::revision_id): <p>A unique identifier for the current revision of the returned policy.</p>
+    /// - On failure, responds with [`SdkError<GetPolicyError>`](crate::error::GetPolicyError)
     pub fn get_policy(&self) -> fluent_builders::GetPolicy<C, M, R> {
         fluent_builders::GetPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetProfile` operation.
+    /// Constructs a fluent builder for the [`GetProfile`](crate::client::fluent_builders::GetProfile) operation.
     ///
-    /// See [`GetProfile`](crate::client::fluent_builders::GetProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::GetProfile::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::GetProfile::set_profiling_group_name): <p>The name of the profiling group to get.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetProfile::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetProfile::set_start_time): <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>  <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
+    ///   - [`period(impl Into<String>)`](crate::client::fluent_builders::GetProfile::period) / [`set_period(Option<String>)`](crate::client::fluent_builders::GetProfile::set_period): <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>  <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetProfile::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetProfile::set_end_time): <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>  <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
+    ///   - [`max_depth(i32)`](crate::client::fluent_builders::GetProfile::max_depth) / [`set_max_depth(Option<i32>)`](crate::client::fluent_builders::GetProfile::set_max_depth): <p> The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. </p>
+    ///   - [`accept(impl Into<String>)`](crate::client::fluent_builders::GetProfile::accept) / [`set_accept(Option<String>)`](crate::client::fluent_builders::GetProfile::set_accept): <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>  <ul>   <li> <p> <code>application/json</code> — standard JSON format </p> </li>   <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>  </ul>
+    /// - On success, responds with [`GetProfileOutput`](crate::output::GetProfileOutput) with field(s):
+    ///   - [`profile(Option<Blob>)`](crate::output::GetProfileOutput::profile): <p>Information about the profile.</p>
+    ///   - [`content_type(Option<String>)`](crate::output::GetProfileOutput::content_type): <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
+    ///   - [`content_encoding(Option<String>)`](crate::output::GetProfileOutput::content_encoding): <p>The content encoding of the profile.</p>
+    /// - On failure, responds with [`SdkError<GetProfileError>`](crate::error::GetProfileError)
     pub fn get_profile(&self) -> fluent_builders::GetProfile<C, M, R> {
         fluent_builders::GetProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRecommendations` operation.
+    /// Constructs a fluent builder for the [`GetRecommendations`](crate::client::fluent_builders::GetRecommendations) operation.
     ///
-    /// See [`GetRecommendations`](crate::client::fluent_builders::GetRecommendations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::GetRecommendations::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::GetRecommendations::set_profiling_group_name): <p> The name of the profiling group to get analysis data about. </p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetRecommendations::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetRecommendations::set_start_time): <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetRecommendations::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetRecommendations::set_end_time): <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    ///   - [`locale(impl Into<String>)`](crate::client::fluent_builders::GetRecommendations::locale) / [`set_locale(Option<String>)`](crate::client::fluent_builders::GetRecommendations::set_locale): <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>  <ul>   <li> <p> <code>de-DE</code> - German, Germany </p> </li>   <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>   <li> <p> <code>en-US</code> - English, United States </p> </li>   <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>   <li> <p> <code>fr-FR</code> - French, France </p> </li>   <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>   <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>   <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>   <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>   <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>   <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>  </ul>
+    /// - On success, responds with [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput) with field(s):
+    ///   - [`profiling_group_name(Option<String>)`](crate::output::GetRecommendationsOutput::profiling_group_name): <p>The name of the profiling group the analysis data is about.</p>
+    ///   - [`profile_start_time(Option<DateTime>)`](crate::output::GetRecommendationsOutput::profile_start_time): <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    ///   - [`profile_end_time(Option<DateTime>)`](crate::output::GetRecommendationsOutput::profile_end_time): <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    ///   - [`recommendations(Option<Vec<Recommendation>>)`](crate::output::GetRecommendationsOutput::recommendations): <p>The list of recommendations that the analysis found for this profile.</p>
+    ///   - [`anomalies(Option<Vec<Anomaly>>)`](crate::output::GetRecommendationsOutput::anomalies): <p> The list of anomalies that the analysis has found for this profile. </p>
+    /// - On failure, responds with [`SdkError<GetRecommendationsError>`](crate::error::GetRecommendationsError)
     pub fn get_recommendations(&self) -> fluent_builders::GetRecommendations<C, M, R> {
         fluent_builders::GetRecommendations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFindingsReports` operation.
+    /// Constructs a fluent builder for the [`ListFindingsReports`](crate::client::fluent_builders::ListFindingsReports) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFindingsReports::into_paginator).
     ///
-    /// See [`ListFindingsReports`](crate::client::fluent_builders::ListFindingsReports) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindingsReports::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::ListFindingsReports::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::ListFindingsReports::set_profiling_group_name): <p>The name of the profiling group from which to search for analysis data.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListFindingsReports::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListFindingsReports::set_start_time): <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListFindingsReports::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListFindingsReports::set_end_time): <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFindingsReports::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFindingsReports::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>   <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFindingsReports::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFindingsReports::set_max_results): <p>The maximum number of report results returned by <code>ListFindingsReports</code> in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFindingsReports</code> request with the returned <code>nextToken</code> value.</p>
+    ///   - [`daily_reports_only(bool)`](crate::client::fluent_builders::ListFindingsReports::daily_reports_only) / [`set_daily_reports_only(Option<bool>)`](crate::client::fluent_builders::ListFindingsReports::set_daily_reports_only): <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
+    /// - On success, responds with [`ListFindingsReportsOutput`](crate::output::ListFindingsReportsOutput) with field(s):
+    ///   - [`findings_report_summaries(Option<Vec<FindingsReportSummary>>)`](crate::output::ListFindingsReportsOutput::findings_report_summaries): <p>The list of analysis results summaries.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFindingsReportsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListFindingsReports</code> request. When the results of a <code>ListFindingsReports</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListFindingsReportsError>`](crate::error::ListFindingsReportsError)
     pub fn list_findings_reports(&self) -> fluent_builders::ListFindingsReports<C, M, R> {
         fluent_builders::ListFindingsReports::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProfileTimes` operation.
+    /// Constructs a fluent builder for the [`ListProfileTimes`](crate::client::fluent_builders::ListProfileTimes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProfileTimes::into_paginator).
     ///
-    /// See [`ListProfileTimes`](crate::client::fluent_builders::ListProfileTimes) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProfileTimes::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::ListProfileTimes::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::ListProfileTimes::set_profiling_group_name): <p>The name of the profiling group.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListProfileTimes::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListProfileTimes::set_start_time): <p>The start time of the time range from which to list the profiles.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListProfileTimes::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListProfileTimes::set_end_time): <p>The end time of the time range from which to list the profiles.</p>
+    ///   - [`period(AggregationPeriod)`](crate::client::fluent_builders::ListProfileTimes::period) / [`set_period(Option<AggregationPeriod>)`](crate::client::fluent_builders::ListProfileTimes::set_period): <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p>  <ul>   <li> <p> <code>P1D</code> — 1 day </p> </li>   <li> <p> <code>PT1H</code> — 1 hour </p> </li>   <li> <p> <code>PT5M</code> — 5 minutes </p> </li>  </ul>
+    ///   - [`order_by(OrderBy)`](crate::client::fluent_builders::ListProfileTimes::order_by) / [`set_order_by(Option<OrderBy>)`](crate::client::fluent_builders::ListProfileTimes::set_order_by): <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProfileTimes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProfileTimes::set_max_results): <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProfileTimes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProfileTimes::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>   <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
+    /// - On success, responds with [`ListProfileTimesOutput`](crate::output::ListProfileTimesOutput) with field(s):
+    ///   - [`profile_times(Option<Vec<ProfileTime>>)`](crate::output::ListProfileTimesOutput::profile_times): <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListProfileTimesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<ListProfileTimesError>`](crate::error::ListProfileTimesError)
     pub fn list_profile_times(&self) -> fluent_builders::ListProfileTimes<C, M, R> {
         fluent_builders::ListProfileTimes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProfilingGroups` operation.
+    /// Constructs a fluent builder for the [`ListProfilingGroups`](crate::client::fluent_builders::ListProfilingGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProfilingGroups::into_paginator).
     ///
-    /// See [`ListProfilingGroups`](crate::client::fluent_builders::ListProfilingGroups) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProfilingGroups::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProfilingGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProfilingGroups::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>   <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProfilingGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProfilingGroups::set_max_results): <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code> value. </p>
+    ///   - [`include_description(bool)`](crate::client::fluent_builders::ListProfilingGroups::include_description) / [`set_include_description(Option<bool>)`](crate::client::fluent_builders::ListProfilingGroups::set_include_description): <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is returned. If <code>false</code>, then a list of profiling group names is returned.</p>
+    /// - On success, responds with [`ListProfilingGroupsOutput`](crate::output::ListProfilingGroupsOutput) with field(s):
+    ///   - [`profiling_group_names(Option<Vec<String>>)`](crate::output::ListProfilingGroupsOutput::profiling_group_names): <p> A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
+    ///   - [`profiling_groups(Option<Vec<ProfilingGroupDescription>>)`](crate::output::ListProfilingGroupsOutput::profiling_groups): <p> A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListProfilingGroupsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<ListProfilingGroupsError>`](crate::error::ListProfilingGroupsError)
     pub fn list_profiling_groups(&self) -> fluent_builders::ListProfilingGroups<C, M, R> {
         fluent_builders::ListProfilingGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p> The Amazon Resource Name (ARN) of the resource that contains the tags to return. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p> The list of tags assigned to the specified resource. This is the list of tags returned in the response. </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PostAgentProfile` operation.
+    /// Constructs a fluent builder for the [`PostAgentProfile`](crate::client::fluent_builders::PostAgentProfile) operation.
     ///
-    /// See [`PostAgentProfile`](crate::client::fluent_builders::PostAgentProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::PostAgentProfile::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::PostAgentProfile::set_profiling_group_name): <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
+    ///   - [`agent_profile(Blob)`](crate::client::fluent_builders::PostAgentProfile::agent_profile) / [`set_agent_profile(Option<Blob>)`](crate::client::fluent_builders::PostAgentProfile::set_agent_profile): <p> The submitted profiling data. </p>
+    ///   - [`profile_token(impl Into<String>)`](crate::client::fluent_builders::PostAgentProfile::profile_token) / [`set_profile_token(Option<String>)`](crate::client::fluent_builders::PostAgentProfile::set_profile_token): <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
+    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::PostAgentProfile::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::PostAgentProfile::set_content_type): <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>  <ul>   <li> <p> <code>application/json</code> — standard JSON format </p> </li>   <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>  </ul>
+    /// - On success, responds with [`PostAgentProfileOutput`](crate::output::PostAgentProfileOutput)
+
+    /// - On failure, responds with [`SdkError<PostAgentProfileError>`](crate::error::PostAgentProfileError)
     pub fn post_agent_profile(&self) -> fluent_builders::PostAgentProfile<C, M, R> {
         fluent_builders::PostAgentProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutPermission` operation.
+    /// Constructs a fluent builder for the [`PutPermission`](crate::client::fluent_builders::PutPermission) operation.
     ///
-    /// See [`PutPermission`](crate::client::fluent_builders::PutPermission) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::PutPermission::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::PutPermission::set_profiling_group_name): <p>The name of the profiling group to grant access to.</p>
+    ///   - [`action_group(ActionGroup)`](crate::client::fluent_builders::PutPermission::action_group) / [`set_action_group(Option<ActionGroup>)`](crate::client::fluent_builders::PutPermission::set_action_group): <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
+    ///   - [`principals(Vec<String>)`](crate::client::fluent_builders::PutPermission::principals) / [`set_principals(Option<Vec<String>>)`](crate::client::fluent_builders::PutPermission::set_principals): <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
+    ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::PutPermission::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::PutPermission::set_revision_id): <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
+    /// - On success, responds with [`PutPermissionOutput`](crate::output::PutPermissionOutput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::output::PutPermissionOutput::policy): <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
+    ///   - [`revision_id(Option<String>)`](crate::output::PutPermissionOutput::revision_id): <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
+    /// - On failure, responds with [`SdkError<PutPermissionError>`](crate::error::PutPermissionError)
     pub fn put_permission(&self) -> fluent_builders::PutPermission<C, M, R> {
         fluent_builders::PutPermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveNotificationChannel` operation.
+    /// Constructs a fluent builder for the [`RemoveNotificationChannel`](crate::client::fluent_builders::RemoveNotificationChannel) operation.
     ///
-    /// See [`RemoveNotificationChannel`](crate::client::fluent_builders::RemoveNotificationChannel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::RemoveNotificationChannel::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::RemoveNotificationChannel::set_profiling_group_name): <p>The name of the profiling group we want to change notification configuration for.</p>
+    ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::RemoveNotificationChannel::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::RemoveNotificationChannel::set_channel_id): <p>The id of the channel that we want to stop receiving notifications.</p>
+    /// - On success, responds with [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput) with field(s):
+    ///   - [`notification_configuration(Option<NotificationConfiguration>)`](crate::output::RemoveNotificationChannelOutput::notification_configuration): <p>The new notification configuration for this profiling group.</p>
+    /// - On failure, responds with [`SdkError<RemoveNotificationChannelError>`](crate::error::RemoveNotificationChannelError)
     pub fn remove_notification_channel(
         &self,
     ) -> fluent_builders::RemoveNotificationChannel<C, M, R> {
         fluent_builders::RemoveNotificationChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemovePermission` operation.
+    /// Constructs a fluent builder for the [`RemovePermission`](crate::client::fluent_builders::RemovePermission) operation.
     ///
-    /// See [`RemovePermission`](crate::client::fluent_builders::RemovePermission) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::RemovePermission::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::RemovePermission::set_profiling_group_name): <p>The name of the profiling group.</p>
+    ///   - [`action_group(ActionGroup)`](crate::client::fluent_builders::RemovePermission::action_group) / [`set_action_group(Option<ActionGroup>)`](crate::client::fluent_builders::RemovePermission::set_action_group): <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
+    ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::RemovePermission::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::RemovePermission::set_revision_id): <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
+    /// - On success, responds with [`RemovePermissionOutput`](crate::output::RemovePermissionOutput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::output::RemovePermissionOutput::policy): <p> The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed. </p>
+    ///   - [`revision_id(Option<String>)`](crate::output::RemovePermissionOutput::revision_id): <p> A universally unique identifier (UUID) for the revision of the resource-based policy after the specified permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the response. </p>
+    /// - On failure, responds with [`SdkError<RemovePermissionError>`](crate::error::RemovePermissionError)
     pub fn remove_permission(&self) -> fluent_builders::RemovePermission<C, M, R> {
         fluent_builders::RemovePermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SubmitFeedback` operation.
+    /// Constructs a fluent builder for the [`SubmitFeedback`](crate::client::fluent_builders::SubmitFeedback) operation.
     ///
-    /// See [`SubmitFeedback`](crate::client::fluent_builders::SubmitFeedback) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::SubmitFeedback::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::SubmitFeedback::set_profiling_group_name): <p>The name of the profiling group that is associated with the analysis data.</p>
+    ///   - [`anomaly_instance_id(impl Into<String>)`](crate::client::fluent_builders::SubmitFeedback::anomaly_instance_id) / [`set_anomaly_instance_id(Option<String>)`](crate::client::fluent_builders::SubmitFeedback::set_anomaly_instance_id): <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
+    ///   - [`r#type(FeedbackType)`](crate::client::fluent_builders::SubmitFeedback::r#type) / [`set_type(Option<FeedbackType>)`](crate::client::fluent_builders::SubmitFeedback::set_type): <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
+    ///   - [`comment(impl Into<String>)`](crate::client::fluent_builders::SubmitFeedback::comment) / [`set_comment(Option<String>)`](crate::client::fluent_builders::SubmitFeedback::set_comment): <p>Optional feedback about this anomaly.</p>
+    /// - On success, responds with [`SubmitFeedbackOutput`](crate::output::SubmitFeedbackOutput)
+
+    /// - On failure, responds with [`SdkError<SubmitFeedbackError>`](crate::error::SubmitFeedbackError)
     pub fn submit_feedback(&self) -> fluent_builders::SubmitFeedback<C, M, R> {
         fluent_builders::SubmitFeedback::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p> The Amazon Resource Name (ARN) of the resource that the tags are added to. </p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p> The list of tags that are added to the specified resource. </p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p> The Amazon Resource Name (ARN) of the resource that contains the tags to remove. </p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p> A list of tag keys. Existing tags of resources with keys in this list are removed from the specified resource. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateProfilingGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateProfilingGroup`](crate::client::fluent_builders::UpdateProfilingGroup) operation.
     ///
-    /// See [`UpdateProfilingGroup`](crate::client::fluent_builders::UpdateProfilingGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profiling_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProfilingGroup::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::client::fluent_builders::UpdateProfilingGroup::set_profiling_group_name): <p>The name of the profiling group to update.</p>
+    ///   - [`agent_orchestration_config(AgentOrchestrationConfig)`](crate::client::fluent_builders::UpdateProfilingGroup::agent_orchestration_config) / [`set_agent_orchestration_config(Option<AgentOrchestrationConfig>)`](crate::client::fluent_builders::UpdateProfilingGroup::set_agent_orchestration_config): <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
+    /// - On success, responds with [`UpdateProfilingGroupOutput`](crate::output::UpdateProfilingGroupOutput) with field(s):
+    ///   - [`profiling_group(Option<ProfilingGroupDescription>)`](crate::output::UpdateProfilingGroupOutput::profiling_group): <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group. </p>
+    /// - On failure, responds with [`SdkError<UpdateProfilingGroupError>`](crate::error::UpdateProfilingGroupError)
     pub fn update_profiling_group(&self) -> fluent_builders::UpdateProfilingGroup<C, M, R> {
         fluent_builders::UpdateProfilingGroup::new(self.handle.clone())
     }

@@ -135,6 +135,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyWorkspaceImage {
     }
 }
 
+/// Operation shape for `CreateConnectClientAddIn`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_connect_client_add_in`](crate::client::Client::create_connect_client_add_in).
+///
+/// See [`crate::client::fluent_builders::CreateConnectClientAddIn`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateConnectClientAddIn {
+    _private: (),
+}
+impl CreateConnectClientAddIn {
+    /// Creates a new builder-style object to manufacture [`CreateConnectClientAddInInput`](crate::input::CreateConnectClientAddInInput)
+    pub fn builder() -> crate::input::create_connect_client_add_in_input::Builder {
+        crate::input::create_connect_client_add_in_input::Builder::default()
+    }
+    /// Creates a new `CreateConnectClientAddIn` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateConnectClientAddIn {
+    type Output = std::result::Result<
+        crate::output::CreateConnectClientAddInOutput,
+        crate::error::CreateConnectClientAddInError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_connect_client_add_in_error(response)
+        } else {
+            crate::operation_deser::parse_create_connect_client_add_in_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateConnectionAlias`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -331,6 +365,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspaces {
             crate::operation_deser::parse_create_workspaces_error(response)
         } else {
             crate::operation_deser::parse_create_workspaces_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteConnectClientAddIn`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_connect_client_add_in`](crate::client::Client::delete_connect_client_add_in).
+///
+/// See [`crate::client::fluent_builders::DeleteConnectClientAddIn`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteConnectClientAddIn {
+    _private: (),
+}
+impl DeleteConnectClientAddIn {
+    /// Creates a new builder-style object to manufacture [`DeleteConnectClientAddInInput`](crate::input::DeleteConnectClientAddInInput)
+    pub fn builder() -> crate::input::delete_connect_client_add_in_input::Builder {
+        crate::input::delete_connect_client_add_in_input::Builder::default()
+    }
+    /// Creates a new `DeleteConnectClientAddIn` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteConnectClientAddIn {
+    type Output = std::result::Result<
+        crate::output::DeleteConnectClientAddInOutput,
+        crate::error::DeleteConnectClientAddInError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_connect_client_add_in_error(response)
+        } else {
+            crate::operation_deser::parse_delete_connect_client_add_in_response(response)
         }
     }
 }
@@ -633,6 +701,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeClientProperties
             crate::operation_deser::parse_describe_client_properties_error(response)
         } else {
             crate::operation_deser::parse_describe_client_properties_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeConnectClientAddIns`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_connect_client_add_ins`](crate::client::Client::describe_connect_client_add_ins).
+///
+/// See [`crate::client::fluent_builders::DescribeConnectClientAddIns`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeConnectClientAddIns {
+    _private: (),
+}
+impl DescribeConnectClientAddIns {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectClientAddInsInput`](crate::input::DescribeConnectClientAddInsInput)
+    pub fn builder() -> crate::input::describe_connect_client_add_ins_input::Builder {
+        crate::input::describe_connect_client_add_ins_input::Builder::default()
+    }
+    /// Creates a new `DescribeConnectClientAddIns` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeConnectClientAddIns {
+    type Output = std::result::Result<
+        crate::output::DescribeConnectClientAddInsOutput,
+        crate::error::DescribeConnectClientAddInsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_connect_client_add_ins_error(response)
+        } else {
+            crate::operation_deser::parse_describe_connect_client_add_ins_response(response)
         }
     }
 }
@@ -1679,6 +1781,40 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateWorkspaces {
             crate::operation_deser::parse_terminate_workspaces_error(response)
         } else {
             crate::operation_deser::parse_terminate_workspaces_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateConnectClientAddIn`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_connect_client_add_in`](crate::client::Client::update_connect_client_add_in).
+///
+/// See [`crate::client::fluent_builders::UpdateConnectClientAddIn`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateConnectClientAddIn {
+    _private: (),
+}
+impl UpdateConnectClientAddIn {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectClientAddInInput`](crate::input::UpdateConnectClientAddInInput)
+    pub fn builder() -> crate::input::update_connect_client_add_in_input::Builder {
+        crate::input::update_connect_client_add_in_input::Builder::default()
+    }
+    /// Creates a new `UpdateConnectClientAddIn` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateConnectClientAddIn {
+    type Output = std::result::Result<
+        crate::output::UpdateConnectClientAddInOutput,
+        crate::error::UpdateConnectClientAddInError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_connect_client_add_in_error(response)
+        } else {
+            crate::operation_deser::parse_update_connect_client_add_in_response(response)
         }
     }
 }

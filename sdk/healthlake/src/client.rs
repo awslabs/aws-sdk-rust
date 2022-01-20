@@ -83,97 +83,181 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateFHIRDatastore` operation.
+    /// Constructs a fluent builder for the [`CreateFHIRDatastore`](crate::client::fluent_builders::CreateFHIRDatastore) operation.
     ///
-    /// See [`CreateFHIRDatastore`](crate::client::fluent_builders::CreateFHIRDatastore) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`datastore_name(impl Into<String>)`](crate::client::fluent_builders::CreateFHIRDatastore::datastore_name) / [`set_datastore_name(Option<String>)`](crate::client::fluent_builders::CreateFHIRDatastore::set_datastore_name): <p>The user generated name for the Data Store.</p>
+    ///   - [`datastore_type_version(FhirVersion)`](crate::client::fluent_builders::CreateFHIRDatastore::datastore_type_version) / [`set_datastore_type_version(Option<FhirVersion>)`](crate::client::fluent_builders::CreateFHIRDatastore::set_datastore_type_version): <p>The FHIR version of the Data Store. The only supported version is R4.</p>
+    ///   - [`sse_configuration(SseConfiguration)`](crate::client::fluent_builders::CreateFHIRDatastore::sse_configuration) / [`set_sse_configuration(Option<SseConfiguration>)`](crate::client::fluent_builders::CreateFHIRDatastore::set_sse_configuration): <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store. </p>
+    ///   - [`preload_data_config(PreloadDataConfig)`](crate::client::fluent_builders::CreateFHIRDatastore::preload_data_config) / [`set_preload_data_config(Option<PreloadDataConfig>)`](crate::client::fluent_builders::CreateFHIRDatastore::set_preload_data_config): <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateFHIRDatastore::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateFHIRDatastore::set_client_token): <p>Optional user provided token used for ensuring idempotency.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFHIRDatastore::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFHIRDatastore::set_tags): <p> Resource tags that are applied to a Data Store when it is created. </p>
+    /// - On success, responds with [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput) with field(s):
+    ///   - [`datastore_id(Option<String>)`](crate::output::CreateFhirDatastoreOutput::datastore_id): <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
+    ///   - [`datastore_arn(Option<String>)`](crate::output::CreateFhirDatastoreOutput::datastore_arn): <p>The datastore ARN is generated during the creation of the Data Store and can be found in the output from the initial Data Store creation call.</p>
+    ///   - [`datastore_status(Option<DatastoreStatus>)`](crate::output::CreateFhirDatastoreOutput::datastore_status): <p>The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’, ‘DELETED’.</p>
+    ///   - [`datastore_endpoint(Option<String>)`](crate::output::CreateFhirDatastoreOutput::datastore_endpoint): <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
+    /// - On failure, responds with [`SdkError<CreateFHIRDatastoreError>`](crate::error::CreateFHIRDatastoreError)
     pub fn create_fhir_datastore(&self) -> fluent_builders::CreateFHIRDatastore<C, M, R> {
         fluent_builders::CreateFHIRDatastore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFHIRDatastore` operation.
+    /// Constructs a fluent builder for the [`DeleteFHIRDatastore`](crate::client::fluent_builders::DeleteFHIRDatastore) operation.
     ///
-    /// See [`DeleteFHIRDatastore`](crate::client::fluent_builders::DeleteFHIRDatastore) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`datastore_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFHIRDatastore::datastore_id) / [`set_datastore_id(Option<String>)`](crate::client::fluent_builders::DeleteFHIRDatastore::set_datastore_id): <p> The AWS-generated ID for the Data Store to be deleted.</p>
+    /// - On success, responds with [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput) with field(s):
+    ///   - [`datastore_id(Option<String>)`](crate::output::DeleteFhirDatastoreOutput::datastore_id): <p>The AWS-generated ID for the Data Store to be deleted.</p>
+    ///   - [`datastore_arn(Option<String>)`](crate::output::DeleteFhirDatastoreOutput::datastore_arn): <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
+    ///   - [`datastore_status(Option<DatastoreStatus>)`](crate::output::DeleteFhirDatastoreOutput::datastore_status): <p>The status of the Data Store that the user has requested to be deleted. </p>
+    ///   - [`datastore_endpoint(Option<String>)`](crate::output::DeleteFhirDatastoreOutput::datastore_endpoint): <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteFHIRDatastoreError>`](crate::error::DeleteFHIRDatastoreError)
     pub fn delete_fhir_datastore(&self) -> fluent_builders::DeleteFHIRDatastore<C, M, R> {
         fluent_builders::DeleteFHIRDatastore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFHIRDatastore` operation.
+    /// Constructs a fluent builder for the [`DescribeFHIRDatastore`](crate::client::fluent_builders::DescribeFHIRDatastore) operation.
     ///
-    /// See [`DescribeFHIRDatastore`](crate::client::fluent_builders::DescribeFHIRDatastore) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`datastore_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFHIRDatastore::datastore_id) / [`set_datastore_id(Option<String>)`](crate::client::fluent_builders::DescribeFHIRDatastore::set_datastore_id): <p>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</p>
+    /// - On success, responds with [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput) with field(s):
+    ///   - [`datastore_properties(Option<DatastoreProperties>)`](crate::output::DescribeFhirDatastoreOutput::datastore_properties): <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
+    /// - On failure, responds with [`SdkError<DescribeFHIRDatastoreError>`](crate::error::DescribeFHIRDatastoreError)
     pub fn describe_fhir_datastore(&self) -> fluent_builders::DescribeFHIRDatastore<C, M, R> {
         fluent_builders::DescribeFHIRDatastore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFHIRExportJob` operation.
+    /// Constructs a fluent builder for the [`DescribeFHIRExportJob`](crate::client::fluent_builders::DescribeFHIRExportJob) operation.
     ///
-    /// See [`DescribeFHIRExportJob`](crate::client::fluent_builders::DescribeFHIRExportJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`datastore_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFHIRExportJob::datastore_id) / [`set_datastore_id(Option<String>)`](crate::client::fluent_builders::DescribeFHIRExportJob::set_datastore_id): <p>The AWS generated ID for the Data Store from which files are being exported from for an export job.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFHIRExportJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeFHIRExportJob::set_job_id): <p>The AWS generated ID for an export job.</p>
+    /// - On success, responds with [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput) with field(s):
+    ///   - [`export_job_properties(Option<ExportJobProperties>)`](crate::output::DescribeFhirExportJobOutput::export_job_properties): <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
+    /// - On failure, responds with [`SdkError<DescribeFHIRExportJobError>`](crate::error::DescribeFHIRExportJobError)
     pub fn describe_fhir_export_job(&self) -> fluent_builders::DescribeFHIRExportJob<C, M, R> {
         fluent_builders::DescribeFHIRExportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFHIRImportJob` operation.
+    /// Constructs a fluent builder for the [`DescribeFHIRImportJob`](crate::client::fluent_builders::DescribeFHIRImportJob) operation.
     ///
-    /// See [`DescribeFHIRImportJob`](crate::client::fluent_builders::DescribeFHIRImportJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`datastore_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFHIRImportJob::datastore_id) / [`set_datastore_id(Option<String>)`](crate::client::fluent_builders::DescribeFHIRImportJob::set_datastore_id): <p>The AWS-generated ID of the Data Store.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFHIRImportJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeFHIRImportJob::set_job_id): <p>The AWS-generated job ID.</p>
+    /// - On success, responds with [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput) with field(s):
+    ///   - [`import_job_properties(Option<ImportJobProperties>)`](crate::output::DescribeFhirImportJobOutput::import_job_properties): <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
+    /// - On failure, responds with [`SdkError<DescribeFHIRImportJobError>`](crate::error::DescribeFHIRImportJobError)
     pub fn describe_fhir_import_job(&self) -> fluent_builders::DescribeFHIRImportJob<C, M, R> {
         fluent_builders::DescribeFHIRImportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFHIRDatastores` operation.
+    /// Constructs a fluent builder for the [`ListFHIRDatastores`](crate::client::fluent_builders::ListFHIRDatastores) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFHIRDatastores::into_paginator).
     ///
-    /// See [`ListFHIRDatastores`](crate::client::fluent_builders::ListFHIRDatastores) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFHIRDatastores::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`filter(DatastoreFilter)`](crate::client::fluent_builders::ListFHIRDatastores::filter) / [`set_filter(Option<DatastoreFilter>)`](crate::client::fluent_builders::ListFHIRDatastores::set_filter): <p>Lists all filters associated with a FHIR Data Store request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFHIRDatastores::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFHIRDatastores::set_next_token): <p>Fetches the next page of Data Stores when results are paginated.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFHIRDatastores::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFHIRDatastores::set_max_results): <p>The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
+    /// - On success, responds with [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput) with field(s):
+    ///   - [`datastore_properties_list(Option<Vec<DatastoreProperties>>)`](crate::output::ListFhirDatastoresOutput::datastore_properties_list): <p>All properties associated with the listed Data Stores.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFhirDatastoresOutput::next_token): <p>Pagination token that can be used to retrieve the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListFHIRDatastoresError>`](crate::error::ListFHIRDatastoresError)
     pub fn list_fhir_datastores(&self) -> fluent_builders::ListFHIRDatastores<C, M, R> {
         fluent_builders::ListFHIRDatastores::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFHIRExportJobs` operation.
+    /// Constructs a fluent builder for the [`ListFHIRExportJobs`](crate::client::fluent_builders::ListFHIRExportJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFHIRExportJobs::into_paginator).
     ///
-    /// See [`ListFHIRExportJobs`](crate::client::fluent_builders::ListFHIRExportJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFHIRExportJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`datastore_id(impl Into<String>)`](crate::client::fluent_builders::ListFHIRExportJobs::datastore_id) / [`set_datastore_id(Option<String>)`](crate::client::fluent_builders::ListFHIRExportJobs::set_datastore_id): <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFHIRExportJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFHIRExportJobs::set_next_token): <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFHIRExportJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFHIRExportJobs::set_max_results): <p> This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user. </p>
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::ListFHIRExportJobs::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::ListFHIRExportJobs::set_job_name): <p> This parameter limits the response to the export job with the specified job name. </p>
+    ///   - [`job_status(JobStatus)`](crate::client::fluent_builders::ListFHIRExportJobs::job_status) / [`set_job_status(Option<JobStatus>)`](crate::client::fluent_builders::ListFHIRExportJobs::set_job_status): <p> This parameter limits the response to the export jobs with the specified job status. </p>
+    ///   - [`submitted_before(DateTime)`](crate::client::fluent_builders::ListFHIRExportJobs::submitted_before) / [`set_submitted_before(Option<DateTime>)`](crate::client::fluent_builders::ListFHIRExportJobs::set_submitted_before): <p> This parameter limits the response to FHIR export jobs submitted before a user specified date. </p>
+    ///   - [`submitted_after(DateTime)`](crate::client::fluent_builders::ListFHIRExportJobs::submitted_after) / [`set_submitted_after(Option<DateTime>)`](crate::client::fluent_builders::ListFHIRExportJobs::set_submitted_after): <p> This parameter limits the response to FHIR export jobs submitted after a user specified date. </p>
+    /// - On success, responds with [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput) with field(s):
+    ///   - [`export_job_properties_list(Option<Vec<ExportJobProperties>>)`](crate::output::ListFhirExportJobsOutput::export_job_properties_list): <p> The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFhirExportJobsOutput::next_token): <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
+    /// - On failure, responds with [`SdkError<ListFHIRExportJobsError>`](crate::error::ListFHIRExportJobsError)
     pub fn list_fhir_export_jobs(&self) -> fluent_builders::ListFHIRExportJobs<C, M, R> {
         fluent_builders::ListFHIRExportJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFHIRImportJobs` operation.
+    /// Constructs a fluent builder for the [`ListFHIRImportJobs`](crate::client::fluent_builders::ListFHIRImportJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFHIRImportJobs::into_paginator).
     ///
-    /// See [`ListFHIRImportJobs`](crate::client::fluent_builders::ListFHIRImportJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFHIRImportJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`datastore_id(impl Into<String>)`](crate::client::fluent_builders::ListFHIRImportJobs::datastore_id) / [`set_datastore_id(Option<String>)`](crate::client::fluent_builders::ListFHIRImportJobs::set_datastore_id): <p> This parameter limits the response to the import job with the specified Data Store ID. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFHIRImportJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFHIRImportJobs::set_next_token): <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFHIRImportJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFHIRImportJobs::set_max_results): <p> This parameter limits the number of results returned for a ListFHIRImportJobs to a maximum quantity specified by the user. </p>
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::ListFHIRImportJobs::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::ListFHIRImportJobs::set_job_name): <p> This parameter limits the response to the import job with the specified job name. </p>
+    ///   - [`job_status(JobStatus)`](crate::client::fluent_builders::ListFHIRImportJobs::job_status) / [`set_job_status(Option<JobStatus>)`](crate::client::fluent_builders::ListFHIRImportJobs::set_job_status): <p> This parameter limits the response to the import job with the specified job status. </p>
+    ///   - [`submitted_before(DateTime)`](crate::client::fluent_builders::ListFHIRImportJobs::submitted_before) / [`set_submitted_before(Option<DateTime>)`](crate::client::fluent_builders::ListFHIRImportJobs::set_submitted_before): <p> This parameter limits the response to FHIR import jobs submitted before a user specified date. </p>
+    ///   - [`submitted_after(DateTime)`](crate::client::fluent_builders::ListFHIRImportJobs::submitted_after) / [`set_submitted_after(Option<DateTime>)`](crate::client::fluent_builders::ListFHIRImportJobs::set_submitted_after): <p> This parameter limits the response to FHIR import jobs submitted after a user specified date. </p>
+    /// - On success, responds with [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput) with field(s):
+    ///   - [`import_job_properties_list(Option<Vec<ImportJobProperties>>)`](crate::output::ListFhirImportJobsOutput::import_job_properties_list): <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFhirImportJobsOutput::next_token): <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
+    /// - On failure, responds with [`SdkError<ListFHIRImportJobsError>`](crate::error::ListFHIRImportJobsError)
     pub fn list_fhir_import_jobs(&self) -> fluent_builders::ListFHIRImportJobs<C, M, R> {
         fluent_builders::ListFHIRImportJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p> The Amazon Resource Name(ARN) of the Data Store for which tags are being added. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p> Returns a list of tags associated with a Data Store. </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartFHIRExportJob` operation.
+    /// Constructs a fluent builder for the [`StartFHIRExportJob`](crate::client::fluent_builders::StartFHIRExportJob) operation.
     ///
-    /// See [`StartFHIRExportJob`](crate::client::fluent_builders::StartFHIRExportJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartFHIRExportJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartFHIRExportJob::set_job_name): <p>The user generated name for an export job.</p>
+    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartFHIRExportJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartFHIRExportJob::set_output_data_config): <p>The output data configuration that was supplied when the export job was created.</p>
+    ///   - [`datastore_id(impl Into<String>)`](crate::client::fluent_builders::StartFHIRExportJob::datastore_id) / [`set_datastore_id(Option<String>)`](crate::client::fluent_builders::StartFHIRExportJob::set_datastore_id): <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartFHIRExportJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartFHIRExportJob::set_data_access_role_arn): <p>The Amazon Resource Name used during the initiation of the job.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartFHIRExportJob::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartFHIRExportJob::set_client_token): <p>An optional user provided token used for ensuring idempotency.</p>
+    /// - On success, responds with [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartFhirExportJobOutput::job_id): <p>The AWS generated ID for an export job.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StartFhirExportJobOutput::job_status): <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
+    ///   - [`datastore_id(Option<String>)`](crate::output::StartFhirExportJobOutput::datastore_id): <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
+    /// - On failure, responds with [`SdkError<StartFHIRExportJobError>`](crate::error::StartFHIRExportJobError)
     pub fn start_fhir_export_job(&self) -> fluent_builders::StartFHIRExportJob<C, M, R> {
         fluent_builders::StartFHIRExportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartFHIRImportJob` operation.
+    /// Constructs a fluent builder for the [`StartFHIRImportJob`](crate::client::fluent_builders::StartFHIRImportJob) operation.
     ///
-    /// See [`StartFHIRImportJob`](crate::client::fluent_builders::StartFHIRImportJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartFHIRImportJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartFHIRImportJob::set_job_name): <p>The name of the FHIR Import job in the StartFHIRImport job request.</p>
+    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartFHIRImportJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartFHIRImportJob::set_input_data_config): <p>The input properties of the FHIR Import job in the StartFHIRImport job request.</p>
+    ///   - [`job_output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartFHIRImportJob::job_output_data_config) / [`set_job_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartFHIRImportJob::set_job_output_data_config): <p>The output data configuration that was supplied when the export job was created.</p>
+    ///   - [`datastore_id(impl Into<String>)`](crate::client::fluent_builders::StartFHIRImportJob::datastore_id) / [`set_datastore_id(Option<String>)`](crate::client::fluent_builders::StartFHIRImportJob::set_datastore_id): <p>The AWS-generated Data Store ID.</p>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartFHIRImportJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartFHIRImportJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartFHIRImportJob::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartFHIRImportJob::set_client_token): <p>Optional user provided token used for ensuring idempotency.</p>
+    /// - On success, responds with [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartFhirImportJobOutput::job_id): <p>The AWS-generated job ID.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StartFhirImportJobOutput::job_status): <p>The status of an import job.</p>
+    ///   - [`datastore_id(Option<String>)`](crate::output::StartFhirImportJobOutput::datastore_id): <p>The AWS-generated Data Store ID.</p>
+    /// - On failure, responds with [`SdkError<StartFHIRImportJobError>`](crate::error::StartFHIRImportJobError)
     pub fn start_fhir_import_job(&self) -> fluent_builders::StartFHIRImportJob<C, M, R> {
         fluent_builders::StartFHIRImportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p> The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store which tags are being added to. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p> The user specified key and value pair tags being added to a Data Store. </p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p> "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed </p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p> The keys for the tags to be removed from the Healthlake Data Store. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

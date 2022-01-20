@@ -83,304 +83,562 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateFileSystemAliases` operation.
+    /// Constructs a fluent builder for the [`AssociateFileSystemAliases`](crate::client::fluent_builders::AssociateFileSystemAliases) operation.
     ///
-    /// See [`AssociateFileSystemAliases`](crate::client::fluent_builders::AssociateFileSystemAliases) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::AssociateFileSystemAliases::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::AssociateFileSystemAliases::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::AssociateFileSystemAliases::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::AssociateFileSystemAliases::set_file_system_id): <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
+    ///   - [`aliases(Vec<String>)`](crate::client::fluent_builders::AssociateFileSystemAliases::aliases) / [`set_aliases(Option<Vec<String>>)`](crate::client::fluent_builders::AssociateFileSystemAliases::set_aliases): <p>An array of one or more DNS alias names to associate with the file system. The alias name has to comply with the following formatting requirements:</p>  <ul>   <li> <p>Formatted as a fully-qualified domain name (FQDN), <i> <code>hostname.domain</code> </i>, for example, <code>accounting.corp.example.com</code>.</p> </li>   <li> <p>Can contain alphanumeric characters and the hyphen (-).</p> </li>   <li> <p>Cannot start or end with a hyphen.</p> </li>   <li> <p>Can start with a numeric.</p> </li>  </ul>  <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
+    /// - On success, responds with [`AssociateFileSystemAliasesOutput`](crate::output::AssociateFileSystemAliasesOutput) with field(s):
+    ///   - [`aliases(Option<Vec<Alias>>)`](crate::output::AssociateFileSystemAliasesOutput::aliases): <p>An array of the DNS aliases that Amazon FSx is associating with the file system.</p>
+    /// - On failure, responds with [`SdkError<AssociateFileSystemAliasesError>`](crate::error::AssociateFileSystemAliasesError)
     pub fn associate_file_system_aliases(
         &self,
     ) -> fluent_builders::AssociateFileSystemAliases<C, M, R> {
         fluent_builders::AssociateFileSystemAliases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelDataRepositoryTask` operation.
+    /// Constructs a fluent builder for the [`CancelDataRepositoryTask`](crate::client::fluent_builders::CancelDataRepositoryTask) operation.
     ///
-    /// See [`CancelDataRepositoryTask`](crate::client::fluent_builders::CancelDataRepositoryTask) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::CancelDataRepositoryTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::CancelDataRepositoryTask::set_task_id): <p>Specifies the data repository task to cancel.</p>
+    /// - On success, responds with [`CancelDataRepositoryTaskOutput`](crate::output::CancelDataRepositoryTaskOutput) with field(s):
+    ///   - [`lifecycle(Option<DataRepositoryTaskLifecycle>)`](crate::output::CancelDataRepositoryTaskOutput::lifecycle): <p>The lifecycle status of the data repository task, as follows:</p>  <ul>   <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>   <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>   <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>   <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>   <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>   <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>  </ul>
+    ///   - [`task_id(Option<String>)`](crate::output::CancelDataRepositoryTaskOutput::task_id): <p>The ID of the task being canceled.</p>
+    /// - On failure, responds with [`SdkError<CancelDataRepositoryTaskError>`](crate::error::CancelDataRepositoryTaskError)
     pub fn cancel_data_repository_task(
         &self,
     ) -> fluent_builders::CancelDataRepositoryTask<C, M, R> {
         fluent_builders::CancelDataRepositoryTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CopyBackup` operation.
+    /// Constructs a fluent builder for the [`CopyBackup`](crate::client::fluent_builders::CopyBackup) operation.
     ///
-    /// See [`CopyBackup`](crate::client::fluent_builders::CopyBackup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CopyBackup::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CopyBackup::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`source_backup_id(impl Into<String>)`](crate::client::fluent_builders::CopyBackup::source_backup_id) / [`set_source_backup_id(Option<String>)`](crate::client::fluent_builders::CopyBackup::set_source_backup_id): <p>The ID of the source backup. Specifies the ID of the backup that's being copied.</p>
+    ///   - [`source_region(impl Into<String>)`](crate::client::fluent_builders::CopyBackup::source_region) / [`set_source_region(Option<String>)`](crate::client::fluent_builders::CopyBackup::set_source_region): <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which the backup is being copied. The source and destination Regions must be in the same Amazon Web Services partition. If you don't specify a Region, <code>SourceRegion</code> defaults to the Region where the request is sent from (in-Region copy).</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CopyBackup::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CopyBackup::set_kms_key_id): <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    ///   - [`copy_tags(bool)`](crate::client::fluent_builders::CopyBackup::copy_tags) / [`set_copy_tags(Option<bool>)`](crate::client::fluent_builders::CopyBackup::set_copy_tags): <p>A Boolean flag indicating whether tags from the source backup should be copied to the backup copy. This value defaults to <code>false</code>.</p>  <p>If you set <code>CopyTags</code> to <code>true</code> and the source backup has existing tags, you can use the <code>Tags</code> parameter to create new tags, provided that the sum of the source backup tags and the new tags doesn't exceed 50. Both sets of tags are merged. If there are tag conflicts (for example, two tags with the same key but different values), the tags created with the <code>Tags</code> parameter take precedence.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CopyBackup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CopyBackup::set_tags): <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    /// - On success, responds with [`CopyBackupOutput`](crate::output::CopyBackupOutput) with field(s):
+    ///   - [`backup(Option<Backup>)`](crate::output::CopyBackupOutput::backup): <p>A backup of an Amazon FSx for Windows File Server, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx for OpenZFS file system.</p>
+    /// - On failure, responds with [`SdkError<CopyBackupError>`](crate::error::CopyBackupError)
     pub fn copy_backup(&self) -> fluent_builders::CopyBackup<C, M, R> {
         fluent_builders::CopyBackup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBackup` operation.
+    /// Constructs a fluent builder for the [`CreateBackup`](crate::client::fluent_builders::CreateBackup) operation.
     ///
-    /// See [`CreateBackup`](crate::client::fluent_builders::CreateBackup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::CreateBackup::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::CreateBackup::set_file_system_id): <p>The ID of the file system to back up.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateBackup::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateBackup::set_client_request_token): <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateBackup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateBackup::set_tags): <p>(Optional) The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to <code>true</code>, and you specify one or more tags using the <code>CreateBackup</code> operation, no existing file system tags are copied from the file system to the backup.</p>
+    ///   - [`volume_id(impl Into<String>)`](crate::client::fluent_builders::CreateBackup::volume_id) / [`set_volume_id(Option<String>)`](crate::client::fluent_builders::CreateBackup::set_volume_id): <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
+    /// - On success, responds with [`CreateBackupOutput`](crate::output::CreateBackupOutput) with field(s):
+    ///   - [`backup(Option<Backup>)`](crate::output::CreateBackupOutput::backup): <p>A description of the backup.</p>
+    /// - On failure, responds with [`SdkError<CreateBackupError>`](crate::error::CreateBackupError)
     pub fn create_backup(&self) -> fluent_builders::CreateBackup<C, M, R> {
         fluent_builders::CreateBackup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDataRepositoryAssociation` operation.
+    /// Constructs a fluent builder for the [`CreateDataRepositoryAssociation`](crate::client::fluent_builders::CreateDataRepositoryAssociation) operation.
     ///
-    /// See [`CreateDataRepositoryAssociation`](crate::client::fluent_builders::CreateDataRepositoryAssociation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_file_system_id): <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    ///   - [`file_system_path(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::file_system_path) / [`set_file_system_path(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_file_system_path): <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>  <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p>
+    ///   - [`data_repository_path(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::data_repository_path) / [`set_data_repository_path(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_data_repository_path): <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
+    ///   - [`batch_import_meta_data_on_create(bool)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::batch_import_meta_data_on_create) / [`set_batch_import_meta_data_on_create(Option<bool>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_batch_import_meta_data_on_create): <p>Set to <code>true</code> to run an import data repository task to import metadata from the data repository to the file system after the data repository association is created. Default is <code>false</code>.</p>
+    ///   - [`imported_file_chunk_size(i32)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::imported_file_chunk_size) / [`set_imported_file_chunk_size(Option<i32>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_imported_file_chunk_size): <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>  <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
+    ///   - [`s3(S3DataRepositoryConfiguration)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::s3) / [`set_s3(Option<S3DataRepositoryConfiguration>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_s3): <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDataRepositoryAssociation::set_tags): <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    /// - On success, responds with [`CreateDataRepositoryAssociationOutput`](crate::output::CreateDataRepositoryAssociationOutput) with field(s):
+    ///   - [`association(Option<DataRepositoryAssociation>)`](crate::output::CreateDataRepositoryAssociationOutput::association): <p>The response object returned after the data repository association is created.</p>
+    /// - On failure, responds with [`SdkError<CreateDataRepositoryAssociationError>`](crate::error::CreateDataRepositoryAssociationError)
     pub fn create_data_repository_association(
         &self,
     ) -> fluent_builders::CreateDataRepositoryAssociation<C, M, R> {
         fluent_builders::CreateDataRepositoryAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDataRepositoryTask` operation.
+    /// Constructs a fluent builder for the [`CreateDataRepositoryTask`](crate::client::fluent_builders::CreateDataRepositoryTask) operation.
     ///
-    /// See [`CreateDataRepositoryTask`](crate::client::fluent_builders::CreateDataRepositoryTask) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`r#type(DataRepositoryTaskType)`](crate::client::fluent_builders::CreateDataRepositoryTask::r#type) / [`set_type(Option<DataRepositoryTaskType>)`](crate::client::fluent_builders::CreateDataRepositoryTask::set_type): <p>Specifies the type of data repository task to create.</p>
+    ///   - [`paths(Vec<String>)`](crate::client::fluent_builders::CreateDataRepositoryTask::paths) / [`set_paths(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDataRepositoryTask::set_paths): <p>(Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>. If a path that you provide isn't valid, the task fails.</p>
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryTask::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryTask::set_file_system_id): <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    ///   - [`report(CompletionReport)`](crate::client::fluent_builders::CreateDataRepositoryTask::report) / [`set_report(Option<CompletionReport>)`](crate::client::fluent_builders::CreateDataRepositoryTask::set_report): <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataRepositoryTask::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateDataRepositoryTask::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDataRepositoryTask::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDataRepositoryTask::set_tags): <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    /// - On success, responds with [`CreateDataRepositoryTaskOutput`](crate::output::CreateDataRepositoryTaskOutput) with field(s):
+    ///   - [`data_repository_task(Option<DataRepositoryTask>)`](crate::output::CreateDataRepositoryTaskOutput::data_repository_task): <p>The description of the data repository task that you just created.</p>
+    /// - On failure, responds with [`SdkError<CreateDataRepositoryTaskError>`](crate::error::CreateDataRepositoryTaskError)
     pub fn create_data_repository_task(
         &self,
     ) -> fluent_builders::CreateDataRepositoryTask<C, M, R> {
         fluent_builders::CreateDataRepositoryTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFileSystem` operation.
+    /// Constructs a fluent builder for the [`CreateFileSystem`](crate::client::fluent_builders::CreateFileSystem) operation.
     ///
-    /// See [`CreateFileSystem`](crate::client::fluent_builders::CreateFileSystem) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystem::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateFileSystem::set_client_request_token): <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`file_system_type(FileSystemType)`](crate::client::fluent_builders::CreateFileSystem::file_system_type) / [`set_file_system_type(Option<FileSystemType>)`](crate::client::fluent_builders::CreateFileSystem::set_file_system_type): <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and <code>OPENZFS</code>.</p>
+    ///   - [`storage_capacity(i32)`](crate::client::fluent_builders::CreateFileSystem::storage_capacity) / [`set_storage_capacity(Option<i32>)`](crate::client::fluent_builders::CreateFileSystem::set_storage_capacity): <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>  <p> <b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>  <ul>   <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p> </li>   <li> <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p> </li>   <li> <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li>  </ul>  <p> <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure is from 1024 GiB up to 196,608 GiB (192 TiB).</p>  <p> <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>  <p> <b>FSx for Windows File Server file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> as follows:</p>  <ul>   <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li>   <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>  </ul>
+    ///   - [`storage_type(StorageType)`](crate::client::fluent_builders::CreateFileSystem::storage_type) / [`set_storage_type(Option<StorageType>)`](crate::client::fluent_builders::CreateFileSystem::set_storage_type): <p>Sets the storage type for the file system that you're creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p>  <ul>   <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li>   <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT</code> Lustre file system deployment types. </p> </li>  </ul>  <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>. </p>
+    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateFileSystem::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateFileSystem::set_subnet_ids): <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows and ONTAP <code>MULTI_AZ_1</code> deployment types,provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more information about Multi-AZ file system configuration, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and durability: Single-AZ and Multi-AZ file systems</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html"> Availability and durability</a> in the <i>Amazon FSx for ONTAP User Guide</i>.</p>  <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> and all Lustre deployment types, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
+    ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateFileSystem::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateFileSystem::set_security_group_ids): <p>A list of IDs specifying the security groups to apply to all network interfaces created for file system access. This list isn't returned in later requests to describe the file system.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFileSystem::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFileSystem::set_tags): <p>The tags to apply to the file system that's being created. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystem::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateFileSystem::set_kms_key_id): <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    ///   - [`windows_configuration(CreateFileSystemWindowsConfiguration)`](crate::client::fluent_builders::CreateFileSystem::windows_configuration) / [`set_windows_configuration(Option<CreateFileSystemWindowsConfiguration>)`](crate::client::fluent_builders::CreateFileSystem::set_windows_configuration): <p>The Microsoft Windows configuration for the file system that's being created. </p>
+    ///   - [`lustre_configuration(CreateFileSystemLustreConfiguration)`](crate::client::fluent_builders::CreateFileSystem::lustre_configuration) / [`set_lustre_configuration(Option<CreateFileSystemLustreConfiguration>)`](crate::client::fluent_builders::CreateFileSystem::set_lustre_configuration): <p>The Lustre configuration for the file system being created.</p> <note>   <p>The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>   <ul>    <li> <p> <code>AutoImportPolicy</code> </p> </li>    <li> <p> <code>ExportPath</code> </p> </li>    <li> <p> <code>ImportedChunkSize</code> </p> </li>    <li> <p> <code>ImportPath</code> </p> </li>   </ul>  </note>
+    ///   - [`ontap_configuration(CreateFileSystemOntapConfiguration)`](crate::client::fluent_builders::CreateFileSystem::ontap_configuration) / [`set_ontap_configuration(Option<CreateFileSystemOntapConfiguration>)`](crate::client::fluent_builders::CreateFileSystem::set_ontap_configuration): <p>The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.</p>
+    ///   - [`file_system_type_version(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystem::file_system_type_version) / [`set_file_system_type_version(Option<String>)`](crate::client::fluent_builders::CreateFileSystem::set_file_system_type_version): <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>  <ul>   <li> <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p> </li>   <li> <p>2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>  </ul>  <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>   <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>  </note>
+    ///   - [`open_zfs_configuration(CreateFileSystemOpenZfsConfiguration)`](crate::client::fluent_builders::CreateFileSystem::open_zfs_configuration) / [`set_open_zfs_configuration(Option<CreateFileSystemOpenZfsConfiguration>)`](crate::client::fluent_builders::CreateFileSystem::set_open_zfs_configuration): <p>The OpenZFS configuration for the file system that's being created.</p>
+    /// - On success, responds with [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput) with field(s):
+    ///   - [`file_system(Option<FileSystem>)`](crate::output::CreateFileSystemOutput::file_system): <p>The configuration of the file system that was created.</p>
+    /// - On failure, responds with [`SdkError<CreateFileSystemError>`](crate::error::CreateFileSystemError)
     pub fn create_file_system(&self) -> fluent_builders::CreateFileSystem<C, M, R> {
         fluent_builders::CreateFileSystem::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFileSystemFromBackup` operation.
+    /// Constructs a fluent builder for the [`CreateFileSystemFromBackup`](crate::client::fluent_builders::CreateFileSystemFromBackup) operation.
     ///
-    /// See [`CreateFileSystemFromBackup`](crate::client::fluent_builders::CreateFileSystemFromBackup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_id(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::backup_id) / [`set_backup_id(Option<String>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_backup_id): <p>The ID of the source backup. Specifies the backup that you are copying.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_client_request_token): <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_subnet_ids): <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>  <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types, Lustre file systems, and OpenZFS file systems provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
+    ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_security_group_ids): <p>A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups apply to all network interfaces. This value isn't returned in later <code>DescribeFileSystem</code> requests.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_tags): <p>The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>
+    ///   - [`windows_configuration(CreateFileSystemWindowsConfiguration)`](crate::client::fluent_builders::CreateFileSystemFromBackup::windows_configuration) / [`set_windows_configuration(Option<CreateFileSystemWindowsConfiguration>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_windows_configuration): <p>The configuration for this Microsoft Windows file system.</p>
+    ///   - [`lustre_configuration(CreateFileSystemLustreConfiguration)`](crate::client::fluent_builders::CreateFileSystemFromBackup::lustre_configuration) / [`set_lustre_configuration(Option<CreateFileSystemLustreConfiguration>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_lustre_configuration): <p>The Lustre configuration for the file system being created.</p> <note>   <p>The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>   <ul>    <li> <p> <code>AutoImportPolicy</code> </p> </li>    <li> <p> <code>ExportPath</code> </p> </li>    <li> <p> <code>ImportedChunkSize</code> </p> </li>    <li> <p> <code>ImportPath</code> </p> </li>   </ul>  </note>
+    ///   - [`storage_type(StorageType)`](crate::client::fluent_builders::CreateFileSystemFromBackup::storage_type) / [`set_storage_type(Option<StorageType>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_storage_type): <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>  <ul>   <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p> </li>   <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p> </li>  </ul>  <p> The default value is <code>SSD</code>. </p> <note>   <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>  </note>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_kms_key_id): <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    ///   - [`file_system_type_version(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::file_system_type_version) / [`set_file_system_type_version(Option<String>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_file_system_type_version): <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>  <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+    ///   - [`open_zfs_configuration(CreateFileSystemOpenZfsConfiguration)`](crate::client::fluent_builders::CreateFileSystemFromBackup::open_zfs_configuration) / [`set_open_zfs_configuration(Option<CreateFileSystemOpenZfsConfiguration>)`](crate::client::fluent_builders::CreateFileSystemFromBackup::set_open_zfs_configuration): <p>The OpenZFS configuration for the file system that's being created. </p>
+    /// - On success, responds with [`CreateFileSystemFromBackupOutput`](crate::output::CreateFileSystemFromBackupOutput) with field(s):
+    ///   - [`file_system(Option<FileSystem>)`](crate::output::CreateFileSystemFromBackupOutput::file_system): <p>A description of the file system.</p>
+    /// - On failure, responds with [`SdkError<CreateFileSystemFromBackupError>`](crate::error::CreateFileSystemFromBackupError)
     pub fn create_file_system_from_backup(
         &self,
     ) -> fluent_builders::CreateFileSystemFromBackup<C, M, R> {
         fluent_builders::CreateFileSystemFromBackup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSnapshot` operation.
+    /// Constructs a fluent builder for the [`CreateSnapshot`](crate::client::fluent_builders::CreateSnapshot) operation.
     ///
-    /// See [`CreateSnapshot`](crate::client::fluent_builders::CreateSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateSnapshot::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateSnapshot::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSnapshot::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSnapshot::set_name): <p>The name of the snapshot. </p>
+    ///   - [`volume_id(impl Into<String>)`](crate::client::fluent_builders::CreateSnapshot::volume_id) / [`set_volume_id(Option<String>)`](crate::client::fluent_builders::CreateSnapshot::set_volume_id): <p>The ID of the volume that you are taking a snapshot of.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateSnapshot::set_tags): <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    /// - On success, responds with [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput) with field(s):
+    ///   - [`snapshot(Option<Snapshot>)`](crate::output::CreateSnapshotOutput::snapshot): <p>A description of the snapshot.</p>
+    /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::error::CreateSnapshotError)
     pub fn create_snapshot(&self) -> fluent_builders::CreateSnapshot<C, M, R> {
         fluent_builders::CreateSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateStorageVirtualMachine` operation.
+    /// Constructs a fluent builder for the [`CreateStorageVirtualMachine`](crate::client::fluent_builders::CreateStorageVirtualMachine) operation.
     ///
-    /// See [`CreateStorageVirtualMachine`](crate::client::fluent_builders::CreateStorageVirtualMachine) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`active_directory_configuration(CreateSvmActiveDirectoryConfiguration)`](crate::client::fluent_builders::CreateStorageVirtualMachine::active_directory_configuration) / [`set_active_directory_configuration(Option<CreateSvmActiveDirectoryConfiguration>)`](crate::client::fluent_builders::CreateStorageVirtualMachine::set_active_directory_configuration): <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateStorageVirtualMachine::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateStorageVirtualMachine::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::CreateStorageVirtualMachine::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::CreateStorageVirtualMachine::set_file_system_id): <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateStorageVirtualMachine::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateStorageVirtualMachine::set_name): <p>The name of the SVM.</p>
+    ///   - [`svm_admin_password(impl Into<String>)`](crate::client::fluent_builders::CreateStorageVirtualMachine::svm_admin_password) / [`set_svm_admin_password(Option<String>)`](crate::client::fluent_builders::CreateStorageVirtualMachine::set_svm_admin_password): <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API. If you do not specify a password, you can still use the file system's <code>fsxadmin</code> user to manage the SVM.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateStorageVirtualMachine::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateStorageVirtualMachine::set_tags): <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    ///   - [`root_volume_security_style(StorageVirtualMachineRootVolumeSecurityStyle)`](crate::client::fluent_builders::CreateStorageVirtualMachine::root_volume_security_style) / [`set_root_volume_security_style(Option<StorageVirtualMachineRootVolumeSecurityStyle>)`](crate::client::fluent_builders::CreateStorageVirtualMachine::set_root_volume_security_style): <p>The security style of the root volume of the SVM. Specify one of the following values:</p>  <ul>   <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p> </li>   <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>   <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>  </ul>
+    /// - On success, responds with [`CreateStorageVirtualMachineOutput`](crate::output::CreateStorageVirtualMachineOutput) with field(s):
+    ///   - [`storage_virtual_machine(Option<StorageVirtualMachine>)`](crate::output::CreateStorageVirtualMachineOutput::storage_virtual_machine): <p>Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes the SVM just created.</p>
+    /// - On failure, responds with [`SdkError<CreateStorageVirtualMachineError>`](crate::error::CreateStorageVirtualMachineError)
     pub fn create_storage_virtual_machine(
         &self,
     ) -> fluent_builders::CreateStorageVirtualMachine<C, M, R> {
         fluent_builders::CreateStorageVirtualMachine::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVolume` operation.
+    /// Constructs a fluent builder for the [`CreateVolume`](crate::client::fluent_builders::CreateVolume) operation.
     ///
-    /// See [`CreateVolume`](crate::client::fluent_builders::CreateVolume) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateVolume::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateVolume::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`volume_type(VolumeType)`](crate::client::fluent_builders::CreateVolume::volume_type) / [`set_volume_type(Option<VolumeType>)`](crate::client::fluent_builders::CreateVolume::set_volume_type): <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are the only valid volume types.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateVolume::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateVolume::set_name): <p>Specifies the name of the volume that you're creating.</p>
+    ///   - [`ontap_configuration(CreateOntapVolumeConfiguration)`](crate::client::fluent_builders::CreateVolume::ontap_configuration) / [`set_ontap_configuration(Option<CreateOntapVolumeConfiguration>)`](crate::client::fluent_builders::CreateVolume::set_ontap_configuration): <p>Specifies the configuration to use when creating the ONTAP volume.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateVolume::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateVolume::set_tags): <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    ///   - [`open_zfs_configuration(CreateOpenZfsVolumeConfiguration)`](crate::client::fluent_builders::CreateVolume::open_zfs_configuration) / [`set_open_zfs_configuration(Option<CreateOpenZfsVolumeConfiguration>)`](crate::client::fluent_builders::CreateVolume::set_open_zfs_configuration): <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
+    /// - On success, responds with [`CreateVolumeOutput`](crate::output::CreateVolumeOutput) with field(s):
+    ///   - [`volume(Option<Volume>)`](crate::output::CreateVolumeOutput::volume): <p>Returned after a successful <code>CreateVolume</code> API operation, describing the volume just created.</p>
+    /// - On failure, responds with [`SdkError<CreateVolumeError>`](crate::error::CreateVolumeError)
     pub fn create_volume(&self) -> fluent_builders::CreateVolume<C, M, R> {
         fluent_builders::CreateVolume::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVolumeFromBackup` operation.
+    /// Constructs a fluent builder for the [`CreateVolumeFromBackup`](crate::client::fluent_builders::CreateVolumeFromBackup) operation.
     ///
-    /// See [`CreateVolumeFromBackup`](crate::client::fluent_builders::CreateVolumeFromBackup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_id(impl Into<String>)`](crate::client::fluent_builders::CreateVolumeFromBackup::backup_id) / [`set_backup_id(Option<String>)`](crate::client::fluent_builders::CreateVolumeFromBackup::set_backup_id): <p>The ID of the source backup. Specifies the backup that you are copying.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateVolumeFromBackup::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateVolumeFromBackup::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateVolumeFromBackup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateVolumeFromBackup::set_name): <p>The name of the new volume you're creating.</p>
+    ///   - [`ontap_configuration(CreateOntapVolumeConfiguration)`](crate::client::fluent_builders::CreateVolumeFromBackup::ontap_configuration) / [`set_ontap_configuration(Option<CreateOntapVolumeConfiguration>)`](crate::client::fluent_builders::CreateVolumeFromBackup::set_ontap_configuration): <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateVolumeFromBackup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateVolumeFromBackup::set_tags): <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    /// - On success, responds with [`CreateVolumeFromBackupOutput`](crate::output::CreateVolumeFromBackupOutput) with field(s):
+    ///   - [`volume(Option<Volume>)`](crate::output::CreateVolumeFromBackupOutput::volume): <p>Returned after a successful <code>CreateVolumeFromBackup</code> API operation, describing the volume just created.</p>
+    /// - On failure, responds with [`SdkError<CreateVolumeFromBackupError>`](crate::error::CreateVolumeFromBackupError)
     pub fn create_volume_from_backup(&self) -> fluent_builders::CreateVolumeFromBackup<C, M, R> {
         fluent_builders::CreateVolumeFromBackup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBackup` operation.
+    /// Constructs a fluent builder for the [`DeleteBackup`](crate::client::fluent_builders::DeleteBackup) operation.
     ///
-    /// See [`DeleteBackup`](crate::client::fluent_builders::DeleteBackup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBackup::backup_id) / [`set_backup_id(Option<String>)`](crate::client::fluent_builders::DeleteBackup::set_backup_id): <p>The ID of the backup that you want to delete.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::DeleteBackup::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::DeleteBackup::set_client_request_token): <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This parameter is automatically filled on your behalf when using the CLI or SDK.</p>
+    /// - On success, responds with [`DeleteBackupOutput`](crate::output::DeleteBackupOutput) with field(s):
+    ///   - [`backup_id(Option<String>)`](crate::output::DeleteBackupOutput::backup_id): <p>The ID of the backup that was deleted.</p>
+    ///   - [`lifecycle(Option<BackupLifecycle>)`](crate::output::DeleteBackupOutput::lifecycle): <p>The lifecycle status of the backup. If the <code>DeleteBackup</code> operation is successful, the status is <code>DELETED</code>.</p>
+    /// - On failure, responds with [`SdkError<DeleteBackupError>`](crate::error::DeleteBackupError)
     pub fn delete_backup(&self) -> fluent_builders::DeleteBackup<C, M, R> {
         fluent_builders::DeleteBackup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDataRepositoryAssociation` operation.
+    /// Constructs a fluent builder for the [`DeleteDataRepositoryAssociation`](crate::client::fluent_builders::DeleteDataRepositoryAssociation) operation.
     ///
-    /// See [`DeleteDataRepositoryAssociation`](crate::client::fluent_builders::DeleteDataRepositoryAssociation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`association_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataRepositoryAssociation::association_id) / [`set_association_id(Option<String>)`](crate::client::fluent_builders::DeleteDataRepositoryAssociation::set_association_id): <p>The ID of the data repository association that you want to delete.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::DeleteDataRepositoryAssociation::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::DeleteDataRepositoryAssociation::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`delete_data_in_file_system(bool)`](crate::client::fluent_builders::DeleteDataRepositoryAssociation::delete_data_in_file_system) / [`set_delete_data_in_file_system(Option<bool>)`](crate::client::fluent_builders::DeleteDataRepositoryAssociation::set_delete_data_in_file_system): <p>Set to <code>true</code> to delete the data in the file system that corresponds to the data repository association.</p>
+    /// - On success, responds with [`DeleteDataRepositoryAssociationOutput`](crate::output::DeleteDataRepositoryAssociationOutput) with field(s):
+    ///   - [`association_id(Option<String>)`](crate::output::DeleteDataRepositoryAssociationOutput::association_id): <p>The ID of the data repository association being deleted.</p>
+    ///   - [`lifecycle(Option<DataRepositoryLifecycle>)`](crate::output::DeleteDataRepositoryAssociationOutput::lifecycle): <p>Describes the lifecycle state of the data repository association being deleted.</p>
+    ///   - [`delete_data_in_file_system(Option<bool>)`](crate::output::DeleteDataRepositoryAssociationOutput::delete_data_in_file_system): <p>Indicates whether data in the file system that corresponds to the data repository association is being deleted. Default is <code>false</code>.</p>
+    /// - On failure, responds with [`SdkError<DeleteDataRepositoryAssociationError>`](crate::error::DeleteDataRepositoryAssociationError)
     pub fn delete_data_repository_association(
         &self,
     ) -> fluent_builders::DeleteDataRepositoryAssociation<C, M, R> {
         fluent_builders::DeleteDataRepositoryAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFileSystem` operation.
+    /// Constructs a fluent builder for the [`DeleteFileSystem`](crate::client::fluent_builders::DeleteFileSystem) operation.
     ///
-    /// See [`DeleteFileSystem`](crate::client::fluent_builders::DeleteFileSystem) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFileSystem::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DeleteFileSystem::set_file_system_id): <p>The ID of the file system that you want to delete.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::DeleteFileSystem::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::DeleteFileSystem::set_client_request_token): <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This token is automatically filled on your behalf when using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`windows_configuration(DeleteFileSystemWindowsConfiguration)`](crate::client::fluent_builders::DeleteFileSystem::windows_configuration) / [`set_windows_configuration(Option<DeleteFileSystemWindowsConfiguration>)`](crate::client::fluent_builders::DeleteFileSystem::set_windows_configuration): <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
+    ///   - [`lustre_configuration(DeleteFileSystemLustreConfiguration)`](crate::client::fluent_builders::DeleteFileSystem::lustre_configuration) / [`set_lustre_configuration(Option<DeleteFileSystemLustreConfiguration>)`](crate::client::fluent_builders::DeleteFileSystem::set_lustre_configuration): <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
+    ///   - [`open_zfs_configuration(DeleteFileSystemOpenZfsConfiguration)`](crate::client::fluent_builders::DeleteFileSystem::open_zfs_configuration) / [`set_open_zfs_configuration(Option<DeleteFileSystemOpenZfsConfiguration>)`](crate::client::fluent_builders::DeleteFileSystem::set_open_zfs_configuration): <p>The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
+    /// - On success, responds with [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput) with field(s):
+    ///   - [`file_system_id(Option<String>)`](crate::output::DeleteFileSystemOutput::file_system_id): <p>The ID of the file system that's being deleted.</p>
+    ///   - [`lifecycle(Option<FileSystemLifecycle>)`](crate::output::DeleteFileSystemOutput::lifecycle): <p>The file system lifecycle for the deletion request. If the <code>DeleteFileSystem</code> operation is successful, this status is <code>DELETING</code>.</p>
+    ///   - [`windows_response(Option<DeleteFileSystemWindowsResponse>)`](crate::output::DeleteFileSystemOutput::windows_response): <p>The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
+    ///   - [`lustre_response(Option<DeleteFileSystemLustreResponse>)`](crate::output::DeleteFileSystemOutput::lustre_response): <p>The response object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
+    ///   - [`open_zfs_response(Option<DeleteFileSystemOpenZfsResponse>)`](crate::output::DeleteFileSystemOutput::open_zfs_response): <p>The response object for the OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
+    /// - On failure, responds with [`SdkError<DeleteFileSystemError>`](crate::error::DeleteFileSystemError)
     pub fn delete_file_system(&self) -> fluent_builders::DeleteFileSystem<C, M, R> {
         fluent_builders::DeleteFileSystem::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSnapshot` operation.
+    /// Constructs a fluent builder for the [`DeleteSnapshot`](crate::client::fluent_builders::DeleteSnapshot) operation.
     ///
-    /// See [`DeleteSnapshot`](crate::client::fluent_builders::DeleteSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::DeleteSnapshot::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::DeleteSnapshot::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSnapshot::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::DeleteSnapshot::set_snapshot_id): <p>The ID of the snapshot that you want to delete.</p>
+    /// - On success, responds with [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput) with field(s):
+    ///   - [`snapshot_id(Option<String>)`](crate::output::DeleteSnapshotOutput::snapshot_id): <p>The ID of the deleted snapshot.</p>
+    ///   - [`lifecycle(Option<SnapshotLifecycle>)`](crate::output::DeleteSnapshotOutput::lifecycle): <p>The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation is successful, this status is <code>DELETING</code>.</p>
+    /// - On failure, responds with [`SdkError<DeleteSnapshotError>`](crate::error::DeleteSnapshotError)
     pub fn delete_snapshot(&self) -> fluent_builders::DeleteSnapshot<C, M, R> {
         fluent_builders::DeleteSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteStorageVirtualMachine` operation.
+    /// Constructs a fluent builder for the [`DeleteStorageVirtualMachine`](crate::client::fluent_builders::DeleteStorageVirtualMachine) operation.
     ///
-    /// See [`DeleteStorageVirtualMachine`](crate::client::fluent_builders::DeleteStorageVirtualMachine) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStorageVirtualMachine::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::DeleteStorageVirtualMachine::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`storage_virtual_machine_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStorageVirtualMachine::storage_virtual_machine_id) / [`set_storage_virtual_machine_id(Option<String>)`](crate::client::fluent_builders::DeleteStorageVirtualMachine::set_storage_virtual_machine_id): <p>The ID of the SVM that you want to delete.</p>
+    /// - On success, responds with [`DeleteStorageVirtualMachineOutput`](crate::output::DeleteStorageVirtualMachineOutput) with field(s):
+    ///   - [`storage_virtual_machine_id(Option<String>)`](crate::output::DeleteStorageVirtualMachineOutput::storage_virtual_machine_id): <p>The ID of the SVM Amazon FSx is deleting.</p>
+    ///   - [`lifecycle(Option<StorageVirtualMachineLifecycle>)`](crate::output::DeleteStorageVirtualMachineOutput::lifecycle): <p>Describes the lifecycle state of the SVM being deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteStorageVirtualMachineError>`](crate::error::DeleteStorageVirtualMachineError)
     pub fn delete_storage_virtual_machine(
         &self,
     ) -> fluent_builders::DeleteStorageVirtualMachine<C, M, R> {
         fluent_builders::DeleteStorageVirtualMachine::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVolume` operation.
+    /// Constructs a fluent builder for the [`DeleteVolume`](crate::client::fluent_builders::DeleteVolume) operation.
     ///
-    /// See [`DeleteVolume`](crate::client::fluent_builders::DeleteVolume) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::DeleteVolume::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::DeleteVolume::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`volume_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVolume::volume_id) / [`set_volume_id(Option<String>)`](crate::client::fluent_builders::DeleteVolume::set_volume_id): <p>The ID of the volume that you are deleting.</p>
+    ///   - [`ontap_configuration(DeleteVolumeOntapConfiguration)`](crate::client::fluent_builders::DeleteVolume::ontap_configuration) / [`set_ontap_configuration(Option<DeleteVolumeOntapConfiguration>)`](crate::client::fluent_builders::DeleteVolume::set_ontap_configuration): <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code> permission.</p>
+    ///   - [`open_zfs_configuration(DeleteVolumeOpenZfsConfiguration)`](crate::client::fluent_builders::DeleteVolume::open_zfs_configuration) / [`set_open_zfs_configuration(Option<DeleteVolumeOpenZfsConfiguration>)`](crate::client::fluent_builders::DeleteVolume::set_open_zfs_configuration): <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and snapshots.</p>
+    /// - On success, responds with [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput) with field(s):
+    ///   - [`volume_id(Option<String>)`](crate::output::DeleteVolumeOutput::volume_id): <p>The ID of the volume that's being deleted.</p>
+    ///   - [`lifecycle(Option<VolumeLifecycle>)`](crate::output::DeleteVolumeOutput::lifecycle): <p>The lifecycle state of the volume being deleted. If the <code>DeleteVolume</code> operation is successful, this value is <code>DELETING</code>.</p>
+    ///   - [`ontap_response(Option<DeleteVolumeOntapResponse>)`](crate::output::DeleteVolumeOutput::ontap_response): <p>Returned after a <code>DeleteVolume</code> request, showing the status of the delete request.</p>
+    /// - On failure, responds with [`SdkError<DeleteVolumeError>`](crate::error::DeleteVolumeError)
     pub fn delete_volume(&self) -> fluent_builders::DeleteVolume<C, M, R> {
         fluent_builders::DeleteVolume::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeBackups` operation.
+    /// Constructs a fluent builder for the [`DescribeBackups`](crate::client::fluent_builders::DescribeBackups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeBackups::into_paginator).
     ///
-    /// See [`DescribeBackups`](crate::client::fluent_builders::DescribeBackups) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBackups::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`backup_ids(Vec<String>)`](crate::client::fluent_builders::DescribeBackups::backup_ids) / [`set_backup_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeBackups::set_backup_ids): <p>The IDs of the backups that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code> error occurs.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeBackups::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeBackups::set_filters): <p>The filters structure. The supported names are <code>file-system-id</code>, <code>backup-type</code>, <code>file-system-type</code>, and <code>volume-id</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeBackups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeBackups::set_max_results): <p>Maximum number of backups to return in the response. This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeBackups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeBackups::set_next_token): <p>An opaque pagination token returned from a previous <code>DescribeBackups</code> operation. If a token is present, the operation continues the list from where the returning call left off.</p>
+    /// - On success, responds with [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput) with field(s):
+    ///   - [`backups(Option<Vec<Backup>>)`](crate::output::DescribeBackupsOutput::backups): <p>An array of backups.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeBackupsOutput::next_token): <p>A <code>NextToken</code> value is present if there are more backups than returned in the response. You can use the <code>NextToken</code> value in the subsequent request to fetch the backups. </p>
+    /// - On failure, responds with [`SdkError<DescribeBackupsError>`](crate::error::DescribeBackupsError)
     pub fn describe_backups(&self) -> fluent_builders::DescribeBackups<C, M, R> {
         fluent_builders::DescribeBackups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDataRepositoryAssociations` operation.
+    /// Constructs a fluent builder for the [`DescribeDataRepositoryAssociations`](crate::client::fluent_builders::DescribeDataRepositoryAssociations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::into_paginator).
     ///
-    /// See [`DescribeDataRepositoryAssociations`](crate::client::fluent_builders::DescribeDataRepositoryAssociations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`association_ids(Vec<String>)`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::association_ids) / [`set_association_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::set_association_ids): <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::set_filters): <p>A list of <code>Filter</code> elements.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::set_max_results): <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::set_next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    /// - On success, responds with [`DescribeDataRepositoryAssociationsOutput`](crate::output::DescribeDataRepositoryAssociationsOutput) with field(s):
+    ///   - [`associations(Option<Vec<DataRepositoryAssociation>>)`](crate::output::DescribeDataRepositoryAssociationsOutput::associations): <p>An array of one ore more data repository association descriptions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeDataRepositoryAssociationsOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    /// - On failure, responds with [`SdkError<DescribeDataRepositoryAssociationsError>`](crate::error::DescribeDataRepositoryAssociationsError)
     pub fn describe_data_repository_associations(
         &self,
     ) -> fluent_builders::DescribeDataRepositoryAssociations<C, M, R> {
         fluent_builders::DescribeDataRepositoryAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDataRepositoryTasks` operation.
+    /// Constructs a fluent builder for the [`DescribeDataRepositoryTasks`](crate::client::fluent_builders::DescribeDataRepositoryTasks) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeDataRepositoryTasks::into_paginator).
     ///
-    /// See [`DescribeDataRepositoryTasks`](crate::client::fluent_builders::DescribeDataRepositoryTasks) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDataRepositoryTasks::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`task_ids(Vec<String>)`](crate::client::fluent_builders::DescribeDataRepositoryTasks::task_ids) / [`set_task_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeDataRepositoryTasks::set_task_ids): <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
+    ///   - [`filters(Vec<DataRepositoryTaskFilter>)`](crate::client::fluent_builders::DescribeDataRepositoryTasks::filters) / [`set_filters(Option<Vec<DataRepositoryTaskFilter>>)`](crate::client::fluent_builders::DescribeDataRepositoryTasks::set_filters): <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeDataRepositoryTasks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeDataRepositoryTasks::set_max_results): <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeDataRepositoryTasks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeDataRepositoryTasks::set_next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    /// - On success, responds with [`DescribeDataRepositoryTasksOutput`](crate::output::DescribeDataRepositoryTasksOutput) with field(s):
+    ///   - [`data_repository_tasks(Option<Vec<DataRepositoryTask>>)`](crate::output::DescribeDataRepositoryTasksOutput::data_repository_tasks): <p>The collection of data repository task descriptions returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeDataRepositoryTasksOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    /// - On failure, responds with [`SdkError<DescribeDataRepositoryTasksError>`](crate::error::DescribeDataRepositoryTasksError)
     pub fn describe_data_repository_tasks(
         &self,
     ) -> fluent_builders::DescribeDataRepositoryTasks<C, M, R> {
         fluent_builders::DescribeDataRepositoryTasks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFileSystemAliases` operation.
+    /// Constructs a fluent builder for the [`DescribeFileSystemAliases`](crate::client::fluent_builders::DescribeFileSystemAliases) operation.
     ///
-    /// See [`DescribeFileSystemAliases`](crate::client::fluent_builders::DescribeFileSystemAliases) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFileSystemAliases::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::DescribeFileSystemAliases::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFileSystemAliases::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DescribeFileSystemAliases::set_file_system_id): <p>The ID of the file system to return the associated DNS aliases for (String).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeFileSystemAliases::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeFileSystemAliases::set_max_results): <p>Maximum number of DNS aliases to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFileSystemAliases::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFileSystemAliases::set_next_token): <p>Opaque pagination token returned from a previous <code>DescribeFileSystemAliases</code> operation (String). If a token is included in the request, the action continues the list from where the previous returning call left off.</p>
+    /// - On success, responds with [`DescribeFileSystemAliasesOutput`](crate::output::DescribeFileSystemAliasesOutput) with field(s):
+    ///   - [`aliases(Option<Vec<Alias>>)`](crate::output::DescribeFileSystemAliasesOutput::aliases): <p>An array of one or more DNS aliases currently associated with the specified file system.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeFileSystemAliasesOutput::next_token): <p>Present if there are more DNS aliases than returned in the response (String). You can use the <code>NextToken</code> value in a later request to fetch additional descriptions. </p>
+    /// - On failure, responds with [`SdkError<DescribeFileSystemAliasesError>`](crate::error::DescribeFileSystemAliasesError)
     pub fn describe_file_system_aliases(
         &self,
     ) -> fluent_builders::DescribeFileSystemAliases<C, M, R> {
         fluent_builders::DescribeFileSystemAliases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFileSystems` operation.
+    /// Constructs a fluent builder for the [`DescribeFileSystems`](crate::client::fluent_builders::DescribeFileSystems) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFileSystems::into_paginator).
     ///
-    /// See [`DescribeFileSystems`](crate::client::fluent_builders::DescribeFileSystems) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFileSystems::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_ids(Vec<String>)`](crate::client::fluent_builders::DescribeFileSystems::file_system_ids) / [`set_file_system_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeFileSystems::set_file_system_ids): <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeFileSystems::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeFileSystems::set_max_results): <p>Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFileSystems::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFileSystems::set_next_token): <p>Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token present, the operation continues the list from where the returning call left off.</p>
+    /// - On success, responds with [`DescribeFileSystemsOutput`](crate::output::DescribeFileSystemsOutput) with field(s):
+    ///   - [`file_systems(Option<Vec<FileSystem>>)`](crate::output::DescribeFileSystemsOutput::file_systems): <p>An array of file system descriptions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeFileSystemsOutput::next_token): <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the descriptions. </p>
+    /// - On failure, responds with [`SdkError<DescribeFileSystemsError>`](crate::error::DescribeFileSystemsError)
     pub fn describe_file_systems(&self) -> fluent_builders::DescribeFileSystems<C, M, R> {
         fluent_builders::DescribeFileSystems::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSnapshots` operation.
+    /// Constructs a fluent builder for the [`DescribeSnapshots`](crate::client::fluent_builders::DescribeSnapshots) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeSnapshots::into_paginator).
     ///
-    /// See [`DescribeSnapshots`](crate::client::fluent_builders::DescribeSnapshots) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSnapshots::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`snapshot_ids(Vec<String>)`](crate::client::fluent_builders::DescribeSnapshots::snapshot_ids) / [`set_snapshot_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSnapshots::set_snapshot_ids): <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
+    ///   - [`filters(Vec<SnapshotFilter>)`](crate::client::fluent_builders::DescribeSnapshots::filters) / [`set_filters(Option<Vec<SnapshotFilter>>)`](crate::client::fluent_builders::DescribeSnapshots::set_filters): <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeSnapshots::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeSnapshots::set_max_results): <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSnapshots::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSnapshots::set_next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    /// - On success, responds with [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput) with field(s):
+    ///   - [`snapshots(Option<Vec<Snapshot>>)`](crate::output::DescribeSnapshotsOutput::snapshots): <p>An array of snapshots.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeSnapshotsOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    /// - On failure, responds with [`SdkError<DescribeSnapshotsError>`](crate::error::DescribeSnapshotsError)
     pub fn describe_snapshots(&self) -> fluent_builders::DescribeSnapshots<C, M, R> {
         fluent_builders::DescribeSnapshots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeStorageVirtualMachines` operation.
+    /// Constructs a fluent builder for the [`DescribeStorageVirtualMachines`](crate::client::fluent_builders::DescribeStorageVirtualMachines) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeStorageVirtualMachines::into_paginator).
     ///
-    /// See [`DescribeStorageVirtualMachines`](crate::client::fluent_builders::DescribeStorageVirtualMachines) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeStorageVirtualMachines::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`storage_virtual_machine_ids(Vec<String>)`](crate::client::fluent_builders::DescribeStorageVirtualMachines::storage_virtual_machine_ids) / [`set_storage_virtual_machine_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeStorageVirtualMachines::set_storage_virtual_machine_ids): <p>Enter the ID of one or more SVMs that you want to view.</p>
+    ///   - [`filters(Vec<StorageVirtualMachineFilter>)`](crate::client::fluent_builders::DescribeStorageVirtualMachines::filters) / [`set_filters(Option<Vec<StorageVirtualMachineFilter>>)`](crate::client::fluent_builders::DescribeStorageVirtualMachines::set_filters): <p>Enter a filter name:value pair to view a select set of SVMs.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeStorageVirtualMachines::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeStorageVirtualMachines::set_max_results): <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeStorageVirtualMachines::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeStorageVirtualMachines::set_next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    /// - On success, responds with [`DescribeStorageVirtualMachinesOutput`](crate::output::DescribeStorageVirtualMachinesOutput) with field(s):
+    ///   - [`storage_virtual_machines(Option<Vec<StorageVirtualMachine>>)`](crate::output::DescribeStorageVirtualMachinesOutput::storage_virtual_machines): <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeStorageVirtualMachinesOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    /// - On failure, responds with [`SdkError<DescribeStorageVirtualMachinesError>`](crate::error::DescribeStorageVirtualMachinesError)
     pub fn describe_storage_virtual_machines(
         &self,
     ) -> fluent_builders::DescribeStorageVirtualMachines<C, M, R> {
         fluent_builders::DescribeStorageVirtualMachines::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeVolumes` operation.
+    /// Constructs a fluent builder for the [`DescribeVolumes`](crate::client::fluent_builders::DescribeVolumes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeVolumes::into_paginator).
     ///
-    /// See [`DescribeVolumes`](crate::client::fluent_builders::DescribeVolumes) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeVolumes::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`volume_ids(Vec<String>)`](crate::client::fluent_builders::DescribeVolumes::volume_ids) / [`set_volume_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeVolumes::set_volume_ids): <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
+    ///   - [`filters(Vec<VolumeFilter>)`](crate::client::fluent_builders::DescribeVolumes::filters) / [`set_filters(Option<Vec<VolumeFilter>>)`](crate::client::fluent_builders::DescribeVolumes::set_filters): <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeVolumes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeVolumes::set_max_results): <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeVolumes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeVolumes::set_next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    /// - On success, responds with [`DescribeVolumesOutput`](crate::output::DescribeVolumesOutput) with field(s):
+    ///   - [`volumes(Option<Vec<Volume>>)`](crate::output::DescribeVolumesOutput::volumes): <p>Returned after a successful <code>DescribeVolumes</code> operation, describing each volume.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeVolumesOutput::next_token): <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    /// - On failure, responds with [`SdkError<DescribeVolumesError>`](crate::error::DescribeVolumesError)
     pub fn describe_volumes(&self) -> fluent_builders::DescribeVolumes<C, M, R> {
         fluent_builders::DescribeVolumes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateFileSystemAliases` operation.
+    /// Constructs a fluent builder for the [`DisassociateFileSystemAliases`](crate::client::fluent_builders::DisassociateFileSystemAliases) operation.
     ///
-    /// See [`DisassociateFileSystemAliases`](crate::client::fluent_builders::DisassociateFileSystemAliases) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::DisassociateFileSystemAliases::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::DisassociateFileSystemAliases::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateFileSystemAliases::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DisassociateFileSystemAliases::set_file_system_id): <p>Specifies the file system from which to disassociate the DNS aliases.</p>
+    ///   - [`aliases(Vec<String>)`](crate::client::fluent_builders::DisassociateFileSystemAliases::aliases) / [`set_aliases(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociateFileSystemAliases::set_aliases): <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
+    /// - On success, responds with [`DisassociateFileSystemAliasesOutput`](crate::output::DisassociateFileSystemAliasesOutput) with field(s):
+    ///   - [`aliases(Option<Vec<Alias>>)`](crate::output::DisassociateFileSystemAliasesOutput::aliases): <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
+    /// - On failure, responds with [`SdkError<DisassociateFileSystemAliasesError>`](crate::error::DisassociateFileSystemAliasesError)
     pub fn disassociate_file_system_aliases(
         &self,
     ) -> fluent_builders::DisassociateFileSystemAliases<C, M, R> {
         fluent_builders::DisassociateFileSystemAliases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the Amazon FSx resource that will have its tags listed.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTagsForResource::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTagsForResource::set_max_results): <p>Maximum number of tags to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If a token present, the action continues the list from where the returning call left off.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tags on the resource.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>This is present if there are more tags than returned in the response (String). You can use the <code>NextToken</code> value in the later request to fetch the tags. </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ReleaseFileSystemNfsV3Locks` operation.
+    /// Constructs a fluent builder for the [`ReleaseFileSystemNfsV3Locks`](crate::client::fluent_builders::ReleaseFileSystemNfsV3Locks) operation.
     ///
-    /// See [`ReleaseFileSystemNfsV3Locks`](crate::client::fluent_builders::ReleaseFileSystemNfsV3Locks) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::ReleaseFileSystemNfsV3Locks::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::ReleaseFileSystemNfsV3Locks::set_file_system_id): <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::ReleaseFileSystemNfsV3Locks::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::ReleaseFileSystemNfsV3Locks::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    /// - On success, responds with [`ReleaseFileSystemNfsV3LocksOutput`](crate::output::ReleaseFileSystemNfsV3LocksOutput) with field(s):
+    ///   - [`file_system(Option<FileSystem>)`](crate::output::ReleaseFileSystemNfsV3LocksOutput::file_system): <p>A description of a specific Amazon FSx file system.</p>
+    /// - On failure, responds with [`SdkError<ReleaseFileSystemNfsV3LocksError>`](crate::error::ReleaseFileSystemNfsV3LocksError)
     pub fn release_file_system_nfs_v3_locks(
         &self,
     ) -> fluent_builders::ReleaseFileSystemNfsV3Locks<C, M, R> {
         fluent_builders::ReleaseFileSystemNfsV3Locks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestoreVolumeFromSnapshot` operation.
+    /// Constructs a fluent builder for the [`RestoreVolumeFromSnapshot`](crate::client::fluent_builders::RestoreVolumeFromSnapshot) operation.
     ///
-    /// See [`RestoreVolumeFromSnapshot`](crate::client::fluent_builders::RestoreVolumeFromSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::RestoreVolumeFromSnapshot::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::RestoreVolumeFromSnapshot::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`volume_id(impl Into<String>)`](crate::client::fluent_builders::RestoreVolumeFromSnapshot::volume_id) / [`set_volume_id(Option<String>)`](crate::client::fluent_builders::RestoreVolumeFromSnapshot::set_volume_id): <p>The ID of the volume that you are restoring.</p>
+    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::RestoreVolumeFromSnapshot::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::RestoreVolumeFromSnapshot::set_snapshot_id): <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
+    ///   - [`options(Vec<RestoreOpenZfsVolumeOption>)`](crate::client::fluent_builders::RestoreVolumeFromSnapshot::options) / [`set_options(Option<Vec<RestoreOpenZfsVolumeOption>>)`](crate::client::fluent_builders::RestoreVolumeFromSnapshot::set_options): <p>The settings used when restoring the specified volume from snapshot. </p>  <ul>   <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>   <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any volumes cloned from this volume. If there are any cloned volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>  </ul>
+    /// - On success, responds with [`RestoreVolumeFromSnapshotOutput`](crate::output::RestoreVolumeFromSnapshotOutput) with field(s):
+    ///   - [`volume_id(Option<String>)`](crate::output::RestoreVolumeFromSnapshotOutput::volume_id): <p>The ID of the volume that you restored.</p>
+    ///   - [`lifecycle(Option<VolumeLifecycle>)`](crate::output::RestoreVolumeFromSnapshotOutput::lifecycle): <p>The lifecycle state of the volume being restored.</p>
+    /// - On failure, responds with [`SdkError<RestoreVolumeFromSnapshotError>`](crate::error::RestoreVolumeFromSnapshotError)
     pub fn restore_volume_from_snapshot(
         &self,
     ) -> fluent_builders::RestoreVolumeFromSnapshot<C, M, R> {
         fluent_builders::RestoreVolumeFromSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to tag.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tags for the resource. If a tag with a given key already exists, the value is replaced by the one specified in this parameter.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the Amazon FSx resource to untag.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of keys of tags on the resource to untag. In case the tag key doesn't exist, the call will still succeed to be idempotent.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDataRepositoryAssociation` operation.
+    /// Constructs a fluent builder for the [`UpdateDataRepositoryAssociation`](crate::client::fluent_builders::UpdateDataRepositoryAssociation) operation.
     ///
-    /// See [`UpdateDataRepositoryAssociation`](crate::client::fluent_builders::UpdateDataRepositoryAssociation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`association_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataRepositoryAssociation::association_id) / [`set_association_id(Option<String>)`](crate::client::fluent_builders::UpdateDataRepositoryAssociation::set_association_id): <p>The ID of the data repository association that you are updating.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpdateDataRepositoryAssociation::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpdateDataRepositoryAssociation::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`imported_file_chunk_size(i32)`](crate::client::fluent_builders::UpdateDataRepositoryAssociation::imported_file_chunk_size) / [`set_imported_file_chunk_size(Option<i32>)`](crate::client::fluent_builders::UpdateDataRepositoryAssociation::set_imported_file_chunk_size): <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>  <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
+    ///   - [`s3(S3DataRepositoryConfiguration)`](crate::client::fluent_builders::UpdateDataRepositoryAssociation::s3) / [`set_s3(Option<S3DataRepositoryConfiguration>)`](crate::client::fluent_builders::UpdateDataRepositoryAssociation::set_s3): <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
+    /// - On success, responds with [`UpdateDataRepositoryAssociationOutput`](crate::output::UpdateDataRepositoryAssociationOutput) with field(s):
+    ///   - [`association(Option<DataRepositoryAssociation>)`](crate::output::UpdateDataRepositoryAssociationOutput::association): <p>The response object returned after the data repository association is updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateDataRepositoryAssociationError>`](crate::error::UpdateDataRepositoryAssociationError)
     pub fn update_data_repository_association(
         &self,
     ) -> fluent_builders::UpdateDataRepositoryAssociation<C, M, R> {
         fluent_builders::UpdateDataRepositoryAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFileSystem` operation.
+    /// Constructs a fluent builder for the [`UpdateFileSystem`](crate::client::fluent_builders::UpdateFileSystem) operation.
     ///
-    /// See [`UpdateFileSystem`](crate::client::fluent_builders::UpdateFileSystem) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFileSystem::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::UpdateFileSystem::set_file_system_id): <p>The ID of the file system that you are updating.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpdateFileSystem::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpdateFileSystem::set_client_request_token): <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`storage_capacity(i32)`](crate::client::fluent_builders::UpdateFileSystem::storage_capacity) / [`set_storage_capacity(Option<i32>)`](crate::client::fluent_builders::UpdateFileSystem::set_storage_capacity): <p>Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server or Amazon FSx for Lustre file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating. </p> <note>   <p>You can't make a storage capacity increase request if there is an existing storage capacity increase request in progress.</p>  </note>  <p>For Windows file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. To increase storage capacity, the file system must have at least 16 MBps of throughput capacity.</p>  <p>For Lustre file systems, the storage capacity target value can be the following:</p>  <ul>   <li> <p>For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p> </li>   <li> <p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput per TiB file systems. The values must be greater than the current storage capacity.</p> </li>   <li> <p>For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.</p> </li>  </ul>  <p>For OpenZFS file systems, the input/output operations per second (IOPS) automatically scale with increases to the storage capacity if IOPS is configured for automatic scaling. If the storage capacity increase would result in less than 3 IOPS per GiB of storage, this operation returns an error. </p>  <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    ///   - [`windows_configuration(UpdateFileSystemWindowsConfiguration)`](crate::client::fluent_builders::UpdateFileSystem::windows_configuration) / [`set_windows_configuration(Option<UpdateFileSystemWindowsConfiguration>)`](crate::client::fluent_builders::UpdateFileSystem::set_windows_configuration): <p>The configuration updates for an Amazon FSx for Windows File Server file system.</p>
+    ///   - [`lustre_configuration(UpdateFileSystemLustreConfiguration)`](crate::client::fluent_builders::UpdateFileSystem::lustre_configuration) / [`set_lustre_configuration(Option<UpdateFileSystemLustreConfiguration>)`](crate::client::fluent_builders::UpdateFileSystem::set_lustre_configuration): <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
+    ///   - [`ontap_configuration(UpdateFileSystemOntapConfiguration)`](crate::client::fluent_builders::UpdateFileSystem::ontap_configuration) / [`set_ontap_configuration(Option<UpdateFileSystemOntapConfiguration>)`](crate::client::fluent_builders::UpdateFileSystem::set_ontap_configuration): <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
+    ///   - [`open_zfs_configuration(UpdateFileSystemOpenZfsConfiguration)`](crate::client::fluent_builders::UpdateFileSystem::open_zfs_configuration) / [`set_open_zfs_configuration(Option<UpdateFileSystemOpenZfsConfiguration>)`](crate::client::fluent_builders::UpdateFileSystem::set_open_zfs_configuration): <p>The configuration updates for an Amazon FSx for OpenZFS file system.</p>
+    /// - On success, responds with [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput) with field(s):
+    ///   - [`file_system(Option<FileSystem>)`](crate::output::UpdateFileSystemOutput::file_system): <p>A description of the file system that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateFileSystemError>`](crate::error::UpdateFileSystemError)
     pub fn update_file_system(&self) -> fluent_builders::UpdateFileSystem<C, M, R> {
         fluent_builders::UpdateFileSystem::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSnapshot` operation.
+    /// Constructs a fluent builder for the [`UpdateSnapshot`](crate::client::fluent_builders::UpdateSnapshot) operation.
     ///
-    /// See [`UpdateSnapshot`](crate::client::fluent_builders::UpdateSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpdateSnapshot::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpdateSnapshot::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateSnapshot::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateSnapshot::set_name): <p>The name of the snapshot to update. </p>
+    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSnapshot::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::UpdateSnapshot::set_snapshot_id): <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
+    /// - On success, responds with [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput) with field(s):
+    ///   - [`snapshot(Option<Snapshot>)`](crate::output::UpdateSnapshotOutput::snapshot): <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing the snapshot that you updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateSnapshotError>`](crate::error::UpdateSnapshotError)
     pub fn update_snapshot(&self) -> fluent_builders::UpdateSnapshot<C, M, R> {
         fluent_builders::UpdateSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateStorageVirtualMachine` operation.
+    /// Constructs a fluent builder for the [`UpdateStorageVirtualMachine`](crate::client::fluent_builders::UpdateStorageVirtualMachine) operation.
     ///
-    /// See [`UpdateStorageVirtualMachine`](crate::client::fluent_builders::UpdateStorageVirtualMachine) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`active_directory_configuration(UpdateSvmActiveDirectoryConfiguration)`](crate::client::fluent_builders::UpdateStorageVirtualMachine::active_directory_configuration) / [`set_active_directory_configuration(Option<UpdateSvmActiveDirectoryConfiguration>)`](crate::client::fluent_builders::UpdateStorageVirtualMachine::set_active_directory_configuration): <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpdateStorageVirtualMachine::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpdateStorageVirtualMachine::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`storage_virtual_machine_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStorageVirtualMachine::storage_virtual_machine_id) / [`set_storage_virtual_machine_id(Option<String>)`](crate::client::fluent_builders::UpdateStorageVirtualMachine::set_storage_virtual_machine_id): <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
+    ///   - [`svm_admin_password(impl Into<String>)`](crate::client::fluent_builders::UpdateStorageVirtualMachine::svm_admin_password) / [`set_svm_admin_password(Option<String>)`](crate::client::fluent_builders::UpdateStorageVirtualMachine::set_svm_admin_password): <p>Enter a new SvmAdminPassword if you are updating it.</p>
+    /// - On success, responds with [`UpdateStorageVirtualMachineOutput`](crate::output::UpdateStorageVirtualMachineOutput) with field(s):
+    ///   - [`storage_virtual_machine(Option<StorageVirtualMachine>)`](crate::output::UpdateStorageVirtualMachineOutput::storage_virtual_machine): <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuraton.</p>
+    /// - On failure, responds with [`SdkError<UpdateStorageVirtualMachineError>`](crate::error::UpdateStorageVirtualMachineError)
     pub fn update_storage_virtual_machine(
         &self,
     ) -> fluent_builders::UpdateStorageVirtualMachine<C, M, R> {
         fluent_builders::UpdateStorageVirtualMachine::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateVolume` operation.
+    /// Constructs a fluent builder for the [`UpdateVolume`](crate::client::fluent_builders::UpdateVolume) operation.
     ///
-    /// See [`UpdateVolume`](crate::client::fluent_builders::UpdateVolume) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpdateVolume::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpdateVolume::set_client_request_token): <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    ///   - [`volume_id(impl Into<String>)`](crate::client::fluent_builders::UpdateVolume::volume_id) / [`set_volume_id(Option<String>)`](crate::client::fluent_builders::UpdateVolume::set_volume_id): <p>The ID of the volume that you want to update, in the format <code>fsvol-0123456789abcdef0</code>.</p>
+    ///   - [`ontap_configuration(UpdateOntapVolumeConfiguration)`](crate::client::fluent_builders::UpdateVolume::ontap_configuration) / [`set_ontap_configuration(Option<UpdateOntapVolumeConfiguration>)`](crate::client::fluent_builders::UpdateVolume::set_ontap_configuration): <p>The configuration of the ONTAP volume that you are updating.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateVolume::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateVolume::set_name): <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
+    ///   - [`open_zfs_configuration(UpdateOpenZfsVolumeConfiguration)`](crate::client::fluent_builders::UpdateVolume::open_zfs_configuration) / [`set_open_zfs_configuration(Option<UpdateOpenZfsVolumeConfiguration>)`](crate::client::fluent_builders::UpdateVolume::set_open_zfs_configuration): <p>The configuration of the OpenZFS volume that you are updating.</p>
+    /// - On success, responds with [`UpdateVolumeOutput`](crate::output::UpdateVolumeOutput) with field(s):
+    ///   - [`volume(Option<Volume>)`](crate::output::UpdateVolumeOutput::volume): <p>A description of the volume just updated. Returned after a successful <code>UpdateVolume</code> API operation.</p>
+    /// - On failure, responds with [`SdkError<UpdateVolumeError>`](crate::error::UpdateVolumeError)
     pub fn update_volume(&self) -> fluent_builders::UpdateVolume<C, M, R> {
         fluent_builders::UpdateVolume::new(self.handle.clone())
     }

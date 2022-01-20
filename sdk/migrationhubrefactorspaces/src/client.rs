@@ -83,169 +83,415 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateApplication` operation.
+    /// Constructs a fluent builder for the [`CreateApplication`](crate::client::fluent_builders::CreateApplication) operation.
     ///
-    /// See [`CreateApplication`](crate::client::fluent_builders::CreateApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_name): <p>The name to use for the application. </p>
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_environment_identifier): <p>The unique identifier of the environment.</p>
+    ///   - [`vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::vpc_id) / [`set_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_vpc_id): <p>The ID of the virtual private cloud (VPC).</p>
+    ///   - [`proxy_type(ProxyType)`](crate::client::fluent_builders::CreateApplication::proxy_type) / [`set_proxy_type(Option<ProxyType>)`](crate::client::fluent_builders::CreateApplication::set_proxy_type): <p>The proxy type of the proxy created within the application. </p>
+    ///   - [`api_gateway_proxy(ApiGatewayProxyInput)`](crate::client::fluent_builders::CreateApplication::api_gateway_proxy) / [`set_api_gateway_proxy(Option<ApiGatewayProxyInput>)`](crate::client::fluent_builders::CreateApplication::set_api_gateway_proxy): <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateApplication::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateApplication::set_tags): <p>The tags to assign to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateApplicationOutput::name): <p>The name of the application.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`owner_account_id(Option<String>)`](crate::output::CreateApplicationOutput::owner_account_id): <p>The Amazon Web Services account ID of the application owner.</p>
+    ///   - [`created_by_account_id(Option<String>)`](crate::output::CreateApplicationOutput::created_by_account_id): <p>The Amazon Web Services account ID of application creator.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::CreateApplicationOutput::application_id): <p>The unique identifier of the application.</p>
+    ///   - [`environment_id(Option<String>)`](crate::output::CreateApplicationOutput::environment_id): <p>The ID of the environment in which the application is created.</p>
+    ///   - [`vpc_id(Option<String>)`](crate::output::CreateApplicationOutput::vpc_id): <p>The ID of the Amazon VPC. </p>
+    ///   - [`proxy_type(Option<ProxyType>)`](crate::output::CreateApplicationOutput::proxy_type): <p>The proxy type of the proxy created within the application. </p>
+    ///   - [`api_gateway_proxy(Option<ApiGatewayProxyInput>)`](crate::output::CreateApplicationOutput::api_gateway_proxy): <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
+    ///   - [`state(Option<ApplicationState>)`](crate::output::CreateApplicationOutput::state): <p>The current state of the application. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateApplicationOutput::tags): <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::CreateApplicationOutput::last_updated_time): <p>A timestamp that indicates when the application was last updated. </p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::CreateApplicationOutput::created_time): <p>A timestamp that indicates when the application is created.</p>
+    /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::error::CreateApplicationError)
     pub fn create_application(&self) -> fluent_builders::CreateApplication<C, M, R> {
         fluent_builders::CreateApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEnvironment` operation.
+    /// Constructs a fluent builder for the [`CreateEnvironment`](crate::client::fluent_builders::CreateEnvironment) operation.
     ///
-    /// See [`CreateEnvironment`](crate::client::fluent_builders::CreateEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_name): <p>The name of the environment.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_description): <p>The description of the environment.</p>
+    ///   - [`network_fabric_type(NetworkFabricType)`](crate::client::fluent_builders::CreateEnvironment::network_fabric_type) / [`set_network_fabric_type(Option<NetworkFabricType>)`](crate::client::fluent_builders::CreateEnvironment::set_network_fabric_type): <p>The network fabric type of the environment.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateEnvironment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateEnvironment::set_tags): <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateEnvironmentOutput::name): <p>The name of the environment.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateEnvironmentOutput::arn): <p>The Amazon Resource Name (ARN) of the environment.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateEnvironmentOutput::description): <p>A description of the environment.</p>
+    ///   - [`environment_id(Option<String>)`](crate::output::CreateEnvironmentOutput::environment_id): <p>The unique identifier of the environment.</p>
+    ///   - [`network_fabric_type(Option<NetworkFabricType>)`](crate::output::CreateEnvironmentOutput::network_fabric_type): <p>The network fabric type of the environment.</p>
+    ///   - [`owner_account_id(Option<String>)`](crate::output::CreateEnvironmentOutput::owner_account_id): <p>The Amazon Web Services account ID of environment owner.</p>
+    ///   - [`state(Option<EnvironmentState>)`](crate::output::CreateEnvironmentOutput::state): <p>The current state of the environment. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateEnvironmentOutput::tags): <p>The tags assigned to the created environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair..</p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::CreateEnvironmentOutput::last_updated_time): <p>A timestamp that indicates when the environment was last updated. </p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::CreateEnvironmentOutput::created_time): <p>A timestamp that indicates when the environment is created.</p>
+    /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::error::CreateEnvironmentError)
     pub fn create_environment(&self) -> fluent_builders::CreateEnvironment<C, M, R> {
         fluent_builders::CreateEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRoute` operation.
+    /// Constructs a fluent builder for the [`CreateRoute`](crate::client::fluent_builders::CreateRoute) operation.
     ///
-    /// See [`CreateRoute`](crate::client::fluent_builders::CreateRoute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_environment_identifier): <p>The ID of the environment in which the route is created.</p>
+    ///   - [`application_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::application_identifier) / [`set_application_identifier(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_application_identifier): <p>The ID of the application within which the route is being created.</p>
+    ///   - [`service_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::service_identifier) / [`set_service_identifier(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_service_identifier): <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
+    ///   - [`route_type(RouteType)`](crate::client::fluent_builders::CreateRoute::route_type) / [`set_route_type(Option<RouteType>)`](crate::client::fluent_builders::CreateRoute::set_route_type): <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
+    ///   - [`uri_path_route(UriPathRouteInput)`](crate::client::fluent_builders::CreateRoute::uri_path_route) / [`set_uri_path_route(Option<UriPathRouteInput>)`](crate::client::fluent_builders::CreateRoute::set_uri_path_route): <p>The configuration for the URI path route type. </p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRoute::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRoute::set_tags): <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`CreateRouteOutput`](crate::output::CreateRouteOutput) with field(s):
+    ///   - [`route_id(Option<String>)`](crate::output::CreateRouteOutput::route_id): <p>The unique identifier of the route.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateRouteOutput::arn): <p>The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i> </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`owner_account_id(Option<String>)`](crate::output::CreateRouteOutput::owner_account_id): <p>The Amazon Web Services account ID of the route owner.</p>
+    ///   - [`created_by_account_id(Option<String>)`](crate::output::CreateRouteOutput::created_by_account_id): <p>The Amazon Web Services account ID of the route creator.</p>
+    ///   - [`route_type(Option<RouteType>)`](crate::output::CreateRouteOutput::route_type): <p>The route type of the route.</p>
+    ///   - [`service_id(Option<String>)`](crate::output::CreateRouteOutput::service_id): <p>The ID of service in which the rute iscreated. Traffic that matches this route is forwarded to this service.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::CreateRouteOutput::application_id): <p>The ID of the application in which the route is created.</p>
+    ///   - [`uri_path_route(Option<UriPathRouteInput>)`](crate::output::CreateRouteOutput::uri_path_route): <p>onfiguration for the URI path route type. </p>
+    ///   - [`state(Option<RouteState>)`](crate::output::CreateRouteOutput::state): <p>he current state of the route. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRouteOutput::tags): <p>The tags assigned to the created route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::CreateRouteOutput::last_updated_time): <p>A timestamp that indicates when the route was last updated. </p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::CreateRouteOutput::created_time): <p>A timestamp that indicates when the route is created.</p>
+    /// - On failure, responds with [`SdkError<CreateRouteError>`](crate::error::CreateRouteError)
     pub fn create_route(&self) -> fluent_builders::CreateRoute<C, M, R> {
         fluent_builders::CreateRoute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateService` operation.
+    /// Constructs a fluent builder for the [`CreateService`](crate::client::fluent_builders::CreateService) operation.
     ///
-    /// See [`CreateService`](crate::client::fluent_builders::CreateService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateService::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateService::set_name): <p>The name of the service.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateService::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateService::set_description): <p>The description of the service.</p>
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateService::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::CreateService::set_environment_identifier): <p>The ID of the environment in which the service is created.</p>
+    ///   - [`application_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateService::application_identifier) / [`set_application_identifier(Option<String>)`](crate::client::fluent_builders::CreateService::set_application_identifier): <p>The ID of the application which the service is created.</p>
+    ///   - [`vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateService::vpc_id) / [`set_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateService::set_vpc_id): <p>The ID of the VPC.</p>
+    ///   - [`endpoint_type(ServiceEndpointType)`](crate::client::fluent_builders::CreateService::endpoint_type) / [`set_endpoint_type(Option<ServiceEndpointType>)`](crate::client::fluent_builders::CreateService::set_endpoint_type): <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
+    ///   - [`url_endpoint(UrlEndpointInput)`](crate::client::fluent_builders::CreateService::url_endpoint) / [`set_url_endpoint(Option<UrlEndpointInput>)`](crate::client::fluent_builders::CreateService::set_url_endpoint): <p>The configuration for the URL endpoint type.</p>
+    ///   - [`lambda_endpoint(LambdaEndpointInput)`](crate::client::fluent_builders::CreateService::lambda_endpoint) / [`set_lambda_endpoint(Option<LambdaEndpointInput>)`](crate::client::fluent_builders::CreateService::set_lambda_endpoint): <p>The configuration for the Lambda endpoint type.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateService::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateService::set_tags): <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateService::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateService::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`CreateServiceOutput`](crate::output::CreateServiceOutput) with field(s):
+    ///   - [`service_id(Option<String>)`](crate::output::CreateServiceOutput::service_id): <p>The unique identifier of the service.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateServiceOutput::name): <p>The name of the service.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateServiceOutput::arn): <p>The Amazon Resource Name (ARN) of the service.</p>
+    ///   - [`owner_account_id(Option<String>)`](crate::output::CreateServiceOutput::owner_account_id): <p>The Amazon Web Services account ID of the service owner.</p>
+    ///   - [`created_by_account_id(Option<String>)`](crate::output::CreateServiceOutput::created_by_account_id): <p>The Amazon Web Services account ID of the service creator.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateServiceOutput::description): <p>The description of the created service.</p>
+    ///   - [`environment_id(Option<String>)`](crate::output::CreateServiceOutput::environment_id): <p>The unique identifier of the environment.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::CreateServiceOutput::application_id): <p>The ID of the application that the created service belongs to. </p>
+    ///   - [`vpc_id(Option<String>)`](crate::output::CreateServiceOutput::vpc_id): <p>The ID of the VPC. </p>
+    ///   - [`endpoint_type(Option<ServiceEndpointType>)`](crate::output::CreateServiceOutput::endpoint_type): <p>The endpoint type of the service.</p>
+    ///   - [`url_endpoint(Option<UrlEndpointInput>)`](crate::output::CreateServiceOutput::url_endpoint): <p>The configuration for the URL endpoint type. </p>
+    ///   - [`lambda_endpoint(Option<LambdaEndpointInput>)`](crate::output::CreateServiceOutput::lambda_endpoint): <p>The configuration for the Lambda endpoint type.</p>
+    ///   - [`state(Option<ServiceState>)`](crate::output::CreateServiceOutput::state): <p>The current state of the service. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateServiceOutput::tags): <p>The tags assigned to the created service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::CreateServiceOutput::last_updated_time): <p>A timestamp that indicates when the service was last updated. </p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::CreateServiceOutput::created_time): <p>A timestamp that indicates when the service is created.</p>
+    /// - On failure, responds with [`SdkError<CreateServiceError>`](crate::error::CreateServiceError)
     pub fn create_service(&self) -> fluent_builders::CreateService<C, M, R> {
         fluent_builders::CreateService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteApplication` operation.
+    /// Constructs a fluent builder for the [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) operation.
     ///
-    /// See [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_environment_identifier): <p>The ID of the environment. </p>
+    ///   - [`application_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::application_identifier) / [`set_application_identifier(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_application_identifier): <p>The ID of the application.</p>
+    /// - On success, responds with [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DeleteApplicationOutput::name): <p>The name of the application.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DeleteApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the application.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::DeleteApplicationOutput::application_id): <p>The ID of the application.</p>
+    ///   - [`environment_id(Option<String>)`](crate::output::DeleteApplicationOutput::environment_id): <p>The unique identifier of the application’s environment.</p>
+    ///   - [`state(Option<ApplicationState>)`](crate::output::DeleteApplicationOutput::state): <p>The current state of the application. </p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DeleteApplicationOutput::last_updated_time): <p>A timestamp that indicates when the environment was last updated. </p>
+    /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::error::DeleteApplicationError)
     pub fn delete_application(&self) -> fluent_builders::DeleteApplication<C, M, R> {
         fluent_builders::DeleteApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEnvironment` operation.
+    /// Constructs a fluent builder for the [`DeleteEnvironment`](crate::client::fluent_builders::DeleteEnvironment) operation.
     ///
-    /// See [`DeleteEnvironment`](crate::client::fluent_builders::DeleteEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteEnvironment::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::DeleteEnvironment::set_environment_identifier): <p>The ID of the environment. </p>
+    /// - On success, responds with [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DeleteEnvironmentOutput::name): <p>The name of the environment.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DeleteEnvironmentOutput::arn): <p>The Amazon Resource Name (ARN) of the environment.</p>
+    ///   - [`environment_id(Option<String>)`](crate::output::DeleteEnvironmentOutput::environment_id): <p>The unique identifier of the environment.</p>
+    ///   - [`state(Option<EnvironmentState>)`](crate::output::DeleteEnvironmentOutput::state): <p>The current state of the environment. </p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DeleteEnvironmentOutput::last_updated_time): <p>A timestamp that indicates when the environment was last updated. </p>
+    /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::error::DeleteEnvironmentError)
     pub fn delete_environment(&self) -> fluent_builders::DeleteEnvironment<C, M, R> {
         fluent_builders::DeleteEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) operation.
     ///
-    /// See [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_identifier): <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    /// - On success, responds with [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourcePolicyError>`](crate::error::DeleteResourcePolicyError)
     pub fn delete_resource_policy(&self) -> fluent_builders::DeleteResourcePolicy<C, M, R> {
         fluent_builders::DeleteResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRoute` operation.
+    /// Constructs a fluent builder for the [`DeleteRoute`](crate::client::fluent_builders::DeleteRoute) operation.
     ///
-    /// See [`DeleteRoute`](crate::client::fluent_builders::DeleteRoute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteRoute::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::DeleteRoute::set_environment_identifier): <p>The ID of the environment to delete the route from.</p>
+    ///   - [`application_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteRoute::application_identifier) / [`set_application_identifier(Option<String>)`](crate::client::fluent_builders::DeleteRoute::set_application_identifier): <p>The ID of the application to delete the route from.</p>
+    ///   - [`route_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteRoute::route_identifier) / [`set_route_identifier(Option<String>)`](crate::client::fluent_builders::DeleteRoute::set_route_identifier): <p>The ID of the route to delete.</p>
+    /// - On success, responds with [`DeleteRouteOutput`](crate::output::DeleteRouteOutput) with field(s):
+    ///   - [`route_id(Option<String>)`](crate::output::DeleteRouteOutput::route_id): <p>The ID of the route to delete.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DeleteRouteOutput::arn): <p>The Amazon Resource Name (ARN) of the route.</p>
+    ///   - [`service_id(Option<String>)`](crate::output::DeleteRouteOutput::service_id): <p>The ID of the service that the route belongs to.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::DeleteRouteOutput::application_id): <p>he ID of the application that the route belongs to.</p>
+    ///   - [`state(Option<RouteState>)`](crate::output::DeleteRouteOutput::state): <p>The current state of the route. </p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DeleteRouteOutput::last_updated_time): <p>A timestamp that indicates when the route was last updated. </p>
+    /// - On failure, responds with [`SdkError<DeleteRouteError>`](crate::error::DeleteRouteError)
     pub fn delete_route(&self) -> fluent_builders::DeleteRoute<C, M, R> {
         fluent_builders::DeleteRoute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteService` operation.
+    /// Constructs a fluent builder for the [`DeleteService`](crate::client::fluent_builders::DeleteService) operation.
     ///
-    /// See [`DeleteService`](crate::client::fluent_builders::DeleteService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteService::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::DeleteService::set_environment_identifier): <p>The ID of the environment that the service is in.</p>
+    ///   - [`application_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteService::application_identifier) / [`set_application_identifier(Option<String>)`](crate::client::fluent_builders::DeleteService::set_application_identifier): <p>Deletes a Refactor Spaces service.</p> <note>   <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>  </note>
+    ///   - [`service_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteService::service_identifier) / [`set_service_identifier(Option<String>)`](crate::client::fluent_builders::DeleteService::set_service_identifier): <p>The ID of the service to delete.</p>
+    /// - On success, responds with [`DeleteServiceOutput`](crate::output::DeleteServiceOutput) with field(s):
+    ///   - [`service_id(Option<String>)`](crate::output::DeleteServiceOutput::service_id): <p>The unique identifier of the service.</p>
+    ///   - [`name(Option<String>)`](crate::output::DeleteServiceOutput::name): <p>The name of the service.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DeleteServiceOutput::arn): <p>The Amazon Resource Name (ARN) of the service.</p>
+    ///   - [`environment_id(Option<String>)`](crate::output::DeleteServiceOutput::environment_id): <p>The unique identifier of the environment.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::DeleteServiceOutput::application_id): <p>The ID of the application that the service is in.</p>
+    ///   - [`state(Option<ServiceState>)`](crate::output::DeleteServiceOutput::state): <p>The current state of the service. </p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DeleteServiceOutput::last_updated_time): <p>A timestamp that indicates when the service was last updated. </p>
+    /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::error::DeleteServiceError)
     pub fn delete_service(&self) -> fluent_builders::DeleteService<C, M, R> {
         fluent_builders::DeleteService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetApplication` operation.
+    /// Constructs a fluent builder for the [`GetApplication`](crate::client::fluent_builders::GetApplication) operation.
     ///
-    /// See [`GetApplication`](crate::client::fluent_builders::GetApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::GetApplication::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::GetApplication::set_environment_identifier): <p>The ID of the environment. </p>
+    ///   - [`application_identifier(impl Into<String>)`](crate::client::fluent_builders::GetApplication::application_identifier) / [`set_application_identifier(Option<String>)`](crate::client::fluent_builders::GetApplication::set_application_identifier): <p>The ID of the application.</p>
+    /// - On success, responds with [`GetApplicationOutput`](crate::output::GetApplicationOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetApplicationOutput::name): <p>The name of the application.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the application.</p>
+    ///   - [`owner_account_id(Option<String>)`](crate::output::GetApplicationOutput::owner_account_id): <p>The Amazon Web Services account ID of the application owner.</p>
+    ///   - [`created_by_account_id(Option<String>)`](crate::output::GetApplicationOutput::created_by_account_id): <p>The Amazon Web Services account ID of the application creator. </p>
+    ///   - [`application_id(Option<String>)`](crate::output::GetApplicationOutput::application_id): <p>The unique identifier of the application.</p>
+    ///   - [`environment_id(Option<String>)`](crate::output::GetApplicationOutput::environment_id): <p>The unique identifier of the environment.</p>
+    ///   - [`vpc_id(Option<String>)`](crate::output::GetApplicationOutput::vpc_id): <p>The ID of the virtual private cloud (VPC). </p>
+    ///   - [`proxy_type(Option<ProxyType>)`](crate::output::GetApplicationOutput::proxy_type): <p>The proxy type of the proxy created within the application. </p>
+    ///   - [`api_gateway_proxy(Option<ApiGatewayProxyConfig>)`](crate::output::GetApplicationOutput::api_gateway_proxy): <p>The endpoint URL of the API Gateway proxy. </p>
+    ///   - [`state(Option<ApplicationState>)`](crate::output::GetApplicationOutput::state): <p>The current state of the application. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetApplicationOutput::tags): <p>The tags assigned to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    ///   - [`error(Option<ErrorResponse>)`](crate::output::GetApplicationOutput::error): <p>Any error associated with the application resource. </p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::GetApplicationOutput::last_updated_time): <p>A timestamp that indicates when the application was last updated. </p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::GetApplicationOutput::created_time): <p>A timestamp that indicates when the application is created. </p>
+    /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::error::GetApplicationError)
     pub fn get_application(&self) -> fluent_builders::GetApplication<C, M, R> {
         fluent_builders::GetApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEnvironment` operation.
+    /// Constructs a fluent builder for the [`GetEnvironment`](crate::client::fluent_builders::GetEnvironment) operation.
     ///
-    /// See [`GetEnvironment`](crate::client::fluent_builders::GetEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::GetEnvironment::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::GetEnvironment::set_environment_identifier): <p>The ID of the environment.</p>
+    /// - On success, responds with [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetEnvironmentOutput::name): <p>The name of the environment.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetEnvironmentOutput::arn): <p>The Amazon Resource Name (ARN) of the environment.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetEnvironmentOutput::description): <p>The description of the environment. </p>
+    ///   - [`environment_id(Option<String>)`](crate::output::GetEnvironmentOutput::environment_id): <p>The unique identifier of the environment. </p>
+    ///   - [`network_fabric_type(Option<NetworkFabricType>)`](crate::output::GetEnvironmentOutput::network_fabric_type): <p>The network fabric type of the environment. </p>
+    ///   - [`owner_account_id(Option<String>)`](crate::output::GetEnvironmentOutput::owner_account_id): <p>The Amazon Web Services account ID of the environment owner.</p>
+    ///   - [`transit_gateway_id(Option<String>)`](crate::output::GetEnvironmentOutput::transit_gateway_id): <p>The ID of the transit gateway set up by the environment. </p>
+    ///   - [`state(Option<EnvironmentState>)`](crate::output::GetEnvironmentOutput::state): <p>The current state of the environment. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetEnvironmentOutput::tags): <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    ///   - [`error(Option<ErrorResponse>)`](crate::output::GetEnvironmentOutput::error): <p>Any error associated with the environment resource. </p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::GetEnvironmentOutput::last_updated_time): <p>A timestamp that indicates when the environment was last updated. </p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::GetEnvironmentOutput::created_time): <p>A timestamp that indicates when the environment is created. </p>
+    /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::error::GetEnvironmentError)
     pub fn get_environment(&self) -> fluent_builders::GetEnvironment<C, M, R> {
         fluent_builders::GetEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`GetResourcePolicy`](crate::client::fluent_builders::GetResourcePolicy) operation.
     ///
-    /// See [`GetResourcePolicy`](crate::client::fluent_builders::GetResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetResourcePolicy::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetResourcePolicy::set_identifier): <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    /// - On success, responds with [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::output::GetResourcePolicyOutput::policy): <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
+    /// - On failure, responds with [`SdkError<GetResourcePolicyError>`](crate::error::GetResourcePolicyError)
     pub fn get_resource_policy(&self) -> fluent_builders::GetResourcePolicy<C, M, R> {
         fluent_builders::GetResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRoute` operation.
+    /// Constructs a fluent builder for the [`GetRoute`](crate::client::fluent_builders::GetRoute) operation.
     ///
-    /// See [`GetRoute`](crate::client::fluent_builders::GetRoute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::GetRoute::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::GetRoute::set_environment_identifier): <p>The ID of the environment.</p>
+    ///   - [`application_identifier(impl Into<String>)`](crate::client::fluent_builders::GetRoute::application_identifier) / [`set_application_identifier(Option<String>)`](crate::client::fluent_builders::GetRoute::set_application_identifier): <p>The ID of the application. </p>
+    ///   - [`route_identifier(impl Into<String>)`](crate::client::fluent_builders::GetRoute::route_identifier) / [`set_route_identifier(Option<String>)`](crate::client::fluent_builders::GetRoute::set_route_identifier): <p>The ID of the route.</p>
+    /// - On success, responds with [`GetRouteOutput`](crate::output::GetRouteOutput) with field(s):
+    ///   - [`route_id(Option<String>)`](crate::output::GetRouteOutput::route_id): <p>The unique identifier of the route.</p>  <p> <b>DEFAULT</b>: All traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created.</p>  <p> <b>URI_PATH</b>: A route that is based on a URI path.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetRouteOutput::arn): <p>The Amazon Resource Name (ARN) of the route.</p>
+    ///   - [`owner_account_id(Option<String>)`](crate::output::GetRouteOutput::owner_account_id): <p>The Amazon Web Services account ID of the route owner.</p>
+    ///   - [`created_by_account_id(Option<String>)`](crate::output::GetRouteOutput::created_by_account_id): <p>The Amazon Web Services account ID of the route creator.</p>
+    ///   - [`route_type(Option<RouteType>)`](crate::output::GetRouteOutput::route_type): <p>The type of route.</p>
+    ///   - [`service_id(Option<String>)`](crate::output::GetRouteOutput::service_id): <p>The unique identifier of the service.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::GetRouteOutput::application_id): <p>The ID of the application that the route belongs to. </p>
+    ///   - [`environment_id(Option<String>)`](crate::output::GetRouteOutput::environment_id): <p>Unique identifier of the environment.</p>
+    ///   - [`source_path(Option<String>)`](crate::output::GetRouteOutput::source_path): <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application. </p>
+    ///   - [`methods(Option<Vec<HttpMethod>>)`](crate::output::GetRouteOutput::methods): <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
+    ///   - [`include_child_paths(Option<bool>)`](crate::output::GetRouteOutput::include_child_paths): <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
+    ///   - [`path_resource_to_id(Option<HashMap<String, String>>)`](crate::output::GetRouteOutput::path_resource_to_id): <p>A mapping of Amazon API Gateway path resources to resource IDs. </p>
+    ///   - [`state(Option<RouteState>)`](crate::output::GetRouteOutput::state): <p>The current state of the route. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetRouteOutput::tags): <p>The tags assigned to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    ///   - [`error(Option<ErrorResponse>)`](crate::output::GetRouteOutput::error): <p>Any error associated with the route resource. </p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::GetRouteOutput::last_updated_time): <p>A timestamp that indicates when the route was last updated. </p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::GetRouteOutput::created_time): <p>The timestamp of when the route is created. </p>
+    /// - On failure, responds with [`SdkError<GetRouteError>`](crate::error::GetRouteError)
     pub fn get_route(&self) -> fluent_builders::GetRoute<C, M, R> {
         fluent_builders::GetRoute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetService` operation.
+    /// Constructs a fluent builder for the [`GetService`](crate::client::fluent_builders::GetService) operation.
     ///
-    /// See [`GetService`](crate::client::fluent_builders::GetService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::GetService::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::GetService::set_environment_identifier): <p>The ID of the environment.</p>
+    ///   - [`application_identifier(impl Into<String>)`](crate::client::fluent_builders::GetService::application_identifier) / [`set_application_identifier(Option<String>)`](crate::client::fluent_builders::GetService::set_application_identifier): <p>The ID of the application.</p>
+    ///   - [`service_identifier(impl Into<String>)`](crate::client::fluent_builders::GetService::service_identifier) / [`set_service_identifier(Option<String>)`](crate::client::fluent_builders::GetService::set_service_identifier): <p>The ID of the service.</p>
+    /// - On success, responds with [`GetServiceOutput`](crate::output::GetServiceOutput) with field(s):
+    ///   - [`service_id(Option<String>)`](crate::output::GetServiceOutput::service_id): <p>The unique identifier of the service.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetServiceOutput::name): <p>The name of the service.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetServiceOutput::arn): <p>The Amazon Resource Name (ARN) of the service.</p>
+    ///   - [`owner_account_id(Option<String>)`](crate::output::GetServiceOutput::owner_account_id): <p>The Amazon Web Services account ID of the service owner.</p>
+    ///   - [`created_by_account_id(Option<String>)`](crate::output::GetServiceOutput::created_by_account_id): <p>The Amazon Web Services account ID of the service creator.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetServiceOutput::description): <p>The description of the service. </p>
+    ///   - [`environment_id(Option<String>)`](crate::output::GetServiceOutput::environment_id): <p>The unique identifier of the environment.</p>
+    ///   - [`application_id(Option<String>)`](crate::output::GetServiceOutput::application_id): <p>The ID of the application.</p>
+    ///   - [`vpc_id(Option<String>)`](crate::output::GetServiceOutput::vpc_id): <p>The ID of the virtual private cloud (VPC). </p>
+    ///   - [`endpoint_type(Option<ServiceEndpointType>)`](crate::output::GetServiceOutput::endpoint_type): <p>The endpoint type of the service.</p>
+    ///   - [`url_endpoint(Option<UrlEndpointConfig>)`](crate::output::GetServiceOutput::url_endpoint): <p>The configuration for the URL endpoint type.</p>  <p>The <b>Url</b> isthe URL of the endpoint type.</p>  <p>The <b>HealthUrl</b> is the health check URL of the endpoint type. </p>
+    ///   - [`lambda_endpoint(Option<LambdaEndpointConfig>)`](crate::output::GetServiceOutput::lambda_endpoint): <p>The configuration for the Lambda endpoint type.</p>  <p>The <b>Arn</b> is the Amazon Resource Name (ARN) of the Lambda function associated with this service. </p>
+    ///   - [`state(Option<ServiceState>)`](crate::output::GetServiceOutput::state): <p>The current state of the service. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetServiceOutput::tags): <p>The tags assigned to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair. </p>
+    ///   - [`error(Option<ErrorResponse>)`](crate::output::GetServiceOutput::error): <p>Any error associated with the service resource. </p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::GetServiceOutput::last_updated_time): <p>A timestamp that indicates when the service was last updated. </p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::GetServiceOutput::created_time): <p>The timestamp of when the service is created.</p>
+    /// - On failure, responds with [`SdkError<GetServiceError>`](crate::error::GetServiceError)
     pub fn get_service(&self) -> fluent_builders::GetService<C, M, R> {
         fluent_builders::GetService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListApplications` operation.
+    /// Constructs a fluent builder for the [`ListApplications`](crate::client::fluent_builders::ListApplications) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
     ///
-    /// See [`ListApplications`](crate::client::fluent_builders::ListApplications) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::ListApplications::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::ListApplications::set_environment_identifier): <p>The ID of the environment. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplications::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListApplications::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListApplications::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// - On success, responds with [`ListApplicationsOutput`](crate::output::ListApplicationsOutput) with field(s):
+    ///   - [`application_summary_list(Option<Vec<ApplicationSummary>>)`](crate::output::ListApplicationsOutput::application_summary_list): <p>The list of <code>ApplicationSummary</code> objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationsOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::error::ListApplicationsError)
     pub fn list_applications(&self) -> fluent_builders::ListApplications<C, M, R> {
         fluent_builders::ListApplications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEnvironments` operation.
+    /// Constructs a fluent builder for the [`ListEnvironments`](crate::client::fluent_builders::ListEnvironments) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEnvironments::into_paginator).
     ///
-    /// See [`ListEnvironments`](crate::client::fluent_builders::ListEnvironments) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironments::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEnvironments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEnvironments::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEnvironments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEnvironments::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// - On success, responds with [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput) with field(s):
+    ///   - [`environment_summary_list(Option<Vec<EnvironmentSummary>>)`](crate::output::ListEnvironmentsOutput::environment_summary_list): <p>The list of <code>EnvironmentSummary</code> objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentsOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::error::ListEnvironmentsError)
     pub fn list_environments(&self) -> fluent_builders::ListEnvironments<C, M, R> {
         fluent_builders::ListEnvironments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEnvironmentVpcs` operation.
+    /// Constructs a fluent builder for the [`ListEnvironmentVpcs`](crate::client::fluent_builders::ListEnvironmentVpcs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEnvironmentVpcs::into_paginator).
     ///
-    /// See [`ListEnvironmentVpcs`](crate::client::fluent_builders::ListEnvironmentVpcs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironmentVpcs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::ListEnvironmentVpcs::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::ListEnvironmentVpcs::set_environment_identifier): <p>The ID of the environment. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEnvironmentVpcs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEnvironmentVpcs::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEnvironmentVpcs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEnvironmentVpcs::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// - On success, responds with [`ListEnvironmentVpcsOutput`](crate::output::ListEnvironmentVpcsOutput) with field(s):
+    ///   - [`environment_vpc_list(Option<Vec<EnvironmentVpc>>)`](crate::output::ListEnvironmentVpcsOutput::environment_vpc_list): <p>The list of <code>EnvironmentVpc</code> objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentVpcsOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListEnvironmentVpcsError>`](crate::error::ListEnvironmentVpcsError)
     pub fn list_environment_vpcs(&self) -> fluent_builders::ListEnvironmentVpcs<C, M, R> {
         fluent_builders::ListEnvironmentVpcs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRoutes` operation.
+    /// Constructs a fluent builder for the [`ListRoutes`](crate::client::fluent_builders::ListRoutes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRoutes::into_paginator).
     ///
-    /// See [`ListRoutes`](crate::client::fluent_builders::ListRoutes) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRoutes::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::ListRoutes::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::ListRoutes::set_environment_identifier): <p>The ID of the environment. </p>
+    ///   - [`application_identifier(impl Into<String>)`](crate::client::fluent_builders::ListRoutes::application_identifier) / [`set_application_identifier(Option<String>)`](crate::client::fluent_builders::ListRoutes::set_application_identifier): <p>The ID of the application. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRoutes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRoutes::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRoutes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRoutes::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// - On success, responds with [`ListRoutesOutput`](crate::output::ListRoutesOutput) with field(s):
+    ///   - [`route_summary_list(Option<Vec<RouteSummary>>)`](crate::output::ListRoutesOutput::route_summary_list): <p>The list of <code>RouteSummary</code> objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRoutesOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListRoutesError>`](crate::error::ListRoutesError)
     pub fn list_routes(&self) -> fluent_builders::ListRoutes<C, M, R> {
         fluent_builders::ListRoutes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServices` operation.
+    /// Constructs a fluent builder for the [`ListServices`](crate::client::fluent_builders::ListServices) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServices::into_paginator).
     ///
-    /// See [`ListServices`](crate::client::fluent_builders::ListServices) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServices::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`environment_identifier(impl Into<String>)`](crate::client::fluent_builders::ListServices::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::client::fluent_builders::ListServices::set_environment_identifier): <p>The ID of the environment. </p>
+    ///   - [`application_identifier(impl Into<String>)`](crate::client::fluent_builders::ListServices::application_identifier) / [`set_application_identifier(Option<String>)`](crate::client::fluent_builders::ListServices::set_application_identifier): <p>The ID of the application. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListServices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListServices::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListServices::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListServices::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// - On success, responds with [`ListServicesOutput`](crate::output::ListServicesOutput) with field(s):
+    ///   - [`service_summary_list(Option<Vec<ServiceSummary>>)`](crate::output::ListServicesOutput::service_summary_list): <p> The list of <code>ServiceSummary</code> objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListServicesOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListServicesError>`](crate::error::ListServicesError)
     pub fn list_services(&self) -> fluent_builders::ListServices<C, M, R> {
         fluent_builders::ListServices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags assigned to the resource. </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) operation.
     ///
-    /// See [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy): <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
+    /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::error::PutResourcePolicyError)
     pub fn put_resource_policy(&self) -> fluent_builders::PutResourcePolicy<C, M, R> {
         fluent_builders::PutResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The new or modified tags for the resource. </p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. </p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of keys of the tags to be removed from the resource. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

@@ -83,118 +83,207 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateGroup` operation.
+    /// Constructs a fluent builder for the [`CreateGroup`](crate::client::fluent_builders::CreateGroup) operation.
     ///
-    /// See [`CreateGroup`](crate::client::fluent_builders::CreateGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_name): <p>The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each AWS Region in your AWS account.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_description): <p>The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores, periods, and spaces.</p>
+    ///   - [`resource_query(ResourceQuery)`](crate::client::fluent_builders::CreateGroup::resource_query) / [`set_resource_query(Option<ResourceQuery>)`](crate::client::fluent_builders::CreateGroup::set_resource_query): <p>The resource query that determines which AWS resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>   <p>A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.</p>  </note>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateGroup::set_tags): <p>The tags to add to the group. A tag is key-value pair string.</p>
+    ///   - [`configuration(Vec<GroupConfigurationItem>)`](crate::client::fluent_builders::CreateGroup::configuration) / [`set_configuration(Option<Vec<GroupConfigurationItem>>)`](crate::client::fluent_builders::CreateGroup::set_configuration): <p>A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p> <note>   <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>  </note>
+    /// - On success, responds with [`CreateGroupOutput`](crate::output::CreateGroupOutput) with field(s):
+    ///   - [`group(Option<Group>)`](crate::output::CreateGroupOutput::group): <p>The description of the resource group.</p>
+    ///   - [`resource_query(Option<ResourceQuery>)`](crate::output::CreateGroupOutput::resource_query): <p>The resource query associated with the group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateGroupOutput::tags): <p>The tags associated with the group.</p>
+    ///   - [`group_configuration(Option<GroupConfiguration>)`](crate::output::CreateGroupOutput::group_configuration): <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+    /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::error::CreateGroupError)
     pub fn create_group(&self) -> fluent_builders::CreateGroup<C, M, R> {
         fluent_builders::CreateGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) operation.
     ///
-    /// See [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_group_name): <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+    ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_group): <p>The name or the ARN of the resource group to delete.</p>
+    /// - On success, responds with [`DeleteGroupOutput`](crate::output::DeleteGroupOutput) with field(s):
+    ///   - [`group(Option<Group>)`](crate::output::DeleteGroupOutput::group): <p>A full description of the deleted resource group.</p>
+    /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::error::DeleteGroupError)
     pub fn delete_group(&self) -> fluent_builders::DeleteGroup<C, M, R> {
         fluent_builders::DeleteGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGroup` operation.
+    /// Constructs a fluent builder for the [`GetGroup`](crate::client::fluent_builders::GetGroup) operation.
     ///
-    /// See [`GetGroup`](crate::client::fluent_builders::GetGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::GetGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::GetGroup::set_group_name): <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+    ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::GetGroup::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::GetGroup::set_group): <p>The name or the ARN of the resource group to retrieve.</p>
+    /// - On success, responds with [`GetGroupOutput`](crate::output::GetGroupOutput) with field(s):
+    ///   - [`group(Option<Group>)`](crate::output::GetGroupOutput::group): <p>A full description of the resource group.</p>
+    /// - On failure, responds with [`SdkError<GetGroupError>`](crate::error::GetGroupError)
     pub fn get_group(&self) -> fluent_builders::GetGroup<C, M, R> {
         fluent_builders::GetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGroupConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetGroupConfiguration`](crate::client::fluent_builders::GetGroupConfiguration) operation.
     ///
-    /// See [`GetGroupConfiguration`](crate::client::fluent_builders::GetGroupConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::GetGroupConfiguration::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::GetGroupConfiguration::set_group): <p>The name or the ARN of the resource group.</p>
+    /// - On success, responds with [`GetGroupConfigurationOutput`](crate::output::GetGroupConfigurationOutput) with field(s):
+    ///   - [`group_configuration(Option<GroupConfiguration>)`](crate::output::GetGroupConfigurationOutput::group_configuration): <p>The service configuration associated with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+    /// - On failure, responds with [`SdkError<GetGroupConfigurationError>`](crate::error::GetGroupConfigurationError)
     pub fn get_group_configuration(&self) -> fluent_builders::GetGroupConfiguration<C, M, R> {
         fluent_builders::GetGroupConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGroupQuery` operation.
+    /// Constructs a fluent builder for the [`GetGroupQuery`](crate::client::fluent_builders::GetGroupQuery) operation.
     ///
-    /// See [`GetGroupQuery`](crate::client::fluent_builders::GetGroupQuery) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::GetGroupQuery::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::GetGroupQuery::set_group_name): <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::GetGroupQuery::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::GetGroupQuery::set_group): <p>The name or the ARN of the resource group to query.</p>
+    /// - On success, responds with [`GetGroupQueryOutput`](crate::output::GetGroupQueryOutput) with field(s):
+    ///   - [`group_query(Option<GroupQuery>)`](crate::output::GetGroupQueryOutput::group_query): <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
+    /// - On failure, responds with [`SdkError<GetGroupQueryError>`](crate::error::GetGroupQueryError)
     pub fn get_group_query(&self) -> fluent_builders::GetGroupQuery<C, M, R> {
         fluent_builders::GetGroupQuery::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTags` operation.
+    /// Constructs a fluent builder for the [`GetTags`](crate::client::fluent_builders::GetTags) operation.
     ///
-    /// See [`GetTags`](crate::client::fluent_builders::GetTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetTags::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetTags::set_arn): <p>The ARN of the resource group whose tags you want to retrieve.</p>
+    /// - On success, responds with [`GetTagsOutput`](crate::output::GetTagsOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetTagsOutput::arn): <p>The ARN of the tagged resource group.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetTagsOutput::tags): <p>The tags associated with the specified resource group.</p>
+    /// - On failure, responds with [`SdkError<GetTagsError>`](crate::error::GetTagsError)
     pub fn get_tags(&self) -> fluent_builders::GetTags<C, M, R> {
         fluent_builders::GetTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GroupResources` operation.
+    /// Constructs a fluent builder for the [`GroupResources`](crate::client::fluent_builders::GroupResources) operation.
     ///
-    /// See [`GroupResources`](crate::client::fluent_builders::GroupResources) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::GroupResources::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::GroupResources::set_group): <p>The name or the ARN of the resource group to add resources to.</p>
+    ///   - [`resource_arns(Vec<String>)`](crate::client::fluent_builders::GroupResources::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GroupResources::set_resource_arns): <p>The list of ARNs for resources to be added to the group. </p>
+    /// - On success, responds with [`GroupResourcesOutput`](crate::output::GroupResourcesOutput) with field(s):
+    ///   - [`succeeded(Option<Vec<String>>)`](crate::output::GroupResourcesOutput::succeeded): <p>A list of ARNs of resources that were successfully added to the group by this operation.</p>
+    ///   - [`failed(Option<Vec<FailedResource>>)`](crate::output::GroupResourcesOutput::failed): <p>A list of ARNs of any resources that failed to be added to the group by this operation.</p>
+    ///   - [`pending(Option<Vec<PendingResource>>)`](crate::output::GroupResourcesOutput::pending): <p>A list of ARNs of any resources that are still in the process of being added to the group by this operation. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
+    /// - On failure, responds with [`SdkError<GroupResourcesError>`](crate::error::GroupResourcesError)
     pub fn group_resources(&self) -> fluent_builders::GroupResources<C, M, R> {
         fluent_builders::GroupResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGroupResources` operation.
+    /// Constructs a fluent builder for the [`ListGroupResources`](crate::client::fluent_builders::ListGroupResources) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroupResources::into_paginator).
     ///
-    /// See [`ListGroupResources`](crate::client::fluent_builders::ListGroupResources) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGroupResources::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::ListGroupResources::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::ListGroupResources::set_group_name): <important>   <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>  </important>
+    ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::ListGroupResources::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::ListGroupResources::set_group): <p>The name or the ARN of the resource group</p>
+    ///   - [`filters(Vec<ResourceFilter>)`](crate::client::fluent_builders::ListGroupResources::filters) / [`set_filters(Option<Vec<ResourceFilter>>)`](crate::client::fluent_builders::ListGroupResources::set_filters): <p>Filters, formatted as <code>ResourceFilter</code> objects, that you want to apply to a <code>ListGroupResources</code> operation. Filters the results to include only those of the specified resource types.</p>  <ul>   <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format <code>AWS::ServiceCode::ResourceType</code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>. </p> </li>  </ul>  <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>  <p> <code>The resource types specified as filters in the request are not valid.</code> </p>  <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or AWS CloudFormation stack-based queries).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroupResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroupResources::set_max_results): <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroupResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroupResources::set_next_token): <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+    /// - On success, responds with [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput) with field(s):
+    ///   - [`resources(Option<Vec<ListGroupResourcesItem>>)`](crate::output::ListGroupResourcesOutput::resources): <p>An array of resources from which you can determine each resource's identity, type, and group membership status.</p>
+    ///   - [`resource_identifiers(Option<Vec<ResourceIdentifier>>)`](crate::output::ListGroupResourcesOutput::resource_identifiers): <important>   <p> <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response field instead.</i> </b> </p>  </important>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGroupResourcesOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    ///   - [`query_errors(Option<Vec<QueryError>>)`](crate::output::ListGroupResourcesOutput::query_errors): <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    /// - On failure, responds with [`SdkError<ListGroupResourcesError>`](crate::error::ListGroupResourcesError)
     pub fn list_group_resources(&self) -> fluent_builders::ListGroupResources<C, M, R> {
         fluent_builders::ListGroupResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGroups` operation.
+    /// Constructs a fluent builder for the [`ListGroups`](crate::client::fluent_builders::ListGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroups::into_paginator).
     ///
-    /// See [`ListGroups`](crate::client::fluent_builders::ListGroups) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGroups::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`filters(Vec<GroupFilter>)`](crate::client::fluent_builders::ListGroups::filters) / [`set_filters(Option<Vec<GroupFilter>>)`](crate::client::fluent_builders::ListGroups::set_filters): <p>Filters, formatted as <code>GroupFilter</code> objects, that you want to apply to a <code>ListGroups</code> operation.</p>  <ul>   <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li>   <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>    <ul>     <li> <p> <code>AWS:EC2::CapacityReservationPool</code> </p> </li>     <li> <p> <code>AWS:EC2::HostManagement</code> </p> </li>    </ul> </li>  </ul>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroups::set_max_results): <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroups::set_next_token): <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+    /// - On success, responds with [`ListGroupsOutput`](crate::output::ListGroupsOutput) with field(s):
+    ///   - [`group_identifiers(Option<Vec<GroupIdentifier>>)`](crate::output::ListGroupsOutput::group_identifiers): <p>A list of <code>GroupIdentifier</code> objects. Each identifier is an object that contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
+    ///   - [`groups(Option<Vec<Group>>)`](crate::output::ListGroupsOutput::groups): <important>   <p> <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i> </p>  </important>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGroupsOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// - On failure, responds with [`SdkError<ListGroupsError>`](crate::error::ListGroupsError)
     pub fn list_groups(&self) -> fluent_builders::ListGroups<C, M, R> {
         fluent_builders::ListGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutGroupConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutGroupConfiguration`](crate::client::fluent_builders::PutGroupConfiguration) operation.
     ///
-    /// See [`PutGroupConfiguration`](crate::client::fluent_builders::PutGroupConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::PutGroupConfiguration::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::PutGroupConfiguration::set_group): <p>The name or ARN of the resource group with the configuration that you want to update.</p>
+    ///   - [`configuration(Vec<GroupConfigurationItem>)`](crate::client::fluent_builders::PutGroupConfiguration::configuration) / [`set_configuration(Option<Vec<GroupConfigurationItem>>)`](crate::client::fluent_builders::PutGroupConfiguration::set_configuration): <p>The new configuration to associate with the specified group. A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>  <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p> <note>   <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>  </note>
+    /// - On success, responds with [`PutGroupConfigurationOutput`](crate::output::PutGroupConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<PutGroupConfigurationError>`](crate::error::PutGroupConfigurationError)
     pub fn put_group_configuration(&self) -> fluent_builders::PutGroupConfiguration<C, M, R> {
         fluent_builders::PutGroupConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchResources` operation.
+    /// Constructs a fluent builder for the [`SearchResources`](crate::client::fluent_builders::SearchResources) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchResources::into_paginator).
     ///
-    /// See [`SearchResources`](crate::client::fluent_builders::SearchResources) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchResources::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_query(ResourceQuery)`](crate::client::fluent_builders::SearchResources::resource_query) / [`set_resource_query(Option<ResourceQuery>)`](crate::client::fluent_builders::SearchResources::set_resource_query): <p>The search query, using the same formats that are supported for resource group definition. For more information, see <code>CreateGroup</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchResources::set_max_results): <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchResources::set_next_token): <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+    /// - On success, responds with [`SearchResourcesOutput`](crate::output::SearchResourcesOutput) with field(s):
+    ///   - [`resource_identifiers(Option<Vec<ResourceIdentifier>>)`](crate::output::SearchResourcesOutput::resource_identifiers): <p>The ARNs and resource types of resources that are members of the group that you specified.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchResourcesOutput::next_token): <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    ///   - [`query_errors(Option<Vec<QueryError>>)`](crate::output::SearchResourcesOutput::query_errors): <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+    /// - On failure, responds with [`SdkError<SearchResourcesError>`](crate::error::SearchResourcesError)
     pub fn search_resources(&self) -> fluent_builders::SearchResources<C, M, R> {
         fluent_builders::SearchResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `Tag` operation.
+    /// Constructs a fluent builder for the [`Tag`](crate::client::fluent_builders::Tag) operation.
     ///
-    /// See [`Tag`](crate::client::fluent_builders::Tag) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::Tag::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::Tag::set_arn): <p>The ARN of the resource group to which to add tags.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::Tag::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::Tag::set_tags): <p>The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.</p>
+    /// - On success, responds with [`TagOutput`](crate::output::TagOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::TagOutput::arn): <p>The ARN of the tagged resource.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::TagOutput::tags): <p>The tags that have been added to the specified resource group.</p>
+    /// - On failure, responds with [`SdkError<TagError>`](crate::error::TagError)
     pub fn tag(&self) -> fluent_builders::Tag<C, M, R> {
         fluent_builders::Tag::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UngroupResources` operation.
+    /// Constructs a fluent builder for the [`UngroupResources`](crate::client::fluent_builders::UngroupResources) operation.
     ///
-    /// See [`UngroupResources`](crate::client::fluent_builders::UngroupResources) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::UngroupResources::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::UngroupResources::set_group): <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    ///   - [`resource_arns(Vec<String>)`](crate::client::fluent_builders::UngroupResources::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::client::fluent_builders::UngroupResources::set_resource_arns): <p>The ARNs of the resources to be removed from the group.</p>
+    /// - On success, responds with [`UngroupResourcesOutput`](crate::output::UngroupResourcesOutput) with field(s):
+    ///   - [`succeeded(Option<Vec<String>>)`](crate::output::UngroupResourcesOutput::succeeded): <p>A list of resources that were successfully removed from the group by this operation.</p>
+    ///   - [`failed(Option<Vec<FailedResource>>)`](crate::output::UngroupResourcesOutput::failed): <p>A list of any resources that failed to be removed from the group by this operation.</p>
+    ///   - [`pending(Option<Vec<PendingResource>>)`](crate::output::UngroupResourcesOutput::pending): <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
+    /// - On failure, responds with [`SdkError<UngroupResourcesError>`](crate::error::UngroupResourcesError)
     pub fn ungroup_resources(&self) -> fluent_builders::UngroupResources<C, M, R> {
         fluent_builders::UngroupResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `Untag` operation.
+    /// Constructs a fluent builder for the [`Untag`](crate::client::fluent_builders::Untag) operation.
     ///
-    /// See [`Untag`](crate::client::fluent_builders::Untag) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::Untag::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::Untag::set_arn): <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
+    ///   - [`keys(Vec<String>)`](crate::client::fluent_builders::Untag::keys) / [`set_keys(Option<Vec<String>>)`](crate::client::fluent_builders::Untag::set_keys): <p>The keys of the tags to be removed.</p>
+    /// - On success, responds with [`UntagOutput`](crate::output::UntagOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UntagOutput::arn): <p>The ARN of the resource group from which tags have been removed.</p>
+    ///   - [`keys(Option<Vec<String>>)`](crate::output::UntagOutput::keys): <p>The keys of the tags that were removed.</p>
+    /// - On failure, responds with [`SdkError<UntagError>`](crate::error::UntagError)
     pub fn untag(&self) -> fluent_builders::Untag<C, M, R> {
         fluent_builders::Untag::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateGroup`](crate::client::fluent_builders::UpdateGroup) operation.
     ///
-    /// See [`UpdateGroup`](crate::client::fluent_builders::UpdateGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_group_name): <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_group): <p>The name or the ARN of the resource group to modify.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_description): <p>The new description that you want to update the resource group with. Descriptions can contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
+    /// - On success, responds with [`UpdateGroupOutput`](crate::output::UpdateGroupOutput) with field(s):
+    ///   - [`group(Option<Group>)`](crate::output::UpdateGroupOutput::group): <p>The update description of the resource group.</p>
+    /// - On failure, responds with [`SdkError<UpdateGroupError>`](crate::error::UpdateGroupError)
     pub fn update_group(&self) -> fluent_builders::UpdateGroup<C, M, R> {
         fluent_builders::UpdateGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGroupQuery` operation.
+    /// Constructs a fluent builder for the [`UpdateGroupQuery`](crate::client::fluent_builders::UpdateGroupQuery) operation.
     ///
-    /// See [`UpdateGroupQuery`](crate::client::fluent_builders::UpdateGroupQuery) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGroupQuery::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::UpdateGroupQuery::set_group_name): <p>Don't use this parameter. Use <code>Group</code> instead.</p>
+    ///   - [`group(impl Into<String>)`](crate::client::fluent_builders::UpdateGroupQuery::group) / [`set_group(Option<String>)`](crate::client::fluent_builders::UpdateGroupQuery::set_group): <p>The name or the ARN of the resource group to query.</p>
+    ///   - [`resource_query(ResourceQuery)`](crate::client::fluent_builders::UpdateGroupQuery::resource_query) / [`set_resource_query(Option<ResourceQuery>)`](crate::client::fluent_builders::UpdateGroupQuery::set_resource_query): <p>The resource query to determine which AWS resources are members of this resource group.</p> <note>   <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>  </note>
+    /// - On success, responds with [`UpdateGroupQueryOutput`](crate::output::UpdateGroupQueryOutput) with field(s):
+    ///   - [`group_query(Option<GroupQuery>)`](crate::output::UpdateGroupQueryOutput::group_query): <p>The updated resource query associated with the resource group after the update.</p>
+    /// - On failure, responds with [`SdkError<UpdateGroupQueryError>`](crate::error::UpdateGroupQueryError)
     pub fn update_group_query(&self) -> fluent_builders::UpdateGroupQuery<C, M, R> {
         fluent_builders::UpdateGroupQuery::new(self.handle.clone())
     }

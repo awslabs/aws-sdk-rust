@@ -83,514 +83,951 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateBackupPlan` operation.
+    /// Constructs a fluent builder for the [`CreateBackupPlan`](crate::client::fluent_builders::CreateBackupPlan) operation.
     ///
-    /// See [`CreateBackupPlan`](crate::client::fluent_builders::CreateBackupPlan) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_plan(BackupPlanInput)`](crate::client::fluent_builders::CreateBackupPlan::backup_plan) / [`set_backup_plan(Option<BackupPlanInput>)`](crate::client::fluent_builders::CreateBackupPlan::set_backup_plan): <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    ///   - [`backup_plan_tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateBackupPlan::backup_plan_tags) / [`set_backup_plan_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateBackupPlan::set_backup_plan_tags): <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
+    ///   - [`creator_request_id(impl Into<String>)`](crate::client::fluent_builders::CreateBackupPlan::creator_request_id) / [`set_creator_request_id(Option<String>)`](crate::client::fluent_builders::CreateBackupPlan::set_creator_request_id): <p>Identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>  <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    /// - On success, responds with [`CreateBackupPlanOutput`](crate::output::CreateBackupPlanOutput) with field(s):
+    ///   - [`backup_plan_id(Option<String>)`](crate::output::CreateBackupPlanOutput::backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`backup_plan_arn(Option<String>)`](crate::output::CreateBackupPlanOutput::backup_plan_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::CreateBackupPlanOutput::creation_date): <p>The date and time that a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`version_id(Option<String>)`](crate::output::CreateBackupPlanOutput::version_id): <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
+    ///   - [`advanced_backup_settings(Option<Vec<AdvancedBackupSetting>>)`](crate::output::CreateBackupPlanOutput::advanced_backup_settings): <p>A list of <code>BackupOptions</code> settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+    /// - On failure, responds with [`SdkError<CreateBackupPlanError>`](crate::error::CreateBackupPlanError)
     pub fn create_backup_plan(&self) -> fluent_builders::CreateBackupPlan<C, M, R> {
         fluent_builders::CreateBackupPlan::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBackupSelection` operation.
+    /// Constructs a fluent builder for the [`CreateBackupSelection`](crate::client::fluent_builders::CreateBackupSelection) operation.
     ///
-    /// See [`CreateBackupSelection`](crate::client::fluent_builders::CreateBackupSelection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_plan_id(impl Into<String>)`](crate::client::fluent_builders::CreateBackupSelection::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::client::fluent_builders::CreateBackupSelection::set_backup_plan_id): <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
+    ///   - [`backup_selection(BackupSelection)`](crate::client::fluent_builders::CreateBackupSelection::backup_selection) / [`set_backup_selection(Option<BackupSelection>)`](crate::client::fluent_builders::CreateBackupSelection::set_backup_selection): <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
+    ///   - [`creator_request_id(impl Into<String>)`](crate::client::fluent_builders::CreateBackupSelection::creator_request_id) / [`set_creator_request_id(Option<String>)`](crate::client::fluent_builders::CreateBackupSelection::set_creator_request_id): <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>  <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    /// - On success, responds with [`CreateBackupSelectionOutput`](crate::output::CreateBackupSelectionOutput) with field(s):
+    ///   - [`selection_id(Option<String>)`](crate::output::CreateBackupSelectionOutput::selection_id): <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
+    ///   - [`backup_plan_id(Option<String>)`](crate::output::CreateBackupSelectionOutput::backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::CreateBackupSelectionOutput::creation_date): <p>The date and time a backup selection is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// - On failure, responds with [`SdkError<CreateBackupSelectionError>`](crate::error::CreateBackupSelectionError)
     pub fn create_backup_selection(&self) -> fluent_builders::CreateBackupSelection<C, M, R> {
         fluent_builders::CreateBackupSelection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBackupVault` operation.
+    /// Constructs a fluent builder for the [`CreateBackupVault`](crate::client::fluent_builders::CreateBackupVault) operation.
     ///
-    /// See [`CreateBackupVault`](crate::client::fluent_builders::CreateBackupVault) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::CreateBackupVault::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::CreateBackupVault::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens.</p>
+    ///   - [`backup_vault_tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateBackupVault::backup_vault_tags) / [`set_backup_vault_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateBackupVault::set_backup_vault_tags): <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
+    ///   - [`encryption_key_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBackupVault::encryption_key_arn) / [`set_encryption_key_arn(Option<String>)`](crate::client::fluent_builders::CreateBackupVault::set_encryption_key_arn): <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+    ///   - [`creator_request_id(impl Into<String>)`](crate::client::fluent_builders::CreateBackupVault::creator_request_id) / [`set_creator_request_id(Option<String>)`](crate::client::fluent_builders::CreateBackupVault::set_creator_request_id): <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>  <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
+    /// - On success, responds with [`CreateBackupVaultOutput`](crate::output::CreateBackupVaultOutput) with field(s):
+    ///   - [`backup_vault_name(Option<String>)`](crate::output::CreateBackupVaultOutput::backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`backup_vault_arn(Option<String>)`](crate::output::CreateBackupVaultOutput::backup_vault_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::CreateBackupVaultOutput::creation_date): <p>The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// - On failure, responds with [`SdkError<CreateBackupVaultError>`](crate::error::CreateBackupVaultError)
     pub fn create_backup_vault(&self) -> fluent_builders::CreateBackupVault<C, M, R> {
         fluent_builders::CreateBackupVault::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFramework` operation.
+    /// Constructs a fluent builder for the [`CreateFramework`](crate::client::fluent_builders::CreateFramework) operation.
     ///
-    /// See [`CreateFramework`](crate::client::fluent_builders::CreateFramework) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`framework_name(impl Into<String>)`](crate::client::fluent_builders::CreateFramework::framework_name) / [`set_framework_name(Option<String>)`](crate::client::fluent_builders::CreateFramework::set_framework_name): <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    ///   - [`framework_description(impl Into<String>)`](crate::client::fluent_builders::CreateFramework::framework_description) / [`set_framework_description(Option<String>)`](crate::client::fluent_builders::CreateFramework::set_framework_description): <p>An optional description of the framework with a maximum of 1,024 characters.</p>
+    ///   - [`framework_controls(Vec<FrameworkControl>)`](crate::client::fluent_builders::CreateFramework::framework_controls) / [`set_framework_controls(Option<Vec<FrameworkControl>>)`](crate::client::fluent_builders::CreateFramework::set_framework_controls): <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateFramework::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateFramework::set_idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    ///   - [`framework_tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateFramework::framework_tags) / [`set_framework_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateFramework::set_framework_tags): <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
+    /// - On success, responds with [`CreateFrameworkOutput`](crate::output::CreateFrameworkOutput) with field(s):
+    ///   - [`framework_name(Option<String>)`](crate::output::CreateFrameworkOutput::framework_name): <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    ///   - [`framework_arn(Option<String>)`](crate::output::CreateFrameworkOutput::framework_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    /// - On failure, responds with [`SdkError<CreateFrameworkError>`](crate::error::CreateFrameworkError)
     pub fn create_framework(&self) -> fluent_builders::CreateFramework<C, M, R> {
         fluent_builders::CreateFramework::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateReportPlan` operation.
+    /// Constructs a fluent builder for the [`CreateReportPlan`](crate::client::fluent_builders::CreateReportPlan) operation.
     ///
-    /// See [`CreateReportPlan`](crate::client::fluent_builders::CreateReportPlan) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`report_plan_name(impl Into<String>)`](crate::client::fluent_builders::CreateReportPlan::report_plan_name) / [`set_report_plan_name(Option<String>)`](crate::client::fluent_builders::CreateReportPlan::set_report_plan_name): <p>The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    ///   - [`report_plan_description(impl Into<String>)`](crate::client::fluent_builders::CreateReportPlan::report_plan_description) / [`set_report_plan_description(Option<String>)`](crate::client::fluent_builders::CreateReportPlan::set_report_plan_description): <p>An optional description of the report plan with a maximum of 1,024 characters.</p>
+    ///   - [`report_delivery_channel(ReportDeliveryChannel)`](crate::client::fluent_builders::CreateReportPlan::report_delivery_channel) / [`set_report_delivery_channel(Option<ReportDeliveryChannel>)`](crate::client::fluent_builders::CreateReportPlan::set_report_delivery_channel): <p>A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+    ///   - [`report_setting(ReportSetting)`](crate::client::fluent_builders::CreateReportPlan::report_setting) / [`set_report_setting(Option<ReportSetting>)`](crate::client::fluent_builders::CreateReportPlan::set_report_setting): <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>  <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>  <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
+    ///   - [`report_plan_tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateReportPlan::report_plan_tags) / [`set_report_plan_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateReportPlan::set_report_plan_tags): <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
+    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateReportPlan::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateReportPlan::set_idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    /// - On success, responds with [`CreateReportPlanOutput`](crate::output::CreateReportPlanOutput) with field(s):
+    ///   - [`report_plan_name(Option<String>)`](crate::output::CreateReportPlanOutput::report_plan_name): <p>The unique name of the report plan.</p>
+    ///   - [`report_plan_arn(Option<String>)`](crate::output::CreateReportPlanOutput::report_plan_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateReportPlanOutput::creation_time): <p>The date and time a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// - On failure, responds with [`SdkError<CreateReportPlanError>`](crate::error::CreateReportPlanError)
     pub fn create_report_plan(&self) -> fluent_builders::CreateReportPlan<C, M, R> {
         fluent_builders::CreateReportPlan::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBackupPlan` operation.
+    /// Constructs a fluent builder for the [`DeleteBackupPlan`](crate::client::fluent_builders::DeleteBackupPlan) operation.
     ///
-    /// See [`DeleteBackupPlan`](crate::client::fluent_builders::DeleteBackupPlan) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_plan_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBackupPlan::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::client::fluent_builders::DeleteBackupPlan::set_backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    /// - On success, responds with [`DeleteBackupPlanOutput`](crate::output::DeleteBackupPlanOutput) with field(s):
+    ///   - [`backup_plan_id(Option<String>)`](crate::output::DeleteBackupPlanOutput::backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`backup_plan_arn(Option<String>)`](crate::output::DeleteBackupPlanOutput::backup_plan_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+    ///   - [`deletion_date(Option<DateTime>)`](crate::output::DeleteBackupPlanOutput::deletion_date): <p>The date and time a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`version_id(Option<String>)`](crate::output::DeleteBackupPlanOutput::version_id): <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
+    /// - On failure, responds with [`SdkError<DeleteBackupPlanError>`](crate::error::DeleteBackupPlanError)
     pub fn delete_backup_plan(&self) -> fluent_builders::DeleteBackupPlan<C, M, R> {
         fluent_builders::DeleteBackupPlan::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBackupSelection` operation.
+    /// Constructs a fluent builder for the [`DeleteBackupSelection`](crate::client::fluent_builders::DeleteBackupSelection) operation.
     ///
-    /// See [`DeleteBackupSelection`](crate::client::fluent_builders::DeleteBackupSelection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_plan_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBackupSelection::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::client::fluent_builders::DeleteBackupSelection::set_backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`selection_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBackupSelection::selection_id) / [`set_selection_id(Option<String>)`](crate::client::fluent_builders::DeleteBackupSelection::set_selection_id): <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
+    /// - On success, responds with [`DeleteBackupSelectionOutput`](crate::output::DeleteBackupSelectionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBackupSelectionError>`](crate::error::DeleteBackupSelectionError)
     pub fn delete_backup_selection(&self) -> fluent_builders::DeleteBackupSelection<C, M, R> {
         fluent_builders::DeleteBackupSelection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBackupVault` operation.
+    /// Constructs a fluent builder for the [`DeleteBackupVault`](crate::client::fluent_builders::DeleteBackupVault) operation.
     ///
-    /// See [`DeleteBackupVault`](crate::client::fluent_builders::DeleteBackupVault) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBackupVault::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::DeleteBackupVault::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// - On success, responds with [`DeleteBackupVaultOutput`](crate::output::DeleteBackupVaultOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBackupVaultError>`](crate::error::DeleteBackupVaultError)
     pub fn delete_backup_vault(&self) -> fluent_builders::DeleteBackupVault<C, M, R> {
         fluent_builders::DeleteBackupVault::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBackupVaultAccessPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteBackupVaultAccessPolicy`](crate::client::fluent_builders::DeleteBackupVaultAccessPolicy) operation.
     ///
-    /// See [`DeleteBackupVaultAccessPolicy`](crate::client::fluent_builders::DeleteBackupVaultAccessPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBackupVaultAccessPolicy::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::DeleteBackupVaultAccessPolicy::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// - On success, responds with [`DeleteBackupVaultAccessPolicyOutput`](crate::output::DeleteBackupVaultAccessPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBackupVaultAccessPolicyError>`](crate::error::DeleteBackupVaultAccessPolicyError)
     pub fn delete_backup_vault_access_policy(
         &self,
     ) -> fluent_builders::DeleteBackupVaultAccessPolicy<C, M, R> {
         fluent_builders::DeleteBackupVaultAccessPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBackupVaultLockConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteBackupVaultLockConfiguration`](crate::client::fluent_builders::DeleteBackupVaultLockConfiguration) operation.
     ///
-    /// See [`DeleteBackupVaultLockConfiguration`](crate::client::fluent_builders::DeleteBackupVaultLockConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBackupVaultLockConfiguration::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::DeleteBackupVaultLockConfiguration::set_backup_vault_name): <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
+    /// - On success, responds with [`DeleteBackupVaultLockConfigurationOutput`](crate::output::DeleteBackupVaultLockConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBackupVaultLockConfigurationError>`](crate::error::DeleteBackupVaultLockConfigurationError)
     pub fn delete_backup_vault_lock_configuration(
         &self,
     ) -> fluent_builders::DeleteBackupVaultLockConfiguration<C, M, R> {
         fluent_builders::DeleteBackupVaultLockConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBackupVaultNotifications` operation.
+    /// Constructs a fluent builder for the [`DeleteBackupVaultNotifications`](crate::client::fluent_builders::DeleteBackupVaultNotifications) operation.
     ///
-    /// See [`DeleteBackupVaultNotifications`](crate::client::fluent_builders::DeleteBackupVaultNotifications) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBackupVaultNotifications::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::DeleteBackupVaultNotifications::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// - On success, responds with [`DeleteBackupVaultNotificationsOutput`](crate::output::DeleteBackupVaultNotificationsOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBackupVaultNotificationsError>`](crate::error::DeleteBackupVaultNotificationsError)
     pub fn delete_backup_vault_notifications(
         &self,
     ) -> fluent_builders::DeleteBackupVaultNotifications<C, M, R> {
         fluent_builders::DeleteBackupVaultNotifications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFramework` operation.
+    /// Constructs a fluent builder for the [`DeleteFramework`](crate::client::fluent_builders::DeleteFramework) operation.
     ///
-    /// See [`DeleteFramework`](crate::client::fluent_builders::DeleteFramework) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`framework_name(impl Into<String>)`](crate::client::fluent_builders::DeleteFramework::framework_name) / [`set_framework_name(Option<String>)`](crate::client::fluent_builders::DeleteFramework::set_framework_name): <p>The unique name of a framework.</p>
+    /// - On success, responds with [`DeleteFrameworkOutput`](crate::output::DeleteFrameworkOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFrameworkError>`](crate::error::DeleteFrameworkError)
     pub fn delete_framework(&self) -> fluent_builders::DeleteFramework<C, M, R> {
         fluent_builders::DeleteFramework::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRecoveryPoint` operation.
+    /// Constructs a fluent builder for the [`DeleteRecoveryPoint`](crate::client::fluent_builders::DeleteRecoveryPoint) operation.
     ///
-    /// See [`DeleteRecoveryPoint`](crate::client::fluent_builders::DeleteRecoveryPoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRecoveryPoint::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::DeleteRecoveryPoint::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`recovery_point_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteRecoveryPoint::recovery_point_arn) / [`set_recovery_point_arn(Option<String>)`](crate::client::fluent_builders::DeleteRecoveryPoint::set_recovery_point_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    /// - On success, responds with [`DeleteRecoveryPointOutput`](crate::output::DeleteRecoveryPointOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRecoveryPointError>`](crate::error::DeleteRecoveryPointError)
     pub fn delete_recovery_point(&self) -> fluent_builders::DeleteRecoveryPoint<C, M, R> {
         fluent_builders::DeleteRecoveryPoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteReportPlan` operation.
+    /// Constructs a fluent builder for the [`DeleteReportPlan`](crate::client::fluent_builders::DeleteReportPlan) operation.
     ///
-    /// See [`DeleteReportPlan`](crate::client::fluent_builders::DeleteReportPlan) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`report_plan_name(impl Into<String>)`](crate::client::fluent_builders::DeleteReportPlan::report_plan_name) / [`set_report_plan_name(Option<String>)`](crate::client::fluent_builders::DeleteReportPlan::set_report_plan_name): <p>The unique name of a report plan.</p>
+    /// - On success, responds with [`DeleteReportPlanOutput`](crate::output::DeleteReportPlanOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteReportPlanError>`](crate::error::DeleteReportPlanError)
     pub fn delete_report_plan(&self) -> fluent_builders::DeleteReportPlan<C, M, R> {
         fluent_builders::DeleteReportPlan::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeBackupJob` operation.
+    /// Constructs a fluent builder for the [`DescribeBackupJob`](crate::client::fluent_builders::DescribeBackupJob) operation.
     ///
-    /// See [`DescribeBackupJob`](crate::client::fluent_builders::DescribeBackupJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBackupJob::backup_job_id) / [`set_backup_job_id(Option<String>)`](crate::client::fluent_builders::DescribeBackupJob::set_backup_job_id): <p>Uniquely identifies a request to Backup to back up a resource.</p>
+    /// - On success, responds with [`DescribeBackupJobOutput`](crate::output::DescribeBackupJobOutput) with field(s):
+    ///   - [`account_id(Option<String>)`](crate::output::DescribeBackupJobOutput::account_id): <p>Returns the account ID that owns the backup job.</p>
+    ///   - [`backup_job_id(Option<String>)`](crate::output::DescribeBackupJobOutput::backup_job_id): <p>Uniquely identifies a request to Backup to back up a resource.</p>
+    ///   - [`backup_vault_name(Option<String>)`](crate::output::DescribeBackupJobOutput::backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`backup_vault_arn(Option<String>)`](crate::output::DescribeBackupJobOutput::backup_vault_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    ///   - [`recovery_point_arn(Option<String>)`](crate::output::DescribeBackupJobOutput::recovery_point_arn): <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::output::DescribeBackupJobOutput::resource_arn): <p>An ARN that uniquely identifies a saved resource. The format of the ARN depends on the resource type.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeBackupJobOutput::creation_date): <p>The date and time that a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`completion_date(Option<DateTime>)`](crate::output::DescribeBackupJobOutput::completion_date): <p>The date and time that a job to create a backup job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`state(Option<BackupJobState>)`](crate::output::DescribeBackupJobOutput::state): <p>The current state of a resource recovery point.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::DescribeBackupJobOutput::status_message): <p>A detailed message explaining the status of the job to back up a resource.</p>
+    ///   - [`percent_done(Option<String>)`](crate::output::DescribeBackupJobOutput::percent_done): <p>Contains an estimated percentage that is complete of a job at the time the job status was queried.</p>
+    ///   - [`backup_size_in_bytes(Option<i64>)`](crate::output::DescribeBackupJobOutput::backup_size_in_bytes): <p>The size, in bytes, of a backup.</p>
+    ///   - [`iam_role_arn(Option<String>)`](crate::output::DescribeBackupJobOutput::iam_role_arn): <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    ///   - [`created_by(Option<RecoveryPointCreator>)`](crate::output::DescribeBackupJobOutput::created_by): <p>Contains identifying information about the creation of a backup job, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan that is used to create it.</p>
+    ///   - [`resource_type(Option<String>)`](crate::output::DescribeBackupJobOutput::resource_type): <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
+    ///   - [`bytes_transferred(Option<i64>)`](crate::output::DescribeBackupJobOutput::bytes_transferred): <p>The size in bytes transferred to a backup vault at the time that the job status was queried.</p>
+    ///   - [`expected_completion_date(Option<DateTime>)`](crate::output::DescribeBackupJobOutput::expected_completion_date): <p>The date and time that a job to back up resources is expected to be completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>ExpectedCompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`start_by(Option<DateTime>)`](crate::output::DescribeBackupJobOutput::start_by): <p>Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup job must be started before it is canceled. The value is calculated by adding the start window to the scheduled time. So if the scheduled time were 6:00 PM and the start window is 2 hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`backup_options(Option<HashMap<String, String>>)`](crate::output::DescribeBackupJobOutput::backup_options): <p>Represents the options specified as part of backup plan or on-demand backup job.</p>
+    ///   - [`backup_type(Option<String>)`](crate::output::DescribeBackupJobOutput::backup_type): <p>Represents the actual backup type selected for a backup job. For example, if a successful Windows Volume Shadow Copy Service (VSS) backup was taken, <code>BackupType</code> returns <code>"WindowsVSS"</code>. If <code>BackupType</code> is empty, then the backup type was a regular backup.</p>
+    /// - On failure, responds with [`SdkError<DescribeBackupJobError>`](crate::error::DescribeBackupJobError)
     pub fn describe_backup_job(&self) -> fluent_builders::DescribeBackupJob<C, M, R> {
         fluent_builders::DescribeBackupJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeBackupVault` operation.
+    /// Constructs a fluent builder for the [`DescribeBackupVault`](crate::client::fluent_builders::DescribeBackupVault) operation.
     ///
-    /// See [`DescribeBackupVault`](crate::client::fluent_builders::DescribeBackupVault) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::DescribeBackupVault::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::DescribeBackupVault::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// - On success, responds with [`DescribeBackupVaultOutput`](crate::output::DescribeBackupVaultOutput) with field(s):
+    ///   - [`backup_vault_name(Option<String>)`](crate::output::DescribeBackupVaultOutput::backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`backup_vault_arn(Option<String>)`](crate::output::DescribeBackupVaultOutput::backup_vault_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    ///   - [`encryption_key_arn(Option<String>)`](crate::output::DescribeBackupVaultOutput::encryption_key_arn): <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeBackupVaultOutput::creation_date): <p>The date and time that a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`creator_request_id(Option<String>)`](crate::output::DescribeBackupVaultOutput::creator_request_id): <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    ///   - [`number_of_recovery_points(i64)`](crate::output::DescribeBackupVaultOutput::number_of_recovery_points): <p>The number of recovery points that are stored in a backup vault.</p>
+    ///   - [`locked(Option<bool>)`](crate::output::DescribeBackupVaultOutput::locked): <p>A Boolean that indicates whether Backup Vault Lock is currently protecting the backup vault. <code>True</code> means that Vault Lock causes delete or update operations on the recovery points stored in the vault to fail.</p>
+    ///   - [`min_retention_days(Option<i64>)`](crate::output::DescribeBackupVaultOutput::min_retention_days): <p>The Backup Vault Lock setting that specifies the minimum retention period that the vault retains its recovery points. If this parameter is not specified, Vault Lock does not enforce a minimum retention period.</p>  <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already stored in the vault prior to Vault Lock are not affected.</p>
+    ///   - [`max_retention_days(Option<i64>)`](crate::output::DescribeBackupVaultOutput::max_retention_days): <p>The Backup Vault Lock setting that specifies the maximum retention period that the vault retains its recovery points. If this parameter is not specified, Vault Lock does not enforce a maximum retention period on the recovery points in the vault (allowing indefinite storage).</p>  <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already stored in the vault prior to Vault Lock are not affected.</p>
+    ///   - [`lock_date(Option<DateTime>)`](crate::output::DescribeBackupVaultOutput::lock_date): <p>The date and time when Backup Vault Lock configuration cannot be changed or deleted.</p>  <p>If you applied Vault Lock to your vault without specifying a lock date, you can change any of your Vault Lock settings, or delete Vault Lock from the vault entirely, at any time.</p>  <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// - On failure, responds with [`SdkError<DescribeBackupVaultError>`](crate::error::DescribeBackupVaultError)
     pub fn describe_backup_vault(&self) -> fluent_builders::DescribeBackupVault<C, M, R> {
         fluent_builders::DescribeBackupVault::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCopyJob` operation.
+    /// Constructs a fluent builder for the [`DescribeCopyJob`](crate::client::fluent_builders::DescribeCopyJob) operation.
     ///
-    /// See [`DescribeCopyJob`](crate::client::fluent_builders::DescribeCopyJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`copy_job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeCopyJob::copy_job_id) / [`set_copy_job_id(Option<String>)`](crate::client::fluent_builders::DescribeCopyJob::set_copy_job_id): <p>Uniquely identifies a copy job.</p>
+    /// - On success, responds with [`DescribeCopyJobOutput`](crate::output::DescribeCopyJobOutput) with field(s):
+    ///   - [`copy_job(Option<CopyJob>)`](crate::output::DescribeCopyJobOutput::copy_job): <p>Contains detailed information about a copy job.</p>
+    /// - On failure, responds with [`SdkError<DescribeCopyJobError>`](crate::error::DescribeCopyJobError)
     pub fn describe_copy_job(&self) -> fluent_builders::DescribeCopyJob<C, M, R> {
         fluent_builders::DescribeCopyJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFramework` operation.
+    /// Constructs a fluent builder for the [`DescribeFramework`](crate::client::fluent_builders::DescribeFramework) operation.
     ///
-    /// See [`DescribeFramework`](crate::client::fluent_builders::DescribeFramework) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`framework_name(impl Into<String>)`](crate::client::fluent_builders::DescribeFramework::framework_name) / [`set_framework_name(Option<String>)`](crate::client::fluent_builders::DescribeFramework::set_framework_name): <p>The unique name of a framework.</p>
+    /// - On success, responds with [`DescribeFrameworkOutput`](crate::output::DescribeFrameworkOutput) with field(s):
+    ///   - [`framework_name(Option<String>)`](crate::output::DescribeFrameworkOutput::framework_name): <p>The unique name of a framework.</p>
+    ///   - [`framework_arn(Option<String>)`](crate::output::DescribeFrameworkOutput::framework_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    ///   - [`framework_description(Option<String>)`](crate::output::DescribeFrameworkOutput::framework_description): <p>An optional description of the framework.</p>
+    ///   - [`framework_controls(Option<Vec<FrameworkControl>>)`](crate::output::DescribeFrameworkOutput::framework_controls): <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeFrameworkOutput::creation_time): <p>The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`deployment_status(Option<String>)`](crate::output::DescribeFrameworkOutput::deployment_status): <p>The deployment status of a framework. The statuses are:</p>  <p> <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</code> </p>
+    ///   - [`framework_status(Option<String>)`](crate::output::DescribeFrameworkOutput::framework_status): <p>A framework consists of one or more controls. Each control governs a resource, such as backup plans, backup selections, backup vaults, or recovery points. You can also turn Config recording on or off for each resource. The statuses are:</p>  <ul>   <li> <p> <code>ACTIVE</code> when recording is turned on for all resources governed by the framework.</p> </li>   <li> <p> <code>PARTIALLY_ACTIVE</code> when recording is turned off for at least one resource governed by the framework.</p> </li>   <li> <p> <code>INACTIVE</code> when recording is turned off for all resources governed by the framework.</p> </li>   <li> <p> <code>UNAVAILABLE</code> when Backup is unable to validate recording status at this time.</p> </li>  </ul>
+    ///   - [`idempotency_token(Option<String>)`](crate::output::DescribeFrameworkOutput::idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>DescribeFrameworkOutput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    /// - On failure, responds with [`SdkError<DescribeFrameworkError>`](crate::error::DescribeFrameworkError)
     pub fn describe_framework(&self) -> fluent_builders::DescribeFramework<C, M, R> {
         fluent_builders::DescribeFramework::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeGlobalSettings` operation.
+    /// Constructs a fluent builder for the [`DescribeGlobalSettings`](crate::client::fluent_builders::DescribeGlobalSettings) operation.
     ///
-    /// See [`DescribeGlobalSettings`](crate::client::fluent_builders::DescribeGlobalSettings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeGlobalSettings::send) it.
+
+    /// - On success, responds with [`DescribeGlobalSettingsOutput`](crate::output::DescribeGlobalSettingsOutput) with field(s):
+    ///   - [`global_settings(Option<HashMap<String, String>>)`](crate::output::DescribeGlobalSettingsOutput::global_settings): <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
+    ///   - [`last_update_time(Option<DateTime>)`](crate::output::DescribeGlobalSettingsOutput::last_update_time): <p>The date and time that the flag <code>isCrossAccountBackupEnabled</code> was last updated. This update is in Unix format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// - On failure, responds with [`SdkError<DescribeGlobalSettingsError>`](crate::error::DescribeGlobalSettingsError)
     pub fn describe_global_settings(&self) -> fluent_builders::DescribeGlobalSettings<C, M, R> {
         fluent_builders::DescribeGlobalSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeProtectedResource` operation.
+    /// Constructs a fluent builder for the [`DescribeProtectedResource`](crate::client::fluent_builders::DescribeProtectedResource) operation.
     ///
-    /// See [`DescribeProtectedResource`](crate::client::fluent_builders::DescribeProtectedResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeProtectedResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DescribeProtectedResource::set_resource_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    /// - On success, responds with [`DescribeProtectedResourceOutput`](crate::output::DescribeProtectedResourceOutput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::output::DescribeProtectedResourceOutput::resource_arn): <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    ///   - [`resource_type(Option<String>)`](crate::output::DescribeProtectedResourceOutput::resource_type): <p>The type of Amazon Web Services resource saved as a recovery point; for example, an Amazon EBS volume or an Amazon RDS database.</p>
+    ///   - [`last_backup_time(Option<DateTime>)`](crate::output::DescribeProtectedResourceOutput::last_backup_time): <p>The date and time that a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// - On failure, responds with [`SdkError<DescribeProtectedResourceError>`](crate::error::DescribeProtectedResourceError)
     pub fn describe_protected_resource(
         &self,
     ) -> fluent_builders::DescribeProtectedResource<C, M, R> {
         fluent_builders::DescribeProtectedResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRecoveryPoint` operation.
+    /// Constructs a fluent builder for the [`DescribeRecoveryPoint`](crate::client::fluent_builders::DescribeRecoveryPoint) operation.
     ///
-    /// See [`DescribeRecoveryPoint`](crate::client::fluent_builders::DescribeRecoveryPoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::DescribeRecoveryPoint::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::DescribeRecoveryPoint::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`recovery_point_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeRecoveryPoint::recovery_point_arn) / [`set_recovery_point_arn(Option<String>)`](crate::client::fluent_builders::DescribeRecoveryPoint::set_recovery_point_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    /// - On success, responds with [`DescribeRecoveryPointOutput`](crate::output::DescribeRecoveryPointOutput) with field(s):
+    ///   - [`recovery_point_arn(Option<String>)`](crate::output::DescribeRecoveryPointOutput::recovery_point_arn): <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    ///   - [`backup_vault_name(Option<String>)`](crate::output::DescribeRecoveryPointOutput::backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`backup_vault_arn(Option<String>)`](crate::output::DescribeRecoveryPointOutput::backup_vault_arn): <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    ///   - [`source_backup_vault_arn(Option<String>)`](crate::output::DescribeRecoveryPointOutput::source_backup_vault_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally backed up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the recovery is restored to the same Amazon Web Services account or Region, this value will be <code>null</code>.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::output::DescribeRecoveryPointOutput::resource_arn): <p>An ARN that uniquely identifies a saved resource. The format of the ARN depends on the resource type.</p>
+    ///   - [`resource_type(Option<String>)`](crate::output::DescribeRecoveryPointOutput::resource_type): <p>The type of Amazon Web Services resource to save as a recovery point; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
+    ///   - [`created_by(Option<RecoveryPointCreator>)`](crate::output::DescribeRecoveryPointOutput::created_by): <p>Contains identifying information about the creation of a recovery point, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan used to create it.</p>
+    ///   - [`iam_role_arn(Option<String>)`](crate::output::DescribeRecoveryPointOutput::iam_role_arn): <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    ///   - [`status(Option<RecoveryPointStatus>)`](crate::output::DescribeRecoveryPointOutput::status): <p>A status code specifying the state of the recovery point.</p>  <p> <code>PARTIAL</code> status indicates Backup could not create the recovery point before the backup window closed. To increase your backup plan window using the API, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>. You can also increase your backup plan window using the Console by choosing and editing your backup plan.</p>  <p> <code>EXPIRED</code> status indicates that the recovery point has exceeded its retention period, but Backup lacks permission or is otherwise unable to delete it. To manually delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::DescribeRecoveryPointOutput::status_message): <p>A status message explaining the reason for the recovery point deletion failure.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeRecoveryPointOutput::creation_date): <p>The date and time that a recovery point is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`completion_date(Option<DateTime>)`](crate::output::DescribeRecoveryPointOutput::completion_date): <p>The date and time that a job to create a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`backup_size_in_bytes(Option<i64>)`](crate::output::DescribeRecoveryPointOutput::backup_size_in_bytes): <p>The size, in bytes, of a backup.</p>
+    ///   - [`calculated_lifecycle(Option<CalculatedLifecycle>)`](crate::output::DescribeRecoveryPointOutput::calculated_lifecycle): <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
+    ///   - [`lifecycle(Option<Lifecycle>)`](crate::output::DescribeRecoveryPointOutput::lifecycle): <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>  <p>Backups that are transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>  <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    ///   - [`encryption_key_arn(Option<String>)`](crate::output::DescribeRecoveryPointOutput::encryption_key_arn): <p>The server-side encryption key used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+    ///   - [`is_encrypted(bool)`](crate::output::DescribeRecoveryPointOutput::is_encrypted): <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is encrypted, or <code>FALSE</code> if the recovery point is not encrypted.</p>
+    ///   - [`storage_class(Option<StorageClass>)`](crate::output::DescribeRecoveryPointOutput::storage_class): <p>Specifies the storage class of the recovery point. Valid values are <code>WARM</code> or <code>COLD</code>.</p>
+    ///   - [`last_restore_time(Option<DateTime>)`](crate::output::DescribeRecoveryPointOutput::last_restore_time): <p>The date and time that a recovery point was last restored, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// - On failure, responds with [`SdkError<DescribeRecoveryPointError>`](crate::error::DescribeRecoveryPointError)
     pub fn describe_recovery_point(&self) -> fluent_builders::DescribeRecoveryPoint<C, M, R> {
         fluent_builders::DescribeRecoveryPoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRegionSettings` operation.
+    /// Constructs a fluent builder for the [`DescribeRegionSettings`](crate::client::fluent_builders::DescribeRegionSettings) operation.
     ///
-    /// See [`DescribeRegionSettings`](crate::client::fluent_builders::DescribeRegionSettings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeRegionSettings::send) it.
+
+    /// - On success, responds with [`DescribeRegionSettingsOutput`](crate::output::DescribeRegionSettingsOutput) with field(s):
+    ///   - [`resource_type_opt_in_preference(Option<HashMap<String, bool>>)`](crate::output::DescribeRegionSettingsOutput::resource_type_opt_in_preference): <p>Returns a list of all services along with the opt-in preferences in the Region.</p>
+    ///   - [`resource_type_management_preference(Option<HashMap<String, bool>>)`](crate::output::DescribeRegionSettingsOutput::resource_type_management_preference): <p>Returns whether a DynamoDB recovery point was taken using <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>. </p>
+    /// - On failure, responds with [`SdkError<DescribeRegionSettingsError>`](crate::error::DescribeRegionSettingsError)
     pub fn describe_region_settings(&self) -> fluent_builders::DescribeRegionSettings<C, M, R> {
         fluent_builders::DescribeRegionSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReportJob` operation.
+    /// Constructs a fluent builder for the [`DescribeReportJob`](crate::client::fluent_builders::DescribeReportJob) operation.
     ///
-    /// See [`DescribeReportJob`](crate::client::fluent_builders::DescribeReportJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`report_job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeReportJob::report_job_id) / [`set_report_job_id(Option<String>)`](crate::client::fluent_builders::DescribeReportJob::set_report_job_id): <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
+    /// - On success, responds with [`DescribeReportJobOutput`](crate::output::DescribeReportJobOutput) with field(s):
+    ///   - [`report_job(Option<ReportJob>)`](crate::output::DescribeReportJobOutput::report_job): <p>A list of information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
+    /// - On failure, responds with [`SdkError<DescribeReportJobError>`](crate::error::DescribeReportJobError)
     pub fn describe_report_job(&self) -> fluent_builders::DescribeReportJob<C, M, R> {
         fluent_builders::DescribeReportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReportPlan` operation.
+    /// Constructs a fluent builder for the [`DescribeReportPlan`](crate::client::fluent_builders::DescribeReportPlan) operation.
     ///
-    /// See [`DescribeReportPlan`](crate::client::fluent_builders::DescribeReportPlan) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`report_plan_name(impl Into<String>)`](crate::client::fluent_builders::DescribeReportPlan::report_plan_name) / [`set_report_plan_name(Option<String>)`](crate::client::fluent_builders::DescribeReportPlan::set_report_plan_name): <p>The unique name of a report plan.</p>
+    /// - On success, responds with [`DescribeReportPlanOutput`](crate::output::DescribeReportPlanOutput) with field(s):
+    ///   - [`report_plan(Option<ReportPlan>)`](crate::output::DescribeReportPlanOutput::report_plan): <p>Returns details about the report plan that is specified by its name. These details include the report plan's Amazon Resource Name (ARN), description, settings, delivery channel, deployment status, creation time, and last attempted and successful run times.</p>
+    /// - On failure, responds with [`SdkError<DescribeReportPlanError>`](crate::error::DescribeReportPlanError)
     pub fn describe_report_plan(&self) -> fluent_builders::DescribeReportPlan<C, M, R> {
         fluent_builders::DescribeReportPlan::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRestoreJob` operation.
+    /// Constructs a fluent builder for the [`DescribeRestoreJob`](crate::client::fluent_builders::DescribeRestoreJob) operation.
     ///
-    /// See [`DescribeRestoreJob`](crate::client::fluent_builders::DescribeRestoreJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`restore_job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeRestoreJob::restore_job_id) / [`set_restore_job_id(Option<String>)`](crate::client::fluent_builders::DescribeRestoreJob::set_restore_job_id): <p>Uniquely identifies the job that restores a recovery point.</p>
+    /// - On success, responds with [`DescribeRestoreJobOutput`](crate::output::DescribeRestoreJobOutput) with field(s):
+    ///   - [`account_id(Option<String>)`](crate::output::DescribeRestoreJobOutput::account_id): <p>Returns the account ID that owns the restore job.</p>
+    ///   - [`restore_job_id(Option<String>)`](crate::output::DescribeRestoreJobOutput::restore_job_id): <p>Uniquely identifies the job that restores a recovery point.</p>
+    ///   - [`recovery_point_arn(Option<String>)`](crate::output::DescribeRestoreJobOutput::recovery_point_arn): <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeRestoreJobOutput::creation_date): <p>The date and time that a restore job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`completion_date(Option<DateTime>)`](crate::output::DescribeRestoreJobOutput::completion_date): <p>The date and time that a job to restore a recovery point is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`status(Option<RestoreJobStatus>)`](crate::output::DescribeRestoreJobOutput::status): <p>Status code specifying the state of the job that is initiated by Backup to restore a recovery point.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::DescribeRestoreJobOutput::status_message): <p>A message showing the status of a job to restore a recovery point.</p>
+    ///   - [`percent_done(Option<String>)`](crate::output::DescribeRestoreJobOutput::percent_done): <p>Contains an estimated percentage that is complete of a job at the time the job status was queried.</p>
+    ///   - [`backup_size_in_bytes(Option<i64>)`](crate::output::DescribeRestoreJobOutput::backup_size_in_bytes): <p>The size, in bytes, of the restored resource.</p>
+    ///   - [`iam_role_arn(Option<String>)`](crate::output::DescribeRestoreJobOutput::iam_role_arn): <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    ///   - [`expected_completion_time_minutes(Option<i64>)`](crate::output::DescribeRestoreJobOutput::expected_completion_time_minutes): <p>The amount of time in minutes that a job restoring a recovery point is expected to take.</p>
+    ///   - [`created_resource_arn(Option<String>)`](crate::output::DescribeRestoreJobOutput::created_resource_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource whose recovery point is being restored. The format of the ARN depends on the resource type of the backed-up resource.</p>
+    ///   - [`resource_type(Option<String>)`](crate::output::DescribeRestoreJobOutput::resource_type): <p>Returns metadata associated with a restore job listed by resource type.</p>
+    /// - On failure, responds with [`SdkError<DescribeRestoreJobError>`](crate::error::DescribeRestoreJobError)
     pub fn describe_restore_job(&self) -> fluent_builders::DescribeRestoreJob<C, M, R> {
         fluent_builders::DescribeRestoreJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateRecoveryPoint` operation.
+    /// Constructs a fluent builder for the [`DisassociateRecoveryPoint`](crate::client::fluent_builders::DisassociateRecoveryPoint) operation.
     ///
-    /// See [`DisassociateRecoveryPoint`](crate::client::fluent_builders::DisassociateRecoveryPoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateRecoveryPoint::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::DisassociateRecoveryPoint::set_backup_vault_name): <p>The unique name of an Backup vault.</p>
+    ///   - [`recovery_point_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateRecoveryPoint::recovery_point_arn) / [`set_recovery_point_arn(Option<String>)`](crate::client::fluent_builders::DisassociateRecoveryPoint::set_recovery_point_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
+    /// - On success, responds with [`DisassociateRecoveryPointOutput`](crate::output::DisassociateRecoveryPointOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateRecoveryPointError>`](crate::error::DisassociateRecoveryPointError)
     pub fn disassociate_recovery_point(
         &self,
     ) -> fluent_builders::DisassociateRecoveryPoint<C, M, R> {
         fluent_builders::DisassociateRecoveryPoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ExportBackupPlanTemplate` operation.
+    /// Constructs a fluent builder for the [`ExportBackupPlanTemplate`](crate::client::fluent_builders::ExportBackupPlanTemplate) operation.
     ///
-    /// See [`ExportBackupPlanTemplate`](crate::client::fluent_builders::ExportBackupPlanTemplate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_plan_id(impl Into<String>)`](crate::client::fluent_builders::ExportBackupPlanTemplate::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::client::fluent_builders::ExportBackupPlanTemplate::set_backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    /// - On success, responds with [`ExportBackupPlanTemplateOutput`](crate::output::ExportBackupPlanTemplateOutput) with field(s):
+    ///   - [`backup_plan_template_json(Option<String>)`](crate::output::ExportBackupPlanTemplateOutput::backup_plan_template_json): <p>The body of a backup plan template in JSON format.</p> <note>   <p>This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code> </p>  </note>
+    /// - On failure, responds with [`SdkError<ExportBackupPlanTemplateError>`](crate::error::ExportBackupPlanTemplateError)
     pub fn export_backup_plan_template(
         &self,
     ) -> fluent_builders::ExportBackupPlanTemplate<C, M, R> {
         fluent_builders::ExportBackupPlanTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBackupPlan` operation.
+    /// Constructs a fluent builder for the [`GetBackupPlan`](crate::client::fluent_builders::GetBackupPlan) operation.
     ///
-    /// See [`GetBackupPlan`](crate::client::fluent_builders::GetBackupPlan) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_plan_id(impl Into<String>)`](crate::client::fluent_builders::GetBackupPlan::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::client::fluent_builders::GetBackupPlan::set_backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::GetBackupPlan::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::GetBackupPlan::set_version_id): <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
+    /// - On success, responds with [`GetBackupPlanOutput`](crate::output::GetBackupPlanOutput) with field(s):
+    ///   - [`backup_plan(Option<BackupPlan>)`](crate::output::GetBackupPlanOutput::backup_plan): <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    ///   - [`backup_plan_id(Option<String>)`](crate::output::GetBackupPlanOutput::backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`backup_plan_arn(Option<String>)`](crate::output::GetBackupPlanOutput::backup_plan_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+    ///   - [`version_id(Option<String>)`](crate::output::GetBackupPlanOutput::version_id): <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
+    ///   - [`creator_request_id(Option<String>)`](crate::output::GetBackupPlanOutput::creator_request_id): <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::GetBackupPlanOutput::creation_date): <p>The date and time that a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`deletion_date(Option<DateTime>)`](crate::output::GetBackupPlanOutput::deletion_date): <p>The date and time that a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`last_execution_date(Option<DateTime>)`](crate::output::GetBackupPlanOutput::last_execution_date): <p>The last time a job to back up resources was run with this backup plan. A date and time, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`advanced_backup_settings(Option<Vec<AdvancedBackupSetting>>)`](crate::output::GetBackupPlanOutput::advanced_backup_settings): <p>Contains a list of <code>BackupOptions</code> for each resource type. The list is populated only if the advanced option is set for the backup plan.</p>
+    /// - On failure, responds with [`SdkError<GetBackupPlanError>`](crate::error::GetBackupPlanError)
     pub fn get_backup_plan(&self) -> fluent_builders::GetBackupPlan<C, M, R> {
         fluent_builders::GetBackupPlan::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBackupPlanFromJSON` operation.
+    /// Constructs a fluent builder for the [`GetBackupPlanFromJSON`](crate::client::fluent_builders::GetBackupPlanFromJSON) operation.
     ///
-    /// See [`GetBackupPlanFromJSON`](crate::client::fluent_builders::GetBackupPlanFromJSON) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_plan_template_json(impl Into<String>)`](crate::client::fluent_builders::GetBackupPlanFromJSON::backup_plan_template_json) / [`set_backup_plan_template_json(Option<String>)`](crate::client::fluent_builders::GetBackupPlanFromJSON::set_backup_plan_template_json): <p>A customer-supplied backup plan document in JSON format.</p>
+    /// - On success, responds with [`GetBackupPlanFromJsonOutput`](crate::output::GetBackupPlanFromJsonOutput) with field(s):
+    ///   - [`backup_plan(Option<BackupPlan>)`](crate::output::GetBackupPlanFromJsonOutput::backup_plan): <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// - On failure, responds with [`SdkError<GetBackupPlanFromJSONError>`](crate::error::GetBackupPlanFromJSONError)
     pub fn get_backup_plan_from_json(&self) -> fluent_builders::GetBackupPlanFromJSON<C, M, R> {
         fluent_builders::GetBackupPlanFromJSON::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBackupPlanFromTemplate` operation.
+    /// Constructs a fluent builder for the [`GetBackupPlanFromTemplate`](crate::client::fluent_builders::GetBackupPlanFromTemplate) operation.
     ///
-    /// See [`GetBackupPlanFromTemplate`](crate::client::fluent_builders::GetBackupPlanFromTemplate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_plan_template_id(impl Into<String>)`](crate::client::fluent_builders::GetBackupPlanFromTemplate::backup_plan_template_id) / [`set_backup_plan_template_id(Option<String>)`](crate::client::fluent_builders::GetBackupPlanFromTemplate::set_backup_plan_template_id): <p>Uniquely identifies a stored backup plan template.</p>
+    /// - On success, responds with [`GetBackupPlanFromTemplateOutput`](crate::output::GetBackupPlanFromTemplateOutput) with field(s):
+    ///   - [`backup_plan_document(Option<BackupPlan>)`](crate::output::GetBackupPlanFromTemplateOutput::backup_plan_document): <p>Returns the body of a backup plan based on the target template, including the name, rules, and backup vault of the plan.</p>
+    /// - On failure, responds with [`SdkError<GetBackupPlanFromTemplateError>`](crate::error::GetBackupPlanFromTemplateError)
     pub fn get_backup_plan_from_template(
         &self,
     ) -> fluent_builders::GetBackupPlanFromTemplate<C, M, R> {
         fluent_builders::GetBackupPlanFromTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBackupSelection` operation.
+    /// Constructs a fluent builder for the [`GetBackupSelection`](crate::client::fluent_builders::GetBackupSelection) operation.
     ///
-    /// See [`GetBackupSelection`](crate::client::fluent_builders::GetBackupSelection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_plan_id(impl Into<String>)`](crate::client::fluent_builders::GetBackupSelection::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::client::fluent_builders::GetBackupSelection::set_backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`selection_id(impl Into<String>)`](crate::client::fluent_builders::GetBackupSelection::selection_id) / [`set_selection_id(Option<String>)`](crate::client::fluent_builders::GetBackupSelection::set_selection_id): <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
+    /// - On success, responds with [`GetBackupSelectionOutput`](crate::output::GetBackupSelectionOutput) with field(s):
+    ///   - [`backup_selection(Option<BackupSelection>)`](crate::output::GetBackupSelectionOutput::backup_selection): <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
+    ///   - [`selection_id(Option<String>)`](crate::output::GetBackupSelectionOutput::selection_id): <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
+    ///   - [`backup_plan_id(Option<String>)`](crate::output::GetBackupSelectionOutput::backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::GetBackupSelectionOutput::creation_date): <p>The date and time a backup selection is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`creator_request_id(Option<String>)`](crate::output::GetBackupSelectionOutput::creator_request_id): <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// - On failure, responds with [`SdkError<GetBackupSelectionError>`](crate::error::GetBackupSelectionError)
     pub fn get_backup_selection(&self) -> fluent_builders::GetBackupSelection<C, M, R> {
         fluent_builders::GetBackupSelection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBackupVaultAccessPolicy` operation.
+    /// Constructs a fluent builder for the [`GetBackupVaultAccessPolicy`](crate::client::fluent_builders::GetBackupVaultAccessPolicy) operation.
     ///
-    /// See [`GetBackupVaultAccessPolicy`](crate::client::fluent_builders::GetBackupVaultAccessPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::GetBackupVaultAccessPolicy::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::GetBackupVaultAccessPolicy::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// - On success, responds with [`GetBackupVaultAccessPolicyOutput`](crate::output::GetBackupVaultAccessPolicyOutput) with field(s):
+    ///   - [`backup_vault_name(Option<String>)`](crate::output::GetBackupVaultAccessPolicyOutput::backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`backup_vault_arn(Option<String>)`](crate::output::GetBackupVaultAccessPolicyOutput::backup_vault_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    ///   - [`policy(Option<String>)`](crate::output::GetBackupVaultAccessPolicyOutput::policy): <p>The backup vault access policy document in JSON format.</p>
+    /// - On failure, responds with [`SdkError<GetBackupVaultAccessPolicyError>`](crate::error::GetBackupVaultAccessPolicyError)
     pub fn get_backup_vault_access_policy(
         &self,
     ) -> fluent_builders::GetBackupVaultAccessPolicy<C, M, R> {
         fluent_builders::GetBackupVaultAccessPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBackupVaultNotifications` operation.
+    /// Constructs a fluent builder for the [`GetBackupVaultNotifications`](crate::client::fluent_builders::GetBackupVaultNotifications) operation.
     ///
-    /// See [`GetBackupVaultNotifications`](crate::client::fluent_builders::GetBackupVaultNotifications) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::GetBackupVaultNotifications::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::GetBackupVaultNotifications::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// - On success, responds with [`GetBackupVaultNotificationsOutput`](crate::output::GetBackupVaultNotificationsOutput) with field(s):
+    ///   - [`backup_vault_name(Option<String>)`](crate::output::GetBackupVaultNotificationsOutput::backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`backup_vault_arn(Option<String>)`](crate::output::GetBackupVaultNotificationsOutput::backup_vault_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::output::GetBackupVaultNotificationsOutput::sns_topic_arn): <p>An ARN that uniquely identifies an Amazon Simple Notification Service (Amazon SNS) topic; for example, <code>arn:aws:sns:us-west-2:111122223333:MyTopic</code>.</p>
+    ///   - [`backup_vault_events(Option<Vec<BackupVaultEvent>>)`](crate::output::GetBackupVaultNotificationsOutput::backup_vault_events): <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
+    /// - On failure, responds with [`SdkError<GetBackupVaultNotificationsError>`](crate::error::GetBackupVaultNotificationsError)
     pub fn get_backup_vault_notifications(
         &self,
     ) -> fluent_builders::GetBackupVaultNotifications<C, M, R> {
         fluent_builders::GetBackupVaultNotifications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRecoveryPointRestoreMetadata` operation.
+    /// Constructs a fluent builder for the [`GetRecoveryPointRestoreMetadata`](crate::client::fluent_builders::GetRecoveryPointRestoreMetadata) operation.
     ///
-    /// See [`GetRecoveryPointRestoreMetadata`](crate::client::fluent_builders::GetRecoveryPointRestoreMetadata) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::GetRecoveryPointRestoreMetadata::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::GetRecoveryPointRestoreMetadata::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`recovery_point_arn(impl Into<String>)`](crate::client::fluent_builders::GetRecoveryPointRestoreMetadata::recovery_point_arn) / [`set_recovery_point_arn(Option<String>)`](crate::client::fluent_builders::GetRecoveryPointRestoreMetadata::set_recovery_point_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    /// - On success, responds with [`GetRecoveryPointRestoreMetadataOutput`](crate::output::GetRecoveryPointRestoreMetadataOutput) with field(s):
+    ///   - [`backup_vault_arn(Option<String>)`](crate::output::GetRecoveryPointRestoreMetadataOutput::backup_vault_arn): <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    ///   - [`recovery_point_arn(Option<String>)`](crate::output::GetRecoveryPointRestoreMetadataOutput::recovery_point_arn): <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    ///   - [`restore_metadata(Option<HashMap<String, String>>)`](crate::output::GetRecoveryPointRestoreMetadataOutput::restore_metadata): <p>The set of metadata key-value pairs that describe the original configuration of the backed-up resource. These values vary depending on the service that is being restored.</p>
+    /// - On failure, responds with [`SdkError<GetRecoveryPointRestoreMetadataError>`](crate::error::GetRecoveryPointRestoreMetadataError)
     pub fn get_recovery_point_restore_metadata(
         &self,
     ) -> fluent_builders::GetRecoveryPointRestoreMetadata<C, M, R> {
         fluent_builders::GetRecoveryPointRestoreMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSupportedResourceTypes` operation.
+    /// Constructs a fluent builder for the [`GetSupportedResourceTypes`](crate::client::fluent_builders::GetSupportedResourceTypes) operation.
     ///
-    /// See [`GetSupportedResourceTypes`](crate::client::fluent_builders::GetSupportedResourceTypes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetSupportedResourceTypes::send) it.
+
+    /// - On success, responds with [`GetSupportedResourceTypesOutput`](crate::output::GetSupportedResourceTypesOutput) with field(s):
+    ///   - [`resource_types(Option<Vec<String>>)`](crate::output::GetSupportedResourceTypesOutput::resource_types): <p>Contains a string with the supported Amazon Web Services resource types:</p>  <ul>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>FSX</code> for Amazon FSx</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<GetSupportedResourceTypesError>`](crate::error::GetSupportedResourceTypesError)
     pub fn get_supported_resource_types(
         &self,
     ) -> fluent_builders::GetSupportedResourceTypes<C, M, R> {
         fluent_builders::GetSupportedResourceTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBackupJobs` operation.
+    /// Constructs a fluent builder for the [`ListBackupJobs`](crate::client::fluent_builders::ListBackupJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBackupJobs::into_paginator).
     ///
-    /// See [`ListBackupJobs`](crate::client::fluent_builders::ListBackupJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBackupJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBackupJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBackupJobs::set_next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBackupJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBackupJobs::set_max_results): <p>The maximum number of items to be returned.</p>
+    ///   - [`by_resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListBackupJobs::by_resource_arn) / [`set_by_resource_arn(Option<String>)`](crate::client::fluent_builders::ListBackupJobs::set_by_resource_arn): <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
+    ///   - [`by_state(BackupJobState)`](crate::client::fluent_builders::ListBackupJobs::by_state) / [`set_by_state(Option<BackupJobState>)`](crate::client::fluent_builders::ListBackupJobs::set_by_state): <p>Returns only backup jobs that are in the specified state.</p>
+    ///   - [`by_backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::ListBackupJobs::by_backup_vault_name) / [`set_by_backup_vault_name(Option<String>)`](crate::client::fluent_builders::ListBackupJobs::set_by_backup_vault_name): <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`by_created_before(DateTime)`](crate::client::fluent_builders::ListBackupJobs::by_created_before) / [`set_by_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListBackupJobs::set_by_created_before): <p>Returns only backup jobs that were created before the specified date.</p>
+    ///   - [`by_created_after(DateTime)`](crate::client::fluent_builders::ListBackupJobs::by_created_after) / [`set_by_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListBackupJobs::set_by_created_after): <p>Returns only backup jobs that were created after the specified date.</p>
+    ///   - [`by_resource_type(impl Into<String>)`](crate::client::fluent_builders::ListBackupJobs::by_resource_type) / [`set_by_resource_type(Option<String>)`](crate::client::fluent_builders::ListBackupJobs::set_by_resource_type): <p>Returns only backup jobs for the specified resources:</p>  <ul>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>  </ul>
+    ///   - [`by_account_id(impl Into<String>)`](crate::client::fluent_builders::ListBackupJobs::by_account_id) / [`set_by_account_id(Option<String>)`](crate::client::fluent_builders::ListBackupJobs::set_by_account_id): <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>  <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
+    /// - On success, responds with [`ListBackupJobsOutput`](crate::output::ListBackupJobsOutput) with field(s):
+    ///   - [`backup_jobs(Option<Vec<BackupJob>>)`](crate::output::ListBackupJobsOutput::backup_jobs): <p>An array of structures containing metadata about your backup jobs returned in JSON format.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBackupJobsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// - On failure, responds with [`SdkError<ListBackupJobsError>`](crate::error::ListBackupJobsError)
     pub fn list_backup_jobs(&self) -> fluent_builders::ListBackupJobs<C, M, R> {
         fluent_builders::ListBackupJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBackupPlans` operation.
+    /// Constructs a fluent builder for the [`ListBackupPlans`](crate::client::fluent_builders::ListBackupPlans) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBackupPlans::into_paginator).
     ///
-    /// See [`ListBackupPlans`](crate::client::fluent_builders::ListBackupPlans) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBackupPlans::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBackupPlans::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBackupPlans::set_next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBackupPlans::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBackupPlans::set_max_results): <p>The maximum number of items to be returned.</p>
+    ///   - [`include_deleted(bool)`](crate::client::fluent_builders::ListBackupPlans::include_deleted) / [`set_include_deleted(Option<bool>)`](crate::client::fluent_builders::ListBackupPlans::set_include_deleted): <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup plans when set to <code>TRUE</code>.</p>
+    /// - On success, responds with [`ListBackupPlansOutput`](crate::output::ListBackupPlansOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListBackupPlansOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`backup_plans_list(Option<Vec<BackupPlansListMember>>)`](crate::output::ListBackupPlansOutput::backup_plans_list): <p>An array of backup plan list items containing metadata about your saved backup plans.</p>
+    /// - On failure, responds with [`SdkError<ListBackupPlansError>`](crate::error::ListBackupPlansError)
     pub fn list_backup_plans(&self) -> fluent_builders::ListBackupPlans<C, M, R> {
         fluent_builders::ListBackupPlans::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBackupPlanTemplates` operation.
+    /// Constructs a fluent builder for the [`ListBackupPlanTemplates`](crate::client::fluent_builders::ListBackupPlanTemplates) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBackupPlanTemplates::into_paginator).
     ///
-    /// See [`ListBackupPlanTemplates`](crate::client::fluent_builders::ListBackupPlanTemplates) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBackupPlanTemplates::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBackupPlanTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBackupPlanTemplates::set_next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBackupPlanTemplates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBackupPlanTemplates::set_max_results): <p>The maximum number of items to be returned.</p>
+    /// - On success, responds with [`ListBackupPlanTemplatesOutput`](crate::output::ListBackupPlanTemplatesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListBackupPlanTemplatesOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`backup_plan_templates_list(Option<Vec<BackupPlanTemplatesListMember>>)`](crate::output::ListBackupPlanTemplatesOutput::backup_plan_templates_list): <p>An array of template list items containing metadata about your saved templates.</p>
+    /// - On failure, responds with [`SdkError<ListBackupPlanTemplatesError>`](crate::error::ListBackupPlanTemplatesError)
     pub fn list_backup_plan_templates(&self) -> fluent_builders::ListBackupPlanTemplates<C, M, R> {
         fluent_builders::ListBackupPlanTemplates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBackupPlanVersions` operation.
+    /// Constructs a fluent builder for the [`ListBackupPlanVersions`](crate::client::fluent_builders::ListBackupPlanVersions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBackupPlanVersions::into_paginator).
     ///
-    /// See [`ListBackupPlanVersions`](crate::client::fluent_builders::ListBackupPlanVersions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBackupPlanVersions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`backup_plan_id(impl Into<String>)`](crate::client::fluent_builders::ListBackupPlanVersions::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::client::fluent_builders::ListBackupPlanVersions::set_backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBackupPlanVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBackupPlanVersions::set_next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBackupPlanVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBackupPlanVersions::set_max_results): <p>The maximum number of items to be returned.</p>
+    /// - On success, responds with [`ListBackupPlanVersionsOutput`](crate::output::ListBackupPlanVersionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListBackupPlanVersionsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`backup_plan_versions_list(Option<Vec<BackupPlansListMember>>)`](crate::output::ListBackupPlanVersionsOutput::backup_plan_versions_list): <p>An array of version list items containing metadata about your backup plans.</p>
+    /// - On failure, responds with [`SdkError<ListBackupPlanVersionsError>`](crate::error::ListBackupPlanVersionsError)
     pub fn list_backup_plan_versions(&self) -> fluent_builders::ListBackupPlanVersions<C, M, R> {
         fluent_builders::ListBackupPlanVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBackupSelections` operation.
+    /// Constructs a fluent builder for the [`ListBackupSelections`](crate::client::fluent_builders::ListBackupSelections) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBackupSelections::into_paginator).
     ///
-    /// See [`ListBackupSelections`](crate::client::fluent_builders::ListBackupSelections) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBackupSelections::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`backup_plan_id(impl Into<String>)`](crate::client::fluent_builders::ListBackupSelections::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::client::fluent_builders::ListBackupSelections::set_backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBackupSelections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBackupSelections::set_next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBackupSelections::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBackupSelections::set_max_results): <p>The maximum number of items to be returned.</p>
+    /// - On success, responds with [`ListBackupSelectionsOutput`](crate::output::ListBackupSelectionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListBackupSelectionsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`backup_selections_list(Option<Vec<BackupSelectionsListMember>>)`](crate::output::ListBackupSelectionsOutput::backup_selections_list): <p>An array of backup selection list items containing metadata about each resource in the list.</p>
+    /// - On failure, responds with [`SdkError<ListBackupSelectionsError>`](crate::error::ListBackupSelectionsError)
     pub fn list_backup_selections(&self) -> fluent_builders::ListBackupSelections<C, M, R> {
         fluent_builders::ListBackupSelections::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBackupVaults` operation.
+    /// Constructs a fluent builder for the [`ListBackupVaults`](crate::client::fluent_builders::ListBackupVaults) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBackupVaults::into_paginator).
     ///
-    /// See [`ListBackupVaults`](crate::client::fluent_builders::ListBackupVaults) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBackupVaults::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBackupVaults::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBackupVaults::set_next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBackupVaults::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBackupVaults::set_max_results): <p>The maximum number of items to be returned.</p>
+    /// - On success, responds with [`ListBackupVaultsOutput`](crate::output::ListBackupVaultsOutput) with field(s):
+    ///   - [`backup_vault_list(Option<Vec<BackupVaultListMember>>)`](crate::output::ListBackupVaultsOutput::backup_vault_list): <p>An array of backup vault list members containing vault metadata, including Amazon Resource Name (ARN), display name, creation date, number of saved recovery points, and encryption information if the resources saved in the backup vault are encrypted.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBackupVaultsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// - On failure, responds with [`SdkError<ListBackupVaultsError>`](crate::error::ListBackupVaultsError)
     pub fn list_backup_vaults(&self) -> fluent_builders::ListBackupVaults<C, M, R> {
         fluent_builders::ListBackupVaults::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCopyJobs` operation.
+    /// Constructs a fluent builder for the [`ListCopyJobs`](crate::client::fluent_builders::ListCopyJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCopyJobs::into_paginator).
     ///
-    /// See [`ListCopyJobs`](crate::client::fluent_builders::ListCopyJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCopyJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCopyJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCopyJobs::set_next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCopyJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCopyJobs::set_max_results): <p>The maximum number of items to be returned.</p>
+    ///   - [`by_resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListCopyJobs::by_resource_arn) / [`set_by_resource_arn(Option<String>)`](crate::client::fluent_builders::ListCopyJobs::set_by_resource_arn): <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
+    ///   - [`by_state(CopyJobState)`](crate::client::fluent_builders::ListCopyJobs::by_state) / [`set_by_state(Option<CopyJobState>)`](crate::client::fluent_builders::ListCopyJobs::set_by_state): <p>Returns only copy jobs that are in the specified state.</p>
+    ///   - [`by_created_before(DateTime)`](crate::client::fluent_builders::ListCopyJobs::by_created_before) / [`set_by_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListCopyJobs::set_by_created_before): <p>Returns only copy jobs that were created before the specified date.</p>
+    ///   - [`by_created_after(DateTime)`](crate::client::fluent_builders::ListCopyJobs::by_created_after) / [`set_by_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListCopyJobs::set_by_created_after): <p>Returns only copy jobs that were created after the specified date.</p>
+    ///   - [`by_resource_type(impl Into<String>)`](crate::client::fluent_builders::ListCopyJobs::by_resource_type) / [`set_by_resource_type(Option<String>)`](crate::client::fluent_builders::ListCopyJobs::set_by_resource_type): <p>Returns only backup jobs for the specified resources:</p>  <ul>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>  </ul>
+    ///   - [`by_destination_vault_arn(impl Into<String>)`](crate::client::fluent_builders::ListCopyJobs::by_destination_vault_arn) / [`set_by_destination_vault_arn(Option<String>)`](crate::client::fluent_builders::ListCopyJobs::set_by_destination_vault_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+    ///   - [`by_account_id(impl Into<String>)`](crate::client::fluent_builders::ListCopyJobs::by_account_id) / [`set_by_account_id(Option<String>)`](crate::client::fluent_builders::ListCopyJobs::set_by_account_id): <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
+    /// - On success, responds with [`ListCopyJobsOutput`](crate::output::ListCopyJobsOutput) with field(s):
+    ///   - [`copy_jobs(Option<Vec<CopyJob>>)`](crate::output::ListCopyJobsOutput::copy_jobs): <p>An array of structures containing metadata about your copy jobs returned in JSON format. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCopyJobsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
+    /// - On failure, responds with [`SdkError<ListCopyJobsError>`](crate::error::ListCopyJobsError)
     pub fn list_copy_jobs(&self) -> fluent_builders::ListCopyJobs<C, M, R> {
         fluent_builders::ListCopyJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFrameworks` operation.
+    /// Constructs a fluent builder for the [`ListFrameworks`](crate::client::fluent_builders::ListFrameworks) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFrameworks::into_paginator).
     ///
-    /// See [`ListFrameworks`](crate::client::fluent_builders::ListFrameworks) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFrameworks::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFrameworks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFrameworks::set_max_results): <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFrameworks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFrameworks::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListFrameworksOutput`](crate::output::ListFrameworksOutput) with field(s):
+    ///   - [`frameworks(Option<Vec<Framework>>)`](crate::output::ListFrameworksOutput::frameworks): <p>A list of frameworks with details for each framework, including the framework name, Amazon Resource Name (ARN), description, number of controls, creation time, and deployment status.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFrameworksOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListFrameworksError>`](crate::error::ListFrameworksError)
     pub fn list_frameworks(&self) -> fluent_builders::ListFrameworks<C, M, R> {
         fluent_builders::ListFrameworks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProtectedResources` operation.
+    /// Constructs a fluent builder for the [`ListProtectedResources`](crate::client::fluent_builders::ListProtectedResources) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProtectedResources::into_paginator).
     ///
-    /// See [`ListProtectedResources`](crate::client::fluent_builders::ListProtectedResources) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProtectedResources::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProtectedResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProtectedResources::set_next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProtectedResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProtectedResources::set_max_results): <p>The maximum number of items to be returned.</p>
+    /// - On success, responds with [`ListProtectedResourcesOutput`](crate::output::ListProtectedResourcesOutput) with field(s):
+    ///   - [`results(Option<Vec<ProtectedResource>>)`](crate::output::ListProtectedResourcesOutput::results): <p>An array of resources successfully backed up by Backup including the time the resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource type.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListProtectedResourcesOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// - On failure, responds with [`SdkError<ListProtectedResourcesError>`](crate::error::ListProtectedResourcesError)
     pub fn list_protected_resources(&self) -> fluent_builders::ListProtectedResources<C, M, R> {
         fluent_builders::ListProtectedResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRecoveryPointsByBackupVault` operation.
+    /// Constructs a fluent builder for the [`ListRecoveryPointsByBackupVault`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::into_paginator).
     ///
-    /// See [`ListRecoveryPointsByBackupVault`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>   <p>Backup vault name might not be available when a supported service creates the backup.</p>  </note>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::set_next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::set_max_results): <p>The maximum number of items to be returned.</p>
+    ///   - [`by_resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::by_resource_arn) / [`set_by_resource_arn(Option<String>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::set_by_resource_arn): <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
+    ///   - [`by_resource_type(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::by_resource_type) / [`set_by_resource_type(Option<String>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::set_by_resource_type): <p>Returns only recovery points that match the specified resource type.</p>
+    ///   - [`by_backup_plan_id(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::by_backup_plan_id) / [`set_by_backup_plan_id(Option<String>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::set_by_backup_plan_id): <p>Returns only recovery points that match the specified backup plan ID.</p>
+    ///   - [`by_created_before(DateTime)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::by_created_before) / [`set_by_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::set_by_created_before): <p>Returns only recovery points that were created before the specified timestamp.</p>
+    ///   - [`by_created_after(DateTime)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::by_created_after) / [`set_by_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault::set_by_created_after): <p>Returns only recovery points that were created after the specified timestamp.</p>
+    /// - On success, responds with [`ListRecoveryPointsByBackupVaultOutput`](crate::output::ListRecoveryPointsByBackupVaultOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListRecoveryPointsByBackupVaultOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`recovery_points(Option<Vec<RecoveryPointByBackupVault>>)`](crate::output::ListRecoveryPointsByBackupVaultOutput::recovery_points): <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
+    /// - On failure, responds with [`SdkError<ListRecoveryPointsByBackupVaultError>`](crate::error::ListRecoveryPointsByBackupVaultError)
     pub fn list_recovery_points_by_backup_vault(
         &self,
     ) -> fluent_builders::ListRecoveryPointsByBackupVault<C, M, R> {
         fluent_builders::ListRecoveryPointsByBackupVault::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRecoveryPointsByResource` operation.
+    /// Constructs a fluent builder for the [`ListRecoveryPointsByResource`](crate::client::fluent_builders::ListRecoveryPointsByResource) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecoveryPointsByResource::into_paginator).
     ///
-    /// See [`ListRecoveryPointsByResource`](crate::client::fluent_builders::ListRecoveryPointsByResource) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecoveryPointsByResource::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPointsByResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListRecoveryPointsByResource::set_resource_arn): <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryPointsByResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecoveryPointsByResource::set_next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecoveryPointsByResource::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRecoveryPointsByResource::set_max_results): <p>The maximum number of items to be returned.</p> <note>   <p>Amazon RDS requires a value of at least 20.</p>  </note>
+    /// - On success, responds with [`ListRecoveryPointsByResourceOutput`](crate::output::ListRecoveryPointsByResourceOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListRecoveryPointsByResourceOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`recovery_points(Option<Vec<RecoveryPointByResource>>)`](crate::output::ListRecoveryPointsByResourceOutput::recovery_points): <p>An array of objects that contain detailed information about recovery points of the specified resource type.</p> <note>   <p>Only Amazon EFS and Amazon EC2 recovery points return BackupVaultName.</p>  </note>
+    /// - On failure, responds with [`SdkError<ListRecoveryPointsByResourceError>`](crate::error::ListRecoveryPointsByResourceError)
     pub fn list_recovery_points_by_resource(
         &self,
     ) -> fluent_builders::ListRecoveryPointsByResource<C, M, R> {
         fluent_builders::ListRecoveryPointsByResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListReportJobs` operation.
+    /// Constructs a fluent builder for the [`ListReportJobs`](crate::client::fluent_builders::ListReportJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListReportJobs::into_paginator).
     ///
-    /// See [`ListReportJobs`](crate::client::fluent_builders::ListReportJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReportJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`by_report_plan_name(impl Into<String>)`](crate::client::fluent_builders::ListReportJobs::by_report_plan_name) / [`set_by_report_plan_name(Option<String>)`](crate::client::fluent_builders::ListReportJobs::set_by_report_plan_name): <p>Returns only report jobs with the specified report plan name.</p>
+    ///   - [`by_creation_before(DateTime)`](crate::client::fluent_builders::ListReportJobs::by_creation_before) / [`set_by_creation_before(Option<DateTime>)`](crate::client::fluent_builders::ListReportJobs::set_by_creation_before): <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
+    ///   - [`by_creation_after(DateTime)`](crate::client::fluent_builders::ListReportJobs::by_creation_after) / [`set_by_creation_after(Option<DateTime>)`](crate::client::fluent_builders::ListReportJobs::set_by_creation_after): <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
+    ///   - [`by_status(impl Into<String>)`](crate::client::fluent_builders::ListReportJobs::by_status) / [`set_by_status(Option<String>)`](crate::client::fluent_builders::ListReportJobs::set_by_status): <p>Returns only report jobs that are in the specified status. The statuses are:</p>  <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReportJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListReportJobs::set_max_results): <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReportJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReportJobs::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListReportJobsOutput`](crate::output::ListReportJobsOutput) with field(s):
+    ///   - [`report_jobs(Option<Vec<ReportJob>>)`](crate::output::ListReportJobsOutput::report_jobs): <p>Details about your report jobs in JSON format.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListReportJobsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListReportJobsError>`](crate::error::ListReportJobsError)
     pub fn list_report_jobs(&self) -> fluent_builders::ListReportJobs<C, M, R> {
         fluent_builders::ListReportJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListReportPlans` operation.
+    /// Constructs a fluent builder for the [`ListReportPlans`](crate::client::fluent_builders::ListReportPlans) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListReportPlans::into_paginator).
     ///
-    /// See [`ListReportPlans`](crate::client::fluent_builders::ListReportPlans) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReportPlans::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReportPlans::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListReportPlans::set_max_results): <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReportPlans::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReportPlans::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListReportPlansOutput`](crate::output::ListReportPlansOutput) with field(s):
+    ///   - [`report_plans(Option<Vec<ReportPlan>>)`](crate::output::ListReportPlansOutput::report_plans): <p>A list of your report plans with detailed information for each plan. This information includes the Amazon Resource Name (ARN), report plan name, description, settings, delivery channel, deployment status, creation time, and last times the report plan attempted to and successfully ran.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListReportPlansOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListReportPlansError>`](crate::error::ListReportPlansError)
     pub fn list_report_plans(&self) -> fluent_builders::ListReportPlans<C, M, R> {
         fluent_builders::ListReportPlans::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRestoreJobs` operation.
+    /// Constructs a fluent builder for the [`ListRestoreJobs`](crate::client::fluent_builders::ListRestoreJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRestoreJobs::into_paginator).
     ///
-    /// See [`ListRestoreJobs`](crate::client::fluent_builders::ListRestoreJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRestoreJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRestoreJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRestoreJobs::set_next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRestoreJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRestoreJobs::set_max_results): <p>The maximum number of items to be returned.</p>
+    ///   - [`by_account_id(impl Into<String>)`](crate::client::fluent_builders::ListRestoreJobs::by_account_id) / [`set_by_account_id(Option<String>)`](crate::client::fluent_builders::ListRestoreJobs::set_by_account_id): <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
+    ///   - [`by_created_before(DateTime)`](crate::client::fluent_builders::ListRestoreJobs::by_created_before) / [`set_by_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListRestoreJobs::set_by_created_before): <p>Returns only restore jobs that were created before the specified date.</p>
+    ///   - [`by_created_after(DateTime)`](crate::client::fluent_builders::ListRestoreJobs::by_created_after) / [`set_by_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListRestoreJobs::set_by_created_after): <p>Returns only restore jobs that were created after the specified date.</p>
+    ///   - [`by_status(RestoreJobStatus)`](crate::client::fluent_builders::ListRestoreJobs::by_status) / [`set_by_status(Option<RestoreJobStatus>)`](crate::client::fluent_builders::ListRestoreJobs::set_by_status): <p>Returns only restore jobs associated with the specified job status.</p>
+    /// - On success, responds with [`ListRestoreJobsOutput`](crate::output::ListRestoreJobsOutput) with field(s):
+    ///   - [`restore_jobs(Option<Vec<RestoreJobsListMember>>)`](crate::output::ListRestoreJobsOutput::restore_jobs): <p>An array of objects that contain detailed information about jobs to restore saved resources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRestoreJobsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// - On failure, responds with [`SdkError<ListRestoreJobsError>`](crate::error::ListRestoreJobsError)
     pub fn list_restore_jobs(&self) -> fluent_builders::ListRestoreJobs<C, M, R> {
         fluent_builders::ListRestoreJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTags` operation.
+    /// Constructs a fluent builder for the [`ListTags`](crate::client::fluent_builders::ListTags) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
     ///
-    /// See [`ListTags`](crate::client::fluent_builders::ListTags) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTags::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTags::set_resource_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the type of resource. Valid targets for <code>ListTags</code> are recovery points, backup plans, and backup vaults.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTags::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTags::set_next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTags::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTags::set_max_results): <p>The maximum number of items to be returned.</p>
+    /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsOutput::next_token): <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsOutput::tags): <p>To help organize your resources, you can assign your own metadata to the resources you create. Each tag is a key-value pair.</p>
+    /// - On failure, responds with [`SdkError<ListTagsError>`](crate::error::ListTagsError)
     pub fn list_tags(&self) -> fluent_builders::ListTags<C, M, R> {
         fluent_builders::ListTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutBackupVaultAccessPolicy` operation.
+    /// Constructs a fluent builder for the [`PutBackupVaultAccessPolicy`](crate::client::fluent_builders::PutBackupVaultAccessPolicy) operation.
     ///
-    /// See [`PutBackupVaultAccessPolicy`](crate::client::fluent_builders::PutBackupVaultAccessPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::PutBackupVaultAccessPolicy::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::PutBackupVaultAccessPolicy::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutBackupVaultAccessPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutBackupVaultAccessPolicy::set_policy): <p>The backup vault access policy document in JSON format.</p>
+    /// - On success, responds with [`PutBackupVaultAccessPolicyOutput`](crate::output::PutBackupVaultAccessPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutBackupVaultAccessPolicyError>`](crate::error::PutBackupVaultAccessPolicyError)
     pub fn put_backup_vault_access_policy(
         &self,
     ) -> fluent_builders::PutBackupVaultAccessPolicy<C, M, R> {
         fluent_builders::PutBackupVaultAccessPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutBackupVaultLockConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutBackupVaultLockConfiguration`](crate::client::fluent_builders::PutBackupVaultLockConfiguration) operation.
     ///
-    /// See [`PutBackupVaultLockConfiguration`](crate::client::fluent_builders::PutBackupVaultLockConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::set_backup_vault_name): <p>The Backup Vault Lock configuration that specifies the name of the backup vault it protects.</p>
+    ///   - [`min_retention_days(i64)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::min_retention_days) / [`set_min_retention_days(Option<i64>)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::set_min_retention_days): <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>  <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>  <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+    ///   - [`max_retention_days(i64)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::max_retention_days) / [`set_max_retention_days(Option<i64>)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::set_max_retention_days): <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>  <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>  <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
+    ///   - [`changeable_for_days(i64)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::changeable_for_days) / [`set_changeable_for_days(Option<i64>)`](crate::client::fluent_builders::PutBackupVaultLockConfiguration::set_changeable_for_days): <p>The Backup Vault Lock configuration that specifies the number of days before the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>  <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or greater.</p>  <p>Before the lock date, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault Lock becomes immutable and cannot be changed or deleted.</p>  <p>If this parameter is not specified, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
+    /// - On success, responds with [`PutBackupVaultLockConfigurationOutput`](crate::output::PutBackupVaultLockConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<PutBackupVaultLockConfigurationError>`](crate::error::PutBackupVaultLockConfigurationError)
     pub fn put_backup_vault_lock_configuration(
         &self,
     ) -> fluent_builders::PutBackupVaultLockConfiguration<C, M, R> {
         fluent_builders::PutBackupVaultLockConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutBackupVaultNotifications` operation.
+    /// Constructs a fluent builder for the [`PutBackupVaultNotifications`](crate::client::fluent_builders::PutBackupVaultNotifications) operation.
     ///
-    /// See [`PutBackupVaultNotifications`](crate::client::fluent_builders::PutBackupVaultNotifications) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::PutBackupVaultNotifications::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::PutBackupVaultNotifications::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`sns_topic_arn(impl Into<String>)`](crate::client::fluent_builders::PutBackupVaultNotifications::sns_topic_arn) / [`set_sns_topic_arn(Option<String>)`](crate::client::fluent_builders::PutBackupVaultNotifications::set_sns_topic_arn): <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
+    ///   - [`backup_vault_events(Vec<BackupVaultEvent>)`](crate::client::fluent_builders::PutBackupVaultNotifications::backup_vault_events) / [`set_backup_vault_events(Option<Vec<BackupVaultEvent>>)`](crate::client::fluent_builders::PutBackupVaultNotifications::set_backup_vault_events): <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>  <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>  <p>The following events are supported:</p>  <ul>   <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>   <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>   <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>  </ul> <note>   <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>  </note>
+    /// - On success, responds with [`PutBackupVaultNotificationsOutput`](crate::output::PutBackupVaultNotificationsOutput)
+
+    /// - On failure, responds with [`SdkError<PutBackupVaultNotificationsError>`](crate::error::PutBackupVaultNotificationsError)
     pub fn put_backup_vault_notifications(
         &self,
     ) -> fluent_builders::PutBackupVaultNotifications<C, M, R> {
         fluent_builders::PutBackupVaultNotifications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartBackupJob` operation.
+    /// Constructs a fluent builder for the [`StartBackupJob`](crate::client::fluent_builders::StartBackupJob) operation.
     ///
-    /// See [`StartBackupJob`](crate::client::fluent_builders::StartBackupJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::StartBackupJob::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::StartBackupJob::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::StartBackupJob::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::StartBackupJob::set_resource_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartBackupJob::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::StartBackupJob::set_iam_role_arn): <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::StartBackupJob::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::StartBackupJob::set_idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartBackupJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    ///   - [`start_window_minutes(i64)`](crate::client::fluent_builders::StartBackupJob::start_window_minutes) / [`set_start_window_minutes(Option<i64>)`](crate::client::fluent_builders::StartBackupJob::set_start_window_minutes): <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours.</p>
+    ///   - [`complete_window_minutes(i64)`](crate::client::fluent_builders::StartBackupJob::complete_window_minutes) / [`set_complete_window_minutes(Option<i64>)`](crate::client::fluent_builders::StartBackupJob::set_complete_window_minutes): <p>A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
+    ///   - [`lifecycle(Lifecycle)`](crate::client::fluent_builders::StartBackupJob::lifecycle) / [`set_lifecycle(Option<Lifecycle>)`](crate::client::fluent_builders::StartBackupJob::set_lifecycle): <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>  <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>  <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    ///   - [`recovery_point_tags(HashMap<String, String>)`](crate::client::fluent_builders::StartBackupJob::recovery_point_tags) / [`set_recovery_point_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartBackupJob::set_recovery_point_tags): <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
+    ///   - [`backup_options(HashMap<String, String>)`](crate::client::fluent_builders::StartBackupJob::backup_options) / [`set_backup_options(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartBackupJob::set_backup_options): <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>  <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS""disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
+    /// - On success, responds with [`StartBackupJobOutput`](crate::output::StartBackupJobOutput) with field(s):
+    ///   - [`backup_job_id(Option<String>)`](crate::output::StartBackupJobOutput::backup_job_id): <p>Uniquely identifies a request to Backup to back up a resource.</p>
+    ///   - [`recovery_point_arn(Option<String>)`](crate::output::StartBackupJobOutput::recovery_point_arn): <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::StartBackupJobOutput::creation_date): <p>The date and time that a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// - On failure, responds with [`SdkError<StartBackupJobError>`](crate::error::StartBackupJobError)
     pub fn start_backup_job(&self) -> fluent_builders::StartBackupJob<C, M, R> {
         fluent_builders::StartBackupJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartCopyJob` operation.
+    /// Constructs a fluent builder for the [`StartCopyJob`](crate::client::fluent_builders::StartCopyJob) operation.
     ///
-    /// See [`StartCopyJob`](crate::client::fluent_builders::StartCopyJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`recovery_point_arn(impl Into<String>)`](crate::client::fluent_builders::StartCopyJob::recovery_point_arn) / [`set_recovery_point_arn(Option<String>)`](crate::client::fluent_builders::StartCopyJob::set_recovery_point_arn): <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45. </p>
+    ///   - [`source_backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::StartCopyJob::source_backup_vault_name) / [`set_source_backup_vault_name(Option<String>)`](crate::client::fluent_builders::StartCopyJob::set_source_backup_vault_name): <p>The name of a logical source container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`destination_backup_vault_arn(impl Into<String>)`](crate::client::fluent_builders::StartCopyJob::destination_backup_vault_arn) / [`set_destination_backup_vault_arn(Option<String>)`](crate::client::fluent_builders::StartCopyJob::set_destination_backup_vault_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartCopyJob::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::StartCopyJob::set_iam_role_arn): <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::StartCopyJob::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::StartCopyJob::set_idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    ///   - [`lifecycle(Lifecycle)`](crate::client::fluent_builders::StartCopyJob::lifecycle) / [`set_lifecycle(Option<Lifecycle>)`](crate::client::fluent_builders::StartCopyJob::set_lifecycle): <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>  <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>  <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    /// - On success, responds with [`StartCopyJobOutput`](crate::output::StartCopyJobOutput) with field(s):
+    ///   - [`copy_job_id(Option<String>)`](crate::output::StartCopyJobOutput::copy_job_id): <p>Uniquely identifies a copy job.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::StartCopyJobOutput::creation_date): <p>The date and time that a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// - On failure, responds with [`SdkError<StartCopyJobError>`](crate::error::StartCopyJobError)
     pub fn start_copy_job(&self) -> fluent_builders::StartCopyJob<C, M, R> {
         fluent_builders::StartCopyJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartReportJob` operation.
+    /// Constructs a fluent builder for the [`StartReportJob`](crate::client::fluent_builders::StartReportJob) operation.
     ///
-    /// See [`StartReportJob`](crate::client::fluent_builders::StartReportJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`report_plan_name(impl Into<String>)`](crate::client::fluent_builders::StartReportJob::report_plan_name) / [`set_report_plan_name(Option<String>)`](crate::client::fluent_builders::StartReportJob::set_report_plan_name): <p>The unique name of a report plan.</p>
+    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::StartReportJob::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::StartReportJob::set_idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartReportJobInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    /// - On success, responds with [`StartReportJobOutput`](crate::output::StartReportJobOutput) with field(s):
+    ///   - [`report_job_id(Option<String>)`](crate::output::StartReportJobOutput::report_job_id): <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
+    /// - On failure, responds with [`SdkError<StartReportJobError>`](crate::error::StartReportJobError)
     pub fn start_report_job(&self) -> fluent_builders::StartReportJob<C, M, R> {
         fluent_builders::StartReportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartRestoreJob` operation.
+    /// Constructs a fluent builder for the [`StartRestoreJob`](crate::client::fluent_builders::StartRestoreJob) operation.
     ///
-    /// See [`StartRestoreJob`](crate::client::fluent_builders::StartRestoreJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`recovery_point_arn(impl Into<String>)`](crate::client::fluent_builders::StartRestoreJob::recovery_point_arn) / [`set_recovery_point_arn(Option<String>)`](crate::client::fluent_builders::StartRestoreJob::set_recovery_point_arn): <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    ///   - [`metadata(HashMap<String, String>)`](crate::client::fluent_builders::StartRestoreJob::metadata) / [`set_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartRestoreJob::set_metadata): <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p>  <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>  <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>  <ul>   <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li>   <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li>   <li> <p> <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p> </li>   <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li>   <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li>   <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>   <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>  </ul>
+    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartRestoreJob::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::StartRestoreJob::set_iam_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::StartRestoreJob::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::StartRestoreJob::set_idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartRestoreJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::StartRestoreJob::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::StartRestoreJob::set_resource_type): <p>Starts a job to restore a recovery point for one of the following resources:</p>  <ul>   <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>   <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>   <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>   <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>   <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>   <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>   <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>  </ul>
+    /// - On success, responds with [`StartRestoreJobOutput`](crate::output::StartRestoreJobOutput) with field(s):
+    ///   - [`restore_job_id(Option<String>)`](crate::output::StartRestoreJobOutput::restore_job_id): <p>Uniquely identifies the job that restores a recovery point.</p>
+    /// - On failure, responds with [`SdkError<StartRestoreJobError>`](crate::error::StartRestoreJobError)
     pub fn start_restore_job(&self) -> fluent_builders::StartRestoreJob<C, M, R> {
         fluent_builders::StartRestoreJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopBackupJob` operation.
+    /// Constructs a fluent builder for the [`StopBackupJob`](crate::client::fluent_builders::StopBackupJob) operation.
     ///
-    /// See [`StopBackupJob`](crate::client::fluent_builders::StopBackupJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_job_id(impl Into<String>)`](crate::client::fluent_builders::StopBackupJob::backup_job_id) / [`set_backup_job_id(Option<String>)`](crate::client::fluent_builders::StopBackupJob::set_backup_job_id): <p>Uniquely identifies a request to Backup to back up a resource.</p>
+    /// - On success, responds with [`StopBackupJobOutput`](crate::output::StopBackupJobOutput)
+
+    /// - On failure, responds with [`SdkError<StopBackupJobError>`](crate::error::StopBackupJobError)
     pub fn stop_backup_job(&self) -> fluent_builders::StopBackupJob<C, M, R> {
         fluent_builders::StopBackupJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Key-value pairs that are used to help organize your resources. You can assign your own metadata to the resources you create. For clarity, this is the structure to assign tags: <code>[{"Key":"string","Value":"string"}]</code>.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
+    ///   - [`tag_key_list(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_key_list) / [`set_tag_key_list(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_key_list): <p>A list of keys to identify which key-value tags to remove from a resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateBackupPlan` operation.
+    /// Constructs a fluent builder for the [`UpdateBackupPlan`](crate::client::fluent_builders::UpdateBackupPlan) operation.
     ///
-    /// See [`UpdateBackupPlan`](crate::client::fluent_builders::UpdateBackupPlan) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_plan_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBackupPlan::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::client::fluent_builders::UpdateBackupPlan::set_backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`backup_plan(BackupPlanInput)`](crate::client::fluent_builders::UpdateBackupPlan::backup_plan) / [`set_backup_plan(Option<BackupPlanInput>)`](crate::client::fluent_builders::UpdateBackupPlan::set_backup_plan): <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
+    /// - On success, responds with [`UpdateBackupPlanOutput`](crate::output::UpdateBackupPlanOutput) with field(s):
+    ///   - [`backup_plan_id(Option<String>)`](crate::output::UpdateBackupPlanOutput::backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`backup_plan_arn(Option<String>)`](crate::output::UpdateBackupPlanOutput::backup_plan_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::UpdateBackupPlanOutput::creation_date): <p>The date and time a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    ///   - [`version_id(Option<String>)`](crate::output::UpdateBackupPlanOutput::version_id): <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids cannot be edited.</p>
+    ///   - [`advanced_backup_settings(Option<Vec<AdvancedBackupSetting>>)`](crate::output::UpdateBackupPlanOutput::advanced_backup_settings): <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+    /// - On failure, responds with [`SdkError<UpdateBackupPlanError>`](crate::error::UpdateBackupPlanError)
     pub fn update_backup_plan(&self) -> fluent_builders::UpdateBackupPlan<C, M, R> {
         fluent_builders::UpdateBackupPlan::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFramework` operation.
+    /// Constructs a fluent builder for the [`UpdateFramework`](crate::client::fluent_builders::UpdateFramework) operation.
     ///
-    /// See [`UpdateFramework`](crate::client::fluent_builders::UpdateFramework) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`framework_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFramework::framework_name) / [`set_framework_name(Option<String>)`](crate::client::fluent_builders::UpdateFramework::set_framework_name): <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    ///   - [`framework_description(impl Into<String>)`](crate::client::fluent_builders::UpdateFramework::framework_description) / [`set_framework_description(Option<String>)`](crate::client::fluent_builders::UpdateFramework::set_framework_description): <p>An optional description of the framework with a maximum 1,024 characters.</p>
+    ///   - [`framework_controls(Vec<FrameworkControl>)`](crate::client::fluent_builders::UpdateFramework::framework_controls) / [`set_framework_controls(Option<Vec<FrameworkControl>>)`](crate::client::fluent_builders::UpdateFramework::set_framework_controls): <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
+    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::UpdateFramework::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::UpdateFramework::set_idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    /// - On success, responds with [`UpdateFrameworkOutput`](crate::output::UpdateFrameworkOutput) with field(s):
+    ///   - [`framework_name(Option<String>)`](crate::output::UpdateFrameworkOutput::framework_name): <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    ///   - [`framework_arn(Option<String>)`](crate::output::UpdateFrameworkOutput::framework_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateFrameworkOutput::creation_time): <p>The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// - On failure, responds with [`SdkError<UpdateFrameworkError>`](crate::error::UpdateFrameworkError)
     pub fn update_framework(&self) -> fluent_builders::UpdateFramework<C, M, R> {
         fluent_builders::UpdateFramework::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGlobalSettings` operation.
+    /// Constructs a fluent builder for the [`UpdateGlobalSettings`](crate::client::fluent_builders::UpdateGlobalSettings) operation.
     ///
-    /// See [`UpdateGlobalSettings`](crate::client::fluent_builders::UpdateGlobalSettings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`global_settings(HashMap<String, String>)`](crate::client::fluent_builders::UpdateGlobalSettings::global_settings) / [`set_global_settings(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateGlobalSettings::set_global_settings): <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
+    /// - On success, responds with [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateGlobalSettingsError>`](crate::error::UpdateGlobalSettingsError)
     pub fn update_global_settings(&self) -> fluent_builders::UpdateGlobalSettings<C, M, R> {
         fluent_builders::UpdateGlobalSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRecoveryPointLifecycle` operation.
+    /// Constructs a fluent builder for the [`UpdateRecoveryPointLifecycle`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle) operation.
     ///
-    /// See [`UpdateRecoveryPointLifecycle`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`backup_vault_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle::backup_vault_name) / [`set_backup_vault_name(Option<String>)`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle::set_backup_vault_name): <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    ///   - [`recovery_point_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle::recovery_point_arn) / [`set_recovery_point_arn(Option<String>)`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle::set_recovery_point_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    ///   - [`lifecycle(Lifecycle)`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle::lifecycle) / [`set_lifecycle(Option<Lifecycle>)`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle::set_lifecycle): <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>  <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+    /// - On success, responds with [`UpdateRecoveryPointLifecycleOutput`](crate::output::UpdateRecoveryPointLifecycleOutput) with field(s):
+    ///   - [`backup_vault_arn(Option<String>)`](crate::output::UpdateRecoveryPointLifecycleOutput::backup_vault_arn): <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    ///   - [`recovery_point_arn(Option<String>)`](crate::output::UpdateRecoveryPointLifecycleOutput::recovery_point_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    ///   - [`lifecycle(Option<Lifecycle>)`](crate::output::UpdateRecoveryPointLifecycleOutput::lifecycle): <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>  <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>  <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
+    ///   - [`calculated_lifecycle(Option<CalculatedLifecycle>)`](crate::output::UpdateRecoveryPointLifecycleOutput::calculated_lifecycle): <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps.</p>
+    /// - On failure, responds with [`SdkError<UpdateRecoveryPointLifecycleError>`](crate::error::UpdateRecoveryPointLifecycleError)
     pub fn update_recovery_point_lifecycle(
         &self,
     ) -> fluent_builders::UpdateRecoveryPointLifecycle<C, M, R> {
         fluent_builders::UpdateRecoveryPointLifecycle::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRegionSettings` operation.
+    /// Constructs a fluent builder for the [`UpdateRegionSettings`](crate::client::fluent_builders::UpdateRegionSettings) operation.
     ///
-    /// See [`UpdateRegionSettings`](crate::client::fluent_builders::UpdateRegionSettings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type_opt_in_preference(HashMap<String, bool>)`](crate::client::fluent_builders::UpdateRegionSettings::resource_type_opt_in_preference) / [`set_resource_type_opt_in_preference(Option<HashMap<String, bool>>)`](crate::client::fluent_builders::UpdateRegionSettings::set_resource_type_opt_in_preference): <p>Updates the list of services along with the opt-in preferences for the Region.</p>
+    ///   - [`resource_type_management_preference(HashMap<String, bool>)`](crate::client::fluent_builders::UpdateRegionSettings::resource_type_management_preference) / [`set_resource_type_management_preference(Option<HashMap<String, bool>>)`](crate::client::fluent_builders::UpdateRegionSettings::set_resource_type_management_preference): <p>Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a> for the Region.</p>
+    /// - On success, responds with [`UpdateRegionSettingsOutput`](crate::output::UpdateRegionSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRegionSettingsError>`](crate::error::UpdateRegionSettingsError)
     pub fn update_region_settings(&self) -> fluent_builders::UpdateRegionSettings<C, M, R> {
         fluent_builders::UpdateRegionSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateReportPlan` operation.
+    /// Constructs a fluent builder for the [`UpdateReportPlan`](crate::client::fluent_builders::UpdateReportPlan) operation.
     ///
-    /// See [`UpdateReportPlan`](crate::client::fluent_builders::UpdateReportPlan) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`report_plan_name(impl Into<String>)`](crate::client::fluent_builders::UpdateReportPlan::report_plan_name) / [`set_report_plan_name(Option<String>)`](crate::client::fluent_builders::UpdateReportPlan::set_report_plan_name): <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    ///   - [`report_plan_description(impl Into<String>)`](crate::client::fluent_builders::UpdateReportPlan::report_plan_description) / [`set_report_plan_description(Option<String>)`](crate::client::fluent_builders::UpdateReportPlan::set_report_plan_description): <p>An optional description of the report plan with a maximum 1,024 characters.</p>
+    ///   - [`report_delivery_channel(ReportDeliveryChannel)`](crate::client::fluent_builders::UpdateReportPlan::report_delivery_channel) / [`set_report_delivery_channel(Option<ReportDeliveryChannel>)`](crate::client::fluent_builders::UpdateReportPlan::set_report_delivery_channel): <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+    ///   - [`report_setting(ReportSetting)`](crate::client::fluent_builders::UpdateReportPlan::report_setting) / [`set_report_setting(Option<ReportSetting>)`](crate::client::fluent_builders::UpdateReportPlan::set_report_setting): <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>  <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>  <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
+    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::UpdateReportPlan::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::UpdateReportPlan::set_idempotency_token): <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    /// - On success, responds with [`UpdateReportPlanOutput`](crate::output::UpdateReportPlanOutput) with field(s):
+    ///   - [`report_plan_name(Option<String>)`](crate::output::UpdateReportPlanOutput::report_plan_name): <p>The unique name of the report plan.</p>
+    ///   - [`report_plan_arn(Option<String>)`](crate::output::UpdateReportPlanOutput::report_plan_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateReportPlanOutput::creation_time): <p>The date and time that a report plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    /// - On failure, responds with [`SdkError<UpdateReportPlanError>`](crate::error::UpdateReportPlanError)
     pub fn update_report_plan(&self) -> fluent_builders::UpdateReportPlan<C, M, R> {
         fluent_builders::UpdateReportPlan::new(self.handle.clone())
     }

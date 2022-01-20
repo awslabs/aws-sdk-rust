@@ -952,8 +952,10 @@ pub struct SessionState {
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
     pub session_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p></p>
+    /// <p>A unique identifier for a specific request.</p>
     pub originating_request_id: std::option::Option<std::string::String>,
+    /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
+    pub runtime_hints: std::option::Option<crate::model::RuntimeHints>,
 }
 impl SessionState {
     /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
@@ -975,9 +977,13 @@ impl SessionState {
     {
         self.session_attributes.as_ref()
     }
-    /// <p></p>
+    /// <p>A unique identifier for a specific request.</p>
     pub fn originating_request_id(&self) -> std::option::Option<&str> {
         self.originating_request_id.as_deref()
+    }
+    /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
+    pub fn runtime_hints(&self) -> std::option::Option<&crate::model::RuntimeHints> {
+        self.runtime_hints.as_ref()
     }
 }
 impl std::fmt::Debug for SessionState {
@@ -988,6 +994,7 @@ impl std::fmt::Debug for SessionState {
         formatter.field("active_contexts", &self.active_contexts);
         formatter.field("session_attributes", &self.session_attributes);
         formatter.field("originating_request_id", &self.originating_request_id);
+        formatter.field("runtime_hints", &self.runtime_hints);
         formatter.finish()
     }
 }
@@ -1004,6 +1011,7 @@ pub mod session_state {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) originating_request_id: std::option::Option<std::string::String>,
+        pub(crate) runtime_hints: std::option::Option<crate::model::RuntimeHints>,
     }
     impl Builder {
         /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
@@ -1073,17 +1081,30 @@ pub mod session_state {
             self.session_attributes = input;
             self
         }
-        /// <p></p>
+        /// <p>A unique identifier for a specific request.</p>
         pub fn originating_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.originating_request_id = Some(input.into());
             self
         }
-        /// <p></p>
+        /// <p>A unique identifier for a specific request.</p>
         pub fn set_originating_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.originating_request_id = input;
+            self
+        }
+        /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
+        pub fn runtime_hints(mut self, input: crate::model::RuntimeHints) -> Self {
+            self.runtime_hints = Some(input);
+            self
+        }
+        /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
+        pub fn set_runtime_hints(
+            mut self,
+            input: std::option::Option<crate::model::RuntimeHints>,
+        ) -> Self {
+            self.runtime_hints = input;
             self
         }
         /// Consumes the builder and constructs a [`SessionState`](crate::model::SessionState)
@@ -1094,6 +1115,7 @@ pub mod session_state {
                 active_contexts: self.active_contexts,
                 session_attributes: self.session_attributes,
                 originating_request_id: self.originating_request_id,
+                runtime_hints: self.runtime_hints,
             }
         }
     }
@@ -1102,6 +1124,226 @@ impl SessionState {
     /// Creates a new builder-style object to manufacture [`SessionState`](crate::model::SessionState)
     pub fn builder() -> crate::model::session_state::Builder {
         crate::model::session_state::Builder::default()
+    }
+}
+
+/// <p>You can provide Amazon Lex V2 with hints to the phrases that a customer is likely to use for a slot. When a slot with hints is resolved, the phrases in the runtime hints are preferred in the resolution. You can provide hints for a maximum of 100 intents. You can provide a maximum of 100 slots.</p>
+/// <p>Before you can use runtime hints with an existing bot, you must first rebuild the bot.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RuntimeHints {
+    /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
+    /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.</p>
+    /// <p>The intent name and slot name must exist.</p>
+    pub slot_hints: std::option::Option<
+        std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
+        >,
+    >,
+}
+impl RuntimeHints {
+    /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
+    /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.</p>
+    /// <p>The intent name and slot name must exist.</p>
+    pub fn slot_hints(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
+        >,
+    > {
+        self.slot_hints.as_ref()
+    }
+}
+impl std::fmt::Debug for RuntimeHints {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RuntimeHints");
+        formatter.field("slot_hints", &self.slot_hints);
+        formatter.finish()
+    }
+}
+/// See [`RuntimeHints`](crate::model::RuntimeHints)
+pub mod runtime_hints {
+    /// A builder for [`RuntimeHints`](crate::model::RuntimeHints)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) slot_hints: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
+            >,
+        >,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `slot_hints`.
+        ///
+        /// To override the contents of this collection use [`set_slot_hints`](Self::set_slot_hints).
+        ///
+        /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
+        /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.</p>
+        /// <p>The intent name and slot name must exist.</p>
+        pub fn slot_hints(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
+        ) -> Self {
+            let mut hash_map = self.slot_hints.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.slot_hints = Some(hash_map);
+            self
+        }
+        /// <p>A list of the slots in the intent that should have runtime hints added, and the phrases that should be added for each slot.</p>
+        /// <p>The first level of the <code>slotHints</code> map is the name of the intent. The second level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using hints to improve accuracy</a>.</p>
+        /// <p>The intent name and slot name must exist.</p>
+        pub fn set_slot_hints(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    std::collections::HashMap<
+                        std::string::String,
+                        crate::model::RuntimeHintDetails,
+                    >,
+                >,
+            >,
+        ) -> Self {
+            self.slot_hints = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RuntimeHints`](crate::model::RuntimeHints)
+        pub fn build(self) -> crate::model::RuntimeHints {
+            crate::model::RuntimeHints {
+                slot_hints: self.slot_hints,
+            }
+        }
+    }
+}
+impl RuntimeHints {
+    /// Creates a new builder-style object to manufacture [`RuntimeHints`](crate::model::RuntimeHints)
+    pub fn builder() -> crate::model::runtime_hints::Builder {
+        crate::model::runtime_hints::Builder::default()
+    }
+}
+
+/// <p>Provides an array of phrases that should be given preference when resolving values for a slot.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RuntimeHintDetails {
+    /// <p>One or more strings that Amazon Lex V2 should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
+    pub runtime_hint_values: std::option::Option<std::vec::Vec<crate::model::RuntimeHintValue>>,
+}
+impl RuntimeHintDetails {
+    /// <p>One or more strings that Amazon Lex V2 should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
+    pub fn runtime_hint_values(&self) -> std::option::Option<&[crate::model::RuntimeHintValue]> {
+        self.runtime_hint_values.as_deref()
+    }
+}
+impl std::fmt::Debug for RuntimeHintDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RuntimeHintDetails");
+        formatter.field("runtime_hint_values", &self.runtime_hint_values);
+        formatter.finish()
+    }
+}
+/// See [`RuntimeHintDetails`](crate::model::RuntimeHintDetails)
+pub mod runtime_hint_details {
+    /// A builder for [`RuntimeHintDetails`](crate::model::RuntimeHintDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) runtime_hint_values:
+            std::option::Option<std::vec::Vec<crate::model::RuntimeHintValue>>,
+    }
+    impl Builder {
+        /// Appends an item to `runtime_hint_values`.
+        ///
+        /// To override the contents of this collection use [`set_runtime_hint_values`](Self::set_runtime_hint_values).
+        ///
+        /// <p>One or more strings that Amazon Lex V2 should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
+        pub fn runtime_hint_values(mut self, input: crate::model::RuntimeHintValue) -> Self {
+            let mut v = self.runtime_hint_values.unwrap_or_default();
+            v.push(input);
+            self.runtime_hint_values = Some(v);
+            self
+        }
+        /// <p>One or more strings that Amazon Lex V2 should look for in the input to the bot. Each phrase is given preference when deciding on slot values.</p>
+        pub fn set_runtime_hint_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::RuntimeHintValue>>,
+        ) -> Self {
+            self.runtime_hint_values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RuntimeHintDetails`](crate::model::RuntimeHintDetails)
+        pub fn build(self) -> crate::model::RuntimeHintDetails {
+            crate::model::RuntimeHintDetails {
+                runtime_hint_values: self.runtime_hint_values,
+            }
+        }
+    }
+}
+impl RuntimeHintDetails {
+    /// Creates a new builder-style object to manufacture [`RuntimeHintDetails`](crate::model::RuntimeHintDetails)
+    pub fn builder() -> crate::model::runtime_hint_details::Builder {
+        crate::model::runtime_hint_details::Builder::default()
+    }
+}
+
+/// <p>Provides the phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RuntimeHintValue {
+    /// <p>The phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
+    pub phrase: std::option::Option<std::string::String>,
+}
+impl RuntimeHintValue {
+    /// <p>The phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
+    pub fn phrase(&self) -> std::option::Option<&str> {
+        self.phrase.as_deref()
+    }
+}
+impl std::fmt::Debug for RuntimeHintValue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RuntimeHintValue");
+        formatter.field("phrase", &self.phrase);
+        formatter.finish()
+    }
+}
+/// See [`RuntimeHintValue`](crate::model::RuntimeHintValue)
+pub mod runtime_hint_value {
+    /// A builder for [`RuntimeHintValue`](crate::model::RuntimeHintValue)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) phrase: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
+        pub fn phrase(mut self, input: impl Into<std::string::String>) -> Self {
+            self.phrase = Some(input.into());
+            self
+        }
+        /// <p>The phrase that Amazon Lex V2 should look for in the user's input to the bot.</p>
+        pub fn set_phrase(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phrase = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RuntimeHintValue`](crate::model::RuntimeHintValue)
+        pub fn build(self) -> crate::model::RuntimeHintValue {
+            crate::model::RuntimeHintValue {
+                phrase: self.phrase,
+            }
+        }
+    }
+}
+impl RuntimeHintValue {
+    /// Creates a new builder-style object to manufacture [`RuntimeHintValue`](crate::model::RuntimeHintValue)
+    pub fn builder() -> crate::model::runtime_hint_value::Builder {
+        crate::model::runtime_hint_value::Builder::default()
     }
 }
 

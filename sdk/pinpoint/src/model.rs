@@ -9365,6 +9365,8 @@ pub struct WriteJourneyRequest {
     pub wait_for_quiet_time: bool,
     /// <p>Specifies whether a journey should be refreshed on segment update.</p>
     pub refresh_on_segment_update: bool,
+    /// <p>The channel-specific configurations for the journey.</p>
+    pub journey_channel_settings: std::option::Option<crate::model::JourneyChannelSettings>,
 }
 impl WriteJourneyRequest {
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity. An activity identifier can contain a maximum of 100 characters. The characters must be alphanumeric characters.</p>
@@ -9438,6 +9440,12 @@ impl WriteJourneyRequest {
     pub fn refresh_on_segment_update(&self) -> bool {
         self.refresh_on_segment_update
     }
+    /// <p>The channel-specific configurations for the journey.</p>
+    pub fn journey_channel_settings(
+        &self,
+    ) -> std::option::Option<&crate::model::JourneyChannelSettings> {
+        self.journey_channel_settings.as_ref()
+    }
 }
 impl std::fmt::Debug for WriteJourneyRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9456,6 +9464,7 @@ impl std::fmt::Debug for WriteJourneyRequest {
         formatter.field("state", &self.state);
         formatter.field("wait_for_quiet_time", &self.wait_for_quiet_time);
         formatter.field("refresh_on_segment_update", &self.refresh_on_segment_update);
+        formatter.field("journey_channel_settings", &self.journey_channel_settings);
         formatter.finish()
     }
 }
@@ -9481,6 +9490,8 @@ pub mod write_journey_request {
         pub(crate) state: std::option::Option<crate::model::State>,
         pub(crate) wait_for_quiet_time: std::option::Option<bool>,
         pub(crate) refresh_on_segment_update: std::option::Option<bool>,
+        pub(crate) journey_channel_settings:
+            std::option::Option<crate::model::JourneyChannelSettings>,
     }
     impl Builder {
         /// Adds a key-value pair to `activities`.
@@ -9686,6 +9697,22 @@ pub mod write_journey_request {
             self.refresh_on_segment_update = input;
             self
         }
+        /// <p>The channel-specific configurations for the journey.</p>
+        pub fn journey_channel_settings(
+            mut self,
+            input: crate::model::JourneyChannelSettings,
+        ) -> Self {
+            self.journey_channel_settings = Some(input);
+            self
+        }
+        /// <p>The channel-specific configurations for the journey.</p>
+        pub fn set_journey_channel_settings(
+            mut self,
+            input: std::option::Option<crate::model::JourneyChannelSettings>,
+        ) -> Self {
+            self.journey_channel_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WriteJourneyRequest`](crate::model::WriteJourneyRequest)
         pub fn build(self) -> crate::model::WriteJourneyRequest {
             crate::model::WriteJourneyRequest {
@@ -9703,6 +9730,7 @@ pub mod write_journey_request {
                 state: self.state,
                 wait_for_quiet_time: self.wait_for_quiet_time.unwrap_or_default(),
                 refresh_on_segment_update: self.refresh_on_segment_update.unwrap_or_default(),
+                journey_channel_settings: self.journey_channel_settings,
             }
         }
     }

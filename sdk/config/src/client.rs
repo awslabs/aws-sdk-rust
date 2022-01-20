@@ -83,761 +83,1216 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `BatchGetAggregateResourceConfig` operation.
+    /// Constructs a fluent builder for the [`BatchGetAggregateResourceConfig`](crate::client::fluent_builders::BatchGetAggregateResourceConfig) operation.
     ///
-    /// See [`BatchGetAggregateResourceConfig`](crate::client::fluent_builders::BatchGetAggregateResourceConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::client::fluent_builders::BatchGetAggregateResourceConfig::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::client::fluent_builders::BatchGetAggregateResourceConfig::set_configuration_aggregator_name): <p>The name of the configuration aggregator.</p>
+    ///   - [`resource_identifiers(Vec<AggregateResourceIdentifier>)`](crate::client::fluent_builders::BatchGetAggregateResourceConfig::resource_identifiers) / [`set_resource_identifiers(Option<Vec<AggregateResourceIdentifier>>)`](crate::client::fluent_builders::BatchGetAggregateResourceConfig::set_resource_identifiers): <p>A list of aggregate ResourceIdentifiers objects. </p>
+    /// - On success, responds with [`BatchGetAggregateResourceConfigOutput`](crate::output::BatchGetAggregateResourceConfigOutput) with field(s):
+    ///   - [`base_configuration_items(Option<Vec<BaseConfigurationItem>>)`](crate::output::BatchGetAggregateResourceConfigOutput::base_configuration_items): <p>A list that contains the current configuration of one or more resources.</p>
+    ///   - [`unprocessed_resource_identifiers(Option<Vec<AggregateResourceIdentifier>>)`](crate::output::BatchGetAggregateResourceConfigOutput::unprocessed_resource_identifiers): <p>A list of resource identifiers that were not processed with current scope. The list is empty if all the resources are processed.</p>
+    /// - On failure, responds with [`SdkError<BatchGetAggregateResourceConfigError>`](crate::error::BatchGetAggregateResourceConfigError)
     pub fn batch_get_aggregate_resource_config(
         &self,
     ) -> fluent_builders::BatchGetAggregateResourceConfig<C, M, R> {
         fluent_builders::BatchGetAggregateResourceConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetResourceConfig` operation.
+    /// Constructs a fluent builder for the [`BatchGetResourceConfig`](crate::client::fluent_builders::BatchGetResourceConfig) operation.
     ///
-    /// See [`BatchGetResourceConfig`](crate::client::fluent_builders::BatchGetResourceConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_keys(Vec<ResourceKey>)`](crate::client::fluent_builders::BatchGetResourceConfig::resource_keys) / [`set_resource_keys(Option<Vec<ResourceKey>>)`](crate::client::fluent_builders::BatchGetResourceConfig::set_resource_keys): <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.</p>
+    /// - On success, responds with [`BatchGetResourceConfigOutput`](crate::output::BatchGetResourceConfigOutput) with field(s):
+    ///   - [`base_configuration_items(Option<Vec<BaseConfigurationItem>>)`](crate::output::BatchGetResourceConfigOutput::base_configuration_items): <p>A list that contains the current configuration of one or more resources.</p>
+    ///   - [`unprocessed_resource_keys(Option<Vec<ResourceKey>>)`](crate::output::BatchGetResourceConfigOutput::unprocessed_resource_keys): <p>A list of resource keys that were not processed with the current response. The unprocessesResourceKeys value is in the same form as ResourceKeys, so the value can be directly provided to a subsequent BatchGetResourceConfig operation. If there are no unprocessed resource keys, the response contains an empty unprocessedResourceKeys list. </p>
+    /// - On failure, responds with [`SdkError<BatchGetResourceConfigError>`](crate::error::BatchGetResourceConfigError)
     pub fn batch_get_resource_config(&self) -> fluent_builders::BatchGetResourceConfig<C, M, R> {
         fluent_builders::BatchGetResourceConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAggregationAuthorization` operation.
+    /// Constructs a fluent builder for the [`DeleteAggregationAuthorization`](crate::client::fluent_builders::DeleteAggregationAuthorization) operation.
     ///
-    /// See [`DeleteAggregationAuthorization`](crate::client::fluent_builders::DeleteAggregationAuthorization) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`authorized_account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAggregationAuthorization::authorized_account_id) / [`set_authorized_account_id(Option<String>)`](crate::client::fluent_builders::DeleteAggregationAuthorization::set_authorized_account_id): <p>The 12-digit account ID of the account authorized to aggregate data.</p>
+    ///   - [`authorized_aws_region(impl Into<String>)`](crate::client::fluent_builders::DeleteAggregationAuthorization::authorized_aws_region) / [`set_authorized_aws_region(Option<String>)`](crate::client::fluent_builders::DeleteAggregationAuthorization::set_authorized_aws_region): <p>The region authorized to collect aggregated data.</p>
+    /// - On success, responds with [`DeleteAggregationAuthorizationOutput`](crate::output::DeleteAggregationAuthorizationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAggregationAuthorizationError>`](crate::error::DeleteAggregationAuthorizationError)
     pub fn delete_aggregation_authorization(
         &self,
     ) -> fluent_builders::DeleteAggregationAuthorization<C, M, R> {
         fluent_builders::DeleteAggregationAuthorization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConfigRule` operation.
+    /// Constructs a fluent builder for the [`DeleteConfigRule`](crate::client::fluent_builders::DeleteConfigRule) operation.
     ///
-    /// See [`DeleteConfigRule`](crate::client::fluent_builders::DeleteConfigRule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConfigRule::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::client::fluent_builders::DeleteConfigRule::set_config_rule_name): <p>The name of the Config rule that you want to delete.</p>
+    /// - On success, responds with [`DeleteConfigRuleOutput`](crate::output::DeleteConfigRuleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteConfigRuleError>`](crate::error::DeleteConfigRuleError)
     pub fn delete_config_rule(&self) -> fluent_builders::DeleteConfigRule<C, M, R> {
         fluent_builders::DeleteConfigRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConfigurationAggregator` operation.
+    /// Constructs a fluent builder for the [`DeleteConfigurationAggregator`](crate::client::fluent_builders::DeleteConfigurationAggregator) operation.
     ///
-    /// See [`DeleteConfigurationAggregator`](crate::client::fluent_builders::DeleteConfigurationAggregator) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConfigurationAggregator::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::client::fluent_builders::DeleteConfigurationAggregator::set_configuration_aggregator_name): <p>The name of the configuration aggregator.</p>
+    /// - On success, responds with [`DeleteConfigurationAggregatorOutput`](crate::output::DeleteConfigurationAggregatorOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteConfigurationAggregatorError>`](crate::error::DeleteConfigurationAggregatorError)
     pub fn delete_configuration_aggregator(
         &self,
     ) -> fluent_builders::DeleteConfigurationAggregator<C, M, R> {
         fluent_builders::DeleteConfigurationAggregator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConfigurationRecorder` operation.
+    /// Constructs a fluent builder for the [`DeleteConfigurationRecorder`](crate::client::fluent_builders::DeleteConfigurationRecorder) operation.
     ///
-    /// See [`DeleteConfigurationRecorder`](crate::client::fluent_builders::DeleteConfigurationRecorder) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_recorder_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConfigurationRecorder::configuration_recorder_name) / [`set_configuration_recorder_name(Option<String>)`](crate::client::fluent_builders::DeleteConfigurationRecorder::set_configuration_recorder_name): <p>The name of the configuration recorder to be deleted. You can retrieve the name of your configuration recorder by using the <code>DescribeConfigurationRecorders</code> action.</p>
+    /// - On success, responds with [`DeleteConfigurationRecorderOutput`](crate::output::DeleteConfigurationRecorderOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteConfigurationRecorderError>`](crate::error::DeleteConfigurationRecorderError)
     pub fn delete_configuration_recorder(
         &self,
     ) -> fluent_builders::DeleteConfigurationRecorder<C, M, R> {
         fluent_builders::DeleteConfigurationRecorder::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConformancePack` operation.
+    /// Constructs a fluent builder for the [`DeleteConformancePack`](crate::client::fluent_builders::DeleteConformancePack) operation.
     ///
-    /// See [`DeleteConformancePack`](crate::client::fluent_builders::DeleteConformancePack) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`conformance_pack_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConformancePack::conformance_pack_name) / [`set_conformance_pack_name(Option<String>)`](crate::client::fluent_builders::DeleteConformancePack::set_conformance_pack_name): <p>Name of the conformance pack you want to delete.</p>
+    /// - On success, responds with [`DeleteConformancePackOutput`](crate::output::DeleteConformancePackOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteConformancePackError>`](crate::error::DeleteConformancePackError)
     pub fn delete_conformance_pack(&self) -> fluent_builders::DeleteConformancePack<C, M, R> {
         fluent_builders::DeleteConformancePack::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDeliveryChannel` operation.
+    /// Constructs a fluent builder for the [`DeleteDeliveryChannel`](crate::client::fluent_builders::DeleteDeliveryChannel) operation.
     ///
-    /// See [`DeleteDeliveryChannel`](crate::client::fluent_builders::DeleteDeliveryChannel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_channel_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDeliveryChannel::delivery_channel_name) / [`set_delivery_channel_name(Option<String>)`](crate::client::fluent_builders::DeleteDeliveryChannel::set_delivery_channel_name): <p>The name of the delivery channel to delete.</p>
+    /// - On success, responds with [`DeleteDeliveryChannelOutput`](crate::output::DeleteDeliveryChannelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDeliveryChannelError>`](crate::error::DeleteDeliveryChannelError)
     pub fn delete_delivery_channel(&self) -> fluent_builders::DeleteDeliveryChannel<C, M, R> {
         fluent_builders::DeleteDeliveryChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEvaluationResults` operation.
+    /// Constructs a fluent builder for the [`DeleteEvaluationResults`](crate::client::fluent_builders::DeleteEvaluationResults) operation.
     ///
-    /// See [`DeleteEvaluationResults`](crate::client::fluent_builders::DeleteEvaluationResults) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_name(impl Into<String>)`](crate::client::fluent_builders::DeleteEvaluationResults::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::client::fluent_builders::DeleteEvaluationResults::set_config_rule_name): <p>The name of the Config rule for which you want to delete the evaluation results.</p>
+    /// - On success, responds with [`DeleteEvaluationResultsOutput`](crate::output::DeleteEvaluationResultsOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEvaluationResultsError>`](crate::error::DeleteEvaluationResultsError)
     pub fn delete_evaluation_results(&self) -> fluent_builders::DeleteEvaluationResults<C, M, R> {
         fluent_builders::DeleteEvaluationResults::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteOrganizationConfigRule` operation.
+    /// Constructs a fluent builder for the [`DeleteOrganizationConfigRule`](crate::client::fluent_builders::DeleteOrganizationConfigRule) operation.
     ///
-    /// See [`DeleteOrganizationConfigRule`](crate::client::fluent_builders::DeleteOrganizationConfigRule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`organization_config_rule_name(impl Into<String>)`](crate::client::fluent_builders::DeleteOrganizationConfigRule::organization_config_rule_name) / [`set_organization_config_rule_name(Option<String>)`](crate::client::fluent_builders::DeleteOrganizationConfigRule::set_organization_config_rule_name): <p>The name of organization config rule that you want to delete.</p>
+    /// - On success, responds with [`DeleteOrganizationConfigRuleOutput`](crate::output::DeleteOrganizationConfigRuleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteOrganizationConfigRuleError>`](crate::error::DeleteOrganizationConfigRuleError)
     pub fn delete_organization_config_rule(
         &self,
     ) -> fluent_builders::DeleteOrganizationConfigRule<C, M, R> {
         fluent_builders::DeleteOrganizationConfigRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteOrganizationConformancePack` operation.
+    /// Constructs a fluent builder for the [`DeleteOrganizationConformancePack`](crate::client::fluent_builders::DeleteOrganizationConformancePack) operation.
     ///
-    /// See [`DeleteOrganizationConformancePack`](crate::client::fluent_builders::DeleteOrganizationConformancePack) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`organization_conformance_pack_name(impl Into<String>)`](crate::client::fluent_builders::DeleteOrganizationConformancePack::organization_conformance_pack_name) / [`set_organization_conformance_pack_name(Option<String>)`](crate::client::fluent_builders::DeleteOrganizationConformancePack::set_organization_conformance_pack_name): <p>The name of organization conformance pack that you want to delete.</p>
+    /// - On success, responds with [`DeleteOrganizationConformancePackOutput`](crate::output::DeleteOrganizationConformancePackOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteOrganizationConformancePackError>`](crate::error::DeleteOrganizationConformancePackError)
     pub fn delete_organization_conformance_pack(
         &self,
     ) -> fluent_builders::DeleteOrganizationConformancePack<C, M, R> {
         fluent_builders::DeleteOrganizationConformancePack::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePendingAggregationRequest` operation.
+    /// Constructs a fluent builder for the [`DeletePendingAggregationRequest`](crate::client::fluent_builders::DeletePendingAggregationRequest) operation.
     ///
-    /// See [`DeletePendingAggregationRequest`](crate::client::fluent_builders::DeletePendingAggregationRequest) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`requester_account_id(impl Into<String>)`](crate::client::fluent_builders::DeletePendingAggregationRequest::requester_account_id) / [`set_requester_account_id(Option<String>)`](crate::client::fluent_builders::DeletePendingAggregationRequest::set_requester_account_id): <p>The 12-digit account ID of the account requesting to aggregate data.</p>
+    ///   - [`requester_aws_region(impl Into<String>)`](crate::client::fluent_builders::DeletePendingAggregationRequest::requester_aws_region) / [`set_requester_aws_region(Option<String>)`](crate::client::fluent_builders::DeletePendingAggregationRequest::set_requester_aws_region): <p>The region requesting to aggregate data.</p>
+    /// - On success, responds with [`DeletePendingAggregationRequestOutput`](crate::output::DeletePendingAggregationRequestOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePendingAggregationRequestError>`](crate::error::DeletePendingAggregationRequestError)
     pub fn delete_pending_aggregation_request(
         &self,
     ) -> fluent_builders::DeletePendingAggregationRequest<C, M, R> {
         fluent_builders::DeletePendingAggregationRequest::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRemediationConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteRemediationConfiguration`](crate::client::fluent_builders::DeleteRemediationConfiguration) operation.
     ///
-    /// See [`DeleteRemediationConfiguration`](crate::client::fluent_builders::DeleteRemediationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRemediationConfiguration::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::client::fluent_builders::DeleteRemediationConfiguration::set_config_rule_name): <p>The name of the Config rule for which you want to delete remediation configuration.</p>
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::DeleteRemediationConfiguration::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::DeleteRemediationConfiguration::set_resource_type): <p>The type of a resource.</p>
+    /// - On success, responds with [`DeleteRemediationConfigurationOutput`](crate::output::DeleteRemediationConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRemediationConfigurationError>`](crate::error::DeleteRemediationConfigurationError)
     pub fn delete_remediation_configuration(
         &self,
     ) -> fluent_builders::DeleteRemediationConfiguration<C, M, R> {
         fluent_builders::DeleteRemediationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRemediationExceptions` operation.
+    /// Constructs a fluent builder for the [`DeleteRemediationExceptions`](crate::client::fluent_builders::DeleteRemediationExceptions) operation.
     ///
-    /// See [`DeleteRemediationExceptions`](crate::client::fluent_builders::DeleteRemediationExceptions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRemediationExceptions::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::client::fluent_builders::DeleteRemediationExceptions::set_config_rule_name): <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
+    ///   - [`resource_keys(Vec<RemediationExceptionResourceKey>)`](crate::client::fluent_builders::DeleteRemediationExceptions::resource_keys) / [`set_resource_keys(Option<Vec<RemediationExceptionResourceKey>>)`](crate::client::fluent_builders::DeleteRemediationExceptions::set_resource_keys): <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
+    /// - On success, responds with [`DeleteRemediationExceptionsOutput`](crate::output::DeleteRemediationExceptionsOutput) with field(s):
+    ///   - [`failed_batches(Option<Vec<FailedDeleteRemediationExceptionsBatch>>)`](crate::output::DeleteRemediationExceptionsOutput::failed_batches): <p>Returns a list of failed delete remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
+    /// - On failure, responds with [`SdkError<DeleteRemediationExceptionsError>`](crate::error::DeleteRemediationExceptionsError)
     pub fn delete_remediation_exceptions(
         &self,
     ) -> fluent_builders::DeleteRemediationExceptions<C, M, R> {
         fluent_builders::DeleteRemediationExceptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteResourceConfig` operation.
+    /// Constructs a fluent builder for the [`DeleteResourceConfig`](crate::client::fluent_builders::DeleteResourceConfig) operation.
     ///
-    /// See [`DeleteResourceConfig`](crate::client::fluent_builders::DeleteResourceConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::DeleteResourceConfig::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::DeleteResourceConfig::set_resource_type): <p>The type of the resource.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DeleteResourceConfig::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DeleteResourceConfig::set_resource_id): <p>Unique identifier of the resource.</p>
+    /// - On success, responds with [`DeleteResourceConfigOutput`](crate::output::DeleteResourceConfigOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourceConfigError>`](crate::error::DeleteResourceConfigError)
     pub fn delete_resource_config(&self) -> fluent_builders::DeleteResourceConfig<C, M, R> {
         fluent_builders::DeleteResourceConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRetentionConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteRetentionConfiguration`](crate::client::fluent_builders::DeleteRetentionConfiguration) operation.
     ///
-    /// See [`DeleteRetentionConfiguration`](crate::client::fluent_builders::DeleteRetentionConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`retention_configuration_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRetentionConfiguration::retention_configuration_name) / [`set_retention_configuration_name(Option<String>)`](crate::client::fluent_builders::DeleteRetentionConfiguration::set_retention_configuration_name): <p>The name of the retention configuration to delete.</p>
+    /// - On success, responds with [`DeleteRetentionConfigurationOutput`](crate::output::DeleteRetentionConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRetentionConfigurationError>`](crate::error::DeleteRetentionConfigurationError)
     pub fn delete_retention_configuration(
         &self,
     ) -> fluent_builders::DeleteRetentionConfiguration<C, M, R> {
         fluent_builders::DeleteRetentionConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteStoredQuery` operation.
+    /// Constructs a fluent builder for the [`DeleteStoredQuery`](crate::client::fluent_builders::DeleteStoredQuery) operation.
     ///
-    /// See [`DeleteStoredQuery`](crate::client::fluent_builders::DeleteStoredQuery) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`query_name(impl Into<String>)`](crate::client::fluent_builders::DeleteStoredQuery::query_name) / [`set_query_name(Option<String>)`](crate::client::fluent_builders::DeleteStoredQuery::set_query_name): <p>The name of the query that you want to delete.</p>
+    /// - On success, responds with [`DeleteStoredQueryOutput`](crate::output::DeleteStoredQueryOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteStoredQueryError>`](crate::error::DeleteStoredQueryError)
     pub fn delete_stored_query(&self) -> fluent_builders::DeleteStoredQuery<C, M, R> {
         fluent_builders::DeleteStoredQuery::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeliverConfigSnapshot` operation.
+    /// Constructs a fluent builder for the [`DeliverConfigSnapshot`](crate::client::fluent_builders::DeliverConfigSnapshot) operation.
     ///
-    /// See [`DeliverConfigSnapshot`](crate::client::fluent_builders::DeliverConfigSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_channel_name(impl Into<String>)`](crate::client::fluent_builders::DeliverConfigSnapshot::delivery_channel_name) / [`set_delivery_channel_name(Option<String>)`](crate::client::fluent_builders::DeliverConfigSnapshot::set_delivery_channel_name): <p>The name of the delivery channel through which the snapshot is delivered.</p>
+    /// - On success, responds with [`DeliverConfigSnapshotOutput`](crate::output::DeliverConfigSnapshotOutput) with field(s):
+    ///   - [`config_snapshot_id(Option<String>)`](crate::output::DeliverConfigSnapshotOutput::config_snapshot_id): <p>The ID of the snapshot that is being created.</p>
+    /// - On failure, responds with [`SdkError<DeliverConfigSnapshotError>`](crate::error::DeliverConfigSnapshotError)
     pub fn deliver_config_snapshot(&self) -> fluent_builders::DeliverConfigSnapshot<C, M, R> {
         fluent_builders::DeliverConfigSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAggregateComplianceByConfigRules` operation.
+    /// Constructs a fluent builder for the [`DescribeAggregateComplianceByConfigRules`](crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules::into_paginator).
     ///
-    /// See [`DescribeAggregateComplianceByConfigRules`](crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules::set_configuration_aggregator_name): <p>The name of the configuration aggregator.</p>
+    ///   - [`filters(ConfigRuleComplianceFilters)`](crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules::filters) / [`set_filters(Option<ConfigRuleComplianceFilters>)`](crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules::set_filters): <p>Filters the results by ConfigRuleComplianceFilters object. </p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules::set_limit): <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeAggregateComplianceByConfigRules::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`DescribeAggregateComplianceByConfigRulesOutput`](crate::output::DescribeAggregateComplianceByConfigRulesOutput) with field(s):
+    ///   - [`aggregate_compliance_by_config_rules(Option<Vec<AggregateComplianceByConfigRule>>)`](crate::output::DescribeAggregateComplianceByConfigRulesOutput::aggregate_compliance_by_config_rules): <p>Returns a list of AggregateComplianceByConfigRule object.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAggregateComplianceByConfigRulesOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeAggregateComplianceByConfigRulesError>`](crate::error::DescribeAggregateComplianceByConfigRulesError)
     pub fn describe_aggregate_compliance_by_config_rules(
         &self,
     ) -> fluent_builders::DescribeAggregateComplianceByConfigRules<C, M, R> {
         fluent_builders::DescribeAggregateComplianceByConfigRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAggregateComplianceByConformancePacks` operation.
+    /// Constructs a fluent builder for the [`DescribeAggregateComplianceByConformancePacks`](crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks::into_paginator).
     ///
-    /// See [`DescribeAggregateComplianceByConformancePacks`](crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks::set_configuration_aggregator_name): <p>The name of the configuration aggregator.</p>
+    ///   - [`filters(AggregateConformancePackComplianceFilters)`](crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks::filters) / [`set_filters(Option<AggregateConformancePackComplianceFilters>)`](crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks::set_filters): <p>Filters the result by <code>AggregateConformancePackComplianceFilters</code> object.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks::set_limit): <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeAggregateComplianceByConformancePacks::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`DescribeAggregateComplianceByConformancePacksOutput`](crate::output::DescribeAggregateComplianceByConformancePacksOutput) with field(s):
+    ///   - [`aggregate_compliance_by_conformance_packs(Option<Vec<AggregateComplianceByConformancePack>>)`](crate::output::DescribeAggregateComplianceByConformancePacksOutput::aggregate_compliance_by_conformance_packs): <p>Returns the <code>AggregateComplianceByConformancePack</code> object.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAggregateComplianceByConformancePacksOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeAggregateComplianceByConformancePacksError>`](crate::error::DescribeAggregateComplianceByConformancePacksError)
     pub fn describe_aggregate_compliance_by_conformance_packs(
         &self,
     ) -> fluent_builders::DescribeAggregateComplianceByConformancePacks<C, M, R> {
         fluent_builders::DescribeAggregateComplianceByConformancePacks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAggregationAuthorizations` operation.
+    /// Constructs a fluent builder for the [`DescribeAggregationAuthorizations`](crate::client::fluent_builders::DescribeAggregationAuthorizations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeAggregationAuthorizations::into_paginator).
     ///
-    /// See [`DescribeAggregationAuthorizations`](crate::client::fluent_builders::DescribeAggregationAuthorizations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAggregationAuthorizations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeAggregationAuthorizations::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeAggregationAuthorizations::set_limit): <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeAggregationAuthorizations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeAggregationAuthorizations::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`DescribeAggregationAuthorizationsOutput`](crate::output::DescribeAggregationAuthorizationsOutput) with field(s):
+    ///   - [`aggregation_authorizations(Option<Vec<AggregationAuthorization>>)`](crate::output::DescribeAggregationAuthorizationsOutput::aggregation_authorizations): <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAggregationAuthorizationsOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeAggregationAuthorizationsError>`](crate::error::DescribeAggregationAuthorizationsError)
     pub fn describe_aggregation_authorizations(
         &self,
     ) -> fluent_builders::DescribeAggregationAuthorizations<C, M, R> {
         fluent_builders::DescribeAggregationAuthorizations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeComplianceByConfigRule` operation.
+    /// Constructs a fluent builder for the [`DescribeComplianceByConfigRule`](crate::client::fluent_builders::DescribeComplianceByConfigRule) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeComplianceByConfigRule::into_paginator).
     ///
-    /// See [`DescribeComplianceByConfigRule`](crate::client::fluent_builders::DescribeComplianceByConfigRule) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeComplianceByConfigRule::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_names(Vec<String>)`](crate::client::fluent_builders::DescribeComplianceByConfigRule::config_rule_names) / [`set_config_rule_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeComplianceByConfigRule::set_config_rule_names): <p>Specify one or more Config rule names to filter the results by rule.</p>
+    ///   - [`compliance_types(Vec<ComplianceType>)`](crate::client::fluent_builders::DescribeComplianceByConfigRule::compliance_types) / [`set_compliance_types(Option<Vec<ComplianceType>>)`](crate::client::fluent_builders::DescribeComplianceByConfigRule::set_compliance_types): <p>Filters the results by compliance.</p>  <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeComplianceByConfigRule::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeComplianceByConfigRule::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`DescribeComplianceByConfigRuleOutput`](crate::output::DescribeComplianceByConfigRuleOutput) with field(s):
+    ///   - [`compliance_by_config_rules(Option<Vec<ComplianceByConfigRule>>)`](crate::output::DescribeComplianceByConfigRuleOutput::compliance_by_config_rules): <p>Indicates whether each of the specified Config rules is compliant.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeComplianceByConfigRuleOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeComplianceByConfigRuleError>`](crate::error::DescribeComplianceByConfigRuleError)
     pub fn describe_compliance_by_config_rule(
         &self,
     ) -> fluent_builders::DescribeComplianceByConfigRule<C, M, R> {
         fluent_builders::DescribeComplianceByConfigRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeComplianceByResource` operation.
+    /// Constructs a fluent builder for the [`DescribeComplianceByResource`](crate::client::fluent_builders::DescribeComplianceByResource) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeComplianceByResource::into_paginator).
     ///
-    /// See [`DescribeComplianceByResource`](crate::client::fluent_builders::DescribeComplianceByResource) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeComplianceByResource::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::DescribeComplianceByResource::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::DescribeComplianceByResource::set_resource_type): <p>The types of Amazon Web Services resources for which you want compliance information (for example, <code>AWS::EC2::Instance</code>). For this action, you can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DescribeComplianceByResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DescribeComplianceByResource::set_resource_id): <p>The ID of the Amazon Web Services resource for which you want compliance information. You can specify only one resource ID. If you specify a resource ID, you must also specify a type for <code>ResourceType</code>.</p>
+    ///   - [`compliance_types(Vec<ComplianceType>)`](crate::client::fluent_builders::DescribeComplianceByResource::compliance_types) / [`set_compliance_types(Option<Vec<ComplianceType>>)`](crate::client::fluent_builders::DescribeComplianceByResource::set_compliance_types): <p>Filters the results by compliance.</p>  <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeComplianceByResource::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeComplianceByResource::set_limit): <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeComplianceByResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeComplianceByResource::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`DescribeComplianceByResourceOutput`](crate::output::DescribeComplianceByResourceOutput) with field(s):
+    ///   - [`compliance_by_resources(Option<Vec<ComplianceByResource>>)`](crate::output::DescribeComplianceByResourceOutput::compliance_by_resources): <p>Indicates whether the specified Amazon Web Services resource complies with all of the Config rules that evaluate it.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeComplianceByResourceOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeComplianceByResourceError>`](crate::error::DescribeComplianceByResourceError)
     pub fn describe_compliance_by_resource(
         &self,
     ) -> fluent_builders::DescribeComplianceByResource<C, M, R> {
         fluent_builders::DescribeComplianceByResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConfigRuleEvaluationStatus` operation.
+    /// Constructs a fluent builder for the [`DescribeConfigRuleEvaluationStatus`](crate::client::fluent_builders::DescribeConfigRuleEvaluationStatus) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeConfigRuleEvaluationStatus::into_paginator).
     ///
-    /// See [`DescribeConfigRuleEvaluationStatus`](crate::client::fluent_builders::DescribeConfigRuleEvaluationStatus) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConfigRuleEvaluationStatus::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_names(Vec<String>)`](crate::client::fluent_builders::DescribeConfigRuleEvaluationStatus::config_rule_names) / [`set_config_rule_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeConfigRuleEvaluationStatus::set_config_rule_names): <p>The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeConfigRuleEvaluationStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeConfigRuleEvaluationStatus::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeConfigRuleEvaluationStatus::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeConfigRuleEvaluationStatus::set_limit): <p>The number of rule evaluation results that you want returned.</p>  <p>This parameter is required if the rule limit for your account is more than the default of 150 rules.</p>  <p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// - On success, responds with [`DescribeConfigRuleEvaluationStatusOutput`](crate::output::DescribeConfigRuleEvaluationStatusOutput) with field(s):
+    ///   - [`config_rules_evaluation_status(Option<Vec<ConfigRuleEvaluationStatus>>)`](crate::output::DescribeConfigRuleEvaluationStatusOutput::config_rules_evaluation_status): <p>Status information about your Config managed rules.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeConfigRuleEvaluationStatusOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeConfigRuleEvaluationStatusError>`](crate::error::DescribeConfigRuleEvaluationStatusError)
     pub fn describe_config_rule_evaluation_status(
         &self,
     ) -> fluent_builders::DescribeConfigRuleEvaluationStatus<C, M, R> {
         fluent_builders::DescribeConfigRuleEvaluationStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConfigRules` operation.
+    /// Constructs a fluent builder for the [`DescribeConfigRules`](crate::client::fluent_builders::DescribeConfigRules) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeConfigRules::into_paginator).
     ///
-    /// See [`DescribeConfigRules`](crate::client::fluent_builders::DescribeConfigRules) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConfigRules::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_names(Vec<String>)`](crate::client::fluent_builders::DescribeConfigRules::config_rule_names) / [`set_config_rule_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeConfigRules::set_config_rule_names): <p>The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeConfigRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeConfigRules::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`DescribeConfigRulesOutput`](crate::output::DescribeConfigRulesOutput) with field(s):
+    ///   - [`config_rules(Option<Vec<ConfigRule>>)`](crate::output::DescribeConfigRulesOutput::config_rules): <p>The details about your Config rules.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeConfigRulesOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeConfigRulesError>`](crate::error::DescribeConfigRulesError)
     pub fn describe_config_rules(&self) -> fluent_builders::DescribeConfigRules<C, M, R> {
         fluent_builders::DescribeConfigRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConfigurationAggregators` operation.
+    /// Constructs a fluent builder for the [`DescribeConfigurationAggregators`](crate::client::fluent_builders::DescribeConfigurationAggregators) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeConfigurationAggregators::into_paginator).
     ///
-    /// See [`DescribeConfigurationAggregators`](crate::client::fluent_builders::DescribeConfigurationAggregators) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConfigurationAggregators::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_aggregator_names(Vec<String>)`](crate::client::fluent_builders::DescribeConfigurationAggregators::configuration_aggregator_names) / [`set_configuration_aggregator_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeConfigurationAggregators::set_configuration_aggregator_names): <p>The name of the configuration aggregators.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeConfigurationAggregators::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeConfigurationAggregators::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeConfigurationAggregators::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeConfigurationAggregators::set_limit): <p>The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    /// - On success, responds with [`DescribeConfigurationAggregatorsOutput`](crate::output::DescribeConfigurationAggregatorsOutput) with field(s):
+    ///   - [`configuration_aggregators(Option<Vec<ConfigurationAggregator>>)`](crate::output::DescribeConfigurationAggregatorsOutput::configuration_aggregators): <p>Returns a ConfigurationAggregators object.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeConfigurationAggregatorsOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeConfigurationAggregatorsError>`](crate::error::DescribeConfigurationAggregatorsError)
     pub fn describe_configuration_aggregators(
         &self,
     ) -> fluent_builders::DescribeConfigurationAggregators<C, M, R> {
         fluent_builders::DescribeConfigurationAggregators::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConfigurationAggregatorSourcesStatus` operation.
+    /// Constructs a fluent builder for the [`DescribeConfigurationAggregatorSourcesStatus`](crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus::into_paginator).
     ///
-    /// See [`DescribeConfigurationAggregatorSourcesStatus`](crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus::set_configuration_aggregator_name): <p>The name of the configuration aggregator.</p>
+    ///   - [`update_status(Vec<AggregatedSourceStatusType>)`](crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus::update_status) / [`set_update_status(Option<Vec<AggregatedSourceStatusType>>)`](crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus::set_update_status): <p>Filters the status type.</p>  <ul>   <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>   <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>   <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeConfigurationAggregatorSourcesStatus::set_limit): <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    /// - On success, responds with [`DescribeConfigurationAggregatorSourcesStatusOutput`](crate::output::DescribeConfigurationAggregatorSourcesStatusOutput) with field(s):
+    ///   - [`aggregated_source_status_list(Option<Vec<AggregatedSourceStatus>>)`](crate::output::DescribeConfigurationAggregatorSourcesStatusOutput::aggregated_source_status_list): <p>Returns an AggregatedSourceStatus object. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeConfigurationAggregatorSourcesStatusOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeConfigurationAggregatorSourcesStatusError>`](crate::error::DescribeConfigurationAggregatorSourcesStatusError)
     pub fn describe_configuration_aggregator_sources_status(
         &self,
     ) -> fluent_builders::DescribeConfigurationAggregatorSourcesStatus<C, M, R> {
         fluent_builders::DescribeConfigurationAggregatorSourcesStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConfigurationRecorders` operation.
+    /// Constructs a fluent builder for the [`DescribeConfigurationRecorders`](crate::client::fluent_builders::DescribeConfigurationRecorders) operation.
     ///
-    /// See [`DescribeConfigurationRecorders`](crate::client::fluent_builders::DescribeConfigurationRecorders) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_recorder_names(Vec<String>)`](crate::client::fluent_builders::DescribeConfigurationRecorders::configuration_recorder_names) / [`set_configuration_recorder_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeConfigurationRecorders::set_configuration_recorder_names): <p>A list of configuration recorder names.</p>
+    /// - On success, responds with [`DescribeConfigurationRecordersOutput`](crate::output::DescribeConfigurationRecordersOutput) with field(s):
+    ///   - [`configuration_recorders(Option<Vec<ConfigurationRecorder>>)`](crate::output::DescribeConfigurationRecordersOutput::configuration_recorders): <p>A list that contains the descriptions of the specified configuration recorders.</p>
+    /// - On failure, responds with [`SdkError<DescribeConfigurationRecordersError>`](crate::error::DescribeConfigurationRecordersError)
     pub fn describe_configuration_recorders(
         &self,
     ) -> fluent_builders::DescribeConfigurationRecorders<C, M, R> {
         fluent_builders::DescribeConfigurationRecorders::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConfigurationRecorderStatus` operation.
+    /// Constructs a fluent builder for the [`DescribeConfigurationRecorderStatus`](crate::client::fluent_builders::DescribeConfigurationRecorderStatus) operation.
     ///
-    /// See [`DescribeConfigurationRecorderStatus`](crate::client::fluent_builders::DescribeConfigurationRecorderStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_recorder_names(Vec<String>)`](crate::client::fluent_builders::DescribeConfigurationRecorderStatus::configuration_recorder_names) / [`set_configuration_recorder_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeConfigurationRecorderStatus::set_configuration_recorder_names): <p>The name(s) of the configuration recorder. If the name is not specified, the action returns the current status of all the configuration recorders associated with the account.</p>
+    /// - On success, responds with [`DescribeConfigurationRecorderStatusOutput`](crate::output::DescribeConfigurationRecorderStatusOutput) with field(s):
+    ///   - [`configuration_recorders_status(Option<Vec<ConfigurationRecorderStatus>>)`](crate::output::DescribeConfigurationRecorderStatusOutput::configuration_recorders_status): <p>A list that contains status of the specified recorders.</p>
+    /// - On failure, responds with [`SdkError<DescribeConfigurationRecorderStatusError>`](crate::error::DescribeConfigurationRecorderStatusError)
     pub fn describe_configuration_recorder_status(
         &self,
     ) -> fluent_builders::DescribeConfigurationRecorderStatus<C, M, R> {
         fluent_builders::DescribeConfigurationRecorderStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConformancePackCompliance` operation.
+    /// Constructs a fluent builder for the [`DescribeConformancePackCompliance`](crate::client::fluent_builders::DescribeConformancePackCompliance) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeConformancePackCompliance::into_paginator).
     ///
-    /// See [`DescribeConformancePackCompliance`](crate::client::fluent_builders::DescribeConformancePackCompliance) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConformancePackCompliance::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`conformance_pack_name(impl Into<String>)`](crate::client::fluent_builders::DescribeConformancePackCompliance::conformance_pack_name) / [`set_conformance_pack_name(Option<String>)`](crate::client::fluent_builders::DescribeConformancePackCompliance::set_conformance_pack_name): <p>Name of the conformance pack.</p>
+    ///   - [`filters(ConformancePackComplianceFilters)`](crate::client::fluent_builders::DescribeConformancePackCompliance::filters) / [`set_filters(Option<ConformancePackComplianceFilters>)`](crate::client::fluent_builders::DescribeConformancePackCompliance::set_filters): <p>A <code>ConformancePackComplianceFilters</code> object.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeConformancePackCompliance::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeConformancePackCompliance::set_limit): <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeConformancePackCompliance::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeConformancePackCompliance::set_next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    /// - On success, responds with [`DescribeConformancePackComplianceOutput`](crate::output::DescribeConformancePackComplianceOutput) with field(s):
+    ///   - [`conformance_pack_name(Option<String>)`](crate::output::DescribeConformancePackComplianceOutput::conformance_pack_name): <p>Name of the conformance pack.</p>
+    ///   - [`conformance_pack_rule_compliance_list(Option<Vec<ConformancePackRuleCompliance>>)`](crate::output::DescribeConformancePackComplianceOutput::conformance_pack_rule_compliance_list): <p>Returns a list of <code>ConformancePackRuleCompliance</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeConformancePackComplianceOutput::next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeConformancePackComplianceError>`](crate::error::DescribeConformancePackComplianceError)
     pub fn describe_conformance_pack_compliance(
         &self,
     ) -> fluent_builders::DescribeConformancePackCompliance<C, M, R> {
         fluent_builders::DescribeConformancePackCompliance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConformancePacks` operation.
+    /// Constructs a fluent builder for the [`DescribeConformancePacks`](crate::client::fluent_builders::DescribeConformancePacks) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeConformancePacks::into_paginator).
     ///
-    /// See [`DescribeConformancePacks`](crate::client::fluent_builders::DescribeConformancePacks) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConformancePacks::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`conformance_pack_names(Vec<String>)`](crate::client::fluent_builders::DescribeConformancePacks::conformance_pack_names) / [`set_conformance_pack_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeConformancePacks::set_conformance_pack_names): <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeConformancePacks::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeConformancePacks::set_limit): <p>The maximum number of conformance packs returned on each page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeConformancePacks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeConformancePacks::set_next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    /// - On success, responds with [`DescribeConformancePacksOutput`](crate::output::DescribeConformancePacksOutput) with field(s):
+    ///   - [`conformance_pack_details(Option<Vec<ConformancePackDetail>>)`](crate::output::DescribeConformancePacksOutput::conformance_pack_details): <p>Returns a list of <code>ConformancePackDetail</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeConformancePacksOutput::next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeConformancePacksError>`](crate::error::DescribeConformancePacksError)
     pub fn describe_conformance_packs(&self) -> fluent_builders::DescribeConformancePacks<C, M, R> {
         fluent_builders::DescribeConformancePacks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConformancePackStatus` operation.
+    /// Constructs a fluent builder for the [`DescribeConformancePackStatus`](crate::client::fluent_builders::DescribeConformancePackStatus) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeConformancePackStatus::into_paginator).
     ///
-    /// See [`DescribeConformancePackStatus`](crate::client::fluent_builders::DescribeConformancePackStatus) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConformancePackStatus::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`conformance_pack_names(Vec<String>)`](crate::client::fluent_builders::DescribeConformancePackStatus::conformance_pack_names) / [`set_conformance_pack_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeConformancePackStatus::set_conformance_pack_names): <p>Comma-separated list of conformance pack names.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeConformancePackStatus::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeConformancePackStatus::set_limit): <p>The maximum number of conformance packs status returned on each page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeConformancePackStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeConformancePackStatus::set_next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    /// - On success, responds with [`DescribeConformancePackStatusOutput`](crate::output::DescribeConformancePackStatusOutput) with field(s):
+    ///   - [`conformance_pack_status_details(Option<Vec<ConformancePackStatusDetail>>)`](crate::output::DescribeConformancePackStatusOutput::conformance_pack_status_details): <p>A list of <code>ConformancePackStatusDetail</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeConformancePackStatusOutput::next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeConformancePackStatusError>`](crate::error::DescribeConformancePackStatusError)
     pub fn describe_conformance_pack_status(
         &self,
     ) -> fluent_builders::DescribeConformancePackStatus<C, M, R> {
         fluent_builders::DescribeConformancePackStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDeliveryChannels` operation.
+    /// Constructs a fluent builder for the [`DescribeDeliveryChannels`](crate::client::fluent_builders::DescribeDeliveryChannels) operation.
     ///
-    /// See [`DescribeDeliveryChannels`](crate::client::fluent_builders::DescribeDeliveryChannels) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_channel_names(Vec<String>)`](crate::client::fluent_builders::DescribeDeliveryChannels::delivery_channel_names) / [`set_delivery_channel_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeDeliveryChannels::set_delivery_channel_names): <p>A list of delivery channel names.</p>
+    /// - On success, responds with [`DescribeDeliveryChannelsOutput`](crate::output::DescribeDeliveryChannelsOutput) with field(s):
+    ///   - [`delivery_channels(Option<Vec<DeliveryChannel>>)`](crate::output::DescribeDeliveryChannelsOutput::delivery_channels): <p>A list that contains the descriptions of the specified delivery channel.</p>
+    /// - On failure, responds with [`SdkError<DescribeDeliveryChannelsError>`](crate::error::DescribeDeliveryChannelsError)
     pub fn describe_delivery_channels(&self) -> fluent_builders::DescribeDeliveryChannels<C, M, R> {
         fluent_builders::DescribeDeliveryChannels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDeliveryChannelStatus` operation.
+    /// Constructs a fluent builder for the [`DescribeDeliveryChannelStatus`](crate::client::fluent_builders::DescribeDeliveryChannelStatus) operation.
     ///
-    /// See [`DescribeDeliveryChannelStatus`](crate::client::fluent_builders::DescribeDeliveryChannelStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_channel_names(Vec<String>)`](crate::client::fluent_builders::DescribeDeliveryChannelStatus::delivery_channel_names) / [`set_delivery_channel_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeDeliveryChannelStatus::set_delivery_channel_names): <p>A list of delivery channel names.</p>
+    /// - On success, responds with [`DescribeDeliveryChannelStatusOutput`](crate::output::DescribeDeliveryChannelStatusOutput) with field(s):
+    ///   - [`delivery_channels_status(Option<Vec<DeliveryChannelStatus>>)`](crate::output::DescribeDeliveryChannelStatusOutput::delivery_channels_status): <p>A list that contains the status of a specified delivery channel.</p>
+    /// - On failure, responds with [`SdkError<DescribeDeliveryChannelStatusError>`](crate::error::DescribeDeliveryChannelStatusError)
     pub fn describe_delivery_channel_status(
         &self,
     ) -> fluent_builders::DescribeDeliveryChannelStatus<C, M, R> {
         fluent_builders::DescribeDeliveryChannelStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOrganizationConfigRules` operation.
+    /// Constructs a fluent builder for the [`DescribeOrganizationConfigRules`](crate::client::fluent_builders::DescribeOrganizationConfigRules) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationConfigRules::into_paginator).
     ///
-    /// See [`DescribeOrganizationConfigRules`](crate::client::fluent_builders::DescribeOrganizationConfigRules) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationConfigRules::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`organization_config_rule_names(Vec<String>)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::organization_config_rule_names) / [`set_organization_config_rule_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::set_organization_config_rule_names): <p>The names of organization config rules for which you want details. If you do not specify any names, Config returns details for all your organization config rules.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::set_limit): <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeOrganizationConfigRules::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On success, responds with [`DescribeOrganizationConfigRulesOutput`](crate::output::DescribeOrganizationConfigRulesOutput) with field(s):
+    ///   - [`organization_config_rules(Option<Vec<OrganizationConfigRule>>)`](crate::output::DescribeOrganizationConfigRulesOutput::organization_config_rules): <p>Returns a list of <code>OrganizationConfigRule</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeOrganizationConfigRulesOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On failure, responds with [`SdkError<DescribeOrganizationConfigRulesError>`](crate::error::DescribeOrganizationConfigRulesError)
     pub fn describe_organization_config_rules(
         &self,
     ) -> fluent_builders::DescribeOrganizationConfigRules<C, M, R> {
         fluent_builders::DescribeOrganizationConfigRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOrganizationConfigRuleStatuses` operation.
+    /// Constructs a fluent builder for the [`DescribeOrganizationConfigRuleStatuses`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::into_paginator).
     ///
-    /// See [`DescribeOrganizationConfigRuleStatuses`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`organization_config_rule_names(Vec<String>)`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::organization_config_rule_names) / [`set_organization_config_rule_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::set_organization_config_rule_names): <p>The names of organization config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::set_limit): <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeOrganizationConfigRuleStatuses::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On success, responds with [`DescribeOrganizationConfigRuleStatusesOutput`](crate::output::DescribeOrganizationConfigRuleStatusesOutput) with field(s):
+    ///   - [`organization_config_rule_statuses(Option<Vec<OrganizationConfigRuleStatus>>)`](crate::output::DescribeOrganizationConfigRuleStatusesOutput::organization_config_rule_statuses): <p>A list of <code>OrganizationConfigRuleStatus</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeOrganizationConfigRuleStatusesOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On failure, responds with [`SdkError<DescribeOrganizationConfigRuleStatusesError>`](crate::error::DescribeOrganizationConfigRuleStatusesError)
     pub fn describe_organization_config_rule_statuses(
         &self,
     ) -> fluent_builders::DescribeOrganizationConfigRuleStatuses<C, M, R> {
         fluent_builders::DescribeOrganizationConfigRuleStatuses::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOrganizationConformancePacks` operation.
+    /// Constructs a fluent builder for the [`DescribeOrganizationConformancePacks`](crate::client::fluent_builders::DescribeOrganizationConformancePacks) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationConformancePacks::into_paginator).
     ///
-    /// See [`DescribeOrganizationConformancePacks`](crate::client::fluent_builders::DescribeOrganizationConformancePacks) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationConformancePacks::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`organization_conformance_pack_names(Vec<String>)`](crate::client::fluent_builders::DescribeOrganizationConformancePacks::organization_conformance_pack_names) / [`set_organization_conformance_pack_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeOrganizationConformancePacks::set_organization_conformance_pack_names): <p>The name that you assign to an organization conformance pack.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeOrganizationConformancePacks::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeOrganizationConformancePacks::set_limit): <p>The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeOrganizationConformancePacks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeOrganizationConformancePacks::set_next_token): <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`DescribeOrganizationConformancePacksOutput`](crate::output::DescribeOrganizationConformancePacksOutput) with field(s):
+    ///   - [`organization_conformance_packs(Option<Vec<OrganizationConformancePack>>)`](crate::output::DescribeOrganizationConformancePacksOutput::organization_conformance_packs): <p>Returns a list of OrganizationConformancePacks objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeOrganizationConformancePacksOutput::next_token): <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeOrganizationConformancePacksError>`](crate::error::DescribeOrganizationConformancePacksError)
     pub fn describe_organization_conformance_packs(
         &self,
     ) -> fluent_builders::DescribeOrganizationConformancePacks<C, M, R> {
         fluent_builders::DescribeOrganizationConformancePacks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOrganizationConformancePackStatuses` operation.
+    /// Constructs a fluent builder for the [`DescribeOrganizationConformancePackStatuses`](crate::client::fluent_builders::DescribeOrganizationConformancePackStatuses) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationConformancePackStatuses::into_paginator).
     ///
-    /// See [`DescribeOrganizationConformancePackStatuses`](crate::client::fluent_builders::DescribeOrganizationConformancePackStatuses) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOrganizationConformancePackStatuses::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`organization_conformance_pack_names(Vec<String>)`](crate::client::fluent_builders::DescribeOrganizationConformancePackStatuses::organization_conformance_pack_names) / [`set_organization_conformance_pack_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeOrganizationConformancePackStatuses::set_organization_conformance_pack_names): <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs. </p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeOrganizationConformancePackStatuses::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeOrganizationConformancePackStatuses::set_limit): <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeOrganizationConformancePackStatuses::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeOrganizationConformancePackStatuses::set_next_token): <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On success, responds with [`DescribeOrganizationConformancePackStatusesOutput`](crate::output::DescribeOrganizationConformancePackStatusesOutput) with field(s):
+    ///   - [`organization_conformance_pack_statuses(Option<Vec<OrganizationConformancePackStatus>>)`](crate::output::DescribeOrganizationConformancePackStatusesOutput::organization_conformance_pack_statuses): <p>A list of <code>OrganizationConformancePackStatus</code> objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeOrganizationConformancePackStatusesOutput::next_token): <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On failure, responds with [`SdkError<DescribeOrganizationConformancePackStatusesError>`](crate::error::DescribeOrganizationConformancePackStatusesError)
     pub fn describe_organization_conformance_pack_statuses(
         &self,
     ) -> fluent_builders::DescribeOrganizationConformancePackStatuses<C, M, R> {
         fluent_builders::DescribeOrganizationConformancePackStatuses::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePendingAggregationRequests` operation.
+    /// Constructs a fluent builder for the [`DescribePendingAggregationRequests`](crate::client::fluent_builders::DescribePendingAggregationRequests) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribePendingAggregationRequests::into_paginator).
     ///
-    /// See [`DescribePendingAggregationRequests`](crate::client::fluent_builders::DescribePendingAggregationRequests) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePendingAggregationRequests::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribePendingAggregationRequests::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribePendingAggregationRequests::set_limit): <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribePendingAggregationRequests::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribePendingAggregationRequests::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`DescribePendingAggregationRequestsOutput`](crate::output::DescribePendingAggregationRequestsOutput) with field(s):
+    ///   - [`pending_aggregation_requests(Option<Vec<PendingAggregationRequest>>)`](crate::output::DescribePendingAggregationRequestsOutput::pending_aggregation_requests): <p>Returns a PendingAggregationRequests object.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribePendingAggregationRequestsOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribePendingAggregationRequestsError>`](crate::error::DescribePendingAggregationRequestsError)
     pub fn describe_pending_aggregation_requests(
         &self,
     ) -> fluent_builders::DescribePendingAggregationRequests<C, M, R> {
         fluent_builders::DescribePendingAggregationRequests::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRemediationConfigurations` operation.
+    /// Constructs a fluent builder for the [`DescribeRemediationConfigurations`](crate::client::fluent_builders::DescribeRemediationConfigurations) operation.
     ///
-    /// See [`DescribeRemediationConfigurations`](crate::client::fluent_builders::DescribeRemediationConfigurations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_names(Vec<String>)`](crate::client::fluent_builders::DescribeRemediationConfigurations::config_rule_names) / [`set_config_rule_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeRemediationConfigurations::set_config_rule_names): <p>A list of Config rule names of remediation configurations for which you want details. </p>
+    /// - On success, responds with [`DescribeRemediationConfigurationsOutput`](crate::output::DescribeRemediationConfigurationsOutput) with field(s):
+    ///   - [`remediation_configurations(Option<Vec<RemediationConfiguration>>)`](crate::output::DescribeRemediationConfigurationsOutput::remediation_configurations): <p>Returns a remediation configuration object.</p>
+    /// - On failure, responds with [`SdkError<DescribeRemediationConfigurationsError>`](crate::error::DescribeRemediationConfigurationsError)
     pub fn describe_remediation_configurations(
         &self,
     ) -> fluent_builders::DescribeRemediationConfigurations<C, M, R> {
         fluent_builders::DescribeRemediationConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRemediationExceptions` operation.
+    /// Constructs a fluent builder for the [`DescribeRemediationExceptions`](crate::client::fluent_builders::DescribeRemediationExceptions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeRemediationExceptions::into_paginator).
     ///
-    /// See [`DescribeRemediationExceptions`](crate::client::fluent_builders::DescribeRemediationExceptions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeRemediationExceptions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_name(impl Into<String>)`](crate::client::fluent_builders::DescribeRemediationExceptions::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::client::fluent_builders::DescribeRemediationExceptions::set_config_rule_name): <p>The name of the Config rule.</p>
+    ///   - [`resource_keys(Vec<RemediationExceptionResourceKey>)`](crate::client::fluent_builders::DescribeRemediationExceptions::resource_keys) / [`set_resource_keys(Option<Vec<RemediationExceptionResourceKey>>)`](crate::client::fluent_builders::DescribeRemediationExceptions::set_resource_keys): <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeRemediationExceptions::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeRemediationExceptions::set_limit): <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeRemediationExceptions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeRemediationExceptions::set_next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    /// - On success, responds with [`DescribeRemediationExceptionsOutput`](crate::output::DescribeRemediationExceptionsOutput) with field(s):
+    ///   - [`remediation_exceptions(Option<Vec<RemediationException>>)`](crate::output::DescribeRemediationExceptionsOutput::remediation_exceptions): <p>Returns a list of remediation exception objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeRemediationExceptionsOutput::next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeRemediationExceptionsError>`](crate::error::DescribeRemediationExceptionsError)
     pub fn describe_remediation_exceptions(
         &self,
     ) -> fluent_builders::DescribeRemediationExceptions<C, M, R> {
         fluent_builders::DescribeRemediationExceptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRemediationExecutionStatus` operation.
+    /// Constructs a fluent builder for the [`DescribeRemediationExecutionStatus`](crate::client::fluent_builders::DescribeRemediationExecutionStatus) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeRemediationExecutionStatus::into_paginator).
     ///
-    /// See [`DescribeRemediationExecutionStatus`](crate::client::fluent_builders::DescribeRemediationExecutionStatus) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeRemediationExecutionStatus::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_name(impl Into<String>)`](crate::client::fluent_builders::DescribeRemediationExecutionStatus::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::client::fluent_builders::DescribeRemediationExecutionStatus::set_config_rule_name): <p>A list of Config rule names.</p>
+    ///   - [`resource_keys(Vec<ResourceKey>)`](crate::client::fluent_builders::DescribeRemediationExecutionStatus::resource_keys) / [`set_resource_keys(Option<Vec<ResourceKey>>)`](crate::client::fluent_builders::DescribeRemediationExecutionStatus::set_resource_keys): <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeRemediationExecutionStatus::limit) / [`set_limit(i32)`](crate::client::fluent_builders::DescribeRemediationExecutionStatus::set_limit): <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeRemediationExecutionStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeRemediationExecutionStatus::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`DescribeRemediationExecutionStatusOutput`](crate::output::DescribeRemediationExecutionStatusOutput) with field(s):
+    ///   - [`remediation_execution_statuses(Option<Vec<RemediationExecutionStatus>>)`](crate::output::DescribeRemediationExecutionStatusOutput::remediation_execution_statuses): <p>Returns a list of remediation execution statuses objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeRemediationExecutionStatusOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<DescribeRemediationExecutionStatusError>`](crate::error::DescribeRemediationExecutionStatusError)
     pub fn describe_remediation_execution_status(
         &self,
     ) -> fluent_builders::DescribeRemediationExecutionStatus<C, M, R> {
         fluent_builders::DescribeRemediationExecutionStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRetentionConfigurations` operation.
+    /// Constructs a fluent builder for the [`DescribeRetentionConfigurations`](crate::client::fluent_builders::DescribeRetentionConfigurations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeRetentionConfigurations::into_paginator).
     ///
-    /// See [`DescribeRetentionConfigurations`](crate::client::fluent_builders::DescribeRetentionConfigurations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeRetentionConfigurations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`retention_configuration_names(Vec<String>)`](crate::client::fluent_builders::DescribeRetentionConfigurations::retention_configuration_names) / [`set_retention_configuration_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeRetentionConfigurations::set_retention_configuration_names): <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>   <p>Currently, Config supports only one retention configuration per region in your account.</p>  </note>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeRetentionConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeRetentionConfigurations::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On success, responds with [`DescribeRetentionConfigurationsOutput`](crate::output::DescribeRetentionConfigurationsOutput) with field(s):
+    ///   - [`retention_configurations(Option<Vec<RetentionConfiguration>>)`](crate::output::DescribeRetentionConfigurationsOutput::retention_configurations): <p>Returns a retention configuration object.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeRetentionConfigurationsOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On failure, responds with [`SdkError<DescribeRetentionConfigurationsError>`](crate::error::DescribeRetentionConfigurationsError)
     pub fn describe_retention_configurations(
         &self,
     ) -> fluent_builders::DescribeRetentionConfigurations<C, M, R> {
         fluent_builders::DescribeRetentionConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAggregateComplianceDetailsByConfigRule` operation.
+    /// Constructs a fluent builder for the [`GetAggregateComplianceDetailsByConfigRule`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::into_paginator).
     ///
-    /// See [`GetAggregateComplianceDetailsByConfigRule`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::set_configuration_aggregator_name): <p>The name of the configuration aggregator.</p>
+    ///   - [`config_rule_name(impl Into<String>)`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::set_config_rule_name): <p>The name of the Config rule for which you want compliance information.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::set_account_id): <p>The 12-digit account ID of the source account.</p>
+    ///   - [`aws_region(impl Into<String>)`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::aws_region) / [`set_aws_region(Option<String>)`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::set_aws_region): <p>The source region from where the data is aggregated.</p>
+    ///   - [`compliance_type(ComplianceType)`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::compliance_type) / [`set_compliance_type(Option<ComplianceType>)`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::set_compliance_type): <p>The resource compliance status.</p> <note>   <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>  </note>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::limit) / [`set_limit(i32)`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::set_limit): <p>The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetAggregateComplianceDetailsByConfigRule::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`GetAggregateComplianceDetailsByConfigRuleOutput`](crate::output::GetAggregateComplianceDetailsByConfigRuleOutput) with field(s):
+    ///   - [`aggregate_evaluation_results(Option<Vec<AggregateEvaluationResult>>)`](crate::output::GetAggregateComplianceDetailsByConfigRuleOutput::aggregate_evaluation_results): <p>Returns an AggregateEvaluationResults object.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetAggregateComplianceDetailsByConfigRuleOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<GetAggregateComplianceDetailsByConfigRuleError>`](crate::error::GetAggregateComplianceDetailsByConfigRuleError)
     pub fn get_aggregate_compliance_details_by_config_rule(
         &self,
     ) -> fluent_builders::GetAggregateComplianceDetailsByConfigRule<C, M, R> {
         fluent_builders::GetAggregateComplianceDetailsByConfigRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAggregateConfigRuleComplianceSummary` operation.
+    /// Constructs a fluent builder for the [`GetAggregateConfigRuleComplianceSummary`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary::into_paginator).
     ///
-    /// See [`GetAggregateConfigRuleComplianceSummary`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary::set_configuration_aggregator_name): <p>The name of the configuration aggregator.</p>
+    ///   - [`filters(ConfigRuleComplianceSummaryFilters)`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary::filters) / [`set_filters(Option<ConfigRuleComplianceSummaryFilters>)`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary::set_filters): <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
+    ///   - [`group_by_key(ConfigRuleComplianceSummaryGroupKey)`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary::group_by_key) / [`set_group_by_key(Option<ConfigRuleComplianceSummaryGroupKey>)`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary::set_group_by_key): <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary::limit) / [`set_limit(i32)`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary::set_limit): <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetAggregateConfigRuleComplianceSummary::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`GetAggregateConfigRuleComplianceSummaryOutput`](crate::output::GetAggregateConfigRuleComplianceSummaryOutput) with field(s):
+    ///   - [`group_by_key(Option<String>)`](crate::output::GetAggregateConfigRuleComplianceSummaryOutput::group_by_key): <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
+    ///   - [`aggregate_compliance_counts(Option<Vec<AggregateComplianceCount>>)`](crate::output::GetAggregateConfigRuleComplianceSummaryOutput::aggregate_compliance_counts): <p>Returns a list of AggregateComplianceCounts object.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetAggregateConfigRuleComplianceSummaryOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<GetAggregateConfigRuleComplianceSummaryError>`](crate::error::GetAggregateConfigRuleComplianceSummaryError)
     pub fn get_aggregate_config_rule_compliance_summary(
         &self,
     ) -> fluent_builders::GetAggregateConfigRuleComplianceSummary<C, M, R> {
         fluent_builders::GetAggregateConfigRuleComplianceSummary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAggregateConformancePackComplianceSummary` operation.
+    /// Constructs a fluent builder for the [`GetAggregateConformancePackComplianceSummary`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary::into_paginator).
     ///
-    /// See [`GetAggregateConformancePackComplianceSummary`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary::set_configuration_aggregator_name): <p>The name of the configuration aggregator.</p>
+    ///   - [`filters(AggregateConformancePackComplianceSummaryFilters)`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary::filters) / [`set_filters(Option<AggregateConformancePackComplianceSummaryFilters>)`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary::set_filters): <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
+    ///   - [`group_by_key(AggregateConformancePackComplianceSummaryGroupKey)`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary::group_by_key) / [`set_group_by_key(Option<AggregateConformancePackComplianceSummaryGroupKey>)`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary::set_group_by_key): <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary::limit) / [`set_limit(i32)`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary::set_limit): <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetAggregateConformancePackComplianceSummary::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`GetAggregateConformancePackComplianceSummaryOutput`](crate::output::GetAggregateConformancePackComplianceSummaryOutput) with field(s):
+    ///   - [`aggregate_conformance_pack_compliance_summaries(Option<Vec<AggregateConformancePackComplianceSummary>>)`](crate::output::GetAggregateConformancePackComplianceSummaryOutput::aggregate_conformance_pack_compliance_summaries): <p>Returns a list of <code>AggregateConformancePackComplianceSummary</code> object.</p>
+    ///   - [`group_by_key(Option<String>)`](crate::output::GetAggregateConformancePackComplianceSummaryOutput::group_by_key): <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetAggregateConformancePackComplianceSummaryOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<GetAggregateConformancePackComplianceSummaryError>`](crate::error::GetAggregateConformancePackComplianceSummaryError)
     pub fn get_aggregate_conformance_pack_compliance_summary(
         &self,
     ) -> fluent_builders::GetAggregateConformancePackComplianceSummary<C, M, R> {
         fluent_builders::GetAggregateConformancePackComplianceSummary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAggregateDiscoveredResourceCounts` operation.
+    /// Constructs a fluent builder for the [`GetAggregateDiscoveredResourceCounts`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts::into_paginator).
     ///
-    /// See [`GetAggregateDiscoveredResourceCounts`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts::set_configuration_aggregator_name): <p>The name of the configuration aggregator.</p>
+    ///   - [`filters(ResourceCountFilters)`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts::filters) / [`set_filters(Option<ResourceCountFilters>)`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts::set_filters): <p>Filters the results based on the <code>ResourceCountFilters</code> object.</p>
+    ///   - [`group_by_key(ResourceCountGroupKey)`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts::group_by_key) / [`set_group_by_key(Option<ResourceCountGroupKey>)`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts::set_group_by_key): <p>The key to group the resource counts.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts::limit) / [`set_limit(i32)`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts::set_limit): <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetAggregateDiscoveredResourceCounts::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On success, responds with [`GetAggregateDiscoveredResourceCountsOutput`](crate::output::GetAggregateDiscoveredResourceCountsOutput) with field(s):
+    ///   - [`total_discovered_resources(i64)`](crate::output::GetAggregateDiscoveredResourceCountsOutput::total_discovered_resources): <p>The total number of resources that are present in an aggregator with the filters that you provide.</p>
+    ///   - [`group_by_key(Option<String>)`](crate::output::GetAggregateDiscoveredResourceCountsOutput::group_by_key): <p>The key passed into the request object. If <code>GroupByKey</code> is not provided, the result will be empty.</p>
+    ///   - [`grouped_resource_counts(Option<Vec<GroupedResourceCount>>)`](crate::output::GetAggregateDiscoveredResourceCountsOutput::grouped_resource_counts): <p>Returns a list of GroupedResourceCount objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetAggregateDiscoveredResourceCountsOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<GetAggregateDiscoveredResourceCountsError>`](crate::error::GetAggregateDiscoveredResourceCountsError)
     pub fn get_aggregate_discovered_resource_counts(
         &self,
     ) -> fluent_builders::GetAggregateDiscoveredResourceCounts<C, M, R> {
         fluent_builders::GetAggregateDiscoveredResourceCounts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAggregateResourceConfig` operation.
+    /// Constructs a fluent builder for the [`GetAggregateResourceConfig`](crate::client::fluent_builders::GetAggregateResourceConfig) operation.
     ///
-    /// See [`GetAggregateResourceConfig`](crate::client::fluent_builders::GetAggregateResourceConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::client::fluent_builders::GetAggregateResourceConfig::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::client::fluent_builders::GetAggregateResourceConfig::set_configuration_aggregator_name): <p>The name of the configuration aggregator.</p>
+    ///   - [`resource_identifier(AggregateResourceIdentifier)`](crate::client::fluent_builders::GetAggregateResourceConfig::resource_identifier) / [`set_resource_identifier(Option<AggregateResourceIdentifier>)`](crate::client::fluent_builders::GetAggregateResourceConfig::set_resource_identifier): <p>An object that identifies aggregate resource.</p>
+    /// - On success, responds with [`GetAggregateResourceConfigOutput`](crate::output::GetAggregateResourceConfigOutput) with field(s):
+    ///   - [`configuration_item(Option<ConfigurationItem>)`](crate::output::GetAggregateResourceConfigOutput::configuration_item): <p>Returns a <code>ConfigurationItem</code> object.</p>
+    /// - On failure, responds with [`SdkError<GetAggregateResourceConfigError>`](crate::error::GetAggregateResourceConfigError)
     pub fn get_aggregate_resource_config(
         &self,
     ) -> fluent_builders::GetAggregateResourceConfig<C, M, R> {
         fluent_builders::GetAggregateResourceConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetComplianceDetailsByConfigRule` operation.
+    /// Constructs a fluent builder for the [`GetComplianceDetailsByConfigRule`](crate::client::fluent_builders::GetComplianceDetailsByConfigRule) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetComplianceDetailsByConfigRule::into_paginator).
     ///
-    /// See [`GetComplianceDetailsByConfigRule`](crate::client::fluent_builders::GetComplianceDetailsByConfigRule) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetComplianceDetailsByConfigRule::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_name(impl Into<String>)`](crate::client::fluent_builders::GetComplianceDetailsByConfigRule::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::client::fluent_builders::GetComplianceDetailsByConfigRule::set_config_rule_name): <p>The name of the Config rule for which you want compliance information.</p>
+    ///   - [`compliance_types(Vec<ComplianceType>)`](crate::client::fluent_builders::GetComplianceDetailsByConfigRule::compliance_types) / [`set_compliance_types(Option<Vec<ComplianceType>>)`](crate::client::fluent_builders::GetComplianceDetailsByConfigRule::set_compliance_types): <p>Filters the results by compliance.</p>  <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetComplianceDetailsByConfigRule::limit) / [`set_limit(i32)`](crate::client::fluent_builders::GetComplianceDetailsByConfigRule::set_limit): <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetComplianceDetailsByConfigRule::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetComplianceDetailsByConfigRule::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`GetComplianceDetailsByConfigRuleOutput`](crate::output::GetComplianceDetailsByConfigRuleOutput) with field(s):
+    ///   - [`evaluation_results(Option<Vec<EvaluationResult>>)`](crate::output::GetComplianceDetailsByConfigRuleOutput::evaluation_results): <p>Indicates whether the Amazon Web Services resource complies with the specified Config rule.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetComplianceDetailsByConfigRuleOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<GetComplianceDetailsByConfigRuleError>`](crate::error::GetComplianceDetailsByConfigRuleError)
     pub fn get_compliance_details_by_config_rule(
         &self,
     ) -> fluent_builders::GetComplianceDetailsByConfigRule<C, M, R> {
         fluent_builders::GetComplianceDetailsByConfigRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetComplianceDetailsByResource` operation.
+    /// Constructs a fluent builder for the [`GetComplianceDetailsByResource`](crate::client::fluent_builders::GetComplianceDetailsByResource) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetComplianceDetailsByResource::into_paginator).
     ///
-    /// See [`GetComplianceDetailsByResource`](crate::client::fluent_builders::GetComplianceDetailsByResource) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetComplianceDetailsByResource::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::set_resource_type): <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::set_resource_id): <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
+    ///   - [`compliance_types(Vec<ComplianceType>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::compliance_types) / [`set_compliance_types(Option<Vec<ComplianceType>>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::set_compliance_types): <p>Filters the results by compliance.</p>  <p>The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetComplianceDetailsByResource::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`GetComplianceDetailsByResourceOutput`](crate::output::GetComplianceDetailsByResourceOutput) with field(s):
+    ///   - [`evaluation_results(Option<Vec<EvaluationResult>>)`](crate::output::GetComplianceDetailsByResourceOutput::evaluation_results): <p>Indicates whether the specified Amazon Web Services resource complies each Config rule.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetComplianceDetailsByResourceOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<GetComplianceDetailsByResourceError>`](crate::error::GetComplianceDetailsByResourceError)
     pub fn get_compliance_details_by_resource(
         &self,
     ) -> fluent_builders::GetComplianceDetailsByResource<C, M, R> {
         fluent_builders::GetComplianceDetailsByResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetComplianceSummaryByConfigRule` operation.
+    /// Constructs a fluent builder for the [`GetComplianceSummaryByConfigRule`](crate::client::fluent_builders::GetComplianceSummaryByConfigRule) operation.
     ///
-    /// See [`GetComplianceSummaryByConfigRule`](crate::client::fluent_builders::GetComplianceSummaryByConfigRule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetComplianceSummaryByConfigRule::send) it.
+
+    /// - On success, responds with [`GetComplianceSummaryByConfigRuleOutput`](crate::output::GetComplianceSummaryByConfigRuleOutput) with field(s):
+    ///   - [`compliance_summary(Option<ComplianceSummary>)`](crate::output::GetComplianceSummaryByConfigRuleOutput::compliance_summary): <p>The number of Config rules that are compliant and the number that are noncompliant, up to a maximum of 25 for each.</p>
+    /// - On failure, responds with [`SdkError<GetComplianceSummaryByConfigRuleError>`](crate::error::GetComplianceSummaryByConfigRuleError)
     pub fn get_compliance_summary_by_config_rule(
         &self,
     ) -> fluent_builders::GetComplianceSummaryByConfigRule<C, M, R> {
         fluent_builders::GetComplianceSummaryByConfigRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetComplianceSummaryByResourceType` operation.
+    /// Constructs a fluent builder for the [`GetComplianceSummaryByResourceType`](crate::client::fluent_builders::GetComplianceSummaryByResourceType) operation.
     ///
-    /// See [`GetComplianceSummaryByResourceType`](crate::client::fluent_builders::GetComplianceSummaryByResourceType) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_types(Vec<String>)`](crate::client::fluent_builders::GetComplianceSummaryByResourceType::resource_types) / [`set_resource_types(Option<Vec<String>>)`](crate::client::fluent_builders::GetComplianceSummaryByResourceType::set_resource_types): <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>  <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
+    /// - On success, responds with [`GetComplianceSummaryByResourceTypeOutput`](crate::output::GetComplianceSummaryByResourceTypeOutput) with field(s):
+    ///   - [`compliance_summaries_by_resource_type(Option<Vec<ComplianceSummaryByResourceType>>)`](crate::output::GetComplianceSummaryByResourceTypeOutput::compliance_summaries_by_resource_type): <p>The number of resources that are compliant and the number that are noncompliant. If one or more resource types were provided with the request, the numbers are returned for each resource type. The maximum number returned is 100.</p>
+    /// - On failure, responds with [`SdkError<GetComplianceSummaryByResourceTypeError>`](crate::error::GetComplianceSummaryByResourceTypeError)
     pub fn get_compliance_summary_by_resource_type(
         &self,
     ) -> fluent_builders::GetComplianceSummaryByResourceType<C, M, R> {
         fluent_builders::GetComplianceSummaryByResourceType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConformancePackComplianceDetails` operation.
+    /// Constructs a fluent builder for the [`GetConformancePackComplianceDetails`](crate::client::fluent_builders::GetConformancePackComplianceDetails) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetConformancePackComplianceDetails::into_paginator).
     ///
-    /// See [`GetConformancePackComplianceDetails`](crate::client::fluent_builders::GetConformancePackComplianceDetails) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetConformancePackComplianceDetails::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`conformance_pack_name(impl Into<String>)`](crate::client::fluent_builders::GetConformancePackComplianceDetails::conformance_pack_name) / [`set_conformance_pack_name(Option<String>)`](crate::client::fluent_builders::GetConformancePackComplianceDetails::set_conformance_pack_name): <p>Name of the conformance pack.</p>
+    ///   - [`filters(ConformancePackEvaluationFilters)`](crate::client::fluent_builders::GetConformancePackComplianceDetails::filters) / [`set_filters(Option<ConformancePackEvaluationFilters>)`](crate::client::fluent_builders::GetConformancePackComplianceDetails::set_filters): <p>A <code>ConformancePackEvaluationFilters</code> object.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetConformancePackComplianceDetails::limit) / [`set_limit(i32)`](crate::client::fluent_builders::GetConformancePackComplianceDetails::set_limit): <p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetConformancePackComplianceDetails::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetConformancePackComplianceDetails::set_next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    /// - On success, responds with [`GetConformancePackComplianceDetailsOutput`](crate::output::GetConformancePackComplianceDetailsOutput) with field(s):
+    ///   - [`conformance_pack_name(Option<String>)`](crate::output::GetConformancePackComplianceDetailsOutput::conformance_pack_name): <p>Name of the conformance pack.</p>
+    ///   - [`conformance_pack_rule_evaluation_results(Option<Vec<ConformancePackEvaluationResult>>)`](crate::output::GetConformancePackComplianceDetailsOutput::conformance_pack_rule_evaluation_results): <p>Returns a list of <code>ConformancePackEvaluationResult</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetConformancePackComplianceDetailsOutput::next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<GetConformancePackComplianceDetailsError>`](crate::error::GetConformancePackComplianceDetailsError)
     pub fn get_conformance_pack_compliance_details(
         &self,
     ) -> fluent_builders::GetConformancePackComplianceDetails<C, M, R> {
         fluent_builders::GetConformancePackComplianceDetails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConformancePackComplianceSummary` operation.
+    /// Constructs a fluent builder for the [`GetConformancePackComplianceSummary`](crate::client::fluent_builders::GetConformancePackComplianceSummary) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetConformancePackComplianceSummary::into_paginator).
     ///
-    /// See [`GetConformancePackComplianceSummary`](crate::client::fluent_builders::GetConformancePackComplianceSummary) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetConformancePackComplianceSummary::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`conformance_pack_names(Vec<String>)`](crate::client::fluent_builders::GetConformancePackComplianceSummary::conformance_pack_names) / [`set_conformance_pack_names(Option<Vec<String>>)`](crate::client::fluent_builders::GetConformancePackComplianceSummary::set_conformance_pack_names): <p>Names of conformance packs.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetConformancePackComplianceSummary::limit) / [`set_limit(i32)`](crate::client::fluent_builders::GetConformancePackComplianceSummary::set_limit): <p>The maximum number of conformance packs returned on each page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetConformancePackComplianceSummary::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetConformancePackComplianceSummary::set_next_token): <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`GetConformancePackComplianceSummaryOutput`](crate::output::GetConformancePackComplianceSummaryOutput) with field(s):
+    ///   - [`conformance_pack_compliance_summary_list(Option<Vec<ConformancePackComplianceSummary>>)`](crate::output::GetConformancePackComplianceSummaryOutput::conformance_pack_compliance_summary_list): <p>A list of <code>ConformancePackComplianceSummary</code> objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetConformancePackComplianceSummaryOutput::next_token): <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<GetConformancePackComplianceSummaryError>`](crate::error::GetConformancePackComplianceSummaryError)
     pub fn get_conformance_pack_compliance_summary(
         &self,
     ) -> fluent_builders::GetConformancePackComplianceSummary<C, M, R> {
         fluent_builders::GetConformancePackComplianceSummary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDiscoveredResourceCounts` operation.
+    /// Constructs a fluent builder for the [`GetDiscoveredResourceCounts`](crate::client::fluent_builders::GetDiscoveredResourceCounts) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetDiscoveredResourceCounts::into_paginator).
     ///
-    /// See [`GetDiscoveredResourceCounts`](crate::client::fluent_builders::GetDiscoveredResourceCounts) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDiscoveredResourceCounts::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_types(Vec<String>)`](crate::client::fluent_builders::GetDiscoveredResourceCounts::resource_types) / [`set_resource_types(Option<Vec<String>>)`](crate::client::fluent_builders::GetDiscoveredResourceCounts::set_resource_types): <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>  <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>   <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>  </note>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetDiscoveredResourceCounts::limit) / [`set_limit(i32)`](crate::client::fluent_builders::GetDiscoveredResourceCounts::set_limit): <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetDiscoveredResourceCounts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetDiscoveredResourceCounts::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`GetDiscoveredResourceCountsOutput`](crate::output::GetDiscoveredResourceCountsOutput) with field(s):
+    ///   - [`total_discovered_resources(i64)`](crate::output::GetDiscoveredResourceCountsOutput::total_discovered_resources): <p>The total number of resources that Config is recording in the region for your account. If you specify resource types in the request, Config returns only the total number of resources for those resource types.</p>  <p class="title"> <b>Example</b> </p>  <ol>   <li> <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets, for a total of 60 resources.</p> </li>   <li> <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type, <code>"AWS::EC2::Instances"</code>, in the request.</p> </li>   <li> <p>Config returns 25 for <code>totalDiscoveredResources</code>.</p> </li>  </ol>
+    ///   - [`resource_counts(Option<Vec<ResourceCount>>)`](crate::output::GetDiscoveredResourceCountsOutput::resource_counts): <p>The list of <code>ResourceCount</code> objects. Each object is listed in descending order by the number of resources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetDiscoveredResourceCountsOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<GetDiscoveredResourceCountsError>`](crate::error::GetDiscoveredResourceCountsError)
     pub fn get_discovered_resource_counts(
         &self,
     ) -> fluent_builders::GetDiscoveredResourceCounts<C, M, R> {
         fluent_builders::GetDiscoveredResourceCounts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOrganizationConfigRuleDetailedStatus` operation.
+    /// Constructs a fluent builder for the [`GetOrganizationConfigRuleDetailedStatus`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::into_paginator).
     ///
-    /// See [`GetOrganizationConfigRuleDetailedStatus`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`organization_config_rule_name(impl Into<String>)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::organization_config_rule_name) / [`set_organization_config_rule_name(Option<String>)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::set_organization_config_rule_name): <p>The name of organization config rule for which you want status details for member accounts.</p>
+    ///   - [`filters(StatusDetailFilters)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::filters) / [`set_filters(Option<StatusDetailFilters>)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::set_filters): <p>A <code>StatusDetailFilters</code> object.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::limit) / [`set_limit(i32)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::set_limit): <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetOrganizationConfigRuleDetailedStatus::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On success, responds with [`GetOrganizationConfigRuleDetailedStatusOutput`](crate::output::GetOrganizationConfigRuleDetailedStatusOutput) with field(s):
+    ///   - [`organization_config_rule_detailed_status(Option<Vec<MemberAccountStatus>>)`](crate::output::GetOrganizationConfigRuleDetailedStatusOutput::organization_config_rule_detailed_status): <p>A list of <code>MemberAccountStatus</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetOrganizationConfigRuleDetailedStatusOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On failure, responds with [`SdkError<GetOrganizationConfigRuleDetailedStatusError>`](crate::error::GetOrganizationConfigRuleDetailedStatusError)
     pub fn get_organization_config_rule_detailed_status(
         &self,
     ) -> fluent_builders::GetOrganizationConfigRuleDetailedStatus<C, M, R> {
         fluent_builders::GetOrganizationConfigRuleDetailedStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOrganizationConformancePackDetailedStatus` operation.
+    /// Constructs a fluent builder for the [`GetOrganizationConformancePackDetailedStatus`](crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus::into_paginator).
     ///
-    /// See [`GetOrganizationConformancePackDetailedStatus`](crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`organization_conformance_pack_name(impl Into<String>)`](crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus::organization_conformance_pack_name) / [`set_organization_conformance_pack_name(Option<String>)`](crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus::set_organization_conformance_pack_name): <p>The name of organization conformance pack for which you want status details for member accounts.</p>
+    ///   - [`filters(OrganizationResourceDetailedStatusFilters)`](crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus::filters) / [`set_filters(Option<OrganizationResourceDetailedStatusFilters>)`](crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus::set_filters): <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus::limit) / [`set_limit(i32)`](crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus::set_limit): <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetOrganizationConformancePackDetailedStatus::set_next_token): <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On success, responds with [`GetOrganizationConformancePackDetailedStatusOutput`](crate::output::GetOrganizationConformancePackDetailedStatusOutput) with field(s):
+    ///   - [`organization_conformance_pack_detailed_statuses(Option<Vec<OrganizationConformancePackDetailedStatus>>)`](crate::output::GetOrganizationConformancePackDetailedStatusOutput::organization_conformance_pack_detailed_statuses): <p>A list of <code>OrganizationConformancePackDetailedStatus</code> objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetOrganizationConformancePackDetailedStatusOutput::next_token): <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On failure, responds with [`SdkError<GetOrganizationConformancePackDetailedStatusError>`](crate::error::GetOrganizationConformancePackDetailedStatusError)
     pub fn get_organization_conformance_pack_detailed_status(
         &self,
     ) -> fluent_builders::GetOrganizationConformancePackDetailedStatus<C, M, R> {
         fluent_builders::GetOrganizationConformancePackDetailedStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetResourceConfigHistory` operation.
+    /// Constructs a fluent builder for the [`GetResourceConfigHistory`](crate::client::fluent_builders::GetResourceConfigHistory) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetResourceConfigHistory::into_paginator).
     ///
-    /// See [`GetResourceConfigHistory`](crate::client::fluent_builders::GetResourceConfigHistory) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourceConfigHistory::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::GetResourceConfigHistory::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::GetResourceConfigHistory::set_resource_type): <p>The resource type.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::GetResourceConfigHistory::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::GetResourceConfigHistory::set_resource_id): <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+    ///   - [`later_time(DateTime)`](crate::client::fluent_builders::GetResourceConfigHistory::later_time) / [`set_later_time(Option<DateTime>)`](crate::client::fluent_builders::GetResourceConfigHistory::set_later_time): <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
+    ///   - [`earlier_time(DateTime)`](crate::client::fluent_builders::GetResourceConfigHistory::earlier_time) / [`set_earlier_time(Option<DateTime>)`](crate::client::fluent_builders::GetResourceConfigHistory::set_earlier_time): <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
+    ///   - [`chronological_order(ChronologicalOrder)`](crate::client::fluent_builders::GetResourceConfigHistory::chronological_order) / [`set_chronological_order(Option<ChronologicalOrder>)`](crate::client::fluent_builders::GetResourceConfigHistory::set_chronological_order): <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::GetResourceConfigHistory::limit) / [`set_limit(i32)`](crate::client::fluent_builders::GetResourceConfigHistory::set_limit): <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetResourceConfigHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetResourceConfigHistory::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`GetResourceConfigHistoryOutput`](crate::output::GetResourceConfigHistoryOutput) with field(s):
+    ///   - [`configuration_items(Option<Vec<ConfigurationItem>>)`](crate::output::GetResourceConfigHistoryOutput::configuration_items): <p>A list that contains the configuration history of one or more resources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetResourceConfigHistoryOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<GetResourceConfigHistoryError>`](crate::error::GetResourceConfigHistoryError)
     pub fn get_resource_config_history(
         &self,
     ) -> fluent_builders::GetResourceConfigHistory<C, M, R> {
         fluent_builders::GetResourceConfigHistory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetStoredQuery` operation.
+    /// Constructs a fluent builder for the [`GetStoredQuery`](crate::client::fluent_builders::GetStoredQuery) operation.
     ///
-    /// See [`GetStoredQuery`](crate::client::fluent_builders::GetStoredQuery) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`query_name(impl Into<String>)`](crate::client::fluent_builders::GetStoredQuery::query_name) / [`set_query_name(Option<String>)`](crate::client::fluent_builders::GetStoredQuery::set_query_name): <p>The name of the query.</p>
+    /// - On success, responds with [`GetStoredQueryOutput`](crate::output::GetStoredQueryOutput) with field(s):
+    ///   - [`stored_query(Option<StoredQuery>)`](crate::output::GetStoredQueryOutput::stored_query): <p>Returns a <code>StoredQuery</code> object.</p>
+    /// - On failure, responds with [`SdkError<GetStoredQueryError>`](crate::error::GetStoredQueryError)
     pub fn get_stored_query(&self) -> fluent_builders::GetStoredQuery<C, M, R> {
         fluent_builders::GetStoredQuery::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAggregateDiscoveredResources` operation.
+    /// Constructs a fluent builder for the [`ListAggregateDiscoveredResources`](crate::client::fluent_builders::ListAggregateDiscoveredResources) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAggregateDiscoveredResources::into_paginator).
     ///
-    /// See [`ListAggregateDiscoveredResources`](crate::client::fluent_builders::ListAggregateDiscoveredResources) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAggregateDiscoveredResources::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::client::fluent_builders::ListAggregateDiscoveredResources::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::client::fluent_builders::ListAggregateDiscoveredResources::set_configuration_aggregator_name): <p>The name of the configuration aggregator. </p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::ListAggregateDiscoveredResources::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::ListAggregateDiscoveredResources::set_resource_type): <p>The type of resources that you want Config to list in the response.</p>
+    ///   - [`filters(ResourceFilters)`](crate::client::fluent_builders::ListAggregateDiscoveredResources::filters) / [`set_filters(Option<ResourceFilters>)`](crate::client::fluent_builders::ListAggregateDiscoveredResources::set_filters): <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListAggregateDiscoveredResources::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListAggregateDiscoveredResources::set_limit): <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAggregateDiscoveredResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAggregateDiscoveredResources::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`ListAggregateDiscoveredResourcesOutput`](crate::output::ListAggregateDiscoveredResourcesOutput) with field(s):
+    ///   - [`resource_identifiers(Option<Vec<AggregateResourceIdentifier>>)`](crate::output::ListAggregateDiscoveredResourcesOutput::resource_identifiers): <p>Returns a list of <code>ResourceIdentifiers</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAggregateDiscoveredResourcesOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<ListAggregateDiscoveredResourcesError>`](crate::error::ListAggregateDiscoveredResourcesError)
     pub fn list_aggregate_discovered_resources(
         &self,
     ) -> fluent_builders::ListAggregateDiscoveredResources<C, M, R> {
         fluent_builders::ListAggregateDiscoveredResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDiscoveredResources` operation.
+    /// Constructs a fluent builder for the [`ListDiscoveredResources`](crate::client::fluent_builders::ListDiscoveredResources) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDiscoveredResources::into_paginator).
     ///
-    /// See [`ListDiscoveredResources`](crate::client::fluent_builders::ListDiscoveredResources) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDiscoveredResources::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::ListDiscoveredResources::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::ListDiscoveredResources::set_resource_type): <p>The type of resources that you want Config to list in the response.</p>
+    ///   - [`resource_ids(Vec<String>)`](crate::client::fluent_builders::ListDiscoveredResources::resource_ids) / [`set_resource_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ListDiscoveredResources::set_resource_ids): <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::ListDiscoveredResources::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::ListDiscoveredResources::set_resource_name): <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListDiscoveredResources::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListDiscoveredResources::set_limit): <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    ///   - [`include_deleted_resources(bool)`](crate::client::fluent_builders::ListDiscoveredResources::include_deleted_resources) / [`set_include_deleted_resources(bool)`](crate::client::fluent_builders::ListDiscoveredResources::set_include_deleted_resources): <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDiscoveredResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDiscoveredResources::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    /// - On success, responds with [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput) with field(s):
+    ///   - [`resource_identifiers(Option<Vec<ResourceIdentifier>>)`](crate::output::ListDiscoveredResourcesOutput::resource_identifiers): <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDiscoveredResourcesOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    /// - On failure, responds with [`SdkError<ListDiscoveredResourcesError>`](crate::error::ListDiscoveredResourcesError)
     pub fn list_discovered_resources(&self) -> fluent_builders::ListDiscoveredResources<C, M, R> {
         fluent_builders::ListDiscoveredResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListStoredQueries` operation.
+    /// Constructs a fluent builder for the [`ListStoredQueries`](crate::client::fluent_builders::ListStoredQueries) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStoredQueries::into_paginator).
     ///
-    /// See [`ListStoredQueries`](crate::client::fluent_builders::ListStoredQueries) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStoredQueries::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStoredQueries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStoredQueries::set_next_token): <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStoredQueries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStoredQueries::set_max_results): <p>The maximum number of results to be returned with a single call.</p>
+    /// - On success, responds with [`ListStoredQueriesOutput`](crate::output::ListStoredQueriesOutput) with field(s):
+    ///   - [`stored_query_metadata(Option<Vec<StoredQueryMetadata>>)`](crate::output::ListStoredQueriesOutput::stored_query_metadata): <p>A list of <code>StoredQueryMetadata</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListStoredQueriesOutput::next_token): <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>. </p>
+    /// - On failure, responds with [`SdkError<ListStoredQueriesError>`](crate::error::ListStoredQueriesError)
     pub fn list_stored_queries(&self) -> fluent_builders::ListStoredQueries<C, M, R> {
         fluent_builders::ListStoredQueries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListTagsForResource::limit) / [`set_limit(i32)`](crate::client::fluent_builders::ListTagsForResource::set_limit): <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags for the resource.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutAggregationAuthorization` operation.
+    /// Constructs a fluent builder for the [`PutAggregationAuthorization`](crate::client::fluent_builders::PutAggregationAuthorization) operation.
     ///
-    /// See [`PutAggregationAuthorization`](crate::client::fluent_builders::PutAggregationAuthorization) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`authorized_account_id(impl Into<String>)`](crate::client::fluent_builders::PutAggregationAuthorization::authorized_account_id) / [`set_authorized_account_id(Option<String>)`](crate::client::fluent_builders::PutAggregationAuthorization::set_authorized_account_id): <p>The 12-digit account ID of the account authorized to aggregate data.</p>
+    ///   - [`authorized_aws_region(impl Into<String>)`](crate::client::fluent_builders::PutAggregationAuthorization::authorized_aws_region) / [`set_authorized_aws_region(Option<String>)`](crate::client::fluent_builders::PutAggregationAuthorization::set_authorized_aws_region): <p>The region authorized to collect aggregated data.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::PutAggregationAuthorization::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::PutAggregationAuthorization::set_tags): <p>An array of tag object.</p>
+    /// - On success, responds with [`PutAggregationAuthorizationOutput`](crate::output::PutAggregationAuthorizationOutput) with field(s):
+    ///   - [`aggregation_authorization(Option<AggregationAuthorization>)`](crate::output::PutAggregationAuthorizationOutput::aggregation_authorization): <p>Returns an AggregationAuthorization object. </p>
+    /// - On failure, responds with [`SdkError<PutAggregationAuthorizationError>`](crate::error::PutAggregationAuthorizationError)
     pub fn put_aggregation_authorization(
         &self,
     ) -> fluent_builders::PutAggregationAuthorization<C, M, R> {
         fluent_builders::PutAggregationAuthorization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutConfigRule` operation.
+    /// Constructs a fluent builder for the [`PutConfigRule`](crate::client::fluent_builders::PutConfigRule) operation.
     ///
-    /// See [`PutConfigRule`](crate::client::fluent_builders::PutConfigRule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule(ConfigRule)`](crate::client::fluent_builders::PutConfigRule::config_rule) / [`set_config_rule(Option<ConfigRule>)`](crate::client::fluent_builders::PutConfigRule::set_config_rule): <p>The rule that you want to add to your account.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::PutConfigRule::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::PutConfigRule::set_tags): <p>An array of tag object.</p>
+    /// - On success, responds with [`PutConfigRuleOutput`](crate::output::PutConfigRuleOutput)
+
+    /// - On failure, responds with [`SdkError<PutConfigRuleError>`](crate::error::PutConfigRuleError)
     pub fn put_config_rule(&self) -> fluent_builders::PutConfigRule<C, M, R> {
         fluent_builders::PutConfigRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutConfigurationAggregator` operation.
+    /// Constructs a fluent builder for the [`PutConfigurationAggregator`](crate::client::fluent_builders::PutConfigurationAggregator) operation.
     ///
-    /// See [`PutConfigurationAggregator`](crate::client::fluent_builders::PutConfigurationAggregator) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationAggregator::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::client::fluent_builders::PutConfigurationAggregator::set_configuration_aggregator_name): <p>The name of the configuration aggregator.</p>
+    ///   - [`account_aggregation_sources(Vec<AccountAggregationSource>)`](crate::client::fluent_builders::PutConfigurationAggregator::account_aggregation_sources) / [`set_account_aggregation_sources(Option<Vec<AccountAggregationSource>>)`](crate::client::fluent_builders::PutConfigurationAggregator::set_account_aggregation_sources): <p>A list of AccountAggregationSource object. </p>
+    ///   - [`organization_aggregation_source(OrganizationAggregationSource)`](crate::client::fluent_builders::PutConfigurationAggregator::organization_aggregation_source) / [`set_organization_aggregation_source(Option<OrganizationAggregationSource>)`](crate::client::fluent_builders::PutConfigurationAggregator::set_organization_aggregation_source): <p>An OrganizationAggregationSource object.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::PutConfigurationAggregator::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::PutConfigurationAggregator::set_tags): <p>An array of tag object.</p>
+    /// - On success, responds with [`PutConfigurationAggregatorOutput`](crate::output::PutConfigurationAggregatorOutput) with field(s):
+    ///   - [`configuration_aggregator(Option<ConfigurationAggregator>)`](crate::output::PutConfigurationAggregatorOutput::configuration_aggregator): <p>Returns a ConfigurationAggregator object.</p>
+    /// - On failure, responds with [`SdkError<PutConfigurationAggregatorError>`](crate::error::PutConfigurationAggregatorError)
     pub fn put_configuration_aggregator(
         &self,
     ) -> fluent_builders::PutConfigurationAggregator<C, M, R> {
         fluent_builders::PutConfigurationAggregator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutConfigurationRecorder` operation.
+    /// Constructs a fluent builder for the [`PutConfigurationRecorder`](crate::client::fluent_builders::PutConfigurationRecorder) operation.
     ///
-    /// See [`PutConfigurationRecorder`](crate::client::fluent_builders::PutConfigurationRecorder) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_recorder(ConfigurationRecorder)`](crate::client::fluent_builders::PutConfigurationRecorder::configuration_recorder) / [`set_configuration_recorder(Option<ConfigurationRecorder>)`](crate::client::fluent_builders::PutConfigurationRecorder::set_configuration_recorder): <p>The configuration recorder object that records each configuration change made to the resources.</p>
+    /// - On success, responds with [`PutConfigurationRecorderOutput`](crate::output::PutConfigurationRecorderOutput)
+
+    /// - On failure, responds with [`SdkError<PutConfigurationRecorderError>`](crate::error::PutConfigurationRecorderError)
     pub fn put_configuration_recorder(&self) -> fluent_builders::PutConfigurationRecorder<C, M, R> {
         fluent_builders::PutConfigurationRecorder::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutConformancePack` operation.
+    /// Constructs a fluent builder for the [`PutConformancePack`](crate::client::fluent_builders::PutConformancePack) operation.
     ///
-    /// See [`PutConformancePack`](crate::client::fluent_builders::PutConformancePack) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`conformance_pack_name(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::conformance_pack_name) / [`set_conformance_pack_name(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_conformance_pack_name): <p>Name of the conformance pack you want to create.</p>
+    ///   - [`template_s3_uri(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::template_s3_uri) / [`set_template_s3_uri(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_template_s3_uri): <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p> <note>   <p>You must have access to read Amazon S3 bucket.</p>  </note>
+    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_template_body): <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>   <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>  </note>
+    ///   - [`delivery_s3_bucket(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::delivery_s3_bucket) / [`set_delivery_s3_bucket(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_delivery_s3_bucket): <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>   <p>This field is optional.</p>  </note>
+    ///   - [`delivery_s3_key_prefix(impl Into<String>)`](crate::client::fluent_builders::PutConformancePack::delivery_s3_key_prefix) / [`set_delivery_s3_key_prefix(Option<String>)`](crate::client::fluent_builders::PutConformancePack::set_delivery_s3_key_prefix): <p>The prefix for the Amazon S3 bucket. </p> <note>   <p>This field is optional.</p>  </note>
+    ///   - [`conformance_pack_input_parameters(Vec<ConformancePackInputParameter>)`](crate::client::fluent_builders::PutConformancePack::conformance_pack_input_parameters) / [`set_conformance_pack_input_parameters(Option<Vec<ConformancePackInputParameter>>)`](crate::client::fluent_builders::PutConformancePack::set_conformance_pack_input_parameters): <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    /// - On success, responds with [`PutConformancePackOutput`](crate::output::PutConformancePackOutput) with field(s):
+    ///   - [`conformance_pack_arn(Option<String>)`](crate::output::PutConformancePackOutput::conformance_pack_arn): <p>ARN of the conformance pack.</p>
+    /// - On failure, responds with [`SdkError<PutConformancePackError>`](crate::error::PutConformancePackError)
     pub fn put_conformance_pack(&self) -> fluent_builders::PutConformancePack<C, M, R> {
         fluent_builders::PutConformancePack::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutDeliveryChannel` operation.
+    /// Constructs a fluent builder for the [`PutDeliveryChannel`](crate::client::fluent_builders::PutDeliveryChannel) operation.
     ///
-    /// See [`PutDeliveryChannel`](crate::client::fluent_builders::PutDeliveryChannel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`delivery_channel(DeliveryChannel)`](crate::client::fluent_builders::PutDeliveryChannel::delivery_channel) / [`set_delivery_channel(Option<DeliveryChannel>)`](crate::client::fluent_builders::PutDeliveryChannel::set_delivery_channel): <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+    /// - On success, responds with [`PutDeliveryChannelOutput`](crate::output::PutDeliveryChannelOutput)
+
+    /// - On failure, responds with [`SdkError<PutDeliveryChannelError>`](crate::error::PutDeliveryChannelError)
     pub fn put_delivery_channel(&self) -> fluent_builders::PutDeliveryChannel<C, M, R> {
         fluent_builders::PutDeliveryChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutEvaluations` operation.
+    /// Constructs a fluent builder for the [`PutEvaluations`](crate::client::fluent_builders::PutEvaluations) operation.
     ///
-    /// See [`PutEvaluations`](crate::client::fluent_builders::PutEvaluations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`evaluations(Vec<Evaluation>)`](crate::client::fluent_builders::PutEvaluations::evaluations) / [`set_evaluations(Option<Vec<Evaluation>>)`](crate::client::fluent_builders::PutEvaluations::set_evaluations): <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
+    ///   - [`result_token(impl Into<String>)`](crate::client::fluent_builders::PutEvaluations::result_token) / [`set_result_token(Option<String>)`](crate::client::fluent_builders::PutEvaluations::set_result_token): <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
+    ///   - [`test_mode(bool)`](crate::client::fluent_builders::PutEvaluations::test_mode) / [`set_test_mode(bool)`](crate::client::fluent_builders::PutEvaluations::set_test_mode): <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>   <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>  </note>
+    /// - On success, responds with [`PutEvaluationsOutput`](crate::output::PutEvaluationsOutput) with field(s):
+    ///   - [`failed_evaluations(Option<Vec<Evaluation>>)`](crate::output::PutEvaluationsOutput::failed_evaluations): <p>Requests that failed because of a client or server error.</p>
+    /// - On failure, responds with [`SdkError<PutEvaluationsError>`](crate::error::PutEvaluationsError)
     pub fn put_evaluations(&self) -> fluent_builders::PutEvaluations<C, M, R> {
         fluent_builders::PutEvaluations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutExternalEvaluation` operation.
+    /// Constructs a fluent builder for the [`PutExternalEvaluation`](crate::client::fluent_builders::PutExternalEvaluation) operation.
     ///
-    /// See [`PutExternalEvaluation`](crate::client::fluent_builders::PutExternalEvaluation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_name(impl Into<String>)`](crate::client::fluent_builders::PutExternalEvaluation::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::client::fluent_builders::PutExternalEvaluation::set_config_rule_name): <p>The name of the Config rule.</p>
+    ///   - [`external_evaluation(ExternalEvaluation)`](crate::client::fluent_builders::PutExternalEvaluation::external_evaluation) / [`set_external_evaluation(Option<ExternalEvaluation>)`](crate::client::fluent_builders::PutExternalEvaluation::set_external_evaluation): <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
+    /// - On success, responds with [`PutExternalEvaluationOutput`](crate::output::PutExternalEvaluationOutput)
+
+    /// - On failure, responds with [`SdkError<PutExternalEvaluationError>`](crate::error::PutExternalEvaluationError)
     pub fn put_external_evaluation(&self) -> fluent_builders::PutExternalEvaluation<C, M, R> {
         fluent_builders::PutExternalEvaluation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutOrganizationConfigRule` operation.
+    /// Constructs a fluent builder for the [`PutOrganizationConfigRule`](crate::client::fluent_builders::PutOrganizationConfigRule) operation.
     ///
-    /// See [`PutOrganizationConfigRule`](crate::client::fluent_builders::PutOrganizationConfigRule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`organization_config_rule_name(impl Into<String>)`](crate::client::fluent_builders::PutOrganizationConfigRule::organization_config_rule_name) / [`set_organization_config_rule_name(Option<String>)`](crate::client::fluent_builders::PutOrganizationConfigRule::set_organization_config_rule_name): <p>The name that you assign to an organization config rule.</p>
+    ///   - [`organization_managed_rule_metadata(OrganizationManagedRuleMetadata)`](crate::client::fluent_builders::PutOrganizationConfigRule::organization_managed_rule_metadata) / [`set_organization_managed_rule_metadata(Option<OrganizationManagedRuleMetadata>)`](crate::client::fluent_builders::PutOrganizationConfigRule::set_organization_managed_rule_metadata): <p>An <code>OrganizationManagedRuleMetadata</code> object. </p>
+    ///   - [`organization_custom_rule_metadata(OrganizationCustomRuleMetadata)`](crate::client::fluent_builders::PutOrganizationConfigRule::organization_custom_rule_metadata) / [`set_organization_custom_rule_metadata(Option<OrganizationCustomRuleMetadata>)`](crate::client::fluent_builders::PutOrganizationConfigRule::set_organization_custom_rule_metadata): <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
+    ///   - [`excluded_accounts(Vec<String>)`](crate::client::fluent_builders::PutOrganizationConfigRule::excluded_accounts) / [`set_excluded_accounts(Option<Vec<String>>)`](crate::client::fluent_builders::PutOrganizationConfigRule::set_excluded_accounts): <p>A comma-separated list of accounts that you want to exclude from an organization config rule.</p>
+    /// - On success, responds with [`PutOrganizationConfigRuleOutput`](crate::output::PutOrganizationConfigRuleOutput) with field(s):
+    ///   - [`organization_config_rule_arn(Option<String>)`](crate::output::PutOrganizationConfigRuleOutput::organization_config_rule_arn): <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
+    /// - On failure, responds with [`SdkError<PutOrganizationConfigRuleError>`](crate::error::PutOrganizationConfigRuleError)
     pub fn put_organization_config_rule(
         &self,
     ) -> fluent_builders::PutOrganizationConfigRule<C, M, R> {
         fluent_builders::PutOrganizationConfigRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutOrganizationConformancePack` operation.
+    /// Constructs a fluent builder for the [`PutOrganizationConformancePack`](crate::client::fluent_builders::PutOrganizationConformancePack) operation.
     ///
-    /// See [`PutOrganizationConformancePack`](crate::client::fluent_builders::PutOrganizationConformancePack) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`organization_conformance_pack_name(impl Into<String>)`](crate::client::fluent_builders::PutOrganizationConformancePack::organization_conformance_pack_name) / [`set_organization_conformance_pack_name(Option<String>)`](crate::client::fluent_builders::PutOrganizationConformancePack::set_organization_conformance_pack_name): <p>Name of the organization conformance pack you want to create.</p>
+    ///   - [`template_s3_uri(impl Into<String>)`](crate::client::fluent_builders::PutOrganizationConformancePack::template_s3_uri) / [`set_template_s3_uri(Option<String>)`](crate::client::fluent_builders::PutOrganizationConformancePack::set_template_s3_uri): <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>   <p>You must have access to read Amazon S3 bucket.</p>  </note>
+    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::PutOrganizationConformancePack::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::PutOrganizationConformancePack::set_template_body): <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+    ///   - [`delivery_s3_bucket(impl Into<String>)`](crate::client::fluent_builders::PutOrganizationConformancePack::delivery_s3_bucket) / [`set_delivery_s3_bucket(Option<String>)`](crate::client::fluent_builders::PutOrganizationConformancePack::set_delivery_s3_bucket): <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>   <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>  </note>
+    ///   - [`delivery_s3_key_prefix(impl Into<String>)`](crate::client::fluent_builders::PutOrganizationConformancePack::delivery_s3_key_prefix) / [`set_delivery_s3_key_prefix(Option<String>)`](crate::client::fluent_builders::PutOrganizationConformancePack::set_delivery_s3_key_prefix): <p>The prefix for the Amazon S3 bucket.</p> <note>   <p>This field is optional.</p>  </note>
+    ///   - [`conformance_pack_input_parameters(Vec<ConformancePackInputParameter>)`](crate::client::fluent_builders::PutOrganizationConformancePack::conformance_pack_input_parameters) / [`set_conformance_pack_input_parameters(Option<Vec<ConformancePackInputParameter>>)`](crate::client::fluent_builders::PutOrganizationConformancePack::set_conformance_pack_input_parameters): <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    ///   - [`excluded_accounts(Vec<String>)`](crate::client::fluent_builders::PutOrganizationConformancePack::excluded_accounts) / [`set_excluded_accounts(Option<Vec<String>>)`](crate::client::fluent_builders::PutOrganizationConformancePack::set_excluded_accounts): <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
+    /// - On success, responds with [`PutOrganizationConformancePackOutput`](crate::output::PutOrganizationConformancePackOutput) with field(s):
+    ///   - [`organization_conformance_pack_arn(Option<String>)`](crate::output::PutOrganizationConformancePackOutput::organization_conformance_pack_arn): <p>ARN of the organization conformance pack.</p>
+    /// - On failure, responds with [`SdkError<PutOrganizationConformancePackError>`](crate::error::PutOrganizationConformancePackError)
     pub fn put_organization_conformance_pack(
         &self,
     ) -> fluent_builders::PutOrganizationConformancePack<C, M, R> {
         fluent_builders::PutOrganizationConformancePack::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRemediationConfigurations` operation.
+    /// Constructs a fluent builder for the [`PutRemediationConfigurations`](crate::client::fluent_builders::PutRemediationConfigurations) operation.
     ///
-    /// See [`PutRemediationConfigurations`](crate::client::fluent_builders::PutRemediationConfigurations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`remediation_configurations(Vec<RemediationConfiguration>)`](crate::client::fluent_builders::PutRemediationConfigurations::remediation_configurations) / [`set_remediation_configurations(Option<Vec<RemediationConfiguration>>)`](crate::client::fluent_builders::PutRemediationConfigurations::set_remediation_configurations): <p>A list of remediation configuration objects.</p>
+    /// - On success, responds with [`PutRemediationConfigurationsOutput`](crate::output::PutRemediationConfigurationsOutput) with field(s):
+    ///   - [`failed_batches(Option<Vec<FailedRemediationBatch>>)`](crate::output::PutRemediationConfigurationsOutput::failed_batches): <p>Returns a list of failed remediation batch objects.</p>
+    /// - On failure, responds with [`SdkError<PutRemediationConfigurationsError>`](crate::error::PutRemediationConfigurationsError)
     pub fn put_remediation_configurations(
         &self,
     ) -> fluent_builders::PutRemediationConfigurations<C, M, R> {
         fluent_builders::PutRemediationConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRemediationExceptions` operation.
+    /// Constructs a fluent builder for the [`PutRemediationExceptions`](crate::client::fluent_builders::PutRemediationExceptions) operation.
     ///
-    /// See [`PutRemediationExceptions`](crate::client::fluent_builders::PutRemediationExceptions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_name(impl Into<String>)`](crate::client::fluent_builders::PutRemediationExceptions::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::client::fluent_builders::PutRemediationExceptions::set_config_rule_name): <p>The name of the Config rule for which you want to create remediation exception.</p>
+    ///   - [`resource_keys(Vec<RemediationExceptionResourceKey>)`](crate::client::fluent_builders::PutRemediationExceptions::resource_keys) / [`set_resource_keys(Option<Vec<RemediationExceptionResourceKey>>)`](crate::client::fluent_builders::PutRemediationExceptions::set_resource_keys): <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
+    ///   - [`message(impl Into<String>)`](crate::client::fluent_builders::PutRemediationExceptions::message) / [`set_message(Option<String>)`](crate::client::fluent_builders::PutRemediationExceptions::set_message): <p>The message contains an explanation of the exception.</p>
+    ///   - [`expiration_time(DateTime)`](crate::client::fluent_builders::PutRemediationExceptions::expiration_time) / [`set_expiration_time(Option<DateTime>)`](crate::client::fluent_builders::PutRemediationExceptions::set_expiration_time): <p>The exception is automatically deleted after the expiration date.</p>
+    /// - On success, responds with [`PutRemediationExceptionsOutput`](crate::output::PutRemediationExceptionsOutput) with field(s):
+    ///   - [`failed_batches(Option<Vec<FailedRemediationExceptionBatch>>)`](crate::output::PutRemediationExceptionsOutput::failed_batches): <p>Returns a list of failed remediation exceptions batch objects. Each object in the batch consists of a list of failed items and failure messages.</p>
+    /// - On failure, responds with [`SdkError<PutRemediationExceptionsError>`](crate::error::PutRemediationExceptionsError)
     pub fn put_remediation_exceptions(&self) -> fluent_builders::PutRemediationExceptions<C, M, R> {
         fluent_builders::PutRemediationExceptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutResourceConfig` operation.
+    /// Constructs a fluent builder for the [`PutResourceConfig`](crate::client::fluent_builders::PutResourceConfig) operation.
     ///
-    /// See [`PutResourceConfig`](crate::client::fluent_builders::PutResourceConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::PutResourceConfig::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::PutResourceConfig::set_resource_type): <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p> <note>   <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>  </note>
+    ///   - [`schema_version_id(impl Into<String>)`](crate::client::fluent_builders::PutResourceConfig::schema_version_id) / [`set_schema_version_id(Option<String>)`](crate::client::fluent_builders::PutResourceConfig::set_schema_version_id): <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::PutResourceConfig::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::PutResourceConfig::set_resource_id): <p>Unique identifier of the resource.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::PutResourceConfig::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::PutResourceConfig::set_resource_name): <p>Name of the resource.</p>
+    ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::PutResourceConfig::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::PutResourceConfig::set_configuration): <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p> <note>   <p>The configuration JSON must not exceed 64 KB.</p>  </note>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::PutResourceConfig::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PutResourceConfig::set_tags): <p>Tags associated with the resource.</p>
+    /// - On success, responds with [`PutResourceConfigOutput`](crate::output::PutResourceConfigOutput)
+
+    /// - On failure, responds with [`SdkError<PutResourceConfigError>`](crate::error::PutResourceConfigError)
     pub fn put_resource_config(&self) -> fluent_builders::PutResourceConfig<C, M, R> {
         fluent_builders::PutResourceConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRetentionConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutRetentionConfiguration`](crate::client::fluent_builders::PutRetentionConfiguration) operation.
     ///
-    /// See [`PutRetentionConfiguration`](crate::client::fluent_builders::PutRetentionConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`retention_period_in_days(i32)`](crate::client::fluent_builders::PutRetentionConfiguration::retention_period_in_days) / [`set_retention_period_in_days(i32)`](crate::client::fluent_builders::PutRetentionConfiguration::set_retention_period_in_days): <p>Number of days Config stores your historical information.</p> <note>   <p>Currently, only applicable to the configuration item history.</p>  </note>
+    /// - On success, responds with [`PutRetentionConfigurationOutput`](crate::output::PutRetentionConfigurationOutput) with field(s):
+    ///   - [`retention_configuration(Option<RetentionConfiguration>)`](crate::output::PutRetentionConfigurationOutput::retention_configuration): <p>Returns a retention configuration object.</p>
+    /// - On failure, responds with [`SdkError<PutRetentionConfigurationError>`](crate::error::PutRetentionConfigurationError)
     pub fn put_retention_configuration(
         &self,
     ) -> fluent_builders::PutRetentionConfiguration<C, M, R> {
         fluent_builders::PutRetentionConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutStoredQuery` operation.
+    /// Constructs a fluent builder for the [`PutStoredQuery`](crate::client::fluent_builders::PutStoredQuery) operation.
     ///
-    /// See [`PutStoredQuery`](crate::client::fluent_builders::PutStoredQuery) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stored_query(StoredQuery)`](crate::client::fluent_builders::PutStoredQuery::stored_query) / [`set_stored_query(Option<StoredQuery>)`](crate::client::fluent_builders::PutStoredQuery::set_stored_query): <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>   <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::PutStoredQuery::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::PutStoredQuery::set_tags): <p>A list of <code>Tags</code> object.</p>
+    /// - On success, responds with [`PutStoredQueryOutput`](crate::output::PutStoredQueryOutput) with field(s):
+    ///   - [`query_arn(Option<String>)`](crate::output::PutStoredQueryOutput::query_arn): <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
+    /// - On failure, responds with [`SdkError<PutStoredQueryError>`](crate::error::PutStoredQueryError)
     pub fn put_stored_query(&self) -> fluent_builders::PutStoredQuery<C, M, R> {
         fluent_builders::PutStoredQuery::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SelectAggregateResourceConfig` operation.
+    /// Constructs a fluent builder for the [`SelectAggregateResourceConfig`](crate::client::fluent_builders::SelectAggregateResourceConfig) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SelectAggregateResourceConfig::into_paginator).
     ///
-    /// See [`SelectAggregateResourceConfig`](crate::client::fluent_builders::SelectAggregateResourceConfig) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SelectAggregateResourceConfig::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`expression(impl Into<String>)`](crate::client::fluent_builders::SelectAggregateResourceConfig::expression) / [`set_expression(Option<String>)`](crate::client::fluent_builders::SelectAggregateResourceConfig::set_expression): <p>The SQL query SELECT command. </p>
+    ///   - [`configuration_aggregator_name(impl Into<String>)`](crate::client::fluent_builders::SelectAggregateResourceConfig::configuration_aggregator_name) / [`set_configuration_aggregator_name(Option<String>)`](crate::client::fluent_builders::SelectAggregateResourceConfig::set_configuration_aggregator_name): <p>The name of the configuration aggregator.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::SelectAggregateResourceConfig::limit) / [`set_limit(i32)`](crate::client::fluent_builders::SelectAggregateResourceConfig::set_limit): <p>The maximum number of query results returned on each page. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SelectAggregateResourceConfig::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::SelectAggregateResourceConfig::set_max_results): <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SelectAggregateResourceConfig::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SelectAggregateResourceConfig::set_next_token): <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    /// - On success, responds with [`SelectAggregateResourceConfigOutput`](crate::output::SelectAggregateResourceConfigOutput) with field(s):
+    ///   - [`results(Option<Vec<String>>)`](crate::output::SelectAggregateResourceConfigOutput::results): <p>Returns the results for the SQL query.</p>
+    ///   - [`query_info(Option<QueryInfo>)`](crate::output::SelectAggregateResourceConfigOutput::query_info): <p>Details about the query.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SelectAggregateResourceConfigOutput::next_token): <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    /// - On failure, responds with [`SdkError<SelectAggregateResourceConfigError>`](crate::error::SelectAggregateResourceConfigError)
     pub fn select_aggregate_resource_config(
         &self,
     ) -> fluent_builders::SelectAggregateResourceConfig<C, M, R> {
         fluent_builders::SelectAggregateResourceConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SelectResourceConfig` operation.
+    /// Constructs a fluent builder for the [`SelectResourceConfig`](crate::client::fluent_builders::SelectResourceConfig) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SelectResourceConfig::into_paginator).
     ///
-    /// See [`SelectResourceConfig`](crate::client::fluent_builders::SelectResourceConfig) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SelectResourceConfig::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`expression(impl Into<String>)`](crate::client::fluent_builders::SelectResourceConfig::expression) / [`set_expression(Option<String>)`](crate::client::fluent_builders::SelectResourceConfig::set_expression): <p>The SQL query <code>SELECT</code> command.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::SelectResourceConfig::limit) / [`set_limit(i32)`](crate::client::fluent_builders::SelectResourceConfig::set_limit): <p>The maximum number of query results returned on each page. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SelectResourceConfig::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SelectResourceConfig::set_next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    /// - On success, responds with [`SelectResourceConfigOutput`](crate::output::SelectResourceConfigOutput) with field(s):
+    ///   - [`results(Option<Vec<String>>)`](crate::output::SelectResourceConfigOutput::results): <p>Returns the results for the SQL query.</p>
+    ///   - [`query_info(Option<QueryInfo>)`](crate::output::SelectResourceConfigOutput::query_info): <p>Returns the <code>QueryInfo</code> object.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SelectResourceConfigOutput::next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    /// - On failure, responds with [`SdkError<SelectResourceConfigError>`](crate::error::SelectResourceConfigError)
     pub fn select_resource_config(&self) -> fluent_builders::SelectResourceConfig<C, M, R> {
         fluent_builders::SelectResourceConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartConfigRulesEvaluation` operation.
+    /// Constructs a fluent builder for the [`StartConfigRulesEvaluation`](crate::client::fluent_builders::StartConfigRulesEvaluation) operation.
     ///
-    /// See [`StartConfigRulesEvaluation`](crate::client::fluent_builders::StartConfigRulesEvaluation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_names(Vec<String>)`](crate::client::fluent_builders::StartConfigRulesEvaluation::config_rule_names) / [`set_config_rule_names(Option<Vec<String>>)`](crate::client::fluent_builders::StartConfigRulesEvaluation::set_config_rule_names): <p>The list of names of Config rules that you want to run evaluations for.</p>
+    /// - On success, responds with [`StartConfigRulesEvaluationOutput`](crate::output::StartConfigRulesEvaluationOutput)
+
+    /// - On failure, responds with [`SdkError<StartConfigRulesEvaluationError>`](crate::error::StartConfigRulesEvaluationError)
     pub fn start_config_rules_evaluation(
         &self,
     ) -> fluent_builders::StartConfigRulesEvaluation<C, M, R> {
         fluent_builders::StartConfigRulesEvaluation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartConfigurationRecorder` operation.
+    /// Constructs a fluent builder for the [`StartConfigurationRecorder`](crate::client::fluent_builders::StartConfigurationRecorder) operation.
     ///
-    /// See [`StartConfigurationRecorder`](crate::client::fluent_builders::StartConfigurationRecorder) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_recorder_name(impl Into<String>)`](crate::client::fluent_builders::StartConfigurationRecorder::configuration_recorder_name) / [`set_configuration_recorder_name(Option<String>)`](crate::client::fluent_builders::StartConfigurationRecorder::set_configuration_recorder_name): <p>The name of the recorder object that records each configuration change made to the resources.</p>
+    /// - On success, responds with [`StartConfigurationRecorderOutput`](crate::output::StartConfigurationRecorderOutput)
+
+    /// - On failure, responds with [`SdkError<StartConfigurationRecorderError>`](crate::error::StartConfigurationRecorderError)
     pub fn start_configuration_recorder(
         &self,
     ) -> fluent_builders::StartConfigurationRecorder<C, M, R> {
         fluent_builders::StartConfigurationRecorder::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartRemediationExecution` operation.
+    /// Constructs a fluent builder for the [`StartRemediationExecution`](crate::client::fluent_builders::StartRemediationExecution) operation.
     ///
-    /// See [`StartRemediationExecution`](crate::client::fluent_builders::StartRemediationExecution) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_rule_name(impl Into<String>)`](crate::client::fluent_builders::StartRemediationExecution::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::client::fluent_builders::StartRemediationExecution::set_config_rule_name): <p>The list of names of Config rules that you want to run remediation execution for.</p>
+    ///   - [`resource_keys(Vec<ResourceKey>)`](crate::client::fluent_builders::StartRemediationExecution::resource_keys) / [`set_resource_keys(Option<Vec<ResourceKey>>)`](crate::client::fluent_builders::StartRemediationExecution::set_resource_keys): <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
+    /// - On success, responds with [`StartRemediationExecutionOutput`](crate::output::StartRemediationExecutionOutput) with field(s):
+    ///   - [`failure_message(Option<String>)`](crate::output::StartRemediationExecutionOutput::failure_message): <p>Returns a failure message. For example, the resource is already compliant.</p>
+    ///   - [`failed_items(Option<Vec<ResourceKey>>)`](crate::output::StartRemediationExecutionOutput::failed_items): <p>For resources that have failed to start execution, the API returns a resource key object.</p>
+    /// - On failure, responds with [`SdkError<StartRemediationExecutionError>`](crate::error::StartRemediationExecutionError)
     pub fn start_remediation_execution(
         &self,
     ) -> fluent_builders::StartRemediationExecution<C, M, R> {
         fluent_builders::StartRemediationExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopConfigurationRecorder` operation.
+    /// Constructs a fluent builder for the [`StopConfigurationRecorder`](crate::client::fluent_builders::StopConfigurationRecorder) operation.
     ///
-    /// See [`StopConfigurationRecorder`](crate::client::fluent_builders::StopConfigurationRecorder) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`configuration_recorder_name(impl Into<String>)`](crate::client::fluent_builders::StopConfigurationRecorder::configuration_recorder_name) / [`set_configuration_recorder_name(Option<String>)`](crate::client::fluent_builders::StopConfigurationRecorder::set_configuration_recorder_name): <p>The name of the recorder object that records each configuration change made to the resources.</p>
+    /// - On success, responds with [`StopConfigurationRecorderOutput`](crate::output::StopConfigurationRecorderOutput)
+
+    /// - On failure, responds with [`SdkError<StopConfigurationRecorderError>`](crate::error::StopConfigurationRecorderError)
     pub fn stop_configuration_recorder(
         &self,
     ) -> fluent_builders::StopConfigurationRecorder<C, M, R> {
         fluent_builders::StopConfigurationRecorder::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>An array of tag object.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys of the tags to be removed.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

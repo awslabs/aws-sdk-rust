@@ -83,106 +83,225 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateChangeset` operation.
+    /// Constructs a fluent builder for the [`CreateChangeset`](crate::client::fluent_builders::CreateChangeset) operation.
     ///
-    /// See [`CreateChangeset`](crate::client::fluent_builders::CreateChangeset) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateChangeset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateChangeset::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::CreateChangeset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::CreateChangeset::set_dataset_id): <p>The unique identifier for the FinSpace Dataset where the Changeset will be created. </p>
+    ///   - [`change_type(ChangeType)`](crate::client::fluent_builders::CreateChangeset::change_type) / [`set_change_type(Option<ChangeType>)`](crate::client::fluent_builders::CreateChangeset::set_change_type): <p>Option to indicate how a Changeset will be applied to a Dataset.</p>  <ul>   <li> <p> <code>REPLACE</code> - Changeset will be considered as a replacement to all prior loaded Changesets.</p> </li>   <li> <p> <code>APPEND</code> - Changeset will be considered as an addition to the end of all prior loaded Changesets.</p> </li>   <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>  </ul>
+    ///   - [`source_params(HashMap<String, String>)`](crate::client::fluent_builders::CreateChangeset::source_params) / [`set_source_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChangeset::set_source_params): <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>  <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>  <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>  <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>  <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+    ///   - [`format_params(HashMap<String, String>)`](crate::client::fluent_builders::CreateChangeset::format_params) / [`set_format_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChangeset::set_format_params): <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>  <p> <code>formatType</code> is a required attribute and can have the following values: </p>  <ul>   <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>   <li> <p> <code>CSV</code> - CSV source file format.</p> </li>   <li> <p> <code>JSON</code> - JSON source file format.</p> </li>   <li> <p> <code>XML</code> - XML source file format.</p> </li>  </ul>  <p>Here is an example of how you could specify the <code>formatParams</code>:</p>  <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>  <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>  <p> <code> { "withHeader": "true", "separator": "," } </code> </p>  <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
+    /// - On success, responds with [`CreateChangesetOutput`](crate::output::CreateChangesetOutput) with field(s):
+    ///   - [`dataset_id(Option<String>)`](crate::output::CreateChangesetOutput::dataset_id): <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
+    ///   - [`changeset_id(Option<String>)`](crate::output::CreateChangesetOutput::changeset_id): <p>The unique identifier of the Changeset that is created.</p>
+    /// - On failure, responds with [`SdkError<CreateChangesetError>`](crate::error::CreateChangesetError)
     pub fn create_changeset(&self) -> fluent_builders::CreateChangeset<C, M, R> {
         fluent_builders::CreateChangeset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDataset` operation.
+    /// Constructs a fluent builder for the [`CreateDataset`](crate::client::fluent_builders::CreateDataset) operation.
     ///
-    /// See [`CreateDataset`](crate::client::fluent_builders::CreateDataset) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    ///   - [`dataset_title(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::dataset_title) / [`set_dataset_title(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_dataset_title): <p>Display title for a FinSpace Dataset.</p>
+    ///   - [`kind(DatasetKind)`](crate::client::fluent_builders::CreateDataset::kind) / [`set_kind(Option<DatasetKind>)`](crate::client::fluent_builders::CreateDataset::set_kind): <p>The format in which Dataset data is structured.</p>  <ul>   <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>   <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>  </ul>
+    ///   - [`dataset_description(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::dataset_description) / [`set_dataset_description(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_dataset_description): <p>Description of a Dataset.</p>
+    ///   - [`owner_info(DatasetOwnerInfo)`](crate::client::fluent_builders::CreateDataset::owner_info) / [`set_owner_info(Option<DatasetOwnerInfo>)`](crate::client::fluent_builders::CreateDataset::set_owner_info): <p>Contact information for a Dataset owner.</p>
+    ///   - [`permission_group_params(PermissionGroupParams)`](crate::client::fluent_builders::CreateDataset::permission_group_params) / [`set_permission_group_params(Option<PermissionGroupParams>)`](crate::client::fluent_builders::CreateDataset::set_permission_group_params): <p>Permission group parameters for Dataset permissions.</p>
+    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::CreateDataset::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::CreateDataset::set_alias): <p>The unique resource identifier for a Dataset.</p>
+    ///   - [`schema_definition(SchemaUnion)`](crate::client::fluent_builders::CreateDataset::schema_definition) / [`set_schema_definition(Option<SchemaUnion>)`](crate::client::fluent_builders::CreateDataset::set_schema_definition): <p>Definition for a schema on a tabular Dataset.</p>
+    /// - On success, responds with [`CreateDatasetOutput`](crate::output::CreateDatasetOutput) with field(s):
+    ///   - [`dataset_id(Option<String>)`](crate::output::CreateDatasetOutput::dataset_id): <p>The unique identifier for the created Dataset.</p>
+    /// - On failure, responds with [`SdkError<CreateDatasetError>`](crate::error::CreateDatasetError)
     pub fn create_dataset(&self) -> fluent_builders::CreateDataset<C, M, R> {
         fluent_builders::CreateDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDataView` operation.
+    /// Constructs a fluent builder for the [`CreateDataView`](crate::client::fluent_builders::CreateDataView) operation.
     ///
-    /// See [`CreateDataView`](crate::client::fluent_builders::CreateDataView) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataView::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataView::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataView::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::CreateDataView::set_dataset_id): <p>The unique Dataset identifier that is used to create a Dataview.</p>
+    ///   - [`auto_update(bool)`](crate::client::fluent_builders::CreateDataView::auto_update) / [`set_auto_update(bool)`](crate::client::fluent_builders::CreateDataView::set_auto_update): <p>Flag to indicate Dataview should be updated automatically.</p>
+    ///   - [`sort_columns(Vec<String>)`](crate::client::fluent_builders::CreateDataView::sort_columns) / [`set_sort_columns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDataView::set_sort_columns): <p>Columns to be used for sorting the data.</p>
+    ///   - [`partition_columns(Vec<String>)`](crate::client::fluent_builders::CreateDataView::partition_columns) / [`set_partition_columns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDataView::set_partition_columns): <p>Ordered set of column names used to partition data.</p>
+    ///   - [`as_of_timestamp(i64)`](crate::client::fluent_builders::CreateDataView::as_of_timestamp) / [`set_as_of_timestamp(Option<i64>)`](crate::client::fluent_builders::CreateDataView::set_as_of_timestamp): <p>Beginning time to use for the Dataview. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    ///   - [`destination_type_params(DataViewDestinationTypeParams)`](crate::client::fluent_builders::CreateDataView::destination_type_params) / [`set_destination_type_params(Option<DataViewDestinationTypeParams>)`](crate::client::fluent_builders::CreateDataView::set_destination_type_params): <p>Options that define the destination type for the Dataview.</p>
+    /// - On success, responds with [`CreateDataViewOutput`](crate::output::CreateDataViewOutput) with field(s):
+    ///   - [`dataset_id(Option<String>)`](crate::output::CreateDataViewOutput::dataset_id): <p>The unique identifier of the Dataset used for the Dataview.</p>
+    ///   - [`data_view_id(Option<String>)`](crate::output::CreateDataViewOutput::data_view_id): <p>The unique identifier for the created Dataview.</p>
+    /// - On failure, responds with [`SdkError<CreateDataViewError>`](crate::error::CreateDataViewError)
     pub fn create_data_view(&self) -> fluent_builders::CreateDataView<C, M, R> {
         fluent_builders::CreateDataView::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDataset` operation.
+    /// Constructs a fluent builder for the [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) operation.
     ///
-    /// See [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteDataset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteDataset::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::DeleteDataset::set_dataset_id): <p>The unique identifier of the Dataset to be deleted.</p>
+    /// - On success, responds with [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput) with field(s):
+    ///   - [`dataset_id(Option<String>)`](crate::output::DeleteDatasetOutput::dataset_id): <p>The unique identifier for the deleted Dataset.</p>
+    /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::error::DeleteDatasetError)
     pub fn delete_dataset(&self) -> fluent_builders::DeleteDataset<C, M, R> {
         fluent_builders::DeleteDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetChangeset` operation.
+    /// Constructs a fluent builder for the [`GetChangeset`](crate::client::fluent_builders::GetChangeset) operation.
     ///
-    /// See [`GetChangeset`](crate::client::fluent_builders::GetChangeset) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::GetChangeset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::GetChangeset::set_dataset_id): <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
+    ///   - [`changeset_id(impl Into<String>)`](crate::client::fluent_builders::GetChangeset::changeset_id) / [`set_changeset_id(Option<String>)`](crate::client::fluent_builders::GetChangeset::set_changeset_id): <p>The unique identifier of the Changeset for which to get data.</p>
+    /// - On success, responds with [`GetChangesetOutput`](crate::output::GetChangesetOutput) with field(s):
+    ///   - [`changeset_id(Option<String>)`](crate::output::GetChangesetOutput::changeset_id): <p>The unique identifier for a Changeset.</p>
+    ///   - [`changeset_arn(Option<String>)`](crate::output::GetChangesetOutput::changeset_arn): <p>The ARN identifier of the Changeset.</p>
+    ///   - [`dataset_id(Option<String>)`](crate::output::GetChangesetOutput::dataset_id): <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
+    ///   - [`change_type(Option<ChangeType>)`](crate::output::GetChangesetOutput::change_type): <p>Type that indicates how a Changeset is applied to a Dataset.</p>  <ul>   <li> <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>   <li> <p> <code>APPEND</code> - Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>   <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>  </ul>
+    ///   - [`source_params(Option<HashMap<String, String>>)`](crate::output::GetChangesetOutput::source_params): <p>Options that define the location of the data being ingested.</p>
+    ///   - [`format_params(Option<HashMap<String, String>>)`](crate::output::GetChangesetOutput::format_params): <p>Structure of the source file(s).</p>
+    ///   - [`create_time(i64)`](crate::output::GetChangesetOutput::create_time): <p>The timestamp at which the Changeset was created in FinSpace. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    ///   - [`status(Option<IngestionStatus>)`](crate::output::GetChangesetOutput::status): <p>The status of Changeset creation operation.</p>
+    ///   - [`error_info(Option<ChangesetErrorInfo>)`](crate::output::GetChangesetOutput::error_info): <p>The structure with error messages.</p>
+    ///   - [`active_until_timestamp(Option<i64>)`](crate::output::GetChangesetOutput::active_until_timestamp): <p>Time until which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    ///   - [`active_from_timestamp(Option<i64>)`](crate::output::GetChangesetOutput::active_from_timestamp): <p>Beginning time from which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    ///   - [`updates_changeset_id(Option<String>)`](crate::output::GetChangesetOutput::updates_changeset_id): <p>The unique identifier of the Changeset that is being updated.</p>
+    ///   - [`updated_by_changeset_id(Option<String>)`](crate::output::GetChangesetOutput::updated_by_changeset_id): <p>The unique identifier of the updated Changeset.</p>
+    /// - On failure, responds with [`SdkError<GetChangesetError>`](crate::error::GetChangesetError)
     pub fn get_changeset(&self) -> fluent_builders::GetChangeset<C, M, R> {
         fluent_builders::GetChangeset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDataset` operation.
+    /// Constructs a fluent builder for the [`GetDataset`](crate::client::fluent_builders::GetDataset) operation.
     ///
-    /// See [`GetDataset`](crate::client::fluent_builders::GetDataset) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::GetDataset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::GetDataset::set_dataset_id): <p>The unique identifier for a Dataset.</p>
+    /// - On success, responds with [`GetDatasetOutput`](crate::output::GetDatasetOutput) with field(s):
+    ///   - [`dataset_id(Option<String>)`](crate::output::GetDatasetOutput::dataset_id): <p>The unique identifier for a Dataset.</p>
+    ///   - [`dataset_arn(Option<String>)`](crate::output::GetDatasetOutput::dataset_arn): <p>The ARN identifier of the Dataset.</p>
+    ///   - [`dataset_title(Option<String>)`](crate::output::GetDatasetOutput::dataset_title): <p>Display title for a Dataset.</p>
+    ///   - [`kind(Option<DatasetKind>)`](crate::output::GetDatasetOutput::kind): <p>The format in which Dataset data is structured.</p>  <ul>   <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>   <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>  </ul>
+    ///   - [`dataset_description(Option<String>)`](crate::output::GetDatasetOutput::dataset_description): <p>A description of the Dataset.</p>
+    ///   - [`create_time(i64)`](crate::output::GetDatasetOutput::create_time): <p>The timestamp at which the Dataset was created in FinSpace. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    ///   - [`last_modified_time(i64)`](crate::output::GetDatasetOutput::last_modified_time): <p>The last time that the Dataset was modified. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    ///   - [`schema_definition(Option<SchemaUnion>)`](crate::output::GetDatasetOutput::schema_definition): <p>Definition for a schema on a tabular Dataset.</p>
+    ///   - [`alias(Option<String>)`](crate::output::GetDatasetOutput::alias): <p>The unique resource identifier for a Dataset.</p>
+    ///   - [`status(Option<DatasetStatus>)`](crate::output::GetDatasetOutput::status): <p>Status of the Dataset creation.</p>  <ul>   <li> <p> <code>PENDING</code> - Dataset is pending creation.</p> </li>   <li> <p> <code>FAILED</code> - Dataset creation has failed.</p> </li>   <li> <p> <code>SUCCESS</code> - Dataset creation has succeeded.</p> </li>   <li> <p> <code>RUNNING</code> - Dataset creation is running.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<GetDatasetError>`](crate::error::GetDatasetError)
     pub fn get_dataset(&self) -> fluent_builders::GetDataset<C, M, R> {
         fluent_builders::GetDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDataView` operation.
+    /// Constructs a fluent builder for the [`GetDataView`](crate::client::fluent_builders::GetDataView) operation.
     ///
-    /// See [`GetDataView`](crate::client::fluent_builders::GetDataView) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`data_view_id(impl Into<String>)`](crate::client::fluent_builders::GetDataView::data_view_id) / [`set_data_view_id(Option<String>)`](crate::client::fluent_builders::GetDataView::set_data_view_id): <p>The unique identifier for the Dataview.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::GetDataView::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::GetDataView::set_dataset_id): <p>The unique identifier for the Dataset used in the Dataview.</p>
+    /// - On success, responds with [`GetDataViewOutput`](crate::output::GetDataViewOutput) with field(s):
+    ///   - [`auto_update(bool)`](crate::output::GetDataViewOutput::auto_update): <p>Flag to indicate Dataview should be updated automatically.</p>
+    ///   - [`partition_columns(Option<Vec<String>>)`](crate::output::GetDataViewOutput::partition_columns): <p>Ordered set of column names used to partition data.</p>
+    ///   - [`dataset_id(Option<String>)`](crate::output::GetDataViewOutput::dataset_id): <p>The unique identifier for the Dataset used in the Dataview.</p>
+    ///   - [`as_of_timestamp(Option<i64>)`](crate::output::GetDataViewOutput::as_of_timestamp): <p>Time range to use for the Dataview. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    ///   - [`error_info(Option<DataViewErrorInfo>)`](crate::output::GetDataViewOutput::error_info): <p>Information about an error that occurred for the Dataview.</p>
+    ///   - [`last_modified_time(i64)`](crate::output::GetDataViewOutput::last_modified_time): <p>The last time that a Dataview was modified. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    ///   - [`create_time(i64)`](crate::output::GetDataViewOutput::create_time): <p>The timestamp at which the Dataview was created in FinSpace. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    ///   - [`sort_columns(Option<Vec<String>>)`](crate::output::GetDataViewOutput::sort_columns): <p>Columns to be used for sorting the data.</p>
+    ///   - [`data_view_id(Option<String>)`](crate::output::GetDataViewOutput::data_view_id): <p>The unique identifier for the Dataview.</p>
+    ///   - [`data_view_arn(Option<String>)`](crate::output::GetDataViewOutput::data_view_arn): <p>The ARN identifier of the Dataview.</p>
+    ///   - [`destination_type_params(Option<DataViewDestinationTypeParams>)`](crate::output::GetDataViewOutput::destination_type_params): <p>Options that define the destination type for the Dataview.</p>
+    ///   - [`status(Option<DataViewStatus>)`](crate::output::GetDataViewOutput::status): <p>The status of a Dataview creation.</p>  <ul>   <li> <p> <code>RUNNING</code> - Dataview creation is running.</p> </li>   <li> <p> <code>STARTING</code> - Dataview creation is starting.</p> </li>   <li> <p> <code>FAILED</code> - Dataview creation has failed.</p> </li>   <li> <p> <code>CANCELLED</code> - Dataview creation has been cancelled.</p> </li>   <li> <p> <code>TIMEOUT</code> - Dataview creation has timed out.</p> </li>   <li> <p> <code>SUCCESS</code> - Dataview creation has succeeded.</p> </li>   <li> <p> <code>PENDING</code> - Dataview creation is pending.</p> </li>   <li> <p> <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<GetDataViewError>`](crate::error::GetDataViewError)
     pub fn get_data_view(&self) -> fluent_builders::GetDataView<C, M, R> {
         fluent_builders::GetDataView::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetProgrammaticAccessCredentials` operation.
+    /// Constructs a fluent builder for the [`GetProgrammaticAccessCredentials`](crate::client::fluent_builders::GetProgrammaticAccessCredentials) operation.
     ///
-    /// See [`GetProgrammaticAccessCredentials`](crate::client::fluent_builders::GetProgrammaticAccessCredentials) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`duration_in_minutes(i64)`](crate::client::fluent_builders::GetProgrammaticAccessCredentials::duration_in_minutes) / [`set_duration_in_minutes(i64)`](crate::client::fluent_builders::GetProgrammaticAccessCredentials::set_duration_in_minutes): <p>The time duration in which the credentials remain valid. </p>
+    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::GetProgrammaticAccessCredentials::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::GetProgrammaticAccessCredentials::set_environment_id): <p>The FinSpace environment identifier.</p>
+    /// - On success, responds with [`GetProgrammaticAccessCredentialsOutput`](crate::output::GetProgrammaticAccessCredentialsOutput) with field(s):
+    ///   - [`credentials(Option<Credentials>)`](crate::output::GetProgrammaticAccessCredentialsOutput::credentials): <p>Returns the programmatic credentials.</p>
+    ///   - [`duration_in_minutes(i64)`](crate::output::GetProgrammaticAccessCredentialsOutput::duration_in_minutes): <p>Returns the duration in which the credentials will remain valid.</p>
+    /// - On failure, responds with [`SdkError<GetProgrammaticAccessCredentialsError>`](crate::error::GetProgrammaticAccessCredentialsError)
     pub fn get_programmatic_access_credentials(
         &self,
     ) -> fluent_builders::GetProgrammaticAccessCredentials<C, M, R> {
         fluent_builders::GetProgrammaticAccessCredentials::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetWorkingLocation` operation.
+    /// Constructs a fluent builder for the [`GetWorkingLocation`](crate::client::fluent_builders::GetWorkingLocation) operation.
     ///
-    /// See [`GetWorkingLocation`](crate::client::fluent_builders::GetWorkingLocation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`location_type(LocationType)`](crate::client::fluent_builders::GetWorkingLocation::location_type) / [`set_location_type(Option<LocationType>)`](crate::client::fluent_builders::GetWorkingLocation::set_location_type): <p>Specify the type of the working location.</p>  <ul>   <li> <p> <code>SAGEMAKER</code> - Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>   <li> <p> <code>INGESTION</code> - Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>  </ul>
+    /// - On success, responds with [`GetWorkingLocationOutput`](crate::output::GetWorkingLocationOutput) with field(s):
+    ///   - [`s3_uri(Option<String>)`](crate::output::GetWorkingLocationOutput::s3_uri): <p>Returns the Amazon S3 URI for the working location.</p>
+    ///   - [`s3_path(Option<String>)`](crate::output::GetWorkingLocationOutput::s3_path): <p>Returns the Amazon S3 Path for the working location.</p>
+    ///   - [`s3_bucket(Option<String>)`](crate::output::GetWorkingLocationOutput::s3_bucket): <p>Returns the Amazon S3 bucket name for the working location.</p>
+    /// - On failure, responds with [`SdkError<GetWorkingLocationError>`](crate::error::GetWorkingLocationError)
     pub fn get_working_location(&self) -> fluent_builders::GetWorkingLocation<C, M, R> {
         fluent_builders::GetWorkingLocation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChangesets` operation.
+    /// Constructs a fluent builder for the [`ListChangesets`](crate::client::fluent_builders::ListChangesets) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChangesets::into_paginator).
     ///
-    /// See [`ListChangesets`](crate::client::fluent_builders::ListChangesets) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChangesets::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::ListChangesets::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::ListChangesets::set_dataset_id): <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChangesets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChangesets::set_max_results): <p>The maximum number of results per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChangesets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChangesets::set_next_token): <p>A token indicating where a results page should begin.</p>
+    /// - On success, responds with [`ListChangesetsOutput`](crate::output::ListChangesetsOutput) with field(s):
+    ///   - [`changesets(Option<Vec<ChangesetSummary>>)`](crate::output::ListChangesetsOutput::changesets): <p>List of Changesets found.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChangesetsOutput::next_token): <p>A token indicating where a results page should begin.</p>
+    /// - On failure, responds with [`SdkError<ListChangesetsError>`](crate::error::ListChangesetsError)
     pub fn list_changesets(&self) -> fluent_builders::ListChangesets<C, M, R> {
         fluent_builders::ListChangesets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDatasets` operation.
+    /// Constructs a fluent builder for the [`ListDatasets`](crate::client::fluent_builders::ListDatasets) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDatasets::into_paginator).
     ///
-    /// See [`ListDatasets`](crate::client::fluent_builders::ListDatasets) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasets::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDatasets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDatasets::set_next_token): <p>A token indicating where a results page should begin.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDatasets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDatasets::set_max_results): <p>The maximum number of results per page.</p>
+    /// - On success, responds with [`ListDatasetsOutput`](crate::output::ListDatasetsOutput) with field(s):
+    ///   - [`datasets(Option<Vec<Dataset>>)`](crate::output::ListDatasetsOutput::datasets): <p>List of Datasets.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDatasetsOutput::next_token): <p>A token indicating where a results page should begin.</p>
+    /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::error::ListDatasetsError)
     pub fn list_datasets(&self) -> fluent_builders::ListDatasets<C, M, R> {
         fluent_builders::ListDatasets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDataViews` operation.
+    /// Constructs a fluent builder for the [`ListDataViews`](crate::client::fluent_builders::ListDataViews) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataViews::into_paginator).
     ///
-    /// See [`ListDataViews`](crate::client::fluent_builders::ListDataViews) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataViews::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::ListDataViews::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::ListDataViews::set_dataset_id): <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataViews::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataViews::set_next_token): <p>A token indicating where a results page should begin.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataViews::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataViews::set_max_results): <p>The maximum number of results per page.</p>
+    /// - On success, responds with [`ListDataViewsOutput`](crate::output::ListDataViewsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListDataViewsOutput::next_token): <p>A token indicating where a results page should begin.</p>
+    ///   - [`data_views(Option<Vec<DataViewSummary>>)`](crate::output::ListDataViewsOutput::data_views): <p>A list of Dataviews.</p>
+    /// - On failure, responds with [`SdkError<ListDataViewsError>`](crate::error::ListDataViewsError)
     pub fn list_data_views(&self) -> fluent_builders::ListDataViews<C, M, R> {
         fluent_builders::ListDataViews::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateChangeset` operation.
+    /// Constructs a fluent builder for the [`UpdateChangeset`](crate::client::fluent_builders::UpdateChangeset) operation.
     ///
-    /// See [`UpdateChangeset`](crate::client::fluent_builders::UpdateChangeset) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateChangeset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateChangeset::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::UpdateChangeset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::UpdateChangeset::set_dataset_id): <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
+    ///   - [`changeset_id(impl Into<String>)`](crate::client::fluent_builders::UpdateChangeset::changeset_id) / [`set_changeset_id(Option<String>)`](crate::client::fluent_builders::UpdateChangeset::set_changeset_id): <p>The unique identifier for the Changeset to update.</p>
+    ///   - [`source_params(HashMap<String, String>)`](crate::client::fluent_builders::UpdateChangeset::source_params) / [`set_source_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateChangeset::set_source_params): <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>  <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>  <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>  <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>  <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
+    ///   - [`format_params(HashMap<String, String>)`](crate::client::fluent_builders::UpdateChangeset::format_params) / [`set_format_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateChangeset::set_format_params): <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>  <p> <code>formatType</code> is a required attribute and can have the following values: </p>  <ul>   <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>   <li> <p> <code>CSV</code> - CSV source file format.</p> </li>   <li> <p> <code>JSON</code> - JSON source file format.</p> </li>   <li> <p> <code>XML</code> - XML source file format.</p> </li>  </ul>  <p>Here is an example of how you could specify the <code>formatParams</code>:</p>  <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>  <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>  <p> <code> { "withHeader": "true", "separator": "," } </code> </p>  <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
+    /// - On success, responds with [`UpdateChangesetOutput`](crate::output::UpdateChangesetOutput) with field(s):
+    ///   - [`changeset_id(Option<String>)`](crate::output::UpdateChangesetOutput::changeset_id): <p>The unique identifier for the Changeset to update.</p>
+    ///   - [`dataset_id(Option<String>)`](crate::output::UpdateChangesetOutput::dataset_id): <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
+    /// - On failure, responds with [`SdkError<UpdateChangesetError>`](crate::error::UpdateChangesetError)
     pub fn update_changeset(&self) -> fluent_builders::UpdateChangeset<C, M, R> {
         fluent_builders::UpdateChangeset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDataset` operation.
+    /// Constructs a fluent builder for the [`UpdateDataset`](crate::client::fluent_builders::UpdateDataset) operation.
     ///
-    /// See [`UpdateDataset`](crate::client::fluent_builders::UpdateDataset) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateDataset::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateDataset::set_client_token): <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    ///   - [`dataset_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataset::dataset_id) / [`set_dataset_id(Option<String>)`](crate::client::fluent_builders::UpdateDataset::set_dataset_id): <p>The unique identifier for the Dataset to update.</p>
+    ///   - [`dataset_title(impl Into<String>)`](crate::client::fluent_builders::UpdateDataset::dataset_title) / [`set_dataset_title(Option<String>)`](crate::client::fluent_builders::UpdateDataset::set_dataset_title): <p>A display title for the Dataset.</p>
+    ///   - [`kind(DatasetKind)`](crate::client::fluent_builders::UpdateDataset::kind) / [`set_kind(Option<DatasetKind>)`](crate::client::fluent_builders::UpdateDataset::set_kind): <p>The format in which the Dataset data is structured.</p>  <ul>   <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>   <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>  </ul>
+    ///   - [`dataset_description(impl Into<String>)`](crate::client::fluent_builders::UpdateDataset::dataset_description) / [`set_dataset_description(Option<String>)`](crate::client::fluent_builders::UpdateDataset::set_dataset_description): <p>A description for the Dataset.</p>
+    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::UpdateDataset::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::UpdateDataset::set_alias): <p>The unique resource identifier for a Dataset.</p>
+    ///   - [`schema_definition(SchemaUnion)`](crate::client::fluent_builders::UpdateDataset::schema_definition) / [`set_schema_definition(Option<SchemaUnion>)`](crate::client::fluent_builders::UpdateDataset::set_schema_definition): <p>Definition for a schema on a tabular Dataset.</p>
+    /// - On success, responds with [`UpdateDatasetOutput`](crate::output::UpdateDatasetOutput) with field(s):
+    ///   - [`dataset_id(Option<String>)`](crate::output::UpdateDatasetOutput::dataset_id): <p>The unique identifier for updated Dataset.</p>
+    /// - On failure, responds with [`SdkError<UpdateDatasetError>`](crate::error::UpdateDatasetError)
     pub fn update_dataset(&self) -> fluent_builders::UpdateDataset<C, M, R> {
         fluent_builders::UpdateDataset::new(self.handle.clone())
     }
@@ -254,12 +373,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -301,7 +420,11 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_source_params`](Self::set_source_params).
         ///
-        /// <p>Options that define the location of the data being ingested.</p>
+        /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+        /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+        /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+        /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
         pub fn source_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -310,7 +433,11 @@ pub mod fluent_builders {
             self.inner = self.inner.source_params(k.into(), v.into());
             self
         }
-        /// <p>Options that define the location of the data being ingested.</p>
+        /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+        /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+        /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+        /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
         pub fn set_source_params(
             mut self,
             input: std::option::Option<
@@ -332,7 +459,11 @@ pub mod fluent_builders {
         /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
         /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
         /// </ul>
-        /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+        /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+        /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+        /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
         pub fn format_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -349,7 +480,11 @@ pub mod fluent_builders {
         /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
         /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
         /// </ul>
-        /// <p> For example, you could specify the following for <code>formatParams</code>: <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+        /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+        /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+        /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
         pub fn set_format_params(
             mut self,
             input: std::option::Option<
@@ -419,12 +554,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -585,12 +720,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -735,12 +870,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1487,12 +1622,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1521,7 +1656,11 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_source_params`](Self::set_source_params).
         ///
-        /// <p>Options that define the location of the data being ingested.</p>
+        /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+        /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+        /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+        /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
         pub fn source_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -1530,7 +1669,11 @@ pub mod fluent_builders {
             self.inner = self.inner.source_params(k.into(), v.into());
             self
         }
-        /// <p>Options that define the location of the data being ingested.</p>
+        /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
+        /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
+        /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
+        /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
+        /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
         pub fn set_source_params(
             mut self,
             input: std::option::Option<
@@ -1544,7 +1687,19 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_format_params`](Self::set_format_params).
         ///
-        /// <p>Options that define the structure of the source file(s).</p>
+        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+        /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
+        /// <ul>
+        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+        /// </ul>
+        /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+        /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+        /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+        /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
         pub fn format_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -1553,7 +1708,19 @@ pub mod fluent_builders {
             self.inner = self.inner.format_params(k.into(), v.into());
             self
         }
-        /// <p>Options that define the structure of the source file(s).</p>
+        /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
+        /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
+        /// <ul>
+        /// <li> <p> <code>PARQUET</code> - Parquet source file format.</p> </li>
+        /// <li> <p> <code>CSV</code> - CSV source file format.</p> </li>
+        /// <li> <p> <code>JSON</code> - JSON source file format.</p> </li>
+        /// <li> <p> <code>XML</code> - XML source file format.</p> </li>
+        /// </ul>
+        /// <p>Here is an example of how you could specify the <code>formatParams</code>:</p>
+        /// <p> <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",", "compression":"None" } </code> </p>
+        /// <p>Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest of the attributes will automatically default to CSV values as following:</p>
+        /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
+        /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
         pub fn set_format_params(
             mut self,
             input: std::option::Option<
@@ -1623,12 +1790,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token used to ensure idempotency.</p>
+        /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self

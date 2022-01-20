@@ -361,12 +361,14 @@ mod describe_compute_environments_request_test {
                         <crate::operation::DescribeComputeEnvironments as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.unwrap();
-        assert_eq!(
-            parsed.compute_environments, expected_output.compute_environments,
+        pretty_assertions::assert_eq!(
+            parsed.compute_environments,
+            expected_output.compute_environments,
             "Unexpected value for `compute_environments`"
         );
-        assert_eq!(
-            parsed.next_token, expected_output.next_token,
+        pretty_assertions::assert_eq!(
+            parsed.next_token,
+            expected_output.next_token,
             "Unexpected value for `next_token`"
         );
     }

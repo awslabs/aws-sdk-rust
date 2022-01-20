@@ -11,14 +11,13 @@
 //! collecting system inventory, applying operating system (OS) patches, automating the creation of
 //! Amazon Machine Images (AMIs), and configuring operating systems (OSs) and applications at scale.
 //! Systems Manager lets you remotely and securely manage the configuration of your managed nodes. A
-//! <i>managed node</i> is any Amazon Elastic Compute Cloud (Amazon EC2) instance, edge
-//! device, or on-premises server or virtual machine (VM) that has been configured for
-//! Systems Manager. </p>
+//! <i>managed node</i> is any Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises
+//! server or virtual machine (VM) that has been configured for Systems Manager. </p>
 //! <note>
-//! <p>With support for IoT Greengrass Version 2 devices, the phrase <i>managed
+//! <p>With support for IoT Greengrass core devices, the phrase <i>managed
 //! instance</i> has been changed to <i>managed node</i> in most of the Systems Manager
-//! documentation. The Systems Manager console, API
-//! calls, error messages, and SSM documents still use the term instance.</p>
+//! documentation. The Systems Manager console, API calls, error messages, and SSM documents still use the
+//! term <i>instance</i>.</p>
 //! </note>
 //! <p>This reference is intended to be used with the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon Web Services Systems Manager User Guide</a>.</p>
 //! <p>To get started, verify prerequisites and configure managed nodes. For more information, see
@@ -51,7 +50,7 @@
 //! The entry point for most customers will be [`Client`]. [`Client`] exposes one method for each API offered
 //! by the service.
 //!
-//! Some APIs require complex or nested arguments. These exist in [`model`].
+//! Some APIs require complex or nested arguments. These exist in [`model`](crate::model).
 //!
 //! Lastly, errors that can be returned by the service are contained within [`error`]. [`Error`] defines a meta
 //! error encompassing all possible errors that can be returned by the service.

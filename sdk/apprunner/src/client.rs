@@ -83,170 +83,283 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateCustomDomain` operation.
+    /// Constructs a fluent builder for the [`AssociateCustomDomain`](crate::client::fluent_builders::AssociateCustomDomain) operation.
     ///
-    /// See [`AssociateCustomDomain`](crate::client::fluent_builders::AssociateCustomDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateCustomDomain::service_arn) / [`set_service_arn(Option<String>)`](crate::client::fluent_builders::AssociateCustomDomain::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want to associate a custom domain name with.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::AssociateCustomDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::AssociateCustomDomain::set_domain_name): <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
+    ///   - [`enable_www_subdomain(bool)`](crate::client::fluent_builders::AssociateCustomDomain::enable_www_subdomain) / [`set_enable_www_subdomain(Option<bool>)`](crate::client::fluent_builders::AssociateCustomDomain::set_enable_www_subdomain): <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>  <p>Default: <code>true</code> </p>
+    /// - On success, responds with [`AssociateCustomDomainOutput`](crate::output::AssociateCustomDomainOutput) with field(s):
+    ///   - [`dns_target(Option<String>)`](crate::output::AssociateCustomDomainOutput::dns_target): <p>The App Runner subdomain of the App Runner service. The custom domain name is mapped to this target name.</p>
+    ///   - [`service_arn(Option<String>)`](crate::output::AssociateCustomDomainOutput::service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service with which a custom domain name is associated.</p>
+    ///   - [`custom_domain(Option<CustomDomain>)`](crate::output::AssociateCustomDomainOutput::custom_domain): <p>A description of the domain name that's being associated.</p>
+    /// - On failure, responds with [`SdkError<AssociateCustomDomainError>`](crate::error::AssociateCustomDomainError)
     pub fn associate_custom_domain(&self) -> fluent_builders::AssociateCustomDomain<C, M, R> {
         fluent_builders::AssociateCustomDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAutoScalingConfiguration` operation.
+    /// Constructs a fluent builder for the [`CreateAutoScalingConfiguration`](crate::client::fluent_builders::CreateAutoScalingConfiguration) operation.
     ///
-    /// See [`CreateAutoScalingConfiguration`](crate::client::fluent_builders::CreateAutoScalingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`auto_scaling_configuration_name(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::auto_scaling_configuration_name) / [`set_auto_scaling_configuration_name(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::set_auto_scaling_configuration_name): <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+    ///   - [`max_concurrency(i32)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::max_concurrency) / [`set_max_concurrency(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::set_max_concurrency): <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>  <p>Default: <code>100</code> </p>
+    ///   - [`min_size(i32)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::min_size) / [`set_min_size(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::set_min_size): <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>  <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>  <p>Default: <code>1</code> </p>
+    ///   - [`max_size(i32)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::max_size) / [`set_max_size(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::set_max_size): <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>  <p>Default: <code>25</code> </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAutoScalingConfiguration::set_tags): <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
+    /// - On success, responds with [`CreateAutoScalingConfigurationOutput`](crate::output::CreateAutoScalingConfigurationOutput) with field(s):
+    ///   - [`auto_scaling_configuration(Option<AutoScalingConfiguration>)`](crate::output::CreateAutoScalingConfigurationOutput::auto_scaling_configuration): <p>A description of the App Runner auto scaling configuration that's created by this request.</p>
+    /// - On failure, responds with [`SdkError<CreateAutoScalingConfigurationError>`](crate::error::CreateAutoScalingConfigurationError)
     pub fn create_auto_scaling_configuration(
         &self,
     ) -> fluent_builders::CreateAutoScalingConfiguration<C, M, R> {
         fluent_builders::CreateAutoScalingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateConnection` operation.
+    /// Constructs a fluent builder for the [`CreateConnection`](crate::client::fluent_builders::CreateConnection) operation.
     ///
-    /// See [`CreateConnection`](crate::client::fluent_builders::CreateConnection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`connection_name(impl Into<String>)`](crate::client::fluent_builders::CreateConnection::connection_name) / [`set_connection_name(Option<String>)`](crate::client::fluent_builders::CreateConnection::set_connection_name): <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
+    ///   - [`provider_type(ProviderType)`](crate::client::fluent_builders::CreateConnection::provider_type) / [`set_provider_type(Option<ProviderType>)`](crate::client::fluent_builders::CreateConnection::set_provider_type): <p>The source repository provider.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateConnection::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateConnection::set_tags): <p>A list of metadata items that you can associate with your connection resource. A tag is a key-value pair.</p>
+    /// - On success, responds with [`CreateConnectionOutput`](crate::output::CreateConnectionOutput) with field(s):
+    ///   - [`connection(Option<Connection>)`](crate::output::CreateConnectionOutput::connection): <p>A description of the App Runner connection that's created by this request.</p>
+    /// - On failure, responds with [`SdkError<CreateConnectionError>`](crate::error::CreateConnectionError)
     pub fn create_connection(&self) -> fluent_builders::CreateConnection<C, M, R> {
         fluent_builders::CreateConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateService` operation.
+    /// Constructs a fluent builder for the [`CreateService`](crate::client::fluent_builders::CreateService) operation.
     ///
-    /// See [`CreateService`](crate::client::fluent_builders::CreateService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::CreateService::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::CreateService::set_service_name): <p>A name for the new service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
+    ///   - [`source_configuration(SourceConfiguration)`](crate::client::fluent_builders::CreateService::source_configuration) / [`set_source_configuration(Option<SourceConfiguration>)`](crate::client::fluent_builders::CreateService::set_source_configuration): <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
+    ///   - [`instance_configuration(InstanceConfiguration)`](crate::client::fluent_builders::CreateService::instance_configuration) / [`set_instance_configuration(Option<InstanceConfiguration>)`](crate::client::fluent_builders::CreateService::set_instance_configuration): <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateService::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateService::set_tags): <p>An optional list of metadata items that you can associate with your service resource. A tag is a key-value pair.</p>
+    ///   - [`encryption_configuration(EncryptionConfiguration)`](crate::client::fluent_builders::CreateService::encryption_configuration) / [`set_encryption_configuration(Option<EncryptionConfiguration>)`](crate::client::fluent_builders::CreateService::set_encryption_configuration): <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed CMK.</p>
+    ///   - [`health_check_configuration(HealthCheckConfiguration)`](crate::client::fluent_builders::CreateService::health_check_configuration) / [`set_health_check_configuration(Option<HealthCheckConfiguration>)`](crate::client::fluent_builders::CreateService::set_health_check_configuration): <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+    ///   - [`auto_scaling_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::CreateService::auto_scaling_configuration_arn) / [`set_auto_scaling_configuration_arn(Option<String>)`](crate::client::fluent_builders::CreateService::set_auto_scaling_configuration_arn): <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+    /// - On success, responds with [`CreateServiceOutput`](crate::output::CreateServiceOutput) with field(s):
+    ///   - [`service(Option<Service>)`](crate::output::CreateServiceOutput::service): <p>A description of the App Runner service that's created by this request.</p>
+    ///   - [`operation_id(Option<String>)`](crate::output::CreateServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a> call to track the operation's progress.</p>
+    /// - On failure, responds with [`SdkError<CreateServiceError>`](crate::error::CreateServiceError)
     pub fn create_service(&self) -> fluent_builders::CreateService<C, M, R> {
         fluent_builders::CreateService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAutoScalingConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteAutoScalingConfiguration`](crate::client::fluent_builders::DeleteAutoScalingConfiguration) operation.
     ///
-    /// See [`DeleteAutoScalingConfiguration`](crate::client::fluent_builders::DeleteAutoScalingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`auto_scaling_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAutoScalingConfiguration::auto_scaling_configuration_arn) / [`set_auto_scaling_configuration_arn(Option<String>)`](crate::client::fluent_builders::DeleteAutoScalingConfiguration::set_auto_scaling_configuration_arn): <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>  <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+    /// - On success, responds with [`DeleteAutoScalingConfigurationOutput`](crate::output::DeleteAutoScalingConfigurationOutput) with field(s):
+    ///   - [`auto_scaling_configuration(Option<AutoScalingConfiguration>)`](crate::output::DeleteAutoScalingConfigurationOutput::auto_scaling_configuration): <p>A description of the App Runner auto scaling configuration that this request just deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteAutoScalingConfigurationError>`](crate::error::DeleteAutoScalingConfigurationError)
     pub fn delete_auto_scaling_configuration(
         &self,
     ) -> fluent_builders::DeleteAutoScalingConfiguration<C, M, R> {
         fluent_builders::DeleteAutoScalingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConnection` operation.
+    /// Constructs a fluent builder for the [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) operation.
     ///
-    /// See [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`connection_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteConnection::connection_arn) / [`set_connection_arn(Option<String>)`](crate::client::fluent_builders::DeleteConnection::set_connection_arn): <p>The Amazon Resource Name (ARN) of the App Runner connection that you want to delete.</p>
+    /// - On success, responds with [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput) with field(s):
+    ///   - [`connection(Option<Connection>)`](crate::output::DeleteConnectionOutput::connection): <p>A description of the App Runner connection that this request just deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::error::DeleteConnectionError)
     pub fn delete_connection(&self) -> fluent_builders::DeleteConnection<C, M, R> {
         fluent_builders::DeleteConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteService` operation.
+    /// Constructs a fluent builder for the [`DeleteService`](crate::client::fluent_builders::DeleteService) operation.
     ///
-    /// See [`DeleteService`](crate::client::fluent_builders::DeleteService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteService::service_arn) / [`set_service_arn(Option<String>)`](crate::client::fluent_builders::DeleteService::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
+    /// - On success, responds with [`DeleteServiceOutput`](crate::output::DeleteServiceOutput) with field(s):
+    ///   - [`service(Option<Service>)`](crate::output::DeleteServiceOutput::service): <p>A description of the App Runner service that this request just deleted.</p>
+    ///   - [`operation_id(Option<String>)`](crate::output::DeleteServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
+    /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::error::DeleteServiceError)
     pub fn delete_service(&self) -> fluent_builders::DeleteService<C, M, R> {
         fluent_builders::DeleteService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAutoScalingConfiguration` operation.
+    /// Constructs a fluent builder for the [`DescribeAutoScalingConfiguration`](crate::client::fluent_builders::DescribeAutoScalingConfiguration) operation.
     ///
-    /// See [`DescribeAutoScalingConfiguration`](crate::client::fluent_builders::DescribeAutoScalingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`auto_scaling_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAutoScalingConfiguration::auto_scaling_configuration_arn) / [`set_auto_scaling_configuration_arn(Option<String>)`](crate::client::fluent_builders::DescribeAutoScalingConfiguration::set_auto_scaling_configuration_arn): <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>  <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
+    /// - On success, responds with [`DescribeAutoScalingConfigurationOutput`](crate::output::DescribeAutoScalingConfigurationOutput) with field(s):
+    ///   - [`auto_scaling_configuration(Option<AutoScalingConfiguration>)`](crate::output::DescribeAutoScalingConfigurationOutput::auto_scaling_configuration): <p>A full description of the App Runner auto scaling configuration that you specified in this request.</p>
+    /// - On failure, responds with [`SdkError<DescribeAutoScalingConfigurationError>`](crate::error::DescribeAutoScalingConfigurationError)
     pub fn describe_auto_scaling_configuration(
         &self,
     ) -> fluent_builders::DescribeAutoScalingConfiguration<C, M, R> {
         fluent_builders::DescribeAutoScalingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCustomDomains` operation.
+    /// Constructs a fluent builder for the [`DescribeCustomDomains`](crate::client::fluent_builders::DescribeCustomDomains) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeCustomDomains::into_paginator).
     ///
-    /// See [`DescribeCustomDomains`](crate::client::fluent_builders::DescribeCustomDomains) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCustomDomains::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`service_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeCustomDomains::service_arn) / [`set_service_arn(Option<String>)`](crate::client::fluent_builders::DescribeCustomDomains::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want associated custom domain names to be described for.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeCustomDomains::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeCustomDomains::set_next_token): <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>  <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeCustomDomains::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeCustomDomains::set_max_results): <p>The maximum number of results that each response (result page) can include. It's used for a paginated request.</p>  <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    /// - On success, responds with [`DescribeCustomDomainsOutput`](crate::output::DescribeCustomDomainsOutput) with field(s):
+    ///   - [`dns_target(Option<String>)`](crate::output::DescribeCustomDomainsOutput::dns_target): <p>The App Runner subdomain of the App Runner service. The associated custom domain names are mapped to this target name.</p>
+    ///   - [`service_arn(Option<String>)`](crate::output::DescribeCustomDomainsOutput::service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service whose associated custom domain names you want to describe.</p>
+    ///   - [`custom_domains(Option<Vec<CustomDomain>>)`](crate::output::DescribeCustomDomainsOutput::custom_domains): <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to <code>MaxResults</code> records per call.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeCustomDomainsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    /// - On failure, responds with [`SdkError<DescribeCustomDomainsError>`](crate::error::DescribeCustomDomainsError)
     pub fn describe_custom_domains(&self) -> fluent_builders::DescribeCustomDomains<C, M, R> {
         fluent_builders::DescribeCustomDomains::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeService` operation.
+    /// Constructs a fluent builder for the [`DescribeService`](crate::client::fluent_builders::DescribeService) operation.
     ///
-    /// See [`DescribeService`](crate::client::fluent_builders::DescribeService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeService::service_arn) / [`set_service_arn(Option<String>)`](crate::client::fluent_builders::DescribeService::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want a description for.</p>
+    /// - On success, responds with [`DescribeServiceOutput`](crate::output::DescribeServiceOutput) with field(s):
+    ///   - [`service(Option<Service>)`](crate::output::DescribeServiceOutput::service): <p>A full description of the App Runner service that you specified in this request.</p>
+    /// - On failure, responds with [`SdkError<DescribeServiceError>`](crate::error::DescribeServiceError)
     pub fn describe_service(&self) -> fluent_builders::DescribeService<C, M, R> {
         fluent_builders::DescribeService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateCustomDomain` operation.
+    /// Constructs a fluent builder for the [`DisassociateCustomDomain`](crate::client::fluent_builders::DisassociateCustomDomain) operation.
     ///
-    /// See [`DisassociateCustomDomain`](crate::client::fluent_builders::DisassociateCustomDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateCustomDomain::service_arn) / [`set_service_arn(Option<String>)`](crate::client::fluent_builders::DisassociateCustomDomain::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want to disassociate a custom domain name from.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateCustomDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DisassociateCustomDomain::set_domain_name): <p>The domain name that you want to disassociate from the App Runner service.</p>
+    /// - On success, responds with [`DisassociateCustomDomainOutput`](crate::output::DisassociateCustomDomainOutput) with field(s):
+    ///   - [`dns_target(Option<String>)`](crate::output::DisassociateCustomDomainOutput::dns_target): <p>The App Runner subdomain of the App Runner service. The disassociated custom domain name was mapped to this target name.</p>
+    ///   - [`service_arn(Option<String>)`](crate::output::DisassociateCustomDomainOutput::service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that a custom domain name is disassociated from.</p>
+    ///   - [`custom_domain(Option<CustomDomain>)`](crate::output::DisassociateCustomDomainOutput::custom_domain): <p>A description of the domain name that's being disassociated.</p>
+    /// - On failure, responds with [`SdkError<DisassociateCustomDomainError>`](crate::error::DisassociateCustomDomainError)
     pub fn disassociate_custom_domain(&self) -> fluent_builders::DisassociateCustomDomain<C, M, R> {
         fluent_builders::DisassociateCustomDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAutoScalingConfigurations` operation.
+    /// Constructs a fluent builder for the [`ListAutoScalingConfigurations`](crate::client::fluent_builders::ListAutoScalingConfigurations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAutoScalingConfigurations::into_paginator).
     ///
-    /// See [`ListAutoScalingConfigurations`](crate::client::fluent_builders::ListAutoScalingConfigurations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAutoScalingConfigurations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`auto_scaling_configuration_name(impl Into<String>)`](crate::client::fluent_builders::ListAutoScalingConfigurations::auto_scaling_configuration_name) / [`set_auto_scaling_configuration_name(Option<String>)`](crate::client::fluent_builders::ListAutoScalingConfigurations::set_auto_scaling_configuration_name): <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all configurations.</p>
+    ///   - [`latest_only(bool)`](crate::client::fluent_builders::ListAutoScalingConfigurations::latest_only) / [`set_latest_only(bool)`](crate::client::fluent_builders::ListAutoScalingConfigurations::set_latest_only): <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>  <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>  <p>Default: <code>false</code> </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAutoScalingConfigurations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAutoScalingConfigurations::set_max_results): <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>  <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAutoScalingConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAutoScalingConfigurations::set_next_token): <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>  <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    /// - On success, responds with [`ListAutoScalingConfigurationsOutput`](crate::output::ListAutoScalingConfigurationsOutput) with field(s):
+    ///   - [`auto_scaling_configuration_summary_list(Option<Vec<AutoScalingConfigurationSummary>>)`](crate::output::ListAutoScalingConfigurationsOutput::auto_scaling_configuration_summary_list): <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAutoScalingConfigurationsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    /// - On failure, responds with [`SdkError<ListAutoScalingConfigurationsError>`](crate::error::ListAutoScalingConfigurationsError)
     pub fn list_auto_scaling_configurations(
         &self,
     ) -> fluent_builders::ListAutoScalingConfigurations<C, M, R> {
         fluent_builders::ListAutoScalingConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListConnections` operation.
+    /// Constructs a fluent builder for the [`ListConnections`](crate::client::fluent_builders::ListConnections) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConnections::into_paginator).
     ///
-    /// See [`ListConnections`](crate::client::fluent_builders::ListConnections) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConnections::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`connection_name(impl Into<String>)`](crate::client::fluent_builders::ListConnections::connection_name) / [`set_connection_name(Option<String>)`](crate::client::fluent_builders::ListConnections::set_connection_name): <p>If specified, only this connection is returned. If not specified, the result isn't filtered by name.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConnections::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListConnections::set_max_results): <p>The maximum number of results to include in each response (result page). Used for a paginated request.</p>  <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConnections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConnections::set_next_token): <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>  <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    /// - On success, responds with [`ListConnectionsOutput`](crate::output::ListConnectionsOutput) with field(s):
+    ///   - [`connection_summary_list(Option<Vec<ConnectionSummary>>)`](crate::output::ListConnectionsOutput::connection_summary_list): <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListConnectionsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. Returned in a paginated request.</p>
+    /// - On failure, responds with [`SdkError<ListConnectionsError>`](crate::error::ListConnectionsError)
     pub fn list_connections(&self) -> fluent_builders::ListConnections<C, M, R> {
         fluent_builders::ListConnections::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOperations` operation.
+    /// Constructs a fluent builder for the [`ListOperations`](crate::client::fluent_builders::ListOperations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOperations::into_paginator).
     ///
-    /// See [`ListOperations`](crate::client::fluent_builders::ListOperations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOperations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`service_arn(impl Into<String>)`](crate::client::fluent_builders::ListOperations::service_arn) / [`set_service_arn(Option<String>)`](crate::client::fluent_builders::ListOperations::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want a list of operations for.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOperations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOperations::set_next_token): <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>  <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOperations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListOperations::set_max_results): <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>  <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    /// - On success, responds with [`ListOperationsOutput`](crate::output::ListOperationsOutput) with field(s):
+    ///   - [`operation_summary_list(Option<Vec<OperationSummary>>)`](crate::output::ListOperationsOutput::operation_summary_list): <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListOperationsOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    /// - On failure, responds with [`SdkError<ListOperationsError>`](crate::error::ListOperationsError)
     pub fn list_operations(&self) -> fluent_builders::ListOperations<C, M, R> {
         fluent_builders::ListOperations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServices` operation.
+    /// Constructs a fluent builder for the [`ListServices`](crate::client::fluent_builders::ListServices) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServices::into_paginator).
     ///
-    /// See [`ListServices`](crate::client::fluent_builders::ListServices) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServices::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListServices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListServices::set_next_token): <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>  <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListServices::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListServices::set_max_results): <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>  <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    /// - On success, responds with [`ListServicesOutput`](crate::output::ListServicesOutput) with field(s):
+    ///   - [`service_summary_list(Option<Vec<ServiceSummary>>)`](crate::output::ListServicesOutput::service_summary_list): <p>A list of service summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListServicesOutput::next_token): <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    /// - On failure, responds with [`SdkError<ListServicesError>`](crate::error::ListServicesError)
     pub fn list_services(&self) -> fluent_builders::ListServices<C, M, R> {
         fluent_builders::ListServices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that a tag list is requested for.</p>  <p>It must be the ARN of an App Runner resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of the tag key-value pairs that are associated with the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PauseService` operation.
+    /// Constructs a fluent builder for the [`PauseService`](crate::client::fluent_builders::PauseService) operation.
     ///
-    /// See [`PauseService`](crate::client::fluent_builders::PauseService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_arn(impl Into<String>)`](crate::client::fluent_builders::PauseService::service_arn) / [`set_service_arn(Option<String>)`](crate::client::fluent_builders::PauseService::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
+    /// - On success, responds with [`PauseServiceOutput`](crate::output::PauseServiceOutput) with field(s):
+    ///   - [`service(Option<Service>)`](crate::output::PauseServiceOutput::service): <p>A description of the App Runner service that this request just paused.</p>
+    ///   - [`operation_id(Option<String>)`](crate::output::PauseServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
+    /// - On failure, responds with [`SdkError<PauseServiceError>`](crate::error::PauseServiceError)
     pub fn pause_service(&self) -> fluent_builders::PauseService<C, M, R> {
         fluent_builders::PauseService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResumeService` operation.
+    /// Constructs a fluent builder for the [`ResumeService`](crate::client::fluent_builders::ResumeService) operation.
     ///
-    /// See [`ResumeService`](crate::client::fluent_builders::ResumeService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_arn(impl Into<String>)`](crate::client::fluent_builders::ResumeService::service_arn) / [`set_service_arn(Option<String>)`](crate::client::fluent_builders::ResumeService::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want to resume.</p>
+    /// - On success, responds with [`ResumeServiceOutput`](crate::output::ResumeServiceOutput) with field(s):
+    ///   - [`service(Option<Service>)`](crate::output::ResumeServiceOutput::service): <p>A description of the App Runner service that this request just resumed.</p>
+    ///   - [`operation_id(Option<String>)`](crate::output::ResumeServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
+    /// - On failure, responds with [`SdkError<ResumeServiceError>`](crate::error::ResumeServiceError)
     pub fn resume_service(&self) -> fluent_builders::ResumeService<C, M, R> {
         fluent_builders::ResumeService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartDeployment` operation.
+    /// Constructs a fluent builder for the [`StartDeployment`](crate::client::fluent_builders::StartDeployment) operation.
     ///
-    /// See [`StartDeployment`](crate::client::fluent_builders::StartDeployment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_arn(impl Into<String>)`](crate::client::fluent_builders::StartDeployment::service_arn) / [`set_service_arn(Option<String>)`](crate::client::fluent_builders::StartDeployment::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
+    /// - On success, responds with [`StartDeploymentOutput`](crate::output::StartDeploymentOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::StartDeploymentOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
+    /// - On failure, responds with [`SdkError<StartDeploymentError>`](crate::error::StartDeploymentError)
     pub fn start_deployment(&self) -> fluent_builders::StartDeployment<C, M, R> {
         fluent_builders::StartDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to update tags for.</p>  <p>It must be the ARN of an App Runner resource.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already associated with the resource, the value of the tag is updated.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>  <p>It must be the ARN of an App Runner resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of tag keys that you want to remove.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateService` operation.
+    /// Constructs a fluent builder for the [`UpdateService`](crate::client::fluent_builders::UpdateService) operation.
     ///
-    /// See [`UpdateService`](crate::client::fluent_builders::UpdateService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateService::service_arn) / [`set_service_arn(Option<String>)`](crate::client::fluent_builders::UpdateService::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
+    ///   - [`source_configuration(SourceConfiguration)`](crate::client::fluent_builders::UpdateService::source_configuration) / [`set_source_configuration(Option<SourceConfiguration>)`](crate::client::fluent_builders::UpdateService::set_source_configuration): <p>The source configuration to apply to the App Runner service.</p>  <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the values to members of the structure that you include.</p>
+    ///   - [`instance_configuration(InstanceConfiguration)`](crate::client::fluent_builders::UpdateService::instance_configuration) / [`set_instance_configuration(Option<InstanceConfiguration>)`](crate::client::fluent_builders::UpdateService::set_instance_configuration): <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
+    ///   - [`auto_scaling_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateService::auto_scaling_configuration_arn) / [`set_auto_scaling_configuration_arn(Option<String>)`](crate::client::fluent_builders::UpdateService::set_auto_scaling_configuration_arn): <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service.</p>
+    ///   - [`health_check_configuration(HealthCheckConfiguration)`](crate::client::fluent_builders::UpdateService::health_check_configuration) / [`set_health_check_configuration(Option<HealthCheckConfiguration>)`](crate::client::fluent_builders::UpdateService::set_health_check_configuration): <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
+    /// - On success, responds with [`UpdateServiceOutput`](crate::output::UpdateServiceOutput) with field(s):
+    ///   - [`service(Option<Service>)`](crate::output::UpdateServiceOutput::service): <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
+    ///   - [`operation_id(Option<String>)`](crate::output::UpdateServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
+    /// - On failure, responds with [`SdkError<UpdateServiceError>`](crate::error::UpdateServiceError)
     pub fn update_service(&self) -> fluent_builders::UpdateService<C, M, R> {
         fluent_builders::UpdateService::new(self.handle.clone())
     }

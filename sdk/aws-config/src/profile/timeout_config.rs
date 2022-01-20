@@ -117,10 +117,13 @@ impl ProfileFileTimeoutConfigProvider {
         let selected_profile = match profile.get_profile(selected_profile) {
             Some(profile) => profile,
             None => {
-                tracing::warn!(
-                    "failed to get selected '{}' profile, skipping it",
-                    selected_profile
-                );
+                // Only warn if the user specified a profile name to use.
+                if self.profile_override.is_some() {
+                    tracing::warn!(
+                        "failed to get selected '{}' profile, skipping it",
+                        selected_profile
+                    );
+                }
                 // return an empty config
                 return Ok(TimeoutConfig::new());
             }

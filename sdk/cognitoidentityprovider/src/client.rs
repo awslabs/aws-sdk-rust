@@ -83,741 +83,1381 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddCustomAttributes` operation.
+    /// Constructs a fluent builder for the [`AddCustomAttributes`](crate::client::fluent_builders::AddCustomAttributes) operation.
     ///
-    /// See [`AddCustomAttributes`](crate::client::fluent_builders::AddCustomAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AddCustomAttributes::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AddCustomAttributes::set_user_pool_id): <p>The user pool ID for the user pool where you want to add custom attributes.</p>
+    ///   - [`custom_attributes(Vec<SchemaAttributeType>)`](crate::client::fluent_builders::AddCustomAttributes::custom_attributes) / [`set_custom_attributes(Option<Vec<SchemaAttributeType>>)`](crate::client::fluent_builders::AddCustomAttributes::set_custom_attributes): <p>An array of custom attributes, such as Mutable and Name.</p>
+    /// - On success, responds with [`AddCustomAttributesOutput`](crate::output::AddCustomAttributesOutput)
+
+    /// - On failure, responds with [`SdkError<AddCustomAttributesError>`](crate::error::AddCustomAttributesError)
     pub fn add_custom_attributes(&self) -> fluent_builders::AddCustomAttributes<C, M, R> {
         fluent_builders::AddCustomAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminAddUserToGroup` operation.
+    /// Constructs a fluent builder for the [`AdminAddUserToGroup`](crate::client::fluent_builders::AdminAddUserToGroup) operation.
     ///
-    /// See [`AdminAddUserToGroup`](crate::client::fluent_builders::AdminAddUserToGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminAddUserToGroup::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminAddUserToGroup::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminAddUserToGroup::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminAddUserToGroup::set_username): <p>The username for the user.</p>
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::AdminAddUserToGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::AdminAddUserToGroup::set_group_name): <p>The group name.</p>
+    /// - On success, responds with [`AdminAddUserToGroupOutput`](crate::output::AdminAddUserToGroupOutput)
+
+    /// - On failure, responds with [`SdkError<AdminAddUserToGroupError>`](crate::error::AdminAddUserToGroupError)
     pub fn admin_add_user_to_group(&self) -> fluent_builders::AdminAddUserToGroup<C, M, R> {
         fluent_builders::AdminAddUserToGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminConfirmSignUp` operation.
+    /// Constructs a fluent builder for the [`AdminConfirmSignUp`](crate::client::fluent_builders::AdminConfirmSignUp) operation.
     ///
-    /// See [`AdminConfirmSignUp`](crate::client::fluent_builders::AdminConfirmSignUp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminConfirmSignUp::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminConfirmSignUp::set_user_pool_id): <p>The user pool ID for which you want to confirm user registration.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminConfirmSignUp::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminConfirmSignUp::set_username): <p>The user name for which you want to confirm user registration.</p>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::AdminConfirmSignUp::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::AdminConfirmSignUp::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>  <p>If your user pool configuration includes triggers, the AdminConfirmSignUp API action invokes the Lambda function that is specified for the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. In this payload, the <code>clientMetadata</code> attribute provides the data that you assigned to the ClientMetadata parameter in your AdminConfirmSignUp request. In your function code in Lambda, you can process the ClientMetadata value to enhance your workflow for your specific needs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    /// - On success, responds with [`AdminConfirmSignUpOutput`](crate::output::AdminConfirmSignUpOutput)
+
+    /// - On failure, responds with [`SdkError<AdminConfirmSignUpError>`](crate::error::AdminConfirmSignUpError)
     pub fn admin_confirm_sign_up(&self) -> fluent_builders::AdminConfirmSignUp<C, M, R> {
         fluent_builders::AdminConfirmSignUp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminCreateUser` operation.
+    /// Constructs a fluent builder for the [`AdminCreateUser`](crate::client::fluent_builders::AdminCreateUser) operation.
     ///
-    /// See [`AdminCreateUser`](crate::client::fluent_builders::AdminCreateUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminCreateUser::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminCreateUser::set_user_pool_id): <p>The user pool ID for the user pool where the user will be created.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminCreateUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminCreateUser::set_username): <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128 characters. After the user is created, the username cannot be changed.</p>
+    ///   - [`user_attributes(Vec<AttributeType>)`](crate::client::fluent_builders::AdminCreateUser::user_attributes) / [`set_user_attributes(Option<Vec<AttributeType>>)`](crate::client::fluent_builders::AdminCreateUser::set_user_attributes): <p>An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created. You can create a user without specifying any attributes other than <code>Username</code>. However, any attributes that you specify as required (when creating a user pool or in the <b>Attributes</b> tab of the console) must be supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).</p>  <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>  <p>To send a message inviting the user to sign up, you must specify the user's email address or phone number. This can be done in your call to AdminCreateUser or in the <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p>  <p>In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You can also do this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)</p>  <ul>   <li> <p> <b>email</b>: The email address of the user to whom the message that contains the code and username will be sent. Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p> </li>   <li> <p> <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p> </li>  </ul>
+    ///   - [`validation_data(Vec<AttributeType>)`](crate::client::fluent_builders::AdminCreateUser::validation_data) / [`set_validation_data(Option<Vec<AttributeType>>)`](crate::client::fluent_builders::AdminCreateUser::set_validation_data): <p>The user's validation data. This is an array of name-value pairs that contain user attributes and attribute values that you can use for custom validation, such as restricting the types of user accounts that can be registered. For example, you might choose to allow or disallow user sign-up based on the user's domain.</p>  <p>To configure custom validation, you must create a Pre Sign-up Lambda trigger for the user pool as described in the Amazon Cognito Developer Guide. The Lambda trigger receives the validation data and uses it in the validation process.</p>  <p>The user's validation data is not persisted.</p>
+    ///   - [`temporary_password(impl Into<String>)`](crate::client::fluent_builders::AdminCreateUser::temporary_password) / [`set_temporary_password(Option<String>)`](crate::client::fluent_builders::AdminCreateUser::set_temporary_password): <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>  <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page along with a new password to be used in all future sign-ins.</p>  <p>This parameter is not required. If you do not specify a value, Amazon Cognito generates one for you.</p>  <p>The temporary password can only be used until the user account expiration limit that you specified when you created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+    ///   - [`force_alias_creation(bool)`](crate::client::fluent_builders::AdminCreateUser::force_alias_creation) / [`set_force_alias_creation(bool)`](crate::client::fluent_builders::AdminCreateUser::set_force_alias_creation): <p>This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is ignored.</p>  <p>If this parameter is set to <code>True</code> and the phone number or email address specified in the UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user. The previous user will no longer be able to log in using that alias.</p>  <p>If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the alias already exists. The default value is <code>False</code>.</p>
+    ///   - [`message_action(MessageActionType)`](crate::client::fluent_builders::AdminCreateUser::message_action) / [`set_message_action(Option<MessageActionType>)`](crate::client::fluent_builders::AdminCreateUser::set_message_action): <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be specified.</p>
+    ///   - [`desired_delivery_mediums(Vec<DeliveryMediumType>)`](crate::client::fluent_builders::AdminCreateUser::desired_delivery_mediums) / [`set_desired_delivery_mediums(Option<Vec<DeliveryMediumType>>)`](crate::client::fluent_builders::AdminCreateUser::set_desired_delivery_mediums): <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. More than one value can be specified.</p>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::AdminCreateUser::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::AdminCreateUser::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminCreateUser API action, Amazon Cognito invokes the function that is assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminCreateUser request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    /// - On success, responds with [`AdminCreateUserOutput`](crate::output::AdminCreateUserOutput) with field(s):
+    ///   - [`user(Option<UserType>)`](crate::output::AdminCreateUserOutput::user): <p>The newly created user.</p>
+    /// - On failure, responds with [`SdkError<AdminCreateUserError>`](crate::error::AdminCreateUserError)
     pub fn admin_create_user(&self) -> fluent_builders::AdminCreateUser<C, M, R> {
         fluent_builders::AdminCreateUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminDeleteUser` operation.
+    /// Constructs a fluent builder for the [`AdminDeleteUser`](crate::client::fluent_builders::AdminDeleteUser) operation.
     ///
-    /// See [`AdminDeleteUser`](crate::client::fluent_builders::AdminDeleteUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminDeleteUser::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminDeleteUser::set_user_pool_id): <p>The user pool ID for the user pool where you want to delete the user.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminDeleteUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminDeleteUser::set_username): <p>The user name of the user you wish to delete.</p>
+    /// - On success, responds with [`AdminDeleteUserOutput`](crate::output::AdminDeleteUserOutput)
+
+    /// - On failure, responds with [`SdkError<AdminDeleteUserError>`](crate::error::AdminDeleteUserError)
     pub fn admin_delete_user(&self) -> fluent_builders::AdminDeleteUser<C, M, R> {
         fluent_builders::AdminDeleteUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminDeleteUserAttributes` operation.
+    /// Constructs a fluent builder for the [`AdminDeleteUserAttributes`](crate::client::fluent_builders::AdminDeleteUserAttributes) operation.
     ///
-    /// See [`AdminDeleteUserAttributes`](crate::client::fluent_builders::AdminDeleteUserAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminDeleteUserAttributes::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminDeleteUserAttributes::set_user_pool_id): <p>The user pool ID for the user pool where you want to delete user attributes.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminDeleteUserAttributes::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminDeleteUserAttributes::set_username): <p>The user name of the user from which you would like to delete attributes.</p>
+    ///   - [`user_attribute_names(Vec<String>)`](crate::client::fluent_builders::AdminDeleteUserAttributes::user_attribute_names) / [`set_user_attribute_names(Option<Vec<String>>)`](crate::client::fluent_builders::AdminDeleteUserAttributes::set_user_attribute_names): <p>An array of strings representing the user attribute names you wish to delete.</p>  <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    /// - On success, responds with [`AdminDeleteUserAttributesOutput`](crate::output::AdminDeleteUserAttributesOutput)
+
+    /// - On failure, responds with [`SdkError<AdminDeleteUserAttributesError>`](crate::error::AdminDeleteUserAttributesError)
     pub fn admin_delete_user_attributes(
         &self,
     ) -> fluent_builders::AdminDeleteUserAttributes<C, M, R> {
         fluent_builders::AdminDeleteUserAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminDisableProviderForUser` operation.
+    /// Constructs a fluent builder for the [`AdminDisableProviderForUser`](crate::client::fluent_builders::AdminDisableProviderForUser) operation.
     ///
-    /// See [`AdminDisableProviderForUser`](crate::client::fluent_builders::AdminDisableProviderForUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminDisableProviderForUser::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminDisableProviderForUser::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`user(ProviderUserIdentifierType)`](crate::client::fluent_builders::AdminDisableProviderForUser::user) / [`set_user(Option<ProviderUserIdentifierType>)`](crate::client::fluent_builders::AdminDisableProviderForUser::set_user): <p>The user to be disabled.</p>
+    /// - On success, responds with [`AdminDisableProviderForUserOutput`](crate::output::AdminDisableProviderForUserOutput)
+
+    /// - On failure, responds with [`SdkError<AdminDisableProviderForUserError>`](crate::error::AdminDisableProviderForUserError)
     pub fn admin_disable_provider_for_user(
         &self,
     ) -> fluent_builders::AdminDisableProviderForUser<C, M, R> {
         fluent_builders::AdminDisableProviderForUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminDisableUser` operation.
+    /// Constructs a fluent builder for the [`AdminDisableUser`](crate::client::fluent_builders::AdminDisableUser) operation.
     ///
-    /// See [`AdminDisableUser`](crate::client::fluent_builders::AdminDisableUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminDisableUser::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminDisableUser::set_user_pool_id): <p>The user pool ID for the user pool where you want to disable the user.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminDisableUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminDisableUser::set_username): <p>The user name of the user you wish to disable.</p>
+    /// - On success, responds with [`AdminDisableUserOutput`](crate::output::AdminDisableUserOutput)
+
+    /// - On failure, responds with [`SdkError<AdminDisableUserError>`](crate::error::AdminDisableUserError)
     pub fn admin_disable_user(&self) -> fluent_builders::AdminDisableUser<C, M, R> {
         fluent_builders::AdminDisableUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminEnableUser` operation.
+    /// Constructs a fluent builder for the [`AdminEnableUser`](crate::client::fluent_builders::AdminEnableUser) operation.
     ///
-    /// See [`AdminEnableUser`](crate::client::fluent_builders::AdminEnableUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminEnableUser::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminEnableUser::set_user_pool_id): <p>The user pool ID for the user pool where you want to enable the user.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminEnableUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminEnableUser::set_username): <p>The user name of the user you wish to enable.</p>
+    /// - On success, responds with [`AdminEnableUserOutput`](crate::output::AdminEnableUserOutput)
+
+    /// - On failure, responds with [`SdkError<AdminEnableUserError>`](crate::error::AdminEnableUserError)
     pub fn admin_enable_user(&self) -> fluent_builders::AdminEnableUser<C, M, R> {
         fluent_builders::AdminEnableUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminForgetDevice` operation.
+    /// Constructs a fluent builder for the [`AdminForgetDevice`](crate::client::fluent_builders::AdminForgetDevice) operation.
     ///
-    /// See [`AdminForgetDevice`](crate::client::fluent_builders::AdminForgetDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminForgetDevice::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminForgetDevice::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminForgetDevice::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminForgetDevice::set_username): <p>The user name.</p>
+    ///   - [`device_key(impl Into<String>)`](crate::client::fluent_builders::AdminForgetDevice::device_key) / [`set_device_key(Option<String>)`](crate::client::fluent_builders::AdminForgetDevice::set_device_key): <p>The device key.</p>
+    /// - On success, responds with [`AdminForgetDeviceOutput`](crate::output::AdminForgetDeviceOutput)
+
+    /// - On failure, responds with [`SdkError<AdminForgetDeviceError>`](crate::error::AdminForgetDeviceError)
     pub fn admin_forget_device(&self) -> fluent_builders::AdminForgetDevice<C, M, R> {
         fluent_builders::AdminForgetDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminGetDevice` operation.
+    /// Constructs a fluent builder for the [`AdminGetDevice`](crate::client::fluent_builders::AdminGetDevice) operation.
     ///
-    /// See [`AdminGetDevice`](crate::client::fluent_builders::AdminGetDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`device_key(impl Into<String>)`](crate::client::fluent_builders::AdminGetDevice::device_key) / [`set_device_key(Option<String>)`](crate::client::fluent_builders::AdminGetDevice::set_device_key): <p>The device key.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminGetDevice::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminGetDevice::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminGetDevice::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminGetDevice::set_username): <p>The user name.</p>
+    /// - On success, responds with [`AdminGetDeviceOutput`](crate::output::AdminGetDeviceOutput) with field(s):
+    ///   - [`device(Option<DeviceType>)`](crate::output::AdminGetDeviceOutput::device): <p>The device.</p>
+    /// - On failure, responds with [`SdkError<AdminGetDeviceError>`](crate::error::AdminGetDeviceError)
     pub fn admin_get_device(&self) -> fluent_builders::AdminGetDevice<C, M, R> {
         fluent_builders::AdminGetDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminGetUser` operation.
+    /// Constructs a fluent builder for the [`AdminGetUser`](crate::client::fluent_builders::AdminGetUser) operation.
     ///
-    /// See [`AdminGetUser`](crate::client::fluent_builders::AdminGetUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminGetUser::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminGetUser::set_user_pool_id): <p>The user pool ID for the user pool where you want to get information about the user.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminGetUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminGetUser::set_username): <p>The user name of the user you wish to retrieve.</p>
+    /// - On success, responds with [`AdminGetUserOutput`](crate::output::AdminGetUserOutput) with field(s):
+    ///   - [`username(Option<String>)`](crate::output::AdminGetUserOutput::username): <p>The user name of the user about whom you are receiving information.</p>
+    ///   - [`user_attributes(Option<Vec<AttributeType>>)`](crate::output::AdminGetUserOutput::user_attributes): <p>An array of name-value pairs representing user attributes.</p>
+    ///   - [`user_create_date(Option<DateTime>)`](crate::output::AdminGetUserOutput::user_create_date): <p>The date the user was created.</p>
+    ///   - [`user_last_modified_date(Option<DateTime>)`](crate::output::AdminGetUserOutput::user_last_modified_date): <p>The date the user was last modified.</p>
+    ///   - [`enabled(bool)`](crate::output::AdminGetUserOutput::enabled): <p>Indicates that the status is enabled.</p>
+    ///   - [`user_status(Option<UserStatusType>)`](crate::output::AdminGetUserOutput::user_status): <p>The user status. Can be one of the following:</p>  <ul>   <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>   <li> <p>CONFIRMED - User has been confirmed.</p> </li>   <li> <p>ARCHIVED - User is no longer active.</p> </li>   <li> <p>COMPROMISED - User is disabled due to a potential security threat.</p> </li>   <li> <p>UNKNOWN - User status is not known.</p> </li>   <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or she can sign in.</p> </li>   <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change his or her password to a new value before doing anything else. </p> </li>  </ul>
+    ///   - [`mfa_options(Option<Vec<MfaOptionType>>)`](crate::output::AdminGetUserOutput::mfa_options): <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about TOTP software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    ///   - [`preferred_mfa_setting(Option<String>)`](crate::output::AdminGetUserOutput::preferred_mfa_setting): <p>The user's preferred MFA setting.</p>
+    ///   - [`user_mfa_setting_list(Option<Vec<String>>)`](crate::output::AdminGetUserOutput::user_mfa_setting_list): <p>The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    /// - On failure, responds with [`SdkError<AdminGetUserError>`](crate::error::AdminGetUserError)
     pub fn admin_get_user(&self) -> fluent_builders::AdminGetUser<C, M, R> {
         fluent_builders::AdminGetUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminInitiateAuth` operation.
+    /// Constructs a fluent builder for the [`AdminInitiateAuth`](crate::client::fluent_builders::AdminInitiateAuth) operation.
     ///
-    /// See [`AdminInitiateAuth`](crate::client::fluent_builders::AdminInitiateAuth) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminInitiateAuth::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminInitiateAuth::set_user_pool_id): <p>The ID of the Amazon Cognito user pool.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::AdminInitiateAuth::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::AdminInitiateAuth::set_client_id): <p>The app client ID.</p>
+    ///   - [`auth_flow(AuthFlowType)`](crate::client::fluent_builders::AdminInitiateAuth::auth_flow) / [`set_auth_flow(Option<AuthFlowType>)`](crate::client::fluent_builders::AdminInitiateAuth::set_auth_flow): <p>The authentication flow for this call to execute. The API action will depend on this value. For example:</p>  <ul>   <li> <p> <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p> </li>   <li> <p> <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables to be used for next challenge execution.</p> </li>   <li> <p> <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p> </li>  </ul>  <p>Valid values include:</p>  <ul>   <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>   <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>   <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>   <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p> </li>   <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not found in the user pool. </p> </li>   <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request instead of using the SRP process to verify passwords.</p> </li>  </ul>
+    ///   - [`auth_parameters(HashMap<String, String>)`](crate::client::fluent_builders::AdminInitiateAuth::auth_parameters) / [`set_auth_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::AdminInitiateAuth::set_auth_parameters): <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking. The required values depend on the value of <code>AuthFlow</code>:</p>  <ul>   <li> <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>   <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>   <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code>.</p> </li>   <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>  </ul>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::AdminInitiateAuth::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::AdminInitiateAuth::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminInitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>  <ul>   <li> <p>Pre signup</p> </li>   <li> <p>Pre authentication</p> </li>   <li> <p>User migration</p> </li>  </ul>  <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON payload, which the function receives as input. This payload contains a <code>validationData</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminInitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow for your specific needs.</p>  <p>When you use the AdminInitiateAuth API action, Amazon Cognito also invokes the functions for the following triggers, but it does not provide the ClientMetadata value as input:</p>  <ul>   <li> <p>Post authentication</p> </li>   <li> <p>Custom message</p> </li>   <li> <p>Pre token generation</p> </li>   <li> <p>Create auth challenge</p> </li>   <li> <p>Define auth challenge</p> </li>   <li> <p>Verify auth challenge</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    ///   - [`analytics_metadata(AnalyticsMetadataType)`](crate::client::fluent_builders::AdminInitiateAuth::analytics_metadata) / [`set_analytics_metadata(Option<AnalyticsMetadataType>)`](crate::client::fluent_builders::AdminInitiateAuth::set_analytics_metadata): <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code> calls.</p>
+    ///   - [`context_data(ContextDataType)`](crate::client::fluent_builders::AdminInitiateAuth::context_data) / [`set_context_data(Option<ContextDataType>)`](crate::client::fluent_builders::AdminInitiateAuth::set_context_data): <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// - On success, responds with [`AdminInitiateAuthOutput`](crate::output::AdminInitiateAuthOutput) with field(s):
+    ///   - [`challenge_name(Option<ChallengeNameType>)`](crate::output::AdminInitiateAuthOutput::challenge_name): <p>The name of the challenge which you are responding to with this call. This is returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>  <ul>   <li> <p> <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to authenticate.</p> </li>   <li> <p> <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.</p> </li>   <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li>   <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>   <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li>   <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>   <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>   <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p> </li>   <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>   <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>  </ul>
+    ///   - [`session(Option<String>)`](crate::output::AdminInitiateAuthOutput::session): <p>The session which should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>
+    ///   - [`challenge_parameters(Option<HashMap<String, String>>)`](crate::output::AdminInitiateAuthOutput::challenge_parameters): <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>  <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>  <p>The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be an alias.</p>
+    ///   - [`authentication_result(Option<AuthenticationResultType>)`](crate::output::AdminInitiateAuthOutput::authentication_result): <p>The result of the authentication response. This is only returned if the caller does not need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+    /// - On failure, responds with [`SdkError<AdminInitiateAuthError>`](crate::error::AdminInitiateAuthError)
     pub fn admin_initiate_auth(&self) -> fluent_builders::AdminInitiateAuth<C, M, R> {
         fluent_builders::AdminInitiateAuth::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminLinkProviderForUser` operation.
+    /// Constructs a fluent builder for the [`AdminLinkProviderForUser`](crate::client::fluent_builders::AdminLinkProviderForUser) operation.
     ///
-    /// See [`AdminLinkProviderForUser`](crate::client::fluent_builders::AdminLinkProviderForUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminLinkProviderForUser::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminLinkProviderForUser::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`destination_user(ProviderUserIdentifierType)`](crate::client::fluent_builders::AdminLinkProviderForUser::destination_user) / [`set_destination_user(Option<ProviderUserIdentifierType>)`](crate::client::fluent_builders::AdminLinkProviderForUser::set_destination_user): <p>The existing user in the user pool to be linked to the external identity provider user account. Can be a native (Username + Password) Cognito User Pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, an exception is thrown. This is the user that is returned when the new user (with the linked identity provider attribute) signs in.</p>  <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>  <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>  <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p>
+    ///   - [`source_user(ProviderUserIdentifierType)`](crate::client::fluent_builders::AdminLinkProviderForUser::source_user) / [`set_source_user(Option<ProviderUserIdentifierType>)`](crate::client::fluent_builders::AdminLinkProviderForUser::set_source_user): <p>An external identity provider account for a user who does not currently exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>  <p>If the <code>SourceUser</code> is a federated social identity provider user (Facebook, Google, or Login with Amazon), you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social identity providers, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social identity provider token.</p>  <p></p>  <p>For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim in the SAML assertion. If you wish to link SAML users based on the subject of the SAML assertion, you should map the subject to a claim through the SAML identity provider and submit that claim name as the <code>ProviderAttributeName</code>. If you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Cognito will automatically parse the default unique identifier found in the subject from the SAML token.</p>
+    /// - On success, responds with [`AdminLinkProviderForUserOutput`](crate::output::AdminLinkProviderForUserOutput)
+
+    /// - On failure, responds with [`SdkError<AdminLinkProviderForUserError>`](crate::error::AdminLinkProviderForUserError)
     pub fn admin_link_provider_for_user(
         &self,
     ) -> fluent_builders::AdminLinkProviderForUser<C, M, R> {
         fluent_builders::AdminLinkProviderForUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminListDevices` operation.
+    /// Constructs a fluent builder for the [`AdminListDevices`](crate::client::fluent_builders::AdminListDevices) operation.
     ///
-    /// See [`AdminListDevices`](crate::client::fluent_builders::AdminListDevices) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminListDevices::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminListDevices::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminListDevices::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminListDevices::set_username): <p>The user name.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::AdminListDevices::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::AdminListDevices::set_limit): <p>The limit of the devices request.</p>
+    ///   - [`pagination_token(impl Into<String>)`](crate::client::fluent_builders::AdminListDevices::pagination_token) / [`set_pagination_token(Option<String>)`](crate::client::fluent_builders::AdminListDevices::set_pagination_token): <p>The pagination token.</p>
+    /// - On success, responds with [`AdminListDevicesOutput`](crate::output::AdminListDevicesOutput) with field(s):
+    ///   - [`devices(Option<Vec<DeviceType>>)`](crate::output::AdminListDevicesOutput::devices): <p>The devices in the list of devices response.</p>
+    ///   - [`pagination_token(Option<String>)`](crate::output::AdminListDevicesOutput::pagination_token): <p>The pagination token.</p>
+    /// - On failure, responds with [`SdkError<AdminListDevicesError>`](crate::error::AdminListDevicesError)
     pub fn admin_list_devices(&self) -> fluent_builders::AdminListDevices<C, M, R> {
         fluent_builders::AdminListDevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminListGroupsForUser` operation.
+    /// Constructs a fluent builder for the [`AdminListGroupsForUser`](crate::client::fluent_builders::AdminListGroupsForUser) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::AdminListGroupsForUser::into_paginator).
     ///
-    /// See [`AdminListGroupsForUser`](crate::client::fluent_builders::AdminListGroupsForUser) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::AdminListGroupsForUser::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminListGroupsForUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminListGroupsForUser::set_username): <p>The username for the user.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminListGroupsForUser::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminListGroupsForUser::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::AdminListGroupsForUser::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::AdminListGroupsForUser::set_limit): <p>The limit of the request to list groups.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::AdminListGroupsForUser::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::AdminListGroupsForUser::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`AdminListGroupsForUserOutput`](crate::output::AdminListGroupsForUserOutput) with field(s):
+    ///   - [`groups(Option<Vec<GroupType>>)`](crate::output::AdminListGroupsForUserOutput::groups): <p>The groups that the user belongs to.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::AdminListGroupsForUserOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<AdminListGroupsForUserError>`](crate::error::AdminListGroupsForUserError)
     pub fn admin_list_groups_for_user(&self) -> fluent_builders::AdminListGroupsForUser<C, M, R> {
         fluent_builders::AdminListGroupsForUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminListUserAuthEvents` operation.
+    /// Constructs a fluent builder for the [`AdminListUserAuthEvents`](crate::client::fluent_builders::AdminListUserAuthEvents) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::AdminListUserAuthEvents::into_paginator).
     ///
-    /// See [`AdminListUserAuthEvents`](crate::client::fluent_builders::AdminListUserAuthEvents) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::AdminListUserAuthEvents::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminListUserAuthEvents::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminListUserAuthEvents::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminListUserAuthEvents::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminListUserAuthEvents::set_username): <p>The user pool username or an alias.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::AdminListUserAuthEvents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::AdminListUserAuthEvents::set_max_results): <p>The maximum number of authentication events to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::AdminListUserAuthEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::AdminListUserAuthEvents::set_next_token): <p>A pagination token.</p>
+    /// - On success, responds with [`AdminListUserAuthEventsOutput`](crate::output::AdminListUserAuthEventsOutput) with field(s):
+    ///   - [`auth_events(Option<Vec<AuthEventType>>)`](crate::output::AdminListUserAuthEventsOutput::auth_events): <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::AdminListUserAuthEventsOutput::next_token): <p>A pagination token.</p>
+    /// - On failure, responds with [`SdkError<AdminListUserAuthEventsError>`](crate::error::AdminListUserAuthEventsError)
     pub fn admin_list_user_auth_events(&self) -> fluent_builders::AdminListUserAuthEvents<C, M, R> {
         fluent_builders::AdminListUserAuthEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminRemoveUserFromGroup` operation.
+    /// Constructs a fluent builder for the [`AdminRemoveUserFromGroup`](crate::client::fluent_builders::AdminRemoveUserFromGroup) operation.
     ///
-    /// See [`AdminRemoveUserFromGroup`](crate::client::fluent_builders::AdminRemoveUserFromGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminRemoveUserFromGroup::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminRemoveUserFromGroup::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminRemoveUserFromGroup::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminRemoveUserFromGroup::set_username): <p>The username for the user.</p>
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::AdminRemoveUserFromGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::AdminRemoveUserFromGroup::set_group_name): <p>The group name.</p>
+    /// - On success, responds with [`AdminRemoveUserFromGroupOutput`](crate::output::AdminRemoveUserFromGroupOutput)
+
+    /// - On failure, responds with [`SdkError<AdminRemoveUserFromGroupError>`](crate::error::AdminRemoveUserFromGroupError)
     pub fn admin_remove_user_from_group(
         &self,
     ) -> fluent_builders::AdminRemoveUserFromGroup<C, M, R> {
         fluent_builders::AdminRemoveUserFromGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminResetUserPassword` operation.
+    /// Constructs a fluent builder for the [`AdminResetUserPassword`](crate::client::fluent_builders::AdminResetUserPassword) operation.
     ///
-    /// See [`AdminResetUserPassword`](crate::client::fluent_builders::AdminResetUserPassword) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminResetUserPassword::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminResetUserPassword::set_user_pool_id): <p>The user pool ID for the user pool where you want to reset the user's password.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminResetUserPassword::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminResetUserPassword::set_username): <p>The user name of the user whose password you wish to reset.</p>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::AdminResetUserPassword::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::AdminResetUserPassword::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminResetUserPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    /// - On success, responds with [`AdminResetUserPasswordOutput`](crate::output::AdminResetUserPasswordOutput)
+
+    /// - On failure, responds with [`SdkError<AdminResetUserPasswordError>`](crate::error::AdminResetUserPasswordError)
     pub fn admin_reset_user_password(&self) -> fluent_builders::AdminResetUserPassword<C, M, R> {
         fluent_builders::AdminResetUserPassword::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminRespondToAuthChallenge` operation.
+    /// Constructs a fluent builder for the [`AdminRespondToAuthChallenge`](crate::client::fluent_builders::AdminRespondToAuthChallenge) operation.
     ///
-    /// See [`AdminRespondToAuthChallenge`](crate::client::fluent_builders::AdminRespondToAuthChallenge) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::set_user_pool_id): <p>The ID of the Amazon Cognito user pool.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::set_client_id): <p>The app client ID.</p>
+    ///   - [`challenge_name(ChallengeNameType)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::challenge_name) / [`set_challenge_name(Option<ChallengeNameType>)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::set_challenge_name): <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    ///   - [`challenge_responses(HashMap<String, String>)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::challenge_responses) / [`set_challenge_responses(Option<HashMap<String, String>>)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::set_challenge_responses): <p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p>  <ul>   <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).</p> </li>   <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).</p> </li>   <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>   <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li>   <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>  </ul>  <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email address or phone number). To make this easier, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
+    ///   - [`session(impl Into<String>)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::session) / [`set_session(Option<String>)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::set_session): <p>The session which should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    ///   - [`analytics_metadata(AnalyticsMetadataType)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::analytics_metadata) / [`set_analytics_metadata(Option<AnalyticsMetadataType>)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::set_analytics_metadata): <p>The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.</p>
+    ///   - [`context_data(ContextDataType)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::context_data) / [`set_context_data(Option<ContextDataType>)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::set_context_data): <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::AdminRespondToAuthChallenge::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminRespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, <i>post authentication</i>, <i>user migration</i>, <i>pre token generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify auth challenge response</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminRespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    /// - On success, responds with [`AdminRespondToAuthChallengeOutput`](crate::output::AdminRespondToAuthChallengeOutput) with field(s):
+    ///   - [`challenge_name(Option<ChallengeNameType>)`](crate::output::AdminRespondToAuthChallengeOutput::challenge_name): <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    ///   - [`session(Option<String>)`](crate::output::AdminRespondToAuthChallengeOutput::session): <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    ///   - [`challenge_parameters(Option<HashMap<String, String>>)`](crate::output::AdminRespondToAuthChallengeOutput::challenge_parameters): <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
+    ///   - [`authentication_result(Option<AuthenticationResultType>)`](crate::output::AdminRespondToAuthChallengeOutput::authentication_result): <p>The result returned by the server in response to the authentication request.</p>
+    /// - On failure, responds with [`SdkError<AdminRespondToAuthChallengeError>`](crate::error::AdminRespondToAuthChallengeError)
     pub fn admin_respond_to_auth_challenge(
         &self,
     ) -> fluent_builders::AdminRespondToAuthChallenge<C, M, R> {
         fluent_builders::AdminRespondToAuthChallenge::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminSetUserMFAPreference` operation.
+    /// Constructs a fluent builder for the [`AdminSetUserMFAPreference`](crate::client::fluent_builders::AdminSetUserMFAPreference) operation.
     ///
-    /// See [`AdminSetUserMFAPreference`](crate::client::fluent_builders::AdminSetUserMFAPreference) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`sms_mfa_settings(SmsMfaSettingsType)`](crate::client::fluent_builders::AdminSetUserMFAPreference::sms_mfa_settings) / [`set_sms_mfa_settings(Option<SmsMfaSettingsType>)`](crate::client::fluent_builders::AdminSetUserMFAPreference::set_sms_mfa_settings): <p>The SMS text message MFA settings.</p>
+    ///   - [`software_token_mfa_settings(SoftwareTokenMfaSettingsType)`](crate::client::fluent_builders::AdminSetUserMFAPreference::software_token_mfa_settings) / [`set_software_token_mfa_settings(Option<SoftwareTokenMfaSettingsType>)`](crate::client::fluent_builders::AdminSetUserMFAPreference::set_software_token_mfa_settings): <p>The time-based one-time password software token MFA settings.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminSetUserMFAPreference::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminSetUserMFAPreference::set_username): <p>The user pool username or alias.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminSetUserMFAPreference::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminSetUserMFAPreference::set_user_pool_id): <p>The user pool ID.</p>
+    /// - On success, responds with [`AdminSetUserMfaPreferenceOutput`](crate::output::AdminSetUserMfaPreferenceOutput)
+
+    /// - On failure, responds with [`SdkError<AdminSetUserMFAPreferenceError>`](crate::error::AdminSetUserMFAPreferenceError)
     pub fn admin_set_user_mfa_preference(
         &self,
     ) -> fluent_builders::AdminSetUserMFAPreference<C, M, R> {
         fluent_builders::AdminSetUserMFAPreference::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminSetUserPassword` operation.
+    /// Constructs a fluent builder for the [`AdminSetUserPassword`](crate::client::fluent_builders::AdminSetUserPassword) operation.
     ///
-    /// See [`AdminSetUserPassword`](crate::client::fluent_builders::AdminSetUserPassword) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminSetUserPassword::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminSetUserPassword::set_user_pool_id): <p>The user pool ID for the user pool where you want to set the user's password.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminSetUserPassword::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminSetUserPassword::set_username): <p>The user name of the user whose password you wish to set.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::AdminSetUserPassword::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::AdminSetUserPassword::set_password): <p>The password for the user.</p>
+    ///   - [`permanent(bool)`](crate::client::fluent_builders::AdminSetUserPassword::permanent) / [`set_permanent(bool)`](crate::client::fluent_builders::AdminSetUserPassword::set_permanent): <p> <code>True</code> if the password is permanent, <code>False</code> if it is temporary.</p>
+    /// - On success, responds with [`AdminSetUserPasswordOutput`](crate::output::AdminSetUserPasswordOutput)
+
+    /// - On failure, responds with [`SdkError<AdminSetUserPasswordError>`](crate::error::AdminSetUserPasswordError)
     pub fn admin_set_user_password(&self) -> fluent_builders::AdminSetUserPassword<C, M, R> {
         fluent_builders::AdminSetUserPassword::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminSetUserSettings` operation.
+    /// Constructs a fluent builder for the [`AdminSetUserSettings`](crate::client::fluent_builders::AdminSetUserSettings) operation.
     ///
-    /// See [`AdminSetUserSettings`](crate::client::fluent_builders::AdminSetUserSettings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminSetUserSettings::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminSetUserSettings::set_user_pool_id): <p>The ID of the user pool that contains the user that you are setting options for.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminSetUserSettings::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminSetUserSettings::set_username): <p>The user name of the user that you are setting options for.</p>
+    ///   - [`mfa_options(Vec<MfaOptionType>)`](crate::client::fluent_builders::AdminSetUserSettings::mfa_options) / [`set_mfa_options(Option<Vec<MfaOptionType>>)`](crate::client::fluent_builders::AdminSetUserSettings::set_mfa_options): <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
+    /// - On success, responds with [`AdminSetUserSettingsOutput`](crate::output::AdminSetUserSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<AdminSetUserSettingsError>`](crate::error::AdminSetUserSettingsError)
     pub fn admin_set_user_settings(&self) -> fluent_builders::AdminSetUserSettings<C, M, R> {
         fluent_builders::AdminSetUserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminUpdateAuthEventFeedback` operation.
+    /// Constructs a fluent builder for the [`AdminUpdateAuthEventFeedback`](crate::client::fluent_builders::AdminUpdateAuthEventFeedback) operation.
     ///
-    /// See [`AdminUpdateAuthEventFeedback`](crate::client::fluent_builders::AdminUpdateAuthEventFeedback) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminUpdateAuthEventFeedback::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminUpdateAuthEventFeedback::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminUpdateAuthEventFeedback::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminUpdateAuthEventFeedback::set_username): <p>The user pool username.</p>
+    ///   - [`event_id(impl Into<String>)`](crate::client::fluent_builders::AdminUpdateAuthEventFeedback::event_id) / [`set_event_id(Option<String>)`](crate::client::fluent_builders::AdminUpdateAuthEventFeedback::set_event_id): <p>The authentication event ID.</p>
+    ///   - [`feedback_value(FeedbackValueType)`](crate::client::fluent_builders::AdminUpdateAuthEventFeedback::feedback_value) / [`set_feedback_value(Option<FeedbackValueType>)`](crate::client::fluent_builders::AdminUpdateAuthEventFeedback::set_feedback_value): <p>The authentication event feedback value.</p>
+    /// - On success, responds with [`AdminUpdateAuthEventFeedbackOutput`](crate::output::AdminUpdateAuthEventFeedbackOutput)
+
+    /// - On failure, responds with [`SdkError<AdminUpdateAuthEventFeedbackError>`](crate::error::AdminUpdateAuthEventFeedbackError)
     pub fn admin_update_auth_event_feedback(
         &self,
     ) -> fluent_builders::AdminUpdateAuthEventFeedback<C, M, R> {
         fluent_builders::AdminUpdateAuthEventFeedback::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminUpdateDeviceStatus` operation.
+    /// Constructs a fluent builder for the [`AdminUpdateDeviceStatus`](crate::client::fluent_builders::AdminUpdateDeviceStatus) operation.
     ///
-    /// See [`AdminUpdateDeviceStatus`](crate::client::fluent_builders::AdminUpdateDeviceStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminUpdateDeviceStatus::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminUpdateDeviceStatus::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminUpdateDeviceStatus::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminUpdateDeviceStatus::set_username): <p>The user name.</p>
+    ///   - [`device_key(impl Into<String>)`](crate::client::fluent_builders::AdminUpdateDeviceStatus::device_key) / [`set_device_key(Option<String>)`](crate::client::fluent_builders::AdminUpdateDeviceStatus::set_device_key): <p>The device key.</p>
+    ///   - [`device_remembered_status(DeviceRememberedStatusType)`](crate::client::fluent_builders::AdminUpdateDeviceStatus::device_remembered_status) / [`set_device_remembered_status(Option<DeviceRememberedStatusType>)`](crate::client::fluent_builders::AdminUpdateDeviceStatus::set_device_remembered_status): <p>The status indicating whether a device has been remembered or not.</p>
+    /// - On success, responds with [`AdminUpdateDeviceStatusOutput`](crate::output::AdminUpdateDeviceStatusOutput)
+
+    /// - On failure, responds with [`SdkError<AdminUpdateDeviceStatusError>`](crate::error::AdminUpdateDeviceStatusError)
     pub fn admin_update_device_status(&self) -> fluent_builders::AdminUpdateDeviceStatus<C, M, R> {
         fluent_builders::AdminUpdateDeviceStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminUpdateUserAttributes` operation.
+    /// Constructs a fluent builder for the [`AdminUpdateUserAttributes`](crate::client::fluent_builders::AdminUpdateUserAttributes) operation.
     ///
-    /// See [`AdminUpdateUserAttributes`](crate::client::fluent_builders::AdminUpdateUserAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminUpdateUserAttributes::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminUpdateUserAttributes::set_user_pool_id): <p>The user pool ID for the user pool where you want to update user attributes.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminUpdateUserAttributes::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminUpdateUserAttributes::set_username): <p>The user name of the user for whom you want to update user attributes.</p>
+    ///   - [`user_attributes(Vec<AttributeType>)`](crate::client::fluent_builders::AdminUpdateUserAttributes::user_attributes) / [`set_user_attributes(Option<Vec<AttributeType>>)`](crate::client::fluent_builders::AdminUpdateUserAttributes::set_user_attributes): <p>An array of name-value pairs representing user attributes.</p>  <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::AdminUpdateUserAttributes::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::AdminUpdateUserAttributes::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    /// - On success, responds with [`AdminUpdateUserAttributesOutput`](crate::output::AdminUpdateUserAttributesOutput)
+
+    /// - On failure, responds with [`SdkError<AdminUpdateUserAttributesError>`](crate::error::AdminUpdateUserAttributesError)
     pub fn admin_update_user_attributes(
         &self,
     ) -> fluent_builders::AdminUpdateUserAttributes<C, M, R> {
         fluent_builders::AdminUpdateUserAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdminUserGlobalSignOut` operation.
+    /// Constructs a fluent builder for the [`AdminUserGlobalSignOut`](crate::client::fluent_builders::AdminUserGlobalSignOut) operation.
     ///
-    /// See [`AdminUserGlobalSignOut`](crate::client::fluent_builders::AdminUserGlobalSignOut) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::AdminUserGlobalSignOut::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::AdminUserGlobalSignOut::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AdminUserGlobalSignOut::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AdminUserGlobalSignOut::set_username): <p>The user name.</p>
+    /// - On success, responds with [`AdminUserGlobalSignOutOutput`](crate::output::AdminUserGlobalSignOutOutput)
+
+    /// - On failure, responds with [`SdkError<AdminUserGlobalSignOutError>`](crate::error::AdminUserGlobalSignOutError)
     pub fn admin_user_global_sign_out(&self) -> fluent_builders::AdminUserGlobalSignOut<C, M, R> {
         fluent_builders::AdminUserGlobalSignOut::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateSoftwareToken` operation.
+    /// Constructs a fluent builder for the [`AssociateSoftwareToken`](crate::client::fluent_builders::AssociateSoftwareToken) operation.
     ///
-    /// See [`AssociateSoftwareToken`](crate::client::fluent_builders::AssociateSoftwareToken) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::AssociateSoftwareToken::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::AssociateSoftwareToken::set_access_token): <p>The access token.</p>
+    ///   - [`session(impl Into<String>)`](crate::client::fluent_builders::AssociateSoftwareToken::session) / [`set_session(Option<String>)`](crate::client::fluent_builders::AssociateSoftwareToken::set_session): <p>The session which should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// - On success, responds with [`AssociateSoftwareTokenOutput`](crate::output::AssociateSoftwareTokenOutput) with field(s):
+    ///   - [`secret_code(Option<String>)`](crate::output::AssociateSoftwareTokenOutput::secret_code): <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one time code.</p>
+    ///   - [`session(Option<String>)`](crate::output::AssociateSoftwareTokenOutput::session): <p>The session which should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    /// - On failure, responds with [`SdkError<AssociateSoftwareTokenError>`](crate::error::AssociateSoftwareTokenError)
     pub fn associate_software_token(&self) -> fluent_builders::AssociateSoftwareToken<C, M, R> {
         fluent_builders::AssociateSoftwareToken::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ChangePassword` operation.
+    /// Constructs a fluent builder for the [`ChangePassword`](crate::client::fluent_builders::ChangePassword) operation.
     ///
-    /// See [`ChangePassword`](crate::client::fluent_builders::ChangePassword) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`previous_password(impl Into<String>)`](crate::client::fluent_builders::ChangePassword::previous_password) / [`set_previous_password(Option<String>)`](crate::client::fluent_builders::ChangePassword::set_previous_password): <p>The old password.</p>
+    ///   - [`proposed_password(impl Into<String>)`](crate::client::fluent_builders::ChangePassword::proposed_password) / [`set_proposed_password(Option<String>)`](crate::client::fluent_builders::ChangePassword::set_proposed_password): <p>The new password.</p>
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::ChangePassword::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::ChangePassword::set_access_token): <p>The access token.</p>
+    /// - On success, responds with [`ChangePasswordOutput`](crate::output::ChangePasswordOutput)
+
+    /// - On failure, responds with [`SdkError<ChangePasswordError>`](crate::error::ChangePasswordError)
     pub fn change_password(&self) -> fluent_builders::ChangePassword<C, M, R> {
         fluent_builders::ChangePassword::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ConfirmDevice` operation.
+    /// Constructs a fluent builder for the [`ConfirmDevice`](crate::client::fluent_builders::ConfirmDevice) operation.
     ///
-    /// See [`ConfirmDevice`](crate::client::fluent_builders::ConfirmDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::ConfirmDevice::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::ConfirmDevice::set_access_token): <p>The access token.</p>
+    ///   - [`device_key(impl Into<String>)`](crate::client::fluent_builders::ConfirmDevice::device_key) / [`set_device_key(Option<String>)`](crate::client::fluent_builders::ConfirmDevice::set_device_key): <p>The device key.</p>
+    ///   - [`device_secret_verifier_config(DeviceSecretVerifierConfigType)`](crate::client::fluent_builders::ConfirmDevice::device_secret_verifier_config) / [`set_device_secret_verifier_config(Option<DeviceSecretVerifierConfigType>)`](crate::client::fluent_builders::ConfirmDevice::set_device_secret_verifier_config): <p>The configuration of the device secret verifier.</p>
+    ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::ConfirmDevice::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::ConfirmDevice::set_device_name): <p>The device name.</p>
+    /// - On success, responds with [`ConfirmDeviceOutput`](crate::output::ConfirmDeviceOutput) with field(s):
+    ///   - [`user_confirmation_necessary(bool)`](crate::output::ConfirmDeviceOutput::user_confirmation_necessary): <p>Indicates whether the user confirmation is necessary to confirm the device response.</p>
+    /// - On failure, responds with [`SdkError<ConfirmDeviceError>`](crate::error::ConfirmDeviceError)
     pub fn confirm_device(&self) -> fluent_builders::ConfirmDevice<C, M, R> {
         fluent_builders::ConfirmDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ConfirmForgotPassword` operation.
+    /// Constructs a fluent builder for the [`ConfirmForgotPassword`](crate::client::fluent_builders::ConfirmForgotPassword) operation.
     ///
-    /// See [`ConfirmForgotPassword`](crate::client::fluent_builders::ConfirmForgotPassword) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_client_id): <p>The app client ID of the app associated with the user pool.</p>
+    ///   - [`secret_hash(impl Into<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::secret_hash) / [`set_secret_hash(Option<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_secret_hash): <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_username): <p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>
+    ///   - [`confirmation_code(impl Into<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::confirmation_code) / [`set_confirmation_code(Option<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_confirmation_code): <p>The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_password): <p>The password sent by a user's request to retrieve a forgotten password.</p>
+    ///   - [`analytics_metadata(AnalyticsMetadataType)`](crate::client::fluent_builders::ConfirmForgotPassword::analytics_metadata) / [`set_analytics_metadata(Option<AnalyticsMetadataType>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_analytics_metadata): <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code> calls.</p>
+    ///   - [`user_context_data(UserContextDataType)`](crate::client::fluent_builders::ConfirmForgotPassword::user_context_data) / [`set_user_context_data(Option<UserContextDataType>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_user_context_data): <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::ConfirmForgotPassword::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function that is assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    /// - On success, responds with [`ConfirmForgotPasswordOutput`](crate::output::ConfirmForgotPasswordOutput)
+
+    /// - On failure, responds with [`SdkError<ConfirmForgotPasswordError>`](crate::error::ConfirmForgotPasswordError)
     pub fn confirm_forgot_password(&self) -> fluent_builders::ConfirmForgotPassword<C, M, R> {
         fluent_builders::ConfirmForgotPassword::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ConfirmSignUp` operation.
+    /// Constructs a fluent builder for the [`ConfirmSignUp`](crate::client::fluent_builders::ConfirmSignUp) operation.
     ///
-    /// See [`ConfirmSignUp`](crate::client::fluent_builders::ConfirmSignUp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::ConfirmSignUp::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::ConfirmSignUp::set_client_id): <p>The ID of the app client associated with the user pool.</p>
+    ///   - [`secret_hash(impl Into<String>)`](crate::client::fluent_builders::ConfirmSignUp::secret_hash) / [`set_secret_hash(Option<String>)`](crate::client::fluent_builders::ConfirmSignUp::set_secret_hash): <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::ConfirmSignUp::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::ConfirmSignUp::set_username): <p>The user name of the user whose registration you wish to confirm.</p>
+    ///   - [`confirmation_code(impl Into<String>)`](crate::client::fluent_builders::ConfirmSignUp::confirmation_code) / [`set_confirmation_code(Option<String>)`](crate::client::fluent_builders::ConfirmSignUp::set_confirmation_code): <p>The confirmation code sent by a user's request to confirm registration.</p>
+    ///   - [`force_alias_creation(bool)`](crate::client::fluent_builders::ConfirmSignUp::force_alias_creation) / [`set_force_alias_creation(bool)`](crate::client::fluent_builders::ConfirmSignUp::set_force_alias_creation): <p>Boolean to be specified to force user confirmation irrespective of existing alias. By default set to <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign up confirmation already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user being confirmed. If set to <code>False</code>, the API will throw an <b>AliasExistsException</b> error.</p>
+    ///   - [`analytics_metadata(AnalyticsMetadataType)`](crate::client::fluent_builders::ConfirmSignUp::analytics_metadata) / [`set_analytics_metadata(Option<AnalyticsMetadataType>)`](crate::client::fluent_builders::ConfirmSignUp::set_analytics_metadata): <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmSignUp</code> calls.</p>
+    ///   - [`user_context_data(UserContextDataType)`](crate::client::fluent_builders::ConfirmSignUp::user_context_data) / [`set_user_context_data(Option<UserContextDataType>)`](crate::client::fluent_builders::ConfirmSignUp::set_user_context_data): <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::ConfirmSignUp::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ConfirmSignUp::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    /// - On success, responds with [`ConfirmSignUpOutput`](crate::output::ConfirmSignUpOutput)
+
+    /// - On failure, responds with [`SdkError<ConfirmSignUpError>`](crate::error::ConfirmSignUpError)
     pub fn confirm_sign_up(&self) -> fluent_builders::ConfirmSignUp<C, M, R> {
         fluent_builders::ConfirmSignUp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGroup` operation.
+    /// Constructs a fluent builder for the [`CreateGroup`](crate::client::fluent_builders::CreateGroup) operation.
     ///
-    /// See [`CreateGroup`](crate::client::fluent_builders::CreateGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_group_name): <p>The name of the group. Must be unique.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_description): <p>A string containing the description of the group.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_role_arn): <p>The role ARN for the group.</p>
+    ///   - [`precedence(i32)`](crate::client::fluent_builders::CreateGroup::precedence) / [`set_precedence(Option<i32>)`](crate::client::fluent_builders::CreateGroup::set_precedence): <p>A nonnegative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN will be used in the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the user's tokens.</p>  <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is not set in users' tokens.</p>  <p>The default <code>Precedence</code> value is null.</p>
+    /// - On success, responds with [`CreateGroupOutput`](crate::output::CreateGroupOutput) with field(s):
+    ///   - [`group(Option<GroupType>)`](crate::output::CreateGroupOutput::group): <p>The group object for the group.</p>
+    /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::error::CreateGroupError)
     pub fn create_group(&self) -> fluent_builders::CreateGroup<C, M, R> {
         fluent_builders::CreateGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateIdentityProvider` operation.
+    /// Constructs a fluent builder for the [`CreateIdentityProvider`](crate::client::fluent_builders::CreateIdentityProvider) operation.
     ///
-    /// See [`CreateIdentityProvider`](crate::client::fluent_builders::CreateIdentityProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::CreateIdentityProvider::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::CreateIdentityProvider::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`provider_name(impl Into<String>)`](crate::client::fluent_builders::CreateIdentityProvider::provider_name) / [`set_provider_name(Option<String>)`](crate::client::fluent_builders::CreateIdentityProvider::set_provider_name): <p>The identity provider name.</p>
+    ///   - [`provider_type(IdentityProviderTypeType)`](crate::client::fluent_builders::CreateIdentityProvider::provider_type) / [`set_provider_type(Option<IdentityProviderTypeType>)`](crate::client::fluent_builders::CreateIdentityProvider::set_provider_type): <p>The identity provider type.</p>
+    ///   - [`provider_details(HashMap<String, String>)`](crate::client::fluent_builders::CreateIdentityProvider::provider_details) / [`set_provider_details(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIdentityProvider::set_provider_details): <p>The identity provider details. The following list describes the provider detail keys for each identity provider type.</p>  <ul>   <li> <p>For Google and Login with Amazon:</p>    <ul>     <li> <p>client_id</p> </li>     <li> <p>client_secret</p> </li>     <li> <p>authorize_scopes</p> </li>    </ul> </li>   <li> <p>For Facebook:</p>    <ul>     <li> <p>client_id</p> </li>     <li> <p>client_secret</p> </li>     <li> <p>authorize_scopes</p> </li>     <li> <p>api_version</p> </li>    </ul> </li>   <li> <p>For Sign in with Apple:</p>    <ul>     <li> <p>client_id</p> </li>     <li> <p>team_id</p> </li>     <li> <p>key_id</p> </li>     <li> <p>private_key</p> </li>     <li> <p>authorize_scopes</p> </li>    </ul> </li>   <li> <p>For OIDC providers:</p>    <ul>     <li> <p>client_id</p> </li>     <li> <p>client_secret</p> </li>     <li> <p>attributes_request_method</p> </li>     <li> <p>oidc_issuer</p> </li>     <li> <p>authorize_scopes</p> </li>     <li> <p>authorize_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>     <li> <p>token_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>     <li> <p>attributes_url <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>     <li> <p>jwks_uri <i>if not available from discovery URL specified by oidc_issuer key</i> </p> </li>    </ul> </li>   <li> <p>For SAML providers:</p>    <ul>     <li> <p>MetadataFile OR MetadataURL</p> </li>     <li> <p>IDPSignout <i>optional</i> </p> </li>    </ul> </li>  </ul>
+    ///   - [`attribute_mapping(HashMap<String, String>)`](crate::client::fluent_builders::CreateIdentityProvider::attribute_mapping) / [`set_attribute_mapping(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIdentityProvider::set_attribute_mapping): <p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>
+    ///   - [`idp_identifiers(Vec<String>)`](crate::client::fluent_builders::CreateIdentityProvider::idp_identifiers) / [`set_idp_identifiers(Option<Vec<String>>)`](crate::client::fluent_builders::CreateIdentityProvider::set_idp_identifiers): <p>A list of identity provider identifiers.</p>
+    /// - On success, responds with [`CreateIdentityProviderOutput`](crate::output::CreateIdentityProviderOutput) with field(s):
+    ///   - [`identity_provider(Option<IdentityProviderType>)`](crate::output::CreateIdentityProviderOutput::identity_provider): <p>The newly created identity provider object.</p>
+    /// - On failure, responds with [`SdkError<CreateIdentityProviderError>`](crate::error::CreateIdentityProviderError)
     pub fn create_identity_provider(&self) -> fluent_builders::CreateIdentityProvider<C, M, R> {
         fluent_builders::CreateIdentityProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateResourceServer` operation.
+    /// Constructs a fluent builder for the [`CreateResourceServer`](crate::client::fluent_builders::CreateResourceServer) operation.
     ///
-    /// See [`CreateResourceServer`](crate::client::fluent_builders::CreateResourceServer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::CreateResourceServer::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::CreateResourceServer::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::CreateResourceServer::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::CreateResourceServer::set_identifier): <p>A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource server is located. For example, <code>https://my-weather-api.example.com</code>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateResourceServer::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateResourceServer::set_name): <p>A friendly name for the resource server.</p>
+    ///   - [`scopes(Vec<ResourceServerScopeType>)`](crate::client::fluent_builders::CreateResourceServer::scopes) / [`set_scopes(Option<Vec<ResourceServerScopeType>>)`](crate::client::fluent_builders::CreateResourceServer::set_scopes): <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and <code>description</code>.</p>
+    /// - On success, responds with [`CreateResourceServerOutput`](crate::output::CreateResourceServerOutput) with field(s):
+    ///   - [`resource_server(Option<ResourceServerType>)`](crate::output::CreateResourceServerOutput::resource_server): <p>The newly created resource server.</p>
+    /// - On failure, responds with [`SdkError<CreateResourceServerError>`](crate::error::CreateResourceServerError)
     pub fn create_resource_server(&self) -> fluent_builders::CreateResourceServer<C, M, R> {
         fluent_builders::CreateResourceServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUserImportJob` operation.
+    /// Constructs a fluent builder for the [`CreateUserImportJob`](crate::client::fluent_builders::CreateUserImportJob) operation.
     ///
-    /// See [`CreateUserImportJob`](crate::client::fluent_builders::CreateUserImportJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::CreateUserImportJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::CreateUserImportJob::set_job_name): <p>The job name for the user import job.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::CreateUserImportJob::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::CreateUserImportJob::set_user_pool_id): <p>The user pool ID for the user pool that the users are being imported into.</p>
+    ///   - [`cloud_watch_logs_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateUserImportJob::cloud_watch_logs_role_arn) / [`set_cloud_watch_logs_role_arn(Option<String>)`](crate::client::fluent_builders::CreateUserImportJob::set_cloud_watch_logs_role_arn): <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.</p>
+    /// - On success, responds with [`CreateUserImportJobOutput`](crate::output::CreateUserImportJobOutput) with field(s):
+    ///   - [`user_import_job(Option<UserImportJobType>)`](crate::output::CreateUserImportJobOutput::user_import_job): <p>The job object that represents the user import job.</p>
+    /// - On failure, responds with [`SdkError<CreateUserImportJobError>`](crate::error::CreateUserImportJobError)
     pub fn create_user_import_job(&self) -> fluent_builders::CreateUserImportJob<C, M, R> {
         fluent_builders::CreateUserImportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUserPool` operation.
+    /// Constructs a fluent builder for the [`CreateUserPool`](crate::client::fluent_builders::CreateUserPool) operation.
     ///
-    /// See [`CreateUserPool`](crate::client::fluent_builders::CreateUserPool) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`pool_name(impl Into<String>)`](crate::client::fluent_builders::CreateUserPool::pool_name) / [`set_pool_name(Option<String>)`](crate::client::fluent_builders::CreateUserPool::set_pool_name): <p>A string used to name the user pool.</p>
+    ///   - [`policies(UserPoolPolicyType)`](crate::client::fluent_builders::CreateUserPool::policies) / [`set_policies(Option<UserPoolPolicyType>)`](crate::client::fluent_builders::CreateUserPool::set_policies): <p>The policies associated with the new user pool.</p>
+    ///   - [`lambda_config(LambdaConfigType)`](crate::client::fluent_builders::CreateUserPool::lambda_config) / [`set_lambda_config(Option<LambdaConfigType>)`](crate::client::fluent_builders::CreateUserPool::set_lambda_config): <p>The Lambda trigger configuration information for the new user pool.</p> <note>   <p>In a push model, event sources (such as Amazon S3 and custom applications) need permission to invoke a function. So you will need to make an extra call to add permission for these event sources to invoke your Lambda function.</p>   <p></p>   <p>For more information on using the Lambda API to add permission, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html"> AddPermission </a>. </p>   <p>For adding permission using the CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission </a>.</p>  </note>
+    ///   - [`auto_verified_attributes(Vec<VerifiedAttributeType>)`](crate::client::fluent_builders::CreateUserPool::auto_verified_attributes) / [`set_auto_verified_attributes(Option<Vec<VerifiedAttributeType>>)`](crate::client::fluent_builders::CreateUserPool::set_auto_verified_attributes): <p>The attributes to be auto-verified. Possible values: <b>email</b>, <b>phone_number</b>.</p>
+    ///   - [`alias_attributes(Vec<AliasAttributeType>)`](crate::client::fluent_builders::CreateUserPool::alias_attributes) / [`set_alias_attributes(Option<Vec<AliasAttributeType>>)`](crate::client::fluent_builders::CreateUserPool::set_alias_attributes): <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
+    ///   - [`username_attributes(Vec<UsernameAttributeType>)`](crate::client::fluent_builders::CreateUserPool::username_attributes) / [`set_username_attributes(Option<Vec<UsernameAttributeType>>)`](crate::client::fluent_builders::CreateUserPool::set_username_attributes): <p>Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.</p>
+    ///   - [`sms_verification_message(impl Into<String>)`](crate::client::fluent_builders::CreateUserPool::sms_verification_message) / [`set_sms_verification_message(Option<String>)`](crate::client::fluent_builders::CreateUserPool::set_sms_verification_message): <p>A string representing the SMS verification message.</p>
+    ///   - [`email_verification_message(impl Into<String>)`](crate::client::fluent_builders::CreateUserPool::email_verification_message) / [`set_email_verification_message(Option<String>)`](crate::client::fluent_builders::CreateUserPool::set_email_verification_message): <p>A string representing the email verification message. EmailVerificationMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    ///   - [`email_verification_subject(impl Into<String>)`](crate::client::fluent_builders::CreateUserPool::email_verification_subject) / [`set_email_verification_subject(Option<String>)`](crate::client::fluent_builders::CreateUserPool::set_email_verification_subject): <p>A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    ///   - [`verification_message_template(VerificationMessageTemplateType)`](crate::client::fluent_builders::CreateUserPool::verification_message_template) / [`set_verification_message_template(Option<VerificationMessageTemplateType>)`](crate::client::fluent_builders::CreateUserPool::set_verification_message_template): <p>The template for the verification message that the user sees when the app requests permission to access the user's information.</p>
+    ///   - [`sms_authentication_message(impl Into<String>)`](crate::client::fluent_builders::CreateUserPool::sms_authentication_message) / [`set_sms_authentication_message(Option<String>)`](crate::client::fluent_builders::CreateUserPool::set_sms_authentication_message): <p>A string representing the SMS authentication message.</p>
+    ///   - [`mfa_configuration(UserPoolMfaType)`](crate::client::fluent_builders::CreateUserPool::mfa_configuration) / [`set_mfa_configuration(Option<UserPoolMfaType>)`](crate::client::fluent_builders::CreateUserPool::set_mfa_configuration): <p>Specifies MFA configuration details.</p>
+    ///   - [`device_configuration(DeviceConfigurationType)`](crate::client::fluent_builders::CreateUserPool::device_configuration) / [`set_device_configuration(Option<DeviceConfigurationType>)`](crate::client::fluent_builders::CreateUserPool::set_device_configuration): <p>The device configuration.</p>
+    ///   - [`email_configuration(EmailConfigurationType)`](crate::client::fluent_builders::CreateUserPool::email_configuration) / [`set_email_configuration(Option<EmailConfigurationType>)`](crate::client::fluent_builders::CreateUserPool::set_email_configuration): <p>The email configuration.</p>
+    ///   - [`sms_configuration(SmsConfigurationType)`](crate::client::fluent_builders::CreateUserPool::sms_configuration) / [`set_sms_configuration(Option<SmsConfigurationType>)`](crate::client::fluent_builders::CreateUserPool::set_sms_configuration): <p>The SMS configuration.</p>
+    ///   - [`user_pool_tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateUserPool::user_pool_tags) / [`set_user_pool_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateUserPool::set_user_pool_tags): <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
+    ///   - [`admin_create_user_config(AdminCreateUserConfigType)`](crate::client::fluent_builders::CreateUserPool::admin_create_user_config) / [`set_admin_create_user_config(Option<AdminCreateUserConfigType>)`](crate::client::fluent_builders::CreateUserPool::set_admin_create_user_config): <p>The configuration for <code>AdminCreateUser</code> requests.</p>
+    ///   - [`schema(Vec<SchemaAttributeType>)`](crate::client::fluent_builders::CreateUserPool::schema) / [`set_schema(Option<Vec<SchemaAttributeType>>)`](crate::client::fluent_builders::CreateUserPool::set_schema): <p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>
+    ///   - [`user_pool_add_ons(UserPoolAddOnsType)`](crate::client::fluent_builders::CreateUserPool::user_pool_add_ons) / [`set_user_pool_add_ons(Option<UserPoolAddOnsType>)`](crate::client::fluent_builders::CreateUserPool::set_user_pool_add_ons): <p>Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    ///   - [`username_configuration(UsernameConfigurationType)`](crate::client::fluent_builders::CreateUserPool::username_configuration) / [`set_username_configuration(Option<UsernameConfigurationType>)`](crate::client::fluent_builders::CreateUserPool::set_username_configuration): <p>You can choose to set case sensitivity on the username input for the selected sign-in option. For example, when this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This configuration is immutable once it has been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
+    ///   - [`account_recovery_setting(AccountRecoverySettingType)`](crate::client::fluent_builders::CreateUserPool::account_recovery_setting) / [`set_account_recovery_setting(Option<AccountRecoverySettingType>)`](crate::client::fluent_builders::CreateUserPool::set_account_recovery_setting): <p>Use this setting to define which verified available method a user can use to recover their password when they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery method where SMS is preferred over email.</p>
+    /// - On success, responds with [`CreateUserPoolOutput`](crate::output::CreateUserPoolOutput) with field(s):
+    ///   - [`user_pool(Option<UserPoolType>)`](crate::output::CreateUserPoolOutput::user_pool): <p>A container for the user pool details.</p>
+    /// - On failure, responds with [`SdkError<CreateUserPoolError>`](crate::error::CreateUserPoolError)
     pub fn create_user_pool(&self) -> fluent_builders::CreateUserPool<C, M, R> {
         fluent_builders::CreateUserPool::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUserPoolClient` operation.
+    /// Constructs a fluent builder for the [`CreateUserPoolClient`](crate::client::fluent_builders::CreateUserPoolClient) operation.
     ///
-    /// See [`CreateUserPoolClient`](crate::client::fluent_builders::CreateUserPoolClient) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::CreateUserPoolClient::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::CreateUserPoolClient::set_user_pool_id): <p>The user pool ID for the user pool where you want to create a user pool client.</p>
+    ///   - [`client_name(impl Into<String>)`](crate::client::fluent_builders::CreateUserPoolClient::client_name) / [`set_client_name(Option<String>)`](crate::client::fluent_builders::CreateUserPoolClient::set_client_name): <p>The client name for the user pool client you would like to create.</p>
+    ///   - [`generate_secret(bool)`](crate::client::fluent_builders::CreateUserPoolClient::generate_secret) / [`set_generate_secret(bool)`](crate::client::fluent_builders::CreateUserPoolClient::set_generate_secret): <p>Boolean to specify whether you want to generate a secret for the user pool client being created.</p>
+    ///   - [`refresh_token_validity(i32)`](crate::client::fluent_builders::CreateUserPoolClient::refresh_token_validity) / [`set_refresh_token_validity(i32)`](crate::client::fluent_builders::CreateUserPoolClient::set_refresh_token_validity): <p>The time limit, in days, after which the refresh token is no longer valid and cannot be used.</p>
+    ///   - [`access_token_validity(i32)`](crate::client::fluent_builders::CreateUserPoolClient::access_token_validity) / [`set_access_token_validity(Option<i32>)`](crate::client::fluent_builders::CreateUserPoolClient::set_access_token_validity): <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and cannot be used. This value will be overridden if you have entered a value in TokenValidityUnits.</p>
+    ///   - [`id_token_validity(i32)`](crate::client::fluent_builders::CreateUserPoolClient::id_token_validity) / [`set_id_token_validity(Option<i32>)`](crate::client::fluent_builders::CreateUserPoolClient::set_id_token_validity): <p>The time limit, between 5 minutes and 1 day, after which the ID token is no longer valid and cannot be used. This value will be overridden if you have entered a value in TokenValidityUnits.</p>
+    ///   - [`token_validity_units(TokenValidityUnitsType)`](crate::client::fluent_builders::CreateUserPoolClient::token_validity_units) / [`set_token_validity_units(Option<TokenValidityUnitsType>)`](crate::client::fluent_builders::CreateUserPoolClient::set_token_validity_units): <p>The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID and access tokens are hours.</p>
+    ///   - [`read_attributes(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::read_attributes) / [`set_read_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_read_attributes): <p>The read attributes.</p>
+    ///   - [`write_attributes(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::write_attributes) / [`set_write_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_write_attributes): <p>The user pool attributes that the app client can write to.</p>  <p>If your app client allows users to sign in through an identity provider, this array must include all attributes that are mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an identity provider. If your app client lacks write access to a mapped attribute, Amazon Cognito throws an error when it attempts to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying Identity Provider Attribute Mappings for Your User Pool</a>.</p>
+    ///   - [`explicit_auth_flows(Vec<ExplicitAuthFlowsType>)`](crate::client::fluent_builders::CreateUserPoolClient::explicit_auth_flows) / [`set_explicit_auth_flows(Option<Vec<ExplicitAuthFlowsType>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_explicit_auth_flows): <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.</p>  <p>Valid values include:</p>  <ul>   <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote Password protocol) protocol to verify passwords.</p> </li>   <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>   <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>   <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p> </li>   <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>  </ul>
+    ///   - [`supported_identity_providers(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::supported_identity_providers) / [`set_supported_identity_providers(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_supported_identity_providers): <p>A list of provider names for the identity providers that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.</p>
+    ///   - [`callback_ur_ls(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::callback_ur_ls) / [`set_callback_ur_ls(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_callback_ur_ls): <p>A list of allowed redirect (callback) URLs for the identity providers.</p>  <p>A redirect URI must:</p>  <ul>   <li> <p>Be an absolute URI.</p> </li>   <li> <p>Be registered with the authorization server.</p> </li>   <li> <p>Not include a fragment component.</p> </li>  </ul>  <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>  <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>  <p>App callback URLs such as myapp://example are also supported.</p>
+    ///   - [`logout_ur_ls(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::logout_ur_ls) / [`set_logout_ur_ls(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_logout_ur_ls): <p>A list of allowed logout URLs for the identity providers.</p>
+    ///   - [`default_redirect_uri(impl Into<String>)`](crate::client::fluent_builders::CreateUserPoolClient::default_redirect_uri) / [`set_default_redirect_uri(Option<String>)`](crate::client::fluent_builders::CreateUserPoolClient::set_default_redirect_uri): <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>  <p>A redirect URI must:</p>  <ul>   <li> <p>Be an absolute URI.</p> </li>   <li> <p>Be registered with the authorization server.</p> </li>   <li> <p>Not include a fragment component.</p> </li>  </ul>  <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>  <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>  <p>App callback URLs such as myapp://example are also supported.</p>
+    ///   - [`allowed_o_auth_flows(Vec<OAuthFlowType>)`](crate::client::fluent_builders::CreateUserPoolClient::allowed_o_auth_flows) / [`set_allowed_o_auth_flows(Option<Vec<OAuthFlowType>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_allowed_o_auth_flows): <p>The allowed OAuth flows.</p>  <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>  <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>  <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+    ///   - [`allowed_o_auth_scopes(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::allowed_o_auth_scopes) / [`set_allowed_o_auth_scopes(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_allowed_o_auth_scopes): <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+    ///   - [`allowed_o_auth_flows_user_pool_client(bool)`](crate::client::fluent_builders::CreateUserPoolClient::allowed_o_auth_flows_user_pool_client) / [`set_allowed_o_auth_flows_user_pool_client(bool)`](crate::client::fluent_builders::CreateUserPoolClient::set_allowed_o_auth_flows_user_pool_client): <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.</p>
+    ///   - [`analytics_configuration(AnalyticsConfigurationType)`](crate::client::fluent_builders::CreateUserPoolClient::analytics_configuration) / [`set_analytics_configuration(Option<AnalyticsConfigurationType>)`](crate::client::fluent_builders::CreateUserPoolClient::set_analytics_configuration): <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>   <p>In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to Amazon Pinpoint projects within that same region. </p>  </note>
+    ///   - [`prevent_user_existence_errors(PreventUserExistenceErrorTypes)`](crate::client::fluent_builders::CreateUserPoolClient::prevent_user_existence_errors) / [`set_prevent_user_existence_errors(Option<PreventUserExistenceErrorTypes>)`](crate::client::fluent_builders::CreateUserPoolClient::set_prevent_user_existence_errors): <p>Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account confirmation, and password recovery when the user does not exist in the user pool. When set to <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username or password was incorrect, and account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>  <p>Valid values include:</p>  <ul>   <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>   <li> <p> <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not prevented.</p> </li>  </ul> <note>   <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for newly created user pool clients if no value is provided.</p>  </note>
+    ///   - [`enable_token_revocation(bool)`](crate::client::fluent_builders::CreateUserPoolClient::enable_token_revocation) / [`set_enable_token_revocation(Option<bool>)`](crate::client::fluent_builders::CreateUserPoolClient::set_enable_token_revocation): <p>Enables or disables token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>  <p>If you don't include this parameter, token revocation is automatically enabled for the new user pool client.</p>
+    /// - On success, responds with [`CreateUserPoolClientOutput`](crate::output::CreateUserPoolClientOutput) with field(s):
+    ///   - [`user_pool_client(Option<UserPoolClientType>)`](crate::output::CreateUserPoolClientOutput::user_pool_client): <p>The user pool client that was just created.</p>
+    /// - On failure, responds with [`SdkError<CreateUserPoolClientError>`](crate::error::CreateUserPoolClientError)
     pub fn create_user_pool_client(&self) -> fluent_builders::CreateUserPoolClient<C, M, R> {
         fluent_builders::CreateUserPoolClient::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUserPoolDomain` operation.
+    /// Constructs a fluent builder for the [`CreateUserPoolDomain`](crate::client::fluent_builders::CreateUserPoolDomain) operation.
     ///
-    /// See [`CreateUserPoolDomain`](crate::client::fluent_builders::CreateUserPoolDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CreateUserPoolDomain::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CreateUserPoolDomain::set_domain): <p>The domain string.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::CreateUserPoolDomain::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::CreateUserPoolDomain::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`custom_domain_config(CustomDomainConfigType)`](crate::client::fluent_builders::CreateUserPoolDomain::custom_domain_config) / [`set_custom_domain_config(Option<CustomDomainConfigType>)`](crate::client::fluent_builders::CreateUserPoolDomain::set_custom_domain_config): <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>  <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>  <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
+    /// - On success, responds with [`CreateUserPoolDomainOutput`](crate::output::CreateUserPoolDomainOutput) with field(s):
+    ///   - [`cloud_front_domain(Option<String>)`](crate::output::CreateUserPoolDomainOutput::cloud_front_domain): <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider.</p>
+    /// - On failure, responds with [`SdkError<CreateUserPoolDomainError>`](crate::error::CreateUserPoolDomainError)
     pub fn create_user_pool_domain(&self) -> fluent_builders::CreateUserPoolDomain<C, M, R> {
         fluent_builders::CreateUserPoolDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) operation.
     ///
-    /// See [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_group_name): <p>The name of the group.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    /// - On success, responds with [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::error::DeleteGroupError)
     pub fn delete_group(&self) -> fluent_builders::DeleteGroup<C, M, R> {
         fluent_builders::DeleteGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteIdentityProvider` operation.
+    /// Constructs a fluent builder for the [`DeleteIdentityProvider`](crate::client::fluent_builders::DeleteIdentityProvider) operation.
     ///
-    /// See [`DeleteIdentityProvider`](crate::client::fluent_builders::DeleteIdentityProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::DeleteIdentityProvider::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::DeleteIdentityProvider::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`provider_name(impl Into<String>)`](crate::client::fluent_builders::DeleteIdentityProvider::provider_name) / [`set_provider_name(Option<String>)`](crate::client::fluent_builders::DeleteIdentityProvider::set_provider_name): <p>The identity provider name.</p>
+    /// - On success, responds with [`DeleteIdentityProviderOutput`](crate::output::DeleteIdentityProviderOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteIdentityProviderError>`](crate::error::DeleteIdentityProviderError)
     pub fn delete_identity_provider(&self) -> fluent_builders::DeleteIdentityProvider<C, M, R> {
         fluent_builders::DeleteIdentityProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteResourceServer` operation.
+    /// Constructs a fluent builder for the [`DeleteResourceServer`](crate::client::fluent_builders::DeleteResourceServer) operation.
     ///
-    /// See [`DeleteResourceServer`](crate::client::fluent_builders::DeleteResourceServer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::DeleteResourceServer::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::DeleteResourceServer::set_user_pool_id): <p>The user pool ID for the user pool that hosts the resource server.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteResourceServer::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::DeleteResourceServer::set_identifier): <p>The identifier for the resource server.</p>
+    /// - On success, responds with [`DeleteResourceServerOutput`](crate::output::DeleteResourceServerOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourceServerError>`](crate::error::DeleteResourceServerError)
     pub fn delete_resource_server(&self) -> fluent_builders::DeleteResourceServer<C, M, R> {
         fluent_builders::DeleteResourceServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUser` operation.
+    /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
     ///
-    /// See [`DeleteUser`](crate::client::fluent_builders::DeleteUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_access_token): <p>The access token from a request to delete a user.</p>
+    /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::error::DeleteUserError)
     pub fn delete_user(&self) -> fluent_builders::DeleteUser<C, M, R> {
         fluent_builders::DeleteUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUserAttributes` operation.
+    /// Constructs a fluent builder for the [`DeleteUserAttributes`](crate::client::fluent_builders::DeleteUserAttributes) operation.
     ///
-    /// See [`DeleteUserAttributes`](crate::client::fluent_builders::DeleteUserAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_attribute_names(Vec<String>)`](crate::client::fluent_builders::DeleteUserAttributes::user_attribute_names) / [`set_user_attribute_names(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteUserAttributes::set_user_attribute_names): <p>An array of strings representing the user attribute names you wish to delete.</p>  <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::DeleteUserAttributes::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::DeleteUserAttributes::set_access_token): <p>The access token used in the request to delete user attributes.</p>
+    /// - On success, responds with [`DeleteUserAttributesOutput`](crate::output::DeleteUserAttributesOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserAttributesError>`](crate::error::DeleteUserAttributesError)
     pub fn delete_user_attributes(&self) -> fluent_builders::DeleteUserAttributes<C, M, R> {
         fluent_builders::DeleteUserAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUserPool` operation.
+    /// Constructs a fluent builder for the [`DeleteUserPool`](crate::client::fluent_builders::DeleteUserPool) operation.
     ///
-    /// See [`DeleteUserPool`](crate::client::fluent_builders::DeleteUserPool) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUserPool::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::DeleteUserPool::set_user_pool_id): <p>The user pool ID for the user pool you want to delete.</p>
+    /// - On success, responds with [`DeleteUserPoolOutput`](crate::output::DeleteUserPoolOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserPoolError>`](crate::error::DeleteUserPoolError)
     pub fn delete_user_pool(&self) -> fluent_builders::DeleteUserPool<C, M, R> {
         fluent_builders::DeleteUserPool::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUserPoolClient` operation.
+    /// Constructs a fluent builder for the [`DeleteUserPoolClient`](crate::client::fluent_builders::DeleteUserPoolClient) operation.
     ///
-    /// See [`DeleteUserPoolClient`](crate::client::fluent_builders::DeleteUserPoolClient) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUserPoolClient::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::DeleteUserPoolClient::set_user_pool_id): <p>The user pool ID for the user pool where you want to delete the client.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUserPoolClient::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::DeleteUserPoolClient::set_client_id): <p>The app client ID of the app associated with the user pool.</p>
+    /// - On success, responds with [`DeleteUserPoolClientOutput`](crate::output::DeleteUserPoolClientOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserPoolClientError>`](crate::error::DeleteUserPoolClientError)
     pub fn delete_user_pool_client(&self) -> fluent_builders::DeleteUserPoolClient<C, M, R> {
         fluent_builders::DeleteUserPoolClient::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUserPoolDomain` operation.
+    /// Constructs a fluent builder for the [`DeleteUserPoolDomain`](crate::client::fluent_builders::DeleteUserPoolDomain) operation.
     ///
-    /// See [`DeleteUserPoolDomain`](crate::client::fluent_builders::DeleteUserPoolDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::DeleteUserPoolDomain::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::DeleteUserPoolDomain::set_domain): <p>The domain string.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUserPoolDomain::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::DeleteUserPoolDomain::set_user_pool_id): <p>The user pool ID.</p>
+    /// - On success, responds with [`DeleteUserPoolDomainOutput`](crate::output::DeleteUserPoolDomainOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserPoolDomainError>`](crate::error::DeleteUserPoolDomainError)
     pub fn delete_user_pool_domain(&self) -> fluent_builders::DeleteUserPoolDomain<C, M, R> {
         fluent_builders::DeleteUserPoolDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeIdentityProvider` operation.
+    /// Constructs a fluent builder for the [`DescribeIdentityProvider`](crate::client::fluent_builders::DescribeIdentityProvider) operation.
     ///
-    /// See [`DescribeIdentityProvider`](crate::client::fluent_builders::DescribeIdentityProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::DescribeIdentityProvider::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::DescribeIdentityProvider::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`provider_name(impl Into<String>)`](crate::client::fluent_builders::DescribeIdentityProvider::provider_name) / [`set_provider_name(Option<String>)`](crate::client::fluent_builders::DescribeIdentityProvider::set_provider_name): <p>The identity provider name.</p>
+    /// - On success, responds with [`DescribeIdentityProviderOutput`](crate::output::DescribeIdentityProviderOutput) with field(s):
+    ///   - [`identity_provider(Option<IdentityProviderType>)`](crate::output::DescribeIdentityProviderOutput::identity_provider): <p>The identity provider that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DescribeIdentityProviderError>`](crate::error::DescribeIdentityProviderError)
     pub fn describe_identity_provider(&self) -> fluent_builders::DescribeIdentityProvider<C, M, R> {
         fluent_builders::DescribeIdentityProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeResourceServer` operation.
+    /// Constructs a fluent builder for the [`DescribeResourceServer`](crate::client::fluent_builders::DescribeResourceServer) operation.
     ///
-    /// See [`DescribeResourceServer`](crate::client::fluent_builders::DescribeResourceServer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::DescribeResourceServer::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::DescribeResourceServer::set_user_pool_id): <p>The user pool ID for the user pool that hosts the resource server.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeResourceServer::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::DescribeResourceServer::set_identifier): <p>The identifier for the resource server</p>
+    /// - On success, responds with [`DescribeResourceServerOutput`](crate::output::DescribeResourceServerOutput) with field(s):
+    ///   - [`resource_server(Option<ResourceServerType>)`](crate::output::DescribeResourceServerOutput::resource_server): <p>The resource server.</p>
+    /// - On failure, responds with [`SdkError<DescribeResourceServerError>`](crate::error::DescribeResourceServerError)
     pub fn describe_resource_server(&self) -> fluent_builders::DescribeResourceServer<C, M, R> {
         fluent_builders::DescribeResourceServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRiskConfiguration` operation.
+    /// Constructs a fluent builder for the [`DescribeRiskConfiguration`](crate::client::fluent_builders::DescribeRiskConfiguration) operation.
     ///
-    /// See [`DescribeRiskConfiguration`](crate::client::fluent_builders::DescribeRiskConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::DescribeRiskConfiguration::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::DescribeRiskConfiguration::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::DescribeRiskConfiguration::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::DescribeRiskConfiguration::set_client_id): <p>The app client ID.</p>
+    /// - On success, responds with [`DescribeRiskConfigurationOutput`](crate::output::DescribeRiskConfigurationOutput) with field(s):
+    ///   - [`risk_configuration(Option<RiskConfigurationType>)`](crate::output::DescribeRiskConfigurationOutput::risk_configuration): <p>The risk configuration.</p>
+    /// - On failure, responds with [`SdkError<DescribeRiskConfigurationError>`](crate::error::DescribeRiskConfigurationError)
     pub fn describe_risk_configuration(
         &self,
     ) -> fluent_builders::DescribeRiskConfiguration<C, M, R> {
         fluent_builders::DescribeRiskConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUserImportJob` operation.
+    /// Constructs a fluent builder for the [`DescribeUserImportJob`](crate::client::fluent_builders::DescribeUserImportJob) operation.
     ///
-    /// See [`DescribeUserImportJob`](crate::client::fluent_builders::DescribeUserImportJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUserImportJob::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::DescribeUserImportJob::set_user_pool_id): <p>The user pool ID for the user pool that the users are being imported into.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUserImportJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeUserImportJob::set_job_id): <p>The job ID for the user import job.</p>
+    /// - On success, responds with [`DescribeUserImportJobOutput`](crate::output::DescribeUserImportJobOutput) with field(s):
+    ///   - [`user_import_job(Option<UserImportJobType>)`](crate::output::DescribeUserImportJobOutput::user_import_job): <p>The job object that represents the user import job.</p>
+    /// - On failure, responds with [`SdkError<DescribeUserImportJobError>`](crate::error::DescribeUserImportJobError)
     pub fn describe_user_import_job(&self) -> fluent_builders::DescribeUserImportJob<C, M, R> {
         fluent_builders::DescribeUserImportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUserPool` operation.
+    /// Constructs a fluent builder for the [`DescribeUserPool`](crate::client::fluent_builders::DescribeUserPool) operation.
     ///
-    /// See [`DescribeUserPool`](crate::client::fluent_builders::DescribeUserPool) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUserPool::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::DescribeUserPool::set_user_pool_id): <p>The user pool ID for the user pool you want to describe.</p>
+    /// - On success, responds with [`DescribeUserPoolOutput`](crate::output::DescribeUserPoolOutput) with field(s):
+    ///   - [`user_pool(Option<UserPoolType>)`](crate::output::DescribeUserPoolOutput::user_pool): <p>The container of metadata returned by the server to describe the pool.</p>
+    /// - On failure, responds with [`SdkError<DescribeUserPoolError>`](crate::error::DescribeUserPoolError)
     pub fn describe_user_pool(&self) -> fluent_builders::DescribeUserPool<C, M, R> {
         fluent_builders::DescribeUserPool::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUserPoolClient` operation.
+    /// Constructs a fluent builder for the [`DescribeUserPoolClient`](crate::client::fluent_builders::DescribeUserPoolClient) operation.
     ///
-    /// See [`DescribeUserPoolClient`](crate::client::fluent_builders::DescribeUserPoolClient) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUserPoolClient::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::DescribeUserPoolClient::set_user_pool_id): <p>The user pool ID for the user pool you want to describe.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUserPoolClient::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::DescribeUserPoolClient::set_client_id): <p>The app client ID of the app associated with the user pool.</p>
+    /// - On success, responds with [`DescribeUserPoolClientOutput`](crate::output::DescribeUserPoolClientOutput) with field(s):
+    ///   - [`user_pool_client(Option<UserPoolClientType>)`](crate::output::DescribeUserPoolClientOutput::user_pool_client): <p>The user pool client from a server response to describe the user pool client.</p>
+    /// - On failure, responds with [`SdkError<DescribeUserPoolClientError>`](crate::error::DescribeUserPoolClientError)
     pub fn describe_user_pool_client(&self) -> fluent_builders::DescribeUserPoolClient<C, M, R> {
         fluent_builders::DescribeUserPoolClient::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUserPoolDomain` operation.
+    /// Constructs a fluent builder for the [`DescribeUserPoolDomain`](crate::client::fluent_builders::DescribeUserPoolDomain) operation.
     ///
-    /// See [`DescribeUserPoolDomain`](crate::client::fluent_builders::DescribeUserPoolDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::DescribeUserPoolDomain::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::DescribeUserPoolDomain::set_domain): <p>The domain string.</p>
+    /// - On success, responds with [`DescribeUserPoolDomainOutput`](crate::output::DescribeUserPoolDomainOutput) with field(s):
+    ///   - [`domain_description(Option<DomainDescriptionType>)`](crate::output::DescribeUserPoolDomainOutput::domain_description): <p>A domain description object containing information about the domain.</p>
+    /// - On failure, responds with [`SdkError<DescribeUserPoolDomainError>`](crate::error::DescribeUserPoolDomainError)
     pub fn describe_user_pool_domain(&self) -> fluent_builders::DescribeUserPoolDomain<C, M, R> {
         fluent_builders::DescribeUserPoolDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ForgetDevice` operation.
+    /// Constructs a fluent builder for the [`ForgetDevice`](crate::client::fluent_builders::ForgetDevice) operation.
     ///
-    /// See [`ForgetDevice`](crate::client::fluent_builders::ForgetDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::ForgetDevice::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::ForgetDevice::set_access_token): <p>The access token for the forgotten device request.</p>
+    ///   - [`device_key(impl Into<String>)`](crate::client::fluent_builders::ForgetDevice::device_key) / [`set_device_key(Option<String>)`](crate::client::fluent_builders::ForgetDevice::set_device_key): <p>The device key.</p>
+    /// - On success, responds with [`ForgetDeviceOutput`](crate::output::ForgetDeviceOutput)
+
+    /// - On failure, responds with [`SdkError<ForgetDeviceError>`](crate::error::ForgetDeviceError)
     pub fn forget_device(&self) -> fluent_builders::ForgetDevice<C, M, R> {
         fluent_builders::ForgetDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ForgotPassword` operation.
+    /// Constructs a fluent builder for the [`ForgotPassword`](crate::client::fluent_builders::ForgotPassword) operation.
     ///
-    /// See [`ForgotPassword`](crate::client::fluent_builders::ForgotPassword) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::ForgotPassword::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::ForgotPassword::set_client_id): <p>The ID of the client associated with the user pool.</p>
+    ///   - [`secret_hash(impl Into<String>)`](crate::client::fluent_builders::ForgotPassword::secret_hash) / [`set_secret_hash(Option<String>)`](crate::client::fluent_builders::ForgotPassword::set_secret_hash): <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
+    ///   - [`user_context_data(UserContextDataType)`](crate::client::fluent_builders::ForgotPassword::user_context_data) / [`set_user_context_data(Option<UserContextDataType>)`](crate::client::fluent_builders::ForgotPassword::set_user_context_data): <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::ForgotPassword::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::ForgotPassword::set_username): <p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>
+    ///   - [`analytics_metadata(AnalyticsMetadataType)`](crate::client::fluent_builders::ForgotPassword::analytics_metadata) / [`set_analytics_metadata(Option<AnalyticsMetadataType>)`](crate::client::fluent_builders::ForgotPassword::set_analytics_metadata): <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.</p>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::ForgotPassword::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ForgotPassword::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ForgotPassword API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>user migration</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    /// - On success, responds with [`ForgotPasswordOutput`](crate::output::ForgotPasswordOutput) with field(s):
+    ///   - [`code_delivery_details(Option<CodeDeliveryDetailsType>)`](crate::output::ForgotPasswordOutput::code_delivery_details): <p>The code delivery details returned by the server in response to the request to reset a password.</p>
+    /// - On failure, responds with [`SdkError<ForgotPasswordError>`](crate::error::ForgotPasswordError)
     pub fn forgot_password(&self) -> fluent_builders::ForgotPassword<C, M, R> {
         fluent_builders::ForgotPassword::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCSVHeader` operation.
+    /// Constructs a fluent builder for the [`GetCSVHeader`](crate::client::fluent_builders::GetCSVHeader) operation.
     ///
-    /// See [`GetCSVHeader`](crate::client::fluent_builders::GetCSVHeader) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetCSVHeader::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::GetCSVHeader::set_user_pool_id): <p>The user pool ID for the user pool that the users are to be imported into.</p>
+    /// - On success, responds with [`GetCsvHeaderOutput`](crate::output::GetCsvHeaderOutput) with field(s):
+    ///   - [`user_pool_id(Option<String>)`](crate::output::GetCsvHeaderOutput::user_pool_id): <p>The user pool ID for the user pool that the users are to be imported into.</p>
+    ///   - [`csv_header(Option<Vec<String>>)`](crate::output::GetCsvHeaderOutput::csv_header): <p>The header information for the .csv file for the user import job.</p>
+    /// - On failure, responds with [`SdkError<GetCSVHeaderError>`](crate::error::GetCSVHeaderError)
     pub fn get_csv_header(&self) -> fluent_builders::GetCSVHeader<C, M, R> {
         fluent_builders::GetCSVHeader::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDevice` operation.
+    /// Constructs a fluent builder for the [`GetDevice`](crate::client::fluent_builders::GetDevice) operation.
     ///
-    /// See [`GetDevice`](crate::client::fluent_builders::GetDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`device_key(impl Into<String>)`](crate::client::fluent_builders::GetDevice::device_key) / [`set_device_key(Option<String>)`](crate::client::fluent_builders::GetDevice::set_device_key): <p>The device key.</p>
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::GetDevice::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::GetDevice::set_access_token): <p>The access token.</p>
+    /// - On success, responds with [`GetDeviceOutput`](crate::output::GetDeviceOutput) with field(s):
+    ///   - [`device(Option<DeviceType>)`](crate::output::GetDeviceOutput::device): <p>The device.</p>
+    /// - On failure, responds with [`SdkError<GetDeviceError>`](crate::error::GetDeviceError)
     pub fn get_device(&self) -> fluent_builders::GetDevice<C, M, R> {
         fluent_builders::GetDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGroup` operation.
+    /// Constructs a fluent builder for the [`GetGroup`](crate::client::fluent_builders::GetGroup) operation.
     ///
-    /// See [`GetGroup`](crate::client::fluent_builders::GetGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::GetGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::GetGroup::set_group_name): <p>The name of the group.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetGroup::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::GetGroup::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    /// - On success, responds with [`GetGroupOutput`](crate::output::GetGroupOutput) with field(s):
+    ///   - [`group(Option<GroupType>)`](crate::output::GetGroupOutput::group): <p>The group object for the group.</p>
+    /// - On failure, responds with [`SdkError<GetGroupError>`](crate::error::GetGroupError)
     pub fn get_group(&self) -> fluent_builders::GetGroup<C, M, R> {
         fluent_builders::GetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetIdentityProviderByIdentifier` operation.
+    /// Constructs a fluent builder for the [`GetIdentityProviderByIdentifier`](crate::client::fluent_builders::GetIdentityProviderByIdentifier) operation.
     ///
-    /// See [`GetIdentityProviderByIdentifier`](crate::client::fluent_builders::GetIdentityProviderByIdentifier) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetIdentityProviderByIdentifier::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::GetIdentityProviderByIdentifier::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`idp_identifier(impl Into<String>)`](crate::client::fluent_builders::GetIdentityProviderByIdentifier::idp_identifier) / [`set_idp_identifier(Option<String>)`](crate::client::fluent_builders::GetIdentityProviderByIdentifier::set_idp_identifier): <p>The identity provider ID.</p>
+    /// - On success, responds with [`GetIdentityProviderByIdentifierOutput`](crate::output::GetIdentityProviderByIdentifierOutput) with field(s):
+    ///   - [`identity_provider(Option<IdentityProviderType>)`](crate::output::GetIdentityProviderByIdentifierOutput::identity_provider): <p>The identity provider object.</p>
+    /// - On failure, responds with [`SdkError<GetIdentityProviderByIdentifierError>`](crate::error::GetIdentityProviderByIdentifierError)
     pub fn get_identity_provider_by_identifier(
         &self,
     ) -> fluent_builders::GetIdentityProviderByIdentifier<C, M, R> {
         fluent_builders::GetIdentityProviderByIdentifier::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSigningCertificate` operation.
+    /// Constructs a fluent builder for the [`GetSigningCertificate`](crate::client::fluent_builders::GetSigningCertificate) operation.
     ///
-    /// See [`GetSigningCertificate`](crate::client::fluent_builders::GetSigningCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetSigningCertificate::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::GetSigningCertificate::set_user_pool_id): <p>The user pool ID.</p>
+    /// - On success, responds with [`GetSigningCertificateOutput`](crate::output::GetSigningCertificateOutput) with field(s):
+    ///   - [`certificate(Option<String>)`](crate::output::GetSigningCertificateOutput::certificate): <p>The signing certificate.</p>
+    /// - On failure, responds with [`SdkError<GetSigningCertificateError>`](crate::error::GetSigningCertificateError)
     pub fn get_signing_certificate(&self) -> fluent_builders::GetSigningCertificate<C, M, R> {
         fluent_builders::GetSigningCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUICustomization` operation.
+    /// Constructs a fluent builder for the [`GetUICustomization`](crate::client::fluent_builders::GetUICustomization) operation.
     ///
-    /// See [`GetUICustomization`](crate::client::fluent_builders::GetUICustomization) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetUICustomization::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::GetUICustomization::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::GetUICustomization::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::GetUICustomization::set_client_id): <p>The client ID for the client app.</p>
+    /// - On success, responds with [`GetUiCustomizationOutput`](crate::output::GetUiCustomizationOutput) with field(s):
+    ///   - [`ui_customization(Option<UiCustomizationType>)`](crate::output::GetUiCustomizationOutput::ui_customization): <p>The UI customization information.</p>
+    /// - On failure, responds with [`SdkError<GetUICustomizationError>`](crate::error::GetUICustomizationError)
     pub fn get_ui_customization(&self) -> fluent_builders::GetUICustomization<C, M, R> {
         fluent_builders::GetUICustomization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUser` operation.
+    /// Constructs a fluent builder for the [`GetUser`](crate::client::fluent_builders::GetUser) operation.
     ///
-    /// See [`GetUser`](crate::client::fluent_builders::GetUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::GetUser::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::GetUser::set_access_token): <p>The access token returned by the server response to get information about the user.</p>
+    /// - On success, responds with [`GetUserOutput`](crate::output::GetUserOutput) with field(s):
+    ///   - [`username(Option<String>)`](crate::output::GetUserOutput::username): <p>The user name of the user you wish to retrieve from the get user request.</p>
+    ///   - [`user_attributes(Option<Vec<AttributeType>>)`](crate::output::GetUserOutput::user_attributes): <p>An array of name-value pairs representing user attributes.</p>  <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    ///   - [`mfa_options(Option<Vec<MfaOptionType>>)`](crate::output::GetUserOutput::mfa_options): <p> <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about TOTP software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
+    ///   - [`preferred_mfa_setting(Option<String>)`](crate::output::GetUserOutput::preferred_mfa_setting): <p>The user's preferred MFA setting.</p>
+    ///   - [`user_mfa_setting_list(Option<Vec<String>>)`](crate::output::GetUserOutput::user_mfa_setting_list): <p>The MFA options that are enabled for the user. The possible values in this list are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.</p>
+    /// - On failure, responds with [`SdkError<GetUserError>`](crate::error::GetUserError)
     pub fn get_user(&self) -> fluent_builders::GetUser<C, M, R> {
         fluent_builders::GetUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUserAttributeVerificationCode` operation.
+    /// Constructs a fluent builder for the [`GetUserAttributeVerificationCode`](crate::client::fluent_builders::GetUserAttributeVerificationCode) operation.
     ///
-    /// See [`GetUserAttributeVerificationCode`](crate::client::fluent_builders::GetUserAttributeVerificationCode) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::GetUserAttributeVerificationCode::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::GetUserAttributeVerificationCode::set_access_token): <p>The access token returned by the server response to get the user attribute verification code.</p>
+    ///   - [`attribute_name(impl Into<String>)`](crate::client::fluent_builders::GetUserAttributeVerificationCode::attribute_name) / [`set_attribute_name(Option<String>)`](crate::client::fluent_builders::GetUserAttributeVerificationCode::set_attribute_name): <p>The attribute name returned by the server response to get the user attribute verification code.</p>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::GetUserAttributeVerificationCode::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::GetUserAttributeVerificationCode::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your GetUserAttributeVerificationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    /// - On success, responds with [`GetUserAttributeVerificationCodeOutput`](crate::output::GetUserAttributeVerificationCodeOutput) with field(s):
+    ///   - [`code_delivery_details(Option<CodeDeliveryDetailsType>)`](crate::output::GetUserAttributeVerificationCodeOutput::code_delivery_details): <p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>
+    /// - On failure, responds with [`SdkError<GetUserAttributeVerificationCodeError>`](crate::error::GetUserAttributeVerificationCodeError)
     pub fn get_user_attribute_verification_code(
         &self,
     ) -> fluent_builders::GetUserAttributeVerificationCode<C, M, R> {
         fluent_builders::GetUserAttributeVerificationCode::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUserPoolMfaConfig` operation.
+    /// Constructs a fluent builder for the [`GetUserPoolMfaConfig`](crate::client::fluent_builders::GetUserPoolMfaConfig) operation.
     ///
-    /// See [`GetUserPoolMfaConfig`](crate::client::fluent_builders::GetUserPoolMfaConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetUserPoolMfaConfig::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::GetUserPoolMfaConfig::set_user_pool_id): <p>The user pool ID.</p>
+    /// - On success, responds with [`GetUserPoolMfaConfigOutput`](crate::output::GetUserPoolMfaConfigOutput) with field(s):
+    ///   - [`sms_mfa_configuration(Option<SmsMfaConfigType>)`](crate::output::GetUserPoolMfaConfigOutput::sms_mfa_configuration): <p>The SMS text message multi-factor (MFA) configuration.</p>
+    ///   - [`software_token_mfa_configuration(Option<SoftwareTokenMfaConfigType>)`](crate::output::GetUserPoolMfaConfigOutput::software_token_mfa_configuration): <p>The software token multi-factor (MFA) configuration.</p>
+    ///   - [`mfa_configuration(Option<UserPoolMfaType>)`](crate::output::GetUserPoolMfaConfigOutput::mfa_configuration): <p>The multi-factor (MFA) configuration. Valid values include:</p>  <ul>   <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>   <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>   <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<GetUserPoolMfaConfigError>`](crate::error::GetUserPoolMfaConfigError)
     pub fn get_user_pool_mfa_config(&self) -> fluent_builders::GetUserPoolMfaConfig<C, M, R> {
         fluent_builders::GetUserPoolMfaConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GlobalSignOut` operation.
+    /// Constructs a fluent builder for the [`GlobalSignOut`](crate::client::fluent_builders::GlobalSignOut) operation.
     ///
-    /// See [`GlobalSignOut`](crate::client::fluent_builders::GlobalSignOut) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::GlobalSignOut::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::GlobalSignOut::set_access_token): <p>The access token.</p>
+    /// - On success, responds with [`GlobalSignOutOutput`](crate::output::GlobalSignOutOutput)
+
+    /// - On failure, responds with [`SdkError<GlobalSignOutError>`](crate::error::GlobalSignOutError)
     pub fn global_sign_out(&self) -> fluent_builders::GlobalSignOut<C, M, R> {
         fluent_builders::GlobalSignOut::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `InitiateAuth` operation.
+    /// Constructs a fluent builder for the [`InitiateAuth`](crate::client::fluent_builders::InitiateAuth) operation.
     ///
-    /// See [`InitiateAuth`](crate::client::fluent_builders::InitiateAuth) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`auth_flow(AuthFlowType)`](crate::client::fluent_builders::InitiateAuth::auth_flow) / [`set_auth_flow(Option<AuthFlowType>)`](crate::client::fluent_builders::InitiateAuth::set_auth_flow): <p>The authentication flow for this call to execute. The API action will depend on this value. For example: </p>  <ul>   <li> <p> <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p> </li>   <li> <p> <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables to be used for next challenge execution.</p> </li>   <li> <p> <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or tokens.</p> </li>  </ul>  <p>Valid values include:</p>  <ul>   <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>   <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li>   <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li>   <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not found in the user pool. </p> </li>   <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication. This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow, Cognito receives the password in the request instead of using the SRP process to verify passwords.</p> </li>  </ul>  <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+    ///   - [`auth_parameters(HashMap<String, String>)`](crate::client::fluent_builders::InitiateAuth::auth_parameters) / [`set_auth_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::InitiateAuth::set_auth_parameters): <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking. The required values depend on the value of <code>AuthFlow</code>:</p>  <ul>   <li> <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>   <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>   <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>  </ul>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::InitiateAuth::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::InitiateAuth::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>  <ul>   <li> <p>Pre signup</p> </li>   <li> <p>Pre authentication</p> </li>   <li> <p>User migration</p> </li>  </ul>  <p>When Amazon Cognito invokes the functions for these triggers, it passes a JSON payload, which the function receives as input. This payload contains a <code>validationData</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your InitiateAuth request. In your function code in Lambda, you can process the <code>validationData</code> value to enhance your workflow for your specific needs.</p>  <p>When you use the InitiateAuth API action, Amazon Cognito also invokes the functions for the following triggers, but it does not provide the ClientMetadata value as input:</p>  <ul>   <li> <p>Post authentication</p> </li>   <li> <p>Custom message</p> </li>   <li> <p>Pre token generation</p> </li>   <li> <p>Create auth challenge</p> </li>   <li> <p>Define auth challenge</p> </li>   <li> <p>Verify auth challenge</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::InitiateAuth::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::InitiateAuth::set_client_id): <p>The app client ID.</p>
+    ///   - [`analytics_metadata(AnalyticsMetadataType)`](crate::client::fluent_builders::InitiateAuth::analytics_metadata) / [`set_analytics_metadata(Option<AnalyticsMetadataType>)`](crate::client::fluent_builders::InitiateAuth::set_analytics_metadata): <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.</p>
+    ///   - [`user_context_data(UserContextDataType)`](crate::client::fluent_builders::InitiateAuth::user_context_data) / [`set_user_context_data(Option<UserContextDataType>)`](crate::client::fluent_builders::InitiateAuth::set_user_context_data): <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    /// - On success, responds with [`InitiateAuthOutput`](crate::output::InitiateAuthOutput) with field(s):
+    ///   - [`challenge_name(Option<ChallengeNameType>)`](crate::output::InitiateAuthOutput::challenge_name): <p>The name of the challenge which you are responding to with this call. This is returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>  <p>Valid values include the following. Note that all of these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>  <ul>   <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li>   <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li>   <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li>   <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li>   <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li>   <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li>   <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p> </li>  </ul>
+    ///   - [`session(Option<String>)`](crate::output::InitiateAuthOutput::session): <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    ///   - [`challenge_parameters(Option<HashMap<String, String>>)`](crate::output::InitiateAuthOutput::challenge_parameters): <p>The challenge parameters. These are returned to you in the <code>InitiateAuth</code> response if you need to pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>  <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
+    ///   - [`authentication_result(Option<AuthenticationResultType>)`](crate::output::InitiateAuthOutput::authentication_result): <p>The result of the authentication response. This is only returned if the caller does not need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+    /// - On failure, responds with [`SdkError<InitiateAuthError>`](crate::error::InitiateAuthError)
     pub fn initiate_auth(&self) -> fluent_builders::InitiateAuth<C, M, R> {
         fluent_builders::InitiateAuth::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDevices` operation.
+    /// Constructs a fluent builder for the [`ListDevices`](crate::client::fluent_builders::ListDevices) operation.
     ///
-    /// See [`ListDevices`](crate::client::fluent_builders::ListDevices) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::ListDevices::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::ListDevices::set_access_token): <p>The access tokens for the request to list devices.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListDevices::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListDevices::set_limit): <p>The limit of the device request.</p>
+    ///   - [`pagination_token(impl Into<String>)`](crate::client::fluent_builders::ListDevices::pagination_token) / [`set_pagination_token(Option<String>)`](crate::client::fluent_builders::ListDevices::set_pagination_token): <p>The pagination token for the list request.</p>
+    /// - On success, responds with [`ListDevicesOutput`](crate::output::ListDevicesOutput) with field(s):
+    ///   - [`devices(Option<Vec<DeviceType>>)`](crate::output::ListDevicesOutput::devices): <p>The devices returned in the list devices response.</p>
+    ///   - [`pagination_token(Option<String>)`](crate::output::ListDevicesOutput::pagination_token): <p>The pagination token for the list device response.</p>
+    /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::error::ListDevicesError)
     pub fn list_devices(&self) -> fluent_builders::ListDevices<C, M, R> {
         fluent_builders::ListDevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGroups` operation.
+    /// Constructs a fluent builder for the [`ListGroups`](crate::client::fluent_builders::ListGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroups::into_paginator).
     ///
-    /// See [`ListGroups`](crate::client::fluent_builders::ListGroups) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGroups::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::ListGroups::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::ListGroups::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListGroups::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListGroups::set_limit): <p>The limit of the request to list groups.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroups::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListGroupsOutput`](crate::output::ListGroupsOutput) with field(s):
+    ///   - [`groups(Option<Vec<GroupType>>)`](crate::output::ListGroupsOutput::groups): <p>The group objects for the groups.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGroupsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListGroupsError>`](crate::error::ListGroupsError)
     pub fn list_groups(&self) -> fluent_builders::ListGroups<C, M, R> {
         fluent_builders::ListGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListIdentityProviders` operation.
+    /// Constructs a fluent builder for the [`ListIdentityProviders`](crate::client::fluent_builders::ListIdentityProviders) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListIdentityProviders::into_paginator).
     ///
-    /// See [`ListIdentityProviders`](crate::client::fluent_builders::ListIdentityProviders) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIdentityProviders::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::ListIdentityProviders::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::ListIdentityProviders::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIdentityProviders::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIdentityProviders::set_max_results): <p>The maximum number of identity providers to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIdentityProviders::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIdentityProviders::set_next_token): <p>A pagination token.</p>
+    /// - On success, responds with [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput) with field(s):
+    ///   - [`providers(Option<Vec<ProviderDescription>>)`](crate::output::ListIdentityProvidersOutput::providers): <p>A list of identity provider objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListIdentityProvidersOutput::next_token): <p>A pagination token.</p>
+    /// - On failure, responds with [`SdkError<ListIdentityProvidersError>`](crate::error::ListIdentityProvidersError)
     pub fn list_identity_providers(&self) -> fluent_builders::ListIdentityProviders<C, M, R> {
         fluent_builders::ListIdentityProviders::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResourceServers` operation.
+    /// Constructs a fluent builder for the [`ListResourceServers`](crate::client::fluent_builders::ListResourceServers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListResourceServers::into_paginator).
     ///
-    /// See [`ListResourceServers`](crate::client::fluent_builders::ListResourceServers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResourceServers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::ListResourceServers::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::ListResourceServers::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResourceServers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListResourceServers::set_max_results): <p>The maximum number of resource servers to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourceServers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourceServers::set_next_token): <p>A pagination token.</p>
+    /// - On success, responds with [`ListResourceServersOutput`](crate::output::ListResourceServersOutput) with field(s):
+    ///   - [`resource_servers(Option<Vec<ResourceServerType>>)`](crate::output::ListResourceServersOutput::resource_servers): <p>The resource servers.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceServersOutput::next_token): <p>A pagination token.</p>
+    /// - On failure, responds with [`SdkError<ListResourceServersError>`](crate::error::ListResourceServersError)
     pub fn list_resource_servers(&self) -> fluent_builders::ListResourceServers<C, M, R> {
         fluent_builders::ListResourceServers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags that are assigned to the user pool.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUserImportJobs` operation.
+    /// Constructs a fluent builder for the [`ListUserImportJobs`](crate::client::fluent_builders::ListUserImportJobs) operation.
     ///
-    /// See [`ListUserImportJobs`](crate::client::fluent_builders::ListUserImportJobs) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::ListUserImportJobs::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::ListUserImportJobs::set_user_pool_id): <p>The user pool ID for the user pool that the users are being imported into.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUserImportJobs::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListUserImportJobs::set_max_results): <p>The maximum number of import jobs you want the request to return.</p>
+    ///   - [`pagination_token(impl Into<String>)`](crate::client::fluent_builders::ListUserImportJobs::pagination_token) / [`set_pagination_token(Option<String>)`](crate::client::fluent_builders::ListUserImportJobs::set_pagination_token): <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
+    /// - On success, responds with [`ListUserImportJobsOutput`](crate::output::ListUserImportJobsOutput) with field(s):
+    ///   - [`user_import_jobs(Option<Vec<UserImportJobType>>)`](crate::output::ListUserImportJobsOutput::user_import_jobs): <p>The user import jobs.</p>
+    ///   - [`pagination_token(Option<String>)`](crate::output::ListUserImportJobsOutput::pagination_token): <p>An identifier that can be used to return the next set of user import jobs in the list.</p>
+    /// - On failure, responds with [`SdkError<ListUserImportJobsError>`](crate::error::ListUserImportJobsError)
     pub fn list_user_import_jobs(&self) -> fluent_builders::ListUserImportJobs<C, M, R> {
         fluent_builders::ListUserImportJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUserPoolClients` operation.
+    /// Constructs a fluent builder for the [`ListUserPoolClients`](crate::client::fluent_builders::ListUserPoolClients) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUserPoolClients::into_paginator).
     ///
-    /// See [`ListUserPoolClients`](crate::client::fluent_builders::ListUserPoolClients) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUserPoolClients::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::ListUserPoolClients::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::ListUserPoolClients::set_user_pool_id): <p>The user pool ID for the user pool where you want to list user pool clients.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUserPoolClients::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListUserPoolClients::set_max_results): <p>The maximum number of results you want the request to return when listing the user pool clients.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUserPoolClients::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUserPoolClients::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListUserPoolClientsOutput`](crate::output::ListUserPoolClientsOutput) with field(s):
+    ///   - [`user_pool_clients(Option<Vec<UserPoolClientDescription>>)`](crate::output::ListUserPoolClientsOutput::user_pool_clients): <p>The user pool clients in the response that lists user pool clients.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUserPoolClientsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListUserPoolClientsError>`](crate::error::ListUserPoolClientsError)
     pub fn list_user_pool_clients(&self) -> fluent_builders::ListUserPoolClients<C, M, R> {
         fluent_builders::ListUserPoolClients::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUserPools` operation.
+    /// Constructs a fluent builder for the [`ListUserPools`](crate::client::fluent_builders::ListUserPools) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUserPools::into_paginator).
     ///
-    /// See [`ListUserPools`](crate::client::fluent_builders::ListUserPools) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUserPools::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUserPools::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUserPools::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUserPools::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListUserPools::set_max_results): <p>The maximum number of results you want the request to return when listing the user pools.</p>
+    /// - On success, responds with [`ListUserPoolsOutput`](crate::output::ListUserPoolsOutput) with field(s):
+    ///   - [`user_pools(Option<Vec<UserPoolDescriptionType>>)`](crate::output::ListUserPoolsOutput::user_pools): <p>The user pools from the response to list users.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUserPoolsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListUserPoolsError>`](crate::error::ListUserPoolsError)
     pub fn list_user_pools(&self) -> fluent_builders::ListUserPools<C, M, R> {
         fluent_builders::ListUserPools::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUsers` operation.
+    /// Constructs a fluent builder for the [`ListUsers`](crate::client::fluent_builders::ListUsers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
     ///
-    /// See [`ListUsers`](crate::client::fluent_builders::ListUsers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::ListUsers::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::ListUsers::set_user_pool_id): <p>The user pool ID for the user pool on which the search should be performed.</p>
+    ///   - [`attributes_to_get(Vec<String>)`](crate::client::fluent_builders::ListUsers::attributes_to_get) / [`set_attributes_to_get(Option<Vec<String>>)`](crate::client::fluent_builders::ListUsers::set_attributes_to_get): <p>An array of strings, where each string is the name of a user attribute to be returned for each user in the search results. If the array is null, all attributes are returned.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListUsers::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListUsers::set_limit): <p>Maximum number of users to be returned.</p>
+    ///   - [`pagination_token(impl Into<String>)`](crate::client::fluent_builders::ListUsers::pagination_token) / [`set_pagination_token(Option<String>)`](crate::client::fluent_builders::ListUsers::set_pagination_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    ///   - [`filter(impl Into<String>)`](crate::client::fluent_builders::ListUsers::filter) / [`set_filter(Option<String>)`](crate::client::fluent_builders::ListUsers::set_filter): <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (\) character. For example, "<code>family_name</code> = \"Reddy\"".</p>  <ul>   <li> <p> <i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p> </li>   <li> <p> <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>   <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for each user.</p> </li>  </ul>  <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user pool.</p>  <p>You can only search for the following standard attributes:</p>  <ul>   <li> <p> <code>username</code> (case-sensitive)</p> </li>   <li> <p> <code>email</code> </p> </li>   <li> <p> <code>phone_number</code> </p> </li>   <li> <p> <code>name</code> </p> </li>   <li> <p> <code>given_name</code> </p> </li>   <li> <p> <code>family_name</code> </p> </li>   <li> <p> <code>preferred_username</code> </p> </li>   <li> <p> <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)</p> </li>   <li> <p> <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code> </p> </li>   <li> <p> <code>sub</code> </p> </li>  </ul>  <p>Custom attributes are not searchable.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+    /// - On success, responds with [`ListUsersOutput`](crate::output::ListUsersOutput) with field(s):
+    ///   - [`users(Option<Vec<UserType>>)`](crate::output::ListUsersOutput::users): <p>The users returned in the request to list users.</p>
+    ///   - [`pagination_token(Option<String>)`](crate::output::ListUsersOutput::pagination_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListUsersError>`](crate::error::ListUsersError)
     pub fn list_users(&self) -> fluent_builders::ListUsers<C, M, R> {
         fluent_builders::ListUsers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUsersInGroup` operation.
+    /// Constructs a fluent builder for the [`ListUsersInGroup`](crate::client::fluent_builders::ListUsersInGroup) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUsersInGroup::into_paginator).
     ///
-    /// See [`ListUsersInGroup`](crate::client::fluent_builders::ListUsersInGroup) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUsersInGroup::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::ListUsersInGroup::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::ListUsersInGroup::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::ListUsersInGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::ListUsersInGroup::set_group_name): <p>The name of the group.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListUsersInGroup::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListUsersInGroup::set_limit): <p>The limit of the request to list users.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUsersInGroup::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUsersInGroup::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListUsersInGroupOutput`](crate::output::ListUsersInGroupOutput) with field(s):
+    ///   - [`users(Option<Vec<UserType>>)`](crate::output::ListUsersInGroupOutput::users): <p>The users returned in the request to list users.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUsersInGroupOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListUsersInGroupError>`](crate::error::ListUsersInGroupError)
     pub fn list_users_in_group(&self) -> fluent_builders::ListUsersInGroup<C, M, R> {
         fluent_builders::ListUsersInGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResendConfirmationCode` operation.
+    /// Constructs a fluent builder for the [`ResendConfirmationCode`](crate::client::fluent_builders::ResendConfirmationCode) operation.
     ///
-    /// See [`ResendConfirmationCode`](crate::client::fluent_builders::ResendConfirmationCode) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::ResendConfirmationCode::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::ResendConfirmationCode::set_client_id): <p>The ID of the client associated with the user pool.</p>
+    ///   - [`secret_hash(impl Into<String>)`](crate::client::fluent_builders::ResendConfirmationCode::secret_hash) / [`set_secret_hash(Option<String>)`](crate::client::fluent_builders::ResendConfirmationCode::set_secret_hash): <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
+    ///   - [`user_context_data(UserContextDataType)`](crate::client::fluent_builders::ResendConfirmationCode::user_context_data) / [`set_user_context_data(Option<UserContextDataType>)`](crate::client::fluent_builders::ResendConfirmationCode::set_user_context_data): <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::ResendConfirmationCode::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::ResendConfirmationCode::set_username): <p>The user name of the user to whom you wish to resend a confirmation code.</p>
+    ///   - [`analytics_metadata(AnalyticsMetadataType)`](crate::client::fluent_builders::ResendConfirmationCode::analytics_metadata) / [`set_analytics_metadata(Option<AnalyticsMetadataType>)`](crate::client::fluent_builders::ResendConfirmationCode::set_analytics_metadata): <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code> calls.</p>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::ResendConfirmationCode::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ResendConfirmationCode::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ResendConfirmationCode API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ResendConfirmationCode request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    /// - On success, responds with [`ResendConfirmationCodeOutput`](crate::output::ResendConfirmationCodeOutput) with field(s):
+    ///   - [`code_delivery_details(Option<CodeDeliveryDetailsType>)`](crate::output::ResendConfirmationCodeOutput::code_delivery_details): <p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>
+    /// - On failure, responds with [`SdkError<ResendConfirmationCodeError>`](crate::error::ResendConfirmationCodeError)
     pub fn resend_confirmation_code(&self) -> fluent_builders::ResendConfirmationCode<C, M, R> {
         fluent_builders::ResendConfirmationCode::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RespondToAuthChallenge` operation.
+    /// Constructs a fluent builder for the [`RespondToAuthChallenge`](crate::client::fluent_builders::RespondToAuthChallenge) operation.
     ///
-    /// See [`RespondToAuthChallenge`](crate::client::fluent_builders::RespondToAuthChallenge) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::RespondToAuthChallenge::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::RespondToAuthChallenge::set_client_id): <p>The app client ID.</p>
+    ///   - [`challenge_name(ChallengeNameType)`](crate::client::fluent_builders::RespondToAuthChallenge::challenge_name) / [`set_challenge_name(Option<ChallengeNameType>)`](crate::client::fluent_builders::RespondToAuthChallenge::set_challenge_name): <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>  <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+    ///   - [`session(impl Into<String>)`](crate::client::fluent_builders::RespondToAuthChallenge::session) / [`set_session(Option<String>)`](crate::client::fluent_builders::RespondToAuthChallenge::set_session): <p>The session which should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    ///   - [`challenge_responses(HashMap<String, String>)`](crate::client::fluent_builders::RespondToAuthChallenge::challenge_responses) / [`set_challenge_responses(Option<HashMap<String, String>>)`](crate::client::fluent_builders::RespondToAuthChallenge::set_challenge_responses): <p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p> <note>   <p> <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all inputs below (including <code>SOFTWARE_TOKEN_MFA</code>).</p>  </note>  <ul>   <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>.</p> </li>   <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>.</p> </li>   <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>. </p> </li>   <li> <p> <code>SOFTWARE_TOKEN_MFA</code>: <code>USERNAME</code> and <code>SOFTWARE_TOKEN_MFA_CODE</code> are required attributes.</p> </li>   <li> <p> <code>DEVICE_SRP_AUTH</code> requires <code>USERNAME</code>, <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p> </li>   <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>   <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>  </ul>
+    ///   - [`analytics_metadata(AnalyticsMetadataType)`](crate::client::fluent_builders::RespondToAuthChallenge::analytics_metadata) / [`set_analytics_metadata(Option<AnalyticsMetadataType>)`](crate::client::fluent_builders::RespondToAuthChallenge::set_analytics_metadata): <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>RespondToAuthChallenge</code> calls.</p>
+    ///   - [`user_context_data(UserContextDataType)`](crate::client::fluent_builders::RespondToAuthChallenge::user_context_data) / [`set_user_context_data(Option<UserContextDataType>)`](crate::client::fluent_builders::RespondToAuthChallenge::set_user_context_data): <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::RespondToAuthChallenge::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::RespondToAuthChallenge::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>post authentication</i>, <i>pre token generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify auth challenge</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    /// - On success, responds with [`RespondToAuthChallengeOutput`](crate::output::RespondToAuthChallengeOutput) with field(s):
+    ///   - [`challenge_name(Option<ChallengeNameType>)`](crate::output::RespondToAuthChallengeOutput::challenge_name): <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+    ///   - [`session(Option<String>)`](crate::output::RespondToAuthChallengeOutput::session): <p>The session which should be passed both ways in challenge-response calls to the service. If the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+    ///   - [`challenge_parameters(Option<HashMap<String, String>>)`](crate::output::RespondToAuthChallengeOutput::challenge_parameters): <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
+    ///   - [`authentication_result(Option<AuthenticationResultType>)`](crate::output::RespondToAuthChallengeOutput::authentication_result): <p>The result returned by the server in response to the request to respond to the authentication challenge.</p>
+    /// - On failure, responds with [`SdkError<RespondToAuthChallengeError>`](crate::error::RespondToAuthChallengeError)
     pub fn respond_to_auth_challenge(&self) -> fluent_builders::RespondToAuthChallenge<C, M, R> {
         fluent_builders::RespondToAuthChallenge::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RevokeToken` operation.
+    /// Constructs a fluent builder for the [`RevokeToken`](crate::client::fluent_builders::RevokeToken) operation.
     ///
-    /// See [`RevokeToken`](crate::client::fluent_builders::RevokeToken) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::RevokeToken::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::RevokeToken::set_token): <p>The token that you want to revoke.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::RevokeToken::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::RevokeToken::set_client_id): <p>The client ID for the token that you want to revoke.</p>
+    ///   - [`client_secret(impl Into<String>)`](crate::client::fluent_builders::RevokeToken::client_secret) / [`set_client_secret(Option<String>)`](crate::client::fluent_builders::RevokeToken::set_client_secret): <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
+    /// - On success, responds with [`RevokeTokenOutput`](crate::output::RevokeTokenOutput)
+
+    /// - On failure, responds with [`SdkError<RevokeTokenError>`](crate::error::RevokeTokenError)
     pub fn revoke_token(&self) -> fluent_builders::RevokeToken<C, M, R> {
         fluent_builders::RevokeToken::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetRiskConfiguration` operation.
+    /// Constructs a fluent builder for the [`SetRiskConfiguration`](crate::client::fluent_builders::SetRiskConfiguration) operation.
     ///
-    /// See [`SetRiskConfiguration`](crate::client::fluent_builders::SetRiskConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::SetRiskConfiguration::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::SetRiskConfiguration::set_user_pool_id): <p>The user pool ID. </p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::SetRiskConfiguration::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::SetRiskConfiguration::set_client_id): <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>userPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>  <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID is not null, the user pool configuration is overridden and the risk configuration for the client is used instead.</p>
+    ///   - [`compromised_credentials_risk_configuration(CompromisedCredentialsRiskConfigurationType)`](crate::client::fluent_builders::SetRiskConfiguration::compromised_credentials_risk_configuration) / [`set_compromised_credentials_risk_configuration(Option<CompromisedCredentialsRiskConfigurationType>)`](crate::client::fluent_builders::SetRiskConfiguration::set_compromised_credentials_risk_configuration): <p>The compromised credentials risk configuration.</p>
+    ///   - [`account_takeover_risk_configuration(AccountTakeoverRiskConfigurationType)`](crate::client::fluent_builders::SetRiskConfiguration::account_takeover_risk_configuration) / [`set_account_takeover_risk_configuration(Option<AccountTakeoverRiskConfigurationType>)`](crate::client::fluent_builders::SetRiskConfiguration::set_account_takeover_risk_configuration): <p>The account takeover risk configuration.</p>
+    ///   - [`risk_exception_configuration(RiskExceptionConfigurationType)`](crate::client::fluent_builders::SetRiskConfiguration::risk_exception_configuration) / [`set_risk_exception_configuration(Option<RiskExceptionConfigurationType>)`](crate::client::fluent_builders::SetRiskConfiguration::set_risk_exception_configuration): <p>The configuration to override the risk decision.</p>
+    /// - On success, responds with [`SetRiskConfigurationOutput`](crate::output::SetRiskConfigurationOutput) with field(s):
+    ///   - [`risk_configuration(Option<RiskConfigurationType>)`](crate::output::SetRiskConfigurationOutput::risk_configuration): <p>The risk configuration.</p>
+    /// - On failure, responds with [`SdkError<SetRiskConfigurationError>`](crate::error::SetRiskConfigurationError)
     pub fn set_risk_configuration(&self) -> fluent_builders::SetRiskConfiguration<C, M, R> {
         fluent_builders::SetRiskConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetUICustomization` operation.
+    /// Constructs a fluent builder for the [`SetUICustomization`](crate::client::fluent_builders::SetUICustomization) operation.
     ///
-    /// See [`SetUICustomization`](crate::client::fluent_builders::SetUICustomization) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::SetUICustomization::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::SetUICustomization::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::SetUICustomization::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::SetUICustomization::set_client_id): <p>The client ID for the client app.</p>
+    ///   - [`css(impl Into<String>)`](crate::client::fluent_builders::SetUICustomization::css) / [`set_css(Option<String>)`](crate::client::fluent_builders::SetUICustomization::set_css): <p>The CSS values in the UI customization.</p>
+    ///   - [`image_file(Blob)`](crate::client::fluent_builders::SetUICustomization::image_file) / [`set_image_file(Option<Blob>)`](crate::client::fluent_builders::SetUICustomization::set_image_file): <p>The uploaded logo image for the UI customization.</p>
+    /// - On success, responds with [`SetUiCustomizationOutput`](crate::output::SetUiCustomizationOutput) with field(s):
+    ///   - [`ui_customization(Option<UiCustomizationType>)`](crate::output::SetUiCustomizationOutput::ui_customization): <p>The UI customization information.</p>
+    /// - On failure, responds with [`SdkError<SetUICustomizationError>`](crate::error::SetUICustomizationError)
     pub fn set_ui_customization(&self) -> fluent_builders::SetUICustomization<C, M, R> {
         fluent_builders::SetUICustomization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetUserMFAPreference` operation.
+    /// Constructs a fluent builder for the [`SetUserMFAPreference`](crate::client::fluent_builders::SetUserMFAPreference) operation.
     ///
-    /// See [`SetUserMFAPreference`](crate::client::fluent_builders::SetUserMFAPreference) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`sms_mfa_settings(SmsMfaSettingsType)`](crate::client::fluent_builders::SetUserMFAPreference::sms_mfa_settings) / [`set_sms_mfa_settings(Option<SmsMfaSettingsType>)`](crate::client::fluent_builders::SetUserMFAPreference::set_sms_mfa_settings): <p>The SMS text message multi-factor authentication (MFA) settings.</p>
+    ///   - [`software_token_mfa_settings(SoftwareTokenMfaSettingsType)`](crate::client::fluent_builders::SetUserMFAPreference::software_token_mfa_settings) / [`set_software_token_mfa_settings(Option<SoftwareTokenMfaSettingsType>)`](crate::client::fluent_builders::SetUserMFAPreference::set_software_token_mfa_settings): <p>The time-based one-time password software token MFA settings.</p>
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::SetUserMFAPreference::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::SetUserMFAPreference::set_access_token): <p>The access token for the user.</p>
+    /// - On success, responds with [`SetUserMfaPreferenceOutput`](crate::output::SetUserMfaPreferenceOutput)
+
+    /// - On failure, responds with [`SdkError<SetUserMFAPreferenceError>`](crate::error::SetUserMFAPreferenceError)
     pub fn set_user_mfa_preference(&self) -> fluent_builders::SetUserMFAPreference<C, M, R> {
         fluent_builders::SetUserMFAPreference::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetUserPoolMfaConfig` operation.
+    /// Constructs a fluent builder for the [`SetUserPoolMfaConfig`](crate::client::fluent_builders::SetUserPoolMfaConfig) operation.
     ///
-    /// See [`SetUserPoolMfaConfig`](crate::client::fluent_builders::SetUserPoolMfaConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::SetUserPoolMfaConfig::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::SetUserPoolMfaConfig::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`sms_mfa_configuration(SmsMfaConfigType)`](crate::client::fluent_builders::SetUserPoolMfaConfig::sms_mfa_configuration) / [`set_sms_mfa_configuration(Option<SmsMfaConfigType>)`](crate::client::fluent_builders::SetUserPoolMfaConfig::set_sms_mfa_configuration): <p>The SMS text message MFA configuration.</p>
+    ///   - [`software_token_mfa_configuration(SoftwareTokenMfaConfigType)`](crate::client::fluent_builders::SetUserPoolMfaConfig::software_token_mfa_configuration) / [`set_software_token_mfa_configuration(Option<SoftwareTokenMfaConfigType>)`](crate::client::fluent_builders::SetUserPoolMfaConfig::set_software_token_mfa_configuration): <p>The software token MFA configuration.</p>
+    ///   - [`mfa_configuration(UserPoolMfaType)`](crate::client::fluent_builders::SetUserPoolMfaConfig::mfa_configuration) / [`set_mfa_configuration(Option<UserPoolMfaType>)`](crate::client::fluent_builders::SetUserPoolMfaConfig::set_mfa_configuration): <p>The MFA configuration. Users who don't have an MFA factor set up won't be able to sign-in if you set the MfaConfiguration value to ‘ON’. See <a href="cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a User Pool</a> to learn more. Valid values include:</p>  <ul>   <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>   <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>   <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>  </ul>
+    /// - On success, responds with [`SetUserPoolMfaConfigOutput`](crate::output::SetUserPoolMfaConfigOutput) with field(s):
+    ///   - [`sms_mfa_configuration(Option<SmsMfaConfigType>)`](crate::output::SetUserPoolMfaConfigOutput::sms_mfa_configuration): <p>The SMS text message MFA configuration.</p>
+    ///   - [`software_token_mfa_configuration(Option<SoftwareTokenMfaConfigType>)`](crate::output::SetUserPoolMfaConfigOutput::software_token_mfa_configuration): <p>The software token MFA configuration.</p>
+    ///   - [`mfa_configuration(Option<UserPoolMfaType>)`](crate::output::SetUserPoolMfaConfigOutput::mfa_configuration): <p>The MFA configuration. Valid values include:</p>  <ul>   <li> <p> <code>OFF</code> MFA will not be used for any users.</p> </li>   <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>   <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor enabled.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<SetUserPoolMfaConfigError>`](crate::error::SetUserPoolMfaConfigError)
     pub fn set_user_pool_mfa_config(&self) -> fluent_builders::SetUserPoolMfaConfig<C, M, R> {
         fluent_builders::SetUserPoolMfaConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetUserSettings` operation.
+    /// Constructs a fluent builder for the [`SetUserSettings`](crate::client::fluent_builders::SetUserSettings) operation.
     ///
-    /// See [`SetUserSettings`](crate::client::fluent_builders::SetUserSettings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::SetUserSettings::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::SetUserSettings::set_access_token): <p>The access token for the set user settings request.</p>
+    ///   - [`mfa_options(Vec<MfaOptionType>)`](crate::client::fluent_builders::SetUserSettings::mfa_options) / [`set_mfa_options(Option<Vec<MfaOptionType>>)`](crate::client::fluent_builders::SetUserSettings::set_mfa_options): <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
+    /// - On success, responds with [`SetUserSettingsOutput`](crate::output::SetUserSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<SetUserSettingsError>`](crate::error::SetUserSettingsError)
     pub fn set_user_settings(&self) -> fluent_builders::SetUserSettings<C, M, R> {
         fluent_builders::SetUserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SignUp` operation.
+    /// Constructs a fluent builder for the [`SignUp`](crate::client::fluent_builders::SignUp) operation.
     ///
-    /// See [`SignUp`](crate::client::fluent_builders::SignUp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::SignUp::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::SignUp::set_client_id): <p>The ID of the client associated with the user pool.</p>
+    ///   - [`secret_hash(impl Into<String>)`](crate::client::fluent_builders::SignUp::secret_hash) / [`set_secret_hash(Option<String>)`](crate::client::fluent_builders::SignUp::set_secret_hash): <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::SignUp::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::SignUp::set_username): <p>The user name of the user you wish to register.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::SignUp::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::SignUp::set_password): <p>The password of the user you wish to register.</p>
+    ///   - [`user_attributes(Vec<AttributeType>)`](crate::client::fluent_builders::SignUp::user_attributes) / [`set_user_attributes(Option<Vec<AttributeType>>)`](crate::client::fluent_builders::SignUp::set_user_attributes): <p>An array of name-value pairs representing user attributes.</p>  <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    ///   - [`validation_data(Vec<AttributeType>)`](crate::client::fluent_builders::SignUp::validation_data) / [`set_validation_data(Option<Vec<AttributeType>>)`](crate::client::fluent_builders::SignUp::set_validation_data): <p>The validation data in the request to register a user.</p>
+    ///   - [`analytics_metadata(AnalyticsMetadataType)`](crate::client::fluent_builders::SignUp::analytics_metadata) / [`set_analytics_metadata(Option<AnalyticsMetadataType>)`](crate::client::fluent_builders::SignUp::set_analytics_metadata): <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.</p>
+    ///   - [`user_context_data(UserContextDataType)`](crate::client::fluent_builders::SignUp::user_context_data) / [`set_user_context_data(Option<UserContextDataType>)`](crate::client::fluent_builders::SignUp::set_user_context_data): <p>Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::SignUp::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::SignUp::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the SignUp API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post confirmation</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your SignUp request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    /// - On success, responds with [`SignUpOutput`](crate::output::SignUpOutput) with field(s):
+    ///   - [`user_confirmed(bool)`](crate::output::SignUpOutput::user_confirmed): <p>A response from the server indicating that a user registration has been confirmed.</p>
+    ///   - [`code_delivery_details(Option<CodeDeliveryDetailsType>)`](crate::output::SignUpOutput::code_delivery_details): <p>The code delivery details returned by the server response to the user registration request.</p>
+    ///   - [`user_sub(Option<String>)`](crate::output::SignUpOutput::user_sub): <p>The UUID of the authenticated user. This is not the same as <code>username</code>.</p>
+    /// - On failure, responds with [`SdkError<SignUpError>`](crate::error::SignUpError)
     pub fn sign_up(&self) -> fluent_builders::SignUp<C, M, R> {
         fluent_builders::SignUp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartUserImportJob` operation.
+    /// Constructs a fluent builder for the [`StartUserImportJob`](crate::client::fluent_builders::StartUserImportJob) operation.
     ///
-    /// See [`StartUserImportJob`](crate::client::fluent_builders::StartUserImportJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::StartUserImportJob::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::StartUserImportJob::set_user_pool_id): <p>The user pool ID for the user pool that the users are being imported into.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::StartUserImportJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::StartUserImportJob::set_job_id): <p>The job ID for the user import job.</p>
+    /// - On success, responds with [`StartUserImportJobOutput`](crate::output::StartUserImportJobOutput) with field(s):
+    ///   - [`user_import_job(Option<UserImportJobType>)`](crate::output::StartUserImportJobOutput::user_import_job): <p>The job object that represents the user import job.</p>
+    /// - On failure, responds with [`SdkError<StartUserImportJobError>`](crate::error::StartUserImportJobError)
     pub fn start_user_import_job(&self) -> fluent_builders::StartUserImportJob<C, M, R> {
         fluent_builders::StartUserImportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopUserImportJob` operation.
+    /// Constructs a fluent builder for the [`StopUserImportJob`](crate::client::fluent_builders::StopUserImportJob) operation.
     ///
-    /// See [`StopUserImportJob`](crate::client::fluent_builders::StopUserImportJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::StopUserImportJob::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::StopUserImportJob::set_user_pool_id): <p>The user pool ID for the user pool that the users are being imported into.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::StopUserImportJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::StopUserImportJob::set_job_id): <p>The job ID for the user import job.</p>
+    /// - On success, responds with [`StopUserImportJobOutput`](crate::output::StopUserImportJobOutput) with field(s):
+    ///   - [`user_import_job(Option<UserImportJobType>)`](crate::output::StopUserImportJobOutput::user_import_job): <p>The job object that represents the user import job.</p>
+    /// - On failure, responds with [`SdkError<StopUserImportJobError>`](crate::error::StopUserImportJobError)
     pub fn stop_user_import_job(&self) -> fluent_builders::StopUserImportJob<C, M, R> {
         fluent_builders::StopUserImportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the user pool to assign the tags to.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to assign to the user pool.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys of the tags to remove from the user pool.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAuthEventFeedback` operation.
+    /// Constructs a fluent builder for the [`UpdateAuthEventFeedback`](crate::client::fluent_builders::UpdateAuthEventFeedback) operation.
     ///
-    /// See [`UpdateAuthEventFeedback`](crate::client::fluent_builders::UpdateAuthEventFeedback) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAuthEventFeedback::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::UpdateAuthEventFeedback::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::UpdateAuthEventFeedback::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::UpdateAuthEventFeedback::set_username): <p>The user pool username.</p>
+    ///   - [`event_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAuthEventFeedback::event_id) / [`set_event_id(Option<String>)`](crate::client::fluent_builders::UpdateAuthEventFeedback::set_event_id): <p>The event ID.</p>
+    ///   - [`feedback_token(impl Into<String>)`](crate::client::fluent_builders::UpdateAuthEventFeedback::feedback_token) / [`set_feedback_token(Option<String>)`](crate::client::fluent_builders::UpdateAuthEventFeedback::set_feedback_token): <p>The feedback token.</p>
+    ///   - [`feedback_value(FeedbackValueType)`](crate::client::fluent_builders::UpdateAuthEventFeedback::feedback_value) / [`set_feedback_value(Option<FeedbackValueType>)`](crate::client::fluent_builders::UpdateAuthEventFeedback::set_feedback_value): <p>The authentication event feedback value.</p>
+    /// - On success, responds with [`UpdateAuthEventFeedbackOutput`](crate::output::UpdateAuthEventFeedbackOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateAuthEventFeedbackError>`](crate::error::UpdateAuthEventFeedbackError)
     pub fn update_auth_event_feedback(&self) -> fluent_builders::UpdateAuthEventFeedback<C, M, R> {
         fluent_builders::UpdateAuthEventFeedback::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDeviceStatus` operation.
+    /// Constructs a fluent builder for the [`UpdateDeviceStatus`](crate::client::fluent_builders::UpdateDeviceStatus) operation.
     ///
-    /// See [`UpdateDeviceStatus`](crate::client::fluent_builders::UpdateDeviceStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::UpdateDeviceStatus::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::UpdateDeviceStatus::set_access_token): <p>The access token.</p>
+    ///   - [`device_key(impl Into<String>)`](crate::client::fluent_builders::UpdateDeviceStatus::device_key) / [`set_device_key(Option<String>)`](crate::client::fluent_builders::UpdateDeviceStatus::set_device_key): <p>The device key.</p>
+    ///   - [`device_remembered_status(DeviceRememberedStatusType)`](crate::client::fluent_builders::UpdateDeviceStatus::device_remembered_status) / [`set_device_remembered_status(Option<DeviceRememberedStatusType>)`](crate::client::fluent_builders::UpdateDeviceStatus::set_device_remembered_status): <p>The status of whether a device is remembered.</p>
+    /// - On success, responds with [`UpdateDeviceStatusOutput`](crate::output::UpdateDeviceStatusOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDeviceStatusError>`](crate::error::UpdateDeviceStatusError)
     pub fn update_device_status(&self) -> fluent_builders::UpdateDeviceStatus<C, M, R> {
         fluent_builders::UpdateDeviceStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateGroup`](crate::client::fluent_builders::UpdateGroup) operation.
     ///
-    /// See [`UpdateGroup`](crate::client::fluent_builders::UpdateGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_group_name): <p>The name of the group.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_description): <p>A string containing the new description of the group.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_role_arn): <p>The new role ARN for the group. This is used for setting the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.</p>
+    ///   - [`precedence(i32)`](crate::client::fluent_builders::UpdateGroup::precedence) / [`set_precedence(Option<i32>)`](crate::client::fluent_builders::UpdateGroup::set_precedence): <p>The new precedence value for the group. For more information about this parameter, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
+    /// - On success, responds with [`UpdateGroupOutput`](crate::output::UpdateGroupOutput) with field(s):
+    ///   - [`group(Option<GroupType>)`](crate::output::UpdateGroupOutput::group): <p>The group object for the group.</p>
+    /// - On failure, responds with [`SdkError<UpdateGroupError>`](crate::error::UpdateGroupError)
     pub fn update_group(&self) -> fluent_builders::UpdateGroup<C, M, R> {
         fluent_builders::UpdateGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateIdentityProvider` operation.
+    /// Constructs a fluent builder for the [`UpdateIdentityProvider`](crate::client::fluent_builders::UpdateIdentityProvider) operation.
     ///
-    /// See [`UpdateIdentityProvider`](crate::client::fluent_builders::UpdateIdentityProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIdentityProvider::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::UpdateIdentityProvider::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`provider_name(impl Into<String>)`](crate::client::fluent_builders::UpdateIdentityProvider::provider_name) / [`set_provider_name(Option<String>)`](crate::client::fluent_builders::UpdateIdentityProvider::set_provider_name): <p>The identity provider name.</p>
+    ///   - [`provider_details(HashMap<String, String>)`](crate::client::fluent_builders::UpdateIdentityProvider::provider_details) / [`set_provider_details(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateIdentityProvider::set_provider_details): <p>The identity provider details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>
+    ///   - [`attribute_mapping(HashMap<String, String>)`](crate::client::fluent_builders::UpdateIdentityProvider::attribute_mapping) / [`set_attribute_mapping(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateIdentityProvider::set_attribute_mapping): <p>The identity provider attribute mapping to be changed.</p>
+    ///   - [`idp_identifiers(Vec<String>)`](crate::client::fluent_builders::UpdateIdentityProvider::idp_identifiers) / [`set_idp_identifiers(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateIdentityProvider::set_idp_identifiers): <p>A list of identity provider identifiers.</p>
+    /// - On success, responds with [`UpdateIdentityProviderOutput`](crate::output::UpdateIdentityProviderOutput) with field(s):
+    ///   - [`identity_provider(Option<IdentityProviderType>)`](crate::output::UpdateIdentityProviderOutput::identity_provider): <p>The identity provider object.</p>
+    /// - On failure, responds with [`SdkError<UpdateIdentityProviderError>`](crate::error::UpdateIdentityProviderError)
     pub fn update_identity_provider(&self) -> fluent_builders::UpdateIdentityProvider<C, M, R> {
         fluent_builders::UpdateIdentityProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateResourceServer` operation.
+    /// Constructs a fluent builder for the [`UpdateResourceServer`](crate::client::fluent_builders::UpdateResourceServer) operation.
     ///
-    /// See [`UpdateResourceServer`](crate::client::fluent_builders::UpdateResourceServer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceServer::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::UpdateResourceServer::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceServer::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::UpdateResourceServer::set_identifier): <p>The identifier for the resource server.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceServer::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateResourceServer::set_name): <p>The name of the resource server.</p>
+    ///   - [`scopes(Vec<ResourceServerScopeType>)`](crate::client::fluent_builders::UpdateResourceServer::scopes) / [`set_scopes(Option<Vec<ResourceServerScopeType>>)`](crate::client::fluent_builders::UpdateResourceServer::set_scopes): <p>The scope values to be set for the resource server.</p>
+    /// - On success, responds with [`UpdateResourceServerOutput`](crate::output::UpdateResourceServerOutput) with field(s):
+    ///   - [`resource_server(Option<ResourceServerType>)`](crate::output::UpdateResourceServerOutput::resource_server): <p>The resource server.</p>
+    /// - On failure, responds with [`SdkError<UpdateResourceServerError>`](crate::error::UpdateResourceServerError)
     pub fn update_resource_server(&self) -> fluent_builders::UpdateResourceServer<C, M, R> {
         fluent_builders::UpdateResourceServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserAttributes` operation.
+    /// Constructs a fluent builder for the [`UpdateUserAttributes`](crate::client::fluent_builders::UpdateUserAttributes) operation.
     ///
-    /// See [`UpdateUserAttributes`](crate::client::fluent_builders::UpdateUserAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_attributes(Vec<AttributeType>)`](crate::client::fluent_builders::UpdateUserAttributes::user_attributes) / [`set_user_attributes(Option<Vec<AttributeType>>)`](crate::client::fluent_builders::UpdateUserAttributes::set_user_attributes): <p>An array of name-value pairs representing user attributes.</p>  <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::UpdateUserAttributes::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::UpdateUserAttributes::set_access_token): <p>The access token for the request to update user attributes.</p>
+    ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::UpdateUserAttributes::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateUserAttributes::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. </p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">Customizing User Pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>Take the following limitations into consideration when you use the ClientMetadata parameter:</p>   <ul>    <li> <p>Amazon Cognito does not store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Amazon Cognito does not validate the ClientMetadata value.</p> </li>    <li> <p>Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.</p> </li>   </ul>  </note>
+    /// - On success, responds with [`UpdateUserAttributesOutput`](crate::output::UpdateUserAttributesOutput) with field(s):
+    ///   - [`code_delivery_details_list(Option<Vec<CodeDeliveryDetailsType>>)`](crate::output::UpdateUserAttributesOutput::code_delivery_details_list): <p>The code delivery details list from the server for the request to update user attributes.</p>
+    /// - On failure, responds with [`SdkError<UpdateUserAttributesError>`](crate::error::UpdateUserAttributesError)
     pub fn update_user_attributes(&self) -> fluent_builders::UpdateUserAttributes<C, M, R> {
         fluent_builders::UpdateUserAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserPool` operation.
+    /// Constructs a fluent builder for the [`UpdateUserPool`](crate::client::fluent_builders::UpdateUserPool) operation.
     ///
-    /// See [`UpdateUserPool`](crate::client::fluent_builders::UpdateUserPool) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPool::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::UpdateUserPool::set_user_pool_id): <p>The user pool ID for the user pool you want to update.</p>
+    ///   - [`policies(UserPoolPolicyType)`](crate::client::fluent_builders::UpdateUserPool::policies) / [`set_policies(Option<UserPoolPolicyType>)`](crate::client::fluent_builders::UpdateUserPool::set_policies): <p>A container with the policies you wish to update in a user pool.</p>
+    ///   - [`lambda_config(LambdaConfigType)`](crate::client::fluent_builders::UpdateUserPool::lambda_config) / [`set_lambda_config(Option<LambdaConfigType>)`](crate::client::fluent_builders::UpdateUserPool::set_lambda_config): <p>The Lambda configuration information from the request to update the user pool.</p>
+    ///   - [`auto_verified_attributes(Vec<VerifiedAttributeType>)`](crate::client::fluent_builders::UpdateUserPool::auto_verified_attributes) / [`set_auto_verified_attributes(Option<Vec<VerifiedAttributeType>>)`](crate::client::fluent_builders::UpdateUserPool::set_auto_verified_attributes): <p>The attributes that are automatically verified when the Amazon Cognito service makes a request to update user pools.</p>
+    ///   - [`sms_verification_message(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPool::sms_verification_message) / [`set_sms_verification_message(Option<String>)`](crate::client::fluent_builders::UpdateUserPool::set_sms_verification_message): <p>A container with information about the SMS verification message.</p>
+    ///   - [`email_verification_message(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPool::email_verification_message) / [`set_email_verification_message(Option<String>)`](crate::client::fluent_builders::UpdateUserPool::set_email_verification_message): <p>The contents of the email verification message.</p>
+    ///   - [`email_verification_subject(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPool::email_verification_subject) / [`set_email_verification_subject(Option<String>)`](crate::client::fluent_builders::UpdateUserPool::set_email_verification_subject): <p>The subject of the email verification message.</p>
+    ///   - [`verification_message_template(VerificationMessageTemplateType)`](crate::client::fluent_builders::UpdateUserPool::verification_message_template) / [`set_verification_message_template(Option<VerificationMessageTemplateType>)`](crate::client::fluent_builders::UpdateUserPool::set_verification_message_template): <p>The template for verification messages.</p>
+    ///   - [`sms_authentication_message(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPool::sms_authentication_message) / [`set_sms_authentication_message(Option<String>)`](crate::client::fluent_builders::UpdateUserPool::set_sms_authentication_message): <p>The contents of the SMS authentication message.</p>
+    ///   - [`mfa_configuration(UserPoolMfaType)`](crate::client::fluent_builders::UpdateUserPool::mfa_configuration) / [`set_mfa_configuration(Option<UserPoolMfaType>)`](crate::client::fluent_builders::UpdateUserPool::set_mfa_configuration): <p>Can be one of the following values:</p>  <ul>   <li> <p> <code>OFF</code> - MFA tokens are not required and cannot be specified during user registration.</p> </li>   <li> <p> <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools. </p> </li>   <li> <p> <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p> </li>  </ul>
+    ///   - [`device_configuration(DeviceConfigurationType)`](crate::client::fluent_builders::UpdateUserPool::device_configuration) / [`set_device_configuration(Option<DeviceConfigurationType>)`](crate::client::fluent_builders::UpdateUserPool::set_device_configuration): <p>Device configuration.</p>
+    ///   - [`email_configuration(EmailConfigurationType)`](crate::client::fluent_builders::UpdateUserPool::email_configuration) / [`set_email_configuration(Option<EmailConfigurationType>)`](crate::client::fluent_builders::UpdateUserPool::set_email_configuration): <p>Email configuration.</p>
+    ///   - [`sms_configuration(SmsConfigurationType)`](crate::client::fluent_builders::UpdateUserPool::sms_configuration) / [`set_sms_configuration(Option<SmsConfigurationType>)`](crate::client::fluent_builders::UpdateUserPool::set_sms_configuration): <p>SMS configuration.</p>
+    ///   - [`user_pool_tags(HashMap<String, String>)`](crate::client::fluent_builders::UpdateUserPool::user_pool_tags) / [`set_user_pool_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateUserPool::set_user_pool_tags): <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
+    ///   - [`admin_create_user_config(AdminCreateUserConfigType)`](crate::client::fluent_builders::UpdateUserPool::admin_create_user_config) / [`set_admin_create_user_config(Option<AdminCreateUserConfigType>)`](crate::client::fluent_builders::UpdateUserPool::set_admin_create_user_config): <p>The configuration for <code>AdminCreateUser</code> requests.</p>
+    ///   - [`user_pool_add_ons(UserPoolAddOnsType)`](crate::client::fluent_builders::UpdateUserPool::user_pool_add_ons) / [`set_user_pool_add_ons(Option<UserPoolAddOnsType>)`](crate::client::fluent_builders::UpdateUserPool::set_user_pool_add_ons): <p>Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+    ///   - [`account_recovery_setting(AccountRecoverySettingType)`](crate::client::fluent_builders::UpdateUserPool::account_recovery_setting) / [`set_account_recovery_setting(Option<AccountRecoverySettingType>)`](crate::client::fluent_builders::UpdateUserPool::set_account_recovery_setting): <p>Use this setting to define which verified available method a user can use to recover their password when they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery method where SMS is preferred over email.</p>
+    /// - On success, responds with [`UpdateUserPoolOutput`](crate::output::UpdateUserPoolOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateUserPoolError>`](crate::error::UpdateUserPoolError)
     pub fn update_user_pool(&self) -> fluent_builders::UpdateUserPool<C, M, R> {
         fluent_builders::UpdateUserPool::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserPoolClient` operation.
+    /// Constructs a fluent builder for the [`UpdateUserPoolClient`](crate::client::fluent_builders::UpdateUserPoolClient) operation.
     ///
-    /// See [`UpdateUserPoolClient`](crate::client::fluent_builders::UpdateUserPoolClient) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_user_pool_id): <p>The user pool ID for the user pool where you want to update the user pool client.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_client_id): <p>The ID of the client associated with the user pool.</p>
+    ///   - [`client_name(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::client_name) / [`set_client_name(Option<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_client_name): <p>The client name from the update user pool client request.</p>
+    ///   - [`refresh_token_validity(i32)`](crate::client::fluent_builders::UpdateUserPoolClient::refresh_token_validity) / [`set_refresh_token_validity(i32)`](crate::client::fluent_builders::UpdateUserPoolClient::set_refresh_token_validity): <p>The time limit, in days, after which the refresh token is no longer valid and cannot be used.</p>
+    ///   - [`access_token_validity(i32)`](crate::client::fluent_builders::UpdateUserPoolClient::access_token_validity) / [`set_access_token_validity(Option<i32>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_access_token_validity): <p>The time limit, after which the access token is no longer valid and cannot be used.</p>
+    ///   - [`id_token_validity(i32)`](crate::client::fluent_builders::UpdateUserPoolClient::id_token_validity) / [`set_id_token_validity(Option<i32>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_id_token_validity): <p>The time limit, after which the ID token is no longer valid and cannot be used.</p>
+    ///   - [`token_validity_units(TokenValidityUnitsType)`](crate::client::fluent_builders::UpdateUserPoolClient::token_validity_units) / [`set_token_validity_units(Option<TokenValidityUnitsType>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_token_validity_units): <p>The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID and access tokens are hours.</p>
+    ///   - [`read_attributes(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::read_attributes) / [`set_read_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_read_attributes): <p>The read-only attributes of the user pool.</p>
+    ///   - [`write_attributes(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::write_attributes) / [`set_write_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_write_attributes): <p>The writeable attributes of the user pool.</p>
+    ///   - [`explicit_auth_flows(Vec<ExplicitAuthFlowsType>)`](crate::client::fluent_builders::UpdateUserPoolClient::explicit_auth_flows) / [`set_explicit_auth_flows(Option<Vec<ExplicitAuthFlowsType>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_explicit_auth_flows): <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are deprecated in favor of new names with the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix cannot be used along with values without <code>ALLOW_</code> prefix.</p>  <p>Valid values include:</p>  <ul>   <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Cognito receives the password in the request instead of using the SRP (Secure Remote Password protocol) protocol to verify passwords.</p> </li>   <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>   <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>   <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP based authentication.</p> </li>   <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>  </ul>
+    ///   - [`supported_identity_providers(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::supported_identity_providers) / [`set_supported_identity_providers(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_supported_identity_providers): <p>A list of provider names for the identity providers that are supported on this client.</p>
+    ///   - [`callback_ur_ls(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::callback_ur_ls) / [`set_callback_ur_ls(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_callback_ur_ls): <p>A list of allowed redirect (callback) URLs for the identity providers.</p>  <p>A redirect URI must:</p>  <ul>   <li> <p>Be an absolute URI.</p> </li>   <li> <p>Be registered with the authorization server.</p> </li>   <li> <p>Not include a fragment component.</p> </li>  </ul>  <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>  <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>  <p>App callback URLs such as myapp://example are also supported.</p>
+    ///   - [`logout_ur_ls(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::logout_ur_ls) / [`set_logout_ur_ls(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_logout_ur_ls): <p>A list of allowed logout URLs for the identity providers.</p>
+    ///   - [`default_redirect_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::default_redirect_uri) / [`set_default_redirect_uri(Option<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_default_redirect_uri): <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>  <p>A redirect URI must:</p>  <ul>   <li> <p>Be an absolute URI.</p> </li>   <li> <p>Be registered with the authorization server.</p> </li>   <li> <p>Not include a fragment component.</p> </li>  </ul>  <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>  <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>  <p>App callback URLs such as myapp://example are also supported.</p>
+    ///   - [`allowed_o_auth_flows(Vec<OAuthFlowType>)`](crate::client::fluent_builders::UpdateUserPoolClient::allowed_o_auth_flows) / [`set_allowed_o_auth_flows(Option<Vec<OAuthFlowType>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_allowed_o_auth_flows): <p>The allowed OAuth flows.</p>  <p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p>  <p>Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>  <p>Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) from the token endpoint using a combination of client and client_secret.</p>
+    ///   - [`allowed_o_auth_scopes(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::allowed_o_auth_scopes) / [`set_allowed_o_auth_scopes(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_allowed_o_auth_scopes): <p>The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are: <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.</p>
+    ///   - [`allowed_o_auth_flows_user_pool_client(bool)`](crate::client::fluent_builders::UpdateUserPoolClient::allowed_o_auth_flows_user_pool_client) / [`set_allowed_o_auth_flows_user_pool_client(bool)`](crate::client::fluent_builders::UpdateUserPoolClient::set_allowed_o_auth_flows_user_pool_client): <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.</p>
+    ///   - [`analytics_configuration(AnalyticsConfigurationType)`](crate::client::fluent_builders::UpdateUserPoolClient::analytics_configuration) / [`set_analytics_configuration(Option<AnalyticsConfigurationType>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_analytics_configuration): <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>   <p>In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to Amazon Pinpoint projects within that same region. </p>  </note>
+    ///   - [`prevent_user_existence_errors(PreventUserExistenceErrorTypes)`](crate::client::fluent_builders::UpdateUserPoolClient::prevent_user_existence_errors) / [`set_prevent_user_existence_errors(Option<PreventUserExistenceErrorTypes>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_prevent_user_existence_errors): <p>Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account confirmation, and password recovery when the user does not exist in the user pool. When set to <code>ENABLED</code> and the user does not exist, authentication returns an error indicating either the username or password was incorrect, and account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs will return a <code>UserNotFoundException</code> exception if the user does not exist in the user pool.</p>  <p>Valid values include:</p>  <ul>   <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>   <li> <p> <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not prevented.</p> </li>  </ul> <note>   <p>After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for newly created user pool clients if no value is provided.</p>  </note>
+    ///   - [`enable_token_revocation(bool)`](crate::client::fluent_builders::UpdateUserPoolClient::enable_token_revocation) / [`set_enable_token_revocation(Option<bool>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_enable_token_revocation): <p>Enables or disables token revocation. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+    /// - On success, responds with [`UpdateUserPoolClientOutput`](crate::output::UpdateUserPoolClientOutput) with field(s):
+    ///   - [`user_pool_client(Option<UserPoolClientType>)`](crate::output::UpdateUserPoolClientOutput::user_pool_client): <p>The user pool client value from the response from the server when an update user pool client request is made.</p>
+    /// - On failure, responds with [`SdkError<UpdateUserPoolClientError>`](crate::error::UpdateUserPoolClientError)
     pub fn update_user_pool_client(&self) -> fluent_builders::UpdateUserPoolClient<C, M, R> {
         fluent_builders::UpdateUserPoolClient::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserPoolDomain` operation.
+    /// Constructs a fluent builder for the [`UpdateUserPoolDomain`](crate::client::fluent_builders::UpdateUserPoolDomain) operation.
     ///
-    /// See [`UpdateUserPoolDomain`](crate::client::fluent_builders::UpdateUserPoolDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPoolDomain::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::UpdateUserPoolDomain::set_domain): <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>. </p>  <p>This string can include only lowercase letters, numbers, and hyphens. Do not use a hyphen for the first or last character. Use periods to separate subdomain names.</p>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPoolDomain::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::UpdateUserPoolDomain::set_user_pool_id): <p>The ID of the user pool that is associated with the custom domain that you are updating the certificate for.</p>
+    ///   - [`custom_domain_config(CustomDomainConfigType)`](crate::client::fluent_builders::UpdateUserPoolDomain::custom_domain_config) / [`set_custom_domain_config(Option<CustomDomainConfigType>)`](crate::client::fluent_builders::UpdateUserPoolDomain::set_custom_domain_config): <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
+    /// - On success, responds with [`UpdateUserPoolDomainOutput`](crate::output::UpdateUserPoolDomainOutput) with field(s):
+    ///   - [`cloud_front_domain(Option<String>)`](crate::output::UpdateUserPoolDomainOutput::cloud_front_domain): <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
+    /// - On failure, responds with [`SdkError<UpdateUserPoolDomainError>`](crate::error::UpdateUserPoolDomainError)
     pub fn update_user_pool_domain(&self) -> fluent_builders::UpdateUserPoolDomain<C, M, R> {
         fluent_builders::UpdateUserPoolDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `VerifySoftwareToken` operation.
+    /// Constructs a fluent builder for the [`VerifySoftwareToken`](crate::client::fluent_builders::VerifySoftwareToken) operation.
     ///
-    /// See [`VerifySoftwareToken`](crate::client::fluent_builders::VerifySoftwareToken) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::VerifySoftwareToken::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::VerifySoftwareToken::set_access_token): <p>The access token.</p>
+    ///   - [`session(impl Into<String>)`](crate::client::fluent_builders::VerifySoftwareToken::session) / [`set_session(Option<String>)`](crate::client::fluent_builders::VerifySoftwareToken::set_session): <p>The session which should be passed both ways in challenge-response calls to the service.</p>
+    ///   - [`user_code(impl Into<String>)`](crate::client::fluent_builders::VerifySoftwareToken::user_code) / [`set_user_code(Option<String>)`](crate::client::fluent_builders::VerifySoftwareToken::set_user_code): <p>The one time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
+    ///   - [`friendly_device_name(impl Into<String>)`](crate::client::fluent_builders::VerifySoftwareToken::friendly_device_name) / [`set_friendly_device_name(Option<String>)`](crate::client::fluent_builders::VerifySoftwareToken::set_friendly_device_name): <p>The friendly device name.</p>
+    /// - On success, responds with [`VerifySoftwareTokenOutput`](crate::output::VerifySoftwareTokenOutput) with field(s):
+    ///   - [`status(Option<VerifySoftwareTokenResponseType>)`](crate::output::VerifySoftwareTokenOutput::status): <p>The status of the verify software token.</p>
+    ///   - [`session(Option<String>)`](crate::output::VerifySoftwareTokenOutput::session): <p>The session which should be passed both ways in challenge-response calls to the service.</p>
+    /// - On failure, responds with [`SdkError<VerifySoftwareTokenError>`](crate::error::VerifySoftwareTokenError)
     pub fn verify_software_token(&self) -> fluent_builders::VerifySoftwareToken<C, M, R> {
         fluent_builders::VerifySoftwareToken::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `VerifyUserAttribute` operation.
+    /// Constructs a fluent builder for the [`VerifyUserAttribute`](crate::client::fluent_builders::VerifyUserAttribute) operation.
     ///
-    /// See [`VerifyUserAttribute`](crate::client::fluent_builders::VerifyUserAttribute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::VerifyUserAttribute::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::VerifyUserAttribute::set_access_token): <p>Represents the access token of the request to verify user attributes.</p>
+    ///   - [`attribute_name(impl Into<String>)`](crate::client::fluent_builders::VerifyUserAttribute::attribute_name) / [`set_attribute_name(Option<String>)`](crate::client::fluent_builders::VerifyUserAttribute::set_attribute_name): <p>The attribute name in the request to verify user attributes.</p>
+    ///   - [`code(impl Into<String>)`](crate::client::fluent_builders::VerifyUserAttribute::code) / [`set_code(Option<String>)`](crate::client::fluent_builders::VerifyUserAttribute::set_code): <p>The verification code in the request to verify user attributes.</p>
+    /// - On success, responds with [`VerifyUserAttributeOutput`](crate::output::VerifyUserAttributeOutput)
+
+    /// - On failure, responds with [`SdkError<VerifyUserAttributeError>`](crate::error::VerifyUserAttributeError)
     pub fn verify_user_attribute(&self) -> fluent_builders::VerifyUserAttribute<C, M, R> {
         fluent_builders::VerifyUserAttribute::new(self.handle.clone())
     }

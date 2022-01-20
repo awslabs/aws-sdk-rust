@@ -83,17 +83,28 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `GetIceServerConfig` operation.
+    /// Constructs a fluent builder for the [`GetIceServerConfig`](crate::client::fluent_builders::GetIceServerConfig) operation.
     ///
-    /// See [`GetIceServerConfig`](crate::client::fluent_builders::GetIceServerConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::GetIceServerConfig::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::GetIceServerConfig::set_channel_arn): <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::GetIceServerConfig::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::GetIceServerConfig::set_client_id): <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
+    ///   - [`service(Service)`](crate::client::fluent_builders::GetIceServerConfig::service) / [`set_service(Option<Service>)`](crate::client::fluent_builders::GetIceServerConfig::set_service): <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::GetIceServerConfig::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::GetIceServerConfig::set_username): <p>An optional user ID to be associated with the credentials.</p>
+    /// - On success, responds with [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput) with field(s):
+    ///   - [`ice_server_list(Option<Vec<IceServer>>)`](crate::output::GetIceServerConfigOutput::ice_server_list): <p>The list of ICE server information objects.</p>
+    /// - On failure, responds with [`SdkError<GetIceServerConfigError>`](crate::error::GetIceServerConfigError)
     pub fn get_ice_server_config(&self) -> fluent_builders::GetIceServerConfig<C, M, R> {
         fluent_builders::GetIceServerConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendAlexaOfferToMaster` operation.
+    /// Constructs a fluent builder for the [`SendAlexaOfferToMaster`](crate::client::fluent_builders::SendAlexaOfferToMaster) operation.
     ///
-    /// See [`SendAlexaOfferToMaster`](crate::client::fluent_builders::SendAlexaOfferToMaster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::SendAlexaOfferToMaster::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::SendAlexaOfferToMaster::set_channel_arn): <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
+    ///   - [`sender_client_id(impl Into<String>)`](crate::client::fluent_builders::SendAlexaOfferToMaster::sender_client_id) / [`set_sender_client_id(Option<String>)`](crate::client::fluent_builders::SendAlexaOfferToMaster::set_sender_client_id): <p>The unique identifier for the sender client.</p>
+    ///   - [`message_payload(impl Into<String>)`](crate::client::fluent_builders::SendAlexaOfferToMaster::message_payload) / [`set_message_payload(Option<String>)`](crate::client::fluent_builders::SendAlexaOfferToMaster::set_message_payload): <p>The base64-encoded SDP offer content.</p>
+    /// - On success, responds with [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput) with field(s):
+    ///   - [`answer(Option<String>)`](crate::output::SendAlexaOfferToMasterOutput::answer): <p>The base64-encoded SDP answer content.</p>
+    /// - On failure, responds with [`SdkError<SendAlexaOfferToMasterError>`](crate::error::SendAlexaOfferToMasterError)
     pub fn send_alexa_offer_to_master(&self) -> fluent_builders::SendAlexaOfferToMaster<C, M, R> {
         fluent_builders::SendAlexaOfferToMaster::new(self.handle.clone())
     }

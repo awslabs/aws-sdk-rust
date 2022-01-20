@@ -3054,6 +3054,10 @@ pub enum AnomalyDetectorStatus {
     #[allow(missing_docs)] // documentation missing in model
     BackTestComplete,
     #[allow(missing_docs)] // documentation missing in model
+    Deactivated,
+    #[allow(missing_docs)] // documentation missing in model
+    Deactivating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -3072,6 +3076,8 @@ impl std::convert::From<&str> for AnomalyDetectorStatus {
             "BACK_TEST_ACTIVATING" => AnomalyDetectorStatus::BackTestActivating,
             "BACK_TEST_ACTIVE" => AnomalyDetectorStatus::BackTestActive,
             "BACK_TEST_COMPLETE" => AnomalyDetectorStatus::BackTestComplete,
+            "DEACTIVATED" => AnomalyDetectorStatus::Deactivated,
+            "DEACTIVATING" => AnomalyDetectorStatus::Deactivating,
             "DELETING" => AnomalyDetectorStatus::Deleting,
             "FAILED" => AnomalyDetectorStatus::Failed,
             "INACTIVE" => AnomalyDetectorStatus::Inactive,
@@ -3096,6 +3102,8 @@ impl AnomalyDetectorStatus {
             AnomalyDetectorStatus::BackTestActivating => "BACK_TEST_ACTIVATING",
             AnomalyDetectorStatus::BackTestActive => "BACK_TEST_ACTIVE",
             AnomalyDetectorStatus::BackTestComplete => "BACK_TEST_COMPLETE",
+            AnomalyDetectorStatus::Deactivated => "DEACTIVATED",
+            AnomalyDetectorStatus::Deactivating => "DEACTIVATING",
             AnomalyDetectorStatus::Deleting => "DELETING",
             AnomalyDetectorStatus::Failed => "FAILED",
             AnomalyDetectorStatus::Inactive => "INACTIVE",
@@ -3111,6 +3119,8 @@ impl AnomalyDetectorStatus {
             "BACK_TEST_ACTIVATING",
             "BACK_TEST_ACTIVE",
             "BACK_TEST_COMPLETE",
+            "DEACTIVATED",
+            "DEACTIVATING",
             "DELETING",
             "FAILED",
             "INACTIVE",
@@ -4273,6 +4283,74 @@ impl DimensionValueContribution {
     /// Creates a new builder-style object to manufacture [`DimensionValueContribution`](crate::model::DimensionValueContribution)
     pub fn builder() -> crate::model::dimension_value_contribution::Builder {
         crate::model::dimension_value_contribution::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AnomalyDetectorFailureType {
+    #[allow(missing_docs)] // documentation missing in model
+    ActivationFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    BackTestActivationFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    DeactivationFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    DeletionFailure,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AnomalyDetectorFailureType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVATION_FAILURE" => AnomalyDetectorFailureType::ActivationFailure,
+            "BACK_TEST_ACTIVATION_FAILURE" => AnomalyDetectorFailureType::BackTestActivationFailure,
+            "DEACTIVATION_FAILURE" => AnomalyDetectorFailureType::DeactivationFailure,
+            "DELETION_FAILURE" => AnomalyDetectorFailureType::DeletionFailure,
+            other => AnomalyDetectorFailureType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AnomalyDetectorFailureType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AnomalyDetectorFailureType::from(s))
+    }
+}
+impl AnomalyDetectorFailureType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AnomalyDetectorFailureType::ActivationFailure => "ACTIVATION_FAILURE",
+            AnomalyDetectorFailureType::BackTestActivationFailure => "BACK_TEST_ACTIVATION_FAILURE",
+            AnomalyDetectorFailureType::DeactivationFailure => "DEACTIVATION_FAILURE",
+            AnomalyDetectorFailureType::DeletionFailure => "DELETION_FAILURE",
+            AnomalyDetectorFailureType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVATION_FAILURE",
+            "BACK_TEST_ACTIVATION_FAILURE",
+            "DEACTIVATION_FAILURE",
+            "DELETION_FAILURE",
+        ]
+    }
+}
+impl AsRef<str> for AnomalyDetectorFailureType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

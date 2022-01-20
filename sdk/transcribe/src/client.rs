@@ -83,302 +83,551 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateCallAnalyticsCategory` operation.
+    /// Constructs a fluent builder for the [`CreateCallAnalyticsCategory`](crate::client::fluent_builders::CreateCallAnalyticsCategory) operation.
     ///
-    /// See [`CreateCallAnalyticsCategory`](crate::client::fluent_builders::CreateCallAnalyticsCategory) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`category_name(impl Into<String>)`](crate::client::fluent_builders::CreateCallAnalyticsCategory::category_name) / [`set_category_name(Option<String>)`](crate::client::fluent_builders::CreateCallAnalyticsCategory::set_category_name): <p>The name that you choose for your category when you create it. </p>
+    ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::CreateCallAnalyticsCategory::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::CreateCallAnalyticsCategory::set_rules): <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral.</p>
+    /// - On success, responds with [`CreateCallAnalyticsCategoryOutput`](crate::output::CreateCallAnalyticsCategoryOutput) with field(s):
+    ///   - [`category_properties(Option<CategoryProperties>)`](crate::output::CreateCallAnalyticsCategoryOutput::category_properties): <p>The rules and associated metadata used to create a category.</p>
+    /// - On failure, responds with [`SdkError<CreateCallAnalyticsCategoryError>`](crate::error::CreateCallAnalyticsCategoryError)
     pub fn create_call_analytics_category(
         &self,
     ) -> fluent_builders::CreateCallAnalyticsCategory<C, M, R> {
         fluent_builders::CreateCallAnalyticsCategory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLanguageModel` operation.
+    /// Constructs a fluent builder for the [`CreateLanguageModel`](crate::client::fluent_builders::CreateLanguageModel) operation.
     ///
-    /// See [`CreateLanguageModel`](crate::client::fluent_builders::CreateLanguageModel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`language_code(ClmLanguageCode)`](crate::client::fluent_builders::CreateLanguageModel::language_code) / [`set_language_code(Option<ClmLanguageCode>)`](crate::client::fluent_builders::CreateLanguageModel::set_language_code): <p>The language of the input text you're using to train your custom language model.</p>
+    ///   - [`base_model_name(BaseModelName)`](crate::client::fluent_builders::CreateLanguageModel::base_model_name) / [`set_base_model_name(Option<BaseModelName>)`](crate::client::fluent_builders::CreateLanguageModel::set_base_model_name): <p>The Amazon Transcribe standard language model, or base model used to create your custom language model.</p>  <p>If you want to use your custom language model to transcribe audio with a sample rate of 16,000 Hz or greater, choose <code>Wideband</code>.</p>  <p>If you want to use your custom language model to transcribe audio with a sample rate that is less than 16,000 Hz, choose <code>Narrowband</code>.</p>
+    ///   - [`model_name(impl Into<String>)`](crate::client::fluent_builders::CreateLanguageModel::model_name) / [`set_model_name(Option<String>)`](crate::client::fluent_builders::CreateLanguageModel::set_model_name): <p>The name you choose for your custom language model when you create it.</p>
+    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::CreateLanguageModel::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::CreateLanguageModel::set_input_data_config): <p>Contains the data access role and the Amazon S3 prefixes to read the required input files to create a custom language model.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateLanguageModel::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateLanguageModel::set_tags): <p>Adds one or more tags, each in the form of a key:value pair, to a new language model at the time you create this new model.</p>
+    /// - On success, responds with [`CreateLanguageModelOutput`](crate::output::CreateLanguageModelOutput) with field(s):
+    ///   - [`language_code(Option<ClmLanguageCode>)`](crate::output::CreateLanguageModelOutput::language_code): <p>The language code of the text you've used to create a custom language model.</p>
+    ///   - [`base_model_name(Option<BaseModelName>)`](crate::output::CreateLanguageModelOutput::base_model_name): <p>The Amazon Transcribe standard language model, or base model you've used to create a custom language model.</p>
+    ///   - [`model_name(Option<String>)`](crate::output::CreateLanguageModelOutput::model_name): <p>The name you've chosen for your custom language model.</p>
+    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::output::CreateLanguageModelOutput::input_data_config): <p>The data access role and Amazon S3 prefixes you've chosen to create your custom language model.</p>
+    ///   - [`model_status(Option<ModelStatus>)`](crate::output::CreateLanguageModelOutput::model_status): <p>The status of the custom language model. When the status is <code>COMPLETED</code> the model is ready to use.</p>
+    /// - On failure, responds with [`SdkError<CreateLanguageModelError>`](crate::error::CreateLanguageModelError)
     pub fn create_language_model(&self) -> fluent_builders::CreateLanguageModel<C, M, R> {
         fluent_builders::CreateLanguageModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMedicalVocabulary` operation.
+    /// Constructs a fluent builder for the [`CreateMedicalVocabulary`](crate::client::fluent_builders::CreateMedicalVocabulary) operation.
     ///
-    /// See [`CreateMedicalVocabulary`](crate::client::fluent_builders::CreateMedicalVocabulary) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::CreateMedicalVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::CreateMedicalVocabulary::set_vocabulary_name): <p>The name of the custom vocabulary. This case-sensitive name must be unique within an Amazon Web Services account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a <code>ConflictException</code> error.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::CreateMedicalVocabulary::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::CreateMedicalVocabulary::set_language_code): <p>The language code for the language used for the entries in your custom vocabulary. The language code of your custom vocabulary must match the language code of your transcription job. US English (en-US) is the only language code available for Amazon Transcribe Medical.</p>
+    ///   - [`vocabulary_file_uri(impl Into<String>)`](crate::client::fluent_builders::CreateMedicalVocabulary::vocabulary_file_uri) / [`set_vocabulary_file_uri(Option<String>)`](crate::client::fluent_builders::CreateMedicalVocabulary::set_vocabulary_file_uri): <p>The location in Amazon S3 of the text file you use to define your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling. Enter information about your <code>VocabularyFileUri</code> in the following format:</p>  <p> <code>https://s3.   <aws-region>    .amazonaws.com/    <bucket-name>     /     <keyprefix>      /      <objectkey></objectkey>     </keyprefix>    </bucket-name>   </aws-region></code> </p>  <p>The following is an example URI for a vocabulary file that is stored in Amazon S3:</p>  <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>  <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>  <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMedicalVocabulary::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMedicalVocabulary::set_tags): <p>Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you create this new vocabulary.</p>
+    /// - On success, responds with [`CreateMedicalVocabularyOutput`](crate::output::CreateMedicalVocabularyOutput) with field(s):
+    ///   - [`vocabulary_name(Option<String>)`](crate::output::CreateMedicalVocabularyOutput::vocabulary_name): <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account and is case sensitive.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::output::CreateMedicalVocabularyOutput::language_code): <p>The language code for the entries in your custom vocabulary. US English (en-US) is the only valid language code for Amazon Transcribe Medical.</p>
+    ///   - [`vocabulary_state(Option<VocabularyState>)`](crate::output::CreateMedicalVocabularyOutput::vocabulary_state): <p>The processing state of your custom vocabulary in Amazon Transcribe Medical. If the state is <code>READY</code>, you can use the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateMedicalVocabularyOutput::last_modified_time): <p>The date and time that you created the vocabulary.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::CreateMedicalVocabularyOutput::failure_reason): <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about why the job failed.</p>
+    /// - On failure, responds with [`SdkError<CreateMedicalVocabularyError>`](crate::error::CreateMedicalVocabularyError)
     pub fn create_medical_vocabulary(&self) -> fluent_builders::CreateMedicalVocabulary<C, M, R> {
         fluent_builders::CreateMedicalVocabulary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVocabulary` operation.
+    /// Constructs a fluent builder for the [`CreateVocabulary`](crate::client::fluent_builders::CreateVocabulary) operation.
     ///
-    /// See [`CreateVocabulary`](crate::client::fluent_builders::CreateVocabulary) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_vocabulary_name): <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account. The name is case sensitive. If you try to create a vocabulary with the same name as a previous vocabulary you will receive a <code>ConflictException</code> error.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::CreateVocabulary::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::CreateVocabulary::set_language_code): <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>table-language-matrix</code>.</p>
+    ///   - [`phrases(Vec<String>)`](crate::client::fluent_builders::CreateVocabulary::phrases) / [`set_phrases(Option<Vec<String>>)`](crate::client::fluent_builders::CreateVocabulary::set_phrases): <p>An array of strings that contains the vocabulary entries. </p>
+    ///   - [`vocabulary_file_uri(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::vocabulary_file_uri) / [`set_vocabulary_file_uri(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_vocabulary_file_uri): <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>  <p> <code>https://s3.   <amazon web services-region>    .amazonaws.com/    <awsdoc-example-bucket>     /     <keyprefix>      /      <objectkey>       </objectkey>     </keyprefix>    </awsdoc-example-bucket>   </amazon></code> </p>  <p>For example:</p>  <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>  <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>  <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateVocabulary::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateVocabulary::set_tags): <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary at the time you create this new vocabulary.</p>
+    /// - On success, responds with [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput) with field(s):
+    ///   - [`vocabulary_name(Option<String>)`](crate::output::CreateVocabularyOutput::vocabulary_name): <p>The name of the vocabulary.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::output::CreateVocabularyOutput::language_code): <p>The language code of the vocabulary entries.</p>
+    ///   - [`vocabulary_state(Option<VocabularyState>)`](crate::output::CreateVocabularyOutput::vocabulary_state): <p>The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateVocabularyOutput::last_modified_time): <p>The date and time that the vocabulary was created.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::CreateVocabularyOutput::failure_reason): <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about why the job failed.</p>
+    /// - On failure, responds with [`SdkError<CreateVocabularyError>`](crate::error::CreateVocabularyError)
     pub fn create_vocabulary(&self) -> fluent_builders::CreateVocabulary<C, M, R> {
         fluent_builders::CreateVocabulary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVocabularyFilter` operation.
+    /// Constructs a fluent builder for the [`CreateVocabularyFilter`](crate::client::fluent_builders::CreateVocabularyFilter) operation.
     ///
-    /// See [`CreateVocabularyFilter`](crate::client::fluent_builders::CreateVocabularyFilter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vocabulary_filter_name(impl Into<String>)`](crate::client::fluent_builders::CreateVocabularyFilter::vocabulary_filter_name) / [`set_vocabulary_filter_name(Option<String>)`](crate::client::fluent_builders::CreateVocabularyFilter::set_vocabulary_filter_name): <p>The vocabulary filter name. The name must be unique within the account that contains it. If you try to create a vocabulary filter with the same name as another vocabulary filter, you get a <code>ConflictException</code> error.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::CreateVocabularyFilter::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::CreateVocabularyFilter::set_language_code): <p>The language code of the words in the vocabulary filter. All words in the filter must be in the same language. The vocabulary filter can only be used with transcription jobs in the specified language.</p>
+    ///   - [`words(Vec<String>)`](crate::client::fluent_builders::CreateVocabularyFilter::words) / [`set_words(Option<Vec<String>>)`](crate::client::fluent_builders::CreateVocabularyFilter::set_words): <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>  <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
+    ///   - [`vocabulary_filter_file_uri(impl Into<String>)`](crate::client::fluent_builders::CreateVocabularyFilter::vocabulary_filter_file_uri) / [`set_vocabulary_filter_file_uri(Option<String>)`](crate::client::fluent_builders::CreateVocabularyFilter::set_vocabulary_filter_file_uri): <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>  <p>The specified file must be less than 50 KB of UTF-8 characters.</p>  <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateVocabularyFilter::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateVocabularyFilter::set_tags): <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary filter at the time you create this new vocabulary filter.</p>
+    /// - On success, responds with [`CreateVocabularyFilterOutput`](crate::output::CreateVocabularyFilterOutput) with field(s):
+    ///   - [`vocabulary_filter_name(Option<String>)`](crate::output::CreateVocabularyFilterOutput::vocabulary_filter_name): <p>The name of the vocabulary filter.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::output::CreateVocabularyFilterOutput::language_code): <p>The language code of the words in the collection.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateVocabularyFilterOutput::last_modified_time): <p>The date and time that the vocabulary filter was modified.</p>
+    /// - On failure, responds with [`SdkError<CreateVocabularyFilterError>`](crate::error::CreateVocabularyFilterError)
     pub fn create_vocabulary_filter(&self) -> fluent_builders::CreateVocabularyFilter<C, M, R> {
         fluent_builders::CreateVocabularyFilter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCallAnalyticsCategory` operation.
+    /// Constructs a fluent builder for the [`DeleteCallAnalyticsCategory`](crate::client::fluent_builders::DeleteCallAnalyticsCategory) operation.
     ///
-    /// See [`DeleteCallAnalyticsCategory`](crate::client::fluent_builders::DeleteCallAnalyticsCategory) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`category_name(impl Into<String>)`](crate::client::fluent_builders::DeleteCallAnalyticsCategory::category_name) / [`set_category_name(Option<String>)`](crate::client::fluent_builders::DeleteCallAnalyticsCategory::set_category_name): <p>The name of the call analytics category that you're choosing to delete. The value is case sensitive. </p>
+    /// - On success, responds with [`DeleteCallAnalyticsCategoryOutput`](crate::output::DeleteCallAnalyticsCategoryOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCallAnalyticsCategoryError>`](crate::error::DeleteCallAnalyticsCategoryError)
     pub fn delete_call_analytics_category(
         &self,
     ) -> fluent_builders::DeleteCallAnalyticsCategory<C, M, R> {
         fluent_builders::DeleteCallAnalyticsCategory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCallAnalyticsJob` operation.
+    /// Constructs a fluent builder for the [`DeleteCallAnalyticsJob`](crate::client::fluent_builders::DeleteCallAnalyticsJob) operation.
     ///
-    /// See [`DeleteCallAnalyticsJob`](crate::client::fluent_builders::DeleteCallAnalyticsJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`call_analytics_job_name(impl Into<String>)`](crate::client::fluent_builders::DeleteCallAnalyticsJob::call_analytics_job_name) / [`set_call_analytics_job_name(Option<String>)`](crate::client::fluent_builders::DeleteCallAnalyticsJob::set_call_analytics_job_name): <p>The name of the call analytics job you want to delete.</p>
+    /// - On success, responds with [`DeleteCallAnalyticsJobOutput`](crate::output::DeleteCallAnalyticsJobOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCallAnalyticsJobError>`](crate::error::DeleteCallAnalyticsJobError)
     pub fn delete_call_analytics_job(&self) -> fluent_builders::DeleteCallAnalyticsJob<C, M, R> {
         fluent_builders::DeleteCallAnalyticsJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLanguageModel` operation.
+    /// Constructs a fluent builder for the [`DeleteLanguageModel`](crate::client::fluent_builders::DeleteLanguageModel) operation.
     ///
-    /// See [`DeleteLanguageModel`](crate::client::fluent_builders::DeleteLanguageModel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`model_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLanguageModel::model_name) / [`set_model_name(Option<String>)`](crate::client::fluent_builders::DeleteLanguageModel::set_model_name): <p>The name of the model you're choosing to delete.</p>
+    /// - On success, responds with [`DeleteLanguageModelOutput`](crate::output::DeleteLanguageModelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLanguageModelError>`](crate::error::DeleteLanguageModelError)
     pub fn delete_language_model(&self) -> fluent_builders::DeleteLanguageModel<C, M, R> {
         fluent_builders::DeleteLanguageModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMedicalTranscriptionJob` operation.
+    /// Constructs a fluent builder for the [`DeleteMedicalTranscriptionJob`](crate::client::fluent_builders::DeleteMedicalTranscriptionJob) operation.
     ///
-    /// See [`DeleteMedicalTranscriptionJob`](crate::client::fluent_builders::DeleteMedicalTranscriptionJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`medical_transcription_job_name(impl Into<String>)`](crate::client::fluent_builders::DeleteMedicalTranscriptionJob::medical_transcription_job_name) / [`set_medical_transcription_job_name(Option<String>)`](crate::client::fluent_builders::DeleteMedicalTranscriptionJob::set_medical_transcription_job_name): <p>The name you provide to the <code>DeleteMedicalTranscriptionJob</code> object to delete a transcription job.</p>
+    /// - On success, responds with [`DeleteMedicalTranscriptionJobOutput`](crate::output::DeleteMedicalTranscriptionJobOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteMedicalTranscriptionJobError>`](crate::error::DeleteMedicalTranscriptionJobError)
     pub fn delete_medical_transcription_job(
         &self,
     ) -> fluent_builders::DeleteMedicalTranscriptionJob<C, M, R> {
         fluent_builders::DeleteMedicalTranscriptionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMedicalVocabulary` operation.
+    /// Constructs a fluent builder for the [`DeleteMedicalVocabulary`](crate::client::fluent_builders::DeleteMedicalVocabulary) operation.
     ///
-    /// See [`DeleteMedicalVocabulary`](crate::client::fluent_builders::DeleteMedicalVocabulary) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::DeleteMedicalVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::DeleteMedicalVocabulary::set_vocabulary_name): <p>The name of the vocabulary that you want to delete.</p>
+    /// - On success, responds with [`DeleteMedicalVocabularyOutput`](crate::output::DeleteMedicalVocabularyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteMedicalVocabularyError>`](crate::error::DeleteMedicalVocabularyError)
     pub fn delete_medical_vocabulary(&self) -> fluent_builders::DeleteMedicalVocabulary<C, M, R> {
         fluent_builders::DeleteMedicalVocabulary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTranscriptionJob` operation.
+    /// Constructs a fluent builder for the [`DeleteTranscriptionJob`](crate::client::fluent_builders::DeleteTranscriptionJob) operation.
     ///
-    /// See [`DeleteTranscriptionJob`](crate::client::fluent_builders::DeleteTranscriptionJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`transcription_job_name(impl Into<String>)`](crate::client::fluent_builders::DeleteTranscriptionJob::transcription_job_name) / [`set_transcription_job_name(Option<String>)`](crate::client::fluent_builders::DeleteTranscriptionJob::set_transcription_job_name): <p>The name of the transcription job to be deleted.</p>
+    /// - On success, responds with [`DeleteTranscriptionJobOutput`](crate::output::DeleteTranscriptionJobOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTranscriptionJobError>`](crate::error::DeleteTranscriptionJobError)
     pub fn delete_transcription_job(&self) -> fluent_builders::DeleteTranscriptionJob<C, M, R> {
         fluent_builders::DeleteTranscriptionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVocabulary` operation.
+    /// Constructs a fluent builder for the [`DeleteVocabulary`](crate::client::fluent_builders::DeleteVocabulary) operation.
     ///
-    /// See [`DeleteVocabulary`](crate::client::fluent_builders::DeleteVocabulary) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::DeleteVocabulary::set_vocabulary_name): <p>The name of the vocabulary to delete. </p>
+    /// - On success, responds with [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteVocabularyError>`](crate::error::DeleteVocabularyError)
     pub fn delete_vocabulary(&self) -> fluent_builders::DeleteVocabulary<C, M, R> {
         fluent_builders::DeleteVocabulary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVocabularyFilter` operation.
+    /// Constructs a fluent builder for the [`DeleteVocabularyFilter`](crate::client::fluent_builders::DeleteVocabularyFilter) operation.
     ///
-    /// See [`DeleteVocabularyFilter`](crate::client::fluent_builders::DeleteVocabularyFilter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vocabulary_filter_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVocabularyFilter::vocabulary_filter_name) / [`set_vocabulary_filter_name(Option<String>)`](crate::client::fluent_builders::DeleteVocabularyFilter::set_vocabulary_filter_name): <p>The name of the vocabulary filter to remove.</p>
+    /// - On success, responds with [`DeleteVocabularyFilterOutput`](crate::output::DeleteVocabularyFilterOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteVocabularyFilterError>`](crate::error::DeleteVocabularyFilterError)
     pub fn delete_vocabulary_filter(&self) -> fluent_builders::DeleteVocabularyFilter<C, M, R> {
         fluent_builders::DeleteVocabularyFilter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLanguageModel` operation.
+    /// Constructs a fluent builder for the [`DescribeLanguageModel`](crate::client::fluent_builders::DescribeLanguageModel) operation.
     ///
-    /// See [`DescribeLanguageModel`](crate::client::fluent_builders::DescribeLanguageModel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`model_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLanguageModel::model_name) / [`set_model_name(Option<String>)`](crate::client::fluent_builders::DescribeLanguageModel::set_model_name): <p>The name of the custom language model you submit to get more information.</p>
+    /// - On success, responds with [`DescribeLanguageModelOutput`](crate::output::DescribeLanguageModelOutput) with field(s):
+    ///   - [`language_model(Option<LanguageModel>)`](crate::output::DescribeLanguageModelOutput::language_model): <p>The name of the custom language model you requested more information about.</p>
+    /// - On failure, responds with [`SdkError<DescribeLanguageModelError>`](crate::error::DescribeLanguageModelError)
     pub fn describe_language_model(&self) -> fluent_builders::DescribeLanguageModel<C, M, R> {
         fluent_builders::DescribeLanguageModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCallAnalyticsCategory` operation.
+    /// Constructs a fluent builder for the [`GetCallAnalyticsCategory`](crate::client::fluent_builders::GetCallAnalyticsCategory) operation.
     ///
-    /// See [`GetCallAnalyticsCategory`](crate::client::fluent_builders::GetCallAnalyticsCategory) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`category_name(impl Into<String>)`](crate::client::fluent_builders::GetCallAnalyticsCategory::category_name) / [`set_category_name(Option<String>)`](crate::client::fluent_builders::GetCallAnalyticsCategory::set_category_name): <p>The name of the category you want information about. This value is case sensitive.</p>
+    /// - On success, responds with [`GetCallAnalyticsCategoryOutput`](crate::output::GetCallAnalyticsCategoryOutput) with field(s):
+    ///   - [`category_properties(Option<CategoryProperties>)`](crate::output::GetCallAnalyticsCategoryOutput::category_properties): <p>The rules you've defined for a category.</p>
+    /// - On failure, responds with [`SdkError<GetCallAnalyticsCategoryError>`](crate::error::GetCallAnalyticsCategoryError)
     pub fn get_call_analytics_category(
         &self,
     ) -> fluent_builders::GetCallAnalyticsCategory<C, M, R> {
         fluent_builders::GetCallAnalyticsCategory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCallAnalyticsJob` operation.
+    /// Constructs a fluent builder for the [`GetCallAnalyticsJob`](crate::client::fluent_builders::GetCallAnalyticsJob) operation.
     ///
-    /// See [`GetCallAnalyticsJob`](crate::client::fluent_builders::GetCallAnalyticsJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`call_analytics_job_name(impl Into<String>)`](crate::client::fluent_builders::GetCallAnalyticsJob::call_analytics_job_name) / [`set_call_analytics_job_name(Option<String>)`](crate::client::fluent_builders::GetCallAnalyticsJob::set_call_analytics_job_name): <p>The name of the analytics job you want information about. This value is case sensitive. </p>
+    /// - On success, responds with [`GetCallAnalyticsJobOutput`](crate::output::GetCallAnalyticsJobOutput) with field(s):
+    ///   - [`call_analytics_job(Option<CallAnalyticsJob>)`](crate::output::GetCallAnalyticsJobOutput::call_analytics_job): <p>An object that contains the results of your call analytics job.</p>
+    /// - On failure, responds with [`SdkError<GetCallAnalyticsJobError>`](crate::error::GetCallAnalyticsJobError)
     pub fn get_call_analytics_job(&self) -> fluent_builders::GetCallAnalyticsJob<C, M, R> {
         fluent_builders::GetCallAnalyticsJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMedicalTranscriptionJob` operation.
+    /// Constructs a fluent builder for the [`GetMedicalTranscriptionJob`](crate::client::fluent_builders::GetMedicalTranscriptionJob) operation.
     ///
-    /// See [`GetMedicalTranscriptionJob`](crate::client::fluent_builders::GetMedicalTranscriptionJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`medical_transcription_job_name(impl Into<String>)`](crate::client::fluent_builders::GetMedicalTranscriptionJob::medical_transcription_job_name) / [`set_medical_transcription_job_name(Option<String>)`](crate::client::fluent_builders::GetMedicalTranscriptionJob::set_medical_transcription_job_name): <p>The name of the medical transcription job.</p>
+    /// - On success, responds with [`GetMedicalTranscriptionJobOutput`](crate::output::GetMedicalTranscriptionJobOutput) with field(s):
+    ///   - [`medical_transcription_job(Option<MedicalTranscriptionJob>)`](crate::output::GetMedicalTranscriptionJobOutput::medical_transcription_job): <p>An object that contains the results of the medical transcription job.</p>
+    /// - On failure, responds with [`SdkError<GetMedicalTranscriptionJobError>`](crate::error::GetMedicalTranscriptionJobError)
     pub fn get_medical_transcription_job(
         &self,
     ) -> fluent_builders::GetMedicalTranscriptionJob<C, M, R> {
         fluent_builders::GetMedicalTranscriptionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMedicalVocabulary` operation.
+    /// Constructs a fluent builder for the [`GetMedicalVocabulary`](crate::client::fluent_builders::GetMedicalVocabulary) operation.
     ///
-    /// See [`GetMedicalVocabulary`](crate::client::fluent_builders::GetMedicalVocabulary) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::GetMedicalVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::GetMedicalVocabulary::set_vocabulary_name): <p>The name of the vocabulary that you want information about. The value is case sensitive. </p>
+    /// - On success, responds with [`GetMedicalVocabularyOutput`](crate::output::GetMedicalVocabularyOutput) with field(s):
+    ///   - [`vocabulary_name(Option<String>)`](crate::output::GetMedicalVocabularyOutput::vocabulary_name): <p>The name of the vocabulary returned by Amazon Transcribe Medical.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::output::GetMedicalVocabularyOutput::language_code): <p>The valid language code for your vocabulary entries.</p>
+    ///   - [`vocabulary_state(Option<VocabularyState>)`](crate::output::GetMedicalVocabularyOutput::vocabulary_state): <p>The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code> then you can use it in the <code>StartMedicalTranscriptionJob</code> operation.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::GetMedicalVocabularyOutput::last_modified_time): <p>The date and time that the vocabulary was last modified with a text file different from the one that was previously used.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::GetMedicalVocabularyOutput::failure_reason): <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field contains information about why the job failed.</p>
+    ///   - [`download_uri(Option<String>)`](crate::output::GetMedicalVocabularyOutput::download_uri): <p>The location in Amazon S3 where the vocabulary is stored. Use this URI to get the contents of the vocabulary. You can download your vocabulary from the URI for a limited time.</p>
+    /// - On failure, responds with [`SdkError<GetMedicalVocabularyError>`](crate::error::GetMedicalVocabularyError)
     pub fn get_medical_vocabulary(&self) -> fluent_builders::GetMedicalVocabulary<C, M, R> {
         fluent_builders::GetMedicalVocabulary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTranscriptionJob` operation.
+    /// Constructs a fluent builder for the [`GetTranscriptionJob`](crate::client::fluent_builders::GetTranscriptionJob) operation.
     ///
-    /// See [`GetTranscriptionJob`](crate::client::fluent_builders::GetTranscriptionJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`transcription_job_name(impl Into<String>)`](crate::client::fluent_builders::GetTranscriptionJob::transcription_job_name) / [`set_transcription_job_name(Option<String>)`](crate::client::fluent_builders::GetTranscriptionJob::set_transcription_job_name): <p>The name of the job.</p>
+    /// - On success, responds with [`GetTranscriptionJobOutput`](crate::output::GetTranscriptionJobOutput) with field(s):
+    ///   - [`transcription_job(Option<TranscriptionJob>)`](crate::output::GetTranscriptionJobOutput::transcription_job): <p>An object that contains the results of the transcription job.</p>
+    /// - On failure, responds with [`SdkError<GetTranscriptionJobError>`](crate::error::GetTranscriptionJobError)
     pub fn get_transcription_job(&self) -> fluent_builders::GetTranscriptionJob<C, M, R> {
         fluent_builders::GetTranscriptionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetVocabulary` operation.
+    /// Constructs a fluent builder for the [`GetVocabulary`](crate::client::fluent_builders::GetVocabulary) operation.
     ///
-    /// See [`GetVocabulary`](crate::client::fluent_builders::GetVocabulary) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::GetVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::GetVocabulary::set_vocabulary_name): <p>The name of the vocabulary to return information about. The name is case sensitive.</p>
+    /// - On success, responds with [`GetVocabularyOutput`](crate::output::GetVocabularyOutput) with field(s):
+    ///   - [`vocabulary_name(Option<String>)`](crate::output::GetVocabularyOutput::vocabulary_name): <p>The name of the vocabulary to return.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::output::GetVocabularyOutput::language_code): <p>The language code of the vocabulary entries.</p>
+    ///   - [`vocabulary_state(Option<VocabularyState>)`](crate::output::GetVocabularyOutput::vocabulary_state): <p>The processing state of the vocabulary.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::GetVocabularyOutput::last_modified_time): <p>The date and time that the vocabulary was last modified.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::GetVocabularyOutput::failure_reason): <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about why the job failed.</p>
+    ///   - [`download_uri(Option<String>)`](crate::output::GetVocabularyOutput::download_uri): <p>The S3 location where the vocabulary is stored. Use this URI to get the contents of the vocabulary. The URI is available for a limited time.</p>
+    /// - On failure, responds with [`SdkError<GetVocabularyError>`](crate::error::GetVocabularyError)
     pub fn get_vocabulary(&self) -> fluent_builders::GetVocabulary<C, M, R> {
         fluent_builders::GetVocabulary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetVocabularyFilter` operation.
+    /// Constructs a fluent builder for the [`GetVocabularyFilter`](crate::client::fluent_builders::GetVocabularyFilter) operation.
     ///
-    /// See [`GetVocabularyFilter`](crate::client::fluent_builders::GetVocabularyFilter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vocabulary_filter_name(impl Into<String>)`](crate::client::fluent_builders::GetVocabularyFilter::vocabulary_filter_name) / [`set_vocabulary_filter_name(Option<String>)`](crate::client::fluent_builders::GetVocabularyFilter::set_vocabulary_filter_name): <p>The name of the vocabulary filter for which to return information.</p>
+    /// - On success, responds with [`GetVocabularyFilterOutput`](crate::output::GetVocabularyFilterOutput) with field(s):
+    ///   - [`vocabulary_filter_name(Option<String>)`](crate::output::GetVocabularyFilterOutput::vocabulary_filter_name): <p>The name of the vocabulary filter.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::output::GetVocabularyFilterOutput::language_code): <p>The language code of the words in the vocabulary filter.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::GetVocabularyFilterOutput::last_modified_time): <p>The date and time that the contents of the vocabulary filter were updated.</p>
+    ///   - [`download_uri(Option<String>)`](crate::output::GetVocabularyFilterOutput::download_uri): <p>The URI of the list of words in the vocabulary filter. You can use this URI to get the list of words.</p>
+    /// - On failure, responds with [`SdkError<GetVocabularyFilterError>`](crate::error::GetVocabularyFilterError)
     pub fn get_vocabulary_filter(&self) -> fluent_builders::GetVocabularyFilter<C, M, R> {
         fluent_builders::GetVocabularyFilter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCallAnalyticsCategories` operation.
+    /// Constructs a fluent builder for the [`ListCallAnalyticsCategories`](crate::client::fluent_builders::ListCallAnalyticsCategories) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCallAnalyticsCategories::into_paginator).
     ///
-    /// See [`ListCallAnalyticsCategories`](crate::client::fluent_builders::ListCallAnalyticsCategories) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCallAnalyticsCategories::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCallAnalyticsCategories::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCallAnalyticsCategories::set_next_token): <p>When included, <code>NextToken</code>fetches the next set of categories if the result of the previous request was truncated.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCallAnalyticsCategories::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCallAnalyticsCategories::set_max_results): <p>The maximum number of categories to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
+    /// - On success, responds with [`ListCallAnalyticsCategoriesOutput`](crate::output::ListCallAnalyticsCategoriesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListCallAnalyticsCategoriesOutput::next_token): <p>The operation returns a page of jobs at a time. The maximum size of the list is set by the <code>MaxResults</code> parameter. If there are more categories in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the operation to return the next page of analytics categories.</p>
+    ///   - [`categories(Option<Vec<CategoryProperties>>)`](crate::output::ListCallAnalyticsCategoriesOutput::categories): <p>A list of objects containing information about analytics categories.</p>
+    /// - On failure, responds with [`SdkError<ListCallAnalyticsCategoriesError>`](crate::error::ListCallAnalyticsCategoriesError)
     pub fn list_call_analytics_categories(
         &self,
     ) -> fluent_builders::ListCallAnalyticsCategories<C, M, R> {
         fluent_builders::ListCallAnalyticsCategories::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCallAnalyticsJobs` operation.
+    /// Constructs a fluent builder for the [`ListCallAnalyticsJobs`](crate::client::fluent_builders::ListCallAnalyticsJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCallAnalyticsJobs::into_paginator).
     ///
-    /// See [`ListCallAnalyticsJobs`](crate::client::fluent_builders::ListCallAnalyticsJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCallAnalyticsJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`status(CallAnalyticsJobStatus)`](crate::client::fluent_builders::ListCallAnalyticsJobs::status) / [`set_status(Option<CallAnalyticsJobStatus>)`](crate::client::fluent_builders::ListCallAnalyticsJobs::set_status): <p>When specified, returns only call analytics jobs with the specified status. Jobs are ordered by creation date, with the most recent jobs returned first. If you don't specify a status, Amazon Transcribe returns all analytics jobs ordered by creation date.</p>
+    ///   - [`job_name_contains(impl Into<String>)`](crate::client::fluent_builders::ListCallAnalyticsJobs::job_name_contains) / [`set_job_name_contains(Option<String>)`](crate::client::fluent_builders::ListCallAnalyticsJobs::set_job_name_contains): <p>When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCallAnalyticsJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCallAnalyticsJobs::set_next_token): <p>If you receive a truncated result in the previous request of , include <code>NextToken</code> to fetch the next set of jobs.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCallAnalyticsJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCallAnalyticsJobs::set_max_results): <p> The maximum number of call analytics jobs to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used. </p>
+    /// - On success, responds with [`ListCallAnalyticsJobsOutput`](crate::output::ListCallAnalyticsJobsOutput) with field(s):
+    ///   - [`status(Option<CallAnalyticsJobStatus>)`](crate::output::ListCallAnalyticsJobsOutput::status): <p>When specified, returns only call analytics jobs with that status. Jobs are ordered by creation date, with the most recent jobs returned first. If you don't specify a status, Amazon Transcribe returns all transcription jobs ordered by creation date.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCallAnalyticsJobsOutput::next_token): <p>The operation returns a page of jobs at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in your next request to the operation to return next page of jobs.</p>
+    ///   - [`call_analytics_job_summaries(Option<Vec<CallAnalyticsJobSummary>>)`](crate::output::ListCallAnalyticsJobsOutput::call_analytics_job_summaries): <p>A list of objects containing summary information for a transcription job.</p>
+    /// - On failure, responds with [`SdkError<ListCallAnalyticsJobsError>`](crate::error::ListCallAnalyticsJobsError)
     pub fn list_call_analytics_jobs(&self) -> fluent_builders::ListCallAnalyticsJobs<C, M, R> {
         fluent_builders::ListCallAnalyticsJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLanguageModels` operation.
+    /// Constructs a fluent builder for the [`ListLanguageModels`](crate::client::fluent_builders::ListLanguageModels) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLanguageModels::into_paginator).
     ///
-    /// See [`ListLanguageModels`](crate::client::fluent_builders::ListLanguageModels) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLanguageModels::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`status_equals(ModelStatus)`](crate::client::fluent_builders::ListLanguageModels::status_equals) / [`set_status_equals(Option<ModelStatus>)`](crate::client::fluent_builders::ListLanguageModels::set_status_equals): <p>When specified, returns only custom language models with the specified status. Language models are ordered by creation date, with the newest models first. If you don't specify a status, Amazon Transcribe returns all custom language models ordered by date.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListLanguageModels::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListLanguageModels::set_name_contains): <p>When specified, the custom language model names returned contain the substring you've specified.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLanguageModels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLanguageModels::set_next_token): <p>When included, fetches the next set of jobs if the result of the previous request was truncated.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLanguageModels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLanguageModels::set_max_results): <p> The maximum number of language models to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
+    /// - On success, responds with [`ListLanguageModelsOutput`](crate::output::ListLanguageModelsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListLanguageModelsOutput::next_token): <p>The operation returns a page of jobs at a time. The maximum size of the list is set by the MaxResults parameter. If there are more language models in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the operation to return the next page of language models.</p>
+    ///   - [`models(Option<Vec<LanguageModel>>)`](crate::output::ListLanguageModelsOutput::models): <p>A list of objects containing information about custom language models.</p>
+    /// - On failure, responds with [`SdkError<ListLanguageModelsError>`](crate::error::ListLanguageModelsError)
     pub fn list_language_models(&self) -> fluent_builders::ListLanguageModels<C, M, R> {
         fluent_builders::ListLanguageModels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMedicalTranscriptionJobs` operation.
+    /// Constructs a fluent builder for the [`ListMedicalTranscriptionJobs`](crate::client::fluent_builders::ListMedicalTranscriptionJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMedicalTranscriptionJobs::into_paginator).
     ///
-    /// See [`ListMedicalTranscriptionJobs`](crate::client::fluent_builders::ListMedicalTranscriptionJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMedicalTranscriptionJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`status(TranscriptionJobStatus)`](crate::client::fluent_builders::ListMedicalTranscriptionJobs::status) / [`set_status(Option<TranscriptionJobStatus>)`](crate::client::fluent_builders::ListMedicalTranscriptionJobs::set_status): <p>When specified, returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest jobs returned first. If you don't specify a status, Amazon Transcribe Medical returns all transcription jobs ordered by creation date.</p>
+    ///   - [`job_name_contains(impl Into<String>)`](crate::client::fluent_builders::ListMedicalTranscriptionJobs::job_name_contains) / [`set_job_name_contains(Option<String>)`](crate::client::fluent_builders::ListMedicalTranscriptionJobs::set_job_name_contains): <p>When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMedicalTranscriptionJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMedicalTranscriptionJobs::set_next_token): <p>If you a receive a truncated result in the previous request of <code>ListMedicalTranscriptionJobs</code>, include <code>NextToken</code> to fetch the next set of jobs.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMedicalTranscriptionJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMedicalTranscriptionJobs::set_max_results): <p> The maximum number of medical transcription jobs to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
+    /// - On success, responds with [`ListMedicalTranscriptionJobsOutput`](crate::output::ListMedicalTranscriptionJobsOutput) with field(s):
+    ///   - [`status(Option<TranscriptionJobStatus>)`](crate::output::ListMedicalTranscriptionJobsOutput::status): <p>The requested status of the medical transcription jobs returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMedicalTranscriptionJobsOutput::next_token): <p>The <code>ListMedicalTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. Include the token in the next request to the <code>ListMedicalTranscriptionJobs</code> operation to return in the next page of jobs.</p>
+    ///   - [`medical_transcription_job_summaries(Option<Vec<MedicalTranscriptionJobSummary>>)`](crate::output::ListMedicalTranscriptionJobsOutput::medical_transcription_job_summaries): <p>A list of objects containing summary information for a transcription job.</p>
+    /// - On failure, responds with [`SdkError<ListMedicalTranscriptionJobsError>`](crate::error::ListMedicalTranscriptionJobsError)
     pub fn list_medical_transcription_jobs(
         &self,
     ) -> fluent_builders::ListMedicalTranscriptionJobs<C, M, R> {
         fluent_builders::ListMedicalTranscriptionJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMedicalVocabularies` operation.
+    /// Constructs a fluent builder for the [`ListMedicalVocabularies`](crate::client::fluent_builders::ListMedicalVocabularies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMedicalVocabularies::into_paginator).
     ///
-    /// See [`ListMedicalVocabularies`](crate::client::fluent_builders::ListMedicalVocabularies) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMedicalVocabularies::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMedicalVocabularies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMedicalVocabularies::set_next_token): <p>If the result of your previous request to <code>ListMedicalVocabularies</code> was truncated, include the <code>NextToken</code> to fetch the next set of vocabularies.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMedicalVocabularies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMedicalVocabularies::set_max_results): <p>The maximum number of vocabularies to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
+    ///   - [`state_equals(VocabularyState)`](crate::client::fluent_builders::ListMedicalVocabularies::state_equals) / [`set_state_equals(Option<VocabularyState>)`](crate::client::fluent_builders::ListMedicalVocabularies::set_state_equals): <p>When specified, returns only vocabularies with the <code>VocabularyState</code> equal to the specified vocabulary state. Use this field to see which vocabularies are ready for your medical transcription jobs.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListMedicalVocabularies::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListMedicalVocabularies::set_name_contains): <p>Returns vocabularies whose names contain the specified string. The search is not case sensitive. <code>ListMedicalVocabularies</code> returns both "<code>vocabularyname</code>" and "<code>VocabularyName</code>".</p>
+    /// - On success, responds with [`ListMedicalVocabulariesOutput`](crate::output::ListMedicalVocabulariesOutput) with field(s):
+    ///   - [`status(Option<VocabularyState>)`](crate::output::ListMedicalVocabulariesOutput::status): <p>The requested vocabulary state.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMedicalVocabulariesOutput::next_token): <p>The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies at a time. You set the maximum number of vocabularies to return on a page with the <code>MaxResults</code> parameter. If there are more jobs in the list will fit on a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. To return the next page of vocabularies, include the token in the next request to the <code>ListMedicalVocabularies</code> operation .</p>
+    ///   - [`vocabularies(Option<Vec<VocabularyInfo>>)`](crate::output::ListMedicalVocabulariesOutput::vocabularies): <p>A list of objects that describe the vocabularies that match your search criteria.</p>
+    /// - On failure, responds with [`SdkError<ListMedicalVocabulariesError>`](crate::error::ListMedicalVocabulariesError)
     pub fn list_medical_vocabularies(&self) -> fluent_builders::ListMedicalVocabularies<C, M, R> {
         fluent_builders::ListMedicalVocabularies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>Lists all tags associated with a given Amazon Resource Name (ARN). ARNs have the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code> (for example, <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>). Valid values for <code>resource-type</code> are: <code>transcription-job</code>, <code>medical-transcription-job</code>, <code>vocabulary</code>, <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and <code>language-model</code>.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::output::ListTagsForResourceOutput::resource_arn): <p>Lists all tags associated with the given Amazon Resource Name (ARN). </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Lists all tags associated with the given transcription job, vocabulary, or resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTranscriptionJobs` operation.
+    /// Constructs a fluent builder for the [`ListTranscriptionJobs`](crate::client::fluent_builders::ListTranscriptionJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTranscriptionJobs::into_paginator).
     ///
-    /// See [`ListTranscriptionJobs`](crate::client::fluent_builders::ListTranscriptionJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTranscriptionJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`status(TranscriptionJobStatus)`](crate::client::fluent_builders::ListTranscriptionJobs::status) / [`set_status(Option<TranscriptionJobStatus>)`](crate::client::fluent_builders::ListTranscriptionJobs::set_status): <p>When specified, returns only transcription jobs with the specified status. Jobs are ordered by creation date, with the newest jobs returned first. If you don’t specify a status, Amazon Transcribe returns all transcription jobs ordered by creation date.</p>
+    ///   - [`job_name_contains(impl Into<String>)`](crate::client::fluent_builders::ListTranscriptionJobs::job_name_contains) / [`set_job_name_contains(Option<String>)`](crate::client::fluent_builders::ListTranscriptionJobs::set_job_name_contains): <p>When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTranscriptionJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTranscriptionJobs::set_next_token): <p>If the result of the previous request to <code>ListTranscriptionJobs</code> is truncated, include the <code>NextToken</code> to fetch the next set of jobs.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTranscriptionJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTranscriptionJobs::set_max_results): <p>The maximum number of jobs to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
+    /// - On success, responds with [`ListTranscriptionJobsOutput`](crate::output::ListTranscriptionJobsOutput) with field(s):
+    ///   - [`status(Option<TranscriptionJobStatus>)`](crate::output::ListTranscriptionJobsOutput::status): <p>The requested status of the jobs returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTranscriptionJobsOutput::next_token): <p>The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.</p>
+    ///   - [`transcription_job_summaries(Option<Vec<TranscriptionJobSummary>>)`](crate::output::ListTranscriptionJobsOutput::transcription_job_summaries): <p>A list of objects containing summary information for a transcription job.</p>
+    /// - On failure, responds with [`SdkError<ListTranscriptionJobsError>`](crate::error::ListTranscriptionJobsError)
     pub fn list_transcription_jobs(&self) -> fluent_builders::ListTranscriptionJobs<C, M, R> {
         fluent_builders::ListTranscriptionJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVocabularies` operation.
+    /// Constructs a fluent builder for the [`ListVocabularies`](crate::client::fluent_builders::ListVocabularies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVocabularies::into_paginator).
     ///
-    /// See [`ListVocabularies`](crate::client::fluent_builders::ListVocabularies) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVocabularies::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVocabularies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVocabularies::set_next_token): <p>If the result of the previous request to <code>ListVocabularies</code> was truncated, include the <code>NextToken</code> to fetch the next set of jobs.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVocabularies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListVocabularies::set_max_results): <p>The maximum number of vocabularies to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
+    ///   - [`state_equals(VocabularyState)`](crate::client::fluent_builders::ListVocabularies::state_equals) / [`set_state_equals(Option<VocabularyState>)`](crate::client::fluent_builders::ListVocabularies::set_state_equals): <p>When specified, only returns vocabularies with the <code>VocabularyState</code> field equal to the specified state.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListVocabularies::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListVocabularies::set_name_contains): <p>When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the specified string. The search is not case sensitive, <code>ListVocabularies</code> returns both "vocabularyname" and "VocabularyName" in the response list.</p>
+    /// - On success, responds with [`ListVocabulariesOutput`](crate::output::ListVocabulariesOutput) with field(s):
+    ///   - [`status(Option<VocabularyState>)`](crate::output::ListVocabulariesOutput::status): <p>The requested vocabulary state.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVocabulariesOutput::next_token): <p>The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of the page is set in the <code>MaxResults</code> parameter. If there are more jobs in the list than will fit on the page, Amazon Transcribe returns the <code>NextPage</code> token. To return in the next page of jobs, include the token in the next request to the <code>ListVocabularies</code> operation.</p>
+    ///   - [`vocabularies(Option<Vec<VocabularyInfo>>)`](crate::output::ListVocabulariesOutput::vocabularies): <p>A list of objects that describe the vocabularies that match the search criteria in the request.</p>
+    /// - On failure, responds with [`SdkError<ListVocabulariesError>`](crate::error::ListVocabulariesError)
     pub fn list_vocabularies(&self) -> fluent_builders::ListVocabularies<C, M, R> {
         fluent_builders::ListVocabularies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVocabularyFilters` operation.
+    /// Constructs a fluent builder for the [`ListVocabularyFilters`](crate::client::fluent_builders::ListVocabularyFilters) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVocabularyFilters::into_paginator).
     ///
-    /// See [`ListVocabularyFilters`](crate::client::fluent_builders::ListVocabularyFilters) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVocabularyFilters::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVocabularyFilters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVocabularyFilters::set_next_token): <p>If the result of the previous request to <code>ListVocabularyFilters</code> was truncated, include the <code>NextToken</code> to fetch the next set of collections.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVocabularyFilters::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListVocabularyFilters::set_max_results): <p>The maximum number of filters to return in each page of results. If there are fewer results than the value you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
+    ///   - [`name_contains(impl Into<String>)`](crate::client::fluent_builders::ListVocabularyFilters::name_contains) / [`set_name_contains(Option<String>)`](crate::client::fluent_builders::ListVocabularyFilters::set_name_contains): <p>Filters the response so that it only contains vocabulary filters whose name contains the specified string.</p>
+    /// - On success, responds with [`ListVocabularyFiltersOutput`](crate::output::ListVocabularyFiltersOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListVocabularyFiltersOutput::next_token): <p>The <code>ListVocabularyFilters</code> operation returns a page of collections at a time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the <code>ListVocabularyFilters</code> operation to return in the next page of jobs.</p>
+    ///   - [`vocabulary_filters(Option<Vec<VocabularyFilterInfo>>)`](crate::output::ListVocabularyFiltersOutput::vocabulary_filters): <p>The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there are more filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter in the request set to the value of the <code>NextToken</code> field in the response.</p>
+    /// - On failure, responds with [`SdkError<ListVocabularyFiltersError>`](crate::error::ListVocabularyFiltersError)
     pub fn list_vocabulary_filters(&self) -> fluent_builders::ListVocabularyFilters<C, M, R> {
         fluent_builders::ListVocabularyFilters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartCallAnalyticsJob` operation.
+    /// Constructs a fluent builder for the [`StartCallAnalyticsJob`](crate::client::fluent_builders::StartCallAnalyticsJob) operation.
     ///
-    /// See [`StartCallAnalyticsJob`](crate::client::fluent_builders::StartCallAnalyticsJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`call_analytics_job_name(impl Into<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::call_analytics_job_name) / [`set_call_analytics_job_name(Option<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_call_analytics_job_name): <p>The name of the call analytics job. You can't use the string "." or ".." by themselves as the job name. The name must also be unique within an Amazon Web Services account. If you try to create a call analytics job with the same name as a previous call analytics job, you get a <code>ConflictException</code> error.</p>
+    ///   - [`media(Media)`](crate::client::fluent_builders::StartCallAnalyticsJob::media) / [`set_media(Option<Media>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_media): <p>Describes the input media file in a transcription request.</p>
+    ///   - [`output_location(impl Into<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::output_location) / [`set_output_location(Option<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_output_location): <p>The Amazon S3 location where the output of the call analytics job is stored. You can provide the following location types to store the output of call analytics job:</p>  <ul>   <li> <p>s3://DOC-EXAMPLE-BUCKET1</p> <p> If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the root level of the bucket.</p> </li>   <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.</p> <p>If you specify a folder, you must provide a trailing slash.</p> </li>   <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.</p> <p> If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.</p> </li>  </ul>  <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption of the analytics job output that is placed in your S3 bucket.</p>
+    ///   - [`output_encryption_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::output_encryption_kms_key_id) / [`set_output_encryption_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_output_encryption_kms_key_id): <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service key used to encrypt the output of the call analytics job. The user calling the operation must have permission to use the specified KMS key.</p>  <p>You use either of the following to identify an Amazon Web Services KMS key in the current account:</p>  <ul>   <li> <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li>   <li> <p>KMS Key Alias: "alias/ExampleAlias"</p> </li>  </ul>  <p> You can use either of the following to identify a KMS key in the current account or another account:</p>  <ul>   <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or another account: "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li>   <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"</p> </li>  </ul>  <p>If you don't specify an encryption key, the output of the call analytics job is encrypted with the default Amazon S3 key (SSE-S3).</p>  <p>If you specify a KMS key to encrypt your output, you must also specify an output location in the <code>OutputLocation</code> parameter. </p>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_data_access_role_arn): <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains your input files. Amazon Transcribe assumes this role to read queued audio files. If you have specified an output S3 bucket for your transcription results, this role should have access to the output bucket as well.</p>
+    ///   - [`settings(CallAnalyticsJobSettings)`](crate::client::fluent_builders::StartCallAnalyticsJob::settings) / [`set_settings(Option<CallAnalyticsJobSettings>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_settings): <p>A <code>Settings</code> object that provides optional settings for a call analytics job.</p>
+    ///   - [`channel_definitions(Vec<ChannelDefinition>)`](crate::client::fluent_builders::StartCallAnalyticsJob::channel_definitions) / [`set_channel_definitions(Option<Vec<ChannelDefinition>>)`](crate::client::fluent_builders::StartCallAnalyticsJob::set_channel_definitions): <p>When you start a call analytics job, you must pass an array that maps the agent and the customer to specific audio channels. The values you can assign to a channel are 0 and 1. The agent and the customer must each have their own channel. You can't assign more than one channel to an agent or customer. </p>
+    /// - On success, responds with [`StartCallAnalyticsJobOutput`](crate::output::StartCallAnalyticsJobOutput) with field(s):
+    ///   - [`call_analytics_job(Option<CallAnalyticsJob>)`](crate::output::StartCallAnalyticsJobOutput::call_analytics_job): <p>An object containing the details of the asynchronous call analytics job.</p>
+    /// - On failure, responds with [`SdkError<StartCallAnalyticsJobError>`](crate::error::StartCallAnalyticsJobError)
     pub fn start_call_analytics_job(&self) -> fluent_builders::StartCallAnalyticsJob<C, M, R> {
         fluent_builders::StartCallAnalyticsJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartMedicalTranscriptionJob` operation.
+    /// Constructs a fluent builder for the [`StartMedicalTranscriptionJob`](crate::client::fluent_builders::StartMedicalTranscriptionJob) operation.
     ///
-    /// See [`StartMedicalTranscriptionJob`](crate::client::fluent_builders::StartMedicalTranscriptionJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`medical_transcription_job_name(impl Into<String>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::medical_transcription_job_name) / [`set_medical_transcription_job_name(Option<String>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::set_medical_transcription_job_name): <p>The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name must also be unique within an Amazon Web Services account. If you try to create a medical transcription job with the same name as a previous medical transcription job, you get a <code>ConflictException</code> error.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::set_language_code): <p>The language code for the language spoken in the input media file. US English (en-US) is the valid value for medical transcription jobs. Any other value you enter for language code results in a <code>BadRequestException</code> error.</p>
+    ///   - [`media_sample_rate_hertz(i32)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::media_sample_rate_hertz) / [`set_media_sample_rate_hertz(Option<i32>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::set_media_sample_rate_hertz): <p>The sample rate, in Hertz, of the audio track in the input media file.</p>  <p>If you do not specify the media sample rate, Amazon Transcribe Medical determines the sample rate. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical. In most cases, you should leave the <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe Medical determine the sample rate.</p>
+    ///   - [`media_format(MediaFormat)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::media_format) / [`set_media_format(Option<MediaFormat>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::set_media_format): <p>The audio format of the input media file.</p>
+    ///   - [`media(Media)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::media) / [`set_media(Option<Media>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::set_media): <p>Describes the input media file in a transcription request.</p>
+    ///   - [`output_bucket_name(impl Into<String>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::output_bucket_name) / [`set_output_bucket_name(Option<String>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::set_output_bucket_name): <p>The Amazon S3 location where the transcription is stored.</p>  <p>You must set <code>OutputBucketName</code> for Amazon Transcribe Medical to store the transcription results. Your transcript appears in the S3 location you specify. When you call the <code>GetMedicalTranscriptionJob</code>, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe Medical to put files in the bucket. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>  <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of your transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe Medical uses the default Amazon S3 key for server-side encryption of transcripts that are placed in your S3 bucket.</p>
+    ///   - [`output_key(impl Into<String>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::output_key) / [`set_output_key(Option<String>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::set_output_key): <p>You can specify a location in an Amazon S3 bucket to store the output of your medical transcription job.</p>  <p>If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job in the Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".</p>  <p>You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key, the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and the file name, for example "folder/my-other-job-name.json".</p>  <p>If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.</p>
+    ///   - [`output_encryption_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::output_encryption_kms_key_id) / [`set_output_encryption_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::set_output_encryption_kms_key_id): <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS) key used to encrypt the output of the transcription job. The user calling the <code>StartMedicalTranscriptionJob</code> operation must have permission to use the specified KMS key.</p>  <p>You use either of the following to identify a KMS key in the current account:</p>  <ul>   <li> <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li>   <li> <p>KMS Key Alias: "alias/ExampleAlias"</p> </li>  </ul>  <p>You can use either of the following to identify a KMS key in the current account or another account:</p>  <ul>   <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or another account: "arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li>   <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li>  </ul>  <p>If you don't specify an encryption key, the output of the medical transcription job is encrypted with the default Amazon S3 key (SSE-S3).</p>  <p>If you specify a KMS key to encrypt your output, you must also specify an output location in the <code>OutputBucketName</code> parameter.</p>
+    ///   - [`kms_encryption_context(HashMap<String, String>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::kms_encryption_context) / [`set_kms_encryption_context(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::set_kms_encryption_context): <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data.</p>
+    ///   - [`settings(MedicalTranscriptionSetting)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::settings) / [`set_settings(Option<MedicalTranscriptionSetting>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::set_settings): <p>Optional settings for the medical transcription job.</p>
+    ///   - [`content_identification_type(MedicalContentIdentificationType)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::content_identification_type) / [`set_content_identification_type(Option<MedicalContentIdentificationType>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::set_content_identification_type): <p>You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it identifies in the transcription output.</p>
+    ///   - [`specialty(Specialty)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::specialty) / [`set_specialty(Option<Specialty>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::set_specialty): <p>The medical specialty of any clinician speaking in the input media.</p>
+    ///   - [`r#type(Type)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::r#type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::set_type): <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations between two or more speakers, e.g., a conversations between doctors and patients. <code>DICTATION</code> refers to single-speaker dictated speech, such as clinical notes.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::StartMedicalTranscriptionJob::set_tags): <p>Add tags to an Amazon Transcribe medical transcription job.</p>
+    /// - On success, responds with [`StartMedicalTranscriptionJobOutput`](crate::output::StartMedicalTranscriptionJobOutput) with field(s):
+    ///   - [`medical_transcription_job(Option<MedicalTranscriptionJob>)`](crate::output::StartMedicalTranscriptionJobOutput::medical_transcription_job): <p>A batch job submitted to transcribe medical speech to text.</p>
+    /// - On failure, responds with [`SdkError<StartMedicalTranscriptionJobError>`](crate::error::StartMedicalTranscriptionJobError)
     pub fn start_medical_transcription_job(
         &self,
     ) -> fluent_builders::StartMedicalTranscriptionJob<C, M, R> {
         fluent_builders::StartMedicalTranscriptionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartTranscriptionJob` operation.
+    /// Constructs a fluent builder for the [`StartTranscriptionJob`](crate::client::fluent_builders::StartTranscriptionJob) operation.
     ///
-    /// See [`StartTranscriptionJob`](crate::client::fluent_builders::StartTranscriptionJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`transcription_job_name(impl Into<String>)`](crate::client::fluent_builders::StartTranscriptionJob::transcription_job_name) / [`set_transcription_job_name(Option<String>)`](crate::client::fluent_builders::StartTranscriptionJob::set_transcription_job_name): <p>The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the job name. The name must also be unique within an Amazon Web Services account. If you try to create a transcription job with the same name as a previous transcription job, you get a <code>ConflictException</code> error.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::StartTranscriptionJob::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::StartTranscriptionJob::set_language_code): <p>The language code for the language used in the input media file.</p>  <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    ///   - [`media_sample_rate_hertz(i32)`](crate::client::fluent_builders::StartTranscriptionJob::media_sample_rate_hertz) / [`set_media_sample_rate_hertz(Option<i32>)`](crate::client::fluent_builders::StartTranscriptionJob::set_media_sample_rate_hertz): <p>The sample rate, in Hertz, of the audio track in the input media file. </p>  <p>If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify the sample rate, it must match the sample rate detected by Amazon Transcribe. In most cases, you should leave the <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe determine the sample rate.</p>
+    ///   - [`media_format(MediaFormat)`](crate::client::fluent_builders::StartTranscriptionJob::media_format) / [`set_media_format(Option<MediaFormat>)`](crate::client::fluent_builders::StartTranscriptionJob::set_media_format): <p>The format of the input media file.</p>
+    ///   - [`media(Media)`](crate::client::fluent_builders::StartTranscriptionJob::media) / [`set_media(Option<Media>)`](crate::client::fluent_builders::StartTranscriptionJob::set_media): <p>An object that describes the input media for a transcription job.</p>
+    ///   - [`output_bucket_name(impl Into<String>)`](crate::client::fluent_builders::StartTranscriptionJob::output_bucket_name) / [`set_output_bucket_name(Option<String>)`](crate::client::fluent_builders::StartTranscriptionJob::set_output_bucket_name): <p>The location where the transcription is stored.</p>  <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcript in the specified S3 bucket. When you call the <code>GetTranscriptionJob</code> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. If you enable content redaction, the redacted transcript appears in <code>RedactedTranscriptFileUri</code>. If you enable content redaction and choose to output an unredacted transcript, that transcript's location still appears in the <code>TranscriptFileUri</code>. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>  <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of your transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption of transcripts that are placed in your S3 bucket.</p>  <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>
+    ///   - [`output_key(impl Into<String>)`](crate::client::fluent_builders::StartTranscriptionJob::output_key) / [`set_output_key(Option<String>)`](crate::client::fluent_builders::StartTranscriptionJob::set_output_key): <p>You can specify a location in an Amazon S3 bucket to store the output of your transcription job.</p>  <p>If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".</p>  <p>You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key, the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and the file name, for example "folder/my-other-job-name.json".</p>  <p>If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.</p>
+    ///   - [`output_encryption_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartTranscriptionJob::output_encryption_kms_key_id) / [`set_output_encryption_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartTranscriptionJob::set_output_encryption_kms_key_id): <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS) key used to encrypt the output of the transcription job. The user calling the <code>StartTranscriptionJob</code> operation must have permission to use the specified KMS key.</p>  <p>You can use either of the following to identify a KMS key in the current account:</p>  <ul>   <li> <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li>   <li> <p>KMS Key Alias: "alias/ExampleAlias"</p> </li>  </ul>  <p>You can use either of the following to identify a KMS key in the current account or another account:</p>  <ul>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p> </li>   <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account-ID:alias/ExampleAlias"</p> </li>  </ul>  <p>If you don't specify an encryption key, the output of the transcription job is encrypted with the default Amazon S3 key (SSE-S3).</p>  <p>If you specify a KMS key to encrypt your output, you must also specify an output location in the <code>OutputBucketName</code> parameter.</p>
+    ///   - [`kms_encryption_context(HashMap<String, String>)`](crate::client::fluent_builders::StartTranscriptionJob::kms_encryption_context) / [`set_kms_encryption_context(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartTranscriptionJob::set_kms_encryption_context): <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data.</p>
+    ///   - [`settings(Settings)`](crate::client::fluent_builders::StartTranscriptionJob::settings) / [`set_settings(Option<Settings>)`](crate::client::fluent_builders::StartTranscriptionJob::set_settings): <p>A <code>Settings</code> object that provides optional settings for a transcription job.</p>
+    ///   - [`model_settings(ModelSettings)`](crate::client::fluent_builders::StartTranscriptionJob::model_settings) / [`set_model_settings(Option<ModelSettings>)`](crate::client::fluent_builders::StartTranscriptionJob::set_model_settings): <p>Choose the custom language model you use for your transcription job in this parameter.</p>
+    ///   - [`job_execution_settings(JobExecutionSettings)`](crate::client::fluent_builders::StartTranscriptionJob::job_execution_settings) / [`set_job_execution_settings(Option<JobExecutionSettings>)`](crate::client::fluent_builders::StartTranscriptionJob::set_job_execution_settings): <p>Provides information about how a transcription job is executed. Use this field to indicate that the job can be queued for deferred execution if the concurrency limit is reached and there are no slots available to immediately run the job.</p>
+    ///   - [`content_redaction(ContentRedaction)`](crate::client::fluent_builders::StartTranscriptionJob::content_redaction) / [`set_content_redaction(Option<ContentRedaction>)`](crate::client::fluent_builders::StartTranscriptionJob::set_content_redaction): <p>An object that contains the request parameters for content redaction.</p>
+    ///   - [`identify_language(bool)`](crate::client::fluent_builders::StartTranscriptionJob::identify_language) / [`set_identify_language(Option<bool>)`](crate::client::fluent_builders::StartTranscriptionJob::set_identify_language): <p>Set this field to <code>true</code> to enable automatic language identification. Automatic language identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value for a <code>LanguageCode</code>.</p>
+    ///   - [`language_options(Vec<LanguageCode>)`](crate::client::fluent_builders::StartTranscriptionJob::language_options) / [`set_language_options(Option<Vec<LanguageCode>>)`](crate::client::fluent_builders::StartTranscriptionJob::set_language_options): <p>An object containing a list of languages that might be present in your collection of audio files. Automatic language identification chooses a language that best matches the source audio from that list.</p>  <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    ///   - [`subtitles(Subtitles)`](crate::client::fluent_builders::StartTranscriptionJob::subtitles) / [`set_subtitles(Option<Subtitles>)`](crate::client::fluent_builders::StartTranscriptionJob::set_subtitles): <p>Add subtitles to your batch transcription job.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::StartTranscriptionJob::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::StartTranscriptionJob::set_tags): <p>Add tags to an Amazon Transcribe transcription job.</p>
+    ///   - [`language_id_settings(HashMap<LanguageCode, LanguageIdSettings>)`](crate::client::fluent_builders::StartTranscriptionJob::language_id_settings) / [`set_language_id_settings(Option<HashMap<LanguageCode, LanguageIdSettings>>)`](crate::client::fluent_builders::StartTranscriptionJob::set_language_id_settings): <p>The language identification settings associated with your transcription job. These settings include <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and <code>LanguageModelName</code>.</p>
+    /// - On success, responds with [`StartTranscriptionJobOutput`](crate::output::StartTranscriptionJobOutput) with field(s):
+    ///   - [`transcription_job(Option<TranscriptionJob>)`](crate::output::StartTranscriptionJobOutput::transcription_job): <p>An object containing details of the asynchronous transcription job.</p>
+    /// - On failure, responds with [`SdkError<StartTranscriptionJobError>`](crate::error::StartTranscriptionJobError)
     pub fn start_transcription_job(&self) -> fluent_builders::StartTranscriptionJob<C, M, R> {
         fluent_builders::StartTranscriptionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to tag. ARNs have the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code> (for example, <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>). Valid values for <code>resource-type</code> are: <code>transcription-job</code>, <code>medical-transcription-job</code>, <code>vocabulary</code>, <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and <code>language-model</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags you are assigning to a given Amazon Transcribe resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to remove tags from. ARNs have the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code> (for example, <code>arn:aws:transcribe:us-east-1:account-id:transcription-job/your-job-name</code>). Valid values for <code>resource-type</code> are: <code>transcription-job</code>, <code>medical-transcription-job</code>, <code>vocabulary</code>, <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and <code>language-model</code>.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of tag keys you want to remove from a specified Amazon Transcribe resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCallAnalyticsCategory` operation.
+    /// Constructs a fluent builder for the [`UpdateCallAnalyticsCategory`](crate::client::fluent_builders::UpdateCallAnalyticsCategory) operation.
     ///
-    /// See [`UpdateCallAnalyticsCategory`](crate::client::fluent_builders::UpdateCallAnalyticsCategory) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`category_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCallAnalyticsCategory::category_name) / [`set_category_name(Option<String>)`](crate::client::fluent_builders::UpdateCallAnalyticsCategory::set_category_name): <p>The name of the analytics category to update. The name is case sensitive. If you try to update a call analytics category with the same name as a previous category you will receive a <code>ConflictException</code> error.</p>
+    ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::UpdateCallAnalyticsCategory::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::UpdateCallAnalyticsCategory::set_rules): <p>The rules used for the updated analytics category. The rules that you provide in this field replace the ones that are currently being used.</p>
+    /// - On success, responds with [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput) with field(s):
+    ///   - [`category_properties(Option<CategoryProperties>)`](crate::output::UpdateCallAnalyticsCategoryOutput::category_properties): <p>The attributes describing the analytics category. You can see information such as the rules that you've used to update the category and when the category was originally created.</p>
+    /// - On failure, responds with [`SdkError<UpdateCallAnalyticsCategoryError>`](crate::error::UpdateCallAnalyticsCategoryError)
     pub fn update_call_analytics_category(
         &self,
     ) -> fluent_builders::UpdateCallAnalyticsCategory<C, M, R> {
         fluent_builders::UpdateCallAnalyticsCategory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMedicalVocabulary` operation.
+    /// Constructs a fluent builder for the [`UpdateMedicalVocabulary`](crate::client::fluent_builders::UpdateMedicalVocabulary) operation.
     ///
-    /// See [`UpdateMedicalVocabulary`](crate::client::fluent_builders::UpdateMedicalVocabulary) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::UpdateMedicalVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::UpdateMedicalVocabulary::set_vocabulary_name): <p>The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same name as a vocabulary you've already made, you get a <code>ConflictException</code> error.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::UpdateMedicalVocabulary::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::UpdateMedicalVocabulary::set_language_code): <p>The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
+    ///   - [`vocabulary_file_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateMedicalVocabulary::vocabulary_file_uri) / [`set_vocabulary_file_uri(Option<String>)`](crate::client::fluent_builders::UpdateMedicalVocabulary::set_vocabulary_file_uri): <p>The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you are calling. The following is the format for a URI:</p>  <p> <code> https://s3.   <aws-region>    .amazonaws.com/    <bucket-name>     /     <keyprefix>      /      <objectkey>       </objectkey>     </keyprefix>    </bucket-name>   </aws-region></code> </p>  <p>For example:</p>  <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>  <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>  <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
+    /// - On success, responds with [`UpdateMedicalVocabularyOutput`](crate::output::UpdateMedicalVocabularyOutput) with field(s):
+    ///   - [`vocabulary_name(Option<String>)`](crate::output::UpdateMedicalVocabularyOutput::vocabulary_name): <p>The name of the updated vocabulary.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::output::UpdateMedicalVocabularyOutput::language_code): <p>The language code for the language of the text file used to update the custom vocabulary. US English (en-US) is the only language supported in Amazon Transcribe Medical.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateMedicalVocabularyOutput::last_modified_time): <p>The date and time that the vocabulary was updated.</p>
+    ///   - [`vocabulary_state(Option<VocabularyState>)`](crate::output::UpdateMedicalVocabularyOutput::vocabulary_state): <p>The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code> request.</p>
+    /// - On failure, responds with [`SdkError<UpdateMedicalVocabularyError>`](crate::error::UpdateMedicalVocabularyError)
     pub fn update_medical_vocabulary(&self) -> fluent_builders::UpdateMedicalVocabulary<C, M, R> {
         fluent_builders::UpdateMedicalVocabulary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateVocabulary` operation.
+    /// Constructs a fluent builder for the [`UpdateVocabulary`](crate::client::fluent_builders::UpdateVocabulary) operation.
     ///
-    /// See [`UpdateVocabulary`](crate::client::fluent_builders::UpdateVocabulary) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::UpdateVocabulary::set_vocabulary_name): <p>The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same name as a previous vocabulary you will receive a <code>ConflictException</code> error.</p>
+    ///   - [`language_code(LanguageCode)`](crate::client::fluent_builders::UpdateVocabulary::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::client::fluent_builders::UpdateVocabulary::set_language_code): <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
+    ///   - [`phrases(Vec<String>)`](crate::client::fluent_builders::UpdateVocabulary::phrases) / [`set_phrases(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateVocabulary::set_phrases): <p>An array of strings containing the vocabulary entries.</p>
+    ///   - [`vocabulary_file_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateVocabulary::vocabulary_file_uri) / [`set_vocabulary_file_uri(Option<String>)`](crate::client::fluent_builders::UpdateVocabulary::set_vocabulary_file_uri): <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>  <p> <code>https://s3.   <aws-region>    .amazonaws.com/    <awsdoc-example-bucket>     /     <keyprefix>      /      <objectkey></objectkey>     </keyprefix>    </awsdoc-example-bucket>   </aws-region></code> </p>  <p>For example:</p>  <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>  <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>  <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom Vocabularies</a>.</p>
+    /// - On success, responds with [`UpdateVocabularyOutput`](crate::output::UpdateVocabularyOutput) with field(s):
+    ///   - [`vocabulary_name(Option<String>)`](crate::output::UpdateVocabularyOutput::vocabulary_name): <p>The name of the vocabulary that was updated.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::output::UpdateVocabularyOutput::language_code): <p>The language code of the vocabulary entries.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateVocabularyOutput::last_modified_time): <p>The date and time that the vocabulary was updated.</p>
+    ///   - [`vocabulary_state(Option<VocabularyState>)`](crate::output::UpdateVocabularyOutput::vocabulary_state): <p>The processing state of the vocabulary. When the <code>VocabularyState</code> field contains <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code> request.</p>
+    /// - On failure, responds with [`SdkError<UpdateVocabularyError>`](crate::error::UpdateVocabularyError)
     pub fn update_vocabulary(&self) -> fluent_builders::UpdateVocabulary<C, M, R> {
         fluent_builders::UpdateVocabulary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateVocabularyFilter` operation.
+    /// Constructs a fluent builder for the [`UpdateVocabularyFilter`](crate::client::fluent_builders::UpdateVocabularyFilter) operation.
     ///
-    /// See [`UpdateVocabularyFilter`](crate::client::fluent_builders::UpdateVocabularyFilter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vocabulary_filter_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVocabularyFilter::vocabulary_filter_name) / [`set_vocabulary_filter_name(Option<String>)`](crate::client::fluent_builders::UpdateVocabularyFilter::set_vocabulary_filter_name): <p>The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name as another vocabulary filter, you get a <code>ConflictException</code> error.</p>
+    ///   - [`words(Vec<String>)`](crate::client::fluent_builders::UpdateVocabularyFilter::words) / [`set_words(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateVocabularyFilter::set_words): <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>  <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
+    ///   - [`vocabulary_filter_file_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateVocabularyFilter::vocabulary_filter_file_uri) / [`set_vocabulary_filter_file_uri(Option<String>)`](crate::client::fluent_builders::UpdateVocabularyFilter::set_vocabulary_filter_file_uri): <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>  <p>The specified file must be less than 50 KB of UTF-8 characters.</p>  <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
+    /// - On success, responds with [`UpdateVocabularyFilterOutput`](crate::output::UpdateVocabularyFilterOutput) with field(s):
+    ///   - [`vocabulary_filter_name(Option<String>)`](crate::output::UpdateVocabularyFilterOutput::vocabulary_filter_name): <p>The name of the updated vocabulary filter.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::output::UpdateVocabularyFilterOutput::language_code): <p>The language code of the words in the vocabulary filter.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateVocabularyFilterOutput::last_modified_time): <p>The date and time that the vocabulary filter was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateVocabularyFilterError>`](crate::error::UpdateVocabularyFilterError)
     pub fn update_vocabulary_filter(&self) -> fluent_builders::UpdateVocabularyFilter<C, M, R> {
         fluent_builders::UpdateVocabularyFilter::new(self.handle.clone())
     }
@@ -467,12 +716,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral. </p>
+        /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral.</p>
         pub fn rules(mut self, input: crate::model::Rule) -> Self {
             self.inner = self.inner.rules(input);
             self
         }
-        /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral. </p>
+        /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a filter to be applied to the attributes of the call. For example, you can specify a sentiment filter to detect if the customer's sentiment was negative or neutral.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -697,43 +946,41 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location in Amazon S3 of the text file you use to define your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling. Enter information about your <code>VocabularyFileUri</code> in the following format:</p>
-        /// <p> <code> https://s3.
+        /// <p> <code>https://s3.
         /// <aws-region>
         /// .amazonaws.com/
         /// <bucket-name>
         /// /
         /// <keyprefix>
         /// /
-        /// <objectkey>
-        /// </objectkey>
+        /// <objectkey></objectkey>
         /// </keyprefix>
         /// </bucket-name>
         /// </aws-region></code> </p>
         /// <p>The following is an example URI for a vocabulary file that is stored in Amazon S3:</p>
         /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med">Medical Custom Vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_file_uri(input.into());
             self
         }
         /// <p>The location in Amazon S3 of the text file you use to define your custom vocabulary. The URI must be in the same Amazon Web Services Region as the resource that you're calling. Enter information about your <code>VocabularyFileUri</code> in the following format:</p>
-        /// <p> <code> https://s3.
+        /// <p> <code>https://s3.
         /// <aws-region>
         /// .amazonaws.com/
         /// <bucket-name>
         /// /
         /// <keyprefix>
         /// /
-        /// <objectkey>
-        /// </objectkey>
+        /// <objectkey></objectkey>
         /// </keyprefix>
         /// </bucket-name>
         /// </aws-region></code> </p>
         /// <p>The following is an example URI for a vocabulary file that is stored in Amazon S3:</p>
         /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med">Medical Custom Vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
         pub fn set_vocabulary_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -831,12 +1078,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vocabulary_name(input);
             self
         }
-        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>transcribe-whatis</code>.</p>
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>table-language-matrix</code>.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>transcribe-whatis</code>.</p>
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>table-language-matrix</code>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -862,15 +1109,43 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
+        /// <p> <code>https://s3.
+        /// <amazon web services-region>
+        /// .amazonaws.com/
+        /// <awsdoc-example-bucket>
+        /// /
+        /// <keyprefix>
+        /// /
+        /// <objectkey>
+        /// </objectkey>
+        /// </keyprefix>
+        /// </awsdoc-example-bucket>
+        /// </amazon></code> </p>
+        /// <p>For example:</p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_file_uri(input.into());
             self
         }
         /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
+        /// <p> <code>https://s3.
+        /// <amazon web services-region>
+        /// .amazonaws.com/
+        /// <awsdoc-example-bucket>
+        /// /
+        /// <keyprefix>
+        /// /
+        /// <objectkey>
+        /// </objectkey>
+        /// </keyprefix>
+        /// </awsdoc-example-bucket>
+        /// </amazon></code> </p>
+        /// <p>For example:</p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
         pub fn set_vocabulary_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -985,13 +1260,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_words`](Self::set_words).
         ///
-        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
         pub fn words(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.words(input.into());
             self
         }
-        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
         pub fn set_words(
             mut self,
@@ -1000,14 +1275,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_words(input);
             self
         }
-        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
         /// <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
         pub fn vocabulary_filter_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_filter_file_uri(input.into());
             self
         }
-        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
         /// <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
         pub fn set_vocabulary_filter_file_uri(
@@ -3219,8 +3494,8 @@ pub mod fluent_builders {
         /// <p>The Amazon S3 location where the output of the call analytics job is stored. You can provide the following location types to store the output of call analytics job:</p>
         /// <ul>
         /// <li> <p>s3://DOC-EXAMPLE-BUCKET1</p> <p> If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the root level of the bucket.</p> </li>
-        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p> <p>If you specify a folder, you must provide a trailing slash.</p> </li>
-        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li>
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.</p> <p>If you specify a folder, you must provide a trailing slash.</p> </li>
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.</p> <p> If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.</p> </li>
         /// </ul>
         /// <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption of the analytics job output that is placed in your S3 bucket.</p>
         pub fn output_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3230,8 +3505,8 @@ pub mod fluent_builders {
         /// <p>The Amazon S3 location where the output of the call analytics job is stored. You can provide the following location types to store the output of call analytics job:</p>
         /// <ul>
         /// <li> <p>s3://DOC-EXAMPLE-BUCKET1</p> <p> If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the root level of the bucket.</p> </li>
-        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p> <p>If you specify a folder, you must provide a trailing slash.</p> </li>
-        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p> <p> If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p> </li>
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p> <p>f you specify a path, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json.</p> <p>If you specify a folder, you must provide a trailing slash.</p> </li>
+        /// <li> <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json.</p> <p> If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json.</p> </li>
         /// </ul>
         /// <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption of the analytics job output that is placed in your S3 bucket.</p>
         pub fn set_output_location(
@@ -3250,7 +3525,7 @@ pub mod fluent_builders {
         /// <p> You can use either of the following to identify a KMS key in the current account or another account:</p>
         /// <ul>
         /// <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or another account: "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li>
-        /// <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li>
+        /// <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"</p> </li>
         /// </ul>
         /// <p>If you don't specify an encryption key, the output of the call analytics job is encrypted with the default Amazon S3 key (SSE-S3).</p>
         /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location in the <code>OutputLocation</code> parameter. </p>
@@ -3270,7 +3545,7 @@ pub mod fluent_builders {
         /// <p> You can use either of the following to identify a KMS key in the current account or another account:</p>
         /// <ul>
         /// <li> <p>Amazon Resource Name (ARN) of a KMS key in the current account or another account: "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p> </li>
-        /// <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p> </li>
+        /// <li> <p>ARN of a KMS Key Alias: "arn:aws:kms:region:accountID:alias/ExampleAlias"</p> </li>
         /// </ul>
         /// <p>If you don't specify an encryption key, the output of the call analytics job is encrypted with the default Amazon S3 key (SSE-S3).</p>
         /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location in the <code>OutputLocation</code> parameter. </p>
@@ -3294,12 +3569,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_access_role_arn(input);
             self
         }
-        /// <p>A <code>Settings</code> object that provides optional settings for a call analytics job. </p>
+        /// <p>A <code>Settings</code> object that provides optional settings for a call analytics job.</p>
         pub fn settings(mut self, input: crate::model::CallAnalyticsJobSettings) -> Self {
             self.inner = self.inner.settings(input);
             self
         }
-        /// <p>A <code>Settings</code> object that provides optional settings for a call analytics job. </p>
+        /// <p>A <code>Settings</code> object that provides optional settings for a call analytics job.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::CallAnalyticsJobSettings>,
@@ -4145,7 +4420,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateCallAnalyticsCategory`.
     ///
-    /// <p>Updates the call analytics category with new values. The <code>UpdateCallAnalyticsCategory</code> operation overwrites all of the existing information with the values that you provide in the request. </p>
+    /// <p>Updates the call analytics category with new values. The <code>UpdateCallAnalyticsCategory</code> operation overwrites all of the existing information with the values that you provide in the request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCallAnalyticsCategory<
         C = aws_smithy_client::erase::DynConnector,
@@ -4219,12 +4494,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>The rules used for the updated analytics category. The rules that you provide in this field replace the ones that are currently being used. </p>
+        /// <p>The rules used for the updated analytics category. The rules that you provide in this field replace the ones that are currently being used.</p>
         pub fn rules(mut self, input: crate::model::Rule) -> Self {
             self.inner = self.inner.rules(input);
             self
         }
-        /// <p>The rules used for the updated analytics category. The rules that you provide in this field replace the ones that are currently being used. </p>
+        /// <p>The rules used for the updated analytics category. The rules that you provide in this field replace the ones that are currently being used.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -4305,12 +4580,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vocabulary_name(input);
             self
         }
-        /// <p>The language code of the language used for the entries in the updated vocabulary. US English (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
+        /// <p>The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language code of the language used for the entries in the updated vocabulary. US English (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
+        /// <p>The language code of the language used for the entries in the updated vocabulary. U.S. English (en-US) is the only valid language code in Amazon Transcribe Medical.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -4334,7 +4609,7 @@ pub mod fluent_builders {
         /// <p>For example:</p>
         /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Medical Custom Vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_file_uri(input.into());
             self
@@ -4355,7 +4630,7 @@ pub mod fluent_builders {
         /// <p>For example:</p>
         /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Medical Custom Vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-med.html">Medical Custom Vocabularies</a>.</p>
         pub fn set_vocabulary_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4436,12 +4711,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vocabulary_name(input);
             self
         }
-        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>transcribe-whatis</code>.</p>
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <code>transcribe-whatis</code>.</p>
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -4466,18 +4741,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_phrases(input);
             self
         }
-        /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is </p>
+        /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
+        /// <p> <code>https://s3.
+        /// <aws-region>
+        /// .amazonaws.com/
+        /// <awsdoc-example-bucket>
+        /// /
+        /// <keyprefix>
+        /// /
+        /// <objectkey></objectkey>
+        /// </keyprefix>
+        /// </awsdoc-example-bucket>
+        /// </aws-region></code> </p>
         /// <p>For example:</p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom Vocabularies</a>.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_file_uri(input.into());
             self
         }
-        /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is </p>
+        /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the same region as the API endpoint that you are calling. The general form is:</p>
+        /// <p> <code>https://s3.
+        /// <aws-region>
+        /// .amazonaws.com/
+        /// <awsdoc-example-bucket>
+        /// /
+        /// <keyprefix>
+        /// /
+        /// <objectkey></objectkey>
+        /// </keyprefix>
+        /// </awsdoc-example-bucket>
+        /// </aws-region></code> </p>
         /// <p>For example:</p>
+        /// <p> <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code> </p>
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom Vocabularies</a>.</p>
         pub fn set_vocabulary_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4562,13 +4861,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_words`](Self::set_words).
         ///
-        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
         pub fn words(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.words(input.into());
             self
         }
-        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the <code>VocabularyFilterFileUri</code> parameter.</p>
         pub fn set_words(
             mut self,
@@ -4577,14 +4876,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_words(input);
             self
         }
-        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
         /// <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
         pub fn vocabulary_filter_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_filter_file_uri(input.into());
             self
         }
-        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>.</p>
         /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
         /// <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code> parameter.</p>
         pub fn set_vocabulary_filter_file_uri(

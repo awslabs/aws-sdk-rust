@@ -83,26 +83,37 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `GetRoutingControlState` operation.
+    /// Constructs a fluent builder for the [`GetRoutingControlState`](crate::client::fluent_builders::GetRoutingControlState) operation.
     ///
-    /// See [`GetRoutingControlState`](crate::client::fluent_builders::GetRoutingControlState) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`routing_control_arn(impl Into<String>)`](crate::client::fluent_builders::GetRoutingControlState::routing_control_arn) / [`set_routing_control_arn(Option<String>)`](crate::client::fluent_builders::GetRoutingControlState::set_routing_control_arn): <p>The Amazon Resource Number (ARN) for the routing control that you want to get the state for.</p>
+    /// - On success, responds with [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput) with field(s):
+    ///   - [`routing_control_arn(Option<String>)`](crate::output::GetRoutingControlStateOutput::routing_control_arn): <p>The Amazon Resource Number (ARN) of the response.</p>
+    ///   - [`routing_control_state(Option<RoutingControlState>)`](crate::output::GetRoutingControlStateOutput::routing_control_state): <p>The state of the routing control.</p>
+    /// - On failure, responds with [`SdkError<GetRoutingControlStateError>`](crate::error::GetRoutingControlStateError)
     pub fn get_routing_control_state(&self) -> fluent_builders::GetRoutingControlState<C, M, R> {
         fluent_builders::GetRoutingControlState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRoutingControlState` operation.
+    /// Constructs a fluent builder for the [`UpdateRoutingControlState`](crate::client::fluent_builders::UpdateRoutingControlState) operation.
     ///
-    /// See [`UpdateRoutingControlState`](crate::client::fluent_builders::UpdateRoutingControlState) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`routing_control_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingControlState::routing_control_arn) / [`set_routing_control_arn(Option<String>)`](crate::client::fluent_builders::UpdateRoutingControlState::set_routing_control_arn): <p>The Amazon Resource Number (ARN) for the routing control that you want to update the state for.</p>
+    ///   - [`routing_control_state(RoutingControlState)`](crate::client::fluent_builders::UpdateRoutingControlState::routing_control_state) / [`set_routing_control_state(Option<RoutingControlState>)`](crate::client::fluent_builders::UpdateRoutingControlState::set_routing_control_state): <p>The state of the routing control. You can set the value to be On or Off.</p>
+    /// - On success, responds with [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRoutingControlStateError>`](crate::error::UpdateRoutingControlStateError)
     pub fn update_routing_control_state(
         &self,
     ) -> fluent_builders::UpdateRoutingControlState<C, M, R> {
         fluent_builders::UpdateRoutingControlState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRoutingControlStates` operation.
+    /// Constructs a fluent builder for the [`UpdateRoutingControlStates`](crate::client::fluent_builders::UpdateRoutingControlStates) operation.
     ///
-    /// See [`UpdateRoutingControlStates`](crate::client::fluent_builders::UpdateRoutingControlStates) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`update_routing_control_state_entries(Vec<UpdateRoutingControlStateEntry>)`](crate::client::fluent_builders::UpdateRoutingControlStates::update_routing_control_state_entries) / [`set_update_routing_control_state_entries(Option<Vec<UpdateRoutingControlStateEntry>>)`](crate::client::fluent_builders::UpdateRoutingControlStates::set_update_routing_control_state_entries): <p>A set of routing control entries that you want to update.</p>
+    /// - On success, responds with [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRoutingControlStatesError>`](crate::error::UpdateRoutingControlStatesError)
     pub fn update_routing_control_states(
         &self,
     ) -> fluent_builders::UpdateRoutingControlStates<C, M, R> {

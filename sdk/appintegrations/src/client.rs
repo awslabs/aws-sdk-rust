@@ -83,112 +83,203 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateDataIntegration` operation.
+    /// Constructs a fluent builder for the [`CreateDataIntegration`](crate::client::fluent_builders::CreateDataIntegration) operation.
     ///
-    /// See [`CreateDataIntegration`](crate::client::fluent_builders::CreateDataIntegration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDataIntegration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDataIntegration::set_name): <p>The name of the DataIntegration.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDataIntegration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDataIntegration::set_description): <p>A description of the DataIntegration.</p>
+    ///   - [`kms_key(impl Into<String>)`](crate::client::fluent_builders::CreateDataIntegration::kms_key) / [`set_kms_key(Option<String>)`](crate::client::fluent_builders::CreateDataIntegration::set_kms_key): <p>The KMS key for the DataIntegration.</p>
+    ///   - [`source_uri(impl Into<String>)`](crate::client::fluent_builders::CreateDataIntegration::source_uri) / [`set_source_uri(Option<String>)`](crate::client::fluent_builders::CreateDataIntegration::set_source_uri): <p>The URI of the data source.</p>
+    ///   - [`schedule_config(ScheduleConfiguration)`](crate::client::fluent_builders::CreateDataIntegration::schedule_config) / [`set_schedule_config(Option<ScheduleConfiguration>)`](crate::client::fluent_builders::CreateDataIntegration::set_schedule_config): <p>The name of the data and how often it should be pulled from the source.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDataIntegration::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDataIntegration::set_tags): <p>One or more tags.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataIntegration::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataIntegration::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`CreateDataIntegrationOutput`](crate::output::CreateDataIntegrationOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateDataIntegrationOutput::arn): <p>The Amazon Resource Name (ARN)</p>
+    ///   - [`id(Option<String>)`](crate::output::CreateDataIntegrationOutput::id): <p>A unique identifier.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateDataIntegrationOutput::name): <p>The name of the DataIntegration.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateDataIntegrationOutput::description): <p>A description of the DataIntegration.</p>
+    ///   - [`kms_key(Option<String>)`](crate::output::CreateDataIntegrationOutput::kms_key): <p>The KMS key for the DataIntegration.</p>
+    ///   - [`source_uri(Option<String>)`](crate::output::CreateDataIntegrationOutput::source_uri): <p>The URI of the data source.</p>
+    ///   - [`schedule_configuration(Option<ScheduleConfiguration>)`](crate::output::CreateDataIntegrationOutput::schedule_configuration): <p>The name of the data and how often it should be pulled from the source.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateDataIntegrationOutput::tags): <p>One or more tags.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::CreateDataIntegrationOutput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On failure, responds with [`SdkError<CreateDataIntegrationError>`](crate::error::CreateDataIntegrationError)
     pub fn create_data_integration(&self) -> fluent_builders::CreateDataIntegration<C, M, R> {
         fluent_builders::CreateDataIntegration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEventIntegration` operation.
+    /// Constructs a fluent builder for the [`CreateEventIntegration`](crate::client::fluent_builders::CreateEventIntegration) operation.
     ///
-    /// See [`CreateEventIntegration`](crate::client::fluent_builders::CreateEventIntegration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEventIntegration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEventIntegration::set_name): <p>The name of the event integration.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateEventIntegration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateEventIntegration::set_description): <p>The description of the event integration.</p>
+    ///   - [`event_filter(EventFilter)`](crate::client::fluent_builders::CreateEventIntegration::event_filter) / [`set_event_filter(Option<EventFilter>)`](crate::client::fluent_builders::CreateEventIntegration::set_event_filter): <p>The event filter.</p>
+    ///   - [`event_bridge_bus(impl Into<String>)`](crate::client::fluent_builders::CreateEventIntegration::event_bridge_bus) / [`set_event_bridge_bus(Option<String>)`](crate::client::fluent_builders::CreateEventIntegration::set_event_bridge_bus): <p>The EventBridge bus.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateEventIntegration::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateEventIntegration::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateEventIntegration::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateEventIntegration::set_tags): <p>One or more tags.</p>
+    /// - On success, responds with [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput) with field(s):
+    ///   - [`event_integration_arn(Option<String>)`](crate::output::CreateEventIntegrationOutput::event_integration_arn): <p>The Amazon Resource Name (ARN) of the event integration. </p>
+    /// - On failure, responds with [`SdkError<CreateEventIntegrationError>`](crate::error::CreateEventIntegrationError)
     pub fn create_event_integration(&self) -> fluent_builders::CreateEventIntegration<C, M, R> {
         fluent_builders::CreateEventIntegration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDataIntegration` operation.
+    /// Constructs a fluent builder for the [`DeleteDataIntegration`](crate::client::fluent_builders::DeleteDataIntegration) operation.
     ///
-    /// See [`DeleteDataIntegration`](crate::client::fluent_builders::DeleteDataIntegration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`data_integration_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteDataIntegration::data_integration_identifier) / [`set_data_integration_identifier(Option<String>)`](crate::client::fluent_builders::DeleteDataIntegration::set_data_integration_identifier): <p>A unique identifier for the DataIntegration.</p>
+    /// - On success, responds with [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDataIntegrationError>`](crate::error::DeleteDataIntegrationError)
     pub fn delete_data_integration(&self) -> fluent_builders::DeleteDataIntegration<C, M, R> {
         fluent_builders::DeleteDataIntegration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEventIntegration` operation.
+    /// Constructs a fluent builder for the [`DeleteEventIntegration`](crate::client::fluent_builders::DeleteEventIntegration) operation.
     ///
-    /// See [`DeleteEventIntegration`](crate::client::fluent_builders::DeleteEventIntegration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteEventIntegration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteEventIntegration::set_name): <p>The name of the event integration.</p>
+    /// - On success, responds with [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEventIntegrationError>`](crate::error::DeleteEventIntegrationError)
     pub fn delete_event_integration(&self) -> fluent_builders::DeleteEventIntegration<C, M, R> {
         fluent_builders::DeleteEventIntegration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDataIntegration` operation.
+    /// Constructs a fluent builder for the [`GetDataIntegration`](crate::client::fluent_builders::GetDataIntegration) operation.
     ///
-    /// See [`GetDataIntegration`](crate::client::fluent_builders::GetDataIntegration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetDataIntegration::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetDataIntegration::set_identifier): <p>A unique identifier.</p>
+    /// - On success, responds with [`GetDataIntegrationOutput`](crate::output::GetDataIntegrationOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetDataIntegrationOutput::arn): <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
+    ///   - [`id(Option<String>)`](crate::output::GetDataIntegrationOutput::id): <p>A unique identifier.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetDataIntegrationOutput::name): <p>The name of the DataIntegration.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetDataIntegrationOutput::description): <p>The KMS key for the DataIntegration.</p>
+    ///   - [`kms_key(Option<String>)`](crate::output::GetDataIntegrationOutput::kms_key): <p>The KMS key for the DataIntegration.</p>
+    ///   - [`source_uri(Option<String>)`](crate::output::GetDataIntegrationOutput::source_uri): <p>The URI of the data source.</p>
+    ///   - [`schedule_configuration(Option<ScheduleConfiguration>)`](crate::output::GetDataIntegrationOutput::schedule_configuration): <p>The name of the data and how often it should be pulled from the source.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetDataIntegrationOutput::tags): <p>One or more tags.</p>
+    /// - On failure, responds with [`SdkError<GetDataIntegrationError>`](crate::error::GetDataIntegrationError)
     pub fn get_data_integration(&self) -> fluent_builders::GetDataIntegration<C, M, R> {
         fluent_builders::GetDataIntegration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEventIntegration` operation.
+    /// Constructs a fluent builder for the [`GetEventIntegration`](crate::client::fluent_builders::GetEventIntegration) operation.
     ///
-    /// See [`GetEventIntegration`](crate::client::fluent_builders::GetEventIntegration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetEventIntegration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetEventIntegration::set_name): <p>The name of the event integration. </p>
+    /// - On success, responds with [`GetEventIntegrationOutput`](crate::output::GetEventIntegrationOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetEventIntegrationOutput::name): <p>The name of the event integration. </p>
+    ///   - [`description(Option<String>)`](crate::output::GetEventIntegrationOutput::description): <p>The description of the event integration.</p>
+    ///   - [`event_integration_arn(Option<String>)`](crate::output::GetEventIntegrationOutput::event_integration_arn): <p>The Amazon Resource Name (ARN) for the event integration.</p>
+    ///   - [`event_bridge_bus(Option<String>)`](crate::output::GetEventIntegrationOutput::event_bridge_bus): <p>The EventBridge bus.</p>
+    ///   - [`event_filter(Option<EventFilter>)`](crate::output::GetEventIntegrationOutput::event_filter): <p>The event filter.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetEventIntegrationOutput::tags): <p>One or more tags.</p>
+    /// - On failure, responds with [`SdkError<GetEventIntegrationError>`](crate::error::GetEventIntegrationError)
     pub fn get_event_integration(&self) -> fluent_builders::GetEventIntegration<C, M, R> {
         fluent_builders::GetEventIntegration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDataIntegrationAssociations` operation.
+    /// Constructs a fluent builder for the [`ListDataIntegrationAssociations`](crate::client::fluent_builders::ListDataIntegrationAssociations) operation.
     ///
-    /// See [`ListDataIntegrationAssociations`](crate::client::fluent_builders::ListDataIntegrationAssociations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`data_integration_identifier(impl Into<String>)`](crate::client::fluent_builders::ListDataIntegrationAssociations::data_integration_identifier) / [`set_data_integration_identifier(Option<String>)`](crate::client::fluent_builders::ListDataIntegrationAssociations::set_data_integration_identifier): <p>A unique identifier for the DataIntegration.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataIntegrationAssociations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataIntegrationAssociations::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataIntegrationAssociations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataIntegrationAssociations::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListDataIntegrationAssociationsOutput`](crate::output::ListDataIntegrationAssociationsOutput) with field(s):
+    ///   - [`data_integration_associations(Option<Vec<DataIntegrationAssociationSummary>>)`](crate::output::ListDataIntegrationAssociationsOutput::data_integration_associations): <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDataIntegrationAssociationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListDataIntegrationAssociationsError>`](crate::error::ListDataIntegrationAssociationsError)
     pub fn list_data_integration_associations(
         &self,
     ) -> fluent_builders::ListDataIntegrationAssociations<C, M, R> {
         fluent_builders::ListDataIntegrationAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDataIntegrations` operation.
+    /// Constructs a fluent builder for the [`ListDataIntegrations`](crate::client::fluent_builders::ListDataIntegrations) operation.
     ///
-    /// See [`ListDataIntegrations`](crate::client::fluent_builders::ListDataIntegrations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataIntegrations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataIntegrations::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataIntegrations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataIntegrations::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListDataIntegrationsOutput`](crate::output::ListDataIntegrationsOutput) with field(s):
+    ///   - [`data_integrations(Option<Vec<DataIntegrationSummary>>)`](crate::output::ListDataIntegrationsOutput::data_integrations): <p>The DataIntegrations associated with this account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDataIntegrationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListDataIntegrationsError>`](crate::error::ListDataIntegrationsError)
     pub fn list_data_integrations(&self) -> fluent_builders::ListDataIntegrations<C, M, R> {
         fluent_builders::ListDataIntegrations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEventIntegrationAssociations` operation.
+    /// Constructs a fluent builder for the [`ListEventIntegrationAssociations`](crate::client::fluent_builders::ListEventIntegrationAssociations) operation.
     ///
-    /// See [`ListEventIntegrationAssociations`](crate::client::fluent_builders::ListEventIntegrationAssociations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`event_integration_name(impl Into<String>)`](crate::client::fluent_builders::ListEventIntegrationAssociations::event_integration_name) / [`set_event_integration_name(Option<String>)`](crate::client::fluent_builders::ListEventIntegrationAssociations::set_event_integration_name): <p>The name of the event integration. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEventIntegrationAssociations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEventIntegrationAssociations::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEventIntegrationAssociations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEventIntegrationAssociations::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListEventIntegrationAssociationsOutput`](crate::output::ListEventIntegrationAssociationsOutput) with field(s):
+    ///   - [`event_integration_associations(Option<Vec<EventIntegrationAssociation>>)`](crate::output::ListEventIntegrationAssociationsOutput::event_integration_associations): <p>The event integration associations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEventIntegrationAssociationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListEventIntegrationAssociationsError>`](crate::error::ListEventIntegrationAssociationsError)
     pub fn list_event_integration_associations(
         &self,
     ) -> fluent_builders::ListEventIntegrationAssociations<C, M, R> {
         fluent_builders::ListEventIntegrationAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEventIntegrations` operation.
+    /// Constructs a fluent builder for the [`ListEventIntegrations`](crate::client::fluent_builders::ListEventIntegrations) operation.
     ///
-    /// See [`ListEventIntegrations`](crate::client::fluent_builders::ListEventIntegrations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEventIntegrations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEventIntegrations::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEventIntegrations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEventIntegrations::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListEventIntegrationsOutput`](crate::output::ListEventIntegrationsOutput) with field(s):
+    ///   - [`event_integrations(Option<Vec<EventIntegration>>)`](crate::output::ListEventIntegrationsOutput::event_integrations): <p>The event integrations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEventIntegrationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListEventIntegrationsError>`](crate::error::ListEventIntegrationsError)
     pub fn list_event_integrations(&self) -> fluent_builders::ListEventIntegrations<C, M, R> {
         fluent_builders::ListEventIntegrations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Information about the tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>One or more tags. </p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDataIntegration` operation.
+    /// Constructs a fluent builder for the [`UpdateDataIntegration`](crate::client::fluent_builders::UpdateDataIntegration) operation.
     ///
-    /// See [`UpdateDataIntegration`](crate::client::fluent_builders::UpdateDataIntegration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateDataIntegration::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::UpdateDataIntegration::set_identifier): <p>A unique identifier for the DataIntegration.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDataIntegration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDataIntegration::set_name): <p>The name of the DataIntegration.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDataIntegration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDataIntegration::set_description): <p>A description of the DataIntegration.</p>
+    /// - On success, responds with [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDataIntegrationError>`](crate::error::UpdateDataIntegrationError)
     pub fn update_data_integration(&self) -> fluent_builders::UpdateDataIntegration<C, M, R> {
         fluent_builders::UpdateDataIntegration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEventIntegration` operation.
+    /// Constructs a fluent builder for the [`UpdateEventIntegration`](crate::client::fluent_builders::UpdateEventIntegration) operation.
     ///
-    /// See [`UpdateEventIntegration`](crate::client::fluent_builders::UpdateEventIntegration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateEventIntegration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateEventIntegration::set_name): <p>The name of the event integration.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateEventIntegration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateEventIntegration::set_description): <p>The description of the event inegration.</p>
+    /// - On success, responds with [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateEventIntegrationError>`](crate::error::UpdateEventIntegrationError)
     pub fn update_event_integration(&self) -> fluent_builders::UpdateEventIntegration<C, M, R> {
         fluent_builders::UpdateEventIntegration::new(self.handle.clone())
     }

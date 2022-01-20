@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+use crate::fs_util::{home_dir, Os};
 use aws_types::os_shim_internal;
 use std::borrow::Cow;
 use std::io::ErrorKind;
@@ -55,10 +56,10 @@ impl FileKind {
 pub async fn load(proc_env: &os_shim_internal::Env, fs: &os_shim_internal::Fs) -> Source {
     let home = home_dir(proc_env, Os::real());
     let config = load_config_file(FileKind::Config, &home, fs, proc_env)
-        .instrument(tracing::info_span!("load_config_file"))
+        .instrument(tracing::debug_span!("load_config_file"))
         .await;
     let credentials = load_config_file(FileKind::Credentials, &home, fs, proc_env)
-        .instrument(tracing::info_span!("load_credentials_file"))
+        .instrument(tracing::debug_span!("load_credentials_file"))
         .await;
 
     Source {
@@ -103,7 +104,7 @@ async fn load_config_file(
         Err(e) => {
             match e.kind() {
                 ErrorKind::NotFound if path == kind.default_path() => {
-                    tracing::info!(path = %path, "config file not found")
+                    tracing::debug!(path = %path, "config file not found")
                 }
                 ErrorKind::NotFound if path != kind.default_path() => {
                     // in the case where the user overrode the path with an environment variable,
@@ -123,7 +124,7 @@ async fn load_config_file(
             Default::default()
         }
     };
-    tracing::info!(path = %path, size = ?data.len(), "config file loaded");
+    tracing::debug!(path = %path, size = ?data.len(), "config file loaded");
     File {
         // lossy is OK here, the name of this file is just for debugging purposes
         path: expanded.to_string_lossy().into(),
@@ -181,55 +182,14 @@ fn expand_home(
 /// Returns true or false based on whether or not this code is likely running inside an AWS Lambda.
 /// [Lambdas set many environment variables](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime)
 /// that we can check.
-fn check_is_likely_running_on_a_lambda(environment: &os_shim_internal::Env) -> bool {
+fn check_is_likely_running_on_a_lambda(environment: &aws_types::os_shim_internal::Env) -> bool {
     // LAMBDA_TASK_ROOT – The path to your Lambda function code.
     environment.get("LAMBDA_TASK_ROOT").is_ok()
 }
 
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
-enum Os {
-    Windows,
-    NotWindows,
-}
-
-impl Os {
-    pub fn real() -> Self {
-        match std::env::consts::OS {
-            "windows" => Os::Windows,
-            _ => Os::NotWindows,
-        }
-    }
-}
-
-/// Resolve a home directory given a set of environment variables
-fn home_dir(env_var: &os_shim_internal::Env, os: Os) -> Option<String> {
-    if let Ok(home) = env_var.get("HOME") {
-        tracing::debug!(src = "HOME", "loaded home directory");
-        return Some(home);
-    }
-
-    if os == Os::Windows {
-        if let Ok(home) = env_var.get("USERPROFILE") {
-            tracing::debug!(src = "USERPROFILE", "loaded home directory");
-            return Some(home);
-        }
-
-        let home_drive = env_var.get("HOMEDRIVE");
-        let home_path = env_var.get("HOMEPATH");
-        tracing::debug!(src = "HOMEDRIVE/HOMEPATH", "loaded home directory");
-        if let (Ok(mut drive), Ok(path)) = (home_drive, home_path) {
-            drive.push_str(&path);
-            return Some(drive);
-        }
-    }
-    None
-}
-
 #[cfg(test)]
 mod tests {
-    use crate::profile::parser::source::{
-        expand_home, home_dir, load, load_config_file, FileKind, Os,
-    };
+    use crate::profile::parser::source::{expand_home, load, load_config_file, FileKind};
     use aws_types::os_shim_internal::{Env, Fs};
     use serde::Deserialize;
     use std::collections::HashMap;
@@ -349,17 +309,6 @@ mod tests {
                 .unwrap(),
             "/user/foo/.aws/config"
         );
-    }
-
-    #[test]
-    fn homedir_profile_only_windows() {
-        // windows specific variables should only be considered when the platform is windows
-        let env = Env::from_slice(&[("USERPROFILE", "C:\\Users\\name")]);
-        assert_eq!(
-            home_dir(&env, Os::Windows),
-            Some("C:\\Users\\name".to_string())
-        );
-        assert_eq!(home_dir(&env, Os::NotWindows), None);
     }
 
     #[test]

@@ -149,6 +149,16 @@ pub(crate) fn reflens_structure_crate_output_describe_export_image_tasks_output_
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_describe_fast_launch_images_output_next_token(
+    input: &crate::output::DescribeFastLaunchImagesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_describe_fast_snapshot_restores_output_next_token(
     input: &crate::output::DescribeFastSnapshotRestoresOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -1303,6 +1313,16 @@ pub(crate) fn lens_structure_crate_output_describe_export_image_tasks_output_exp
     input: crate::output::DescribeExportImageTasksOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::ExportImageTask>> {
     let input = match input.export_image_tasks {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_describe_fast_launch_images_output_fast_launch_images(
+    input: crate::output::DescribeFastLaunchImagesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::DescribeFastLaunchImagesSuccessItem>> {
+    let input = match input.fast_launch_images {
         None => return None,
         Some(t) => t,
     };

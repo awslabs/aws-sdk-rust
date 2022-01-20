@@ -83,213 +83,456 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddTags` operation.
+    /// Constructs a fluent builder for the [`AddTags`](crate::client::fluent_builders::AddTags) operation.
     ///
-    /// See [`AddTags`](crate::client::fluent_builders::AddTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::AddTags::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::AddTags::set_resource_id): <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    ///   - [`tags_list(Vec<Tag>)`](crate::client::fluent_builders::AddTags::tags_list) / [`set_tags_list(Option<Vec<Tag>>)`](crate::client::fluent_builders::AddTags::set_tags_list): <p>Contains a list of tags, up to a limit of 50</p>
+    /// - On success, responds with [`AddTagsOutput`](crate::output::AddTagsOutput)
+
+    /// - On failure, responds with [`SdkError<AddTagsError>`](crate::error::AddTagsError)
     pub fn add_tags(&self) -> fluent_builders::AddTags<C, M, R> {
         fluent_builders::AddTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelQuery` operation.
+    /// Constructs a fluent builder for the [`CancelQuery`](crate::client::fluent_builders::CancelQuery) operation.
     ///
-    /// See [`CancelQuery`](crate::client::fluent_builders::CancelQuery) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`event_data_store(impl Into<String>)`](crate::client::fluent_builders::CancelQuery::event_data_store) / [`set_event_data_store(Option<String>)`](crate::client::fluent_builders::CancelQuery::set_event_data_store): <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
+    ///   - [`query_id(impl Into<String>)`](crate::client::fluent_builders::CancelQuery::query_id) / [`set_query_id(Option<String>)`](crate::client::fluent_builders::CancelQuery::set_query_id): <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
+    /// - On success, responds with [`CancelQueryOutput`](crate::output::CancelQueryOutput) with field(s):
+    ///   - [`query_id(Option<String>)`](crate::output::CancelQueryOutput::query_id): <p>The ID of the canceled query.</p>
+    ///   - [`query_status(Option<QueryStatus>)`](crate::output::CancelQueryOutput::query_status): <p>Shows the status of a query after a <code>CancelQuery</code> request. Typically, the values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.</p>
+    /// - On failure, responds with [`SdkError<CancelQueryError>`](crate::error::CancelQueryError)
     pub fn cancel_query(&self) -> fluent_builders::CancelQuery<C, M, R> {
         fluent_builders::CancelQuery::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEventDataStore` operation.
+    /// Constructs a fluent builder for the [`CreateEventDataStore`](crate::client::fluent_builders::CreateEventDataStore) operation.
     ///
-    /// See [`CreateEventDataStore`](crate::client::fluent_builders::CreateEventDataStore) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEventDataStore::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEventDataStore::set_name): <p>The name of the event data store.</p>
+    ///   - [`advanced_event_selectors(Vec<AdvancedEventSelector>)`](crate::client::fluent_builders::CreateEventDataStore::advanced_event_selectors) / [`set_advanced_event_selectors(Option<Vec<AdvancedEventSelector>>)`](crate::client::fluent_builders::CreateEventDataStore::set_advanced_event_selectors): <p>The advanced event selectors to use to select the events for the data store. For more information about how to use advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
+    ///   - [`multi_region_enabled(bool)`](crate::client::fluent_builders::CreateEventDataStore::multi_region_enabled) / [`set_multi_region_enabled(Option<bool>)`](crate::client::fluent_builders::CreateEventDataStore::set_multi_region_enabled): <p>Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created.</p>
+    ///   - [`organization_enabled(bool)`](crate::client::fluent_builders::CreateEventDataStore::organization_enabled) / [`set_organization_enabled(Option<bool>)`](crate::client::fluent_builders::CreateEventDataStore::set_organization_enabled): <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    ///   - [`retention_period(i32)`](crate::client::fluent_builders::CreateEventDataStore::retention_period) / [`set_retention_period(Option<i32>)`](crate::client::fluent_builders::CreateEventDataStore::set_retention_period): <p>The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the equivalent of seven years.</p>
+    ///   - [`termination_protection_enabled(bool)`](crate::client::fluent_builders::CreateEventDataStore::termination_protection_enabled) / [`set_termination_protection_enabled(Option<bool>)`](crate::client::fluent_builders::CreateEventDataStore::set_termination_protection_enabled): <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
+    ///   - [`tags_list(Vec<Tag>)`](crate::client::fluent_builders::CreateEventDataStore::tags_list) / [`set_tags_list(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEventDataStore::set_tags_list): <p>A list of tags.</p>
+    /// - On success, responds with [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput) with field(s):
+    ///   - [`event_data_store_arn(Option<String>)`](crate::output::CreateEventDataStoreOutput::event_data_store_arn): <p>The ARN of the event data store.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateEventDataStoreOutput::name): <p>The name of the event data store.</p>
+    ///   - [`status(Option<EventDataStoreStatus>)`](crate::output::CreateEventDataStoreOutput::status): <p>The status of event data store creation.</p>
+    ///   - [`advanced_event_selectors(Option<Vec<AdvancedEventSelector>>)`](crate::output::CreateEventDataStoreOutput::advanced_event_selectors): <p>The advanced event selectors that were used to select the events for the data store.</p>
+    ///   - [`multi_region_enabled(Option<bool>)`](crate::output::CreateEventDataStoreOutput::multi_region_enabled): <p>Indicates whether the event data store collects events from all regions, or only from the region in which it was created.</p>
+    ///   - [`organization_enabled(Option<bool>)`](crate::output::CreateEventDataStoreOutput::organization_enabled): <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    ///   - [`retention_period(Option<i32>)`](crate::output::CreateEventDataStoreOutput::retention_period): <p>The retention period of an event data store, in days.</p>
+    ///   - [`termination_protection_enabled(Option<bool>)`](crate::output::CreateEventDataStoreOutput::termination_protection_enabled): <p>Indicates whether termination protection is enabled for the event data store.</p>
+    ///   - [`tags_list(Option<Vec<Tag>>)`](crate::output::CreateEventDataStoreOutput::tags_list): <p>A list of tags.</p>
+    ///   - [`created_timestamp(Option<DateTime>)`](crate::output::CreateEventDataStoreOutput::created_timestamp): <p>The timestamp that shows when the event data store was created.</p>
+    ///   - [`updated_timestamp(Option<DateTime>)`](crate::output::CreateEventDataStoreOutput::updated_timestamp): <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    /// - On failure, responds with [`SdkError<CreateEventDataStoreError>`](crate::error::CreateEventDataStoreError)
     pub fn create_event_data_store(&self) -> fluent_builders::CreateEventDataStore<C, M, R> {
         fluent_builders::CreateEventDataStore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTrail` operation.
+    /// Constructs a fluent builder for the [`CreateTrail`](crate::client::fluent_builders::CreateTrail) operation.
     ///
-    /// See [`CreateTrail`](crate::client::fluent_builders::CreateTrail) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateTrail::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateTrail::set_name): <p>Specifies the name of the trail. The name must meet the following requirements:</p>  <ul>   <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>   <li> <p>Start with a letter or number, and end with a letter or number</p> </li>   <li> <p>Be between 3 and 128 characters</p> </li>   <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>   <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>  </ul>
+    ///   - [`s3_bucket_name(impl Into<String>)`](crate::client::fluent_builders::CreateTrail::s3_bucket_name) / [`set_s3_bucket_name(Option<String>)`](crate::client::fluent_builders::CreateTrail::set_s3_bucket_name): <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
+    ///   - [`s3_key_prefix(impl Into<String>)`](crate::client::fluent_builders::CreateTrail::s3_key_prefix) / [`set_s3_key_prefix(Option<String>)`](crate::client::fluent_builders::CreateTrail::set_s3_key_prefix): <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+    ///   - [`sns_topic_name(impl Into<String>)`](crate::client::fluent_builders::CreateTrail::sns_topic_name) / [`set_sns_topic_name(Option<String>)`](crate::client::fluent_builders::CreateTrail::set_sns_topic_name): <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
+    ///   - [`include_global_service_events(bool)`](crate::client::fluent_builders::CreateTrail::include_global_service_events) / [`set_include_global_service_events(Option<bool>)`](crate::client::fluent_builders::CreateTrail::set_include_global_service_events): <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
+    ///   - [`is_multi_region_trail(bool)`](crate::client::fluent_builders::CreateTrail::is_multi_region_trail) / [`set_is_multi_region_trail(Option<bool>)`](crate::client::fluent_builders::CreateTrail::set_is_multi_region_trail): <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
+    ///   - [`enable_log_file_validation(bool)`](crate::client::fluent_builders::CreateTrail::enable_log_file_validation) / [`set_enable_log_file_validation(Option<bool>)`](crate::client::fluent_builders::CreateTrail::set_enable_log_file_validation): <p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>   <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>  </note>
+    ///   - [`cloud_watch_logs_log_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTrail::cloud_watch_logs_log_group_arn) / [`set_cloud_watch_logs_log_group_arn(Option<String>)`](crate::client::fluent_builders::CreateTrail::set_cloud_watch_logs_log_group_arn): <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    ///   - [`cloud_watch_logs_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTrail::cloud_watch_logs_role_arn) / [`set_cloud_watch_logs_role_arn(Option<String>)`](crate::client::fluent_builders::CreateTrail::set_cloud_watch_logs_role_arn): <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateTrail::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateTrail::set_kms_key_id): <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>  <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>Examples:</p>  <ul>   <li> <p>alias/MyAliasName</p> </li>   <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>   <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>   <li> <p>12345678-1234-1234-1234-123456789012</p> </li>  </ul>
+    ///   - [`is_organization_trail(bool)`](crate::client::fluent_builders::CreateTrail::is_organization_trail) / [`set_is_organization_trail(Option<bool>)`](crate::client::fluent_builders::CreateTrail::set_is_organization_trail): <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
+    ///   - [`tags_list(Vec<Tag>)`](crate::client::fluent_builders::CreateTrail::tags_list) / [`set_tags_list(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTrail::set_tags_list): <p>A list of tags.</p>
+    /// - On success, responds with [`CreateTrailOutput`](crate::output::CreateTrailOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateTrailOutput::name): <p>Specifies the name of the trail.</p>
+    ///   - [`s3_bucket_name(Option<String>)`](crate::output::CreateTrailOutput::s3_bucket_name): <p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>
+    ///   - [`s3_key_prefix(Option<String>)`](crate::output::CreateTrailOutput::s3_key_prefix): <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
+    ///   - [`sns_topic_name(Option<String>)`](crate::output::CreateTrailOutput::sns_topic_name): <p>This field is no longer in use. Use SnsTopicARN.</p>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::output::CreateTrailOutput::sns_topic_arn): <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The format of a topic ARN is:</p>  <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+    ///   - [`include_global_service_events(Option<bool>)`](crate::output::CreateTrailOutput::include_global_service_events): <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
+    ///   - [`is_multi_region_trail(Option<bool>)`](crate::output::CreateTrailOutput::is_multi_region_trail): <p>Specifies whether the trail exists in one region or in all regions.</p>
+    ///   - [`trail_arn(Option<String>)`](crate::output::CreateTrailOutput::trail_arn): <p>Specifies the ARN of the trail that was created. The format of a trail ARN is:</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    ///   - [`log_file_validation_enabled(Option<bool>)`](crate::output::CreateTrailOutput::log_file_validation_enabled): <p>Specifies whether log file integrity validation is enabled.</p>
+    ///   - [`cloud_watch_logs_log_group_arn(Option<String>)`](crate::output::CreateTrailOutput::cloud_watch_logs_log_group_arn): <p>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs will be delivered.</p>
+    ///   - [`cloud_watch_logs_role_arn(Option<String>)`](crate::output::CreateTrailOutput::cloud_watch_logs_role_arn): <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::CreateTrailOutput::kms_key_id): <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>  <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    ///   - [`is_organization_trail(Option<bool>)`](crate::output::CreateTrailOutput::is_organization_trail): <p>Specifies whether the trail is an organization trail.</p>
+    /// - On failure, responds with [`SdkError<CreateTrailError>`](crate::error::CreateTrailError)
     pub fn create_trail(&self) -> fluent_builders::CreateTrail<C, M, R> {
         fluent_builders::CreateTrail::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEventDataStore` operation.
+    /// Constructs a fluent builder for the [`DeleteEventDataStore`](crate::client::fluent_builders::DeleteEventDataStore) operation.
     ///
-    /// See [`DeleteEventDataStore`](crate::client::fluent_builders::DeleteEventDataStore) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`event_data_store(impl Into<String>)`](crate::client::fluent_builders::DeleteEventDataStore::event_data_store) / [`set_event_data_store(Option<String>)`](crate::client::fluent_builders::DeleteEventDataStore::set_event_data_store): <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
+    /// - On success, responds with [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEventDataStoreError>`](crate::error::DeleteEventDataStoreError)
     pub fn delete_event_data_store(&self) -> fluent_builders::DeleteEventDataStore<C, M, R> {
         fluent_builders::DeleteEventDataStore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTrail` operation.
+    /// Constructs a fluent builder for the [`DeleteTrail`](crate::client::fluent_builders::DeleteTrail) operation.
     ///
-    /// See [`DeleteTrail`](crate::client::fluent_builders::DeleteTrail) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteTrail::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteTrail::set_name): <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// - On success, responds with [`DeleteTrailOutput`](crate::output::DeleteTrailOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTrailError>`](crate::error::DeleteTrailError)
     pub fn delete_trail(&self) -> fluent_builders::DeleteTrail<C, M, R> {
         fluent_builders::DeleteTrail::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeQuery` operation.
+    /// Constructs a fluent builder for the [`DescribeQuery`](crate::client::fluent_builders::DescribeQuery) operation.
     ///
-    /// See [`DescribeQuery`](crate::client::fluent_builders::DescribeQuery) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`event_data_store(impl Into<String>)`](crate::client::fluent_builders::DescribeQuery::event_data_store) / [`set_event_data_store(Option<String>)`](crate::client::fluent_builders::DescribeQuery::set_event_data_store): <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
+    ///   - [`query_id(impl Into<String>)`](crate::client::fluent_builders::DescribeQuery::query_id) / [`set_query_id(Option<String>)`](crate::client::fluent_builders::DescribeQuery::set_query_id): <p>The query ID.</p>
+    /// - On success, responds with [`DescribeQueryOutput`](crate::output::DescribeQueryOutput) with field(s):
+    ///   - [`query_id(Option<String>)`](crate::output::DescribeQueryOutput::query_id): <p>The ID of the query.</p>
+    ///   - [`query_string(Option<String>)`](crate::output::DescribeQueryOutput::query_string): <p>The SQL code of a query.</p>
+    ///   - [`query_status(Option<QueryStatus>)`](crate::output::DescribeQueryOutput::query_status): <p>The status of a query. Values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code> </p>
+    ///   - [`query_statistics(Option<QueryStatisticsForDescribeQuery>)`](crate::output::DescribeQueryOutput::query_statistics): <p>Metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
+    ///   - [`error_message(Option<String>)`](crate::output::DescribeQueryOutput::error_message): <p>The error message returned if a query failed.</p>
+    /// - On failure, responds with [`SdkError<DescribeQueryError>`](crate::error::DescribeQueryError)
     pub fn describe_query(&self) -> fluent_builders::DescribeQuery<C, M, R> {
         fluent_builders::DescribeQuery::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTrails` operation.
+    /// Constructs a fluent builder for the [`DescribeTrails`](crate::client::fluent_builders::DescribeTrails) operation.
     ///
-    /// See [`DescribeTrails`](crate::client::fluent_builders::DescribeTrails) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`trail_name_list(Vec<String>)`](crate::client::fluent_builders::DescribeTrails::trail_name_list) / [`set_trail_name_list(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeTrails::set_trail_name_list): <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>  <p>If an empty list is specified, information for the trail in the current region is returned.</p>  <ul>   <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</p> </li>   <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p> </li>  </ul> <note>   <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p>  </note>
+    ///   - [`include_shadow_trails(bool)`](crate::client::fluent_builders::DescribeTrails::include_shadow_trails) / [`set_include_shadow_trails(Option<bool>)`](crate::client::fluent_builders::DescribeTrails::set_include_shadow_trails): <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>
+    /// - On success, responds with [`DescribeTrailsOutput`](crate::output::DescribeTrailsOutput) with field(s):
+    ///   - [`trail_list(Option<Vec<Trail>>)`](crate::output::DescribeTrailsOutput::trail_list): <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration. For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly, <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
+    /// - On failure, responds with [`SdkError<DescribeTrailsError>`](crate::error::DescribeTrailsError)
     pub fn describe_trails(&self) -> fluent_builders::DescribeTrails<C, M, R> {
         fluent_builders::DescribeTrails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEventDataStore` operation.
+    /// Constructs a fluent builder for the [`GetEventDataStore`](crate::client::fluent_builders::GetEventDataStore) operation.
     ///
-    /// See [`GetEventDataStore`](crate::client::fluent_builders::GetEventDataStore) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`event_data_store(impl Into<String>)`](crate::client::fluent_builders::GetEventDataStore::event_data_store) / [`set_event_data_store(Option<String>)`](crate::client::fluent_builders::GetEventDataStore::set_event_data_store): <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
+    /// - On success, responds with [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput) with field(s):
+    ///   - [`event_data_store_arn(Option<String>)`](crate::output::GetEventDataStoreOutput::event_data_store_arn): <p>The event data store Amazon Resource Number (ARN).</p>
+    ///   - [`name(Option<String>)`](crate::output::GetEventDataStoreOutput::name): <p>The name of the event data store.</p>
+    ///   - [`status(Option<EventDataStoreStatus>)`](crate::output::GetEventDataStoreOutput::status): <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    ///   - [`advanced_event_selectors(Option<Vec<AdvancedEventSelector>>)`](crate::output::GetEventDataStoreOutput::advanced_event_selectors): <p>The advanced event selectors used to select events for the data store.</p>
+    ///   - [`multi_region_enabled(Option<bool>)`](crate::output::GetEventDataStoreOutput::multi_region_enabled): <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    ///   - [`organization_enabled(Option<bool>)`](crate::output::GetEventDataStoreOutput::organization_enabled): <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    ///   - [`retention_period(Option<i32>)`](crate::output::GetEventDataStoreOutput::retention_period): <p>The retention period of the event data store, in days.</p>
+    ///   - [`termination_protection_enabled(Option<bool>)`](crate::output::GetEventDataStoreOutput::termination_protection_enabled): <p>Indicates that termination protection is enabled.</p>
+    ///   - [`created_timestamp(Option<DateTime>)`](crate::output::GetEventDataStoreOutput::created_timestamp): <p>The timestamp of the event data store's creation.</p>
+    ///   - [`updated_timestamp(Option<DateTime>)`](crate::output::GetEventDataStoreOutput::updated_timestamp): <p>Shows the time that an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    /// - On failure, responds with [`SdkError<GetEventDataStoreError>`](crate::error::GetEventDataStoreError)
     pub fn get_event_data_store(&self) -> fluent_builders::GetEventDataStore<C, M, R> {
         fluent_builders::GetEventDataStore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEventSelectors` operation.
+    /// Constructs a fluent builder for the [`GetEventSelectors`](crate::client::fluent_builders::GetEventSelectors) operation.
     ///
-    /// See [`GetEventSelectors`](crate::client::fluent_builders::GetEventSelectors) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`trail_name(impl Into<String>)`](crate::client::fluent_builders::GetEventSelectors::trail_name) / [`set_trail_name(Option<String>)`](crate::client::fluent_builders::GetEventSelectors::set_trail_name): <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>  <ul>   <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>   <li> <p>Start with a letter or number, and end with a letter or number</p> </li>   <li> <p>Be between 3 and 128 characters</p> </li>   <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>   <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>  </ul>  <p>If you specify a trail ARN, it must be in the format:</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// - On success, responds with [`GetEventSelectorsOutput`](crate::output::GetEventSelectorsOutput) with field(s):
+    ///   - [`trail_arn(Option<String>)`](crate::output::GetEventSelectorsOutput::trail_arn): <p>The specified trail ARN that has the event selectors.</p>
+    ///   - [`event_selectors(Option<Vec<EventSelector>>)`](crate::output::GetEventSelectorsOutput::event_selectors): <p>The event selectors that are configured for the trail.</p>
+    ///   - [`advanced_event_selectors(Option<Vec<AdvancedEventSelector>>)`](crate::output::GetEventSelectorsOutput::advanced_event_selectors): <p> The advanced event selectors that are configured for the trail. </p>
+    /// - On failure, responds with [`SdkError<GetEventSelectorsError>`](crate::error::GetEventSelectorsError)
     pub fn get_event_selectors(&self) -> fluent_builders::GetEventSelectors<C, M, R> {
         fluent_builders::GetEventSelectors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInsightSelectors` operation.
+    /// Constructs a fluent builder for the [`GetInsightSelectors`](crate::client::fluent_builders::GetInsightSelectors) operation.
     ///
-    /// See [`GetInsightSelectors`](crate::client::fluent_builders::GetInsightSelectors) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`trail_name(impl Into<String>)`](crate::client::fluent_builders::GetInsightSelectors::trail_name) / [`set_trail_name(Option<String>)`](crate::client::fluent_builders::GetInsightSelectors::set_trail_name): <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>  <ul>   <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>   <li> <p>Start with a letter or number, and end with a letter or number</p> </li>   <li> <p>Be between 3 and 128 characters</p> </li>   <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>   <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>  </ul>  <p>If you specify a trail ARN, it must be in the format:</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// - On success, responds with [`GetInsightSelectorsOutput`](crate::output::GetInsightSelectorsOutput) with field(s):
+    ///   - [`trail_arn(Option<String>)`](crate::output::GetInsightSelectorsOutput::trail_arn): <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
+    ///   - [`insight_selectors(Option<Vec<InsightSelector>>)`](crate::output::GetInsightSelectorsOutput::insight_selectors): <p>A JSON string that contains the insight types you want to log on a trail. In this release, <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.</p>
+    /// - On failure, responds with [`SdkError<GetInsightSelectorsError>`](crate::error::GetInsightSelectorsError)
     pub fn get_insight_selectors(&self) -> fluent_builders::GetInsightSelectors<C, M, R> {
         fluent_builders::GetInsightSelectors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetQueryResults` operation.
+    /// Constructs a fluent builder for the [`GetQueryResults`](crate::client::fluent_builders::GetQueryResults) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetQueryResults::into_paginator).
     ///
-    /// See [`GetQueryResults`](crate::client::fluent_builders::GetQueryResults) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetQueryResults::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`event_data_store(impl Into<String>)`](crate::client::fluent_builders::GetQueryResults::event_data_store) / [`set_event_data_store(Option<String>)`](crate::client::fluent_builders::GetQueryResults::set_event_data_store): <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
+    ///   - [`query_id(impl Into<String>)`](crate::client::fluent_builders::GetQueryResults::query_id) / [`set_query_id(Option<String>)`](crate::client::fluent_builders::GetQueryResults::set_query_id): <p>The ID of the query for which you want to get results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetQueryResults::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetQueryResults::set_next_token): <p>A token you can use to get the next page of query results.</p>
+    ///   - [`max_query_results(i32)`](crate::client::fluent_builders::GetQueryResults::max_query_results) / [`set_max_query_results(Option<i32>)`](crate::client::fluent_builders::GetQueryResults::set_max_query_results): <p>The maximum number of query results to display on a single page.</p>
+    /// - On success, responds with [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput) with field(s):
+    ///   - [`query_status(Option<QueryStatus>)`](crate::output::GetQueryResultsOutput::query_status): <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+    ///   - [`query_statistics(Option<QueryStatistics>)`](crate::output::GetQueryResultsOutput::query_statistics): <p>Shows the count of query results.</p>
+    ///   - [`query_result_rows(Option<Vec<Vec<HashMap<String, String>>>>)`](crate::output::GetQueryResultsOutput::query_result_rows): <p>Contains the individual event results of the query.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetQueryResultsOutput::next_token): <p>A token you can use to get the next page of query results.</p>
+    ///   - [`error_message(Option<String>)`](crate::output::GetQueryResultsOutput::error_message): <p>The error message returned if a query failed.</p>
+    /// - On failure, responds with [`SdkError<GetQueryResultsError>`](crate::error::GetQueryResultsError)
     pub fn get_query_results(&self) -> fluent_builders::GetQueryResults<C, M, R> {
         fluent_builders::GetQueryResults::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTrail` operation.
+    /// Constructs a fluent builder for the [`GetTrail`](crate::client::fluent_builders::GetTrail) operation.
     ///
-    /// See [`GetTrail`](crate::client::fluent_builders::GetTrail) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetTrail::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetTrail::set_name): <p>The name or the Amazon Resource Name (ARN) of the trail for which you want to retrieve settings information.</p>
+    /// - On success, responds with [`GetTrailOutput`](crate::output::GetTrailOutput) with field(s):
+    ///   - [`trail(Option<Trail>)`](crate::output::GetTrailOutput::trail): <p>The settings for a trail.</p>
+    /// - On failure, responds with [`SdkError<GetTrailError>`](crate::error::GetTrailError)
     pub fn get_trail(&self) -> fluent_builders::GetTrail<C, M, R> {
         fluent_builders::GetTrail::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTrailStatus` operation.
+    /// Constructs a fluent builder for the [`GetTrailStatus`](crate::client::fluent_builders::GetTrailStatus) operation.
     ///
-    /// See [`GetTrailStatus`](crate::client::fluent_builders::GetTrailStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetTrailStatus::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetTrailStatus::set_name): <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// - On success, responds with [`GetTrailStatusOutput`](crate::output::GetTrailStatusOutput) with field(s):
+    ///   - [`is_logging(Option<bool>)`](crate::output::GetTrailStatusOutput::is_logging): <p>Whether the CloudTrail trail is currently logging Amazon Web Services API calls.</p>
+    ///   - [`latest_delivery_error(Option<String>)`](crate::output::GetTrailStatusOutput::latest_delivery_error): <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>   <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>  </note>
+    ///   - [`latest_notification_error(Option<String>)`](crate::output::GetTrailStatusOutput::latest_notification_error): <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>. </p>
+    ///   - [`latest_delivery_time(Option<DateTime>)`](crate::output::GetTrailStatusOutput::latest_delivery_time): <p>Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.</p>
+    ///   - [`latest_notification_time(Option<DateTime>)`](crate::output::GetTrailStatusOutput::latest_notification_time): <p>Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file to an account's Amazon S3 bucket.</p>
+    ///   - [`start_logging_time(Option<DateTime>)`](crate::output::GetTrailStatusOutput::start_logging_time): <p>Specifies the most recent date and time when CloudTrail started recording API calls for an Amazon Web Services account.</p>
+    ///   - [`stop_logging_time(Option<DateTime>)`](crate::output::GetTrailStatusOutput::stop_logging_time): <p>Specifies the most recent date and time when CloudTrail stopped recording API calls for an Amazon Web Services account.</p>
+    ///   - [`latest_cloud_watch_logs_delivery_error(Option<String>)`](crate::output::GetTrailStatusOutput::latest_cloud_watch_logs_delivery_error): <p>Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch Logs.</p>
+    ///   - [`latest_cloud_watch_logs_delivery_time(Option<DateTime>)`](crate::output::GetTrailStatusOutput::latest_cloud_watch_logs_delivery_time): <p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>
+    ///   - [`latest_digest_delivery_time(Option<DateTime>)`](crate::output::GetTrailStatusOutput::latest_digest_delivery_time): <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
+    ///   - [`latest_digest_delivery_error(Option<String>)`](crate::output::GetTrailStatusOutput::latest_digest_delivery_error): <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API Reference. </p> <note>   <p>This error occurs only when there is a problem with the destination S3 bucket, and does not occur for requests that time out. To resolve the issue, create a new bucket, and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that CloudTrail can again write to the bucket.</p>  </note>
+    ///   - [`latest_delivery_attempt_time(Option<String>)`](crate::output::GetTrailStatusOutput::latest_delivery_attempt_time): <p>This field is no longer in use.</p>
+    ///   - [`latest_notification_attempt_time(Option<String>)`](crate::output::GetTrailStatusOutput::latest_notification_attempt_time): <p>This field is no longer in use.</p>
+    ///   - [`latest_notification_attempt_succeeded(Option<String>)`](crate::output::GetTrailStatusOutput::latest_notification_attempt_succeeded): <p>This field is no longer in use.</p>
+    ///   - [`latest_delivery_attempt_succeeded(Option<String>)`](crate::output::GetTrailStatusOutput::latest_delivery_attempt_succeeded): <p>This field is no longer in use.</p>
+    ///   - [`time_logging_started(Option<String>)`](crate::output::GetTrailStatusOutput::time_logging_started): <p>This field is no longer in use.</p>
+    ///   - [`time_logging_stopped(Option<String>)`](crate::output::GetTrailStatusOutput::time_logging_stopped): <p>This field is no longer in use.</p>
+    /// - On failure, responds with [`SdkError<GetTrailStatusError>`](crate::error::GetTrailStatusError)
     pub fn get_trail_status(&self) -> fluent_builders::GetTrailStatus<C, M, R> {
         fluent_builders::GetTrailStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEventDataStores` operation.
+    /// Constructs a fluent builder for the [`ListEventDataStores`](crate::client::fluent_builders::ListEventDataStores) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEventDataStores::into_paginator).
     ///
-    /// See [`ListEventDataStores`](crate::client::fluent_builders::ListEventDataStores) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEventDataStores::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEventDataStores::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEventDataStores::set_next_token): <p>A token you can use to get the next page of event data store results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEventDataStores::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEventDataStores::set_max_results): <p>The maximum number of event data stores to display on a single page.</p>
+    /// - On success, responds with [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput) with field(s):
+    ///   - [`event_data_stores(Option<Vec<EventDataStore>>)`](crate::output::ListEventDataStoresOutput::event_data_stores): <p>Contains information about event data stores in the account, in the current region.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEventDataStoresOutput::next_token): <p>A token you can use to get the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListEventDataStoresError>`](crate::error::ListEventDataStoresError)
     pub fn list_event_data_stores(&self) -> fluent_builders::ListEventDataStores<C, M, R> {
         fluent_builders::ListEventDataStores::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPublicKeys` operation.
+    /// Constructs a fluent builder for the [`ListPublicKeys`](crate::client::fluent_builders::ListPublicKeys) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPublicKeys::into_paginator).
     ///
-    /// See [`ListPublicKeys`](crate::client::fluent_builders::ListPublicKeys) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPublicKeys::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListPublicKeys::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListPublicKeys::set_start_time): <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListPublicKeys::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListPublicKeys::set_end_time): <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPublicKeys::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPublicKeys::set_next_token): <p>Reserved for future use.</p>
+    /// - On success, responds with [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput) with field(s):
+    ///   - [`public_key_list(Option<Vec<PublicKey>>)`](crate::output::ListPublicKeysOutput::public_key_list): <p>Contains an array of PublicKey objects.</p> <note>   <p>The returned public keys may have validity time ranges that overlap.</p>  </note>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPublicKeysOutput::next_token): <p>Reserved for future use.</p>
+    /// - On failure, responds with [`SdkError<ListPublicKeysError>`](crate::error::ListPublicKeysError)
     pub fn list_public_keys(&self) -> fluent_builders::ListPublicKeys<C, M, R> {
         fluent_builders::ListPublicKeys::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListQueries` operation.
+    /// Constructs a fluent builder for the [`ListQueries`](crate::client::fluent_builders::ListQueries) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListQueries::into_paginator).
     ///
-    /// See [`ListQueries`](crate::client::fluent_builders::ListQueries) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQueries::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`event_data_store(impl Into<String>)`](crate::client::fluent_builders::ListQueries::event_data_store) / [`set_event_data_store(Option<String>)`](crate::client::fluent_builders::ListQueries::set_event_data_store): <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListQueries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListQueries::set_next_token): <p>A token you can use to get the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQueries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListQueries::set_max_results): <p>The maximum number of queries to show on a page.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListQueries::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListQueries::set_start_time): <p>Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListQueries::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListQueries::set_end_time): <p>Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
+    ///   - [`query_status(QueryStatus)`](crate::client::fluent_builders::ListQueries::query_status) / [`set_query_status(Option<QueryStatus>)`](crate::client::fluent_builders::ListQueries::set_query_status): <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+    /// - On success, responds with [`ListQueriesOutput`](crate::output::ListQueriesOutput) with field(s):
+    ///   - [`queries(Option<Vec<Query>>)`](crate::output::ListQueriesOutput::queries): <p>Lists matching query results, and shows query ID, status, and creation time of each query.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListQueriesOutput::next_token): <p>A token you can use to get the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListQueriesError>`](crate::error::ListQueriesError)
     pub fn list_queries(&self) -> fluent_builders::ListQueries<C, M, R> {
         fluent_builders::ListQueries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTags` operation.
+    /// Constructs a fluent builder for the [`ListTags`](crate::client::fluent_builders::ListTags) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
     ///
-    /// See [`ListTags`](crate::client::fluent_builders::ListTags) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id_list(Vec<String>)`](crate::client::fluent_builders::ListTags::resource_id_list) / [`set_resource_id_list(Option<Vec<String>>)`](crate::client::fluent_builders::ListTags::set_resource_id_list): <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTags::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTags::set_next_token): <p>Reserved for future use.</p>
+    /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
+    ///   - [`resource_tag_list(Option<Vec<ResourceTag>>)`](crate::output::ListTagsOutput::resource_tag_list): <p>A list of resource tags.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsOutput::next_token): <p>Reserved for future use.</p>
+    /// - On failure, responds with [`SdkError<ListTagsError>`](crate::error::ListTagsError)
     pub fn list_tags(&self) -> fluent_builders::ListTags<C, M, R> {
         fluent_builders::ListTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTrails` operation.
+    /// Constructs a fluent builder for the [`ListTrails`](crate::client::fluent_builders::ListTrails) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTrails::into_paginator).
     ///
-    /// See [`ListTrails`](crate::client::fluent_builders::ListTrails) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTrails::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTrails::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTrails::set_next_token): <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    /// - On success, responds with [`ListTrailsOutput`](crate::output::ListTrailsOutput) with field(s):
+    ///   - [`trails(Option<Vec<TrailInfo>>)`](crate::output::ListTrailsOutput::trails): <p>Returns the name, ARN, and home region of trails in the current account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTrailsOutput::next_token): <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    /// - On failure, responds with [`SdkError<ListTrailsError>`](crate::error::ListTrailsError)
     pub fn list_trails(&self) -> fluent_builders::ListTrails<C, M, R> {
         fluent_builders::ListTrails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `LookupEvents` operation.
+    /// Constructs a fluent builder for the [`LookupEvents`](crate::client::fluent_builders::LookupEvents) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::LookupEvents::into_paginator).
     ///
-    /// See [`LookupEvents`](crate::client::fluent_builders::LookupEvents) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::LookupEvents::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`lookup_attributes(Vec<LookupAttribute>)`](crate::client::fluent_builders::LookupEvents::lookup_attributes) / [`set_lookup_attributes(Option<Vec<LookupAttribute>>)`](crate::client::fluent_builders::LookupEvents::set_lookup_attributes): <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::LookupEvents::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::LookupEvents::set_start_time): <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::LookupEvents::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::LookupEvents::set_end_time): <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
+    ///   - [`event_category(EventCategory)`](crate::client::fluent_builders::LookupEvents::event_category) / [`set_event_category(Option<EventCategory>)`](crate::client::fluent_builders::LookupEvents::set_event_category): <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::LookupEvents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::LookupEvents::set_max_results): <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::LookupEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::LookupEvents::set_next_token): <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    /// - On success, responds with [`LookupEventsOutput`](crate::output::LookupEventsOutput) with field(s):
+    ///   - [`events(Option<Vec<Event>>)`](crate::output::LookupEventsOutput::events): <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::LookupEventsOutput::next_token): <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    /// - On failure, responds with [`SdkError<LookupEventsError>`](crate::error::LookupEventsError)
     pub fn lookup_events(&self) -> fluent_builders::LookupEvents<C, M, R> {
         fluent_builders::LookupEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutEventSelectors` operation.
+    /// Constructs a fluent builder for the [`PutEventSelectors`](crate::client::fluent_builders::PutEventSelectors) operation.
     ///
-    /// See [`PutEventSelectors`](crate::client::fluent_builders::PutEventSelectors) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`trail_name(impl Into<String>)`](crate::client::fluent_builders::PutEventSelectors::trail_name) / [`set_trail_name(Option<String>)`](crate::client::fluent_builders::PutEventSelectors::set_trail_name): <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>  <ul>   <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>   <li> <p>Start with a letter or number, and end with a letter or number</p> </li>   <li> <p>Be between 3 and 128 characters</p> </li>   <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>   <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>  </ul>  <p>If you specify a trail ARN, it must be in the following format.</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    ///   - [`event_selectors(Vec<EventSelector>)`](crate::client::fluent_builders::PutEventSelectors::event_selectors) / [`set_event_selectors(Option<Vec<EventSelector>>)`](crate::client::fluent_builders::PutEventSelectors::set_event_selectors): <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+    ///   - [`advanced_event_selectors(Vec<AdvancedEventSelector>)`](crate::client::fluent_builders::PutEventSelectors::advanced_event_selectors) / [`set_advanced_event_selectors(Option<Vec<AdvancedEventSelector>>)`](crate::client::fluent_builders::PutEventSelectors::set_advanced_event_selectors): <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+    /// - On success, responds with [`PutEventSelectorsOutput`](crate::output::PutEventSelectorsOutput) with field(s):
+    ///   - [`trail_arn(Option<String>)`](crate::output::PutEventSelectorsOutput::trail_arn): <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    ///   - [`event_selectors(Option<Vec<EventSelector>>)`](crate::output::PutEventSelectorsOutput::event_selectors): <p>Specifies the event selectors configured for your trail.</p>
+    ///   - [`advanced_event_selectors(Option<Vec<AdvancedEventSelector>>)`](crate::output::PutEventSelectorsOutput::advanced_event_selectors): <p>Specifies the advanced event selectors configured for your trail.</p>
+    /// - On failure, responds with [`SdkError<PutEventSelectorsError>`](crate::error::PutEventSelectorsError)
     pub fn put_event_selectors(&self) -> fluent_builders::PutEventSelectors<C, M, R> {
         fluent_builders::PutEventSelectors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutInsightSelectors` operation.
+    /// Constructs a fluent builder for the [`PutInsightSelectors`](crate::client::fluent_builders::PutInsightSelectors) operation.
     ///
-    /// See [`PutInsightSelectors`](crate::client::fluent_builders::PutInsightSelectors) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`trail_name(impl Into<String>)`](crate::client::fluent_builders::PutInsightSelectors::trail_name) / [`set_trail_name(Option<String>)`](crate::client::fluent_builders::PutInsightSelectors::set_trail_name): <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
+    ///   - [`insight_selectors(Vec<InsightSelector>)`](crate::client::fluent_builders::PutInsightSelectors::insight_selectors) / [`set_insight_selectors(Option<Vec<InsightSelector>>)`](crate::client::fluent_builders::PutInsightSelectors::set_insight_selectors): <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
+    /// - On success, responds with [`PutInsightSelectorsOutput`](crate::output::PutInsightSelectorsOutput) with field(s):
+    ///   - [`trail_arn(Option<String>)`](crate::output::PutInsightSelectorsOutput::trail_arn): <p>The Amazon Resource Name (ARN) of a trail for which you want to change or add Insights selectors.</p>
+    ///   - [`insight_selectors(Option<Vec<InsightSelector>>)`](crate::output::PutInsightSelectorsOutput::insight_selectors): <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
+    /// - On failure, responds with [`SdkError<PutInsightSelectorsError>`](crate::error::PutInsightSelectorsError)
     pub fn put_insight_selectors(&self) -> fluent_builders::PutInsightSelectors<C, M, R> {
         fluent_builders::PutInsightSelectors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveTags` operation.
+    /// Constructs a fluent builder for the [`RemoveTags`](crate::client::fluent_builders::RemoveTags) operation.
     ///
-    /// See [`RemoveTags`](crate::client::fluent_builders::RemoveTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::RemoveTags::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::RemoveTags::set_resource_id): <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    ///   - [`tags_list(Vec<Tag>)`](crate::client::fluent_builders::RemoveTags::tags_list) / [`set_tags_list(Option<Vec<Tag>>)`](crate::client::fluent_builders::RemoveTags::set_tags_list): <p>Specifies a list of tags to be removed.</p>
+    /// - On success, responds with [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveTagsError>`](crate::error::RemoveTagsError)
     pub fn remove_tags(&self) -> fluent_builders::RemoveTags<C, M, R> {
         fluent_builders::RemoveTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestoreEventDataStore` operation.
+    /// Constructs a fluent builder for the [`RestoreEventDataStore`](crate::client::fluent_builders::RestoreEventDataStore) operation.
     ///
-    /// See [`RestoreEventDataStore`](crate::client::fluent_builders::RestoreEventDataStore) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`event_data_store(impl Into<String>)`](crate::client::fluent_builders::RestoreEventDataStore::event_data_store) / [`set_event_data_store(Option<String>)`](crate::client::fluent_builders::RestoreEventDataStore::set_event_data_store): <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to restore.</p>
+    /// - On success, responds with [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput) with field(s):
+    ///   - [`event_data_store_arn(Option<String>)`](crate::output::RestoreEventDataStoreOutput::event_data_store_arn): <p>The event data store ARN.</p>
+    ///   - [`name(Option<String>)`](crate::output::RestoreEventDataStoreOutput::name): <p>The name of the event data store.</p>
+    ///   - [`status(Option<EventDataStoreStatus>)`](crate::output::RestoreEventDataStoreOutput::status): <p>The status of the event data store.</p>
+    ///   - [`advanced_event_selectors(Option<Vec<AdvancedEventSelector>>)`](crate::output::RestoreEventDataStoreOutput::advanced_event_selectors): <p>The advanced event selectors that were used to select events.</p>
+    ///   - [`multi_region_enabled(Option<bool>)`](crate::output::RestoreEventDataStoreOutput::multi_region_enabled): <p>Indicates whether the event data store is collecting events from all regions, or only from the region in which the event data store was created.</p>
+    ///   - [`organization_enabled(Option<bool>)`](crate::output::RestoreEventDataStoreOutput::organization_enabled): <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    ///   - [`retention_period(Option<i32>)`](crate::output::RestoreEventDataStoreOutput::retention_period): <p>The retention period, in days.</p>
+    ///   - [`termination_protection_enabled(Option<bool>)`](crate::output::RestoreEventDataStoreOutput::termination_protection_enabled): <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+    ///   - [`created_timestamp(Option<DateTime>)`](crate::output::RestoreEventDataStoreOutput::created_timestamp): <p>The timestamp of an event data store's creation.</p>
+    ///   - [`updated_timestamp(Option<DateTime>)`](crate::output::RestoreEventDataStoreOutput::updated_timestamp): <p>The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    /// - On failure, responds with [`SdkError<RestoreEventDataStoreError>`](crate::error::RestoreEventDataStoreError)
     pub fn restore_event_data_store(&self) -> fluent_builders::RestoreEventDataStore<C, M, R> {
         fluent_builders::RestoreEventDataStore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartLogging` operation.
+    /// Constructs a fluent builder for the [`StartLogging`](crate::client::fluent_builders::StartLogging) operation.
     ///
-    /// See [`StartLogging`](crate::client::fluent_builders::StartLogging) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartLogging::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartLogging::set_name): <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// - On success, responds with [`StartLoggingOutput`](crate::output::StartLoggingOutput)
+
+    /// - On failure, responds with [`SdkError<StartLoggingError>`](crate::error::StartLoggingError)
     pub fn start_logging(&self) -> fluent_builders::StartLogging<C, M, R> {
         fluent_builders::StartLogging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartQuery` operation.
+    /// Constructs a fluent builder for the [`StartQuery`](crate::client::fluent_builders::StartQuery) operation.
     ///
-    /// See [`StartQuery`](crate::client::fluent_builders::StartQuery) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`query_statement(impl Into<String>)`](crate::client::fluent_builders::StartQuery::query_statement) / [`set_query_statement(Option<String>)`](crate::client::fluent_builders::StartQuery::set_query_statement): <p>The SQL code of your query.</p>
+    /// - On success, responds with [`StartQueryOutput`](crate::output::StartQueryOutput) with field(s):
+    ///   - [`query_id(Option<String>)`](crate::output::StartQueryOutput::query_id): <p>The ID of the started query.</p>
+    /// - On failure, responds with [`SdkError<StartQueryError>`](crate::error::StartQueryError)
     pub fn start_query(&self) -> fluent_builders::StartQuery<C, M, R> {
         fluent_builders::StartQuery::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopLogging` operation.
+    /// Constructs a fluent builder for the [`StopLogging`](crate::client::fluent_builders::StopLogging) operation.
     ///
-    /// See [`StopLogging`](crate::client::fluent_builders::StopLogging) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StopLogging::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StopLogging::set_name): <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// - On success, responds with [`StopLoggingOutput`](crate::output::StopLoggingOutput)
+
+    /// - On failure, responds with [`SdkError<StopLoggingError>`](crate::error::StopLoggingError)
     pub fn stop_logging(&self) -> fluent_builders::StopLogging<C, M, R> {
         fluent_builders::StopLogging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEventDataStore` operation.
+    /// Constructs a fluent builder for the [`UpdateEventDataStore`](crate::client::fluent_builders::UpdateEventDataStore) operation.
     ///
-    /// See [`UpdateEventDataStore`](crate::client::fluent_builders::UpdateEventDataStore) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`event_data_store(impl Into<String>)`](crate::client::fluent_builders::UpdateEventDataStore::event_data_store) / [`set_event_data_store(Option<String>)`](crate::client::fluent_builders::UpdateEventDataStore::set_event_data_store): <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateEventDataStore::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateEventDataStore::set_name): <p>The event data store name.</p>
+    ///   - [`advanced_event_selectors(Vec<AdvancedEventSelector>)`](crate::client::fluent_builders::UpdateEventDataStore::advanced_event_selectors) / [`set_advanced_event_selectors(Option<Vec<AdvancedEventSelector>>)`](crate::client::fluent_builders::UpdateEventDataStore::set_advanced_event_selectors): <p>The advanced event selectors used to select events for the event data store.</p>
+    ///   - [`multi_region_enabled(bool)`](crate::client::fluent_builders::UpdateEventDataStore::multi_region_enabled) / [`set_multi_region_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateEventDataStore::set_multi_region_enabled): <p>Specifies whether an event data store collects events from all regions, or only from the region in which it was created.</p>
+    ///   - [`organization_enabled(bool)`](crate::client::fluent_builders::UpdateEventDataStore::organization_enabled) / [`set_organization_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateEventDataStore::set_organization_enabled): <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    ///   - [`retention_period(i32)`](crate::client::fluent_builders::UpdateEventDataStore::retention_period) / [`set_retention_period(Option<i32>)`](crate::client::fluent_builders::UpdateEventDataStore::set_retention_period): <p>The retention period, in days.</p>
+    ///   - [`termination_protection_enabled(bool)`](crate::client::fluent_builders::UpdateEventDataStore::termination_protection_enabled) / [`set_termination_protection_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateEventDataStore::set_termination_protection_enabled): <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+    /// - On success, responds with [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput) with field(s):
+    ///   - [`event_data_store_arn(Option<String>)`](crate::output::UpdateEventDataStoreOutput::event_data_store_arn): <p>The ARN of the event data store.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateEventDataStoreOutput::name): <p>The name of the event data store.</p>
+    ///   - [`status(Option<EventDataStoreStatus>)`](crate::output::UpdateEventDataStoreOutput::status): <p>The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.</p>
+    ///   - [`advanced_event_selectors(Option<Vec<AdvancedEventSelector>>)`](crate::output::UpdateEventDataStoreOutput::advanced_event_selectors): <p>The advanced event selectors that are applied to the event data store.</p>
+    ///   - [`multi_region_enabled(Option<bool>)`](crate::output::UpdateEventDataStoreOutput::multi_region_enabled): <p>Indicates whether the event data store includes events from all regions, or only from the region in which it was created.</p>
+    ///   - [`organization_enabled(Option<bool>)`](crate::output::UpdateEventDataStoreOutput::organization_enabled): <p>Indicates whether an event data store is collecting logged events for an organization in Organizations.</p>
+    ///   - [`retention_period(Option<i32>)`](crate::output::UpdateEventDataStoreOutput::retention_period): <p>The retention period, in days.</p>
+    ///   - [`termination_protection_enabled(Option<bool>)`](crate::output::UpdateEventDataStoreOutput::termination_protection_enabled): <p>Indicates whether termination protection is enabled for the event data store.</p>
+    ///   - [`created_timestamp(Option<DateTime>)`](crate::output::UpdateEventDataStoreOutput::created_timestamp): <p>The timestamp that shows when an event data store was first created.</p>
+    ///   - [`updated_timestamp(Option<DateTime>)`](crate::output::UpdateEventDataStoreOutput::updated_timestamp): <p>The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code> is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.</p>
+    /// - On failure, responds with [`SdkError<UpdateEventDataStoreError>`](crate::error::UpdateEventDataStoreError)
     pub fn update_event_data_store(&self) -> fluent_builders::UpdateEventDataStore<C, M, R> {
         fluent_builders::UpdateEventDataStore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateTrail` operation.
+    /// Constructs a fluent builder for the [`UpdateTrail`](crate::client::fluent_builders::UpdateTrail) operation.
     ///
-    /// See [`UpdateTrail`](crate::client::fluent_builders::UpdateTrail) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateTrail::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateTrail::set_name): <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>  <ul>   <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>   <li> <p>Start with a letter or number, and end with a letter or number</p> </li>   <li> <p>Be between 3 and 128 characters</p> </li>   <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>   <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>  </ul>  <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    ///   - [`s3_bucket_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTrail::s3_bucket_name) / [`set_s3_bucket_name(Option<String>)`](crate::client::fluent_builders::UpdateTrail::set_s3_bucket_name): <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
+    ///   - [`s3_key_prefix(impl Into<String>)`](crate::client::fluent_builders::UpdateTrail::s3_key_prefix) / [`set_s3_key_prefix(Option<String>)`](crate::client::fluent_builders::UpdateTrail::set_s3_key_prefix): <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+    ///   - [`sns_topic_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTrail::sns_topic_name) / [`set_sns_topic_name(Option<String>)`](crate::client::fluent_builders::UpdateTrail::set_sns_topic_name): <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
+    ///   - [`include_global_service_events(bool)`](crate::client::fluent_builders::UpdateTrail::include_global_service_events) / [`set_include_global_service_events(Option<bool>)`](crate::client::fluent_builders::UpdateTrail::set_include_global_service_events): <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
+    ///   - [`is_multi_region_trail(bool)`](crate::client::fluent_builders::UpdateTrail::is_multi_region_trail) / [`set_is_multi_region_trail(Option<bool>)`](crate::client::fluent_builders::UpdateTrail::set_is_multi_region_trail): <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true, shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider using trails that log events in all regions.</p>
+    ///   - [`enable_log_file_validation(bool)`](crate::client::fluent_builders::UpdateTrail::enable_log_file_validation) / [`set_enable_log_file_validation(Option<bool>)`](crate::client::fluent_builders::UpdateTrail::set_enable_log_file_validation): <p>Specifies whether log file validation is enabled. The default is false.</p> <note>   <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>  </note>
+    ///   - [`cloud_watch_logs_log_group_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateTrail::cloud_watch_logs_log_group_arn) / [`set_cloud_watch_logs_log_group_arn(Option<String>)`](crate::client::fluent_builders::UpdateTrail::set_cloud_watch_logs_log_group_arn): <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    ///   - [`cloud_watch_logs_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateTrail::cloud_watch_logs_role_arn) / [`set_cloud_watch_logs_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateTrail::set_cloud_watch_logs_role_arn): <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTrail::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::UpdateTrail::set_kms_key_id): <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>  <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>Examples:</p>  <ul>   <li> <p>alias/MyAliasName</p> </li>   <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>   <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>   <li> <p>12345678-1234-1234-1234-123456789012</p> </li>  </ul>
+    ///   - [`is_organization_trail(bool)`](crate::client::fluent_builders::UpdateTrail::is_organization_trail) / [`set_is_organization_trail(Option<bool>)`](crate::client::fluent_builders::UpdateTrail::set_is_organization_trail): <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
+    /// - On success, responds with [`UpdateTrailOutput`](crate::output::UpdateTrailOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::UpdateTrailOutput::name): <p>Specifies the name of the trail.</p>
+    ///   - [`s3_bucket_name(Option<String>)`](crate::output::UpdateTrailOutput::s3_bucket_name): <p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>
+    ///   - [`s3_key_prefix(Option<String>)`](crate::output::UpdateTrailOutput::s3_key_prefix): <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your IAM Log Files</a>.</p>
+    ///   - [`sns_topic_name(Option<String>)`](crate::output::UpdateTrailOutput::sns_topic_name): <p>This field is no longer in use. Use <code>UpdateTrailResponse$SnsTopicARN</code>.</p>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::output::UpdateTrailOutput::sns_topic_arn): <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>  <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+    ///   - [`include_global_service_events(Option<bool>)`](crate::output::UpdateTrailOutput::include_global_service_events): <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
+    ///   - [`is_multi_region_trail(Option<bool>)`](crate::output::UpdateTrailOutput::is_multi_region_trail): <p>Specifies whether the trail exists in one region or in all regions.</p>
+    ///   - [`trail_arn(Option<String>)`](crate::output::UpdateTrailOutput::trail_arn): <p>Specifies the ARN of the trail that was updated. The following is the format of a trail ARN.</p>  <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    ///   - [`log_file_validation_enabled(Option<bool>)`](crate::output::UpdateTrailOutput::log_file_validation_enabled): <p>Specifies whether log file integrity validation is enabled.</p>
+    ///   - [`cloud_watch_logs_log_group_arn(Option<String>)`](crate::output::UpdateTrailOutput::cloud_watch_logs_log_group_arn): <p>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs are delivered.</p>
+    ///   - [`cloud_watch_logs_role_arn(Option<String>)`](crate::output::UpdateTrailOutput::cloud_watch_logs_role_arn): <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::UpdateTrailOutput::kms_key_id): <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>  <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
+    ///   - [`is_organization_trail(Option<bool>)`](crate::output::UpdateTrailOutput::is_organization_trail): <p>Specifies whether the trail is an organization trail.</p>
+    /// - On failure, responds with [`SdkError<UpdateTrailError>`](crate::error::UpdateTrailError)
     pub fn update_trail(&self) -> fluent_builders::UpdateTrail<C, M, R> {
         fluent_builders::UpdateTrail::new(self.handle.clone())
     }
@@ -868,8 +1111,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEventDataStore`.
     ///
-    /// <p>Disables the event data store specified by <code>EventDataStore</code>, which accepts an event data store ARN. After you run <code>DeleteEventDataStore</code>, the event data store is automatically deleted after a wait period of seven days. <code>TerminationProtectionEnabled</code> must be set to <code>False</code> on the event data store; this operation cannot work if <code>TerminationProtectionEnabled</code> is <code>True</code>.</p>
-    /// <p>After you run <code>DeleteEventDataStore</code> on an event data store, you cannot run <code>ListQueries</code>, <code>DescribeQuery</code>, or <code>GetQueryResults</code> on queries that are using an event data store in a <code>PENDING_DELETION</code> state.</p>
+    /// <p>Disables the event data store specified by <code>EventDataStore</code>, which accepts an event data store ARN. After you run <code>DeleteEventDataStore</code>, the event data store enters a <code>PENDING_DELETION</code> state, and is automatically deleted after a wait period of seven days. <code>TerminationProtectionEnabled</code> must be set to <code>False</code> on the event data store; this operation cannot work if <code>TerminationProtectionEnabled</code> is <code>True</code>.</p>
+    /// <p>After you run <code>DeleteEventDataStore</code> on an event data store, you cannot run <code>ListQueries</code>, <code>DescribeQuery</code>, or <code>GetQueryResults</code> on queries that are using an event data store in a <code>PENDING_DELETION</code> state. An event data store in the <code>PENDING_DELETION</code> state does not incur costs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventDataStore<
         C = aws_smithy_client::erase::DynConnector,

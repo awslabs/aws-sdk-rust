@@ -83,368 +83,617 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddTagsToOnPremisesInstances` operation.
+    /// Constructs a fluent builder for the [`AddTagsToOnPremisesInstances`](crate::client::fluent_builders::AddTagsToOnPremisesInstances) operation.
     ///
-    /// See [`AddTagsToOnPremisesInstances`](crate::client::fluent_builders::AddTagsToOnPremisesInstances) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::AddTagsToOnPremisesInstances::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::AddTagsToOnPremisesInstances::set_tags): <p>The tag key-value pairs to add to the on-premises instances.</p>  <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
+    ///   - [`instance_names(Vec<String>)`](crate::client::fluent_builders::AddTagsToOnPremisesInstances::instance_names) / [`set_instance_names(Option<Vec<String>>)`](crate::client::fluent_builders::AddTagsToOnPremisesInstances::set_instance_names): <p>The names of the on-premises instances to which to add tags.</p>
+    /// - On success, responds with [`AddTagsToOnPremisesInstancesOutput`](crate::output::AddTagsToOnPremisesInstancesOutput)
+
+    /// - On failure, responds with [`SdkError<AddTagsToOnPremisesInstancesError>`](crate::error::AddTagsToOnPremisesInstancesError)
     pub fn add_tags_to_on_premises_instances(
         &self,
     ) -> fluent_builders::AddTagsToOnPremisesInstances<C, M, R> {
         fluent_builders::AddTagsToOnPremisesInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetApplicationRevisions` operation.
+    /// Constructs a fluent builder for the [`BatchGetApplicationRevisions`](crate::client::fluent_builders::BatchGetApplicationRevisions) operation.
     ///
-    /// See [`BatchGetApplicationRevisions`](crate::client::fluent_builders::BatchGetApplicationRevisions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::BatchGetApplicationRevisions::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::BatchGetApplicationRevisions::set_application_name): <p>The name of an AWS CodeDeploy application about which to get revision information.</p>
+    ///   - [`revisions(Vec<RevisionLocation>)`](crate::client::fluent_builders::BatchGetApplicationRevisions::revisions) / [`set_revisions(Option<Vec<RevisionLocation>>)`](crate::client::fluent_builders::BatchGetApplicationRevisions::set_revisions): <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
+    /// - On success, responds with [`BatchGetApplicationRevisionsOutput`](crate::output::BatchGetApplicationRevisionsOutput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::output::BatchGetApplicationRevisionsOutput::application_name): <p>The name of the application that corresponds to the revisions.</p>
+    ///   - [`error_message(Option<String>)`](crate::output::BatchGetApplicationRevisionsOutput::error_message): <p>Information about errors that might have occurred during the API call.</p>
+    ///   - [`revisions(Option<Vec<RevisionInfo>>)`](crate::output::BatchGetApplicationRevisionsOutput::revisions): <p>Additional information about the revisions, including the type and location.</p>
+    /// - On failure, responds with [`SdkError<BatchGetApplicationRevisionsError>`](crate::error::BatchGetApplicationRevisionsError)
     pub fn batch_get_application_revisions(
         &self,
     ) -> fluent_builders::BatchGetApplicationRevisions<C, M, R> {
         fluent_builders::BatchGetApplicationRevisions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetApplications` operation.
+    /// Constructs a fluent builder for the [`BatchGetApplications`](crate::client::fluent_builders::BatchGetApplications) operation.
     ///
-    /// See [`BatchGetApplications`](crate::client::fluent_builders::BatchGetApplications) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application_names(Vec<String>)`](crate::client::fluent_builders::BatchGetApplications::application_names) / [`set_application_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetApplications::set_application_names): <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
+    /// - On success, responds with [`BatchGetApplicationsOutput`](crate::output::BatchGetApplicationsOutput) with field(s):
+    ///   - [`applications_info(Option<Vec<ApplicationInfo>>)`](crate::output::BatchGetApplicationsOutput::applications_info): <p>Information about the applications.</p>
+    /// - On failure, responds with [`SdkError<BatchGetApplicationsError>`](crate::error::BatchGetApplicationsError)
     pub fn batch_get_applications(&self) -> fluent_builders::BatchGetApplications<C, M, R> {
         fluent_builders::BatchGetApplications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetDeploymentGroups` operation.
+    /// Constructs a fluent builder for the [`BatchGetDeploymentGroups`](crate::client::fluent_builders::BatchGetDeploymentGroups) operation.
     ///
-    /// See [`BatchGetDeploymentGroups`](crate::client::fluent_builders::BatchGetDeploymentGroups) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::BatchGetDeploymentGroups::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::BatchGetDeploymentGroups::set_application_name): <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
+    ///   - [`deployment_group_names(Vec<String>)`](crate::client::fluent_builders::BatchGetDeploymentGroups::deployment_group_names) / [`set_deployment_group_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetDeploymentGroups::set_deployment_group_names): <p>The names of the deployment groups.</p>
+    /// - On success, responds with [`BatchGetDeploymentGroupsOutput`](crate::output::BatchGetDeploymentGroupsOutput) with field(s):
+    ///   - [`deployment_groups_info(Option<Vec<DeploymentGroupInfo>>)`](crate::output::BatchGetDeploymentGroupsOutput::deployment_groups_info): <p>Information about the deployment groups.</p>
+    ///   - [`error_message(Option<String>)`](crate::output::BatchGetDeploymentGroupsOutput::error_message): <p>Information about errors that might have occurred during the API call.</p>
+    /// - On failure, responds with [`SdkError<BatchGetDeploymentGroupsError>`](crate::error::BatchGetDeploymentGroupsError)
     pub fn batch_get_deployment_groups(
         &self,
     ) -> fluent_builders::BatchGetDeploymentGroups<C, M, R> {
         fluent_builders::BatchGetDeploymentGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetDeploymentInstances` operation.
+    /// Constructs a fluent builder for the [`BatchGetDeploymentInstances`](crate::client::fluent_builders::BatchGetDeploymentInstances) operation.
     ///
-    /// See [`BatchGetDeploymentInstances`](crate::client::fluent_builders::BatchGetDeploymentInstances) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::BatchGetDeploymentInstances::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::BatchGetDeploymentInstances::set_deployment_id): <p> The unique ID of a deployment. </p>
+    ///   - [`instance_ids(Vec<String>)`](crate::client::fluent_builders::BatchGetDeploymentInstances::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetDeploymentInstances::set_instance_ids): <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
+    /// - On success, responds with [`BatchGetDeploymentInstancesOutput`](crate::output::BatchGetDeploymentInstancesOutput) with field(s):
+    ///   - [`instances_summary(Option<Vec<InstanceSummary>>)`](crate::output::BatchGetDeploymentInstancesOutput::instances_summary): <p>Information about the instance.</p>
+    ///   - [`error_message(Option<String>)`](crate::output::BatchGetDeploymentInstancesOutput::error_message): <p>Information about errors that might have occurred during the API call.</p>
+    /// - On failure, responds with [`SdkError<BatchGetDeploymentInstancesError>`](crate::error::BatchGetDeploymentInstancesError)
     pub fn batch_get_deployment_instances(
         &self,
     ) -> fluent_builders::BatchGetDeploymentInstances<C, M, R> {
         fluent_builders::BatchGetDeploymentInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetDeployments` operation.
+    /// Constructs a fluent builder for the [`BatchGetDeployments`](crate::client::fluent_builders::BatchGetDeployments) operation.
     ///
-    /// See [`BatchGetDeployments`](crate::client::fluent_builders::BatchGetDeployments) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_ids(Vec<String>)`](crate::client::fluent_builders::BatchGetDeployments::deployment_ids) / [`set_deployment_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetDeployments::set_deployment_ids): <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
+    /// - On success, responds with [`BatchGetDeploymentsOutput`](crate::output::BatchGetDeploymentsOutput) with field(s):
+    ///   - [`deployments_info(Option<Vec<DeploymentInfo>>)`](crate::output::BatchGetDeploymentsOutput::deployments_info): <p> Information about the deployments. </p>
+    /// - On failure, responds with [`SdkError<BatchGetDeploymentsError>`](crate::error::BatchGetDeploymentsError)
     pub fn batch_get_deployments(&self) -> fluent_builders::BatchGetDeployments<C, M, R> {
         fluent_builders::BatchGetDeployments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetDeploymentTargets` operation.
+    /// Constructs a fluent builder for the [`BatchGetDeploymentTargets`](crate::client::fluent_builders::BatchGetDeploymentTargets) operation.
     ///
-    /// See [`BatchGetDeploymentTargets`](crate::client::fluent_builders::BatchGetDeploymentTargets) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::BatchGetDeploymentTargets::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::BatchGetDeploymentTargets::set_deployment_id): <p> The unique ID of a deployment. </p>
+    ///   - [`target_ids(Vec<String>)`](crate::client::fluent_builders::BatchGetDeploymentTargets::target_ids) / [`set_target_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetDeploymentTargets::set_target_ids): <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>  <ul>   <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>   <li> <p> For deployments that use the AWS Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>   <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>     <clustername>      :      <servicename></servicename>     </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>   <li> <p> For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>  </ul>
+    /// - On success, responds with [`BatchGetDeploymentTargetsOutput`](crate::output::BatchGetDeploymentTargetsOutput) with field(s):
+    ///   - [`deployment_targets(Option<Vec<DeploymentTarget>>)`](crate::output::BatchGetDeploymentTargetsOutput::deployment_targets): <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>  <ul>   <li> <p> <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance. </p> </li>   <li> <p> <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function. </p> </li>   <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>   <li> <p> <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment. </p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<BatchGetDeploymentTargetsError>`](crate::error::BatchGetDeploymentTargetsError)
     pub fn batch_get_deployment_targets(
         &self,
     ) -> fluent_builders::BatchGetDeploymentTargets<C, M, R> {
         fluent_builders::BatchGetDeploymentTargets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetOnPremisesInstances` operation.
+    /// Constructs a fluent builder for the [`BatchGetOnPremisesInstances`](crate::client::fluent_builders::BatchGetOnPremisesInstances) operation.
     ///
-    /// See [`BatchGetOnPremisesInstances`](crate::client::fluent_builders::BatchGetOnPremisesInstances) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_names(Vec<String>)`](crate::client::fluent_builders::BatchGetOnPremisesInstances::instance_names) / [`set_instance_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetOnPremisesInstances::set_instance_names): <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
+    /// - On success, responds with [`BatchGetOnPremisesInstancesOutput`](crate::output::BatchGetOnPremisesInstancesOutput) with field(s):
+    ///   - [`instance_infos(Option<Vec<InstanceInfo>>)`](crate::output::BatchGetOnPremisesInstancesOutput::instance_infos): <p>Information about the on-premises instances.</p>
+    /// - On failure, responds with [`SdkError<BatchGetOnPremisesInstancesError>`](crate::error::BatchGetOnPremisesInstancesError)
     pub fn batch_get_on_premises_instances(
         &self,
     ) -> fluent_builders::BatchGetOnPremisesInstances<C, M, R> {
         fluent_builders::BatchGetOnPremisesInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ContinueDeployment` operation.
+    /// Constructs a fluent builder for the [`ContinueDeployment`](crate::client::fluent_builders::ContinueDeployment) operation.
     ///
-    /// See [`ContinueDeployment`](crate::client::fluent_builders::ContinueDeployment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::ContinueDeployment::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::ContinueDeployment::set_deployment_id): <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
+    ///   - [`deployment_wait_type(DeploymentWaitType)`](crate::client::fluent_builders::ContinueDeployment::deployment_wait_type) / [`set_deployment_wait_type(Option<DeploymentWaitType>)`](crate::client::fluent_builders::ContinueDeployment::set_deployment_wait_type): <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
+    /// - On success, responds with [`ContinueDeploymentOutput`](crate::output::ContinueDeploymentOutput)
+
+    /// - On failure, responds with [`SdkError<ContinueDeploymentError>`](crate::error::ContinueDeploymentError)
     pub fn continue_deployment(&self) -> fluent_builders::ContinueDeployment<C, M, R> {
         fluent_builders::ContinueDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateApplication` operation.
+    /// Constructs a fluent builder for the [`CreateApplication`](crate::client::fluent_builders::CreateApplication) operation.
     ///
-    /// See [`CreateApplication`](crate::client::fluent_builders::CreateApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_application_name): <p>The name of the application. This name must be unique with the applicable IAM user or AWS account.</p>
+    ///   - [`compute_platform(ComputePlatform)`](crate::client::fluent_builders::CreateApplication::compute_platform) / [`set_compute_platform(Option<ComputePlatform>)`](crate::client::fluent_builders::CreateApplication::set_compute_platform): <p> The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateApplication::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateApplication::set_tags): <p> The metadata that you apply to CodeDeploy applications to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
+    /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
+    ///   - [`application_id(Option<String>)`](crate::output::CreateApplicationOutput::application_id): <p>A unique application ID.</p>
+    /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::error::CreateApplicationError)
     pub fn create_application(&self) -> fluent_builders::CreateApplication<C, M, R> {
         fluent_builders::CreateApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDeployment` operation.
+    /// Constructs a fluent builder for the [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) operation.
     ///
-    /// See [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    ///   - [`deployment_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::deployment_group_name) / [`set_deployment_group_name(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_deployment_group_name): <p>The name of the deployment group.</p>
+    ///   - [`revision(RevisionLocation)`](crate::client::fluent_builders::CreateDeployment::revision) / [`set_revision(Option<RevisionLocation>)`](crate::client::fluent_builders::CreateDeployment::set_revision): <p> The type and location of the revision to deploy. </p>
+    ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_deployment_config_name): <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>  <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_description): <p>A comment about the deployment.</p>
+    ///   - [`ignore_application_stop_failures(bool)`](crate::client::fluent_builders::CreateDeployment::ignore_application_stop_failures) / [`set_ignore_application_stop_failures(bool)`](crate::client::fluent_builders::CreateDeployment::set_ignore_application_stop_failures): <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>  <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>  <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>  <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
+    ///   - [`target_instances(TargetInstances)`](crate::client::fluent_builders::CreateDeployment::target_instances) / [`set_target_instances(Option<TargetInstances>)`](crate::client::fluent_builders::CreateDeployment::set_target_instances): <p> Information about the instances that belong to the replacement environment in a blue/green deployment. </p>
+    ///   - [`auto_rollback_configuration(AutoRollbackConfiguration)`](crate::client::fluent_builders::CreateDeployment::auto_rollback_configuration) / [`set_auto_rollback_configuration(Option<AutoRollbackConfiguration>)`](crate::client::fluent_builders::CreateDeployment::set_auto_rollback_configuration): <p>Configuration information for an automatic rollback that is added when a deployment is created.</p>
+    ///   - [`update_outdated_instances_only(bool)`](crate::client::fluent_builders::CreateDeployment::update_outdated_instances_only) / [`set_update_outdated_instances_only(bool)`](crate::client::fluent_builders::CreateDeployment::set_update_outdated_instances_only): <p> Indicates whether to deploy to all instances or only to instances that are not running the latest application revision. </p>
+    ///   - [`file_exists_behavior(FileExistsBehavior)`](crate::client::fluent_builders::CreateDeployment::file_exists_behavior) / [`set_file_exists_behavior(Option<FileExistsBehavior>)`](crate::client::fluent_builders::CreateDeployment::set_file_exists_behavior): <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>  <p>The <code>fileExistsBehavior</code> parameter takes any of the following values:</p>  <ul>   <li> <p>DISALLOW: The deployment fails. This is also the default behavior if no option is specified.</p> </li>   <li> <p>OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>   <li> <p>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>  </ul>
+    /// - On success, responds with [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput) with field(s):
+    ///   - [`deployment_id(Option<String>)`](crate::output::CreateDeploymentOutput::deployment_id): <p> The unique ID of a deployment. </p>
+    /// - On failure, responds with [`SdkError<CreateDeploymentError>`](crate::error::CreateDeploymentError)
     pub fn create_deployment(&self) -> fluent_builders::CreateDeployment<C, M, R> {
         fluent_builders::CreateDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDeploymentConfig` operation.
+    /// Constructs a fluent builder for the [`CreateDeploymentConfig`](crate::client::fluent_builders::CreateDeploymentConfig) operation.
     ///
-    /// See [`CreateDeploymentConfig`](crate::client::fluent_builders::CreateDeploymentConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentConfig::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::CreateDeploymentConfig::set_deployment_config_name): <p>The name of the deployment configuration to create.</p>
+    ///   - [`minimum_healthy_hosts(MinimumHealthyHosts)`](crate::client::fluent_builders::CreateDeploymentConfig::minimum_healthy_hosts) / [`set_minimum_healthy_hosts(Option<MinimumHealthyHosts>)`](crate::client::fluent_builders::CreateDeploymentConfig::set_minimum_healthy_hosts): <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>  <p>The type parameter takes either of the following values:</p>  <ul>   <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>   <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>  </ul>  <p>The value parameter takes an integer.</p>  <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
+    ///   - [`traffic_routing_config(TrafficRoutingConfig)`](crate::client::fluent_builders::CreateDeploymentConfig::traffic_routing_config) / [`set_traffic_routing_config(Option<TrafficRoutingConfig>)`](crate::client::fluent_builders::CreateDeploymentConfig::set_traffic_routing_config): <p>The configuration that specifies how the deployment traffic is routed.</p>
+    ///   - [`compute_platform(ComputePlatform)`](crate::client::fluent_builders::CreateDeploymentConfig::compute_platform) / [`set_compute_platform(Option<ComputePlatform>)`](crate::client::fluent_builders::CreateDeploymentConfig::set_compute_platform): <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
+    /// - On success, responds with [`CreateDeploymentConfigOutput`](crate::output::CreateDeploymentConfigOutput) with field(s):
+    ///   - [`deployment_config_id(Option<String>)`](crate::output::CreateDeploymentConfigOutput::deployment_config_id): <p>A unique deployment configuration ID.</p>
+    /// - On failure, responds with [`SdkError<CreateDeploymentConfigError>`](crate::error::CreateDeploymentConfigError)
     pub fn create_deployment_config(&self) -> fluent_builders::CreateDeploymentConfig<C, M, R> {
         fluent_builders::CreateDeploymentConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDeploymentGroup` operation.
+    /// Constructs a fluent builder for the [`CreateDeploymentGroup`](crate::client::fluent_builders::CreateDeploymentGroup) operation.
     ///
-    /// See [`CreateDeploymentGroup`](crate::client::fluent_builders::CreateDeploymentGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    ///   - [`deployment_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::deployment_group_name) / [`set_deployment_group_name(Option<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_deployment_group_name): <p>The name of a new deployment group for the specified application.</p>
+    ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_deployment_config_name): <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>  <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>  <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    ///   - [`ec2_tag_filters(Vec<Ec2TagFilter>)`](crate::client::fluent_builders::CreateDeploymentGroup::ec2_tag_filters) / [`set_ec2_tag_filters(Option<Vec<Ec2TagFilter>>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_ec2_tag_filters): <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
+    ///   - [`on_premises_instance_tag_filters(Vec<TagFilter>)`](crate::client::fluent_builders::CreateDeploymentGroup::on_premises_instance_tag_filters) / [`set_on_premises_instance_tag_filters(Option<Vec<TagFilter>>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_on_premises_instance_tag_filters): <p>The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags. Cannot be used in the same call as <code>OnPremisesTagSet</code>.</p>
+    ///   - [`auto_scaling_groups(Vec<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::auto_scaling_groups) / [`set_auto_scaling_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_auto_scaling_groups): <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
+    ///   - [`service_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::service_role_arn) / [`set_service_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_service_role_arn): <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting with AWS services.</p>
+    ///   - [`trigger_configurations(Vec<TriggerConfig>)`](crate::client::fluent_builders::CreateDeploymentGroup::trigger_configurations) / [`set_trigger_configurations(Option<Vec<TriggerConfig>>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_trigger_configurations): <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    ///   - [`alarm_configuration(AlarmConfiguration)`](crate::client::fluent_builders::CreateDeploymentGroup::alarm_configuration) / [`set_alarm_configuration(Option<AlarmConfiguration>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_alarm_configuration): <p>Information to add about Amazon CloudWatch alarms when the deployment group is created.</p>
+    ///   - [`auto_rollback_configuration(AutoRollbackConfiguration)`](crate::client::fluent_builders::CreateDeploymentGroup::auto_rollback_configuration) / [`set_auto_rollback_configuration(Option<AutoRollbackConfiguration>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_auto_rollback_configuration): <p>Configuration information for an automatic rollback that is added when a deployment group is created.</p>
+    ///   - [`outdated_instances_strategy(OutdatedInstancesStrategy)`](crate::client::fluent_builders::CreateDeploymentGroup::outdated_instances_strategy) / [`set_outdated_instances_strategy(Option<OutdatedInstancesStrategy>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_outdated_instances_strategy): <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>  <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>  <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+    ///   - [`deployment_style(DeploymentStyle)`](crate::client::fluent_builders::CreateDeploymentGroup::deployment_style) / [`set_deployment_style(Option<DeploymentStyle>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_deployment_style): <p>Information about the type of deployment, in-place or blue/green, that you want to run and whether to route deployment traffic behind a load balancer.</p>
+    ///   - [`blue_green_deployment_configuration(BlueGreenDeploymentConfiguration)`](crate::client::fluent_builders::CreateDeploymentGroup::blue_green_deployment_configuration) / [`set_blue_green_deployment_configuration(Option<BlueGreenDeploymentConfiguration>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_blue_green_deployment_configuration): <p>Information about blue/green deployment options for a deployment group.</p>
+    ///   - [`load_balancer_info(LoadBalancerInfo)`](crate::client::fluent_builders::CreateDeploymentGroup::load_balancer_info) / [`set_load_balancer_info(Option<LoadBalancerInfo>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_load_balancer_info): <p>Information about the load balancer used in a deployment.</p>
+    ///   - [`ec2_tag_set(Ec2TagSet)`](crate::client::fluent_builders::CreateDeploymentGroup::ec2_tag_set) / [`set_ec2_tag_set(Option<Ec2TagSet>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_ec2_tag_set): <p>Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
+    ///   - [`ecs_services(Vec<EcsService>)`](crate::client::fluent_builders::CreateDeploymentGroup::ecs_services) / [`set_ecs_services(Option<Vec<EcsService>>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_ecs_services): <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>   <clustername>    :    <servicename></servicename>   </clustername></code>. </p>
+    ///   - [`on_premises_tag_set(OnPremisesTagSet)`](crate::client::fluent_builders::CreateDeploymentGroup::on_premises_tag_set) / [`set_on_premises_tag_set(Option<OnPremisesTagSet>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_on_premises_tag_set): <p>Information about groups of tags applied to on-premises instances. The deployment group includes only on-premises instances identified by all of the tag groups. Cannot be used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDeploymentGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDeploymentGroup::set_tags): <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
+    /// - On success, responds with [`CreateDeploymentGroupOutput`](crate::output::CreateDeploymentGroupOutput) with field(s):
+    ///   - [`deployment_group_id(Option<String>)`](crate::output::CreateDeploymentGroupOutput::deployment_group_id): <p>A unique deployment group ID.</p>
+    /// - On failure, responds with [`SdkError<CreateDeploymentGroupError>`](crate::error::CreateDeploymentGroupError)
     pub fn create_deployment_group(&self) -> fluent_builders::CreateDeploymentGroup<C, M, R> {
         fluent_builders::CreateDeploymentGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteApplication` operation.
+    /// Constructs a fluent builder for the [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) operation.
     ///
-    /// See [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    /// - On success, responds with [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::error::DeleteApplicationError)
     pub fn delete_application(&self) -> fluent_builders::DeleteApplication<C, M, R> {
         fluent_builders::DeleteApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDeploymentConfig` operation.
+    /// Constructs a fluent builder for the [`DeleteDeploymentConfig`](crate::client::fluent_builders::DeleteDeploymentConfig) operation.
     ///
-    /// See [`DeleteDeploymentConfig`](crate::client::fluent_builders::DeleteDeploymentConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDeploymentConfig::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::DeleteDeploymentConfig::set_deployment_config_name): <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+    /// - On success, responds with [`DeleteDeploymentConfigOutput`](crate::output::DeleteDeploymentConfigOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDeploymentConfigError>`](crate::error::DeleteDeploymentConfigError)
     pub fn delete_deployment_config(&self) -> fluent_builders::DeleteDeploymentConfig<C, M, R> {
         fluent_builders::DeleteDeploymentConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDeploymentGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteDeploymentGroup`](crate::client::fluent_builders::DeleteDeploymentGroup) operation.
     ///
-    /// See [`DeleteDeploymentGroup`](crate::client::fluent_builders::DeleteDeploymentGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDeploymentGroup::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::DeleteDeploymentGroup::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    ///   - [`deployment_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDeploymentGroup::deployment_group_name) / [`set_deployment_group_name(Option<String>)`](crate::client::fluent_builders::DeleteDeploymentGroup::set_deployment_group_name): <p>The name of a deployment group for the specified application.</p>
+    /// - On success, responds with [`DeleteDeploymentGroupOutput`](crate::output::DeleteDeploymentGroupOutput) with field(s):
+    ///   - [`hooks_not_cleaned_up(Option<Vec<AutoScalingGroup>>)`](crate::output::DeleteDeploymentGroupOutput::hooks_not_cleaned_up): <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
+    /// - On failure, responds with [`SdkError<DeleteDeploymentGroupError>`](crate::error::DeleteDeploymentGroupError)
     pub fn delete_deployment_group(&self) -> fluent_builders::DeleteDeploymentGroup<C, M, R> {
         fluent_builders::DeleteDeploymentGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGitHubAccountToken` operation.
+    /// Constructs a fluent builder for the [`DeleteGitHubAccountToken`](crate::client::fluent_builders::DeleteGitHubAccountToken) operation.
     ///
-    /// See [`DeleteGitHubAccountToken`](crate::client::fluent_builders::DeleteGitHubAccountToken) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`token_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGitHubAccountToken::token_name) / [`set_token_name(Option<String>)`](crate::client::fluent_builders::DeleteGitHubAccountToken::set_token_name): <p>The name of the GitHub account connection to delete.</p>
+    /// - On success, responds with [`DeleteGitHubAccountTokenOutput`](crate::output::DeleteGitHubAccountTokenOutput) with field(s):
+    ///   - [`token_name(Option<String>)`](crate::output::DeleteGitHubAccountTokenOutput::token_name): <p>The name of the GitHub account connection that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteGitHubAccountTokenError>`](crate::error::DeleteGitHubAccountTokenError)
     pub fn delete_git_hub_account_token(
         &self,
     ) -> fluent_builders::DeleteGitHubAccountToken<C, M, R> {
         fluent_builders::DeleteGitHubAccountToken::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteResourcesByExternalId` operation.
+    /// Constructs a fluent builder for the [`DeleteResourcesByExternalId`](crate::client::fluent_builders::DeleteResourcesByExternalId) operation.
     ///
-    /// See [`DeleteResourcesByExternalId`](crate::client::fluent_builders::DeleteResourcesByExternalId) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`external_id(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcesByExternalId::external_id) / [`set_external_id(Option<String>)`](crate::client::fluent_builders::DeleteResourcesByExternalId::set_external_id): <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
+    /// - On success, responds with [`DeleteResourcesByExternalIdOutput`](crate::output::DeleteResourcesByExternalIdOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourcesByExternalIdError>`](crate::error::DeleteResourcesByExternalIdError)
     pub fn delete_resources_by_external_id(
         &self,
     ) -> fluent_builders::DeleteResourcesByExternalId<C, M, R> {
         fluent_builders::DeleteResourcesByExternalId::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterOnPremisesInstance` operation.
+    /// Constructs a fluent builder for the [`DeregisterOnPremisesInstance`](crate::client::fluent_builders::DeregisterOnPremisesInstance) operation.
     ///
-    /// See [`DeregisterOnPremisesInstance`](crate::client::fluent_builders::DeregisterOnPremisesInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::DeregisterOnPremisesInstance::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::DeregisterOnPremisesInstance::set_instance_name): <p>The name of the on-premises instance to deregister.</p>
+    /// - On success, responds with [`DeregisterOnPremisesInstanceOutput`](crate::output::DeregisterOnPremisesInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterOnPremisesInstanceError>`](crate::error::DeregisterOnPremisesInstanceError)
     pub fn deregister_on_premises_instance(
         &self,
     ) -> fluent_builders::DeregisterOnPremisesInstance<C, M, R> {
         fluent_builders::DeregisterOnPremisesInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetApplication` operation.
+    /// Constructs a fluent builder for the [`GetApplication`](crate::client::fluent_builders::GetApplication) operation.
     ///
-    /// See [`GetApplication`](crate::client::fluent_builders::GetApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::GetApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::GetApplication::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    /// - On success, responds with [`GetApplicationOutput`](crate::output::GetApplicationOutput) with field(s):
+    ///   - [`application(Option<ApplicationInfo>)`](crate::output::GetApplicationOutput::application): <p>Information about the application.</p>
+    /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::error::GetApplicationError)
     pub fn get_application(&self) -> fluent_builders::GetApplication<C, M, R> {
         fluent_builders::GetApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetApplicationRevision` operation.
+    /// Constructs a fluent builder for the [`GetApplicationRevision`](crate::client::fluent_builders::GetApplicationRevision) operation.
     ///
-    /// See [`GetApplicationRevision`](crate::client::fluent_builders::GetApplicationRevision) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::GetApplicationRevision::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::GetApplicationRevision::set_application_name): <p>The name of the application that corresponds to the revision.</p>
+    ///   - [`revision(RevisionLocation)`](crate::client::fluent_builders::GetApplicationRevision::revision) / [`set_revision(Option<RevisionLocation>)`](crate::client::fluent_builders::GetApplicationRevision::set_revision): <p>Information about the application revision to get, including type and location.</p>
+    /// - On success, responds with [`GetApplicationRevisionOutput`](crate::output::GetApplicationRevisionOutput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::output::GetApplicationRevisionOutput::application_name): <p>The name of the application that corresponds to the revision.</p>
+    ///   - [`revision(Option<RevisionLocation>)`](crate::output::GetApplicationRevisionOutput::revision): <p>Additional information about the revision, including type and location.</p>
+    ///   - [`revision_info(Option<GenericRevisionInfo>)`](crate::output::GetApplicationRevisionOutput::revision_info): <p>General information about the revision.</p>
+    /// - On failure, responds with [`SdkError<GetApplicationRevisionError>`](crate::error::GetApplicationRevisionError)
     pub fn get_application_revision(&self) -> fluent_builders::GetApplicationRevision<C, M, R> {
         fluent_builders::GetApplicationRevision::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDeployment` operation.
+    /// Constructs a fluent builder for the [`GetDeployment`](crate::client::fluent_builders::GetDeployment) operation.
     ///
-    /// See [`GetDeployment`](crate::client::fluent_builders::GetDeployment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::GetDeployment::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::GetDeployment::set_deployment_id): <p> The unique ID of a deployment associated with the IAM user or AWS account. </p>
+    /// - On success, responds with [`GetDeploymentOutput`](crate::output::GetDeploymentOutput) with field(s):
+    ///   - [`deployment_info(Option<DeploymentInfo>)`](crate::output::GetDeploymentOutput::deployment_info): <p>Information about the deployment.</p>
+    /// - On failure, responds with [`SdkError<GetDeploymentError>`](crate::error::GetDeploymentError)
     pub fn get_deployment(&self) -> fluent_builders::GetDeployment<C, M, R> {
         fluent_builders::GetDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDeploymentConfig` operation.
+    /// Constructs a fluent builder for the [`GetDeploymentConfig`](crate::client::fluent_builders::GetDeploymentConfig) operation.
     ///
-    /// See [`GetDeploymentConfig`](crate::client::fluent_builders::GetDeploymentConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::GetDeploymentConfig::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::GetDeploymentConfig::set_deployment_config_name): <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+    /// - On success, responds with [`GetDeploymentConfigOutput`](crate::output::GetDeploymentConfigOutput) with field(s):
+    ///   - [`deployment_config_info(Option<DeploymentConfigInfo>)`](crate::output::GetDeploymentConfigOutput::deployment_config_info): <p>Information about the deployment configuration.</p>
+    /// - On failure, responds with [`SdkError<GetDeploymentConfigError>`](crate::error::GetDeploymentConfigError)
     pub fn get_deployment_config(&self) -> fluent_builders::GetDeploymentConfig<C, M, R> {
         fluent_builders::GetDeploymentConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDeploymentGroup` operation.
+    /// Constructs a fluent builder for the [`GetDeploymentGroup`](crate::client::fluent_builders::GetDeploymentGroup) operation.
     ///
-    /// See [`GetDeploymentGroup`](crate::client::fluent_builders::GetDeploymentGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::GetDeploymentGroup::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::GetDeploymentGroup::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    ///   - [`deployment_group_name(impl Into<String>)`](crate::client::fluent_builders::GetDeploymentGroup::deployment_group_name) / [`set_deployment_group_name(Option<String>)`](crate::client::fluent_builders::GetDeploymentGroup::set_deployment_group_name): <p>The name of a deployment group for the specified application.</p>
+    /// - On success, responds with [`GetDeploymentGroupOutput`](crate::output::GetDeploymentGroupOutput) with field(s):
+    ///   - [`deployment_group_info(Option<DeploymentGroupInfo>)`](crate::output::GetDeploymentGroupOutput::deployment_group_info): <p>Information about the deployment group.</p>
+    /// - On failure, responds with [`SdkError<GetDeploymentGroupError>`](crate::error::GetDeploymentGroupError)
     pub fn get_deployment_group(&self) -> fluent_builders::GetDeploymentGroup<C, M, R> {
         fluent_builders::GetDeploymentGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDeploymentInstance` operation.
+    /// Constructs a fluent builder for the [`GetDeploymentInstance`](crate::client::fluent_builders::GetDeploymentInstance) operation.
     ///
-    /// See [`GetDeploymentInstance`](crate::client::fluent_builders::GetDeploymentInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::GetDeploymentInstance::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::GetDeploymentInstance::set_deployment_id): <p> The unique ID of a deployment. </p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::GetDeploymentInstance::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::GetDeploymentInstance::set_instance_id): <p> The unique ID of an instance in the deployment group. </p>
+    /// - On success, responds with [`GetDeploymentInstanceOutput`](crate::output::GetDeploymentInstanceOutput) with field(s):
+    ///   - [`instance_summary(Option<InstanceSummary>)`](crate::output::GetDeploymentInstanceOutput::instance_summary): <p> Information about the instance. </p>
+    /// - On failure, responds with [`SdkError<GetDeploymentInstanceError>`](crate::error::GetDeploymentInstanceError)
     pub fn get_deployment_instance(&self) -> fluent_builders::GetDeploymentInstance<C, M, R> {
         fluent_builders::GetDeploymentInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDeploymentTarget` operation.
+    /// Constructs a fluent builder for the [`GetDeploymentTarget`](crate::client::fluent_builders::GetDeploymentTarget) operation.
     ///
-    /// See [`GetDeploymentTarget`](crate::client::fluent_builders::GetDeploymentTarget) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::GetDeploymentTarget::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::GetDeploymentTarget::set_deployment_id): <p> The unique ID of a deployment. </p>
+    ///   - [`target_id(impl Into<String>)`](crate::client::fluent_builders::GetDeploymentTarget::target_id) / [`set_target_id(Option<String>)`](crate::client::fluent_builders::GetDeploymentTarget::set_target_id): <p> The unique ID of a deployment target. </p>
+    /// - On success, responds with [`GetDeploymentTargetOutput`](crate::output::GetDeploymentTargetOutput) with field(s):
+    ///   - [`deployment_target(Option<DeploymentTarget>)`](crate::output::GetDeploymentTargetOutput::deployment_target): <p> A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
+    /// - On failure, responds with [`SdkError<GetDeploymentTargetError>`](crate::error::GetDeploymentTargetError)
     pub fn get_deployment_target(&self) -> fluent_builders::GetDeploymentTarget<C, M, R> {
         fluent_builders::GetDeploymentTarget::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOnPremisesInstance` operation.
+    /// Constructs a fluent builder for the [`GetOnPremisesInstance`](crate::client::fluent_builders::GetOnPremisesInstance) operation.
     ///
-    /// See [`GetOnPremisesInstance`](crate::client::fluent_builders::GetOnPremisesInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::GetOnPremisesInstance::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::GetOnPremisesInstance::set_instance_name): <p> The name of the on-premises instance about which to get information. </p>
+    /// - On success, responds with [`GetOnPremisesInstanceOutput`](crate::output::GetOnPremisesInstanceOutput) with field(s):
+    ///   - [`instance_info(Option<InstanceInfo>)`](crate::output::GetOnPremisesInstanceOutput::instance_info): <p> Information about the on-premises instance. </p>
+    /// - On failure, responds with [`SdkError<GetOnPremisesInstanceError>`](crate::error::GetOnPremisesInstanceError)
     pub fn get_on_premises_instance(&self) -> fluent_builders::GetOnPremisesInstance<C, M, R> {
         fluent_builders::GetOnPremisesInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListApplicationRevisions` operation.
+    /// Constructs a fluent builder for the [`ListApplicationRevisions`](crate::client::fluent_builders::ListApplicationRevisions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplicationRevisions::into_paginator).
     ///
-    /// See [`ListApplicationRevisions`](crate::client::fluent_builders::ListApplicationRevisions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplicationRevisions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::ListApplicationRevisions::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::ListApplicationRevisions::set_application_name): <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS account. </p>
+    ///   - [`sort_by(ApplicationRevisionSortBy)`](crate::client::fluent_builders::ListApplicationRevisions::sort_by) / [`set_sort_by(Option<ApplicationRevisionSortBy>)`](crate::client::fluent_builders::ListApplicationRevisions::set_sort_by): <p>The column name to use to sort the list results:</p>  <ul>   <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with AWS CodeDeploy.</p> </li>   <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>   <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>  </ul>  <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
+    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListApplicationRevisions::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListApplicationRevisions::set_sort_order): <p> The order in which to sort the list results: </p>  <ul>   <li> <p> <code>ascending</code>: ascending order.</p> </li>   <li> <p> <code>descending</code>: descending order.</p> </li>  </ul>  <p>If not specified, the results are sorted in ascending order.</p>  <p>If set to null, the results are sorted in an arbitrary order.</p>
+    ///   - [`s3_bucket(impl Into<String>)`](crate::client::fluent_builders::ListApplicationRevisions::s3_bucket) / [`set_s3_bucket(Option<String>)`](crate::client::fluent_builders::ListApplicationRevisions::set_s3_bucket): <p> An Amazon S3 bucket name to limit the search for revisions. </p>  <p> If set to null, all of the user's buckets are searched. </p>
+    ///   - [`s3_key_prefix(impl Into<String>)`](crate::client::fluent_builders::ListApplicationRevisions::s3_key_prefix) / [`set_s3_key_prefix(Option<String>)`](crate::client::fluent_builders::ListApplicationRevisions::set_s3_key_prefix): <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
+    ///   - [`deployed(ListStateFilterAction)`](crate::client::fluent_builders::ListApplicationRevisions::deployed) / [`set_deployed(Option<ListStateFilterAction>)`](crate::client::fluent_builders::ListApplicationRevisions::set_deployed): <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>  <ul>   <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li>   <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>   <li> <p> <code>ignore</code>: List all revisions.</p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplicationRevisions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplicationRevisions::set_next_token): <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>
+    /// - On success, responds with [`ListApplicationRevisionsOutput`](crate::output::ListApplicationRevisionsOutput) with field(s):
+    ///   - [`revisions(Option<Vec<RevisionLocation>>)`](crate::output::ListApplicationRevisionsOutput::revisions): <p>A list of locations that contain the matching revisions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationRevisionsOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
+    /// - On failure, responds with [`SdkError<ListApplicationRevisionsError>`](crate::error::ListApplicationRevisionsError)
     pub fn list_application_revisions(&self) -> fluent_builders::ListApplicationRevisions<C, M, R> {
         fluent_builders::ListApplicationRevisions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListApplications` operation.
+    /// Constructs a fluent builder for the [`ListApplications`](crate::client::fluent_builders::ListApplications) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
     ///
-    /// See [`ListApplications`](crate::client::fluent_builders::ListApplications) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplications::set_next_token): <p>An identifier returned from the previous list applications call. It can be used to return the next set of applications in the list.</p>
+    /// - On success, responds with [`ListApplicationsOutput`](crate::output::ListApplicationsOutput) with field(s):
+    ///   - [`applications(Option<Vec<String>>)`](crate::output::ListApplicationsOutput::applications): <p>A list of application names.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationsOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list applications call to return the next set of applications in the list.</p>
+    /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::error::ListApplicationsError)
     pub fn list_applications(&self) -> fluent_builders::ListApplications<C, M, R> {
         fluent_builders::ListApplications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDeploymentConfigs` operation.
+    /// Constructs a fluent builder for the [`ListDeploymentConfigs`](crate::client::fluent_builders::ListDeploymentConfigs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentConfigs::into_paginator).
     ///
-    /// See [`ListDeploymentConfigs`](crate::client::fluent_builders::ListDeploymentConfigs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentConfigs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeploymentConfigs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeploymentConfigs::set_next_token): <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the next set of deployment configurations in the list. </p>
+    /// - On success, responds with [`ListDeploymentConfigsOutput`](crate::output::ListDeploymentConfigsOutput) with field(s):
+    ///   - [`deployment_configs_list(Option<Vec<String>>)`](crate::output::ListDeploymentConfigsOutput::deployment_configs_list): <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDeploymentConfigsOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
+    /// - On failure, responds with [`SdkError<ListDeploymentConfigsError>`](crate::error::ListDeploymentConfigsError)
     pub fn list_deployment_configs(&self) -> fluent_builders::ListDeploymentConfigs<C, M, R> {
         fluent_builders::ListDeploymentConfigs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDeploymentGroups` operation.
+    /// Constructs a fluent builder for the [`ListDeploymentGroups`](crate::client::fluent_builders::ListDeploymentGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentGroups::into_paginator).
     ///
-    /// See [`ListDeploymentGroups`](crate::client::fluent_builders::ListDeploymentGroups) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentGroups::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::ListDeploymentGroups::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::ListDeploymentGroups::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeploymentGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeploymentGroups::set_next_token): <p>An identifier returned from the previous list deployment groups call. It can be used to return the next set of deployment groups in the list.</p>
+    /// - On success, responds with [`ListDeploymentGroupsOutput`](crate::output::ListDeploymentGroupsOutput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::output::ListDeploymentGroupsOutput::application_name): <p>The application name.</p>
+    ///   - [`deployment_groups(Option<Vec<String>>)`](crate::output::ListDeploymentGroupsOutput::deployment_groups): <p>A list of deployment group names.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDeploymentGroupsOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
+    /// - On failure, responds with [`SdkError<ListDeploymentGroupsError>`](crate::error::ListDeploymentGroupsError)
     pub fn list_deployment_groups(&self) -> fluent_builders::ListDeploymentGroups<C, M, R> {
         fluent_builders::ListDeploymentGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDeploymentInstances` operation.
+    /// Constructs a fluent builder for the [`ListDeploymentInstances`](crate::client::fluent_builders::ListDeploymentInstances) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentInstances::into_paginator).
     ///
-    /// See [`ListDeploymentInstances`](crate::client::fluent_builders::ListDeploymentInstances) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentInstances::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::ListDeploymentInstances::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::ListDeploymentInstances::set_deployment_id): <p> The unique ID of a deployment. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeploymentInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeploymentInstances::set_next_token): <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
+    ///   - [`instance_status_filter(Vec<InstanceStatus>)`](crate::client::fluent_builders::ListDeploymentInstances::instance_status_filter) / [`set_instance_status_filter(Option<Vec<InstanceStatus>>)`](crate::client::fluent_builders::ListDeploymentInstances::set_instance_status_filter): <p>A subset of instances to list by status:</p>  <ul>   <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li>   <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li>   <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li>   <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li>   <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>   <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>  </ul>
+    ///   - [`instance_type_filter(Vec<InstanceType>)`](crate::client::fluent_builders::ListDeploymentInstances::instance_type_filter) / [`set_instance_type_filter(Option<Vec<InstanceType>>)`](crate::client::fluent_builders::ListDeploymentInstances::set_instance_type_filter): <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
+    /// - On success, responds with [`ListDeploymentInstancesOutput`](crate::output::ListDeploymentInstancesOutput) with field(s):
+    ///   - [`instances_list(Option<Vec<String>>)`](crate::output::ListDeploymentInstancesOutput::instances_list): <p>A list of instance IDs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDeploymentInstancesOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
+    /// - On failure, responds with [`SdkError<ListDeploymentInstancesError>`](crate::error::ListDeploymentInstancesError)
     pub fn list_deployment_instances(&self) -> fluent_builders::ListDeploymentInstances<C, M, R> {
         fluent_builders::ListDeploymentInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDeployments` operation.
+    /// Constructs a fluent builder for the [`ListDeployments`](crate::client::fluent_builders::ListDeployments) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeployments::into_paginator).
     ///
-    /// See [`ListDeployments`](crate::client::fluent_builders::ListDeployments) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeployments::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p> <note>   <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>  </note>
+    ///   - [`deployment_group_name(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::deployment_group_name) / [`set_deployment_group_name(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_deployment_group_name): <p>The name of a deployment group for the specified application.</p> <note>   <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>  </note>
+    ///   - [`external_id(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::external_id) / [`set_external_id(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_external_id): <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
+    ///   - [`include_only_statuses(Vec<DeploymentStatus>)`](crate::client::fluent_builders::ListDeployments::include_only_statuses) / [`set_include_only_statuses(Option<Vec<DeploymentStatus>>)`](crate::client::fluent_builders::ListDeployments::set_include_only_statuses): <p>A subset of deployments to list by status:</p>  <ul>   <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li>   <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li>   <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li>   <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li>   <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>   <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>  </ul>
+    ///   - [`create_time_range(TimeRange)`](crate::client::fluent_builders::ListDeployments::create_time_range) / [`set_create_time_range(Option<TimeRange>)`](crate::client::fluent_builders::ListDeployments::set_create_time_range): <p>A time range (start and end) for returning a subset of the list of deployments.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_next_token): <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
+    /// - On success, responds with [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput) with field(s):
+    ///   - [`deployments(Option<Vec<String>>)`](crate::output::ListDeploymentsOutput::deployments): <p>A list of deployment IDs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDeploymentsOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
+    /// - On failure, responds with [`SdkError<ListDeploymentsError>`](crate::error::ListDeploymentsError)
     pub fn list_deployments(&self) -> fluent_builders::ListDeployments<C, M, R> {
         fluent_builders::ListDeployments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDeploymentTargets` operation.
+    /// Constructs a fluent builder for the [`ListDeploymentTargets`](crate::client::fluent_builders::ListDeploymentTargets) operation.
     ///
-    /// See [`ListDeploymentTargets`](crate::client::fluent_builders::ListDeploymentTargets) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::ListDeploymentTargets::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::ListDeploymentTargets::set_deployment_id): <p> The unique ID of a deployment. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeploymentTargets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeploymentTargets::set_next_token): <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
+    ///   - [`target_filters(HashMap<TargetFilterName, Vec<String>>)`](crate::client::fluent_builders::ListDeploymentTargets::target_filters) / [`set_target_filters(Option<HashMap<TargetFilterName, Vec<String>>>)`](crate::client::fluent_builders::ListDeploymentTargets::set_target_filters): <p> A key used to filter the returned targets. The two valid values are:</p>  <ul>   <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>   <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>  </ul>
+    /// - On success, responds with [`ListDeploymentTargetsOutput`](crate::output::ListDeploymentTargetsOutput) with field(s):
+    ///   - [`target_ids(Option<Vec<String>>)`](crate::output::ListDeploymentTargetsOutput::target_ids): <p> The unique IDs of deployment targets. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDeploymentTargetsOutput::next_token): <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
+    /// - On failure, responds with [`SdkError<ListDeploymentTargetsError>`](crate::error::ListDeploymentTargetsError)
     pub fn list_deployment_targets(&self) -> fluent_builders::ListDeploymentTargets<C, M, R> {
         fluent_builders::ListDeploymentTargets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGitHubAccountTokenNames` operation.
+    /// Constructs a fluent builder for the [`ListGitHubAccountTokenNames`](crate::client::fluent_builders::ListGitHubAccountTokenNames) operation.
     ///
-    /// See [`ListGitHubAccountTokenNames`](crate::client::fluent_builders::ListGitHubAccountTokenNames) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGitHubAccountTokenNames::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGitHubAccountTokenNames::set_next_token): <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return the next set of names in the list. </p>
+    /// - On success, responds with [`ListGitHubAccountTokenNamesOutput`](crate::output::ListGitHubAccountTokenNamesOutput) with field(s):
+    ///   - [`token_name_list(Option<Vec<String>>)`](crate::output::ListGitHubAccountTokenNamesOutput::token_name_list): <p>A list of names of connections to GitHub accounts.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGitHubAccountTokenNamesOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next set of names in the list. </p>
+    /// - On failure, responds with [`SdkError<ListGitHubAccountTokenNamesError>`](crate::error::ListGitHubAccountTokenNamesError)
     pub fn list_git_hub_account_token_names(
         &self,
     ) -> fluent_builders::ListGitHubAccountTokenNames<C, M, R> {
         fluent_builders::ListGitHubAccountTokenNames::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOnPremisesInstances` operation.
+    /// Constructs a fluent builder for the [`ListOnPremisesInstances`](crate::client::fluent_builders::ListOnPremisesInstances) operation.
     ///
-    /// See [`ListOnPremisesInstances`](crate::client::fluent_builders::ListOnPremisesInstances) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`registration_status(RegistrationStatus)`](crate::client::fluent_builders::ListOnPremisesInstances::registration_status) / [`set_registration_status(Option<RegistrationStatus>)`](crate::client::fluent_builders::ListOnPremisesInstances::set_registration_status): <p>The registration status of the on-premises instances:</p>  <ul>   <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>   <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>  </ul>
+    ///   - [`tag_filters(Vec<TagFilter>)`](crate::client::fluent_builders::ListOnPremisesInstances::tag_filters) / [`set_tag_filters(Option<Vec<TagFilter>>)`](crate::client::fluent_builders::ListOnPremisesInstances::set_tag_filters): <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOnPremisesInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOnPremisesInstances::set_next_token): <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
+    /// - On success, responds with [`ListOnPremisesInstancesOutput`](crate::output::ListOnPremisesInstancesOutput) with field(s):
+    ///   - [`instance_names(Option<Vec<String>>)`](crate::output::ListOnPremisesInstancesOutput::instance_names): <p>The list of matching on-premises instance names.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListOnPremisesInstancesOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
+    /// - On failure, responds with [`SdkError<ListOnPremisesInstancesError>`](crate::error::ListOnPremisesInstancesError)
     pub fn list_on_premises_instances(&self) -> fluent_builders::ListOnPremisesInstances<C, M, R> {
         fluent_builders::ListOnPremisesInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the tags associated with the resource that is identified by the <code>ResourceArn</code>. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can be used to return the next set of applications in the list.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated with the resource identified by the input <code>ResourceArn</code> parameter. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutLifecycleEventHookExecutionStatus` operation.
+    /// Constructs a fluent builder for the [`PutLifecycleEventHookExecutionStatus`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus) operation.
     ///
-    /// See [`PutLifecycleEventHookExecutionStatus`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus::set_deployment_id): <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
+    ///   - [`lifecycle_event_hook_execution_id(impl Into<String>)`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus::lifecycle_event_hook_execution_id) / [`set_lifecycle_event_hook_execution_id(Option<String>)`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus::set_lifecycle_event_hook_execution_id): <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
+    ///   - [`status(LifecycleEventStatus)`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus::status) / [`set_status(Option<LifecycleEventStatus>)`](crate::client::fluent_builders::PutLifecycleEventHookExecutionStatus::set_status): <p>The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and <code>Failed</code> are the only valid values for <code>status</code>.</p>
+    /// - On success, responds with [`PutLifecycleEventHookExecutionStatusOutput`](crate::output::PutLifecycleEventHookExecutionStatusOutput) with field(s):
+    ///   - [`lifecycle_event_hook_execution_id(Option<String>)`](crate::output::PutLifecycleEventHookExecutionStatusOutput::lifecycle_event_hook_execution_id): <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
+    /// - On failure, responds with [`SdkError<PutLifecycleEventHookExecutionStatusError>`](crate::error::PutLifecycleEventHookExecutionStatusError)
     pub fn put_lifecycle_event_hook_execution_status(
         &self,
     ) -> fluent_builders::PutLifecycleEventHookExecutionStatus<C, M, R> {
         fluent_builders::PutLifecycleEventHookExecutionStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterApplicationRevision` operation.
+    /// Constructs a fluent builder for the [`RegisterApplicationRevision`](crate::client::fluent_builders::RegisterApplicationRevision) operation.
     ///
-    /// See [`RegisterApplicationRevision`](crate::client::fluent_builders::RegisterApplicationRevision) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::RegisterApplicationRevision::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::RegisterApplicationRevision::set_application_name): <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::RegisterApplicationRevision::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::RegisterApplicationRevision::set_description): <p>A comment about the revision.</p>
+    ///   - [`revision(RevisionLocation)`](crate::client::fluent_builders::RegisterApplicationRevision::revision) / [`set_revision(Option<RevisionLocation>)`](crate::client::fluent_builders::RegisterApplicationRevision::set_revision): <p>Information about the application revision to register, including type and location.</p>
+    /// - On success, responds with [`RegisterApplicationRevisionOutput`](crate::output::RegisterApplicationRevisionOutput)
+
+    /// - On failure, responds with [`SdkError<RegisterApplicationRevisionError>`](crate::error::RegisterApplicationRevisionError)
     pub fn register_application_revision(
         &self,
     ) -> fluent_builders::RegisterApplicationRevision<C, M, R> {
         fluent_builders::RegisterApplicationRevision::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterOnPremisesInstance` operation.
+    /// Constructs a fluent builder for the [`RegisterOnPremisesInstance`](crate::client::fluent_builders::RegisterOnPremisesInstance) operation.
     ///
-    /// See [`RegisterOnPremisesInstance`](crate::client::fluent_builders::RegisterOnPremisesInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::RegisterOnPremisesInstance::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::RegisterOnPremisesInstance::set_instance_name): <p>The name of the on-premises instance to register.</p>
+    ///   - [`iam_session_arn(impl Into<String>)`](crate::client::fluent_builders::RegisterOnPremisesInstance::iam_session_arn) / [`set_iam_session_arn(Option<String>)`](crate::client::fluent_builders::RegisterOnPremisesInstance::set_iam_session_arn): <p>The ARN of the IAM session to associate with the on-premises instance.</p>
+    ///   - [`iam_user_arn(impl Into<String>)`](crate::client::fluent_builders::RegisterOnPremisesInstance::iam_user_arn) / [`set_iam_user_arn(Option<String>)`](crate::client::fluent_builders::RegisterOnPremisesInstance::set_iam_user_arn): <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+    /// - On success, responds with [`RegisterOnPremisesInstanceOutput`](crate::output::RegisterOnPremisesInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<RegisterOnPremisesInstanceError>`](crate::error::RegisterOnPremisesInstanceError)
     pub fn register_on_premises_instance(
         &self,
     ) -> fluent_builders::RegisterOnPremisesInstance<C, M, R> {
         fluent_builders::RegisterOnPremisesInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveTagsFromOnPremisesInstances` operation.
+    /// Constructs a fluent builder for the [`RemoveTagsFromOnPremisesInstances`](crate::client::fluent_builders::RemoveTagsFromOnPremisesInstances) operation.
     ///
-    /// See [`RemoveTagsFromOnPremisesInstances`](crate::client::fluent_builders::RemoveTagsFromOnPremisesInstances) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RemoveTagsFromOnPremisesInstances::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RemoveTagsFromOnPremisesInstances::set_tags): <p>The tag key-value pairs to remove from the on-premises instances.</p>
+    ///   - [`instance_names(Vec<String>)`](crate::client::fluent_builders::RemoveTagsFromOnPremisesInstances::instance_names) / [`set_instance_names(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveTagsFromOnPremisesInstances::set_instance_names): <p>The names of the on-premises instances from which to remove tags.</p>
+    /// - On success, responds with [`RemoveTagsFromOnPremisesInstancesOutput`](crate::output::RemoveTagsFromOnPremisesInstancesOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveTagsFromOnPremisesInstancesError>`](crate::error::RemoveTagsFromOnPremisesInstancesError)
     pub fn remove_tags_from_on_premises_instances(
         &self,
     ) -> fluent_builders::RemoveTagsFromOnPremisesInstances<C, M, R> {
         fluent_builders::RemoveTagsFromOnPremisesInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SkipWaitTimeForInstanceTermination` operation.
+    /// Constructs a fluent builder for the [`SkipWaitTimeForInstanceTermination`](crate::client::fluent_builders::SkipWaitTimeForInstanceTermination) operation.
     ///
-    /// See [`SkipWaitTimeForInstanceTermination`](crate::client::fluent_builders::SkipWaitTimeForInstanceTermination) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::SkipWaitTimeForInstanceTermination::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::SkipWaitTimeForInstanceTermination::set_deployment_id): <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
+    /// - On success, responds with [`SkipWaitTimeForInstanceTerminationOutput`](crate::output::SkipWaitTimeForInstanceTerminationOutput)
+
+    /// - On failure, responds with [`SdkError<SkipWaitTimeForInstanceTerminationError>`](crate::error::SkipWaitTimeForInstanceTerminationError)
     pub fn skip_wait_time_for_instance_termination(
         &self,
     ) -> fluent_builders::SkipWaitTimeForInstanceTermination<C, M, R> {
         fluent_builders::SkipWaitTimeForInstanceTermination::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopDeployment` operation.
+    /// Constructs a fluent builder for the [`StopDeployment`](crate::client::fluent_builders::StopDeployment) operation.
     ///
-    /// See [`StopDeployment`](crate::client::fluent_builders::StopDeployment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::StopDeployment::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::StopDeployment::set_deployment_id): <p> The unique ID of a deployment. </p>
+    ///   - [`auto_rollback_enabled(bool)`](crate::client::fluent_builders::StopDeployment::auto_rollback_enabled) / [`set_auto_rollback_enabled(Option<bool>)`](crate::client::fluent_builders::StopDeployment::set_auto_rollback_enabled): <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
+    /// - On success, responds with [`StopDeploymentOutput`](crate::output::StopDeploymentOutput) with field(s):
+    ///   - [`status(Option<StopStatus>)`](crate::output::StopDeploymentOutput::status): <p>The status of the stop deployment operation:</p>  <ul>   <li> <p>Pending: The stop operation is pending.</p> </li>   <li> <p>Succeeded: The stop operation was successful.</p> </li>  </ul>
+    ///   - [`status_message(Option<String>)`](crate::output::StopDeploymentOutput::status_message): <p>An accompanying status message.</p>
+    /// - On failure, responds with [`SdkError<StopDeploymentError>`](crate::error::StopDeploymentError)
     pub fn stop_deployment(&self) -> fluent_builders::StopDeployment<C, M, R> {
         fluent_builders::StopDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p> The ARN of a resource, such as a CodeDeploy application or deployment group. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p> A list of tags that <code>TagResource</code> associates with a resource. The resource is identified by the <code>ResourceArn</code> input parameter. </p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the <code>TagKeys</code> input parameter. </p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified by the keys are disassociated from the resource specified by the <code>ResourceArn</code> input parameter. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateApplication` operation.
+    /// Constructs a fluent builder for the [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) operation.
     ///
-    /// See [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_application_name): <p>The current name of the application you want to change.</p>
+    ///   - [`new_application_name(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::new_application_name) / [`set_new_application_name(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_new_application_name): <p>The new name to give the application.</p>
+    /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::error::UpdateApplicationError)
     pub fn update_application(&self) -> fluent_builders::UpdateApplication<C, M, R> {
         fluent_builders::UpdateApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDeploymentGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateDeploymentGroup`](crate::client::fluent_builders::UpdateDeploymentGroup) operation.
     ///
-    /// See [`UpdateDeploymentGroup`](crate::client::fluent_builders::UpdateDeploymentGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::application_name) / [`set_application_name(Option<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_application_name): <p>The application name that corresponds to the deployment group to update.</p>
+    ///   - [`current_deployment_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::current_deployment_group_name) / [`set_current_deployment_group_name(Option<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_current_deployment_group_name): <p>The current name of the deployment group.</p>
+    ///   - [`new_deployment_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::new_deployment_group_name) / [`set_new_deployment_group_name(Option<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_new_deployment_group_name): <p>The new name of the deployment group, if you want to change it.</p>
+    ///   - [`deployment_config_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::deployment_config_name) / [`set_deployment_config_name(Option<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_deployment_config_name): <p>The replacement deployment configuration name to use, if you want to change it.</p>
+    ///   - [`ec2_tag_filters(Vec<Ec2TagFilter>)`](crate::client::fluent_builders::UpdateDeploymentGroup::ec2_tag_filters) / [`set_ec2_tag_filters(Option<Vec<Ec2TagFilter>>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_ec2_tag_filters): <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
+    ///   - [`on_premises_instance_tag_filters(Vec<TagFilter>)`](crate::client::fluent_builders::UpdateDeploymentGroup::on_premises_instance_tag_filters) / [`set_on_premises_instance_tag_filters(Option<Vec<TagFilter>>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_on_premises_instance_tag_filters): <p>The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
+    ///   - [`auto_scaling_groups(Vec<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::auto_scaling_groups) / [`set_auto_scaling_groups(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_auto_scaling_groups): <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling group names.</p>
+    ///   - [`service_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::service_role_arn) / [`set_service_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_service_role_arn): <p>A replacement ARN for the service role, if you want to change it.</p>
+    ///   - [`trigger_configurations(Vec<TriggerConfig>)`](crate::client::fluent_builders::UpdateDeploymentGroup::trigger_configurations) / [`set_trigger_configurations(Option<Vec<TriggerConfig>>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_trigger_configurations): <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
+    ///   - [`alarm_configuration(AlarmConfiguration)`](crate::client::fluent_builders::UpdateDeploymentGroup::alarm_configuration) / [`set_alarm_configuration(Option<AlarmConfiguration>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_alarm_configuration): <p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>
+    ///   - [`auto_rollback_configuration(AutoRollbackConfiguration)`](crate::client::fluent_builders::UpdateDeploymentGroup::auto_rollback_configuration) / [`set_auto_rollback_configuration(Option<AutoRollbackConfiguration>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_auto_rollback_configuration): <p>Information for an automatic rollback configuration that is added or changed when a deployment group is updated.</p>
+    ///   - [`outdated_instances_strategy(OutdatedInstancesStrategy)`](crate::client::fluent_builders::UpdateDeploymentGroup::outdated_instances_strategy) / [`set_outdated_instances_strategy(Option<OutdatedInstancesStrategy>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_outdated_instances_strategy): <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>  <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>  <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
+    ///   - [`deployment_style(DeploymentStyle)`](crate::client::fluent_builders::UpdateDeploymentGroup::deployment_style) / [`set_deployment_style(Option<DeploymentStyle>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_deployment_style): <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
+    ///   - [`blue_green_deployment_configuration(BlueGreenDeploymentConfiguration)`](crate::client::fluent_builders::UpdateDeploymentGroup::blue_green_deployment_configuration) / [`set_blue_green_deployment_configuration(Option<BlueGreenDeploymentConfiguration>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_blue_green_deployment_configuration): <p>Information about blue/green deployment options for a deployment group.</p>
+    ///   - [`load_balancer_info(LoadBalancerInfo)`](crate::client::fluent_builders::UpdateDeploymentGroup::load_balancer_info) / [`set_load_balancer_info(Option<LoadBalancerInfo>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_load_balancer_info): <p>Information about the load balancer used in a deployment.</p>
+    ///   - [`ec2_tag_set(Ec2TagSet)`](crate::client::fluent_builders::UpdateDeploymentGroup::ec2_tag_set) / [`set_ec2_tag_set(Option<Ec2TagSet>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_ec2_tag_set): <p>Information about groups of tags applied to on-premises instances. The deployment group includes only EC2 instances identified by all the tag groups.</p>
+    ///   - [`ecs_services(Vec<EcsService>)`](crate::client::fluent_builders::UpdateDeploymentGroup::ecs_services) / [`set_ecs_services(Option<Vec<EcsService>>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_ecs_services): <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>   <clustername>    :    <servicename></servicename>   </clustername></code>. </p>
+    ///   - [`on_premises_tag_set(OnPremisesTagSet)`](crate::client::fluent_builders::UpdateDeploymentGroup::on_premises_tag_set) / [`set_on_premises_tag_set(Option<OnPremisesTagSet>)`](crate::client::fluent_builders::UpdateDeploymentGroup::set_on_premises_tag_set): <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
+    /// - On success, responds with [`UpdateDeploymentGroupOutput`](crate::output::UpdateDeploymentGroupOutput) with field(s):
+    ///   - [`hooks_not_cleaned_up(Option<Vec<AutoScalingGroup>>)`](crate::output::UpdateDeploymentGroupOutput::hooks_not_cleaned_up): <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
+    /// - On failure, responds with [`SdkError<UpdateDeploymentGroupError>`](crate::error::UpdateDeploymentGroupError)
     pub fn update_deployment_group(&self) -> fluent_builders::UpdateDeploymentGroup<C, M, R> {
         fluent_builders::UpdateDeploymentGroup::new(self.handle.clone())
     }

@@ -145,12 +145,12 @@ impl PublishMetricsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>The key-value tag pairs associated to your environment. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
+    /// <p>The key-value tag pairs associated to your environment. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>The key-value tag pairs associated to your environment. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
+    /// <p>The key-value tag pairs associated to your environment. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -180,7 +180,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value tag pairs associated to your environment. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
+        /// <p>The key-value tag pairs associated to your environment. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -191,7 +191,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The key-value tag pairs associated to your environment. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
+        /// <p>The key-value tag pairs associated to your environment. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -218,13 +218,13 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsOutput {
-    /// <p>Returns the list of Amazon MWAA environments.</p>
+    /// <p>Returns a list of Amazon MWAA environments.</p>
     pub environments: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Retrieves the next page of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentsOutput {
-    /// <p>Returns the list of Amazon MWAA environments.</p>
+    /// <p>Returns a list of Amazon MWAA environments.</p>
     pub fn environments(&self) -> std::option::Option<&[std::string::String]> {
         self.environments.as_deref()
     }
@@ -255,14 +255,14 @@ pub mod list_environments_output {
         ///
         /// To override the contents of this collection use [`set_environments`](Self::set_environments).
         ///
-        /// <p>Returns the list of Amazon MWAA environments.</p>
+        /// <p>Returns a list of Amazon MWAA environments.</p>
         pub fn environments(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.environments.unwrap_or_default();
             v.push(input.into());
             self.environments = Some(v);
             self
         }
-        /// <p>Returns the list of Amazon MWAA environments.</p>
+        /// <p>Returns a list of Amazon MWAA environments.</p>
         pub fn set_environments(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -387,17 +387,17 @@ impl DeleteEnvironmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebLoginTokenOutput {
-    /// <p>Create an Airflow Web UI login token response for the provided JWT token.</p>
+    /// <p>An Airflow web server login token.</p>
     pub web_token: std::option::Option<std::string::String>,
-    /// <p>Create an Airflow Web UI login token response for the provided webserver hostname.</p>
+    /// <p>The Airflow web server hostname for the environment.</p>
     pub web_server_hostname: std::option::Option<std::string::String>,
 }
 impl CreateWebLoginTokenOutput {
-    /// <p>Create an Airflow Web UI login token response for the provided JWT token.</p>
+    /// <p>An Airflow web server login token.</p>
     pub fn web_token(&self) -> std::option::Option<&str> {
         self.web_token.as_deref()
     }
-    /// <p>Create an Airflow Web UI login token response for the provided webserver hostname.</p>
+    /// <p>The Airflow web server hostname for the environment.</p>
     pub fn web_server_hostname(&self) -> std::option::Option<&str> {
         self.web_server_hostname.as_deref()
     }
@@ -420,22 +420,22 @@ pub mod create_web_login_token_output {
         pub(crate) web_server_hostname: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Create an Airflow Web UI login token response for the provided JWT token.</p>
+        /// <p>An Airflow web server login token.</p>
         pub fn web_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_token = Some(input.into());
             self
         }
-        /// <p>Create an Airflow Web UI login token response for the provided JWT token.</p>
+        /// <p>An Airflow web server login token.</p>
         pub fn set_web_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_token = input;
             self
         }
-        /// <p>Create an Airflow Web UI login token response for the provided webserver hostname.</p>
+        /// <p>The Airflow web server hostname for the environment.</p>
         pub fn web_server_hostname(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_server_hostname = Some(input.into());
             self
         }
-        /// <p>Create an Airflow Web UI login token response for the provided webserver hostname.</p>
+        /// <p>The Airflow web server hostname for the environment.</p>
         pub fn set_web_server_hostname(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -515,17 +515,17 @@ impl CreateEnvironmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCliTokenOutput {
-    /// <p>Create an Airflow CLI login token response for the provided JWT token.</p>
+    /// <p>An Airflow CLI login token.</p>
     pub cli_token: std::option::Option<std::string::String>,
-    /// <p>Create an Airflow CLI login token response for the provided webserver hostname.</p>
+    /// <p>The Airflow web server hostname for the environment.</p>
     pub web_server_hostname: std::option::Option<std::string::String>,
 }
 impl CreateCliTokenOutput {
-    /// <p>Create an Airflow CLI login token response for the provided JWT token.</p>
+    /// <p>An Airflow CLI login token.</p>
     pub fn cli_token(&self) -> std::option::Option<&str> {
         self.cli_token.as_deref()
     }
-    /// <p>Create an Airflow CLI login token response for the provided webserver hostname.</p>
+    /// <p>The Airflow web server hostname for the environment.</p>
     pub fn web_server_hostname(&self) -> std::option::Option<&str> {
         self.web_server_hostname.as_deref()
     }
@@ -548,22 +548,22 @@ pub mod create_cli_token_output {
         pub(crate) web_server_hostname: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Create an Airflow CLI login token response for the provided JWT token.</p>
+        /// <p>An Airflow CLI login token.</p>
         pub fn cli_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.cli_token = Some(input.into());
             self
         }
-        /// <p>Create an Airflow CLI login token response for the provided JWT token.</p>
+        /// <p>An Airflow CLI login token.</p>
         pub fn set_cli_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cli_token = input;
             self
         }
-        /// <p>Create an Airflow CLI login token response for the provided webserver hostname.</p>
+        /// <p>The Airflow web server hostname for the environment.</p>
         pub fn web_server_hostname(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_server_hostname = Some(input.into());
             self
         }
-        /// <p>Create an Airflow CLI login token response for the provided webserver hostname.</p>
+        /// <p>The Airflow web server hostname for the environment.</p>
         pub fn set_web_server_hostname(
             mut self,
             input: std::option::Option<std::string::String>,

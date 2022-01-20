@@ -83,24 +83,36 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `DeleteConnection` operation.
+    /// Constructs a fluent builder for the [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) operation.
     ///
-    /// See [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`connection_id(impl Into<String>)`](crate::client::fluent_builders::DeleteConnection::connection_id) / [`set_connection_id(Option<String>)`](crate::client::fluent_builders::DeleteConnection::set_connection_id): (undocumented)
+    /// - On success, responds with [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::error::DeleteConnectionError)
     pub fn delete_connection(&self) -> fluent_builders::DeleteConnection<C, M, R> {
         fluent_builders::DeleteConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConnection` operation.
+    /// Constructs a fluent builder for the [`GetConnection`](crate::client::fluent_builders::GetConnection) operation.
     ///
-    /// See [`GetConnection`](crate::client::fluent_builders::GetConnection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`connection_id(impl Into<String>)`](crate::client::fluent_builders::GetConnection::connection_id) / [`set_connection_id(Option<String>)`](crate::client::fluent_builders::GetConnection::set_connection_id): (undocumented)
+    /// - On success, responds with [`GetConnectionOutput`](crate::output::GetConnectionOutput) with field(s):
+    ///   - [`connected_at(Option<DateTime>)`](crate::output::GetConnectionOutput::connected_at): <p>The time in ISO 8601 format for when the connection was established.</p>
+    ///   - [`identity(Option<Identity>)`](crate::output::GetConnectionOutput::identity): (undocumented)
+    ///   - [`last_active_at(Option<DateTime>)`](crate::output::GetConnectionOutput::last_active_at): <p>The time in ISO 8601 format for when the connection was last active.</p>
+    /// - On failure, responds with [`SdkError<GetConnectionError>`](crate::error::GetConnectionError)
     pub fn get_connection(&self) -> fluent_builders::GetConnection<C, M, R> {
         fluent_builders::GetConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PostToConnection` operation.
+    /// Constructs a fluent builder for the [`PostToConnection`](crate::client::fluent_builders::PostToConnection) operation.
     ///
-    /// See [`PostToConnection`](crate::client::fluent_builders::PostToConnection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`data(Blob)`](crate::client::fluent_builders::PostToConnection::data) / [`set_data(Option<Blob>)`](crate::client::fluent_builders::PostToConnection::set_data): <p>The data to be sent to the client specified by its connection id.</p>
+    ///   - [`connection_id(impl Into<String>)`](crate::client::fluent_builders::PostToConnection::connection_id) / [`set_connection_id(Option<String>)`](crate::client::fluent_builders::PostToConnection::set_connection_id): <p>The identifier of the connection that a specific client is using.</p>
+    /// - On success, responds with [`PostToConnectionOutput`](crate::output::PostToConnectionOutput)
+
+    /// - On failure, responds with [`SdkError<PostToConnectionError>`](crate::error::PostToConnectionError)
     pub fn post_to_connection(&self) -> fluent_builders::PostToConnection<C, M, R> {
         fluent_builders::PostToConnection::new(self.handle.clone())
     }

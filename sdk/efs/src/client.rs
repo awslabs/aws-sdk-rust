@@ -83,208 +83,391 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateAccessPoint` operation.
+    /// Constructs a fluent builder for the [`CreateAccessPoint`](crate::client::fluent_builders::CreateAccessPoint) operation.
     ///
-    /// See [`CreateAccessPoint`](crate::client::fluent_builders::CreateAccessPoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPoint::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAccessPoint::set_client_token): <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAccessPoint::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAccessPoint::set_tags): <p>Creates tags associated with the access point. Each tag is a key-value pair, each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPoint::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::CreateAccessPoint::set_file_system_id): <p>The ID of the EFS file system that the access point provides access to.</p>
+    ///   - [`posix_user(PosixUser)`](crate::client::fluent_builders::CreateAccessPoint::posix_user) / [`set_posix_user(Option<PosixUser>)`](crate::client::fluent_builders::CreateAccessPoint::set_posix_user): <p>The operating system user and group applied to all file system requests made using the access point.</p>
+    ///   - [`root_directory(RootDirectory)`](crate::client::fluent_builders::CreateAccessPoint::root_directory) / [`set_root_directory(Option<RootDirectory>)`](crate::client::fluent_builders::CreateAccessPoint::set_root_directory): <p>Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory of your file system to NFS clients using the access point. The clients using the access point can only access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the <code>CreationInfo</code>.</p>  <p>Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the root directory does not exist, attempts to mount using the access point will fail.</p>
+    /// - On success, responds with [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::output::CreateAccessPointOutput::client_token): <p>The opaque string specified in the request to ensure idempotent creation.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateAccessPointOutput::name): <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateAccessPointOutput::tags): <p>The tags associated with the access point, presented as an array of Tag objects.</p>
+    ///   - [`access_point_id(Option<String>)`](crate::output::CreateAccessPointOutput::access_point_id): <p>The ID of the access point, assigned by Amazon EFS.</p>
+    ///   - [`access_point_arn(Option<String>)`](crate::output::CreateAccessPointOutput::access_point_arn): <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
+    ///   - [`file_system_id(Option<String>)`](crate::output::CreateAccessPointOutput::file_system_id): <p>The ID of the EFS file system that the access point applies to.</p>
+    ///   - [`posix_user(Option<PosixUser>)`](crate::output::CreateAccessPointOutput::posix_user): <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
+    ///   - [`root_directory(Option<RootDirectory>)`](crate::output::CreateAccessPointOutput::root_directory): <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
+    ///   - [`owner_id(Option<String>)`](crate::output::CreateAccessPointOutput::owner_id): <p>Identified the Amazon Web Services account that owns the access point resource.</p>
+    ///   - [`life_cycle_state(Option<LifeCycleState>)`](crate::output::CreateAccessPointOutput::life_cycle_state): <p>Identifies the lifecycle phase of the access point.</p>
+    /// - On failure, responds with [`SdkError<CreateAccessPointError>`](crate::error::CreateAccessPointError)
     pub fn create_access_point(&self) -> fluent_builders::CreateAccessPoint<C, M, R> {
         fluent_builders::CreateAccessPoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFileSystem` operation.
+    /// Constructs a fluent builder for the [`CreateFileSystem`](crate::client::fluent_builders::CreateFileSystem) operation.
     ///
-    /// See [`CreateFileSystem`](crate::client::fluent_builders::CreateFileSystem) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`creation_token(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystem::creation_token) / [`set_creation_token(Option<String>)`](crate::client::fluent_builders::CreateFileSystem::set_creation_token): <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
+    ///   - [`performance_mode(PerformanceMode)`](crate::client::fluent_builders::CreateFileSystem::performance_mode) / [`set_performance_mode(Option<PerformanceMode>)`](crate::client::fluent_builders::CreateFileSystem::set_performance_mode): <p>The performance mode of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created.</p> <note>   <p>The <code>maxIO</code> mode is not supported on file systems using One Zone storage classes.</p>  </note>
+    ///   - [`encrypted(bool)`](crate::client::fluent_builders::CreateFileSystem::encrypted) / [`set_encrypted(Option<bool>)`](crate::client::fluent_builders::CreateFileSystem::set_encrypted): <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying <code>CreateFileSystemRequest$KmsKeyId</code> for an existing Key Management Service (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystem::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateFileSystem::set_kms_key_id): <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>  <ul>   <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>   <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>   <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>   <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>  </ul>  <p>If <code>KmsKeyId</code> is specified, the <code>CreateFileSystemRequest$Encrypted</code> parameter must be set to true.</p> <important>   <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.</p>  </important>
+    ///   - [`throughput_mode(ThroughputMode)`](crate::client::fluent_builders::CreateFileSystem::throughput_mode) / [`set_throughput_mode(Option<ThroughputMode>)`](crate::client::fluent_builders::CreateFileSystem::set_throughput_mode): <p>Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>  <p>Default is <code>bursting</code>.</p>
+    ///   - [`provisioned_throughput_in_mibps(f64)`](crate::client::fluent_builders::CreateFileSystem::provisioned_throughput_in_mibps) / [`set_provisioned_throughput_in_mibps(Option<f64>)`](crate::client::fluent_builders::CreateFileSystem::set_provisioned_throughput_in_mibps): <p>The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
+    ///   - [`availability_zone_name(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystem::availability_zone_name) / [`set_availability_zone_name(Option<String>)`](crate::client::fluent_builders::CreateFileSystem::set_availability_zone_name): <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services Availability Zone in which to create the file system. Use the format <code>us-east-1a</code> to specify the Availability Zone. For more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> <note>   <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where Amazon EFS is available.</p>  </note>
+    ///   - [`backup(bool)`](crate::client::fluent_builders::CreateFileSystem::backup) / [`set_backup(Option<bool>)`](crate::client::fluent_builders::CreateFileSystem::set_backup): <p>Specifies whether automatic backups are enabled on the file system that you are creating. Set the value to <code>true</code> to enable automatic backups. If you are creating a file system that uses One Zone storage classes, automatic backups are enabled by default. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>   <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFileSystem::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFileSystem::set_tags): <p>Use to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    /// - On success, responds with [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput) with field(s):
+    ///   - [`owner_id(Option<String>)`](crate::output::CreateFileSystemOutput::owner_id): <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
+    ///   - [`creation_token(Option<String>)`](crate::output::CreateFileSystemOutput::creation_token): <p>The opaque string specified in the request.</p>
+    ///   - [`file_system_id(Option<String>)`](crate::output::CreateFileSystemOutput::file_system_id): <p>The ID of the file system, assigned by Amazon EFS.</p>
+    ///   - [`file_system_arn(Option<String>)`](crate::output::CreateFileSystemOutput::file_system_arn): <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateFileSystemOutput::creation_time): <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
+    ///   - [`life_cycle_state(Option<LifeCycleState>)`](crate::output::CreateFileSystemOutput::life_cycle_state): <p>The lifecycle phase of the file system.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateFileSystemOutput::name): <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
+    ///   - [`number_of_mount_targets(i32)`](crate::output::CreateFileSystemOutput::number_of_mount_targets): <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
+    ///   - [`size_in_bytes(Option<FileSystemSize>)`](crate::output::CreateFileSystemOutput::size_in_bytes): <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
+    ///   - [`performance_mode(Option<PerformanceMode>)`](crate::output::CreateFileSystemOutput::performance_mode): <p>The performance mode of the file system.</p>
+    ///   - [`encrypted(Option<bool>)`](crate::output::CreateFileSystemOutput::encrypted): <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::CreateFileSystemOutput::kms_key_id): <p>The ID of an Key Management Service customer master key (CMK) that was used to protect the encrypted file system.</p>
+    ///   - [`throughput_mode(Option<ThroughputMode>)`](crate::output::CreateFileSystemOutput::throughput_mode): <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
+    ///   - [`provisioned_throughput_in_mibps(Option<f64>)`](crate::output::CreateFileSystemOutput::provisioned_throughput_in_mibps): <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
+    ///   - [`availability_zone_name(Option<String>)`](crate::output::CreateFileSystemOutput::availability_zone_name): <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+    ///   - [`availability_zone_id(Option<String>)`](crate::output::CreateFileSystemOutput::availability_zone_id): <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateFileSystemOutput::tags): <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
+    /// - On failure, responds with [`SdkError<CreateFileSystemError>`](crate::error::CreateFileSystemError)
     pub fn create_file_system(&self) -> fluent_builders::CreateFileSystem<C, M, R> {
         fluent_builders::CreateFileSystem::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMountTarget` operation.
+    /// Constructs a fluent builder for the [`CreateMountTarget`](crate::client::fluent_builders::CreateMountTarget) operation.
     ///
-    /// See [`CreateMountTarget`](crate::client::fluent_builders::CreateMountTarget) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::CreateMountTarget::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::CreateMountTarget::set_file_system_id): <p>The ID of the file system for which to create the mount target.</p>
+    ///   - [`subnet_id(impl Into<String>)`](crate::client::fluent_builders::CreateMountTarget::subnet_id) / [`set_subnet_id(Option<String>)`](crate::client::fluent_builders::CreateMountTarget::set_subnet_id): <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
+    ///   - [`ip_address(impl Into<String>)`](crate::client::fluent_builders::CreateMountTarget::ip_address) / [`set_ip_address(Option<String>)`](crate::client::fluent_builders::CreateMountTarget::set_ip_address): <p>Valid IPv4 address within the address range of the specified subnet.</p>
+    ///   - [`security_groups(Vec<String>)`](crate::client::fluent_builders::CreateMountTarget::security_groups) / [`set_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateMountTarget::set_security_groups): <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>
+    /// - On success, responds with [`CreateMountTargetOutput`](crate::output::CreateMountTargetOutput) with field(s):
+    ///   - [`owner_id(Option<String>)`](crate::output::CreateMountTargetOutput::owner_id): <p>Amazon Web Services account ID that owns the resource.</p>
+    ///   - [`mount_target_id(Option<String>)`](crate::output::CreateMountTargetOutput::mount_target_id): <p>System-assigned mount target ID.</p>
+    ///   - [`file_system_id(Option<String>)`](crate::output::CreateMountTargetOutput::file_system_id): <p>The ID of the file system for which the mount target is intended.</p>
+    ///   - [`subnet_id(Option<String>)`](crate::output::CreateMountTargetOutput::subnet_id): <p>The ID of the mount target's subnet.</p>
+    ///   - [`life_cycle_state(Option<LifeCycleState>)`](crate::output::CreateMountTargetOutput::life_cycle_state): <p>Lifecycle state of the mount target.</p>
+    ///   - [`ip_address(Option<String>)`](crate::output::CreateMountTargetOutput::ip_address): <p>Address at which the file system can be mounted by using the mount target.</p>
+    ///   - [`network_interface_id(Option<String>)`](crate::output::CreateMountTargetOutput::network_interface_id): <p>The ID of the network interface that Amazon EFS created when it created the mount target.</p>
+    ///   - [`availability_zone_id(Option<String>)`](crate::output::CreateMountTargetOutput::availability_zone_id): <p>The unique and consistent identifier of the Availability Zone that the mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
+    ///   - [`availability_zone_name(Option<String>)`](crate::output::CreateMountTargetOutput::availability_zone_name): <p>The name of the Availability Zone in which the mount target is located. Availability Zones are independently mapped to names for each Amazon Web Services account. For example, the Availability Zone <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
+    ///   - [`vpc_id(Option<String>)`](crate::output::CreateMountTargetOutput::vpc_id): <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
+    /// - On failure, responds with [`SdkError<CreateMountTargetError>`](crate::error::CreateMountTargetError)
     pub fn create_mount_target(&self) -> fluent_builders::CreateMountTarget<C, M, R> {
         fluent_builders::CreateMountTarget::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTags` operation.
+    /// Constructs a fluent builder for the [`CreateTags`](crate::client::fluent_builders::CreateTags) operation.
     ///
-    /// See [`CreateTags`](crate::client::fluent_builders::CreateTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::CreateTags::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::CreateTags::set_file_system_id): <p>The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTags::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTags::set_tags): <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p>
+    /// - On success, responds with [`CreateTagsOutput`](crate::output::CreateTagsOutput)
+
+    /// - On failure, responds with [`SdkError<CreateTagsError>`](crate::error::CreateTagsError)
     pub fn create_tags(&self) -> fluent_builders::CreateTags<C, M, R> {
         fluent_builders::CreateTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAccessPoint` operation.
+    /// Constructs a fluent builder for the [`DeleteAccessPoint`](crate::client::fluent_builders::DeleteAccessPoint) operation.
     ///
-    /// See [`DeleteAccessPoint`](crate::client::fluent_builders::DeleteAccessPoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`access_point_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPoint::access_point_id) / [`set_access_point_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessPoint::set_access_point_id): <p>The ID of the access point that you want to delete.</p>
+    /// - On success, responds with [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAccessPointError>`](crate::error::DeleteAccessPointError)
     pub fn delete_access_point(&self) -> fluent_builders::DeleteAccessPoint<C, M, R> {
         fluent_builders::DeleteAccessPoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFileSystem` operation.
+    /// Constructs a fluent builder for the [`DeleteFileSystem`](crate::client::fluent_builders::DeleteFileSystem) operation.
     ///
-    /// See [`DeleteFileSystem`](crate::client::fluent_builders::DeleteFileSystem) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFileSystem::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DeleteFileSystem::set_file_system_id): <p>The ID of the file system you want to delete.</p>
+    /// - On success, responds with [`DeleteFileSystemOutput`](crate::output::DeleteFileSystemOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFileSystemError>`](crate::error::DeleteFileSystemError)
     pub fn delete_file_system(&self) -> fluent_builders::DeleteFileSystem<C, M, R> {
         fluent_builders::DeleteFileSystem::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFileSystemPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteFileSystemPolicy`](crate::client::fluent_builders::DeleteFileSystemPolicy) operation.
     ///
-    /// See [`DeleteFileSystemPolicy`](crate::client::fluent_builders::DeleteFileSystemPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFileSystemPolicy::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DeleteFileSystemPolicy::set_file_system_id): <p>Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.</p>
+    /// - On success, responds with [`DeleteFileSystemPolicyOutput`](crate::output::DeleteFileSystemPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFileSystemPolicyError>`](crate::error::DeleteFileSystemPolicyError)
     pub fn delete_file_system_policy(&self) -> fluent_builders::DeleteFileSystemPolicy<C, M, R> {
         fluent_builders::DeleteFileSystemPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMountTarget` operation.
+    /// Constructs a fluent builder for the [`DeleteMountTarget`](crate::client::fluent_builders::DeleteMountTarget) operation.
     ///
-    /// See [`DeleteMountTarget`](crate::client::fluent_builders::DeleteMountTarget) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`mount_target_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMountTarget::mount_target_id) / [`set_mount_target_id(Option<String>)`](crate::client::fluent_builders::DeleteMountTarget::set_mount_target_id): <p>The ID of the mount target to delete (String).</p>
+    /// - On success, responds with [`DeleteMountTargetOutput`](crate::output::DeleteMountTargetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteMountTargetError>`](crate::error::DeleteMountTargetError)
     pub fn delete_mount_target(&self) -> fluent_builders::DeleteMountTarget<C, M, R> {
         fluent_builders::DeleteMountTarget::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTags` operation.
+    /// Constructs a fluent builder for the [`DeleteTags`](crate::client::fluent_builders::DeleteTags) operation.
     ///
-    /// See [`DeleteTags`](crate::client::fluent_builders::DeleteTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTags::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DeleteTags::set_file_system_id): <p>The ID of the file system whose tags you want to delete (String).</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::DeleteTags::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteTags::set_tag_keys): <p>A list of tag keys to delete.</p>
+    /// - On success, responds with [`DeleteTagsOutput`](crate::output::DeleteTagsOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::error::DeleteTagsError)
     pub fn delete_tags(&self) -> fluent_builders::DeleteTags<C, M, R> {
         fluent_builders::DeleteTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAccessPoints` operation.
+    /// Constructs a fluent builder for the [`DescribeAccessPoints`](crate::client::fluent_builders::DescribeAccessPoints) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeAccessPoints::into_paginator).
     ///
-    /// See [`DescribeAccessPoints`](crate::client::fluent_builders::DescribeAccessPoints) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAccessPoints::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeAccessPoints::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeAccessPoints::set_max_results): <p>(Optional) When retrieving all access points for a file system, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeAccessPoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeAccessPoints::set_next_token): <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in the subsequent request to fetch the next page of access point descriptions.</p>
+    ///   - [`access_point_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccessPoints::access_point_id) / [`set_access_point_id(Option<String>)`](crate::client::fluent_builders::DescribeAccessPoints::set_access_point_id): <p>(Optional) Specifies an EFS access point to describe in the response; mutually exclusive with <code>FileSystemId</code>.</p>
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccessPoints::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DescribeAccessPoints::set_file_system_id): <p>(Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points for that file system; mutually exclusive with <code>AccessPointId</code>.</p>
+    /// - On success, responds with [`DescribeAccessPointsOutput`](crate::output::DescribeAccessPointsOutput) with field(s):
+    ///   - [`access_points(Option<Vec<AccessPointDescription>>)`](crate::output::DescribeAccessPointsOutput::access_points): <p>An array of access point descriptions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAccessPointsOutput::next_token): <p>Present if there are more access points than returned in the response. You can use the NextMarker in the subsequent request to fetch the additional descriptions.</p>
+    /// - On failure, responds with [`SdkError<DescribeAccessPointsError>`](crate::error::DescribeAccessPointsError)
     pub fn describe_access_points(&self) -> fluent_builders::DescribeAccessPoints<C, M, R> {
         fluent_builders::DescribeAccessPoints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAccountPreferences` operation.
+    /// Constructs a fluent builder for the [`DescribeAccountPreferences`](crate::client::fluent_builders::DescribeAccountPreferences) operation.
     ///
-    /// See [`DescribeAccountPreferences`](crate::client::fluent_builders::DescribeAccountPreferences) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountPreferences::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeAccountPreferences::set_next_token): <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of Amazon Web Services account preferences if the response payload was paginated.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeAccountPreferences::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeAccountPreferences::set_max_results): <p>(Optional) When retrieving account preferences, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+    /// - On success, responds with [`DescribeAccountPreferencesOutput`](crate::output::DescribeAccountPreferencesOutput) with field(s):
+    ///   - [`resource_id_preference(Option<ResourceIdPreference>)`](crate::output::DescribeAccountPreferencesOutput::resource_id_preference): <p>Describes the resource ID preference setting for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAccountPreferencesOutput::next_token): <p>Present if there are more records than returned in the response. You can use the <code>NextToken</code> in the subsequent request to fetch the additional descriptions.</p>
+    /// - On failure, responds with [`SdkError<DescribeAccountPreferencesError>`](crate::error::DescribeAccountPreferencesError)
     pub fn describe_account_preferences(
         &self,
     ) -> fluent_builders::DescribeAccountPreferences<C, M, R> {
         fluent_builders::DescribeAccountPreferences::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeBackupPolicy` operation.
+    /// Constructs a fluent builder for the [`DescribeBackupPolicy`](crate::client::fluent_builders::DescribeBackupPolicy) operation.
     ///
-    /// See [`DescribeBackupPolicy`](crate::client::fluent_builders::DescribeBackupPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBackupPolicy::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DescribeBackupPolicy::set_file_system_id): <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
+    /// - On success, responds with [`DescribeBackupPolicyOutput`](crate::output::DescribeBackupPolicyOutput) with field(s):
+    ///   - [`backup_policy(Option<BackupPolicy>)`](crate::output::DescribeBackupPolicyOutput::backup_policy): <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off..</p>
+    /// - On failure, responds with [`SdkError<DescribeBackupPolicyError>`](crate::error::DescribeBackupPolicyError)
     pub fn describe_backup_policy(&self) -> fluent_builders::DescribeBackupPolicy<C, M, R> {
         fluent_builders::DescribeBackupPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFileSystemPolicy` operation.
+    /// Constructs a fluent builder for the [`DescribeFileSystemPolicy`](crate::client::fluent_builders::DescribeFileSystemPolicy) operation.
     ///
-    /// See [`DescribeFileSystemPolicy`](crate::client::fluent_builders::DescribeFileSystemPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFileSystemPolicy::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DescribeFileSystemPolicy::set_file_system_id): <p>Specifies which EFS file system to retrieve the <code>FileSystemPolicy</code> for.</p>
+    /// - On success, responds with [`DescribeFileSystemPolicyOutput`](crate::output::DescribeFileSystemPolicyOutput) with field(s):
+    ///   - [`file_system_id(Option<String>)`](crate::output::DescribeFileSystemPolicyOutput::file_system_id): <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
+    ///   - [`policy(Option<String>)`](crate::output::DescribeFileSystemPolicyOutput::policy): <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
+    /// - On failure, responds with [`SdkError<DescribeFileSystemPolicyError>`](crate::error::DescribeFileSystemPolicyError)
     pub fn describe_file_system_policy(
         &self,
     ) -> fluent_builders::DescribeFileSystemPolicy<C, M, R> {
         fluent_builders::DescribeFileSystemPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFileSystems` operation.
+    /// Constructs a fluent builder for the [`DescribeFileSystems`](crate::client::fluent_builders::DescribeFileSystems) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFileSystems::into_paginator).
     ///
-    /// See [`DescribeFileSystems`](crate::client::fluent_builders::DescribeFileSystems) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFileSystems::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::DescribeFileSystems::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::DescribeFileSystems::set_max_items): <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems. </p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeFileSystems::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeFileSystems::set_marker): <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off. </p>
+    ///   - [`creation_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFileSystems::creation_token) / [`set_creation_token(Option<String>)`](crate::client::fluent_builders::DescribeFileSystems::set_creation_token): <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFileSystems::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DescribeFileSystems::set_file_system_id): <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
+    /// - On success, responds with [`DescribeFileSystemsOutput`](crate::output::DescribeFileSystemsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeFileSystemsOutput::marker): <p>Present if provided by caller in the request (String).</p>
+    ///   - [`file_systems(Option<Vec<FileSystemDescription>>)`](crate::output::DescribeFileSystemsOutput::file_systems): <p>An array of file system descriptions.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::DescribeFileSystemsOutput::next_marker): <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.</p>
+    /// - On failure, responds with [`SdkError<DescribeFileSystemsError>`](crate::error::DescribeFileSystemsError)
     pub fn describe_file_systems(&self) -> fluent_builders::DescribeFileSystems<C, M, R> {
         fluent_builders::DescribeFileSystems::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLifecycleConfiguration` operation.
+    /// Constructs a fluent builder for the [`DescribeLifecycleConfiguration`](crate::client::fluent_builders::DescribeLifecycleConfiguration) operation.
     ///
-    /// See [`DescribeLifecycleConfiguration`](crate::client::fluent_builders::DescribeLifecycleConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DescribeLifecycleConfiguration::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DescribeLifecycleConfiguration::set_file_system_id): <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
+    /// - On success, responds with [`DescribeLifecycleConfigurationOutput`](crate::output::DescribeLifecycleConfigurationOutput) with field(s):
+    ///   - [`lifecycle_policies(Option<Vec<LifecyclePolicy>>)`](crate::output::DescribeLifecycleConfigurationOutput::lifecycle_policies): <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
+    /// - On failure, responds with [`SdkError<DescribeLifecycleConfigurationError>`](crate::error::DescribeLifecycleConfigurationError)
     pub fn describe_lifecycle_configuration(
         &self,
     ) -> fluent_builders::DescribeLifecycleConfiguration<C, M, R> {
         fluent_builders::DescribeLifecycleConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMountTargets` operation.
+    /// Constructs a fluent builder for the [`DescribeMountTargets`](crate::client::fluent_builders::DescribeMountTargets) operation.
     ///
-    /// See [`DescribeMountTargets`](crate::client::fluent_builders::DescribeMountTargets) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::DescribeMountTargets::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::DescribeMountTargets::set_max_items): <p>(Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeMountTargets::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeMountTargets::set_marker): <p>(Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.</p>
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DescribeMountTargets::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DescribeMountTargets::set_file_system_id): <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
+    ///   - [`mount_target_id(impl Into<String>)`](crate::client::fluent_builders::DescribeMountTargets::mount_target_id) / [`set_mount_target_id(Option<String>)`](crate::client::fluent_builders::DescribeMountTargets::set_mount_target_id): <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
+    ///   - [`access_point_id(impl Into<String>)`](crate::client::fluent_builders::DescribeMountTargets::access_point_id) / [`set_access_point_id(Option<String>)`](crate::client::fluent_builders::DescribeMountTargets::set_access_point_id): <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
+    /// - On success, responds with [`DescribeMountTargetsOutput`](crate::output::DescribeMountTargetsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeMountTargetsOutput::marker): <p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>
+    ///   - [`mount_targets(Option<Vec<MountTargetDescription>>)`](crate::output::DescribeMountTargetsOutput::mount_targets): <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::DescribeMountTargetsOutput::next_marker): <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
+    /// - On failure, responds with [`SdkError<DescribeMountTargetsError>`](crate::error::DescribeMountTargetsError)
     pub fn describe_mount_targets(&self) -> fluent_builders::DescribeMountTargets<C, M, R> {
         fluent_builders::DescribeMountTargets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMountTargetSecurityGroups` operation.
+    /// Constructs a fluent builder for the [`DescribeMountTargetSecurityGroups`](crate::client::fluent_builders::DescribeMountTargetSecurityGroups) operation.
     ///
-    /// See [`DescribeMountTargetSecurityGroups`](crate::client::fluent_builders::DescribeMountTargetSecurityGroups) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`mount_target_id(impl Into<String>)`](crate::client::fluent_builders::DescribeMountTargetSecurityGroups::mount_target_id) / [`set_mount_target_id(Option<String>)`](crate::client::fluent_builders::DescribeMountTargetSecurityGroups::set_mount_target_id): <p>The ID of the mount target whose security groups you want to retrieve.</p>
+    /// - On success, responds with [`DescribeMountTargetSecurityGroupsOutput`](crate::output::DescribeMountTargetSecurityGroupsOutput) with field(s):
+    ///   - [`security_groups(Option<Vec<String>>)`](crate::output::DescribeMountTargetSecurityGroupsOutput::security_groups): <p>An array of security groups.</p>
+    /// - On failure, responds with [`SdkError<DescribeMountTargetSecurityGroupsError>`](crate::error::DescribeMountTargetSecurityGroupsError)
     pub fn describe_mount_target_security_groups(
         &self,
     ) -> fluent_builders::DescribeMountTargetSecurityGroups<C, M, R> {
         fluent_builders::DescribeMountTargetSecurityGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTags` operation.
+    /// Constructs a fluent builder for the [`DescribeTags`](crate::client::fluent_builders::DescribeTags) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeTags::into_paginator).
     ///
-    /// See [`DescribeTags`](crate::client::fluent_builders::DescribeTags) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeTags::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::DescribeTags::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::DescribeTags::set_max_items): <p>(Optional) The maximum number of file system tags to return in the response. Currently, this number is automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have more than 100 tags.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeTags::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeTags::set_marker): <p>(Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.</p>
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTags::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DescribeTags::set_file_system_id): <p>The ID of the file system whose tag set you want to retrieve.</p>
+    /// - On success, responds with [`DescribeTagsOutput`](crate::output::DescribeTagsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeTagsOutput::marker): <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::DescribeTagsOutput::tags): <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
+    ///   - [`next_marker(Option<String>)`](crate::output::DescribeTagsOutput::next_marker): <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
+    /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::error::DescribeTagsError)
     pub fn describe_tags(&self) -> fluent_builders::DescribeTags<C, M, R> {
         fluent_builders::DescribeTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_id): <p>Specifies the EFS resource you want to retrieve tags for. You can retrieve tags for EFS file systems and access points using this API endpoint.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTagsForResource::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTagsForResource::set_max_results): <p>(Optional) Specifies the maximum number of tag objects to return in the response. The default value is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions if the response payload was paginated.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>An array of the tags for the specified EFS resource.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p> <code>NextToken</code> is present if the response payload is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyMountTargetSecurityGroups` operation.
+    /// Constructs a fluent builder for the [`ModifyMountTargetSecurityGroups`](crate::client::fluent_builders::ModifyMountTargetSecurityGroups) operation.
     ///
-    /// See [`ModifyMountTargetSecurityGroups`](crate::client::fluent_builders::ModifyMountTargetSecurityGroups) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`mount_target_id(impl Into<String>)`](crate::client::fluent_builders::ModifyMountTargetSecurityGroups::mount_target_id) / [`set_mount_target_id(Option<String>)`](crate::client::fluent_builders::ModifyMountTargetSecurityGroups::set_mount_target_id): <p>The ID of the mount target whose security groups you want to modify.</p>
+    ///   - [`security_groups(Vec<String>)`](crate::client::fluent_builders::ModifyMountTargetSecurityGroups::security_groups) / [`set_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyMountTargetSecurityGroups::set_security_groups): <p>An array of up to five VPC security group IDs.</p>
+    /// - On success, responds with [`ModifyMountTargetSecurityGroupsOutput`](crate::output::ModifyMountTargetSecurityGroupsOutput)
+
+    /// - On failure, responds with [`SdkError<ModifyMountTargetSecurityGroupsError>`](crate::error::ModifyMountTargetSecurityGroupsError)
     pub fn modify_mount_target_security_groups(
         &self,
     ) -> fluent_builders::ModifyMountTargetSecurityGroups<C, M, R> {
         fluent_builders::ModifyMountTargetSecurityGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutAccountPreferences` operation.
+    /// Constructs a fluent builder for the [`PutAccountPreferences`](crate::client::fluent_builders::PutAccountPreferences) operation.
     ///
-    /// See [`PutAccountPreferences`](crate::client::fluent_builders::PutAccountPreferences) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id_type(ResourceIdType)`](crate::client::fluent_builders::PutAccountPreferences::resource_id_type) / [`set_resource_id_type(Option<ResourceIdType>)`](crate::client::fluent_builders::PutAccountPreferences::set_resource_id_type): <p>Specifies the EFS resource ID preference to set for the user's Amazon Web Services account, in the current Amazon Web Services Region, either <code>LONG_ID</code> (17 characters), or <code>SHORT_ID</code> (8 characters).</p> <note>   <p>Starting in October, 2021, you will receive an error when setting the account preference to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error and need to use short IDs for file system and mount target resources.</p>  </note>
+    /// - On success, responds with [`PutAccountPreferencesOutput`](crate::output::PutAccountPreferencesOutput) with field(s):
+    ///   - [`resource_id_preference(Option<ResourceIdPreference>)`](crate::output::PutAccountPreferencesOutput::resource_id_preference): <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<PutAccountPreferencesError>`](crate::error::PutAccountPreferencesError)
     pub fn put_account_preferences(&self) -> fluent_builders::PutAccountPreferences<C, M, R> {
         fluent_builders::PutAccountPreferences::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutBackupPolicy` operation.
+    /// Constructs a fluent builder for the [`PutBackupPolicy`](crate::client::fluent_builders::PutBackupPolicy) operation.
     ///
-    /// See [`PutBackupPolicy`](crate::client::fluent_builders::PutBackupPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::PutBackupPolicy::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::PutBackupPolicy::set_file_system_id): <p>Specifies which EFS file system to update the backup policy for.</p>
+    ///   - [`backup_policy(BackupPolicy)`](crate::client::fluent_builders::PutBackupPolicy::backup_policy) / [`set_backup_policy(Option<BackupPolicy>)`](crate::client::fluent_builders::PutBackupPolicy::set_backup_policy): <p>The backup policy included in the <code>PutBackupPolicy</code> request.</p>
+    /// - On success, responds with [`PutBackupPolicyOutput`](crate::output::PutBackupPolicyOutput) with field(s):
+    ///   - [`backup_policy(Option<BackupPolicy>)`](crate::output::PutBackupPolicyOutput::backup_policy): <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off..</p>
+    /// - On failure, responds with [`SdkError<PutBackupPolicyError>`](crate::error::PutBackupPolicyError)
     pub fn put_backup_policy(&self) -> fluent_builders::PutBackupPolicy<C, M, R> {
         fluent_builders::PutBackupPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutFileSystemPolicy` operation.
+    /// Constructs a fluent builder for the [`PutFileSystemPolicy`](crate::client::fluent_builders::PutFileSystemPolicy) operation.
     ///
-    /// See [`PutFileSystemPolicy`](crate::client::fluent_builders::PutFileSystemPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::PutFileSystemPolicy::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::PutFileSystemPolicy::set_file_system_id): <p>The ID of the EFS file system that you want to create or update the <code>FileSystemPolicy</code> for.</p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutFileSystemPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutFileSystemPolicy::set_policy): <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS file system policies have a 20,000 character limit. To find out more about the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS Resource-based Policies</a>. </p>
+    ///   - [`bypass_policy_lockout_safety_check(bool)`](crate::client::fluent_builders::PutFileSystemPolicy::bypass_policy_lockout_safety_check) / [`set_bypass_policy_lockout_safety_check(bool)`](crate::client::fluent_builders::PutFileSystemPolicy::set_bypass_policy_lockout_safety_check): <p>(Optional) A flag to indicate whether to bypass the <code>FileSystemPolicy</code> lockout safety check. The policy lockout safety check determines whether the policy in the request will prevent the principal making the request will be locked out from making future <code>PutFileSystemPolicy</code> requests on the file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the principal that is making the request from making a subsequent <code>PutFileSystemPolicy</code> request on the file system. The default value is False. </p>
+    /// - On success, responds with [`PutFileSystemPolicyOutput`](crate::output::PutFileSystemPolicyOutput) with field(s):
+    ///   - [`file_system_id(Option<String>)`](crate::output::PutFileSystemPolicyOutput::file_system_id): <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
+    ///   - [`policy(Option<String>)`](crate::output::PutFileSystemPolicyOutput::policy): <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
+    /// - On failure, responds with [`SdkError<PutFileSystemPolicyError>`](crate::error::PutFileSystemPolicyError)
     pub fn put_file_system_policy(&self) -> fluent_builders::PutFileSystemPolicy<C, M, R> {
         fluent_builders::PutFileSystemPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutLifecycleConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutLifecycleConfiguration`](crate::client::fluent_builders::PutLifecycleConfiguration) operation.
     ///
-    /// See [`PutLifecycleConfiguration`](crate::client::fluent_builders::PutLifecycleConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::PutLifecycleConfiguration::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::PutLifecycleConfiguration::set_file_system_id): <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
+    ///   - [`lifecycle_policies(Vec<LifecyclePolicy>)`](crate::client::fluent_builders::PutLifecycleConfiguration::lifecycle_policies) / [`set_lifecycle_policies(Option<Vec<LifecyclePolicy>>)`](crate::client::fluent_builders::PutLifecycleConfiguration::set_lifecycle_policies): <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and intelligent tiering of the following:</p>  <ul>   <li> <p>When to move files in the file system from primary storage to the IA storage class.</p> </li>   <li> <p>When to move files that are in IA storage to primary storage.</p> </li>  </ul> <note>   <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>  </note>
+    /// - On success, responds with [`PutLifecycleConfigurationOutput`](crate::output::PutLifecycleConfigurationOutput) with field(s):
+    ///   - [`lifecycle_policies(Option<Vec<LifecyclePolicy>>)`](crate::output::PutLifecycleConfigurationOutput::lifecycle_policies): <p>An array of lifecycle management policies. EFS supports a maximum of one policy per file system.</p>
+    /// - On failure, responds with [`SdkError<PutLifecycleConfigurationError>`](crate::error::PutLifecycleConfigurationError)
     pub fn put_lifecycle_configuration(
         &self,
     ) -> fluent_builders::PutLifecycleConfiguration<C, M, R> {
         fluent_builders::PutLifecycleConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_id): <p>The ID specifying the EFS resource that you want to create a tag for.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_id): <p>Specifies the EFS resource that you want to remove tags from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys of the key-value tag pairs that you want to remove from the specified EFS resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFileSystem` operation.
+    /// Constructs a fluent builder for the [`UpdateFileSystem`](crate::client::fluent_builders::UpdateFileSystem) operation.
     ///
-    /// See [`UpdateFileSystem`](crate::client::fluent_builders::UpdateFileSystem) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFileSystem::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::UpdateFileSystem::set_file_system_id): <p>The ID of the file system that you want to update.</p>
+    ///   - [`throughput_mode(ThroughputMode)`](crate::client::fluent_builders::UpdateFileSystem::throughput_mode) / [`set_throughput_mode(Option<ThroughputMode>)`](crate::client::fluent_builders::UpdateFileSystem::set_throughput_mode): <p>(Optional) Updates the file system's throughput mode. If you're not updating your throughput mode, you don't need to provide this value in your request. If you are changing the <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>.</p>
+    ///   - [`provisioned_throughput_in_mibps(f64)`](crate::client::fluent_builders::UpdateFileSystem::provisioned_throughput_in_mibps) / [`set_provisioned_throughput_in_mibps(Option<f64>)`](crate::client::fluent_builders::UpdateFileSystem::set_provisioned_throughput_in_mibps): <p>(Optional) Sets the amount of provisioned throughput, in MiB/s, for the file system. Valid values are 1-1024. If you are changing the throughput mode to provisioned, you must also provide the amount of provisioned throughput. Required if <code>ThroughputMode</code> is changed to <code>provisioned</code> on update.</p>
+    /// - On success, responds with [`UpdateFileSystemOutput`](crate::output::UpdateFileSystemOutput) with field(s):
+    ///   - [`owner_id(Option<String>)`](crate::output::UpdateFileSystemOutput::owner_id): <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
+    ///   - [`creation_token(Option<String>)`](crate::output::UpdateFileSystemOutput::creation_token): <p>The opaque string specified in the request.</p>
+    ///   - [`file_system_id(Option<String>)`](crate::output::UpdateFileSystemOutput::file_system_id): <p>The ID of the file system, assigned by Amazon EFS.</p>
+    ///   - [`file_system_arn(Option<String>)`](crate::output::UpdateFileSystemOutput::file_system_arn): <p>The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i> </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code> </p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateFileSystemOutput::creation_time): <p>The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>
+    ///   - [`life_cycle_state(Option<LifeCycleState>)`](crate::output::UpdateFileSystemOutput::life_cycle_state): <p>The lifecycle phase of the file system.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateFileSystemOutput::name): <p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <code>CreateFileSystem</code>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
+    ///   - [`number_of_mount_targets(i32)`](crate::output::UpdateFileSystemOutput::number_of_mount_targets): <p>The current number of mount targets that the file system has. For more information, see <code>CreateMountTarget</code>.</p>
+    ///   - [`size_in_bytes(Option<FileSystemSize>)`](crate::output::UpdateFileSystemOutput::size_in_bytes): <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
+    ///   - [`performance_mode(Option<PerformanceMode>)`](crate::output::UpdateFileSystemOutput::performance_mode): <p>The performance mode of the file system.</p>
+    ///   - [`encrypted(Option<bool>)`](crate::output::UpdateFileSystemOutput::encrypted): <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::UpdateFileSystemOutput::kms_key_id): <p>The ID of an Key Management Service customer master key (CMK) that was used to protect the encrypted file system.</p>
+    ///   - [`throughput_mode(Option<ThroughputMode>)`](crate::output::UpdateFileSystemOutput::throughput_mode): <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
+    ///   - [`provisioned_throughput_in_mibps(Option<f64>)`](crate::output::UpdateFileSystemOutput::provisioned_throughput_in_mibps): <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
+    ///   - [`availability_zone_name(Option<String>)`](crate::output::UpdateFileSystemOutput::availability_zone_name): <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+    ///   - [`availability_zone_id(Option<String>)`](crate::output::UpdateFileSystemOutput::availability_zone_id): <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::UpdateFileSystemOutput::tags): <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
+    /// - On failure, responds with [`SdkError<UpdateFileSystemError>`](crate::error::UpdateFileSystemError)
     pub fn update_file_system(&self) -> fluent_builders::UpdateFileSystem<C, M, R> {
         fluent_builders::UpdateFileSystem::new(self.handle.clone())
     }

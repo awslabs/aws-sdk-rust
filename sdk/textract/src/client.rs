@@ -83,77 +83,157 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AnalyzeDocument` operation.
+    /// Constructs a fluent builder for the [`AnalyzeDocument`](crate::client::fluent_builders::AnalyzeDocument) operation.
     ///
-    /// See [`AnalyzeDocument`](crate::client::fluent_builders::AnalyzeDocument) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`document(Document)`](crate::client::fluent_builders::AnalyzeDocument::document) / [`set_document(Option<Document>)`](crate::client::fluent_builders::AnalyzeDocument::set_document): <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>  <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
+    ///   - [`feature_types(Vec<FeatureType>)`](crate::client::fluent_builders::AnalyzeDocument::feature_types) / [`set_feature_types(Option<Vec<FeatureType>>)`](crate::client::fluent_builders::AnalyzeDocument::set_feature_types): <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
+    ///   - [`human_loop_config(HumanLoopConfig)`](crate::client::fluent_builders::AnalyzeDocument::human_loop_config) / [`set_human_loop_config(Option<HumanLoopConfig>)`](crate::client::fluent_builders::AnalyzeDocument::set_human_loop_config): <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
+    /// - On success, responds with [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput) with field(s):
+    ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::output::AnalyzeDocumentOutput::document_metadata): <p>Metadata about the analyzed document. An example is the number of pages.</p>
+    ///   - [`blocks(Option<Vec<Block>>)`](crate::output::AnalyzeDocumentOutput::blocks): <p>The items that are detected and analyzed by <code>AnalyzeDocument</code>.</p>
+    ///   - [`human_loop_activation_output(Option<HumanLoopActivationOutput>)`](crate::output::AnalyzeDocumentOutput::human_loop_activation_output): <p>Shows the results of the human in the loop evaluation.</p>
+    ///   - [`analyze_document_model_version(Option<String>)`](crate::output::AnalyzeDocumentOutput::analyze_document_model_version): <p>The version of the model used to analyze the document.</p>
+    /// - On failure, responds with [`SdkError<AnalyzeDocumentError>`](crate::error::AnalyzeDocumentError)
     pub fn analyze_document(&self) -> fluent_builders::AnalyzeDocument<C, M, R> {
         fluent_builders::AnalyzeDocument::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AnalyzeExpense` operation.
+    /// Constructs a fluent builder for the [`AnalyzeExpense`](crate::client::fluent_builders::AnalyzeExpense) operation.
     ///
-    /// See [`AnalyzeExpense`](crate::client::fluent_builders::AnalyzeExpense) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`document(Document)`](crate::client::fluent_builders::AnalyzeExpense::document) / [`set_document(Option<Document>)`](crate::client::fluent_builders::AnalyzeExpense::set_document): <p>The input document, either as bytes or as an S3 object.</p>  <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. </p>  <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64 encoded.</p>  <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.</p>  <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p>  <p>For Amazon Textract to process an S3 object, the user must have permission to access the S3 object. </p>
+    /// - On success, responds with [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput) with field(s):
+    ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::output::AnalyzeExpenseOutput::document_metadata): <p>Information about the input document.</p>
+    ///   - [`expense_documents(Option<Vec<ExpenseDocument>>)`](crate::output::AnalyzeExpenseOutput::expense_documents): <p>The expenses detected by Amazon Textract.</p>
+    /// - On failure, responds with [`SdkError<AnalyzeExpenseError>`](crate::error::AnalyzeExpenseError)
     pub fn analyze_expense(&self) -> fluent_builders::AnalyzeExpense<C, M, R> {
         fluent_builders::AnalyzeExpense::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AnalyzeID` operation.
+    /// Constructs a fluent builder for the [`AnalyzeID`](crate::client::fluent_builders::AnalyzeID) operation.
     ///
-    /// See [`AnalyzeID`](crate::client::fluent_builders::AnalyzeID) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`document_pages(Vec<Document>)`](crate::client::fluent_builders::AnalyzeID::document_pages) / [`set_document_pages(Option<Vec<Document>>)`](crate::client::fluent_builders::AnalyzeID::set_document_pages): <p>The document being passed to AnalyzeID.</p>
+    /// - On success, responds with [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput) with field(s):
+    ///   - [`identity_documents(Option<Vec<IdentityDocument>>)`](crate::output::AnalyzeIdOutput::identity_documents): <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
+    ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::output::AnalyzeIdOutput::document_metadata): <p>Information about the input document.</p>
+    ///   - [`analyze_id_model_version(Option<String>)`](crate::output::AnalyzeIdOutput::analyze_id_model_version): <p>The version of the AnalyzeIdentity API being used to process documents.</p>
+    /// - On failure, responds with [`SdkError<AnalyzeIDError>`](crate::error::AnalyzeIDError)
     pub fn analyze_id(&self) -> fluent_builders::AnalyzeID<C, M, R> {
         fluent_builders::AnalyzeID::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetectDocumentText` operation.
+    /// Constructs a fluent builder for the [`DetectDocumentText`](crate::client::fluent_builders::DetectDocumentText) operation.
     ///
-    /// See [`DetectDocumentText`](crate::client::fluent_builders::DetectDocumentText) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`document(Document)`](crate::client::fluent_builders::DetectDocumentText::document) / [`set_document(Option<Document>)`](crate::client::fluent_builders::DetectDocumentText::set_document): <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>  <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
+    /// - On success, responds with [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput) with field(s):
+    ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::output::DetectDocumentTextOutput::document_metadata): <p>Metadata about the document. It contains the number of pages that are detected in the document.</p>
+    ///   - [`blocks(Option<Vec<Block>>)`](crate::output::DetectDocumentTextOutput::blocks): <p>An array of <code>Block</code> objects that contain the text that's detected in the document.</p>
+    ///   - [`detect_document_text_model_version(Option<String>)`](crate::output::DetectDocumentTextOutput::detect_document_text_model_version): <p></p>
+    /// - On failure, responds with [`SdkError<DetectDocumentTextError>`](crate::error::DetectDocumentTextError)
     pub fn detect_document_text(&self) -> fluent_builders::DetectDocumentText<C, M, R> {
         fluent_builders::DetectDocumentText::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDocumentAnalysis` operation.
+    /// Constructs a fluent builder for the [`GetDocumentAnalysis`](crate::client::fluent_builders::GetDocumentAnalysis) operation.
     ///
-    /// See [`GetDocumentAnalysis`](crate::client::fluent_builders::GetDocumentAnalysis) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetDocumentAnalysis::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetDocumentAnalysis::set_job_id): <p>A unique identifier for the text-detection job. The <code>JobId</code> is returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetDocumentAnalysis::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetDocumentAnalysis::set_max_results): <p>The maximum number of results to return per paginated call. The largest value that you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetDocumentAnalysis::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetDocumentAnalysis::set_next_token): <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
+    /// - On success, responds with [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput) with field(s):
+    ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::output::GetDocumentAnalysisOutput::document_metadata): <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::GetDocumentAnalysisOutput::job_status): <p>The current status of the text detection job.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetDocumentAnalysisOutput::next_token): <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text detection results.</p>
+    ///   - [`blocks(Option<Vec<Block>>)`](crate::output::GetDocumentAnalysisOutput::blocks): <p>The results of the text-analysis operation.</p>
+    ///   - [`warnings(Option<Vec<Warning>>)`](crate::output::GetDocumentAnalysisOutput::warnings): <p>A list of warnings that occurred during the document-analysis operation.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::GetDocumentAnalysisOutput::status_message): <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
+    ///   - [`analyze_document_model_version(Option<String>)`](crate::output::GetDocumentAnalysisOutput::analyze_document_model_version): <p></p>
+    /// - On failure, responds with [`SdkError<GetDocumentAnalysisError>`](crate::error::GetDocumentAnalysisError)
     pub fn get_document_analysis(&self) -> fluent_builders::GetDocumentAnalysis<C, M, R> {
         fluent_builders::GetDocumentAnalysis::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDocumentTextDetection` operation.
+    /// Constructs a fluent builder for the [`GetDocumentTextDetection`](crate::client::fluent_builders::GetDocumentTextDetection) operation.
     ///
-    /// See [`GetDocumentTextDetection`](crate::client::fluent_builders::GetDocumentTextDetection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetDocumentTextDetection::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetDocumentTextDetection::set_job_id): <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetDocumentTextDetection::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetDocumentTextDetection::set_max_results): <p>The maximum number of results to return per paginated call. The largest value you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetDocumentTextDetection::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetDocumentTextDetection::set_next_token): <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
+    /// - On success, responds with [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput) with field(s):
+    ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::output::GetDocumentTextDetectionOutput::document_metadata): <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::GetDocumentTextDetectionOutput::job_status): <p>The current status of the text detection job.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetDocumentTextDetectionOutput::next_token): <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
+    ///   - [`blocks(Option<Vec<Block>>)`](crate::output::GetDocumentTextDetectionOutput::blocks): <p>The results of the text-detection operation.</p>
+    ///   - [`warnings(Option<Vec<Warning>>)`](crate::output::GetDocumentTextDetectionOutput::warnings): <p>A list of warnings that occurred during the text-detection operation for the document.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::GetDocumentTextDetectionOutput::status_message): <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+    ///   - [`detect_document_text_model_version(Option<String>)`](crate::output::GetDocumentTextDetectionOutput::detect_document_text_model_version): <p></p>
+    /// - On failure, responds with [`SdkError<GetDocumentTextDetectionError>`](crate::error::GetDocumentTextDetectionError)
     pub fn get_document_text_detection(
         &self,
     ) -> fluent_builders::GetDocumentTextDetection<C, M, R> {
         fluent_builders::GetDocumentTextDetection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetExpenseAnalysis` operation.
+    /// Constructs a fluent builder for the [`GetExpenseAnalysis`](crate::client::fluent_builders::GetExpenseAnalysis) operation.
     ///
-    /// See [`GetExpenseAnalysis`](crate::client::fluent_builders::GetExpenseAnalysis) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetExpenseAnalysis::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetExpenseAnalysis::set_job_id): <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetExpenseAnalysis::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetExpenseAnalysis::set_max_results): <p>The maximum number of results to return per paginated call. The largest value you can specify is 20. If you specify a value greater than 20, a maximum of 20 results is returned. The default value is 20.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetExpenseAnalysis::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetExpenseAnalysis::set_next_token): <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
+    /// - On success, responds with [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput) with field(s):
+    ///   - [`document_metadata(Option<DocumentMetadata>)`](crate::output::GetExpenseAnalysisOutput::document_metadata): <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract operation.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::GetExpenseAnalysisOutput::job_status): <p>The current status of the text detection job.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetExpenseAnalysisOutput::next_token): <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text-detection results.</p>
+    ///   - [`expense_documents(Option<Vec<ExpenseDocument>>)`](crate::output::GetExpenseAnalysisOutput::expense_documents): <p>The expenses detected by Amazon Textract.</p>
+    ///   - [`warnings(Option<Vec<Warning>>)`](crate::output::GetExpenseAnalysisOutput::warnings): <p>A list of warnings that occurred during the text-detection operation for the document.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::GetExpenseAnalysisOutput::status_message): <p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>
+    ///   - [`analyze_expense_model_version(Option<String>)`](crate::output::GetExpenseAnalysisOutput::analyze_expense_model_version): <p>The current model version of AnalyzeExpense.</p>
+    /// - On failure, responds with [`SdkError<GetExpenseAnalysisError>`](crate::error::GetExpenseAnalysisError)
     pub fn get_expense_analysis(&self) -> fluent_builders::GetExpenseAnalysis<C, M, R> {
         fluent_builders::GetExpenseAnalysis::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartDocumentAnalysis` operation.
+    /// Constructs a fluent builder for the [`StartDocumentAnalysis`](crate::client::fluent_builders::StartDocumentAnalysis) operation.
     ///
-    /// See [`StartDocumentAnalysis`](crate::client::fluent_builders::StartDocumentAnalysis) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`document_location(DocumentLocation)`](crate::client::fluent_builders::StartDocumentAnalysis::document_location) / [`set_document_location(Option<DocumentLocation>)`](crate::client::fluent_builders::StartDocumentAnalysis::set_document_location): <p>The location of the document to be processed.</p>
+    ///   - [`feature_types(Vec<FeatureType>)`](crate::client::fluent_builders::StartDocumentAnalysis::feature_types) / [`set_feature_types(Option<Vec<FeatureType>>)`](crate::client::fluent_builders::StartDocumentAnalysis::set_feature_types): <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartDocumentAnalysis::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartDocumentAnalysis::set_client_request_token): <p>The idempotent token that you use to identify the start request. If you use the same token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
+    ///   - [`job_tag(impl Into<String>)`](crate::client::fluent_builders::StartDocumentAnalysis::job_tag) / [`set_job_tag(Option<String>)`](crate::client::fluent_builders::StartDocumentAnalysis::set_job_tag): <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
+    ///   - [`notification_channel(NotificationChannel)`](crate::client::fluent_builders::StartDocumentAnalysis::notification_channel) / [`set_notification_channel(Option<NotificationChannel>)`](crate::client::fluent_builders::StartDocumentAnalysis::set_notification_channel): <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
+    ///   - [`output_config(OutputConfig)`](crate::client::fluent_builders::StartDocumentAnalysis::output_config) / [`set_output_config(Option<OutputConfig>)`](crate::client::fluent_builders::StartDocumentAnalysis::set_output_config): <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartDocumentAnalysis::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartDocumentAnalysis::set_kms_key_id): <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
+    /// - On success, responds with [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartDocumentAnalysisOutput::job_id): <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    /// - On failure, responds with [`SdkError<StartDocumentAnalysisError>`](crate::error::StartDocumentAnalysisError)
     pub fn start_document_analysis(&self) -> fluent_builders::StartDocumentAnalysis<C, M, R> {
         fluent_builders::StartDocumentAnalysis::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartDocumentTextDetection` operation.
+    /// Constructs a fluent builder for the [`StartDocumentTextDetection`](crate::client::fluent_builders::StartDocumentTextDetection) operation.
     ///
-    /// See [`StartDocumentTextDetection`](crate::client::fluent_builders::StartDocumentTextDetection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`document_location(DocumentLocation)`](crate::client::fluent_builders::StartDocumentTextDetection::document_location) / [`set_document_location(Option<DocumentLocation>)`](crate::client::fluent_builders::StartDocumentTextDetection::set_document_location): <p>The location of the document to be processed.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartDocumentTextDetection::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartDocumentTextDetection::set_client_request_token): <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
+    ///   - [`job_tag(impl Into<String>)`](crate::client::fluent_builders::StartDocumentTextDetection::job_tag) / [`set_job_tag(Option<String>)`](crate::client::fluent_builders::StartDocumentTextDetection::set_job_tag): <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
+    ///   - [`notification_channel(NotificationChannel)`](crate::client::fluent_builders::StartDocumentTextDetection::notification_channel) / [`set_notification_channel(Option<NotificationChannel>)`](crate::client::fluent_builders::StartDocumentTextDetection::set_notification_channel): <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
+    ///   - [`output_config(OutputConfig)`](crate::client::fluent_builders::StartDocumentTextDetection::output_config) / [`set_output_config(Option<OutputConfig>)`](crate::client::fluent_builders::StartDocumentTextDetection::set_output_config): <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartDocumentTextDetection::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartDocumentTextDetection::set_kms_key_id): <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
+    /// - On success, responds with [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartDocumentTextDetectionOutput::job_id): <p>The identifier of the text detection job for the document. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    /// - On failure, responds with [`SdkError<StartDocumentTextDetectionError>`](crate::error::StartDocumentTextDetectionError)
     pub fn start_document_text_detection(
         &self,
     ) -> fluent_builders::StartDocumentTextDetection<C, M, R> {
         fluent_builders::StartDocumentTextDetection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartExpenseAnalysis` operation.
+    /// Constructs a fluent builder for the [`StartExpenseAnalysis`](crate::client::fluent_builders::StartExpenseAnalysis) operation.
     ///
-    /// See [`StartExpenseAnalysis`](crate::client::fluent_builders::StartExpenseAnalysis) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`document_location(DocumentLocation)`](crate::client::fluent_builders::StartExpenseAnalysis::document_location) / [`set_document_location(Option<DocumentLocation>)`](crate::client::fluent_builders::StartExpenseAnalysis::set_document_location): <p>The location of the document to be processed.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartExpenseAnalysis::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartExpenseAnalysis::set_client_request_token): <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a> </p>
+    ///   - [`job_tag(impl Into<String>)`](crate::client::fluent_builders::StartExpenseAnalysis::job_tag) / [`set_job_tag(Option<String>)`](crate::client::fluent_builders::StartExpenseAnalysis::set_job_tag): <p>An identifier you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
+    ///   - [`notification_channel(NotificationChannel)`](crate::client::fluent_builders::StartExpenseAnalysis::notification_channel) / [`set_notification_channel(Option<NotificationChannel>)`](crate::client::fluent_builders::StartExpenseAnalysis::set_notification_channel): <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
+    ///   - [`output_config(OutputConfig)`](crate::client::fluent_builders::StartExpenseAnalysis::output_config) / [`set_output_config(Option<OutputConfig>)`](crate::client::fluent_builders::StartExpenseAnalysis::set_output_config): <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the <code>GetExpenseAnalysis</code> operation.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::StartExpenseAnalysis::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::StartExpenseAnalysis::set_kms_key_id): <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
+    /// - On success, responds with [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartExpenseAnalysisOutput::job_id): <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
+    /// - On failure, responds with [`SdkError<StartExpenseAnalysisError>`](crate::error::StartExpenseAnalysisError)
     pub fn start_expense_analysis(&self) -> fluent_builders::StartExpenseAnalysis<C, M, R> {
         fluent_builders::StartExpenseAnalysis::new(self.handle.clone())
     }

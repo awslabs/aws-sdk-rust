@@ -83,237 +83,408 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptDomainTransferFromAnotherAwsAccount` operation.
+    /// Constructs a fluent builder for the [`AcceptDomainTransferFromAnotherAwsAccount`](crate::client::fluent_builders::AcceptDomainTransferFromAnotherAwsAccount) operation.
     ///
-    /// See [`AcceptDomainTransferFromAnotherAwsAccount`](crate::client::fluent_builders::AcceptDomainTransferFromAnotherAwsAccount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::AcceptDomainTransferFromAnotherAwsAccount::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::AcceptDomainTransferFromAnotherAwsAccount::set_domain_name): <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::AcceptDomainTransferFromAnotherAwsAccount::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::AcceptDomainTransferFromAnotherAwsAccount::set_password): <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
+    /// - On success, responds with [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    /// - On failure, responds with [`SdkError<AcceptDomainTransferFromAnotherAwsAccountError>`](crate::error::AcceptDomainTransferFromAnotherAwsAccountError)
     pub fn accept_domain_transfer_from_another_aws_account(
         &self,
     ) -> fluent_builders::AcceptDomainTransferFromAnotherAwsAccount<C, M, R> {
         fluent_builders::AcceptDomainTransferFromAnotherAwsAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelDomainTransferToAnotherAwsAccount` operation.
+    /// Constructs a fluent builder for the [`CancelDomainTransferToAnotherAwsAccount`](crate::client::fluent_builders::CancelDomainTransferToAnotherAwsAccount) operation.
     ///
-    /// See [`CancelDomainTransferToAnotherAwsAccount`](crate::client::fluent_builders::CancelDomainTransferToAnotherAwsAccount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CancelDomainTransferToAnotherAwsAccount::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CancelDomainTransferToAnotherAwsAccount::set_domain_name): <p>The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.</p>
+    /// - On success, responds with [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput::operation_id): <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was canceled, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
+    /// - On failure, responds with [`SdkError<CancelDomainTransferToAnotherAwsAccountError>`](crate::error::CancelDomainTransferToAnotherAwsAccountError)
     pub fn cancel_domain_transfer_to_another_aws_account(
         &self,
     ) -> fluent_builders::CancelDomainTransferToAnotherAwsAccount<C, M, R> {
         fluent_builders::CancelDomainTransferToAnotherAwsAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CheckDomainAvailability` operation.
+    /// Constructs a fluent builder for the [`CheckDomainAvailability`](crate::client::fluent_builders::CheckDomainAvailability) operation.
     ///
-    /// See [`CheckDomainAvailability`](crate::client::fluent_builders::CheckDomainAvailability) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CheckDomainAvailability::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CheckDomainAvailability::set_domain_name): <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>  <p>The domain name can contain only the following characters:</p>  <ul>   <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>   <li> <p>Numbers 0 through 9.</p> </li>   <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>   <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>  </ul>  <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
+    ///   - [`idn_lang_code(impl Into<String>)`](crate::client::fluent_builders::CheckDomainAvailability::idn_lang_code) / [`set_idn_lang_code(Option<String>)`](crate::client::fluent_builders::CheckDomainAvailability::set_idn_lang_code): <p>Reserved for future use.</p>
+    /// - On success, responds with [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput) with field(s):
+    ///   - [`availability(Option<DomainAvailability>)`](crate::output::CheckDomainAvailabilityOutput::availability): <p>Whether the domain name is available for registering.</p> <note>   <p>You can register only domains designated as <code>AVAILABLE</code>.</p>  </note>  <p>Valid values:</p>  <dl>   <dt>   AVAILABLE  </dt>   <dd>    <p>The domain name is available.</p>   </dd>   <dt>   AVAILABLE_RESERVED  </dt>   <dd>    <p>The domain name is reserved under specific conditions.</p>   </dd>   <dt>   AVAILABLE_PREORDER  </dt>   <dd>    <p>The domain name is available and can be preordered.</p>   </dd>   <dt>   DONT_KNOW  </dt>   <dd>    <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>   </dd>   <dt>   PENDING  </dt>   <dd>    <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>   </dd>   <dt>   RESERVED  </dt>   <dd>    <p>The domain name has been reserved for another person or organization.</p>   </dd>   <dt>   UNAVAILABLE  </dt>   <dd>    <p>The domain name is not available.</p>   </dd>   <dt>   UNAVAILABLE_PREMIUM  </dt>   <dd>    <p>The domain name is not available.</p>   </dd>   <dt>   UNAVAILABLE_RESTRICTED  </dt>   <dd>    <p>The domain name is forbidden.</p>   </dd>  </dl>
+    /// - On failure, responds with [`SdkError<CheckDomainAvailabilityError>`](crate::error::CheckDomainAvailabilityError)
     pub fn check_domain_availability(&self) -> fluent_builders::CheckDomainAvailability<C, M, R> {
         fluent_builders::CheckDomainAvailability::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CheckDomainTransferability` operation.
+    /// Constructs a fluent builder for the [`CheckDomainTransferability`](crate::client::fluent_builders::CheckDomainTransferability) operation.
     ///
-    /// See [`CheckDomainTransferability`](crate::client::fluent_builders::CheckDomainTransferability) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CheckDomainTransferability::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CheckDomainTransferability::set_domain_name): <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>  <p>The domain name can contain only the following characters:</p>  <ul>   <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>   <li> <p>Numbers 0 through 9.</p> </li>   <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>   <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>  </ul>
+    ///   - [`auth_code(impl Into<String>)`](crate::client::fluent_builders::CheckDomainTransferability::auth_code) / [`set_auth_code(Option<String>)`](crate::client::fluent_builders::CheckDomainTransferability::set_auth_code): <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
+    /// - On success, responds with [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput) with field(s):
+    ///   - [`transferability(Option<DomainTransferability>)`](crate::output::CheckDomainTransferabilityOutput::transferability): <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
+    /// - On failure, responds with [`SdkError<CheckDomainTransferabilityError>`](crate::error::CheckDomainTransferabilityError)
     pub fn check_domain_transferability(
         &self,
     ) -> fluent_builders::CheckDomainTransferability<C, M, R> {
         fluent_builders::CheckDomainTransferability::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDomain` operation.
+    /// Constructs a fluent builder for the [`DeleteDomain`](crate::client::fluent_builders::DeleteDomain) operation.
     ///
-    /// See [`DeleteDomain`](crate::client::fluent_builders::DeleteDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteDomain::set_domain_name): <p>Name of the domain to be deleted.</p>
+    /// - On success, responds with [`DeleteDomainOutput`](crate::output::DeleteDomainOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::DeleteDomainOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::error::DeleteDomainError)
     pub fn delete_domain(&self) -> fluent_builders::DeleteDomain<C, M, R> {
         fluent_builders::DeleteDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTagsForDomain` operation.
+    /// Constructs a fluent builder for the [`DeleteTagsForDomain`](crate::client::fluent_builders::DeleteTagsForDomain) operation.
     ///
-    /// See [`DeleteTagsForDomain`](crate::client::fluent_builders::DeleteTagsForDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteTagsForDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteTagsForDomain::set_domain_name): <p>The domain for which you want to delete one or more tags.</p>
+    ///   - [`tags_to_delete(Vec<String>)`](crate::client::fluent_builders::DeleteTagsForDomain::tags_to_delete) / [`set_tags_to_delete(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteTagsForDomain::set_tags_to_delete): <p>A list of tag keys to delete.</p>
+    /// - On success, responds with [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTagsForDomainError>`](crate::error::DeleteTagsForDomainError)
     pub fn delete_tags_for_domain(&self) -> fluent_builders::DeleteTagsForDomain<C, M, R> {
         fluent_builders::DeleteTagsForDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableDomainAutoRenew` operation.
+    /// Constructs a fluent builder for the [`DisableDomainAutoRenew`](crate::client::fluent_builders::DisableDomainAutoRenew) operation.
     ///
-    /// See [`DisableDomainAutoRenew`](crate::client::fluent_builders::DisableDomainAutoRenew) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DisableDomainAutoRenew::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DisableDomainAutoRenew::set_domain_name): <p>The name of the domain that you want to disable automatic renewal for.</p>
+    /// - On success, responds with [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput)
+
+    /// - On failure, responds with [`SdkError<DisableDomainAutoRenewError>`](crate::error::DisableDomainAutoRenewError)
     pub fn disable_domain_auto_renew(&self) -> fluent_builders::DisableDomainAutoRenew<C, M, R> {
         fluent_builders::DisableDomainAutoRenew::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableDomainTransferLock` operation.
+    /// Constructs a fluent builder for the [`DisableDomainTransferLock`](crate::client::fluent_builders::DisableDomainTransferLock) operation.
     ///
-    /// See [`DisableDomainTransferLock`](crate::client::fluent_builders::DisableDomainTransferLock) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DisableDomainTransferLock::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DisableDomainTransferLock::set_domain_name): <p>The name of the domain that you want to remove the transfer lock for.</p>
+    /// - On success, responds with [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::DisableDomainTransferLockOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    /// - On failure, responds with [`SdkError<DisableDomainTransferLockError>`](crate::error::DisableDomainTransferLockError)
     pub fn disable_domain_transfer_lock(
         &self,
     ) -> fluent_builders::DisableDomainTransferLock<C, M, R> {
         fluent_builders::DisableDomainTransferLock::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableDomainAutoRenew` operation.
+    /// Constructs a fluent builder for the [`EnableDomainAutoRenew`](crate::client::fluent_builders::EnableDomainAutoRenew) operation.
     ///
-    /// See [`EnableDomainAutoRenew`](crate::client::fluent_builders::EnableDomainAutoRenew) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::EnableDomainAutoRenew::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::EnableDomainAutoRenew::set_domain_name): <p>The name of the domain that you want to enable automatic renewal for.</p>
+    /// - On success, responds with [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput)
+
+    /// - On failure, responds with [`SdkError<EnableDomainAutoRenewError>`](crate::error::EnableDomainAutoRenewError)
     pub fn enable_domain_auto_renew(&self) -> fluent_builders::EnableDomainAutoRenew<C, M, R> {
         fluent_builders::EnableDomainAutoRenew::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableDomainTransferLock` operation.
+    /// Constructs a fluent builder for the [`EnableDomainTransferLock`](crate::client::fluent_builders::EnableDomainTransferLock) operation.
     ///
-    /// See [`EnableDomainTransferLock`](crate::client::fluent_builders::EnableDomainTransferLock) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::EnableDomainTransferLock::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::EnableDomainTransferLock::set_domain_name): <p>The name of the domain that you want to set the transfer lock for.</p>
+    /// - On success, responds with [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::EnableDomainTransferLockOutput::operation_id): <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
+    /// - On failure, responds with [`SdkError<EnableDomainTransferLockError>`](crate::error::EnableDomainTransferLockError)
     pub fn enable_domain_transfer_lock(
         &self,
     ) -> fluent_builders::EnableDomainTransferLock<C, M, R> {
         fluent_builders::EnableDomainTransferLock::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContactReachabilityStatus` operation.
+    /// Constructs a fluent builder for the [`GetContactReachabilityStatus`](crate::client::fluent_builders::GetContactReachabilityStatus) operation.
     ///
-    /// See [`GetContactReachabilityStatus`](crate::client::fluent_builders::GetContactReachabilityStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetContactReachabilityStatus::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetContactReachabilityStatus::set_domain_name): <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
+    /// - On success, responds with [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::output::GetContactReachabilityStatusOutput::domain_name): <p>The domain name for which you requested the reachability status.</p>
+    ///   - [`status(Option<ReachabilityStatus>)`](crate::output::GetContactReachabilityStatusOutput::status): <p>Whether the registrant contact has responded. Values include the following:</p>  <dl>   <dt>   PENDING  </dt>   <dd>    <p>We sent the confirmation email and haven't received a response yet.</p>   </dd>   <dt>   DONE  </dt>   <dd>    <p>We sent the email and got confirmation from the registrant contact.</p>   </dd>   <dt>   EXPIRED  </dt>   <dd>    <p>The time limit expired before the registrant contact responded.</p>   </dd>  </dl>
+    /// - On failure, responds with [`SdkError<GetContactReachabilityStatusError>`](crate::error::GetContactReachabilityStatusError)
     pub fn get_contact_reachability_status(
         &self,
     ) -> fluent_builders::GetContactReachabilityStatus<C, M, R> {
         fluent_builders::GetContactReachabilityStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDomainDetail` operation.
+    /// Constructs a fluent builder for the [`GetDomainDetail`](crate::client::fluent_builders::GetDomainDetail) operation.
     ///
-    /// See [`GetDomainDetail`](crate::client::fluent_builders::GetDomainDetail) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetDomainDetail::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetDomainDetail::set_domain_name): <p>The name of the domain that you want to get detailed information about.</p>
+    /// - On success, responds with [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::output::GetDomainDetailOutput::domain_name): <p>The name of a domain.</p>
+    ///   - [`nameservers(Option<Vec<Nameserver>>)`](crate::output::GetDomainDetailOutput::nameservers): <p>The name of the domain.</p>
+    ///   - [`auto_renew(Option<bool>)`](crate::output::GetDomainDetailOutput::auto_renew): <p>Specifies whether the domain registration is set to renew automatically.</p>
+    ///   - [`admin_contact(Option<ContactDetail>)`](crate::output::GetDomainDetailOutput::admin_contact): <p>Provides details about the domain administrative contact.</p>
+    ///   - [`registrant_contact(Option<ContactDetail>)`](crate::output::GetDomainDetailOutput::registrant_contact): <p>Provides details about the domain registrant.</p>
+    ///   - [`tech_contact(Option<ContactDetail>)`](crate::output::GetDomainDetailOutput::tech_contact): <p>Provides details about the domain technical contact.</p>
+    ///   - [`admin_privacy(Option<bool>)`](crate::output::GetDomainDetailOutput::admin_privacy): <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+    ///   - [`registrant_privacy(Option<bool>)`](crate::output::GetDomainDetailOutput::registrant_privacy): <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+    ///   - [`tech_privacy(Option<bool>)`](crate::output::GetDomainDetailOutput::tech_privacy): <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+    ///   - [`registrar_name(Option<String>)`](crate::output::GetDomainDetailOutput::registrar_name): <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
+    ///   - [`who_is_server(Option<String>)`](crate::output::GetDomainDetailOutput::who_is_server): <p>The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.</p>
+    ///   - [`registrar_url(Option<String>)`](crate::output::GetDomainDetailOutput::registrar_url): <p>Web address of the registrar.</p>
+    ///   - [`abuse_contact_email(Option<String>)`](crate::output::GetDomainDetailOutput::abuse_contact_email): <p>Email address to contact to report incorrect contact information for a domain, to report that the domain is being used to send spam, to report that someone is cybersquatting on a domain name, or report some other type of abuse.</p>
+    ///   - [`abuse_contact_phone(Option<String>)`](crate::output::GetDomainDetailOutput::abuse_contact_phone): <p>Phone number for reporting abuse.</p>
+    ///   - [`registry_domain_id(Option<String>)`](crate::output::GetDomainDetailOutput::registry_domain_id): <p>Reserved for future use.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::GetDomainDetailOutput::creation_date): <p>The date when the domain was created as found in the response to a WHOIS query. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
+    ///   - [`updated_date(Option<DateTime>)`](crate::output::GetDomainDetailOutput::updated_date): <p>The last updated date of the domain as found in the response to a WHOIS query. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
+    ///   - [`expiration_date(Option<DateTime>)`](crate::output::GetDomainDetailOutput::expiration_date): <p>The date when the registration for the domain is set to expire. The date and time is in Unix time format and Coordinated Universal time (UTC).</p>
+    ///   - [`reseller(Option<String>)`](crate::output::GetDomainDetailOutput::reseller): <p>Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code> as the reseller. </p>
+    ///   - [`dns_sec(Option<String>)`](crate::output::GetDomainDetailOutput::dns_sec): <p>Deprecated.</p>
+    ///   - [`status_list(Option<Vec<String>>)`](crate::output::GetDomainDetailOutput::status_list): <p>An array of domain name status codes, also known as Extensible Provisioning Protocol (EPP) status codes.</p>  <p>ICANN, the organization that maintains a central database of domain names, has developed a set of domain name status codes that tell you the status of a variety of operations on a domain name, for example, registering a domain name, transferring a domain name to another registrar, renewing the registration for a domain name, and so on. All registrars use this same set of status codes.</p>  <p>For a current list of domain name status codes and an explanation of what each code means, go to the <a href="https://www.icann.org/">ICANN website</a> and search for <code>epp status codes</code>. (Search on the ICANN website; web searches sometimes return an old version of the document.)</p>
+    /// - On failure, responds with [`SdkError<GetDomainDetailError>`](crate::error::GetDomainDetailError)
     pub fn get_domain_detail(&self) -> fluent_builders::GetDomainDetail<C, M, R> {
         fluent_builders::GetDomainDetail::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDomainSuggestions` operation.
+    /// Constructs a fluent builder for the [`GetDomainSuggestions`](crate::client::fluent_builders::GetDomainSuggestions) operation.
     ///
-    /// See [`GetDomainSuggestions`](crate::client::fluent_builders::GetDomainSuggestions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetDomainSuggestions::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetDomainSuggestions::set_domain_name): <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>  <p>The domain name can contain only the following characters:</p>  <ul>   <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>   <li> <p>Numbers 0 through 9.</p> </li>   <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>   <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>  </ul>  <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. </p>
+    ///   - [`suggestion_count(i32)`](crate::client::fluent_builders::GetDomainSuggestions::suggestion_count) / [`set_suggestion_count(i32)`](crate::client::fluent_builders::GetDomainSuggestions::set_suggestion_count): <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
+    ///   - [`only_available(bool)`](crate::client::fluent_builders::GetDomainSuggestions::only_available) / [`set_only_available(Option<bool>)`](crate::client::fluent_builders::GetDomainSuggestions::set_only_available): <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// - On success, responds with [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput) with field(s):
+    ///   - [`suggestions_list(Option<Vec<DomainSuggestion>>)`](crate::output::GetDomainSuggestionsOutput::suggestions_list): <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
+    /// - On failure, responds with [`SdkError<GetDomainSuggestionsError>`](crate::error::GetDomainSuggestionsError)
     pub fn get_domain_suggestions(&self) -> fluent_builders::GetDomainSuggestions<C, M, R> {
         fluent_builders::GetDomainSuggestions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOperationDetail` operation.
+    /// Constructs a fluent builder for the [`GetOperationDetail`](crate::client::fluent_builders::GetOperationDetail) operation.
     ///
-    /// See [`GetOperationDetail`](crate::client::fluent_builders::GetOperationDetail) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`operation_id(impl Into<String>)`](crate::client::fluent_builders::GetOperationDetail::operation_id) / [`set_operation_id(Option<String>)`](crate::client::fluent_builders::GetOperationDetail::set_operation_id): <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.</p>
+    /// - On success, responds with [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::GetOperationDetailOutput::operation_id): <p>The identifier for the operation.</p>
+    ///   - [`status(Option<OperationStatus>)`](crate::output::GetOperationDetailOutput::status): <p>The current status of the requested operation in the system.</p>
+    ///   - [`message(Option<String>)`](crate::output::GetOperationDetailOutput::message): <p>Detailed information on the status including possible errors.</p>
+    ///   - [`domain_name(Option<String>)`](crate::output::GetOperationDetailOutput::domain_name): <p>The name of a domain.</p>
+    ///   - [`r#type(Option<OperationType>)`](crate::output::GetOperationDetailOutput::type): <p>The type of operation that was requested.</p>
+    ///   - [`submitted_date(Option<DateTime>)`](crate::output::GetOperationDetailOutput::submitted_date): <p>The date when the request was submitted.</p>
+    /// - On failure, responds with [`SdkError<GetOperationDetailError>`](crate::error::GetOperationDetailError)
     pub fn get_operation_detail(&self) -> fluent_builders::GetOperationDetail<C, M, R> {
         fluent_builders::GetOperationDetail::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDomains` operation.
+    /// Constructs a fluent builder for the [`ListDomains`](crate::client::fluent_builders::ListDomains) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
     ///
-    /// See [`ListDomains`](crate::client::fluent_builders::ListDomains) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`filter_conditions(Vec<FilterCondition>)`](crate::client::fluent_builders::ListDomains::filter_conditions) / [`set_filter_conditions(Option<Vec<FilterCondition>>)`](crate::client::fluent_builders::ListDomains::set_filter_conditions): <p>A complex type that contains information about the filters applied during the <code>ListDomains</code> request. The filter conditions can include domain name and domain expiration.</p>
+    ///   - [`sort_condition(SortCondition)`](crate::client::fluent_builders::ListDomains::sort_condition) / [`set_sort_condition(Option<SortCondition>)`](crate::client::fluent_builders::ListDomains::set_sort_condition): <p>A complex type that contains information about the requested ordering of domains in the returned list.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDomains::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDomains::set_marker): <p>For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current Amazon Web Services account is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>  <p>Constraints: The marker must match the value specified in the previous request.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDomains::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDomains::set_max_items): <p>Number of domains to be returned.</p>  <p>Default: 20</p>
+    /// - On success, responds with [`ListDomainsOutput`](crate::output::ListDomainsOutput) with field(s):
+    ///   - [`domains(Option<Vec<DomainSummary>>)`](crate::output::ListDomainsOutput::domains): <p>A list of domains.</p>
+    ///   - [`next_page_marker(Option<String>)`](crate::output::ListDomainsOutput::next_page_marker): <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
+    /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::error::ListDomainsError)
     pub fn list_domains(&self) -> fluent_builders::ListDomains<C, M, R> {
         fluent_builders::ListDomains::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOperations` operation.
+    /// Constructs a fluent builder for the [`ListOperations`](crate::client::fluent_builders::ListOperations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOperations::into_paginator).
     ///
-    /// See [`ListOperations`](crate::client::fluent_builders::ListOperations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOperations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`submitted_since(DateTime)`](crate::client::fluent_builders::ListOperations::submitted_since) / [`set_submitted_since(Option<DateTime>)`](crate::client::fluent_builders::ListOperations::set_submitted_since): <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListOperations::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListOperations::set_marker): <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListOperations::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListOperations::set_max_items): <p>Number of domains to be returned.</p>  <p>Default: 20</p>
+    /// - On success, responds with [`ListOperationsOutput`](crate::output::ListOperationsOutput) with field(s):
+    ///   - [`operations(Option<Vec<OperationSummary>>)`](crate::output::ListOperationsOutput::operations): <p>Lists summaries of the operations.</p>
+    ///   - [`next_page_marker(Option<String>)`](crate::output::ListOperationsOutput::next_page_marker): <p>If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
+    /// - On failure, responds with [`SdkError<ListOperationsError>`](crate::error::ListOperationsError)
     pub fn list_operations(&self) -> fluent_builders::ListOperations<C, M, R> {
         fluent_builders::ListOperations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPrices` operation.
+    /// Constructs a fluent builder for the [`ListPrices`](crate::client::fluent_builders::ListPrices) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPrices::into_paginator).
     ///
-    /// See [`ListPrices`](crate::client::fluent_builders::ListPrices) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPrices::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`tld(impl Into<String>)`](crate::client::fluent_builders::ListPrices::tld) / [`set_tld(Option<String>)`](crate::client::fluent_builders::ListPrices::set_tld): <p>The TLD for which you want to receive the pricing information. For example. <code>.net</code>.</p>  <p>If a <code>Tld</code> value is not provided, a list of prices for all TLDs supported by Route&nbsp;53 is returned.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListPrices::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListPrices::set_marker): <p>For an initial request for a list of prices, omit this element. If the number of prices that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional prices. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>  <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>Marker</code>.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListPrices::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListPrices::set_max_items): <p>Number of <code>Prices</code> to be returned.</p>  <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>MaxItems</code>.</p>
+    /// - On success, responds with [`ListPricesOutput`](crate::output::ListPricesOutput) with field(s):
+    ///   - [`prices(Option<Vec<DomainPrice>>)`](crate::output::ListPricesOutput::prices): <p>A complex type that includes all the pricing information. If you specify a TLD, this array contains only the pricing for that TLD.</p>
+    ///   - [`next_page_marker(Option<String>)`](crate::output::ListPricesOutput::next_page_marker): <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>  <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
+    /// - On failure, responds with [`SdkError<ListPricesError>`](crate::error::ListPricesError)
     pub fn list_prices(&self) -> fluent_builders::ListPrices<C, M, R> {
         fluent_builders::ListPrices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForDomain` operation.
+    /// Constructs a fluent builder for the [`ListTagsForDomain`](crate::client::fluent_builders::ListTagsForDomain) operation.
     ///
-    /// See [`ListTagsForDomain`](crate::client::fluent_builders::ListTagsForDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ListTagsForDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ListTagsForDomain::set_domain_name): <p>The domain for which you want to get a list of tags.</p>
+    /// - On success, responds with [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ListTagsForDomainOutput::tag_list): <p>A list of the tags that are associated with the specified domain.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForDomainError>`](crate::error::ListTagsForDomainError)
     pub fn list_tags_for_domain(&self) -> fluent_builders::ListTagsForDomain<C, M, R> {
         fluent_builders::ListTagsForDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterDomain` operation.
+    /// Constructs a fluent builder for the [`RegisterDomain`](crate::client::fluent_builders::RegisterDomain) operation.
     ///
-    /// See [`RegisterDomain`](crate::client::fluent_builders::RegisterDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::RegisterDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::RegisterDomain::set_domain_name): <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>  <p>The domain name can contain only the following characters:</p>  <ul>   <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>   <li> <p>Numbers 0 through 9.</p> </li>   <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>   <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>  </ul>  <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
+    ///   - [`idn_lang_code(impl Into<String>)`](crate::client::fluent_builders::RegisterDomain::idn_lang_code) / [`set_idn_lang_code(Option<String>)`](crate::client::fluent_builders::RegisterDomain::set_idn_lang_code): <p>Reserved for future use.</p>
+    ///   - [`duration_in_years(i32)`](crate::client::fluent_builders::RegisterDomain::duration_in_years) / [`set_duration_in_years(Option<i32>)`](crate::client::fluent_builders::RegisterDomain::set_duration_in_years): <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>  <p>Default: 1</p>
+    ///   - [`auto_renew(bool)`](crate::client::fluent_builders::RegisterDomain::auto_renew) / [`set_auto_renew(Option<bool>)`](crate::client::fluent_builders::RegisterDomain::set_auto_renew): <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect after the account is charged.</p>  <p>Default: <code>true</code> </p>
+    ///   - [`admin_contact(ContactDetail)`](crate::client::fluent_builders::RegisterDomain::admin_contact) / [`set_admin_contact(Option<ContactDetail>)`](crate::client::fluent_builders::RegisterDomain::set_admin_contact): <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    ///   - [`registrant_contact(ContactDetail)`](crate::client::fluent_builders::RegisterDomain::registrant_contact) / [`set_registrant_contact(Option<ContactDetail>)`](crate::client::fluent_builders::RegisterDomain::set_registrant_contact): <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    ///   - [`tech_contact(ContactDetail)`](crate::client::fluent_builders::RegisterDomain::tech_contact) / [`set_tech_contact(Option<ContactDetail>)`](crate::client::fluent_builders::RegisterDomain::set_tech_contact): <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    ///   - [`privacy_protect_admin_contact(bool)`](crate::client::fluent_builders::RegisterDomain::privacy_protect_admin_contact) / [`set_privacy_protect_admin_contact(Option<bool>)`](crate::client::fluent_builders::RegisterDomain::set_privacy_protect_admin_contact): <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p> <note>   <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>  </note>  <p>Default: <code>true</code> </p>
+    ///   - [`privacy_protect_registrant_contact(bool)`](crate::client::fluent_builders::RegisterDomain::privacy_protect_registrant_contact) / [`set_privacy_protect_registrant_contact(Option<bool>)`](crate::client::fluent_builders::RegisterDomain::set_privacy_protect_registrant_contact): <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p> <note>   <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>  </note>  <p>Default: <code>true</code> </p>
+    ///   - [`privacy_protect_tech_contact(bool)`](crate::client::fluent_builders::RegisterDomain::privacy_protect_tech_contact) / [`set_privacy_protect_tech_contact(Option<bool>)`](crate::client::fluent_builders::RegisterDomain::set_privacy_protect_tech_contact): <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p> <note>   <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>  </note>  <p>Default: <code>true</code> </p>
+    /// - On success, responds with [`RegisterDomainOutput`](crate::output::RegisterDomainOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::RegisterDomainOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    /// - On failure, responds with [`SdkError<RegisterDomainError>`](crate::error::RegisterDomainError)
     pub fn register_domain(&self) -> fluent_builders::RegisterDomain<C, M, R> {
         fluent_builders::RegisterDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RejectDomainTransferFromAnotherAwsAccount` operation.
+    /// Constructs a fluent builder for the [`RejectDomainTransferFromAnotherAwsAccount`](crate::client::fluent_builders::RejectDomainTransferFromAnotherAwsAccount) operation.
     ///
-    /// See [`RejectDomainTransferFromAnotherAwsAccount`](crate::client::fluent_builders::RejectDomainTransferFromAnotherAwsAccount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::RejectDomainTransferFromAnotherAwsAccount::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::RejectDomainTransferFromAnotherAwsAccount::set_domain_name): <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
+    /// - On success, responds with [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput::operation_id): <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was rejected, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
+    /// - On failure, responds with [`SdkError<RejectDomainTransferFromAnotherAwsAccountError>`](crate::error::RejectDomainTransferFromAnotherAwsAccountError)
     pub fn reject_domain_transfer_from_another_aws_account(
         &self,
     ) -> fluent_builders::RejectDomainTransferFromAnotherAwsAccount<C, M, R> {
         fluent_builders::RejectDomainTransferFromAnotherAwsAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RenewDomain` operation.
+    /// Constructs a fluent builder for the [`RenewDomain`](crate::client::fluent_builders::RenewDomain) operation.
     ///
-    /// See [`RenewDomain`](crate::client::fluent_builders::RenewDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::RenewDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::RenewDomain::set_domain_name): <p>The name of the domain that you want to renew.</p>
+    ///   - [`duration_in_years(i32)`](crate::client::fluent_builders::RenewDomain::duration_in_years) / [`set_duration_in_years(Option<i32>)`](crate::client::fluent_builders::RenewDomain::set_duration_in_years): <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>  <p>Default: 1</p>
+    ///   - [`current_expiry_year(i32)`](crate::client::fluent_builders::RenewDomain::current_expiry_year) / [`set_current_expiry_year(i32)`](crate::client::fluent_builders::RenewDomain::set_current_expiry_year): <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
+    /// - On success, responds with [`RenewDomainOutput`](crate::output::RenewDomainOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::RenewDomainOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    /// - On failure, responds with [`SdkError<RenewDomainError>`](crate::error::RenewDomainError)
     pub fn renew_domain(&self) -> fluent_builders::RenewDomain<C, M, R> {
         fluent_builders::RenewDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResendContactReachabilityEmail` operation.
+    /// Constructs a fluent builder for the [`ResendContactReachabilityEmail`](crate::client::fluent_builders::ResendContactReachabilityEmail) operation.
     ///
-    /// See [`ResendContactReachabilityEmail`](crate::client::fluent_builders::ResendContactReachabilityEmail) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::ResendContactReachabilityEmail::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::ResendContactReachabilityEmail::set_domain_name): <p>The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.</p>
+    /// - On success, responds with [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::output::ResendContactReachabilityEmailOutput::domain_name): <p>The domain name for which you requested a confirmation email.</p>
+    ///   - [`email_address(Option<String>)`](crate::output::ResendContactReachabilityEmailOutput::email_address): <p>The email address for the registrant contact at the time that we sent the verification email.</p>
+    ///   - [`is_already_verified(Option<bool>)`](crate::output::ResendContactReachabilityEmailOutput::is_already_verified): <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
+    /// - On failure, responds with [`SdkError<ResendContactReachabilityEmailError>`](crate::error::ResendContactReachabilityEmailError)
     pub fn resend_contact_reachability_email(
         &self,
     ) -> fluent_builders::ResendContactReachabilityEmail<C, M, R> {
         fluent_builders::ResendContactReachabilityEmail::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RetrieveDomainAuthCode` operation.
+    /// Constructs a fluent builder for the [`RetrieveDomainAuthCode`](crate::client::fluent_builders::RetrieveDomainAuthCode) operation.
     ///
-    /// See [`RetrieveDomainAuthCode`](crate::client::fluent_builders::RetrieveDomainAuthCode) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::RetrieveDomainAuthCode::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::RetrieveDomainAuthCode::set_domain_name): <p>The name of the domain that you want to get an authorization code for.</p>
+    /// - On success, responds with [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput) with field(s):
+    ///   - [`auth_code(Option<String>)`](crate::output::RetrieveDomainAuthCodeOutput::auth_code): <p>The authorization code for the domain.</p>
+    /// - On failure, responds with [`SdkError<RetrieveDomainAuthCodeError>`](crate::error::RetrieveDomainAuthCodeError)
     pub fn retrieve_domain_auth_code(&self) -> fluent_builders::RetrieveDomainAuthCode<C, M, R> {
         fluent_builders::RetrieveDomainAuthCode::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TransferDomain` operation.
+    /// Constructs a fluent builder for the [`TransferDomain`](crate::client::fluent_builders::TransferDomain) operation.
     ///
-    /// See [`TransferDomain`](crate::client::fluent_builders::TransferDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::TransferDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::TransferDomain::set_domain_name): <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>  <p>The domain name can contain only the following characters:</p>  <ul>   <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>   <li> <p>Numbers 0 through 9.</p> </li>   <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>   <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>  </ul>
+    ///   - [`idn_lang_code(impl Into<String>)`](crate::client::fluent_builders::TransferDomain::idn_lang_code) / [`set_idn_lang_code(Option<String>)`](crate::client::fluent_builders::TransferDomain::set_idn_lang_code): <p>Reserved for future use.</p>
+    ///   - [`duration_in_years(i32)`](crate::client::fluent_builders::TransferDomain::duration_in_years) / [`set_duration_in_years(Option<i32>)`](crate::client::fluent_builders::TransferDomain::set_duration_in_years): <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>  <p>Default: 1</p>
+    ///   - [`nameservers(Vec<Nameserver>)`](crate::client::fluent_builders::TransferDomain::nameservers) / [`set_nameservers(Option<Vec<Nameserver>>)`](crate::client::fluent_builders::TransferDomain::set_nameservers): <p>Contains details for the host and glue IP addresses.</p>
+    ///   - [`auth_code(impl Into<String>)`](crate::client::fluent_builders::TransferDomain::auth_code) / [`set_auth_code(Option<String>)`](crate::client::fluent_builders::TransferDomain::set_auth_code): <p>The authorization code for the domain. You get this value from the current registrar.</p>
+    ///   - [`auto_renew(bool)`](crate::client::fluent_builders::TransferDomain::auto_renew) / [`set_auto_renew(Option<bool>)`](crate::client::fluent_builders::TransferDomain::set_auto_renew): <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect after the account is charged.</p>  <p>Default: true</p>
+    ///   - [`admin_contact(ContactDetail)`](crate::client::fluent_builders::TransferDomain::admin_contact) / [`set_admin_contact(Option<ContactDetail>)`](crate::client::fluent_builders::TransferDomain::set_admin_contact): <p>Provides detailed contact information.</p>
+    ///   - [`registrant_contact(ContactDetail)`](crate::client::fluent_builders::TransferDomain::registrant_contact) / [`set_registrant_contact(Option<ContactDetail>)`](crate::client::fluent_builders::TransferDomain::set_registrant_contact): <p>Provides detailed contact information.</p>
+    ///   - [`tech_contact(ContactDetail)`](crate::client::fluent_builders::TransferDomain::tech_contact) / [`set_tech_contact(Option<ContactDetail>)`](crate::client::fluent_builders::TransferDomain::set_tech_contact): <p>Provides detailed contact information.</p>
+    ///   - [`privacy_protect_admin_contact(bool)`](crate::client::fluent_builders::TransferDomain::privacy_protect_admin_contact) / [`set_privacy_protect_admin_contact(Option<bool>)`](crate::client::fluent_builders::TransferDomain::set_privacy_protect_admin_contact): <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p> <note>   <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>  </note>  <p>Default: <code>true</code> </p>
+    ///   - [`privacy_protect_registrant_contact(bool)`](crate::client::fluent_builders::TransferDomain::privacy_protect_registrant_contact) / [`set_privacy_protect_registrant_contact(Option<bool>)`](crate::client::fluent_builders::TransferDomain::set_privacy_protect_registrant_contact): <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p> <note>   <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>  </note>  <p>Default: <code>true</code> </p>
+    ///   - [`privacy_protect_tech_contact(bool)`](crate::client::fluent_builders::TransferDomain::privacy_protect_tech_contact) / [`set_privacy_protect_tech_contact(Option<bool>)`](crate::client::fluent_builders::TransferDomain::set_privacy_protect_tech_contact): <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p> <note>   <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>  </note>  <p>Default: <code>true</code> </p>
+    /// - On success, responds with [`TransferDomainOutput`](crate::output::TransferDomainOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::TransferDomainOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    /// - On failure, responds with [`SdkError<TransferDomainError>`](crate::error::TransferDomainError)
     pub fn transfer_domain(&self) -> fluent_builders::TransferDomain<C, M, R> {
         fluent_builders::TransferDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TransferDomainToAnotherAwsAccount` operation.
+    /// Constructs a fluent builder for the [`TransferDomainToAnotherAwsAccount`](crate::client::fluent_builders::TransferDomainToAnotherAwsAccount) operation.
     ///
-    /// See [`TransferDomainToAnotherAwsAccount`](crate::client::fluent_builders::TransferDomainToAnotherAwsAccount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::TransferDomainToAnotherAwsAccount::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::TransferDomainToAnotherAwsAccount::set_domain_name): <p>The name of the domain that you want to transfer from the current Amazon Web Services account to another account.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::TransferDomainToAnotherAwsAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::TransferDomainToAnotherAwsAccount::set_account_id): <p>The account ID of the Amazon Web Services account that you want to transfer the domain to, for example, <code>111122223333</code>.</p>
+    /// - On success, responds with [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::TransferDomainToAnotherAwsAccountOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    ///   - [`password(Option<String>)`](crate::output::TransferDomainToAnotherAwsAccountOutput::password): <p>To finish transferring a domain to another Amazon Web Services account, the account that the domain is being transferred to must submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.</p>
+    /// - On failure, responds with [`SdkError<TransferDomainToAnotherAwsAccountError>`](crate::error::TransferDomainToAnotherAwsAccountError)
     pub fn transfer_domain_to_another_aws_account(
         &self,
     ) -> fluent_builders::TransferDomainToAnotherAwsAccount<C, M, R> {
         fluent_builders::TransferDomainToAnotherAwsAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDomainContact` operation.
+    /// Constructs a fluent builder for the [`UpdateDomainContact`](crate::client::fluent_builders::UpdateDomainContact) operation.
     ///
-    /// See [`UpdateDomainContact`](crate::client::fluent_builders::UpdateDomainContact) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainContact::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateDomainContact::set_domain_name): <p>The name of the domain that you want to update contact information for.</p>
+    ///   - [`admin_contact(ContactDetail)`](crate::client::fluent_builders::UpdateDomainContact::admin_contact) / [`set_admin_contact(Option<ContactDetail>)`](crate::client::fluent_builders::UpdateDomainContact::set_admin_contact): <p>Provides detailed contact information.</p>
+    ///   - [`registrant_contact(ContactDetail)`](crate::client::fluent_builders::UpdateDomainContact::registrant_contact) / [`set_registrant_contact(Option<ContactDetail>)`](crate::client::fluent_builders::UpdateDomainContact::set_registrant_contact): <p>Provides detailed contact information.</p>
+    ///   - [`tech_contact(ContactDetail)`](crate::client::fluent_builders::UpdateDomainContact::tech_contact) / [`set_tech_contact(Option<ContactDetail>)`](crate::client::fluent_builders::UpdateDomainContact::set_tech_contact): <p>Provides detailed contact information.</p>
+    /// - On success, responds with [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::UpdateDomainContactOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    /// - On failure, responds with [`SdkError<UpdateDomainContactError>`](crate::error::UpdateDomainContactError)
     pub fn update_domain_contact(&self) -> fluent_builders::UpdateDomainContact<C, M, R> {
         fluent_builders::UpdateDomainContact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDomainContactPrivacy` operation.
+    /// Constructs a fluent builder for the [`UpdateDomainContactPrivacy`](crate::client::fluent_builders::UpdateDomainContactPrivacy) operation.
     ///
-    /// See [`UpdateDomainContactPrivacy`](crate::client::fluent_builders::UpdateDomainContactPrivacy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainContactPrivacy::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateDomainContactPrivacy::set_domain_name): <p>The name of the domain that you want to update the privacy setting for.</p>
+    ///   - [`admin_privacy(bool)`](crate::client::fluent_builders::UpdateDomainContactPrivacy::admin_privacy) / [`set_admin_privacy(Option<bool>)`](crate::client::fluent_builders::UpdateDomainContactPrivacy::set_admin_privacy): <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p> <note>   <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>  </note>
+    ///   - [`registrant_privacy(bool)`](crate::client::fluent_builders::UpdateDomainContactPrivacy::registrant_privacy) / [`set_registrant_privacy(Option<bool>)`](crate::client::fluent_builders::UpdateDomainContactPrivacy::set_registrant_privacy): <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p> <note>   <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>  </note>
+    ///   - [`tech_privacy(bool)`](crate::client::fluent_builders::UpdateDomainContactPrivacy::tech_privacy) / [`set_tech_privacy(Option<bool>)`](crate::client::fluent_builders::UpdateDomainContactPrivacy::set_tech_privacy): <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p> <note>   <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>  </note>
+    /// - On success, responds with [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::UpdateDomainContactPrivacyOutput::operation_id): <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
+    /// - On failure, responds with [`SdkError<UpdateDomainContactPrivacyError>`](crate::error::UpdateDomainContactPrivacyError)
     pub fn update_domain_contact_privacy(
         &self,
     ) -> fluent_builders::UpdateDomainContactPrivacy<C, M, R> {
         fluent_builders::UpdateDomainContactPrivacy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDomainNameservers` operation.
+    /// Constructs a fluent builder for the [`UpdateDomainNameservers`](crate::client::fluent_builders::UpdateDomainNameservers) operation.
     ///
-    /// See [`UpdateDomainNameservers`](crate::client::fluent_builders::UpdateDomainNameservers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainNameservers::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateDomainNameservers::set_domain_name): <p>The name of the domain that you want to change name servers for.</p>
+    ///   - [`fi_auth_key(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainNameservers::fi_auth_key) / [`set_fi_auth_key(Option<String>)`](crate::client::fluent_builders::UpdateDomainNameservers::set_fi_auth_key): <p>The authorization key for .fi domains</p>
+    ///   - [`nameservers(Vec<Nameserver>)`](crate::client::fluent_builders::UpdateDomainNameservers::nameservers) / [`set_nameservers(Option<Vec<Nameserver>>)`](crate::client::fluent_builders::UpdateDomainNameservers::set_nameservers): <p>A list of new name servers for the domain.</p>
+    /// - On success, responds with [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::UpdateDomainNameserversOutput::operation_id): <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    /// - On failure, responds with [`SdkError<UpdateDomainNameserversError>`](crate::error::UpdateDomainNameserversError)
     pub fn update_domain_nameservers(&self) -> fluent_builders::UpdateDomainNameservers<C, M, R> {
         fluent_builders::UpdateDomainNameservers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateTagsForDomain` operation.
+    /// Constructs a fluent builder for the [`UpdateTagsForDomain`](crate::client::fluent_builders::UpdateTagsForDomain) operation.
     ///
-    /// See [`UpdateTagsForDomain`](crate::client::fluent_builders::UpdateTagsForDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTagsForDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateTagsForDomain::set_domain_name): <p>The domain for which you want to add or update tags.</p>
+    ///   - [`tags_to_update(Vec<Tag>)`](crate::client::fluent_builders::UpdateTagsForDomain::tags_to_update) / [`set_tags_to_update(Option<Vec<Tag>>)`](crate::client::fluent_builders::UpdateTagsForDomain::set_tags_to_update): <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
+    /// - On success, responds with [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateTagsForDomainError>`](crate::error::UpdateTagsForDomainError)
     pub fn update_tags_for_domain(&self) -> fluent_builders::UpdateTagsForDomain<C, M, R> {
         fluent_builders::UpdateTagsForDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ViewBilling` operation.
+    /// Constructs a fluent builder for the [`ViewBilling`](crate::client::fluent_builders::ViewBilling) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ViewBilling::into_paginator).
     ///
-    /// See [`ViewBilling`](crate::client::fluent_builders::ViewBilling) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ViewBilling::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`start(DateTime)`](crate::client::fluent_builders::ViewBilling::start) / [`set_start(Option<DateTime>)`](crate::client::fluent_builders::ViewBilling::set_start): <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+    ///   - [`end(DateTime)`](crate::client::fluent_builders::ViewBilling::end) / [`set_end(Option<DateTime>)`](crate::client::fluent_builders::ViewBilling::set_end): <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ViewBilling::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ViewBilling::set_marker): <p>For an initial request for a list of billing records, omit this element. If the number of billing records that are associated with the current Amazon Web Services account during the specified period is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>  <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ViewBilling::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ViewBilling::set_max_items): <p>The number of billing records to be returned.</p>  <p>Default: 20</p>
+    /// - On success, responds with [`ViewBillingOutput`](crate::output::ViewBillingOutput) with field(s):
+    ///   - [`next_page_marker(Option<String>)`](crate::output::ViewBillingOutput::next_page_marker): <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
+    ///   - [`billing_records(Option<Vec<BillingRecord>>)`](crate::output::ViewBillingOutput::billing_records): <p>A summary of billing records.</p>
+    /// - On failure, responds with [`SdkError<ViewBillingError>`](crate::error::ViewBillingError)
     pub fn view_billing(&self) -> fluent_builders::ViewBilling<C, M, R> {
         fluent_builders::ViewBilling::new(self.handle.clone())
     }

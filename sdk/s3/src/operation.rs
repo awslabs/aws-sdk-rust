@@ -181,8 +181,8 @@ mod create_multipart_upload_request_test {
             .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
-        assert_eq!(http_request.method(), "POST");
-        assert_eq!(http_request.uri().path(), "/test-bucket/object.txt");
+        pretty_assertions::assert_eq!(http_request.method(), "POST");
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/test-bucket/object.txt");
         let expected_query_params = &["uploads", "x-id=CreateMultipartUpload"];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_query_string(
             &http_request,
@@ -1101,8 +1101,9 @@ mod get_bucket_location_request_test {
                         <crate::operation::GetBucketLocation as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.unwrap();
-        assert_eq!(
-            parsed.location_constraint, expected_output.location_constraint,
+        pretty_assertions::assert_eq!(
+            parsed.location_constraint,
+            expected_output.location_constraint,
             "Unexpected value for `location_constraint`"
         );
     }
@@ -1825,7 +1826,7 @@ mod head_bucket_request_test {
                     });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::HeadBucketErrorKind::NotFound(actual_error) = parsed.kind {
-            assert_eq!(expected_output, actual_error);
+            pretty_assertions::assert_eq!(expected_output, actual_error);
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -1883,8 +1884,8 @@ mod head_object_request_test {
             .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
-        assert_eq!(http_request.method(), "HEAD");
-        assert_eq!(
+        pretty_assertions::assert_eq!(http_request.method(), "HEAD");
+        pretty_assertions::assert_eq!(
             http_request.uri().path(),
             "/test-bucket/%3C%3E%20%60%3F%F0%9F%90%B1"
         );
@@ -1917,7 +1918,7 @@ mod head_object_request_test {
                     });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::HeadObjectErrorKind::NotFound(actual_error) = parsed.kind {
-            assert_eq!(expected_output, actual_error);
+            pretty_assertions::assert_eq!(expected_output, actual_error);
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -2219,44 +2220,54 @@ mod list_objects_request_test {
                         <crate::operation::ListObjects as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.unwrap();
-        assert_eq!(
-            parsed.is_truncated, expected_output.is_truncated,
+        pretty_assertions::assert_eq!(
+            parsed.is_truncated,
+            expected_output.is_truncated,
             "Unexpected value for `is_truncated`"
         );
-        assert_eq!(
-            parsed.marker, expected_output.marker,
+        pretty_assertions::assert_eq!(
+            parsed.marker,
+            expected_output.marker,
             "Unexpected value for `marker`"
         );
-        assert_eq!(
-            parsed.next_marker, expected_output.next_marker,
+        pretty_assertions::assert_eq!(
+            parsed.next_marker,
+            expected_output.next_marker,
             "Unexpected value for `next_marker`"
         );
-        assert_eq!(
-            parsed.contents, expected_output.contents,
+        pretty_assertions::assert_eq!(
+            parsed.contents,
+            expected_output.contents,
             "Unexpected value for `contents`"
         );
-        assert_eq!(
-            parsed.name, expected_output.name,
+        pretty_assertions::assert_eq!(
+            parsed.name,
+            expected_output.name,
             "Unexpected value for `name`"
         );
-        assert_eq!(
-            parsed.prefix, expected_output.prefix,
+        pretty_assertions::assert_eq!(
+            parsed.prefix,
+            expected_output.prefix,
             "Unexpected value for `prefix`"
         );
-        assert_eq!(
-            parsed.delimiter, expected_output.delimiter,
+        pretty_assertions::assert_eq!(
+            parsed.delimiter,
+            expected_output.delimiter,
             "Unexpected value for `delimiter`"
         );
-        assert_eq!(
-            parsed.max_keys, expected_output.max_keys,
+        pretty_assertions::assert_eq!(
+            parsed.max_keys,
+            expected_output.max_keys,
             "Unexpected value for `max_keys`"
         );
-        assert_eq!(
-            parsed.common_prefixes, expected_output.common_prefixes,
+        pretty_assertions::assert_eq!(
+            parsed.common_prefixes,
+            expected_output.common_prefixes,
             "Unexpected value for `common_prefixes`"
         );
-        assert_eq!(
-            parsed.encoding_type, expected_output.encoding_type,
+        pretty_assertions::assert_eq!(
+            parsed.encoding_type,
+            expected_output.encoding_type,
             "Unexpected value for `encoding_type`"
         );
     }
@@ -2659,8 +2670,8 @@ mod put_bucket_lifecycle_configuration_request_test {
             .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
-        assert_eq!(http_request.method(), "PUT");
-        assert_eq!(http_request.uri().path(), "/test-bucket");
+        pretty_assertions::assert_eq!(http_request.method(), "PUT");
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/test-bucket");
         let expected_headers = [("content-md5", "JP8DTuCSH6yDC8wNGg4+mA==")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request,
@@ -3061,8 +3072,8 @@ mod put_object_request_test {
             .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
-        assert_eq!(http_request.method(), "PUT");
-        assert_eq!(http_request.uri().path(), "/test-bucket/test-key");
+        pretty_assertions::assert_eq!(http_request.method(), "PUT");
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/test-bucket/test-key");
         let expected_headers = [("content-type", "text/html")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request,
@@ -3087,8 +3098,8 @@ mod put_object_request_test {
             .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
-        assert_eq!(http_request.method(), "PUT");
-        assert_eq!(http_request.uri().path(), "/test-bucket/test-key");
+        pretty_assertions::assert_eq!(http_request.method(), "PUT");
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/test-bucket/test-key");
         let expected_headers = [("content-length", "2")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request,

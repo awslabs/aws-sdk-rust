@@ -83,292 +83,489 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcknowledgeJob` operation.
+    /// Constructs a fluent builder for the [`AcknowledgeJob`](crate::client::fluent_builders::AcknowledgeJob) operation.
     ///
-    /// See [`AcknowledgeJob`](crate::client::fluent_builders::AcknowledgeJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::AcknowledgeJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::AcknowledgeJob::set_job_id): <p>The unique system-generated ID of the job for which you want to confirm receipt.</p>
+    ///   - [`nonce(impl Into<String>)`](crate::client::fluent_builders::AcknowledgeJob::nonce) / [`set_nonce(Option<String>)`](crate::client::fluent_builders::AcknowledgeJob::set_nonce): <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <code>PollForJobs</code> request that returned this job.</p>
+    /// - On success, responds with [`AcknowledgeJobOutput`](crate::output::AcknowledgeJobOutput) with field(s):
+    ///   - [`status(Option<JobStatus>)`](crate::output::AcknowledgeJobOutput::status): <p>Whether the job worker has received the specified job.</p>
+    /// - On failure, responds with [`SdkError<AcknowledgeJobError>`](crate::error::AcknowledgeJobError)
     pub fn acknowledge_job(&self) -> fluent_builders::AcknowledgeJob<C, M, R> {
         fluent_builders::AcknowledgeJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AcknowledgeThirdPartyJob` operation.
+    /// Constructs a fluent builder for the [`AcknowledgeThirdPartyJob`](crate::client::fluent_builders::AcknowledgeThirdPartyJob) operation.
     ///
-    /// See [`AcknowledgeThirdPartyJob`](crate::client::fluent_builders::AcknowledgeThirdPartyJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::AcknowledgeThirdPartyJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::AcknowledgeThirdPartyJob::set_job_id): <p>The unique system-generated ID of the job.</p>
+    ///   - [`nonce(impl Into<String>)`](crate::client::fluent_builders::AcknowledgeThirdPartyJob::nonce) / [`set_nonce(Option<String>)`](crate::client::fluent_builders::AcknowledgeThirdPartyJob::set_nonce): <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::AcknowledgeThirdPartyJob::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::AcknowledgeThirdPartyJob::set_client_token): <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    /// - On success, responds with [`AcknowledgeThirdPartyJobOutput`](crate::output::AcknowledgeThirdPartyJobOutput) with field(s):
+    ///   - [`status(Option<JobStatus>)`](crate::output::AcknowledgeThirdPartyJobOutput::status): <p>The status information for the third party job, if any.</p>
+    /// - On failure, responds with [`SdkError<AcknowledgeThirdPartyJobError>`](crate::error::AcknowledgeThirdPartyJobError)
     pub fn acknowledge_third_party_job(
         &self,
     ) -> fluent_builders::AcknowledgeThirdPartyJob<C, M, R> {
         fluent_builders::AcknowledgeThirdPartyJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCustomActionType` operation.
+    /// Constructs a fluent builder for the [`CreateCustomActionType`](crate::client::fluent_builders::CreateCustomActionType) operation.
     ///
-    /// See [`CreateCustomActionType`](crate::client::fluent_builders::CreateCustomActionType) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`category(ActionCategory)`](crate::client::fluent_builders::CreateCustomActionType::category) / [`set_category(Option<ActionCategory>)`](crate::client::fluent_builders::CreateCustomActionType::set_category): <p>The category of the custom action, such as a build action or a test action.</p>
+    ///   - [`provider(impl Into<String>)`](crate::client::fluent_builders::CreateCustomActionType::provider) / [`set_provider(Option<String>)`](crate::client::fluent_builders::CreateCustomActionType::set_provider): <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::CreateCustomActionType::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::CreateCustomActionType::set_version): <p>The version identifier of the custom action.</p>
+    ///   - [`settings(ActionTypeSettings)`](crate::client::fluent_builders::CreateCustomActionType::settings) / [`set_settings(Option<ActionTypeSettings>)`](crate::client::fluent_builders::CreateCustomActionType::set_settings): <p>URLs that provide users information about this custom action.</p>
+    ///   - [`configuration_properties(Vec<ActionConfigurationProperty>)`](crate::client::fluent_builders::CreateCustomActionType::configuration_properties) / [`set_configuration_properties(Option<Vec<ActionConfigurationProperty>>)`](crate::client::fluent_builders::CreateCustomActionType::set_configuration_properties): <p>The configuration properties for the custom action.</p> <note>   <p>You can refer to a name in the configuration properties of the custom action within the URL templates by following the format of {Config:name}, as long as the configuration property is both required and not secret. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom Action for a Pipeline</a>.</p>  </note>
+    ///   - [`input_artifact_details(ArtifactDetails)`](crate::client::fluent_builders::CreateCustomActionType::input_artifact_details) / [`set_input_artifact_details(Option<ArtifactDetails>)`](crate::client::fluent_builders::CreateCustomActionType::set_input_artifact_details): <p>The details of the input artifact for the action, such as its commit ID.</p>
+    ///   - [`output_artifact_details(ArtifactDetails)`](crate::client::fluent_builders::CreateCustomActionType::output_artifact_details) / [`set_output_artifact_details(Option<ArtifactDetails>)`](crate::client::fluent_builders::CreateCustomActionType::set_output_artifact_details): <p>The details of the output artifact of the action, such as its commit ID.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCustomActionType::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCustomActionType::set_tags): <p>The tags for the custom action.</p>
+    /// - On success, responds with [`CreateCustomActionTypeOutput`](crate::output::CreateCustomActionTypeOutput) with field(s):
+    ///   - [`action_type(Option<ActionType>)`](crate::output::CreateCustomActionTypeOutput::action_type): <p>Returns information about the details of an action type.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateCustomActionTypeOutput::tags): <p>Specifies the tags applied to the custom action.</p>
+    /// - On failure, responds with [`SdkError<CreateCustomActionTypeError>`](crate::error::CreateCustomActionTypeError)
     pub fn create_custom_action_type(&self) -> fluent_builders::CreateCustomActionType<C, M, R> {
         fluent_builders::CreateCustomActionType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePipeline` operation.
+    /// Constructs a fluent builder for the [`CreatePipeline`](crate::client::fluent_builders::CreatePipeline) operation.
     ///
-    /// See [`CreatePipeline`](crate::client::fluent_builders::CreatePipeline) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline(PipelineDeclaration)`](crate::client::fluent_builders::CreatePipeline::pipeline) / [`set_pipeline(Option<PipelineDeclaration>)`](crate::client::fluent_builders::CreatePipeline::set_pipeline): <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreatePipeline::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreatePipeline::set_tags): <p>The tags for the pipeline.</p>
+    /// - On success, responds with [`CreatePipelineOutput`](crate::output::CreatePipelineOutput) with field(s):
+    ///   - [`pipeline(Option<PipelineDeclaration>)`](crate::output::CreatePipelineOutput::pipeline): <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreatePipelineOutput::tags): <p>Specifies the tags applied to the pipeline.</p>
+    /// - On failure, responds with [`SdkError<CreatePipelineError>`](crate::error::CreatePipelineError)
     pub fn create_pipeline(&self) -> fluent_builders::CreatePipeline<C, M, R> {
         fluent_builders::CreatePipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCustomActionType` operation.
+    /// Constructs a fluent builder for the [`DeleteCustomActionType`](crate::client::fluent_builders::DeleteCustomActionType) operation.
     ///
-    /// See [`DeleteCustomActionType`](crate::client::fluent_builders::DeleteCustomActionType) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`category(ActionCategory)`](crate::client::fluent_builders::DeleteCustomActionType::category) / [`set_category(Option<ActionCategory>)`](crate::client::fluent_builders::DeleteCustomActionType::set_category): <p>The category of the custom action that you want to delete, such as source or deploy.</p>
+    ///   - [`provider(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomActionType::provider) / [`set_provider(Option<String>)`](crate::client::fluent_builders::DeleteCustomActionType::set_provider): <p>The provider of the service used in the custom action, such as AWS CodeDeploy.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomActionType::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::DeleteCustomActionType::set_version): <p>The version of the custom action to delete.</p>
+    /// - On success, responds with [`DeleteCustomActionTypeOutput`](crate::output::DeleteCustomActionTypeOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCustomActionTypeError>`](crate::error::DeleteCustomActionTypeError)
     pub fn delete_custom_action_type(&self) -> fluent_builders::DeleteCustomActionType<C, M, R> {
         fluent_builders::DeleteCustomActionType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePipeline` operation.
+    /// Constructs a fluent builder for the [`DeletePipeline`](crate::client::fluent_builders::DeletePipeline) operation.
     ///
-    /// See [`DeletePipeline`](crate::client::fluent_builders::DeletePipeline) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeletePipeline::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeletePipeline::set_name): <p>The name of the pipeline to be deleted.</p>
+    /// - On success, responds with [`DeletePipelineOutput`](crate::output::DeletePipelineOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePipelineError>`](crate::error::DeletePipelineError)
     pub fn delete_pipeline(&self) -> fluent_builders::DeletePipeline<C, M, R> {
         fluent_builders::DeletePipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWebhook` operation.
+    /// Constructs a fluent builder for the [`DeleteWebhook`](crate::client::fluent_builders::DeleteWebhook) operation.
     ///
-    /// See [`DeleteWebhook`](crate::client::fluent_builders::DeleteWebhook) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteWebhook::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteWebhook::set_name): <p>The name of the webhook you want to delete.</p>
+    /// - On success, responds with [`DeleteWebhookOutput`](crate::output::DeleteWebhookOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWebhookError>`](crate::error::DeleteWebhookError)
     pub fn delete_webhook(&self) -> fluent_builders::DeleteWebhook<C, M, R> {
         fluent_builders::DeleteWebhook::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterWebhookWithThirdParty` operation.
+    /// Constructs a fluent builder for the [`DeregisterWebhookWithThirdParty`](crate::client::fluent_builders::DeregisterWebhookWithThirdParty) operation.
     ///
-    /// See [`DeregisterWebhookWithThirdParty`](crate::client::fluent_builders::DeregisterWebhookWithThirdParty) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`webhook_name(impl Into<String>)`](crate::client::fluent_builders::DeregisterWebhookWithThirdParty::webhook_name) / [`set_webhook_name(Option<String>)`](crate::client::fluent_builders::DeregisterWebhookWithThirdParty::set_webhook_name): <p>The name of the webhook you want to deregister.</p>
+    /// - On success, responds with [`DeregisterWebhookWithThirdPartyOutput`](crate::output::DeregisterWebhookWithThirdPartyOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterWebhookWithThirdPartyError>`](crate::error::DeregisterWebhookWithThirdPartyError)
     pub fn deregister_webhook_with_third_party(
         &self,
     ) -> fluent_builders::DeregisterWebhookWithThirdParty<C, M, R> {
         fluent_builders::DeregisterWebhookWithThirdParty::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableStageTransition` operation.
+    /// Constructs a fluent builder for the [`DisableStageTransition`](crate::client::fluent_builders::DisableStageTransition) operation.
     ///
-    /// See [`DisableStageTransition`](crate::client::fluent_builders::DisableStageTransition) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::DisableStageTransition::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::DisableStageTransition::set_pipeline_name): <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::DisableStageTransition::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::DisableStageTransition::set_stage_name): <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
+    ///   - [`transition_type(StageTransitionType)`](crate::client::fluent_builders::DisableStageTransition::transition_type) / [`set_transition_type(Option<StageTransitionType>)`](crate::client::fluent_builders::DisableStageTransition::set_transition_type): <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
+    ///   - [`reason(impl Into<String>)`](crate::client::fluent_builders::DisableStageTransition::reason) / [`set_reason(Option<String>)`](crate::client::fluent_builders::DisableStageTransition::set_reason): <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
+    /// - On success, responds with [`DisableStageTransitionOutput`](crate::output::DisableStageTransitionOutput)
+
+    /// - On failure, responds with [`SdkError<DisableStageTransitionError>`](crate::error::DisableStageTransitionError)
     pub fn disable_stage_transition(&self) -> fluent_builders::DisableStageTransition<C, M, R> {
         fluent_builders::DisableStageTransition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableStageTransition` operation.
+    /// Constructs a fluent builder for the [`EnableStageTransition`](crate::client::fluent_builders::EnableStageTransition) operation.
     ///
-    /// See [`EnableStageTransition`](crate::client::fluent_builders::EnableStageTransition) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::EnableStageTransition::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::EnableStageTransition::set_pipeline_name): <p>The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::EnableStageTransition::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::EnableStageTransition::set_stage_name): <p>The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).</p>
+    ///   - [`transition_type(StageTransitionType)`](crate::client::fluent_builders::EnableStageTransition::transition_type) / [`set_transition_type(Option<StageTransitionType>)`](crate::client::fluent_builders::EnableStageTransition::set_transition_type): <p>Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).</p>
+    /// - On success, responds with [`EnableStageTransitionOutput`](crate::output::EnableStageTransitionOutput)
+
+    /// - On failure, responds with [`SdkError<EnableStageTransitionError>`](crate::error::EnableStageTransitionError)
     pub fn enable_stage_transition(&self) -> fluent_builders::EnableStageTransition<C, M, R> {
         fluent_builders::EnableStageTransition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetActionType` operation.
+    /// Constructs a fluent builder for the [`GetActionType`](crate::client::fluent_builders::GetActionType) operation.
     ///
-    /// See [`GetActionType`](crate::client::fluent_builders::GetActionType) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`category(ActionCategory)`](crate::client::fluent_builders::GetActionType::category) / [`set_category(Option<ActionCategory>)`](crate::client::fluent_builders::GetActionType::set_category): <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>  <ul>   <li> <p> <code>Source</code> </p> </li>   <li> <p> <code>Build</code> </p> </li>   <li> <p> <code>Test</code> </p> </li>   <li> <p> <code>Deploy</code> </p> </li>   <li> <p> <code>Approval</code> </p> </li>   <li> <p> <code>Invoke</code> </p> </li>  </ul>
+    ///   - [`owner(impl Into<String>)`](crate::client::fluent_builders::GetActionType::owner) / [`set_owner(Option<String>)`](crate::client::fluent_builders::GetActionType::set_owner): <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
+    ///   - [`provider(impl Into<String>)`](crate::client::fluent_builders::GetActionType::provider) / [`set_provider(Option<String>)`](crate::client::fluent_builders::GetActionType::set_provider): <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::GetActionType::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::GetActionType::set_version): <p>A string that describes the action type version.</p>
+    /// - On success, responds with [`GetActionTypeOutput`](crate::output::GetActionTypeOutput) with field(s):
+    ///   - [`action_type(Option<ActionTypeDeclaration>)`](crate::output::GetActionTypeOutput::action_type): <p>The action type information for the requested action type, such as the action type ID.</p>
+    /// - On failure, responds with [`SdkError<GetActionTypeError>`](crate::error::GetActionTypeError)
     pub fn get_action_type(&self) -> fluent_builders::GetActionType<C, M, R> {
         fluent_builders::GetActionType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJobDetails` operation.
+    /// Constructs a fluent builder for the [`GetJobDetails`](crate::client::fluent_builders::GetJobDetails) operation.
     ///
-    /// See [`GetJobDetails`](crate::client::fluent_builders::GetJobDetails) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetJobDetails::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetJobDetails::set_job_id): <p>The unique system-generated ID for the job.</p>
+    /// - On success, responds with [`GetJobDetailsOutput`](crate::output::GetJobDetailsOutput) with field(s):
+    ///   - [`job_details(Option<JobDetails>)`](crate::output::GetJobDetailsOutput::job_details): <p>The details of the job.</p> <note>   <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>  </note>
+    /// - On failure, responds with [`SdkError<GetJobDetailsError>`](crate::error::GetJobDetailsError)
     pub fn get_job_details(&self) -> fluent_builders::GetJobDetails<C, M, R> {
         fluent_builders::GetJobDetails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPipeline` operation.
+    /// Constructs a fluent builder for the [`GetPipeline`](crate::client::fluent_builders::GetPipeline) operation.
     ///
-    /// See [`GetPipeline`](crate::client::fluent_builders::GetPipeline) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetPipeline::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetPipeline::set_name): <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
+    ///   - [`version(i32)`](crate::client::fluent_builders::GetPipeline::version) / [`set_version(Option<i32>)`](crate::client::fluent_builders::GetPipeline::set_version): <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
+    /// - On success, responds with [`GetPipelineOutput`](crate::output::GetPipelineOutput) with field(s):
+    ///   - [`pipeline(Option<PipelineDeclaration>)`](crate::output::GetPipelineOutput::pipeline): <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
+    ///   - [`metadata(Option<PipelineMetadata>)`](crate::output::GetPipelineOutput::metadata): <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
+    /// - On failure, responds with [`SdkError<GetPipelineError>`](crate::error::GetPipelineError)
     pub fn get_pipeline(&self) -> fluent_builders::GetPipeline<C, M, R> {
         fluent_builders::GetPipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPipelineExecution` operation.
+    /// Constructs a fluent builder for the [`GetPipelineExecution`](crate::client::fluent_builders::GetPipelineExecution) operation.
     ///
-    /// See [`GetPipelineExecution`](crate::client::fluent_builders::GetPipelineExecution) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::GetPipelineExecution::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::GetPipelineExecution::set_pipeline_name): <p>The name of the pipeline about which you want to get execution details.</p>
+    ///   - [`pipeline_execution_id(impl Into<String>)`](crate::client::fluent_builders::GetPipelineExecution::pipeline_execution_id) / [`set_pipeline_execution_id(Option<String>)`](crate::client::fluent_builders::GetPipelineExecution::set_pipeline_execution_id): <p>The ID of the pipeline execution about which you want to get execution details.</p>
+    /// - On success, responds with [`GetPipelineExecutionOutput`](crate::output::GetPipelineExecutionOutput) with field(s):
+    ///   - [`pipeline_execution(Option<PipelineExecution>)`](crate::output::GetPipelineExecutionOutput::pipeline_execution): <p>Represents information about the execution of a pipeline.</p>
+    /// - On failure, responds with [`SdkError<GetPipelineExecutionError>`](crate::error::GetPipelineExecutionError)
     pub fn get_pipeline_execution(&self) -> fluent_builders::GetPipelineExecution<C, M, R> {
         fluent_builders::GetPipelineExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPipelineState` operation.
+    /// Constructs a fluent builder for the [`GetPipelineState`](crate::client::fluent_builders::GetPipelineState) operation.
     ///
-    /// See [`GetPipelineState`](crate::client::fluent_builders::GetPipelineState) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetPipelineState::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetPipelineState::set_name): <p>The name of the pipeline about which you want to get information.</p>
+    /// - On success, responds with [`GetPipelineStateOutput`](crate::output::GetPipelineStateOutput) with field(s):
+    ///   - [`pipeline_name(Option<String>)`](crate::output::GetPipelineStateOutput::pipeline_name): <p>The name of the pipeline for which you want to get the state.</p>
+    ///   - [`pipeline_version(Option<i32>)`](crate::output::GetPipelineStateOutput::pipeline_version): <p>The version number of the pipeline.</p> <note>   <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>  </note>
+    ///   - [`stage_states(Option<Vec<StageState>>)`](crate::output::GetPipelineStateOutput::stage_states): <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
+    ///   - [`created(Option<DateTime>)`](crate::output::GetPipelineStateOutput::created): <p>The date and time the pipeline was created, in timestamp format.</p>
+    ///   - [`updated(Option<DateTime>)`](crate::output::GetPipelineStateOutput::updated): <p>The date and time the pipeline was last updated, in timestamp format.</p>
+    /// - On failure, responds with [`SdkError<GetPipelineStateError>`](crate::error::GetPipelineStateError)
     pub fn get_pipeline_state(&self) -> fluent_builders::GetPipelineState<C, M, R> {
         fluent_builders::GetPipelineState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetThirdPartyJobDetails` operation.
+    /// Constructs a fluent builder for the [`GetThirdPartyJobDetails`](crate::client::fluent_builders::GetThirdPartyJobDetails) operation.
     ///
-    /// See [`GetThirdPartyJobDetails`](crate::client::fluent_builders::GetThirdPartyJobDetails) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetThirdPartyJobDetails::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetThirdPartyJobDetails::set_job_id): <p>The unique system-generated ID used for identifying the job.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::GetThirdPartyJobDetails::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::GetThirdPartyJobDetails::set_client_token): <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    /// - On success, responds with [`GetThirdPartyJobDetailsOutput`](crate::output::GetThirdPartyJobDetailsOutput) with field(s):
+    ///   - [`job_details(Option<ThirdPartyJobDetails>)`](crate::output::GetThirdPartyJobDetailsOutput::job_details): <p>The details of the job, including any protected values defined for the job.</p>
+    /// - On failure, responds with [`SdkError<GetThirdPartyJobDetailsError>`](crate::error::GetThirdPartyJobDetailsError)
     pub fn get_third_party_job_details(&self) -> fluent_builders::GetThirdPartyJobDetails<C, M, R> {
         fluent_builders::GetThirdPartyJobDetails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListActionExecutions` operation.
+    /// Constructs a fluent builder for the [`ListActionExecutions`](crate::client::fluent_builders::ListActionExecutions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListActionExecutions::into_paginator).
     ///
-    /// See [`ListActionExecutions`](crate::client::fluent_builders::ListActionExecutions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListActionExecutions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::ListActionExecutions::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::ListActionExecutions::set_pipeline_name): <p> The name of the pipeline for which you want to list action execution history.</p>
+    ///   - [`filter(ActionExecutionFilter)`](crate::client::fluent_builders::ListActionExecutions::filter) / [`set_filter(Option<ActionExecutionFilter>)`](crate::client::fluent_builders::ListActionExecutions::set_filter): <p>Input information used to filter action execution history.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListActionExecutions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListActionExecutions::set_max_results): <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note>   <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>  </note>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListActionExecutions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListActionExecutions::set_next_token): <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
+    /// - On success, responds with [`ListActionExecutionsOutput`](crate::output::ListActionExecutionsOutput) with field(s):
+    ///   - [`action_execution_details(Option<Vec<ActionExecutionDetail>>)`](crate::output::ListActionExecutionsOutput::action_execution_details): <p>The details for a list of recent executions, such as action execution ID.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListActionExecutionsOutput::next_token): <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
+    /// - On failure, responds with [`SdkError<ListActionExecutionsError>`](crate::error::ListActionExecutionsError)
     pub fn list_action_executions(&self) -> fluent_builders::ListActionExecutions<C, M, R> {
         fluent_builders::ListActionExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListActionTypes` operation.
+    /// Constructs a fluent builder for the [`ListActionTypes`](crate::client::fluent_builders::ListActionTypes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListActionTypes::into_paginator).
     ///
-    /// See [`ListActionTypes`](crate::client::fluent_builders::ListActionTypes) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListActionTypes::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`action_owner_filter(ActionOwner)`](crate::client::fluent_builders::ListActionTypes::action_owner_filter) / [`set_action_owner_filter(Option<ActionOwner>)`](crate::client::fluent_builders::ListActionTypes::set_action_owner_filter): <p>Filters the list of action types to those created by a specified entity.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListActionTypes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListActionTypes::set_next_token): <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
+    ///   - [`region_filter(impl Into<String>)`](crate::client::fluent_builders::ListActionTypes::region_filter) / [`set_region_filter(Option<String>)`](crate::client::fluent_builders::ListActionTypes::set_region_filter): <p>The Region to filter on for the list of action types.</p>
+    /// - On success, responds with [`ListActionTypesOutput`](crate::output::ListActionTypesOutput) with field(s):
+    ///   - [`action_types(Option<Vec<ActionType>>)`](crate::output::ListActionTypesOutput::action_types): <p>Provides details of the action types.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListActionTypesOutput::next_token): <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
+    /// - On failure, responds with [`SdkError<ListActionTypesError>`](crate::error::ListActionTypesError)
     pub fn list_action_types(&self) -> fluent_builders::ListActionTypes<C, M, R> {
         fluent_builders::ListActionTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPipelineExecutions` operation.
+    /// Constructs a fluent builder for the [`ListPipelineExecutions`](crate::client::fluent_builders::ListPipelineExecutions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPipelineExecutions::into_paginator).
     ///
-    /// See [`ListPipelineExecutions`](crate::client::fluent_builders::ListPipelineExecutions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelineExecutions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::ListPipelineExecutions::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::ListPipelineExecutions::set_pipeline_name): <p>The name of the pipeline for which you want to get execution summary information.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPipelineExecutions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPipelineExecutions::set_max_results): <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPipelineExecutions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPipelineExecutions::set_next_token): <p>The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to return the next set of pipeline executions in the list.</p>
+    /// - On success, responds with [`ListPipelineExecutionsOutput`](crate::output::ListPipelineExecutionsOutput) with field(s):
+    ///   - [`pipeline_execution_summaries(Option<Vec<PipelineExecutionSummary>>)`](crate::output::ListPipelineExecutionsOutput::pipeline_execution_summaries): <p>A list of executions in the history of a pipeline.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPipelineExecutionsOutput::next_token): <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
+    /// - On failure, responds with [`SdkError<ListPipelineExecutionsError>`](crate::error::ListPipelineExecutionsError)
     pub fn list_pipeline_executions(&self) -> fluent_builders::ListPipelineExecutions<C, M, R> {
         fluent_builders::ListPipelineExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPipelines` operation.
+    /// Constructs a fluent builder for the [`ListPipelines`](crate::client::fluent_builders::ListPipelines) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPipelines::into_paginator).
     ///
-    /// See [`ListPipelines`](crate::client::fluent_builders::ListPipelines) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelines::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPipelines::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPipelines::set_next_token): <p>An identifier that was returned from the previous list pipelines call. It can be used to return the next set of pipelines in the list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPipelines::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPipelines::set_max_results): <p>The maximum number of pipelines to return in a single call. To retrieve the remaining pipelines, make another call with the returned nextToken value. The minimum value you can specify is 1. The maximum accepted value is 1000.</p>
+    /// - On success, responds with [`ListPipelinesOutput`](crate::output::ListPipelinesOutput) with field(s):
+    ///   - [`pipelines(Option<Vec<PipelineSummary>>)`](crate::output::ListPipelinesOutput::pipelines): <p>The list of pipelines.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPipelinesOutput::next_token): <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
+    /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::error::ListPipelinesError)
     pub fn list_pipelines(&self) -> fluent_builders::ListPipelines<C, M, R> {
         fluent_builders::ListPipelines::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>The token that was returned from the previous API call, which would be used to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTagsForResource::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTagsForResource::set_max_results): <p>The maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags for the resource.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent API call to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWebhooks` operation.
+    /// Constructs a fluent builder for the [`ListWebhooks`](crate::client::fluent_builders::ListWebhooks) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWebhooks::into_paginator).
     ///
-    /// See [`ListWebhooks`](crate::client::fluent_builders::ListWebhooks) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWebhooks::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWebhooks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWebhooks::set_next_token): <p>The token that was returned from the previous ListWebhooks call, which can be used to return the next set of webhooks in the list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWebhooks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWebhooks::set_max_results): <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>
+    /// - On success, responds with [`ListWebhooksOutput`](crate::output::ListWebhooksOutput) with field(s):
+    ///   - [`webhooks(Option<Vec<ListWebhookItem>>)`](crate::output::ListWebhooksOutput::webhooks): <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWebhooksOutput::next_token): <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list. </p>
+    /// - On failure, responds with [`SdkError<ListWebhooksError>`](crate::error::ListWebhooksError)
     pub fn list_webhooks(&self) -> fluent_builders::ListWebhooks<C, M, R> {
         fluent_builders::ListWebhooks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PollForJobs` operation.
+    /// Constructs a fluent builder for the [`PollForJobs`](crate::client::fluent_builders::PollForJobs) operation.
     ///
-    /// See [`PollForJobs`](crate::client::fluent_builders::PollForJobs) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`action_type_id(ActionTypeId)`](crate::client::fluent_builders::PollForJobs::action_type_id) / [`set_action_type_id(Option<ActionTypeId>)`](crate::client::fluent_builders::PollForJobs::set_action_type_id): <p>Represents information about an action type.</p>
+    ///   - [`max_batch_size(i32)`](crate::client::fluent_builders::PollForJobs::max_batch_size) / [`set_max_batch_size(Option<i32>)`](crate::client::fluent_builders::PollForJobs::set_max_batch_size): <p>The maximum number of jobs to return in a poll for jobs call.</p>
+    ///   - [`query_param(HashMap<String, String>)`](crate::client::fluent_builders::PollForJobs::query_param) / [`set_query_param(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PollForJobs::set_query_param): <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
+    /// - On success, responds with [`PollForJobsOutput`](crate::output::PollForJobsOutput) with field(s):
+    ///   - [`jobs(Option<Vec<Job>>)`](crate::output::PollForJobsOutput::jobs): <p>Information about the jobs to take action on.</p>
+    /// - On failure, responds with [`SdkError<PollForJobsError>`](crate::error::PollForJobsError)
     pub fn poll_for_jobs(&self) -> fluent_builders::PollForJobs<C, M, R> {
         fluent_builders::PollForJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PollForThirdPartyJobs` operation.
+    /// Constructs a fluent builder for the [`PollForThirdPartyJobs`](crate::client::fluent_builders::PollForThirdPartyJobs) operation.
     ///
-    /// See [`PollForThirdPartyJobs`](crate::client::fluent_builders::PollForThirdPartyJobs) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`action_type_id(ActionTypeId)`](crate::client::fluent_builders::PollForThirdPartyJobs::action_type_id) / [`set_action_type_id(Option<ActionTypeId>)`](crate::client::fluent_builders::PollForThirdPartyJobs::set_action_type_id): <p>Represents information about an action type.</p>
+    ///   - [`max_batch_size(i32)`](crate::client::fluent_builders::PollForThirdPartyJobs::max_batch_size) / [`set_max_batch_size(Option<i32>)`](crate::client::fluent_builders::PollForThirdPartyJobs::set_max_batch_size): <p>The maximum number of jobs to return in a poll for jobs call.</p>
+    /// - On success, responds with [`PollForThirdPartyJobsOutput`](crate::output::PollForThirdPartyJobsOutput) with field(s):
+    ///   - [`jobs(Option<Vec<ThirdPartyJob>>)`](crate::output::PollForThirdPartyJobsOutput::jobs): <p>Information about the jobs to take action on.</p>
+    /// - On failure, responds with [`SdkError<PollForThirdPartyJobsError>`](crate::error::PollForThirdPartyJobsError)
     pub fn poll_for_third_party_jobs(&self) -> fluent_builders::PollForThirdPartyJobs<C, M, R> {
         fluent_builders::PollForThirdPartyJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutActionRevision` operation.
+    /// Constructs a fluent builder for the [`PutActionRevision`](crate::client::fluent_builders::PutActionRevision) operation.
     ///
-    /// See [`PutActionRevision`](crate::client::fluent_builders::PutActionRevision) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::PutActionRevision::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::PutActionRevision::set_pipeline_name): <p>The name of the pipeline that starts processing the revision to the source.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::PutActionRevision::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::PutActionRevision::set_stage_name): <p>The name of the stage that contains the action that acts on the revision.</p>
+    ///   - [`action_name(impl Into<String>)`](crate::client::fluent_builders::PutActionRevision::action_name) / [`set_action_name(Option<String>)`](crate::client::fluent_builders::PutActionRevision::set_action_name): <p>The name of the action that processes the revision.</p>
+    ///   - [`action_revision(ActionRevision)`](crate::client::fluent_builders::PutActionRevision::action_revision) / [`set_action_revision(Option<ActionRevision>)`](crate::client::fluent_builders::PutActionRevision::set_action_revision): <p>Represents information about the version (or revision) of an action.</p>
+    /// - On success, responds with [`PutActionRevisionOutput`](crate::output::PutActionRevisionOutput) with field(s):
+    ///   - [`new_revision(bool)`](crate::output::PutActionRevisionOutput::new_revision): <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
+    ///   - [`pipeline_execution_id(Option<String>)`](crate::output::PutActionRevisionOutput::pipeline_execution_id): <p>The ID of the current workflow state of the pipeline.</p>
+    /// - On failure, responds with [`SdkError<PutActionRevisionError>`](crate::error::PutActionRevisionError)
     pub fn put_action_revision(&self) -> fluent_builders::PutActionRevision<C, M, R> {
         fluent_builders::PutActionRevision::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutApprovalResult` operation.
+    /// Constructs a fluent builder for the [`PutApprovalResult`](crate::client::fluent_builders::PutApprovalResult) operation.
     ///
-    /// See [`PutApprovalResult`](crate::client::fluent_builders::PutApprovalResult) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::PutApprovalResult::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::PutApprovalResult::set_pipeline_name): <p>The name of the pipeline that contains the action. </p>
+    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::PutApprovalResult::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::PutApprovalResult::set_stage_name): <p>The name of the stage that contains the action.</p>
+    ///   - [`action_name(impl Into<String>)`](crate::client::fluent_builders::PutApprovalResult::action_name) / [`set_action_name(Option<String>)`](crate::client::fluent_builders::PutApprovalResult::set_action_name): <p>The name of the action for which approval is requested.</p>
+    ///   - [`result(ApprovalResult)`](crate::client::fluent_builders::PutApprovalResult::result) / [`set_result(Option<ApprovalResult>)`](crate::client::fluent_builders::PutApprovalResult::set_result): <p>Represents information about the result of the approval request.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::PutApprovalResult::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::PutApprovalResult::set_token): <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
+    /// - On success, responds with [`PutApprovalResultOutput`](crate::output::PutApprovalResultOutput) with field(s):
+    ///   - [`approved_at(Option<DateTime>)`](crate::output::PutApprovalResultOutput::approved_at): <p>The timestamp showing when the approval or rejection was submitted.</p>
+    /// - On failure, responds with [`SdkError<PutApprovalResultError>`](crate::error::PutApprovalResultError)
     pub fn put_approval_result(&self) -> fluent_builders::PutApprovalResult<C, M, R> {
         fluent_builders::PutApprovalResult::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutJobFailureResult` operation.
+    /// Constructs a fluent builder for the [`PutJobFailureResult`](crate::client::fluent_builders::PutJobFailureResult) operation.
     ///
-    /// See [`PutJobFailureResult`](crate::client::fluent_builders::PutJobFailureResult) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::PutJobFailureResult::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::PutJobFailureResult::set_job_id): <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
+    ///   - [`failure_details(FailureDetails)`](crate::client::fluent_builders::PutJobFailureResult::failure_details) / [`set_failure_details(Option<FailureDetails>)`](crate::client::fluent_builders::PutJobFailureResult::set_failure_details): <p>The details about the failure of a job.</p>
+    /// - On success, responds with [`PutJobFailureResultOutput`](crate::output::PutJobFailureResultOutput)
+
+    /// - On failure, responds with [`SdkError<PutJobFailureResultError>`](crate::error::PutJobFailureResultError)
     pub fn put_job_failure_result(&self) -> fluent_builders::PutJobFailureResult<C, M, R> {
         fluent_builders::PutJobFailureResult::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutJobSuccessResult` operation.
+    /// Constructs a fluent builder for the [`PutJobSuccessResult`](crate::client::fluent_builders::PutJobSuccessResult) operation.
     ///
-    /// See [`PutJobSuccessResult`](crate::client::fluent_builders::PutJobSuccessResult) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::PutJobSuccessResult::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::PutJobSuccessResult::set_job_id): <p>The unique system-generated ID of the job that succeeded. This is the same ID returned from <code>PollForJobs</code>.</p>
+    ///   - [`current_revision(CurrentRevision)`](crate::client::fluent_builders::PutJobSuccessResult::current_revision) / [`set_current_revision(Option<CurrentRevision>)`](crate::client::fluent_builders::PutJobSuccessResult::set_current_revision): <p>The ID of the current revision of the artifact successfully worked on by the job.</p>
+    ///   - [`continuation_token(impl Into<String>)`](crate::client::fluent_builders::PutJobSuccessResult::continuation_token) / [`set_continuation_token(Option<String>)`](crate::client::fluent_builders::PutJobSuccessResult::set_continuation_token): <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a custom action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the custom action. When the action is complete, no continuation token should be supplied.</p>
+    ///   - [`execution_details(ExecutionDetails)`](crate::client::fluent_builders::PutJobSuccessResult::execution_details) / [`set_execution_details(Option<ExecutionDetails>)`](crate::client::fluent_builders::PutJobSuccessResult::set_execution_details): <p>The execution details of the successful job, such as the actions taken by the job worker.</p>
+    ///   - [`output_variables(HashMap<String, String>)`](crate::client::fluent_builders::PutJobSuccessResult::output_variables) / [`set_output_variables(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PutJobSuccessResult::set_output_variables): <p>Key-value pairs produced as output by a job worker that can be made available to a downstream action configuration. <code>outputVariables</code> can be included only when there is no continuation token on the request.</p>
+    /// - On success, responds with [`PutJobSuccessResultOutput`](crate::output::PutJobSuccessResultOutput)
+
+    /// - On failure, responds with [`SdkError<PutJobSuccessResultError>`](crate::error::PutJobSuccessResultError)
     pub fn put_job_success_result(&self) -> fluent_builders::PutJobSuccessResult<C, M, R> {
         fluent_builders::PutJobSuccessResult::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutThirdPartyJobFailureResult` operation.
+    /// Constructs a fluent builder for the [`PutThirdPartyJobFailureResult`](crate::client::fluent_builders::PutThirdPartyJobFailureResult) operation.
     ///
-    /// See [`PutThirdPartyJobFailureResult`](crate::client::fluent_builders::PutThirdPartyJobFailureResult) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::PutThirdPartyJobFailureResult::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::PutThirdPartyJobFailureResult::set_job_id): <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::PutThirdPartyJobFailureResult::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::PutThirdPartyJobFailureResult::set_client_token): <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    ///   - [`failure_details(FailureDetails)`](crate::client::fluent_builders::PutThirdPartyJobFailureResult::failure_details) / [`set_failure_details(Option<FailureDetails>)`](crate::client::fluent_builders::PutThirdPartyJobFailureResult::set_failure_details): <p>Represents information about failure details.</p>
+    /// - On success, responds with [`PutThirdPartyJobFailureResultOutput`](crate::output::PutThirdPartyJobFailureResultOutput)
+
+    /// - On failure, responds with [`SdkError<PutThirdPartyJobFailureResultError>`](crate::error::PutThirdPartyJobFailureResultError)
     pub fn put_third_party_job_failure_result(
         &self,
     ) -> fluent_builders::PutThirdPartyJobFailureResult<C, M, R> {
         fluent_builders::PutThirdPartyJobFailureResult::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutThirdPartyJobSuccessResult` operation.
+    /// Constructs a fluent builder for the [`PutThirdPartyJobSuccessResult`](crate::client::fluent_builders::PutThirdPartyJobSuccessResult) operation.
     ///
-    /// See [`PutThirdPartyJobSuccessResult`](crate::client::fluent_builders::PutThirdPartyJobSuccessResult) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::PutThirdPartyJobSuccessResult::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::PutThirdPartyJobSuccessResult::set_job_id): <p>The ID of the job that successfully completed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::PutThirdPartyJobSuccessResult::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::PutThirdPartyJobSuccessResult::set_client_token): <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    ///   - [`current_revision(CurrentRevision)`](crate::client::fluent_builders::PutThirdPartyJobSuccessResult::current_revision) / [`set_current_revision(Option<CurrentRevision>)`](crate::client::fluent_builders::PutThirdPartyJobSuccessResult::set_current_revision): <p>Represents information about a current revision.</p>
+    ///   - [`continuation_token(impl Into<String>)`](crate::client::fluent_builders::PutThirdPartyJobSuccessResult::continuation_token) / [`set_continuation_token(Option<String>)`](crate::client::fluent_builders::PutThirdPartyJobSuccessResult::set_continuation_token): <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a successful job provides to identify a partner action in progress. Future jobs use this token to identify the running instance of the action. It can be reused to return more information about the progress of the partner action. When the action is complete, no continuation token should be supplied.</p>
+    ///   - [`execution_details(ExecutionDetails)`](crate::client::fluent_builders::PutThirdPartyJobSuccessResult::execution_details) / [`set_execution_details(Option<ExecutionDetails>)`](crate::client::fluent_builders::PutThirdPartyJobSuccessResult::set_execution_details): <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. </p>
+    /// - On success, responds with [`PutThirdPartyJobSuccessResultOutput`](crate::output::PutThirdPartyJobSuccessResultOutput)
+
+    /// - On failure, responds with [`SdkError<PutThirdPartyJobSuccessResultError>`](crate::error::PutThirdPartyJobSuccessResultError)
     pub fn put_third_party_job_success_result(
         &self,
     ) -> fluent_builders::PutThirdPartyJobSuccessResult<C, M, R> {
         fluent_builders::PutThirdPartyJobSuccessResult::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutWebhook` operation.
+    /// Constructs a fluent builder for the [`PutWebhook`](crate::client::fluent_builders::PutWebhook) operation.
     ///
-    /// See [`PutWebhook`](crate::client::fluent_builders::PutWebhook) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`webhook(WebhookDefinition)`](crate::client::fluent_builders::PutWebhook::webhook) / [`set_webhook(Option<WebhookDefinition>)`](crate::client::fluent_builders::PutWebhook::set_webhook): <p>The detail provided in an input file to create the webhook, such as the webhook name, the pipeline name, and the action name. Give the webhook a unique name that helps you identify it. You might name the webhook after the pipeline and action it targets so that you can easily recognize what it's used for later.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::PutWebhook::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::PutWebhook::set_tags): <p>The tags for the webhook.</p>
+    /// - On success, responds with [`PutWebhookOutput`](crate::output::PutWebhookOutput) with field(s):
+    ///   - [`webhook(Option<ListWebhookItem>)`](crate::output::PutWebhookOutput::webhook): <p>The detail returned from creating the webhook, such as the webhook name, webhook URL, and webhook ARN.</p>
+    /// - On failure, responds with [`SdkError<PutWebhookError>`](crate::error::PutWebhookError)
     pub fn put_webhook(&self) -> fluent_builders::PutWebhook<C, M, R> {
         fluent_builders::PutWebhook::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterWebhookWithThirdParty` operation.
+    /// Constructs a fluent builder for the [`RegisterWebhookWithThirdParty`](crate::client::fluent_builders::RegisterWebhookWithThirdParty) operation.
     ///
-    /// See [`RegisterWebhookWithThirdParty`](crate::client::fluent_builders::RegisterWebhookWithThirdParty) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`webhook_name(impl Into<String>)`](crate::client::fluent_builders::RegisterWebhookWithThirdParty::webhook_name) / [`set_webhook_name(Option<String>)`](crate::client::fluent_builders::RegisterWebhookWithThirdParty::set_webhook_name): <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
+    /// - On success, responds with [`RegisterWebhookWithThirdPartyOutput`](crate::output::RegisterWebhookWithThirdPartyOutput)
+
+    /// - On failure, responds with [`SdkError<RegisterWebhookWithThirdPartyError>`](crate::error::RegisterWebhookWithThirdPartyError)
     pub fn register_webhook_with_third_party(
         &self,
     ) -> fluent_builders::RegisterWebhookWithThirdParty<C, M, R> {
         fluent_builders::RegisterWebhookWithThirdParty::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RetryStageExecution` operation.
+    /// Constructs a fluent builder for the [`RetryStageExecution`](crate::client::fluent_builders::RetryStageExecution) operation.
     ///
-    /// See [`RetryStageExecution`](crate::client::fluent_builders::RetryStageExecution) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::RetryStageExecution::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::RetryStageExecution::set_pipeline_name): <p>The name of the pipeline that contains the failed stage.</p>
+    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::RetryStageExecution::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::RetryStageExecution::set_stage_name): <p>The name of the failed stage to be retried.</p>
+    ///   - [`pipeline_execution_id(impl Into<String>)`](crate::client::fluent_builders::RetryStageExecution::pipeline_execution_id) / [`set_pipeline_execution_id(Option<String>)`](crate::client::fluent_builders::RetryStageExecution::set_pipeline_execution_id): <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
+    ///   - [`retry_mode(StageRetryMode)`](crate::client::fluent_builders::RetryStageExecution::retry_mode) / [`set_retry_mode(Option<StageRetryMode>)`](crate::client::fluent_builders::RetryStageExecution::set_retry_mode): <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
+    /// - On success, responds with [`RetryStageExecutionOutput`](crate::output::RetryStageExecutionOutput) with field(s):
+    ///   - [`pipeline_execution_id(Option<String>)`](crate::output::RetryStageExecutionOutput::pipeline_execution_id): <p>The ID of the current workflow execution in the failed stage.</p>
+    /// - On failure, responds with [`SdkError<RetryStageExecutionError>`](crate::error::RetryStageExecutionError)
     pub fn retry_stage_execution(&self) -> fluent_builders::RetryStageExecution<C, M, R> {
         fluent_builders::RetryStageExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartPipelineExecution` operation.
+    /// Constructs a fluent builder for the [`StartPipelineExecution`](crate::client::fluent_builders::StartPipelineExecution) operation.
     ///
-    /// See [`StartPipelineExecution`](crate::client::fluent_builders::StartPipelineExecution) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartPipelineExecution::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartPipelineExecution::set_name): <p>The name of the pipeline to start.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartPipelineExecution::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartPipelineExecution::set_client_request_token): <p>The system-generated unique ID used to identify a unique execution request.</p>
+    /// - On success, responds with [`StartPipelineExecutionOutput`](crate::output::StartPipelineExecutionOutput) with field(s):
+    ///   - [`pipeline_execution_id(Option<String>)`](crate::output::StartPipelineExecutionOutput::pipeline_execution_id): <p>The unique system-generated ID of the pipeline execution that was started.</p>
+    /// - On failure, responds with [`SdkError<StartPipelineExecutionError>`](crate::error::StartPipelineExecutionError)
     pub fn start_pipeline_execution(&self) -> fluent_builders::StartPipelineExecution<C, M, R> {
         fluent_builders::StartPipelineExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopPipelineExecution` operation.
+    /// Constructs a fluent builder for the [`StopPipelineExecution`](crate::client::fluent_builders::StopPipelineExecution) operation.
     ///
-    /// See [`StopPipelineExecution`](crate::client::fluent_builders::StopPipelineExecution) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline_name(impl Into<String>)`](crate::client::fluent_builders::StopPipelineExecution::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::client::fluent_builders::StopPipelineExecution::set_pipeline_name): <p>The name of the pipeline to stop.</p>
+    ///   - [`pipeline_execution_id(impl Into<String>)`](crate::client::fluent_builders::StopPipelineExecution::pipeline_execution_id) / [`set_pipeline_execution_id(Option<String>)`](crate::client::fluent_builders::StopPipelineExecution::set_pipeline_execution_id): <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
+    ///   - [`abandon(bool)`](crate::client::fluent_builders::StopPipelineExecution::abandon) / [`set_abandon(bool)`](crate::client::fluent_builders::StopPipelineExecution::set_abandon): <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>   <p>This option can lead to failed or out-of-sequence tasks.</p>  </note>
+    ///   - [`reason(impl Into<String>)`](crate::client::fluent_builders::StopPipelineExecution::reason) / [`set_reason(Option<String>)`](crate::client::fluent_builders::StopPipelineExecution::set_reason): <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
+    /// - On success, responds with [`StopPipelineExecutionOutput`](crate::output::StopPipelineExecutionOutput) with field(s):
+    ///   - [`pipeline_execution_id(Option<String>)`](crate::output::StopPipelineExecutionOutput::pipeline_execution_id): <p>The unique system-generated ID of the pipeline execution that was stopped.</p>
+    /// - On failure, responds with [`SdkError<StopPipelineExecutionError>`](crate::error::StopPipelineExecutionError)
     pub fn stop_pipeline_execution(&self) -> fluent_builders::StopPipelineExecution<C, M, R> {
         fluent_builders::StopPipelineExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags you want to modify or add to the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p> The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of keys for the tags to be removed from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateActionType` operation.
+    /// Constructs a fluent builder for the [`UpdateActionType`](crate::client::fluent_builders::UpdateActionType) operation.
     ///
-    /// See [`UpdateActionType`](crate::client::fluent_builders::UpdateActionType) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`action_type(ActionTypeDeclaration)`](crate::client::fluent_builders::UpdateActionType::action_type) / [`set_action_type(Option<ActionTypeDeclaration>)`](crate::client::fluent_builders::UpdateActionType::set_action_type): <p>The action type definition for the action type to be updated.</p>
+    /// - On success, responds with [`UpdateActionTypeOutput`](crate::output::UpdateActionTypeOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateActionTypeError>`](crate::error::UpdateActionTypeError)
     pub fn update_action_type(&self) -> fluent_builders::UpdateActionType<C, M, R> {
         fluent_builders::UpdateActionType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePipeline` operation.
+    /// Constructs a fluent builder for the [`UpdatePipeline`](crate::client::fluent_builders::UpdatePipeline) operation.
     ///
-    /// See [`UpdatePipeline`](crate::client::fluent_builders::UpdatePipeline) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`pipeline(PipelineDeclaration)`](crate::client::fluent_builders::UpdatePipeline::pipeline) / [`set_pipeline(Option<PipelineDeclaration>)`](crate::client::fluent_builders::UpdatePipeline::set_pipeline): <p>The name of the pipeline to be updated.</p>
+    /// - On success, responds with [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput) with field(s):
+    ///   - [`pipeline(Option<PipelineDeclaration>)`](crate::output::UpdatePipelineOutput::pipeline): <p>The structure of the updated pipeline.</p>
+    /// - On failure, responds with [`SdkError<UpdatePipelineError>`](crate::error::UpdatePipelineError)
     pub fn update_pipeline(&self) -> fluent_builders::UpdatePipeline<C, M, R> {
         fluent_builders::UpdatePipeline::new(self.handle.clone())
     }

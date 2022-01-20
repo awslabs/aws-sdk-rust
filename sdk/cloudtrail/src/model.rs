@@ -97,7 +97,7 @@ impl AdvancedEventSelector {
 pub struct AdvancedFieldSelector {
     /// <p> A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
     /// <ul>
-    /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code> events.</p> </li>
+    /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
     /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
     /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
     /// <li> <p> <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must be <code>Management</code> or <code>Data</code>.</p> </li>
@@ -112,6 +112,7 @@ pub struct AdvancedFieldSelector {
     /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
+    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
     /// <ul>
@@ -247,6 +248,22 @@ pub struct AdvancedFieldSelector {
     /// /stream/
     /// <date_time></date_time>
     /// </table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :glue:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <database_name>
+    /// /
+    /// <table_name></table_name>
+    /// </database_name>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -269,7 +286,7 @@ pub struct AdvancedFieldSelector {
 impl AdvancedFieldSelector {
     /// <p> A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
     /// <ul>
-    /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code> events.</p> </li>
+    /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
     /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
     /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
     /// <li> <p> <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must be <code>Management</code> or <code>Data</code>.</p> </li>
@@ -284,6 +301,7 @@ impl AdvancedFieldSelector {
     /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
+    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
     /// <ul>
@@ -419,6 +437,22 @@ impl AdvancedFieldSelector {
     /// /stream/
     /// <date_time></date_time>
     /// </table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :glue:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <database_name>
+    /// /
+    /// <table_name></table_name>
+    /// </database_name>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -482,7 +516,7 @@ pub mod advanced_field_selector {
     impl Builder {
         /// <p> A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
         /// <ul>
-        /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code> events.</p> </li>
+        /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
         /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
         /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
         /// <li> <p> <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must be <code>Management</code> or <code>Data</code>.</p> </li>
@@ -497,6 +531,7 @@ pub mod advanced_field_selector {
         /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
         /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
         /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
+        /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
         /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
         /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
         /// <ul>
@@ -632,6 +667,22 @@ pub mod advanced_field_selector {
         /// /stream/
         /// <date_time></date_time>
         /// </table_name>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+        /// <ul>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :glue:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :table/
+        /// <database_name>
+        /// /
+        /// <table_name></table_name>
+        /// </database_name>
         /// </account_id>
         /// </region>
         /// </partition></code> </p> </li>
@@ -643,7 +694,7 @@ pub mod advanced_field_selector {
         }
         /// <p> A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
         /// <ul>
-        /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code> events.</p> </li>
+        /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p> </li>
         /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
         /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
         /// <li> <p> <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must be <code>Management</code> or <code>Data</code>.</p> </li>
@@ -658,6 +709,7 @@ pub mod advanced_field_selector {
         /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
         /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
         /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
+        /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
         /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
         /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
         /// <ul>
@@ -793,6 +845,22 @@ pub mod advanced_field_selector {
         /// /stream/
         /// <date_time></date_time>
         /// </table_name>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+        /// <ul>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :glue:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :table/
+        /// <database_name>
+        /// /
+        /// <table_name></table_name>
+        /// </database_name>
         /// </account_id>
         /// </region>
         /// </partition></code> </p> </li>
@@ -1198,7 +1266,7 @@ pub struct EventSelector {
     /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources for an individual event selector, but the total number of data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource logging for all data events.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
     pub data_resources: std::option::Option<std::vec::Vec<crate::model::DataResource>>,
-    /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail.</p>
+    /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only in regions that support the event source.</p>
     pub exclude_management_event_sources: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EventSelector {
@@ -1219,7 +1287,7 @@ impl EventSelector {
     pub fn data_resources(&self) -> std::option::Option<&[crate::model::DataResource]> {
         self.data_resources.as_deref()
     }
-    /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail.</p>
+    /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only in regions that support the event source.</p>
     pub fn exclude_management_event_sources(&self) -> std::option::Option<&[std::string::String]> {
         self.exclude_management_event_sources.as_deref()
     }
@@ -1306,7 +1374,7 @@ pub mod event_selector {
         ///
         /// To override the contents of this collection use [`set_exclude_management_event_sources`](Self::set_exclude_management_event_sources).
         ///
-        /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail.</p>
+        /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only in regions that support the event source.</p>
         pub fn exclude_management_event_sources(
             mut self,
             input: impl Into<std::string::String>,
@@ -1316,7 +1384,7 @@ pub mod event_selector {
             self.exclude_management_event_sources = Some(v);
             self
         }
-        /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail.</p>
+        /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail. You can exclude management event sources only in regions that support the event source.</p>
         pub fn set_exclude_management_event_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1376,6 +1444,7 @@ pub struct DataResource {
     /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
+    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// </ul>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
@@ -1410,6 +1479,7 @@ impl DataResource {
     /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
     /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
+    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
@@ -1465,6 +1535,7 @@ pub mod data_resource {
         /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
         /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
         /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
+        /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
@@ -1484,6 +1555,7 @@ pub mod data_resource {
         /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
         /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
         /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
+        /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;

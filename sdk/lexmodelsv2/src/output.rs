@@ -1150,7 +1150,7 @@ pub struct UpdateExportOutput {
     pub export_id: std::option::Option<std::string::String>,
     /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
     pub resource_specification: std::option::Option<crate::model::ExportResourceSpecification>,
-    /// <p>The file format used for the files that define the resource.</p>
+    /// <p>The file format used for the files that define the resource. The <code>TSV</code> format is required to export a custom vocabulary only; otherwise use <code>LexJson</code> format.</p>
     pub file_format: std::option::Option<crate::model::ImportExportFileFormat>,
     /// <p>The status of the export. When the status is <code>Completed</code> the export archive is available for download.</p>
     pub export_status: std::option::Option<crate::model::ExportStatus>,
@@ -1170,7 +1170,7 @@ impl UpdateExportOutput {
     ) -> std::option::Option<&crate::model::ExportResourceSpecification> {
         self.resource_specification.as_ref()
     }
-    /// <p>The file format used for the files that define the resource.</p>
+    /// <p>The file format used for the files that define the resource. The <code>TSV</code> format is required to export a custom vocabulary only; otherwise use <code>LexJson</code> format.</p>
     pub fn file_format(&self) -> std::option::Option<&crate::model::ImportExportFileFormat> {
         self.file_format.as_ref()
     }
@@ -1240,12 +1240,12 @@ pub mod update_export_output {
             self.resource_specification = input;
             self
         }
-        /// <p>The file format used for the files that define the resource.</p>
+        /// <p>The file format used for the files that define the resource. The <code>TSV</code> format is required to export a custom vocabulary only; otherwise use <code>LexJson</code> format.</p>
         pub fn file_format(mut self, input: crate::model::ImportExportFileFormat) -> Self {
             self.file_format = Some(input);
             self
         }
-        /// <p>The file format used for the files that define the resource.</p>
+        /// <p>The file format used for the files that define the resource. The <code>TSV</code> format is required to export a custom vocabulary only; otherwise use <code>LexJson</code> format.</p>
         pub fn set_file_format(
             mut self,
             input: std::option::Option<crate::model::ImportExportFileFormat>,
@@ -2441,11 +2441,11 @@ impl TagResourceOutput {
 pub struct StartImportOutput {
     /// <p>A unique identifier for the import.</p>
     pub import_id: std::option::Option<std::string::String>,
-    /// <p>The parameters used when importing the bot or bot locale.</p>
+    /// <p>The parameters used when importing the resource.</p>
     pub resource_specification: std::option::Option<crate::model::ImportResourceSpecification>,
     /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
     pub merge_strategy: std::option::Option<crate::model::MergeStrategy>,
-    /// <p>The current status of the import. When the status is <code>Complete</code> the bot or bot alias is ready to use.</p>
+    /// <p>The current status of the import. When the status is <code>Complete</code> the bot, bot alias, or custom vocabulary is ready to use.</p>
     pub import_status: std::option::Option<crate::model::ImportStatus>,
     /// <p>The date and time that the import request was created.</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2455,7 +2455,7 @@ impl StartImportOutput {
     pub fn import_id(&self) -> std::option::Option<&str> {
         self.import_id.as_deref()
     }
-    /// <p>The parameters used when importing the bot or bot locale.</p>
+    /// <p>The parameters used when importing the resource.</p>
     pub fn resource_specification(
         &self,
     ) -> std::option::Option<&crate::model::ImportResourceSpecification> {
@@ -2465,7 +2465,7 @@ impl StartImportOutput {
     pub fn merge_strategy(&self) -> std::option::Option<&crate::model::MergeStrategy> {
         self.merge_strategy.as_ref()
     }
-    /// <p>The current status of the import. When the status is <code>Complete</code> the bot or bot alias is ready to use.</p>
+    /// <p>The current status of the import. When the status is <code>Complete</code> the bot, bot alias, or custom vocabulary is ready to use.</p>
     pub fn import_status(&self) -> std::option::Option<&crate::model::ImportStatus> {
         self.import_status.as_ref()
     }
@@ -2509,7 +2509,7 @@ pub mod start_import_output {
             self.import_id = input;
             self
         }
-        /// <p>The parameters used when importing the bot or bot locale.</p>
+        /// <p>The parameters used when importing the resource.</p>
         pub fn resource_specification(
             mut self,
             input: crate::model::ImportResourceSpecification,
@@ -2517,7 +2517,7 @@ pub mod start_import_output {
             self.resource_specification = Some(input);
             self
         }
-        /// <p>The parameters used when importing the bot or bot locale.</p>
+        /// <p>The parameters used when importing the resource.</p>
         pub fn set_resource_specification(
             mut self,
             input: std::option::Option<crate::model::ImportResourceSpecification>,
@@ -2538,12 +2538,12 @@ pub mod start_import_output {
             self.merge_strategy = input;
             self
         }
-        /// <p>The current status of the import. When the status is <code>Complete</code> the bot or bot alias is ready to use.</p>
+        /// <p>The current status of the import. When the status is <code>Complete</code> the bot, bot alias, or custom vocabulary is ready to use.</p>
         pub fn import_status(mut self, input: crate::model::ImportStatus) -> Self {
             self.import_status = Some(input);
             self
         }
-        /// <p>The current status of the import. When the status is <code>Complete</code> the bot or bot alias is ready to use.</p>
+        /// <p>The current status of the import. When the status is <code>Complete</code> the bot, bot alias, or custom vocabulary is ready to use.</p>
         pub fn set_import_status(
             mut self,
             input: std::option::Option<crate::model::ImportStatus>,
@@ -3670,6 +3670,8 @@ pub struct ListImportsOutput {
     pub import_summaries: std::option::Option<std::vec::Vec<crate::model::ImportSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListImports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListImports</code> operation request to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The locale specified in the request.</p>
+    pub locale_id: std::option::Option<std::string::String>,
 }
 impl ListImportsOutput {
     /// <p>The unique identifier assigned by Amazon Lex to the bot.</p>
@@ -3688,6 +3690,10 @@ impl ListImportsOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The locale specified in the request.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListImportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3696,6 +3702,7 @@ impl std::fmt::Debug for ListImportsOutput {
         formatter.field("bot_version", &self.bot_version);
         formatter.field("import_summaries", &self.import_summaries);
         formatter.field("next_token", &self.next_token);
+        formatter.field("locale_id", &self.locale_id);
         formatter.finish()
     }
 }
@@ -3710,6 +3717,7 @@ pub mod list_imports_output {
         pub(crate) import_summaries:
             std::option::Option<std::vec::Vec<crate::model::ImportSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier assigned by Amazon Lex to the bot.</p>
@@ -3761,6 +3769,16 @@ pub mod list_imports_output {
             self.next_token = input;
             self
         }
+        /// <p>The locale specified in the request.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The locale specified in the request.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListImportsOutput`](crate::output::ListImportsOutput)
         pub fn build(self) -> crate::output::ListImportsOutput {
             crate::output::ListImportsOutput {
@@ -3768,6 +3786,7 @@ pub mod list_imports_output {
                 bot_version: self.bot_version,
                 import_summaries: self.import_summaries,
                 next_token: self.next_token,
+                locale_id: self.locale_id,
             }
         }
     }
@@ -3791,6 +3810,8 @@ pub struct ListExportsOutput {
     pub export_summaries: std::option::Option<std::vec::Vec<crate::model::ExportSummary>>,
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListExports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListExports</code> operation request to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The locale specified in the request.</p>
+    pub locale_id: std::option::Option<std::string::String>,
 }
 impl ListExportsOutput {
     /// <p>The unique identifier assigned to the bot by Amazon Lex.</p>
@@ -3809,6 +3830,10 @@ impl ListExportsOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The locale specified in the request.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListExportsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3817,6 +3842,7 @@ impl std::fmt::Debug for ListExportsOutput {
         formatter.field("bot_version", &self.bot_version);
         formatter.field("export_summaries", &self.export_summaries);
         formatter.field("next_token", &self.next_token);
+        formatter.field("locale_id", &self.locale_id);
         formatter.finish()
     }
 }
@@ -3831,6 +3857,7 @@ pub mod list_exports_output {
         pub(crate) export_summaries:
             std::option::Option<std::vec::Vec<crate::model::ExportSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The unique identifier assigned to the bot by Amazon Lex.</p>
@@ -3882,6 +3909,16 @@ pub mod list_exports_output {
             self.next_token = input;
             self
         }
+        /// <p>The locale specified in the request.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The locale specified in the request.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListExportsOutput`](crate::output::ListExportsOutput)
         pub fn build(self) -> crate::output::ListExportsOutput {
             crate::output::ListExportsOutput {
@@ -3889,6 +3926,7 @@ pub mod list_exports_output {
                 bot_version: self.bot_version,
                 export_summaries: self.export_summaries,
                 next_token: self.next_token,
+                locale_id: self.locale_id,
             }
         }
     }
@@ -6146,7 +6184,7 @@ impl DescribeIntentOutput {
 pub struct DescribeImportOutput {
     /// <p>The unique identifier of the described import.</p>
     pub import_id: std::option::Option<std::string::String>,
-    /// <p>The specifications of the imported bot or bot locale.</p>
+    /// <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
     pub resource_specification: std::option::Option<crate::model::ImportResourceSpecification>,
     /// <p>The unique identifier that Amazon Lex assigned to the resource created by the import.</p>
     pub imported_resource_id: std::option::Option<std::string::String>,
@@ -6168,7 +6206,7 @@ impl DescribeImportOutput {
     pub fn import_id(&self) -> std::option::Option<&str> {
         self.import_id.as_deref()
     }
-    /// <p>The specifications of the imported bot or bot locale.</p>
+    /// <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
     pub fn resource_specification(
         &self,
     ) -> std::option::Option<&crate::model::ImportResourceSpecification> {
@@ -6246,7 +6284,7 @@ pub mod describe_import_output {
             self.import_id = input;
             self
         }
-        /// <p>The specifications of the imported bot or bot locale.</p>
+        /// <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
         pub fn resource_specification(
             mut self,
             input: crate::model::ImportResourceSpecification,
@@ -6254,7 +6292,7 @@ pub mod describe_import_output {
             self.resource_specification = Some(input);
             self
         }
-        /// <p>The specifications of the imported bot or bot locale.</p>
+        /// <p>The specifications of the imported bot, bot locale, or custom vocabulary.</p>
         pub fn set_resource_specification(
             mut self,
             input: std::option::Option<crate::model::ImportResourceSpecification>,
@@ -6390,7 +6428,7 @@ pub struct DescribeExportOutput {
     pub export_id: std::option::Option<std::string::String>,
     /// <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>
     pub resource_specification: std::option::Option<crate::model::ExportResourceSpecification>,
-    /// <p>The file format used in the files that describe the bot or bot locale.</p>
+    /// <p>The file format used in the files that describe the resource. </p>
     pub file_format: std::option::Option<crate::model::ImportExportFileFormat>,
     /// <p>The status of the export. When the status is <code>Complete</code> the export archive file is available for download.</p>
     pub export_status: std::option::Option<crate::model::ExportStatus>,
@@ -6414,7 +6452,7 @@ impl DescribeExportOutput {
     ) -> std::option::Option<&crate::model::ExportResourceSpecification> {
         self.resource_specification.as_ref()
     }
-    /// <p>The file format used in the files that describe the bot or bot locale.</p>
+    /// <p>The file format used in the files that describe the resource. </p>
     pub fn file_format(&self) -> std::option::Option<&crate::model::ImportExportFileFormat> {
         self.file_format.as_ref()
     }
@@ -6496,12 +6534,12 @@ pub mod describe_export_output {
             self.resource_specification = input;
             self
         }
-        /// <p>The file format used in the files that describe the bot or bot locale.</p>
+        /// <p>The file format used in the files that describe the resource. </p>
         pub fn file_format(mut self, input: crate::model::ImportExportFileFormat) -> Self {
             self.file_format = Some(input);
             self
         }
-        /// <p>The file format used in the files that describe the bot or bot locale.</p>
+        /// <p>The file format used in the files that describe the resource. </p>
         pub fn set_file_format(
             mut self,
             input: std::option::Option<crate::model::ImportExportFileFormat>,
@@ -6596,6 +6634,170 @@ impl DescribeExportOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExportOutput`](crate::output::DescribeExportOutput)
     pub fn builder() -> crate::output::describe_export_output::Builder {
         crate::output::describe_export_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeCustomVocabularyMetadataOutput {
+    /// <p>The identifier of the bot that contains the custom vocabulary.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot that contains the custom vocabulary to describe.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The locale that contains the custom vocabulary to describe.</p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The status of the custom vocabulary. If the status is <code>Ready</code> the custom vocabulary is ready to use.</p>
+    pub custom_vocabulary_status: std::option::Option<crate::model::CustomVocabularyStatus>,
+    /// <p>The date and time that the custom vocabulary was created.</p>
+    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date and time that the custom vocabulary was last updated.</p>
+    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DescribeCustomVocabularyMetadataOutput {
+    /// <p>The identifier of the bot that contains the custom vocabulary.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that contains the custom vocabulary to describe.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The locale that contains the custom vocabulary to describe.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The status of the custom vocabulary. If the status is <code>Ready</code> the custom vocabulary is ready to use.</p>
+    pub fn custom_vocabulary_status(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomVocabularyStatus> {
+        self.custom_vocabulary_status.as_ref()
+    }
+    /// <p>The date and time that the custom vocabulary was created.</p>
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_date_time.as_ref()
+    }
+    /// <p>The date and time that the custom vocabulary was last updated.</p>
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_date_time.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeCustomVocabularyMetadataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeCustomVocabularyMetadataOutput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("custom_vocabulary_status", &self.custom_vocabulary_status);
+        formatter.field("creation_date_time", &self.creation_date_time);
+        formatter.field("last_updated_date_time", &self.last_updated_date_time);
+        formatter.finish()
+    }
+}
+/// See [`DescribeCustomVocabularyMetadataOutput`](crate::output::DescribeCustomVocabularyMetadataOutput)
+pub mod describe_custom_vocabulary_metadata_output {
+    /// A builder for [`DescribeCustomVocabularyMetadataOutput`](crate::output::DescribeCustomVocabularyMetadataOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) custom_vocabulary_status:
+            std::option::Option<crate::model::CustomVocabularyStatus>,
+        pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The identifier of the bot that contains the custom vocabulary.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the bot that contains the custom vocabulary.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot that contains the custom vocabulary to describe.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot that contains the custom vocabulary to describe.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The locale that contains the custom vocabulary to describe.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The locale that contains the custom vocabulary to describe.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p>The status of the custom vocabulary. If the status is <code>Ready</code> the custom vocabulary is ready to use.</p>
+        pub fn custom_vocabulary_status(
+            mut self,
+            input: crate::model::CustomVocabularyStatus,
+        ) -> Self {
+            self.custom_vocabulary_status = Some(input);
+            self
+        }
+        /// <p>The status of the custom vocabulary. If the status is <code>Ready</code> the custom vocabulary is ready to use.</p>
+        pub fn set_custom_vocabulary_status(
+            mut self,
+            input: std::option::Option<crate::model::CustomVocabularyStatus>,
+        ) -> Self {
+            self.custom_vocabulary_status = input;
+            self
+        }
+        /// <p>The date and time that the custom vocabulary was created.</p>
+        pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_date_time = Some(input);
+            self
+        }
+        /// <p>The date and time that the custom vocabulary was created.</p>
+        pub fn set_creation_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_date_time = input;
+            self
+        }
+        /// <p>The date and time that the custom vocabulary was last updated.</p>
+        pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_date_time = Some(input);
+            self
+        }
+        /// <p>The date and time that the custom vocabulary was last updated.</p>
+        pub fn set_last_updated_date_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_date_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeCustomVocabularyMetadataOutput`](crate::output::DescribeCustomVocabularyMetadataOutput)
+        pub fn build(self) -> crate::output::DescribeCustomVocabularyMetadataOutput {
+            crate::output::DescribeCustomVocabularyMetadataOutput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                custom_vocabulary_status: self.custom_vocabulary_status,
+                creation_date_time: self.creation_date_time,
+                last_updated_date_time: self.last_updated_date_time,
+            }
+        }
+    }
+}
+impl DescribeCustomVocabularyMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCustomVocabularyMetadataOutput`](crate::output::DescribeCustomVocabularyMetadataOutput)
+    pub fn builder() -> crate::output::describe_custom_vocabulary_metadata_output::Builder {
+        crate::output::describe_custom_vocabulary_metadata_output::Builder::default()
     }
 }
 
@@ -8513,6 +8715,126 @@ impl DeleteExportOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExportOutput`](crate::output::DeleteExportOutput)
     pub fn builder() -> crate::output::delete_export_output::Builder {
         crate::output::delete_export_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCustomVocabularyOutput {
+    /// <p>The identifier of the bot that the custom vocabulary was removed from.</p>
+    pub bot_id: std::option::Option<std::string::String>,
+    /// <p>The version of the bot that the custom vocabulary was removed from.</p>
+    pub bot_version: std::option::Option<std::string::String>,
+    /// <p>The locale identifier for the locale that the custom vocabulary was removed from.</p>
+    pub locale_id: std::option::Option<std::string::String>,
+    /// <p>The status of removing the custom vocabulary.</p>
+    pub custom_vocabulary_status: std::option::Option<crate::model::CustomVocabularyStatus>,
+}
+impl DeleteCustomVocabularyOutput {
+    /// <p>The identifier of the bot that the custom vocabulary was removed from.</p>
+    pub fn bot_id(&self) -> std::option::Option<&str> {
+        self.bot_id.as_deref()
+    }
+    /// <p>The version of the bot that the custom vocabulary was removed from.</p>
+    pub fn bot_version(&self) -> std::option::Option<&str> {
+        self.bot_version.as_deref()
+    }
+    /// <p>The locale identifier for the locale that the custom vocabulary was removed from.</p>
+    pub fn locale_id(&self) -> std::option::Option<&str> {
+        self.locale_id.as_deref()
+    }
+    /// <p>The status of removing the custom vocabulary.</p>
+    pub fn custom_vocabulary_status(
+        &self,
+    ) -> std::option::Option<&crate::model::CustomVocabularyStatus> {
+        self.custom_vocabulary_status.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteCustomVocabularyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCustomVocabularyOutput");
+        formatter.field("bot_id", &self.bot_id);
+        formatter.field("bot_version", &self.bot_version);
+        formatter.field("locale_id", &self.locale_id);
+        formatter.field("custom_vocabulary_status", &self.custom_vocabulary_status);
+        formatter.finish()
+    }
+}
+/// See [`DeleteCustomVocabularyOutput`](crate::output::DeleteCustomVocabularyOutput)
+pub mod delete_custom_vocabulary_output {
+    /// A builder for [`DeleteCustomVocabularyOutput`](crate::output::DeleteCustomVocabularyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bot_id: std::option::Option<std::string::String>,
+        pub(crate) bot_version: std::option::Option<std::string::String>,
+        pub(crate) locale_id: std::option::Option<std::string::String>,
+        pub(crate) custom_vocabulary_status:
+            std::option::Option<crate::model::CustomVocabularyStatus>,
+    }
+    impl Builder {
+        /// <p>The identifier of the bot that the custom vocabulary was removed from.</p>
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the bot that the custom vocabulary was removed from.</p>
+        pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_id = input;
+            self
+        }
+        /// <p>The version of the bot that the custom vocabulary was removed from.</p>
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bot_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the bot that the custom vocabulary was removed from.</p>
+        pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bot_version = input;
+            self
+        }
+        /// <p>The locale identifier for the locale that the custom vocabulary was removed from.</p>
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.locale_id = Some(input.into());
+            self
+        }
+        /// <p>The locale identifier for the locale that the custom vocabulary was removed from.</p>
+        pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.locale_id = input;
+            self
+        }
+        /// <p>The status of removing the custom vocabulary.</p>
+        pub fn custom_vocabulary_status(
+            mut self,
+            input: crate::model::CustomVocabularyStatus,
+        ) -> Self {
+            self.custom_vocabulary_status = Some(input);
+            self
+        }
+        /// <p>The status of removing the custom vocabulary.</p>
+        pub fn set_custom_vocabulary_status(
+            mut self,
+            input: std::option::Option<crate::model::CustomVocabularyStatus>,
+        ) -> Self {
+            self.custom_vocabulary_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteCustomVocabularyOutput`](crate::output::DeleteCustomVocabularyOutput)
+        pub fn build(self) -> crate::output::DeleteCustomVocabularyOutput {
+            crate::output::DeleteCustomVocabularyOutput {
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                locale_id: self.locale_id,
+                custom_vocabulary_status: self.custom_vocabulary_status,
+            }
+        }
+    }
+}
+impl DeleteCustomVocabularyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCustomVocabularyOutput`](crate::output::DeleteCustomVocabularyOutput)
+    pub fn builder() -> crate::output::delete_custom_vocabulary_output::Builder {
+        crate::output::delete_custom_vocabulary_output::Builder::default()
     }
 }
 

@@ -25176,8 +25176,10 @@ pub struct HlsGroupSettings {
     pub mode: std::option::Option<crate::model::HlsMode>,
     /// MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output group. VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest. SEGMENTS_ONLY: Does not generate any manifests for this output group.
     pub output_selection: std::option::Option<crate::model::HlsOutputSelection>,
-    /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestampOffset.
+    /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated using the program date time clock.
     pub program_date_time: std::option::Option<crate::model::HlsProgramDateTime>,
+    /// Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock. Options include: INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized as a function of the first output timecode, then incremented by the EXTINF duration of each encoded segment. SYSTEM_CLOCK: The PDT clock is initialized as a function of the UTC wall clock, then incremented by the EXTINF duration of each encoded segment. If the PDT clock diverges from the wall clock by more than 500ms, it is resynchronized to the wall clock.
+    pub program_date_time_clock: std::option::Option<crate::model::HlsProgramDateTimeClock>,
     /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
     pub program_date_time_period: i32,
     /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines. DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only. For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
@@ -25340,9 +25342,15 @@ impl HlsGroupSettings {
     pub fn output_selection(&self) -> std::option::Option<&crate::model::HlsOutputSelection> {
         self.output_selection.as_ref()
     }
-    /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestampOffset.
+    /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated using the program date time clock.
     pub fn program_date_time(&self) -> std::option::Option<&crate::model::HlsProgramDateTime> {
         self.program_date_time.as_ref()
+    }
+    /// Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock. Options include: INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized as a function of the first output timecode, then incremented by the EXTINF duration of each encoded segment. SYSTEM_CLOCK: The PDT clock is initialized as a function of the UTC wall clock, then incremented by the EXTINF duration of each encoded segment. If the PDT clock diverges from the wall clock by more than 500ms, it is resynchronized to the wall clock.
+    pub fn program_date_time_clock(
+        &self,
+    ) -> std::option::Option<&crate::model::HlsProgramDateTimeClock> {
+        self.program_date_time_clock.as_ref()
     }
     /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
     pub fn program_date_time_period(&self) -> i32 {
@@ -25427,6 +25435,7 @@ impl std::fmt::Debug for HlsGroupSettings {
         formatter.field("mode", &self.mode);
         formatter.field("output_selection", &self.output_selection);
         formatter.field("program_date_time", &self.program_date_time);
+        formatter.field("program_date_time_clock", &self.program_date_time_clock);
         formatter.field("program_date_time_period", &self.program_date_time_period);
         formatter.field("redundant_manifest", &self.redundant_manifest);
         formatter.field("segment_length", &self.segment_length);
@@ -25487,6 +25496,8 @@ pub mod hls_group_settings {
         pub(crate) mode: std::option::Option<crate::model::HlsMode>,
         pub(crate) output_selection: std::option::Option<crate::model::HlsOutputSelection>,
         pub(crate) program_date_time: std::option::Option<crate::model::HlsProgramDateTime>,
+        pub(crate) program_date_time_clock:
+            std::option::Option<crate::model::HlsProgramDateTimeClock>,
         pub(crate) program_date_time_period: std::option::Option<i32>,
         pub(crate) redundant_manifest: std::option::Option<crate::model::HlsRedundantManifest>,
         pub(crate) segment_length: std::option::Option<i32>,
@@ -25915,17 +25926,33 @@ pub mod hls_group_settings {
             self.output_selection = input;
             self
         }
-        /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestampOffset.
+        /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated using the program date time clock.
         pub fn program_date_time(mut self, input: crate::model::HlsProgramDateTime) -> Self {
             self.program_date_time = Some(input);
             self
         }
-        /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestampOffset.
+        /// Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated using the program date time clock.
         pub fn set_program_date_time(
             mut self,
             input: std::option::Option<crate::model::HlsProgramDateTime>,
         ) -> Self {
             self.program_date_time = input;
+            self
+        }
+        /// Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock. Options include: INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized as a function of the first output timecode, then incremented by the EXTINF duration of each encoded segment. SYSTEM_CLOCK: The PDT clock is initialized as a function of the UTC wall clock, then incremented by the EXTINF duration of each encoded segment. If the PDT clock diverges from the wall clock by more than 500ms, it is resynchronized to the wall clock.
+        pub fn program_date_time_clock(
+            mut self,
+            input: crate::model::HlsProgramDateTimeClock,
+        ) -> Self {
+            self.program_date_time_clock = Some(input);
+            self
+        }
+        /// Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock. Options include: INITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized as a function of the first output timecode, then incremented by the EXTINF duration of each encoded segment. SYSTEM_CLOCK: The PDT clock is initialized as a function of the UTC wall clock, then incremented by the EXTINF duration of each encoded segment. If the PDT clock diverges from the wall clock by more than 500ms, it is resynchronized to the wall clock.
+        pub fn set_program_date_time_clock(
+            mut self,
+            input: std::option::Option<crate::model::HlsProgramDateTimeClock>,
+        ) -> Self {
+            self.program_date_time_clock = input;
             self
         }
         /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
@@ -26084,6 +26111,7 @@ pub mod hls_group_settings {
                 mode: self.mode,
                 output_selection: self.output_selection,
                 program_date_time: self.program_date_time,
+                program_date_time_clock: self.program_date_time_clock,
                 program_date_time_period: self.program_date_time_period.unwrap_or_default(),
                 redundant_manifest: self.redundant_manifest,
                 segment_length: self.segment_length.unwrap_or_default(),
@@ -26379,6 +26407,65 @@ impl HlsRedundantManifest {
     }
 }
 impl AsRef<str> for HlsRedundantManifest {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Hls Program Date Time Clock
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HlsProgramDateTimeClock {
+    #[allow(missing_docs)] // documentation missing in model
+    InitializeFromOutputTimecode,
+    #[allow(missing_docs)] // documentation missing in model
+    SystemClock,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HlsProgramDateTimeClock {
+    fn from(s: &str) -> Self {
+        match s {
+            "INITIALIZE_FROM_OUTPUT_TIMECODE" => {
+                HlsProgramDateTimeClock::InitializeFromOutputTimecode
+            }
+            "SYSTEM_CLOCK" => HlsProgramDateTimeClock::SystemClock,
+            other => HlsProgramDateTimeClock::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HlsProgramDateTimeClock {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HlsProgramDateTimeClock::from(s))
+    }
+}
+impl HlsProgramDateTimeClock {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HlsProgramDateTimeClock::InitializeFromOutputTimecode => {
+                "INITIALIZE_FROM_OUTPUT_TIMECODE"
+            }
+            HlsProgramDateTimeClock::SystemClock => "SYSTEM_CLOCK",
+            HlsProgramDateTimeClock::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["INITIALIZE_FROM_OUTPUT_TIMECODE", "SYSTEM_CLOCK"]
+    }
+}
+impl AsRef<str> for HlsProgramDateTimeClock {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

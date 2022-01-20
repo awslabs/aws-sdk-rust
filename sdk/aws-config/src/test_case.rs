@@ -227,6 +227,7 @@ impl TestEnvironment {
         let (connector, conf) = self.provider_config().await;
         let provider = make_provider(conf).await;
         let result = provider.provide_credentials().await;
+        tokio::time::pause();
         self.log_info();
         self.check_results(result);
         // todo: validate bodies

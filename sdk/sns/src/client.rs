@@ -83,319 +83,489 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddPermission` operation.
+    /// Constructs a fluent builder for the [`AddPermission`](crate::client::fluent_builders::AddPermission) operation.
     ///
-    /// See [`AddPermission`](crate::client::fluent_builders::AddPermission) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`topic_arn(impl Into<String>)`](crate::client::fluent_builders::AddPermission::topic_arn) / [`set_topic_arn(Option<String>)`](crate::client::fluent_builders::AddPermission::set_topic_arn): <p>The ARN of the topic whose access control policy you wish to modify.</p>
+    ///   - [`label(impl Into<String>)`](crate::client::fluent_builders::AddPermission::label) / [`set_label(Option<String>)`](crate::client::fluent_builders::AddPermission::set_label): <p>A unique identifier for the new policy statement.</p>
+    ///   - [`aws_account_id(Vec<String>)`](crate::client::fluent_builders::AddPermission::aws_account_id) / [`set_aws_account_id(Option<Vec<String>>)`](crate::client::fluent_builders::AddPermission::set_aws_account_id): <p>The Amazon Web Services account IDs of the users (principals) who will be given access to the specified actions. The users must have Amazon Web Services account, but do not need to be signed up for this service.</p>
+    ///   - [`action_name(Vec<String>)`](crate::client::fluent_builders::AddPermission::action_name) / [`set_action_name(Option<Vec<String>>)`](crate::client::fluent_builders::AddPermission::set_action_name): <p>The action you want to allow for the specified principal(s).</p>  <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
+    /// - On success, responds with [`AddPermissionOutput`](crate::output::AddPermissionOutput)
+
+    /// - On failure, responds with [`SdkError<AddPermissionError>`](crate::error::AddPermissionError)
     pub fn add_permission(&self) -> fluent_builders::AddPermission<C, M, R> {
         fluent_builders::AddPermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CheckIfPhoneNumberIsOptedOut` operation.
+    /// Constructs a fluent builder for the [`CheckIfPhoneNumberIsOptedOut`](crate::client::fluent_builders::CheckIfPhoneNumberIsOptedOut) operation.
     ///
-    /// See [`CheckIfPhoneNumberIsOptedOut`](crate::client::fluent_builders::CheckIfPhoneNumberIsOptedOut) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`phone_number(impl Into<String>)`](crate::client::fluent_builders::CheckIfPhoneNumberIsOptedOut::phone_number) / [`set_phone_number(Option<String>)`](crate::client::fluent_builders::CheckIfPhoneNumberIsOptedOut::set_phone_number): <p>The phone number for which you want to check the opt out status.</p>
+    /// - On success, responds with [`CheckIfPhoneNumberIsOptedOutOutput`](crate::output::CheckIfPhoneNumberIsOptedOutOutput) with field(s):
+    ///   - [`is_opted_out(bool)`](crate::output::CheckIfPhoneNumberIsOptedOutOutput::is_opted_out): <p>Indicates whether the phone number is opted out:</p>  <ul>   <li> <p> <code>true</code> – The phone number is opted out, meaning you cannot publish SMS messages to it.</p> </li>   <li> <p> <code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<CheckIfPhoneNumberIsOptedOutError>`](crate::error::CheckIfPhoneNumberIsOptedOutError)
     pub fn check_if_phone_number_is_opted_out(
         &self,
     ) -> fluent_builders::CheckIfPhoneNumberIsOptedOut<C, M, R> {
         fluent_builders::CheckIfPhoneNumberIsOptedOut::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ConfirmSubscription` operation.
+    /// Constructs a fluent builder for the [`ConfirmSubscription`](crate::client::fluent_builders::ConfirmSubscription) operation.
     ///
-    /// See [`ConfirmSubscription`](crate::client::fluent_builders::ConfirmSubscription) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`topic_arn(impl Into<String>)`](crate::client::fluent_builders::ConfirmSubscription::topic_arn) / [`set_topic_arn(Option<String>)`](crate::client::fluent_builders::ConfirmSubscription::set_topic_arn): <p>The ARN of the topic for which you wish to confirm a subscription.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::ConfirmSubscription::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::ConfirmSubscription::set_token): <p>Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</p>
+    ///   - [`authenticate_on_unsubscribe(impl Into<String>)`](crate::client::fluent_builders::ConfirmSubscription::authenticate_on_unsubscribe) / [`set_authenticate_on_unsubscribe(Option<String>)`](crate::client::fluent_builders::ConfirmSubscription::set_authenticate_on_unsubscribe): <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action requires Amazon Web Services authentication. </p>
+    /// - On success, responds with [`ConfirmSubscriptionOutput`](crate::output::ConfirmSubscriptionOutput) with field(s):
+    ///   - [`subscription_arn(Option<String>)`](crate::output::ConfirmSubscriptionOutput::subscription_arn): <p>The ARN of the created subscription.</p>
+    /// - On failure, responds with [`SdkError<ConfirmSubscriptionError>`](crate::error::ConfirmSubscriptionError)
     pub fn confirm_subscription(&self) -> fluent_builders::ConfirmSubscription<C, M, R> {
         fluent_builders::ConfirmSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePlatformApplication` operation.
+    /// Constructs a fluent builder for the [`CreatePlatformApplication`](crate::client::fluent_builders::CreatePlatformApplication) operation.
     ///
-    /// See [`CreatePlatformApplication`](crate::client::fluent_builders::CreatePlatformApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreatePlatformApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreatePlatformApplication::set_name): <p>Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, hyphens, and periods, and must be between 1 and 256 characters long.</p>
+    ///   - [`platform(impl Into<String>)`](crate::client::fluent_builders::CreatePlatformApplication::platform) / [`set_platform(Option<String>)`](crate::client::fluent_builders::CreatePlatformApplication::set_platform): <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).</p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::CreatePlatformApplication::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreatePlatformApplication::set_attributes): <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>.</p>
+    /// - On success, responds with [`CreatePlatformApplicationOutput`](crate::output::CreatePlatformApplicationOutput) with field(s):
+    ///   - [`platform_application_arn(Option<String>)`](crate::output::CreatePlatformApplicationOutput::platform_application_arn): <p>PlatformApplicationArn is returned.</p>
+    /// - On failure, responds with [`SdkError<CreatePlatformApplicationError>`](crate::error::CreatePlatformApplicationError)
     pub fn create_platform_application(
         &self,
     ) -> fluent_builders::CreatePlatformApplication<C, M, R> {
         fluent_builders::CreatePlatformApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePlatformEndpoint` operation.
+    /// Constructs a fluent builder for the [`CreatePlatformEndpoint`](crate::client::fluent_builders::CreatePlatformEndpoint) operation.
     ///
-    /// See [`CreatePlatformEndpoint`](crate::client::fluent_builders::CreatePlatformEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`platform_application_arn(impl Into<String>)`](crate::client::fluent_builders::CreatePlatformEndpoint::platform_application_arn) / [`set_platform_application_arn(Option<String>)`](crate::client::fluent_builders::CreatePlatformEndpoint::set_platform_application_arn): <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::CreatePlatformEndpoint::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::CreatePlatformEndpoint::set_token): <p>Unique identifier created by the notification service for an app on a device. The specific name for Token will vary, depending on which notification service is being used. For example, when using APNS as the notification service, you need the device token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token equivalent is called the registration ID.</p>
+    ///   - [`custom_user_data(impl Into<String>)`](crate::client::fluent_builders::CreatePlatformEndpoint::custom_user_data) / [`set_custom_user_data(Option<String>)`](crate::client::fluent_builders::CreatePlatformEndpoint::set_custom_user_data): <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::CreatePlatformEndpoint::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreatePlatformEndpoint::set_attributes): <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+    /// - On success, responds with [`CreatePlatformEndpointOutput`](crate::output::CreatePlatformEndpointOutput) with field(s):
+    ///   - [`endpoint_arn(Option<String>)`](crate::output::CreatePlatformEndpointOutput::endpoint_arn): <p>EndpointArn returned from CreateEndpoint action.</p>
+    /// - On failure, responds with [`SdkError<CreatePlatformEndpointError>`](crate::error::CreatePlatformEndpointError)
     pub fn create_platform_endpoint(&self) -> fluent_builders::CreatePlatformEndpoint<C, M, R> {
         fluent_builders::CreatePlatformEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSMSSandboxPhoneNumber` operation.
+    /// Constructs a fluent builder for the [`CreateSMSSandboxPhoneNumber`](crate::client::fluent_builders::CreateSMSSandboxPhoneNumber) operation.
     ///
-    /// See [`CreateSMSSandboxPhoneNumber`](crate::client::fluent_builders::CreateSMSSandboxPhoneNumber) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`phone_number(impl Into<String>)`](crate::client::fluent_builders::CreateSMSSandboxPhoneNumber::phone_number) / [`set_phone_number(Option<String>)`](crate::client::fluent_builders::CreateSMSSandboxPhoneNumber::set_phone_number): <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number to the list of verified phone numbers that you can send SMS messages to.</p>
+    ///   - [`language_code(LanguageCodeString)`](crate::client::fluent_builders::CreateSMSSandboxPhoneNumber::language_code) / [`set_language_code(Option<LanguageCodeString>)`](crate::client::fluent_builders::CreateSMSSandboxPhoneNumber::set_language_code): <p>The language to use for sending the OTP. The default value is <code>en-US</code>.</p>
+    /// - On success, responds with [`CreateSmsSandboxPhoneNumberOutput`](crate::output::CreateSmsSandboxPhoneNumberOutput)
+
+    /// - On failure, responds with [`SdkError<CreateSMSSandboxPhoneNumberError>`](crate::error::CreateSMSSandboxPhoneNumberError)
     pub fn create_sms_sandbox_phone_number(
         &self,
     ) -> fluent_builders::CreateSMSSandboxPhoneNumber<C, M, R> {
         fluent_builders::CreateSMSSandboxPhoneNumber::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTopic` operation.
+    /// Constructs a fluent builder for the [`CreateTopic`](crate::client::fluent_builders::CreateTopic) operation.
     ///
-    /// See [`CreateTopic`](crate::client::fluent_builders::CreateTopic) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateTopic::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateTopic::set_name): <p>The name of the topic you want to create.</p>  <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</p>  <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code> suffix. </p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::CreateTopic::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTopic::set_attributes): <p>A map of attributes with their corresponding values.</p>  <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateTopic</code> action uses:</p>  <ul>   <li> <p> <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p> </li>   <li> <p> <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.</p> </li>   <li> <p> <code>FifoTopic</code> – Set to true to create a FIFO topic.</p> </li>   <li> <p> <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic.</p> </li>  </ul>  <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side encryption</a>:</p>  <ul>   <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>  </ul>  <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>  <ul>   <li> <p> <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p> </li>   <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>    <ul>     <li> <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p> </li>     <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>    </ul> </li>  </ul>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTopic::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTopic::set_tags): <p>The list of tags to add to a new topic.</p> <note>   <p>To be able to tag a topic on creation, you must have the <code>sns:CreateTopic</code> and <code>sns:TagResource</code> permissions.</p>  </note>
+    /// - On success, responds with [`CreateTopicOutput`](crate::output::CreateTopicOutput) with field(s):
+    ///   - [`topic_arn(Option<String>)`](crate::output::CreateTopicOutput::topic_arn): <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
+    /// - On failure, responds with [`SdkError<CreateTopicError>`](crate::error::CreateTopicError)
     pub fn create_topic(&self) -> fluent_builders::CreateTopic<C, M, R> {
         fluent_builders::CreateTopic::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEndpoint` operation.
+    /// Constructs a fluent builder for the [`DeleteEndpoint`](crate::client::fluent_builders::DeleteEndpoint) operation.
     ///
-    /// See [`DeleteEndpoint`](crate::client::fluent_builders::DeleteEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteEndpoint::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::DeleteEndpoint::set_endpoint_arn): <p>EndpointArn of endpoint to delete.</p>
+    /// - On success, responds with [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEndpointError>`](crate::error::DeleteEndpointError)
     pub fn delete_endpoint(&self) -> fluent_builders::DeleteEndpoint<C, M, R> {
         fluent_builders::DeleteEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePlatformApplication` operation.
+    /// Constructs a fluent builder for the [`DeletePlatformApplication`](crate::client::fluent_builders::DeletePlatformApplication) operation.
     ///
-    /// See [`DeletePlatformApplication`](crate::client::fluent_builders::DeletePlatformApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`platform_application_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePlatformApplication::platform_application_arn) / [`set_platform_application_arn(Option<String>)`](crate::client::fluent_builders::DeletePlatformApplication::set_platform_application_arn): <p>PlatformApplicationArn of platform application object to delete.</p>
+    /// - On success, responds with [`DeletePlatformApplicationOutput`](crate::output::DeletePlatformApplicationOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePlatformApplicationError>`](crate::error::DeletePlatformApplicationError)
     pub fn delete_platform_application(
         &self,
     ) -> fluent_builders::DeletePlatformApplication<C, M, R> {
         fluent_builders::DeletePlatformApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSMSSandboxPhoneNumber` operation.
+    /// Constructs a fluent builder for the [`DeleteSMSSandboxPhoneNumber`](crate::client::fluent_builders::DeleteSMSSandboxPhoneNumber) operation.
     ///
-    /// See [`DeleteSMSSandboxPhoneNumber`](crate::client::fluent_builders::DeleteSMSSandboxPhoneNumber) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`phone_number(impl Into<String>)`](crate::client::fluent_builders::DeleteSMSSandboxPhoneNumber::phone_number) / [`set_phone_number(Option<String>)`](crate::client::fluent_builders::DeleteSMSSandboxPhoneNumber::set_phone_number): <p>The destination phone number to delete.</p>
+    /// - On success, responds with [`DeleteSmsSandboxPhoneNumberOutput`](crate::output::DeleteSmsSandboxPhoneNumberOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSMSSandboxPhoneNumberError>`](crate::error::DeleteSMSSandboxPhoneNumberError)
     pub fn delete_sms_sandbox_phone_number(
         &self,
     ) -> fluent_builders::DeleteSMSSandboxPhoneNumber<C, M, R> {
         fluent_builders::DeleteSMSSandboxPhoneNumber::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTopic` operation.
+    /// Constructs a fluent builder for the [`DeleteTopic`](crate::client::fluent_builders::DeleteTopic) operation.
     ///
-    /// See [`DeleteTopic`](crate::client::fluent_builders::DeleteTopic) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`topic_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteTopic::topic_arn) / [`set_topic_arn(Option<String>)`](crate::client::fluent_builders::DeleteTopic::set_topic_arn): <p>The ARN of the topic you want to delete.</p>
+    /// - On success, responds with [`DeleteTopicOutput`](crate::output::DeleteTopicOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTopicError>`](crate::error::DeleteTopicError)
     pub fn delete_topic(&self) -> fluent_builders::DeleteTopic<C, M, R> {
         fluent_builders::DeleteTopic::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEndpointAttributes` operation.
+    /// Constructs a fluent builder for the [`GetEndpointAttributes`](crate::client::fluent_builders::GetEndpointAttributes) operation.
     ///
-    /// See [`GetEndpointAttributes`](crate::client::fluent_builders::GetEndpointAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::GetEndpointAttributes::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::GetEndpointAttributes::set_endpoint_arn): <p>EndpointArn for GetEndpointAttributes input.</p>
+    /// - On success, responds with [`GetEndpointAttributesOutput`](crate::output::GetEndpointAttributesOutput) with field(s):
+    ///   - [`attributes(Option<HashMap<String, String>>)`](crate::output::GetEndpointAttributesOutput::attributes): <p>Attributes include the following:</p>  <ul>   <li> <p> <code>CustomUserData</code> – arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p> </li>   <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li>   <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> <note>     <p>The device token for the iOS platform is returned in lowercase.</p>    </note> </li>  </ul>
+    /// - On failure, responds with [`SdkError<GetEndpointAttributesError>`](crate::error::GetEndpointAttributesError)
     pub fn get_endpoint_attributes(&self) -> fluent_builders::GetEndpointAttributes<C, M, R> {
         fluent_builders::GetEndpointAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPlatformApplicationAttributes` operation.
+    /// Constructs a fluent builder for the [`GetPlatformApplicationAttributes`](crate::client::fluent_builders::GetPlatformApplicationAttributes) operation.
     ///
-    /// See [`GetPlatformApplicationAttributes`](crate::client::fluent_builders::GetPlatformApplicationAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`platform_application_arn(impl Into<String>)`](crate::client::fluent_builders::GetPlatformApplicationAttributes::platform_application_arn) / [`set_platform_application_arn(Option<String>)`](crate::client::fluent_builders::GetPlatformApplicationAttributes::set_platform_application_arn): <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+    /// - On success, responds with [`GetPlatformApplicationAttributesOutput`](crate::output::GetPlatformApplicationAttributesOutput) with field(s):
+    ///   - [`attributes(Option<HashMap<String, String>>)`](crate::output::GetPlatformApplicationAttributesOutput::attributes): <p>Attributes include the following:</p>  <ul>   <li> <p> <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate used to configure certificate-based authentication.</p> </li>   <li> <p> <code>ApplePlatformTeamID</code> – The Apple developer account ID used to configure token-based authentication.</p> </li>   <li> <p> <code>ApplePlatformBundleID</code> – The app identifier used to configure token-based authentication.</p> </li>   <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.</p> </li>   <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.</p> </li>   <li> <p> <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.</p> </li>   <li> <p> <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<GetPlatformApplicationAttributesError>`](crate::error::GetPlatformApplicationAttributesError)
     pub fn get_platform_application_attributes(
         &self,
     ) -> fluent_builders::GetPlatformApplicationAttributes<C, M, R> {
         fluent_builders::GetPlatformApplicationAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSMSAttributes` operation.
+    /// Constructs a fluent builder for the [`GetSMSAttributes`](crate::client::fluent_builders::GetSMSAttributes) operation.
     ///
-    /// See [`GetSMSAttributes`](crate::client::fluent_builders::GetSMSAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`attributes(Vec<String>)`](crate::client::fluent_builders::GetSMSAttributes::attributes) / [`set_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::GetSMSAttributes::set_attributes): <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for which you want values.</p>  <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>  <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
+    /// - On success, responds with [`GetSmsAttributesOutput`](crate::output::GetSmsAttributesOutput) with field(s):
+    ///   - [`attributes(Option<HashMap<String, String>>)`](crate::output::GetSmsAttributesOutput::attributes): <p>The SMS attribute names and their values.</p>
+    /// - On failure, responds with [`SdkError<GetSMSAttributesError>`](crate::error::GetSMSAttributesError)
     pub fn get_sms_attributes(&self) -> fluent_builders::GetSMSAttributes<C, M, R> {
         fluent_builders::GetSMSAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSMSSandboxAccountStatus` operation.
+    /// Constructs a fluent builder for the [`GetSMSSandboxAccountStatus`](crate::client::fluent_builders::GetSMSSandboxAccountStatus) operation.
     ///
-    /// See [`GetSMSSandboxAccountStatus`](crate::client::fluent_builders::GetSMSSandboxAccountStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetSMSSandboxAccountStatus::send) it.
+
+    /// - On success, responds with [`GetSmsSandboxAccountStatusOutput`](crate::output::GetSmsSandboxAccountStatusOutput) with field(s):
+    ///   - [`is_in_sandbox(bool)`](crate::output::GetSmsSandboxAccountStatusOutput::is_in_sandbox): <p>Indicates whether the calling Amazon Web Services account is in the SMS sandbox.</p>
+    /// - On failure, responds with [`SdkError<GetSMSSandboxAccountStatusError>`](crate::error::GetSMSSandboxAccountStatusError)
     pub fn get_sms_sandbox_account_status(
         &self,
     ) -> fluent_builders::GetSMSSandboxAccountStatus<C, M, R> {
         fluent_builders::GetSMSSandboxAccountStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSubscriptionAttributes` operation.
+    /// Constructs a fluent builder for the [`GetSubscriptionAttributes`](crate::client::fluent_builders::GetSubscriptionAttributes) operation.
     ///
-    /// See [`GetSubscriptionAttributes`](crate::client::fluent_builders::GetSubscriptionAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`subscription_arn(impl Into<String>)`](crate::client::fluent_builders::GetSubscriptionAttributes::subscription_arn) / [`set_subscription_arn(Option<String>)`](crate::client::fluent_builders::GetSubscriptionAttributes::set_subscription_arn): <p>The ARN of the subscription whose properties you want to get.</p>
+    /// - On success, responds with [`GetSubscriptionAttributesOutput`](crate::output::GetSubscriptionAttributesOutput) with field(s):
+    ///   - [`attributes(Option<HashMap<String, String>>)`](crate::output::GetSubscriptionAttributesOutput::attributes): <p>A map of the subscription's attributes. Attributes in this map include the following:</p>  <ul>   <li> <p> <code>ConfirmationWasAuthenticated</code> – <code>true</code> if the subscription confirmation request was authenticated.</p> </li>   <li> <p> <code>DeliveryPolicy</code> – The JSON serialization of the subscription's delivery policy.</p> </li>   <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy that takes into account the topic delivery policy and account system defaults.</p> </li>   <li> <p> <code>FilterPolicy</code> – The filter policy JSON that is assigned to the subscription. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html">Amazon SNS Message Filtering</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>   <li> <p> <code>Owner</code> – The Amazon Web Services account ID of the subscription's owner.</p> </li>   <li> <p> <code>PendingConfirmation</code> – <code>true</code> if the subscription hasn't been confirmed. To confirm a pending subscription, call the <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>   <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message delivery is enabled for the subscription. Raw messages are free of JSON formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li>   <li> <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p> </li>   <li> <p> <code>SubscriptionArn</code> – The subscription's ARN.</p> </li>   <li> <p> <code>TopicArn</code> – The topic ARN that the subscription is associated with.</p> </li>  </ul>  <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>  <ul>   <li> <p> <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>    <ul>     <li> <p>Permission to write to the Kinesis Data Firehose delivery stream</p> </li>     <li> <p>Amazon SNS listed as a trusted entity</p> </li>    </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<GetSubscriptionAttributesError>`](crate::error::GetSubscriptionAttributesError)
     pub fn get_subscription_attributes(
         &self,
     ) -> fluent_builders::GetSubscriptionAttributes<C, M, R> {
         fluent_builders::GetSubscriptionAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTopicAttributes` operation.
+    /// Constructs a fluent builder for the [`GetTopicAttributes`](crate::client::fluent_builders::GetTopicAttributes) operation.
     ///
-    /// See [`GetTopicAttributes`](crate::client::fluent_builders::GetTopicAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`topic_arn(impl Into<String>)`](crate::client::fluent_builders::GetTopicAttributes::topic_arn) / [`set_topic_arn(Option<String>)`](crate::client::fluent_builders::GetTopicAttributes::set_topic_arn): <p>The ARN of the topic whose properties you want to get.</p>
+    /// - On success, responds with [`GetTopicAttributesOutput`](crate::output::GetTopicAttributesOutput) with field(s):
+    ///   - [`attributes(Option<HashMap<String, String>>)`](crate::output::GetTopicAttributesOutput::attributes): <p>A map of the topic's attributes. Attributes in this map include the following:</p>  <ul>   <li> <p> <code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.</p> </li>   <li> <p> <code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints.</p> </li>   <li> <p> <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.</p> </li>   <li> <p> <code>Policy</code> – The JSON serialization of the topic's access control policy.</p> </li>   <li> <p> <code>SubscriptionsConfirmed</code> – The number of confirmed subscriptions for the topic.</p> </li>   <li> <p> <code>SubscriptionsDeleted</code> – The number of deleted subscriptions for the topic.</p> </li>   <li> <p> <code>SubscriptionsPending</code> – The number of subscriptions pending confirmation for the topic.</p> </li>   <li> <p> <code>TopicArn</code> – The topic's ARN.</p> </li>   <li> <p> <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system defaults into account.</p> </li>  </ul>  <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>  <ul>   <li> <p> <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.</p> </li>  </ul>  <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>  <ul>   <li> <p> <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is created.</p> </li>   <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>    <ul>     <li> <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p> </li>     <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>    </ul> </li>  </ul>
+    /// - On failure, responds with [`SdkError<GetTopicAttributesError>`](crate::error::GetTopicAttributesError)
     pub fn get_topic_attributes(&self) -> fluent_builders::GetTopicAttributes<C, M, R> {
         fluent_builders::GetTopicAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEndpointsByPlatformApplication` operation.
+    /// Constructs a fluent builder for the [`ListEndpointsByPlatformApplication`](crate::client::fluent_builders::ListEndpointsByPlatformApplication) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEndpointsByPlatformApplication::into_paginator).
     ///
-    /// See [`ListEndpointsByPlatformApplication`](crate::client::fluent_builders::ListEndpointsByPlatformApplication) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEndpointsByPlatformApplication::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`platform_application_arn(impl Into<String>)`](crate::client::fluent_builders::ListEndpointsByPlatformApplication::platform_application_arn) / [`set_platform_application_arn(Option<String>)`](crate::client::fluent_builders::ListEndpointsByPlatformApplication::set_platform_application_arn): <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEndpointsByPlatformApplication::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEndpointsByPlatformApplication::set_next_token): <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to retrieve additional records that are available after the first page results.</p>
+    /// - On success, responds with [`ListEndpointsByPlatformApplicationOutput`](crate::output::ListEndpointsByPlatformApplicationOutput) with field(s):
+    ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::output::ListEndpointsByPlatformApplicationOutput::endpoints): <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEndpointsByPlatformApplicationOutput::next_token): <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
+    /// - On failure, responds with [`SdkError<ListEndpointsByPlatformApplicationError>`](crate::error::ListEndpointsByPlatformApplicationError)
     pub fn list_endpoints_by_platform_application(
         &self,
     ) -> fluent_builders::ListEndpointsByPlatformApplication<C, M, R> {
         fluent_builders::ListEndpointsByPlatformApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOriginationNumbers` operation.
+    /// Constructs a fluent builder for the [`ListOriginationNumbers`](crate::client::fluent_builders::ListOriginationNumbers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOriginationNumbers::into_paginator).
     ///
-    /// See [`ListOriginationNumbers`](crate::client::fluent_builders::ListOriginationNumbers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOriginationNumbers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOriginationNumbers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOriginationNumbers::set_next_token): <p>Token that the previous <code>ListOriginationNumbers</code> request returns.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOriginationNumbers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListOriginationNumbers::set_max_results): <p>The maximum number of origination numbers to return.</p>
+    /// - On success, responds with [`ListOriginationNumbersOutput`](crate::output::ListOriginationNumbersOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListOriginationNumbersOutput::next_token): <p>A <code>NextToken</code> string is returned when you call the <code>ListOriginationNumbers</code> operation if additional pages of records are available.</p>
+    ///   - [`phone_numbers(Option<Vec<PhoneNumberInformation>>)`](crate::output::ListOriginationNumbersOutput::phone_numbers): <p>A list of the calling account's verified and pending origination numbers.</p>
+    /// - On failure, responds with [`SdkError<ListOriginationNumbersError>`](crate::error::ListOriginationNumbersError)
     pub fn list_origination_numbers(&self) -> fluent_builders::ListOriginationNumbers<C, M, R> {
         fluent_builders::ListOriginationNumbers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPhoneNumbersOptedOut` operation.
+    /// Constructs a fluent builder for the [`ListPhoneNumbersOptedOut`](crate::client::fluent_builders::ListPhoneNumbersOptedOut) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPhoneNumbersOptedOut::into_paginator).
     ///
-    /// See [`ListPhoneNumbersOptedOut`](crate::client::fluent_builders::ListPhoneNumbersOptedOut) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPhoneNumbersOptedOut::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPhoneNumbersOptedOut::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPhoneNumbersOptedOut::set_next_token): <p>A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are available after the first page of results.</p>
+    /// - On success, responds with [`ListPhoneNumbersOptedOutOutput`](crate::output::ListPhoneNumbersOptedOutOutput) with field(s):
+    ///   - [`phone_numbers(Option<Vec<String>>)`](crate::output::ListPhoneNumbersOptedOutOutput::phone_numbers): <p>A list of phone numbers that are opted out of receiving SMS messages. The list is paginated, and each page can contain up to 100 phone numbers.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPhoneNumbersOptedOutOutput::next_token): <p>A <code>NextToken</code> string is returned when you call the <code>ListPhoneNumbersOptedOut</code> action if additional records are available after the first page of results.</p>
+    /// - On failure, responds with [`SdkError<ListPhoneNumbersOptedOutError>`](crate::error::ListPhoneNumbersOptedOutError)
     pub fn list_phone_numbers_opted_out(
         &self,
     ) -> fluent_builders::ListPhoneNumbersOptedOut<C, M, R> {
         fluent_builders::ListPhoneNumbersOptedOut::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPlatformApplications` operation.
+    /// Constructs a fluent builder for the [`ListPlatformApplications`](crate::client::fluent_builders::ListPlatformApplications) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPlatformApplications::into_paginator).
     ///
-    /// See [`ListPlatformApplications`](crate::client::fluent_builders::ListPlatformApplications) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPlatformApplications::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPlatformApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPlatformApplications::set_next_token): <p>NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.</p>
+    /// - On success, responds with [`ListPlatformApplicationsOutput`](crate::output::ListPlatformApplicationsOutput) with field(s):
+    ///   - [`platform_applications(Option<Vec<PlatformApplication>>)`](crate::output::ListPlatformApplicationsOutput::platform_applications): <p>Platform applications returned when calling ListPlatformApplications action.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPlatformApplicationsOutput::next_token): <p>NextToken string is returned when calling ListPlatformApplications action if additional records are available after the first page results.</p>
+    /// - On failure, responds with [`SdkError<ListPlatformApplicationsError>`](crate::error::ListPlatformApplicationsError)
     pub fn list_platform_applications(&self) -> fluent_builders::ListPlatformApplications<C, M, R> {
         fluent_builders::ListPlatformApplications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSMSSandboxPhoneNumbers` operation.
+    /// Constructs a fluent builder for the [`ListSMSSandboxPhoneNumbers`](crate::client::fluent_builders::ListSMSSandboxPhoneNumbers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSMSSandboxPhoneNumbers::into_paginator).
     ///
-    /// See [`ListSMSSandboxPhoneNumbers`](crate::client::fluent_builders::ListSMSSandboxPhoneNumbers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSMSSandboxPhoneNumbers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSMSSandboxPhoneNumbers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSMSSandboxPhoneNumbers::set_next_token): <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request returns.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSMSSandboxPhoneNumbers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSMSSandboxPhoneNumbers::set_max_results): <p>The maximum number of phone numbers to return.</p>
+    /// - On success, responds with [`ListSmsSandboxPhoneNumbersOutput`](crate::output::ListSmsSandboxPhoneNumbersOutput) with field(s):
+    ///   - [`phone_numbers(Option<Vec<SmsSandboxPhoneNumber>>)`](crate::output::ListSmsSandboxPhoneNumbersOutput::phone_numbers): <p>A list of the calling account's pending and verified phone numbers.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSmsSandboxPhoneNumbersOutput::next_token): <p>A <code>NextToken</code> string is returned when you call the <code>ListSMSSandboxPhoneNumbersInput</code> operation if additional pages of records are available.</p>
+    /// - On failure, responds with [`SdkError<ListSMSSandboxPhoneNumbersError>`](crate::error::ListSMSSandboxPhoneNumbersError)
     pub fn list_sms_sandbox_phone_numbers(
         &self,
     ) -> fluent_builders::ListSMSSandboxPhoneNumbers<C, M, R> {
         fluent_builders::ListSMSSandboxPhoneNumbers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSubscriptions` operation.
+    /// Constructs a fluent builder for the [`ListSubscriptions`](crate::client::fluent_builders::ListSubscriptions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSubscriptions::into_paginator).
     ///
-    /// See [`ListSubscriptions`](crate::client::fluent_builders::ListSubscriptions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSubscriptions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSubscriptions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSubscriptions::set_next_token): <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
+    /// - On success, responds with [`ListSubscriptionsOutput`](crate::output::ListSubscriptionsOutput) with field(s):
+    ///   - [`subscriptions(Option<Vec<Subscription>>)`](crate::output::ListSubscriptionsOutput::subscriptions): <p>A list of subscriptions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSubscriptionsOutput::next_token): <p>Token to pass along to the next <code>ListSubscriptions</code> request. This element is returned if there are more subscriptions to retrieve.</p>
+    /// - On failure, responds with [`SdkError<ListSubscriptionsError>`](crate::error::ListSubscriptionsError)
     pub fn list_subscriptions(&self) -> fluent_builders::ListSubscriptions<C, M, R> {
         fluent_builders::ListSubscriptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSubscriptionsByTopic` operation.
+    /// Constructs a fluent builder for the [`ListSubscriptionsByTopic`](crate::client::fluent_builders::ListSubscriptionsByTopic) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSubscriptionsByTopic::into_paginator).
     ///
-    /// See [`ListSubscriptionsByTopic`](crate::client::fluent_builders::ListSubscriptionsByTopic) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSubscriptionsByTopic::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`topic_arn(impl Into<String>)`](crate::client::fluent_builders::ListSubscriptionsByTopic::topic_arn) / [`set_topic_arn(Option<String>)`](crate::client::fluent_builders::ListSubscriptionsByTopic::set_topic_arn): <p>The ARN of the topic for which you wish to find subscriptions.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSubscriptionsByTopic::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSubscriptionsByTopic::set_next_token): <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
+    /// - On success, responds with [`ListSubscriptionsByTopicOutput`](crate::output::ListSubscriptionsByTopicOutput) with field(s):
+    ///   - [`subscriptions(Option<Vec<Subscription>>)`](crate::output::ListSubscriptionsByTopicOutput::subscriptions): <p>A list of subscriptions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSubscriptionsByTopicOutput::next_token): <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
+    /// - On failure, responds with [`SdkError<ListSubscriptionsByTopicError>`](crate::error::ListSubscriptionsByTopicError)
     pub fn list_subscriptions_by_topic(
         &self,
     ) -> fluent_builders::ListSubscriptionsByTopic<C, M, R> {
         fluent_builders::ListSubscriptionsByTopic::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the topic for which to list tags.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags associated with the specified topic.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTopics` operation.
+    /// Constructs a fluent builder for the [`ListTopics`](crate::client::fluent_builders::ListTopics) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTopics::into_paginator).
     ///
-    /// See [`ListTopics`](crate::client::fluent_builders::ListTopics) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTopics::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTopics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTopics::set_next_token): <p>Token returned by the previous <code>ListTopics</code> request.</p>
+    /// - On success, responds with [`ListTopicsOutput`](crate::output::ListTopicsOutput) with field(s):
+    ///   - [`topics(Option<Vec<Topic>>)`](crate::output::ListTopicsOutput::topics): <p>A list of topic ARNs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTopicsOutput::next_token): <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
+    /// - On failure, responds with [`SdkError<ListTopicsError>`](crate::error::ListTopicsError)
     pub fn list_topics(&self) -> fluent_builders::ListTopics<C, M, R> {
         fluent_builders::ListTopics::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `OptInPhoneNumber` operation.
+    /// Constructs a fluent builder for the [`OptInPhoneNumber`](crate::client::fluent_builders::OptInPhoneNumber) operation.
     ///
-    /// See [`OptInPhoneNumber`](crate::client::fluent_builders::OptInPhoneNumber) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`phone_number(impl Into<String>)`](crate::client::fluent_builders::OptInPhoneNumber::phone_number) / [`set_phone_number(Option<String>)`](crate::client::fluent_builders::OptInPhoneNumber::set_phone_number): <p>The phone number to opt in. Use E.164 format.</p>
+    /// - On success, responds with [`OptInPhoneNumberOutput`](crate::output::OptInPhoneNumberOutput)
+
+    /// - On failure, responds with [`SdkError<OptInPhoneNumberError>`](crate::error::OptInPhoneNumberError)
     pub fn opt_in_phone_number(&self) -> fluent_builders::OptInPhoneNumber<C, M, R> {
         fluent_builders::OptInPhoneNumber::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `Publish` operation.
+    /// Constructs a fluent builder for the [`Publish`](crate::client::fluent_builders::Publish) operation.
     ///
-    /// See [`Publish`](crate::client::fluent_builders::Publish) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`topic_arn(impl Into<String>)`](crate::client::fluent_builders::Publish::topic_arn) / [`set_topic_arn(Option<String>)`](crate::client::fluent_builders::Publish::set_topic_arn): <p>The topic you want to publish to.</p>  <p>If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
+    ///   - [`target_arn(impl Into<String>)`](crate::client::fluent_builders::Publish::target_arn) / [`set_target_arn(Option<String>)`](crate::client::fluent_builders::Publish::set_target_arn): <p>If you don't specify a value for the <code>TargetArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
+    ///   - [`phone_number(impl Into<String>)`](crate::client::fluent_builders::Publish::phone_number) / [`set_phone_number(Option<String>)`](crate::client::fluent_builders::Publish::set_phone_number): <p>The phone number to which you want to deliver an SMS message. Use E.164 format.</p>  <p>If you don't specify a value for the <code>PhoneNumber</code> parameter, you must specify a value for the <code>TargetArn</code> or <code>TopicArn</code> parameters.</p>
+    ///   - [`message(impl Into<String>)`](crate::client::fluent_builders::Publish::message) / [`set_message(Option<String>)`](crate::client::fluent_builders::Publish::set_message): <p>The message you want to send.</p>  <p>If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object for the <code>Message</code> parameter. </p>  <p></p>  <p>Constraints:</p>  <ul>   <li> <p>With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters).</p> </li>   <li> <p>For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters.</p> <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries.</p> <p>The total size limit for a single SMS <code>Publish</code> action is 1,600 characters.</p> </li>  </ul>  <p>JSON-specific constraints:</p>  <ul>   <li> <p>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values.</p> </li>   <li> <p>The values will be parsed (unescaped) before they are used in outgoing messages.</p> </li>   <li> <p>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</p> </li>   <li> <p>Values have a minimum length of 0 (the empty string, "", is allowed).</p> </li>   <li> <p>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</p> </li>   <li> <p>Non-string values will cause the key to be ignored.</p> </li>   <li> <p>Keys that do not correspond to supported transport protocols are ignored.</p> </li>   <li> <p>Duplicate keys are not allowed.</p> </li>   <li> <p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p> </li>  </ul>
+    ///   - [`subject(impl Into<String>)`](crate::client::fluent_builders::Publish::subject) / [`set_subject(Option<String>)`](crate::client::fluent_builders::Publish::set_subject): <p>Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints.</p>  <p>Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.</p>
+    ///   - [`message_structure(impl Into<String>)`](crate::client::fluent_builders::Publish::message_structure) / [`set_message_structure(Option<String>)`](crate::client::fluent_builders::Publish::set_message_structure): <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>  <ul>   <li> <p>be a syntactically valid JSON object; and</p> </li>   <li> <p>contain at least a top-level JSON key of "default" with a value that is a string.</p> </li>  </ul>  <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g., "http").</p>  <p>Valid value: <code>json</code> </p>
+    ///   - [`message_attributes(HashMap<String, MessageAttributeValue>)`](crate::client::fluent_builders::Publish::message_attributes) / [`set_message_attributes(Option<HashMap<String, MessageAttributeValue>>)`](crate::client::fluent_builders::Publish::set_message_attributes): <p>Message attributes for Publish action.</p>
+    ///   - [`message_deduplication_id(impl Into<String>)`](crate::client::fluent_builders::Publish::message_deduplication_id) / [`set_message_deduplication_id(Option<String>)`](crate::client::fluent_builders::Publish::set_message_deduplication_id): <p>This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>  <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any message sent with the same <code>MessageDeduplicationId</code> during the 5-minute deduplication interval is treated as a duplicate. </p>  <p>If the topic has <code>ContentBasedDeduplication</code> set, the system generates a <code>MessageDeduplicationId</code> based on the contents of the message. Your <code>MessageDeduplicationId</code> overrides the generated one.</p>
+    ///   - [`message_group_id(impl Into<String>)`](crate::client::fluent_builders::Publish::message_group_id) / [`set_message_group_id(Option<String>)`](crate::client::fluent_builders::Publish::set_message_group_id): <p>This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageGroupId</code> can contain up to 128 alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>  <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). Every message must include a <code>MessageGroupId</code>.</p>
+    /// - On success, responds with [`PublishOutput`](crate::output::PublishOutput) with field(s):
+    ///   - [`message_id(Option<String>)`](crate::output::PublishOutput::message_id): <p>Unique identifier assigned to the published message.</p>  <p>Length Constraint: Maximum 100 characters</p>
+    ///   - [`sequence_number(Option<String>)`](crate::output::PublishOutput::sequence_number): <p>This response element applies only to FIFO (first-in-first-out) topics. </p>  <p>The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each <code>MessageGroupId</code>.</p>
+    /// - On failure, responds with [`SdkError<PublishError>`](crate::error::PublishError)
     pub fn publish(&self) -> fluent_builders::Publish<C, M, R> {
         fluent_builders::Publish::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PublishBatch` operation.
+    /// Constructs a fluent builder for the [`PublishBatch`](crate::client::fluent_builders::PublishBatch) operation.
     ///
-    /// See [`PublishBatch`](crate::client::fluent_builders::PublishBatch) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`topic_arn(impl Into<String>)`](crate::client::fluent_builders::PublishBatch::topic_arn) / [`set_topic_arn(Option<String>)`](crate::client::fluent_builders::PublishBatch::set_topic_arn): <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
+    ///   - [`publish_batch_request_entries(Vec<PublishBatchRequestEntry>)`](crate::client::fluent_builders::PublishBatch::publish_batch_request_entries) / [`set_publish_batch_request_entries(Option<Vec<PublishBatchRequestEntry>>)`](crate::client::fluent_builders::PublishBatch::set_publish_batch_request_entries): <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
+    /// - On success, responds with [`PublishBatchOutput`](crate::output::PublishBatchOutput) with field(s):
+    ///   - [`successful(Option<Vec<PublishBatchResultEntry>>)`](crate::output::PublishBatchOutput::successful): <p>A list of successful <code>PublishBatch</code> responses.</p>
+    ///   - [`failed(Option<Vec<BatchResultErrorEntry>>)`](crate::output::PublishBatchOutput::failed): <p>A list of failed <code>PublishBatch</code> responses. </p>
+    /// - On failure, responds with [`SdkError<PublishBatchError>`](crate::error::PublishBatchError)
     pub fn publish_batch(&self) -> fluent_builders::PublishBatch<C, M, R> {
         fluent_builders::PublishBatch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemovePermission` operation.
+    /// Constructs a fluent builder for the [`RemovePermission`](crate::client::fluent_builders::RemovePermission) operation.
     ///
-    /// See [`RemovePermission`](crate::client::fluent_builders::RemovePermission) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`topic_arn(impl Into<String>)`](crate::client::fluent_builders::RemovePermission::topic_arn) / [`set_topic_arn(Option<String>)`](crate::client::fluent_builders::RemovePermission::set_topic_arn): <p>The ARN of the topic whose access control policy you wish to modify.</p>
+    ///   - [`label(impl Into<String>)`](crate::client::fluent_builders::RemovePermission::label) / [`set_label(Option<String>)`](crate::client::fluent_builders::RemovePermission::set_label): <p>The unique label of the statement you want to remove.</p>
+    /// - On success, responds with [`RemovePermissionOutput`](crate::output::RemovePermissionOutput)
+
+    /// - On failure, responds with [`SdkError<RemovePermissionError>`](crate::error::RemovePermissionError)
     pub fn remove_permission(&self) -> fluent_builders::RemovePermission<C, M, R> {
         fluent_builders::RemovePermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetEndpointAttributes` operation.
+    /// Constructs a fluent builder for the [`SetEndpointAttributes`](crate::client::fluent_builders::SetEndpointAttributes) operation.
     ///
-    /// See [`SetEndpointAttributes`](crate::client::fluent_builders::SetEndpointAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::SetEndpointAttributes::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::SetEndpointAttributes::set_endpoint_arn): <p>EndpointArn used for SetEndpointAttributes action.</p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::SetEndpointAttributes::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::SetEndpointAttributes::set_attributes): <p>A map of the endpoint attributes. Attributes in this map include the following:</p>  <ul>   <li> <p> <code>CustomUserData</code> – arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p> </li>   <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li>   <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> </li>  </ul>
+    /// - On success, responds with [`SetEndpointAttributesOutput`](crate::output::SetEndpointAttributesOutput)
+
+    /// - On failure, responds with [`SdkError<SetEndpointAttributesError>`](crate::error::SetEndpointAttributesError)
     pub fn set_endpoint_attributes(&self) -> fluent_builders::SetEndpointAttributes<C, M, R> {
         fluent_builders::SetEndpointAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetPlatformApplicationAttributes` operation.
+    /// Constructs a fluent builder for the [`SetPlatformApplicationAttributes`](crate::client::fluent_builders::SetPlatformApplicationAttributes) operation.
     ///
-    /// See [`SetPlatformApplicationAttributes`](crate::client::fluent_builders::SetPlatformApplicationAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`platform_application_arn(impl Into<String>)`](crate::client::fluent_builders::SetPlatformApplicationAttributes::platform_application_arn) / [`set_platform_application_arn(Option<String>)`](crate::client::fluent_builders::SetPlatformApplicationAttributes::set_platform_application_arn): <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::SetPlatformApplicationAttributes::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::SetPlatformApplicationAttributes::set_attributes): <p>A map of the platform application attributes. Attributes in this map include the following:</p>  <ul>   <li> <p> <code>PlatformCredential</code> – The credential received from the notification service.</p>    <ul>     <li> <p>For ADM, <code>PlatformCredential</code>is client secret.</p> </li>     <li> <p>For Apple Services using certificate credentials, <code>PlatformCredential</code> is private key.</p> </li>     <li> <p>For Apple Services using token credentials, <code>PlatformCredential</code> is signing key.</p> </li>     <li> <p>For GCM (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p> </li>    </ul> </li>  </ul>  <ul>   <li> <p> <code>PlatformPrincipal</code> – The principal received from the notification service.</p>    <ul>     <li> <p>For ADM, <code>PlatformPrincipal</code>is client id.</p> </li>     <li> <p>For Apple Services using certificate credentials, <code>PlatformPrincipal</code> is SSL certificate.</p> </li>     <li> <p>For Apple Services using token credentials, <code>PlatformPrincipal</code> is signing key ID.</p> </li>     <li> <p>For GCM (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p> </li>    </ul> </li>  </ul>  <ul>   <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which <code>EndpointCreated</code> event notifications are sent.</p> </li>   <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which <code>EndpointDeleted</code> event notifications are sent.</p> </li>   <li> <p> <code>EventEndpointUpdated</code> – Topic ARN to which <code>EndpointUpdate</code> event notifications are sent.</p> </li>   <li> <p> <code>EventDeliveryFailure</code> – Topic ARN to which <code>DeliveryFailure</code> event notifications are sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</p> </li>   <li> <p> <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs on your behalf.</p> </li>   <li> <p> <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs on your behalf.</p> </li>   <li> <p> <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of successfully delivered messages.</p> </li>  </ul>  <p>The following attributes only apply to <code>APNs</code> token-based authentication:</p>  <ul>   <li> <p> <code>ApplePlatformTeamID</code> – The identifier that's assigned to your Apple developer account team.</p> </li>   <li> <p> <code>ApplePlatformBundleID</code> – The bundle identifier that's assigned to your iOS app.</p> </li>  </ul>
+    /// - On success, responds with [`SetPlatformApplicationAttributesOutput`](crate::output::SetPlatformApplicationAttributesOutput)
+
+    /// - On failure, responds with [`SdkError<SetPlatformApplicationAttributesError>`](crate::error::SetPlatformApplicationAttributesError)
     pub fn set_platform_application_attributes(
         &self,
     ) -> fluent_builders::SetPlatformApplicationAttributes<C, M, R> {
         fluent_builders::SetPlatformApplicationAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetSMSAttributes` operation.
+    /// Constructs a fluent builder for the [`SetSMSAttributes`](crate::client::fluent_builders::SetSMSAttributes) operation.
     ///
-    /// See [`SetSMSAttributes`](crate::client::fluent_builders::SetSMSAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::SetSMSAttributes::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::SetSMSAttributes::set_attributes): <p>The default settings for sending SMS messages from your Amazon Web Services account. You can set values for the following attribute names:</p>  <p> <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend each month to send SMS messages. When Amazon SNS determines that sending an SMS message would incur a cost that exceeds this limit, it stops sending SMS messages within minutes.</p> <important>   <p>Amazon SNS stops sending SMS messages within minutes of the limit being crossed. During that interval, if you continue to send SMS messages, you will incur costs that exceed your limit.</p>  </important>  <p>By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want to raise the limit, submit an <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly spend limit. In the <b>Use Case Description</b> field, explain that you are requesting an SMS monthly spend limit increase.</p>  <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message that you send, Amazon SNS writes a log that includes the message price, the success or failure status, the reason for failure (if the message failed), the message dwell time, and other information.</p>  <p> <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value can be an integer from 0 - 100. For example, to write logs only for failed deliveries, set this value to <code>0</code>. To write logs for 10% of your successful deliveries, set it to <code>10</code>.</p>  <p> <code>DefaultSenderID</code> – A string, such as your business brand, that is displayed as the sender on the receiving device. Support for sender IDs varies by country. The sender ID can be 1 - 11 alphanumeric characters, and it must contain at least one letter.</p>  <p> <code>DefaultSMSType</code> – The type of SMS message that you will send by default. You can assign the following values:</p>  <ul>   <li> <p> <code>Promotional</code> – (Default) Noncritical messages, such as marketing messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</p> </li>   <li> <p> <code>Transactional</code> – Critical messages that support customer transactions, such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the message delivery to achieve the highest reliability.</p> </li>  </ul>  <p> <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to the bucket. The report includes the following information for each SMS message that was successfully delivered by your Amazon Web Services account:</p>  <ul>   <li> <p>Time that the message was published (in UTC)</p> </li>   <li> <p>Message ID</p> </li>   <li> <p>Destination phone number</p> </li>   <li> <p>Message type</p> </li>   <li> <p>Delivery status</p> </li>   <li> <p>Message price (in USD)</p> </li>   <li> <p>Part number (a message is split into multiple parts if it is too long for a single message)</p> </li>   <li> <p>Total number of parts</p> </li>  </ul>  <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>  <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    /// - On success, responds with [`SetSmsAttributesOutput`](crate::output::SetSmsAttributesOutput)
+
+    /// - On failure, responds with [`SdkError<SetSMSAttributesError>`](crate::error::SetSMSAttributesError)
     pub fn set_sms_attributes(&self) -> fluent_builders::SetSMSAttributes<C, M, R> {
         fluent_builders::SetSMSAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetSubscriptionAttributes` operation.
+    /// Constructs a fluent builder for the [`SetSubscriptionAttributes`](crate::client::fluent_builders::SetSubscriptionAttributes) operation.
     ///
-    /// See [`SetSubscriptionAttributes`](crate::client::fluent_builders::SetSubscriptionAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`subscription_arn(impl Into<String>)`](crate::client::fluent_builders::SetSubscriptionAttributes::subscription_arn) / [`set_subscription_arn(Option<String>)`](crate::client::fluent_builders::SetSubscriptionAttributes::set_subscription_arn): <p>The ARN of the subscription to modify.</p>
+    ///   - [`attribute_name(impl Into<String>)`](crate::client::fluent_builders::SetSubscriptionAttributes::attribute_name) / [`set_attribute_name(Option<String>)`](crate::client::fluent_builders::SetSubscriptionAttributes::set_attribute_name): <p>A map of attributes with their corresponding values.</p>  <p>The following lists the names, descriptions, and values of the special request parameters that this action uses:</p>  <ul>   <li> <p> <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p> </li>   <li> <p> <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p> </li>   <li> <p> <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p> </li>   <li> <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p> </li>  </ul>  <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>  <ul>   <li> <p> <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>    <ul>     <li> <p>Permission to write to the Kinesis Data Firehose delivery stream</p> </li>     <li> <p>Amazon SNS listed as a trusted entity</p> </li>    </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>  </ul>
+    ///   - [`attribute_value(impl Into<String>)`](crate::client::fluent_builders::SetSubscriptionAttributes::attribute_value) / [`set_attribute_value(Option<String>)`](crate::client::fluent_builders::SetSubscriptionAttributes::set_attribute_value): <p>The new value for the attribute in JSON format.</p>
+    /// - On success, responds with [`SetSubscriptionAttributesOutput`](crate::output::SetSubscriptionAttributesOutput)
+
+    /// - On failure, responds with [`SdkError<SetSubscriptionAttributesError>`](crate::error::SetSubscriptionAttributesError)
     pub fn set_subscription_attributes(
         &self,
     ) -> fluent_builders::SetSubscriptionAttributes<C, M, R> {
         fluent_builders::SetSubscriptionAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetTopicAttributes` operation.
+    /// Constructs a fluent builder for the [`SetTopicAttributes`](crate::client::fluent_builders::SetTopicAttributes) operation.
     ///
-    /// See [`SetTopicAttributes`](crate::client::fluent_builders::SetTopicAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`topic_arn(impl Into<String>)`](crate::client::fluent_builders::SetTopicAttributes::topic_arn) / [`set_topic_arn(Option<String>)`](crate::client::fluent_builders::SetTopicAttributes::set_topic_arn): <p>The ARN of the topic to modify.</p>
+    ///   - [`attribute_name(impl Into<String>)`](crate::client::fluent_builders::SetTopicAttributes::attribute_name) / [`set_attribute_name(Option<String>)`](crate::client::fluent_builders::SetTopicAttributes::set_attribute_name): <p>A map of attributes with their corresponding values.</p>  <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses:</p>  <ul>   <li> <p> <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p> </li>   <li> <p> <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.</p> </li>   <li> <p> <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic.</p> </li>  </ul>  <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>  <ul>   <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>  </ul>  <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>  <ul>   <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication for FIFO topics.</p>    <ul>     <li> <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you create a FIFO topic and this attribute is <code>false</code>, you must specify a value for the <code>MessageDeduplicationId</code> parameter for the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p> </li>     <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>    </ul> </li>  </ul>
+    ///   - [`attribute_value(impl Into<String>)`](crate::client::fluent_builders::SetTopicAttributes::attribute_value) / [`set_attribute_value(Option<String>)`](crate::client::fluent_builders::SetTopicAttributes::set_attribute_value): <p>The new value for the attribute.</p>
+    /// - On success, responds with [`SetTopicAttributesOutput`](crate::output::SetTopicAttributesOutput)
+
+    /// - On failure, responds with [`SdkError<SetTopicAttributesError>`](crate::error::SetTopicAttributesError)
     pub fn set_topic_attributes(&self) -> fluent_builders::SetTopicAttributes<C, M, R> {
         fluent_builders::SetTopicAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `Subscribe` operation.
+    /// Constructs a fluent builder for the [`Subscribe`](crate::client::fluent_builders::Subscribe) operation.
     ///
-    /// See [`Subscribe`](crate::client::fluent_builders::Subscribe) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`topic_arn(impl Into<String>)`](crate::client::fluent_builders::Subscribe::topic_arn) / [`set_topic_arn(Option<String>)`](crate::client::fluent_builders::Subscribe::set_topic_arn): <p>The ARN of the topic you want to subscribe to.</p>
+    ///   - [`protocol(impl Into<String>)`](crate::client::fluent_builders::Subscribe::protocol) / [`set_protocol(Option<String>)`](crate::client::fluent_builders::Subscribe::set_protocol): <p>The protocol that you want to use. Supported protocols include:</p>  <ul>   <li> <p> <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>   <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS POST</p> </li>   <li> <p> <code>email</code> – delivery of message via SMTP</p> </li>   <li> <p> <code>email-json</code> – delivery of JSON-encoded message via SMTP</p> </li>   <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>   <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p> </li>   <li> <p> <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device</p> </li>   <li> <p> <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p> </li>   <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p> </li>  </ul>
+    ///   - [`endpoint(impl Into<String>)`](crate::client::fluent_builders::Subscribe::endpoint) / [`set_endpoint(Option<String>)`](crate::client::fluent_builders::Subscribe::set_endpoint): <p>The endpoint that you want to receive notifications. Endpoints vary by protocol:</p>  <ul>   <li> <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.</p> </li>   <li> <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.</p> </li>   <li> <p>For the <code>email</code> protocol, the endpoint is an email address.</p> </li>   <li> <p>For the <code>email-json</code> protocol, the endpoint is an email address.</p> </li>   <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.</p> </li>   <li> <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p> </li>   <li> <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</p> </li>   <li> <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p> </li>   <li> <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p> </li>  </ul>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::Subscribe::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::Subscribe::set_attributes): <p>A map of attributes with their corresponding values.</p>  <p>The following lists the names, descriptions, and values of the special request parameters that the <code>Subscribe</code> action uses:</p>  <ul>   <li> <p> <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p> </li>   <li> <p> <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p> </li>   <li> <p> <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p> </li>   <li> <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p> </li>  </ul>  <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>  <ul>   <li> <p> <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>    <ul>     <li> <p>Permission to write to the Kinesis Data Firehose delivery stream</p> </li>     <li> <p>Amazon SNS listed as a trusted entity</p> </li>    </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p> </li>  </ul>
+    ///   - [`return_subscription_arn(bool)`](crate::client::fluent_builders::Subscribe::return_subscription_arn) / [`set_return_subscription_arn(bool)`](crate::client::fluent_builders::Subscribe::set_return_subscription_arn): <p>Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the subscription is not yet confirmed.</p>  <p>If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation token.</p>  <p></p>  <p>The default value is <code>false</code>.</p>
+    /// - On success, responds with [`SubscribeOutput`](crate::output::SubscribeOutput) with field(s):
+    ///   - [`subscription_arn(Option<String>)`](crate::output::SubscribeOutput::subscription_arn): <p>The ARN of the subscription if it is confirmed, or the string "pending confirmation" if the subscription requires confirmation. However, if the API request parameter <code>ReturnSubscriptionArn</code> is true, then the value is always the subscription ARN, even if the subscription requires confirmation.</p>
+    /// - On failure, responds with [`SdkError<SubscribeError>`](crate::error::SubscribeError)
     pub fn subscribe(&self) -> fluent_builders::Subscribe<C, M, R> {
         fluent_builders::Subscribe::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the topic to which to add tags.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to be added to the specified topic. A tag consists of a required key and an optional value.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `Unsubscribe` operation.
+    /// Constructs a fluent builder for the [`Unsubscribe`](crate::client::fluent_builders::Unsubscribe) operation.
     ///
-    /// See [`Unsubscribe`](crate::client::fluent_builders::Unsubscribe) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`subscription_arn(impl Into<String>)`](crate::client::fluent_builders::Unsubscribe::subscription_arn) / [`set_subscription_arn(Option<String>)`](crate::client::fluent_builders::Unsubscribe::set_subscription_arn): <p>The ARN of the subscription to be deleted.</p>
+    /// - On success, responds with [`UnsubscribeOutput`](crate::output::UnsubscribeOutput)
+
+    /// - On failure, responds with [`SdkError<UnsubscribeError>`](crate::error::UnsubscribeError)
     pub fn unsubscribe(&self) -> fluent_builders::Unsubscribe<C, M, R> {
         fluent_builders::Unsubscribe::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the topic from which to remove tags.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tag keys to remove from the specified topic.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `VerifySMSSandboxPhoneNumber` operation.
+    /// Constructs a fluent builder for the [`VerifySMSSandboxPhoneNumber`](crate::client::fluent_builders::VerifySMSSandboxPhoneNumber) operation.
     ///
-    /// See [`VerifySMSSandboxPhoneNumber`](crate::client::fluent_builders::VerifySMSSandboxPhoneNumber) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`phone_number(impl Into<String>)`](crate::client::fluent_builders::VerifySMSSandboxPhoneNumber::phone_number) / [`set_phone_number(Option<String>)`](crate::client::fluent_builders::VerifySMSSandboxPhoneNumber::set_phone_number): <p>The destination phone number to verify.</p>
+    ///   - [`one_time_password(impl Into<String>)`](crate::client::fluent_builders::VerifySMSSandboxPhoneNumber::one_time_password) / [`set_one_time_password(Option<String>)`](crate::client::fluent_builders::VerifySMSSandboxPhoneNumber::set_one_time_password): <p>The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
+    /// - On success, responds with [`VerifySmsSandboxPhoneNumberOutput`](crate::output::VerifySmsSandboxPhoneNumberOutput)
+
+    /// - On failure, responds with [`SdkError<VerifySMSSandboxPhoneNumberError>`](crate::error::VerifySMSSandboxPhoneNumberError)
     pub fn verify_sms_sandbox_phone_number(
         &self,
     ) -> fluent_builders::VerifySMSSandboxPhoneNumber<C, M, R> {

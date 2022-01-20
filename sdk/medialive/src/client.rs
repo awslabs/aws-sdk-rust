@@ -83,430 +83,923 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptInputDeviceTransfer` operation.
+    /// Constructs a fluent builder for the [`AcceptInputDeviceTransfer`](crate::client::fluent_builders::AcceptInputDeviceTransfer) operation.
     ///
-    /// See [`AcceptInputDeviceTransfer`](crate::client::fluent_builders::AcceptInputDeviceTransfer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_device_id(impl Into<String>)`](crate::client::fluent_builders::AcceptInputDeviceTransfer::input_device_id) / [`set_input_device_id(Option<String>)`](crate::client::fluent_builders::AcceptInputDeviceTransfer::set_input_device_id): The unique ID of the input device to accept. For example, hd-123456789abcdef.
+    /// - On success, responds with [`AcceptInputDeviceTransferOutput`](crate::output::AcceptInputDeviceTransferOutput)
+
+    /// - On failure, responds with [`SdkError<AcceptInputDeviceTransferError>`](crate::error::AcceptInputDeviceTransferError)
     pub fn accept_input_device_transfer(
         &self,
     ) -> fluent_builders::AcceptInputDeviceTransfer<C, M, R> {
         fluent_builders::AcceptInputDeviceTransfer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDelete` operation.
+    /// Constructs a fluent builder for the [`BatchDelete`](crate::client::fluent_builders::BatchDelete) operation.
     ///
-    /// See [`BatchDelete`](crate::client::fluent_builders::BatchDelete) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_ids(Vec<String>)`](crate::client::fluent_builders::BatchDelete::channel_ids) / [`set_channel_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDelete::set_channel_ids): List of channel IDs
+    ///   - [`input_ids(Vec<String>)`](crate::client::fluent_builders::BatchDelete::input_ids) / [`set_input_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDelete::set_input_ids): List of input IDs
+    ///   - [`input_security_group_ids(Vec<String>)`](crate::client::fluent_builders::BatchDelete::input_security_group_ids) / [`set_input_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDelete::set_input_security_group_ids): List of input security group IDs
+    ///   - [`multiplex_ids(Vec<String>)`](crate::client::fluent_builders::BatchDelete::multiplex_ids) / [`set_multiplex_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDelete::set_multiplex_ids): List of multiplex IDs
+    /// - On success, responds with [`BatchDeleteOutput`](crate::output::BatchDeleteOutput) with field(s):
+    ///   - [`failed(Option<Vec<BatchFailedResultModel>>)`](crate::output::BatchDeleteOutput::failed): List of failed operations
+    ///   - [`successful(Option<Vec<BatchSuccessfulResultModel>>)`](crate::output::BatchDeleteOutput::successful): List of successful operations
+    /// - On failure, responds with [`SdkError<BatchDeleteError>`](crate::error::BatchDeleteError)
     pub fn batch_delete(&self) -> fluent_builders::BatchDelete<C, M, R> {
         fluent_builders::BatchDelete::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchStart` operation.
+    /// Constructs a fluent builder for the [`BatchStart`](crate::client::fluent_builders::BatchStart) operation.
     ///
-    /// See [`BatchStart`](crate::client::fluent_builders::BatchStart) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_ids(Vec<String>)`](crate::client::fluent_builders::BatchStart::channel_ids) / [`set_channel_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchStart::set_channel_ids): List of channel IDs
+    ///   - [`multiplex_ids(Vec<String>)`](crate::client::fluent_builders::BatchStart::multiplex_ids) / [`set_multiplex_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchStart::set_multiplex_ids): List of multiplex IDs
+    /// - On success, responds with [`BatchStartOutput`](crate::output::BatchStartOutput) with field(s):
+    ///   - [`failed(Option<Vec<BatchFailedResultModel>>)`](crate::output::BatchStartOutput::failed): List of failed operations
+    ///   - [`successful(Option<Vec<BatchSuccessfulResultModel>>)`](crate::output::BatchStartOutput::successful): List of successful operations
+    /// - On failure, responds with [`SdkError<BatchStartError>`](crate::error::BatchStartError)
     pub fn batch_start(&self) -> fluent_builders::BatchStart<C, M, R> {
         fluent_builders::BatchStart::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchStop` operation.
+    /// Constructs a fluent builder for the [`BatchStop`](crate::client::fluent_builders::BatchStop) operation.
     ///
-    /// See [`BatchStop`](crate::client::fluent_builders::BatchStop) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_ids(Vec<String>)`](crate::client::fluent_builders::BatchStop::channel_ids) / [`set_channel_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchStop::set_channel_ids): List of channel IDs
+    ///   - [`multiplex_ids(Vec<String>)`](crate::client::fluent_builders::BatchStop::multiplex_ids) / [`set_multiplex_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchStop::set_multiplex_ids): List of multiplex IDs
+    /// - On success, responds with [`BatchStopOutput`](crate::output::BatchStopOutput) with field(s):
+    ///   - [`failed(Option<Vec<BatchFailedResultModel>>)`](crate::output::BatchStopOutput::failed): List of failed operations
+    ///   - [`successful(Option<Vec<BatchSuccessfulResultModel>>)`](crate::output::BatchStopOutput::successful): List of successful operations
+    /// - On failure, responds with [`SdkError<BatchStopError>`](crate::error::BatchStopError)
     pub fn batch_stop(&self) -> fluent_builders::BatchStop<C, M, R> {
         fluent_builders::BatchStop::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchUpdateSchedule` operation.
+    /// Constructs a fluent builder for the [`BatchUpdateSchedule`](crate::client::fluent_builders::BatchUpdateSchedule) operation.
     ///
-    /// See [`BatchUpdateSchedule`](crate::client::fluent_builders::BatchUpdateSchedule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::BatchUpdateSchedule::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::BatchUpdateSchedule::set_channel_id): Id of the channel whose schedule is being updated.
+    ///   - [`creates(BatchScheduleActionCreateRequest)`](crate::client::fluent_builders::BatchUpdateSchedule::creates) / [`set_creates(Option<BatchScheduleActionCreateRequest>)`](crate::client::fluent_builders::BatchUpdateSchedule::set_creates): Schedule actions to create in the schedule.
+    ///   - [`deletes(BatchScheduleActionDeleteRequest)`](crate::client::fluent_builders::BatchUpdateSchedule::deletes) / [`set_deletes(Option<BatchScheduleActionDeleteRequest>)`](crate::client::fluent_builders::BatchUpdateSchedule::set_deletes): Schedule actions to delete from the schedule.
+    /// - On success, responds with [`BatchUpdateScheduleOutput`](crate::output::BatchUpdateScheduleOutput) with field(s):
+    ///   - [`creates(Option<BatchScheduleActionCreateResult>)`](crate::output::BatchUpdateScheduleOutput::creates): Schedule actions created in the schedule.
+    ///   - [`deletes(Option<BatchScheduleActionDeleteResult>)`](crate::output::BatchUpdateScheduleOutput::deletes): Schedule actions deleted from the schedule.
+    /// - On failure, responds with [`SdkError<BatchUpdateScheduleError>`](crate::error::BatchUpdateScheduleError)
     pub fn batch_update_schedule(&self) -> fluent_builders::BatchUpdateSchedule<C, M, R> {
         fluent_builders::BatchUpdateSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelInputDeviceTransfer` operation.
+    /// Constructs a fluent builder for the [`CancelInputDeviceTransfer`](crate::client::fluent_builders::CancelInputDeviceTransfer) operation.
     ///
-    /// See [`CancelInputDeviceTransfer`](crate::client::fluent_builders::CancelInputDeviceTransfer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_device_id(impl Into<String>)`](crate::client::fluent_builders::CancelInputDeviceTransfer::input_device_id) / [`set_input_device_id(Option<String>)`](crate::client::fluent_builders::CancelInputDeviceTransfer::set_input_device_id): The unique ID of the input device to cancel. For example, hd-123456789abcdef.
+    /// - On success, responds with [`CancelInputDeviceTransferOutput`](crate::output::CancelInputDeviceTransferOutput)
+
+    /// - On failure, responds with [`SdkError<CancelInputDeviceTransferError>`](crate::error::CancelInputDeviceTransferError)
     pub fn cancel_input_device_transfer(
         &self,
     ) -> fluent_builders::CancelInputDeviceTransfer<C, M, R> {
         fluent_builders::CancelInputDeviceTransfer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ClaimDevice` operation.
+    /// Constructs a fluent builder for the [`ClaimDevice`](crate::client::fluent_builders::ClaimDevice) operation.
     ///
-    /// See [`ClaimDevice`](crate::client::fluent_builders::ClaimDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ClaimDevice::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ClaimDevice::set_id): The id of the device you want to claim.
+    /// - On success, responds with [`ClaimDeviceOutput`](crate::output::ClaimDeviceOutput)
+
+    /// - On failure, responds with [`SdkError<ClaimDeviceError>`](crate::error::ClaimDeviceError)
     pub fn claim_device(&self) -> fluent_builders::ClaimDevice<C, M, R> {
         fluent_builders::ClaimDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateChannel` operation.
+    /// Constructs a fluent builder for the [`CreateChannel`](crate::client::fluent_builders::CreateChannel) operation.
     ///
-    /// See [`CreateChannel`](crate::client::fluent_builders::CreateChannel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`cdi_input_specification(CdiInputSpecification)`](crate::client::fluent_builders::CreateChannel::cdi_input_specification) / [`set_cdi_input_specification(Option<CdiInputSpecification>)`](crate::client::fluent_builders::CreateChannel::set_cdi_input_specification): Specification of CDI inputs for this channel
+    ///   - [`channel_class(ChannelClass)`](crate::client::fluent_builders::CreateChannel::channel_class) / [`set_channel_class(Option<ChannelClass>)`](crate::client::fluent_builders::CreateChannel::set_channel_class): The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    ///   - [`destinations(Vec<OutputDestination>)`](crate::client::fluent_builders::CreateChannel::destinations) / [`set_destinations(Option<Vec<OutputDestination>>)`](crate::client::fluent_builders::CreateChannel::set_destinations): Placeholder documentation for __listOfOutputDestination
+    ///   - [`encoder_settings(EncoderSettings)`](crate::client::fluent_builders::CreateChannel::encoder_settings) / [`set_encoder_settings(Option<EncoderSettings>)`](crate::client::fluent_builders::CreateChannel::set_encoder_settings): Encoder Settings
+    ///   - [`input_attachments(Vec<InputAttachment>)`](crate::client::fluent_builders::CreateChannel::input_attachments) / [`set_input_attachments(Option<Vec<InputAttachment>>)`](crate::client::fluent_builders::CreateChannel::set_input_attachments): List of input attachments for channel.
+    ///   - [`input_specification(InputSpecification)`](crate::client::fluent_builders::CreateChannel::input_specification) / [`set_input_specification(Option<InputSpecification>)`](crate::client::fluent_builders::CreateChannel::set_input_specification): Specification of network and file inputs for this channel
+    ///   - [`log_level(LogLevel)`](crate::client::fluent_builders::CreateChannel::log_level) / [`set_log_level(Option<LogLevel>)`](crate::client::fluent_builders::CreateChannel::set_log_level): The log level to write to CloudWatch Logs.
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_name): Name of channel.
+    ///   - [`request_id(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::request_id) / [`set_request_id(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_request_id): Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
+    ///   - [`reserved(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::reserved) / [`set_reserved(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_reserved): Deprecated field that's only usable by whitelisted customers.
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_role_arn): An optional Amazon Resource Name (ARN) of the role to assume when running the Channel.
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateChannel::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChannel::set_tags): A collection of key-value pairs.
+    ///   - [`vpc(VpcOutputSettings)`](crate::client::fluent_builders::CreateChannel::vpc) / [`set_vpc(Option<VpcOutputSettings>)`](crate::client::fluent_builders::CreateChannel::set_vpc): Settings for the VPC outputs
+    /// - On success, responds with [`CreateChannelOutput`](crate::output::CreateChannelOutput) with field(s):
+    ///   - [`channel(Option<Channel>)`](crate::output::CreateChannelOutput::channel): Placeholder documentation for Channel
+    /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::error::CreateChannelError)
     pub fn create_channel(&self) -> fluent_builders::CreateChannel<C, M, R> {
         fluent_builders::CreateChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateInput` operation.
+    /// Constructs a fluent builder for the [`CreateInput`](crate::client::fluent_builders::CreateInput) operation.
     ///
-    /// See [`CreateInput`](crate::client::fluent_builders::CreateInput) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`destinations(Vec<InputDestinationRequest>)`](crate::client::fluent_builders::CreateInput::destinations) / [`set_destinations(Option<Vec<InputDestinationRequest>>)`](crate::client::fluent_builders::CreateInput::set_destinations): Destination settings for PUSH type inputs.
+    ///   - [`input_devices(Vec<InputDeviceSettings>)`](crate::client::fluent_builders::CreateInput::input_devices) / [`set_input_devices(Option<Vec<InputDeviceSettings>>)`](crate::client::fluent_builders::CreateInput::set_input_devices): Settings for the devices.
+    ///   - [`input_security_groups(Vec<String>)`](crate::client::fluent_builders::CreateInput::input_security_groups) / [`set_input_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateInput::set_input_security_groups): A list of security groups referenced by IDs to attach to the input.
+    ///   - [`media_connect_flows(Vec<MediaConnectFlowRequest>)`](crate::client::fluent_builders::CreateInput::media_connect_flows) / [`set_media_connect_flows(Option<Vec<MediaConnectFlowRequest>>)`](crate::client::fluent_builders::CreateInput::set_media_connect_flows): A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateInput::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateInput::set_name): Name of the input.
+    ///   - [`request_id(impl Into<String>)`](crate::client::fluent_builders::CreateInput::request_id) / [`set_request_id(Option<String>)`](crate::client::fluent_builders::CreateInput::set_request_id): Unique identifier of the request to ensure the request is handled exactly once in case of retries.
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateInput::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateInput::set_role_arn): The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+    ///   - [`sources(Vec<InputSourceRequest>)`](crate::client::fluent_builders::CreateInput::sources) / [`set_sources(Option<Vec<InputSourceRequest>>)`](crate::client::fluent_builders::CreateInput::set_sources): The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateInput::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateInput::set_tags): A collection of key-value pairs.
+    ///   - [`r#type(InputType)`](crate::client::fluent_builders::CreateInput::r#type) / [`set_type(Option<InputType>)`](crate::client::fluent_builders::CreateInput::set_type): The different types of inputs that AWS Elemental MediaLive supports.
+    ///   - [`vpc(InputVpcRequest)`](crate::client::fluent_builders::CreateInput::vpc) / [`set_vpc(Option<InputVpcRequest>)`](crate::client::fluent_builders::CreateInput::set_vpc): Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
+    /// - On success, responds with [`CreateInputOutput`](crate::output::CreateInputOutput) with field(s):
+    ///   - [`input(Option<Input>)`](crate::output::CreateInputOutput::input): Placeholder documentation for Input
+    /// - On failure, responds with [`SdkError<CreateInputError>`](crate::error::CreateInputError)
     pub fn create_input(&self) -> fluent_builders::CreateInput<C, M, R> {
         fluent_builders::CreateInput::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateInputSecurityGroup` operation.
+    /// Constructs a fluent builder for the [`CreateInputSecurityGroup`](crate::client::fluent_builders::CreateInputSecurityGroup) operation.
     ///
-    /// See [`CreateInputSecurityGroup`](crate::client::fluent_builders::CreateInputSecurityGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateInputSecurityGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateInputSecurityGroup::set_tags): A collection of key-value pairs.
+    ///   - [`whitelist_rules(Vec<InputWhitelistRuleCidr>)`](crate::client::fluent_builders::CreateInputSecurityGroup::whitelist_rules) / [`set_whitelist_rules(Option<Vec<InputWhitelistRuleCidr>>)`](crate::client::fluent_builders::CreateInputSecurityGroup::set_whitelist_rules): List of IPv4 CIDR addresses to whitelist
+    /// - On success, responds with [`CreateInputSecurityGroupOutput`](crate::output::CreateInputSecurityGroupOutput) with field(s):
+    ///   - [`security_group(Option<InputSecurityGroup>)`](crate::output::CreateInputSecurityGroupOutput::security_group): An Input Security Group
+    /// - On failure, responds with [`SdkError<CreateInputSecurityGroupError>`](crate::error::CreateInputSecurityGroupError)
     pub fn create_input_security_group(
         &self,
     ) -> fluent_builders::CreateInputSecurityGroup<C, M, R> {
         fluent_builders::CreateInputSecurityGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMultiplex` operation.
+    /// Constructs a fluent builder for the [`CreateMultiplex`](crate::client::fluent_builders::CreateMultiplex) operation.
     ///
-    /// See [`CreateMultiplex`](crate::client::fluent_builders::CreateMultiplex) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`availability_zones(Vec<String>)`](crate::client::fluent_builders::CreateMultiplex::availability_zones) / [`set_availability_zones(Option<Vec<String>>)`](crate::client::fluent_builders::CreateMultiplex::set_availability_zones): A list of availability zones for the multiplex. You must specify exactly two.
+    ///   - [`multiplex_settings(MultiplexSettings)`](crate::client::fluent_builders::CreateMultiplex::multiplex_settings) / [`set_multiplex_settings(Option<MultiplexSettings>)`](crate::client::fluent_builders::CreateMultiplex::set_multiplex_settings): Configuration for a multiplex event.
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateMultiplex::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateMultiplex::set_name): Name of multiplex.
+    ///   - [`request_id(impl Into<String>)`](crate::client::fluent_builders::CreateMultiplex::request_id) / [`set_request_id(Option<String>)`](crate::client::fluent_builders::CreateMultiplex::set_request_id): Unique request ID. This prevents retries from creating multiple resources.
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateMultiplex::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateMultiplex::set_tags): A collection of key-value pairs.
+    /// - On success, responds with [`CreateMultiplexOutput`](crate::output::CreateMultiplexOutput) with field(s):
+    ///   - [`multiplex(Option<Multiplex>)`](crate::output::CreateMultiplexOutput::multiplex): The newly created multiplex.
+    /// - On failure, responds with [`SdkError<CreateMultiplexError>`](crate::error::CreateMultiplexError)
     pub fn create_multiplex(&self) -> fluent_builders::CreateMultiplex<C, M, R> {
         fluent_builders::CreateMultiplex::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMultiplexProgram` operation.
+    /// Constructs a fluent builder for the [`CreateMultiplexProgram`](crate::client::fluent_builders::CreateMultiplexProgram) operation.
     ///
-    /// See [`CreateMultiplexProgram`](crate::client::fluent_builders::CreateMultiplexProgram) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`multiplex_id(impl Into<String>)`](crate::client::fluent_builders::CreateMultiplexProgram::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::client::fluent_builders::CreateMultiplexProgram::set_multiplex_id): ID of the multiplex where the program is to be created.
+    ///   - [`multiplex_program_settings(MultiplexProgramSettings)`](crate::client::fluent_builders::CreateMultiplexProgram::multiplex_program_settings) / [`set_multiplex_program_settings(Option<MultiplexProgramSettings>)`](crate::client::fluent_builders::CreateMultiplexProgram::set_multiplex_program_settings): The settings for this multiplex program.
+    ///   - [`program_name(impl Into<String>)`](crate::client::fluent_builders::CreateMultiplexProgram::program_name) / [`set_program_name(Option<String>)`](crate::client::fluent_builders::CreateMultiplexProgram::set_program_name): Name of multiplex program.
+    ///   - [`request_id(impl Into<String>)`](crate::client::fluent_builders::CreateMultiplexProgram::request_id) / [`set_request_id(Option<String>)`](crate::client::fluent_builders::CreateMultiplexProgram::set_request_id): Unique request ID. This prevents retries from creating multiple resources.
+    /// - On success, responds with [`CreateMultiplexProgramOutput`](crate::output::CreateMultiplexProgramOutput) with field(s):
+    ///   - [`multiplex_program(Option<MultiplexProgram>)`](crate::output::CreateMultiplexProgramOutput::multiplex_program): The newly created multiplex program.
+    /// - On failure, responds with [`SdkError<CreateMultiplexProgramError>`](crate::error::CreateMultiplexProgramError)
     pub fn create_multiplex_program(&self) -> fluent_builders::CreateMultiplexProgram<C, M, R> {
         fluent_builders::CreateMultiplexProgram::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePartnerInput` operation.
+    /// Constructs a fluent builder for the [`CreatePartnerInput`](crate::client::fluent_builders::CreatePartnerInput) operation.
     ///
-    /// See [`CreatePartnerInput`](crate::client::fluent_builders::CreatePartnerInput) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_id(impl Into<String>)`](crate::client::fluent_builders::CreatePartnerInput::input_id) / [`set_input_id(Option<String>)`](crate::client::fluent_builders::CreatePartnerInput::set_input_id): Unique ID of the input.
+    ///   - [`request_id(impl Into<String>)`](crate::client::fluent_builders::CreatePartnerInput::request_id) / [`set_request_id(Option<String>)`](crate::client::fluent_builders::CreatePartnerInput::set_request_id): Unique identifier of the request to ensure the request is handled exactly once in case of retries.
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreatePartnerInput::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreatePartnerInput::set_tags): A collection of key-value pairs.
+    /// - On success, responds with [`CreatePartnerInputOutput`](crate::output::CreatePartnerInputOutput) with field(s):
+    ///   - [`input(Option<Input>)`](crate::output::CreatePartnerInputOutput::input): Placeholder documentation for Input
+    /// - On failure, responds with [`SdkError<CreatePartnerInputError>`](crate::error::CreatePartnerInputError)
     pub fn create_partner_input(&self) -> fluent_builders::CreatePartnerInput<C, M, R> {
         fluent_builders::CreatePartnerInput::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTags` operation.
+    /// Constructs a fluent builder for the [`CreateTags`](crate::client::fluent_builders::CreateTags) operation.
     ///
-    /// See [`CreateTags`](crate::client::fluent_builders::CreateTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTags::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::CreateTags::set_resource_arn): Placeholder documentation for __string
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateTags::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTags::set_tags): Placeholder documentation for Tags
+    /// - On success, responds with [`CreateTagsOutput`](crate::output::CreateTagsOutput)
+
+    /// - On failure, responds with [`SdkError<CreateTagsError>`](crate::error::CreateTagsError)
     pub fn create_tags(&self) -> fluent_builders::CreateTags<C, M, R> {
         fluent_builders::CreateTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteChannel` operation.
+    /// Constructs a fluent builder for the [`DeleteChannel`](crate::client::fluent_builders::DeleteChannel) operation.
     ///
-    /// See [`DeleteChannel`](crate::client::fluent_builders::DeleteChannel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::DeleteChannel::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::DeleteChannel::set_channel_id): Unique ID of the channel.
+    /// - On success, responds with [`DeleteChannelOutput`](crate::output::DeleteChannelOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DeleteChannelOutput::arn): The unique arn of the channel.
+    ///   - [`cdi_input_specification(Option<CdiInputSpecification>)`](crate::output::DeleteChannelOutput::cdi_input_specification): Specification of CDI inputs for this channel
+    ///   - [`channel_class(Option<ChannelClass>)`](crate::output::DeleteChannelOutput::channel_class): The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    ///   - [`destinations(Option<Vec<OutputDestination>>)`](crate::output::DeleteChannelOutput::destinations): A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
+    ///   - [`egress_endpoints(Option<Vec<ChannelEgressEndpoint>>)`](crate::output::DeleteChannelOutput::egress_endpoints): The endpoints where outgoing connections initiate from
+    ///   - [`encoder_settings(Option<EncoderSettings>)`](crate::output::DeleteChannelOutput::encoder_settings): Encoder Settings
+    ///   - [`id(Option<String>)`](crate::output::DeleteChannelOutput::id): The unique id of the channel.
+    ///   - [`input_attachments(Option<Vec<InputAttachment>>)`](crate::output::DeleteChannelOutput::input_attachments): List of input attachments for channel.
+    ///   - [`input_specification(Option<InputSpecification>)`](crate::output::DeleteChannelOutput::input_specification): Specification of network and file inputs for this channel
+    ///   - [`log_level(Option<LogLevel>)`](crate::output::DeleteChannelOutput::log_level): The log level being written to CloudWatch Logs.
+    ///   - [`name(Option<String>)`](crate::output::DeleteChannelOutput::name): The name of the channel. (user-mutable)
+    ///   - [`pipeline_details(Option<Vec<PipelineDetail>>)`](crate::output::DeleteChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
+    ///   - [`pipelines_running_count(i32)`](crate::output::DeleteChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
+    ///   - [`role_arn(Option<String>)`](crate::output::DeleteChannelOutput::role_arn): The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    ///   - [`state(Option<ChannelState>)`](crate::output::DeleteChannelOutput::state): Placeholder documentation for ChannelState
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DeleteChannelOutput::tags): A collection of key-value pairs.
+    ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::output::DeleteChannelOutput::vpc): Settings for VPC output
+    /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::error::DeleteChannelError)
     pub fn delete_channel(&self) -> fluent_builders::DeleteChannel<C, M, R> {
         fluent_builders::DeleteChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInput` operation.
+    /// Constructs a fluent builder for the [`DeleteInput`](crate::client::fluent_builders::DeleteInput) operation.
     ///
-    /// See [`DeleteInput`](crate::client::fluent_builders::DeleteInput) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_id(impl Into<String>)`](crate::client::fluent_builders::DeleteInput::input_id) / [`set_input_id(Option<String>)`](crate::client::fluent_builders::DeleteInput::set_input_id): Unique ID of the input
+    /// - On success, responds with [`DeleteInputOutput`](crate::output::DeleteInputOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteInputError>`](crate::error::DeleteInputError)
     pub fn delete_input(&self) -> fluent_builders::DeleteInput<C, M, R> {
         fluent_builders::DeleteInput::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInputSecurityGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteInputSecurityGroup`](crate::client::fluent_builders::DeleteInputSecurityGroup) operation.
     ///
-    /// See [`DeleteInputSecurityGroup`](crate::client::fluent_builders::DeleteInputSecurityGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_security_group_id(impl Into<String>)`](crate::client::fluent_builders::DeleteInputSecurityGroup::input_security_group_id) / [`set_input_security_group_id(Option<String>)`](crate::client::fluent_builders::DeleteInputSecurityGroup::set_input_security_group_id): The Input Security Group to delete
+    /// - On success, responds with [`DeleteInputSecurityGroupOutput`](crate::output::DeleteInputSecurityGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteInputSecurityGroupError>`](crate::error::DeleteInputSecurityGroupError)
     pub fn delete_input_security_group(
         &self,
     ) -> fluent_builders::DeleteInputSecurityGroup<C, M, R> {
         fluent_builders::DeleteInputSecurityGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMultiplex` operation.
+    /// Constructs a fluent builder for the [`DeleteMultiplex`](crate::client::fluent_builders::DeleteMultiplex) operation.
     ///
-    /// See [`DeleteMultiplex`](crate::client::fluent_builders::DeleteMultiplex) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`multiplex_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMultiplex::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::client::fluent_builders::DeleteMultiplex::set_multiplex_id): The ID of the multiplex.
+    /// - On success, responds with [`DeleteMultiplexOutput`](crate::output::DeleteMultiplexOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DeleteMultiplexOutput::arn): The unique arn of the multiplex.
+    ///   - [`availability_zones(Option<Vec<String>>)`](crate::output::DeleteMultiplexOutput::availability_zones): A list of availability zones for the multiplex.
+    ///   - [`destinations(Option<Vec<MultiplexOutputDestination>>)`](crate::output::DeleteMultiplexOutput::destinations): A list of the multiplex output destinations.
+    ///   - [`id(Option<String>)`](crate::output::DeleteMultiplexOutput::id): The unique id of the multiplex.
+    ///   - [`multiplex_settings(Option<MultiplexSettings>)`](crate::output::DeleteMultiplexOutput::multiplex_settings): Configuration for a multiplex event.
+    ///   - [`name(Option<String>)`](crate::output::DeleteMultiplexOutput::name): The name of the multiplex.
+    ///   - [`pipelines_running_count(i32)`](crate::output::DeleteMultiplexOutput::pipelines_running_count): The number of currently healthy pipelines.
+    ///   - [`program_count(i32)`](crate::output::DeleteMultiplexOutput::program_count): The number of programs in the multiplex.
+    ///   - [`state(Option<MultiplexState>)`](crate::output::DeleteMultiplexOutput::state): The current state of the multiplex.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DeleteMultiplexOutput::tags): A collection of key-value pairs.
+    /// - On failure, responds with [`SdkError<DeleteMultiplexError>`](crate::error::DeleteMultiplexError)
     pub fn delete_multiplex(&self) -> fluent_builders::DeleteMultiplex<C, M, R> {
         fluent_builders::DeleteMultiplex::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMultiplexProgram` operation.
+    /// Constructs a fluent builder for the [`DeleteMultiplexProgram`](crate::client::fluent_builders::DeleteMultiplexProgram) operation.
     ///
-    /// See [`DeleteMultiplexProgram`](crate::client::fluent_builders::DeleteMultiplexProgram) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`multiplex_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMultiplexProgram::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::client::fluent_builders::DeleteMultiplexProgram::set_multiplex_id): The ID of the multiplex that the program belongs to.
+    ///   - [`program_name(impl Into<String>)`](crate::client::fluent_builders::DeleteMultiplexProgram::program_name) / [`set_program_name(Option<String>)`](crate::client::fluent_builders::DeleteMultiplexProgram::set_program_name): The multiplex program name.
+    /// - On success, responds with [`DeleteMultiplexProgramOutput`](crate::output::DeleteMultiplexProgramOutput) with field(s):
+    ///   - [`channel_id(Option<String>)`](crate::output::DeleteMultiplexProgramOutput::channel_id): The MediaLive channel associated with the program.
+    ///   - [`multiplex_program_settings(Option<MultiplexProgramSettings>)`](crate::output::DeleteMultiplexProgramOutput::multiplex_program_settings): The settings for this multiplex program.
+    ///   - [`packet_identifiers_map(Option<MultiplexProgramPacketIdentifiersMap>)`](crate::output::DeleteMultiplexProgramOutput::packet_identifiers_map): The packet identifier map for this multiplex program.
+    ///   - [`pipeline_details(Option<Vec<MultiplexProgramPipelineDetail>>)`](crate::output::DeleteMultiplexProgramOutput::pipeline_details): Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
+    ///   - [`program_name(Option<String>)`](crate::output::DeleteMultiplexProgramOutput::program_name): The name of the multiplex program.
+    /// - On failure, responds with [`SdkError<DeleteMultiplexProgramError>`](crate::error::DeleteMultiplexProgramError)
     pub fn delete_multiplex_program(&self) -> fluent_builders::DeleteMultiplexProgram<C, M, R> {
         fluent_builders::DeleteMultiplexProgram::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteReservation` operation.
+    /// Constructs a fluent builder for the [`DeleteReservation`](crate::client::fluent_builders::DeleteReservation) operation.
     ///
-    /// See [`DeleteReservation`](crate::client::fluent_builders::DeleteReservation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`reservation_id(impl Into<String>)`](crate::client::fluent_builders::DeleteReservation::reservation_id) / [`set_reservation_id(Option<String>)`](crate::client::fluent_builders::DeleteReservation::set_reservation_id): Unique reservation ID, e.g. '1234567'
+    /// - On success, responds with [`DeleteReservationOutput`](crate::output::DeleteReservationOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DeleteReservationOutput::arn): Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
+    ///   - [`count(i32)`](crate::output::DeleteReservationOutput::count): Number of reserved resources
+    ///   - [`currency_code(Option<String>)`](crate::output::DeleteReservationOutput::currency_code): Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
+    ///   - [`duration(i32)`](crate::output::DeleteReservationOutput::duration): Lease duration, e.g. '12'
+    ///   - [`duration_units(Option<OfferingDurationUnits>)`](crate::output::DeleteReservationOutput::duration_units): Units for duration, e.g. 'MONTHS'
+    ///   - [`end(Option<String>)`](crate::output::DeleteReservationOutput::end): Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
+    ///   - [`fixed_price(f64)`](crate::output::DeleteReservationOutput::fixed_price): One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+    ///   - [`name(Option<String>)`](crate::output::DeleteReservationOutput::name): User specified reservation name
+    ///   - [`offering_description(Option<String>)`](crate::output::DeleteReservationOutput::offering_description): Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
+    ///   - [`offering_id(Option<String>)`](crate::output::DeleteReservationOutput::offering_id): Unique offering ID, e.g. '87654321'
+    ///   - [`offering_type(Option<OfferingType>)`](crate::output::DeleteReservationOutput::offering_type): Offering type, e.g. 'NO_UPFRONT'
+    ///   - [`region(Option<String>)`](crate::output::DeleteReservationOutput::region): AWS region, e.g. 'us-west-2'
+    ///   - [`reservation_id(Option<String>)`](crate::output::DeleteReservationOutput::reservation_id): Unique reservation ID, e.g. '1234567'
+    ///   - [`resource_specification(Option<ReservationResourceSpecification>)`](crate::output::DeleteReservationOutput::resource_specification): Resource configuration details
+    ///   - [`start(Option<String>)`](crate::output::DeleteReservationOutput::start): Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
+    ///   - [`state(Option<ReservationState>)`](crate::output::DeleteReservationOutput::state): Current state of reservation, e.g. 'ACTIVE'
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DeleteReservationOutput::tags): A collection of key-value pairs
+    ///   - [`usage_price(f64)`](crate::output::DeleteReservationOutput::usage_price): Recurring usage charge for each reserved resource, e.g. '157.0'
+    /// - On failure, responds with [`SdkError<DeleteReservationError>`](crate::error::DeleteReservationError)
     pub fn delete_reservation(&self) -> fluent_builders::DeleteReservation<C, M, R> {
         fluent_builders::DeleteReservation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSchedule` operation.
+    /// Constructs a fluent builder for the [`DeleteSchedule`](crate::client::fluent_builders::DeleteSchedule) operation.
     ///
-    /// See [`DeleteSchedule`](crate::client::fluent_builders::DeleteSchedule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSchedule::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::DeleteSchedule::set_channel_id): Id of the channel whose schedule is being deleted.
+    /// - On success, responds with [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteScheduleError>`](crate::error::DeleteScheduleError)
     pub fn delete_schedule(&self) -> fluent_builders::DeleteSchedule<C, M, R> {
         fluent_builders::DeleteSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTags` operation.
+    /// Constructs a fluent builder for the [`DeleteTags`](crate::client::fluent_builders::DeleteTags) operation.
     ///
-    /// See [`DeleteTags`](crate::client::fluent_builders::DeleteTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteTags::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DeleteTags::set_resource_arn): Placeholder documentation for __string
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::DeleteTags::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteTags::set_tag_keys): An array of tag keys to delete
+    /// - On success, responds with [`DeleteTagsOutput`](crate::output::DeleteTagsOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::error::DeleteTagsError)
     pub fn delete_tags(&self) -> fluent_builders::DeleteTags<C, M, R> {
         fluent_builders::DeleteTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeChannel` operation.
+    /// Constructs a fluent builder for the [`DescribeChannel`](crate::client::fluent_builders::DescribeChannel) operation.
     ///
-    /// See [`DescribeChannel`](crate::client::fluent_builders::DescribeChannel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::DescribeChannel::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::DescribeChannel::set_channel_id): channel ID
+    /// - On success, responds with [`DescribeChannelOutput`](crate::output::DescribeChannelOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeChannelOutput::arn): The unique arn of the channel.
+    ///   - [`cdi_input_specification(Option<CdiInputSpecification>)`](crate::output::DescribeChannelOutput::cdi_input_specification): Specification of CDI inputs for this channel
+    ///   - [`channel_class(Option<ChannelClass>)`](crate::output::DescribeChannelOutput::channel_class): The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    ///   - [`destinations(Option<Vec<OutputDestination>>)`](crate::output::DescribeChannelOutput::destinations): A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
+    ///   - [`egress_endpoints(Option<Vec<ChannelEgressEndpoint>>)`](crate::output::DescribeChannelOutput::egress_endpoints): The endpoints where outgoing connections initiate from
+    ///   - [`encoder_settings(Option<EncoderSettings>)`](crate::output::DescribeChannelOutput::encoder_settings): Encoder Settings
+    ///   - [`id(Option<String>)`](crate::output::DescribeChannelOutput::id): The unique id of the channel.
+    ///   - [`input_attachments(Option<Vec<InputAttachment>>)`](crate::output::DescribeChannelOutput::input_attachments): List of input attachments for channel.
+    ///   - [`input_specification(Option<InputSpecification>)`](crate::output::DescribeChannelOutput::input_specification): Specification of network and file inputs for this channel
+    ///   - [`log_level(Option<LogLevel>)`](crate::output::DescribeChannelOutput::log_level): The log level being written to CloudWatch Logs.
+    ///   - [`name(Option<String>)`](crate::output::DescribeChannelOutput::name): The name of the channel. (user-mutable)
+    ///   - [`pipeline_details(Option<Vec<PipelineDetail>>)`](crate::output::DescribeChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
+    ///   - [`pipelines_running_count(i32)`](crate::output::DescribeChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeChannelOutput::role_arn): The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    ///   - [`state(Option<ChannelState>)`](crate::output::DescribeChannelOutput::state): Placeholder documentation for ChannelState
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeChannelOutput::tags): A collection of key-value pairs.
+    ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::output::DescribeChannelOutput::vpc): Settings for VPC output
+    /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::error::DescribeChannelError)
     pub fn describe_channel(&self) -> fluent_builders::DescribeChannel<C, M, R> {
         fluent_builders::DescribeChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInput` operation.
+    /// Constructs a fluent builder for the [`DescribeInput`](crate::client::fluent_builders::DescribeInput) operation.
     ///
-    /// See [`DescribeInput`](crate::client::fluent_builders::DescribeInput) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_id(impl Into<String>)`](crate::client::fluent_builders::DescribeInput::input_id) / [`set_input_id(Option<String>)`](crate::client::fluent_builders::DescribeInput::set_input_id): Unique ID of the input
+    /// - On success, responds with [`DescribeInputOutput`](crate::output::DescribeInputOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeInputOutput::arn): The Unique ARN of the input (generated, immutable).
+    ///   - [`attached_channels(Option<Vec<String>>)`](crate::output::DescribeInputOutput::attached_channels): A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
+    ///   - [`destinations(Option<Vec<InputDestination>>)`](crate::output::DescribeInputOutput::destinations): A list of the destinations of the input (PUSH-type).
+    ///   - [`id(Option<String>)`](crate::output::DescribeInputOutput::id): The generated ID of the input (unique for user account, immutable).
+    ///   - [`input_class(Option<InputClass>)`](crate::output::DescribeInputOutput::input_class): STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails. SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
+    ///   - [`input_devices(Option<Vec<InputDeviceSettings>>)`](crate::output::DescribeInputOutput::input_devices): Settings for the input devices.
+    ///   - [`input_partner_ids(Option<Vec<String>>)`](crate::output::DescribeInputOutput::input_partner_ids): A list of IDs for all Inputs which are partners of this one.
+    ///   - [`input_source_type(Option<InputSourceType>)`](crate::output::DescribeInputOutput::input_source_type): Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
+    ///   - [`media_connect_flows(Option<Vec<MediaConnectFlow>>)`](crate::output::DescribeInputOutput::media_connect_flows): A list of MediaConnect Flows for this input.
+    ///   - [`name(Option<String>)`](crate::output::DescribeInputOutput::name): The user-assigned name (This is a mutable value).
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeInputOutput::role_arn): The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+    ///   - [`security_groups(Option<Vec<String>>)`](crate::output::DescribeInputOutput::security_groups): A list of IDs for all the Input Security Groups attached to the input.
+    ///   - [`sources(Option<Vec<InputSource>>)`](crate::output::DescribeInputOutput::sources): A list of the sources of the input (PULL-type).
+    ///   - [`state(Option<InputState>)`](crate::output::DescribeInputOutput::state): Placeholder documentation for InputState
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeInputOutput::tags): A collection of key-value pairs.
+    ///   - [`r#type(Option<InputType>)`](crate::output::DescribeInputOutput::type): The different types of inputs that AWS Elemental MediaLive supports.
+    /// - On failure, responds with [`SdkError<DescribeInputError>`](crate::error::DescribeInputError)
     pub fn describe_input(&self) -> fluent_builders::DescribeInput<C, M, R> {
         fluent_builders::DescribeInput::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInputDevice` operation.
+    /// Constructs a fluent builder for the [`DescribeInputDevice`](crate::client::fluent_builders::DescribeInputDevice) operation.
     ///
-    /// See [`DescribeInputDevice`](crate::client::fluent_builders::DescribeInputDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_device_id(impl Into<String>)`](crate::client::fluent_builders::DescribeInputDevice::input_device_id) / [`set_input_device_id(Option<String>)`](crate::client::fluent_builders::DescribeInputDevice::set_input_device_id): The unique ID of this input device. For example, hd-123456789abcdef.
+    /// - On success, responds with [`DescribeInputDeviceOutput`](crate::output::DescribeInputDeviceOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeInputDeviceOutput::arn): The unique ARN of the input device.
+    ///   - [`connection_state(Option<InputDeviceConnectionState>)`](crate::output::DescribeInputDeviceOutput::connection_state): The state of the connection between the input device and AWS.
+    ///   - [`device_settings_sync_state(Option<DeviceSettingsSyncState>)`](crate::output::DescribeInputDeviceOutput::device_settings_sync_state): The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
+    ///   - [`device_update_status(Option<DeviceUpdateStatus>)`](crate::output::DescribeInputDeviceOutput::device_update_status): The status of software on the input device.
+    ///   - [`hd_device_settings(Option<InputDeviceHdSettings>)`](crate::output::DescribeInputDeviceOutput::hd_device_settings): Settings that describe an input device that is type HD.
+    ///   - [`id(Option<String>)`](crate::output::DescribeInputDeviceOutput::id): The unique ID of the input device.
+    ///   - [`mac_address(Option<String>)`](crate::output::DescribeInputDeviceOutput::mac_address): The network MAC address of the input device.
+    ///   - [`name(Option<String>)`](crate::output::DescribeInputDeviceOutput::name): A name that you specify for the input device.
+    ///   - [`network_settings(Option<InputDeviceNetworkSettings>)`](crate::output::DescribeInputDeviceOutput::network_settings): The network settings for the input device.
+    ///   - [`serial_number(Option<String>)`](crate::output::DescribeInputDeviceOutput::serial_number): The unique serial number of the input device.
+    ///   - [`r#type(Option<InputDeviceType>)`](crate::output::DescribeInputDeviceOutput::type): The type of the input device.
+    ///   - [`uhd_device_settings(Option<InputDeviceUhdSettings>)`](crate::output::DescribeInputDeviceOutput::uhd_device_settings): Settings that describe an input device that is type UHD.
+    /// - On failure, responds with [`SdkError<DescribeInputDeviceError>`](crate::error::DescribeInputDeviceError)
     pub fn describe_input_device(&self) -> fluent_builders::DescribeInputDevice<C, M, R> {
         fluent_builders::DescribeInputDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInputDeviceThumbnail` operation.
+    /// Constructs a fluent builder for the [`DescribeInputDeviceThumbnail`](crate::client::fluent_builders::DescribeInputDeviceThumbnail) operation.
     ///
-    /// See [`DescribeInputDeviceThumbnail`](crate::client::fluent_builders::DescribeInputDeviceThumbnail) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_device_id(impl Into<String>)`](crate::client::fluent_builders::DescribeInputDeviceThumbnail::input_device_id) / [`set_input_device_id(Option<String>)`](crate::client::fluent_builders::DescribeInputDeviceThumbnail::set_input_device_id): The unique ID of this input device. For example, hd-123456789abcdef.
+    ///   - [`accept(AcceptHeader)`](crate::client::fluent_builders::DescribeInputDeviceThumbnail::accept) / [`set_accept(Option<AcceptHeader>)`](crate::client::fluent_builders::DescribeInputDeviceThumbnail::set_accept): The HTTP Accept header. Indicates the requested type for the thumbnail.
+    /// - On success, responds with [`DescribeInputDeviceThumbnailOutput`](crate::output::DescribeInputDeviceThumbnailOutput) with field(s):
+    ///   - [`body(byte_stream::ByteStream)`](crate::output::DescribeInputDeviceThumbnailOutput::body): The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
+    ///   - [`content_type(Option<ContentType>)`](crate::output::DescribeInputDeviceThumbnailOutput::content_type): Specifies the media type of the thumbnail.
+    ///   - [`content_length(i64)`](crate::output::DescribeInputDeviceThumbnailOutput::content_length): The length of the content.
+    ///   - [`e_tag(Option<String>)`](crate::output::DescribeInputDeviceThumbnailOutput::e_tag): The unique, cacheable version of this thumbnail.
+    ///   - [`last_modified(Option<DateTime>)`](crate::output::DescribeInputDeviceThumbnailOutput::last_modified): The date and time the thumbnail was last updated at the device.
+    /// - On failure, responds with [`SdkError<DescribeInputDeviceThumbnailError>`](crate::error::DescribeInputDeviceThumbnailError)
     pub fn describe_input_device_thumbnail(
         &self,
     ) -> fluent_builders::DescribeInputDeviceThumbnail<C, M, R> {
         fluent_builders::DescribeInputDeviceThumbnail::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInputSecurityGroup` operation.
+    /// Constructs a fluent builder for the [`DescribeInputSecurityGroup`](crate::client::fluent_builders::DescribeInputSecurityGroup) operation.
     ///
-    /// See [`DescribeInputSecurityGroup`](crate::client::fluent_builders::DescribeInputSecurityGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_security_group_id(impl Into<String>)`](crate::client::fluent_builders::DescribeInputSecurityGroup::input_security_group_id) / [`set_input_security_group_id(Option<String>)`](crate::client::fluent_builders::DescribeInputSecurityGroup::set_input_security_group_id): The id of the Input Security Group to describe
+    /// - On success, responds with [`DescribeInputSecurityGroupOutput`](crate::output::DescribeInputSecurityGroupOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeInputSecurityGroupOutput::arn): Unique ARN of Input Security Group
+    ///   - [`id(Option<String>)`](crate::output::DescribeInputSecurityGroupOutput::id): The Id of the Input Security Group
+    ///   - [`inputs(Option<Vec<String>>)`](crate::output::DescribeInputSecurityGroupOutput::inputs): The list of inputs currently using this Input Security Group.
+    ///   - [`state(Option<InputSecurityGroupState>)`](crate::output::DescribeInputSecurityGroupOutput::state): The current state of the Input Security Group.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeInputSecurityGroupOutput::tags): A collection of key-value pairs.
+    ///   - [`whitelist_rules(Option<Vec<InputWhitelistRule>>)`](crate::output::DescribeInputSecurityGroupOutput::whitelist_rules): Whitelist rules and their sync status
+    /// - On failure, responds with [`SdkError<DescribeInputSecurityGroupError>`](crate::error::DescribeInputSecurityGroupError)
     pub fn describe_input_security_group(
         &self,
     ) -> fluent_builders::DescribeInputSecurityGroup<C, M, R> {
         fluent_builders::DescribeInputSecurityGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMultiplex` operation.
+    /// Constructs a fluent builder for the [`DescribeMultiplex`](crate::client::fluent_builders::DescribeMultiplex) operation.
     ///
-    /// See [`DescribeMultiplex`](crate::client::fluent_builders::DescribeMultiplex) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`multiplex_id(impl Into<String>)`](crate::client::fluent_builders::DescribeMultiplex::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::client::fluent_builders::DescribeMultiplex::set_multiplex_id): The ID of the multiplex.
+    /// - On success, responds with [`DescribeMultiplexOutput`](crate::output::DescribeMultiplexOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeMultiplexOutput::arn): The unique arn of the multiplex.
+    ///   - [`availability_zones(Option<Vec<String>>)`](crate::output::DescribeMultiplexOutput::availability_zones): A list of availability zones for the multiplex.
+    ///   - [`destinations(Option<Vec<MultiplexOutputDestination>>)`](crate::output::DescribeMultiplexOutput::destinations): A list of the multiplex output destinations.
+    ///   - [`id(Option<String>)`](crate::output::DescribeMultiplexOutput::id): The unique id of the multiplex.
+    ///   - [`multiplex_settings(Option<MultiplexSettings>)`](crate::output::DescribeMultiplexOutput::multiplex_settings): Configuration for a multiplex event.
+    ///   - [`name(Option<String>)`](crate::output::DescribeMultiplexOutput::name): The name of the multiplex.
+    ///   - [`pipelines_running_count(i32)`](crate::output::DescribeMultiplexOutput::pipelines_running_count): The number of currently healthy pipelines.
+    ///   - [`program_count(i32)`](crate::output::DescribeMultiplexOutput::program_count): The number of programs in the multiplex.
+    ///   - [`state(Option<MultiplexState>)`](crate::output::DescribeMultiplexOutput::state): The current state of the multiplex.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeMultiplexOutput::tags): A collection of key-value pairs.
+    /// - On failure, responds with [`SdkError<DescribeMultiplexError>`](crate::error::DescribeMultiplexError)
     pub fn describe_multiplex(&self) -> fluent_builders::DescribeMultiplex<C, M, R> {
         fluent_builders::DescribeMultiplex::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMultiplexProgram` operation.
+    /// Constructs a fluent builder for the [`DescribeMultiplexProgram`](crate::client::fluent_builders::DescribeMultiplexProgram) operation.
     ///
-    /// See [`DescribeMultiplexProgram`](crate::client::fluent_builders::DescribeMultiplexProgram) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`multiplex_id(impl Into<String>)`](crate::client::fluent_builders::DescribeMultiplexProgram::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::client::fluent_builders::DescribeMultiplexProgram::set_multiplex_id): The ID of the multiplex that the program belongs to.
+    ///   - [`program_name(impl Into<String>)`](crate::client::fluent_builders::DescribeMultiplexProgram::program_name) / [`set_program_name(Option<String>)`](crate::client::fluent_builders::DescribeMultiplexProgram::set_program_name): The name of the program.
+    /// - On success, responds with [`DescribeMultiplexProgramOutput`](crate::output::DescribeMultiplexProgramOutput) with field(s):
+    ///   - [`channel_id(Option<String>)`](crate::output::DescribeMultiplexProgramOutput::channel_id): The MediaLive channel associated with the program.
+    ///   - [`multiplex_program_settings(Option<MultiplexProgramSettings>)`](crate::output::DescribeMultiplexProgramOutput::multiplex_program_settings): The settings for this multiplex program.
+    ///   - [`packet_identifiers_map(Option<MultiplexProgramPacketIdentifiersMap>)`](crate::output::DescribeMultiplexProgramOutput::packet_identifiers_map): The packet identifier map for this multiplex program.
+    ///   - [`pipeline_details(Option<Vec<MultiplexProgramPipelineDetail>>)`](crate::output::DescribeMultiplexProgramOutput::pipeline_details): Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
+    ///   - [`program_name(Option<String>)`](crate::output::DescribeMultiplexProgramOutput::program_name): The name of the multiplex program.
+    /// - On failure, responds with [`SdkError<DescribeMultiplexProgramError>`](crate::error::DescribeMultiplexProgramError)
     pub fn describe_multiplex_program(&self) -> fluent_builders::DescribeMultiplexProgram<C, M, R> {
         fluent_builders::DescribeMultiplexProgram::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOffering` operation.
+    /// Constructs a fluent builder for the [`DescribeOffering`](crate::client::fluent_builders::DescribeOffering) operation.
     ///
-    /// See [`DescribeOffering`](crate::client::fluent_builders::DescribeOffering) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`offering_id(impl Into<String>)`](crate::client::fluent_builders::DescribeOffering::offering_id) / [`set_offering_id(Option<String>)`](crate::client::fluent_builders::DescribeOffering::set_offering_id): Unique offering ID, e.g. '87654321'
+    /// - On success, responds with [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeOfferingOutput::arn): Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
+    ///   - [`currency_code(Option<String>)`](crate::output::DescribeOfferingOutput::currency_code): Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
+    ///   - [`duration(i32)`](crate::output::DescribeOfferingOutput::duration): Lease duration, e.g. '12'
+    ///   - [`duration_units(Option<OfferingDurationUnits>)`](crate::output::DescribeOfferingOutput::duration_units): Units for duration, e.g. 'MONTHS'
+    ///   - [`fixed_price(f64)`](crate::output::DescribeOfferingOutput::fixed_price): One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+    ///   - [`offering_description(Option<String>)`](crate::output::DescribeOfferingOutput::offering_description): Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
+    ///   - [`offering_id(Option<String>)`](crate::output::DescribeOfferingOutput::offering_id): Unique offering ID, e.g. '87654321'
+    ///   - [`offering_type(Option<OfferingType>)`](crate::output::DescribeOfferingOutput::offering_type): Offering type, e.g. 'NO_UPFRONT'
+    ///   - [`region(Option<String>)`](crate::output::DescribeOfferingOutput::region): AWS region, e.g. 'us-west-2'
+    ///   - [`resource_specification(Option<ReservationResourceSpecification>)`](crate::output::DescribeOfferingOutput::resource_specification): Resource configuration details
+    ///   - [`usage_price(f64)`](crate::output::DescribeOfferingOutput::usage_price): Recurring usage charge for each reserved resource, e.g. '157.0'
+    /// - On failure, responds with [`SdkError<DescribeOfferingError>`](crate::error::DescribeOfferingError)
     pub fn describe_offering(&self) -> fluent_builders::DescribeOffering<C, M, R> {
         fluent_builders::DescribeOffering::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReservation` operation.
+    /// Constructs a fluent builder for the [`DescribeReservation`](crate::client::fluent_builders::DescribeReservation) operation.
     ///
-    /// See [`DescribeReservation`](crate::client::fluent_builders::DescribeReservation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`reservation_id(impl Into<String>)`](crate::client::fluent_builders::DescribeReservation::reservation_id) / [`set_reservation_id(Option<String>)`](crate::client::fluent_builders::DescribeReservation::set_reservation_id): Unique reservation ID, e.g. '1234567'
+    /// - On success, responds with [`DescribeReservationOutput`](crate::output::DescribeReservationOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeReservationOutput::arn): Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
+    ///   - [`count(i32)`](crate::output::DescribeReservationOutput::count): Number of reserved resources
+    ///   - [`currency_code(Option<String>)`](crate::output::DescribeReservationOutput::currency_code): Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
+    ///   - [`duration(i32)`](crate::output::DescribeReservationOutput::duration): Lease duration, e.g. '12'
+    ///   - [`duration_units(Option<OfferingDurationUnits>)`](crate::output::DescribeReservationOutput::duration_units): Units for duration, e.g. 'MONTHS'
+    ///   - [`end(Option<String>)`](crate::output::DescribeReservationOutput::end): Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
+    ///   - [`fixed_price(f64)`](crate::output::DescribeReservationOutput::fixed_price): One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+    ///   - [`name(Option<String>)`](crate::output::DescribeReservationOutput::name): User specified reservation name
+    ///   - [`offering_description(Option<String>)`](crate::output::DescribeReservationOutput::offering_description): Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
+    ///   - [`offering_id(Option<String>)`](crate::output::DescribeReservationOutput::offering_id): Unique offering ID, e.g. '87654321'
+    ///   - [`offering_type(Option<OfferingType>)`](crate::output::DescribeReservationOutput::offering_type): Offering type, e.g. 'NO_UPFRONT'
+    ///   - [`region(Option<String>)`](crate::output::DescribeReservationOutput::region): AWS region, e.g. 'us-west-2'
+    ///   - [`reservation_id(Option<String>)`](crate::output::DescribeReservationOutput::reservation_id): Unique reservation ID, e.g. '1234567'
+    ///   - [`resource_specification(Option<ReservationResourceSpecification>)`](crate::output::DescribeReservationOutput::resource_specification): Resource configuration details
+    ///   - [`start(Option<String>)`](crate::output::DescribeReservationOutput::start): Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
+    ///   - [`state(Option<ReservationState>)`](crate::output::DescribeReservationOutput::state): Current state of reservation, e.g. 'ACTIVE'
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeReservationOutput::tags): A collection of key-value pairs
+    ///   - [`usage_price(f64)`](crate::output::DescribeReservationOutput::usage_price): Recurring usage charge for each reserved resource, e.g. '157.0'
+    /// - On failure, responds with [`SdkError<DescribeReservationError>`](crate::error::DescribeReservationError)
     pub fn describe_reservation(&self) -> fluent_builders::DescribeReservation<C, M, R> {
         fluent_builders::DescribeReservation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSchedule` operation.
+    /// Constructs a fluent builder for the [`DescribeSchedule`](crate::client::fluent_builders::DescribeSchedule) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeSchedule::into_paginator).
     ///
-    /// See [`DescribeSchedule`](crate::client::fluent_builders::DescribeSchedule) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSchedule::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSchedule::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::DescribeSchedule::set_channel_id): Id of the channel whose schedule is being updated.
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeSchedule::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeSchedule::set_max_results): Placeholder documentation for MaxResults
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSchedule::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSchedule::set_next_token): Placeholder documentation for __string
+    /// - On success, responds with [`DescribeScheduleOutput`](crate::output::DescribeScheduleOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeScheduleOutput::next_token): The next token; for use in pagination.
+    ///   - [`schedule_actions(Option<Vec<ScheduleAction>>)`](crate::output::DescribeScheduleOutput::schedule_actions): The list of actions in the schedule.
+    /// - On failure, responds with [`SdkError<DescribeScheduleError>`](crate::error::DescribeScheduleError)
     pub fn describe_schedule(&self) -> fluent_builders::DescribeSchedule<C, M, R> {
         fluent_builders::DescribeSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChannels` operation.
+    /// Constructs a fluent builder for the [`ListChannels`](crate::client::fluent_builders::ListChannels) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
     ///
-    /// See [`ListChannels`](crate::client::fluent_builders::ListChannels) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannels::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListChannels::set_max_results): Placeholder documentation for MaxResults
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannels::set_next_token): Placeholder documentation for __string
+    /// - On success, responds with [`ListChannelsOutput`](crate::output::ListChannelsOutput) with field(s):
+    ///   - [`channels(Option<Vec<ChannelSummary>>)`](crate::output::ListChannelsOutput::channels): Placeholder documentation for __listOfChannelSummary
+    ///   - [`next_token(Option<String>)`](crate::output::ListChannelsOutput::next_token): Placeholder documentation for __string
+    /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::error::ListChannelsError)
     pub fn list_channels(&self) -> fluent_builders::ListChannels<C, M, R> {
         fluent_builders::ListChannels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInputDevices` operation.
+    /// Constructs a fluent builder for the [`ListInputDevices`](crate::client::fluent_builders::ListInputDevices) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInputDevices::into_paginator).
     ///
-    /// See [`ListInputDevices`](crate::client::fluent_builders::ListInputDevices) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInputDevices::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInputDevices::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListInputDevices::set_max_results): Placeholder documentation for MaxResults
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInputDevices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInputDevices::set_next_token): Placeholder documentation for __string
+    /// - On success, responds with [`ListInputDevicesOutput`](crate::output::ListInputDevicesOutput) with field(s):
+    ///   - [`input_devices(Option<Vec<InputDeviceSummary>>)`](crate::output::ListInputDevicesOutput::input_devices): The list of input devices.
+    ///   - [`next_token(Option<String>)`](crate::output::ListInputDevicesOutput::next_token): A token to get additional list results.
+    /// - On failure, responds with [`SdkError<ListInputDevicesError>`](crate::error::ListInputDevicesError)
     pub fn list_input_devices(&self) -> fluent_builders::ListInputDevices<C, M, R> {
         fluent_builders::ListInputDevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInputDeviceTransfers` operation.
+    /// Constructs a fluent builder for the [`ListInputDeviceTransfers`](crate::client::fluent_builders::ListInputDeviceTransfers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInputDeviceTransfers::into_paginator).
     ///
-    /// See [`ListInputDeviceTransfers`](crate::client::fluent_builders::ListInputDeviceTransfers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInputDeviceTransfers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInputDeviceTransfers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListInputDeviceTransfers::set_max_results): Placeholder documentation for MaxResults
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInputDeviceTransfers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInputDeviceTransfers::set_next_token): Placeholder documentation for __string
+    ///   - [`transfer_type(impl Into<String>)`](crate::client::fluent_builders::ListInputDeviceTransfers::transfer_type) / [`set_transfer_type(Option<String>)`](crate::client::fluent_builders::ListInputDeviceTransfers::set_transfer_type): Placeholder documentation for __string
+    /// - On success, responds with [`ListInputDeviceTransfersOutput`](crate::output::ListInputDeviceTransfersOutput) with field(s):
+    ///   - [`input_device_transfers(Option<Vec<TransferringInputDeviceSummary>>)`](crate::output::ListInputDeviceTransfersOutput::input_device_transfers): The list of devices that you are transferring or are being transferred to you.
+    ///   - [`next_token(Option<String>)`](crate::output::ListInputDeviceTransfersOutput::next_token): A token to get additional list results.
+    /// - On failure, responds with [`SdkError<ListInputDeviceTransfersError>`](crate::error::ListInputDeviceTransfersError)
     pub fn list_input_device_transfers(
         &self,
     ) -> fluent_builders::ListInputDeviceTransfers<C, M, R> {
         fluent_builders::ListInputDeviceTransfers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInputs` operation.
+    /// Constructs a fluent builder for the [`ListInputs`](crate::client::fluent_builders::ListInputs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInputs::into_paginator).
     ///
-    /// See [`ListInputs`](crate::client::fluent_builders::ListInputs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInputs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInputs::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListInputs::set_max_results): Placeholder documentation for MaxResults
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInputs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInputs::set_next_token): Placeholder documentation for __string
+    /// - On success, responds with [`ListInputsOutput`](crate::output::ListInputsOutput) with field(s):
+    ///   - [`inputs(Option<Vec<Input>>)`](crate::output::ListInputsOutput::inputs): Placeholder documentation for __listOfInput
+    ///   - [`next_token(Option<String>)`](crate::output::ListInputsOutput::next_token): Placeholder documentation for __string
+    /// - On failure, responds with [`SdkError<ListInputsError>`](crate::error::ListInputsError)
     pub fn list_inputs(&self) -> fluent_builders::ListInputs<C, M, R> {
         fluent_builders::ListInputs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInputSecurityGroups` operation.
+    /// Constructs a fluent builder for the [`ListInputSecurityGroups`](crate::client::fluent_builders::ListInputSecurityGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInputSecurityGroups::into_paginator).
     ///
-    /// See [`ListInputSecurityGroups`](crate::client::fluent_builders::ListInputSecurityGroups) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInputSecurityGroups::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInputSecurityGroups::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListInputSecurityGroups::set_max_results): Placeholder documentation for MaxResults
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInputSecurityGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInputSecurityGroups::set_next_token): Placeholder documentation for __string
+    /// - On success, responds with [`ListInputSecurityGroupsOutput`](crate::output::ListInputSecurityGroupsOutput) with field(s):
+    ///   - [`input_security_groups(Option<Vec<InputSecurityGroup>>)`](crate::output::ListInputSecurityGroupsOutput::input_security_groups): List of input security groups
+    ///   - [`next_token(Option<String>)`](crate::output::ListInputSecurityGroupsOutput::next_token): Placeholder documentation for __string
+    /// - On failure, responds with [`SdkError<ListInputSecurityGroupsError>`](crate::error::ListInputSecurityGroupsError)
     pub fn list_input_security_groups(&self) -> fluent_builders::ListInputSecurityGroups<C, M, R> {
         fluent_builders::ListInputSecurityGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMultiplexes` operation.
+    /// Constructs a fluent builder for the [`ListMultiplexes`](crate::client::fluent_builders::ListMultiplexes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMultiplexes::into_paginator).
     ///
-    /// See [`ListMultiplexes`](crate::client::fluent_builders::ListMultiplexes) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMultiplexes::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMultiplexes::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListMultiplexes::set_max_results): The maximum number of items to return.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMultiplexes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMultiplexes::set_next_token): The token to retrieve the next page of results.
+    /// - On success, responds with [`ListMultiplexesOutput`](crate::output::ListMultiplexesOutput) with field(s):
+    ///   - [`multiplexes(Option<Vec<MultiplexSummary>>)`](crate::output::ListMultiplexesOutput::multiplexes): List of multiplexes.
+    ///   - [`next_token(Option<String>)`](crate::output::ListMultiplexesOutput::next_token): Token for the next ListMultiplexes request.
+    /// - On failure, responds with [`SdkError<ListMultiplexesError>`](crate::error::ListMultiplexesError)
     pub fn list_multiplexes(&self) -> fluent_builders::ListMultiplexes<C, M, R> {
         fluent_builders::ListMultiplexes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMultiplexPrograms` operation.
+    /// Constructs a fluent builder for the [`ListMultiplexPrograms`](crate::client::fluent_builders::ListMultiplexPrograms) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMultiplexPrograms::into_paginator).
     ///
-    /// See [`ListMultiplexPrograms`](crate::client::fluent_builders::ListMultiplexPrograms) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMultiplexPrograms::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMultiplexPrograms::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListMultiplexPrograms::set_max_results): The maximum number of items to return.
+    ///   - [`multiplex_id(impl Into<String>)`](crate::client::fluent_builders::ListMultiplexPrograms::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::client::fluent_builders::ListMultiplexPrograms::set_multiplex_id): The ID of the multiplex that the programs belong to.
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMultiplexPrograms::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMultiplexPrograms::set_next_token): The token to retrieve the next page of results.
+    /// - On success, responds with [`ListMultiplexProgramsOutput`](crate::output::ListMultiplexProgramsOutput) with field(s):
+    ///   - [`multiplex_programs(Option<Vec<MultiplexProgramSummary>>)`](crate::output::ListMultiplexProgramsOutput::multiplex_programs): List of multiplex programs.
+    ///   - [`next_token(Option<String>)`](crate::output::ListMultiplexProgramsOutput::next_token): Token for the next ListMultiplexProgram request.
+    /// - On failure, responds with [`SdkError<ListMultiplexProgramsError>`](crate::error::ListMultiplexProgramsError)
     pub fn list_multiplex_programs(&self) -> fluent_builders::ListMultiplexPrograms<C, M, R> {
         fluent_builders::ListMultiplexPrograms::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOfferings` operation.
+    /// Constructs a fluent builder for the [`ListOfferings`](crate::client::fluent_builders::ListOfferings) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOfferings::into_paginator).
     ///
-    /// See [`ListOfferings`](crate::client::fluent_builders::ListOfferings) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOfferings::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`channel_class(impl Into<String>)`](crate::client::fluent_builders::ListOfferings::channel_class) / [`set_channel_class(Option<String>)`](crate::client::fluent_builders::ListOfferings::set_channel_class): Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+    ///   - [`channel_configuration(impl Into<String>)`](crate::client::fluent_builders::ListOfferings::channel_configuration) / [`set_channel_configuration(Option<String>)`](crate::client::fluent_builders::ListOfferings::set_channel_configuration): Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
+    ///   - [`codec(impl Into<String>)`](crate::client::fluent_builders::ListOfferings::codec) / [`set_codec(Option<String>)`](crate::client::fluent_builders::ListOfferings::set_codec): Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    ///   - [`duration(impl Into<String>)`](crate::client::fluent_builders::ListOfferings::duration) / [`set_duration(Option<String>)`](crate::client::fluent_builders::ListOfferings::set_duration): Filter by offering duration, e.g. '12'
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOfferings::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListOfferings::set_max_results): Placeholder documentation for MaxResults
+    ///   - [`maximum_bitrate(impl Into<String>)`](crate::client::fluent_builders::ListOfferings::maximum_bitrate) / [`set_maximum_bitrate(Option<String>)`](crate::client::fluent_builders::ListOfferings::set_maximum_bitrate): Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
+    ///   - [`maximum_framerate(impl Into<String>)`](crate::client::fluent_builders::ListOfferings::maximum_framerate) / [`set_maximum_framerate(Option<String>)`](crate::client::fluent_builders::ListOfferings::set_maximum_framerate): Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOfferings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOfferings::set_next_token): Placeholder documentation for __string
+    ///   - [`resolution(impl Into<String>)`](crate::client::fluent_builders::ListOfferings::resolution) / [`set_resolution(Option<String>)`](crate::client::fluent_builders::ListOfferings::set_resolution): Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::ListOfferings::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::ListOfferings::set_resource_type): Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
+    ///   - [`special_feature(impl Into<String>)`](crate::client::fluent_builders::ListOfferings::special_feature) / [`set_special_feature(Option<String>)`](crate::client::fluent_builders::ListOfferings::set_special_feature): Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
+    ///   - [`video_quality(impl Into<String>)`](crate::client::fluent_builders::ListOfferings::video_quality) / [`set_video_quality(Option<String>)`](crate::client::fluent_builders::ListOfferings::set_video_quality): Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
+    /// - On success, responds with [`ListOfferingsOutput`](crate::output::ListOfferingsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListOfferingsOutput::next_token): Token to retrieve the next page of results
+    ///   - [`offerings(Option<Vec<Offering>>)`](crate::output::ListOfferingsOutput::offerings): List of offerings
+    /// - On failure, responds with [`SdkError<ListOfferingsError>`](crate::error::ListOfferingsError)
     pub fn list_offerings(&self) -> fluent_builders::ListOfferings<C, M, R> {
         fluent_builders::ListOfferings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListReservations` operation.
+    /// Constructs a fluent builder for the [`ListReservations`](crate::client::fluent_builders::ListReservations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListReservations::into_paginator).
     ///
-    /// See [`ListReservations`](crate::client::fluent_builders::ListReservations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReservations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`channel_class(impl Into<String>)`](crate::client::fluent_builders::ListReservations::channel_class) / [`set_channel_class(Option<String>)`](crate::client::fluent_builders::ListReservations::set_channel_class): Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+    ///   - [`codec(impl Into<String>)`](crate::client::fluent_builders::ListReservations::codec) / [`set_codec(Option<String>)`](crate::client::fluent_builders::ListReservations::set_codec): Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReservations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListReservations::set_max_results): Placeholder documentation for MaxResults
+    ///   - [`maximum_bitrate(impl Into<String>)`](crate::client::fluent_builders::ListReservations::maximum_bitrate) / [`set_maximum_bitrate(Option<String>)`](crate::client::fluent_builders::ListReservations::set_maximum_bitrate): Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
+    ///   - [`maximum_framerate(impl Into<String>)`](crate::client::fluent_builders::ListReservations::maximum_framerate) / [`set_maximum_framerate(Option<String>)`](crate::client::fluent_builders::ListReservations::set_maximum_framerate): Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReservations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReservations::set_next_token): Placeholder documentation for __string
+    ///   - [`resolution(impl Into<String>)`](crate::client::fluent_builders::ListReservations::resolution) / [`set_resolution(Option<String>)`](crate::client::fluent_builders::ListReservations::set_resolution): Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::ListReservations::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::ListReservations::set_resource_type): Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
+    ///   - [`special_feature(impl Into<String>)`](crate::client::fluent_builders::ListReservations::special_feature) / [`set_special_feature(Option<String>)`](crate::client::fluent_builders::ListReservations::set_special_feature): Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
+    ///   - [`video_quality(impl Into<String>)`](crate::client::fluent_builders::ListReservations::video_quality) / [`set_video_quality(Option<String>)`](crate::client::fluent_builders::ListReservations::set_video_quality): Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
+    /// - On success, responds with [`ListReservationsOutput`](crate::output::ListReservationsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListReservationsOutput::next_token): Token to retrieve the next page of results
+    ///   - [`reservations(Option<Vec<Reservation>>)`](crate::output::ListReservationsOutput::reservations): List of reservations
+    /// - On failure, responds with [`SdkError<ListReservationsError>`](crate::error::ListReservationsError)
     pub fn list_reservations(&self) -> fluent_builders::ListReservations<C, M, R> {
         fluent_builders::ListReservations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): Placeholder documentation for __string
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): Placeholder documentation for Tags
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PurchaseOffering` operation.
+    /// Constructs a fluent builder for the [`PurchaseOffering`](crate::client::fluent_builders::PurchaseOffering) operation.
     ///
-    /// See [`PurchaseOffering`](crate::client::fluent_builders::PurchaseOffering) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`count(i32)`](crate::client::fluent_builders::PurchaseOffering::count) / [`set_count(i32)`](crate::client::fluent_builders::PurchaseOffering::set_count): Number of resources
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PurchaseOffering::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PurchaseOffering::set_name): Name for the new reservation
+    ///   - [`offering_id(impl Into<String>)`](crate::client::fluent_builders::PurchaseOffering::offering_id) / [`set_offering_id(Option<String>)`](crate::client::fluent_builders::PurchaseOffering::set_offering_id): Offering to purchase, e.g. '87654321'
+    ///   - [`request_id(impl Into<String>)`](crate::client::fluent_builders::PurchaseOffering::request_id) / [`set_request_id(Option<String>)`](crate::client::fluent_builders::PurchaseOffering::set_request_id): Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
+    ///   - [`start(impl Into<String>)`](crate::client::fluent_builders::PurchaseOffering::start) / [`set_start(Option<String>)`](crate::client::fluent_builders::PurchaseOffering::set_start): Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::PurchaseOffering::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PurchaseOffering::set_tags): A collection of key-value pairs
+    /// - On success, responds with [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput) with field(s):
+    ///   - [`reservation(Option<Reservation>)`](crate::output::PurchaseOfferingOutput::reservation): Reserved resources available to use
+    /// - On failure, responds with [`SdkError<PurchaseOfferingError>`](crate::error::PurchaseOfferingError)
     pub fn purchase_offering(&self) -> fluent_builders::PurchaseOffering<C, M, R> {
         fluent_builders::PurchaseOffering::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RejectInputDeviceTransfer` operation.
+    /// Constructs a fluent builder for the [`RejectInputDeviceTransfer`](crate::client::fluent_builders::RejectInputDeviceTransfer) operation.
     ///
-    /// See [`RejectInputDeviceTransfer`](crate::client::fluent_builders::RejectInputDeviceTransfer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_device_id(impl Into<String>)`](crate::client::fluent_builders::RejectInputDeviceTransfer::input_device_id) / [`set_input_device_id(Option<String>)`](crate::client::fluent_builders::RejectInputDeviceTransfer::set_input_device_id): The unique ID of the input device to reject. For example, hd-123456789abcdef.
+    /// - On success, responds with [`RejectInputDeviceTransferOutput`](crate::output::RejectInputDeviceTransferOutput)
+
+    /// - On failure, responds with [`SdkError<RejectInputDeviceTransferError>`](crate::error::RejectInputDeviceTransferError)
     pub fn reject_input_device_transfer(
         &self,
     ) -> fluent_builders::RejectInputDeviceTransfer<C, M, R> {
         fluent_builders::RejectInputDeviceTransfer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartChannel` operation.
+    /// Constructs a fluent builder for the [`StartChannel`](crate::client::fluent_builders::StartChannel) operation.
     ///
-    /// See [`StartChannel`](crate::client::fluent_builders::StartChannel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::StartChannel::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::StartChannel::set_channel_id): A request to start a channel
+    /// - On success, responds with [`StartChannelOutput`](crate::output::StartChannelOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::StartChannelOutput::arn): The unique arn of the channel.
+    ///   - [`cdi_input_specification(Option<CdiInputSpecification>)`](crate::output::StartChannelOutput::cdi_input_specification): Specification of CDI inputs for this channel
+    ///   - [`channel_class(Option<ChannelClass>)`](crate::output::StartChannelOutput::channel_class): The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    ///   - [`destinations(Option<Vec<OutputDestination>>)`](crate::output::StartChannelOutput::destinations): A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
+    ///   - [`egress_endpoints(Option<Vec<ChannelEgressEndpoint>>)`](crate::output::StartChannelOutput::egress_endpoints): The endpoints where outgoing connections initiate from
+    ///   - [`encoder_settings(Option<EncoderSettings>)`](crate::output::StartChannelOutput::encoder_settings): Encoder Settings
+    ///   - [`id(Option<String>)`](crate::output::StartChannelOutput::id): The unique id of the channel.
+    ///   - [`input_attachments(Option<Vec<InputAttachment>>)`](crate::output::StartChannelOutput::input_attachments): List of input attachments for channel.
+    ///   - [`input_specification(Option<InputSpecification>)`](crate::output::StartChannelOutput::input_specification): Specification of network and file inputs for this channel
+    ///   - [`log_level(Option<LogLevel>)`](crate::output::StartChannelOutput::log_level): The log level being written to CloudWatch Logs.
+    ///   - [`name(Option<String>)`](crate::output::StartChannelOutput::name): The name of the channel. (user-mutable)
+    ///   - [`pipeline_details(Option<Vec<PipelineDetail>>)`](crate::output::StartChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
+    ///   - [`pipelines_running_count(i32)`](crate::output::StartChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
+    ///   - [`role_arn(Option<String>)`](crate::output::StartChannelOutput::role_arn): The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    ///   - [`state(Option<ChannelState>)`](crate::output::StartChannelOutput::state): Placeholder documentation for ChannelState
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::StartChannelOutput::tags): A collection of key-value pairs.
+    ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::output::StartChannelOutput::vpc): Settings for VPC output
+    /// - On failure, responds with [`SdkError<StartChannelError>`](crate::error::StartChannelError)
     pub fn start_channel(&self) -> fluent_builders::StartChannel<C, M, R> {
         fluent_builders::StartChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartMultiplex` operation.
+    /// Constructs a fluent builder for the [`StartMultiplex`](crate::client::fluent_builders::StartMultiplex) operation.
     ///
-    /// See [`StartMultiplex`](crate::client::fluent_builders::StartMultiplex) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`multiplex_id(impl Into<String>)`](crate::client::fluent_builders::StartMultiplex::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::client::fluent_builders::StartMultiplex::set_multiplex_id): The ID of the multiplex.
+    /// - On success, responds with [`StartMultiplexOutput`](crate::output::StartMultiplexOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::StartMultiplexOutput::arn): The unique arn of the multiplex.
+    ///   - [`availability_zones(Option<Vec<String>>)`](crate::output::StartMultiplexOutput::availability_zones): A list of availability zones for the multiplex.
+    ///   - [`destinations(Option<Vec<MultiplexOutputDestination>>)`](crate::output::StartMultiplexOutput::destinations): A list of the multiplex output destinations.
+    ///   - [`id(Option<String>)`](crate::output::StartMultiplexOutput::id): The unique id of the multiplex.
+    ///   - [`multiplex_settings(Option<MultiplexSettings>)`](crate::output::StartMultiplexOutput::multiplex_settings): Configuration for a multiplex event.
+    ///   - [`name(Option<String>)`](crate::output::StartMultiplexOutput::name): The name of the multiplex.
+    ///   - [`pipelines_running_count(i32)`](crate::output::StartMultiplexOutput::pipelines_running_count): The number of currently healthy pipelines.
+    ///   - [`program_count(i32)`](crate::output::StartMultiplexOutput::program_count): The number of programs in the multiplex.
+    ///   - [`state(Option<MultiplexState>)`](crate::output::StartMultiplexOutput::state): The current state of the multiplex.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::StartMultiplexOutput::tags): A collection of key-value pairs.
+    /// - On failure, responds with [`SdkError<StartMultiplexError>`](crate::error::StartMultiplexError)
     pub fn start_multiplex(&self) -> fluent_builders::StartMultiplex<C, M, R> {
         fluent_builders::StartMultiplex::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopChannel` operation.
+    /// Constructs a fluent builder for the [`StopChannel`](crate::client::fluent_builders::StopChannel) operation.
     ///
-    /// See [`StopChannel`](crate::client::fluent_builders::StopChannel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::StopChannel::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::StopChannel::set_channel_id): A request to stop a running channel
+    /// - On success, responds with [`StopChannelOutput`](crate::output::StopChannelOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::StopChannelOutput::arn): The unique arn of the channel.
+    ///   - [`cdi_input_specification(Option<CdiInputSpecification>)`](crate::output::StopChannelOutput::cdi_input_specification): Specification of CDI inputs for this channel
+    ///   - [`channel_class(Option<ChannelClass>)`](crate::output::StopChannelOutput::channel_class): The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
+    ///   - [`destinations(Option<Vec<OutputDestination>>)`](crate::output::StopChannelOutput::destinations): A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.
+    ///   - [`egress_endpoints(Option<Vec<ChannelEgressEndpoint>>)`](crate::output::StopChannelOutput::egress_endpoints): The endpoints where outgoing connections initiate from
+    ///   - [`encoder_settings(Option<EncoderSettings>)`](crate::output::StopChannelOutput::encoder_settings): Encoder Settings
+    ///   - [`id(Option<String>)`](crate::output::StopChannelOutput::id): The unique id of the channel.
+    ///   - [`input_attachments(Option<Vec<InputAttachment>>)`](crate::output::StopChannelOutput::input_attachments): List of input attachments for channel.
+    ///   - [`input_specification(Option<InputSpecification>)`](crate::output::StopChannelOutput::input_specification): Specification of network and file inputs for this channel
+    ///   - [`log_level(Option<LogLevel>)`](crate::output::StopChannelOutput::log_level): The log level being written to CloudWatch Logs.
+    ///   - [`name(Option<String>)`](crate::output::StopChannelOutput::name): The name of the channel. (user-mutable)
+    ///   - [`pipeline_details(Option<Vec<PipelineDetail>>)`](crate::output::StopChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
+    ///   - [`pipelines_running_count(i32)`](crate::output::StopChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
+    ///   - [`role_arn(Option<String>)`](crate::output::StopChannelOutput::role_arn): The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+    ///   - [`state(Option<ChannelState>)`](crate::output::StopChannelOutput::state): Placeholder documentation for ChannelState
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::StopChannelOutput::tags): A collection of key-value pairs.
+    ///   - [`vpc(Option<VpcOutputSettingsDescription>)`](crate::output::StopChannelOutput::vpc): Settings for VPC output
+    /// - On failure, responds with [`SdkError<StopChannelError>`](crate::error::StopChannelError)
     pub fn stop_channel(&self) -> fluent_builders::StopChannel<C, M, R> {
         fluent_builders::StopChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopMultiplex` operation.
+    /// Constructs a fluent builder for the [`StopMultiplex`](crate::client::fluent_builders::StopMultiplex) operation.
     ///
-    /// See [`StopMultiplex`](crate::client::fluent_builders::StopMultiplex) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`multiplex_id(impl Into<String>)`](crate::client::fluent_builders::StopMultiplex::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::client::fluent_builders::StopMultiplex::set_multiplex_id): The ID of the multiplex.
+    /// - On success, responds with [`StopMultiplexOutput`](crate::output::StopMultiplexOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::StopMultiplexOutput::arn): The unique arn of the multiplex.
+    ///   - [`availability_zones(Option<Vec<String>>)`](crate::output::StopMultiplexOutput::availability_zones): A list of availability zones for the multiplex.
+    ///   - [`destinations(Option<Vec<MultiplexOutputDestination>>)`](crate::output::StopMultiplexOutput::destinations): A list of the multiplex output destinations.
+    ///   - [`id(Option<String>)`](crate::output::StopMultiplexOutput::id): The unique id of the multiplex.
+    ///   - [`multiplex_settings(Option<MultiplexSettings>)`](crate::output::StopMultiplexOutput::multiplex_settings): Configuration for a multiplex event.
+    ///   - [`name(Option<String>)`](crate::output::StopMultiplexOutput::name): The name of the multiplex.
+    ///   - [`pipelines_running_count(i32)`](crate::output::StopMultiplexOutput::pipelines_running_count): The number of currently healthy pipelines.
+    ///   - [`program_count(i32)`](crate::output::StopMultiplexOutput::program_count): The number of programs in the multiplex.
+    ///   - [`state(Option<MultiplexState>)`](crate::output::StopMultiplexOutput::state): The current state of the multiplex.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::StopMultiplexOutput::tags): A collection of key-value pairs.
+    /// - On failure, responds with [`SdkError<StopMultiplexError>`](crate::error::StopMultiplexError)
     pub fn stop_multiplex(&self) -> fluent_builders::StopMultiplex<C, M, R> {
         fluent_builders::StopMultiplex::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TransferInputDevice` operation.
+    /// Constructs a fluent builder for the [`TransferInputDevice`](crate::client::fluent_builders::TransferInputDevice) operation.
     ///
-    /// See [`TransferInputDevice`](crate::client::fluent_builders::TransferInputDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_device_id(impl Into<String>)`](crate::client::fluent_builders::TransferInputDevice::input_device_id) / [`set_input_device_id(Option<String>)`](crate::client::fluent_builders::TransferInputDevice::set_input_device_id): The unique ID of this input device. For example, hd-123456789abcdef.
+    ///   - [`target_customer_id(impl Into<String>)`](crate::client::fluent_builders::TransferInputDevice::target_customer_id) / [`set_target_customer_id(Option<String>)`](crate::client::fluent_builders::TransferInputDevice::set_target_customer_id): The AWS account ID (12 digits) for the recipient of the device transfer.
+    ///   - [`target_region(impl Into<String>)`](crate::client::fluent_builders::TransferInputDevice::target_region) / [`set_target_region(Option<String>)`](crate::client::fluent_builders::TransferInputDevice::set_target_region): The target AWS region to transfer the device.
+    ///   - [`transfer_message(impl Into<String>)`](crate::client::fluent_builders::TransferInputDevice::transfer_message) / [`set_transfer_message(Option<String>)`](crate::client::fluent_builders::TransferInputDevice::set_transfer_message): An optional message for the recipient. Maximum 280 characters.
+    /// - On success, responds with [`TransferInputDeviceOutput`](crate::output::TransferInputDeviceOutput)
+
+    /// - On failure, responds with [`SdkError<TransferInputDeviceError>`](crate::error::TransferInputDeviceError)
     pub fn transfer_input_device(&self) -> fluent_builders::TransferInputDevice<C, M, R> {
         fluent_builders::TransferInputDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateChannel` operation.
+    /// Constructs a fluent builder for the [`UpdateChannel`](crate::client::fluent_builders::UpdateChannel) operation.
     ///
-    /// See [`UpdateChannel`](crate::client::fluent_builders::UpdateChannel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`cdi_input_specification(CdiInputSpecification)`](crate::client::fluent_builders::UpdateChannel::cdi_input_specification) / [`set_cdi_input_specification(Option<CdiInputSpecification>)`](crate::client::fluent_builders::UpdateChannel::set_cdi_input_specification): Specification of CDI inputs for this channel
+    ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_channel_id): channel ID
+    ///   - [`destinations(Vec<OutputDestination>)`](crate::client::fluent_builders::UpdateChannel::destinations) / [`set_destinations(Option<Vec<OutputDestination>>)`](crate::client::fluent_builders::UpdateChannel::set_destinations): A list of output destinations for this channel.
+    ///   - [`encoder_settings(EncoderSettings)`](crate::client::fluent_builders::UpdateChannel::encoder_settings) / [`set_encoder_settings(Option<EncoderSettings>)`](crate::client::fluent_builders::UpdateChannel::set_encoder_settings): The encoder settings for this channel.
+    ///   - [`input_attachments(Vec<InputAttachment>)`](crate::client::fluent_builders::UpdateChannel::input_attachments) / [`set_input_attachments(Option<Vec<InputAttachment>>)`](crate::client::fluent_builders::UpdateChannel::set_input_attachments): Placeholder documentation for __listOfInputAttachment
+    ///   - [`input_specification(InputSpecification)`](crate::client::fluent_builders::UpdateChannel::input_specification) / [`set_input_specification(Option<InputSpecification>)`](crate::client::fluent_builders::UpdateChannel::set_input_specification): Specification of network and file inputs for this channel
+    ///   - [`log_level(LogLevel)`](crate::client::fluent_builders::UpdateChannel::log_level) / [`set_log_level(Option<LogLevel>)`](crate::client::fluent_builders::UpdateChannel::set_log_level): The log level to write to CloudWatch Logs.
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_name): The name of the channel.
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_role_arn): An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. If you do not specify this on an update call but the role was previously set that role will be removed.
+    /// - On success, responds with [`UpdateChannelOutput`](crate::output::UpdateChannelOutput) with field(s):
+    ///   - [`channel(Option<Channel>)`](crate::output::UpdateChannelOutput::channel): Placeholder documentation for Channel
+    /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::error::UpdateChannelError)
     pub fn update_channel(&self) -> fluent_builders::UpdateChannel<C, M, R> {
         fluent_builders::UpdateChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateChannelClass` operation.
+    /// Constructs a fluent builder for the [`UpdateChannelClass`](crate::client::fluent_builders::UpdateChannelClass) operation.
     ///
-    /// See [`UpdateChannelClass`](crate::client::fluent_builders::UpdateChannelClass) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_class(ChannelClass)`](crate::client::fluent_builders::UpdateChannelClass::channel_class) / [`set_channel_class(Option<ChannelClass>)`](crate::client::fluent_builders::UpdateChannelClass::set_channel_class): The channel class that you wish to update this channel to use.
+    ///   - [`channel_id(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelClass::channel_id) / [`set_channel_id(Option<String>)`](crate::client::fluent_builders::UpdateChannelClass::set_channel_id): Channel Id of the channel whose class should be updated.
+    ///   - [`destinations(Vec<OutputDestination>)`](crate::client::fluent_builders::UpdateChannelClass::destinations) / [`set_destinations(Option<Vec<OutputDestination>>)`](crate::client::fluent_builders::UpdateChannelClass::set_destinations): A list of output destinations for this channel.
+    /// - On success, responds with [`UpdateChannelClassOutput`](crate::output::UpdateChannelClassOutput) with field(s):
+    ///   - [`channel(Option<Channel>)`](crate::output::UpdateChannelClassOutput::channel): Placeholder documentation for Channel
+    /// - On failure, responds with [`SdkError<UpdateChannelClassError>`](crate::error::UpdateChannelClassError)
     pub fn update_channel_class(&self) -> fluent_builders::UpdateChannelClass<C, M, R> {
         fluent_builders::UpdateChannelClass::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateInput` operation.
+    /// Constructs a fluent builder for the [`UpdateInput`](crate::client::fluent_builders::UpdateInput) operation.
     ///
-    /// See [`UpdateInput`](crate::client::fluent_builders::UpdateInput) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`destinations(Vec<InputDestinationRequest>)`](crate::client::fluent_builders::UpdateInput::destinations) / [`set_destinations(Option<Vec<InputDestinationRequest>>)`](crate::client::fluent_builders::UpdateInput::set_destinations): Destination settings for PUSH type inputs.
+    ///   - [`input_devices(Vec<InputDeviceRequest>)`](crate::client::fluent_builders::UpdateInput::input_devices) / [`set_input_devices(Option<Vec<InputDeviceRequest>>)`](crate::client::fluent_builders::UpdateInput::set_input_devices): Settings for the devices.
+    ///   - [`input_id(impl Into<String>)`](crate::client::fluent_builders::UpdateInput::input_id) / [`set_input_id(Option<String>)`](crate::client::fluent_builders::UpdateInput::set_input_id): Unique ID of the input.
+    ///   - [`input_security_groups(Vec<String>)`](crate::client::fluent_builders::UpdateInput::input_security_groups) / [`set_input_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateInput::set_input_security_groups): A list of security groups referenced by IDs to attach to the input.
+    ///   - [`media_connect_flows(Vec<MediaConnectFlowRequest>)`](crate::client::fluent_builders::UpdateInput::media_connect_flows) / [`set_media_connect_flows(Option<Vec<MediaConnectFlowRequest>>)`](crate::client::fluent_builders::UpdateInput::set_media_connect_flows): A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateInput::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateInput::set_name): Name of the input.
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateInput::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateInput::set_role_arn): The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+    ///   - [`sources(Vec<InputSourceRequest>)`](crate::client::fluent_builders::UpdateInput::sources) / [`set_sources(Option<Vec<InputSourceRequest>>)`](crate::client::fluent_builders::UpdateInput::set_sources): The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
+    /// - On success, responds with [`UpdateInputOutput`](crate::output::UpdateInputOutput) with field(s):
+    ///   - [`input(Option<Input>)`](crate::output::UpdateInputOutput::input): Placeholder documentation for Input
+    /// - On failure, responds with [`SdkError<UpdateInputError>`](crate::error::UpdateInputError)
     pub fn update_input(&self) -> fluent_builders::UpdateInput<C, M, R> {
         fluent_builders::UpdateInput::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateInputDevice` operation.
+    /// Constructs a fluent builder for the [`UpdateInputDevice`](crate::client::fluent_builders::UpdateInputDevice) operation.
     ///
-    /// See [`UpdateInputDevice`](crate::client::fluent_builders::UpdateInputDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hd_device_settings(InputDeviceConfigurableSettings)`](crate::client::fluent_builders::UpdateInputDevice::hd_device_settings) / [`set_hd_device_settings(Option<InputDeviceConfigurableSettings>)`](crate::client::fluent_builders::UpdateInputDevice::set_hd_device_settings): The settings that you want to apply to the HD input device.
+    ///   - [`input_device_id(impl Into<String>)`](crate::client::fluent_builders::UpdateInputDevice::input_device_id) / [`set_input_device_id(Option<String>)`](crate::client::fluent_builders::UpdateInputDevice::set_input_device_id): The unique ID of the input device. For example, hd-123456789abcdef.
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateInputDevice::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateInputDevice::set_name): The name that you assigned to this input device (not the unique ID).
+    ///   - [`uhd_device_settings(InputDeviceConfigurableSettings)`](crate::client::fluent_builders::UpdateInputDevice::uhd_device_settings) / [`set_uhd_device_settings(Option<InputDeviceConfigurableSettings>)`](crate::client::fluent_builders::UpdateInputDevice::set_uhd_device_settings): The settings that you want to apply to the UHD input device.
+    /// - On success, responds with [`UpdateInputDeviceOutput`](crate::output::UpdateInputDeviceOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateInputDeviceOutput::arn): The unique ARN of the input device.
+    ///   - [`connection_state(Option<InputDeviceConnectionState>)`](crate::output::UpdateInputDeviceOutput::connection_state): The state of the connection between the input device and AWS.
+    ///   - [`device_settings_sync_state(Option<DeviceSettingsSyncState>)`](crate::output::UpdateInputDeviceOutput::device_settings_sync_state): The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
+    ///   - [`device_update_status(Option<DeviceUpdateStatus>)`](crate::output::UpdateInputDeviceOutput::device_update_status): The status of software on the input device.
+    ///   - [`hd_device_settings(Option<InputDeviceHdSettings>)`](crate::output::UpdateInputDeviceOutput::hd_device_settings): Settings that describe an input device that is type HD.
+    ///   - [`id(Option<String>)`](crate::output::UpdateInputDeviceOutput::id): The unique ID of the input device.
+    ///   - [`mac_address(Option<String>)`](crate::output::UpdateInputDeviceOutput::mac_address): The network MAC address of the input device.
+    ///   - [`name(Option<String>)`](crate::output::UpdateInputDeviceOutput::name): A name that you specify for the input device.
+    ///   - [`network_settings(Option<InputDeviceNetworkSettings>)`](crate::output::UpdateInputDeviceOutput::network_settings): The network settings for the input device.
+    ///   - [`serial_number(Option<String>)`](crate::output::UpdateInputDeviceOutput::serial_number): The unique serial number of the input device.
+    ///   - [`r#type(Option<InputDeviceType>)`](crate::output::UpdateInputDeviceOutput::type): The type of the input device.
+    ///   - [`uhd_device_settings(Option<InputDeviceUhdSettings>)`](crate::output::UpdateInputDeviceOutput::uhd_device_settings): Settings that describe an input device that is type UHD.
+    /// - On failure, responds with [`SdkError<UpdateInputDeviceError>`](crate::error::UpdateInputDeviceError)
     pub fn update_input_device(&self) -> fluent_builders::UpdateInputDevice<C, M, R> {
         fluent_builders::UpdateInputDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateInputSecurityGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateInputSecurityGroup`](crate::client::fluent_builders::UpdateInputSecurityGroup) operation.
     ///
-    /// See [`UpdateInputSecurityGroup`](crate::client::fluent_builders::UpdateInputSecurityGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_security_group_id(impl Into<String>)`](crate::client::fluent_builders::UpdateInputSecurityGroup::input_security_group_id) / [`set_input_security_group_id(Option<String>)`](crate::client::fluent_builders::UpdateInputSecurityGroup::set_input_security_group_id): The id of the Input Security Group to update.
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::UpdateInputSecurityGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateInputSecurityGroup::set_tags): A collection of key-value pairs.
+    ///   - [`whitelist_rules(Vec<InputWhitelistRuleCidr>)`](crate::client::fluent_builders::UpdateInputSecurityGroup::whitelist_rules) / [`set_whitelist_rules(Option<Vec<InputWhitelistRuleCidr>>)`](crate::client::fluent_builders::UpdateInputSecurityGroup::set_whitelist_rules): List of IPv4 CIDR addresses to whitelist
+    /// - On success, responds with [`UpdateInputSecurityGroupOutput`](crate::output::UpdateInputSecurityGroupOutput) with field(s):
+    ///   - [`security_group(Option<InputSecurityGroup>)`](crate::output::UpdateInputSecurityGroupOutput::security_group): An Input Security Group
+    /// - On failure, responds with [`SdkError<UpdateInputSecurityGroupError>`](crate::error::UpdateInputSecurityGroupError)
     pub fn update_input_security_group(
         &self,
     ) -> fluent_builders::UpdateInputSecurityGroup<C, M, R> {
         fluent_builders::UpdateInputSecurityGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMultiplex` operation.
+    /// Constructs a fluent builder for the [`UpdateMultiplex`](crate::client::fluent_builders::UpdateMultiplex) operation.
     ///
-    /// See [`UpdateMultiplex`](crate::client::fluent_builders::UpdateMultiplex) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`multiplex_id(impl Into<String>)`](crate::client::fluent_builders::UpdateMultiplex::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::client::fluent_builders::UpdateMultiplex::set_multiplex_id): ID of the multiplex to update.
+    ///   - [`multiplex_settings(MultiplexSettings)`](crate::client::fluent_builders::UpdateMultiplex::multiplex_settings) / [`set_multiplex_settings(Option<MultiplexSettings>)`](crate::client::fluent_builders::UpdateMultiplex::set_multiplex_settings): The new settings for a multiplex.
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateMultiplex::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateMultiplex::set_name): Name of the multiplex.
+    /// - On success, responds with [`UpdateMultiplexOutput`](crate::output::UpdateMultiplexOutput) with field(s):
+    ///   - [`multiplex(Option<Multiplex>)`](crate::output::UpdateMultiplexOutput::multiplex): The updated multiplex.
+    /// - On failure, responds with [`SdkError<UpdateMultiplexError>`](crate::error::UpdateMultiplexError)
     pub fn update_multiplex(&self) -> fluent_builders::UpdateMultiplex<C, M, R> {
         fluent_builders::UpdateMultiplex::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMultiplexProgram` operation.
+    /// Constructs a fluent builder for the [`UpdateMultiplexProgram`](crate::client::fluent_builders::UpdateMultiplexProgram) operation.
     ///
-    /// See [`UpdateMultiplexProgram`](crate::client::fluent_builders::UpdateMultiplexProgram) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`multiplex_id(impl Into<String>)`](crate::client::fluent_builders::UpdateMultiplexProgram::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::client::fluent_builders::UpdateMultiplexProgram::set_multiplex_id): The ID of the multiplex of the program to update.
+    ///   - [`multiplex_program_settings(MultiplexProgramSettings)`](crate::client::fluent_builders::UpdateMultiplexProgram::multiplex_program_settings) / [`set_multiplex_program_settings(Option<MultiplexProgramSettings>)`](crate::client::fluent_builders::UpdateMultiplexProgram::set_multiplex_program_settings): The new settings for a multiplex program.
+    ///   - [`program_name(impl Into<String>)`](crate::client::fluent_builders::UpdateMultiplexProgram::program_name) / [`set_program_name(Option<String>)`](crate::client::fluent_builders::UpdateMultiplexProgram::set_program_name): The name of the program to update.
+    /// - On success, responds with [`UpdateMultiplexProgramOutput`](crate::output::UpdateMultiplexProgramOutput) with field(s):
+    ///   - [`multiplex_program(Option<MultiplexProgram>)`](crate::output::UpdateMultiplexProgramOutput::multiplex_program): The updated multiplex program.
+    /// - On failure, responds with [`SdkError<UpdateMultiplexProgramError>`](crate::error::UpdateMultiplexProgramError)
     pub fn update_multiplex_program(&self) -> fluent_builders::UpdateMultiplexProgram<C, M, R> {
         fluent_builders::UpdateMultiplexProgram::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateReservation` operation.
+    /// Constructs a fluent builder for the [`UpdateReservation`](crate::client::fluent_builders::UpdateReservation) operation.
     ///
-    /// See [`UpdateReservation`](crate::client::fluent_builders::UpdateReservation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateReservation::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateReservation::set_name): Name of the reservation
+    ///   - [`reservation_id(impl Into<String>)`](crate::client::fluent_builders::UpdateReservation::reservation_id) / [`set_reservation_id(Option<String>)`](crate::client::fluent_builders::UpdateReservation::set_reservation_id): Unique reservation ID, e.g. '1234567'
+    /// - On success, responds with [`UpdateReservationOutput`](crate::output::UpdateReservationOutput) with field(s):
+    ///   - [`reservation(Option<Reservation>)`](crate::output::UpdateReservationOutput::reservation): Reserved resources available to use
+    /// - On failure, responds with [`SdkError<UpdateReservationError>`](crate::error::UpdateReservationError)
     pub fn update_reservation(&self) -> fluent_builders::UpdateReservation<C, M, R> {
         fluent_builders::UpdateReservation::new(self.handle.clone())
     }

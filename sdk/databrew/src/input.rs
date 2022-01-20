@@ -536,12 +536,12 @@ pub mod create_profile_job_input {
             self.max_retries = input;
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn output_location(mut self, input: crate::model::S3Location) -> Self {
             self.output_location = Some(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn set_output_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -7284,12 +7284,12 @@ pub mod update_profile_job_input {
             self.max_retries = input;
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn output_location(mut self, input: crate::model::S3Location) -> Self {
             self.output_location = Some(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn set_output_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -8878,7 +8878,7 @@ pub struct UpdateProfileJobInput {
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub max_retries: i32,
-    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+    /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     pub output_location: std::option::Option<crate::model::S3Location>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
     pub validation_configurations:
@@ -8923,7 +8923,7 @@ impl UpdateProfileJobInput {
     pub fn max_retries(&self) -> i32 {
         self.max_retries
     }
-    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+    /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     pub fn output_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.output_location.as_ref()
     }
@@ -10183,7 +10183,7 @@ pub struct CreateProfileJobInput {
     pub max_capacity: i32,
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub max_retries: i32,
-    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+    /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     pub output_location: std::option::Option<crate::model::S3Location>,
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub configuration: std::option::Option<crate::model::ProfileConfiguration>,
@@ -10233,7 +10233,7 @@ impl CreateProfileJobInput {
     pub fn max_retries(&self) -> i32 {
         self.max_retries
     }
-    /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+    /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     pub fn output_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.output_location.as_ref()
     }

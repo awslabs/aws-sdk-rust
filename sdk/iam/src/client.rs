@@ -83,1216 +83,2042 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddClientIDToOpenIDConnectProvider` operation.
+    /// Constructs a fluent builder for the [`AddClientIDToOpenIDConnectProvider`](crate::client::fluent_builders::AddClientIDToOpenIDConnectProvider) operation.
     ///
-    /// See [`AddClientIDToOpenIDConnectProvider`](crate::client::fluent_builders::AddClientIDToOpenIDConnectProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`open_id_connect_provider_arn(impl Into<String>)`](crate::client::fluent_builders::AddClientIDToOpenIDConnectProvider::open_id_connect_provider_arn) / [`set_open_id_connect_provider_arn(Option<String>)`](crate::client::fluent_builders::AddClientIDToOpenIDConnectProvider::set_open_id_connect_provider_arn): <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::AddClientIDToOpenIDConnectProvider::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::AddClientIDToOpenIDConnectProvider::set_client_id): <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.</p>
+    /// - On success, responds with [`AddClientIdToOpenIdConnectProviderOutput`](crate::output::AddClientIdToOpenIdConnectProviderOutput)
+
+    /// - On failure, responds with [`SdkError<AddClientIDToOpenIDConnectProviderError>`](crate::error::AddClientIDToOpenIDConnectProviderError)
     pub fn add_client_id_to_open_id_connect_provider(
         &self,
     ) -> fluent_builders::AddClientIDToOpenIDConnectProvider<C, M, R> {
         fluent_builders::AddClientIDToOpenIDConnectProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AddRoleToInstanceProfile` operation.
+    /// Constructs a fluent builder for the [`AddRoleToInstanceProfile`](crate::client::fluent_builders::AddRoleToInstanceProfile) operation.
     ///
-    /// See [`AddRoleToInstanceProfile`](crate::client::fluent_builders::AddRoleToInstanceProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_profile_name(impl Into<String>)`](crate::client::fluent_builders::AddRoleToInstanceProfile::instance_profile_name) / [`set_instance_profile_name(Option<String>)`](crate::client::fluent_builders::AddRoleToInstanceProfile::set_instance_profile_name): <p>The name of the instance profile to update.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::AddRoleToInstanceProfile::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::AddRoleToInstanceProfile::set_role_name): <p>The name of the role to add.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`AddRoleToInstanceProfileOutput`](crate::output::AddRoleToInstanceProfileOutput)
+
+    /// - On failure, responds with [`SdkError<AddRoleToInstanceProfileError>`](crate::error::AddRoleToInstanceProfileError)
     pub fn add_role_to_instance_profile(
         &self,
     ) -> fluent_builders::AddRoleToInstanceProfile<C, M, R> {
         fluent_builders::AddRoleToInstanceProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AddUserToGroup` operation.
+    /// Constructs a fluent builder for the [`AddUserToGroup`](crate::client::fluent_builders::AddUserToGroup) operation.
     ///
-    /// See [`AddUserToGroup`](crate::client::fluent_builders::AddUserToGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::AddUserToGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::AddUserToGroup::set_group_name): <p>The name of the group to update.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::AddUserToGroup::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::AddUserToGroup::set_user_name): <p>The name of the user to add.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`AddUserToGroupOutput`](crate::output::AddUserToGroupOutput)
+
+    /// - On failure, responds with [`SdkError<AddUserToGroupError>`](crate::error::AddUserToGroupError)
     pub fn add_user_to_group(&self) -> fluent_builders::AddUserToGroup<C, M, R> {
         fluent_builders::AddUserToGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AttachGroupPolicy` operation.
+    /// Constructs a fluent builder for the [`AttachGroupPolicy`](crate::client::fluent_builders::AttachGroupPolicy) operation.
     ///
-    /// See [`AttachGroupPolicy`](crate::client::fluent_builders::AttachGroupPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::AttachGroupPolicy::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::AttachGroupPolicy::set_group_name): <p>The name (friendly name, not ARN) of the group to attach the policy to.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::AttachGroupPolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::AttachGroupPolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// - On success, responds with [`AttachGroupPolicyOutput`](crate::output::AttachGroupPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<AttachGroupPolicyError>`](crate::error::AttachGroupPolicyError)
     pub fn attach_group_policy(&self) -> fluent_builders::AttachGroupPolicy<C, M, R> {
         fluent_builders::AttachGroupPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AttachRolePolicy` operation.
+    /// Constructs a fluent builder for the [`AttachRolePolicy`](crate::client::fluent_builders::AttachRolePolicy) operation.
     ///
-    /// See [`AttachRolePolicy`](crate::client::fluent_builders::AttachRolePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::AttachRolePolicy::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::AttachRolePolicy::set_role_name): <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::AttachRolePolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::AttachRolePolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// - On success, responds with [`AttachRolePolicyOutput`](crate::output::AttachRolePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<AttachRolePolicyError>`](crate::error::AttachRolePolicyError)
     pub fn attach_role_policy(&self) -> fluent_builders::AttachRolePolicy<C, M, R> {
         fluent_builders::AttachRolePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AttachUserPolicy` operation.
+    /// Constructs a fluent builder for the [`AttachUserPolicy`](crate::client::fluent_builders::AttachUserPolicy) operation.
     ///
-    /// See [`AttachUserPolicy`](crate::client::fluent_builders::AttachUserPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::AttachUserPolicy::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::AttachUserPolicy::set_user_name): <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::AttachUserPolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::AttachUserPolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// - On success, responds with [`AttachUserPolicyOutput`](crate::output::AttachUserPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<AttachUserPolicyError>`](crate::error::AttachUserPolicyError)
     pub fn attach_user_policy(&self) -> fluent_builders::AttachUserPolicy<C, M, R> {
         fluent_builders::AttachUserPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ChangePassword` operation.
+    /// Constructs a fluent builder for the [`ChangePassword`](crate::client::fluent_builders::ChangePassword) operation.
     ///
-    /// See [`ChangePassword`](crate::client::fluent_builders::ChangePassword) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`old_password(impl Into<String>)`](crate::client::fluent_builders::ChangePassword::old_password) / [`set_old_password(Option<String>)`](crate::client::fluent_builders::ChangePassword::set_old_password): <p>The IAM user's current password.</p>
+    ///   - [`new_password(impl Into<String>)`](crate::client::fluent_builders::ChangePassword::new_password) / [`set_new_password(Option<String>)`](crate::client::fluent_builders::ChangePassword::set_new_password): <p>The new password. The new password must conform to the Amazon Web Services account's password policy, if one exists.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any of these characters are valid in a password. However, many tools, such as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have special meaning within that tool.</p>
+    /// - On success, responds with [`ChangePasswordOutput`](crate::output::ChangePasswordOutput)
+
+    /// - On failure, responds with [`SdkError<ChangePasswordError>`](crate::error::ChangePasswordError)
     pub fn change_password(&self) -> fluent_builders::ChangePassword<C, M, R> {
         fluent_builders::ChangePassword::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAccessKey` operation.
+    /// Constructs a fluent builder for the [`CreateAccessKey`](crate::client::fluent_builders::CreateAccessKey) operation.
     ///
-    /// See [`CreateAccessKey`](crate::client::fluent_builders::CreateAccessKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::CreateAccessKey::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::CreateAccessKey::set_user_name): <p>The name of the IAM user that the new key will belong to.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`CreateAccessKeyOutput`](crate::output::CreateAccessKeyOutput) with field(s):
+    ///   - [`access_key(Option<AccessKey>)`](crate::output::CreateAccessKeyOutput::access_key): <p>A structure with details about the access key.</p>
+    /// - On failure, responds with [`SdkError<CreateAccessKeyError>`](crate::error::CreateAccessKeyError)
     pub fn create_access_key(&self) -> fluent_builders::CreateAccessKey<C, M, R> {
         fluent_builders::CreateAccessKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAccountAlias` operation.
+    /// Constructs a fluent builder for the [`CreateAccountAlias`](crate::client::fluent_builders::CreateAccountAlias) operation.
     ///
-    /// See [`CreateAccountAlias`](crate::client::fluent_builders::CreateAccountAlias) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_alias(impl Into<String>)`](crate::client::fluent_builders::CreateAccountAlias::account_alias) / [`set_account_alias(Option<String>)`](crate::client::fluent_builders::CreateAccountAlias::set_account_alias): <p>The account alias to create.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</p>
+    /// - On success, responds with [`CreateAccountAliasOutput`](crate::output::CreateAccountAliasOutput)
+
+    /// - On failure, responds with [`SdkError<CreateAccountAliasError>`](crate::error::CreateAccountAliasError)
     pub fn create_account_alias(&self) -> fluent_builders::CreateAccountAlias<C, M, R> {
         fluent_builders::CreateAccountAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGroup` operation.
+    /// Constructs a fluent builder for the [`CreateGroup`](crate::client::fluent_builders::CreateGroup) operation.
     ///
-    /// See [`CreateGroup`](crate::client::fluent_builders::CreateGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_path): <p> The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>  <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_group_name): <p>The name of the group to create. Do not include the path in this value.</p>  <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
+    /// - On success, responds with [`CreateGroupOutput`](crate::output::CreateGroupOutput) with field(s):
+    ///   - [`group(Option<Group>)`](crate::output::CreateGroupOutput::group): <p>A structure containing details about the new group.</p>
+    /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::error::CreateGroupError)
     pub fn create_group(&self) -> fluent_builders::CreateGroup<C, M, R> {
         fluent_builders::CreateGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateInstanceProfile` operation.
+    /// Constructs a fluent builder for the [`CreateInstanceProfile`](crate::client::fluent_builders::CreateInstanceProfile) operation.
     ///
-    /// See [`CreateInstanceProfile`](crate::client::fluent_builders::CreateInstanceProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_profile_name(impl Into<String>)`](crate::client::fluent_builders::CreateInstanceProfile::instance_profile_name) / [`set_instance_profile_name(Option<String>)`](crate::client::fluent_builders::CreateInstanceProfile::set_instance_profile_name): <p>The name of the instance profile to create.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::CreateInstanceProfile::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::CreateInstanceProfile::set_path): <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>  <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateInstanceProfile::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateInstanceProfile::set_tags): <p>A list of tags that you want to attach to the newly created IAM instance profile. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>  </note>
+    /// - On success, responds with [`CreateInstanceProfileOutput`](crate::output::CreateInstanceProfileOutput) with field(s):
+    ///   - [`instance_profile(Option<InstanceProfile>)`](crate::output::CreateInstanceProfileOutput::instance_profile): <p>A structure containing details about the new instance profile.</p>
+    /// - On failure, responds with [`SdkError<CreateInstanceProfileError>`](crate::error::CreateInstanceProfileError)
     pub fn create_instance_profile(&self) -> fluent_builders::CreateInstanceProfile<C, M, R> {
         fluent_builders::CreateInstanceProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLoginProfile` operation.
+    /// Constructs a fluent builder for the [`CreateLoginProfile`](crate::client::fluent_builders::CreateLoginProfile) operation.
     ///
-    /// See [`CreateLoginProfile`](crate::client::fluent_builders::CreateLoginProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::CreateLoginProfile::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::CreateLoginProfile::set_user_name): <p>The name of the IAM user to create a password for. The user must already exist.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::CreateLoginProfile::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::CreateLoginProfile::set_password): <p>The new password for the user.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any of these characters are valid in a password. However, many tools, such as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have special meaning within that tool.</p>
+    ///   - [`password_reset_required(bool)`](crate::client::fluent_builders::CreateLoginProfile::password_reset_required) / [`set_password_reset_required(bool)`](crate::client::fluent_builders::CreateLoginProfile::set_password_reset_required): <p>Specifies whether the user is required to set a new password on next sign-in.</p>
+    /// - On success, responds with [`CreateLoginProfileOutput`](crate::output::CreateLoginProfileOutput) with field(s):
+    ///   - [`login_profile(Option<LoginProfile>)`](crate::output::CreateLoginProfileOutput::login_profile): <p>A structure containing the user name and password create date.</p>
+    /// - On failure, responds with [`SdkError<CreateLoginProfileError>`](crate::error::CreateLoginProfileError)
     pub fn create_login_profile(&self) -> fluent_builders::CreateLoginProfile<C, M, R> {
         fluent_builders::CreateLoginProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateOpenIDConnectProvider` operation.
+    /// Constructs a fluent builder for the [`CreateOpenIDConnectProvider`](crate::client::fluent_builders::CreateOpenIDConnectProvider) operation.
     ///
-    /// See [`CreateOpenIDConnectProvider`](crate::client::fluent_builders::CreateOpenIDConnectProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`url(impl Into<String>)`](crate::client::fluent_builders::CreateOpenIDConnectProvider::url) / [`set_url(Option<String>)`](crate::client::fluent_builders::CreateOpenIDConnectProvider::set_url): <p>The URL of the identity provider. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the provider's OpenID Connect ID tokens. Per the OIDC standard, path components are allowed but query parameters are not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or <code>https://example.com</code>. The URL should not contain a port number. </p>  <p>You cannot register the same provider multiple times in a single Amazon Web Services account. If you try to submit a URL that has already been used for an OpenID Connect provider in the Amazon Web Services account, you will get an error.</p>
+    ///   - [`client_id_list(Vec<String>)`](crate::client::fluent_builders::CreateOpenIDConnectProvider::client_id_list) / [`set_client_id_list(Option<Vec<String>>)`](crate::client::fluent_builders::CreateOpenIDConnectProvider::set_client_id_list): <p>Provides a list of client IDs, also known as audiences. When a mobile or web app registers with an OpenID Connect provider, they establish a value that identifies the application. This is the value that's sent as the <code>client_id</code> parameter on OAuth requests.</p>  <p>You can register multiple client IDs with the same provider. For example, you might have multiple applications that use the same OIDC provider. You cannot register more than 100 client IDs with a single IAM OIDC provider.</p>  <p>There is no defined format for a client ID. The <code>CreateOpenIDConnectProviderRequest</code> operation accepts client IDs up to 255 characters long.</p>
+    ///   - [`thumbprint_list(Vec<String>)`](crate::client::fluent_builders::CreateOpenIDConnectProvider::thumbprint_list) / [`set_thumbprint_list(Option<Vec<String>>)`](crate::client::fluent_builders::CreateOpenIDConnectProvider::set_thumbprint_list): <p>A list of server certificate thumbprints for the OpenID Connect (OIDC) identity provider's server certificates. Typically this list includes only one entry. However, IAM lets you have up to five thumbprints for an OIDC provider. This lets you maintain multiple thumbprints if the identity provider is rotating certificates.</p>  <p>The server certificate thumbprint is the hex-encoded SHA-1 hash value of the X.509 certificate used by the domain where the OpenID Connect provider makes its keys available. It is always a 40-character string.</p>  <p>You must provide at least one thumbprint when creating an IAM OIDC provider. For example, assume that the OIDC provider is <code>server.example.com</code> and the provider stores its keys at https://keys.server.example.com/openid-connect. In that case, the thumbprint string would be the hex-encoded SHA-1 hash value of the certificate used by <code>https://keys.server.example.com.</code> </p>  <p>For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM User Guide</i>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateOpenIDConnectProvider::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateOpenIDConnectProvider::set_tags): <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>  </note>
+    /// - On success, responds with [`CreateOpenIdConnectProviderOutput`](crate::output::CreateOpenIdConnectProviderOutput) with field(s):
+    ///   - [`open_id_connect_provider_arn(Option<String>)`](crate::output::CreateOpenIdConnectProviderOutput::open_id_connect_provider_arn): <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is created. For more information, see <code>OpenIDConnectProviderListEntry</code>. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateOpenIdConnectProviderOutput::tags): <p>A list of tags that are attached to the new IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<CreateOpenIDConnectProviderError>`](crate::error::CreateOpenIDConnectProviderError)
     pub fn create_open_id_connect_provider(
         &self,
     ) -> fluent_builders::CreateOpenIDConnectProvider<C, M, R> {
         fluent_builders::CreateOpenIDConnectProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePolicy` operation.
+    /// Constructs a fluent builder for the [`CreatePolicy`](crate::client::fluent_builders::CreatePolicy) operation.
     ///
-    /// See [`CreatePolicy`](crate::client::fluent_builders::CreatePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::CreatePolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::CreatePolicy::set_policy_name): <p>The friendly name of the policy.</p>  <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
+    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::CreatePolicy::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::CreatePolicy::set_path): <p>The path for the policy.</p>  <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>  <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p> <note>   <p>You cannot use an asterisk (*) in the path name.</p>  </note>
+    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::CreatePolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::CreatePolicy::set_policy_document): <p>The JSON policy document that you want to use as the content for the new policy.</p>  <p>You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>  <p>The maximum length of the policy document that you can pass in this operation, including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>  <p>To learn more about JSON policy grammar, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html">Grammar of the IAM JSON policy language</a> in the <i>IAM User Guide</i>. </p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePolicy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePolicy::set_description): <p>A friendly description of the policy.</p>  <p>Typically used to store information about the permissions defined in the policy. For example, "Grants access to production DynamoDB tables."</p>  <p>The policy description is immutable. After a value is assigned, it cannot be changed.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreatePolicy::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreatePolicy::set_tags): <p>A list of tags that you want to attach to the new IAM customer managed policy. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>  </note>
+    /// - On success, responds with [`CreatePolicyOutput`](crate::output::CreatePolicyOutput) with field(s):
+    ///   - [`policy(Option<Policy>)`](crate::output::CreatePolicyOutput::policy): <p>A structure containing details about the new policy.</p>
+    /// - On failure, responds with [`SdkError<CreatePolicyError>`](crate::error::CreatePolicyError)
     pub fn create_policy(&self) -> fluent_builders::CreatePolicy<C, M, R> {
         fluent_builders::CreatePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePolicyVersion` operation.
+    /// Constructs a fluent builder for the [`CreatePolicyVersion`](crate::client::fluent_builders::CreatePolicyVersion) operation.
     ///
-    /// See [`CreatePolicyVersion`](crate::client::fluent_builders::CreatePolicyVersion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::CreatePolicyVersion::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::CreatePolicyVersion::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::CreatePolicyVersion::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::CreatePolicyVersion::set_policy_document): <p>The JSON policy document that you want to use as the content for this new version of the policy.</p>  <p>You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>  <p>The maximum length of the policy document that you can pass in this operation, including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    ///   - [`set_as_default(bool)`](crate::client::fluent_builders::CreatePolicyVersion::set_as_default) / [`set_set_as_default(bool)`](crate::client::fluent_builders::CreatePolicyVersion::set_set_as_default): <p>Specifies whether to set this version as the policy's default version.</p>  <p>When this parameter is <code>true</code>, the new policy version becomes the operative version. That is, it becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached to.</p>  <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
+    /// - On success, responds with [`CreatePolicyVersionOutput`](crate::output::CreatePolicyVersionOutput) with field(s):
+    ///   - [`policy_version(Option<PolicyVersion>)`](crate::output::CreatePolicyVersionOutput::policy_version): <p>A structure containing details about the new policy version.</p>
+    /// - On failure, responds with [`SdkError<CreatePolicyVersionError>`](crate::error::CreatePolicyVersionError)
     pub fn create_policy_version(&self) -> fluent_builders::CreatePolicyVersion<C, M, R> {
         fluent_builders::CreatePolicyVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRole` operation.
+    /// Constructs a fluent builder for the [`CreateRole`](crate::client::fluent_builders::CreateRole) operation.
     ///
-    /// See [`CreateRole`](crate::client::fluent_builders::CreateRole) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::CreateRole::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::CreateRole::set_path): <p> The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>  <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::CreateRole::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::CreateRole::set_role_name): <p>The name of the role to create.</p>  <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
+    ///   - [`assume_role_policy_document(impl Into<String>)`](crate::client::fluent_builders::CreateRole::assume_role_policy_document) / [`set_assume_role_policy_document(Option<String>)`](crate::client::fluent_builders::CreateRole::set_assume_role_policy_document): <p>The trust relationship policy document that grants an entity permission to assume the role.</p>  <p>In IAM, you must provide a JSON policy that has been converted to a string. However, for CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>  <p> Upon success, the response includes the same trust policy in JSON format.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRole::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRole::set_description): <p>A description of the role.</p>
+    ///   - [`max_session_duration(i32)`](crate::client::fluent_builders::CreateRole::max_session_duration) / [`set_max_session_duration(Option<i32>)`](crate::client::fluent_builders::CreateRole::set_max_session_duration): <p>The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours.</p>  <p>Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code> setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter. If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM roles</a> in the <i>IAM User Guide</i>.</p>
+    ///   - [`permissions_boundary(impl Into<String>)`](crate::client::fluent_builders::CreateRole::permissions_boundary) / [`set_permissions_boundary(Option<String>)`](crate::client::fluent_builders::CreateRole::set_permissions_boundary): <p>The ARN of the policy that is used to set the permissions boundary for the role.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRole::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRole::set_tags): <p>A list of tags that you want to attach to the new role. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>  </note>
+    /// - On success, responds with [`CreateRoleOutput`](crate::output::CreateRoleOutput) with field(s):
+    ///   - [`role(Option<Role>)`](crate::output::CreateRoleOutput::role): <p>A structure containing details about the new role.</p>
+    /// - On failure, responds with [`SdkError<CreateRoleError>`](crate::error::CreateRoleError)
     pub fn create_role(&self) -> fluent_builders::CreateRole<C, M, R> {
         fluent_builders::CreateRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSAMLProvider` operation.
+    /// Constructs a fluent builder for the [`CreateSAMLProvider`](crate::client::fluent_builders::CreateSAMLProvider) operation.
     ///
-    /// See [`CreateSAMLProvider`](crate::client::fluent_builders::CreateSAMLProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`saml_metadata_document(impl Into<String>)`](crate::client::fluent_builders::CreateSAMLProvider::saml_metadata_document) / [`set_saml_metadata_document(Option<String>)`](crate::client::fluent_builders::CreateSAMLProvider::set_saml_metadata_document): <p>An XML document generated by an identity provider (IdP) that supports SAML 2.0. The document includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response (assertions) that are received from the IdP. You must generate the metadata document using the identity management software that is used as your organization's IdP.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based federation</a> in the <i>IAM User Guide</i> </p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSAMLProvider::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSAMLProvider::set_name): <p>The name of the provider to create.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateSAMLProvider::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateSAMLProvider::set_tags): <p>A list of tags that you want to attach to the new IAM SAML provider. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>  </note>
+    /// - On success, responds with [`CreateSamlProviderOutput`](crate::output::CreateSamlProviderOutput) with field(s):
+    ///   - [`saml_provider_arn(Option<String>)`](crate::output::CreateSamlProviderOutput::saml_provider_arn): <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateSamlProviderOutput::tags): <p>A list of tags that are attached to the new IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<CreateSAMLProviderError>`](crate::error::CreateSAMLProviderError)
     pub fn create_saml_provider(&self) -> fluent_builders::CreateSAMLProvider<C, M, R> {
         fluent_builders::CreateSAMLProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateServiceLinkedRole` operation.
+    /// Constructs a fluent builder for the [`CreateServiceLinkedRole`](crate::client::fluent_builders::CreateServiceLinkedRole) operation.
     ///
-    /// See [`CreateServiceLinkedRole`](crate::client::fluent_builders::CreateServiceLinkedRole) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`aws_service_name(impl Into<String>)`](crate::client::fluent_builders::CreateServiceLinkedRole::aws_service_name) / [`set_aws_service_name(Option<String>)`](crate::client::fluent_builders::CreateServiceLinkedRole::set_aws_service_name): <p>The service principal for the Amazon Web Services service to which this role is attached. You use a string similar to a URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>. </p>  <p>Service principals are unique and case-sensitive. To find the exact service principal for your service-linked role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">Amazon Web Services services that work with IAM</a> in the <i>IAM User Guide</i>. Look for the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for that service.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateServiceLinkedRole::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateServiceLinkedRole::set_description): <p>The description of the role.</p>
+    ///   - [`custom_suffix(impl Into<String>)`](crate::client::fluent_builders::CreateServiceLinkedRole::custom_suffix) / [`set_custom_suffix(Option<String>)`](crate::client::fluent_builders::CreateServiceLinkedRole::set_custom_suffix): <p></p>  <p>A string that you provide, which is combined with the service-provided prefix to form the complete role name. If you make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for each request. Otherwise the request fails with a duplicate role name error. For example, you could add <code>-1</code> or <code>-debug</code> to the suffix.</p>  <p>Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix and the operation fails, try the operation again without the suffix.</p>
+    /// - On success, responds with [`CreateServiceLinkedRoleOutput`](crate::output::CreateServiceLinkedRoleOutput) with field(s):
+    ///   - [`role(Option<Role>)`](crate::output::CreateServiceLinkedRoleOutput::role): <p>A <code>Role</code> object that contains details about the newly created role.</p>
+    /// - On failure, responds with [`SdkError<CreateServiceLinkedRoleError>`](crate::error::CreateServiceLinkedRoleError)
     pub fn create_service_linked_role(&self) -> fluent_builders::CreateServiceLinkedRole<C, M, R> {
         fluent_builders::CreateServiceLinkedRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateServiceSpecificCredential` operation.
+    /// Constructs a fluent builder for the [`CreateServiceSpecificCredential`](crate::client::fluent_builders::CreateServiceSpecificCredential) operation.
     ///
-    /// See [`CreateServiceSpecificCredential`](crate::client::fluent_builders::CreateServiceSpecificCredential) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::CreateServiceSpecificCredential::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::CreateServiceSpecificCredential::set_user_name): <p>The name of the IAM user that is to be associated with the credentials. The new service-specific credentials have the same permissions as the associated user except that they can be used only to access the specified service.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::CreateServiceSpecificCredential::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::CreateServiceSpecificCredential::set_service_name): <p>The name of the Amazon Web Services service that is to be associated with the credentials. The service you specify here is the only service that can be accessed using these credentials.</p>
+    /// - On success, responds with [`CreateServiceSpecificCredentialOutput`](crate::output::CreateServiceSpecificCredentialOutput) with field(s):
+    ///   - [`service_specific_credential(Option<ServiceSpecificCredential>)`](crate::output::CreateServiceSpecificCredentialOutput::service_specific_credential): <p>A structure that contains information about the newly created service-specific credential.</p> <important>   <p>This is the only time that the password for this credential set is available. It cannot be recovered later. Instead, you must reset the password with <code>ResetServiceSpecificCredential</code>.</p>  </important>
+    /// - On failure, responds with [`SdkError<CreateServiceSpecificCredentialError>`](crate::error::CreateServiceSpecificCredentialError)
     pub fn create_service_specific_credential(
         &self,
     ) -> fluent_builders::CreateServiceSpecificCredential<C, M, R> {
         fluent_builders::CreateServiceSpecificCredential::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUser` operation.
+    /// Constructs a fluent builder for the [`CreateUser`](crate::client::fluent_builders::CreateUser) operation.
     ///
-    /// See [`CreateUser`](crate::client::fluent_builders::CreateUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::CreateUser::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::CreateUser::set_path): <p> The path for the user name. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>  <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::CreateUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::CreateUser::set_user_name): <p>The name of the user to create.</p>  <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
+    ///   - [`permissions_boundary(impl Into<String>)`](crate::client::fluent_builders::CreateUser::permissions_boundary) / [`set_permissions_boundary(Option<String>)`](crate::client::fluent_builders::CreateUser::set_permissions_boundary): <p>The ARN of the policy that is used to set the permissions boundary for the user.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateUser::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateUser::set_tags): <p>A list of tags that you want to attach to the new user. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>  </note>
+    /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput) with field(s):
+    ///   - [`user(Option<User>)`](crate::output::CreateUserOutput::user): <p>A structure with details about the new IAM user.</p>
+    /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
     pub fn create_user(&self) -> fluent_builders::CreateUser<C, M, R> {
         fluent_builders::CreateUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVirtualMFADevice` operation.
+    /// Constructs a fluent builder for the [`CreateVirtualMFADevice`](crate::client::fluent_builders::CreateVirtualMFADevice) operation.
     ///
-    /// See [`CreateVirtualMFADevice`](crate::client::fluent_builders::CreateVirtualMFADevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualMFADevice::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::CreateVirtualMFADevice::set_path): <p> The path for the virtual MFA device. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>  <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`virtual_mfa_device_name(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualMFADevice::virtual_mfa_device_name) / [`set_virtual_mfa_device_name(Option<String>)`](crate::client::fluent_builders::CreateVirtualMFADevice::set_virtual_mfa_device_name): <p>The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateVirtualMFADevice::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateVirtualMFADevice::set_tags): <p>A list of tags that you want to attach to the new IAM virtual MFA device. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>  </note>
+    /// - On success, responds with [`CreateVirtualMfaDeviceOutput`](crate::output::CreateVirtualMfaDeviceOutput) with field(s):
+    ///   - [`virtual_mfa_device(Option<VirtualMfaDevice>)`](crate::output::CreateVirtualMfaDeviceOutput::virtual_mfa_device): <p>A structure containing details about the new virtual MFA device.</p>
+    /// - On failure, responds with [`SdkError<CreateVirtualMFADeviceError>`](crate::error::CreateVirtualMFADeviceError)
     pub fn create_virtual_mfa_device(&self) -> fluent_builders::CreateVirtualMFADevice<C, M, R> {
         fluent_builders::CreateVirtualMFADevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeactivateMFADevice` operation.
+    /// Constructs a fluent builder for the [`DeactivateMFADevice`](crate::client::fluent_builders::DeactivateMFADevice) operation.
     ///
-    /// See [`DeactivateMFADevice`](crate::client::fluent_builders::DeactivateMFADevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DeactivateMFADevice::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DeactivateMFADevice::set_user_name): <p>The name of the user whose MFA device you want to deactivate.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`serial_number(impl Into<String>)`](crate::client::fluent_builders::DeactivateMFADevice::serial_number) / [`set_serial_number(Option<String>)`](crate::client::fluent_builders::DeactivateMFADevice::set_serial_number): <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
+    /// - On success, responds with [`DeactivateMfaDeviceOutput`](crate::output::DeactivateMfaDeviceOutput)
+
+    /// - On failure, responds with [`SdkError<DeactivateMFADeviceError>`](crate::error::DeactivateMFADeviceError)
     pub fn deactivate_mfa_device(&self) -> fluent_builders::DeactivateMFADevice<C, M, R> {
         fluent_builders::DeactivateMFADevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAccessKey` operation.
+    /// Constructs a fluent builder for the [`DeleteAccessKey`](crate::client::fluent_builders::DeleteAccessKey) operation.
     ///
-    /// See [`DeleteAccessKey`](crate::client::fluent_builders::DeleteAccessKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessKey::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DeleteAccessKey::set_user_name): <p>The name of the user whose access key pair you want to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`access_key_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessKey::access_key_id) / [`set_access_key_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessKey::set_access_key_id): <p>The access key ID for the access key ID and secret access key you want to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    /// - On success, responds with [`DeleteAccessKeyOutput`](crate::output::DeleteAccessKeyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAccessKeyError>`](crate::error::DeleteAccessKeyError)
     pub fn delete_access_key(&self) -> fluent_builders::DeleteAccessKey<C, M, R> {
         fluent_builders::DeleteAccessKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAccountAlias` operation.
+    /// Constructs a fluent builder for the [`DeleteAccountAlias`](crate::client::fluent_builders::DeleteAccountAlias) operation.
     ///
-    /// See [`DeleteAccountAlias`](crate::client::fluent_builders::DeleteAccountAlias) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_alias(impl Into<String>)`](crate::client::fluent_builders::DeleteAccountAlias::account_alias) / [`set_account_alias(Option<String>)`](crate::client::fluent_builders::DeleteAccountAlias::set_account_alias): <p>The name of the account alias to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</p>
+    /// - On success, responds with [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAccountAliasError>`](crate::error::DeleteAccountAliasError)
     pub fn delete_account_alias(&self) -> fluent_builders::DeleteAccountAlias<C, M, R> {
         fluent_builders::DeleteAccountAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAccountPasswordPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteAccountPasswordPolicy`](crate::client::fluent_builders::DeleteAccountPasswordPolicy) operation.
     ///
-    /// See [`DeleteAccountPasswordPolicy`](crate::client::fluent_builders::DeleteAccountPasswordPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DeleteAccountPasswordPolicy::send) it.
+
+    /// - On success, responds with [`DeleteAccountPasswordPolicyOutput`](crate::output::DeleteAccountPasswordPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAccountPasswordPolicyError>`](crate::error::DeleteAccountPasswordPolicyError)
     pub fn delete_account_password_policy(
         &self,
     ) -> fluent_builders::DeleteAccountPasswordPolicy<C, M, R> {
         fluent_builders::DeleteAccountPasswordPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) operation.
     ///
-    /// See [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_group_name): <p>The name of the IAM group to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::error::DeleteGroupError)
     pub fn delete_group(&self) -> fluent_builders::DeleteGroup<C, M, R> {
         fluent_builders::DeleteGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGroupPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteGroupPolicy`](crate::client::fluent_builders::DeleteGroupPolicy) operation.
     ///
-    /// See [`DeleteGroupPolicy`](crate::client::fluent_builders::DeleteGroupPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupPolicy::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::DeleteGroupPolicy::set_group_name): <p>The name (friendly name, not ARN) identifying the group that the policy is embedded in.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::DeleteGroupPolicy::set_policy_name): <p>The name identifying the policy document to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`DeleteGroupPolicyOutput`](crate::output::DeleteGroupPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteGroupPolicyError>`](crate::error::DeleteGroupPolicyError)
     pub fn delete_group_policy(&self) -> fluent_builders::DeleteGroupPolicy<C, M, R> {
         fluent_builders::DeleteGroupPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInstanceProfile` operation.
+    /// Constructs a fluent builder for the [`DeleteInstanceProfile`](crate::client::fluent_builders::DeleteInstanceProfile) operation.
     ///
-    /// See [`DeleteInstanceProfile`](crate::client::fluent_builders::DeleteInstanceProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_profile_name(impl Into<String>)`](crate::client::fluent_builders::DeleteInstanceProfile::instance_profile_name) / [`set_instance_profile_name(Option<String>)`](crate::client::fluent_builders::DeleteInstanceProfile::set_instance_profile_name): <p>The name of the instance profile to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`DeleteInstanceProfileOutput`](crate::output::DeleteInstanceProfileOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteInstanceProfileError>`](crate::error::DeleteInstanceProfileError)
     pub fn delete_instance_profile(&self) -> fluent_builders::DeleteInstanceProfile<C, M, R> {
         fluent_builders::DeleteInstanceProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLoginProfile` operation.
+    /// Constructs a fluent builder for the [`DeleteLoginProfile`](crate::client::fluent_builders::DeleteLoginProfile) operation.
     ///
-    /// See [`DeleteLoginProfile`](crate::client::fluent_builders::DeleteLoginProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLoginProfile::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DeleteLoginProfile::set_user_name): <p>The name of the user whose password you want to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`DeleteLoginProfileOutput`](crate::output::DeleteLoginProfileOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLoginProfileError>`](crate::error::DeleteLoginProfileError)
     pub fn delete_login_profile(&self) -> fluent_builders::DeleteLoginProfile<C, M, R> {
         fluent_builders::DeleteLoginProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteOpenIDConnectProvider` operation.
+    /// Constructs a fluent builder for the [`DeleteOpenIDConnectProvider`](crate::client::fluent_builders::DeleteOpenIDConnectProvider) operation.
     ///
-    /// See [`DeleteOpenIDConnectProvider`](crate::client::fluent_builders::DeleteOpenIDConnectProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`open_id_connect_provider_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteOpenIDConnectProvider::open_id_connect_provider_arn) / [`set_open_id_connect_provider_arn(Option<String>)`](crate::client::fluent_builders::DeleteOpenIDConnectProvider::set_open_id_connect_provider_arn): <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object to delete. You can get a list of OpenID Connect provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
+    /// - On success, responds with [`DeleteOpenIdConnectProviderOutput`](crate::output::DeleteOpenIdConnectProviderOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteOpenIDConnectProviderError>`](crate::error::DeleteOpenIDConnectProviderError)
     pub fn delete_open_id_connect_provider(
         &self,
     ) -> fluent_builders::DeleteOpenIDConnectProvider<C, M, R> {
         fluent_builders::DeleteOpenIDConnectProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePolicy` operation.
+    /// Constructs a fluent builder for the [`DeletePolicy`](crate::client::fluent_builders::DeletePolicy) operation.
     ///
-    /// See [`DeletePolicy`](crate::client::fluent_builders::DeletePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::DeletePolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy you want to delete.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// - On success, responds with [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePolicyError>`](crate::error::DeletePolicyError)
     pub fn delete_policy(&self) -> fluent_builders::DeletePolicy<C, M, R> {
         fluent_builders::DeletePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePolicyVersion` operation.
+    /// Constructs a fluent builder for the [`DeletePolicyVersion`](crate::client::fluent_builders::DeletePolicyVersion) operation.
     ///
-    /// See [`DeletePolicyVersion`](crate::client::fluent_builders::DeletePolicyVersion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePolicyVersion::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::DeletePolicyVersion::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to delete a version.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::DeletePolicyVersion::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::DeletePolicyVersion::set_version_id): <p>The policy version to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally followed by a period '.' and a string of letters and digits.</p>  <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
+    /// - On success, responds with [`DeletePolicyVersionOutput`](crate::output::DeletePolicyVersionOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePolicyVersionError>`](crate::error::DeletePolicyVersionError)
     pub fn delete_policy_version(&self) -> fluent_builders::DeletePolicyVersion<C, M, R> {
         fluent_builders::DeletePolicyVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRole` operation.
+    /// Constructs a fluent builder for the [`DeleteRole`](crate::client::fluent_builders::DeleteRole) operation.
     ///
-    /// See [`DeleteRole`](crate::client::fluent_builders::DeleteRole) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRole::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::DeleteRole::set_role_name): <p>The name of the role to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`DeleteRoleOutput`](crate::output::DeleteRoleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRoleError>`](crate::error::DeleteRoleError)
     pub fn delete_role(&self) -> fluent_builders::DeleteRole<C, M, R> {
         fluent_builders::DeleteRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRolePermissionsBoundary` operation.
+    /// Constructs a fluent builder for the [`DeleteRolePermissionsBoundary`](crate::client::fluent_builders::DeleteRolePermissionsBoundary) operation.
     ///
-    /// See [`DeleteRolePermissionsBoundary`](crate::client::fluent_builders::DeleteRolePermissionsBoundary) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRolePermissionsBoundary::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::DeleteRolePermissionsBoundary::set_role_name): <p>The name (friendly name, not ARN) of the IAM role from which you want to remove the permissions boundary.</p>
+    /// - On success, responds with [`DeleteRolePermissionsBoundaryOutput`](crate::output::DeleteRolePermissionsBoundaryOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRolePermissionsBoundaryError>`](crate::error::DeleteRolePermissionsBoundaryError)
     pub fn delete_role_permissions_boundary(
         &self,
     ) -> fluent_builders::DeleteRolePermissionsBoundary<C, M, R> {
         fluent_builders::DeleteRolePermissionsBoundary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRolePolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteRolePolicy`](crate::client::fluent_builders::DeleteRolePolicy) operation.
     ///
-    /// See [`DeleteRolePolicy`](crate::client::fluent_builders::DeleteRolePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRolePolicy::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::DeleteRolePolicy::set_role_name): <p>The name (friendly name, not ARN) identifying the role that the policy is embedded in.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRolePolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::DeleteRolePolicy::set_policy_name): <p>The name of the inline policy to delete from the specified IAM role.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`DeleteRolePolicyOutput`](crate::output::DeleteRolePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRolePolicyError>`](crate::error::DeleteRolePolicyError)
     pub fn delete_role_policy(&self) -> fluent_builders::DeleteRolePolicy<C, M, R> {
         fluent_builders::DeleteRolePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSAMLProvider` operation.
+    /// Constructs a fluent builder for the [`DeleteSAMLProvider`](crate::client::fluent_builders::DeleteSAMLProvider) operation.
     ///
-    /// See [`DeleteSAMLProvider`](crate::client::fluent_builders::DeleteSAMLProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`saml_provider_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteSAMLProvider::saml_provider_arn) / [`set_saml_provider_arn(Option<String>)`](crate::client::fluent_builders::DeleteSAMLProvider::set_saml_provider_arn): <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
+    /// - On success, responds with [`DeleteSamlProviderOutput`](crate::output::DeleteSamlProviderOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSAMLProviderError>`](crate::error::DeleteSAMLProviderError)
     pub fn delete_saml_provider(&self) -> fluent_builders::DeleteSAMLProvider<C, M, R> {
         fluent_builders::DeleteSAMLProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteServerCertificate` operation.
+    /// Constructs a fluent builder for the [`DeleteServerCertificate`](crate::client::fluent_builders::DeleteServerCertificate) operation.
     ///
-    /// See [`DeleteServerCertificate`](crate::client::fluent_builders::DeleteServerCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`server_certificate_name(impl Into<String>)`](crate::client::fluent_builders::DeleteServerCertificate::server_certificate_name) / [`set_server_certificate_name(Option<String>)`](crate::client::fluent_builders::DeleteServerCertificate::set_server_certificate_name): <p>The name of the server certificate you want to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`DeleteServerCertificateOutput`](crate::output::DeleteServerCertificateOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteServerCertificateError>`](crate::error::DeleteServerCertificateError)
     pub fn delete_server_certificate(&self) -> fluent_builders::DeleteServerCertificate<C, M, R> {
         fluent_builders::DeleteServerCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteServiceLinkedRole` operation.
+    /// Constructs a fluent builder for the [`DeleteServiceLinkedRole`](crate::client::fluent_builders::DeleteServiceLinkedRole) operation.
     ///
-    /// See [`DeleteServiceLinkedRole`](crate::client::fluent_builders::DeleteServiceLinkedRole) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::DeleteServiceLinkedRole::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::DeleteServiceLinkedRole::set_role_name): <p>The name of the service-linked role to be deleted.</p>
+    /// - On success, responds with [`DeleteServiceLinkedRoleOutput`](crate::output::DeleteServiceLinkedRoleOutput) with field(s):
+    ///   - [`deletion_task_id(Option<String>)`](crate::output::DeleteServiceLinkedRoleOutput::deletion_task_id): <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/   <service-principal-name>    /    <role-name>     /     <task-uuid></task-uuid>    </role-name>   </service-principal-name></code>.</p>
+    /// - On failure, responds with [`SdkError<DeleteServiceLinkedRoleError>`](crate::error::DeleteServiceLinkedRoleError)
     pub fn delete_service_linked_role(&self) -> fluent_builders::DeleteServiceLinkedRole<C, M, R> {
         fluent_builders::DeleteServiceLinkedRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteServiceSpecificCredential` operation.
+    /// Constructs a fluent builder for the [`DeleteServiceSpecificCredential`](crate::client::fluent_builders::DeleteServiceSpecificCredential) operation.
     ///
-    /// See [`DeleteServiceSpecificCredential`](crate::client::fluent_builders::DeleteServiceSpecificCredential) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DeleteServiceSpecificCredential::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DeleteServiceSpecificCredential::set_user_name): <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`service_specific_credential_id(impl Into<String>)`](crate::client::fluent_builders::DeleteServiceSpecificCredential::service_specific_credential_id) / [`set_service_specific_credential_id(Option<String>)`](crate::client::fluent_builders::DeleteServiceSpecificCredential::set_service_specific_credential_id): <p>The unique identifier of the service-specific credential. You can get this value by calling <code>ListServiceSpecificCredentials</code>.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    /// - On success, responds with [`DeleteServiceSpecificCredentialOutput`](crate::output::DeleteServiceSpecificCredentialOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteServiceSpecificCredentialError>`](crate::error::DeleteServiceSpecificCredentialError)
     pub fn delete_service_specific_credential(
         &self,
     ) -> fluent_builders::DeleteServiceSpecificCredential<C, M, R> {
         fluent_builders::DeleteServiceSpecificCredential::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSigningCertificate` operation.
+    /// Constructs a fluent builder for the [`DeleteSigningCertificate`](crate::client::fluent_builders::DeleteSigningCertificate) operation.
     ///
-    /// See [`DeleteSigningCertificate`](crate::client::fluent_builders::DeleteSigningCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSigningCertificate::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DeleteSigningCertificate::set_user_name): <p>The name of the user the signing certificate belongs to.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSigningCertificate::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::DeleteSigningCertificate::set_certificate_id): <p>The ID of the signing certificate to delete.</p>  <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of characters that can be upper- or lower-cased letters or digits.</p>
+    /// - On success, responds with [`DeleteSigningCertificateOutput`](crate::output::DeleteSigningCertificateOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSigningCertificateError>`](crate::error::DeleteSigningCertificateError)
     pub fn delete_signing_certificate(&self) -> fluent_builders::DeleteSigningCertificate<C, M, R> {
         fluent_builders::DeleteSigningCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSSHPublicKey` operation.
+    /// Constructs a fluent builder for the [`DeleteSSHPublicKey`](crate::client::fluent_builders::DeleteSSHPublicKey) operation.
     ///
-    /// See [`DeleteSSHPublicKey`](crate::client::fluent_builders::DeleteSSHPublicKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSSHPublicKey::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DeleteSSHPublicKey::set_user_name): <p>The name of the IAM user associated with the SSH public key.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`ssh_public_key_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSSHPublicKey::ssh_public_key_id) / [`set_ssh_public_key_id(Option<String>)`](crate::client::fluent_builders::DeleteSSHPublicKey::set_ssh_public_key_id): <p>The unique identifier for the SSH public key.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    /// - On success, responds with [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSSHPublicKeyError>`](crate::error::DeleteSSHPublicKeyError)
     pub fn delete_ssh_public_key(&self) -> fluent_builders::DeleteSSHPublicKey<C, M, R> {
         fluent_builders::DeleteSSHPublicKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUser` operation.
+    /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
     ///
-    /// See [`DeleteUser`](crate::client::fluent_builders::DeleteUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_user_name): <p>The name of the user to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::error::DeleteUserError)
     pub fn delete_user(&self) -> fluent_builders::DeleteUser<C, M, R> {
         fluent_builders::DeleteUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUserPermissionsBoundary` operation.
+    /// Constructs a fluent builder for the [`DeleteUserPermissionsBoundary`](crate::client::fluent_builders::DeleteUserPermissionsBoundary) operation.
     ///
-    /// See [`DeleteUserPermissionsBoundary`](crate::client::fluent_builders::DeleteUserPermissionsBoundary) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DeleteUserPermissionsBoundary::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DeleteUserPermissionsBoundary::set_user_name): <p>The name (friendly name, not ARN) of the IAM user from which you want to remove the permissions boundary.</p>
+    /// - On success, responds with [`DeleteUserPermissionsBoundaryOutput`](crate::output::DeleteUserPermissionsBoundaryOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserPermissionsBoundaryError>`](crate::error::DeleteUserPermissionsBoundaryError)
     pub fn delete_user_permissions_boundary(
         &self,
     ) -> fluent_builders::DeleteUserPermissionsBoundary<C, M, R> {
         fluent_builders::DeleteUserPermissionsBoundary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUserPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteUserPolicy`](crate::client::fluent_builders::DeleteUserPolicy) operation.
     ///
-    /// See [`DeleteUserPolicy`](crate::client::fluent_builders::DeleteUserPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DeleteUserPolicy::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DeleteUserPolicy::set_user_name): <p>The name (friendly name, not ARN) identifying the user that the policy is embedded in.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::DeleteUserPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::DeleteUserPolicy::set_policy_name): <p>The name identifying the policy document to delete.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`DeleteUserPolicyOutput`](crate::output::DeleteUserPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserPolicyError>`](crate::error::DeleteUserPolicyError)
     pub fn delete_user_policy(&self) -> fluent_builders::DeleteUserPolicy<C, M, R> {
         fluent_builders::DeleteUserPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVirtualMFADevice` operation.
+    /// Constructs a fluent builder for the [`DeleteVirtualMFADevice`](crate::client::fluent_builders::DeleteVirtualMFADevice) operation.
     ///
-    /// See [`DeleteVirtualMFADevice`](crate::client::fluent_builders::DeleteVirtualMFADevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`serial_number(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualMFADevice::serial_number) / [`set_serial_number(Option<String>)`](crate::client::fluent_builders::DeleteVirtualMFADevice::set_serial_number): <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the same as the ARN.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
+    /// - On success, responds with [`DeleteVirtualMfaDeviceOutput`](crate::output::DeleteVirtualMfaDeviceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteVirtualMFADeviceError>`](crate::error::DeleteVirtualMFADeviceError)
     pub fn delete_virtual_mfa_device(&self) -> fluent_builders::DeleteVirtualMFADevice<C, M, R> {
         fluent_builders::DeleteVirtualMFADevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetachGroupPolicy` operation.
+    /// Constructs a fluent builder for the [`DetachGroupPolicy`](crate::client::fluent_builders::DetachGroupPolicy) operation.
     ///
-    /// See [`DetachGroupPolicy`](crate::client::fluent_builders::DetachGroupPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::DetachGroupPolicy::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::DetachGroupPolicy::set_group_name): <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::DetachGroupPolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::DetachGroupPolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// - On success, responds with [`DetachGroupPolicyOutput`](crate::output::DetachGroupPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DetachGroupPolicyError>`](crate::error::DetachGroupPolicyError)
     pub fn detach_group_policy(&self) -> fluent_builders::DetachGroupPolicy<C, M, R> {
         fluent_builders::DetachGroupPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetachRolePolicy` operation.
+    /// Constructs a fluent builder for the [`DetachRolePolicy`](crate::client::fluent_builders::DetachRolePolicy) operation.
     ///
-    /// See [`DetachRolePolicy`](crate::client::fluent_builders::DetachRolePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::DetachRolePolicy::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::DetachRolePolicy::set_role_name): <p>The name (friendly name, not ARN) of the IAM role to detach the policy from.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::DetachRolePolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::DetachRolePolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// - On success, responds with [`DetachRolePolicyOutput`](crate::output::DetachRolePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DetachRolePolicyError>`](crate::error::DetachRolePolicyError)
     pub fn detach_role_policy(&self) -> fluent_builders::DetachRolePolicy<C, M, R> {
         fluent_builders::DetachRolePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetachUserPolicy` operation.
+    /// Constructs a fluent builder for the [`DetachUserPolicy`](crate::client::fluent_builders::DetachUserPolicy) operation.
     ///
-    /// See [`DetachUserPolicy`](crate::client::fluent_builders::DetachUserPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DetachUserPolicy::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DetachUserPolicy::set_user_name): <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::DetachUserPolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::DetachUserPolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// - On success, responds with [`DetachUserPolicyOutput`](crate::output::DetachUserPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DetachUserPolicyError>`](crate::error::DetachUserPolicyError)
     pub fn detach_user_policy(&self) -> fluent_builders::DetachUserPolicy<C, M, R> {
         fluent_builders::DetachUserPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableMFADevice` operation.
+    /// Constructs a fluent builder for the [`EnableMFADevice`](crate::client::fluent_builders::EnableMFADevice) operation.
     ///
-    /// See [`EnableMFADevice`](crate::client::fluent_builders::EnableMFADevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::EnableMFADevice::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::EnableMFADevice::set_user_name): <p>The name of the IAM user for whom you want to enable the MFA device.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`serial_number(impl Into<String>)`](crate::client::fluent_builders::EnableMFADevice::serial_number) / [`set_serial_number(Option<String>)`](crate::client::fluent_builders::EnableMFADevice::set_serial_number): <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
+    ///   - [`authentication_code1(impl Into<String>)`](crate::client::fluent_builders::EnableMFADevice::authentication_code1) / [`set_authentication_code1(Option<String>)`](crate::client::fluent_builders::EnableMFADevice::set_authentication_code1): <p>An authentication code emitted by the device. </p>  <p>The format for this parameter is a string of six digits.</p> <important>   <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>  </important>
+    ///   - [`authentication_code2(impl Into<String>)`](crate::client::fluent_builders::EnableMFADevice::authentication_code2) / [`set_authentication_code2(Option<String>)`](crate::client::fluent_builders::EnableMFADevice::set_authentication_code2): <p>A subsequent authentication code emitted by the device.</p>  <p>The format for this parameter is a string of six digits.</p> <important>   <p>Submit your request immediately after generating the authentication codes. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.</p>  </important>
+    /// - On success, responds with [`EnableMfaDeviceOutput`](crate::output::EnableMfaDeviceOutput)
+
+    /// - On failure, responds with [`SdkError<EnableMFADeviceError>`](crate::error::EnableMFADeviceError)
     pub fn enable_mfa_device(&self) -> fluent_builders::EnableMFADevice<C, M, R> {
         fluent_builders::EnableMFADevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GenerateCredentialReport` operation.
+    /// Constructs a fluent builder for the [`GenerateCredentialReport`](crate::client::fluent_builders::GenerateCredentialReport) operation.
     ///
-    /// See [`GenerateCredentialReport`](crate::client::fluent_builders::GenerateCredentialReport) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GenerateCredentialReport::send) it.
+
+    /// - On success, responds with [`GenerateCredentialReportOutput`](crate::output::GenerateCredentialReportOutput) with field(s):
+    ///   - [`state(Option<ReportStateType>)`](crate::output::GenerateCredentialReportOutput::state): <p>Information about the state of the credential report.</p>
+    ///   - [`description(Option<String>)`](crate::output::GenerateCredentialReportOutput::description): <p>Information about the credential report.</p>
+    /// - On failure, responds with [`SdkError<GenerateCredentialReportError>`](crate::error::GenerateCredentialReportError)
     pub fn generate_credential_report(&self) -> fluent_builders::GenerateCredentialReport<C, M, R> {
         fluent_builders::GenerateCredentialReport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GenerateOrganizationsAccessReport` operation.
+    /// Constructs a fluent builder for the [`GenerateOrganizationsAccessReport`](crate::client::fluent_builders::GenerateOrganizationsAccessReport) operation.
     ///
-    /// See [`GenerateOrganizationsAccessReport`](crate::client::fluent_builders::GenerateOrganizationsAccessReport) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`entity_path(impl Into<String>)`](crate::client::fluent_builders::GenerateOrganizationsAccessReport::entity_path) / [`set_entity_path(Option<String>)`](crate::client::fluent_builders::GenerateOrganizationsAccessReport::set_entity_path): <p>The path of the Organizations entity (root, OU, or account). You can build an entity path using the known structure of your organization. For example, assume that your account ID is <code>123456789012</code> and its parent OU ID is <code>ou-rge0-awsabcde</code>. The organization root ID is <code>r-f6g7h8i9j0example</code> and your organization ID is <code>o-a1b2c3d4e5</code>. Your entity path is <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.</p>
+    ///   - [`organizations_policy_id(impl Into<String>)`](crate::client::fluent_builders::GenerateOrganizationsAccessReport::organizations_policy_id) / [`set_organizations_policy_id(Option<String>)`](crate::client::fluent_builders::GenerateOrganizationsAccessReport::set_organizations_policy_id): <p>The identifier of the Organizations service control policy (SCP). This parameter is optional.</p>  <p>This ID is used to generate information about when an account principal that is limited by the SCP attempted to access an Amazon Web Services service.</p>
+    /// - On success, responds with [`GenerateOrganizationsAccessReportOutput`](crate::output::GenerateOrganizationsAccessReportOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::GenerateOrganizationsAccessReportOutput::job_id): <p>The job identifier that you can use in the <code>GetOrganizationsAccessReport</code> operation.</p>
+    /// - On failure, responds with [`SdkError<GenerateOrganizationsAccessReportError>`](crate::error::GenerateOrganizationsAccessReportError)
     pub fn generate_organizations_access_report(
         &self,
     ) -> fluent_builders::GenerateOrganizationsAccessReport<C, M, R> {
         fluent_builders::GenerateOrganizationsAccessReport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GenerateServiceLastAccessedDetails` operation.
+    /// Constructs a fluent builder for the [`GenerateServiceLastAccessedDetails`](crate::client::fluent_builders::GenerateServiceLastAccessedDetails) operation.
     ///
-    /// See [`GenerateServiceLastAccessedDetails`](crate::client::fluent_builders::GenerateServiceLastAccessedDetails) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GenerateServiceLastAccessedDetails::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GenerateServiceLastAccessedDetails::set_arn): <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate information about when the resource was last used in an attempt to access an Amazon Web Services service.</p>
+    ///   - [`granularity(AccessAdvisorUsageGranularityType)`](crate::client::fluent_builders::GenerateServiceLastAccessedDetails::granularity) / [`set_granularity(Option<AccessAdvisorUsageGranularityType>)`](crate::client::fluent_builders::GenerateServiceLastAccessedDetails::set_granularity): <p>The level of detail that you want to generate. You can specify whether you want to generate information about the last attempt to access services or actions. If you specify service-level granularity, this operation generates only service data. If you specify action-level granularity, it generates service and action data. If you don't include this optional parameter, the operation generates service data.</p>
+    /// - On success, responds with [`GenerateServiceLastAccessedDetailsOutput`](crate::output::GenerateServiceLastAccessedDetailsOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::GenerateServiceLastAccessedDetailsOutput::job_id): <p>The <code>JobId</code> that you can use in the <code>GetServiceLastAccessedDetails</code> or <code>GetServiceLastAccessedDetailsWithEntities</code> operations. The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same user when used to call <code>GetServiceLastAccessedDetail</code>.</p>
+    /// - On failure, responds with [`SdkError<GenerateServiceLastAccessedDetailsError>`](crate::error::GenerateServiceLastAccessedDetailsError)
     pub fn generate_service_last_accessed_details(
         &self,
     ) -> fluent_builders::GenerateServiceLastAccessedDetails<C, M, R> {
         fluent_builders::GenerateServiceLastAccessedDetails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccessKeyLastUsed` operation.
+    /// Constructs a fluent builder for the [`GetAccessKeyLastUsed`](crate::client::fluent_builders::GetAccessKeyLastUsed) operation.
     ///
-    /// See [`GetAccessKeyLastUsed`](crate::client::fluent_builders::GetAccessKeyLastUsed) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`access_key_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessKeyLastUsed::access_key_id) / [`set_access_key_id(Option<String>)`](crate::client::fluent_builders::GetAccessKeyLastUsed::set_access_key_id): <p>The identifier of an access key.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    /// - On success, responds with [`GetAccessKeyLastUsedOutput`](crate::output::GetAccessKeyLastUsedOutput) with field(s):
+    ///   - [`user_name(Option<String>)`](crate::output::GetAccessKeyLastUsedOutput::user_name): <p>The name of the IAM user that owns this access key.</p>  <p></p>
+    ///   - [`access_key_last_used(Option<AccessKeyLastUsed>)`](crate::output::GetAccessKeyLastUsedOutput::access_key_last_used): <p>Contains information about the last time the access key was used.</p>
+    /// - On failure, responds with [`SdkError<GetAccessKeyLastUsedError>`](crate::error::GetAccessKeyLastUsedError)
     pub fn get_access_key_last_used(&self) -> fluent_builders::GetAccessKeyLastUsed<C, M, R> {
         fluent_builders::GetAccessKeyLastUsed::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccountAuthorizationDetails` operation.
+    /// Constructs a fluent builder for the [`GetAccountAuthorizationDetails`](crate::client::fluent_builders::GetAccountAuthorizationDetails) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetAccountAuthorizationDetails::into_paginator).
     ///
-    /// See [`GetAccountAuthorizationDetails`](crate::client::fluent_builders::GetAccountAuthorizationDetails) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAccountAuthorizationDetails::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`filter(Vec<EntityType>)`](crate::client::fluent_builders::GetAccountAuthorizationDetails::filter) / [`set_filter(Option<Vec<EntityType>>)`](crate::client::fluent_builders::GetAccountAuthorizationDetails::set_filter): <p>A list of entity types used to filter the results. Only the entities that match the types you specify are included in the output. Use the value <code>LocalManagedPolicy</code> to include customer managed policies.</p>  <p>The format for this parameter is a comma-separated (if more than one) list of strings. Each string value in the list must be one of the valid values listed below.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::GetAccountAuthorizationDetails::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::GetAccountAuthorizationDetails::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::GetAccountAuthorizationDetails::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::GetAccountAuthorizationDetails::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    /// - On success, responds with [`GetAccountAuthorizationDetailsOutput`](crate::output::GetAccountAuthorizationDetailsOutput) with field(s):
+    ///   - [`user_detail_list(Option<Vec<UserDetail>>)`](crate::output::GetAccountAuthorizationDetailsOutput::user_detail_list): <p>A list containing information about IAM users.</p>
+    ///   - [`group_detail_list(Option<Vec<GroupDetail>>)`](crate::output::GetAccountAuthorizationDetailsOutput::group_detail_list): <p>A list containing information about IAM groups.</p>
+    ///   - [`role_detail_list(Option<Vec<RoleDetail>>)`](crate::output::GetAccountAuthorizationDetailsOutput::role_detail_list): <p>A list containing information about IAM roles.</p>
+    ///   - [`policies(Option<Vec<ManagedPolicyDetail>>)`](crate::output::GetAccountAuthorizationDetailsOutput::policies): <p>A list containing information about managed policies.</p>
+    ///   - [`is_truncated(bool)`](crate::output::GetAccountAuthorizationDetailsOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::GetAccountAuthorizationDetailsOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<GetAccountAuthorizationDetailsError>`](crate::error::GetAccountAuthorizationDetailsError)
     pub fn get_account_authorization_details(
         &self,
     ) -> fluent_builders::GetAccountAuthorizationDetails<C, M, R> {
         fluent_builders::GetAccountAuthorizationDetails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccountPasswordPolicy` operation.
+    /// Constructs a fluent builder for the [`GetAccountPasswordPolicy`](crate::client::fluent_builders::GetAccountPasswordPolicy) operation.
     ///
-    /// See [`GetAccountPasswordPolicy`](crate::client::fluent_builders::GetAccountPasswordPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetAccountPasswordPolicy::send) it.
+
+    /// - On success, responds with [`GetAccountPasswordPolicyOutput`](crate::output::GetAccountPasswordPolicyOutput) with field(s):
+    ///   - [`password_policy(Option<PasswordPolicy>)`](crate::output::GetAccountPasswordPolicyOutput::password_policy): <p>A structure that contains details about the account's password policy.</p>
+    /// - On failure, responds with [`SdkError<GetAccountPasswordPolicyError>`](crate::error::GetAccountPasswordPolicyError)
     pub fn get_account_password_policy(
         &self,
     ) -> fluent_builders::GetAccountPasswordPolicy<C, M, R> {
         fluent_builders::GetAccountPasswordPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccountSummary` operation.
+    /// Constructs a fluent builder for the [`GetAccountSummary`](crate::client::fluent_builders::GetAccountSummary) operation.
     ///
-    /// See [`GetAccountSummary`](crate::client::fluent_builders::GetAccountSummary) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetAccountSummary::send) it.
+
+    /// - On success, responds with [`GetAccountSummaryOutput`](crate::output::GetAccountSummaryOutput) with field(s):
+    ///   - [`summary_map(Option<HashMap<SummaryKeyType, i32>>)`](crate::output::GetAccountSummaryOutput::summary_map): <p>A set of key–value pairs containing information about IAM entity usage and IAM quotas.</p>
+    /// - On failure, responds with [`SdkError<GetAccountSummaryError>`](crate::error::GetAccountSummaryError)
     pub fn get_account_summary(&self) -> fluent_builders::GetAccountSummary<C, M, R> {
         fluent_builders::GetAccountSummary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContextKeysForCustomPolicy` operation.
+    /// Constructs a fluent builder for the [`GetContextKeysForCustomPolicy`](crate::client::fluent_builders::GetContextKeysForCustomPolicy) operation.
     ///
-    /// See [`GetContextKeysForCustomPolicy`](crate::client::fluent_builders::GetContextKeysForCustomPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`policy_input_list(Vec<String>)`](crate::client::fluent_builders::GetContextKeysForCustomPolicy::policy_input_list) / [`set_policy_input_list(Option<Vec<String>>)`](crate::client::fluent_builders::GetContextKeysForCustomPolicy::set_policy_input_list): <p>A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    /// - On success, responds with [`GetContextKeysForCustomPolicyOutput`](crate::output::GetContextKeysForCustomPolicyOutput) with field(s):
+    ///   - [`context_key_names(Option<Vec<String>>)`](crate::output::GetContextKeysForCustomPolicyOutput::context_key_names): <p>The list of context keys that are referenced in the input policies.</p>
+    /// - On failure, responds with [`SdkError<GetContextKeysForCustomPolicyError>`](crate::error::GetContextKeysForCustomPolicyError)
     pub fn get_context_keys_for_custom_policy(
         &self,
     ) -> fluent_builders::GetContextKeysForCustomPolicy<C, M, R> {
         fluent_builders::GetContextKeysForCustomPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContextKeysForPrincipalPolicy` operation.
+    /// Constructs a fluent builder for the [`GetContextKeysForPrincipalPolicy`](crate::client::fluent_builders::GetContextKeysForPrincipalPolicy) operation.
     ///
-    /// See [`GetContextKeysForPrincipalPolicy`](crate::client::fluent_builders::GetContextKeysForPrincipalPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`policy_source_arn(impl Into<String>)`](crate::client::fluent_builders::GetContextKeysForPrincipalPolicy::policy_source_arn) / [`set_policy_source_arn(Option<String>)`](crate::client::fluent_builders::GetContextKeysForPrincipalPolicy::set_policy_source_arn): <p>The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`policy_input_list(Vec<String>)`](crate::client::fluent_builders::GetContextKeysForPrincipalPolicy::policy_input_list) / [`set_policy_input_list(Option<Vec<String>>)`](crate::client::fluent_builders::GetContextKeysForPrincipalPolicy::set_policy_input_list): <p>An optional list of additional policies for which you want the list of context keys that are referenced.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    /// - On success, responds with [`GetContextKeysForPrincipalPolicyOutput`](crate::output::GetContextKeysForPrincipalPolicyOutput) with field(s):
+    ///   - [`context_key_names(Option<Vec<String>>)`](crate::output::GetContextKeysForPrincipalPolicyOutput::context_key_names): <p>The list of context keys that are referenced in the input policies.</p>
+    /// - On failure, responds with [`SdkError<GetContextKeysForPrincipalPolicyError>`](crate::error::GetContextKeysForPrincipalPolicyError)
     pub fn get_context_keys_for_principal_policy(
         &self,
     ) -> fluent_builders::GetContextKeysForPrincipalPolicy<C, M, R> {
         fluent_builders::GetContextKeysForPrincipalPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCredentialReport` operation.
+    /// Constructs a fluent builder for the [`GetCredentialReport`](crate::client::fluent_builders::GetCredentialReport) operation.
     ///
-    /// See [`GetCredentialReport`](crate::client::fluent_builders::GetCredentialReport) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetCredentialReport::send) it.
+
+    /// - On success, responds with [`GetCredentialReportOutput`](crate::output::GetCredentialReportOutput) with field(s):
+    ///   - [`content(Option<Blob>)`](crate::output::GetCredentialReportOutput::content): <p>Contains the credential report. The report is Base64-encoded.</p>
+    ///   - [`report_format(Option<ReportFormatType>)`](crate::output::GetCredentialReportOutput::report_format): <p>The format (MIME type) of the credential report.</p>
+    ///   - [`generated_time(Option<DateTime>)`](crate::output::GetCredentialReportOutput::generated_time): <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
+    /// - On failure, responds with [`SdkError<GetCredentialReportError>`](crate::error::GetCredentialReportError)
     pub fn get_credential_report(&self) -> fluent_builders::GetCredentialReport<C, M, R> {
         fluent_builders::GetCredentialReport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGroup` operation.
+    /// Constructs a fluent builder for the [`GetGroup`](crate::client::fluent_builders::GetGroup) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetGroup::into_paginator).
     ///
-    /// See [`GetGroup`](crate::client::fluent_builders::GetGroup) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetGroup::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::GetGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::GetGroup::set_group_name): <p>The name of the group.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::GetGroup::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::GetGroup::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::GetGroup::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::GetGroup::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`GetGroupOutput`](crate::output::GetGroupOutput) with field(s):
+    ///   - [`group(Option<Group>)`](crate::output::GetGroupOutput::group): <p>A structure that contains details about the group.</p>
+    ///   - [`users(Option<Vec<User>>)`](crate::output::GetGroupOutput::users): <p>A list of users in the group.</p>
+    ///   - [`is_truncated(bool)`](crate::output::GetGroupOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::GetGroupOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<GetGroupError>`](crate::error::GetGroupError)
     pub fn get_group(&self) -> fluent_builders::GetGroup<C, M, R> {
         fluent_builders::GetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGroupPolicy` operation.
+    /// Constructs a fluent builder for the [`GetGroupPolicy`](crate::client::fluent_builders::GetGroupPolicy) operation.
     ///
-    /// See [`GetGroupPolicy`](crate::client::fluent_builders::GetGroupPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::GetGroupPolicy::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::GetGroupPolicy::set_group_name): <p>The name of the group the policy is associated with.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::GetGroupPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::GetGroupPolicy::set_policy_name): <p>The name of the policy document to get.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`GetGroupPolicyOutput`](crate::output::GetGroupPolicyOutput) with field(s):
+    ///   - [`group_name(Option<String>)`](crate::output::GetGroupPolicyOutput::group_name): <p>The group the policy is associated with.</p>
+    ///   - [`policy_name(Option<String>)`](crate::output::GetGroupPolicyOutput::policy_name): <p>The name of the policy.</p>
+    ///   - [`policy_document(Option<String>)`](crate::output::GetGroupPolicyOutput::policy_document): <p>The policy document.</p>  <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
+    /// - On failure, responds with [`SdkError<GetGroupPolicyError>`](crate::error::GetGroupPolicyError)
     pub fn get_group_policy(&self) -> fluent_builders::GetGroupPolicy<C, M, R> {
         fluent_builders::GetGroupPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInstanceProfile` operation.
+    /// Constructs a fluent builder for the [`GetInstanceProfile`](crate::client::fluent_builders::GetInstanceProfile) operation.
     ///
-    /// See [`GetInstanceProfile`](crate::client::fluent_builders::GetInstanceProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_profile_name(impl Into<String>)`](crate::client::fluent_builders::GetInstanceProfile::instance_profile_name) / [`set_instance_profile_name(Option<String>)`](crate::client::fluent_builders::GetInstanceProfile::set_instance_profile_name): <p>The name of the instance profile to get information about.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`GetInstanceProfileOutput`](crate::output::GetInstanceProfileOutput) with field(s):
+    ///   - [`instance_profile(Option<InstanceProfile>)`](crate::output::GetInstanceProfileOutput::instance_profile): <p>A structure containing details about the instance profile.</p>
+    /// - On failure, responds with [`SdkError<GetInstanceProfileError>`](crate::error::GetInstanceProfileError)
     pub fn get_instance_profile(&self) -> fluent_builders::GetInstanceProfile<C, M, R> {
         fluent_builders::GetInstanceProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLoginProfile` operation.
+    /// Constructs a fluent builder for the [`GetLoginProfile`](crate::client::fluent_builders::GetLoginProfile) operation.
     ///
-    /// See [`GetLoginProfile`](crate::client::fluent_builders::GetLoginProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::GetLoginProfile::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::GetLoginProfile::set_user_name): <p>The name of the user whose login profile you want to retrieve.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`GetLoginProfileOutput`](crate::output::GetLoginProfileOutput) with field(s):
+    ///   - [`login_profile(Option<LoginProfile>)`](crate::output::GetLoginProfileOutput::login_profile): <p>A structure containing the user name and the profile creation date for the user.</p>
+    /// - On failure, responds with [`SdkError<GetLoginProfileError>`](crate::error::GetLoginProfileError)
     pub fn get_login_profile(&self) -> fluent_builders::GetLoginProfile<C, M, R> {
         fluent_builders::GetLoginProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOpenIDConnectProvider` operation.
+    /// Constructs a fluent builder for the [`GetOpenIDConnectProvider`](crate::client::fluent_builders::GetOpenIDConnectProvider) operation.
     ///
-    /// See [`GetOpenIDConnectProvider`](crate::client::fluent_builders::GetOpenIDConnectProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`open_id_connect_provider_arn(impl Into<String>)`](crate::client::fluent_builders::GetOpenIDConnectProvider::open_id_connect_provider_arn) / [`set_open_id_connect_provider_arn(Option<String>)`](crate::client::fluent_builders::GetOpenIDConnectProvider::set_open_id_connect_provider_arn): <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can get a list of OIDC provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// - On success, responds with [`GetOpenIdConnectProviderOutput`](crate::output::GetOpenIdConnectProviderOutput) with field(s):
+    ///   - [`url(Option<String>)`](crate::output::GetOpenIdConnectProviderOutput::url): <p>The URL that the IAM OIDC provider resource object is associated with. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
+    ///   - [`client_id_list(Option<Vec<String>>)`](crate::output::GetOpenIdConnectProviderOutput::client_id_list): <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
+    ///   - [`thumbprint_list(Option<Vec<String>>)`](crate::output::GetOpenIdConnectProviderOutput::thumbprint_list): <p>A list of certificate thumbprints that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
+    ///   - [`create_date(Option<DateTime>)`](crate::output::GetOpenIdConnectProviderOutput::create_date): <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::GetOpenIdConnectProviderOutput::tags): <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<GetOpenIDConnectProviderError>`](crate::error::GetOpenIDConnectProviderError)
     pub fn get_open_id_connect_provider(
         &self,
     ) -> fluent_builders::GetOpenIDConnectProvider<C, M, R> {
         fluent_builders::GetOpenIDConnectProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOrganizationsAccessReport` operation.
+    /// Constructs a fluent builder for the [`GetOrganizationsAccessReport`](crate::client::fluent_builders::GetOrganizationsAccessReport) operation.
     ///
-    /// See [`GetOrganizationsAccessReport`](crate::client::fluent_builders::GetOrganizationsAccessReport) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetOrganizationsAccessReport::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetOrganizationsAccessReport::set_job_id): <p>The identifier of the request generated by the <code>GenerateOrganizationsAccessReport</code> operation.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::GetOrganizationsAccessReport::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::GetOrganizationsAccessReport::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::GetOrganizationsAccessReport::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::GetOrganizationsAccessReport::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`sort_key(SortKeyType)`](crate::client::fluent_builders::GetOrganizationsAccessReport::sort_key) / [`set_sort_key(Option<SortKeyType>)`](crate::client::fluent_builders::GetOrganizationsAccessReport::set_sort_key): <p>The key that is used to sort the results. If you choose the namespace key, the results are returned in alphabetical order. If you choose the time key, the results are sorted numerically by the date and time.</p>
+    /// - On success, responds with [`GetOrganizationsAccessReportOutput`](crate::output::GetOrganizationsAccessReportOutput) with field(s):
+    ///   - [`job_status(Option<JobStatusType>)`](crate::output::GetOrganizationsAccessReportOutput::job_status): <p>The status of the job.</p>
+    ///   - [`job_creation_date(Option<DateTime>)`](crate::output::GetOrganizationsAccessReportOutput::job_creation_date): <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
+    ///   - [`job_completion_date(Option<DateTime>)`](crate::output::GetOrganizationsAccessReportOutput::job_completion_date): <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>  <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
+    ///   - [`number_of_services_accessible(Option<i32>)`](crate::output::GetOrganizationsAccessReportOutput::number_of_services_accessible): <p>The number of services that the applicable SCPs allow account principals to access.</p>
+    ///   - [`number_of_services_not_accessed(Option<i32>)`](crate::output::GetOrganizationsAccessReportOutput::number_of_services_not_accessed): <p>The number of services that account principals are allowed but did not attempt to access.</p>
+    ///   - [`access_details(Option<Vec<AccessDetail>>)`](crate::output::GetOrganizationsAccessReportOutput::access_details): <p>An&nbsp;object that contains details about the most recent attempt to access the service.</p>
+    ///   - [`is_truncated(bool)`](crate::output::GetOrganizationsAccessReportOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::GetOrganizationsAccessReportOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    ///   - [`error_details(Option<ErrorDetails>)`](crate::output::GetOrganizationsAccessReportOutput::error_details): <p>Contains information about the reason that the operation failed.</p>  <p>This data type is used as a response element in the <code>GetOrganizationsAccessReport</code>, <code>GetServiceLastAccessedDetails</code>, and <code>GetServiceLastAccessedDetailsWithEntities</code> operations.</p>
+    /// - On failure, responds with [`SdkError<GetOrganizationsAccessReportError>`](crate::error::GetOrganizationsAccessReportError)
     pub fn get_organizations_access_report(
         &self,
     ) -> fluent_builders::GetOrganizationsAccessReport<C, M, R> {
         fluent_builders::GetOrganizationsAccessReport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPolicy` operation.
+    /// Constructs a fluent builder for the [`GetPolicy`](crate::client::fluent_builders::GetPolicy) operation.
     ///
-    /// See [`GetPolicy`](crate::client::fluent_builders::GetPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::GetPolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::GetPolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// - On success, responds with [`GetPolicyOutput`](crate::output::GetPolicyOutput) with field(s):
+    ///   - [`policy(Option<Policy>)`](crate::output::GetPolicyOutput::policy): <p>A structure containing details about the policy.</p>
+    /// - On failure, responds with [`SdkError<GetPolicyError>`](crate::error::GetPolicyError)
     pub fn get_policy(&self) -> fluent_builders::GetPolicy<C, M, R> {
         fluent_builders::GetPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPolicyVersion` operation.
+    /// Constructs a fluent builder for the [`GetPolicyVersion`](crate::client::fluent_builders::GetPolicyVersion) operation.
     ///
-    /// See [`GetPolicyVersion`](crate::client::fluent_builders::GetPolicyVersion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::GetPolicyVersion::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::GetPolicyVersion::set_policy_arn): <p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::GetPolicyVersion::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::GetPolicyVersion::set_version_id): <p>Identifies the policy version to retrieve.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally followed by a period '.' and a string of letters and digits.</p>
+    /// - On success, responds with [`GetPolicyVersionOutput`](crate::output::GetPolicyVersionOutput) with field(s):
+    ///   - [`policy_version(Option<PolicyVersion>)`](crate::output::GetPolicyVersionOutput::policy_version): <p>A structure containing details about the policy version.</p>
+    /// - On failure, responds with [`SdkError<GetPolicyVersionError>`](crate::error::GetPolicyVersionError)
     pub fn get_policy_version(&self) -> fluent_builders::GetPolicyVersion<C, M, R> {
         fluent_builders::GetPolicyVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRole` operation.
+    /// Constructs a fluent builder for the [`GetRole`](crate::client::fluent_builders::GetRole) operation.
     ///
-    /// See [`GetRole`](crate::client::fluent_builders::GetRole) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::GetRole::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::GetRole::set_role_name): <p>The name of the IAM role to get information about.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`GetRoleOutput`](crate::output::GetRoleOutput) with field(s):
+    ///   - [`role(Option<Role>)`](crate::output::GetRoleOutput::role): <p>A structure containing details about the IAM role.</p>
+    /// - On failure, responds with [`SdkError<GetRoleError>`](crate::error::GetRoleError)
     pub fn get_role(&self) -> fluent_builders::GetRole<C, M, R> {
         fluent_builders::GetRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRolePolicy` operation.
+    /// Constructs a fluent builder for the [`GetRolePolicy`](crate::client::fluent_builders::GetRolePolicy) operation.
     ///
-    /// See [`GetRolePolicy`](crate::client::fluent_builders::GetRolePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::GetRolePolicy::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::GetRolePolicy::set_role_name): <p>The name of the role associated with the policy.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::GetRolePolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::GetRolePolicy::set_policy_name): <p>The name of the policy document to get.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`GetRolePolicyOutput`](crate::output::GetRolePolicyOutput) with field(s):
+    ///   - [`role_name(Option<String>)`](crate::output::GetRolePolicyOutput::role_name): <p>The role the policy is associated with.</p>
+    ///   - [`policy_name(Option<String>)`](crate::output::GetRolePolicyOutput::policy_name): <p>The name of the policy.</p>
+    ///   - [`policy_document(Option<String>)`](crate::output::GetRolePolicyOutput::policy_document): <p>The policy document.</p>  <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
+    /// - On failure, responds with [`SdkError<GetRolePolicyError>`](crate::error::GetRolePolicyError)
     pub fn get_role_policy(&self) -> fluent_builders::GetRolePolicy<C, M, R> {
         fluent_builders::GetRolePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSAMLProvider` operation.
+    /// Constructs a fluent builder for the [`GetSAMLProvider`](crate::client::fluent_builders::GetSAMLProvider) operation.
     ///
-    /// See [`GetSAMLProvider`](crate::client::fluent_builders::GetSAMLProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`saml_provider_arn(impl Into<String>)`](crate::client::fluent_builders::GetSAMLProvider::saml_provider_arn) / [`set_saml_provider_arn(Option<String>)`](crate::client::fluent_builders::GetSAMLProvider::set_saml_provider_arn): <p>The Amazon Resource Name (ARN) of the SAML provider resource object in IAM to get information about.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// - On success, responds with [`GetSamlProviderOutput`](crate::output::GetSamlProviderOutput) with field(s):
+    ///   - [`saml_metadata_document(Option<String>)`](crate::output::GetSamlProviderOutput::saml_metadata_document): <p>The XML metadata document that includes information about an identity provider.</p>
+    ///   - [`create_date(Option<DateTime>)`](crate::output::GetSamlProviderOutput::create_date): <p>The date and time when the SAML provider was created.</p>
+    ///   - [`valid_until(Option<DateTime>)`](crate::output::GetSamlProviderOutput::valid_until): <p>The expiration date and time for the SAML provider.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::GetSamlProviderOutput::tags): <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<GetSAMLProviderError>`](crate::error::GetSAMLProviderError)
     pub fn get_saml_provider(&self) -> fluent_builders::GetSAMLProvider<C, M, R> {
         fluent_builders::GetSAMLProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServerCertificate` operation.
+    /// Constructs a fluent builder for the [`GetServerCertificate`](crate::client::fluent_builders::GetServerCertificate) operation.
     ///
-    /// See [`GetServerCertificate`](crate::client::fluent_builders::GetServerCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`server_certificate_name(impl Into<String>)`](crate::client::fluent_builders::GetServerCertificate::server_certificate_name) / [`set_server_certificate_name(Option<String>)`](crate::client::fluent_builders::GetServerCertificate::set_server_certificate_name): <p>The name of the server certificate you want to retrieve information about.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`GetServerCertificateOutput`](crate::output::GetServerCertificateOutput) with field(s):
+    ///   - [`server_certificate(Option<ServerCertificate>)`](crate::output::GetServerCertificateOutput::server_certificate): <p>A structure containing details about the server certificate.</p>
+    /// - On failure, responds with [`SdkError<GetServerCertificateError>`](crate::error::GetServerCertificateError)
     pub fn get_server_certificate(&self) -> fluent_builders::GetServerCertificate<C, M, R> {
         fluent_builders::GetServerCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServiceLastAccessedDetails` operation.
+    /// Constructs a fluent builder for the [`GetServiceLastAccessedDetails`](crate::client::fluent_builders::GetServiceLastAccessedDetails) operation.
     ///
-    /// See [`GetServiceLastAccessedDetails`](crate::client::fluent_builders::GetServiceLastAccessedDetails) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetServiceLastAccessedDetails::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetServiceLastAccessedDetails::set_job_id): <p>The ID of the request generated by the <code>GenerateServiceLastAccessedDetails</code> operation. The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same user when used to call <code>GetServiceLastAccessedDetail</code>.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::GetServiceLastAccessedDetails::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::GetServiceLastAccessedDetails::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::GetServiceLastAccessedDetails::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::GetServiceLastAccessedDetails::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    /// - On success, responds with [`GetServiceLastAccessedDetailsOutput`](crate::output::GetServiceLastAccessedDetailsOutput) with field(s):
+    ///   - [`job_status(Option<JobStatusType>)`](crate::output::GetServiceLastAccessedDetailsOutput::job_status): <p>The status of the job.</p>
+    ///   - [`job_type(Option<AccessAdvisorUsageGranularityType>)`](crate::output::GetServiceLastAccessedDetailsOutput::job_type): <p>The type of job. Service jobs return information about when each service was last accessed. Action jobs also include information about when tracked actions within the service were last accessed.</p>
+    ///   - [`job_creation_date(Option<DateTime>)`](crate::output::GetServiceLastAccessedDetailsOutput::job_creation_date): <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
+    ///   - [`services_last_accessed(Option<Vec<ServiceLastAccessed>>)`](crate::output::GetServiceLastAccessedDetailsOutput::services_last_accessed): <p> A&nbsp;<code>ServiceLastAccessed</code> object that contains details about the most recent attempt to access the service.</p>
+    ///   - [`job_completion_date(Option<DateTime>)`](crate::output::GetServiceLastAccessedDetailsOutput::job_completion_date): <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>  <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
+    ///   - [`is_truncated(bool)`](crate::output::GetServiceLastAccessedDetailsOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::GetServiceLastAccessedDetailsOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    ///   - [`error(Option<ErrorDetails>)`](crate::output::GetServiceLastAccessedDetailsOutput::error): <p>An object that contains details about the reason the operation failed.</p>
+    /// - On failure, responds with [`SdkError<GetServiceLastAccessedDetailsError>`](crate::error::GetServiceLastAccessedDetailsError)
     pub fn get_service_last_accessed_details(
         &self,
     ) -> fluent_builders::GetServiceLastAccessedDetails<C, M, R> {
         fluent_builders::GetServiceLastAccessedDetails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServiceLastAccessedDetailsWithEntities` operation.
+    /// Constructs a fluent builder for the [`GetServiceLastAccessedDetailsWithEntities`](crate::client::fluent_builders::GetServiceLastAccessedDetailsWithEntities) operation.
     ///
-    /// See [`GetServiceLastAccessedDetailsWithEntities`](crate::client::fluent_builders::GetServiceLastAccessedDetailsWithEntities) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetServiceLastAccessedDetailsWithEntities::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetServiceLastAccessedDetailsWithEntities::set_job_id): <p>The ID of the request generated by the <code>GenerateServiceLastAccessedDetails</code> operation.</p>
+    ///   - [`service_namespace(impl Into<String>)`](crate::client::fluent_builders::GetServiceLastAccessedDetailsWithEntities::service_namespace) / [`set_service_namespace(Option<String>)`](crate::client::fluent_builders::GetServiceLastAccessedDetailsWithEntities::set_service_namespace): <p>The service namespace for an Amazon Web Services service. Provide the service namespace to learn when the IAM entity last attempted to access the specified service.</p>  <p>To learn the service namespace for a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>IAM User Guide</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services service namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::GetServiceLastAccessedDetailsWithEntities::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::GetServiceLastAccessedDetailsWithEntities::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::GetServiceLastAccessedDetailsWithEntities::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::GetServiceLastAccessedDetailsWithEntities::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    /// - On success, responds with [`GetServiceLastAccessedDetailsWithEntitiesOutput`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput) with field(s):
+    ///   - [`job_status(Option<JobStatusType>)`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput::job_status): <p>The status of the job.</p>
+    ///   - [`job_creation_date(Option<DateTime>)`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput::job_creation_date): <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the report job was created.</p>
+    ///   - [`job_completion_date(Option<DateTime>)`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput::job_completion_date): <p>The date and time, in&nbsp;<a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the generated report job was completed or failed.</p>  <p>This field is null if the job is still in progress, as indicated by a job status value of <code>IN_PROGRESS</code>.</p>
+    ///   - [`entity_details_list(Option<Vec<EntityDetails>>)`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput::entity_details_list): <p>An&nbsp;<code>EntityDetailsList</code> object that contains details about when an IAM entity (user or role) used group or policy permissions in an attempt to access the specified Amazon Web Services service.</p>
+    ///   - [`is_truncated(bool)`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    ///   - [`error(Option<ErrorDetails>)`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput::error): <p>An object that contains details about the reason the operation failed.</p>
+    /// - On failure, responds with [`SdkError<GetServiceLastAccessedDetailsWithEntitiesError>`](crate::error::GetServiceLastAccessedDetailsWithEntitiesError)
     pub fn get_service_last_accessed_details_with_entities(
         &self,
     ) -> fluent_builders::GetServiceLastAccessedDetailsWithEntities<C, M, R> {
         fluent_builders::GetServiceLastAccessedDetailsWithEntities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServiceLinkedRoleDeletionStatus` operation.
+    /// Constructs a fluent builder for the [`GetServiceLinkedRoleDeletionStatus`](crate::client::fluent_builders::GetServiceLinkedRoleDeletionStatus) operation.
     ///
-    /// See [`GetServiceLinkedRoleDeletionStatus`](crate::client::fluent_builders::GetServiceLinkedRoleDeletionStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deletion_task_id(impl Into<String>)`](crate::client::fluent_builders::GetServiceLinkedRoleDeletionStatus::deletion_task_id) / [`set_deletion_task_id(Option<String>)`](crate::client::fluent_builders::GetServiceLinkedRoleDeletionStatus::set_deletion_task_id): <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/   <service-principal-name>    /    <role-name>     /     <task-uuid></task-uuid>    </role-name>   </service-principal-name></code>.</p>
+    /// - On success, responds with [`GetServiceLinkedRoleDeletionStatusOutput`](crate::output::GetServiceLinkedRoleDeletionStatusOutput) with field(s):
+    ///   - [`status(Option<DeletionTaskStatusType>)`](crate::output::GetServiceLinkedRoleDeletionStatusOutput::status): <p>The status of the deletion.</p>
+    ///   - [`reason(Option<DeletionTaskFailureReasonType>)`](crate::output::GetServiceLinkedRoleDeletionStatusOutput::reason): <p>An object that contains details about the reason the deletion failed.</p>
+    /// - On failure, responds with [`SdkError<GetServiceLinkedRoleDeletionStatusError>`](crate::error::GetServiceLinkedRoleDeletionStatusError)
     pub fn get_service_linked_role_deletion_status(
         &self,
     ) -> fluent_builders::GetServiceLinkedRoleDeletionStatus<C, M, R> {
         fluent_builders::GetServiceLinkedRoleDeletionStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSSHPublicKey` operation.
+    /// Constructs a fluent builder for the [`GetSSHPublicKey`](crate::client::fluent_builders::GetSSHPublicKey) operation.
     ///
-    /// See [`GetSSHPublicKey`](crate::client::fluent_builders::GetSSHPublicKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::GetSSHPublicKey::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::GetSSHPublicKey::set_user_name): <p>The name of the IAM user associated with the SSH public key.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`ssh_public_key_id(impl Into<String>)`](crate::client::fluent_builders::GetSSHPublicKey::ssh_public_key_id) / [`set_ssh_public_key_id(Option<String>)`](crate::client::fluent_builders::GetSSHPublicKey::set_ssh_public_key_id): <p>The unique identifier for the SSH public key.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    ///   - [`encoding(EncodingType)`](crate::client::fluent_builders::GetSSHPublicKey::encoding) / [`set_encoding(Option<EncodingType>)`](crate::client::fluent_builders::GetSSHPublicKey::set_encoding): <p>Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format, use <code>PEM</code>.</p>
+    /// - On success, responds with [`GetSshPublicKeyOutput`](crate::output::GetSshPublicKeyOutput) with field(s):
+    ///   - [`ssh_public_key(Option<SshPublicKey>)`](crate::output::GetSshPublicKeyOutput::ssh_public_key): <p>A structure containing details about the SSH public key.</p>
+    /// - On failure, responds with [`SdkError<GetSSHPublicKeyError>`](crate::error::GetSSHPublicKeyError)
     pub fn get_ssh_public_key(&self) -> fluent_builders::GetSSHPublicKey<C, M, R> {
         fluent_builders::GetSSHPublicKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUser` operation.
+    /// Constructs a fluent builder for the [`GetUser`](crate::client::fluent_builders::GetUser) operation.
     ///
-    /// See [`GetUser`](crate::client::fluent_builders::GetUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::GetUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::GetUser::set_user_name): <p>The name of the user to get information about.</p>  <p>This parameter is optional. If it is not included, it defaults to the user making the request. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`GetUserOutput`](crate::output::GetUserOutput) with field(s):
+    ///   - [`user(Option<User>)`](crate::output::GetUserOutput::user): <p>A structure containing details about the IAM user.</p> <important>   <p>Due to a service issue, password last used data does not include password use from May 3, 2018 22:50 PDT to May 23, 2018 14:08 PDT. This affects <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last sign-in</a> dates shown in the IAM console and password last used dates in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM credential report</a>, and returned by this operation. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3, 2018. For users that signed in after May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p>   <p>You can use password last used information to identify unused credentials for deletion. For example, you might delete users who did not sign in to Amazon Web Services in the last 90 days. In cases like this, we recommend that you adjust your evaluation window to include dates after May 23, 2018. Alternatively, if your users use access keys to access Amazon Web Services programmatically you can refer to access key last used information because it is accurate for all dates. </p>  </important>
+    /// - On failure, responds with [`SdkError<GetUserError>`](crate::error::GetUserError)
     pub fn get_user(&self) -> fluent_builders::GetUser<C, M, R> {
         fluent_builders::GetUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUserPolicy` operation.
+    /// Constructs a fluent builder for the [`GetUserPolicy`](crate::client::fluent_builders::GetUserPolicy) operation.
     ///
-    /// See [`GetUserPolicy`](crate::client::fluent_builders::GetUserPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::GetUserPolicy::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::GetUserPolicy::set_user_name): <p>The name of the user who the policy is associated with.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::GetUserPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::GetUserPolicy::set_policy_name): <p>The name of the policy document to get.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`GetUserPolicyOutput`](crate::output::GetUserPolicyOutput) with field(s):
+    ///   - [`user_name(Option<String>)`](crate::output::GetUserPolicyOutput::user_name): <p>The user the policy is associated with.</p>
+    ///   - [`policy_name(Option<String>)`](crate::output::GetUserPolicyOutput::policy_name): <p>The name of the policy.</p>
+    ///   - [`policy_document(Option<String>)`](crate::output::GetUserPolicyOutput::policy_document): <p>The policy document.</p>  <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
+    /// - On failure, responds with [`SdkError<GetUserPolicyError>`](crate::error::GetUserPolicyError)
     pub fn get_user_policy(&self) -> fluent_builders::GetUserPolicy<C, M, R> {
         fluent_builders::GetUserPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAccessKeys` operation.
+    /// Constructs a fluent builder for the [`ListAccessKeys`](crate::client::fluent_builders::ListAccessKeys) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccessKeys::into_paginator).
     ///
-    /// See [`ListAccessKeys`](crate::client::fluent_builders::ListAccessKeys) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccessKeys::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::ListAccessKeys::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::ListAccessKeys::set_user_name): <p>The name of the user.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListAccessKeys::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListAccessKeys::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListAccessKeys::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListAccessKeys::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListAccessKeysOutput`](crate::output::ListAccessKeysOutput) with field(s):
+    ///   - [`access_key_metadata(Option<Vec<AccessKeyMetadata>>)`](crate::output::ListAccessKeysOutput::access_key_metadata): <p>A list of objects containing metadata about the access keys.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListAccessKeysOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListAccessKeysOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListAccessKeysError>`](crate::error::ListAccessKeysError)
     pub fn list_access_keys(&self) -> fluent_builders::ListAccessKeys<C, M, R> {
         fluent_builders::ListAccessKeys::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAccountAliases` operation.
+    /// Constructs a fluent builder for the [`ListAccountAliases`](crate::client::fluent_builders::ListAccountAliases) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccountAliases::into_paginator).
     ///
-    /// See [`ListAccountAliases`](crate::client::fluent_builders::ListAccountAliases) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccountAliases::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListAccountAliases::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListAccountAliases::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListAccountAliases::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListAccountAliases::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListAccountAliasesOutput`](crate::output::ListAccountAliasesOutput) with field(s):
+    ///   - [`account_aliases(Option<Vec<String>>)`](crate::output::ListAccountAliasesOutput::account_aliases): <p>A list of aliases associated with the account. Amazon Web Services supports only one alias per account.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListAccountAliasesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListAccountAliasesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListAccountAliasesError>`](crate::error::ListAccountAliasesError)
     pub fn list_account_aliases(&self) -> fluent_builders::ListAccountAliases<C, M, R> {
         fluent_builders::ListAccountAliases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAttachedGroupPolicies` operation.
+    /// Constructs a fluent builder for the [`ListAttachedGroupPolicies`](crate::client::fluent_builders::ListAttachedGroupPolicies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAttachedGroupPolicies::into_paginator).
     ///
-    /// See [`ListAttachedGroupPolicies`](crate::client::fluent_builders::ListAttachedGroupPolicies) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAttachedGroupPolicies::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::ListAttachedGroupPolicies::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::ListAttachedGroupPolicies::set_group_name): <p>The name (friendly name, not ARN) of the group to list attached policies for.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`path_prefix(impl Into<String>)`](crate::client::fluent_builders::ListAttachedGroupPolicies::path_prefix) / [`set_path_prefix(Option<String>)`](crate::client::fluent_builders::ListAttachedGroupPolicies::set_path_prefix): <p>The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a slash (/), listing all policies.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListAttachedGroupPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListAttachedGroupPolicies::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListAttachedGroupPolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListAttachedGroupPolicies::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListAttachedGroupPoliciesOutput`](crate::output::ListAttachedGroupPoliciesOutput) with field(s):
+    ///   - [`attached_policies(Option<Vec<AttachedPolicy>>)`](crate::output::ListAttachedGroupPoliciesOutput::attached_policies): <p>A list of the attached policies.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListAttachedGroupPoliciesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListAttachedGroupPoliciesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListAttachedGroupPoliciesError>`](crate::error::ListAttachedGroupPoliciesError)
     pub fn list_attached_group_policies(
         &self,
     ) -> fluent_builders::ListAttachedGroupPolicies<C, M, R> {
         fluent_builders::ListAttachedGroupPolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAttachedRolePolicies` operation.
+    /// Constructs a fluent builder for the [`ListAttachedRolePolicies`](crate::client::fluent_builders::ListAttachedRolePolicies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAttachedRolePolicies::into_paginator).
     ///
-    /// See [`ListAttachedRolePolicies`](crate::client::fluent_builders::ListAttachedRolePolicies) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAttachedRolePolicies::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::ListAttachedRolePolicies::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::ListAttachedRolePolicies::set_role_name): <p>The name (friendly name, not ARN) of the role to list attached policies for.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`path_prefix(impl Into<String>)`](crate::client::fluent_builders::ListAttachedRolePolicies::path_prefix) / [`set_path_prefix(Option<String>)`](crate::client::fluent_builders::ListAttachedRolePolicies::set_path_prefix): <p>The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a slash (/), listing all policies.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListAttachedRolePolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListAttachedRolePolicies::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListAttachedRolePolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListAttachedRolePolicies::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListAttachedRolePoliciesOutput`](crate::output::ListAttachedRolePoliciesOutput) with field(s):
+    ///   - [`attached_policies(Option<Vec<AttachedPolicy>>)`](crate::output::ListAttachedRolePoliciesOutput::attached_policies): <p>A list of the attached policies.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListAttachedRolePoliciesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListAttachedRolePoliciesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListAttachedRolePoliciesError>`](crate::error::ListAttachedRolePoliciesError)
     pub fn list_attached_role_policies(
         &self,
     ) -> fluent_builders::ListAttachedRolePolicies<C, M, R> {
         fluent_builders::ListAttachedRolePolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAttachedUserPolicies` operation.
+    /// Constructs a fluent builder for the [`ListAttachedUserPolicies`](crate::client::fluent_builders::ListAttachedUserPolicies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAttachedUserPolicies::into_paginator).
     ///
-    /// See [`ListAttachedUserPolicies`](crate::client::fluent_builders::ListAttachedUserPolicies) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAttachedUserPolicies::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::ListAttachedUserPolicies::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::ListAttachedUserPolicies::set_user_name): <p>The name (friendly name, not ARN) of the user to list attached policies for.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`path_prefix(impl Into<String>)`](crate::client::fluent_builders::ListAttachedUserPolicies::path_prefix) / [`set_path_prefix(Option<String>)`](crate::client::fluent_builders::ListAttachedUserPolicies::set_path_prefix): <p>The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a slash (/), listing all policies.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListAttachedUserPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListAttachedUserPolicies::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListAttachedUserPolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListAttachedUserPolicies::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListAttachedUserPoliciesOutput`](crate::output::ListAttachedUserPoliciesOutput) with field(s):
+    ///   - [`attached_policies(Option<Vec<AttachedPolicy>>)`](crate::output::ListAttachedUserPoliciesOutput::attached_policies): <p>A list of the attached policies.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListAttachedUserPoliciesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListAttachedUserPoliciesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListAttachedUserPoliciesError>`](crate::error::ListAttachedUserPoliciesError)
     pub fn list_attached_user_policies(
         &self,
     ) -> fluent_builders::ListAttachedUserPolicies<C, M, R> {
         fluent_builders::ListAttachedUserPolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEntitiesForPolicy` operation.
+    /// Constructs a fluent builder for the [`ListEntitiesForPolicy`](crate::client::fluent_builders::ListEntitiesForPolicy) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEntitiesForPolicy::into_paginator).
     ///
-    /// See [`ListEntitiesForPolicy`](crate::client::fluent_builders::ListEntitiesForPolicy) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEntitiesForPolicy::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::ListEntitiesForPolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::ListEntitiesForPolicy::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`entity_filter(EntityType)`](crate::client::fluent_builders::ListEntitiesForPolicy::entity_filter) / [`set_entity_filter(Option<EntityType>)`](crate::client::fluent_builders::ListEntitiesForPolicy::set_entity_filter): <p>The entity type to use for filtering the results.</p>  <p>For example, when <code>EntityFilter</code> is <code>Role</code>, only the roles that are attached to the specified policy are returned. This parameter is optional. If it is not included, all attached entities (users, groups, and roles) are returned. The argument for this parameter must be one of the valid values listed below.</p>
+    ///   - [`path_prefix(impl Into<String>)`](crate::client::fluent_builders::ListEntitiesForPolicy::path_prefix) / [`set_path_prefix(Option<String>)`](crate::client::fluent_builders::ListEntitiesForPolicy::set_path_prefix): <p>The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a slash (/), listing all entities.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`policy_usage_filter(PolicyUsageType)`](crate::client::fluent_builders::ListEntitiesForPolicy::policy_usage_filter) / [`set_policy_usage_filter(Option<PolicyUsageType>)`](crate::client::fluent_builders::ListEntitiesForPolicy::set_policy_usage_filter): <p>The policy usage method to use for filtering the results.</p>  <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>  <p>This parameter is optional. If it is not included, all policies are returned. </p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListEntitiesForPolicy::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListEntitiesForPolicy::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListEntitiesForPolicy::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListEntitiesForPolicy::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListEntitiesForPolicyOutput`](crate::output::ListEntitiesForPolicyOutput) with field(s):
+    ///   - [`policy_groups(Option<Vec<PolicyGroup>>)`](crate::output::ListEntitiesForPolicyOutput::policy_groups): <p>A list of IAM groups that the policy is attached to.</p>
+    ///   - [`policy_users(Option<Vec<PolicyUser>>)`](crate::output::ListEntitiesForPolicyOutput::policy_users): <p>A list of IAM users that the policy is attached to.</p>
+    ///   - [`policy_roles(Option<Vec<PolicyRole>>)`](crate::output::ListEntitiesForPolicyOutput::policy_roles): <p>A list of IAM roles that the policy is attached to.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListEntitiesForPolicyOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListEntitiesForPolicyOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListEntitiesForPolicyError>`](crate::error::ListEntitiesForPolicyError)
     pub fn list_entities_for_policy(&self) -> fluent_builders::ListEntitiesForPolicy<C, M, R> {
         fluent_builders::ListEntitiesForPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGroupPolicies` operation.
+    /// Constructs a fluent builder for the [`ListGroupPolicies`](crate::client::fluent_builders::ListGroupPolicies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroupPolicies::into_paginator).
     ///
-    /// See [`ListGroupPolicies`](crate::client::fluent_builders::ListGroupPolicies) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGroupPolicies::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::ListGroupPolicies::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::ListGroupPolicies::set_group_name): <p>The name of the group to list policies for.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListGroupPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListGroupPolicies::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListGroupPolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListGroupPolicies::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListGroupPoliciesOutput`](crate::output::ListGroupPoliciesOutput) with field(s):
+    ///   - [`policy_names(Option<Vec<String>>)`](crate::output::ListGroupPoliciesOutput::policy_names): <p>A list of policy names.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListGroupPoliciesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListGroupPoliciesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListGroupPoliciesError>`](crate::error::ListGroupPoliciesError)
     pub fn list_group_policies(&self) -> fluent_builders::ListGroupPolicies<C, M, R> {
         fluent_builders::ListGroupPolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGroups` operation.
+    /// Constructs a fluent builder for the [`ListGroups`](crate::client::fluent_builders::ListGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroups::into_paginator).
     ///
-    /// See [`ListGroups`](crate::client::fluent_builders::ListGroups) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGroups::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`path_prefix(impl Into<String>)`](crate::client::fluent_builders::ListGroups::path_prefix) / [`set_path_prefix(Option<String>)`](crate::client::fluent_builders::ListGroups::set_path_prefix): <p> The path prefix for filtering the results. For example, the prefix <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts with <code>/division_abc/subdivision_xyz/</code>.</p>  <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing all groups. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListGroups::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListGroups::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListGroups::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListGroups::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListGroupsOutput`](crate::output::ListGroupsOutput) with field(s):
+    ///   - [`groups(Option<Vec<Group>>)`](crate::output::ListGroupsOutput::groups): <p>A list of groups.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListGroupsOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListGroupsOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListGroupsError>`](crate::error::ListGroupsError)
     pub fn list_groups(&self) -> fluent_builders::ListGroups<C, M, R> {
         fluent_builders::ListGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGroupsForUser` operation.
+    /// Constructs a fluent builder for the [`ListGroupsForUser`](crate::client::fluent_builders::ListGroupsForUser) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroupsForUser::into_paginator).
     ///
-    /// See [`ListGroupsForUser`](crate::client::fluent_builders::ListGroupsForUser) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGroupsForUser::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::ListGroupsForUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::ListGroupsForUser::set_user_name): <p>The name of the user to list groups for.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListGroupsForUser::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListGroupsForUser::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListGroupsForUser::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListGroupsForUser::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListGroupsForUserOutput`](crate::output::ListGroupsForUserOutput) with field(s):
+    ///   - [`groups(Option<Vec<Group>>)`](crate::output::ListGroupsForUserOutput::groups): <p>A list of groups.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListGroupsForUserOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListGroupsForUserOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListGroupsForUserError>`](crate::error::ListGroupsForUserError)
     pub fn list_groups_for_user(&self) -> fluent_builders::ListGroupsForUser<C, M, R> {
         fluent_builders::ListGroupsForUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInstanceProfiles` operation.
+    /// Constructs a fluent builder for the [`ListInstanceProfiles`](crate::client::fluent_builders::ListInstanceProfiles) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInstanceProfiles::into_paginator).
     ///
-    /// See [`ListInstanceProfiles`](crate::client::fluent_builders::ListInstanceProfiles) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstanceProfiles::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`path_prefix(impl Into<String>)`](crate::client::fluent_builders::ListInstanceProfiles::path_prefix) / [`set_path_prefix(Option<String>)`](crate::client::fluent_builders::ListInstanceProfiles::set_path_prefix): <p> The path prefix for filtering the results. For example, the prefix <code>/application_abc/component_xyz/</code> gets all instance profiles whose path starts with <code>/application_abc/component_xyz/</code>.</p>  <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing all instance profiles. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListInstanceProfiles::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListInstanceProfiles::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListInstanceProfiles::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListInstanceProfiles::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListInstanceProfilesOutput`](crate::output::ListInstanceProfilesOutput) with field(s):
+    ///   - [`instance_profiles(Option<Vec<InstanceProfile>>)`](crate::output::ListInstanceProfilesOutput::instance_profiles): <p>A list of instance profiles.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListInstanceProfilesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListInstanceProfilesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListInstanceProfilesError>`](crate::error::ListInstanceProfilesError)
     pub fn list_instance_profiles(&self) -> fluent_builders::ListInstanceProfiles<C, M, R> {
         fluent_builders::ListInstanceProfiles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInstanceProfilesForRole` operation.
+    /// Constructs a fluent builder for the [`ListInstanceProfilesForRole`](crate::client::fluent_builders::ListInstanceProfilesForRole) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInstanceProfilesForRole::into_paginator).
     ///
-    /// See [`ListInstanceProfilesForRole`](crate::client::fluent_builders::ListInstanceProfilesForRole) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstanceProfilesForRole::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::ListInstanceProfilesForRole::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::ListInstanceProfilesForRole::set_role_name): <p>The name of the role to list instance profiles for.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListInstanceProfilesForRole::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListInstanceProfilesForRole::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListInstanceProfilesForRole::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListInstanceProfilesForRole::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListInstanceProfilesForRoleOutput`](crate::output::ListInstanceProfilesForRoleOutput) with field(s):
+    ///   - [`instance_profiles(Option<Vec<InstanceProfile>>)`](crate::output::ListInstanceProfilesForRoleOutput::instance_profiles): <p>A list of instance profiles.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListInstanceProfilesForRoleOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListInstanceProfilesForRoleOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListInstanceProfilesForRoleError>`](crate::error::ListInstanceProfilesForRoleError)
     pub fn list_instance_profiles_for_role(
         &self,
     ) -> fluent_builders::ListInstanceProfilesForRole<C, M, R> {
         fluent_builders::ListInstanceProfilesForRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInstanceProfileTags` operation.
+    /// Constructs a fluent builder for the [`ListInstanceProfileTags`](crate::client::fluent_builders::ListInstanceProfileTags) operation.
     ///
-    /// See [`ListInstanceProfileTags`](crate::client::fluent_builders::ListInstanceProfileTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_profile_name(impl Into<String>)`](crate::client::fluent_builders::ListInstanceProfileTags::instance_profile_name) / [`set_instance_profile_name(Option<String>)`](crate::client::fluent_builders::ListInstanceProfileTags::set_instance_profile_name): <p>The name of the IAM instance profile whose tags you want to see.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListInstanceProfileTags::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListInstanceProfileTags::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListInstanceProfileTags::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListInstanceProfileTags::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListInstanceProfileTagsOutput`](crate::output::ListInstanceProfileTagsOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListInstanceProfileTagsOutput::tags): <p>The list of tags that are currently attached to the IAM instance profile. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListInstanceProfileTagsOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListInstanceProfileTagsOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListInstanceProfileTagsError>`](crate::error::ListInstanceProfileTagsError)
     pub fn list_instance_profile_tags(&self) -> fluent_builders::ListInstanceProfileTags<C, M, R> {
         fluent_builders::ListInstanceProfileTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMFADevices` operation.
+    /// Constructs a fluent builder for the [`ListMFADevices`](crate::client::fluent_builders::ListMFADevices) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMFADevices::into_paginator).
     ///
-    /// See [`ListMFADevices`](crate::client::fluent_builders::ListMFADevices) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMFADevices::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::ListMFADevices::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::ListMFADevices::set_user_name): <p>The name of the user whose MFA devices you want to list.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListMFADevices::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListMFADevices::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListMFADevices::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListMFADevices::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListMfaDevicesOutput`](crate::output::ListMfaDevicesOutput) with field(s):
+    ///   - [`mfa_devices(Option<Vec<MfaDevice>>)`](crate::output::ListMfaDevicesOutput::mfa_devices): <p>A list of MFA devices.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListMfaDevicesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListMfaDevicesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListMFADevicesError>`](crate::error::ListMFADevicesError)
     pub fn list_mfa_devices(&self) -> fluent_builders::ListMFADevices<C, M, R> {
         fluent_builders::ListMFADevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMFADeviceTags` operation.
+    /// Constructs a fluent builder for the [`ListMFADeviceTags`](crate::client::fluent_builders::ListMFADeviceTags) operation.
     ///
-    /// See [`ListMFADeviceTags`](crate::client::fluent_builders::ListMFADeviceTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`serial_number(impl Into<String>)`](crate::client::fluent_builders::ListMFADeviceTags::serial_number) / [`set_serial_number(Option<String>)`](crate::client::fluent_builders::ListMFADeviceTags::set_serial_number): <p>The unique identifier for the IAM virtual MFA device whose tags you want to see. For virtual MFA devices, the serial number is the same as the ARN.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListMFADeviceTags::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListMFADeviceTags::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListMFADeviceTags::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListMFADeviceTags::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListMfaDeviceTagsOutput`](crate::output::ListMfaDeviceTagsOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListMfaDeviceTagsOutput::tags): <p>The list of tags that are currently attached to the virtual MFA device. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListMfaDeviceTagsOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListMfaDeviceTagsOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListMFADeviceTagsError>`](crate::error::ListMFADeviceTagsError)
     pub fn list_mfa_device_tags(&self) -> fluent_builders::ListMFADeviceTags<C, M, R> {
         fluent_builders::ListMFADeviceTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOpenIDConnectProviders` operation.
+    /// Constructs a fluent builder for the [`ListOpenIDConnectProviders`](crate::client::fluent_builders::ListOpenIDConnectProviders) operation.
     ///
-    /// See [`ListOpenIDConnectProviders`](crate::client::fluent_builders::ListOpenIDConnectProviders) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::ListOpenIDConnectProviders::send) it.
+
+    /// - On success, responds with [`ListOpenIdConnectProvidersOutput`](crate::output::ListOpenIdConnectProvidersOutput) with field(s):
+    ///   - [`open_id_connect_provider_list(Option<Vec<OpenIdConnectProviderListEntry>>)`](crate::output::ListOpenIdConnectProvidersOutput::open_id_connect_provider_list): <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
+    /// - On failure, responds with [`SdkError<ListOpenIDConnectProvidersError>`](crate::error::ListOpenIDConnectProvidersError)
     pub fn list_open_id_connect_providers(
         &self,
     ) -> fluent_builders::ListOpenIDConnectProviders<C, M, R> {
         fluent_builders::ListOpenIDConnectProviders::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOpenIDConnectProviderTags` operation.
+    /// Constructs a fluent builder for the [`ListOpenIDConnectProviderTags`](crate::client::fluent_builders::ListOpenIDConnectProviderTags) operation.
     ///
-    /// See [`ListOpenIDConnectProviderTags`](crate::client::fluent_builders::ListOpenIDConnectProviderTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`open_id_connect_provider_arn(impl Into<String>)`](crate::client::fluent_builders::ListOpenIDConnectProviderTags::open_id_connect_provider_arn) / [`set_open_id_connect_provider_arn(Option<String>)`](crate::client::fluent_builders::ListOpenIDConnectProviderTags::set_open_id_connect_provider_arn): <p>The ARN of the OpenID Connect (OIDC) identity provider whose tags you want to see.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListOpenIDConnectProviderTags::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListOpenIDConnectProviderTags::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListOpenIDConnectProviderTags::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListOpenIDConnectProviderTags::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListOpenIdConnectProviderTagsOutput`](crate::output::ListOpenIdConnectProviderTagsOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListOpenIdConnectProviderTagsOutput::tags): <p>The list of tags that are currently attached to the OpenID Connect (OIDC) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListOpenIdConnectProviderTagsOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListOpenIdConnectProviderTagsOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListOpenIDConnectProviderTagsError>`](crate::error::ListOpenIDConnectProviderTagsError)
     pub fn list_open_id_connect_provider_tags(
         &self,
     ) -> fluent_builders::ListOpenIDConnectProviderTags<C, M, R> {
         fluent_builders::ListOpenIDConnectProviderTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPolicies` operation.
+    /// Constructs a fluent builder for the [`ListPolicies`](crate::client::fluent_builders::ListPolicies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPolicies::into_paginator).
     ///
-    /// See [`ListPolicies`](crate::client::fluent_builders::ListPolicies) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPolicies::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`scope(PolicyScopeType)`](crate::client::fluent_builders::ListPolicies::scope) / [`set_scope(Option<PolicyScopeType>)`](crate::client::fluent_builders::ListPolicies::set_scope): <p>The scope to use for filtering the results.</p>  <p>To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer managed policies in your Amazon Web Services account, set <code>Scope</code> to <code>Local</code>.</p>  <p>This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are returned.</p>
+    ///   - [`only_attached(bool)`](crate::client::fluent_builders::ListPolicies::only_attached) / [`set_only_attached(bool)`](crate::client::fluent_builders::ListPolicies::set_only_attached): <p>A flag to filter the results to only the attached policies.</p>  <p>When <code>OnlyAttached</code> is <code>true</code>, the returned list contains only the policies that are attached to an IAM user, group, or role. When <code>OnlyAttached</code> is <code>false</code>, or when the parameter is not included, all policies are returned.</p>
+    ///   - [`path_prefix(impl Into<String>)`](crate::client::fluent_builders::ListPolicies::path_prefix) / [`set_path_prefix(Option<String>)`](crate::client::fluent_builders::ListPolicies::set_path_prefix): <p>The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a slash (/), listing all policies. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`policy_usage_filter(PolicyUsageType)`](crate::client::fluent_builders::ListPolicies::policy_usage_filter) / [`set_policy_usage_filter(Option<PolicyUsageType>)`](crate::client::fluent_builders::ListPolicies::set_policy_usage_filter): <p>The policy usage method to use for filtering the results.</p>  <p>To list only permissions policies, set&nbsp;<code>PolicyUsageFilter</code>&nbsp;to&nbsp;<code>PermissionsPolicy</code>. To list only the policies used to set permissions boundaries, set&nbsp;the value to&nbsp;<code>PermissionsBoundary</code>.</p>  <p>This parameter is optional. If it is not included, all policies are returned. </p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListPolicies::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListPolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListPolicies::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListPoliciesOutput`](crate::output::ListPoliciesOutput) with field(s):
+    ///   - [`policies(Option<Vec<Policy>>)`](crate::output::ListPoliciesOutput::policies): <p>A list of policies.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListPoliciesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListPoliciesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListPoliciesError>`](crate::error::ListPoliciesError)
     pub fn list_policies(&self) -> fluent_builders::ListPolicies<C, M, R> {
         fluent_builders::ListPolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPoliciesGrantingServiceAccess` operation.
+    /// Constructs a fluent builder for the [`ListPoliciesGrantingServiceAccess`](crate::client::fluent_builders::ListPoliciesGrantingServiceAccess) operation.
     ///
-    /// See [`ListPoliciesGrantingServiceAccess`](crate::client::fluent_builders::ListPoliciesGrantingServiceAccess) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListPoliciesGrantingServiceAccess::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListPoliciesGrantingServiceAccess::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListPoliciesGrantingServiceAccess::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListPoliciesGrantingServiceAccess::set_arn): <p>The ARN of the IAM identity (user, group, or role) whose policies you want to list.</p>
+    ///   - [`service_namespaces(Vec<String>)`](crate::client::fluent_builders::ListPoliciesGrantingServiceAccess::service_namespaces) / [`set_service_namespaces(Option<Vec<String>>)`](crate::client::fluent_builders::ListPoliciesGrantingServiceAccess::set_service_namespaces): <p>The service namespace for the Amazon Web Services services whose policies you want to list.</p>  <p>To learn the service namespace for a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>IAM User Guide</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services service namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
+    /// - On success, responds with [`ListPoliciesGrantingServiceAccessOutput`](crate::output::ListPoliciesGrantingServiceAccessOutput) with field(s):
+    ///   - [`policies_granting_service_access(Option<Vec<ListPoliciesGrantingServiceAccessEntry>>)`](crate::output::ListPoliciesGrantingServiceAccessOutput::policies_granting_service_access): <p>A&nbsp;<code>ListPoliciesGrantingServiceAccess</code> object that contains details about the permissions policies attached to the specified identity (user, group, or role).</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListPoliciesGrantingServiceAccessOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListPoliciesGrantingServiceAccessOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListPoliciesGrantingServiceAccessError>`](crate::error::ListPoliciesGrantingServiceAccessError)
     pub fn list_policies_granting_service_access(
         &self,
     ) -> fluent_builders::ListPoliciesGrantingServiceAccess<C, M, R> {
         fluent_builders::ListPoliciesGrantingServiceAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPolicyTags` operation.
+    /// Constructs a fluent builder for the [`ListPolicyTags`](crate::client::fluent_builders::ListPolicyTags) operation.
     ///
-    /// See [`ListPolicyTags`](crate::client::fluent_builders::ListPolicyTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::ListPolicyTags::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::ListPolicyTags::set_policy_arn): <p>The ARN of the IAM customer managed policy whose tags you want to see.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListPolicyTags::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListPolicyTags::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListPolicyTags::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListPolicyTags::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListPolicyTagsOutput`](crate::output::ListPolicyTagsOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListPolicyTagsOutput::tags): <p>The list of tags that are currently attached to the IAM customer managed policy. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListPolicyTagsOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListPolicyTagsOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListPolicyTagsError>`](crate::error::ListPolicyTagsError)
     pub fn list_policy_tags(&self) -> fluent_builders::ListPolicyTags<C, M, R> {
         fluent_builders::ListPolicyTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPolicyVersions` operation.
+    /// Constructs a fluent builder for the [`ListPolicyVersions`](crate::client::fluent_builders::ListPolicyVersions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPolicyVersions::into_paginator).
     ///
-    /// See [`ListPolicyVersions`](crate::client::fluent_builders::ListPolicyVersions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPolicyVersions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::ListPolicyVersions::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::ListPolicyVersions::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListPolicyVersions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListPolicyVersions::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListPolicyVersions::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListPolicyVersions::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListPolicyVersionsOutput`](crate::output::ListPolicyVersionsOutput) with field(s):
+    ///   - [`versions(Option<Vec<PolicyVersion>>)`](crate::output::ListPolicyVersionsOutput::versions): <p>A list of policy versions.</p>  <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListPolicyVersionsOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListPolicyVersionsOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListPolicyVersionsError>`](crate::error::ListPolicyVersionsError)
     pub fn list_policy_versions(&self) -> fluent_builders::ListPolicyVersions<C, M, R> {
         fluent_builders::ListPolicyVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRolePolicies` operation.
+    /// Constructs a fluent builder for the [`ListRolePolicies`](crate::client::fluent_builders::ListRolePolicies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRolePolicies::into_paginator).
     ///
-    /// See [`ListRolePolicies`](crate::client::fluent_builders::ListRolePolicies) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRolePolicies::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::ListRolePolicies::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::ListRolePolicies::set_role_name): <p>The name of the role to list policies for.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListRolePolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListRolePolicies::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListRolePolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListRolePolicies::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListRolePoliciesOutput`](crate::output::ListRolePoliciesOutput) with field(s):
+    ///   - [`policy_names(Option<Vec<String>>)`](crate::output::ListRolePoliciesOutput::policy_names): <p>A list of policy names.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListRolePoliciesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListRolePoliciesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListRolePoliciesError>`](crate::error::ListRolePoliciesError)
     pub fn list_role_policies(&self) -> fluent_builders::ListRolePolicies<C, M, R> {
         fluent_builders::ListRolePolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRoles` operation.
+    /// Constructs a fluent builder for the [`ListRoles`](crate::client::fluent_builders::ListRoles) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRoles::into_paginator).
     ///
-    /// See [`ListRoles`](crate::client::fluent_builders::ListRoles) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRoles::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`path_prefix(impl Into<String>)`](crate::client::fluent_builders::ListRoles::path_prefix) / [`set_path_prefix(Option<String>)`](crate::client::fluent_builders::ListRoles::set_path_prefix): <p> The path prefix for filtering the results. For example, the prefix <code>/application_abc/component_xyz/</code> gets all roles whose path starts with <code>/application_abc/component_xyz/</code>.</p>  <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing all roles. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListRoles::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListRoles::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListRoles::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListRoles::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListRolesOutput`](crate::output::ListRolesOutput) with field(s):
+    ///   - [`roles(Option<Vec<Role>>)`](crate::output::ListRolesOutput::roles): <p>A list of roles.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListRolesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListRolesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListRolesError>`](crate::error::ListRolesError)
     pub fn list_roles(&self) -> fluent_builders::ListRoles<C, M, R> {
         fluent_builders::ListRoles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRoleTags` operation.
+    /// Constructs a fluent builder for the [`ListRoleTags`](crate::client::fluent_builders::ListRoleTags) operation.
     ///
-    /// See [`ListRoleTags`](crate::client::fluent_builders::ListRoleTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::ListRoleTags::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::ListRoleTags::set_role_name): <p>The name of the IAM role for which you want to see the list of tags.</p>  <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListRoleTags::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListRoleTags::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListRoleTags::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListRoleTags::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListRoleTagsOutput`](crate::output::ListRoleTagsOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListRoleTagsOutput::tags): <p>The list of tags that are currently attached to the role. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListRoleTagsOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListRoleTagsOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListRoleTagsError>`](crate::error::ListRoleTagsError)
     pub fn list_role_tags(&self) -> fluent_builders::ListRoleTags<C, M, R> {
         fluent_builders::ListRoleTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSAMLProviders` operation.
+    /// Constructs a fluent builder for the [`ListSAMLProviders`](crate::client::fluent_builders::ListSAMLProviders) operation.
     ///
-    /// See [`ListSAMLProviders`](crate::client::fluent_builders::ListSAMLProviders) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::ListSAMLProviders::send) it.
+
+    /// - On success, responds with [`ListSamlProvidersOutput`](crate::output::ListSamlProvidersOutput) with field(s):
+    ///   - [`saml_provider_list(Option<Vec<SamlProviderListEntry>>)`](crate::output::ListSamlProvidersOutput::saml_provider_list): <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.</p>
+    /// - On failure, responds with [`SdkError<ListSAMLProvidersError>`](crate::error::ListSAMLProvidersError)
     pub fn list_saml_providers(&self) -> fluent_builders::ListSAMLProviders<C, M, R> {
         fluent_builders::ListSAMLProviders::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSAMLProviderTags` operation.
+    /// Constructs a fluent builder for the [`ListSAMLProviderTags`](crate::client::fluent_builders::ListSAMLProviderTags) operation.
     ///
-    /// See [`ListSAMLProviderTags`](crate::client::fluent_builders::ListSAMLProviderTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`saml_provider_arn(impl Into<String>)`](crate::client::fluent_builders::ListSAMLProviderTags::saml_provider_arn) / [`set_saml_provider_arn(Option<String>)`](crate::client::fluent_builders::ListSAMLProviderTags::set_saml_provider_arn): <p>The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags you want to see.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListSAMLProviderTags::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListSAMLProviderTags::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListSAMLProviderTags::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListSAMLProviderTags::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListSamlProviderTagsOutput`](crate::output::ListSamlProviderTagsOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListSamlProviderTagsOutput::tags): <p>The list of tags that are currently attached to the Security Assertion Markup Language (SAML) identity provider. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListSamlProviderTagsOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListSamlProviderTagsOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListSAMLProviderTagsError>`](crate::error::ListSAMLProviderTagsError)
     pub fn list_saml_provider_tags(&self) -> fluent_builders::ListSAMLProviderTags<C, M, R> {
         fluent_builders::ListSAMLProviderTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServerCertificates` operation.
+    /// Constructs a fluent builder for the [`ListServerCertificates`](crate::client::fluent_builders::ListServerCertificates) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServerCertificates::into_paginator).
     ///
-    /// See [`ListServerCertificates`](crate::client::fluent_builders::ListServerCertificates) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServerCertificates::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`path_prefix(impl Into<String>)`](crate::client::fluent_builders::ListServerCertificates::path_prefix) / [`set_path_prefix(Option<String>)`](crate::client::fluent_builders::ListServerCertificates::set_path_prefix): <p> The path prefix for filtering the results. For example: <code>/company/servercerts</code> would get all server certificates for which the path starts with <code>/company/servercerts</code>.</p>  <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing all server certificates. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListServerCertificates::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListServerCertificates::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListServerCertificates::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListServerCertificates::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListServerCertificatesOutput`](crate::output::ListServerCertificatesOutput) with field(s):
+    ///   - [`server_certificate_metadata_list(Option<Vec<ServerCertificateMetadata>>)`](crate::output::ListServerCertificatesOutput::server_certificate_metadata_list): <p>A list of server certificates.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListServerCertificatesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListServerCertificatesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListServerCertificatesError>`](crate::error::ListServerCertificatesError)
     pub fn list_server_certificates(&self) -> fluent_builders::ListServerCertificates<C, M, R> {
         fluent_builders::ListServerCertificates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServerCertificateTags` operation.
+    /// Constructs a fluent builder for the [`ListServerCertificateTags`](crate::client::fluent_builders::ListServerCertificateTags) operation.
     ///
-    /// See [`ListServerCertificateTags`](crate::client::fluent_builders::ListServerCertificateTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`server_certificate_name(impl Into<String>)`](crate::client::fluent_builders::ListServerCertificateTags::server_certificate_name) / [`set_server_certificate_name(Option<String>)`](crate::client::fluent_builders::ListServerCertificateTags::set_server_certificate_name): <p>The name of the IAM server certificate whose tags you want to see.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListServerCertificateTags::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListServerCertificateTags::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListServerCertificateTags::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListServerCertificateTags::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListServerCertificateTagsOutput`](crate::output::ListServerCertificateTagsOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListServerCertificateTagsOutput::tags): <p>The list of tags that are currently attached to the IAM server certificate. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListServerCertificateTagsOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListServerCertificateTagsOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListServerCertificateTagsError>`](crate::error::ListServerCertificateTagsError)
     pub fn list_server_certificate_tags(
         &self,
     ) -> fluent_builders::ListServerCertificateTags<C, M, R> {
         fluent_builders::ListServerCertificateTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServiceSpecificCredentials` operation.
+    /// Constructs a fluent builder for the [`ListServiceSpecificCredentials`](crate::client::fluent_builders::ListServiceSpecificCredentials) operation.
     ///
-    /// See [`ListServiceSpecificCredentials`](crate::client::fluent_builders::ListServiceSpecificCredentials) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::ListServiceSpecificCredentials::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::ListServiceSpecificCredentials::set_user_name): <p>The name of the user whose service-specific credentials you want information about. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::ListServiceSpecificCredentials::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::ListServiceSpecificCredentials::set_service_name): <p>Filters the returned results to only those for the specified Amazon Web Services service. If not specified, then Amazon Web Services returns service-specific credentials for all services.</p>
+    /// - On success, responds with [`ListServiceSpecificCredentialsOutput`](crate::output::ListServiceSpecificCredentialsOutput) with field(s):
+    ///   - [`service_specific_credentials(Option<Vec<ServiceSpecificCredentialMetadata>>)`](crate::output::ListServiceSpecificCredentialsOutput::service_specific_credentials): <p>A list of structures that each contain details about a service-specific credential.</p>
+    /// - On failure, responds with [`SdkError<ListServiceSpecificCredentialsError>`](crate::error::ListServiceSpecificCredentialsError)
     pub fn list_service_specific_credentials(
         &self,
     ) -> fluent_builders::ListServiceSpecificCredentials<C, M, R> {
         fluent_builders::ListServiceSpecificCredentials::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSigningCertificates` operation.
+    /// Constructs a fluent builder for the [`ListSigningCertificates`](crate::client::fluent_builders::ListSigningCertificates) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSigningCertificates::into_paginator).
     ///
-    /// See [`ListSigningCertificates`](crate::client::fluent_builders::ListSigningCertificates) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSigningCertificates::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::ListSigningCertificates::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::ListSigningCertificates::set_user_name): <p>The name of the IAM user whose signing certificates you want to examine.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListSigningCertificates::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListSigningCertificates::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListSigningCertificates::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListSigningCertificates::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListSigningCertificatesOutput`](crate::output::ListSigningCertificatesOutput) with field(s):
+    ///   - [`certificates(Option<Vec<SigningCertificate>>)`](crate::output::ListSigningCertificatesOutput::certificates): <p>A list of the user's signing certificate information.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListSigningCertificatesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListSigningCertificatesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListSigningCertificatesError>`](crate::error::ListSigningCertificatesError)
     pub fn list_signing_certificates(&self) -> fluent_builders::ListSigningCertificates<C, M, R> {
         fluent_builders::ListSigningCertificates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSSHPublicKeys` operation.
+    /// Constructs a fluent builder for the [`ListSSHPublicKeys`](crate::client::fluent_builders::ListSSHPublicKeys) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSSHPublicKeys::into_paginator).
     ///
-    /// See [`ListSSHPublicKeys`](crate::client::fluent_builders::ListSSHPublicKeys) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSSHPublicKeys::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::ListSSHPublicKeys::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::ListSSHPublicKeys::set_user_name): <p>The name of the IAM user to list SSH public keys for. If none is specified, the <code>UserName</code> field is determined implicitly based on the Amazon Web Services access key used to sign the request.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListSSHPublicKeys::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListSSHPublicKeys::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListSSHPublicKeys::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListSSHPublicKeys::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListSshPublicKeysOutput`](crate::output::ListSshPublicKeysOutput) with field(s):
+    ///   - [`ssh_public_keys(Option<Vec<SshPublicKeyMetadata>>)`](crate::output::ListSshPublicKeysOutput::ssh_public_keys): <p>A list of the SSH public keys assigned to IAM user.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListSshPublicKeysOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListSshPublicKeysOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListSSHPublicKeysError>`](crate::error::ListSSHPublicKeysError)
     pub fn list_ssh_public_keys(&self) -> fluent_builders::ListSSHPublicKeys<C, M, R> {
         fluent_builders::ListSSHPublicKeys::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUserPolicies` operation.
+    /// Constructs a fluent builder for the [`ListUserPolicies`](crate::client::fluent_builders::ListUserPolicies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUserPolicies::into_paginator).
     ///
-    /// See [`ListUserPolicies`](crate::client::fluent_builders::ListUserPolicies) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUserPolicies::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::ListUserPolicies::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::ListUserPolicies::set_user_name): <p>The name of the user to list policies for.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListUserPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListUserPolicies::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListUserPolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListUserPolicies::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListUserPoliciesOutput`](crate::output::ListUserPoliciesOutput) with field(s):
+    ///   - [`policy_names(Option<Vec<String>>)`](crate::output::ListUserPoliciesOutput::policy_names): <p>A list of policy names.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListUserPoliciesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListUserPoliciesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListUserPoliciesError>`](crate::error::ListUserPoliciesError)
     pub fn list_user_policies(&self) -> fluent_builders::ListUserPolicies<C, M, R> {
         fluent_builders::ListUserPolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUsers` operation.
+    /// Constructs a fluent builder for the [`ListUsers`](crate::client::fluent_builders::ListUsers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
     ///
-    /// See [`ListUsers`](crate::client::fluent_builders::ListUsers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`path_prefix(impl Into<String>)`](crate::client::fluent_builders::ListUsers::path_prefix) / [`set_path_prefix(Option<String>)`](crate::client::fluent_builders::ListUsers::set_path_prefix): <p> The path prefix for filtering the results. For example: <code>/division_abc/subdivision_xyz/</code>, which would get all user names whose path starts with <code>/division_abc/subdivision_xyz/</code>.</p>  <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing all user names. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListUsers::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListUsers::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListUsers::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListUsers::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListUsersOutput`](crate::output::ListUsersOutput) with field(s):
+    ///   - [`users(Option<Vec<User>>)`](crate::output::ListUsersOutput::users): <p>A list of users.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListUsersOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListUsersOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListUsersError>`](crate::error::ListUsersError)
     pub fn list_users(&self) -> fluent_builders::ListUsers<C, M, R> {
         fluent_builders::ListUsers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUserTags` operation.
+    /// Constructs a fluent builder for the [`ListUserTags`](crate::client::fluent_builders::ListUserTags) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUserTags::into_paginator).
     ///
-    /// See [`ListUserTags`](crate::client::fluent_builders::ListUserTags) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUserTags::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::ListUserTags::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::ListUserTags::set_user_name): <p>The name of the IAM user whose tags you want to see.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListUserTags::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListUserTags::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListUserTags::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListUserTags::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListUserTagsOutput`](crate::output::ListUserTagsOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListUserTagsOutput::tags): <p>The list of tags that are currently attached to the user. Each tag consists of a key name and an associated value. If no tags are attached to the specified resource, the response contains an empty list.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListUserTagsOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListUserTagsOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListUserTagsError>`](crate::error::ListUserTagsError)
     pub fn list_user_tags(&self) -> fluent_builders::ListUserTags<C, M, R> {
         fluent_builders::ListUserTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVirtualMFADevices` operation.
+    /// Constructs a fluent builder for the [`ListVirtualMFADevices`](crate::client::fluent_builders::ListVirtualMFADevices) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVirtualMFADevices::into_paginator).
     ///
-    /// See [`ListVirtualMFADevices`](crate::client::fluent_builders::ListVirtualMFADevices) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVirtualMFADevices::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`assignment_status(AssignmentStatusType)`](crate::client::fluent_builders::ListVirtualMFADevices::assignment_status) / [`set_assignment_status(Option<AssignmentStatusType>)`](crate::client::fluent_builders::ListVirtualMFADevices::set_assignment_status): <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code>, which lists both assigned and unassigned virtual MFA devices.,</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListVirtualMFADevices::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListVirtualMFADevices::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListVirtualMFADevices::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListVirtualMFADevices::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    /// - On success, responds with [`ListVirtualMfaDevicesOutput`](crate::output::ListVirtualMfaDevicesOutput) with field(s):
+    ///   - [`virtual_mfa_devices(Option<Vec<VirtualMfaDevice>>)`](crate::output::ListVirtualMfaDevicesOutput::virtual_mfa_devices): <p> The list of virtual MFA devices in the current account that match the <code>AssignmentStatus</code> value that was passed in the request.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListVirtualMfaDevicesOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListVirtualMfaDevicesOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListVirtualMFADevicesError>`](crate::error::ListVirtualMFADevicesError)
     pub fn list_virtual_mfa_devices(&self) -> fluent_builders::ListVirtualMFADevices<C, M, R> {
         fluent_builders::ListVirtualMFADevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutGroupPolicy` operation.
+    /// Constructs a fluent builder for the [`PutGroupPolicy`](crate::client::fluent_builders::PutGroupPolicy) operation.
     ///
-    /// See [`PutGroupPolicy`](crate::client::fluent_builders::PutGroupPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::PutGroupPolicy::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::PutGroupPolicy::set_group_name): <p>The name of the group to associate the policy with.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-.</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::PutGroupPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::PutGroupPolicy::set_policy_name): <p>The name of the policy document.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::PutGroupPolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::PutGroupPolicy::set_policy_document): <p>The policy document.</p>  <p>You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to = IAM.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    /// - On success, responds with [`PutGroupPolicyOutput`](crate::output::PutGroupPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutGroupPolicyError>`](crate::error::PutGroupPolicyError)
     pub fn put_group_policy(&self) -> fluent_builders::PutGroupPolicy<C, M, R> {
         fluent_builders::PutGroupPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRolePermissionsBoundary` operation.
+    /// Constructs a fluent builder for the [`PutRolePermissionsBoundary`](crate::client::fluent_builders::PutRolePermissionsBoundary) operation.
     ///
-    /// See [`PutRolePermissionsBoundary`](crate::client::fluent_builders::PutRolePermissionsBoundary) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::PutRolePermissionsBoundary::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::PutRolePermissionsBoundary::set_role_name): <p>The name (friendly name, not ARN) of the IAM role for which you want to set the permissions boundary.</p>
+    ///   - [`permissions_boundary(impl Into<String>)`](crate::client::fluent_builders::PutRolePermissionsBoundary::permissions_boundary) / [`set_permissions_boundary(Option<String>)`](crate::client::fluent_builders::PutRolePermissionsBoundary::set_permissions_boundary): <p>The ARN of the policy that is used to set the permissions boundary for the role.</p>
+    /// - On success, responds with [`PutRolePermissionsBoundaryOutput`](crate::output::PutRolePermissionsBoundaryOutput)
+
+    /// - On failure, responds with [`SdkError<PutRolePermissionsBoundaryError>`](crate::error::PutRolePermissionsBoundaryError)
     pub fn put_role_permissions_boundary(
         &self,
     ) -> fluent_builders::PutRolePermissionsBoundary<C, M, R> {
         fluent_builders::PutRolePermissionsBoundary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRolePolicy` operation.
+    /// Constructs a fluent builder for the [`PutRolePolicy`](crate::client::fluent_builders::PutRolePolicy) operation.
     ///
-    /// See [`PutRolePolicy`](crate::client::fluent_builders::PutRolePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::PutRolePolicy::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::PutRolePolicy::set_role_name): <p>The name of the role to associate the policy with.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::PutRolePolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::PutRolePolicy::set_policy_name): <p>The name of the policy document.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::PutRolePolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::PutRolePolicy::set_policy_document): <p>The policy document.</p>  <p>You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    /// - On success, responds with [`PutRolePolicyOutput`](crate::output::PutRolePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutRolePolicyError>`](crate::error::PutRolePolicyError)
     pub fn put_role_policy(&self) -> fluent_builders::PutRolePolicy<C, M, R> {
         fluent_builders::PutRolePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutUserPermissionsBoundary` operation.
+    /// Constructs a fluent builder for the [`PutUserPermissionsBoundary`](crate::client::fluent_builders::PutUserPermissionsBoundary) operation.
     ///
-    /// See [`PutUserPermissionsBoundary`](crate::client::fluent_builders::PutUserPermissionsBoundary) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::PutUserPermissionsBoundary::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::PutUserPermissionsBoundary::set_user_name): <p>The name (friendly name, not ARN) of the IAM user for which you want to set the permissions boundary.</p>
+    ///   - [`permissions_boundary(impl Into<String>)`](crate::client::fluent_builders::PutUserPermissionsBoundary::permissions_boundary) / [`set_permissions_boundary(Option<String>)`](crate::client::fluent_builders::PutUserPermissionsBoundary::set_permissions_boundary): <p>The ARN of the policy that is used to set the permissions boundary for the user.</p>
+    /// - On success, responds with [`PutUserPermissionsBoundaryOutput`](crate::output::PutUserPermissionsBoundaryOutput)
+
+    /// - On failure, responds with [`SdkError<PutUserPermissionsBoundaryError>`](crate::error::PutUserPermissionsBoundaryError)
     pub fn put_user_permissions_boundary(
         &self,
     ) -> fluent_builders::PutUserPermissionsBoundary<C, M, R> {
         fluent_builders::PutUserPermissionsBoundary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutUserPolicy` operation.
+    /// Constructs a fluent builder for the [`PutUserPolicy`](crate::client::fluent_builders::PutUserPolicy) operation.
     ///
-    /// See [`PutUserPolicy`](crate::client::fluent_builders::PutUserPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::PutUserPolicy::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::PutUserPolicy::set_user_name): <p>The name of the user to associate the policy with.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::PutUserPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::PutUserPolicy::set_policy_name): <p>The name of the policy document.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::PutUserPolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::PutUserPolicy::set_policy_document): <p>The policy document.</p>  <p>You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    /// - On success, responds with [`PutUserPolicyOutput`](crate::output::PutUserPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutUserPolicyError>`](crate::error::PutUserPolicyError)
     pub fn put_user_policy(&self) -> fluent_builders::PutUserPolicy<C, M, R> {
         fluent_builders::PutUserPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveClientIDFromOpenIDConnectProvider` operation.
+    /// Constructs a fluent builder for the [`RemoveClientIDFromOpenIDConnectProvider`](crate::client::fluent_builders::RemoveClientIDFromOpenIDConnectProvider) operation.
     ///
-    /// See [`RemoveClientIDFromOpenIDConnectProvider`](crate::client::fluent_builders::RemoveClientIDFromOpenIDConnectProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`open_id_connect_provider_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveClientIDFromOpenIDConnectProvider::open_id_connect_provider_arn) / [`set_open_id_connect_provider_arn(Option<String>)`](crate::client::fluent_builders::RemoveClientIDFromOpenIDConnectProvider::set_open_id_connect_provider_arn): <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the client ID from. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::RemoveClientIDFromOpenIDConnectProvider::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::RemoveClientIDFromOpenIDConnectProvider::set_client_id): <p>The client ID (also known as audience) to remove from the IAM OIDC provider resource. For more information about client IDs, see <code>CreateOpenIDConnectProvider</code>.</p>
+    /// - On success, responds with [`RemoveClientIdFromOpenIdConnectProviderOutput`](crate::output::RemoveClientIdFromOpenIdConnectProviderOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveClientIDFromOpenIDConnectProviderError>`](crate::error::RemoveClientIDFromOpenIDConnectProviderError)
     pub fn remove_client_id_from_open_id_connect_provider(
         &self,
     ) -> fluent_builders::RemoveClientIDFromOpenIDConnectProvider<C, M, R> {
         fluent_builders::RemoveClientIDFromOpenIDConnectProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveRoleFromInstanceProfile` operation.
+    /// Constructs a fluent builder for the [`RemoveRoleFromInstanceProfile`](crate::client::fluent_builders::RemoveRoleFromInstanceProfile) operation.
     ///
-    /// See [`RemoveRoleFromInstanceProfile`](crate::client::fluent_builders::RemoveRoleFromInstanceProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_profile_name(impl Into<String>)`](crate::client::fluent_builders::RemoveRoleFromInstanceProfile::instance_profile_name) / [`set_instance_profile_name(Option<String>)`](crate::client::fluent_builders::RemoveRoleFromInstanceProfile::set_instance_profile_name): <p>The name of the instance profile to update.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::RemoveRoleFromInstanceProfile::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::RemoveRoleFromInstanceProfile::set_role_name): <p>The name of the role to remove.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`RemoveRoleFromInstanceProfileOutput`](crate::output::RemoveRoleFromInstanceProfileOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveRoleFromInstanceProfileError>`](crate::error::RemoveRoleFromInstanceProfileError)
     pub fn remove_role_from_instance_profile(
         &self,
     ) -> fluent_builders::RemoveRoleFromInstanceProfile<C, M, R> {
         fluent_builders::RemoveRoleFromInstanceProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveUserFromGroup` operation.
+    /// Constructs a fluent builder for the [`RemoveUserFromGroup`](crate::client::fluent_builders::RemoveUserFromGroup) operation.
     ///
-    /// See [`RemoveUserFromGroup`](crate::client::fluent_builders::RemoveUserFromGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::RemoveUserFromGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::RemoveUserFromGroup::set_group_name): <p>The name of the group to update.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::RemoveUserFromGroup::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::RemoveUserFromGroup::set_user_name): <p>The name of the user to remove.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`RemoveUserFromGroupOutput`](crate::output::RemoveUserFromGroupOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveUserFromGroupError>`](crate::error::RemoveUserFromGroupError)
     pub fn remove_user_from_group(&self) -> fluent_builders::RemoveUserFromGroup<C, M, R> {
         fluent_builders::RemoveUserFromGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResetServiceSpecificCredential` operation.
+    /// Constructs a fluent builder for the [`ResetServiceSpecificCredential`](crate::client::fluent_builders::ResetServiceSpecificCredential) operation.
     ///
-    /// See [`ResetServiceSpecificCredential`](crate::client::fluent_builders::ResetServiceSpecificCredential) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::ResetServiceSpecificCredential::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::ResetServiceSpecificCredential::set_user_name): <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`service_specific_credential_id(impl Into<String>)`](crate::client::fluent_builders::ResetServiceSpecificCredential::service_specific_credential_id) / [`set_service_specific_credential_id(Option<String>)`](crate::client::fluent_builders::ResetServiceSpecificCredential::set_service_specific_credential_id): <p>The unique identifier of the service-specific credential.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    /// - On success, responds with [`ResetServiceSpecificCredentialOutput`](crate::output::ResetServiceSpecificCredentialOutput) with field(s):
+    ///   - [`service_specific_credential(Option<ServiceSpecificCredential>)`](crate::output::ResetServiceSpecificCredentialOutput::service_specific_credential): <p>A structure with details about the updated service-specific credential, including the new password.</p> <important>   <p>This is the <b>only</b> time that you can access the password. You cannot recover the password later, but you can reset it again.</p>  </important>
+    /// - On failure, responds with [`SdkError<ResetServiceSpecificCredentialError>`](crate::error::ResetServiceSpecificCredentialError)
     pub fn reset_service_specific_credential(
         &self,
     ) -> fluent_builders::ResetServiceSpecificCredential<C, M, R> {
         fluent_builders::ResetServiceSpecificCredential::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResyncMFADevice` operation.
+    /// Constructs a fluent builder for the [`ResyncMFADevice`](crate::client::fluent_builders::ResyncMFADevice) operation.
     ///
-    /// See [`ResyncMFADevice`](crate::client::fluent_builders::ResyncMFADevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::ResyncMFADevice::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::ResyncMFADevice::set_user_name): <p>The name of the user whose MFA device you want to resynchronize.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`serial_number(impl Into<String>)`](crate::client::fluent_builders::ResyncMFADevice::serial_number) / [`set_serial_number(Option<String>)`](crate::client::fluent_builders::ResyncMFADevice::set_serial_number): <p>Serial number that uniquely identifies the MFA device.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`authentication_code1(impl Into<String>)`](crate::client::fluent_builders::ResyncMFADevice::authentication_code1) / [`set_authentication_code1(Option<String>)`](crate::client::fluent_builders::ResyncMFADevice::set_authentication_code1): <p>An authentication code emitted by the device.</p>  <p>The format for this parameter is a sequence of six digits.</p>
+    ///   - [`authentication_code2(impl Into<String>)`](crate::client::fluent_builders::ResyncMFADevice::authentication_code2) / [`set_authentication_code2(Option<String>)`](crate::client::fluent_builders::ResyncMFADevice::set_authentication_code2): <p>A subsequent authentication code emitted by the device.</p>  <p>The format for this parameter is a sequence of six digits.</p>
+    /// - On success, responds with [`ResyncMfaDeviceOutput`](crate::output::ResyncMfaDeviceOutput)
+
+    /// - On failure, responds with [`SdkError<ResyncMFADeviceError>`](crate::error::ResyncMFADeviceError)
     pub fn resync_mfa_device(&self) -> fluent_builders::ResyncMFADevice<C, M, R> {
         fluent_builders::ResyncMFADevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetDefaultPolicyVersion` operation.
+    /// Constructs a fluent builder for the [`SetDefaultPolicyVersion`](crate::client::fluent_builders::SetDefaultPolicyVersion) operation.
     ///
-    /// See [`SetDefaultPolicyVersion`](crate::client::fluent_builders::SetDefaultPolicyVersion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::SetDefaultPolicyVersion::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::SetDefaultPolicyVersion::set_policy_arn): <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you want to set.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::SetDefaultPolicyVersion::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::SetDefaultPolicyVersion::set_version_id): <p>The version of the policy to set as the default (operative) version.</p>  <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
+    /// - On success, responds with [`SetDefaultPolicyVersionOutput`](crate::output::SetDefaultPolicyVersionOutput)
+
+    /// - On failure, responds with [`SdkError<SetDefaultPolicyVersionError>`](crate::error::SetDefaultPolicyVersionError)
     pub fn set_default_policy_version(&self) -> fluent_builders::SetDefaultPolicyVersion<C, M, R> {
         fluent_builders::SetDefaultPolicyVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetSecurityTokenServicePreferences` operation.
+    /// Constructs a fluent builder for the [`SetSecurityTokenServicePreferences`](crate::client::fluent_builders::SetSecurityTokenServicePreferences) operation.
     ///
-    /// See [`SetSecurityTokenServicePreferences`](crate::client::fluent_builders::SetSecurityTokenServicePreferences) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`global_endpoint_token_version(GlobalEndpointTokenVersion)`](crate::client::fluent_builders::SetSecurityTokenServicePreferences::global_endpoint_token_version) / [`set_global_endpoint_token_version(Option<GlobalEndpointTokenVersion>)`](crate::client::fluent_builders::SetSecurityTokenServicePreferences::set_global_endpoint_token_version): <p>The version of the global endpoint token. Version 1 tokens are valid only in Amazon Web Services Regions that are available by default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens are valid in all Regions. However, version 2 tokens are longer and might affect systems where you temporarily store tokens.</p>  <p>For information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
+    /// - On success, responds with [`SetSecurityTokenServicePreferencesOutput`](crate::output::SetSecurityTokenServicePreferencesOutput)
+
+    /// - On failure, responds with [`SdkError<SetSecurityTokenServicePreferencesError>`](crate::error::SetSecurityTokenServicePreferencesError)
     pub fn set_security_token_service_preferences(
         &self,
     ) -> fluent_builders::SetSecurityTokenServicePreferences<C, M, R> {
         fluent_builders::SetSecurityTokenServicePreferences::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SimulateCustomPolicy` operation.
+    /// Constructs a fluent builder for the [`SimulateCustomPolicy`](crate::client::fluent_builders::SimulateCustomPolicy) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SimulateCustomPolicy::into_paginator).
     ///
-    /// See [`SimulateCustomPolicy`](crate::client::fluent_builders::SimulateCustomPolicy) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SimulateCustomPolicy::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`policy_input_list(Vec<String>)`](crate::client::fluent_builders::SimulateCustomPolicy::policy_input_list) / [`set_policy_input_list(Option<Vec<String>>)`](crate::client::fluent_builders::SimulateCustomPolicy::set_policy_input_list): <p>A list of policy documents to include in the simulation. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this parameter. Any resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The policies cannot be "scope-down" policies, such as you could include in a call to <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or one of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API operations. In other words, do not use policies designed to restrict what a user can do while using the temporary credentials.</p>  <p>The maximum length of the policy document that you can pass in this operation, including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    ///   - [`permissions_boundary_policy_input_list(Vec<String>)`](crate::client::fluent_builders::SimulateCustomPolicy::permissions_boundary_policy_input_list) / [`set_permissions_boundary_policy_input_list(Option<Vec<String>>)`](crate::client::fluent_builders::SimulateCustomPolicy::set_permissions_boundary_policy_input_list): <p>The IAM permissions boundary policy to simulate. The permissions boundary sets the maximum permissions that an IAM entity can have. You can input only one permissions boundary when you pass a policy to this operation. For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string that contains the complete, valid JSON text of a permissions boundary policy.</p>  <p>The maximum length of the policy document that you can pass in this operation, including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    ///   - [`action_names(Vec<String>)`](crate::client::fluent_builders::SimulateCustomPolicy::action_names) / [`set_action_names(Option<Vec<String>>)`](crate::client::fluent_builders::SimulateCustomPolicy::set_action_names): <p>A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This operation does not support using wildcards (*) in an action name.</p>
+    ///   - [`resource_arns(Vec<String>)`](crate::client::fluent_builders::SimulateCustomPolicy::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::client::fluent_builders::SimulateCustomPolicy::set_resource_arns): <p>A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is not provided, then the value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for each resource in this list. The simulation determines the access result (allowed or denied) of each combination and reports it in the response. You can simulate resources that don't exist in your account.</p>  <p>The simulation does not automatically retrieve policies for the specified resources. If you want to include a resource policy in the simulation, then you must include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>  <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to all of the resources included in the simulation or you receive an invalid input error.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`resource_policy(impl Into<String>)`](crate::client::fluent_builders::SimulateCustomPolicy::resource_policy) / [`set_resource_policy(Option<String>)`](crate::client::fluent_builders::SimulateCustomPolicy::set_resource_policy): <p>A resource-based policy to include in the simulation provided as a string. Each resource in the simulation is treated as if it had this policy attached. You can include only one resource-based policy in a simulation.</p>  <p>The maximum length of the policy document that you can pass in this operation, including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    ///   - [`resource_owner(impl Into<String>)`](crate::client::fluent_builders::SimulateCustomPolicy::resource_owner) / [`set_resource_owner(Option<String>)`](crate::client::fluent_builders::SimulateCustomPolicy::set_resource_owner): <p>An ARN representing the Amazon Web Services account ID that specifies the owner of any simulated resource that does not identify its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required only if you specify a resource-based policy and account that owns the resource is different from the account that owns the simulated calling user <code>CallerArn</code>.</p>  <p>The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For example, to represent the account with the 112233445566 ID, use the following ARN: <code>arn:aws:iam::112233445566-ID:root</code>. </p>
+    ///   - [`caller_arn(impl Into<String>)`](crate::client::fluent_builders::SimulateCustomPolicy::caller_arn) / [`set_caller_arn(Option<String>)`](crate::client::fluent_builders::SimulateCustomPolicy::set_caller_arn): <p>The ARN of the IAM user that you want to use as the simulated caller of the API operations. <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element has a value to use in evaluating the policy.</p>  <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed role, federated user, or a service principal.</p>
+    ///   - [`context_entries(Vec<ContextEntry>)`](crate::client::fluent_builders::SimulateCustomPolicy::context_entries) / [`set_context_entries(Option<Vec<ContextEntry>>)`](crate::client::fluent_builders::SimulateCustomPolicy::set_context_entries): <p>A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.</p>
+    ///   - [`resource_handling_option(impl Into<String>)`](crate::client::fluent_builders::SimulateCustomPolicy::resource_handling_option) / [`set_resource_handling_option(Option<String>)`](crate::client::fluent_builders::SimulateCustomPolicy::set_resource_handling_option): <p>Specifies the type of simulation to run. Different API operations that support resource-based policies require different combinations of resources. By specifying the type of simulation to run, you enable the policy simulator to enforce the presence of the required resources to ensure reliable simulation results. If your simulation does not match one of the following scenarios, then you can omit this parameter. The following list shows each of the supported scenario values and the resources that you must define to run the simulation.</p>  <p>Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the subnet resource. For more information on the EC2 scenario options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported platforms</a> in the <i>Amazon EC2 User Guide</i>.</p>  <ul>   <li> <p> <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p> </li>   <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group, volume</p> </li>   <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image, security-group, network-interface</p> </li>   <li> <p> <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group, network-interface, subnet</p> </li>   <li> <p> <b>EC2-VPC-EBS</b> </p> <p>instance, image, security-group, network-interface, volume</p> </li>   <li> <p> <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group, network-interface, subnet, volume</p> </li>  </ul>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::SimulateCustomPolicy::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::SimulateCustomPolicy::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::SimulateCustomPolicy::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::SimulateCustomPolicy::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    /// - On success, responds with [`SimulateCustomPolicyOutput`](crate::output::SimulateCustomPolicyOutput) with field(s):
+    ///   - [`evaluation_results(Option<Vec<EvaluationResult>>)`](crate::output::SimulateCustomPolicyOutput::evaluation_results): <p>The results of the simulation.</p>
+    ///   - [`is_truncated(bool)`](crate::output::SimulateCustomPolicyOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::SimulateCustomPolicyOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<SimulateCustomPolicyError>`](crate::error::SimulateCustomPolicyError)
     pub fn simulate_custom_policy(&self) -> fluent_builders::SimulateCustomPolicy<C, M, R> {
         fluent_builders::SimulateCustomPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SimulatePrincipalPolicy` operation.
+    /// Constructs a fluent builder for the [`SimulatePrincipalPolicy`](crate::client::fluent_builders::SimulatePrincipalPolicy) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SimulatePrincipalPolicy::into_paginator).
     ///
-    /// See [`SimulatePrincipalPolicy`](crate::client::fluent_builders::SimulatePrincipalPolicy) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SimulatePrincipalPolicy::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`policy_source_arn(impl Into<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::policy_source_arn) / [`set_policy_source_arn(Option<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::set_policy_source_arn): <p>The Amazon Resource Name (ARN) of a user, group, or role whose policies you want to include in the simulation. If you specify a user, group, or role, the simulation includes all policies that are associated with that entity. If you specify a user, the simulation also includes all policies that are attached to any groups the user belongs to.</p>  <p>The maximum length of the policy document that you can pass in this operation, including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`policy_input_list(Vec<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::policy_input_list) / [`set_policy_input_list(Option<Vec<String>>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::set_policy_input_list): <p>An optional list of additional policy documents to include in the simulation. Each document is specified as a string containing the complete, valid JSON text of an IAM policy.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    ///   - [`permissions_boundary_policy_input_list(Vec<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::permissions_boundary_policy_input_list) / [`set_permissions_boundary_policy_input_list(Option<Vec<String>>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::set_permissions_boundary_policy_input_list): <p>The IAM permissions boundary policy to simulate. The permissions boundary sets the maximum permissions that the entity can have. You can input only one permissions boundary when you pass a policy to this operation. An IAM entity can only have one permissions boundary in effect at a time. For example, if a permissions boundary is attached to an entity and you pass in a different permissions boundary policy using this parameter, then the new permissions boundary policy is used for the simulation. For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string containing the complete, valid JSON text of a permissions boundary policy.</p>  <p>The maximum length of the policy document that you can pass in this operation, including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    ///   - [`action_names(Vec<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::action_names) / [`set_action_names(Option<Vec<String>>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::set_action_names): <p>A list of names of API operations to evaluate in the simulation. Each operation is evaluated for each resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>.</p>
+    ///   - [`resource_arns(Vec<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::set_resource_arns): <p>A list of ARNs of Amazon Web Services resources to include in the simulation. If this parameter is not provided, then the value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for each resource in this list. The simulation determines the access result (allowed or denied) of each combination and reports it in the response. You can simulate resources that don't exist in your account.</p>  <p>The simulation does not automatically retrieve policies for the specified resources. If you want to include a resource policy in the simulation, then you must include the policy as a string in the <code>ResourcePolicy</code> parameter.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`resource_policy(impl Into<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::resource_policy) / [`set_resource_policy(Option<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::set_resource_policy): <p>A resource-based policy to include in the simulation provided as a string. Each resource in the simulation is treated as if it had this policy attached. You can include only one resource-based policy in a simulation.</p>  <p>The maximum length of the policy document that you can pass in this operation, including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    ///   - [`resource_owner(impl Into<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::resource_owner) / [`set_resource_owner(Option<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::set_resource_owner): <p>An Amazon Web Services account ID that specifies the owner of any simulated resource that does not identify its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required only if you specify a resource-based policy and account that owns the resource is different from the account that owns the simulated calling user <code>CallerArn</code>.</p>
+    ///   - [`caller_arn(impl Into<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::caller_arn) / [`set_caller_arn(Option<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::set_caller_arn): <p>The ARN of the IAM user that you want to specify as the simulated caller of the API operations. If you do not specify a <code>CallerArn</code>, it defaults to the ARN of the user that you specify in <code>PolicySourceArn</code>, if you specified a user. If you include both a <code>PolicySourceArn</code> (for example, <code>arn:aws:iam::123456789012:user/David</code>) and a <code>CallerArn</code> (for example, <code>arn:aws:iam::123456789012:user/Bob</code>), the result is that you simulate calling the API operations as Bob, as if Bob had David's policies.</p>  <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed role, federated user, or a service principal.</p>  <p> <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> and the <code>PolicySourceArn</code> is not the ARN for an IAM user. This is required so that the resource-based policy's <code>Principal</code> element has a value to use in evaluating the policy.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`context_entries(Vec<ContextEntry>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::context_entries) / [`set_context_entries(Option<Vec<ContextEntry>>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::set_context_entries): <p>A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.</p>
+    ///   - [`resource_handling_option(impl Into<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::resource_handling_option) / [`set_resource_handling_option(Option<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::set_resource_handling_option): <p>Specifies the type of simulation to run. Different API operations that support resource-based policies require different combinations of resources. By specifying the type of simulation to run, you enable the policy simulator to enforce the presence of the required resources to ensure reliable simulation results. If your simulation does not match one of the following scenarios, then you can omit this parameter. The following list shows each of the supported scenario values and the resources that you must define to run the simulation.</p>  <p>Each of the EC2 scenarios requires that you specify instance, image, and security group resources. If your scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes VPC, then you must supply the network interface resource. If it includes an IP subnet, then you must specify the subnet resource. For more information on the EC2 scenario options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported platforms</a> in the <i>Amazon EC2 User Guide</i>.</p>  <ul>   <li> <p> <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p> </li>   <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group, volume</p> </li>   <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image, security group, network interface</p> </li>   <li> <p> <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group, network interface, subnet</p> </li>   <li> <p> <b>EC2-VPC-EBS</b> </p> <p>instance, image, security group, network interface, volume</p> </li>   <li> <p> <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network interface, subnet, volume</p> </li>  </ul>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::SimulatePrincipalPolicy::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::set_max_items): <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>  <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::SimulatePrincipalPolicy::set_marker): <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
+    /// - On success, responds with [`SimulatePrincipalPolicyOutput`](crate::output::SimulatePrincipalPolicyOutput) with field(s):
+    ///   - [`evaluation_results(Option<Vec<EvaluationResult>>)`](crate::output::SimulatePrincipalPolicyOutput::evaluation_results): <p>The results of the simulation.</p>
+    ///   - [`is_truncated(bool)`](crate::output::SimulatePrincipalPolicyOutput::is_truncated): <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
+    ///   - [`marker(Option<String>)`](crate::output::SimulatePrincipalPolicyOutput::marker): <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<SimulatePrincipalPolicyError>`](crate::error::SimulatePrincipalPolicyError)
     pub fn simulate_principal_policy(&self) -> fluent_builders::SimulatePrincipalPolicy<C, M, R> {
         fluent_builders::SimulatePrincipalPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagInstanceProfile` operation.
+    /// Constructs a fluent builder for the [`TagInstanceProfile`](crate::client::fluent_builders::TagInstanceProfile) operation.
     ///
-    /// See [`TagInstanceProfile`](crate::client::fluent_builders::TagInstanceProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_profile_name(impl Into<String>)`](crate::client::fluent_builders::TagInstanceProfile::instance_profile_name) / [`set_instance_profile_name(Option<String>)`](crate::client::fluent_builders::TagInstanceProfile::set_instance_profile_name): <p>The name of the IAM instance profile to which you want to add tags.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagInstanceProfile::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagInstanceProfile::set_tags): <p>The list of tags that you want to attach to the IAM instance profile. Each tag consists of a key name and an associated value.</p>
+    /// - On success, responds with [`TagInstanceProfileOutput`](crate::output::TagInstanceProfileOutput)
+
+    /// - On failure, responds with [`SdkError<TagInstanceProfileError>`](crate::error::TagInstanceProfileError)
     pub fn tag_instance_profile(&self) -> fluent_builders::TagInstanceProfile<C, M, R> {
         fluent_builders::TagInstanceProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagMFADevice` operation.
+    /// Constructs a fluent builder for the [`TagMFADevice`](crate::client::fluent_builders::TagMFADevice) operation.
     ///
-    /// See [`TagMFADevice`](crate::client::fluent_builders::TagMFADevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`serial_number(impl Into<String>)`](crate::client::fluent_builders::TagMFADevice::serial_number) / [`set_serial_number(Option<String>)`](crate::client::fluent_builders::TagMFADevice::set_serial_number): <p>The unique identifier for the IAM virtual MFA device to which you want to add tags. For virtual MFA devices, the serial number is the same as the ARN.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagMFADevice::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagMFADevice::set_tags): <p>The list of tags that you want to attach to the IAM virtual MFA device. Each tag consists of a key name and an associated value.</p>
+    /// - On success, responds with [`TagMfaDeviceOutput`](crate::output::TagMfaDeviceOutput)
+
+    /// - On failure, responds with [`SdkError<TagMFADeviceError>`](crate::error::TagMFADeviceError)
     pub fn tag_mfa_device(&self) -> fluent_builders::TagMFADevice<C, M, R> {
         fluent_builders::TagMFADevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagOpenIDConnectProvider` operation.
+    /// Constructs a fluent builder for the [`TagOpenIDConnectProvider`](crate::client::fluent_builders::TagOpenIDConnectProvider) operation.
     ///
-    /// See [`TagOpenIDConnectProvider`](crate::client::fluent_builders::TagOpenIDConnectProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`open_id_connect_provider_arn(impl Into<String>)`](crate::client::fluent_builders::TagOpenIDConnectProvider::open_id_connect_provider_arn) / [`set_open_id_connect_provider_arn(Option<String>)`](crate::client::fluent_builders::TagOpenIDConnectProvider::set_open_id_connect_provider_arn): <p>The ARN of the OIDC identity provider in IAM to which you want to add tags.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagOpenIDConnectProvider::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagOpenIDConnectProvider::set_tags): <p>The list of tags that you want to attach to the OIDC identity provider in IAM. Each tag consists of a key name and an associated value.</p>
+    /// - On success, responds with [`TagOpenIdConnectProviderOutput`](crate::output::TagOpenIdConnectProviderOutput)
+
+    /// - On failure, responds with [`SdkError<TagOpenIDConnectProviderError>`](crate::error::TagOpenIDConnectProviderError)
     pub fn tag_open_id_connect_provider(
         &self,
     ) -> fluent_builders::TagOpenIDConnectProvider<C, M, R> {
         fluent_builders::TagOpenIDConnectProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagPolicy` operation.
+    /// Constructs a fluent builder for the [`TagPolicy`](crate::client::fluent_builders::TagPolicy) operation.
     ///
-    /// See [`TagPolicy`](crate::client::fluent_builders::TagPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::TagPolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::TagPolicy::set_policy_arn): <p>The ARN of the IAM customer managed policy to which you want to add tags.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagPolicy::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagPolicy::set_tags): <p>The list of tags that you want to attach to the IAM customer managed policy. Each tag consists of a key name and an associated value.</p>
+    /// - On success, responds with [`TagPolicyOutput`](crate::output::TagPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<TagPolicyError>`](crate::error::TagPolicyError)
     pub fn tag_policy(&self) -> fluent_builders::TagPolicy<C, M, R> {
         fluent_builders::TagPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagRole` operation.
+    /// Constructs a fluent builder for the [`TagRole`](crate::client::fluent_builders::TagRole) operation.
     ///
-    /// See [`TagRole`](crate::client::fluent_builders::TagRole) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::TagRole::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::TagRole::set_role_name): <p>The name of the IAM role to which you want to add tags.</p>  <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagRole::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagRole::set_tags): <p>The list of tags that you want to attach to the IAM role. Each tag consists of a key name and an associated value.</p>
+    /// - On success, responds with [`TagRoleOutput`](crate::output::TagRoleOutput)
+
+    /// - On failure, responds with [`SdkError<TagRoleError>`](crate::error::TagRoleError)
     pub fn tag_role(&self) -> fluent_builders::TagRole<C, M, R> {
         fluent_builders::TagRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagSAMLProvider` operation.
+    /// Constructs a fluent builder for the [`TagSAMLProvider`](crate::client::fluent_builders::TagSAMLProvider) operation.
     ///
-    /// See [`TagSAMLProvider`](crate::client::fluent_builders::TagSAMLProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`saml_provider_arn(impl Into<String>)`](crate::client::fluent_builders::TagSAMLProvider::saml_provider_arn) / [`set_saml_provider_arn(Option<String>)`](crate::client::fluent_builders::TagSAMLProvider::set_saml_provider_arn): <p>The ARN of the SAML identity provider in IAM to which you want to add tags.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagSAMLProvider::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagSAMLProvider::set_tags): <p>The list of tags that you want to attach to the SAML identity provider in IAM. Each tag consists of a key name and an associated value.</p>
+    /// - On success, responds with [`TagSamlProviderOutput`](crate::output::TagSamlProviderOutput)
+
+    /// - On failure, responds with [`SdkError<TagSAMLProviderError>`](crate::error::TagSAMLProviderError)
     pub fn tag_saml_provider(&self) -> fluent_builders::TagSAMLProvider<C, M, R> {
         fluent_builders::TagSAMLProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagServerCertificate` operation.
+    /// Constructs a fluent builder for the [`TagServerCertificate`](crate::client::fluent_builders::TagServerCertificate) operation.
     ///
-    /// See [`TagServerCertificate`](crate::client::fluent_builders::TagServerCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`server_certificate_name(impl Into<String>)`](crate::client::fluent_builders::TagServerCertificate::server_certificate_name) / [`set_server_certificate_name(Option<String>)`](crate::client::fluent_builders::TagServerCertificate::set_server_certificate_name): <p>The name of the IAM server certificate to which you want to add tags.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagServerCertificate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagServerCertificate::set_tags): <p>The list of tags that you want to attach to the IAM server certificate. Each tag consists of a key name and an associated value.</p>
+    /// - On success, responds with [`TagServerCertificateOutput`](crate::output::TagServerCertificateOutput)
+
+    /// - On failure, responds with [`SdkError<TagServerCertificateError>`](crate::error::TagServerCertificateError)
     pub fn tag_server_certificate(&self) -> fluent_builders::TagServerCertificate<C, M, R> {
         fluent_builders::TagServerCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagUser` operation.
+    /// Constructs a fluent builder for the [`TagUser`](crate::client::fluent_builders::TagUser) operation.
     ///
-    /// See [`TagUser`](crate::client::fluent_builders::TagUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::TagUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::TagUser::set_user_name): <p>The name of the IAM user to which you want to add tags.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagUser::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagUser::set_tags): <p>The list of tags that you want to attach to the IAM user. Each tag consists of a key name and an associated value.</p>
+    /// - On success, responds with [`TagUserOutput`](crate::output::TagUserOutput)
+
+    /// - On failure, responds with [`SdkError<TagUserError>`](crate::error::TagUserError)
     pub fn tag_user(&self) -> fluent_builders::TagUser<C, M, R> {
         fluent_builders::TagUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagInstanceProfile` operation.
+    /// Constructs a fluent builder for the [`UntagInstanceProfile`](crate::client::fluent_builders::UntagInstanceProfile) operation.
     ///
-    /// See [`UntagInstanceProfile`](crate::client::fluent_builders::UntagInstanceProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_profile_name(impl Into<String>)`](crate::client::fluent_builders::UntagInstanceProfile::instance_profile_name) / [`set_instance_profile_name(Option<String>)`](crate::client::fluent_builders::UntagInstanceProfile::set_instance_profile_name): <p>The name of the IAM instance profile from which you want to remove tags.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagInstanceProfile::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagInstanceProfile::set_tag_keys): <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified instance profile.</p>
+    /// - On success, responds with [`UntagInstanceProfileOutput`](crate::output::UntagInstanceProfileOutput)
+
+    /// - On failure, responds with [`SdkError<UntagInstanceProfileError>`](crate::error::UntagInstanceProfileError)
     pub fn untag_instance_profile(&self) -> fluent_builders::UntagInstanceProfile<C, M, R> {
         fluent_builders::UntagInstanceProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagMFADevice` operation.
+    /// Constructs a fluent builder for the [`UntagMFADevice`](crate::client::fluent_builders::UntagMFADevice) operation.
     ///
-    /// See [`UntagMFADevice`](crate::client::fluent_builders::UntagMFADevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`serial_number(impl Into<String>)`](crate::client::fluent_builders::UntagMFADevice::serial_number) / [`set_serial_number(Option<String>)`](crate::client::fluent_builders::UntagMFADevice::set_serial_number): <p>The unique identifier for the IAM virtual MFA device from which you want to remove tags. For virtual MFA devices, the serial number is the same as the ARN.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagMFADevice::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagMFADevice::set_tag_keys): <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified instance profile.</p>
+    /// - On success, responds with [`UntagMfaDeviceOutput`](crate::output::UntagMfaDeviceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagMFADeviceError>`](crate::error::UntagMFADeviceError)
     pub fn untag_mfa_device(&self) -> fluent_builders::UntagMFADevice<C, M, R> {
         fluent_builders::UntagMFADevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagOpenIDConnectProvider` operation.
+    /// Constructs a fluent builder for the [`UntagOpenIDConnectProvider`](crate::client::fluent_builders::UntagOpenIDConnectProvider) operation.
     ///
-    /// See [`UntagOpenIDConnectProvider`](crate::client::fluent_builders::UntagOpenIDConnectProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`open_id_connect_provider_arn(impl Into<String>)`](crate::client::fluent_builders::UntagOpenIDConnectProvider::open_id_connect_provider_arn) / [`set_open_id_connect_provider_arn(Option<String>)`](crate::client::fluent_builders::UntagOpenIDConnectProvider::set_open_id_connect_provider_arn): <p>The ARN of the OIDC provider in IAM from which you want to remove tags.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagOpenIDConnectProvider::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagOpenIDConnectProvider::set_tag_keys): <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified OIDC provider.</p>
+    /// - On success, responds with [`UntagOpenIdConnectProviderOutput`](crate::output::UntagOpenIdConnectProviderOutput)
+
+    /// - On failure, responds with [`SdkError<UntagOpenIDConnectProviderError>`](crate::error::UntagOpenIDConnectProviderError)
     pub fn untag_open_id_connect_provider(
         &self,
     ) -> fluent_builders::UntagOpenIDConnectProvider<C, M, R> {
         fluent_builders::UntagOpenIDConnectProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagPolicy` operation.
+    /// Constructs a fluent builder for the [`UntagPolicy`](crate::client::fluent_builders::UntagPolicy) operation.
     ///
-    /// See [`UntagPolicy`](crate::client::fluent_builders::UntagPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`policy_arn(impl Into<String>)`](crate::client::fluent_builders::UntagPolicy::policy_arn) / [`set_policy_arn(Option<String>)`](crate::client::fluent_builders::UntagPolicy::set_policy_arn): <p>The ARN of the IAM customer managed policy from which you want to remove tags.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagPolicy::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagPolicy::set_tag_keys): <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified policy.</p>
+    /// - On success, responds with [`UntagPolicyOutput`](crate::output::UntagPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<UntagPolicyError>`](crate::error::UntagPolicyError)
     pub fn untag_policy(&self) -> fluent_builders::UntagPolicy<C, M, R> {
         fluent_builders::UntagPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagRole` operation.
+    /// Constructs a fluent builder for the [`UntagRole`](crate::client::fluent_builders::UntagRole) operation.
     ///
-    /// See [`UntagRole`](crate::client::fluent_builders::UntagRole) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::UntagRole::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::UntagRole::set_role_name): <p>The name of the IAM role from which you want to remove tags.</p>  <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagRole::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagRole::set_tag_keys): <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified role.</p>
+    /// - On success, responds with [`UntagRoleOutput`](crate::output::UntagRoleOutput)
+
+    /// - On failure, responds with [`SdkError<UntagRoleError>`](crate::error::UntagRoleError)
     pub fn untag_role(&self) -> fluent_builders::UntagRole<C, M, R> {
         fluent_builders::UntagRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagSAMLProvider` operation.
+    /// Constructs a fluent builder for the [`UntagSAMLProvider`](crate::client::fluent_builders::UntagSAMLProvider) operation.
     ///
-    /// See [`UntagSAMLProvider`](crate::client::fluent_builders::UntagSAMLProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`saml_provider_arn(impl Into<String>)`](crate::client::fluent_builders::UntagSAMLProvider::saml_provider_arn) / [`set_saml_provider_arn(Option<String>)`](crate::client::fluent_builders::UntagSAMLProvider::set_saml_provider_arn): <p>The ARN of the SAML identity provider in IAM from which you want to remove tags.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagSAMLProvider::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagSAMLProvider::set_tag_keys): <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified SAML identity provider.</p>
+    /// - On success, responds with [`UntagSamlProviderOutput`](crate::output::UntagSamlProviderOutput)
+
+    /// - On failure, responds with [`SdkError<UntagSAMLProviderError>`](crate::error::UntagSAMLProviderError)
     pub fn untag_saml_provider(&self) -> fluent_builders::UntagSAMLProvider<C, M, R> {
         fluent_builders::UntagSAMLProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagServerCertificate` operation.
+    /// Constructs a fluent builder for the [`UntagServerCertificate`](crate::client::fluent_builders::UntagServerCertificate) operation.
     ///
-    /// See [`UntagServerCertificate`](crate::client::fluent_builders::UntagServerCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`server_certificate_name(impl Into<String>)`](crate::client::fluent_builders::UntagServerCertificate::server_certificate_name) / [`set_server_certificate_name(Option<String>)`](crate::client::fluent_builders::UntagServerCertificate::set_server_certificate_name): <p>The name of the IAM server certificate from which you want to remove tags.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagServerCertificate::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagServerCertificate::set_tag_keys): <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified IAM server certificate.</p>
+    /// - On success, responds with [`UntagServerCertificateOutput`](crate::output::UntagServerCertificateOutput)
+
+    /// - On failure, responds with [`SdkError<UntagServerCertificateError>`](crate::error::UntagServerCertificateError)
     pub fn untag_server_certificate(&self) -> fluent_builders::UntagServerCertificate<C, M, R> {
         fluent_builders::UntagServerCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagUser` operation.
+    /// Constructs a fluent builder for the [`UntagUser`](crate::client::fluent_builders::UntagUser) operation.
     ///
-    /// See [`UntagUser`](crate::client::fluent_builders::UntagUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::UntagUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::UntagUser::set_user_name): <p>The name of the IAM user from which you want to remove tags.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagUser::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagUser::set_tag_keys): <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified user.</p>
+    /// - On success, responds with [`UntagUserOutput`](crate::output::UntagUserOutput)
+
+    /// - On failure, responds with [`SdkError<UntagUserError>`](crate::error::UntagUserError)
     pub fn untag_user(&self) -> fluent_builders::UntagUser<C, M, R> {
         fluent_builders::UntagUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAccessKey` operation.
+    /// Constructs a fluent builder for the [`UpdateAccessKey`](crate::client::fluent_builders::UpdateAccessKey) operation.
     ///
-    /// See [`UpdateAccessKey`](crate::client::fluent_builders::UpdateAccessKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessKey::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::UpdateAccessKey::set_user_name): <p>The name of the user whose key you want to update.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`access_key_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessKey::access_key_id) / [`set_access_key_id(Option<String>)`](crate::client::fluent_builders::UpdateAccessKey::set_access_key_id): <p>The access key ID of the secret access key you want to update.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    ///   - [`status(StatusType)`](crate::client::fluent_builders::UpdateAccessKey::status) / [`set_status(Option<StatusType>)`](crate::client::fluent_builders::UpdateAccessKey::set_status): <p> The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for programmatic calls to Amazon Web Services, while <code>Inactive</code> means that the key cannot be used.</p>
+    /// - On success, responds with [`UpdateAccessKeyOutput`](crate::output::UpdateAccessKeyOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateAccessKeyError>`](crate::error::UpdateAccessKeyError)
     pub fn update_access_key(&self) -> fluent_builders::UpdateAccessKey<C, M, R> {
         fluent_builders::UpdateAccessKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAccountPasswordPolicy` operation.
+    /// Constructs a fluent builder for the [`UpdateAccountPasswordPolicy`](crate::client::fluent_builders::UpdateAccountPasswordPolicy) operation.
     ///
-    /// See [`UpdateAccountPasswordPolicy`](crate::client::fluent_builders::UpdateAccountPasswordPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`minimum_password_length(i32)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::minimum_password_length) / [`set_minimum_password_length(Option<i32>)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::set_minimum_password_length): <p>The minimum number of characters allowed in an IAM user password.</p>  <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>6</code>.</p>
+    ///   - [`require_symbols(bool)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::require_symbols) / [`set_require_symbols(bool)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::set_require_symbols): <p>Specifies whether IAM user passwords must contain at least one of the following non-alphanumeric characters:</p>  <p>! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '</p>  <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one symbol character.</p>
+    ///   - [`require_numbers(bool)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::require_numbers) / [`set_require_numbers(bool)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::set_require_numbers): <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p>  <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one numeric character.</p>
+    ///   - [`require_uppercase_characters(bool)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::require_uppercase_characters) / [`set_require_uppercase_characters(bool)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::set_require_uppercase_characters): <p>Specifies whether IAM user passwords must contain at least one uppercase character from the ISO basic Latin alphabet (A to Z).</p>  <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one uppercase character.</p>
+    ///   - [`require_lowercase_characters(bool)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::require_lowercase_characters) / [`set_require_lowercase_characters(bool)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::set_require_lowercase_characters): <p>Specifies whether IAM user passwords must contain at least one lowercase character from the ISO basic Latin alphabet (a to z).</p>  <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that passwords do not require at least one lowercase character.</p>
+    ///   - [`allow_users_to_change_password(bool)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::allow_users_to_change_password) / [`set_allow_users_to_change_password(bool)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::set_allow_users_to_change_password): <p> Allows all IAM users in your account to use the Amazon Web Services Management Console to change their own passwords. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting IAM users change their own passwords</a> in the <i>IAM User Guide</i>.</p>  <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that IAM users in the account do not automatically have permissions to change their own password.</p>
+    ///   - [`max_password_age(i32)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::max_password_age) / [`set_max_password_age(Option<i32>)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::set_max_password_age): <p>The number of days that an IAM user password is valid.</p>  <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>0</code>. The result is that IAM user passwords never expire.</p>
+    ///   - [`password_reuse_prevention(i32)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::password_reuse_prevention) / [`set_password_reuse_prevention(Option<i32>)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::set_password_reuse_prevention): <p>Specifies the number of previous passwords that IAM users are prevented from reusing.</p>  <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>0</code>. The result is that IAM users are not prevented from reusing previous passwords.</p>
+    ///   - [`hard_expiry(bool)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::hard_expiry) / [`set_hard_expiry(Option<bool>)`](crate::client::fluent_builders::UpdateAccountPasswordPolicy::set_hard_expiry): <p>Prevents IAM users from setting a new password after their password has expired. The IAM user cannot be accessed until an administrator resets the password.</p>  <p>If you do not specify a value for this parameter, then the operation uses the default value of <code>false</code>. The result is that IAM users can change their passwords after they expire and continue to sign in as the user.</p>
+    /// - On success, responds with [`UpdateAccountPasswordPolicyOutput`](crate::output::UpdateAccountPasswordPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateAccountPasswordPolicyError>`](crate::error::UpdateAccountPasswordPolicyError)
     pub fn update_account_password_policy(
         &self,
     ) -> fluent_builders::UpdateAccountPasswordPolicy<C, M, R> {
         fluent_builders::UpdateAccountPasswordPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAssumeRolePolicy` operation.
+    /// Constructs a fluent builder for the [`UpdateAssumeRolePolicy`](crate::client::fluent_builders::UpdateAssumeRolePolicy) operation.
     ///
-    /// See [`UpdateAssumeRolePolicy`](crate::client::fluent_builders::UpdateAssumeRolePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAssumeRolePolicy::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::UpdateAssumeRolePolicy::set_role_name): <p>The name of the role to update with the new policy.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`policy_document(impl Into<String>)`](crate::client::fluent_builders::UpdateAssumeRolePolicy::policy_document) / [`set_policy_document(Option<String>)`](crate::client::fluent_builders::UpdateAssumeRolePolicy::set_policy_document): <p>The policy that grants an entity permission to assume the role.</p>  <p>You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    /// - On success, responds with [`UpdateAssumeRolePolicyOutput`](crate::output::UpdateAssumeRolePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateAssumeRolePolicyError>`](crate::error::UpdateAssumeRolePolicyError)
     pub fn update_assume_role_policy(&self) -> fluent_builders::UpdateAssumeRolePolicy<C, M, R> {
         fluent_builders::UpdateAssumeRolePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateGroup`](crate::client::fluent_builders::UpdateGroup) operation.
     ///
-    /// See [`UpdateGroup`](crate::client::fluent_builders::UpdateGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_group_name): <p>Name of the IAM group to update. If you're changing the name of the group, this is the original name.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`new_path(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::new_path) / [`set_new_path(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_new_path): <p>New path for the IAM group. Only include this if changing the group's path.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`new_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::new_group_name) / [`set_new_group_name(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_new_group_name): <p>New name for the IAM group. Only include this if changing the group's name.</p>  <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
+    /// - On success, responds with [`UpdateGroupOutput`](crate::output::UpdateGroupOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateGroupError>`](crate::error::UpdateGroupError)
     pub fn update_group(&self) -> fluent_builders::UpdateGroup<C, M, R> {
         fluent_builders::UpdateGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateLoginProfile` operation.
+    /// Constructs a fluent builder for the [`UpdateLoginProfile`](crate::client::fluent_builders::UpdateLoginProfile) operation.
     ///
-    /// See [`UpdateLoginProfile`](crate::client::fluent_builders::UpdateLoginProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::UpdateLoginProfile::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::UpdateLoginProfile::set_user_name): <p>The name of the user whose password you want to update.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::UpdateLoginProfile::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::UpdateLoginProfile::set_password): <p>The new password for the specified IAM user.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>  <p>However, the format can be further restricted by the account administrator by setting a password policy on the Amazon Web Services account. For more information, see <code>UpdateAccountPasswordPolicy</code>.</p>
+    ///   - [`password_reset_required(bool)`](crate::client::fluent_builders::UpdateLoginProfile::password_reset_required) / [`set_password_reset_required(Option<bool>)`](crate::client::fluent_builders::UpdateLoginProfile::set_password_reset_required): <p>Allows this new password to be used only once by requiring the specified IAM user to set a new password on next sign-in.</p>
+    /// - On success, responds with [`UpdateLoginProfileOutput`](crate::output::UpdateLoginProfileOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateLoginProfileError>`](crate::error::UpdateLoginProfileError)
     pub fn update_login_profile(&self) -> fluent_builders::UpdateLoginProfile<C, M, R> {
         fluent_builders::UpdateLoginProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateOpenIDConnectProviderThumbprint` operation.
+    /// Constructs a fluent builder for the [`UpdateOpenIDConnectProviderThumbprint`](crate::client::fluent_builders::UpdateOpenIDConnectProviderThumbprint) operation.
     ///
-    /// See [`UpdateOpenIDConnectProviderThumbprint`](crate::client::fluent_builders::UpdateOpenIDConnectProviderThumbprint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`open_id_connect_provider_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateOpenIDConnectProviderThumbprint::open_id_connect_provider_arn) / [`set_open_id_connect_provider_arn(Option<String>)`](crate::client::fluent_builders::UpdateOpenIDConnectProviderThumbprint::set_open_id_connect_provider_arn): <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`thumbprint_list(Vec<String>)`](crate::client::fluent_builders::UpdateOpenIDConnectProviderThumbprint::thumbprint_list) / [`set_thumbprint_list(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateOpenIDConnectProviderThumbprint::set_thumbprint_list): <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
+    /// - On success, responds with [`UpdateOpenIdConnectProviderThumbprintOutput`](crate::output::UpdateOpenIdConnectProviderThumbprintOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateOpenIDConnectProviderThumbprintError>`](crate::error::UpdateOpenIDConnectProviderThumbprintError)
     pub fn update_open_id_connect_provider_thumbprint(
         &self,
     ) -> fluent_builders::UpdateOpenIDConnectProviderThumbprint<C, M, R> {
         fluent_builders::UpdateOpenIDConnectProviderThumbprint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRole` operation.
+    /// Constructs a fluent builder for the [`UpdateRole`](crate::client::fluent_builders::UpdateRole) operation.
     ///
-    /// See [`UpdateRole`](crate::client::fluent_builders::UpdateRole) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRole::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::UpdateRole::set_role_name): <p>The name of the role that you want to modify.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRole::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRole::set_description): <p>The new description that you want to apply to the specified role.</p>
+    ///   - [`max_session_duration(i32)`](crate::client::fluent_builders::UpdateRole::max_session_duration) / [`set_max_session_duration(Option<i32>)`](crate::client::fluent_builders::UpdateRole::set_max_session_duration): <p>The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours.</p>  <p>Anyone who assumes the role from the CLI or API can use the <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code> setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter. If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM roles</a> in the <i>IAM User Guide</i>.</p>
+    /// - On success, responds with [`UpdateRoleOutput`](crate::output::UpdateRoleOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRoleError>`](crate::error::UpdateRoleError)
     pub fn update_role(&self) -> fluent_builders::UpdateRole<C, M, R> {
         fluent_builders::UpdateRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRoleDescription` operation.
+    /// Constructs a fluent builder for the [`UpdateRoleDescription`](crate::client::fluent_builders::UpdateRoleDescription) operation.
     ///
-    /// See [`UpdateRoleDescription`](crate::client::fluent_builders::UpdateRoleDescription) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRoleDescription::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::UpdateRoleDescription::set_role_name): <p>The name of the role that you want to modify.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRoleDescription::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRoleDescription::set_description): <p>The new description that you want to apply to the specified role.</p>
+    /// - On success, responds with [`UpdateRoleDescriptionOutput`](crate::output::UpdateRoleDescriptionOutput) with field(s):
+    ///   - [`role(Option<Role>)`](crate::output::UpdateRoleDescriptionOutput::role): <p>A structure that contains details about the modified role.</p>
+    /// - On failure, responds with [`SdkError<UpdateRoleDescriptionError>`](crate::error::UpdateRoleDescriptionError)
     pub fn update_role_description(&self) -> fluent_builders::UpdateRoleDescription<C, M, R> {
         fluent_builders::UpdateRoleDescription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSAMLProvider` operation.
+    /// Constructs a fluent builder for the [`UpdateSAMLProvider`](crate::client::fluent_builders::UpdateSAMLProvider) operation.
     ///
-    /// See [`UpdateSAMLProvider`](crate::client::fluent_builders::UpdateSAMLProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`saml_metadata_document(impl Into<String>)`](crate::client::fluent_builders::UpdateSAMLProvider::saml_metadata_document) / [`set_saml_metadata_document(Option<String>)`](crate::client::fluent_builders::UpdateSAMLProvider::set_saml_metadata_document): <p>An XML document generated by an identity provider (IdP) that supports SAML 2.0. The document includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response (assertions) that are received from the IdP. You must generate the metadata document using the identity management software that is used as your organization's IdP.</p>
+    ///   - [`saml_provider_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateSAMLProvider::saml_provider_arn) / [`set_saml_provider_arn(Option<String>)`](crate::client::fluent_builders::UpdateSAMLProvider::set_saml_provider_arn): <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// - On success, responds with [`UpdateSamlProviderOutput`](crate::output::UpdateSamlProviderOutput) with field(s):
+    ///   - [`saml_provider_arn(Option<String>)`](crate::output::UpdateSamlProviderOutput::saml_provider_arn): <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateSAMLProviderError>`](crate::error::UpdateSAMLProviderError)
     pub fn update_saml_provider(&self) -> fluent_builders::UpdateSAMLProvider<C, M, R> {
         fluent_builders::UpdateSAMLProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateServerCertificate` operation.
+    /// Constructs a fluent builder for the [`UpdateServerCertificate`](crate::client::fluent_builders::UpdateServerCertificate) operation.
     ///
-    /// See [`UpdateServerCertificate`](crate::client::fluent_builders::UpdateServerCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`server_certificate_name(impl Into<String>)`](crate::client::fluent_builders::UpdateServerCertificate::server_certificate_name) / [`set_server_certificate_name(Option<String>)`](crate::client::fluent_builders::UpdateServerCertificate::set_server_certificate_name): <p>The name of the server certificate that you want to update.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`new_path(impl Into<String>)`](crate::client::fluent_builders::UpdateServerCertificate::new_path) / [`set_new_path(Option<String>)`](crate::client::fluent_builders::UpdateServerCertificate::set_new_path): <p>The new path for the server certificate. Include this only if you are updating the server certificate's path.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`new_server_certificate_name(impl Into<String>)`](crate::client::fluent_builders::UpdateServerCertificate::new_server_certificate_name) / [`set_new_server_certificate_name(Option<String>)`](crate::client::fluent_builders::UpdateServerCertificate::set_new_server_certificate_name): <p>The new name for the server certificate. Include this only if you are updating the server certificate's name. The name of the certificate cannot contain any spaces.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    /// - On success, responds with [`UpdateServerCertificateOutput`](crate::output::UpdateServerCertificateOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateServerCertificateError>`](crate::error::UpdateServerCertificateError)
     pub fn update_server_certificate(&self) -> fluent_builders::UpdateServerCertificate<C, M, R> {
         fluent_builders::UpdateServerCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateServiceSpecificCredential` operation.
+    /// Constructs a fluent builder for the [`UpdateServiceSpecificCredential`](crate::client::fluent_builders::UpdateServiceSpecificCredential) operation.
     ///
-    /// See [`UpdateServiceSpecificCredential`](crate::client::fluent_builders::UpdateServiceSpecificCredential) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceSpecificCredential::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::UpdateServiceSpecificCredential::set_user_name): <p>The name of the IAM user associated with the service-specific credential. If you do not specify this value, then the operation assumes the user whose credentials are used to call the operation.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`service_specific_credential_id(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceSpecificCredential::service_specific_credential_id) / [`set_service_specific_credential_id(Option<String>)`](crate::client::fluent_builders::UpdateServiceSpecificCredential::set_service_specific_credential_id): <p>The unique identifier of the service-specific credential.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    ///   - [`status(StatusType)`](crate::client::fluent_builders::UpdateServiceSpecificCredential::status) / [`set_status(Option<StatusType>)`](crate::client::fluent_builders::UpdateServiceSpecificCredential::set_status): <p>The status to be assigned to the service-specific credential.</p>
+    /// - On success, responds with [`UpdateServiceSpecificCredentialOutput`](crate::output::UpdateServiceSpecificCredentialOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateServiceSpecificCredentialError>`](crate::error::UpdateServiceSpecificCredentialError)
     pub fn update_service_specific_credential(
         &self,
     ) -> fluent_builders::UpdateServiceSpecificCredential<C, M, R> {
         fluent_builders::UpdateServiceSpecificCredential::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSigningCertificate` operation.
+    /// Constructs a fluent builder for the [`UpdateSigningCertificate`](crate::client::fluent_builders::UpdateSigningCertificate) operation.
     ///
-    /// See [`UpdateSigningCertificate`](crate::client::fluent_builders::UpdateSigningCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSigningCertificate::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::UpdateSigningCertificate::set_user_name): <p>The name of the IAM user the signing certificate belongs to.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`certificate_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSigningCertificate::certificate_id) / [`set_certificate_id(Option<String>)`](crate::client::fluent_builders::UpdateSigningCertificate::set_certificate_id): <p>The ID of the signing certificate you want to update.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    ///   - [`status(StatusType)`](crate::client::fluent_builders::UpdateSigningCertificate::status) / [`set_status(Option<StatusType>)`](crate::client::fluent_builders::UpdateSigningCertificate::set_status): <p> The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that the certificate cannot be used.</p>
+    /// - On success, responds with [`UpdateSigningCertificateOutput`](crate::output::UpdateSigningCertificateOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateSigningCertificateError>`](crate::error::UpdateSigningCertificateError)
     pub fn update_signing_certificate(&self) -> fluent_builders::UpdateSigningCertificate<C, M, R> {
         fluent_builders::UpdateSigningCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSSHPublicKey` operation.
+    /// Constructs a fluent builder for the [`UpdateSSHPublicKey`](crate::client::fluent_builders::UpdateSSHPublicKey) operation.
     ///
-    /// See [`UpdateSSHPublicKey`](crate::client::fluent_builders::UpdateSSHPublicKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSSHPublicKey::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::UpdateSSHPublicKey::set_user_name): <p>The name of the IAM user associated with the SSH public key.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`ssh_public_key_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSSHPublicKey::ssh_public_key_id) / [`set_ssh_public_key_id(Option<String>)`](crate::client::fluent_builders::UpdateSSHPublicKey::set_ssh_public_key_id): <p>The unique identifier for the SSH public key.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
+    ///   - [`status(StatusType)`](crate::client::fluent_builders::UpdateSSHPublicKey::status) / [`set_status(Option<StatusType>)`](crate::client::fluent_builders::UpdateSSHPublicKey::set_status): <p>The status to assign to the SSH public key. <code>Active</code> means that the key can be used for authentication with an CodeCommit repository. <code>Inactive</code> means that the key cannot be used.</p>
+    /// - On success, responds with [`UpdateSshPublicKeyOutput`](crate::output::UpdateSshPublicKeyOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateSSHPublicKeyError>`](crate::error::UpdateSSHPublicKeyError)
     pub fn update_ssh_public_key(&self) -> fluent_builders::UpdateSSHPublicKey<C, M, R> {
         fluent_builders::UpdateSSHPublicKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUser` operation.
+    /// Constructs a fluent builder for the [`UpdateUser`](crate::client::fluent_builders::UpdateUser) operation.
     ///
-    /// See [`UpdateUser`](crate::client::fluent_builders::UpdateUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_user_name): <p>Name of the user to update. If you're changing the name of the user, this is the original user name.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`new_path(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::new_path) / [`set_new_path(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_new_path): <p>New path for the IAM user. Include this parameter only if you're changing the user's path.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    ///   - [`new_user_name(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::new_user_name) / [`set_new_user_name(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_new_user_name): <p>New name for the user. Include this parameter only if you're changing the user's name.</p>  <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
+    /// - On success, responds with [`UpdateUserOutput`](crate::output::UpdateUserOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateUserError>`](crate::error::UpdateUserError)
     pub fn update_user(&self) -> fluent_builders::UpdateUser<C, M, R> {
         fluent_builders::UpdateUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UploadServerCertificate` operation.
+    /// Constructs a fluent builder for the [`UploadServerCertificate`](crate::client::fluent_builders::UploadServerCertificate) operation.
     ///
-    /// See [`UploadServerCertificate`](crate::client::fluent_builders::UploadServerCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::UploadServerCertificate::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::UploadServerCertificate::set_path): <p>The path for the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>  <p>This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p> <note>   <p> If you are uploading a server certificate specifically for use with Amazon CloudFront distributions, you must specify a path using the <code>path</code> parameter. The path must begin with <code>/cloudfront</code> and must include a trailing slash (for example, <code>/cloudfront/test/</code>).</p>  </note>
+    ///   - [`server_certificate_name(impl Into<String>)`](crate::client::fluent_builders::UploadServerCertificate::server_certificate_name) / [`set_server_certificate_name(Option<String>)`](crate::client::fluent_builders::UploadServerCertificate::set_server_certificate_name): <p>The name for the server certificate. Do not include the path in this value. The name of the certificate cannot contain any spaces.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`certificate_body(impl Into<String>)`](crate::client::fluent_builders::UploadServerCertificate::certificate_body) / [`set_certificate_body(Option<String>)`](crate::client::fluent_builders::UploadServerCertificate::set_certificate_body): <p>The contents of the public key certificate in PEM-encoded format.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    ///   - [`private_key(impl Into<String>)`](crate::client::fluent_builders::UploadServerCertificate::private_key) / [`set_private_key(Option<String>)`](crate::client::fluent_builders::UploadServerCertificate::set_private_key): <p>The contents of the private key in PEM-encoded format.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    ///   - [`certificate_chain(impl Into<String>)`](crate::client::fluent_builders::UploadServerCertificate::certificate_chain) / [`set_certificate_chain(Option<String>)`](crate::client::fluent_builders::UploadServerCertificate::set_certificate_chain): <p>The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key certificates of the chain.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::UploadServerCertificate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::UploadServerCertificate::set_tags): <p>A list of tags that you want to attach to the new IAM server certificate resource. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>   <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>  </note>
+    /// - On success, responds with [`UploadServerCertificateOutput`](crate::output::UploadServerCertificateOutput) with field(s):
+    ///   - [`server_certificate_metadata(Option<ServerCertificateMetadata>)`](crate::output::UploadServerCertificateOutput::server_certificate_metadata): <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::UploadServerCertificateOutput::tags): <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<UploadServerCertificateError>`](crate::error::UploadServerCertificateError)
     pub fn upload_server_certificate(&self) -> fluent_builders::UploadServerCertificate<C, M, R> {
         fluent_builders::UploadServerCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UploadSigningCertificate` operation.
+    /// Constructs a fluent builder for the [`UploadSigningCertificate`](crate::client::fluent_builders::UploadSigningCertificate) operation.
     ///
-    /// See [`UploadSigningCertificate`](crate::client::fluent_builders::UploadSigningCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::UploadSigningCertificate::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::UploadSigningCertificate::set_user_name): <p>The name of the user the signing certificate is for.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`certificate_body(impl Into<String>)`](crate::client::fluent_builders::UploadSigningCertificate::certificate_body) / [`set_certificate_body(Option<String>)`](crate::client::fluent_builders::UploadSigningCertificate::set_certificate_body): <p>The contents of the signing certificate.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    /// - On success, responds with [`UploadSigningCertificateOutput`](crate::output::UploadSigningCertificateOutput) with field(s):
+    ///   - [`certificate(Option<SigningCertificate>)`](crate::output::UploadSigningCertificateOutput::certificate): <p>Information about the certificate.</p>
+    /// - On failure, responds with [`SdkError<UploadSigningCertificateError>`](crate::error::UploadSigningCertificateError)
     pub fn upload_signing_certificate(&self) -> fluent_builders::UploadSigningCertificate<C, M, R> {
         fluent_builders::UploadSigningCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UploadSSHPublicKey` operation.
+    /// Constructs a fluent builder for the [`UploadSSHPublicKey`](crate::client::fluent_builders::UploadSSHPublicKey) operation.
     ///
-    /// See [`UploadSSHPublicKey`](crate::client::fluent_builders::UploadSSHPublicKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::UploadSSHPublicKey::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::UploadSSHPublicKey::set_user_name): <p>The name of the IAM user to associate the SSH public key with.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`ssh_public_key_body(impl Into<String>)`](crate::client::fluent_builders::UploadSSHPublicKey::ssh_public_key_body) / [`set_ssh_public_key_body(Option<String>)`](crate::client::fluent_builders::UploadSSHPublicKey::set_ssh_public_key_body): <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM format. The minimum bit-length of the public key is 2048 bits. For example, you can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>  <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>  <ul>   <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>   <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>   <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>  </ul>
+    /// - On success, responds with [`UploadSshPublicKeyOutput`](crate::output::UploadSshPublicKeyOutput) with field(s):
+    ///   - [`ssh_public_key(Option<SshPublicKey>)`](crate::output::UploadSshPublicKeyOutput::ssh_public_key): <p>Contains information about the SSH public key.</p>
+    /// - On failure, responds with [`SdkError<UploadSSHPublicKeyError>`](crate::error::UploadSSHPublicKeyError)
     pub fn upload_ssh_public_key(&self) -> fluent_builders::UploadSSHPublicKey<C, M, R> {
         fluent_builders::UploadSSHPublicKey::new(self.handle.clone())
     }

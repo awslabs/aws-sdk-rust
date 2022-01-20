@@ -6,7 +6,7 @@ authors = ["Russell Cohen <rcoh@amazon.com>"]
 edition = "2018"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.4.1"
+version = "0.5.1"
 
 [dependencies.structopt]
 version = "0.3"
@@ -18,8 +18,8 @@ features = ["full"]
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.4.1"
+version = "0.5.1"
 
 [dependencies.aws-sdk-eks]
 path = "../../sdk/eks"
-version = "0.4.1"
+version = "0.5.0"

@@ -83,151 +83,223 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateContainer` operation.
+    /// Constructs a fluent builder for the [`CreateContainer`](crate::client::fluent_builders::CreateContainer) operation.
     ///
-    /// See [`CreateContainer`](crate::client::fluent_builders::CreateContainer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::CreateContainer::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::CreateContainer::set_container_name): <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateContainer::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateContainer::set_tags): <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+    /// - On success, responds with [`CreateContainerOutput`](crate::output::CreateContainerOutput) with field(s):
+    ///   - [`container(Option<Container>)`](crate::output::CreateContainerOutput::container): <p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:<region>   :   <account that owns this container>    :container/    <name of container>     . For example: arn:aws:mediastore:us-west-2:111122223333:container/movies     </name>   </account>  </region></p>  <p>ContainerName: The container name as specified in the request.</p>  <p>CreationTime: Unix time stamp.</p>  <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p>  <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <code>DescribeContainer</code> or <code>ListContainers</code>.</p>
+    /// - On failure, responds with [`SdkError<CreateContainerError>`](crate::error::CreateContainerError)
     pub fn create_container(&self) -> fluent_builders::CreateContainer<C, M, R> {
         fluent_builders::CreateContainer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteContainer` operation.
+    /// Constructs a fluent builder for the [`DeleteContainer`](crate::client::fluent_builders::DeleteContainer) operation.
     ///
-    /// See [`DeleteContainer`](crate::client::fluent_builders::DeleteContainer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::DeleteContainer::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::DeleteContainer::set_container_name): <p>The name of the container to delete. </p>
+    /// - On success, responds with [`DeleteContainerOutput`](crate::output::DeleteContainerOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteContainerError>`](crate::error::DeleteContainerError)
     pub fn delete_container(&self) -> fluent_builders::DeleteContainer<C, M, R> {
         fluent_builders::DeleteContainer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteContainerPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteContainerPolicy`](crate::client::fluent_builders::DeleteContainerPolicy) operation.
     ///
-    /// See [`DeleteContainerPolicy`](crate::client::fluent_builders::DeleteContainerPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::DeleteContainerPolicy::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::DeleteContainerPolicy::set_container_name): <p>The name of the container that holds the policy.</p>
+    /// - On success, responds with [`DeleteContainerPolicyOutput`](crate::output::DeleteContainerPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteContainerPolicyError>`](crate::error::DeleteContainerPolicyError)
     pub fn delete_container_policy(&self) -> fluent_builders::DeleteContainerPolicy<C, M, R> {
         fluent_builders::DeleteContainerPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCorsPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteCorsPolicy`](crate::client::fluent_builders::DeleteCorsPolicy) operation.
     ///
-    /// See [`DeleteCorsPolicy`](crate::client::fluent_builders::DeleteCorsPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::DeleteCorsPolicy::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::DeleteCorsPolicy::set_container_name): <p>The name of the container to remove the policy from.</p>
+    /// - On success, responds with [`DeleteCorsPolicyOutput`](crate::output::DeleteCorsPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCorsPolicyError>`](crate::error::DeleteCorsPolicyError)
     pub fn delete_cors_policy(&self) -> fluent_builders::DeleteCorsPolicy<C, M, R> {
         fluent_builders::DeleteCorsPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLifecyclePolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteLifecyclePolicy`](crate::client::fluent_builders::DeleteLifecyclePolicy) operation.
     ///
-    /// See [`DeleteLifecyclePolicy`](crate::client::fluent_builders::DeleteLifecyclePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLifecyclePolicy::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::DeleteLifecyclePolicy::set_container_name): <p>The name of the container that holds the object lifecycle policy.</p>
+    /// - On success, responds with [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLifecyclePolicyError>`](crate::error::DeleteLifecyclePolicyError)
     pub fn delete_lifecycle_policy(&self) -> fluent_builders::DeleteLifecyclePolicy<C, M, R> {
         fluent_builders::DeleteLifecyclePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMetricPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteMetricPolicy`](crate::client::fluent_builders::DeleteMetricPolicy) operation.
     ///
-    /// See [`DeleteMetricPolicy`](crate::client::fluent_builders::DeleteMetricPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::DeleteMetricPolicy::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::DeleteMetricPolicy::set_container_name): <p>The name of the container that is associated with the metric policy that you want to delete.</p>
+    /// - On success, responds with [`DeleteMetricPolicyOutput`](crate::output::DeleteMetricPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteMetricPolicyError>`](crate::error::DeleteMetricPolicyError)
     pub fn delete_metric_policy(&self) -> fluent_builders::DeleteMetricPolicy<C, M, R> {
         fluent_builders::DeleteMetricPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeContainer` operation.
+    /// Constructs a fluent builder for the [`DescribeContainer`](crate::client::fluent_builders::DescribeContainer) operation.
     ///
-    /// See [`DescribeContainer`](crate::client::fluent_builders::DescribeContainer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::DescribeContainer::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::DescribeContainer::set_container_name): <p>The name of the container to query.</p>
+    /// - On success, responds with [`DescribeContainerOutput`](crate::output::DescribeContainerOutput) with field(s):
+    ///   - [`container(Option<Container>)`](crate::output::DescribeContainerOutput::container): <p>The name of the queried container.</p>
+    /// - On failure, responds with [`SdkError<DescribeContainerError>`](crate::error::DescribeContainerError)
     pub fn describe_container(&self) -> fluent_builders::DescribeContainer<C, M, R> {
         fluent_builders::DescribeContainer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContainerPolicy` operation.
+    /// Constructs a fluent builder for the [`GetContainerPolicy`](crate::client::fluent_builders::GetContainerPolicy) operation.
     ///
-    /// See [`GetContainerPolicy`](crate::client::fluent_builders::GetContainerPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::GetContainerPolicy::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::GetContainerPolicy::set_container_name): <p>The name of the container. </p>
+    /// - On success, responds with [`GetContainerPolicyOutput`](crate::output::GetContainerPolicyOutput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::output::GetContainerPolicyOutput::policy): <p>The contents of the access policy.</p>
+    /// - On failure, responds with [`SdkError<GetContainerPolicyError>`](crate::error::GetContainerPolicyError)
     pub fn get_container_policy(&self) -> fluent_builders::GetContainerPolicy<C, M, R> {
         fluent_builders::GetContainerPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCorsPolicy` operation.
+    /// Constructs a fluent builder for the [`GetCorsPolicy`](crate::client::fluent_builders::GetCorsPolicy) operation.
     ///
-    /// See [`GetCorsPolicy`](crate::client::fluent_builders::GetCorsPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::GetCorsPolicy::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::GetCorsPolicy::set_container_name): <p>The name of the container that the policy is assigned to.</p>
+    /// - On success, responds with [`GetCorsPolicyOutput`](crate::output::GetCorsPolicyOutput) with field(s):
+    ///   - [`cors_policy(Option<Vec<CorsRule>>)`](crate::output::GetCorsPolicyOutput::cors_policy): <p>The CORS policy assigned to the container.</p>
+    /// - On failure, responds with [`SdkError<GetCorsPolicyError>`](crate::error::GetCorsPolicyError)
     pub fn get_cors_policy(&self) -> fluent_builders::GetCorsPolicy<C, M, R> {
         fluent_builders::GetCorsPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLifecyclePolicy` operation.
+    /// Constructs a fluent builder for the [`GetLifecyclePolicy`](crate::client::fluent_builders::GetLifecyclePolicy) operation.
     ///
-    /// See [`GetLifecyclePolicy`](crate::client::fluent_builders::GetLifecyclePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::GetLifecyclePolicy::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::GetLifecyclePolicy::set_container_name): <p>The name of the container that the object lifecycle policy is assigned to.</p>
+    /// - On success, responds with [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput) with field(s):
+    ///   - [`lifecycle_policy(Option<String>)`](crate::output::GetLifecyclePolicyOutput::lifecycle_policy): <p>The object lifecycle policy that is assigned to the container.</p>
+    /// - On failure, responds with [`SdkError<GetLifecyclePolicyError>`](crate::error::GetLifecyclePolicyError)
     pub fn get_lifecycle_policy(&self) -> fluent_builders::GetLifecyclePolicy<C, M, R> {
         fluent_builders::GetLifecyclePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMetricPolicy` operation.
+    /// Constructs a fluent builder for the [`GetMetricPolicy`](crate::client::fluent_builders::GetMetricPolicy) operation.
     ///
-    /// See [`GetMetricPolicy`](crate::client::fluent_builders::GetMetricPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::GetMetricPolicy::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::GetMetricPolicy::set_container_name): <p>The name of the container that is associated with the metric policy.</p>
+    /// - On success, responds with [`GetMetricPolicyOutput`](crate::output::GetMetricPolicyOutput) with field(s):
+    ///   - [`metric_policy(Option<MetricPolicy>)`](crate::output::GetMetricPolicyOutput::metric_policy): <p>The metric policy that is associated with the specific container.</p>
+    /// - On failure, responds with [`SdkError<GetMetricPolicyError>`](crate::error::GetMetricPolicyError)
     pub fn get_metric_policy(&self) -> fluent_builders::GetMetricPolicy<C, M, R> {
         fluent_builders::GetMetricPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListContainers` operation.
+    /// Constructs a fluent builder for the [`ListContainers`](crate::client::fluent_builders::ListContainers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListContainers::into_paginator).
     ///
-    /// See [`ListContainers`](crate::client::fluent_builders::ListContainers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContainers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContainers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContainers::set_next_token): <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListContainers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListContainers::set_max_results): <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
+    /// - On success, responds with [`ListContainersOutput`](crate::output::ListContainersOutput) with field(s):
+    ///   - [`containers(Option<Vec<Container>>)`](crate::output::ListContainersOutput::containers): <p>The names of the containers.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListContainersOutput::next_token): <p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>
+    /// - On failure, responds with [`SdkError<ListContainersError>`](crate::error::ListContainersError)
     pub fn list_containers(&self) -> fluent_builders::ListContainers<C, M, R> {
         fluent_builders::ListContainers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource): <p>The Amazon Resource Name (ARN) for the container.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>An array of key:value pairs that are assigned to the container.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutContainerPolicy` operation.
+    /// Constructs a fluent builder for the [`PutContainerPolicy`](crate::client::fluent_builders::PutContainerPolicy) operation.
     ///
-    /// See [`PutContainerPolicy`](crate::client::fluent_builders::PutContainerPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::PutContainerPolicy::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::PutContainerPolicy::set_container_name): <p>The name of the container.</p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutContainerPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutContainerPolicy::set_policy): <p>The contents of the policy, which includes the following: </p>  <ul>   <li> <p>One <code>Version</code> tag</p> </li>   <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>  </ul>
+    /// - On success, responds with [`PutContainerPolicyOutput`](crate::output::PutContainerPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutContainerPolicyError>`](crate::error::PutContainerPolicyError)
     pub fn put_container_policy(&self) -> fluent_builders::PutContainerPolicy<C, M, R> {
         fluent_builders::PutContainerPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutCorsPolicy` operation.
+    /// Constructs a fluent builder for the [`PutCorsPolicy`](crate::client::fluent_builders::PutCorsPolicy) operation.
     ///
-    /// See [`PutCorsPolicy`](crate::client::fluent_builders::PutCorsPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::PutCorsPolicy::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::PutCorsPolicy::set_container_name): <p>The name of the container that you want to assign the CORS policy to.</p>
+    ///   - [`cors_policy(Vec<CorsRule>)`](crate::client::fluent_builders::PutCorsPolicy::cors_policy) / [`set_cors_policy(Option<Vec<CorsRule>>)`](crate::client::fluent_builders::PutCorsPolicy::set_cors_policy): <p>The CORS policy to apply to the container. </p>
+    /// - On success, responds with [`PutCorsPolicyOutput`](crate::output::PutCorsPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutCorsPolicyError>`](crate::error::PutCorsPolicyError)
     pub fn put_cors_policy(&self) -> fluent_builders::PutCorsPolicy<C, M, R> {
         fluent_builders::PutCorsPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutLifecyclePolicy` operation.
+    /// Constructs a fluent builder for the [`PutLifecyclePolicy`](crate::client::fluent_builders::PutLifecyclePolicy) operation.
     ///
-    /// See [`PutLifecyclePolicy`](crate::client::fluent_builders::PutLifecyclePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::PutLifecyclePolicy::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::PutLifecyclePolicy::set_container_name): <p>The name of the container that you want to assign the object lifecycle policy to.</p>
+    ///   - [`lifecycle_policy(impl Into<String>)`](crate::client::fluent_builders::PutLifecyclePolicy::lifecycle_policy) / [`set_lifecycle_policy(Option<String>)`](crate::client::fluent_builders::PutLifecyclePolicy::set_lifecycle_policy): <p>The object lifecycle policy to apply to the container.</p>
+    /// - On success, responds with [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutLifecyclePolicyError>`](crate::error::PutLifecyclePolicyError)
     pub fn put_lifecycle_policy(&self) -> fluent_builders::PutLifecyclePolicy<C, M, R> {
         fluent_builders::PutLifecyclePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutMetricPolicy` operation.
+    /// Constructs a fluent builder for the [`PutMetricPolicy`](crate::client::fluent_builders::PutMetricPolicy) operation.
     ///
-    /// See [`PutMetricPolicy`](crate::client::fluent_builders::PutMetricPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::PutMetricPolicy::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::PutMetricPolicy::set_container_name): <p>The name of the container that you want to add the metric policy to.</p>
+    ///   - [`metric_policy(MetricPolicy)`](crate::client::fluent_builders::PutMetricPolicy::metric_policy) / [`set_metric_policy(Option<MetricPolicy>)`](crate::client::fluent_builders::PutMetricPolicy::set_metric_policy): <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for. If you include rules in the policy, construct each rule with both of the following:</p>  <ul>   <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>   <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>  </ul>
+    /// - On success, responds with [`PutMetricPolicyOutput`](crate::output::PutMetricPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutMetricPolicyError>`](crate::error::PutMetricPolicyError)
     pub fn put_metric_policy(&self) -> fluent_builders::PutMetricPolicy<C, M, R> {
         fluent_builders::PutMetricPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartAccessLogging` operation.
+    /// Constructs a fluent builder for the [`StartAccessLogging`](crate::client::fluent_builders::StartAccessLogging) operation.
     ///
-    /// See [`StartAccessLogging`](crate::client::fluent_builders::StartAccessLogging) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::StartAccessLogging::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::StartAccessLogging::set_container_name): <p>The name of the container that you want to start access logging on.</p>
+    /// - On success, responds with [`StartAccessLoggingOutput`](crate::output::StartAccessLoggingOutput)
+
+    /// - On failure, responds with [`SdkError<StartAccessLoggingError>`](crate::error::StartAccessLoggingError)
     pub fn start_access_logging(&self) -> fluent_builders::StartAccessLogging<C, M, R> {
         fluent_builders::StartAccessLogging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopAccessLogging` operation.
+    /// Constructs a fluent builder for the [`StopAccessLogging`](crate::client::fluent_builders::StopAccessLogging) operation.
     ///
-    /// See [`StopAccessLogging`](crate::client::fluent_builders::StopAccessLogging) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::StopAccessLogging::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::StopAccessLogging::set_container_name): <p>The name of the container that you want to stop access logging on.</p>
+    /// - On success, responds with [`StopAccessLoggingOutput`](crate::output::StopAccessLoggingOutput)
+
+    /// - On failure, responds with [`SdkError<StopAccessLoggingError>`](crate::error::StopAccessLoggingError)
     pub fn stop_access_logging(&self) -> fluent_builders::StopAccessLogging<C, M, R> {
         fluent_builders::StopAccessLogging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource): <p>The Amazon Resource Name (ARN) for the container. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource): <p>The Amazon Resource Name (ARN) for the container.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

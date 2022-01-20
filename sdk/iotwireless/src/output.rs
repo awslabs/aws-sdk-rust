@@ -1125,6 +1125,98 @@ impl ListServiceProfilesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListQueuedMessagesOutput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The messages in downlink queue.</p>
+    pub downlink_queue_messages_list:
+        std::option::Option<std::vec::Vec<crate::model::DownlinkQueueMessage>>,
+}
+impl ListQueuedMessagesOutput {
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The messages in downlink queue.</p>
+    pub fn downlink_queue_messages_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DownlinkQueueMessage]> {
+        self.downlink_queue_messages_list.as_deref()
+    }
+}
+impl std::fmt::Debug for ListQueuedMessagesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListQueuedMessagesOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field(
+            "downlink_queue_messages_list",
+            &self.downlink_queue_messages_list,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput)
+pub mod list_queued_messages_output {
+    /// A builder for [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) downlink_queue_messages_list:
+            std::option::Option<std::vec::Vec<crate::model::DownlinkQueueMessage>>,
+    }
+    impl Builder {
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `downlink_queue_messages_list`.
+        ///
+        /// To override the contents of this collection use [`set_downlink_queue_messages_list`](Self::set_downlink_queue_messages_list).
+        ///
+        /// <p>The messages in downlink queue.</p>
+        pub fn downlink_queue_messages_list(
+            mut self,
+            input: crate::model::DownlinkQueueMessage,
+        ) -> Self {
+            let mut v = self.downlink_queue_messages_list.unwrap_or_default();
+            v.push(input);
+            self.downlink_queue_messages_list = Some(v);
+            self
+        }
+        /// <p>The messages in downlink queue.</p>
+        pub fn set_downlink_queue_messages_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DownlinkQueueMessage>>,
+        ) -> Self {
+            self.downlink_queue_messages_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput)
+        pub fn build(self) -> crate::output::ListQueuedMessagesOutput {
+            crate::output::ListQueuedMessagesOutput {
+                next_token: self.next_token,
+                downlink_queue_messages_list: self.downlink_queue_messages_list,
+            }
+        }
+    }
+}
+impl ListQueuedMessagesOutput {
+    /// Creates a new builder-style object to manufacture [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput)
+    pub fn builder() -> crate::output::list_queued_messages_output::Builder {
+        crate::output::list_queued_messages_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPartnerAccountsOutput {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -4426,6 +4518,36 @@ impl DeleteServiceProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput)
     pub fn builder() -> crate::output::delete_service_profile_output::Builder {
         crate::output::delete_service_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteQueuedMessagesOutput {}
+impl std::fmt::Debug for DeleteQueuedMessagesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteQueuedMessagesOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput)
+pub mod delete_queued_messages_output {
+    /// A builder for [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput)
+        pub fn build(self) -> crate::output::DeleteQueuedMessagesOutput {
+            crate::output::DeleteQueuedMessagesOutput {}
+        }
+    }
+}
+impl DeleteQueuedMessagesOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput)
+    pub fn builder() -> crate::output::delete_queued_messages_output::Builder {
+        crate::output::delete_queued_messages_output::Builder::default()
     }
 }
 

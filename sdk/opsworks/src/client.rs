@@ -83,534 +83,972 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssignInstance` operation.
+    /// Constructs a fluent builder for the [`AssignInstance`](crate::client::fluent_builders::AssignInstance) operation.
     ///
-    /// See [`AssignInstance`](crate::client::fluent_builders::AssignInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssignInstance::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssignInstance::set_instance_id): <p>The instance ID.</p>
+    ///   - [`layer_ids(Vec<String>)`](crate::client::fluent_builders::AssignInstance::layer_ids) / [`set_layer_ids(Option<Vec<String>>)`](crate::client::fluent_builders::AssignInstance::set_layer_ids): <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
+    /// - On success, responds with [`AssignInstanceOutput`](crate::output::AssignInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<AssignInstanceError>`](crate::error::AssignInstanceError)
     pub fn assign_instance(&self) -> fluent_builders::AssignInstance<C, M, R> {
         fluent_builders::AssignInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssignVolume` operation.
+    /// Constructs a fluent builder for the [`AssignVolume`](crate::client::fluent_builders::AssignVolume) operation.
     ///
-    /// See [`AssignVolume`](crate::client::fluent_builders::AssignVolume) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`volume_id(impl Into<String>)`](crate::client::fluent_builders::AssignVolume::volume_id) / [`set_volume_id(Option<String>)`](crate::client::fluent_builders::AssignVolume::set_volume_id): <p>The volume ID.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssignVolume::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssignVolume::set_instance_id): <p>The instance ID.</p>
+    /// - On success, responds with [`AssignVolumeOutput`](crate::output::AssignVolumeOutput)
+
+    /// - On failure, responds with [`SdkError<AssignVolumeError>`](crate::error::AssignVolumeError)
     pub fn assign_volume(&self) -> fluent_builders::AssignVolume<C, M, R> {
         fluent_builders::AssignVolume::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateElasticIp` operation.
+    /// Constructs a fluent builder for the [`AssociateElasticIp`](crate::client::fluent_builders::AssociateElasticIp) operation.
     ///
-    /// See [`AssociateElasticIp`](crate::client::fluent_builders::AssociateElasticIp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`elastic_ip(impl Into<String>)`](crate::client::fluent_builders::AssociateElasticIp::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::client::fluent_builders::AssociateElasticIp::set_elastic_ip): <p>The Elastic IP address.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssociateElasticIp::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssociateElasticIp::set_instance_id): <p>The instance ID.</p>
+    /// - On success, responds with [`AssociateElasticIpOutput`](crate::output::AssociateElasticIpOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateElasticIpError>`](crate::error::AssociateElasticIpError)
     pub fn associate_elastic_ip(&self) -> fluent_builders::AssociateElasticIp<C, M, R> {
         fluent_builders::AssociateElasticIp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AttachElasticLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`AttachElasticLoadBalancer`](crate::client::fluent_builders::AttachElasticLoadBalancer) operation.
     ///
-    /// See [`AttachElasticLoadBalancer`](crate::client::fluent_builders::AttachElasticLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`elastic_load_balancer_name(impl Into<String>)`](crate::client::fluent_builders::AttachElasticLoadBalancer::elastic_load_balancer_name) / [`set_elastic_load_balancer_name(Option<String>)`](crate::client::fluent_builders::AttachElasticLoadBalancer::set_elastic_load_balancer_name): <p>The Elastic Load Balancing instance's name.</p>
+    ///   - [`layer_id(impl Into<String>)`](crate::client::fluent_builders::AttachElasticLoadBalancer::layer_id) / [`set_layer_id(Option<String>)`](crate::client::fluent_builders::AttachElasticLoadBalancer::set_layer_id): <p>The ID of the layer to which the Elastic Load Balancing instance is to be attached.</p>
+    /// - On success, responds with [`AttachElasticLoadBalancerOutput`](crate::output::AttachElasticLoadBalancerOutput)
+
+    /// - On failure, responds with [`SdkError<AttachElasticLoadBalancerError>`](crate::error::AttachElasticLoadBalancerError)
     pub fn attach_elastic_load_balancer(
         &self,
     ) -> fluent_builders::AttachElasticLoadBalancer<C, M, R> {
         fluent_builders::AttachElasticLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CloneStack` operation.
+    /// Constructs a fluent builder for the [`CloneStack`](crate::client::fluent_builders::CloneStack) operation.
     ///
-    /// See [`CloneStack`](crate::client::fluent_builders::CloneStack) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`source_stack_id(impl Into<String>)`](crate::client::fluent_builders::CloneStack::source_stack_id) / [`set_source_stack_id(Option<String>)`](crate::client::fluent_builders::CloneStack::set_source_stack_id): <p>The source stack ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CloneStack::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CloneStack::set_name): <p>The cloned stack name.</p>
+    ///   - [`region(impl Into<String>)`](crate::client::fluent_builders::CloneStack::region) / [`set_region(Option<String>)`](crate::client::fluent_builders::CloneStack::set_region): <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    ///   - [`vpc_id(impl Into<String>)`](crate::client::fluent_builders::CloneStack::vpc_id) / [`set_vpc_id(Option<String>)`](crate::client::fluent_builders::CloneStack::set_vpc_id): <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All instances are launched into this VPC, and you cannot change the ID later.</p>  <ul>   <li> <p>If your account supports EC2 Classic, the default value is no VPC.</p> </li>   <li> <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p> </li>  </ul>  <p>If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets these parameters to the first valid Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively. </p>  <p>If you specify a nondefault VPC ID, note the following:</p>  <ul>   <li> <p>It must belong to a VPC in your account that is in the specified region.</p> </li>   <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>  </ul>  <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
+    ///   - [`attributes(HashMap<StackAttributesKeys, String>)`](crate::client::fluent_builders::CloneStack::attributes) / [`set_attributes(Option<HashMap<StackAttributesKeys, String>>)`](crate::client::fluent_builders::CloneStack::set_attributes): <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
+    ///   - [`service_role_arn(impl Into<String>)`](crate::client::fluent_builders::CloneStack::service_role_arn) / [`set_service_role_arn(Option<String>)`](crate::client::fluent_builders::CloneStack::set_service_role_arn): <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p> <note>   <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>  </note>
+    ///   - [`default_instance_profile_arn(impl Into<String>)`](crate::client::fluent_builders::CloneStack::default_instance_profile_arn) / [`set_default_instance_profile_arn(Option<String>)`](crate::client::fluent_builders::CloneStack::set_default_instance_profile_arn): <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    ///   - [`default_os(impl Into<String>)`](crate::client::fluent_builders::CloneStack::default_os) / [`set_default_os(Option<String>)`](crate::client::fluent_builders::CloneStack::set_default_os): <p>The stack's operating system, which must be set to one of the following.</p>  <ul>   <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>   <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>   <li> <p> <code>CentOS Linux 7</code> </p> </li>   <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>   <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>   <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>  </ul>  <p>The default option is the parent stack's operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p> <note>   <p>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</p>  </note>
+    ///   - [`hostname_theme(impl Into<String>)`](crate::client::fluent_builders::CloneStack::hostname_theme) / [`set_hostname_theme(Option<String>)`](crate::client::fluent_builders::CloneStack::set_hostname_theme): <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>  <ul>   <li> <p> <code>Baked_Goods</code> </p> </li>   <li> <p> <code>Clouds</code> </p> </li>   <li> <p> <code>Europe_Cities</code> </p> </li>   <li> <p> <code>Fruits</code> </p> </li>   <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>   <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>   <li> <p> <code>Planets_and_Moons</code> </p> </li>   <li> <p> <code>Roman_Deities</code> </p> </li>   <li> <p> <code>Scottish_Islands</code> </p> </li>   <li> <p> <code>US_Cities</code> </p> </li>   <li> <p> <code>Wild_Cats</code> </p> </li>  </ul>  <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
+    ///   - [`default_availability_zone(impl Into<String>)`](crate::client::fluent_builders::CloneStack::default_availability_zone) / [`set_default_availability_zone(Option<String>)`](crate::client::fluent_builders::CloneStack::set_default_availability_zone): <p>The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
+    ///   - [`default_subnet_id(impl Into<String>)`](crate::client::fluent_builders::CloneStack::default_subnet_id) / [`set_default_subnet_id(Option<String>)`](crate::client::fluent_builders::CloneStack::set_default_subnet_id): <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
+    ///   - [`custom_json(impl Into<String>)`](crate::client::fluent_builders::CloneStack::custom_json) / [`set_custom_json(Option<String>)`](crate::client::fluent_builders::CloneStack::set_custom_json): <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format:</p>  <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>  <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> </p>
+    ///   - [`configuration_manager(StackConfigurationManager)`](crate::client::fluent_builders::CloneStack::configuration_manager) / [`set_configuration_manager(Option<StackConfigurationManager>)`](crate::client::fluent_builders::CloneStack::set_configuration_manager): <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
+    ///   - [`chef_configuration(ChefConfiguration)`](crate::client::fluent_builders::CloneStack::chef_configuration) / [`set_chef_configuration(Option<ChefConfiguration>)`](crate::client::fluent_builders::CloneStack::set_chef_configuration): <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    ///   - [`use_custom_cookbooks(bool)`](crate::client::fluent_builders::CloneStack::use_custom_cookbooks) / [`set_use_custom_cookbooks(Option<bool>)`](crate::client::fluent_builders::CloneStack::set_use_custom_cookbooks): <p>Whether to use custom cookbooks.</p>
+    ///   - [`use_opsworks_security_groups(bool)`](crate::client::fluent_builders::CloneStack::use_opsworks_security_groups) / [`set_use_opsworks_security_groups(Option<bool>)`](crate::client::fluent_builders::CloneStack::set_use_opsworks_security_groups): <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>  <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>  <ul>   <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p> </li>   <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    ///   - [`custom_cookbooks_source(Source)`](crate::client::fluent_builders::CloneStack::custom_cookbooks_source) / [`set_custom_cookbooks_source(Option<Source>)`](crate::client::fluent_builders::CloneStack::set_custom_cookbooks_source): <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    ///   - [`default_ssh_key_name(impl Into<String>)`](crate::client::fluent_builders::CloneStack::default_ssh_key_name) / [`set_default_ssh_key_name(Option<String>)`](crate::client::fluent_builders::CloneStack::set_default_ssh_key_name): <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
+    ///   - [`clone_permissions(bool)`](crate::client::fluent_builders::CloneStack::clone_permissions) / [`set_clone_permissions(Option<bool>)`](crate::client::fluent_builders::CloneStack::set_clone_permissions): <p>Whether to clone the source stack's permissions.</p>
+    ///   - [`clone_app_ids(Vec<String>)`](crate::client::fluent_builders::CloneStack::clone_app_ids) / [`set_clone_app_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CloneStack::set_clone_app_ids): <p>A list of source stack app IDs to be included in the cloned stack.</p>
+    ///   - [`default_root_device_type(RootDeviceType)`](crate::client::fluent_builders::CloneStack::default_root_device_type) / [`set_default_root_device_type(Option<RootDeviceType>)`](crate::client::fluent_builders::CloneStack::set_default_root_device_type): <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    ///   - [`agent_version(impl Into<String>)`](crate::client::fluent_builders::CloneStack::agent_version) / [`set_agent_version(Option<String>)`](crate::client::fluent_builders::CloneStack::set_agent_version): <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>  <ul>   <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>   <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>  </ul>  <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>   <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>  </note>
+    /// - On success, responds with [`CloneStackOutput`](crate::output::CloneStackOutput) with field(s):
+    ///   - [`stack_id(Option<String>)`](crate::output::CloneStackOutput::stack_id): <p>The cloned stack ID.</p>
+    /// - On failure, responds with [`SdkError<CloneStackError>`](crate::error::CloneStackError)
     pub fn clone_stack(&self) -> fluent_builders::CloneStack<C, M, R> {
         fluent_builders::CloneStack::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateApp` operation.
+    /// Constructs a fluent builder for the [`CreateApp`](crate::client::fluent_builders::CreateApp) operation.
     ///
-    /// See [`CreateApp`](crate::client::fluent_builders::CreateApp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::CreateApp::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::CreateApp::set_stack_id): <p>The stack ID.</p>
+    ///   - [`shortname(impl Into<String>)`](crate::client::fluent_builders::CreateApp::shortname) / [`set_shortname(Option<String>)`](crate::client::fluent_builders::CreateApp::set_shortname): <p>The app's short name.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateApp::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateApp::set_name): <p>The app name.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateApp::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateApp::set_description): <p>A description of the app.</p>
+    ///   - [`data_sources(Vec<DataSource>)`](crate::client::fluent_builders::CreateApp::data_sources) / [`set_data_sources(Option<Vec<DataSource>>)`](crate::client::fluent_builders::CreateApp::set_data_sources): <p>The app's data source.</p>
+    ///   - [`r#type(AppType)`](crate::client::fluent_builders::CreateApp::r#type) / [`set_type(Option<AppType>)`](crate::client::fluent_builders::CreateApp::set_type): <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+    ///   - [`app_source(Source)`](crate::client::fluent_builders::CreateApp::app_source) / [`set_app_source(Option<Source>)`](crate::client::fluent_builders::CreateApp::set_app_source): <p>A <code>Source</code> object that specifies the app repository.</p>
+    ///   - [`domains(Vec<String>)`](crate::client::fluent_builders::CreateApp::domains) / [`set_domains(Option<Vec<String>>)`](crate::client::fluent_builders::CreateApp::set_domains): <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
+    ///   - [`enable_ssl(bool)`](crate::client::fluent_builders::CreateApp::enable_ssl) / [`set_enable_ssl(Option<bool>)`](crate::client::fluent_builders::CreateApp::set_enable_ssl): <p>Whether to enable SSL for the app.</p>
+    ///   - [`ssl_configuration(SslConfiguration)`](crate::client::fluent_builders::CreateApp::ssl_configuration) / [`set_ssl_configuration(Option<SslConfiguration>)`](crate::client::fluent_builders::CreateApp::set_ssl_configuration): <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
+    ///   - [`attributes(HashMap<AppAttributesKeys, String>)`](crate::client::fluent_builders::CreateApp::attributes) / [`set_attributes(Option<HashMap<AppAttributesKeys, String>>)`](crate::client::fluent_builders::CreateApp::set_attributes): <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    ///   - [`environment(Vec<EnvironmentVariable>)`](crate::client::fluent_builders::CreateApp::environment) / [`set_environment(Option<Vec<EnvironmentVariable>>)`](crate::client::fluent_builders::CreateApp::set_environment): <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>  <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>   <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>  </note>
+    /// - On success, responds with [`CreateAppOutput`](crate::output::CreateAppOutput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::output::CreateAppOutput::app_id): <p>The app ID.</p>
+    /// - On failure, responds with [`SdkError<CreateAppError>`](crate::error::CreateAppError)
     pub fn create_app(&self) -> fluent_builders::CreateApp<C, M, R> {
         fluent_builders::CreateApp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDeployment` operation.
+    /// Constructs a fluent builder for the [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) operation.
     ///
-    /// See [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_stack_id): <p>The stack ID.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_app_id): <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
+    ///   - [`instance_ids(Vec<String>)`](crate::client::fluent_builders::CreateDeployment::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDeployment::set_instance_ids): <p>The instance IDs for the deployment targets.</p>
+    ///   - [`layer_ids(Vec<String>)`](crate::client::fluent_builders::CreateDeployment::layer_ids) / [`set_layer_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDeployment::set_layer_ids): <p>The layer IDs for the deployment targets.</p>
+    ///   - [`command(DeploymentCommand)`](crate::client::fluent_builders::CreateDeployment::command) / [`set_command(Option<DeploymentCommand>)`](crate::client::fluent_builders::CreateDeployment::set_command): <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
+    ///   - [`comment(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::comment) / [`set_comment(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_comment): <p>A user-defined comment.</p>
+    ///   - [`custom_json(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::custom_json) / [`set_custom_json(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_custom_json): <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>  <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>  <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
+    /// - On success, responds with [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput) with field(s):
+    ///   - [`deployment_id(Option<String>)`](crate::output::CreateDeploymentOutput::deployment_id): <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
+    /// - On failure, responds with [`SdkError<CreateDeploymentError>`](crate::error::CreateDeploymentError)
     pub fn create_deployment(&self) -> fluent_builders::CreateDeployment<C, M, R> {
         fluent_builders::CreateDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateInstance` operation.
+    /// Constructs a fluent builder for the [`CreateInstance`](crate::client::fluent_builders::CreateInstance) operation.
     ///
-    /// See [`CreateInstance`](crate::client::fluent_builders::CreateInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::CreateInstance::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::CreateInstance::set_stack_id): <p>The stack ID.</p>
+    ///   - [`layer_ids(Vec<String>)`](crate::client::fluent_builders::CreateInstance::layer_ids) / [`set_layer_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateInstance::set_layer_ids): <p>An array that contains the instance's layer IDs.</p>
+    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::CreateInstance::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::CreateInstance::set_instance_type): <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    ///   - [`auto_scaling_type(AutoScalingType)`](crate::client::fluent_builders::CreateInstance::auto_scaling_type) / [`set_auto_scaling_type(Option<AutoScalingType>)`](crate::client::fluent_builders::CreateInstance::set_auto_scaling_type): <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
+    ///   - [`hostname(impl Into<String>)`](crate::client::fluent_builders::CreateInstance::hostname) / [`set_hostname(Option<String>)`](crate::client::fluent_builders::CreateInstance::set_hostname): <p>The instance host name.</p>
+    ///   - [`os(impl Into<String>)`](crate::client::fluent_builders::CreateInstance::os) / [`set_os(Option<String>)`](crate::client::fluent_builders::CreateInstance::set_os): <p>The instance's operating system, which must be set to one of the following.</p>  <ul>   <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>   <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>   <li> <p> <code>CentOS Linux 7</code> </p> </li>   <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>   <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>   <li> <p>A custom AMI: <code>Custom</code>.</p> </li>  </ul>  <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>  <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
+    ///   - [`ami_id(impl Into<String>)`](crate::client::fluent_builders::CreateInstance::ami_id) / [`set_ami_id(Option<String>)`](crate::client::fluent_builders::CreateInstance::set_ami_id): <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>   <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>  </note>
+    ///   - [`ssh_key_name(impl Into<String>)`](crate::client::fluent_builders::CreateInstance::ssh_key_name) / [`set_ssh_key_name(Option<String>)`](crate::client::fluent_builders::CreateInstance::set_ssh_key_name): <p>The instance's Amazon EC2 key-pair name.</p>
+    ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateInstance::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateInstance::set_availability_zone): <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+    ///   - [`virtualization_type(impl Into<String>)`](crate::client::fluent_builders::CreateInstance::virtualization_type) / [`set_virtualization_type(Option<String>)`](crate::client::fluent_builders::CreateInstance::set_virtualization_type): <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
+    ///   - [`subnet_id(impl Into<String>)`](crate::client::fluent_builders::CreateInstance::subnet_id) / [`set_subnet_id(Option<String>)`](crate::client::fluent_builders::CreateInstance::set_subnet_id): <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
+    ///   - [`architecture(Architecture)`](crate::client::fluent_builders::CreateInstance::architecture) / [`set_architecture(Option<Architecture>)`](crate::client::fluent_builders::CreateInstance::set_architecture): <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
+    ///   - [`root_device_type(RootDeviceType)`](crate::client::fluent_builders::CreateInstance::root_device_type) / [`set_root_device_type(Option<RootDeviceType>)`](crate::client::fluent_builders::CreateInstance::set_root_device_type): <p>The instance root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    ///   - [`block_device_mappings(Vec<BlockDeviceMapping>)`](crate::client::fluent_builders::CreateInstance::block_device_mappings) / [`set_block_device_mappings(Option<Vec<BlockDeviceMapping>>)`](crate::client::fluent_builders::CreateInstance::set_block_device_mappings): <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
+    ///   - [`install_updates_on_boot(bool)`](crate::client::fluent_builders::CreateInstance::install_updates_on_boot) / [`set_install_updates_on_boot(Option<bool>)`](crate::client::fluent_builders::CreateInstance::set_install_updates_on_boot): <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>   <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>  </note>
+    ///   - [`ebs_optimized(bool)`](crate::client::fluent_builders::CreateInstance::ebs_optimized) / [`set_ebs_optimized(Option<bool>)`](crate::client::fluent_builders::CreateInstance::set_ebs_optimized): <p>Whether to create an Amazon EBS-optimized instance.</p>
+    ///   - [`agent_version(impl Into<String>)`](crate::client::fluent_builders::CreateInstance::agent_version) / [`set_agent_version(Option<String>)`](crate::client::fluent_builders::CreateInstance::set_agent_version): <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>  <ul>   <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>   <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>  </ul>  <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
+    ///   - [`tenancy(impl Into<String>)`](crate::client::fluent_builders::CreateInstance::tenancy) / [`set_tenancy(Option<String>)`](crate::client::fluent_builders::CreateInstance::set_tenancy): <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
+    /// - On success, responds with [`CreateInstanceOutput`](crate::output::CreateInstanceOutput) with field(s):
+    ///   - [`instance_id(Option<String>)`](crate::output::CreateInstanceOutput::instance_id): <p>The instance ID.</p>
+    /// - On failure, responds with [`SdkError<CreateInstanceError>`](crate::error::CreateInstanceError)
     pub fn create_instance(&self) -> fluent_builders::CreateInstance<C, M, R> {
         fluent_builders::CreateInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLayer` operation.
+    /// Constructs a fluent builder for the [`CreateLayer`](crate::client::fluent_builders::CreateLayer) operation.
     ///
-    /// See [`CreateLayer`](crate::client::fluent_builders::CreateLayer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::CreateLayer::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::CreateLayer::set_stack_id): <p>The layer stack ID.</p>
+    ///   - [`r#type(LayerType)`](crate::client::fluent_builders::CreateLayer::r#type) / [`set_type(Option<LayerType>)`](crate::client::fluent_builders::CreateLayer::set_type): <p>The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers. Built-in layers are not available in Chef 12 stacks.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateLayer::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateLayer::set_name): <p>The layer name, which is used by the console.</p>
+    ///   - [`shortname(impl Into<String>)`](crate::client::fluent_builders::CreateLayer::shortname) / [`set_shortname(Option<String>)`](crate::client::fluent_builders::CreateLayer::set_shortname): <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p>  <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.</p>
+    ///   - [`attributes(HashMap<LayerAttributesKeys, String>)`](crate::client::fluent_builders::CreateLayer::attributes) / [`set_attributes(Option<HashMap<LayerAttributesKeys, String>>)`](crate::client::fluent_builders::CreateLayer::set_attributes): <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>  <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
+    ///   - [`cloud_watch_logs_configuration(CloudWatchLogsConfiguration)`](crate::client::fluent_builders::CreateLayer::cloud_watch_logs_configuration) / [`set_cloud_watch_logs_configuration(Option<CloudWatchLogsConfiguration>)`](crate::client::fluent_builders::CreateLayer::set_cloud_watch_logs_configuration): <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
+    ///   - [`custom_instance_profile_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLayer::custom_instance_profile_arn) / [`set_custom_instance_profile_arn(Option<String>)`](crate::client::fluent_builders::CreateLayer::set_custom_instance_profile_arn): <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    ///   - [`custom_json(impl Into<String>)`](crate::client::fluent_builders::CreateLayer::custom_json) / [`set_custom_json(Option<String>)`](crate::client::fluent_builders::CreateLayer::set_custom_json): <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI. </p>
+    ///   - [`custom_security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateLayer::custom_security_group_ids) / [`set_custom_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLayer::set_custom_security_group_ids): <p>An array containing the layer custom security group IDs.</p>
+    ///   - [`packages(Vec<String>)`](crate::client::fluent_builders::CreateLayer::packages) / [`set_packages(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLayer::set_packages): <p>An array of <code>Package</code> objects that describes the layer packages.</p>
+    ///   - [`volume_configurations(Vec<VolumeConfiguration>)`](crate::client::fluent_builders::CreateLayer::volume_configurations) / [`set_volume_configurations(Option<Vec<VolumeConfiguration>>)`](crate::client::fluent_builders::CreateLayer::set_volume_configurations): <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
+    ///   - [`enable_auto_healing(bool)`](crate::client::fluent_builders::CreateLayer::enable_auto_healing) / [`set_enable_auto_healing(Option<bool>)`](crate::client::fluent_builders::CreateLayer::set_enable_auto_healing): <p>Whether to disable auto healing for the layer.</p>
+    ///   - [`auto_assign_elastic_ips(bool)`](crate::client::fluent_builders::CreateLayer::auto_assign_elastic_ips) / [`set_auto_assign_elastic_ips(Option<bool>)`](crate::client::fluent_builders::CreateLayer::set_auto_assign_elastic_ips): <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+    ///   - [`auto_assign_public_ips(bool)`](crate::client::fluent_builders::CreateLayer::auto_assign_public_ips) / [`set_auto_assign_public_ips(Option<bool>)`](crate::client::fluent_builders::CreateLayer::set_auto_assign_public_ips): <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+    ///   - [`custom_recipes(Recipes)`](crate::client::fluent_builders::CreateLayer::custom_recipes) / [`set_custom_recipes(Option<Recipes>)`](crate::client::fluent_builders::CreateLayer::set_custom_recipes): <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.</p>
+    ///   - [`install_updates_on_boot(bool)`](crate::client::fluent_builders::CreateLayer::install_updates_on_boot) / [`set_install_updates_on_boot(Option<bool>)`](crate::client::fluent_builders::CreateLayer::set_install_updates_on_boot): <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>   <p>To ensure that your instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>  </note>
+    ///   - [`use_ebs_optimized_instances(bool)`](crate::client::fluent_builders::CreateLayer::use_ebs_optimized_instances) / [`set_use_ebs_optimized_instances(Option<bool>)`](crate::client::fluent_builders::CreateLayer::set_use_ebs_optimized_instances): <p>Whether to use Amazon EBS-optimized instances.</p>
+    ///   - [`lifecycle_event_configuration(LifecycleEventConfiguration)`](crate::client::fluent_builders::CreateLayer::lifecycle_event_configuration) / [`set_lifecycle_event_configuration(Option<LifecycleEventConfiguration>)`](crate::client::fluent_builders::CreateLayer::set_lifecycle_event_configuration): <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
+    /// - On success, responds with [`CreateLayerOutput`](crate::output::CreateLayerOutput) with field(s):
+    ///   - [`layer_id(Option<String>)`](crate::output::CreateLayerOutput::layer_id): <p>The layer ID.</p>
+    /// - On failure, responds with [`SdkError<CreateLayerError>`](crate::error::CreateLayerError)
     pub fn create_layer(&self) -> fluent_builders::CreateLayer<C, M, R> {
         fluent_builders::CreateLayer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateStack` operation.
+    /// Constructs a fluent builder for the [`CreateStack`](crate::client::fluent_builders::CreateStack) operation.
     ///
-    /// See [`CreateStack`](crate::client::fluent_builders::CreateStack) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateStack::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateStack::set_name): <p>The stack name.</p>
+    ///   - [`region(impl Into<String>)`](crate::client::fluent_builders::CreateStack::region) / [`set_region(Option<String>)`](crate::client::fluent_builders::CreateStack::set_region): <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p> <note>   <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set to one of the following, then the stack uses a legacy or <i>classic</i> region: <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>  </note>
+    ///   - [`vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateStack::vpc_id) / [`set_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateStack::set_vpc_id): <p>The ID of the VPC that the stack is to be launched into. The VPC must be in the stack's region. All instances are launched into this VPC. You cannot change the ID later.</p>  <ul>   <li> <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p> </li>   <li> <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p> </li>  </ul>  <p>If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets these parameters to the first valid Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively.</p>  <p>If you specify a nondefault VPC ID, note the following:</p>  <ul>   <li> <p>It must belong to a VPC in your account that is in the specified region.</p> </li>   <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>  </ul>  <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
+    ///   - [`attributes(HashMap<StackAttributesKeys, String>)`](crate::client::fluent_builders::CreateStack::attributes) / [`set_attributes(Option<HashMap<StackAttributesKeys, String>>)`](crate::client::fluent_builders::CreateStack::set_attributes): <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
+    ///   - [`service_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStack::service_role_arn) / [`set_service_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStack::set_service_role_arn): <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    ///   - [`default_instance_profile_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStack::default_instance_profile_arn) / [`set_default_instance_profile_arn(Option<String>)`](crate::client::fluent_builders::CreateStack::set_default_instance_profile_arn): <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    ///   - [`default_os(impl Into<String>)`](crate::client::fluent_builders::CreateStack::default_os) / [`set_default_os(Option<String>)`](crate::client::fluent_builders::CreateStack::set_default_os): <p>The stack's default operating system, which is installed on every instance unless you specify a different operating system when you create the instance. You can specify one of the following.</p>  <ul>   <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>   <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>   <li> <p> <code>CentOS Linux 7</code> </p> </li>   <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>   <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>   <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"> Using Custom AMIs</a>.</p> </li>  </ul>  <p>The default option is the current Amazon Linux version. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    ///   - [`hostname_theme(impl Into<String>)`](crate::client::fluent_builders::CreateStack::hostname_theme) / [`set_hostname_theme(Option<String>)`](crate::client::fluent_builders::CreateStack::set_hostname_theme): <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>  <ul>   <li> <p> <code>Baked_Goods</code> </p> </li>   <li> <p> <code>Clouds</code> </p> </li>   <li> <p> <code>Europe_Cities</code> </p> </li>   <li> <p> <code>Fruits</code> </p> </li>   <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>   <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>   <li> <p> <code>Planets_and_Moons</code> </p> </li>   <li> <p> <code>Roman_Deities</code> </p> </li>   <li> <p> <code>Scottish_Islands</code> </p> </li>   <li> <p> <code>US_Cities</code> </p> </li>   <li> <p> <code>Wild_Cats</code> </p> </li>  </ul>  <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
+    ///   - [`default_availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateStack::default_availability_zone) / [`set_default_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateStack::set_default_availability_zone): <p>The stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
+    ///   - [`default_subnet_id(impl Into<String>)`](crate::client::fluent_builders::CreateStack::default_subnet_id) / [`set_default_subnet_id(Option<String>)`](crate::client::fluent_builders::CreateStack::set_default_subnet_id): <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
+    ///   - [`custom_json(impl Into<String>)`](crate::client::fluent_builders::CreateStack::custom_json) / [`set_custom_json(Option<String>)`](crate::client::fluent_builders::CreateStack::set_custom_json): <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>  <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>  <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+    ///   - [`configuration_manager(StackConfigurationManager)`](crate::client::fluent_builders::CreateStack::configuration_manager) / [`set_configuration_manager(Option<StackConfigurationManager>)`](crate::client::fluent_builders::CreateStack::set_configuration_manager): <p>The configuration manager. When you create a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
+    ///   - [`chef_configuration(ChefConfiguration)`](crate::client::fluent_builders::CreateStack::chef_configuration) / [`set_chef_configuration(Option<ChefConfiguration>)`](crate::client::fluent_builders::CreateStack::set_chef_configuration): <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    ///   - [`use_custom_cookbooks(bool)`](crate::client::fluent_builders::CreateStack::use_custom_cookbooks) / [`set_use_custom_cookbooks(Option<bool>)`](crate::client::fluent_builders::CreateStack::set_use_custom_cookbooks): <p>Whether the stack uses custom cookbooks.</p>
+    ///   - [`use_opsworks_security_groups(bool)`](crate::client::fluent_builders::CreateStack::use_opsworks_security_groups) / [`set_use_opsworks_security_groups(Option<bool>)`](crate::client::fluent_builders::CreateStack::set_use_opsworks_security_groups): <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>  <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>  <ul>   <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p> </li>   <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    ///   - [`custom_cookbooks_source(Source)`](crate::client::fluent_builders::CreateStack::custom_cookbooks_source) / [`set_custom_cookbooks_source(Option<Source>)`](crate::client::fluent_builders::CreateStack::set_custom_cookbooks_source): <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    ///   - [`default_ssh_key_name(impl Into<String>)`](crate::client::fluent_builders::CreateStack::default_ssh_key_name) / [`set_default_ssh_key_name(Option<String>)`](crate::client::fluent_builders::CreateStack::set_default_ssh_key_name): <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
+    ///   - [`default_root_device_type(RootDeviceType)`](crate::client::fluent_builders::CreateStack::default_root_device_type) / [`set_default_root_device_type(Option<RootDeviceType>)`](crate::client::fluent_builders::CreateStack::set_default_root_device_type): <p>The default root device type. This value is the default for all instances in the stack, but you can override it when you create an instance. The default option is <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    ///   - [`agent_version(impl Into<String>)`](crate::client::fluent_builders::CreateStack::agent_version) / [`set_agent_version(Option<String>)`](crate::client::fluent_builders::CreateStack::set_agent_version): <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>  <ul>   <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>   <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>  </ul>  <p>The default setting is the most recent release of the agent. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>   <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>  </note>
+    /// - On success, responds with [`CreateStackOutput`](crate::output::CreateStackOutput) with field(s):
+    ///   - [`stack_id(Option<String>)`](crate::output::CreateStackOutput::stack_id): <p>The stack ID, which is an opaque string that you use to identify the stack when performing actions such as <code>DescribeStacks</code>.</p>
+    /// - On failure, responds with [`SdkError<CreateStackError>`](crate::error::CreateStackError)
     pub fn create_stack(&self) -> fluent_builders::CreateStack<C, M, R> {
         fluent_builders::CreateStack::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUserProfile` operation.
+    /// Constructs a fluent builder for the [`CreateUserProfile`](crate::client::fluent_builders::CreateUserProfile) operation.
     ///
-    /// See [`CreateUserProfile`](crate::client::fluent_builders::CreateUserProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`iam_user_arn(impl Into<String>)`](crate::client::fluent_builders::CreateUserProfile::iam_user_arn) / [`set_iam_user_arn(Option<String>)`](crate::client::fluent_builders::CreateUserProfile::set_iam_user_arn): <p>The user's IAM ARN; this can also be a federated user's ARN.</p>
+    ///   - [`ssh_username(impl Into<String>)`](crate::client::fluent_builders::CreateUserProfile::ssh_username) / [`set_ssh_username(Option<String>)`](crate::client::fluent_builders::CreateUserProfile::set_ssh_username): <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+    ///   - [`ssh_public_key(impl Into<String>)`](crate::client::fluent_builders::CreateUserProfile::ssh_public_key) / [`set_ssh_public_key(Option<String>)`](crate::client::fluent_builders::CreateUserProfile::set_ssh_public_key): <p>The user's public SSH key.</p>
+    ///   - [`allow_self_management(bool)`](crate::client::fluent_builders::CreateUserProfile::allow_self_management) / [`set_allow_self_management(Option<bool>)`](crate::client::fluent_builders::CreateUserProfile::set_allow_self_management): <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM User's Public SSH Key</a>.</p>
+    /// - On success, responds with [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput) with field(s):
+    ///   - [`iam_user_arn(Option<String>)`](crate::output::CreateUserProfileOutput::iam_user_arn): <p>The user's IAM ARN.</p>
+    /// - On failure, responds with [`SdkError<CreateUserProfileError>`](crate::error::CreateUserProfileError)
     pub fn create_user_profile(&self) -> fluent_builders::CreateUserProfile<C, M, R> {
         fluent_builders::CreateUserProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteApp` operation.
+    /// Constructs a fluent builder for the [`DeleteApp`](crate::client::fluent_builders::DeleteApp) operation.
     ///
-    /// See [`DeleteApp`](crate::client::fluent_builders::DeleteApp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApp::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::DeleteApp::set_app_id): <p>The app ID.</p>
+    /// - On success, responds with [`DeleteAppOutput`](crate::output::DeleteAppOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAppError>`](crate::error::DeleteAppError)
     pub fn delete_app(&self) -> fluent_builders::DeleteApp<C, M, R> {
         fluent_builders::DeleteApp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInstance` operation.
+    /// Constructs a fluent builder for the [`DeleteInstance`](crate::client::fluent_builders::DeleteInstance) operation.
     ///
-    /// See [`DeleteInstance`](crate::client::fluent_builders::DeleteInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteInstance::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteInstance::set_instance_id): <p>The instance ID.</p>
+    ///   - [`delete_elastic_ip(bool)`](crate::client::fluent_builders::DeleteInstance::delete_elastic_ip) / [`set_delete_elastic_ip(Option<bool>)`](crate::client::fluent_builders::DeleteInstance::set_delete_elastic_ip): <p>Whether to delete the instance Elastic IP address.</p>
+    ///   - [`delete_volumes(bool)`](crate::client::fluent_builders::DeleteInstance::delete_volumes) / [`set_delete_volumes(Option<bool>)`](crate::client::fluent_builders::DeleteInstance::set_delete_volumes): <p>Whether to delete the instance's Amazon EBS volumes.</p>
+    /// - On success, responds with [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteInstanceError>`](crate::error::DeleteInstanceError)
     pub fn delete_instance(&self) -> fluent_builders::DeleteInstance<C, M, R> {
         fluent_builders::DeleteInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLayer` operation.
+    /// Constructs a fluent builder for the [`DeleteLayer`](crate::client::fluent_builders::DeleteLayer) operation.
     ///
-    /// See [`DeleteLayer`](crate::client::fluent_builders::DeleteLayer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`layer_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLayer::layer_id) / [`set_layer_id(Option<String>)`](crate::client::fluent_builders::DeleteLayer::set_layer_id): <p>The layer ID.</p>
+    /// - On success, responds with [`DeleteLayerOutput`](crate::output::DeleteLayerOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLayerError>`](crate::error::DeleteLayerError)
     pub fn delete_layer(&self) -> fluent_builders::DeleteLayer<C, M, R> {
         fluent_builders::DeleteLayer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteStack` operation.
+    /// Constructs a fluent builder for the [`DeleteStack`](crate::client::fluent_builders::DeleteStack) operation.
     ///
-    /// See [`DeleteStack`](crate::client::fluent_builders::DeleteStack) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStack::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DeleteStack::set_stack_id): <p>The stack ID.</p>
+    /// - On success, responds with [`DeleteStackOutput`](crate::output::DeleteStackOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteStackError>`](crate::error::DeleteStackError)
     pub fn delete_stack(&self) -> fluent_builders::DeleteStack<C, M, R> {
         fluent_builders::DeleteStack::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUserProfile` operation.
+    /// Constructs a fluent builder for the [`DeleteUserProfile`](crate::client::fluent_builders::DeleteUserProfile) operation.
     ///
-    /// See [`DeleteUserProfile`](crate::client::fluent_builders::DeleteUserProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`iam_user_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteUserProfile::iam_user_arn) / [`set_iam_user_arn(Option<String>)`](crate::client::fluent_builders::DeleteUserProfile::set_iam_user_arn): <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
+    /// - On success, responds with [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserProfileError>`](crate::error::DeleteUserProfileError)
     pub fn delete_user_profile(&self) -> fluent_builders::DeleteUserProfile<C, M, R> {
         fluent_builders::DeleteUserProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterEcsCluster` operation.
+    /// Constructs a fluent builder for the [`DeregisterEcsCluster`](crate::client::fluent_builders::DeregisterEcsCluster) operation.
     ///
-    /// See [`DeregisterEcsCluster`](crate::client::fluent_builders::DeregisterEcsCluster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`ecs_cluster_arn(impl Into<String>)`](crate::client::fluent_builders::DeregisterEcsCluster::ecs_cluster_arn) / [`set_ecs_cluster_arn(Option<String>)`](crate::client::fluent_builders::DeregisterEcsCluster::set_ecs_cluster_arn): <p>The cluster's Amazon Resource Number (ARN).</p>
+    /// - On success, responds with [`DeregisterEcsClusterOutput`](crate::output::DeregisterEcsClusterOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterEcsClusterError>`](crate::error::DeregisterEcsClusterError)
     pub fn deregister_ecs_cluster(&self) -> fluent_builders::DeregisterEcsCluster<C, M, R> {
         fluent_builders::DeregisterEcsCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterElasticIp` operation.
+    /// Constructs a fluent builder for the [`DeregisterElasticIp`](crate::client::fluent_builders::DeregisterElasticIp) operation.
     ///
-    /// See [`DeregisterElasticIp`](crate::client::fluent_builders::DeregisterElasticIp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`elastic_ip(impl Into<String>)`](crate::client::fluent_builders::DeregisterElasticIp::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::client::fluent_builders::DeregisterElasticIp::set_elastic_ip): <p>The Elastic IP address.</p>
+    /// - On success, responds with [`DeregisterElasticIpOutput`](crate::output::DeregisterElasticIpOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterElasticIpError>`](crate::error::DeregisterElasticIpError)
     pub fn deregister_elastic_ip(&self) -> fluent_builders::DeregisterElasticIp<C, M, R> {
         fluent_builders::DeregisterElasticIp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterInstance` operation.
+    /// Constructs a fluent builder for the [`DeregisterInstance`](crate::client::fluent_builders::DeregisterInstance) operation.
     ///
-    /// See [`DeregisterInstance`](crate::client::fluent_builders::DeregisterInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterInstance::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeregisterInstance::set_instance_id): <p>The instance ID.</p>
+    /// - On success, responds with [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterInstanceError>`](crate::error::DeregisterInstanceError)
     pub fn deregister_instance(&self) -> fluent_builders::DeregisterInstance<C, M, R> {
         fluent_builders::DeregisterInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterRdsDbInstance` operation.
+    /// Constructs a fluent builder for the [`DeregisterRdsDbInstance`](crate::client::fluent_builders::DeregisterRdsDbInstance) operation.
     ///
-    /// See [`DeregisterRdsDbInstance`](crate::client::fluent_builders::DeregisterRdsDbInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`rds_db_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeregisterRdsDbInstance::rds_db_instance_arn) / [`set_rds_db_instance_arn(Option<String>)`](crate::client::fluent_builders::DeregisterRdsDbInstance::set_rds_db_instance_arn): <p>The Amazon RDS instance's ARN.</p>
+    /// - On success, responds with [`DeregisterRdsDbInstanceOutput`](crate::output::DeregisterRdsDbInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterRdsDbInstanceError>`](crate::error::DeregisterRdsDbInstanceError)
     pub fn deregister_rds_db_instance(&self) -> fluent_builders::DeregisterRdsDbInstance<C, M, R> {
         fluent_builders::DeregisterRdsDbInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterVolume` operation.
+    /// Constructs a fluent builder for the [`DeregisterVolume`](crate::client::fluent_builders::DeregisterVolume) operation.
     ///
-    /// See [`DeregisterVolume`](crate::client::fluent_builders::DeregisterVolume) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`volume_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterVolume::volume_id) / [`set_volume_id(Option<String>)`](crate::client::fluent_builders::DeregisterVolume::set_volume_id): <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
+    /// - On success, responds with [`DeregisterVolumeOutput`](crate::output::DeregisterVolumeOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterVolumeError>`](crate::error::DeregisterVolumeError)
     pub fn deregister_volume(&self) -> fluent_builders::DeregisterVolume<C, M, R> {
         fluent_builders::DeregisterVolume::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAgentVersions` operation.
+    /// Constructs a fluent builder for the [`DescribeAgentVersions`](crate::client::fluent_builders::DescribeAgentVersions) operation.
     ///
-    /// See [`DescribeAgentVersions`](crate::client::fluent_builders::DescribeAgentVersions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAgentVersions::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribeAgentVersions::set_stack_id): <p>The stack ID.</p>
+    ///   - [`configuration_manager(StackConfigurationManager)`](crate::client::fluent_builders::DescribeAgentVersions::configuration_manager) / [`set_configuration_manager(Option<StackConfigurationManager>)`](crate::client::fluent_builders::DescribeAgentVersions::set_configuration_manager): <p>The configuration manager.</p>
+    /// - On success, responds with [`DescribeAgentVersionsOutput`](crate::output::DescribeAgentVersionsOutput) with field(s):
+    ///   - [`agent_versions(Option<Vec<AgentVersion>>)`](crate::output::DescribeAgentVersionsOutput::agent_versions): <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
+    /// - On failure, responds with [`SdkError<DescribeAgentVersionsError>`](crate::error::DescribeAgentVersionsError)
     pub fn describe_agent_versions(&self) -> fluent_builders::DescribeAgentVersions<C, M, R> {
         fluent_builders::DescribeAgentVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeApps` operation.
+    /// Constructs a fluent builder for the [`DescribeApps`](crate::client::fluent_builders::DescribeApps) operation.
     ///
-    /// See [`DescribeApps`](crate::client::fluent_builders::DescribeApps) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeApps::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribeApps::set_stack_id): <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
+    ///   - [`app_ids(Vec<String>)`](crate::client::fluent_builders::DescribeApps::app_ids) / [`set_app_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeApps::set_app_ids): <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
+    /// - On success, responds with [`DescribeAppsOutput`](crate::output::DescribeAppsOutput) with field(s):
+    ///   - [`apps(Option<Vec<App>>)`](crate::output::DescribeAppsOutput::apps): <p>An array of <code>App</code> objects that describe the specified apps. </p>
+    /// - On failure, responds with [`SdkError<DescribeAppsError>`](crate::error::DescribeAppsError)
     pub fn describe_apps(&self) -> fluent_builders::DescribeApps<C, M, R> {
         fluent_builders::DescribeApps::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCommands` operation.
+    /// Constructs a fluent builder for the [`DescribeCommands`](crate::client::fluent_builders::DescribeCommands) operation.
     ///
-    /// See [`DescribeCommands`](crate::client::fluent_builders::DescribeCommands) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::DescribeCommands::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::DescribeCommands::set_deployment_id): <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeCommands::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeCommands::set_instance_id): <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified instance.</p>
+    ///   - [`command_ids(Vec<String>)`](crate::client::fluent_builders::DescribeCommands::command_ids) / [`set_command_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeCommands::set_command_ids): <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
+    /// - On success, responds with [`DescribeCommandsOutput`](crate::output::DescribeCommandsOutput) with field(s):
+    ///   - [`commands(Option<Vec<Command>>)`](crate::output::DescribeCommandsOutput::commands): <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
+    /// - On failure, responds with [`SdkError<DescribeCommandsError>`](crate::error::DescribeCommandsError)
     pub fn describe_commands(&self) -> fluent_builders::DescribeCommands<C, M, R> {
         fluent_builders::DescribeCommands::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDeployments` operation.
+    /// Constructs a fluent builder for the [`DescribeDeployments`](crate::client::fluent_builders::DescribeDeployments) operation.
     ///
-    /// See [`DescribeDeployments`](crate::client::fluent_builders::DescribeDeployments) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDeployments::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribeDeployments::set_stack_id): <p>The stack ID. If you include this parameter, the command returns a description of the commands associated with the specified stack.</p>
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDeployments::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::DescribeDeployments::set_app_id): <p>The app ID. If you include this parameter, the command returns a description of the commands associated with the specified app.</p>
+    ///   - [`deployment_ids(Vec<String>)`](crate::client::fluent_builders::DescribeDeployments::deployment_ids) / [`set_deployment_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeDeployments::set_deployment_ids): <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
+    /// - On success, responds with [`DescribeDeploymentsOutput`](crate::output::DescribeDeploymentsOutput) with field(s):
+    ///   - [`deployments(Option<Vec<Deployment>>)`](crate::output::DescribeDeploymentsOutput::deployments): <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
+    /// - On failure, responds with [`SdkError<DescribeDeploymentsError>`](crate::error::DescribeDeploymentsError)
     pub fn describe_deployments(&self) -> fluent_builders::DescribeDeployments<C, M, R> {
         fluent_builders::DescribeDeployments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEcsClusters` operation.
+    /// Constructs a fluent builder for the [`DescribeEcsClusters`](crate::client::fluent_builders::DescribeEcsClusters) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeEcsClusters::into_paginator).
     ///
-    /// See [`DescribeEcsClusters`](crate::client::fluent_builders::DescribeEcsClusters) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEcsClusters::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`ecs_cluster_arns(Vec<String>)`](crate::client::fluent_builders::DescribeEcsClusters::ecs_cluster_arns) / [`set_ecs_cluster_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeEcsClusters::set_ecs_cluster_arns): <p>A list of ARNs, one for each cluster to be described.</p>
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeEcsClusters::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribeEcsClusters::set_stack_id): <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeEcsClusters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeEcsClusters::set_next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's<code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>DescribeEcsClusters</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeEcsClusters::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeEcsClusters::set_max_results): <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
+    /// - On success, responds with [`DescribeEcsClustersOutput`](crate::output::DescribeEcsClustersOutput) with field(s):
+    ///   - [`ecs_clusters(Option<Vec<EcsCluster>>)`](crate::output::DescribeEcsClustersOutput::ecs_clusters): <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeEcsClustersOutput::next_token): <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
+    /// - On failure, responds with [`SdkError<DescribeEcsClustersError>`](crate::error::DescribeEcsClustersError)
     pub fn describe_ecs_clusters(&self) -> fluent_builders::DescribeEcsClusters<C, M, R> {
         fluent_builders::DescribeEcsClusters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeElasticIps` operation.
+    /// Constructs a fluent builder for the [`DescribeElasticIps`](crate::client::fluent_builders::DescribeElasticIps) operation.
     ///
-    /// See [`DescribeElasticIps`](crate::client::fluent_builders::DescribeElasticIps) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeElasticIps::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeElasticIps::set_instance_id): <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses associated with the specified instance.</p>
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeElasticIps::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribeElasticIps::set_stack_id): <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses that are registered with the specified stack.</p>
+    ///   - [`ips(Vec<String>)`](crate::client::fluent_builders::DescribeElasticIps::ips) / [`set_ips(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeElasticIps::set_ips): <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
+    /// - On success, responds with [`DescribeElasticIpsOutput`](crate::output::DescribeElasticIpsOutput) with field(s):
+    ///   - [`elastic_ips(Option<Vec<ElasticIp>>)`](crate::output::DescribeElasticIpsOutput::elastic_ips): <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
+    /// - On failure, responds with [`SdkError<DescribeElasticIpsError>`](crate::error::DescribeElasticIpsError)
     pub fn describe_elastic_ips(&self) -> fluent_builders::DescribeElasticIps<C, M, R> {
         fluent_builders::DescribeElasticIps::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeElasticLoadBalancers` operation.
+    /// Constructs a fluent builder for the [`DescribeElasticLoadBalancers`](crate::client::fluent_builders::DescribeElasticLoadBalancers) operation.
     ///
-    /// See [`DescribeElasticLoadBalancers`](crate::client::fluent_builders::DescribeElasticLoadBalancers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeElasticLoadBalancers::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribeElasticLoadBalancers::set_stack_id): <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
+    ///   - [`layer_ids(Vec<String>)`](crate::client::fluent_builders::DescribeElasticLoadBalancers::layer_ids) / [`set_layer_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeElasticLoadBalancers::set_layer_ids): <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
+    /// - On success, responds with [`DescribeElasticLoadBalancersOutput`](crate::output::DescribeElasticLoadBalancersOutput) with field(s):
+    ///   - [`elastic_load_balancers(Option<Vec<ElasticLoadBalancer>>)`](crate::output::DescribeElasticLoadBalancersOutput::elastic_load_balancers): <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
+    /// - On failure, responds with [`SdkError<DescribeElasticLoadBalancersError>`](crate::error::DescribeElasticLoadBalancersError)
     pub fn describe_elastic_load_balancers(
         &self,
     ) -> fluent_builders::DescribeElasticLoadBalancers<C, M, R> {
         fluent_builders::DescribeElasticLoadBalancers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInstances` operation.
+    /// Constructs a fluent builder for the [`DescribeInstances`](crate::client::fluent_builders::DescribeInstances) operation.
     ///
-    /// See [`DescribeInstances`](crate::client::fluent_builders::DescribeInstances) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeInstances::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribeInstances::set_stack_id): <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified stack.</p>
+    ///   - [`layer_id(impl Into<String>)`](crate::client::fluent_builders::DescribeInstances::layer_id) / [`set_layer_id(Option<String>)`](crate::client::fluent_builders::DescribeInstances::set_layer_id): <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified layer.</p>
+    ///   - [`instance_ids(Vec<String>)`](crate::client::fluent_builders::DescribeInstances::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeInstances::set_instance_ids): <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
+    /// - On success, responds with [`DescribeInstancesOutput`](crate::output::DescribeInstancesOutput) with field(s):
+    ///   - [`instances(Option<Vec<Instance>>)`](crate::output::DescribeInstancesOutput::instances): <p>An array of <code>Instance</code> objects that describe the instances.</p>
+    /// - On failure, responds with [`SdkError<DescribeInstancesError>`](crate::error::DescribeInstancesError)
     pub fn describe_instances(&self) -> fluent_builders::DescribeInstances<C, M, R> {
         fluent_builders::DescribeInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLayers` operation.
+    /// Constructs a fluent builder for the [`DescribeLayers`](crate::client::fluent_builders::DescribeLayers) operation.
     ///
-    /// See [`DescribeLayers`](crate::client::fluent_builders::DescribeLayers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeLayers::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribeLayers::set_stack_id): <p>The stack ID.</p>
+    ///   - [`layer_ids(Vec<String>)`](crate::client::fluent_builders::DescribeLayers::layer_ids) / [`set_layer_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeLayers::set_layer_ids): <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+    /// - On success, responds with [`DescribeLayersOutput`](crate::output::DescribeLayersOutput) with field(s):
+    ///   - [`layers(Option<Vec<Layer>>)`](crate::output::DescribeLayersOutput::layers): <p>An array of <code>Layer</code> objects that describe the layers.</p>
+    /// - On failure, responds with [`SdkError<DescribeLayersError>`](crate::error::DescribeLayersError)
     pub fn describe_layers(&self) -> fluent_builders::DescribeLayers<C, M, R> {
         fluent_builders::DescribeLayers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLoadBasedAutoScaling` operation.
+    /// Constructs a fluent builder for the [`DescribeLoadBasedAutoScaling`](crate::client::fluent_builders::DescribeLoadBasedAutoScaling) operation.
     ///
-    /// See [`DescribeLoadBasedAutoScaling`](crate::client::fluent_builders::DescribeLoadBasedAutoScaling) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`layer_ids(Vec<String>)`](crate::client::fluent_builders::DescribeLoadBasedAutoScaling::layer_ids) / [`set_layer_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeLoadBasedAutoScaling::set_layer_ids): <p>An array of layer IDs.</p>
+    /// - On success, responds with [`DescribeLoadBasedAutoScalingOutput`](crate::output::DescribeLoadBasedAutoScalingOutput) with field(s):
+    ///   - [`load_based_auto_scaling_configurations(Option<Vec<LoadBasedAutoScalingConfiguration>>)`](crate::output::DescribeLoadBasedAutoScalingOutput::load_based_auto_scaling_configurations): <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
+    /// - On failure, responds with [`SdkError<DescribeLoadBasedAutoScalingError>`](crate::error::DescribeLoadBasedAutoScalingError)
     pub fn describe_load_based_auto_scaling(
         &self,
     ) -> fluent_builders::DescribeLoadBasedAutoScaling<C, M, R> {
         fluent_builders::DescribeLoadBasedAutoScaling::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMyUserProfile` operation.
+    /// Constructs a fluent builder for the [`DescribeMyUserProfile`](crate::client::fluent_builders::DescribeMyUserProfile) operation.
     ///
-    /// See [`DescribeMyUserProfile`](crate::client::fluent_builders::DescribeMyUserProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeMyUserProfile::send) it.
+
+    /// - On success, responds with [`DescribeMyUserProfileOutput`](crate::output::DescribeMyUserProfileOutput) with field(s):
+    ///   - [`user_profile(Option<SelfUserProfile>)`](crate::output::DescribeMyUserProfileOutput::user_profile): <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
+    /// - On failure, responds with [`SdkError<DescribeMyUserProfileError>`](crate::error::DescribeMyUserProfileError)
     pub fn describe_my_user_profile(&self) -> fluent_builders::DescribeMyUserProfile<C, M, R> {
         fluent_builders::DescribeMyUserProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOperatingSystems` operation.
+    /// Constructs a fluent builder for the [`DescribeOperatingSystems`](crate::client::fluent_builders::DescribeOperatingSystems) operation.
     ///
-    /// See [`DescribeOperatingSystems`](crate::client::fluent_builders::DescribeOperatingSystems) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeOperatingSystems::send) it.
+
+    /// - On success, responds with [`DescribeOperatingSystemsOutput`](crate::output::DescribeOperatingSystemsOutput) with field(s):
+    ///   - [`operating_systems(Option<Vec<OperatingSystem>>)`](crate::output::DescribeOperatingSystemsOutput::operating_systems): <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
+    /// - On failure, responds with [`SdkError<DescribeOperatingSystemsError>`](crate::error::DescribeOperatingSystemsError)
     pub fn describe_operating_systems(&self) -> fluent_builders::DescribeOperatingSystems<C, M, R> {
         fluent_builders::DescribeOperatingSystems::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePermissions` operation.
+    /// Constructs a fluent builder for the [`DescribePermissions`](crate::client::fluent_builders::DescribePermissions) operation.
     ///
-    /// See [`DescribePermissions`](crate::client::fluent_builders::DescribePermissions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`iam_user_arn(impl Into<String>)`](crate::client::fluent_builders::DescribePermissions::iam_user_arn) / [`set_iam_user_arn(Option<String>)`](crate::client::fluent_builders::DescribePermissions::set_iam_user_arn): <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribePermissions::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribePermissions::set_stack_id): <p>The stack ID.</p>
+    /// - On success, responds with [`DescribePermissionsOutput`](crate::output::DescribePermissionsOutput) with field(s):
+    ///   - [`permissions(Option<Vec<Permission>>)`](crate::output::DescribePermissionsOutput::permissions): <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>  <ul>   <li> <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p> </li>   <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>   <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribePermissionsError>`](crate::error::DescribePermissionsError)
     pub fn describe_permissions(&self) -> fluent_builders::DescribePermissions<C, M, R> {
         fluent_builders::DescribePermissions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRaidArrays` operation.
+    /// Constructs a fluent builder for the [`DescribeRaidArrays`](crate::client::fluent_builders::DescribeRaidArrays) operation.
     ///
-    /// See [`DescribeRaidArrays`](crate::client::fluent_builders::DescribeRaidArrays) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeRaidArrays::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeRaidArrays::set_instance_id): <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeRaidArrays::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribeRaidArrays::set_stack_id): <p>The stack ID.</p>
+    ///   - [`raid_array_ids(Vec<String>)`](crate::client::fluent_builders::DescribeRaidArrays::raid_array_ids) / [`set_raid_array_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeRaidArrays::set_raid_array_ids): <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
+    /// - On success, responds with [`DescribeRaidArraysOutput`](crate::output::DescribeRaidArraysOutput) with field(s):
+    ///   - [`raid_arrays(Option<Vec<RaidArray>>)`](crate::output::DescribeRaidArraysOutput::raid_arrays): <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
+    /// - On failure, responds with [`SdkError<DescribeRaidArraysError>`](crate::error::DescribeRaidArraysError)
     pub fn describe_raid_arrays(&self) -> fluent_builders::DescribeRaidArrays<C, M, R> {
         fluent_builders::DescribeRaidArrays::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRdsDbInstances` operation.
+    /// Constructs a fluent builder for the [`DescribeRdsDbInstances`](crate::client::fluent_builders::DescribeRdsDbInstances) operation.
     ///
-    /// See [`DescribeRdsDbInstances`](crate::client::fluent_builders::DescribeRdsDbInstances) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeRdsDbInstances::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribeRdsDbInstances::set_stack_id): <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
+    ///   - [`rds_db_instance_arns(Vec<String>)`](crate::client::fluent_builders::DescribeRdsDbInstances::rds_db_instance_arns) / [`set_rds_db_instance_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeRdsDbInstances::set_rds_db_instance_arns): <p>An array containing the ARNs of the instances to be described.</p>
+    /// - On success, responds with [`DescribeRdsDbInstancesOutput`](crate::output::DescribeRdsDbInstancesOutput) with field(s):
+    ///   - [`rds_db_instances(Option<Vec<RdsDbInstance>>)`](crate::output::DescribeRdsDbInstancesOutput::rds_db_instances): <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
+    /// - On failure, responds with [`SdkError<DescribeRdsDbInstancesError>`](crate::error::DescribeRdsDbInstancesError)
     pub fn describe_rds_db_instances(&self) -> fluent_builders::DescribeRdsDbInstances<C, M, R> {
         fluent_builders::DescribeRdsDbInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeServiceErrors` operation.
+    /// Constructs a fluent builder for the [`DescribeServiceErrors`](crate::client::fluent_builders::DescribeServiceErrors) operation.
     ///
-    /// See [`DescribeServiceErrors`](crate::client::fluent_builders::DescribeServiceErrors) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeServiceErrors::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribeServiceErrors::set_stack_id): <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeServiceErrors::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeServiceErrors::set_instance_id): <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
+    ///   - [`service_error_ids(Vec<String>)`](crate::client::fluent_builders::DescribeServiceErrors::service_error_ids) / [`set_service_error_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeServiceErrors::set_service_error_ids): <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
+    /// - On success, responds with [`DescribeServiceErrorsOutput`](crate::output::DescribeServiceErrorsOutput) with field(s):
+    ///   - [`service_errors(Option<Vec<ServiceError>>)`](crate::output::DescribeServiceErrorsOutput::service_errors): <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
+    /// - On failure, responds with [`SdkError<DescribeServiceErrorsError>`](crate::error::DescribeServiceErrorsError)
     pub fn describe_service_errors(&self) -> fluent_builders::DescribeServiceErrors<C, M, R> {
         fluent_builders::DescribeServiceErrors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeStackProvisioningParameters` operation.
+    /// Constructs a fluent builder for the [`DescribeStackProvisioningParameters`](crate::client::fluent_builders::DescribeStackProvisioningParameters) operation.
     ///
-    /// See [`DescribeStackProvisioningParameters`](crate::client::fluent_builders::DescribeStackProvisioningParameters) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeStackProvisioningParameters::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribeStackProvisioningParameters::set_stack_id): <p>The stack ID.</p>
+    /// - On success, responds with [`DescribeStackProvisioningParametersOutput`](crate::output::DescribeStackProvisioningParametersOutput) with field(s):
+    ///   - [`agent_installer_url(Option<String>)`](crate::output::DescribeStackProvisioningParametersOutput::agent_installer_url): <p>The AWS OpsWorks Stacks agent installer's URL.</p>
+    ///   - [`parameters(Option<HashMap<String, String>>)`](crate::output::DescribeStackProvisioningParametersOutput::parameters): <p>An embedded object that contains the provisioning parameters.</p>
+    /// - On failure, responds with [`SdkError<DescribeStackProvisioningParametersError>`](crate::error::DescribeStackProvisioningParametersError)
     pub fn describe_stack_provisioning_parameters(
         &self,
     ) -> fluent_builders::DescribeStackProvisioningParameters<C, M, R> {
         fluent_builders::DescribeStackProvisioningParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeStacks` operation.
+    /// Constructs a fluent builder for the [`DescribeStacks`](crate::client::fluent_builders::DescribeStacks) operation.
     ///
-    /// See [`DescribeStacks`](crate::client::fluent_builders::DescribeStacks) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_ids(Vec<String>)`](crate::client::fluent_builders::DescribeStacks::stack_ids) / [`set_stack_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeStacks::set_stack_ids): <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
+    /// - On success, responds with [`DescribeStacksOutput`](crate::output::DescribeStacksOutput) with field(s):
+    ///   - [`stacks(Option<Vec<Stack>>)`](crate::output::DescribeStacksOutput::stacks): <p>An array of <code>Stack</code> objects that describe the stacks.</p>
+    /// - On failure, responds with [`SdkError<DescribeStacksError>`](crate::error::DescribeStacksError)
     pub fn describe_stacks(&self) -> fluent_builders::DescribeStacks<C, M, R> {
         fluent_builders::DescribeStacks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeStackSummary` operation.
+    /// Constructs a fluent builder for the [`DescribeStackSummary`](crate::client::fluent_builders::DescribeStackSummary) operation.
     ///
-    /// See [`DescribeStackSummary`](crate::client::fluent_builders::DescribeStackSummary) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeStackSummary::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribeStackSummary::set_stack_id): <p>The stack ID.</p>
+    /// - On success, responds with [`DescribeStackSummaryOutput`](crate::output::DescribeStackSummaryOutput) with field(s):
+    ///   - [`stack_summary(Option<StackSummary>)`](crate::output::DescribeStackSummaryOutput::stack_summary): <p>A <code>StackSummary</code> object that contains the results.</p>
+    /// - On failure, responds with [`SdkError<DescribeStackSummaryError>`](crate::error::DescribeStackSummaryError)
     pub fn describe_stack_summary(&self) -> fluent_builders::DescribeStackSummary<C, M, R> {
         fluent_builders::DescribeStackSummary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTimeBasedAutoScaling` operation.
+    /// Constructs a fluent builder for the [`DescribeTimeBasedAutoScaling`](crate::client::fluent_builders::DescribeTimeBasedAutoScaling) operation.
     ///
-    /// See [`DescribeTimeBasedAutoScaling`](crate::client::fluent_builders::DescribeTimeBasedAutoScaling) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_ids(Vec<String>)`](crate::client::fluent_builders::DescribeTimeBasedAutoScaling::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeTimeBasedAutoScaling::set_instance_ids): <p>An array of instance IDs.</p>
+    /// - On success, responds with [`DescribeTimeBasedAutoScalingOutput`](crate::output::DescribeTimeBasedAutoScalingOutput) with field(s):
+    ///   - [`time_based_auto_scaling_configurations(Option<Vec<TimeBasedAutoScalingConfiguration>>)`](crate::output::DescribeTimeBasedAutoScalingOutput::time_based_auto_scaling_configurations): <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
+    /// - On failure, responds with [`SdkError<DescribeTimeBasedAutoScalingError>`](crate::error::DescribeTimeBasedAutoScalingError)
     pub fn describe_time_based_auto_scaling(
         &self,
     ) -> fluent_builders::DescribeTimeBasedAutoScaling<C, M, R> {
         fluent_builders::DescribeTimeBasedAutoScaling::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUserProfiles` operation.
+    /// Constructs a fluent builder for the [`DescribeUserProfiles`](crate::client::fluent_builders::DescribeUserProfiles) operation.
     ///
-    /// See [`DescribeUserProfiles`](crate::client::fluent_builders::DescribeUserProfiles) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`iam_user_arns(Vec<String>)`](crate::client::fluent_builders::DescribeUserProfiles::iam_user_arns) / [`set_iam_user_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeUserProfiles::set_iam_user_arns): <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
+    /// - On success, responds with [`DescribeUserProfilesOutput`](crate::output::DescribeUserProfilesOutput) with field(s):
+    ///   - [`user_profiles(Option<Vec<UserProfile>>)`](crate::output::DescribeUserProfilesOutput::user_profiles): <p>A <code>Users</code> object that describes the specified users.</p>
+    /// - On failure, responds with [`SdkError<DescribeUserProfilesError>`](crate::error::DescribeUserProfilesError)
     pub fn describe_user_profiles(&self) -> fluent_builders::DescribeUserProfiles<C, M, R> {
         fluent_builders::DescribeUserProfiles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeVolumes` operation.
+    /// Constructs a fluent builder for the [`DescribeVolumes`](crate::client::fluent_builders::DescribeVolumes) operation.
     ///
-    /// See [`DescribeVolumes`](crate::client::fluent_builders::DescribeVolumes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeVolumes::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeVolumes::set_instance_id): <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeVolumes::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::DescribeVolumes::set_stack_id): <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
+    ///   - [`raid_array_id(impl Into<String>)`](crate::client::fluent_builders::DescribeVolumes::raid_array_id) / [`set_raid_array_id(Option<String>)`](crate::client::fluent_builders::DescribeVolumes::set_raid_array_id): <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
+    ///   - [`volume_ids(Vec<String>)`](crate::client::fluent_builders::DescribeVolumes::volume_ids) / [`set_volume_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeVolumes::set_volume_ids): <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
+    /// - On success, responds with [`DescribeVolumesOutput`](crate::output::DescribeVolumesOutput) with field(s):
+    ///   - [`volumes(Option<Vec<Volume>>)`](crate::output::DescribeVolumesOutput::volumes): <p>An array of volume IDs.</p>
+    /// - On failure, responds with [`SdkError<DescribeVolumesError>`](crate::error::DescribeVolumesError)
     pub fn describe_volumes(&self) -> fluent_builders::DescribeVolumes<C, M, R> {
         fluent_builders::DescribeVolumes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetachElasticLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`DetachElasticLoadBalancer`](crate::client::fluent_builders::DetachElasticLoadBalancer) operation.
     ///
-    /// See [`DetachElasticLoadBalancer`](crate::client::fluent_builders::DetachElasticLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`elastic_load_balancer_name(impl Into<String>)`](crate::client::fluent_builders::DetachElasticLoadBalancer::elastic_load_balancer_name) / [`set_elastic_load_balancer_name(Option<String>)`](crate::client::fluent_builders::DetachElasticLoadBalancer::set_elastic_load_balancer_name): <p>The Elastic Load Balancing instance's name.</p>
+    ///   - [`layer_id(impl Into<String>)`](crate::client::fluent_builders::DetachElasticLoadBalancer::layer_id) / [`set_layer_id(Option<String>)`](crate::client::fluent_builders::DetachElasticLoadBalancer::set_layer_id): <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
+    /// - On success, responds with [`DetachElasticLoadBalancerOutput`](crate::output::DetachElasticLoadBalancerOutput)
+
+    /// - On failure, responds with [`SdkError<DetachElasticLoadBalancerError>`](crate::error::DetachElasticLoadBalancerError)
     pub fn detach_elastic_load_balancer(
         &self,
     ) -> fluent_builders::DetachElasticLoadBalancer<C, M, R> {
         fluent_builders::DetachElasticLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateElasticIp` operation.
+    /// Constructs a fluent builder for the [`DisassociateElasticIp`](crate::client::fluent_builders::DisassociateElasticIp) operation.
     ///
-    /// See [`DisassociateElasticIp`](crate::client::fluent_builders::DisassociateElasticIp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`elastic_ip(impl Into<String>)`](crate::client::fluent_builders::DisassociateElasticIp::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::client::fluent_builders::DisassociateElasticIp::set_elastic_ip): <p>The Elastic IP address.</p>
+    /// - On success, responds with [`DisassociateElasticIpOutput`](crate::output::DisassociateElasticIpOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateElasticIpError>`](crate::error::DisassociateElasticIpError)
     pub fn disassociate_elastic_ip(&self) -> fluent_builders::DisassociateElasticIp<C, M, R> {
         fluent_builders::DisassociateElasticIp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetHostnameSuggestion` operation.
+    /// Constructs a fluent builder for the [`GetHostnameSuggestion`](crate::client::fluent_builders::GetHostnameSuggestion) operation.
     ///
-    /// See [`GetHostnameSuggestion`](crate::client::fluent_builders::GetHostnameSuggestion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`layer_id(impl Into<String>)`](crate::client::fluent_builders::GetHostnameSuggestion::layer_id) / [`set_layer_id(Option<String>)`](crate::client::fluent_builders::GetHostnameSuggestion::set_layer_id): <p>The layer ID.</p>
+    /// - On success, responds with [`GetHostnameSuggestionOutput`](crate::output::GetHostnameSuggestionOutput) with field(s):
+    ///   - [`layer_id(Option<String>)`](crate::output::GetHostnameSuggestionOutput::layer_id): <p>The layer ID.</p>
+    ///   - [`hostname(Option<String>)`](crate::output::GetHostnameSuggestionOutput::hostname): <p>The generated host name.</p>
+    /// - On failure, responds with [`SdkError<GetHostnameSuggestionError>`](crate::error::GetHostnameSuggestionError)
     pub fn get_hostname_suggestion(&self) -> fluent_builders::GetHostnameSuggestion<C, M, R> {
         fluent_builders::GetHostnameSuggestion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GrantAccess` operation.
+    /// Constructs a fluent builder for the [`GrantAccess`](crate::client::fluent_builders::GrantAccess) operation.
     ///
-    /// See [`GrantAccess`](crate::client::fluent_builders::GrantAccess) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::GrantAccess::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::GrantAccess::set_instance_id): <p>The instance's AWS OpsWorks Stacks ID.</p>
+    ///   - [`valid_for_in_minutes(i32)`](crate::client::fluent_builders::GrantAccess::valid_for_in_minutes) / [`set_valid_for_in_minutes(Option<i32>)`](crate::client::fluent_builders::GrantAccess::set_valid_for_in_minutes): <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
+    /// - On success, responds with [`GrantAccessOutput`](crate::output::GrantAccessOutput) with field(s):
+    ///   - [`temporary_credential(Option<TemporaryCredential>)`](crate::output::GrantAccessOutput::temporary_credential): <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
+    /// - On failure, responds with [`SdkError<GrantAccessError>`](crate::error::GrantAccessError)
     pub fn grant_access(&self) -> fluent_builders::GrantAccess<C, M, R> {
         fluent_builders::GrantAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTags` operation.
+    /// Constructs a fluent builder for the [`ListTags`](crate::client::fluent_builders::ListTags) operation.
     ///
-    /// See [`ListTags`](crate::client::fluent_builders::ListTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTags::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTags::set_resource_arn): <p>The stack or layer's Amazon Resource Number (ARN).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTags::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListTags::set_max_results): <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTags::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTags::set_next_token): <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call. </p>
+    /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsOutput::tags): <p>A set of key-value pairs that contain tag keys and tag values that are attached to a stack or layer.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsOutput::next_token): <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to get the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>. </p>
+    /// - On failure, responds with [`SdkError<ListTagsError>`](crate::error::ListTagsError)
     pub fn list_tags(&self) -> fluent_builders::ListTags<C, M, R> {
         fluent_builders::ListTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RebootInstance` operation.
+    /// Constructs a fluent builder for the [`RebootInstance`](crate::client::fluent_builders::RebootInstance) operation.
     ///
-    /// See [`RebootInstance`](crate::client::fluent_builders::RebootInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::RebootInstance::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::RebootInstance::set_instance_id): <p>The instance ID.</p>
+    /// - On success, responds with [`RebootInstanceOutput`](crate::output::RebootInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<RebootInstanceError>`](crate::error::RebootInstanceError)
     pub fn reboot_instance(&self) -> fluent_builders::RebootInstance<C, M, R> {
         fluent_builders::RebootInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterEcsCluster` operation.
+    /// Constructs a fluent builder for the [`RegisterEcsCluster`](crate::client::fluent_builders::RegisterEcsCluster) operation.
     ///
-    /// See [`RegisterEcsCluster`](crate::client::fluent_builders::RegisterEcsCluster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`ecs_cluster_arn(impl Into<String>)`](crate::client::fluent_builders::RegisterEcsCluster::ecs_cluster_arn) / [`set_ecs_cluster_arn(Option<String>)`](crate::client::fluent_builders::RegisterEcsCluster::set_ecs_cluster_arn): <p>The cluster's ARN.</p>
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::RegisterEcsCluster::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::RegisterEcsCluster::set_stack_id): <p>The stack ID.</p>
+    /// - On success, responds with [`RegisterEcsClusterOutput`](crate::output::RegisterEcsClusterOutput) with field(s):
+    ///   - [`ecs_cluster_arn(Option<String>)`](crate::output::RegisterEcsClusterOutput::ecs_cluster_arn): <p>The cluster's ARN.</p>
+    /// - On failure, responds with [`SdkError<RegisterEcsClusterError>`](crate::error::RegisterEcsClusterError)
     pub fn register_ecs_cluster(&self) -> fluent_builders::RegisterEcsCluster<C, M, R> {
         fluent_builders::RegisterEcsCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterElasticIp` operation.
+    /// Constructs a fluent builder for the [`RegisterElasticIp`](crate::client::fluent_builders::RegisterElasticIp) operation.
     ///
-    /// See [`RegisterElasticIp`](crate::client::fluent_builders::RegisterElasticIp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`elastic_ip(impl Into<String>)`](crate::client::fluent_builders::RegisterElasticIp::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::client::fluent_builders::RegisterElasticIp::set_elastic_ip): <p>The Elastic IP address.</p>
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::RegisterElasticIp::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::RegisterElasticIp::set_stack_id): <p>The stack ID.</p>
+    /// - On success, responds with [`RegisterElasticIpOutput`](crate::output::RegisterElasticIpOutput) with field(s):
+    ///   - [`elastic_ip(Option<String>)`](crate::output::RegisterElasticIpOutput::elastic_ip): <p>The Elastic IP address.</p>
+    /// - On failure, responds with [`SdkError<RegisterElasticIpError>`](crate::error::RegisterElasticIpError)
     pub fn register_elastic_ip(&self) -> fluent_builders::RegisterElasticIp<C, M, R> {
         fluent_builders::RegisterElasticIp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterInstance` operation.
+    /// Constructs a fluent builder for the [`RegisterInstance`](crate::client::fluent_builders::RegisterInstance) operation.
     ///
-    /// See [`RegisterInstance`](crate::client::fluent_builders::RegisterInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::RegisterInstance::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::RegisterInstance::set_stack_id): <p>The ID of the stack that the instance is to be registered with.</p>
+    ///   - [`hostname(impl Into<String>)`](crate::client::fluent_builders::RegisterInstance::hostname) / [`set_hostname(Option<String>)`](crate::client::fluent_builders::RegisterInstance::set_hostname): <p>The instance's hostname.</p>
+    ///   - [`public_ip(impl Into<String>)`](crate::client::fluent_builders::RegisterInstance::public_ip) / [`set_public_ip(Option<String>)`](crate::client::fluent_builders::RegisterInstance::set_public_ip): <p>The instance's public IP address.</p>
+    ///   - [`private_ip(impl Into<String>)`](crate::client::fluent_builders::RegisterInstance::private_ip) / [`set_private_ip(Option<String>)`](crate::client::fluent_builders::RegisterInstance::set_private_ip): <p>The instance's private IP address.</p>
+    ///   - [`rsa_public_key(impl Into<String>)`](crate::client::fluent_builders::RegisterInstance::rsa_public_key) / [`set_rsa_public_key(Option<String>)`](crate::client::fluent_builders::RegisterInstance::set_rsa_public_key): <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
+    ///   - [`rsa_public_key_fingerprint(impl Into<String>)`](crate::client::fluent_builders::RegisterInstance::rsa_public_key_fingerprint) / [`set_rsa_public_key_fingerprint(Option<String>)`](crate::client::fluent_builders::RegisterInstance::set_rsa_public_key_fingerprint): <p>The instances public RSA key fingerprint.</p>
+    ///   - [`instance_identity(InstanceIdentity)`](crate::client::fluent_builders::RegisterInstance::instance_identity) / [`set_instance_identity(Option<InstanceIdentity>)`](crate::client::fluent_builders::RegisterInstance::set_instance_identity): <p>An InstanceIdentity object that contains the instance's identity.</p>
+    /// - On success, responds with [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput) with field(s):
+    ///   - [`instance_id(Option<String>)`](crate::output::RegisterInstanceOutput::instance_id): <p>The registered instance's AWS OpsWorks Stacks ID.</p>
+    /// - On failure, responds with [`SdkError<RegisterInstanceError>`](crate::error::RegisterInstanceError)
     pub fn register_instance(&self) -> fluent_builders::RegisterInstance<C, M, R> {
         fluent_builders::RegisterInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterRdsDbInstance` operation.
+    /// Constructs a fluent builder for the [`RegisterRdsDbInstance`](crate::client::fluent_builders::RegisterRdsDbInstance) operation.
     ///
-    /// See [`RegisterRdsDbInstance`](crate::client::fluent_builders::RegisterRdsDbInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::RegisterRdsDbInstance::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::RegisterRdsDbInstance::set_stack_id): <p>The stack ID.</p>
+    ///   - [`rds_db_instance_arn(impl Into<String>)`](crate::client::fluent_builders::RegisterRdsDbInstance::rds_db_instance_arn) / [`set_rds_db_instance_arn(Option<String>)`](crate::client::fluent_builders::RegisterRdsDbInstance::set_rds_db_instance_arn): <p>The Amazon RDS instance's ARN.</p>
+    ///   - [`db_user(impl Into<String>)`](crate::client::fluent_builders::RegisterRdsDbInstance::db_user) / [`set_db_user(Option<String>)`](crate::client::fluent_builders::RegisterRdsDbInstance::set_db_user): <p>The database's master user name.</p>
+    ///   - [`db_password(impl Into<String>)`](crate::client::fluent_builders::RegisterRdsDbInstance::db_password) / [`set_db_password(Option<String>)`](crate::client::fluent_builders::RegisterRdsDbInstance::set_db_password): <p>The database password.</p>
+    /// - On success, responds with [`RegisterRdsDbInstanceOutput`](crate::output::RegisterRdsDbInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<RegisterRdsDbInstanceError>`](crate::error::RegisterRdsDbInstanceError)
     pub fn register_rds_db_instance(&self) -> fluent_builders::RegisterRdsDbInstance<C, M, R> {
         fluent_builders::RegisterRdsDbInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterVolume` operation.
+    /// Constructs a fluent builder for the [`RegisterVolume`](crate::client::fluent_builders::RegisterVolume) operation.
     ///
-    /// See [`RegisterVolume`](crate::client::fluent_builders::RegisterVolume) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`ec2_volume_id(impl Into<String>)`](crate::client::fluent_builders::RegisterVolume::ec2_volume_id) / [`set_ec2_volume_id(Option<String>)`](crate::client::fluent_builders::RegisterVolume::set_ec2_volume_id): <p>The Amazon EBS volume ID.</p>
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::RegisterVolume::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::RegisterVolume::set_stack_id): <p>The stack ID.</p>
+    /// - On success, responds with [`RegisterVolumeOutput`](crate::output::RegisterVolumeOutput) with field(s):
+    ///   - [`volume_id(Option<String>)`](crate::output::RegisterVolumeOutput::volume_id): <p>The volume ID.</p>
+    /// - On failure, responds with [`SdkError<RegisterVolumeError>`](crate::error::RegisterVolumeError)
     pub fn register_volume(&self) -> fluent_builders::RegisterVolume<C, M, R> {
         fluent_builders::RegisterVolume::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetLoadBasedAutoScaling` operation.
+    /// Constructs a fluent builder for the [`SetLoadBasedAutoScaling`](crate::client::fluent_builders::SetLoadBasedAutoScaling) operation.
     ///
-    /// See [`SetLoadBasedAutoScaling`](crate::client::fluent_builders::SetLoadBasedAutoScaling) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`layer_id(impl Into<String>)`](crate::client::fluent_builders::SetLoadBasedAutoScaling::layer_id) / [`set_layer_id(Option<String>)`](crate::client::fluent_builders::SetLoadBasedAutoScaling::set_layer_id): <p>The layer ID.</p>
+    ///   - [`enable(bool)`](crate::client::fluent_builders::SetLoadBasedAutoScaling::enable) / [`set_enable(Option<bool>)`](crate::client::fluent_builders::SetLoadBasedAutoScaling::set_enable): <p>Enables load-based auto scaling for the layer.</p>
+    ///   - [`up_scaling(AutoScalingThresholds)`](crate::client::fluent_builders::SetLoadBasedAutoScaling::up_scaling) / [`set_up_scaling(Option<AutoScalingThresholds>)`](crate::client::fluent_builders::SetLoadBasedAutoScaling::set_up_scaling): <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+    ///   - [`down_scaling(AutoScalingThresholds)`](crate::client::fluent_builders::SetLoadBasedAutoScaling::down_scaling) / [`set_down_scaling(Option<AutoScalingThresholds>)`](crate::client::fluent_builders::SetLoadBasedAutoScaling::set_down_scaling): <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+    /// - On success, responds with [`SetLoadBasedAutoScalingOutput`](crate::output::SetLoadBasedAutoScalingOutput)
+
+    /// - On failure, responds with [`SdkError<SetLoadBasedAutoScalingError>`](crate::error::SetLoadBasedAutoScalingError)
     pub fn set_load_based_auto_scaling(&self) -> fluent_builders::SetLoadBasedAutoScaling<C, M, R> {
         fluent_builders::SetLoadBasedAutoScaling::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetPermission` operation.
+    /// Constructs a fluent builder for the [`SetPermission`](crate::client::fluent_builders::SetPermission) operation.
     ///
-    /// See [`SetPermission`](crate::client::fluent_builders::SetPermission) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::SetPermission::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::SetPermission::set_stack_id): <p>The stack ID.</p>
+    ///   - [`iam_user_arn(impl Into<String>)`](crate::client::fluent_builders::SetPermission::iam_user_arn) / [`set_iam_user_arn(Option<String>)`](crate::client::fluent_builders::SetPermission::set_iam_user_arn): <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
+    ///   - [`allow_ssh(bool)`](crate::client::fluent_builders::SetPermission::allow_ssh) / [`set_allow_ssh(Option<bool>)`](crate::client::fluent_builders::SetPermission::set_allow_ssh): <p>The user is allowed to use SSH to communicate with the instance.</p>
+    ///   - [`allow_sudo(bool)`](crate::client::fluent_builders::SetPermission::allow_sudo) / [`set_allow_sudo(Option<bool>)`](crate::client::fluent_builders::SetPermission::set_allow_sudo): <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
+    ///   - [`level(impl Into<String>)`](crate::client::fluent_builders::SetPermission::level) / [`set_level(Option<String>)`](crate::client::fluent_builders::SetPermission::set_level): <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>  <ul>   <li> <p> <code>deny</code> </p> </li>   <li> <p> <code>show</code> </p> </li>   <li> <p> <code>deploy</code> </p> </li>   <li> <p> <code>manage</code> </p> </li>   <li> <p> <code>iam_only</code> </p> </li>  </ul>  <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    /// - On success, responds with [`SetPermissionOutput`](crate::output::SetPermissionOutput)
+
+    /// - On failure, responds with [`SdkError<SetPermissionError>`](crate::error::SetPermissionError)
     pub fn set_permission(&self) -> fluent_builders::SetPermission<C, M, R> {
         fluent_builders::SetPermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetTimeBasedAutoScaling` operation.
+    /// Constructs a fluent builder for the [`SetTimeBasedAutoScaling`](crate::client::fluent_builders::SetTimeBasedAutoScaling) operation.
     ///
-    /// See [`SetTimeBasedAutoScaling`](crate::client::fluent_builders::SetTimeBasedAutoScaling) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::SetTimeBasedAutoScaling::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::SetTimeBasedAutoScaling::set_instance_id): <p>The instance ID.</p>
+    ///   - [`auto_scaling_schedule(WeeklyAutoScalingSchedule)`](crate::client::fluent_builders::SetTimeBasedAutoScaling::auto_scaling_schedule) / [`set_auto_scaling_schedule(Option<WeeklyAutoScalingSchedule>)`](crate::client::fluent_builders::SetTimeBasedAutoScaling::set_auto_scaling_schedule): <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
+    /// - On success, responds with [`SetTimeBasedAutoScalingOutput`](crate::output::SetTimeBasedAutoScalingOutput)
+
+    /// - On failure, responds with [`SdkError<SetTimeBasedAutoScalingError>`](crate::error::SetTimeBasedAutoScalingError)
     pub fn set_time_based_auto_scaling(&self) -> fluent_builders::SetTimeBasedAutoScaling<C, M, R> {
         fluent_builders::SetTimeBasedAutoScaling::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartInstance` operation.
+    /// Constructs a fluent builder for the [`StartInstance`](crate::client::fluent_builders::StartInstance) operation.
     ///
-    /// See [`StartInstance`](crate::client::fluent_builders::StartInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StartInstance::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StartInstance::set_instance_id): <p>The instance ID.</p>
+    /// - On success, responds with [`StartInstanceOutput`](crate::output::StartInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<StartInstanceError>`](crate::error::StartInstanceError)
     pub fn start_instance(&self) -> fluent_builders::StartInstance<C, M, R> {
         fluent_builders::StartInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartStack` operation.
+    /// Constructs a fluent builder for the [`StartStack`](crate::client::fluent_builders::StartStack) operation.
     ///
-    /// See [`StartStack`](crate::client::fluent_builders::StartStack) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::StartStack::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::StartStack::set_stack_id): <p>The stack ID.</p>
+    /// - On success, responds with [`StartStackOutput`](crate::output::StartStackOutput)
+
+    /// - On failure, responds with [`SdkError<StartStackError>`](crate::error::StartStackError)
     pub fn start_stack(&self) -> fluent_builders::StartStack<C, M, R> {
         fluent_builders::StartStack::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopInstance` operation.
+    /// Constructs a fluent builder for the [`StopInstance`](crate::client::fluent_builders::StopInstance) operation.
     ///
-    /// See [`StopInstance`](crate::client::fluent_builders::StopInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StopInstance::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StopInstance::set_instance_id): <p>The instance ID.</p>
+    ///   - [`force(bool)`](crate::client::fluent_builders::StopInstance::force) / [`set_force(Option<bool>)`](crate::client::fluent_builders::StopInstance::set_force): <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance. You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
+    /// - On success, responds with [`StopInstanceOutput`](crate::output::StopInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<StopInstanceError>`](crate::error::StopInstanceError)
     pub fn stop_instance(&self) -> fluent_builders::StopInstance<C, M, R> {
         fluent_builders::StopInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopStack` operation.
+    /// Constructs a fluent builder for the [`StopStack`](crate::client::fluent_builders::StopStack) operation.
     ///
-    /// See [`StopStack`](crate::client::fluent_builders::StopStack) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::StopStack::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::StopStack::set_stack_id): <p>The stack ID.</p>
+    /// - On success, responds with [`StopStackOutput`](crate::output::StopStackOutput)
+
+    /// - On failure, responds with [`SdkError<StopStackError>`](crate::error::StopStackError)
     pub fn stop_stack(&self) -> fluent_builders::StopStack<C, M, R> {
         fluent_builders::StopStack::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The stack or layer's Amazon Resource Number (ARN).</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>  <ul>   <li> <p>The key cannot be empty.</p> </li>   <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>   <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>   <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>   <li> <p>A maximum of 40 tags is allowed for any resource.</p> </li>  </ul>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UnassignInstance` operation.
+    /// Constructs a fluent builder for the [`UnassignInstance`](crate::client::fluent_builders::UnassignInstance) operation.
     ///
-    /// See [`UnassignInstance`](crate::client::fluent_builders::UnassignInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UnassignInstance::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UnassignInstance::set_instance_id): <p>The instance ID.</p>
+    /// - On success, responds with [`UnassignInstanceOutput`](crate::output::UnassignInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<UnassignInstanceError>`](crate::error::UnassignInstanceError)
     pub fn unassign_instance(&self) -> fluent_builders::UnassignInstance<C, M, R> {
         fluent_builders::UnassignInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UnassignVolume` operation.
+    /// Constructs a fluent builder for the [`UnassignVolume`](crate::client::fluent_builders::UnassignVolume) operation.
     ///
-    /// See [`UnassignVolume`](crate::client::fluent_builders::UnassignVolume) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`volume_id(impl Into<String>)`](crate::client::fluent_builders::UnassignVolume::volume_id) / [`set_volume_id(Option<String>)`](crate::client::fluent_builders::UnassignVolume::set_volume_id): <p>The volume ID.</p>
+    /// - On success, responds with [`UnassignVolumeOutput`](crate::output::UnassignVolumeOutput)
+
+    /// - On failure, responds with [`SdkError<UnassignVolumeError>`](crate::error::UnassignVolumeError)
     pub fn unassign_volume(&self) -> fluent_builders::UnassignVolume<C, M, R> {
         fluent_builders::UnassignVolume::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The stack or layer's Amazon Resource Number (ARN).</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of the keys of tags to be removed from a stack or layer.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateApp` operation.
+    /// Constructs a fluent builder for the [`UpdateApp`](crate::client::fluent_builders::UpdateApp) operation.
     ///
-    /// See [`UpdateApp`](crate::client::fluent_builders::UpdateApp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_app_id): <p>The app ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_name): <p>The app name.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateApp::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateApp::set_description): <p>A description of the app.</p>
+    ///   - [`data_sources(Vec<DataSource>)`](crate::client::fluent_builders::UpdateApp::data_sources) / [`set_data_sources(Option<Vec<DataSource>>)`](crate::client::fluent_builders::UpdateApp::set_data_sources): <p>The app's data sources.</p>
+    ///   - [`r#type(AppType)`](crate::client::fluent_builders::UpdateApp::r#type) / [`set_type(Option<AppType>)`](crate::client::fluent_builders::UpdateApp::set_type): <p>The app type.</p>
+    ///   - [`app_source(Source)`](crate::client::fluent_builders::UpdateApp::app_source) / [`set_app_source(Option<Source>)`](crate::client::fluent_builders::UpdateApp::set_app_source): <p>A <code>Source</code> object that specifies the app repository.</p>
+    ///   - [`domains(Vec<String>)`](crate::client::fluent_builders::UpdateApp::domains) / [`set_domains(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateApp::set_domains): <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
+    ///   - [`enable_ssl(bool)`](crate::client::fluent_builders::UpdateApp::enable_ssl) / [`set_enable_ssl(Option<bool>)`](crate::client::fluent_builders::UpdateApp::set_enable_ssl): <p>Whether SSL is enabled for the app.</p>
+    ///   - [`ssl_configuration(SslConfiguration)`](crate::client::fluent_builders::UpdateApp::ssl_configuration) / [`set_ssl_configuration(Option<SslConfiguration>)`](crate::client::fluent_builders::UpdateApp::set_ssl_configuration): <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
+    ///   - [`attributes(HashMap<AppAttributesKeys, String>)`](crate::client::fluent_builders::UpdateApp::attributes) / [`set_attributes(Option<HashMap<AppAttributesKeys, String>>)`](crate::client::fluent_builders::UpdateApp::set_attributes): <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    ///   - [`environment(Vec<EnvironmentVariable>)`](crate::client::fluent_builders::UpdateApp::environment) / [`set_environment(Option<Vec<EnvironmentVariable>>)`](crate::client::fluent_builders::UpdateApp::set_environment): <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>  <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note>   <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>  </note>
+    /// - On success, responds with [`UpdateAppOutput`](crate::output::UpdateAppOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateAppError>`](crate::error::UpdateAppError)
     pub fn update_app(&self) -> fluent_builders::UpdateApp<C, M, R> {
         fluent_builders::UpdateApp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateElasticIp` operation.
+    /// Constructs a fluent builder for the [`UpdateElasticIp`](crate::client::fluent_builders::UpdateElasticIp) operation.
     ///
-    /// See [`UpdateElasticIp`](crate::client::fluent_builders::UpdateElasticIp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`elastic_ip(impl Into<String>)`](crate::client::fluent_builders::UpdateElasticIp::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::client::fluent_builders::UpdateElasticIp::set_elastic_ip): <p>The IP address for which you want to update the name.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateElasticIp::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateElasticIp::set_name): <p>The new name.</p>
+    /// - On success, responds with [`UpdateElasticIpOutput`](crate::output::UpdateElasticIpOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateElasticIpError>`](crate::error::UpdateElasticIpError)
     pub fn update_elastic_ip(&self) -> fluent_builders::UpdateElasticIp<C, M, R> {
         fluent_builders::UpdateElasticIp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateInstance` operation.
+    /// Constructs a fluent builder for the [`UpdateInstance`](crate::client::fluent_builders::UpdateInstance) operation.
     ///
-    /// See [`UpdateInstance`](crate::client::fluent_builders::UpdateInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateInstance::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateInstance::set_instance_id): <p>The instance ID.</p>
+    ///   - [`layer_ids(Vec<String>)`](crate::client::fluent_builders::UpdateInstance::layer_ids) / [`set_layer_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateInstance::set_layer_ids): <p>The instance's layer IDs.</p>
+    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::UpdateInstance::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::UpdateInstance::set_instance_type): <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+    ///   - [`auto_scaling_type(AutoScalingType)`](crate::client::fluent_builders::UpdateInstance::auto_scaling_type) / [`set_auto_scaling_type(Option<AutoScalingType>)`](crate::client::fluent_builders::UpdateInstance::set_auto_scaling_type): <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
+    ///   - [`hostname(impl Into<String>)`](crate::client::fluent_builders::UpdateInstance::hostname) / [`set_hostname(Option<String>)`](crate::client::fluent_builders::UpdateInstance::set_hostname): <p>The instance host name.</p>
+    ///   - [`os(impl Into<String>)`](crate::client::fluent_builders::UpdateInstance::os) / [`set_os(Option<String>)`](crate::client::fluent_builders::UpdateInstance::set_os): <p>The instance's operating system, which must be set to one of the following. You cannot update an instance that is using a custom AMI.</p>  <ul>   <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>   <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>   <li> <p> <code>CentOS Linux 7</code> </p> </li>   <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>   <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>  </ul>  <p>For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>  <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>   <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>  </note>
+    ///   - [`ami_id(impl Into<String>)`](crate::client::fluent_builders::UpdateInstance::ami_id) / [`set_ami_id(Option<String>)`](crate::client::fluent_builders::UpdateInstance::set_ami_id): <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs. </p>
+    ///   - [`ssh_key_name(impl Into<String>)`](crate::client::fluent_builders::UpdateInstance::ssh_key_name) / [`set_ssh_key_name(Option<String>)`](crate::client::fluent_builders::UpdateInstance::set_ssh_key_name): <p>The instance's Amazon EC2 key name.</p>
+    ///   - [`architecture(Architecture)`](crate::client::fluent_builders::UpdateInstance::architecture) / [`set_architecture(Option<Architecture>)`](crate::client::fluent_builders::UpdateInstance::set_architecture): <p>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
+    ///   - [`install_updates_on_boot(bool)`](crate::client::fluent_builders::UpdateInstance::install_updates_on_boot) / [`set_install_updates_on_boot(Option<bool>)`](crate::client::fluent_builders::UpdateInstance::set_install_updates_on_boot): <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>   <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>  </note>
+    ///   - [`ebs_optimized(bool)`](crate::client::fluent_builders::UpdateInstance::ebs_optimized) / [`set_ebs_optimized(Option<bool>)`](crate::client::fluent_builders::UpdateInstance::set_ebs_optimized): <p>This property cannot be updated.</p>
+    ///   - [`agent_version(impl Into<String>)`](crate::client::fluent_builders::UpdateInstance::agent_version) / [`set_agent_version(Option<String>)`](crate::client::fluent_builders::UpdateInstance::set_agent_version): <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>  <ul>   <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>   <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>  </ul>  <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>  <p>AgentVersion cannot be set to Chef 12.2.</p>
+    /// - On success, responds with [`UpdateInstanceOutput`](crate::output::UpdateInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateInstanceError>`](crate::error::UpdateInstanceError)
     pub fn update_instance(&self) -> fluent_builders::UpdateInstance<C, M, R> {
         fluent_builders::UpdateInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateLayer` operation.
+    /// Constructs a fluent builder for the [`UpdateLayer`](crate::client::fluent_builders::UpdateLayer) operation.
     ///
-    /// See [`UpdateLayer`](crate::client::fluent_builders::UpdateLayer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`layer_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLayer::layer_id) / [`set_layer_id(Option<String>)`](crate::client::fluent_builders::UpdateLayer::set_layer_id): <p>The layer ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateLayer::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateLayer::set_name): <p>The layer name, which is used by the console.</p>
+    ///   - [`shortname(impl Into<String>)`](crate::client::fluent_builders::UpdateLayer::shortname) / [`set_shortname(Option<String>)`](crate::client::fluent_builders::UpdateLayer::set_shortname): <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>  <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a> </p>
+    ///   - [`attributes(HashMap<LayerAttributesKeys, String>)`](crate::client::fluent_builders::UpdateLayer::attributes) / [`set_attributes(Option<HashMap<LayerAttributesKeys, String>>)`](crate::client::fluent_builders::UpdateLayer::set_attributes): <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    ///   - [`cloud_watch_logs_configuration(CloudWatchLogsConfiguration)`](crate::client::fluent_builders::UpdateLayer::cloud_watch_logs_configuration) / [`set_cloud_watch_logs_configuration(Option<CloudWatchLogsConfiguration>)`](crate::client::fluent_builders::UpdateLayer::set_cloud_watch_logs_configuration): <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
+    ///   - [`custom_instance_profile_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateLayer::custom_instance_profile_arn) / [`set_custom_instance_profile_arn(Option<String>)`](crate::client::fluent_builders::UpdateLayer::set_custom_instance_profile_arn): <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    ///   - [`custom_json(impl Into<String>)`](crate::client::fluent_builders::UpdateLayer::custom_json) / [`set_custom_json(Option<String>)`](crate::client::fluent_builders::UpdateLayer::set_custom_json): <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
+    ///   - [`custom_security_group_ids(Vec<String>)`](crate::client::fluent_builders::UpdateLayer::custom_security_group_ids) / [`set_custom_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLayer::set_custom_security_group_ids): <p>An array containing the layer's custom security group IDs.</p>
+    ///   - [`packages(Vec<String>)`](crate::client::fluent_builders::UpdateLayer::packages) / [`set_packages(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLayer::set_packages): <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
+    ///   - [`volume_configurations(Vec<VolumeConfiguration>)`](crate::client::fluent_builders::UpdateLayer::volume_configurations) / [`set_volume_configurations(Option<Vec<VolumeConfiguration>>)`](crate::client::fluent_builders::UpdateLayer::set_volume_configurations): <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
+    ///   - [`enable_auto_healing(bool)`](crate::client::fluent_builders::UpdateLayer::enable_auto_healing) / [`set_enable_auto_healing(Option<bool>)`](crate::client::fluent_builders::UpdateLayer::set_enable_auto_healing): <p>Whether to disable auto healing for the layer.</p>
+    ///   - [`auto_assign_elastic_ips(bool)`](crate::client::fluent_builders::UpdateLayer::auto_assign_elastic_ips) / [`set_auto_assign_elastic_ips(Option<bool>)`](crate::client::fluent_builders::UpdateLayer::set_auto_assign_elastic_ips): <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+    ///   - [`auto_assign_public_ips(bool)`](crate::client::fluent_builders::UpdateLayer::auto_assign_public_ips) / [`set_auto_assign_public_ips(Option<bool>)`](crate::client::fluent_builders::UpdateLayer::set_auto_assign_public_ips): <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+    ///   - [`custom_recipes(Recipes)`](crate::client::fluent_builders::UpdateLayer::custom_recipes) / [`set_custom_recipes(Option<Recipes>)`](crate::client::fluent_builders::UpdateLayer::set_custom_recipes): <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
+    ///   - [`install_updates_on_boot(bool)`](crate::client::fluent_builders::UpdateLayer::install_updates_on_boot) / [`set_install_updates_on_boot(Option<bool>)`](crate::client::fluent_builders::UpdateLayer::set_install_updates_on_boot): <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>   <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>  </note>
+    ///   - [`use_ebs_optimized_instances(bool)`](crate::client::fluent_builders::UpdateLayer::use_ebs_optimized_instances) / [`set_use_ebs_optimized_instances(Option<bool>)`](crate::client::fluent_builders::UpdateLayer::set_use_ebs_optimized_instances): <p>Whether to use Amazon EBS-optimized instances.</p>
+    ///   - [`lifecycle_event_configuration(LifecycleEventConfiguration)`](crate::client::fluent_builders::UpdateLayer::lifecycle_event_configuration) / [`set_lifecycle_event_configuration(Option<LifecycleEventConfiguration>)`](crate::client::fluent_builders::UpdateLayer::set_lifecycle_event_configuration): <p></p>
+    /// - On success, responds with [`UpdateLayerOutput`](crate::output::UpdateLayerOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateLayerError>`](crate::error::UpdateLayerError)
     pub fn update_layer(&self) -> fluent_builders::UpdateLayer<C, M, R> {
         fluent_builders::UpdateLayer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMyUserProfile` operation.
+    /// Constructs a fluent builder for the [`UpdateMyUserProfile`](crate::client::fluent_builders::UpdateMyUserProfile) operation.
     ///
-    /// See [`UpdateMyUserProfile`](crate::client::fluent_builders::UpdateMyUserProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`ssh_public_key(impl Into<String>)`](crate::client::fluent_builders::UpdateMyUserProfile::ssh_public_key) / [`set_ssh_public_key(Option<String>)`](crate::client::fluent_builders::UpdateMyUserProfile::set_ssh_public_key): <p>The user's SSH public key.</p>
+    /// - On success, responds with [`UpdateMyUserProfileOutput`](crate::output::UpdateMyUserProfileOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateMyUserProfileError>`](crate::error::UpdateMyUserProfileError)
     pub fn update_my_user_profile(&self) -> fluent_builders::UpdateMyUserProfile<C, M, R> {
         fluent_builders::UpdateMyUserProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRdsDbInstance` operation.
+    /// Constructs a fluent builder for the [`UpdateRdsDbInstance`](crate::client::fluent_builders::UpdateRdsDbInstance) operation.
     ///
-    /// See [`UpdateRdsDbInstance`](crate::client::fluent_builders::UpdateRdsDbInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`rds_db_instance_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRdsDbInstance::rds_db_instance_arn) / [`set_rds_db_instance_arn(Option<String>)`](crate::client::fluent_builders::UpdateRdsDbInstance::set_rds_db_instance_arn): <p>The Amazon RDS instance's ARN.</p>
+    ///   - [`db_user(impl Into<String>)`](crate::client::fluent_builders::UpdateRdsDbInstance::db_user) / [`set_db_user(Option<String>)`](crate::client::fluent_builders::UpdateRdsDbInstance::set_db_user): <p>The master user name.</p>
+    ///   - [`db_password(impl Into<String>)`](crate::client::fluent_builders::UpdateRdsDbInstance::db_password) / [`set_db_password(Option<String>)`](crate::client::fluent_builders::UpdateRdsDbInstance::set_db_password): <p>The database password.</p>
+    /// - On success, responds with [`UpdateRdsDbInstanceOutput`](crate::output::UpdateRdsDbInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRdsDbInstanceError>`](crate::error::UpdateRdsDbInstanceError)
     pub fn update_rds_db_instance(&self) -> fluent_builders::UpdateRdsDbInstance<C, M, R> {
         fluent_builders::UpdateRdsDbInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateStack` operation.
+    /// Constructs a fluent builder for the [`UpdateStack`](crate::client::fluent_builders::UpdateStack) operation.
     ///
-    /// See [`UpdateStack`](crate::client::fluent_builders::UpdateStack) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stack_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::stack_id) / [`set_stack_id(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_stack_id): <p>The stack ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_name): <p>The stack's new name.</p>
+    ///   - [`attributes(HashMap<StackAttributesKeys, String>)`](crate::client::fluent_builders::UpdateStack::attributes) / [`set_attributes(Option<HashMap<StackAttributesKeys, String>>)`](crate::client::fluent_builders::UpdateStack::set_attributes): <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
+    ///   - [`service_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::service_role_arn) / [`set_service_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_service_role_arn): <p>Do not use this parameter. You cannot update a stack's service role.</p>
+    ///   - [`default_instance_profile_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::default_instance_profile_arn) / [`set_default_instance_profile_arn(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_default_instance_profile_arn): <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    ///   - [`default_os(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::default_os) / [`set_default_os(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_default_os): <p>The stack's operating system, which must be set to one of the following:</p>  <ul>   <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>   <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>   <li> <p> <code>CentOS Linux 7</code> </p> </li>   <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>   <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>   <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>  </ul>  <p>The default option is the stack's current operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    ///   - [`hostname_theme(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::hostname_theme) / [`set_hostname_theme(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_hostname_theme): <p>The stack's new host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>  <ul>   <li> <p> <code>Baked_Goods</code> </p> </li>   <li> <p> <code>Clouds</code> </p> </li>   <li> <p> <code>Europe_Cities</code> </p> </li>   <li> <p> <code>Fruits</code> </p> </li>   <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>   <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>   <li> <p> <code>Planets_and_Moons</code> </p> </li>   <li> <p> <code>Roman_Deities</code> </p> </li>   <li> <p> <code>Scottish_Islands</code> </p> </li>   <li> <p> <code>US_Cities</code> </p> </li>   <li> <p> <code>Wild_Cats</code> </p> </li>  </ul>  <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
+    ///   - [`default_availability_zone(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::default_availability_zone) / [`set_default_availability_zone(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_default_availability_zone): <p>The stack's default Availability Zone, which must be in the stack's region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see <code>CreateStack</code>. </p>
+    ///   - [`default_subnet_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::default_subnet_id) / [`set_default_subnet_id(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_default_subnet_id): <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
+    ///   - [`custom_json(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::custom_json) / [`set_custom_json(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_custom_json): <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format:</p>  <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>  <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+    ///   - [`configuration_manager(StackConfigurationManager)`](crate::client::fluent_builders::UpdateStack::configuration_manager) / [`set_configuration_manager(Option<StackConfigurationManager>)`](crate::client::fluent_builders::UpdateStack::set_configuration_manager): <p>The configuration manager. When you update a stack, we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
+    ///   - [`chef_configuration(ChefConfiguration)`](crate::client::fluent_builders::UpdateStack::chef_configuration) / [`set_chef_configuration(Option<ChefConfiguration>)`](crate::client::fluent_builders::UpdateStack::set_chef_configuration): <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    ///   - [`use_custom_cookbooks(bool)`](crate::client::fluent_builders::UpdateStack::use_custom_cookbooks) / [`set_use_custom_cookbooks(Option<bool>)`](crate::client::fluent_builders::UpdateStack::set_use_custom_cookbooks): <p>Whether the stack uses custom cookbooks.</p>
+    ///   - [`custom_cookbooks_source(Source)`](crate::client::fluent_builders::UpdateStack::custom_cookbooks_source) / [`set_custom_cookbooks_source(Option<Source>)`](crate::client::fluent_builders::UpdateStack::set_custom_cookbooks_source): <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+    ///   - [`default_ssh_key_name(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::default_ssh_key_name) / [`set_default_ssh_key_name(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_default_ssh_key_name): <p>A default Amazon EC2 key-pair name. The default value is <code>none</code>. If you specify a key-pair name, AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
+    ///   - [`default_root_device_type(RootDeviceType)`](crate::client::fluent_builders::UpdateStack::default_root_device_type) / [`set_default_root_device_type(Option<RootDeviceType>)`](crate::client::fluent_builders::UpdateStack::set_default_root_device_type): <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+    ///   - [`use_opsworks_security_groups(bool)`](crate::client::fluent_builders::UpdateStack::use_opsworks_security_groups) / [`set_use_opsworks_security_groups(Option<bool>)`](crate::client::fluent_builders::UpdateStack::set_use_opsworks_security_groups): <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>  <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to provide your own custom security groups instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>  <ul>   <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p> </li>   <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+    ///   - [`agent_version(impl Into<String>)`](crate::client::fluent_builders::UpdateStack::agent_version) / [`set_agent_version(Option<String>)`](crate::client::fluent_builders::UpdateStack::set_agent_version): <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>  <ul>   <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>   <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>  </ul>  <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>   <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>  </note>
+    /// - On success, responds with [`UpdateStackOutput`](crate::output::UpdateStackOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateStackError>`](crate::error::UpdateStackError)
     pub fn update_stack(&self) -> fluent_builders::UpdateStack<C, M, R> {
         fluent_builders::UpdateStack::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserProfile` operation.
+    /// Constructs a fluent builder for the [`UpdateUserProfile`](crate::client::fluent_builders::UpdateUserProfile) operation.
     ///
-    /// See [`UpdateUserProfile`](crate::client::fluent_builders::UpdateUserProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`iam_user_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateUserProfile::iam_user_arn) / [`set_iam_user_arn(Option<String>)`](crate::client::fluent_builders::UpdateUserProfile::set_iam_user_arn): <p>The user IAM ARN. This can also be a federated user's ARN.</p>
+    ///   - [`ssh_username(impl Into<String>)`](crate::client::fluent_builders::UpdateUserProfile::ssh_username) / [`set_ssh_username(Option<String>)`](crate::client::fluent_builders::UpdateUserProfile::set_ssh_username): <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+    ///   - [`ssh_public_key(impl Into<String>)`](crate::client::fluent_builders::UpdateUserProfile::ssh_public_key) / [`set_ssh_public_key(Option<String>)`](crate::client::fluent_builders::UpdateUserProfile::set_ssh_public_key): <p>The user's new SSH public key.</p>
+    ///   - [`allow_self_management(bool)`](crate::client::fluent_builders::UpdateUserProfile::allow_self_management) / [`set_allow_self_management(Option<bool>)`](crate::client::fluent_builders::UpdateUserProfile::set_allow_self_management): <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
+    /// - On success, responds with [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateUserProfileError>`](crate::error::UpdateUserProfileError)
     pub fn update_user_profile(&self) -> fluent_builders::UpdateUserProfile<C, M, R> {
         fluent_builders::UpdateUserProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateVolume` operation.
+    /// Constructs a fluent builder for the [`UpdateVolume`](crate::client::fluent_builders::UpdateVolume) operation.
     ///
-    /// See [`UpdateVolume`](crate::client::fluent_builders::UpdateVolume) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`volume_id(impl Into<String>)`](crate::client::fluent_builders::UpdateVolume::volume_id) / [`set_volume_id(Option<String>)`](crate::client::fluent_builders::UpdateVolume::set_volume_id): <p>The volume ID.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateVolume::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateVolume::set_name): <p>The new name.</p>
+    ///   - [`mount_point(impl Into<String>)`](crate::client::fluent_builders::UpdateVolume::mount_point) / [`set_mount_point(Option<String>)`](crate::client::fluent_builders::UpdateVolume::set_mount_point): <p>The new mount point.</p>
+    /// - On success, responds with [`UpdateVolumeOutput`](crate::output::UpdateVolumeOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateVolumeError>`](crate::error::UpdateVolumeError)
     pub fn update_volume(&self) -> fluent_builders::UpdateVolume<C, M, R> {
         fluent_builders::UpdateVolume::new(self.handle.clone())
     }

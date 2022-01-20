@@ -83,574 +83,960 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateDevicePool` operation.
+    /// Constructs a fluent builder for the [`CreateDevicePool`](crate::client::fluent_builders::CreateDevicePool) operation.
     ///
-    /// See [`CreateDevicePool`](crate::client::fluent_builders::CreateDevicePool) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDevicePool::project_arn) / [`set_project_arn(Option<String>)`](crate::client::fluent_builders::CreateDevicePool::set_project_arn): <p>The ARN of the project for the device pool.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDevicePool::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDevicePool::set_name): <p>The device pool's name.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDevicePool::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDevicePool::set_description): <p>The device pool's description.</p>
+    ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::CreateDevicePool::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::CreateDevicePool::set_rules): <p>The device pool's rules.</p>
+    ///   - [`max_devices(i32)`](crate::client::fluent_builders::CreateDevicePool::max_devices) / [`set_max_devices(Option<i32>)`](crate::client::fluent_builders::CreateDevicePool::set_max_devices): <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>  <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
+    /// - On success, responds with [`CreateDevicePoolOutput`](crate::output::CreateDevicePoolOutput) with field(s):
+    ///   - [`device_pool(Option<DevicePool>)`](crate::output::CreateDevicePoolOutput::device_pool): <p>The newly created device pool.</p>
+    /// - On failure, responds with [`SdkError<CreateDevicePoolError>`](crate::error::CreateDevicePoolError)
     pub fn create_device_pool(&self) -> fluent_builders::CreateDevicePool<C, M, R> {
         fluent_builders::CreateDevicePool::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateInstanceProfile` operation.
+    /// Constructs a fluent builder for the [`CreateInstanceProfile`](crate::client::fluent_builders::CreateInstanceProfile) operation.
     ///
-    /// See [`CreateInstanceProfile`](crate::client::fluent_builders::CreateInstanceProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateInstanceProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateInstanceProfile::set_name): <p>The name of your instance profile.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateInstanceProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateInstanceProfile::set_description): <p>The description of your instance profile.</p>
+    ///   - [`package_cleanup(bool)`](crate::client::fluent_builders::CreateInstanceProfile::package_cleanup) / [`set_package_cleanup(Option<bool>)`](crate::client::fluent_builders::CreateInstanceProfile::set_package_cleanup): <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
+    ///   - [`exclude_app_packages_from_cleanup(Vec<String>)`](crate::client::fluent_builders::CreateInstanceProfile::exclude_app_packages_from_cleanup) / [`set_exclude_app_packages_from_cleanup(Option<Vec<String>>)`](crate::client::fluent_builders::CreateInstanceProfile::set_exclude_app_packages_from_cleanup): <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>  <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
+    ///   - [`reboot_after_use(bool)`](crate::client::fluent_builders::CreateInstanceProfile::reboot_after_use) / [`set_reboot_after_use(Option<bool>)`](crate::client::fluent_builders::CreateInstanceProfile::set_reboot_after_use): <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
+    /// - On success, responds with [`CreateInstanceProfileOutput`](crate::output::CreateInstanceProfileOutput) with field(s):
+    ///   - [`instance_profile(Option<InstanceProfile>)`](crate::output::CreateInstanceProfileOutput::instance_profile): <p>An object that contains information about your instance profile.</p>
+    /// - On failure, responds with [`SdkError<CreateInstanceProfileError>`](crate::error::CreateInstanceProfileError)
     pub fn create_instance_profile(&self) -> fluent_builders::CreateInstanceProfile<C, M, R> {
         fluent_builders::CreateInstanceProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateNetworkProfile` operation.
+    /// Constructs a fluent builder for the [`CreateNetworkProfile`](crate::client::fluent_builders::CreateNetworkProfile) operation.
     ///
-    /// See [`CreateNetworkProfile`](crate::client::fluent_builders::CreateNetworkProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_arn(impl Into<String>)`](crate::client::fluent_builders::CreateNetworkProfile::project_arn) / [`set_project_arn(Option<String>)`](crate::client::fluent_builders::CreateNetworkProfile::set_project_arn): <p>The Amazon Resource Name (ARN) of the project for which you want to create a network profile.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateNetworkProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateNetworkProfile::set_name): <p>The name for the new network profile.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateNetworkProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateNetworkProfile::set_description): <p>The description of the network profile.</p>
+    ///   - [`r#type(NetworkProfileType)`](crate::client::fluent_builders::CreateNetworkProfile::r#type) / [`set_type(Option<NetworkProfileType>)`](crate::client::fluent_builders::CreateNetworkProfile::set_type): <p>The type of network profile to create. Valid values are listed here.</p>
+    ///   - [`uplink_bandwidth_bits(i64)`](crate::client::fluent_builders::CreateNetworkProfile::uplink_bandwidth_bits) / [`set_uplink_bandwidth_bits(Option<i64>)`](crate::client::fluent_builders::CreateNetworkProfile::set_uplink_bandwidth_bits): <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+    ///   - [`downlink_bandwidth_bits(i64)`](crate::client::fluent_builders::CreateNetworkProfile::downlink_bandwidth_bits) / [`set_downlink_bandwidth_bits(Option<i64>)`](crate::client::fluent_builders::CreateNetworkProfile::set_downlink_bandwidth_bits): <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+    ///   - [`uplink_delay_ms(i64)`](crate::client::fluent_builders::CreateNetworkProfile::uplink_delay_ms) / [`set_uplink_delay_ms(Option<i64>)`](crate::client::fluent_builders::CreateNetworkProfile::set_uplink_delay_ms): <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+    ///   - [`downlink_delay_ms(i64)`](crate::client::fluent_builders::CreateNetworkProfile::downlink_delay_ms) / [`set_downlink_delay_ms(Option<i64>)`](crate::client::fluent_builders::CreateNetworkProfile::set_downlink_delay_ms): <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+    ///   - [`uplink_jitter_ms(i64)`](crate::client::fluent_builders::CreateNetworkProfile::uplink_jitter_ms) / [`set_uplink_jitter_ms(Option<i64>)`](crate::client::fluent_builders::CreateNetworkProfile::set_uplink_jitter_ms): <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+    ///   - [`downlink_jitter_ms(i64)`](crate::client::fluent_builders::CreateNetworkProfile::downlink_jitter_ms) / [`set_downlink_jitter_ms(Option<i64>)`](crate::client::fluent_builders::CreateNetworkProfile::set_downlink_jitter_ms): <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+    ///   - [`uplink_loss_percent(i32)`](crate::client::fluent_builders::CreateNetworkProfile::uplink_loss_percent) / [`set_uplink_loss_percent(i32)`](crate::client::fluent_builders::CreateNetworkProfile::set_uplink_loss_percent): <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
+    ///   - [`downlink_loss_percent(i32)`](crate::client::fluent_builders::CreateNetworkProfile::downlink_loss_percent) / [`set_downlink_loss_percent(i32)`](crate::client::fluent_builders::CreateNetworkProfile::set_downlink_loss_percent): <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
+    /// - On success, responds with [`CreateNetworkProfileOutput`](crate::output::CreateNetworkProfileOutput) with field(s):
+    ///   - [`network_profile(Option<NetworkProfile>)`](crate::output::CreateNetworkProfileOutput::network_profile): <p>The network profile that is returned by the create network profile request.</p>
+    /// - On failure, responds with [`SdkError<CreateNetworkProfileError>`](crate::error::CreateNetworkProfileError)
     pub fn create_network_profile(&self) -> fluent_builders::CreateNetworkProfile<C, M, R> {
         fluent_builders::CreateNetworkProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProject` operation.
+    /// Constructs a fluent builder for the [`CreateProject`](crate::client::fluent_builders::CreateProject) operation.
     ///
-    /// See [`CreateProject`](crate::client::fluent_builders::CreateProject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateProject::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateProject::set_name): <p>The project's name.</p>
+    ///   - [`default_job_timeout_minutes(i32)`](crate::client::fluent_builders::CreateProject::default_job_timeout_minutes) / [`set_default_job_timeout_minutes(Option<i32>)`](crate::client::fluent_builders::CreateProject::set_default_job_timeout_minutes): <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
+    /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput) with field(s):
+    ///   - [`project(Option<Project>)`](crate::output::CreateProjectOutput::project): <p>The newly created project.</p>
+    /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::error::CreateProjectError)
     pub fn create_project(&self) -> fluent_builders::CreateProject<C, M, R> {
         fluent_builders::CreateProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRemoteAccessSession` operation.
+    /// Constructs a fluent builder for the [`CreateRemoteAccessSession`](crate::client::fluent_builders::CreateRemoteAccessSession) operation.
     ///
-    /// See [`CreateRemoteAccessSession`](crate::client::fluent_builders::CreateRemoteAccessSession) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::project_arn) / [`set_project_arn(Option<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_project_arn): <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
+    ///   - [`device_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::device_arn) / [`set_device_arn(Option<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_device_arn): <p>The ARN of the device for which you want to create a remote access session.</p>
+    ///   - [`instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::instance_arn) / [`set_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_instance_arn): <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
+    ///   - [`ssh_public_key(impl Into<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::ssh_public_key) / [`set_ssh_public_key(Option<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_ssh_public_key): <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>  <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    ///   - [`remote_debug_enabled(bool)`](crate::client::fluent_builders::CreateRemoteAccessSession::remote_debug_enabled) / [`set_remote_debug_enabled(Option<bool>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_remote_debug_enabled): <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>  <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    ///   - [`remote_record_enabled(bool)`](crate::client::fluent_builders::CreateRemoteAccessSession::remote_record_enabled) / [`set_remote_record_enabled(Option<bool>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_remote_record_enabled): <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
+    ///   - [`remote_record_app_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::remote_record_app_arn) / [`set_remote_record_app_arn(Option<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_remote_record_app_arn): <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_name): <p>The name of the remote access session to create.</p>
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_client_id): <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>  <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+    ///   - [`configuration(CreateRemoteAccessSessionConfiguration)`](crate::client::fluent_builders::CreateRemoteAccessSession::configuration) / [`set_configuration(Option<CreateRemoteAccessSessionConfiguration>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_configuration): <p>The configuration information for the remote access session request.</p>
+    ///   - [`interaction_mode(InteractionMode)`](crate::client::fluent_builders::CreateRemoteAccessSession::interaction_mode) / [`set_interaction_mode(Option<InteractionMode>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_interaction_mode): <p>The interaction mode of the remote access session. Valid values are:</p>  <ul>   <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>   <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>   <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>  </ul>
+    ///   - [`skip_app_resign(bool)`](crate::client::fluent_builders::CreateRemoteAccessSession::skip_app_resign) / [`set_skip_app_resign(Option<bool>)`](crate::client::fluent_builders::CreateRemoteAccessSession::set_skip_app_resign): <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>  <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
+    /// - On success, responds with [`CreateRemoteAccessSessionOutput`](crate::output::CreateRemoteAccessSessionOutput) with field(s):
+    ///   - [`remote_access_session(Option<RemoteAccessSession>)`](crate::output::CreateRemoteAccessSessionOutput::remote_access_session): <p>A container that describes the remote access session when the request to create a remote access session is sent.</p>
+    /// - On failure, responds with [`SdkError<CreateRemoteAccessSessionError>`](crate::error::CreateRemoteAccessSessionError)
     pub fn create_remote_access_session(
         &self,
     ) -> fluent_builders::CreateRemoteAccessSession<C, M, R> {
         fluent_builders::CreateRemoteAccessSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTestGridProject` operation.
+    /// Constructs a fluent builder for the [`CreateTestGridProject`](crate::client::fluent_builders::CreateTestGridProject) operation.
     ///
-    /// See [`CreateTestGridProject`](crate::client::fluent_builders::CreateTestGridProject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateTestGridProject::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateTestGridProject::set_name): <p>Human-readable name of the Selenium testing project.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateTestGridProject::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateTestGridProject::set_description): <p>Human-readable description of the project.</p>
+    ///   - [`vpc_config(TestGridVpcConfig)`](crate::client::fluent_builders::CreateTestGridProject::vpc_config) / [`set_vpc_config(Option<TestGridVpcConfig>)`](crate::client::fluent_builders::CreateTestGridProject::set_vpc_config): <p>The VPC security groups and subnets that are attached to a project.</p>
+    /// - On success, responds with [`CreateTestGridProjectOutput`](crate::output::CreateTestGridProjectOutput) with field(s):
+    ///   - [`test_grid_project(Option<TestGridProject>)`](crate::output::CreateTestGridProjectOutput::test_grid_project): <p>ARN of the Selenium testing project that was created.</p>
+    /// - On failure, responds with [`SdkError<CreateTestGridProjectError>`](crate::error::CreateTestGridProjectError)
     pub fn create_test_grid_project(&self) -> fluent_builders::CreateTestGridProject<C, M, R> {
         fluent_builders::CreateTestGridProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTestGridUrl` operation.
+    /// Constructs a fluent builder for the [`CreateTestGridUrl`](crate::client::fluent_builders::CreateTestGridUrl) operation.
     ///
-    /// See [`CreateTestGridUrl`](crate::client::fluent_builders::CreateTestGridUrl) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTestGridUrl::project_arn) / [`set_project_arn(Option<String>)`](crate::client::fluent_builders::CreateTestGridUrl::set_project_arn): <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
+    ///   - [`expires_in_seconds(i32)`](crate::client::fluent_builders::CreateTestGridUrl::expires_in_seconds) / [`set_expires_in_seconds(Option<i32>)`](crate::client::fluent_builders::CreateTestGridUrl::set_expires_in_seconds): <p>Lifetime, in seconds, of the URL.</p>
+    /// - On success, responds with [`CreateTestGridUrlOutput`](crate::output::CreateTestGridUrlOutput) with field(s):
+    ///   - [`url(Option<String>)`](crate::output::CreateTestGridUrlOutput::url): <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>. </p>
+    ///   - [`expires(Option<DateTime>)`](crate::output::CreateTestGridUrlOutput::expires): <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
+    /// - On failure, responds with [`SdkError<CreateTestGridUrlError>`](crate::error::CreateTestGridUrlError)
     pub fn create_test_grid_url(&self) -> fluent_builders::CreateTestGridUrl<C, M, R> {
         fluent_builders::CreateTestGridUrl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUpload` operation.
+    /// Constructs a fluent builder for the [`CreateUpload`](crate::client::fluent_builders::CreateUpload) operation.
     ///
-    /// See [`CreateUpload`](crate::client::fluent_builders::CreateUpload) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_arn(impl Into<String>)`](crate::client::fluent_builders::CreateUpload::project_arn) / [`set_project_arn(Option<String>)`](crate::client::fluent_builders::CreateUpload::set_project_arn): <p>The ARN of the project for the upload.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateUpload::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateUpload::set_name): <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
+    ///   - [`r#type(UploadType)`](crate::client::fluent_builders::CreateUpload::r#type) / [`set_type(Option<UploadType>)`](crate::client::fluent_builders::CreateUpload::set_type): <p>The upload's upload type.</p>  <p>Must be one of the following values:</p>  <ul>   <li> <p>ANDROID_APP</p> </li>   <li> <p>IOS_APP</p> </li>   <li> <p>WEB_APP</p> </li>   <li> <p>EXTERNAL_DATA</p> </li>   <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>   <li> <p>CALABASH_TEST_PACKAGE</p> </li>   <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>   <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>   <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>   <li> <p>XCTEST_TEST_PACKAGE</p> </li>   <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>   <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>   <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>   <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>   <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>   <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>   <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>   <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>   <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>   <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>   <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>   <li> <p>XCTEST_UI_TEST_SPEC</p> </li>  </ul>  <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
+    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::CreateUpload::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::CreateUpload::set_content_type): <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
+    /// - On success, responds with [`CreateUploadOutput`](crate::output::CreateUploadOutput) with field(s):
+    ///   - [`upload(Option<Upload>)`](crate::output::CreateUploadOutput::upload): <p>The newly created upload.</p>
+    /// - On failure, responds with [`SdkError<CreateUploadError>`](crate::error::CreateUploadError)
     pub fn create_upload(&self) -> fluent_builders::CreateUpload<C, M, R> {
         fluent_builders::CreateUpload::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVPCEConfiguration` operation.
+    /// Constructs a fluent builder for the [`CreateVPCEConfiguration`](crate::client::fluent_builders::CreateVPCEConfiguration) operation.
     ///
-    /// See [`CreateVPCEConfiguration`](crate::client::fluent_builders::CreateVPCEConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vpce_configuration_name(impl Into<String>)`](crate::client::fluent_builders::CreateVPCEConfiguration::vpce_configuration_name) / [`set_vpce_configuration_name(Option<String>)`](crate::client::fluent_builders::CreateVPCEConfiguration::set_vpce_configuration_name): <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
+    ///   - [`vpce_service_name(impl Into<String>)`](crate::client::fluent_builders::CreateVPCEConfiguration::vpce_service_name) / [`set_vpce_service_name(Option<String>)`](crate::client::fluent_builders::CreateVPCEConfiguration::set_vpce_service_name): <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
+    ///   - [`service_dns_name(impl Into<String>)`](crate::client::fluent_builders::CreateVPCEConfiguration::service_dns_name) / [`set_service_dns_name(Option<String>)`](crate::client::fluent_builders::CreateVPCEConfiguration::set_service_dns_name): <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
+    ///   - [`vpce_configuration_description(impl Into<String>)`](crate::client::fluent_builders::CreateVPCEConfiguration::vpce_configuration_description) / [`set_vpce_configuration_description(Option<String>)`](crate::client::fluent_builders::CreateVPCEConfiguration::set_vpce_configuration_description): <p>An optional description that provides details about your VPC endpoint configuration.</p>
+    /// - On success, responds with [`CreateVpceConfigurationOutput`](crate::output::CreateVpceConfigurationOutput) with field(s):
+    ///   - [`vpce_configuration(Option<VpceConfiguration>)`](crate::output::CreateVpceConfigurationOutput::vpce_configuration): <p>An object that contains information about your VPC endpoint configuration.</p>
+    /// - On failure, responds with [`SdkError<CreateVPCEConfigurationError>`](crate::error::CreateVPCEConfigurationError)
     pub fn create_vpce_configuration(&self) -> fluent_builders::CreateVPCEConfiguration<C, M, R> {
         fluent_builders::CreateVPCEConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDevicePool` operation.
+    /// Constructs a fluent builder for the [`DeleteDevicePool`](crate::client::fluent_builders::DeleteDevicePool) operation.
     ///
-    /// See [`DeleteDevicePool`](crate::client::fluent_builders::DeleteDevicePool) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteDevicePool::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteDevicePool::set_arn): <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
+    /// - On success, responds with [`DeleteDevicePoolOutput`](crate::output::DeleteDevicePoolOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDevicePoolError>`](crate::error::DeleteDevicePoolError)
     pub fn delete_device_pool(&self) -> fluent_builders::DeleteDevicePool<C, M, R> {
         fluent_builders::DeleteDevicePool::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInstanceProfile` operation.
+    /// Constructs a fluent builder for the [`DeleteInstanceProfile`](crate::client::fluent_builders::DeleteInstanceProfile) operation.
     ///
-    /// See [`DeleteInstanceProfile`](crate::client::fluent_builders::DeleteInstanceProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteInstanceProfile::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteInstanceProfile::set_arn): <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
+    /// - On success, responds with [`DeleteInstanceProfileOutput`](crate::output::DeleteInstanceProfileOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteInstanceProfileError>`](crate::error::DeleteInstanceProfileError)
     pub fn delete_instance_profile(&self) -> fluent_builders::DeleteInstanceProfile<C, M, R> {
         fluent_builders::DeleteInstanceProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteNetworkProfile` operation.
+    /// Constructs a fluent builder for the [`DeleteNetworkProfile`](crate::client::fluent_builders::DeleteNetworkProfile) operation.
     ///
-    /// See [`DeleteNetworkProfile`](crate::client::fluent_builders::DeleteNetworkProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteNetworkProfile::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteNetworkProfile::set_arn): <p>The ARN of the network profile to delete.</p>
+    /// - On success, responds with [`DeleteNetworkProfileOutput`](crate::output::DeleteNetworkProfileOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteNetworkProfileError>`](crate::error::DeleteNetworkProfileError)
     pub fn delete_network_profile(&self) -> fluent_builders::DeleteNetworkProfile<C, M, R> {
         fluent_builders::DeleteNetworkProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProject` operation.
+    /// Constructs a fluent builder for the [`DeleteProject`](crate::client::fluent_builders::DeleteProject) operation.
     ///
-    /// See [`DeleteProject`](crate::client::fluent_builders::DeleteProject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteProject::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteProject::set_arn): <p>Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.</p>
+    /// - On success, responds with [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::error::DeleteProjectError)
     pub fn delete_project(&self) -> fluent_builders::DeleteProject<C, M, R> {
         fluent_builders::DeleteProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRemoteAccessSession` operation.
+    /// Constructs a fluent builder for the [`DeleteRemoteAccessSession`](crate::client::fluent_builders::DeleteRemoteAccessSession) operation.
     ///
-    /// See [`DeleteRemoteAccessSession`](crate::client::fluent_builders::DeleteRemoteAccessSession) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteRemoteAccessSession::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteRemoteAccessSession::set_arn): <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
+    /// - On success, responds with [`DeleteRemoteAccessSessionOutput`](crate::output::DeleteRemoteAccessSessionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRemoteAccessSessionError>`](crate::error::DeleteRemoteAccessSessionError)
     pub fn delete_remote_access_session(
         &self,
     ) -> fluent_builders::DeleteRemoteAccessSession<C, M, R> {
         fluent_builders::DeleteRemoteAccessSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRun` operation.
+    /// Constructs a fluent builder for the [`DeleteRun`](crate::client::fluent_builders::DeleteRun) operation.
     ///
-    /// See [`DeleteRun`](crate::client::fluent_builders::DeleteRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteRun::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteRun::set_arn): <p>The Amazon Resource Name (ARN) for the run to delete.</p>
+    /// - On success, responds with [`DeleteRunOutput`](crate::output::DeleteRunOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRunError>`](crate::error::DeleteRunError)
     pub fn delete_run(&self) -> fluent_builders::DeleteRun<C, M, R> {
         fluent_builders::DeleteRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTestGridProject` operation.
+    /// Constructs a fluent builder for the [`DeleteTestGridProject`](crate::client::fluent_builders::DeleteTestGridProject) operation.
     ///
-    /// See [`DeleteTestGridProject`](crate::client::fluent_builders::DeleteTestGridProject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteTestGridProject::project_arn) / [`set_project_arn(Option<String>)`](crate::client::fluent_builders::DeleteTestGridProject::set_project_arn): <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
+    /// - On success, responds with [`DeleteTestGridProjectOutput`](crate::output::DeleteTestGridProjectOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTestGridProjectError>`](crate::error::DeleteTestGridProjectError)
     pub fn delete_test_grid_project(&self) -> fluent_builders::DeleteTestGridProject<C, M, R> {
         fluent_builders::DeleteTestGridProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUpload` operation.
+    /// Constructs a fluent builder for the [`DeleteUpload`](crate::client::fluent_builders::DeleteUpload) operation.
     ///
-    /// See [`DeleteUpload`](crate::client::fluent_builders::DeleteUpload) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteUpload::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteUpload::set_arn): <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
+    /// - On success, responds with [`DeleteUploadOutput`](crate::output::DeleteUploadOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUploadError>`](crate::error::DeleteUploadError)
     pub fn delete_upload(&self) -> fluent_builders::DeleteUpload<C, M, R> {
         fluent_builders::DeleteUpload::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVPCEConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteVPCEConfiguration`](crate::client::fluent_builders::DeleteVPCEConfiguration) operation.
     ///
-    /// See [`DeleteVPCEConfiguration`](crate::client::fluent_builders::DeleteVPCEConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteVPCEConfiguration::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteVPCEConfiguration::set_arn): <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
+    /// - On success, responds with [`DeleteVpceConfigurationOutput`](crate::output::DeleteVpceConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteVPCEConfigurationError>`](crate::error::DeleteVPCEConfigurationError)
     pub fn delete_vpce_configuration(&self) -> fluent_builders::DeleteVPCEConfiguration<C, M, R> {
         fluent_builders::DeleteVPCEConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccountSettings` operation.
+    /// Constructs a fluent builder for the [`GetAccountSettings`](crate::client::fluent_builders::GetAccountSettings) operation.
     ///
-    /// See [`GetAccountSettings`](crate::client::fluent_builders::GetAccountSettings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetAccountSettings::send) it.
+
+    /// - On success, responds with [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput) with field(s):
+    ///   - [`account_settings(Option<AccountSettings>)`](crate::output::GetAccountSettingsOutput::account_settings): <p>The account settings.</p>
+    /// - On failure, responds with [`SdkError<GetAccountSettingsError>`](crate::error::GetAccountSettingsError)
     pub fn get_account_settings(&self) -> fluent_builders::GetAccountSettings<C, M, R> {
         fluent_builders::GetAccountSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDevice` operation.
+    /// Constructs a fluent builder for the [`GetDevice`](crate::client::fluent_builders::GetDevice) operation.
     ///
-    /// See [`GetDevice`](crate::client::fluent_builders::GetDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetDevice::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetDevice::set_arn): <p>The device type's ARN.</p>
+    /// - On success, responds with [`GetDeviceOutput`](crate::output::GetDeviceOutput) with field(s):
+    ///   - [`device(Option<Device>)`](crate::output::GetDeviceOutput::device): <p>An object that contains information about the requested device.</p>
+    /// - On failure, responds with [`SdkError<GetDeviceError>`](crate::error::GetDeviceError)
     pub fn get_device(&self) -> fluent_builders::GetDevice<C, M, R> {
         fluent_builders::GetDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDeviceInstance` operation.
+    /// Constructs a fluent builder for the [`GetDeviceInstance`](crate::client::fluent_builders::GetDeviceInstance) operation.
     ///
-    /// See [`GetDeviceInstance`](crate::client::fluent_builders::GetDeviceInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetDeviceInstance::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetDeviceInstance::set_arn): <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
+    /// - On success, responds with [`GetDeviceInstanceOutput`](crate::output::GetDeviceInstanceOutput) with field(s):
+    ///   - [`device_instance(Option<DeviceInstance>)`](crate::output::GetDeviceInstanceOutput::device_instance): <p>An object that contains information about your device instance.</p>
+    /// - On failure, responds with [`SdkError<GetDeviceInstanceError>`](crate::error::GetDeviceInstanceError)
     pub fn get_device_instance(&self) -> fluent_builders::GetDeviceInstance<C, M, R> {
         fluent_builders::GetDeviceInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDevicePool` operation.
+    /// Constructs a fluent builder for the [`GetDevicePool`](crate::client::fluent_builders::GetDevicePool) operation.
     ///
-    /// See [`GetDevicePool`](crate::client::fluent_builders::GetDevicePool) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetDevicePool::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetDevicePool::set_arn): <p>The device pool's ARN.</p>
+    /// - On success, responds with [`GetDevicePoolOutput`](crate::output::GetDevicePoolOutput) with field(s):
+    ///   - [`device_pool(Option<DevicePool>)`](crate::output::GetDevicePoolOutput::device_pool): <p>An object that contains information about the requested device pool.</p>
+    /// - On failure, responds with [`SdkError<GetDevicePoolError>`](crate::error::GetDevicePoolError)
     pub fn get_device_pool(&self) -> fluent_builders::GetDevicePool<C, M, R> {
         fluent_builders::GetDevicePool::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDevicePoolCompatibility` operation.
+    /// Constructs a fluent builder for the [`GetDevicePoolCompatibility`](crate::client::fluent_builders::GetDevicePoolCompatibility) operation.
     ///
-    /// See [`GetDevicePoolCompatibility`](crate::client::fluent_builders::GetDevicePoolCompatibility) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`device_pool_arn(impl Into<String>)`](crate::client::fluent_builders::GetDevicePoolCompatibility::device_pool_arn) / [`set_device_pool_arn(Option<String>)`](crate::client::fluent_builders::GetDevicePoolCompatibility::set_device_pool_arn): <p>The device pool's ARN.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::GetDevicePoolCompatibility::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::GetDevicePoolCompatibility::set_app_arn): <p>The ARN of the app that is associated with the specified device pool.</p>
+    ///   - [`test_type(TestType)`](crate::client::fluent_builders::GetDevicePoolCompatibility::test_type) / [`set_test_type(Option<TestType>)`](crate::client::fluent_builders::GetDevicePoolCompatibility::set_test_type): <p>The test type for the specified device pool.</p>  <p>Allowed values include the following:</p>  <ul>   <li> <p>BUILTIN_FUZZ.</p> </li>   <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>   <li> <p>APPIUM_JAVA_JUNIT.</p> </li>   <li> <p>APPIUM_JAVA_TESTNG.</p> </li>   <li> <p>APPIUM_PYTHON.</p> </li>   <li> <p>APPIUM_NODE.</p> </li>   <li> <p>APPIUM_RUBY.</p> </li>   <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>   <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>   <li> <p>APPIUM_WEB_PYTHON.</p> </li>   <li> <p>APPIUM_WEB_NODE.</p> </li>   <li> <p>APPIUM_WEB_RUBY.</p> </li>   <li> <p>CALABASH.</p> </li>   <li> <p>INSTRUMENTATION.</p> </li>   <li> <p>UIAUTOMATION.</p> </li>   <li> <p>UIAUTOMATOR.</p> </li>   <li> <p>XCTEST.</p> </li>   <li> <p>XCTEST_UI.</p> </li>  </ul>
+    ///   - [`test(ScheduleRunTest)`](crate::client::fluent_builders::GetDevicePoolCompatibility::test) / [`set_test(Option<ScheduleRunTest>)`](crate::client::fluent_builders::GetDevicePoolCompatibility::set_test): <p>Information about the uploaded test to be run against the device pool.</p>
+    ///   - [`configuration(ScheduleRunConfiguration)`](crate::client::fluent_builders::GetDevicePoolCompatibility::configuration) / [`set_configuration(Option<ScheduleRunConfiguration>)`](crate::client::fluent_builders::GetDevicePoolCompatibility::set_configuration): <p>An object that contains information about the settings for a run.</p>
+    /// - On success, responds with [`GetDevicePoolCompatibilityOutput`](crate::output::GetDevicePoolCompatibilityOutput) with field(s):
+    ///   - [`compatible_devices(Option<Vec<DevicePoolCompatibilityResult>>)`](crate::output::GetDevicePoolCompatibilityOutput::compatible_devices): <p>Information about compatible devices.</p>
+    ///   - [`incompatible_devices(Option<Vec<DevicePoolCompatibilityResult>>)`](crate::output::GetDevicePoolCompatibilityOutput::incompatible_devices): <p>Information about incompatible devices.</p>
+    /// - On failure, responds with [`SdkError<GetDevicePoolCompatibilityError>`](crate::error::GetDevicePoolCompatibilityError)
     pub fn get_device_pool_compatibility(
         &self,
     ) -> fluent_builders::GetDevicePoolCompatibility<C, M, R> {
         fluent_builders::GetDevicePoolCompatibility::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInstanceProfile` operation.
+    /// Constructs a fluent builder for the [`GetInstanceProfile`](crate::client::fluent_builders::GetInstanceProfile) operation.
     ///
-    /// See [`GetInstanceProfile`](crate::client::fluent_builders::GetInstanceProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetInstanceProfile::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetInstanceProfile::set_arn): <p>The Amazon Resource Name (ARN) of an instance profile.</p>
+    /// - On success, responds with [`GetInstanceProfileOutput`](crate::output::GetInstanceProfileOutput) with field(s):
+    ///   - [`instance_profile(Option<InstanceProfile>)`](crate::output::GetInstanceProfileOutput::instance_profile): <p>An object that contains information about an instance profile.</p>
+    /// - On failure, responds with [`SdkError<GetInstanceProfileError>`](crate::error::GetInstanceProfileError)
     pub fn get_instance_profile(&self) -> fluent_builders::GetInstanceProfile<C, M, R> {
         fluent_builders::GetInstanceProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJob` operation.
+    /// Constructs a fluent builder for the [`GetJob`](crate::client::fluent_builders::GetJob) operation.
     ///
-    /// See [`GetJob`](crate::client::fluent_builders::GetJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetJob::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetJob::set_arn): <p>The job's ARN.</p>
+    /// - On success, responds with [`GetJobOutput`](crate::output::GetJobOutput) with field(s):
+    ///   - [`job(Option<Job>)`](crate::output::GetJobOutput::job): <p>An object that contains information about the requested job.</p>
+    /// - On failure, responds with [`SdkError<GetJobError>`](crate::error::GetJobError)
     pub fn get_job(&self) -> fluent_builders::GetJob<C, M, R> {
         fluent_builders::GetJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetNetworkProfile` operation.
+    /// Constructs a fluent builder for the [`GetNetworkProfile`](crate::client::fluent_builders::GetNetworkProfile) operation.
     ///
-    /// See [`GetNetworkProfile`](crate::client::fluent_builders::GetNetworkProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetNetworkProfile::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetNetworkProfile::set_arn): <p>The ARN of the network profile to return information about.</p>
+    /// - On success, responds with [`GetNetworkProfileOutput`](crate::output::GetNetworkProfileOutput) with field(s):
+    ///   - [`network_profile(Option<NetworkProfile>)`](crate::output::GetNetworkProfileOutput::network_profile): <p>The network profile.</p>
+    /// - On failure, responds with [`SdkError<GetNetworkProfileError>`](crate::error::GetNetworkProfileError)
     pub fn get_network_profile(&self) -> fluent_builders::GetNetworkProfile<C, M, R> {
         fluent_builders::GetNetworkProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOfferingStatus` operation.
+    /// Constructs a fluent builder for the [`GetOfferingStatus`](crate::client::fluent_builders::GetOfferingStatus) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetOfferingStatus::into_paginator).
     ///
-    /// See [`GetOfferingStatus`](crate::client::fluent_builders::GetOfferingStatus) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetOfferingStatus::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetOfferingStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetOfferingStatus::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`GetOfferingStatusOutput`](crate::output::GetOfferingStatusOutput) with field(s):
+    ///   - [`current(Option<HashMap<String, OfferingStatus>>)`](crate::output::GetOfferingStatusOutput::current): <p>When specified, gets the offering status for the current period.</p>
+    ///   - [`next_period(Option<HashMap<String, OfferingStatus>>)`](crate::output::GetOfferingStatusOutput::next_period): <p>When specified, gets the offering status for the next period.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetOfferingStatusOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<GetOfferingStatusError>`](crate::error::GetOfferingStatusError)
     pub fn get_offering_status(&self) -> fluent_builders::GetOfferingStatus<C, M, R> {
         fluent_builders::GetOfferingStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetProject` operation.
+    /// Constructs a fluent builder for the [`GetProject`](crate::client::fluent_builders::GetProject) operation.
     ///
-    /// See [`GetProject`](crate::client::fluent_builders::GetProject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetProject::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetProject::set_arn): <p>The project's ARN.</p>
+    /// - On success, responds with [`GetProjectOutput`](crate::output::GetProjectOutput) with field(s):
+    ///   - [`project(Option<Project>)`](crate::output::GetProjectOutput::project): <p>The project to get information about.</p>
+    /// - On failure, responds with [`SdkError<GetProjectError>`](crate::error::GetProjectError)
     pub fn get_project(&self) -> fluent_builders::GetProject<C, M, R> {
         fluent_builders::GetProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRemoteAccessSession` operation.
+    /// Constructs a fluent builder for the [`GetRemoteAccessSession`](crate::client::fluent_builders::GetRemoteAccessSession) operation.
     ///
-    /// See [`GetRemoteAccessSession`](crate::client::fluent_builders::GetRemoteAccessSession) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetRemoteAccessSession::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetRemoteAccessSession::set_arn): <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
+    /// - On success, responds with [`GetRemoteAccessSessionOutput`](crate::output::GetRemoteAccessSessionOutput) with field(s):
+    ///   - [`remote_access_session(Option<RemoteAccessSession>)`](crate::output::GetRemoteAccessSessionOutput::remote_access_session): <p>A container that lists detailed information about the remote access session.</p>
+    /// - On failure, responds with [`SdkError<GetRemoteAccessSessionError>`](crate::error::GetRemoteAccessSessionError)
     pub fn get_remote_access_session(&self) -> fluent_builders::GetRemoteAccessSession<C, M, R> {
         fluent_builders::GetRemoteAccessSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRun` operation.
+    /// Constructs a fluent builder for the [`GetRun`](crate::client::fluent_builders::GetRun) operation.
     ///
-    /// See [`GetRun`](crate::client::fluent_builders::GetRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetRun::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetRun::set_arn): <p>The run's ARN.</p>
+    /// - On success, responds with [`GetRunOutput`](crate::output::GetRunOutput) with field(s):
+    ///   - [`run(Option<Run>)`](crate::output::GetRunOutput::run): <p>The run to get results from.</p>
+    /// - On failure, responds with [`SdkError<GetRunError>`](crate::error::GetRunError)
     pub fn get_run(&self) -> fluent_builders::GetRun<C, M, R> {
         fluent_builders::GetRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSuite` operation.
+    /// Constructs a fluent builder for the [`GetSuite`](crate::client::fluent_builders::GetSuite) operation.
     ///
-    /// See [`GetSuite`](crate::client::fluent_builders::GetSuite) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetSuite::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetSuite::set_arn): <p>The suite's ARN.</p>
+    /// - On success, responds with [`GetSuiteOutput`](crate::output::GetSuiteOutput) with field(s):
+    ///   - [`suite(Option<Suite>)`](crate::output::GetSuiteOutput::suite): <p>A collection of one or more tests.</p>
+    /// - On failure, responds with [`SdkError<GetSuiteError>`](crate::error::GetSuiteError)
     pub fn get_suite(&self) -> fluent_builders::GetSuite<C, M, R> {
         fluent_builders::GetSuite::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTest` operation.
+    /// Constructs a fluent builder for the [`GetTest`](crate::client::fluent_builders::GetTest) operation.
     ///
-    /// See [`GetTest`](crate::client::fluent_builders::GetTest) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetTest::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetTest::set_arn): <p>The test's ARN.</p>
+    /// - On success, responds with [`GetTestOutput`](crate::output::GetTestOutput) with field(s):
+    ///   - [`test(Option<Test>)`](crate::output::GetTestOutput::test): <p>A test condition that is evaluated.</p>
+    /// - On failure, responds with [`SdkError<GetTestError>`](crate::error::GetTestError)
     pub fn get_test(&self) -> fluent_builders::GetTest<C, M, R> {
         fluent_builders::GetTest::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTestGridProject` operation.
+    /// Constructs a fluent builder for the [`GetTestGridProject`](crate::client::fluent_builders::GetTestGridProject) operation.
     ///
-    /// See [`GetTestGridProject`](crate::client::fluent_builders::GetTestGridProject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_arn(impl Into<String>)`](crate::client::fluent_builders::GetTestGridProject::project_arn) / [`set_project_arn(Option<String>)`](crate::client::fluent_builders::GetTestGridProject::set_project_arn): <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
+    /// - On success, responds with [`GetTestGridProjectOutput`](crate::output::GetTestGridProjectOutput) with field(s):
+    ///   - [`test_grid_project(Option<TestGridProject>)`](crate::output::GetTestGridProjectOutput::test_grid_project): <p>A <code>TestGridProject</code>.</p>
+    /// - On failure, responds with [`SdkError<GetTestGridProjectError>`](crate::error::GetTestGridProjectError)
     pub fn get_test_grid_project(&self) -> fluent_builders::GetTestGridProject<C, M, R> {
         fluent_builders::GetTestGridProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTestGridSession` operation.
+    /// Constructs a fluent builder for the [`GetTestGridSession`](crate::client::fluent_builders::GetTestGridSession) operation.
     ///
-    /// See [`GetTestGridSession`](crate::client::fluent_builders::GetTestGridSession) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_arn(impl Into<String>)`](crate::client::fluent_builders::GetTestGridSession::project_arn) / [`set_project_arn(Option<String>)`](crate::client::fluent_builders::GetTestGridSession::set_project_arn): <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
+    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::GetTestGridSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::GetTestGridSession::set_session_id): <p>An ID associated with this session.</p>
+    ///   - [`session_arn(impl Into<String>)`](crate::client::fluent_builders::GetTestGridSession::session_arn) / [`set_session_arn(Option<String>)`](crate::client::fluent_builders::GetTestGridSession::set_session_arn): <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
+    /// - On success, responds with [`GetTestGridSessionOutput`](crate::output::GetTestGridSessionOutput) with field(s):
+    ///   - [`test_grid_session(Option<TestGridSession>)`](crate::output::GetTestGridSessionOutput::test_grid_session): <p>The <code>TestGridSession</code> that was requested.</p>
+    /// - On failure, responds with [`SdkError<GetTestGridSessionError>`](crate::error::GetTestGridSessionError)
     pub fn get_test_grid_session(&self) -> fluent_builders::GetTestGridSession<C, M, R> {
         fluent_builders::GetTestGridSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUpload` operation.
+    /// Constructs a fluent builder for the [`GetUpload`](crate::client::fluent_builders::GetUpload) operation.
     ///
-    /// See [`GetUpload`](crate::client::fluent_builders::GetUpload) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetUpload::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetUpload::set_arn): <p>The upload's ARN.</p>
+    /// - On success, responds with [`GetUploadOutput`](crate::output::GetUploadOutput) with field(s):
+    ///   - [`upload(Option<Upload>)`](crate::output::GetUploadOutput::upload): <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
+    /// - On failure, responds with [`SdkError<GetUploadError>`](crate::error::GetUploadError)
     pub fn get_upload(&self) -> fluent_builders::GetUpload<C, M, R> {
         fluent_builders::GetUpload::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetVPCEConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetVPCEConfiguration`](crate::client::fluent_builders::GetVPCEConfiguration) operation.
     ///
-    /// See [`GetVPCEConfiguration`](crate::client::fluent_builders::GetVPCEConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetVPCEConfiguration::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetVPCEConfiguration::set_arn): <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
+    /// - On success, responds with [`GetVpceConfigurationOutput`](crate::output::GetVpceConfigurationOutput) with field(s):
+    ///   - [`vpce_configuration(Option<VpceConfiguration>)`](crate::output::GetVpceConfigurationOutput::vpce_configuration): <p>An object that contains information about your VPC endpoint configuration.</p>
+    /// - On failure, responds with [`SdkError<GetVPCEConfigurationError>`](crate::error::GetVPCEConfigurationError)
     pub fn get_vpce_configuration(&self) -> fluent_builders::GetVPCEConfiguration<C, M, R> {
         fluent_builders::GetVPCEConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `InstallToRemoteAccessSession` operation.
+    /// Constructs a fluent builder for the [`InstallToRemoteAccessSession`](crate::client::fluent_builders::InstallToRemoteAccessSession) operation.
     ///
-    /// See [`InstallToRemoteAccessSession`](crate::client::fluent_builders::InstallToRemoteAccessSession) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`remote_access_session_arn(impl Into<String>)`](crate::client::fluent_builders::InstallToRemoteAccessSession::remote_access_session_arn) / [`set_remote_access_session_arn(Option<String>)`](crate::client::fluent_builders::InstallToRemoteAccessSession::set_remote_access_session_arn): <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::InstallToRemoteAccessSession::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::InstallToRemoteAccessSession::set_app_arn): <p>The ARN of the app about which you are requesting information.</p>
+    /// - On success, responds with [`InstallToRemoteAccessSessionOutput`](crate::output::InstallToRemoteAccessSessionOutput) with field(s):
+    ///   - [`app_upload(Option<Upload>)`](crate::output::InstallToRemoteAccessSessionOutput::app_upload): <p>An app to upload or that has been uploaded.</p>
+    /// - On failure, responds with [`SdkError<InstallToRemoteAccessSessionError>`](crate::error::InstallToRemoteAccessSessionError)
     pub fn install_to_remote_access_session(
         &self,
     ) -> fluent_builders::InstallToRemoteAccessSession<C, M, R> {
         fluent_builders::InstallToRemoteAccessSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListArtifacts` operation.
+    /// Constructs a fluent builder for the [`ListArtifacts`](crate::client::fluent_builders::ListArtifacts) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListArtifacts::into_paginator).
     ///
-    /// See [`ListArtifacts`](crate::client::fluent_builders::ListArtifacts) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListArtifacts::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListArtifacts::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListArtifacts::set_arn): <p>The run, job, suite, or test ARN.</p>
+    ///   - [`r#type(ArtifactCategory)`](crate::client::fluent_builders::ListArtifacts::r#type) / [`set_type(Option<ArtifactCategory>)`](crate::client::fluent_builders::ListArtifacts::set_type): <p>The artifacts' type.</p>  <p>Allowed values include:</p>  <ul>   <li> <p>FILE</p> </li>   <li> <p>LOG</p> </li>   <li> <p>SCREENSHOT</p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListArtifacts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListArtifacts::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListArtifactsOutput`](crate::output::ListArtifactsOutput) with field(s):
+    ///   - [`artifacts(Option<Vec<Artifact>>)`](crate::output::ListArtifactsOutput::artifacts): <p>Information about the artifacts.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListArtifactsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListArtifactsError>`](crate::error::ListArtifactsError)
     pub fn list_artifacts(&self) -> fluent_builders::ListArtifacts<C, M, R> {
         fluent_builders::ListArtifacts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDeviceInstances` operation.
+    /// Constructs a fluent builder for the [`ListDeviceInstances`](crate::client::fluent_builders::ListDeviceInstances) operation.
     ///
-    /// See [`ListDeviceInstances`](crate::client::fluent_builders::ListDeviceInstances) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDeviceInstances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDeviceInstances::set_max_results): <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeviceInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeviceInstances::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListDeviceInstancesOutput`](crate::output::ListDeviceInstancesOutput) with field(s):
+    ///   - [`device_instances(Option<Vec<DeviceInstance>>)`](crate::output::ListDeviceInstancesOutput::device_instances): <p>An object that contains information about your device instances.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDeviceInstancesOutput::next_token): <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListDeviceInstancesError>`](crate::error::ListDeviceInstancesError)
     pub fn list_device_instances(&self) -> fluent_builders::ListDeviceInstances<C, M, R> {
         fluent_builders::ListDeviceInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDevicePools` operation.
+    /// Constructs a fluent builder for the [`ListDevicePools`](crate::client::fluent_builders::ListDevicePools) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDevicePools::into_paginator).
     ///
-    /// See [`ListDevicePools`](crate::client::fluent_builders::ListDevicePools) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevicePools::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListDevicePools::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListDevicePools::set_arn): <p>The project ARN.</p>
+    ///   - [`r#type(DevicePoolType)`](crate::client::fluent_builders::ListDevicePools::r#type) / [`set_type(Option<DevicePoolType>)`](crate::client::fluent_builders::ListDevicePools::set_type): <p>The device pools' type.</p>  <p>Allowed values include:</p>  <ul>   <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>   <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDevicePools::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDevicePools::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListDevicePoolsOutput`](crate::output::ListDevicePoolsOutput) with field(s):
+    ///   - [`device_pools(Option<Vec<DevicePool>>)`](crate::output::ListDevicePoolsOutput::device_pools): <p>Information about the device pools.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDevicePoolsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListDevicePoolsError>`](crate::error::ListDevicePoolsError)
     pub fn list_device_pools(&self) -> fluent_builders::ListDevicePools<C, M, R> {
         fluent_builders::ListDevicePools::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDevices` operation.
+    /// Constructs a fluent builder for the [`ListDevices`](crate::client::fluent_builders::ListDevices) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDevices::into_paginator).
     ///
-    /// See [`ListDevices`](crate::client::fluent_builders::ListDevices) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevices::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListDevices::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListDevices::set_arn): <p>The Amazon Resource Name (ARN) of the project.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDevices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDevices::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    ///   - [`filters(Vec<DeviceFilter>)`](crate::client::fluent_builders::ListDevices::filters) / [`set_filters(Option<Vec<DeviceFilter>>)`](crate::client::fluent_builders::ListDevices::set_filters): <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and one or more values.</p>  <ul>   <li> <p>Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.</p> <p>Allowed values include:</p>    <ul>     <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li>     <li> <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>     <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p> </li>     <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>     <li> <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>     <li> <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p> </li>     <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p> </li>     <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p> </li>     <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this attribute is ignored.</p> </li>     <li> <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p> </li>     <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li>     <li> <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>    </ul> </li>   <li> <p>Operator: The filter operator.</p>    <ul>     <li> <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p> </li>     <li> <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>     <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>     <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION attribute.</p> </li>    </ul> </li>   <li> <p>Values: An array of one or more filter values.</p>    <ul>     <li> <p>The IN and NOT_IN operators take a values array that has one or more elements.</p> </li>     <li> <p>The other operators require an array with a single element.</p> </li>     <li> <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>    </ul> </li>  </ul>
+    /// - On success, responds with [`ListDevicesOutput`](crate::output::ListDevicesOutput) with field(s):
+    ///   - [`devices(Option<Vec<Device>>)`](crate::output::ListDevicesOutput::devices): <p>Information about the devices.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDevicesOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::error::ListDevicesError)
     pub fn list_devices(&self) -> fluent_builders::ListDevices<C, M, R> {
         fluent_builders::ListDevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInstanceProfiles` operation.
+    /// Constructs a fluent builder for the [`ListInstanceProfiles`](crate::client::fluent_builders::ListInstanceProfiles) operation.
     ///
-    /// See [`ListInstanceProfiles`](crate::client::fluent_builders::ListInstanceProfiles) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInstanceProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInstanceProfiles::set_max_results): <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInstanceProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInstanceProfiles::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListInstanceProfilesOutput`](crate::output::ListInstanceProfilesOutput) with field(s):
+    ///   - [`instance_profiles(Option<Vec<InstanceProfile>>)`](crate::output::ListInstanceProfilesOutput::instance_profiles): <p>An object that contains information about your instance profiles.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInstanceProfilesOutput::next_token): <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListInstanceProfilesError>`](crate::error::ListInstanceProfilesError)
     pub fn list_instance_profiles(&self) -> fluent_builders::ListInstanceProfiles<C, M, R> {
         fluent_builders::ListInstanceProfiles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListJobs` operation.
+    /// Constructs a fluent builder for the [`ListJobs`](crate::client::fluent_builders::ListJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
     ///
-    /// See [`ListJobs`](crate::client::fluent_builders::ListJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListJobs::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListJobs::set_arn): <p>The run's Amazon Resource Name (ARN).</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListJobs::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListJobsOutput`](crate::output::ListJobsOutput) with field(s):
+    ///   - [`jobs(Option<Vec<Job>>)`](crate::output::ListJobsOutput::jobs): <p>Information about the jobs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListJobsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListJobsError>`](crate::error::ListJobsError)
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListNetworkProfiles` operation.
+    /// Constructs a fluent builder for the [`ListNetworkProfiles`](crate::client::fluent_builders::ListNetworkProfiles) operation.
     ///
-    /// See [`ListNetworkProfiles`](crate::client::fluent_builders::ListNetworkProfiles) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListNetworkProfiles::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListNetworkProfiles::set_arn): <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
+    ///   - [`r#type(NetworkProfileType)`](crate::client::fluent_builders::ListNetworkProfiles::r#type) / [`set_type(Option<NetworkProfileType>)`](crate::client::fluent_builders::ListNetworkProfiles::set_type): <p>The type of network profile to return information about. Valid values are listed here.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNetworkProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNetworkProfiles::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListNetworkProfilesOutput`](crate::output::ListNetworkProfilesOutput) with field(s):
+    ///   - [`network_profiles(Option<Vec<NetworkProfile>>)`](crate::output::ListNetworkProfilesOutput::network_profiles): <p>A list of the available network profiles.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListNetworkProfilesOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListNetworkProfilesError>`](crate::error::ListNetworkProfilesError)
     pub fn list_network_profiles(&self) -> fluent_builders::ListNetworkProfiles<C, M, R> {
         fluent_builders::ListNetworkProfiles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOfferingPromotions` operation.
+    /// Constructs a fluent builder for the [`ListOfferingPromotions`](crate::client::fluent_builders::ListOfferingPromotions) operation.
     ///
-    /// See [`ListOfferingPromotions`](crate::client::fluent_builders::ListOfferingPromotions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOfferingPromotions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOfferingPromotions::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListOfferingPromotionsOutput`](crate::output::ListOfferingPromotionsOutput) with field(s):
+    ///   - [`offering_promotions(Option<Vec<OfferingPromotion>>)`](crate::output::ListOfferingPromotionsOutput::offering_promotions): <p>Information about the offering promotions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListOfferingPromotionsOutput::next_token): <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListOfferingPromotionsError>`](crate::error::ListOfferingPromotionsError)
     pub fn list_offering_promotions(&self) -> fluent_builders::ListOfferingPromotions<C, M, R> {
         fluent_builders::ListOfferingPromotions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOfferings` operation.
+    /// Constructs a fluent builder for the [`ListOfferings`](crate::client::fluent_builders::ListOfferings) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOfferings::into_paginator).
     ///
-    /// See [`ListOfferings`](crate::client::fluent_builders::ListOfferings) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOfferings::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOfferings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOfferings::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListOfferingsOutput`](crate::output::ListOfferingsOutput) with field(s):
+    ///   - [`offerings(Option<Vec<Offering>>)`](crate::output::ListOfferingsOutput::offerings): <p>A value that represents the list offering results.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListOfferingsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListOfferingsError>`](crate::error::ListOfferingsError)
     pub fn list_offerings(&self) -> fluent_builders::ListOfferings<C, M, R> {
         fluent_builders::ListOfferings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOfferingTransactions` operation.
+    /// Constructs a fluent builder for the [`ListOfferingTransactions`](crate::client::fluent_builders::ListOfferingTransactions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOfferingTransactions::into_paginator).
     ///
-    /// See [`ListOfferingTransactions`](crate::client::fluent_builders::ListOfferingTransactions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOfferingTransactions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOfferingTransactions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOfferingTransactions::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListOfferingTransactionsOutput`](crate::output::ListOfferingTransactionsOutput) with field(s):
+    ///   - [`offering_transactions(Option<Vec<OfferingTransaction>>)`](crate::output::ListOfferingTransactionsOutput::offering_transactions): <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListOfferingTransactionsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListOfferingTransactionsError>`](crate::error::ListOfferingTransactionsError)
     pub fn list_offering_transactions(&self) -> fluent_builders::ListOfferingTransactions<C, M, R> {
         fluent_builders::ListOfferingTransactions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProjects` operation.
+    /// Constructs a fluent builder for the [`ListProjects`](crate::client::fluent_builders::ListProjects) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
     ///
-    /// See [`ListProjects`](crate::client::fluent_builders::ListProjects) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListProjects::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListProjects::set_arn): <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for the AWS account. You can also specify a project ARN.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProjects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProjects::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListProjectsOutput`](crate::output::ListProjectsOutput) with field(s):
+    ///   - [`projects(Option<Vec<Project>>)`](crate::output::ListProjectsOutput::projects): <p>Information about the projects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListProjectsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::error::ListProjectsError)
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRemoteAccessSessions` operation.
+    /// Constructs a fluent builder for the [`ListRemoteAccessSessions`](crate::client::fluent_builders::ListRemoteAccessSessions) operation.
     ///
-    /// See [`ListRemoteAccessSessions`](crate::client::fluent_builders::ListRemoteAccessSessions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListRemoteAccessSessions::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListRemoteAccessSessions::set_arn): <p>The Amazon Resource Name (ARN) of the project about which you are requesting information.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRemoteAccessSessions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRemoteAccessSessions::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListRemoteAccessSessionsOutput`](crate::output::ListRemoteAccessSessionsOutput) with field(s):
+    ///   - [`remote_access_sessions(Option<Vec<RemoteAccessSession>>)`](crate::output::ListRemoteAccessSessionsOutput::remote_access_sessions): <p>A container that represents the metadata from the service about each remote access session you are requesting.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRemoteAccessSessionsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListRemoteAccessSessionsError>`](crate::error::ListRemoteAccessSessionsError)
     pub fn list_remote_access_sessions(
         &self,
     ) -> fluent_builders::ListRemoteAccessSessions<C, M, R> {
         fluent_builders::ListRemoteAccessSessions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRuns` operation.
+    /// Constructs a fluent builder for the [`ListRuns`](crate::client::fluent_builders::ListRuns) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRuns::into_paginator).
     ///
-    /// See [`ListRuns`](crate::client::fluent_builders::ListRuns) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRuns::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListRuns::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListRuns::set_arn): <p>The Amazon Resource Name (ARN) of the project for which you want to list runs.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRuns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRuns::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListRunsOutput`](crate::output::ListRunsOutput) with field(s):
+    ///   - [`runs(Option<Vec<Run>>)`](crate::output::ListRunsOutput::runs): <p>Information about the runs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRunsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListRunsError>`](crate::error::ListRunsError)
     pub fn list_runs(&self) -> fluent_builders::ListRuns<C, M, R> {
         fluent_builders::ListRuns::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSamples` operation.
+    /// Constructs a fluent builder for the [`ListSamples`](crate::client::fluent_builders::ListSamples) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSamples::into_paginator).
     ///
-    /// See [`ListSamples`](crate::client::fluent_builders::ListSamples) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSamples::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListSamples::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListSamples::set_arn): <p>The Amazon Resource Name (ARN) of the job used to list samples.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSamples::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSamples::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListSamplesOutput`](crate::output::ListSamplesOutput) with field(s):
+    ///   - [`samples(Option<Vec<Sample>>)`](crate::output::ListSamplesOutput::samples): <p>Information about the samples.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSamplesOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListSamplesError>`](crate::error::ListSamplesError)
     pub fn list_samples(&self) -> fluent_builders::ListSamples<C, M, R> {
         fluent_builders::ListSamples::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSuites` operation.
+    /// Constructs a fluent builder for the [`ListSuites`](crate::client::fluent_builders::ListSuites) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSuites::into_paginator).
     ///
-    /// See [`ListSuites`](crate::client::fluent_builders::ListSuites) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSuites::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListSuites::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListSuites::set_arn): <p>The job's Amazon Resource Name (ARN).</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSuites::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSuites::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListSuitesOutput`](crate::output::ListSuitesOutput) with field(s):
+    ///   - [`suites(Option<Vec<Suite>>)`](crate::output::ListSuitesOutput::suites): <p>Information about the suites.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSuitesOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListSuitesError>`](crate::error::ListSuitesError)
     pub fn list_suites(&self) -> fluent_builders::ListSuites<C, M, R> {
         fluent_builders::ListSuites::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTestGridProjects` operation.
+    /// Constructs a fluent builder for the [`ListTestGridProjects`](crate::client::fluent_builders::ListTestGridProjects) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTestGridProjects::into_paginator).
     ///
-    /// See [`ListTestGridProjects`](crate::client::fluent_builders::ListTestGridProjects) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTestGridProjects::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_result(i32)`](crate::client::fluent_builders::ListTestGridProjects::max_result) / [`set_max_result(Option<i32>)`](crate::client::fluent_builders::ListTestGridProjects::set_max_result): <p>Return no more than this number of results.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTestGridProjects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTestGridProjects::set_next_token): <p>From a response, used to continue a paginated listing. </p>
+    /// - On success, responds with [`ListTestGridProjectsOutput`](crate::output::ListTestGridProjectsOutput) with field(s):
+    ///   - [`test_grid_projects(Option<Vec<TestGridProject>>)`](crate::output::ListTestGridProjectsOutput::test_grid_projects): <p>The list of TestGridProjects, based on a <code>ListTestGridProjectsRequest</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTestGridProjectsOutput::next_token): <p>Used for pagination. Pass into <code>ListTestGridProjects</code> to get more results in a paginated request.</p>
+    /// - On failure, responds with [`SdkError<ListTestGridProjectsError>`](crate::error::ListTestGridProjectsError)
     pub fn list_test_grid_projects(&self) -> fluent_builders::ListTestGridProjects<C, M, R> {
         fluent_builders::ListTestGridProjects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTestGridSessionActions` operation.
+    /// Constructs a fluent builder for the [`ListTestGridSessionActions`](crate::client::fluent_builders::ListTestGridSessionActions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTestGridSessionActions::into_paginator).
     ///
-    /// See [`ListTestGridSessionActions`](crate::client::fluent_builders::ListTestGridSessionActions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTestGridSessionActions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`session_arn(impl Into<String>)`](crate::client::fluent_builders::ListTestGridSessionActions::session_arn) / [`set_session_arn(Option<String>)`](crate::client::fluent_builders::ListTestGridSessionActions::set_session_arn): <p>The ARN of the session to retrieve.</p>
+    ///   - [`max_result(i32)`](crate::client::fluent_builders::ListTestGridSessionActions::max_result) / [`set_max_result(Option<i32>)`](crate::client::fluent_builders::ListTestGridSessionActions::set_max_result): <p>The maximum number of sessions to return per response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTestGridSessionActions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTestGridSessionActions::set_next_token): <p>Pagination token.</p>
+    /// - On success, responds with [`ListTestGridSessionActionsOutput`](crate::output::ListTestGridSessionActionsOutput) with field(s):
+    ///   - [`actions(Option<Vec<TestGridSessionAction>>)`](crate::output::ListTestGridSessionActionsOutput::actions): <p>The action taken by the session.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTestGridSessionActionsOutput::next_token): <p>Pagination token.</p>
+    /// - On failure, responds with [`SdkError<ListTestGridSessionActionsError>`](crate::error::ListTestGridSessionActionsError)
     pub fn list_test_grid_session_actions(
         &self,
     ) -> fluent_builders::ListTestGridSessionActions<C, M, R> {
         fluent_builders::ListTestGridSessionActions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTestGridSessionArtifacts` operation.
+    /// Constructs a fluent builder for the [`ListTestGridSessionArtifacts`](crate::client::fluent_builders::ListTestGridSessionArtifacts) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTestGridSessionArtifacts::into_paginator).
     ///
-    /// See [`ListTestGridSessionArtifacts`](crate::client::fluent_builders::ListTestGridSessionArtifacts) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTestGridSessionArtifacts::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`session_arn(impl Into<String>)`](crate::client::fluent_builders::ListTestGridSessionArtifacts::session_arn) / [`set_session_arn(Option<String>)`](crate::client::fluent_builders::ListTestGridSessionArtifacts::set_session_arn): <p>The ARN of a <code>TestGridSession</code>. </p>
+    ///   - [`r#type(TestGridSessionArtifactCategory)`](crate::client::fluent_builders::ListTestGridSessionArtifacts::r#type) / [`set_type(Option<TestGridSessionArtifactCategory>)`](crate::client::fluent_builders::ListTestGridSessionArtifacts::set_type): <p>Limit results to a specified type of artifact.</p>
+    ///   - [`max_result(i32)`](crate::client::fluent_builders::ListTestGridSessionArtifacts::max_result) / [`set_max_result(Option<i32>)`](crate::client::fluent_builders::ListTestGridSessionArtifacts::set_max_result): <p>The maximum number of results to be returned by a request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTestGridSessionArtifacts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTestGridSessionArtifacts::set_next_token): <p>Pagination token.</p>
+    /// - On success, responds with [`ListTestGridSessionArtifactsOutput`](crate::output::ListTestGridSessionArtifactsOutput) with field(s):
+    ///   - [`artifacts(Option<Vec<TestGridSessionArtifact>>)`](crate::output::ListTestGridSessionArtifactsOutput::artifacts): <p>A list of test grid session artifacts for a <code>TestGridSession</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTestGridSessionArtifactsOutput::next_token): <p>Pagination token.</p>
+    /// - On failure, responds with [`SdkError<ListTestGridSessionArtifactsError>`](crate::error::ListTestGridSessionArtifactsError)
     pub fn list_test_grid_session_artifacts(
         &self,
     ) -> fluent_builders::ListTestGridSessionArtifacts<C, M, R> {
         fluent_builders::ListTestGridSessionArtifacts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTestGridSessions` operation.
+    /// Constructs a fluent builder for the [`ListTestGridSessions`](crate::client::fluent_builders::ListTestGridSessions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTestGridSessions::into_paginator).
     ///
-    /// See [`ListTestGridSessions`](crate::client::fluent_builders::ListTestGridSessions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTestGridSessions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`project_arn(impl Into<String>)`](crate::client::fluent_builders::ListTestGridSessions::project_arn) / [`set_project_arn(Option<String>)`](crate::client::fluent_builders::ListTestGridSessions::set_project_arn): <p>ARN of a <code>TestGridProject</code>.</p>
+    ///   - [`status(TestGridSessionStatus)`](crate::client::fluent_builders::ListTestGridSessions::status) / [`set_status(Option<TestGridSessionStatus>)`](crate::client::fluent_builders::ListTestGridSessions::set_status): <p>Return only sessions in this state.</p>
+    ///   - [`creation_time_after(DateTime)`](crate::client::fluent_builders::ListTestGridSessions::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListTestGridSessions::set_creation_time_after): <p>Return only sessions created after this time.</p>
+    ///   - [`creation_time_before(DateTime)`](crate::client::fluent_builders::ListTestGridSessions::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListTestGridSessions::set_creation_time_before): <p>Return only sessions created before this time.</p>
+    ///   - [`end_time_after(DateTime)`](crate::client::fluent_builders::ListTestGridSessions::end_time_after) / [`set_end_time_after(Option<DateTime>)`](crate::client::fluent_builders::ListTestGridSessions::set_end_time_after): <p>Return only sessions that ended after this time.</p>
+    ///   - [`end_time_before(DateTime)`](crate::client::fluent_builders::ListTestGridSessions::end_time_before) / [`set_end_time_before(Option<DateTime>)`](crate::client::fluent_builders::ListTestGridSessions::set_end_time_before): <p>Return only sessions that ended before this time.</p>
+    ///   - [`max_result(i32)`](crate::client::fluent_builders::ListTestGridSessions::max_result) / [`set_max_result(Option<i32>)`](crate::client::fluent_builders::ListTestGridSessions::set_max_result): <p>Return only this many results at a time.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTestGridSessions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTestGridSessions::set_next_token): <p>Pagination token.</p>
+    /// - On success, responds with [`ListTestGridSessionsOutput`](crate::output::ListTestGridSessionsOutput) with field(s):
+    ///   - [`test_grid_sessions(Option<Vec<TestGridSession>>)`](crate::output::ListTestGridSessionsOutput::test_grid_sessions): <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTestGridSessionsOutput::next_token): <p>Pagination token.</p>
+    /// - On failure, responds with [`SdkError<ListTestGridSessionsError>`](crate::error::ListTestGridSessionsError)
     pub fn list_test_grid_sessions(&self) -> fluent_builders::ListTestGridSessions<C, M, R> {
         fluent_builders::ListTestGridSessions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTests` operation.
+    /// Constructs a fluent builder for the [`ListTests`](crate::client::fluent_builders::ListTests) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTests::into_paginator).
     ///
-    /// See [`ListTests`](crate::client::fluent_builders::ListTests) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTests::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListTests::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListTests::set_arn): <p>The test suite's Amazon Resource Name (ARN).</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTests::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTests::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListTestsOutput`](crate::output::ListTestsOutput) with field(s):
+    ///   - [`tests(Option<Vec<Test>>)`](crate::output::ListTestsOutput::tests): <p>Information about the tests.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTestsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListTestsError>`](crate::error::ListTestsError)
     pub fn list_tests(&self) -> fluent_builders::ListTests<C, M, R> {
         fluent_builders::ListTests::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUniqueProblems` operation.
+    /// Constructs a fluent builder for the [`ListUniqueProblems`](crate::client::fluent_builders::ListUniqueProblems) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUniqueProblems::into_paginator).
     ///
-    /// See [`ListUniqueProblems`](crate::client::fluent_builders::ListUniqueProblems) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUniqueProblems::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListUniqueProblems::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListUniqueProblems::set_arn): <p>The unique problems' ARNs.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUniqueProblems::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUniqueProblems::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListUniqueProblemsOutput`](crate::output::ListUniqueProblemsOutput) with field(s):
+    ///   - [`unique_problems(Option<HashMap<ExecutionResult, Vec<UniqueProblem>>>)`](crate::output::ListUniqueProblemsOutput::unique_problems): <p>Information about the unique problems.</p>  <p>Allowed values include:</p>  <ul>   <li> <p>PENDING</p> </li>   <li> <p>PASSED</p> </li>   <li> <p>WARNED</p> </li>   <li> <p>FAILED</p> </li>   <li> <p>SKIPPED</p> </li>   <li> <p>ERRORED</p> </li>   <li> <p>STOPPED</p> </li>  </ul>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUniqueProblemsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListUniqueProblemsError>`](crate::error::ListUniqueProblemsError)
     pub fn list_unique_problems(&self) -> fluent_builders::ListUniqueProblems<C, M, R> {
         fluent_builders::ListUniqueProblems::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUploads` operation.
+    /// Constructs a fluent builder for the [`ListUploads`](crate::client::fluent_builders::ListUploads) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUploads::into_paginator).
     ///
-    /// See [`ListUploads`](crate::client::fluent_builders::ListUploads) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUploads::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListUploads::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListUploads::set_arn): <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
+    ///   - [`r#type(UploadType)`](crate::client::fluent_builders::ListUploads::r#type) / [`set_type(Option<UploadType>)`](crate::client::fluent_builders::ListUploads::set_type): <p>The type of upload.</p>  <p>Must be one of the following values:</p>  <ul>   <li> <p>ANDROID_APP</p> </li>   <li> <p>IOS_APP</p> </li>   <li> <p>WEB_APP</p> </li>   <li> <p>EXTERNAL_DATA</p> </li>   <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>   <li> <p>CALABASH_TEST_PACKAGE</p> </li>   <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>   <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>   <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>   <li> <p>XCTEST_TEST_PACKAGE</p> </li>   <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>   <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>   <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>   <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>   <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>   <li> <p> APPIUM_RUBY_TEST_SPEC</p> </li>   <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>   <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>   <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>   <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>   <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>   <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>   <li> <p>XCTEST_UI_TEST_SPEC</p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUploads::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUploads::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListUploadsOutput`](crate::output::ListUploadsOutput) with field(s):
+    ///   - [`uploads(Option<Vec<Upload>>)`](crate::output::ListUploadsOutput::uploads): <p>Information about the uploads.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUploadsOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListUploadsError>`](crate::error::ListUploadsError)
     pub fn list_uploads(&self) -> fluent_builders::ListUploads<C, M, R> {
         fluent_builders::ListUploads::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVPCEConfigurations` operation.
+    /// Constructs a fluent builder for the [`ListVPCEConfigurations`](crate::client::fluent_builders::ListVPCEConfigurations) operation.
     ///
-    /// See [`ListVPCEConfigurations`](crate::client::fluent_builders::ListVPCEConfigurations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVPCEConfigurations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListVPCEConfigurations::set_max_results): <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVPCEConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVPCEConfigurations::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On success, responds with [`ListVpceConfigurationsOutput`](crate::output::ListVpceConfigurationsOutput) with field(s):
+    ///   - [`vpce_configurations(Option<Vec<VpceConfiguration>>)`](crate::output::ListVpceConfigurationsOutput::vpce_configurations): <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVpceConfigurationsOutput::next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// - On failure, responds with [`SdkError<ListVPCEConfigurationsError>`](crate::error::ListVPCEConfigurationsError)
     pub fn list_vpce_configurations(&self) -> fluent_builders::ListVPCEConfigurations<C, M, R> {
         fluent_builders::ListVPCEConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PurchaseOffering` operation.
+    /// Constructs a fluent builder for the [`PurchaseOffering`](crate::client::fluent_builders::PurchaseOffering) operation.
     ///
-    /// See [`PurchaseOffering`](crate::client::fluent_builders::PurchaseOffering) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`offering_id(impl Into<String>)`](crate::client::fluent_builders::PurchaseOffering::offering_id) / [`set_offering_id(Option<String>)`](crate::client::fluent_builders::PurchaseOffering::set_offering_id): <p>The ID of the offering.</p>
+    ///   - [`quantity(i32)`](crate::client::fluent_builders::PurchaseOffering::quantity) / [`set_quantity(Option<i32>)`](crate::client::fluent_builders::PurchaseOffering::set_quantity): <p>The number of device slots to purchase in an offering request.</p>
+    ///   - [`offering_promotion_id(impl Into<String>)`](crate::client::fluent_builders::PurchaseOffering::offering_promotion_id) / [`set_offering_promotion_id(Option<String>)`](crate::client::fluent_builders::PurchaseOffering::set_offering_promotion_id): <p>The ID of the offering promotion to be applied to the purchase.</p>
+    /// - On success, responds with [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput) with field(s):
+    ///   - [`offering_transaction(Option<OfferingTransaction>)`](crate::output::PurchaseOfferingOutput::offering_transaction): <p>Represents the offering transaction for the purchase result.</p>
+    /// - On failure, responds with [`SdkError<PurchaseOfferingError>`](crate::error::PurchaseOfferingError)
     pub fn purchase_offering(&self) -> fluent_builders::PurchaseOffering<C, M, R> {
         fluent_builders::PurchaseOffering::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RenewOffering` operation.
+    /// Constructs a fluent builder for the [`RenewOffering`](crate::client::fluent_builders::RenewOffering) operation.
     ///
-    /// See [`RenewOffering`](crate::client::fluent_builders::RenewOffering) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`offering_id(impl Into<String>)`](crate::client::fluent_builders::RenewOffering::offering_id) / [`set_offering_id(Option<String>)`](crate::client::fluent_builders::RenewOffering::set_offering_id): <p>The ID of a request to renew an offering.</p>
+    ///   - [`quantity(i32)`](crate::client::fluent_builders::RenewOffering::quantity) / [`set_quantity(Option<i32>)`](crate::client::fluent_builders::RenewOffering::set_quantity): <p>The quantity requested in an offering renewal.</p>
+    /// - On success, responds with [`RenewOfferingOutput`](crate::output::RenewOfferingOutput) with field(s):
+    ///   - [`offering_transaction(Option<OfferingTransaction>)`](crate::output::RenewOfferingOutput::offering_transaction): <p>Represents the status of the offering transaction for the renewal.</p>
+    /// - On failure, responds with [`SdkError<RenewOfferingError>`](crate::error::RenewOfferingError)
     pub fn renew_offering(&self) -> fluent_builders::RenewOffering<C, M, R> {
         fluent_builders::RenewOffering::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ScheduleRun` operation.
+    /// Constructs a fluent builder for the [`ScheduleRun`](crate::client::fluent_builders::ScheduleRun) operation.
     ///
-    /// See [`ScheduleRun`](crate::client::fluent_builders::ScheduleRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_arn(impl Into<String>)`](crate::client::fluent_builders::ScheduleRun::project_arn) / [`set_project_arn(Option<String>)`](crate::client::fluent_builders::ScheduleRun::set_project_arn): <p>The ARN of the project for the run to be scheduled.</p>
+    ///   - [`app_arn(impl Into<String>)`](crate::client::fluent_builders::ScheduleRun::app_arn) / [`set_app_arn(Option<String>)`](crate::client::fluent_builders::ScheduleRun::set_app_arn): <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
+    ///   - [`device_pool_arn(impl Into<String>)`](crate::client::fluent_builders::ScheduleRun::device_pool_arn) / [`set_device_pool_arn(Option<String>)`](crate::client::fluent_builders::ScheduleRun::set_device_pool_arn): <p>The ARN of the device pool for the run to be scheduled.</p>
+    ///   - [`device_selection_configuration(DeviceSelectionConfiguration)`](crate::client::fluent_builders::ScheduleRun::device_selection_configuration) / [`set_device_selection_configuration(Option<DeviceSelectionConfiguration>)`](crate::client::fluent_builders::ScheduleRun::set_device_selection_configuration): <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>  <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ScheduleRun::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ScheduleRun::set_name): <p>The name for the run to be scheduled.</p>
+    ///   - [`test(ScheduleRunTest)`](crate::client::fluent_builders::ScheduleRun::test) / [`set_test(Option<ScheduleRunTest>)`](crate::client::fluent_builders::ScheduleRun::set_test): <p>Information about the test for the run to be scheduled.</p>
+    ///   - [`configuration(ScheduleRunConfiguration)`](crate::client::fluent_builders::ScheduleRun::configuration) / [`set_configuration(Option<ScheduleRunConfiguration>)`](crate::client::fluent_builders::ScheduleRun::set_configuration): <p>Information about the settings for the run to be scheduled.</p>
+    ///   - [`execution_configuration(ExecutionConfiguration)`](crate::client::fluent_builders::ScheduleRun::execution_configuration) / [`set_execution_configuration(Option<ExecutionConfiguration>)`](crate::client::fluent_builders::ScheduleRun::set_execution_configuration): <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
+    /// - On success, responds with [`ScheduleRunOutput`](crate::output::ScheduleRunOutput) with field(s):
+    ///   - [`run(Option<Run>)`](crate::output::ScheduleRunOutput::run): <p>Information about the scheduled run.</p>
+    /// - On failure, responds with [`SdkError<ScheduleRunError>`](crate::error::ScheduleRunError)
     pub fn schedule_run(&self) -> fluent_builders::ScheduleRun<C, M, R> {
         fluent_builders::ScheduleRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopJob` operation.
+    /// Constructs a fluent builder for the [`StopJob`](crate::client::fluent_builders::StopJob) operation.
     ///
-    /// See [`StopJob`](crate::client::fluent_builders::StopJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::StopJob::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::StopJob::set_arn): <p>Represents the Amazon Resource Name (ARN) of the Device Farm job to stop.</p>
+    /// - On success, responds with [`StopJobOutput`](crate::output::StopJobOutput) with field(s):
+    ///   - [`job(Option<Job>)`](crate::output::StopJobOutput::job): <p>The job that was stopped.</p>
+    /// - On failure, responds with [`SdkError<StopJobError>`](crate::error::StopJobError)
     pub fn stop_job(&self) -> fluent_builders::StopJob<C, M, R> {
         fluent_builders::StopJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopRemoteAccessSession` operation.
+    /// Constructs a fluent builder for the [`StopRemoteAccessSession`](crate::client::fluent_builders::StopRemoteAccessSession) operation.
     ///
-    /// See [`StopRemoteAccessSession`](crate::client::fluent_builders::StopRemoteAccessSession) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::StopRemoteAccessSession::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::StopRemoteAccessSession::set_arn): <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
+    /// - On success, responds with [`StopRemoteAccessSessionOutput`](crate::output::StopRemoteAccessSessionOutput) with field(s):
+    ///   - [`remote_access_session(Option<RemoteAccessSession>)`](crate::output::StopRemoteAccessSessionOutput::remote_access_session): <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
+    /// - On failure, responds with [`SdkError<StopRemoteAccessSessionError>`](crate::error::StopRemoteAccessSessionError)
     pub fn stop_remote_access_session(&self) -> fluent_builders::StopRemoteAccessSession<C, M, R> {
         fluent_builders::StopRemoteAccessSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopRun` operation.
+    /// Constructs a fluent builder for the [`StopRun`](crate::client::fluent_builders::StopRun) operation.
     ///
-    /// See [`StopRun`](crate::client::fluent_builders::StopRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::StopRun::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::StopRun::set_arn): <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
+    /// - On success, responds with [`StopRunOutput`](crate::output::StopRunOutput) with field(s):
+    ///   - [`run(Option<Run>)`](crate::output::StopRunOutput::run): <p>The run that was stopped.</p>
+    /// - On failure, responds with [`SdkError<StopRunError>`](crate::error::StopRunError)
     pub fn stop_run(&self) -> fluent_builders::StopRun<C, M, R> {
         fluent_builders::StopRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys of the tags to be removed.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDeviceInstance` operation.
+    /// Constructs a fluent builder for the [`UpdateDeviceInstance`](crate::client::fluent_builders::UpdateDeviceInstance) operation.
     ///
-    /// See [`UpdateDeviceInstance`](crate::client::fluent_builders::UpdateDeviceInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDeviceInstance::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateDeviceInstance::set_arn): <p>The Amazon Resource Name (ARN) of the device instance.</p>
+    ///   - [`profile_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDeviceInstance::profile_arn) / [`set_profile_arn(Option<String>)`](crate::client::fluent_builders::UpdateDeviceInstance::set_profile_arn): <p>The ARN of the profile that you want to associate with the device instance.</p>
+    ///   - [`labels(Vec<String>)`](crate::client::fluent_builders::UpdateDeviceInstance::labels) / [`set_labels(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateDeviceInstance::set_labels): <p>An array of strings that you want to associate with the device instance.</p>
+    /// - On success, responds with [`UpdateDeviceInstanceOutput`](crate::output::UpdateDeviceInstanceOutput) with field(s):
+    ///   - [`device_instance(Option<DeviceInstance>)`](crate::output::UpdateDeviceInstanceOutput::device_instance): <p>An object that contains information about your device instance.</p>
+    /// - On failure, responds with [`SdkError<UpdateDeviceInstanceError>`](crate::error::UpdateDeviceInstanceError)
     pub fn update_device_instance(&self) -> fluent_builders::UpdateDeviceInstance<C, M, R> {
         fluent_builders::UpdateDeviceInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDevicePool` operation.
+    /// Constructs a fluent builder for the [`UpdateDevicePool`](crate::client::fluent_builders::UpdateDevicePool) operation.
     ///
-    /// See [`UpdateDevicePool`](crate::client::fluent_builders::UpdateDevicePool) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDevicePool::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateDevicePool::set_arn): <p>The Amazon Resource Name (ARN) of the Device Farm device pool to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDevicePool::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDevicePool::set_name): <p>A string that represents the name of the device pool to update.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDevicePool::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDevicePool::set_description): <p>A description of the device pool to update.</p>
+    ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::UpdateDevicePool::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::UpdateDevicePool::set_rules): <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
+    ///   - [`max_devices(i32)`](crate::client::fluent_builders::UpdateDevicePool::max_devices) / [`set_max_devices(Option<i32>)`](crate::client::fluent_builders::UpdateDevicePool::set_max_devices): <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>  <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>  <p>If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code> parameter in the same request.</p>
+    ///   - [`clear_max_devices(bool)`](crate::client::fluent_builders::UpdateDevicePool::clear_max_devices) / [`set_clear_max_devices(Option<bool>)`](crate::client::fluent_builders::UpdateDevicePool::set_clear_max_devices): <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that meet the criteria specified in the <code>rules</code> parameter.</p>  <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same request.</p>
+    /// - On success, responds with [`UpdateDevicePoolOutput`](crate::output::UpdateDevicePoolOutput) with field(s):
+    ///   - [`device_pool(Option<DevicePool>)`](crate::output::UpdateDevicePoolOutput::device_pool): <p>The device pool you just updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateDevicePoolError>`](crate::error::UpdateDevicePoolError)
     pub fn update_device_pool(&self) -> fluent_builders::UpdateDevicePool<C, M, R> {
         fluent_builders::UpdateDevicePool::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateInstanceProfile` operation.
+    /// Constructs a fluent builder for the [`UpdateInstanceProfile`](crate::client::fluent_builders::UpdateInstanceProfile) operation.
     ///
-    /// See [`UpdateInstanceProfile`](crate::client::fluent_builders::UpdateInstanceProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateInstanceProfile::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateInstanceProfile::set_arn): <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateInstanceProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateInstanceProfile::set_name): <p>The updated name for your instance profile.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateInstanceProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateInstanceProfile::set_description): <p>The updated description for your instance profile.</p>
+    ///   - [`package_cleanup(bool)`](crate::client::fluent_builders::UpdateInstanceProfile::package_cleanup) / [`set_package_cleanup(Option<bool>)`](crate::client::fluent_builders::UpdateInstanceProfile::set_package_cleanup): <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
+    ///   - [`exclude_app_packages_from_cleanup(Vec<String>)`](crate::client::fluent_builders::UpdateInstanceProfile::exclude_app_packages_from_cleanup) / [`set_exclude_app_packages_from_cleanup(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateInstanceProfile::set_exclude_app_packages_from_cleanup): <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>  <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
+    ///   - [`reboot_after_use(bool)`](crate::client::fluent_builders::UpdateInstanceProfile::reboot_after_use) / [`set_reboot_after_use(Option<bool>)`](crate::client::fluent_builders::UpdateInstanceProfile::set_reboot_after_use): <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
+    /// - On success, responds with [`UpdateInstanceProfileOutput`](crate::output::UpdateInstanceProfileOutput) with field(s):
+    ///   - [`instance_profile(Option<InstanceProfile>)`](crate::output::UpdateInstanceProfileOutput::instance_profile): <p>An object that contains information about your instance profile.</p>
+    /// - On failure, responds with [`SdkError<UpdateInstanceProfileError>`](crate::error::UpdateInstanceProfileError)
     pub fn update_instance_profile(&self) -> fluent_builders::UpdateInstanceProfile<C, M, R> {
         fluent_builders::UpdateInstanceProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateNetworkProfile` operation.
+    /// Constructs a fluent builder for the [`UpdateNetworkProfile`](crate::client::fluent_builders::UpdateNetworkProfile) operation.
     ///
-    /// See [`UpdateNetworkProfile`](crate::client::fluent_builders::UpdateNetworkProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_arn): <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_name): <p>The name of the network profile about which you are returning information.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_description): <p>The description of the network profile about which you are returning information.</p>
+    ///   - [`r#type(NetworkProfileType)`](crate::client::fluent_builders::UpdateNetworkProfile::r#type) / [`set_type(Option<NetworkProfileType>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_type): <p>The type of network profile to return information about. Valid values are listed here.</p>
+    ///   - [`uplink_bandwidth_bits(i64)`](crate::client::fluent_builders::UpdateNetworkProfile::uplink_bandwidth_bits) / [`set_uplink_bandwidth_bits(Option<i64>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_uplink_bandwidth_bits): <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+    ///   - [`downlink_bandwidth_bits(i64)`](crate::client::fluent_builders::UpdateNetworkProfile::downlink_bandwidth_bits) / [`set_downlink_bandwidth_bits(Option<i64>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_downlink_bandwidth_bits): <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+    ///   - [`uplink_delay_ms(i64)`](crate::client::fluent_builders::UpdateNetworkProfile::uplink_delay_ms) / [`set_uplink_delay_ms(Option<i64>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_uplink_delay_ms): <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+    ///   - [`downlink_delay_ms(i64)`](crate::client::fluent_builders::UpdateNetworkProfile::downlink_delay_ms) / [`set_downlink_delay_ms(Option<i64>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_downlink_delay_ms): <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+    ///   - [`uplink_jitter_ms(i64)`](crate::client::fluent_builders::UpdateNetworkProfile::uplink_jitter_ms) / [`set_uplink_jitter_ms(Option<i64>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_uplink_jitter_ms): <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+    ///   - [`downlink_jitter_ms(i64)`](crate::client::fluent_builders::UpdateNetworkProfile::downlink_jitter_ms) / [`set_downlink_jitter_ms(Option<i64>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_downlink_jitter_ms): <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+    ///   - [`uplink_loss_percent(i32)`](crate::client::fluent_builders::UpdateNetworkProfile::uplink_loss_percent) / [`set_uplink_loss_percent(i32)`](crate::client::fluent_builders::UpdateNetworkProfile::set_uplink_loss_percent): <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
+    ///   - [`downlink_loss_percent(i32)`](crate::client::fluent_builders::UpdateNetworkProfile::downlink_loss_percent) / [`set_downlink_loss_percent(i32)`](crate::client::fluent_builders::UpdateNetworkProfile::set_downlink_loss_percent): <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
+    /// - On success, responds with [`UpdateNetworkProfileOutput`](crate::output::UpdateNetworkProfileOutput) with field(s):
+    ///   - [`network_profile(Option<NetworkProfile>)`](crate::output::UpdateNetworkProfileOutput::network_profile): <p>A list of the available network profiles.</p>
+    /// - On failure, responds with [`SdkError<UpdateNetworkProfileError>`](crate::error::UpdateNetworkProfileError)
     pub fn update_network_profile(&self) -> fluent_builders::UpdateNetworkProfile<C, M, R> {
         fluent_builders::UpdateNetworkProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateProject` operation.
+    /// Constructs a fluent builder for the [`UpdateProject`](crate::client::fluent_builders::UpdateProject) operation.
     ///
-    /// See [`UpdateProject`](crate::client::fluent_builders::UpdateProject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_arn): <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_name): <p>A string that represents the new name of the project that you are updating.</p>
+    ///   - [`default_job_timeout_minutes(i32)`](crate::client::fluent_builders::UpdateProject::default_job_timeout_minutes) / [`set_default_job_timeout_minutes(Option<i32>)`](crate::client::fluent_builders::UpdateProject::set_default_job_timeout_minutes): <p>The number of minutes a test run in the project executes before it times out.</p>
+    /// - On success, responds with [`UpdateProjectOutput`](crate::output::UpdateProjectOutput) with field(s):
+    ///   - [`project(Option<Project>)`](crate::output::UpdateProjectOutput::project): <p>The project to update.</p>
+    /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::error::UpdateProjectError)
     pub fn update_project(&self) -> fluent_builders::UpdateProject<C, M, R> {
         fluent_builders::UpdateProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateTestGridProject` operation.
+    /// Constructs a fluent builder for the [`UpdateTestGridProject`](crate::client::fluent_builders::UpdateTestGridProject) operation.
     ///
-    /// See [`UpdateTestGridProject`](crate::client::fluent_builders::UpdateTestGridProject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateTestGridProject::project_arn) / [`set_project_arn(Option<String>)`](crate::client::fluent_builders::UpdateTestGridProject::set_project_arn): <p>ARN of the project to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateTestGridProject::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateTestGridProject::set_name): <p>Human-readable name for the project.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateTestGridProject::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateTestGridProject::set_description): <p>Human-readable description for the project.</p>
+    ///   - [`vpc_config(TestGridVpcConfig)`](crate::client::fluent_builders::UpdateTestGridProject::vpc_config) / [`set_vpc_config(Option<TestGridVpcConfig>)`](crate::client::fluent_builders::UpdateTestGridProject::set_vpc_config): <p>The VPC security groups and subnets that are attached to a project.</p>
+    /// - On success, responds with [`UpdateTestGridProjectOutput`](crate::output::UpdateTestGridProjectOutput) with field(s):
+    ///   - [`test_grid_project(Option<TestGridProject>)`](crate::output::UpdateTestGridProjectOutput::test_grid_project): <p>The project, including updated information.</p>
+    /// - On failure, responds with [`SdkError<UpdateTestGridProjectError>`](crate::error::UpdateTestGridProjectError)
     pub fn update_test_grid_project(&self) -> fluent_builders::UpdateTestGridProject<C, M, R> {
         fluent_builders::UpdateTestGridProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUpload` operation.
+    /// Constructs a fluent builder for the [`UpdateUpload`](crate::client::fluent_builders::UpdateUpload) operation.
     ///
-    /// See [`UpdateUpload`](crate::client::fluent_builders::UpdateUpload) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateUpload::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateUpload::set_arn): <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateUpload::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateUpload::set_name): <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
+    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::UpdateUpload::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::UpdateUpload::set_content_type): <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
+    ///   - [`edit_content(bool)`](crate::client::fluent_builders::UpdateUpload::edit_content) / [`set_edit_content(Option<bool>)`](crate::client::fluent_builders::UpdateUpload::set_edit_content): <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
+    /// - On success, responds with [`UpdateUploadOutput`](crate::output::UpdateUploadOutput) with field(s):
+    ///   - [`upload(Option<Upload>)`](crate::output::UpdateUploadOutput::upload): <p>A test spec uploaded to Device Farm.</p>
+    /// - On failure, responds with [`SdkError<UpdateUploadError>`](crate::error::UpdateUploadError)
     pub fn update_upload(&self) -> fluent_builders::UpdateUpload<C, M, R> {
         fluent_builders::UpdateUpload::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateVPCEConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateVPCEConfiguration`](crate::client::fluent_builders::UpdateVPCEConfiguration) operation.
     ///
-    /// See [`UpdateVPCEConfiguration`](crate::client::fluent_builders::UpdateVPCEConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateVPCEConfiguration::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateVPCEConfiguration::set_arn): <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update.</p>
+    ///   - [`vpce_configuration_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVPCEConfiguration::vpce_configuration_name) / [`set_vpce_configuration_name(Option<String>)`](crate::client::fluent_builders::UpdateVPCEConfiguration::set_vpce_configuration_name): <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
+    ///   - [`vpce_service_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVPCEConfiguration::vpce_service_name) / [`set_vpce_service_name(Option<String>)`](crate::client::fluent_builders::UpdateVPCEConfiguration::set_vpce_service_name): <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
+    ///   - [`service_dns_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVPCEConfiguration::service_dns_name) / [`set_service_dns_name(Option<String>)`](crate::client::fluent_builders::UpdateVPCEConfiguration::set_service_dns_name): <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
+    ///   - [`vpce_configuration_description(impl Into<String>)`](crate::client::fluent_builders::UpdateVPCEConfiguration::vpce_configuration_description) / [`set_vpce_configuration_description(Option<String>)`](crate::client::fluent_builders::UpdateVPCEConfiguration::set_vpce_configuration_description): <p>An optional description that provides details about your VPC endpoint configuration.</p>
+    /// - On success, responds with [`UpdateVpceConfigurationOutput`](crate::output::UpdateVpceConfigurationOutput) with field(s):
+    ///   - [`vpce_configuration(Option<VpceConfiguration>)`](crate::output::UpdateVpceConfigurationOutput::vpce_configuration): <p>An object that contains information about your VPC endpoint configuration.</p>
+    /// - On failure, responds with [`SdkError<UpdateVPCEConfigurationError>`](crate::error::UpdateVPCEConfigurationError)
     pub fn update_vpce_configuration(&self) -> fluent_builders::UpdateVPCEConfiguration<C, M, R> {
         fluent_builders::UpdateVPCEConfiguration::new(self.handle.clone())
     }

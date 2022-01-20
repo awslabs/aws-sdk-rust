@@ -83,193 +83,346 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateAlarmModel` operation.
+    /// Constructs a fluent builder for the [`CreateAlarmModel`](crate::client::fluent_builders::CreateAlarmModel) operation.
     ///
-    /// See [`CreateAlarmModel`](crate::client::fluent_builders::CreateAlarmModel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`alarm_model_name(impl Into<String>)`](crate::client::fluent_builders::CreateAlarmModel::alarm_model_name) / [`set_alarm_model_name(Option<String>)`](crate::client::fluent_builders::CreateAlarmModel::set_alarm_model_name): <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
+    ///   - [`alarm_model_description(impl Into<String>)`](crate::client::fluent_builders::CreateAlarmModel::alarm_model_description) / [`set_alarm_model_description(Option<String>)`](crate::client::fluent_builders::CreateAlarmModel::set_alarm_model_description): <p>A description that tells you what the alarm model detects.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAlarmModel::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateAlarmModel::set_role_arn): <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAlarmModel::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAlarmModel::set_tags): <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>  <p>You can create up to 50 tags for one alarm model.</p>
+    ///   - [`key(impl Into<String>)`](crate::client::fluent_builders::CreateAlarmModel::key) / [`set_key(Option<String>)`](crate::client::fluent_builders::CreateAlarmModel::set_key): <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
+    ///   - [`severity(i32)`](crate::client::fluent_builders::CreateAlarmModel::severity) / [`set_severity(Option<i32>)`](crate::client::fluent_builders::CreateAlarmModel::set_severity): <p>A non-negative integer that reflects the severity level of the alarm.</p>
+    ///   - [`alarm_rule(AlarmRule)`](crate::client::fluent_builders::CreateAlarmModel::alarm_rule) / [`set_alarm_rule(Option<AlarmRule>)`](crate::client::fluent_builders::CreateAlarmModel::set_alarm_rule): <p>Defines when your alarm is invoked.</p>
+    ///   - [`alarm_notification(AlarmNotification)`](crate::client::fluent_builders::CreateAlarmModel::alarm_notification) / [`set_alarm_notification(Option<AlarmNotification>)`](crate::client::fluent_builders::CreateAlarmModel::set_alarm_notification): <p>Contains information about one or more notification actions.</p>
+    ///   - [`alarm_event_actions(AlarmEventActions)`](crate::client::fluent_builders::CreateAlarmModel::alarm_event_actions) / [`set_alarm_event_actions(Option<AlarmEventActions>)`](crate::client::fluent_builders::CreateAlarmModel::set_alarm_event_actions): <p>Contains information about one or more alarm actions.</p>
+    ///   - [`alarm_capabilities(AlarmCapabilities)`](crate::client::fluent_builders::CreateAlarmModel::alarm_capabilities) / [`set_alarm_capabilities(Option<AlarmCapabilities>)`](crate::client::fluent_builders::CreateAlarmModel::set_alarm_capabilities): <p>Contains the configuration information of alarm state changes.</p>
+    /// - On success, responds with [`CreateAlarmModelOutput`](crate::output::CreateAlarmModelOutput) with field(s):
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateAlarmModelOutput::creation_time): <p>The time the alarm model was created, in the Unix epoch format.</p>
+    ///   - [`alarm_model_arn(Option<String>)`](crate::output::CreateAlarmModelOutput::alarm_model_arn): <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`alarm_model_version(Option<String>)`](crate::output::CreateAlarmModelOutput::alarm_model_version): <p>The version of the alarm model.</p>
+    ///   - [`last_update_time(Option<DateTime>)`](crate::output::CreateAlarmModelOutput::last_update_time): <p>The time the alarm model was last updated, in the Unix epoch format.</p>
+    ///   - [`status(Option<AlarmModelVersionStatus>)`](crate::output::CreateAlarmModelOutput::status): <p>The status of the alarm model. The status can be one of the following values:</p>  <ul>   <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>   <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>   <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>   <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<CreateAlarmModelError>`](crate::error::CreateAlarmModelError)
     pub fn create_alarm_model(&self) -> fluent_builders::CreateAlarmModel<C, M, R> {
         fluent_builders::CreateAlarmModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDetectorModel` operation.
+    /// Constructs a fluent builder for the [`CreateDetectorModel`](crate::client::fluent_builders::CreateDetectorModel) operation.
     ///
-    /// See [`CreateDetectorModel`](crate::client::fluent_builders::CreateDetectorModel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_model_name(impl Into<String>)`](crate::client::fluent_builders::CreateDetectorModel::detector_model_name) / [`set_detector_model_name(Option<String>)`](crate::client::fluent_builders::CreateDetectorModel::set_detector_model_name): <p>The name of the detector model.</p>
+    ///   - [`detector_model_definition(DetectorModelDefinition)`](crate::client::fluent_builders::CreateDetectorModel::detector_model_definition) / [`set_detector_model_definition(Option<DetectorModelDefinition>)`](crate::client::fluent_builders::CreateDetectorModel::set_detector_model_definition): <p>Information that defines how the detectors operate.</p>
+    ///   - [`detector_model_description(impl Into<String>)`](crate::client::fluent_builders::CreateDetectorModel::detector_model_description) / [`set_detector_model_description(Option<String>)`](crate::client::fluent_builders::CreateDetectorModel::set_detector_model_description): <p>A brief description of the detector model.</p>
+    ///   - [`key(impl Into<String>)`](crate::client::fluent_builders::CreateDetectorModel::key) / [`set_key(Option<String>)`](crate::client::fluent_builders::CreateDetectorModel::set_key): <p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDetectorModel::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDetectorModel::set_role_arn): <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDetectorModel::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDetectorModel::set_tags): <p>Metadata that can be used to manage the detector model.</p>
+    ///   - [`evaluation_method(EvaluationMethod)`](crate::client::fluent_builders::CreateDetectorModel::evaluation_method) / [`set_evaluation_method(Option<EvaluationMethod>)`](crate::client::fluent_builders::CreateDetectorModel::set_evaluation_method): <p>Information about the order in which events are evaluated and how actions are executed. </p>
+    /// - On success, responds with [`CreateDetectorModelOutput`](crate::output::CreateDetectorModelOutput) with field(s):
+    ///   - [`detector_model_configuration(Option<DetectorModelConfiguration>)`](crate::output::CreateDetectorModelOutput::detector_model_configuration): <p>Information about how the detector model is configured.</p>
+    /// - On failure, responds with [`SdkError<CreateDetectorModelError>`](crate::error::CreateDetectorModelError)
     pub fn create_detector_model(&self) -> fluent_builders::CreateDetectorModel<C, M, R> {
         fluent_builders::CreateDetectorModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateInput` operation.
+    /// Constructs a fluent builder for the [`CreateInput`](crate::client::fluent_builders::CreateInput) operation.
     ///
-    /// See [`CreateInput`](crate::client::fluent_builders::CreateInput) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_name(impl Into<String>)`](crate::client::fluent_builders::CreateInput::input_name) / [`set_input_name(Option<String>)`](crate::client::fluent_builders::CreateInput::set_input_name): <p>The name you want to give to the input.</p>
+    ///   - [`input_description(impl Into<String>)`](crate::client::fluent_builders::CreateInput::input_description) / [`set_input_description(Option<String>)`](crate::client::fluent_builders::CreateInput::set_input_description): <p>A brief description of the input.</p>
+    ///   - [`input_definition(InputDefinition)`](crate::client::fluent_builders::CreateInput::input_definition) / [`set_input_definition(Option<InputDefinition>)`](crate::client::fluent_builders::CreateInput::set_input_definition): <p>The definition of the input.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateInput::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateInput::set_tags): <p>Metadata that can be used to manage the input.</p>
+    /// - On success, responds with [`CreateInputOutput`](crate::output::CreateInputOutput) with field(s):
+    ///   - [`input_configuration(Option<InputConfiguration>)`](crate::output::CreateInputOutput::input_configuration): <p>Information about the configuration of the input.</p>
+    /// - On failure, responds with [`SdkError<CreateInputError>`](crate::error::CreateInputError)
     pub fn create_input(&self) -> fluent_builders::CreateInput<C, M, R> {
         fluent_builders::CreateInput::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAlarmModel` operation.
+    /// Constructs a fluent builder for the [`DeleteAlarmModel`](crate::client::fluent_builders::DeleteAlarmModel) operation.
     ///
-    /// See [`DeleteAlarmModel`](crate::client::fluent_builders::DeleteAlarmModel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`alarm_model_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAlarmModel::alarm_model_name) / [`set_alarm_model_name(Option<String>)`](crate::client::fluent_builders::DeleteAlarmModel::set_alarm_model_name): <p>The name of the alarm model.</p>
+    /// - On success, responds with [`DeleteAlarmModelOutput`](crate::output::DeleteAlarmModelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAlarmModelError>`](crate::error::DeleteAlarmModelError)
     pub fn delete_alarm_model(&self) -> fluent_builders::DeleteAlarmModel<C, M, R> {
         fluent_builders::DeleteAlarmModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDetectorModel` operation.
+    /// Constructs a fluent builder for the [`DeleteDetectorModel`](crate::client::fluent_builders::DeleteDetectorModel) operation.
     ///
-    /// See [`DeleteDetectorModel`](crate::client::fluent_builders::DeleteDetectorModel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_model_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDetectorModel::detector_model_name) / [`set_detector_model_name(Option<String>)`](crate::client::fluent_builders::DeleteDetectorModel::set_detector_model_name): <p>The name of the detector model to be deleted.</p>
+    /// - On success, responds with [`DeleteDetectorModelOutput`](crate::output::DeleteDetectorModelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDetectorModelError>`](crate::error::DeleteDetectorModelError)
     pub fn delete_detector_model(&self) -> fluent_builders::DeleteDetectorModel<C, M, R> {
         fluent_builders::DeleteDetectorModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInput` operation.
+    /// Constructs a fluent builder for the [`DeleteInput`](crate::client::fluent_builders::DeleteInput) operation.
     ///
-    /// See [`DeleteInput`](crate::client::fluent_builders::DeleteInput) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_name(impl Into<String>)`](crate::client::fluent_builders::DeleteInput::input_name) / [`set_input_name(Option<String>)`](crate::client::fluent_builders::DeleteInput::set_input_name): <p>The name of the input to delete.</p>
+    /// - On success, responds with [`DeleteInputOutput`](crate::output::DeleteInputOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteInputError>`](crate::error::DeleteInputError)
     pub fn delete_input(&self) -> fluent_builders::DeleteInput<C, M, R> {
         fluent_builders::DeleteInput::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAlarmModel` operation.
+    /// Constructs a fluent builder for the [`DescribeAlarmModel`](crate::client::fluent_builders::DescribeAlarmModel) operation.
     ///
-    /// See [`DescribeAlarmModel`](crate::client::fluent_builders::DescribeAlarmModel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`alarm_model_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAlarmModel::alarm_model_name) / [`set_alarm_model_name(Option<String>)`](crate::client::fluent_builders::DescribeAlarmModel::set_alarm_model_name): <p>The name of the alarm model.</p>
+    ///   - [`alarm_model_version(impl Into<String>)`](crate::client::fluent_builders::DescribeAlarmModel::alarm_model_version) / [`set_alarm_model_version(Option<String>)`](crate::client::fluent_builders::DescribeAlarmModel::set_alarm_model_version): <p>The version of the alarm model.</p>
+    /// - On success, responds with [`DescribeAlarmModelOutput`](crate::output::DescribeAlarmModelOutput) with field(s):
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeAlarmModelOutput::creation_time): <p>The time the alarm model was created, in the Unix epoch format.</p>
+    ///   - [`alarm_model_arn(Option<String>)`](crate::output::DescribeAlarmModelOutput::alarm_model_arn): <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`alarm_model_version(Option<String>)`](crate::output::DescribeAlarmModelOutput::alarm_model_version): <p>The version of the alarm model.</p>
+    ///   - [`last_update_time(Option<DateTime>)`](crate::output::DescribeAlarmModelOutput::last_update_time): <p>The time the alarm model was last updated, in the Unix epoch format.</p>
+    ///   - [`status(Option<AlarmModelVersionStatus>)`](crate::output::DescribeAlarmModelOutput::status): <p>The status of the alarm model. The status can be one of the following values:</p>  <ul>   <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>   <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>   <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>   <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>  </ul>
+    ///   - [`status_message(Option<String>)`](crate::output::DescribeAlarmModelOutput::status_message): <p> Contains information about the status of the alarm model. </p>
+    ///   - [`alarm_model_name(Option<String>)`](crate::output::DescribeAlarmModelOutput::alarm_model_name): <p>The name of the alarm model.</p>
+    ///   - [`alarm_model_description(Option<String>)`](crate::output::DescribeAlarmModelOutput::alarm_model_description): <p>The description of the alarm model.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeAlarmModelOutput::role_arn): <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`key(Option<String>)`](crate::output::DescribeAlarmModelOutput::key): <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
+    ///   - [`severity(Option<i32>)`](crate::output::DescribeAlarmModelOutput::severity): <p>A non-negative integer that reflects the severity level of the alarm.</p>
+    ///   - [`alarm_rule(Option<AlarmRule>)`](crate::output::DescribeAlarmModelOutput::alarm_rule): <p>Defines when your alarm is invoked.</p>
+    ///   - [`alarm_notification(Option<AlarmNotification>)`](crate::output::DescribeAlarmModelOutput::alarm_notification): <p>Contains information about one or more notification actions.</p>
+    ///   - [`alarm_event_actions(Option<AlarmEventActions>)`](crate::output::DescribeAlarmModelOutput::alarm_event_actions): <p>Contains information about one or more alarm actions.</p>
+    ///   - [`alarm_capabilities(Option<AlarmCapabilities>)`](crate::output::DescribeAlarmModelOutput::alarm_capabilities): <p>Contains the configuration information of alarm state changes.</p>
+    /// - On failure, responds with [`SdkError<DescribeAlarmModelError>`](crate::error::DescribeAlarmModelError)
     pub fn describe_alarm_model(&self) -> fluent_builders::DescribeAlarmModel<C, M, R> {
         fluent_builders::DescribeAlarmModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDetectorModel` operation.
+    /// Constructs a fluent builder for the [`DescribeDetectorModel`](crate::client::fluent_builders::DescribeDetectorModel) operation.
     ///
-    /// See [`DescribeDetectorModel`](crate::client::fluent_builders::DescribeDetectorModel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_model_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDetectorModel::detector_model_name) / [`set_detector_model_name(Option<String>)`](crate::client::fluent_builders::DescribeDetectorModel::set_detector_model_name): <p>The name of the detector model.</p>
+    ///   - [`detector_model_version(impl Into<String>)`](crate::client::fluent_builders::DescribeDetectorModel::detector_model_version) / [`set_detector_model_version(Option<String>)`](crate::client::fluent_builders::DescribeDetectorModel::set_detector_model_version): <p>The version of the detector model.</p>
+    /// - On success, responds with [`DescribeDetectorModelOutput`](crate::output::DescribeDetectorModelOutput) with field(s):
+    ///   - [`detector_model(Option<DetectorModel>)`](crate::output::DescribeDetectorModelOutput::detector_model): <p>Information about the detector model.</p>
+    /// - On failure, responds with [`SdkError<DescribeDetectorModelError>`](crate::error::DescribeDetectorModelError)
     pub fn describe_detector_model(&self) -> fluent_builders::DescribeDetectorModel<C, M, R> {
         fluent_builders::DescribeDetectorModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDetectorModelAnalysis` operation.
+    /// Constructs a fluent builder for the [`DescribeDetectorModelAnalysis`](crate::client::fluent_builders::DescribeDetectorModelAnalysis) operation.
     ///
-    /// See [`DescribeDetectorModelAnalysis`](crate::client::fluent_builders::DescribeDetectorModelAnalysis) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`analysis_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDetectorModelAnalysis::analysis_id) / [`set_analysis_id(Option<String>)`](crate::client::fluent_builders::DescribeDetectorModelAnalysis::set_analysis_id): <p>The ID of the analysis result that you want to retrieve.</p>
+    /// - On success, responds with [`DescribeDetectorModelAnalysisOutput`](crate::output::DescribeDetectorModelAnalysisOutput) with field(s):
+    ///   - [`status(Option<AnalysisStatus>)`](crate::output::DescribeDetectorModelAnalysisOutput::status): <p>The status of the analysis activity. The status can be one of the following values:</p>  <ul>   <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>   <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>   <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribeDetectorModelAnalysisError>`](crate::error::DescribeDetectorModelAnalysisError)
     pub fn describe_detector_model_analysis(
         &self,
     ) -> fluent_builders::DescribeDetectorModelAnalysis<C, M, R> {
         fluent_builders::DescribeDetectorModelAnalysis::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInput` operation.
+    /// Constructs a fluent builder for the [`DescribeInput`](crate::client::fluent_builders::DescribeInput) operation.
     ///
-    /// See [`DescribeInput`](crate::client::fluent_builders::DescribeInput) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_name(impl Into<String>)`](crate::client::fluent_builders::DescribeInput::input_name) / [`set_input_name(Option<String>)`](crate::client::fluent_builders::DescribeInput::set_input_name): <p>The name of the input.</p>
+    /// - On success, responds with [`DescribeInputOutput`](crate::output::DescribeInputOutput) with field(s):
+    ///   - [`input(Option<Input>)`](crate::output::DescribeInputOutput::input): <p>Information about the input.</p>
+    /// - On failure, responds with [`SdkError<DescribeInputError>`](crate::error::DescribeInputError)
     pub fn describe_input(&self) -> fluent_builders::DescribeInput<C, M, R> {
         fluent_builders::DescribeInput::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLoggingOptions` operation.
+    /// Constructs a fluent builder for the [`DescribeLoggingOptions`](crate::client::fluent_builders::DescribeLoggingOptions) operation.
     ///
-    /// See [`DescribeLoggingOptions`](crate::client::fluent_builders::DescribeLoggingOptions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeLoggingOptions::send) it.
+
+    /// - On success, responds with [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput) with field(s):
+    ///   - [`logging_options(Option<LoggingOptions>)`](crate::output::DescribeLoggingOptionsOutput::logging_options): <p>The current settings of the AWS IoT Events logging options.</p>
+    /// - On failure, responds with [`SdkError<DescribeLoggingOptionsError>`](crate::error::DescribeLoggingOptionsError)
     pub fn describe_logging_options(&self) -> fluent_builders::DescribeLoggingOptions<C, M, R> {
         fluent_builders::DescribeLoggingOptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDetectorModelAnalysisResults` operation.
+    /// Constructs a fluent builder for the [`GetDetectorModelAnalysisResults`](crate::client::fluent_builders::GetDetectorModelAnalysisResults) operation.
     ///
-    /// See [`GetDetectorModelAnalysisResults`](crate::client::fluent_builders::GetDetectorModelAnalysisResults) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`analysis_id(impl Into<String>)`](crate::client::fluent_builders::GetDetectorModelAnalysisResults::analysis_id) / [`set_analysis_id(Option<String>)`](crate::client::fluent_builders::GetDetectorModelAnalysisResults::set_analysis_id): <p>The ID of the analysis result that you want to retrieve.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetDetectorModelAnalysisResults::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetDetectorModelAnalysisResults::set_next_token): <p>The token that you can use to return the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetDetectorModelAnalysisResults::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetDetectorModelAnalysisResults::set_max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - On success, responds with [`GetDetectorModelAnalysisResultsOutput`](crate::output::GetDetectorModelAnalysisResultsOutput) with field(s):
+    ///   - [`analysis_results(Option<Vec<AnalysisResult>>)`](crate::output::GetDetectorModelAnalysisResultsOutput::analysis_results): <p>Contains information about one or more analysis results.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetDetectorModelAnalysisResultsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<GetDetectorModelAnalysisResultsError>`](crate::error::GetDetectorModelAnalysisResultsError)
     pub fn get_detector_model_analysis_results(
         &self,
     ) -> fluent_builders::GetDetectorModelAnalysisResults<C, M, R> {
         fluent_builders::GetDetectorModelAnalysisResults::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAlarmModels` operation.
+    /// Constructs a fluent builder for the [`ListAlarmModels`](crate::client::fluent_builders::ListAlarmModels) operation.
     ///
-    /// See [`ListAlarmModels`](crate::client::fluent_builders::ListAlarmModels) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAlarmModels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAlarmModels::set_next_token): <p>The token that you can use to return the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAlarmModels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAlarmModels::set_max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - On success, responds with [`ListAlarmModelsOutput`](crate::output::ListAlarmModelsOutput) with field(s):
+    ///   - [`alarm_model_summaries(Option<Vec<AlarmModelSummary>>)`](crate::output::ListAlarmModelsOutput::alarm_model_summaries): <p>A list that summarizes each alarm model.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAlarmModelsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListAlarmModelsError>`](crate::error::ListAlarmModelsError)
     pub fn list_alarm_models(&self) -> fluent_builders::ListAlarmModels<C, M, R> {
         fluent_builders::ListAlarmModels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAlarmModelVersions` operation.
+    /// Constructs a fluent builder for the [`ListAlarmModelVersions`](crate::client::fluent_builders::ListAlarmModelVersions) operation.
     ///
-    /// See [`ListAlarmModelVersions`](crate::client::fluent_builders::ListAlarmModelVersions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`alarm_model_name(impl Into<String>)`](crate::client::fluent_builders::ListAlarmModelVersions::alarm_model_name) / [`set_alarm_model_name(Option<String>)`](crate::client::fluent_builders::ListAlarmModelVersions::set_alarm_model_name): <p>The name of the alarm model.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAlarmModelVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAlarmModelVersions::set_next_token): <p>The token that you can use to return the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAlarmModelVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAlarmModelVersions::set_max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - On success, responds with [`ListAlarmModelVersionsOutput`](crate::output::ListAlarmModelVersionsOutput) with field(s):
+    ///   - [`alarm_model_version_summaries(Option<Vec<AlarmModelVersionSummary>>)`](crate::output::ListAlarmModelVersionsOutput::alarm_model_version_summaries): <p>A list that summarizes each alarm model version.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAlarmModelVersionsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListAlarmModelVersionsError>`](crate::error::ListAlarmModelVersionsError)
     pub fn list_alarm_model_versions(&self) -> fluent_builders::ListAlarmModelVersions<C, M, R> {
         fluent_builders::ListAlarmModelVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDetectorModels` operation.
+    /// Constructs a fluent builder for the [`ListDetectorModels`](crate::client::fluent_builders::ListDetectorModels) operation.
     ///
-    /// See [`ListDetectorModels`](crate::client::fluent_builders::ListDetectorModels) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDetectorModels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDetectorModels::set_next_token): <p>The token that you can use to return the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDetectorModels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDetectorModels::set_max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - On success, responds with [`ListDetectorModelsOutput`](crate::output::ListDetectorModelsOutput) with field(s):
+    ///   - [`detector_model_summaries(Option<Vec<DetectorModelSummary>>)`](crate::output::ListDetectorModelsOutput::detector_model_summaries): <p>Summary information about the detector models.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDetectorModelsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListDetectorModelsError>`](crate::error::ListDetectorModelsError)
     pub fn list_detector_models(&self) -> fluent_builders::ListDetectorModels<C, M, R> {
         fluent_builders::ListDetectorModels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDetectorModelVersions` operation.
+    /// Constructs a fluent builder for the [`ListDetectorModelVersions`](crate::client::fluent_builders::ListDetectorModelVersions) operation.
     ///
-    /// See [`ListDetectorModelVersions`](crate::client::fluent_builders::ListDetectorModelVersions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_model_name(impl Into<String>)`](crate::client::fluent_builders::ListDetectorModelVersions::detector_model_name) / [`set_detector_model_name(Option<String>)`](crate::client::fluent_builders::ListDetectorModelVersions::set_detector_model_name): <p>The name of the detector model whose versions are returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDetectorModelVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDetectorModelVersions::set_next_token): <p>The token that you can use to return the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDetectorModelVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDetectorModelVersions::set_max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - On success, responds with [`ListDetectorModelVersionsOutput`](crate::output::ListDetectorModelVersionsOutput) with field(s):
+    ///   - [`detector_model_version_summaries(Option<Vec<DetectorModelVersionSummary>>)`](crate::output::ListDetectorModelVersionsOutput::detector_model_version_summaries): <p>Summary information about the detector model versions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDetectorModelVersionsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListDetectorModelVersionsError>`](crate::error::ListDetectorModelVersionsError)
     pub fn list_detector_model_versions(
         &self,
     ) -> fluent_builders::ListDetectorModelVersions<C, M, R> {
         fluent_builders::ListDetectorModelVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInputRoutings` operation.
+    /// Constructs a fluent builder for the [`ListInputRoutings`](crate::client::fluent_builders::ListInputRoutings) operation.
     ///
-    /// See [`ListInputRoutings`](crate::client::fluent_builders::ListInputRoutings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_identifier(InputIdentifier)`](crate::client::fluent_builders::ListInputRoutings::input_identifier) / [`set_input_identifier(Option<InputIdentifier>)`](crate::client::fluent_builders::ListInputRoutings::set_input_identifier): <p> The identifer of the routed input. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInputRoutings::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInputRoutings::set_max_results): <p> The maximum number of results to be returned per request. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInputRoutings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInputRoutings::set_next_token): <p> The token that you can use to return the next set of results. </p>
+    /// - On success, responds with [`ListInputRoutingsOutput`](crate::output::ListInputRoutingsOutput) with field(s):
+    ///   - [`routed_resources(Option<Vec<RoutedResource>>)`](crate::output::ListInputRoutingsOutput::routed_resources): <p> Summary information about the routed resources. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInputRoutingsOutput::next_token): <p> The token that you can use to return the next set of results, or <code>null</code> if there are no more results. </p>
+    /// - On failure, responds with [`SdkError<ListInputRoutingsError>`](crate::error::ListInputRoutingsError)
     pub fn list_input_routings(&self) -> fluent_builders::ListInputRoutings<C, M, R> {
         fluent_builders::ListInputRoutings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInputs` operation.
+    /// Constructs a fluent builder for the [`ListInputs`](crate::client::fluent_builders::ListInputs) operation.
     ///
-    /// See [`ListInputs`](crate::client::fluent_builders::ListInputs) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInputs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInputs::set_next_token): <p>The token that you can use to return the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInputs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInputs::set_max_results): <p>The maximum number of results to be returned per request.</p>
+    /// - On success, responds with [`ListInputsOutput`](crate::output::ListInputsOutput) with field(s):
+    ///   - [`input_summaries(Option<Vec<InputSummary>>)`](crate::output::ListInputsOutput::input_summaries): <p>Summary information about the inputs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInputsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListInputsError>`](crate::error::ListInputsError)
     pub fn list_inputs(&self) -> fluent_builders::ListInputs<C, M, R> {
         fluent_builders::ListInputs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags assigned to the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutLoggingOptions` operation.
+    /// Constructs a fluent builder for the [`PutLoggingOptions`](crate::client::fluent_builders::PutLoggingOptions) operation.
     ///
-    /// See [`PutLoggingOptions`](crate::client::fluent_builders::PutLoggingOptions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`logging_options(LoggingOptions)`](crate::client::fluent_builders::PutLoggingOptions::logging_options) / [`set_logging_options(Option<LoggingOptions>)`](crate::client::fluent_builders::PutLoggingOptions::set_logging_options): <p>The new values of the AWS IoT Events logging options.</p>
+    /// - On success, responds with [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput)
+
+    /// - On failure, responds with [`SdkError<PutLoggingOptionsError>`](crate::error::PutLoggingOptionsError)
     pub fn put_logging_options(&self) -> fluent_builders::PutLoggingOptions<C, M, R> {
         fluent_builders::PutLoggingOptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartDetectorModelAnalysis` operation.
+    /// Constructs a fluent builder for the [`StartDetectorModelAnalysis`](crate::client::fluent_builders::StartDetectorModelAnalysis) operation.
     ///
-    /// See [`StartDetectorModelAnalysis`](crate::client::fluent_builders::StartDetectorModelAnalysis) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_model_definition(DetectorModelDefinition)`](crate::client::fluent_builders::StartDetectorModelAnalysis::detector_model_definition) / [`set_detector_model_definition(Option<DetectorModelDefinition>)`](crate::client::fluent_builders::StartDetectorModelAnalysis::set_detector_model_definition): <p>Information that defines how a detector operates.</p>
+    /// - On success, responds with [`StartDetectorModelAnalysisOutput`](crate::output::StartDetectorModelAnalysisOutput) with field(s):
+    ///   - [`analysis_id(Option<String>)`](crate::output::StartDetectorModelAnalysisOutput::analysis_id): <p>The ID that you can use to retrieve the analysis result.</p>
+    /// - On failure, responds with [`SdkError<StartDetectorModelAnalysisError>`](crate::error::StartDetectorModelAnalysisError)
     pub fn start_detector_model_analysis(
         &self,
     ) -> fluent_builders::StartDetectorModelAnalysis<C, M, R> {
         fluent_builders::StartDetectorModelAnalysis::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The new or modified tags for the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of the keys of the tags to be removed from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAlarmModel` operation.
+    /// Constructs a fluent builder for the [`UpdateAlarmModel`](crate::client::fluent_builders::UpdateAlarmModel) operation.
     ///
-    /// See [`UpdateAlarmModel`](crate::client::fluent_builders::UpdateAlarmModel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`alarm_model_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAlarmModel::alarm_model_name) / [`set_alarm_model_name(Option<String>)`](crate::client::fluent_builders::UpdateAlarmModel::set_alarm_model_name): <p>The name of the alarm model.</p>
+    ///   - [`alarm_model_description(impl Into<String>)`](crate::client::fluent_builders::UpdateAlarmModel::alarm_model_description) / [`set_alarm_model_description(Option<String>)`](crate::client::fluent_builders::UpdateAlarmModel::set_alarm_model_description): <p>The description of the alarm model.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAlarmModel::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateAlarmModel::set_role_arn): <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`severity(i32)`](crate::client::fluent_builders::UpdateAlarmModel::severity) / [`set_severity(Option<i32>)`](crate::client::fluent_builders::UpdateAlarmModel::set_severity): <p>A non-negative integer that reflects the severity level of the alarm.</p>
+    ///   - [`alarm_rule(AlarmRule)`](crate::client::fluent_builders::UpdateAlarmModel::alarm_rule) / [`set_alarm_rule(Option<AlarmRule>)`](crate::client::fluent_builders::UpdateAlarmModel::set_alarm_rule): <p>Defines when your alarm is invoked.</p>
+    ///   - [`alarm_notification(AlarmNotification)`](crate::client::fluent_builders::UpdateAlarmModel::alarm_notification) / [`set_alarm_notification(Option<AlarmNotification>)`](crate::client::fluent_builders::UpdateAlarmModel::set_alarm_notification): <p>Contains information about one or more notification actions.</p>
+    ///   - [`alarm_event_actions(AlarmEventActions)`](crate::client::fluent_builders::UpdateAlarmModel::alarm_event_actions) / [`set_alarm_event_actions(Option<AlarmEventActions>)`](crate::client::fluent_builders::UpdateAlarmModel::set_alarm_event_actions): <p>Contains information about one or more alarm actions.</p>
+    ///   - [`alarm_capabilities(AlarmCapabilities)`](crate::client::fluent_builders::UpdateAlarmModel::alarm_capabilities) / [`set_alarm_capabilities(Option<AlarmCapabilities>)`](crate::client::fluent_builders::UpdateAlarmModel::set_alarm_capabilities): <p>Contains the configuration information of alarm state changes.</p>
+    /// - On success, responds with [`UpdateAlarmModelOutput`](crate::output::UpdateAlarmModelOutput) with field(s):
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateAlarmModelOutput::creation_time): <p>The time the alarm model was created, in the Unix epoch format.</p>
+    ///   - [`alarm_model_arn(Option<String>)`](crate::output::UpdateAlarmModelOutput::alarm_model_arn): <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    ///   - [`alarm_model_version(Option<String>)`](crate::output::UpdateAlarmModelOutput::alarm_model_version): <p>The version of the alarm model.</p>
+    ///   - [`last_update_time(Option<DateTime>)`](crate::output::UpdateAlarmModelOutput::last_update_time): <p>The time the alarm model was last updated, in the Unix epoch format.</p>
+    ///   - [`status(Option<AlarmModelVersionStatus>)`](crate::output::UpdateAlarmModelOutput::status): <p>The status of the alarm model. The status can be one of the following values:</p>  <ul>   <li> <p> <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p> </li>   <li> <p> <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model. Activating an alarm model can take up to a few minutes.</p> </li>   <li> <p> <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data. Check your alarm model information and update the alarm model.</p> </li>   <li> <p> <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information and try again.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<UpdateAlarmModelError>`](crate::error::UpdateAlarmModelError)
     pub fn update_alarm_model(&self) -> fluent_builders::UpdateAlarmModel<C, M, R> {
         fluent_builders::UpdateAlarmModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDetectorModel` operation.
+    /// Constructs a fluent builder for the [`UpdateDetectorModel`](crate::client::fluent_builders::UpdateDetectorModel) operation.
     ///
-    /// See [`UpdateDetectorModel`](crate::client::fluent_builders::UpdateDetectorModel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_model_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDetectorModel::detector_model_name) / [`set_detector_model_name(Option<String>)`](crate::client::fluent_builders::UpdateDetectorModel::set_detector_model_name): <p>The name of the detector model that is updated.</p>
+    ///   - [`detector_model_definition(DetectorModelDefinition)`](crate::client::fluent_builders::UpdateDetectorModel::detector_model_definition) / [`set_detector_model_definition(Option<DetectorModelDefinition>)`](crate::client::fluent_builders::UpdateDetectorModel::set_detector_model_definition): <p>Information that defines how a detector operates.</p>
+    ///   - [`detector_model_description(impl Into<String>)`](crate::client::fluent_builders::UpdateDetectorModel::detector_model_description) / [`set_detector_model_description(Option<String>)`](crate::client::fluent_builders::UpdateDetectorModel::set_detector_model_description): <p>A brief description of the detector model.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDetectorModel::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateDetectorModel::set_role_arn): <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
+    ///   - [`evaluation_method(EvaluationMethod)`](crate::client::fluent_builders::UpdateDetectorModel::evaluation_method) / [`set_evaluation_method(Option<EvaluationMethod>)`](crate::client::fluent_builders::UpdateDetectorModel::set_evaluation_method): <p>Information about the order in which events are evaluated and how actions are executed. </p>
+    /// - On success, responds with [`UpdateDetectorModelOutput`](crate::output::UpdateDetectorModelOutput) with field(s):
+    ///   - [`detector_model_configuration(Option<DetectorModelConfiguration>)`](crate::output::UpdateDetectorModelOutput::detector_model_configuration): <p>Information about how the detector model is configured.</p>
+    /// - On failure, responds with [`SdkError<UpdateDetectorModelError>`](crate::error::UpdateDetectorModelError)
     pub fn update_detector_model(&self) -> fluent_builders::UpdateDetectorModel<C, M, R> {
         fluent_builders::UpdateDetectorModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateInput` operation.
+    /// Constructs a fluent builder for the [`UpdateInput`](crate::client::fluent_builders::UpdateInput) operation.
     ///
-    /// See [`UpdateInput`](crate::client::fluent_builders::UpdateInput) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`input_name(impl Into<String>)`](crate::client::fluent_builders::UpdateInput::input_name) / [`set_input_name(Option<String>)`](crate::client::fluent_builders::UpdateInput::set_input_name): <p>The name of the input you want to update.</p>
+    ///   - [`input_description(impl Into<String>)`](crate::client::fluent_builders::UpdateInput::input_description) / [`set_input_description(Option<String>)`](crate::client::fluent_builders::UpdateInput::set_input_description): <p>A brief description of the input.</p>
+    ///   - [`input_definition(InputDefinition)`](crate::client::fluent_builders::UpdateInput::input_definition) / [`set_input_definition(Option<InputDefinition>)`](crate::client::fluent_builders::UpdateInput::set_input_definition): <p>The definition of the input.</p>
+    /// - On success, responds with [`UpdateInputOutput`](crate::output::UpdateInputOutput) with field(s):
+    ///   - [`input_configuration(Option<InputConfiguration>)`](crate::output::UpdateInputOutput::input_configuration): <p>Information about the configuration of the input.</p>
+    /// - On failure, responds with [`SdkError<UpdateInputError>`](crate::error::UpdateInputError)
     pub fn update_input(&self) -> fluent_builders::UpdateInput<C, M, R> {
         fluent_builders::UpdateInput::new(self.handle.clone())
     }

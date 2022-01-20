@@ -20,6 +20,12 @@ pub(crate) enum InvalidJsonCredentials {
     /// The response was missing a required field
     MissingField(&'static str),
 
+    /// A field was invalid
+    InvalidField {
+        field: &'static str,
+        err: Box<dyn Error + Send + Sync>,
+    },
+
     /// Another unhandled error occurred
     Other(Cow<'static, str>),
 }
@@ -48,6 +54,9 @@ impl Display for InvalidJsonCredentials {
                 field
             ),
             InvalidJsonCredentials::Other(msg) => write!(f, "{}", msg),
+            InvalidJsonCredentials::InvalidField { field, err } => {
+                write!(f, "Invalid field in response: `{}`. {}", field, err)
+            }
         }
     }
 }
@@ -99,68 +108,34 @@ pub(crate) enum JsonCredentials<'a> {
 pub(crate) fn parse_json_credentials(
     credentials_response: &str,
 ) -> Result<JsonCredentials, InvalidJsonCredentials> {
-    let mut tokens = json_token_iter(credentials_response.as_bytes()).peekable();
     let mut code = None;
     let mut access_key_id = None;
     let mut secret_access_key = None;
     let mut session_token = None;
     let mut expiration = None;
     let mut message = None;
-    if !matches!(tokens.next().transpose()?, Some(Token::StartObject { .. })) {
-        return Err(InvalidJsonCredentials::JsonError(
-            "expected a JSON document starting with `{`".into(),
-        ));
-    }
-    loop {
-        match tokens.next().transpose()? {
-            Some(Token::EndObject { .. }) => break,
-            Some(Token::ObjectKey { key, .. }) => {
-                if let Some(Ok(Token::ValueString { value, .. })) = tokens.peek() {
-                    match key.to_unescaped()? {
-                        /*
-                         "Code": "Success",
-                         "Type": "AWS-HMAC",
-                         "AccessKeyId" : "accessKey",
-                         "SecretAccessKey" : "secret",
-                         "Token" : "token",
-                         "Expiration" : "....",
-                         "LastUpdated" : "2009-11-23T0:00:00Z"
-                        */
-                        c if c.eq_ignore_ascii_case("Code") => code = Some(value.to_unescaped()?),
-                        c if c.eq_ignore_ascii_case("AccessKeyId") => {
-                            access_key_id = Some(value.to_unescaped()?)
-                        }
-                        c if c.eq_ignore_ascii_case("SecretAccessKey") => {
-                            secret_access_key = Some(value.to_unescaped()?)
-                        }
-                        c if c.eq_ignore_ascii_case("Token") => {
-                            session_token = Some(value.to_unescaped()?)
-                        }
-                        c if c.eq_ignore_ascii_case("Expiration") => {
-                            expiration = Some(value.to_unescaped()?)
-                        }
+    json_parse_loop(credentials_response.as_bytes(), |key, value| {
+        match key {
+            /*
+             "Code": "Success",
+             "Type": "AWS-HMAC",
+             "AccessKeyId" : "accessKey",
+             "SecretAccessKey" : "secret",
+             "Token" : "token",
+             "Expiration" : "....",
+             "LastUpdated" : "2009-11-23T0:00:00Z"
+            */
+            c if c.eq_ignore_ascii_case("Code") => code = Some(value),
+            c if c.eq_ignore_ascii_case("AccessKeyId") => access_key_id = Some(value),
+            c if c.eq_ignore_ascii_case("SecretAccessKey") => secret_access_key = Some(value),
+            c if c.eq_ignore_ascii_case("Token") => session_token = Some(value),
+            c if c.eq_ignore_ascii_case("Expiration") => expiration = Some(value),
 
-                        // Error case handling: message will be set
-                        c if c.eq_ignore_ascii_case("Message") => {
-                            message = Some(value.to_unescaped()?)
-                        }
-                        _ => {}
-                    }
-                }
-                skip_value(&mut tokens)?;
-            }
-            other => {
-                return Err(InvalidJsonCredentials::Other(
-                    format!("expected object key, found: {:?}", other,).into(),
-                ));
-            }
+            // Error case handling: message will be set
+            c if c.eq_ignore_ascii_case("Message") => message = Some(value),
+            _ => {}
         }
-    }
-    if tokens.next().is_some() {
-        return Err(InvalidJsonCredentials::Other(
-            "found more JSON tokens after completing parsing".into(),
-        ));
-    }
+    })?;
     match code {
         // IMDS does not appear to reply with a `Code` missing, but documentation indicates it
         // may be possible
@@ -175,7 +150,10 @@ pub(crate) fn parse_json_credentials(
                 expiration.ok_or(InvalidJsonCredentials::MissingField("Expiration"))?;
             let expiration = SystemTime::try_from(
                 DateTime::from_str(expiration.as_ref(), Format::DateTime).map_err(|err| {
-                    InvalidJsonCredentials::Other(format!("invalid date: {}", err).into())
+                    InvalidJsonCredentials::InvalidField {
+                        field: "Expiration",
+                        err: err.into(),
+                    }
                 })?,
             )
             .map_err(|_| {
@@ -195,6 +173,42 @@ pub(crate) fn parse_json_credentials(
             message: message.unwrap_or_else(|| "no message".into()),
         }),
     }
+}
+
+pub(crate) fn json_parse_loop<'a>(
+    input: &'a [u8],
+    mut f: impl FnMut(Cow<'a, str>, Cow<'a, str>),
+) -> Result<(), InvalidJsonCredentials> {
+    let mut tokens = json_token_iter(input).peekable();
+    if !matches!(tokens.next().transpose()?, Some(Token::StartObject { .. })) {
+        return Err(InvalidJsonCredentials::JsonError(
+            "expected a JSON document starting with `{`".into(),
+        ));
+    }
+    loop {
+        match tokens.next().transpose()? {
+            Some(Token::EndObject { .. }) => break,
+            Some(Token::ObjectKey { key, .. }) => {
+                if let Some(Ok(Token::ValueString { value, .. })) = tokens.peek() {
+                    let key = key.to_unescaped()?;
+                    let value = value.to_unescaped()?;
+                    f(key, value)
+                }
+                skip_value(&mut tokens)?;
+            }
+            other => {
+                return Err(InvalidJsonCredentials::Other(
+                    format!("expected object key, found: {:?}", other).into(),
+                ));
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(InvalidJsonCredentials::Other(
+            "found more JSON tokens after completing parsing".into(),
+        ));
+    }
+    Ok(())
 }
 
 #[cfg(test)]

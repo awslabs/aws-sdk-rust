@@ -83,104 +83,167 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateExperimentTemplate` operation.
+    /// Constructs a fluent builder for the [`CreateExperimentTemplate`](crate::client::fluent_builders::CreateExperimentTemplate) operation.
     ///
-    /// See [`CreateExperimentTemplate`](crate::client::fluent_builders::CreateExperimentTemplate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_description): <p>A description for the experiment template. Can contain up to 64 letters (A-Z and a-z).</p>
+    ///   - [`stop_conditions(Vec<CreateExperimentTemplateStopConditionInput>)`](crate::client::fluent_builders::CreateExperimentTemplate::stop_conditions) / [`set_stop_conditions(Option<Vec<CreateExperimentTemplateStopConditionInput>>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_stop_conditions): <p>The stop conditions.</p>
+    ///   - [`targets(HashMap<String, CreateExperimentTemplateTargetInput>)`](crate::client::fluent_builders::CreateExperimentTemplate::targets) / [`set_targets(Option<HashMap<String, CreateExperimentTemplateTargetInput>>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_targets): <p>The targets for the experiment.</p>
+    ///   - [`actions(HashMap<String, CreateExperimentTemplateActionInput>)`](crate::client::fluent_builders::CreateExperimentTemplate::actions) / [`set_actions(Option<HashMap<String, CreateExperimentTemplateActionInput>>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_actions): <p>The actions for the experiment.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateExperimentTemplate::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_tags): <p>The tags to apply to the experiment template.</p>
+    /// - On success, responds with [`CreateExperimentTemplateOutput`](crate::output::CreateExperimentTemplateOutput) with field(s):
+    ///   - [`experiment_template(Option<ExperimentTemplate>)`](crate::output::CreateExperimentTemplateOutput::experiment_template): <p>Information about the experiment template.</p>
+    /// - On failure, responds with [`SdkError<CreateExperimentTemplateError>`](crate::error::CreateExperimentTemplateError)
     pub fn create_experiment_template(&self) -> fluent_builders::CreateExperimentTemplate<C, M, R> {
         fluent_builders::CreateExperimentTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteExperimentTemplate` operation.
+    /// Constructs a fluent builder for the [`DeleteExperimentTemplate`](crate::client::fluent_builders::DeleteExperimentTemplate) operation.
     ///
-    /// See [`DeleteExperimentTemplate`](crate::client::fluent_builders::DeleteExperimentTemplate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteExperimentTemplate::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteExperimentTemplate::set_id): <p>The ID of the experiment template.</p>
+    /// - On success, responds with [`DeleteExperimentTemplateOutput`](crate::output::DeleteExperimentTemplateOutput) with field(s):
+    ///   - [`experiment_template(Option<ExperimentTemplate>)`](crate::output::DeleteExperimentTemplateOutput::experiment_template): <p>Information about the experiment template.</p>
+    /// - On failure, responds with [`SdkError<DeleteExperimentTemplateError>`](crate::error::DeleteExperimentTemplateError)
     pub fn delete_experiment_template(&self) -> fluent_builders::DeleteExperimentTemplate<C, M, R> {
         fluent_builders::DeleteExperimentTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAction` operation.
+    /// Constructs a fluent builder for the [`GetAction`](crate::client::fluent_builders::GetAction) operation.
     ///
-    /// See [`GetAction`](crate::client::fluent_builders::GetAction) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetAction::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetAction::set_id): <p>The ID of the action.</p>
+    /// - On success, responds with [`GetActionOutput`](crate::output::GetActionOutput) with field(s):
+    ///   - [`action(Option<Action>)`](crate::output::GetActionOutput::action): <p>Information about the action.</p>
+    /// - On failure, responds with [`SdkError<GetActionError>`](crate::error::GetActionError)
     pub fn get_action(&self) -> fluent_builders::GetAction<C, M, R> {
         fluent_builders::GetAction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetExperiment` operation.
+    /// Constructs a fluent builder for the [`GetExperiment`](crate::client::fluent_builders::GetExperiment) operation.
     ///
-    /// See [`GetExperiment`](crate::client::fluent_builders::GetExperiment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetExperiment::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetExperiment::set_id): <p>The ID of the experiment.</p>
+    /// - On success, responds with [`GetExperimentOutput`](crate::output::GetExperimentOutput) with field(s):
+    ///   - [`experiment(Option<Experiment>)`](crate::output::GetExperimentOutput::experiment): <p>Information about the experiment.</p>
+    /// - On failure, responds with [`SdkError<GetExperimentError>`](crate::error::GetExperimentError)
     pub fn get_experiment(&self) -> fluent_builders::GetExperiment<C, M, R> {
         fluent_builders::GetExperiment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetExperimentTemplate` operation.
+    /// Constructs a fluent builder for the [`GetExperimentTemplate`](crate::client::fluent_builders::GetExperimentTemplate) operation.
     ///
-    /// See [`GetExperimentTemplate`](crate::client::fluent_builders::GetExperimentTemplate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetExperimentTemplate::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetExperimentTemplate::set_id): <p>The ID of the experiment template.</p>
+    /// - On success, responds with [`GetExperimentTemplateOutput`](crate::output::GetExperimentTemplateOutput) with field(s):
+    ///   - [`experiment_template(Option<ExperimentTemplate>)`](crate::output::GetExperimentTemplateOutput::experiment_template): <p>Information about the experiment template.</p>
+    /// - On failure, responds with [`SdkError<GetExperimentTemplateError>`](crate::error::GetExperimentTemplateError)
     pub fn get_experiment_template(&self) -> fluent_builders::GetExperimentTemplate<C, M, R> {
         fluent_builders::GetExperimentTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListActions` operation.
+    /// Constructs a fluent builder for the [`ListActions`](crate::client::fluent_builders::ListActions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListActions::into_paginator).
     ///
-    /// See [`ListActions`](crate::client::fluent_builders::ListActions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListActions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListActions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListActions::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListActions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListActions::set_next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`ListActionsOutput`](crate::output::ListActionsOutput) with field(s):
+    ///   - [`actions(Option<Vec<ActionSummary>>)`](crate::output::ListActionsOutput::actions): <p>The actions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListActionsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListActionsError>`](crate::error::ListActionsError)
     pub fn list_actions(&self) -> fluent_builders::ListActions<C, M, R> {
         fluent_builders::ListActions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListExperiments` operation.
+    /// Constructs a fluent builder for the [`ListExperiments`](crate::client::fluent_builders::ListExperiments) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExperiments::into_paginator).
     ///
-    /// See [`ListExperiments`](crate::client::fluent_builders::ListExperiments) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListExperiments::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExperiments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListExperiments::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExperiments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExperiments::set_next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`ListExperimentsOutput`](crate::output::ListExperimentsOutput) with field(s):
+    ///   - [`experiments(Option<Vec<ExperimentSummary>>)`](crate::output::ListExperimentsOutput::experiments): <p>The experiments.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListExperimentsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListExperimentsError>`](crate::error::ListExperimentsError)
     pub fn list_experiments(&self) -> fluent_builders::ListExperiments<C, M, R> {
         fluent_builders::ListExperiments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListExperimentTemplates` operation.
+    /// Constructs a fluent builder for the [`ListExperimentTemplates`](crate::client::fluent_builders::ListExperimentTemplates) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExperimentTemplates::into_paginator).
     ///
-    /// See [`ListExperimentTemplates`](crate::client::fluent_builders::ListExperimentTemplates) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListExperimentTemplates::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExperimentTemplates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListExperimentTemplates::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExperimentTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExperimentTemplates::set_next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`ListExperimentTemplatesOutput`](crate::output::ListExperimentTemplatesOutput) with field(s):
+    ///   - [`experiment_templates(Option<Vec<ExperimentTemplateSummary>>)`](crate::output::ListExperimentTemplatesOutput::experiment_templates): <p>The experiment templates.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListExperimentTemplatesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListExperimentTemplatesError>`](crate::error::ListExperimentTemplatesError)
     pub fn list_experiment_templates(&self) -> fluent_builders::ListExperimentTemplates<C, M, R> {
         fluent_builders::ListExperimentTemplates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags for the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartExperiment` operation.
+    /// Constructs a fluent builder for the [`StartExperiment`](crate::client::fluent_builders::StartExperiment) operation.
     ///
-    /// See [`StartExperiment`](crate::client::fluent_builders::StartExperiment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartExperiment::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartExperiment::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`experiment_template_id(impl Into<String>)`](crate::client::fluent_builders::StartExperiment::experiment_template_id) / [`set_experiment_template_id(Option<String>)`](crate::client::fluent_builders::StartExperiment::set_experiment_template_id): <p>The ID of the experiment template.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::StartExperiment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartExperiment::set_tags): <p>The tags to apply to the experiment.</p>
+    /// - On success, responds with [`StartExperimentOutput`](crate::output::StartExperimentOutput) with field(s):
+    ///   - [`experiment(Option<Experiment>)`](crate::output::StartExperimentOutput::experiment): <p>Information about the experiment.</p>
+    /// - On failure, responds with [`SdkError<StartExperimentError>`](crate::error::StartExperimentError)
     pub fn start_experiment(&self) -> fluent_builders::StartExperiment<C, M, R> {
         fluent_builders::StartExperiment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopExperiment` operation.
+    /// Constructs a fluent builder for the [`StopExperiment`](crate::client::fluent_builders::StopExperiment) operation.
     ///
-    /// See [`StopExperiment`](crate::client::fluent_builders::StopExperiment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StopExperiment::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StopExperiment::set_id): <p>The ID of the experiment.</p>
+    /// - On success, responds with [`StopExperimentOutput`](crate::output::StopExperimentOutput) with field(s):
+    ///   - [`experiment(Option<Experiment>)`](crate::output::StopExperimentOutput::experiment): <p>Information about the experiment.</p>
+    /// - On failure, responds with [`SdkError<StopExperimentError>`](crate::error::StopExperimentError)
     pub fn stop_experiment(&self) -> fluent_builders::StopExperiment<C, M, R> {
         fluent_builders::StopExperiment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags for the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys to remove.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateExperimentTemplate` operation.
+    /// Constructs a fluent builder for the [`UpdateExperimentTemplate`](crate::client::fluent_builders::UpdateExperimentTemplate) operation.
     ///
-    /// See [`UpdateExperimentTemplate`](crate::client::fluent_builders::UpdateExperimentTemplate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateExperimentTemplate::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_id): <p>The ID of the experiment template.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateExperimentTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_description): <p>A description for the template.</p>
+    ///   - [`stop_conditions(Vec<UpdateExperimentTemplateStopConditionInput>)`](crate::client::fluent_builders::UpdateExperimentTemplate::stop_conditions) / [`set_stop_conditions(Option<Vec<UpdateExperimentTemplateStopConditionInput>>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_stop_conditions): <p>The stop conditions for the experiment.</p>
+    ///   - [`targets(HashMap<String, UpdateExperimentTemplateTargetInput>)`](crate::client::fluent_builders::UpdateExperimentTemplate::targets) / [`set_targets(Option<HashMap<String, UpdateExperimentTemplateTargetInput>>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_targets): <p>The targets for the experiment.</p>
+    ///   - [`actions(HashMap<String, UpdateExperimentTemplateActionInputItem>)`](crate::client::fluent_builders::UpdateExperimentTemplate::actions) / [`set_actions(Option<HashMap<String, UpdateExperimentTemplateActionInputItem>>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_actions): <p>The actions for the experiment.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateExperimentTemplate::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+    /// - On success, responds with [`UpdateExperimentTemplateOutput`](crate::output::UpdateExperimentTemplateOutput) with field(s):
+    ///   - [`experiment_template(Option<ExperimentTemplate>)`](crate::output::UpdateExperimentTemplateOutput::experiment_template): <p>Information about the experiment template.</p>
+    /// - On failure, responds with [`SdkError<UpdateExperimentTemplateError>`](crate::error::UpdateExperimentTemplateError)
     pub fn update_experiment_template(&self) -> fluent_builders::UpdateExperimentTemplate<C, M, R> {
         fluent_builders::UpdateExperimentTemplate::new(self.handle.clone())
     }

@@ -83,126 +83,203 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateGatewayToServer` operation.
+    /// Constructs a fluent builder for the [`AssociateGatewayToServer`](crate::client::fluent_builders::AssociateGatewayToServer) operation.
     ///
-    /// See [`AssociateGatewayToServer`](crate::client::fluent_builders::AssociateGatewayToServer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateGatewayToServer::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::client::fluent_builders::AssociateGatewayToServer::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`server_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateGatewayToServer::server_arn) / [`set_server_arn(Option<String>)`](crate::client::fluent_builders::AssociateGatewayToServer::set_server_arn): <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
+    /// - On success, responds with [`AssociateGatewayToServerOutput`](crate::output::AssociateGatewayToServerOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::AssociateGatewayToServerOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of a gateway.</p>
+    /// - On failure, responds with [`SdkError<AssociateGatewayToServerError>`](crate::error::AssociateGatewayToServerError)
     pub fn associate_gateway_to_server(
         &self,
     ) -> fluent_builders::AssociateGatewayToServer<C, M, R> {
         fluent_builders::AssociateGatewayToServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGateway` operation.
+    /// Constructs a fluent builder for the [`CreateGateway`](crate::client::fluent_builders::CreateGateway) operation.
     ///
-    /// See [`CreateGateway`](crate::client::fluent_builders::CreateGateway) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`activation_key(impl Into<String>)`](crate::client::fluent_builders::CreateGateway::activation_key) / [`set_activation_key(Option<String>)`](crate::client::fluent_builders::CreateGateway::set_activation_key): <p>The activation key of the created gateway.</p>
+    ///   - [`gateway_display_name(impl Into<String>)`](crate::client::fluent_builders::CreateGateway::gateway_display_name) / [`set_gateway_display_name(Option<String>)`](crate::client::fluent_builders::CreateGateway::set_gateway_display_name): <p>The display name of the created gateway.</p>
+    ///   - [`gateway_type(GatewayType)`](crate::client::fluent_builders::CreateGateway::gateway_type) / [`set_gateway_type(Option<GatewayType>)`](crate::client::fluent_builders::CreateGateway::set_gateway_type): <p>The type of created gateway.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateGateway::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateGateway::set_tags): <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
+    /// - On success, responds with [`CreateGatewayOutput`](crate::output::CreateGatewayOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::CreateGatewayOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway you create.</p>
+    /// - On failure, responds with [`SdkError<CreateGatewayError>`](crate::error::CreateGatewayError)
     pub fn create_gateway(&self) -> fluent_builders::CreateGateway<C, M, R> {
         fluent_builders::CreateGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGateway` operation.
+    /// Constructs a fluent builder for the [`DeleteGateway`](crate::client::fluent_builders::DeleteGateway) operation.
     ///
-    /// See [`DeleteGateway`](crate::client::fluent_builders::DeleteGateway) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteGateway::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::client::fluent_builders::DeleteGateway::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway to delete.</p>
+    /// - On success, responds with [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DeleteGatewayOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway you deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteGatewayError>`](crate::error::DeleteGatewayError)
     pub fn delete_gateway(&self) -> fluent_builders::DeleteGateway<C, M, R> {
         fluent_builders::DeleteGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteHypervisor` operation.
+    /// Constructs a fluent builder for the [`DeleteHypervisor`](crate::client::fluent_builders::DeleteHypervisor) operation.
     ///
-    /// See [`DeleteHypervisor`](crate::client::fluent_builders::DeleteHypervisor) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hypervisor_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteHypervisor::hypervisor_arn) / [`set_hypervisor_arn(Option<String>)`](crate::client::fluent_builders::DeleteHypervisor::set_hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor to delete.</p>
+    /// - On success, responds with [`DeleteHypervisorOutput`](crate::output::DeleteHypervisorOutput) with field(s):
+    ///   - [`hypervisor_arn(Option<String>)`](crate::output::DeleteHypervisorOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteHypervisorError>`](crate::error::DeleteHypervisorError)
     pub fn delete_hypervisor(&self) -> fluent_builders::DeleteHypervisor<C, M, R> {
         fluent_builders::DeleteHypervisor::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateGatewayFromServer` operation.
+    /// Constructs a fluent builder for the [`DisassociateGatewayFromServer`](crate::client::fluent_builders::DisassociateGatewayFromServer) operation.
     ///
-    /// See [`DisassociateGatewayFromServer`](crate::client::fluent_builders::DisassociateGatewayFromServer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateGatewayFromServer::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::client::fluent_builders::DisassociateGatewayFromServer::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p>
+    /// - On success, responds with [`DisassociateGatewayFromServerOutput`](crate::output::DisassociateGatewayFromServerOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DisassociateGatewayFromServerOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway you disassociated.</p>
+    /// - On failure, responds with [`SdkError<DisassociateGatewayFromServerError>`](crate::error::DisassociateGatewayFromServerError)
     pub fn disassociate_gateway_from_server(
         &self,
     ) -> fluent_builders::DisassociateGatewayFromServer<C, M, R> {
         fluent_builders::DisassociateGatewayFromServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ImportHypervisorConfiguration` operation.
+    /// Constructs a fluent builder for the [`ImportHypervisorConfiguration`](crate::client::fluent_builders::ImportHypervisorConfiguration) operation.
     ///
-    /// See [`ImportHypervisorConfiguration`](crate::client::fluent_builders::ImportHypervisorConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ImportHypervisorConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ImportHypervisorConfiguration::set_name): <p>The name of the hypervisor.</p>
+    ///   - [`host(impl Into<String>)`](crate::client::fluent_builders::ImportHypervisorConfiguration::host) / [`set_host(Option<String>)`](crate::client::fluent_builders::ImportHypervisorConfiguration::set_host): <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::ImportHypervisorConfiguration::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::ImportHypervisorConfiguration::set_username): <p>The username for the hypervisor.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::ImportHypervisorConfiguration::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::ImportHypervisorConfiguration::set_password): <p>The password for the hypervisor.</p>
+    ///   - [`kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::ImportHypervisorConfiguration::kms_key_arn) / [`set_kms_key_arn(Option<String>)`](crate::client::fluent_builders::ImportHypervisorConfiguration::set_kms_key_arn): <p>The Key Management Service for the hypervisor.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportHypervisorConfiguration::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportHypervisorConfiguration::set_tags): <p>The tags of the hypervisor configuration to import.</p>
+    /// - On success, responds with [`ImportHypervisorConfigurationOutput`](crate::output::ImportHypervisorConfigurationOutput) with field(s):
+    ///   - [`hypervisor_arn(Option<String>)`](crate::output::ImportHypervisorConfigurationOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor you disassociated.</p>
+    /// - On failure, responds with [`SdkError<ImportHypervisorConfigurationError>`](crate::error::ImportHypervisorConfigurationError)
     pub fn import_hypervisor_configuration(
         &self,
     ) -> fluent_builders::ImportHypervisorConfiguration<C, M, R> {
         fluent_builders::ImportHypervisorConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGateways` operation.
+    /// Constructs a fluent builder for the [`ListGateways`](crate::client::fluent_builders::ListGateways) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGateways::into_paginator).
     ///
-    /// See [`ListGateways`](crate::client::fluent_builders::ListGateways) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGateways::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGateways::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGateways::set_max_results): <p>The maximum number of gateways to list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGateways::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGateways::set_next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// - On success, responds with [`ListGatewaysOutput`](crate::output::ListGatewaysOutput) with field(s):
+    ///   - [`gateways(Option<Vec<Gateway>>)`](crate::output::ListGatewaysOutput::gateways): <p>A list of your gateways.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGatewaysOutput::next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// - On failure, responds with [`SdkError<ListGatewaysError>`](crate::error::ListGatewaysError)
     pub fn list_gateways(&self) -> fluent_builders::ListGateways<C, M, R> {
         fluent_builders::ListGateways::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListHypervisors` operation.
+    /// Constructs a fluent builder for the [`ListHypervisors`](crate::client::fluent_builders::ListHypervisors) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListHypervisors::into_paginator).
     ///
-    /// See [`ListHypervisors`](crate::client::fluent_builders::ListHypervisors) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHypervisors::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHypervisors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListHypervisors::set_max_results): <p>The maximum number of hypervisors to list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHypervisors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHypervisors::set_next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// - On success, responds with [`ListHypervisorsOutput`](crate::output::ListHypervisorsOutput) with field(s):
+    ///   - [`hypervisors(Option<Vec<Hypervisor>>)`](crate::output::ListHypervisorsOutput::hypervisors): <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListHypervisorsOutput::next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// - On failure, responds with [`SdkError<ListHypervisorsError>`](crate::error::ListHypervisorsError)
     pub fn list_hypervisors(&self) -> fluent_builders::ListHypervisors<C, M, R> {
         fluent_builders::ListHypervisors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource's tags to list.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::output::ListTagsForResourceOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource's tags that you listed.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of the resource's tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVirtualMachines` operation.
+    /// Constructs a fluent builder for the [`ListVirtualMachines`](crate::client::fluent_builders::ListVirtualMachines) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVirtualMachines::into_paginator).
     ///
-    /// See [`ListVirtualMachines`](crate::client::fluent_builders::ListVirtualMachines) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVirtualMachines::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVirtualMachines::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListVirtualMachines::set_max_results): <p>The maximum number of virtual machines to list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVirtualMachines::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVirtualMachines::set_next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// - On success, responds with [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput) with field(s):
+    ///   - [`virtual_machines(Option<Vec<VirtualMachine>>)`](crate::output::ListVirtualMachinesOutput::virtual_machines): <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVirtualMachinesOutput::next_token): <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// - On failure, responds with [`SdkError<ListVirtualMachinesError>`](crate::error::ListVirtualMachinesError)
     pub fn list_virtual_machines(&self) -> fluent_builders::ListVirtualMachines<C, M, R> {
         fluent_builders::ListVirtualMachines::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutMaintenanceStartTime` operation.
+    /// Constructs a fluent builder for the [`PutMaintenanceStartTime`](crate::client::fluent_builders::PutMaintenanceStartTime) operation.
     ///
-    /// See [`PutMaintenanceStartTime`](crate::client::fluent_builders::PutMaintenanceStartTime) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_arn(impl Into<String>)`](crate::client::fluent_builders::PutMaintenanceStartTime::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::client::fluent_builders::PutMaintenanceStartTime::set_gateway_arn): <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
+    ///   - [`hour_of_day(i32)`](crate::client::fluent_builders::PutMaintenanceStartTime::hour_of_day) / [`set_hour_of_day(Option<i32>)`](crate::client::fluent_builders::PutMaintenanceStartTime::set_hour_of_day): <p>The hour of the day to start maintenance on a gateway.</p>
+    ///   - [`minute_of_hour(i32)`](crate::client::fluent_builders::PutMaintenanceStartTime::minute_of_hour) / [`set_minute_of_hour(Option<i32>)`](crate::client::fluent_builders::PutMaintenanceStartTime::set_minute_of_hour): <p>The minute of the hour to start maintenance on a gateway.</p>
+    ///   - [`day_of_week(i32)`](crate::client::fluent_builders::PutMaintenanceStartTime::day_of_week) / [`set_day_of_week(Option<i32>)`](crate::client::fluent_builders::PutMaintenanceStartTime::set_day_of_week): <p>The day of the week to start maintenance on a gateway.</p>
+    ///   - [`day_of_month(i32)`](crate::client::fluent_builders::PutMaintenanceStartTime::day_of_month) / [`set_day_of_month(Option<i32>)`](crate::client::fluent_builders::PutMaintenanceStartTime::set_day_of_month): <p>The day of the month start maintenance on a gateway.</p>  <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
+    /// - On success, responds with [`PutMaintenanceStartTimeOutput`](crate::output::PutMaintenanceStartTimeOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::PutMaintenanceStartTimeOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start time.</p>
+    /// - On failure, responds with [`SdkError<PutMaintenanceStartTimeError>`](crate::error::PutMaintenanceStartTimeError)
     pub fn put_maintenance_start_time(&self) -> fluent_builders::PutMaintenanceStartTime<C, M, R> {
         fluent_builders::PutMaintenanceStartTime::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to tag.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tags to assign to the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::output::TagResourceOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource you tagged.</p>
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TestHypervisorConfiguration` operation.
+    /// Constructs a fluent builder for the [`TestHypervisorConfiguration`](crate::client::fluent_builders::TestHypervisorConfiguration) operation.
     ///
-    /// See [`TestHypervisorConfiguration`](crate::client::fluent_builders::TestHypervisorConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_arn(impl Into<String>)`](crate::client::fluent_builders::TestHypervisorConfiguration::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::client::fluent_builders::TestHypervisorConfiguration::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
+    ///   - [`host(impl Into<String>)`](crate::client::fluent_builders::TestHypervisorConfiguration::host) / [`set_host(Option<String>)`](crate::client::fluent_builders::TestHypervisorConfiguration::set_host): <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::TestHypervisorConfiguration::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::TestHypervisorConfiguration::set_username): <p>The username for the hypervisor.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::TestHypervisorConfiguration::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::TestHypervisorConfiguration::set_password): <p>The password for the hypervisor.</p>
+    /// - On success, responds with [`TestHypervisorConfigurationOutput`](crate::output::TestHypervisorConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<TestHypervisorConfigurationError>`](crate::error::TestHypervisorConfigurationError)
     pub fn test_hypervisor_configuration(
         &self,
     ) -> fluent_builders::TestHypervisorConfiguration<C, M, R> {
         fluent_builders::TestHypervisorConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource from which to remove tags.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tag keys specifying which tags to remove.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::output::UntagResourceOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource from which you removed tags.</p>
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGatewayInformation` operation.
+    /// Constructs a fluent builder for the [`UpdateGatewayInformation`](crate::client::fluent_builders::UpdateGatewayInformation) operation.
     ///
-    /// See [`UpdateGatewayInformation`](crate::client::fluent_builders::UpdateGatewayInformation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayInformation::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::client::fluent_builders::UpdateGatewayInformation::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
+    ///   - [`gateway_display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayInformation::gateway_display_name) / [`set_gateway_display_name(Option<String>)`](crate::client::fluent_builders::UpdateGatewayInformation::set_gateway_display_name): <p>The updated display name of the gateway.</p>
+    /// - On success, responds with [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::UpdateGatewayInformationOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateGatewayInformationError>`](crate::error::UpdateGatewayInformationError)
     pub fn update_gateway_information(&self) -> fluent_builders::UpdateGatewayInformation<C, M, R> {
         fluent_builders::UpdateGatewayInformation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateHypervisor` operation.
+    /// Constructs a fluent builder for the [`UpdateHypervisor`](crate::client::fluent_builders::UpdateHypervisor) operation.
     ///
-    /// See [`UpdateHypervisor`](crate::client::fluent_builders::UpdateHypervisor) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hypervisor_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateHypervisor::hypervisor_arn) / [`set_hypervisor_arn(Option<String>)`](crate::client::fluent_builders::UpdateHypervisor::set_hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
+    ///   - [`host(impl Into<String>)`](crate::client::fluent_builders::UpdateHypervisor::host) / [`set_host(Option<String>)`](crate::client::fluent_builders::UpdateHypervisor::set_host): <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::UpdateHypervisor::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::UpdateHypervisor::set_username): <p>The updated username for the hypervisor.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::UpdateHypervisor::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::UpdateHypervisor::set_password): <p>The updated password for the hypervisor.</p>
+    /// - On success, responds with [`UpdateHypervisorOutput`](crate::output::UpdateHypervisorOutput) with field(s):
+    ///   - [`hypervisor_arn(Option<String>)`](crate::output::UpdateHypervisorOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor you updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateHypervisorError>`](crate::error::UpdateHypervisorError)
     pub fn update_hypervisor(&self) -> fluent_builders::UpdateHypervisor<C, M, R> {
         fluent_builders::UpdateHypervisor::new(self.handle.clone())
     }

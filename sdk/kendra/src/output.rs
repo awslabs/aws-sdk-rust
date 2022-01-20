@@ -365,6 +365,9 @@ pub struct QueryOutput {
     pub facet_results: std::option::Option<std::vec::Vec<crate::model::FacetResult>>,
     /// <p>The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
     pub total_number_of_results: std::option::Option<i32>,
+    /// <p>A list of warning codes and their messages on problems with your query.</p>
+    /// <p>Amazon Kendra currently only supports one type of warning, which is a warning on invalid syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a>.</p>
+    pub warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
 }
 impl QueryOutput {
     /// <p>The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
@@ -383,6 +386,11 @@ impl QueryOutput {
     pub fn total_number_of_results(&self) -> std::option::Option<i32> {
         self.total_number_of_results
     }
+    /// <p>A list of warning codes and their messages on problems with your query.</p>
+    /// <p>Amazon Kendra currently only supports one type of warning, which is a warning on invalid syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a>.</p>
+    pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
+        self.warnings.as_deref()
+    }
 }
 impl std::fmt::Debug for QueryOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -391,6 +399,7 @@ impl std::fmt::Debug for QueryOutput {
         formatter.field("result_items", &self.result_items);
         formatter.field("facet_results", &self.facet_results);
         formatter.field("total_number_of_results", &self.total_number_of_results);
+        formatter.field("warnings", &self.warnings);
         formatter.finish()
     }
 }
@@ -404,6 +413,7 @@ pub mod query_output {
         pub(crate) result_items: std::option::Option<std::vec::Vec<crate::model::QueryResultItem>>,
         pub(crate) facet_results: std::option::Option<std::vec::Vec<crate::model::FacetResult>>,
         pub(crate) total_number_of_results: std::option::Option<i32>,
+        pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
     }
     impl Builder {
         /// <p>The unique identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
@@ -464,6 +474,27 @@ pub mod query_output {
             self.total_number_of_results = input;
             self
         }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>A list of warning codes and their messages on problems with your query.</p>
+        /// <p>Amazon Kendra currently only supports one type of warning, which is a warning on invalid syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a>.</p>
+        pub fn warnings(mut self, input: crate::model::Warning) -> Self {
+            let mut v = self.warnings.unwrap_or_default();
+            v.push(input);
+            self.warnings = Some(v);
+            self
+        }
+        /// <p>A list of warning codes and their messages on problems with your query.</p>
+        /// <p>Amazon Kendra currently only supports one type of warning, which is a warning on invalid syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a>.</p>
+        pub fn set_warnings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Warning>>,
+        ) -> Self {
+            self.warnings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`QueryOutput`](crate::output::QueryOutput)
         pub fn build(self) -> crate::output::QueryOutput {
             crate::output::QueryOutput {
@@ -471,6 +502,7 @@ pub mod query_output {
                 result_items: self.result_items,
                 facet_results: self.facet_results,
                 total_number_of_results: self.total_number_of_results,
+                warnings: self.warnings,
             }
         }
     }

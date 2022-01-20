@@ -523,6 +523,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBotVersion {
     }
 }
 
+/// Operation shape for `DeleteCustomVocabulary`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_custom_vocabulary`](crate::client::Client::delete_custom_vocabulary).
+///
+/// See [`crate::client::fluent_builders::DeleteCustomVocabulary`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteCustomVocabulary {
+    _private: (),
+}
+impl DeleteCustomVocabulary {
+    /// Creates a new builder-style object to manufacture [`DeleteCustomVocabularyInput`](crate::input::DeleteCustomVocabularyInput)
+    pub fn builder() -> crate::input::delete_custom_vocabulary_input::Builder {
+        crate::input::delete_custom_vocabulary_input::Builder::default()
+    }
+    /// Creates a new `DeleteCustomVocabulary` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomVocabulary {
+    type Output = std::result::Result<
+        crate::output::DeleteCustomVocabularyOutput,
+        crate::error::DeleteCustomVocabularyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 202 {
+            crate::operation_deser::parse_delete_custom_vocabulary_error(response)
+        } else {
+            crate::operation_deser::parse_delete_custom_vocabulary_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteExport`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -949,6 +983,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBotVersion {
             crate::operation_deser::parse_describe_bot_version_error(response)
         } else {
             crate::operation_deser::parse_describe_bot_version_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeCustomVocabularyMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_custom_vocabulary_metadata`](crate::client::Client::describe_custom_vocabulary_metadata).
+///
+/// See [`crate::client::fluent_builders::DescribeCustomVocabularyMetadata`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeCustomVocabularyMetadata {
+    _private: (),
+}
+impl DescribeCustomVocabularyMetadata {
+    /// Creates a new builder-style object to manufacture [`DescribeCustomVocabularyMetadataInput`](crate::input::DescribeCustomVocabularyMetadataInput)
+    pub fn builder() -> crate::input::describe_custom_vocabulary_metadata_input::Builder {
+        crate::input::describe_custom_vocabulary_metadata_input::Builder::default()
+    }
+    /// Creates a new `DescribeCustomVocabularyMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomVocabularyMetadata {
+    type Output = std::result::Result<
+        crate::output::DescribeCustomVocabularyMetadataOutput,
+        crate::error::DescribeCustomVocabularyMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_custom_vocabulary_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_describe_custom_vocabulary_metadata_response(response)
         }
     }
 }

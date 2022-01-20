@@ -129,6 +129,7 @@ impl AsRef<str> for Mode {
 
 /// <p>Provides the configuration information to fetch access levels of groups and users from an Amazon Web Services Single Sign On identity source. This is useful for setting up user context filtering, where Amazon Kendra filters search results for different users based on their group's access to documents. You can also map your users to their groups for user context filtering using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html">PutPrincipalMapping operation</a>.</p>
 /// <p>To set up an Amazon Web Services SSO identity source in the console to use with Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an Amazon Web Services SSO identity source</a>. You must also grant the required permissions to use Amazon Web Services SSO with Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-aws-sso">IAM roles for Amazon Web Services SSO</a>.</p>
+/// <p>Amazon Kendra currently does not support using <code>UserGroupResolutionConfiguration</code> with an Amazon Web Services organization member account for your Amazon Web Services SSO identify source. You must create your index in the parent account for the organization in order to use <code>UserGroupResolutionConfiguration</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserGroupResolutionConfiguration {
@@ -1731,7 +1732,7 @@ impl CustomDocumentEnrichmentConfiguration {
     }
 }
 
-/// <p>Provides the configuration information for invoking a Lambda function in Lambda to alter document metadata and content when ingesting documents into Amazon Kendra. You can configure your Lambda function using <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PreExtractionHookConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents. If you want to apply advanced alterations on the Amazon Kendra structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_PostExtractionHookConfiguration.html">PostExtractionHookConfiguration</a>. You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
+/// <p>Provides the configuration information for invoking a Lambda function in Lambda to alter document metadata and content when ingesting documents into Amazon Kendra. You can configure your Lambda function using <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents. If you want to apply advanced alterations on the Amazon Kendra structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>. You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1973,7 +1974,7 @@ pub struct DocumentAttributeValue {
     /// <p>A long integer value.</p>
     pub long_value: std::option::Option<i64>,
     /// <p>A date expressed as an ISO 8601 string.</p>
-    /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 20120325T123010+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
+    /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
     pub date_value: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DocumentAttributeValue {
@@ -1990,7 +1991,7 @@ impl DocumentAttributeValue {
         self.long_value
     }
     /// <p>A date expressed as an ISO 8601 string.</p>
-    /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 20120325T123010+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
+    /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
     pub fn date_value(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_value.as_ref()
     }
@@ -2057,13 +2058,13 @@ pub mod document_attribute_value {
             self
         }
         /// <p>A date expressed as an ISO 8601 string.</p>
-        /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 20120325T123010+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
+        /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
         pub fn date_value(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date_value = Some(input);
             self
         }
         /// <p>A date expressed as an ISO 8601 string.</p>
-        /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 20120325T123010+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
+        /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
         pub fn set_date_value(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -10086,6 +10087,130 @@ impl ClickFeedback {
     }
 }
 
+/// <p>The warning code and message that explains a problem with a query.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Warning {
+    /// <p>The message that explains the problem with the query.</p>
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The code used to show the type of warning for the query.</p>
+    pub code: std::option::Option<crate::model::WarningCode>,
+}
+impl Warning {
+    /// <p>The message that explains the problem with the query.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+    /// <p>The code used to show the type of warning for the query.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::WarningCode> {
+        self.code.as_ref()
+    }
+}
+impl std::fmt::Debug for Warning {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Warning");
+        formatter.field("message", &self.message);
+        formatter.field("code", &self.code);
+        formatter.finish()
+    }
+}
+/// See [`Warning`](crate::model::Warning)
+pub mod warning {
+    /// A builder for [`Warning`](crate::model::Warning)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) code: std::option::Option<crate::model::WarningCode>,
+    }
+    impl Builder {
+        /// <p>The message that explains the problem with the query.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The message that explains the problem with the query.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The code used to show the type of warning for the query.</p>
+        pub fn code(mut self, input: crate::model::WarningCode) -> Self {
+            self.code = Some(input);
+            self
+        }
+        /// <p>The code used to show the type of warning for the query.</p>
+        pub fn set_code(mut self, input: std::option::Option<crate::model::WarningCode>) -> Self {
+            self.code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Warning`](crate::model::Warning)
+        pub fn build(self) -> crate::model::Warning {
+            crate::model::Warning {
+                message: self.message,
+                code: self.code,
+            }
+        }
+    }
+}
+impl Warning {
+    /// Creates a new builder-style object to manufacture [`Warning`](crate::model::Warning)
+    pub fn builder() -> crate::model::warning::Builder {
+        crate::model::warning::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum WarningCode {
+    #[allow(missing_docs)] // documentation missing in model
+    QueryLanguageInvalidSyntax,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for WarningCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "QUERY_LANGUAGE_INVALID_SYNTAX" => WarningCode::QueryLanguageInvalidSyntax,
+            other => WarningCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for WarningCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WarningCode::from(s))
+    }
+}
+impl WarningCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            WarningCode::QueryLanguageInvalidSyntax => "QUERY_LANGUAGE_INVALID_SYNTAX",
+            WarningCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["QUERY_LANGUAGE_INVALID_SYNTAX"]
+    }
+}
+impl AsRef<str> for WarningCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The facet values for the documents in the response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -10694,7 +10819,8 @@ impl AsRef<str> for ScoreConfidence {
     }
 }
 
-/// <p>A custom attribute value assigned to a document. </p>
+/// <p>A custom attribute value assigned to a document.</p>
+/// <p>For more information on how to create custom document attributes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-attributes.html">Custom Attributes</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentAttribute {

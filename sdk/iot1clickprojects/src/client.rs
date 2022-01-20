@@ -83,121 +83,193 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateDeviceWithPlacement` operation.
+    /// Constructs a fluent builder for the [`AssociateDeviceWithPlacement`](crate::client::fluent_builders::AssociateDeviceWithPlacement) operation.
     ///
-    /// See [`AssociateDeviceWithPlacement`](crate::client::fluent_builders::AssociateDeviceWithPlacement) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::AssociateDeviceWithPlacement::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::AssociateDeviceWithPlacement::set_project_name): <p>The name of the project containing the placement in which to associate the device.</p>
+    ///   - [`placement_name(impl Into<String>)`](crate::client::fluent_builders::AssociateDeviceWithPlacement::placement_name) / [`set_placement_name(Option<String>)`](crate::client::fluent_builders::AssociateDeviceWithPlacement::set_placement_name): <p>The name of the placement in which to associate the device.</p>
+    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::AssociateDeviceWithPlacement::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::AssociateDeviceWithPlacement::set_device_id): <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
+    ///   - [`device_template_name(impl Into<String>)`](crate::client::fluent_builders::AssociateDeviceWithPlacement::device_template_name) / [`set_device_template_name(Option<String>)`](crate::client::fluent_builders::AssociateDeviceWithPlacement::set_device_template_name): <p>The device template name to associate with the device ID.</p>
+    /// - On success, responds with [`AssociateDeviceWithPlacementOutput`](crate::output::AssociateDeviceWithPlacementOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateDeviceWithPlacementError>`](crate::error::AssociateDeviceWithPlacementError)
     pub fn associate_device_with_placement(
         &self,
     ) -> fluent_builders::AssociateDeviceWithPlacement<C, M, R> {
         fluent_builders::AssociateDeviceWithPlacement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePlacement` operation.
+    /// Constructs a fluent builder for the [`CreatePlacement`](crate::client::fluent_builders::CreatePlacement) operation.
     ///
-    /// See [`CreatePlacement`](crate::client::fluent_builders::CreatePlacement) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`placement_name(impl Into<String>)`](crate::client::fluent_builders::CreatePlacement::placement_name) / [`set_placement_name(Option<String>)`](crate::client::fluent_builders::CreatePlacement::set_placement_name): <p>The name of the placement to be created.</p>
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::CreatePlacement::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::CreatePlacement::set_project_name): <p>The name of the project in which to create the placement.</p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::CreatePlacement::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreatePlacement::set_attributes): <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
+    /// - On success, responds with [`CreatePlacementOutput`](crate::output::CreatePlacementOutput)
+
+    /// - On failure, responds with [`SdkError<CreatePlacementError>`](crate::error::CreatePlacementError)
     pub fn create_placement(&self) -> fluent_builders::CreatePlacement<C, M, R> {
         fluent_builders::CreatePlacement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProject` operation.
+    /// Constructs a fluent builder for the [`CreateProject`](crate::client::fluent_builders::CreateProject) operation.
     ///
-    /// See [`CreateProject`](crate::client::fluent_builders::CreateProject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::CreateProject::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::CreateProject::set_project_name): <p>The name of the project to create.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateProject::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateProject::set_description): <p>An optional description for the project.</p>
+    ///   - [`placement_template(PlacementTemplate)`](crate::client::fluent_builders::CreateProject::placement_template) / [`set_placement_template(Option<PlacementTemplate>)`](crate::client::fluent_builders::CreateProject::set_placement_template): <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateProject::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateProject::set_tags): <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput)
+
+    /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::error::CreateProjectError)
     pub fn create_project(&self) -> fluent_builders::CreateProject<C, M, R> {
         fluent_builders::CreateProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePlacement` operation.
+    /// Constructs a fluent builder for the [`DeletePlacement`](crate::client::fluent_builders::DeletePlacement) operation.
     ///
-    /// See [`DeletePlacement`](crate::client::fluent_builders::DeletePlacement) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`placement_name(impl Into<String>)`](crate::client::fluent_builders::DeletePlacement::placement_name) / [`set_placement_name(Option<String>)`](crate::client::fluent_builders::DeletePlacement::set_placement_name): <p>The name of the empty placement to delete.</p>
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::DeletePlacement::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::DeletePlacement::set_project_name): <p>The project containing the empty placement to delete.</p>
+    /// - On success, responds with [`DeletePlacementOutput`](crate::output::DeletePlacementOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePlacementError>`](crate::error::DeletePlacementError)
     pub fn delete_placement(&self) -> fluent_builders::DeletePlacement<C, M, R> {
         fluent_builders::DeletePlacement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProject` operation.
+    /// Constructs a fluent builder for the [`DeleteProject`](crate::client::fluent_builders::DeleteProject) operation.
     ///
-    /// See [`DeleteProject`](crate::client::fluent_builders::DeleteProject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProject::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::DeleteProject::set_project_name): <p>The name of the empty project to delete.</p>
+    /// - On success, responds with [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::error::DeleteProjectError)
     pub fn delete_project(&self) -> fluent_builders::DeleteProject<C, M, R> {
         fluent_builders::DeleteProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePlacement` operation.
+    /// Constructs a fluent builder for the [`DescribePlacement`](crate::client::fluent_builders::DescribePlacement) operation.
     ///
-    /// See [`DescribePlacement`](crate::client::fluent_builders::DescribePlacement) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`placement_name(impl Into<String>)`](crate::client::fluent_builders::DescribePlacement::placement_name) / [`set_placement_name(Option<String>)`](crate::client::fluent_builders::DescribePlacement::set_placement_name): <p>The name of the placement within a project.</p>
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::DescribePlacement::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::DescribePlacement::set_project_name): <p>The project containing the placement to be described.</p>
+    /// - On success, responds with [`DescribePlacementOutput`](crate::output::DescribePlacementOutput) with field(s):
+    ///   - [`placement(Option<PlacementDescription>)`](crate::output::DescribePlacementOutput::placement): <p>An object describing the placement.</p>
+    /// - On failure, responds with [`SdkError<DescribePlacementError>`](crate::error::DescribePlacementError)
     pub fn describe_placement(&self) -> fluent_builders::DescribePlacement<C, M, R> {
         fluent_builders::DescribePlacement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeProject` operation.
+    /// Constructs a fluent builder for the [`DescribeProject`](crate::client::fluent_builders::DescribeProject) operation.
     ///
-    /// See [`DescribeProject`](crate::client::fluent_builders::DescribeProject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProject::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::DescribeProject::set_project_name): <p>The name of the project to be described.</p>
+    /// - On success, responds with [`DescribeProjectOutput`](crate::output::DescribeProjectOutput) with field(s):
+    ///   - [`project(Option<ProjectDescription>)`](crate::output::DescribeProjectOutput::project): <p>An object describing the project.</p>
+    /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::error::DescribeProjectError)
     pub fn describe_project(&self) -> fluent_builders::DescribeProject<C, M, R> {
         fluent_builders::DescribeProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateDeviceFromPlacement` operation.
+    /// Constructs a fluent builder for the [`DisassociateDeviceFromPlacement`](crate::client::fluent_builders::DisassociateDeviceFromPlacement) operation.
     ///
-    /// See [`DisassociateDeviceFromPlacement`](crate::client::fluent_builders::DisassociateDeviceFromPlacement) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateDeviceFromPlacement::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::DisassociateDeviceFromPlacement::set_project_name): <p>The name of the project that contains the placement.</p>
+    ///   - [`placement_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateDeviceFromPlacement::placement_name) / [`set_placement_name(Option<String>)`](crate::client::fluent_builders::DisassociateDeviceFromPlacement::set_placement_name): <p>The name of the placement that the device should be removed from.</p>
+    ///   - [`device_template_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateDeviceFromPlacement::device_template_name) / [`set_device_template_name(Option<String>)`](crate::client::fluent_builders::DisassociateDeviceFromPlacement::set_device_template_name): <p>The device ID that should be removed from the placement.</p>
+    /// - On success, responds with [`DisassociateDeviceFromPlacementOutput`](crate::output::DisassociateDeviceFromPlacementOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateDeviceFromPlacementError>`](crate::error::DisassociateDeviceFromPlacementError)
     pub fn disassociate_device_from_placement(
         &self,
     ) -> fluent_builders::DisassociateDeviceFromPlacement<C, M, R> {
         fluent_builders::DisassociateDeviceFromPlacement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDevicesInPlacement` operation.
+    /// Constructs a fluent builder for the [`GetDevicesInPlacement`](crate::client::fluent_builders::GetDevicesInPlacement) operation.
     ///
-    /// See [`GetDevicesInPlacement`](crate::client::fluent_builders::GetDevicesInPlacement) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::GetDevicesInPlacement::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::GetDevicesInPlacement::set_project_name): <p>The name of the project containing the placement.</p>
+    ///   - [`placement_name(impl Into<String>)`](crate::client::fluent_builders::GetDevicesInPlacement::placement_name) / [`set_placement_name(Option<String>)`](crate::client::fluent_builders::GetDevicesInPlacement::set_placement_name): <p>The name of the placement to get the devices from.</p>
+    /// - On success, responds with [`GetDevicesInPlacementOutput`](crate::output::GetDevicesInPlacementOutput) with field(s):
+    ///   - [`devices(Option<HashMap<String, String>>)`](crate::output::GetDevicesInPlacementOutput::devices): <p>An object containing the devices (zero or more) within the placement.</p>
+    /// - On failure, responds with [`SdkError<GetDevicesInPlacementError>`](crate::error::GetDevicesInPlacementError)
     pub fn get_devices_in_placement(&self) -> fluent_builders::GetDevicesInPlacement<C, M, R> {
         fluent_builders::GetDevicesInPlacement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPlacements` operation.
+    /// Constructs a fluent builder for the [`ListPlacements`](crate::client::fluent_builders::ListPlacements) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPlacements::into_paginator).
     ///
-    /// See [`ListPlacements`](crate::client::fluent_builders::ListPlacements) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPlacements::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::ListPlacements::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::ListPlacements::set_project_name): <p>The project containing the placements to be listed.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPlacements::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPlacements::set_next_token): <p>The token to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPlacements::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPlacements::set_max_results): <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
+    /// - On success, responds with [`ListPlacementsOutput`](crate::output::ListPlacementsOutput) with field(s):
+    ///   - [`placements(Option<Vec<PlacementSummary>>)`](crate::output::ListPlacementsOutput::placements): <p>An object listing the requested placements.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPlacementsOutput::next_token): <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
+    /// - On failure, responds with [`SdkError<ListPlacementsError>`](crate::error::ListPlacementsError)
     pub fn list_placements(&self) -> fluent_builders::ListPlacements<C, M, R> {
         fluent_builders::ListPlacements::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProjects` operation.
+    /// Constructs a fluent builder for the [`ListProjects`](crate::client::fluent_builders::ListProjects) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
     ///
-    /// See [`ListProjects`](crate::client::fluent_builders::ListProjects) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProjects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProjects::set_next_token): <p>The token to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProjects::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProjects::set_max_results): <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
+    /// - On success, responds with [`ListProjectsOutput`](crate::output::ListProjectsOutput) with field(s):
+    ///   - [`projects(Option<Vec<ProjectSummary>>)`](crate::output::ListProjectsOutput::projects): <p>An object containing the list of projects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListProjectsOutput::next_token): <p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>
+    /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::error::ListProjectsError)
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource whose tags you want to list.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags (metadata key/value pairs) which you have assigned to the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resouce for which tag(s) should be added or modified.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource whose tag you want to remove.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys of those tags which you want to remove.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePlacement` operation.
+    /// Constructs a fluent builder for the [`UpdatePlacement`](crate::client::fluent_builders::UpdatePlacement) operation.
     ///
-    /// See [`UpdatePlacement`](crate::client::fluent_builders::UpdatePlacement) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`placement_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePlacement::placement_name) / [`set_placement_name(Option<String>)`](crate::client::fluent_builders::UpdatePlacement::set_placement_name): <p>The name of the placement to update.</p>
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePlacement::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::UpdatePlacement::set_project_name): <p>The name of the project containing the placement to be updated.</p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::UpdatePlacement::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdatePlacement::set_attributes): <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
+    /// - On success, responds with [`UpdatePlacementOutput`](crate::output::UpdatePlacementOutput)
+
+    /// - On failure, responds with [`SdkError<UpdatePlacementError>`](crate::error::UpdatePlacementError)
     pub fn update_placement(&self) -> fluent_builders::UpdatePlacement<C, M, R> {
         fluent_builders::UpdatePlacement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateProject` operation.
+    /// Constructs a fluent builder for the [`UpdateProject`](crate::client::fluent_builders::UpdateProject) operation.
     ///
-    /// See [`UpdateProject`](crate::client::fluent_builders::UpdateProject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_project_name): <p>The name of the project to be updated.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_description): <p>An optional user-defined description for the project.</p>
+    ///   - [`placement_template(PlacementTemplate)`](crate::client::fluent_builders::UpdateProject::placement_template) / [`set_placement_template(Option<PlacementTemplate>)`](crate::client::fluent_builders::UpdateProject::set_placement_template): <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
+    /// - On success, responds with [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::error::UpdateProjectError)
     pub fn update_project(&self) -> fluent_builders::UpdateProject<C, M, R> {
         fluent_builders::UpdateProject::new(self.handle.clone())
     }

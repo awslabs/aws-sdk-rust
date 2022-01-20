@@ -76,7 +76,9 @@ pub mod imds;
 
 mod json_credentials;
 
+mod fs_util;
 mod http_provider;
+pub mod sso;
 
 // Re-export types from smithy-types
 pub use aws_smithy_types::retry::RetryConfig;

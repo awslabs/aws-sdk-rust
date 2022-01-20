@@ -12398,6 +12398,244 @@ impl EnableFastSnapshotRestoresOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EnableFastLaunchOutput {
+    /// <p>The image ID that identifies the Windows AMI for which faster launching was enabled.</p>
+    pub image_id: std::option::Option<std::string::String>,
+    /// <p>The type of resource that was defined for pre-provisioning the Windows AMI for faster launching.</p>
+    pub resource_type: std::option::Option<crate::model::FastLaunchResourceType>,
+    /// <p>The configuration settings that were defined for creating and managing the pre-provisioned snapshots for faster launching of the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
+    pub snapshot_configuration:
+        std::option::Option<crate::model::FastLaunchSnapshotConfigurationResponse>,
+    /// <p>The launch template that is used when launching Windows instances from pre-provisioned snapshots.</p>
+    pub launch_template:
+        std::option::Option<crate::model::FastLaunchLaunchTemplateSpecificationResponse>,
+    /// <p>The maximum number of parallel instances to launch for creating resources.</p>
+    pub max_parallel_launches: std::option::Option<i32>,
+    /// <p>The owner ID for the Windows AMI for which faster launching was enabled.</p>
+    pub owner_id: std::option::Option<std::string::String>,
+    /// <p>The current state of faster launching for the specified Windows AMI.</p>
+    pub state: std::option::Option<crate::model::FastLaunchStateCode>,
+    /// <p>The reason that the state changed for faster launching for the Windows AMI.</p>
+    pub state_transition_reason: std::option::Option<std::string::String>,
+    /// <p>The time that the state changed for faster launching for the Windows AMI.</p>
+    pub state_transition_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl EnableFastLaunchOutput {
+    /// <p>The image ID that identifies the Windows AMI for which faster launching was enabled.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The type of resource that was defined for pre-provisioning the Windows AMI for faster launching.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::FastLaunchResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>The configuration settings that were defined for creating and managing the pre-provisioned snapshots for faster launching of the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
+    pub fn snapshot_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FastLaunchSnapshotConfigurationResponse> {
+        self.snapshot_configuration.as_ref()
+    }
+    /// <p>The launch template that is used when launching Windows instances from pre-provisioned snapshots.</p>
+    pub fn launch_template(
+        &self,
+    ) -> std::option::Option<&crate::model::FastLaunchLaunchTemplateSpecificationResponse> {
+        self.launch_template.as_ref()
+    }
+    /// <p>The maximum number of parallel instances to launch for creating resources.</p>
+    pub fn max_parallel_launches(&self) -> std::option::Option<i32> {
+        self.max_parallel_launches
+    }
+    /// <p>The owner ID for the Windows AMI for which faster launching was enabled.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The current state of faster launching for the specified Windows AMI.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::FastLaunchStateCode> {
+        self.state.as_ref()
+    }
+    /// <p>The reason that the state changed for faster launching for the Windows AMI.</p>
+    pub fn state_transition_reason(&self) -> std::option::Option<&str> {
+        self.state_transition_reason.as_deref()
+    }
+    /// <p>The time that the state changed for faster launching for the Windows AMI.</p>
+    pub fn state_transition_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.state_transition_time.as_ref()
+    }
+}
+impl std::fmt::Debug for EnableFastLaunchOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EnableFastLaunchOutput");
+        formatter.field("image_id", &self.image_id);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("snapshot_configuration", &self.snapshot_configuration);
+        formatter.field("launch_template", &self.launch_template);
+        formatter.field("max_parallel_launches", &self.max_parallel_launches);
+        formatter.field("owner_id", &self.owner_id);
+        formatter.field("state", &self.state);
+        formatter.field("state_transition_reason", &self.state_transition_reason);
+        formatter.field("state_transition_time", &self.state_transition_time);
+        formatter.finish()
+    }
+}
+/// See [`EnableFastLaunchOutput`](crate::output::EnableFastLaunchOutput)
+pub mod enable_fast_launch_output {
+    /// A builder for [`EnableFastLaunchOutput`](crate::output::EnableFastLaunchOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) image_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<crate::model::FastLaunchResourceType>,
+        pub(crate) snapshot_configuration:
+            std::option::Option<crate::model::FastLaunchSnapshotConfigurationResponse>,
+        pub(crate) launch_template:
+            std::option::Option<crate::model::FastLaunchLaunchTemplateSpecificationResponse>,
+        pub(crate) max_parallel_launches: std::option::Option<i32>,
+        pub(crate) owner_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::FastLaunchStateCode>,
+        pub(crate) state_transition_reason: std::option::Option<std::string::String>,
+        pub(crate) state_transition_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The image ID that identifies the Windows AMI for which faster launching was enabled.</p>
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_id = Some(input.into());
+            self
+        }
+        /// <p>The image ID that identifies the Windows AMI for which faster launching was enabled.</p>
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_id = input;
+            self
+        }
+        /// <p>The type of resource that was defined for pre-provisioning the Windows AMI for faster launching.</p>
+        pub fn resource_type(mut self, input: crate::model::FastLaunchResourceType) -> Self {
+            self.resource_type = Some(input);
+            self
+        }
+        /// <p>The type of resource that was defined for pre-provisioning the Windows AMI for faster launching.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::FastLaunchResourceType>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>The configuration settings that were defined for creating and managing the pre-provisioned snapshots for faster launching of the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
+        pub fn snapshot_configuration(
+            mut self,
+            input: crate::model::FastLaunchSnapshotConfigurationResponse,
+        ) -> Self {
+            self.snapshot_configuration = Some(input);
+            self
+        }
+        /// <p>The configuration settings that were defined for creating and managing the pre-provisioned snapshots for faster launching of the Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.</p>
+        pub fn set_snapshot_configuration(
+            mut self,
+            input: std::option::Option<crate::model::FastLaunchSnapshotConfigurationResponse>,
+        ) -> Self {
+            self.snapshot_configuration = input;
+            self
+        }
+        /// <p>The launch template that is used when launching Windows instances from pre-provisioned snapshots.</p>
+        pub fn launch_template(
+            mut self,
+            input: crate::model::FastLaunchLaunchTemplateSpecificationResponse,
+        ) -> Self {
+            self.launch_template = Some(input);
+            self
+        }
+        /// <p>The launch template that is used when launching Windows instances from pre-provisioned snapshots.</p>
+        pub fn set_launch_template(
+            mut self,
+            input: std::option::Option<crate::model::FastLaunchLaunchTemplateSpecificationResponse>,
+        ) -> Self {
+            self.launch_template = input;
+            self
+        }
+        /// <p>The maximum number of parallel instances to launch for creating resources.</p>
+        pub fn max_parallel_launches(mut self, input: i32) -> Self {
+            self.max_parallel_launches = Some(input);
+            self
+        }
+        /// <p>The maximum number of parallel instances to launch for creating resources.</p>
+        pub fn set_max_parallel_launches(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_parallel_launches = input;
+            self
+        }
+        /// <p>The owner ID for the Windows AMI for which faster launching was enabled.</p>
+        pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_id = Some(input.into());
+            self
+        }
+        /// <p>The owner ID for the Windows AMI for which faster launching was enabled.</p>
+        pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_id = input;
+            self
+        }
+        /// <p>The current state of faster launching for the specified Windows AMI.</p>
+        pub fn state(mut self, input: crate::model::FastLaunchStateCode) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The current state of faster launching for the specified Windows AMI.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::FastLaunchStateCode>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The reason that the state changed for faster launching for the Windows AMI.</p>
+        pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_transition_reason = Some(input.into());
+            self
+        }
+        /// <p>The reason that the state changed for faster launching for the Windows AMI.</p>
+        pub fn set_state_transition_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.state_transition_reason = input;
+            self
+        }
+        /// <p>The time that the state changed for faster launching for the Windows AMI.</p>
+        pub fn state_transition_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.state_transition_time = Some(input);
+            self
+        }
+        /// <p>The time that the state changed for faster launching for the Windows AMI.</p>
+        pub fn set_state_transition_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.state_transition_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EnableFastLaunchOutput`](crate::output::EnableFastLaunchOutput)
+        pub fn build(self) -> crate::output::EnableFastLaunchOutput {
+            crate::output::EnableFastLaunchOutput {
+                image_id: self.image_id,
+                resource_type: self.resource_type,
+                snapshot_configuration: self.snapshot_configuration,
+                launch_template: self.launch_template,
+                max_parallel_launches: self.max_parallel_launches,
+                owner_id: self.owner_id,
+                state: self.state,
+                state_transition_reason: self.state_transition_reason,
+                state_transition_time: self.state_transition_time,
+            }
+        }
+    }
+}
+impl EnableFastLaunchOutput {
+    /// Creates a new builder-style object to manufacture [`EnableFastLaunchOutput`](crate::output::EnableFastLaunchOutput)
+    pub fn builder() -> crate::output::enable_fast_launch_output::Builder {
+        crate::output::enable_fast_launch_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableEbsEncryptionByDefaultOutput {
     /// <p>The updated status of encryption by default.</p>
     pub ebs_encryption_by_default: std::option::Option<bool>,
@@ -13629,6 +13867,244 @@ impl DisableFastSnapshotRestoresOutput {
     /// Creates a new builder-style object to manufacture [`DisableFastSnapshotRestoresOutput`](crate::output::DisableFastSnapshotRestoresOutput)
     pub fn builder() -> crate::output::disable_fast_snapshot_restores_output::Builder {
         crate::output::disable_fast_snapshot_restores_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisableFastLaunchOutput {
+    /// <p>The ID of the image for which faster-launching has been turned off.</p>
+    pub image_id: std::option::Option<std::string::String>,
+    /// <p>The pre-provisioning resource type that must be cleaned after turning off faster launching for the Windows AMI. Supported values include: <code>snapshot</code>.</p>
+    pub resource_type: std::option::Option<crate::model::FastLaunchResourceType>,
+    /// <p>Parameters that were used for faster launching for the Windows AMI before faster launching was turned off. This informs the clean-up process.</p>
+    pub snapshot_configuration:
+        std::option::Option<crate::model::FastLaunchSnapshotConfigurationResponse>,
+    /// <p>The launch template that was used to launch Windows instances from pre-provisioned snapshots.</p>
+    pub launch_template:
+        std::option::Option<crate::model::FastLaunchLaunchTemplateSpecificationResponse>,
+    /// <p>The maximum number of parallel instances to launch for creating resources.</p>
+    pub max_parallel_launches: std::option::Option<i32>,
+    /// <p>The owner of the Windows AMI for which faster launching was turned off.</p>
+    pub owner_id: std::option::Option<std::string::String>,
+    /// <p>The current state of faster launching for the specified Windows AMI.</p>
+    pub state: std::option::Option<crate::model::FastLaunchStateCode>,
+    /// <p>The reason that the state changed for faster launching for the Windows AMI.</p>
+    pub state_transition_reason: std::option::Option<std::string::String>,
+    /// <p>The time that the state changed for faster launching for the Windows AMI.</p>
+    pub state_transition_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DisableFastLaunchOutput {
+    /// <p>The ID of the image for which faster-launching has been turned off.</p>
+    pub fn image_id(&self) -> std::option::Option<&str> {
+        self.image_id.as_deref()
+    }
+    /// <p>The pre-provisioning resource type that must be cleaned after turning off faster launching for the Windows AMI. Supported values include: <code>snapshot</code>.</p>
+    pub fn resource_type(&self) -> std::option::Option<&crate::model::FastLaunchResourceType> {
+        self.resource_type.as_ref()
+    }
+    /// <p>Parameters that were used for faster launching for the Windows AMI before faster launching was turned off. This informs the clean-up process.</p>
+    pub fn snapshot_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::FastLaunchSnapshotConfigurationResponse> {
+        self.snapshot_configuration.as_ref()
+    }
+    /// <p>The launch template that was used to launch Windows instances from pre-provisioned snapshots.</p>
+    pub fn launch_template(
+        &self,
+    ) -> std::option::Option<&crate::model::FastLaunchLaunchTemplateSpecificationResponse> {
+        self.launch_template.as_ref()
+    }
+    /// <p>The maximum number of parallel instances to launch for creating resources.</p>
+    pub fn max_parallel_launches(&self) -> std::option::Option<i32> {
+        self.max_parallel_launches
+    }
+    /// <p>The owner of the Windows AMI for which faster launching was turned off.</p>
+    pub fn owner_id(&self) -> std::option::Option<&str> {
+        self.owner_id.as_deref()
+    }
+    /// <p>The current state of faster launching for the specified Windows AMI.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::FastLaunchStateCode> {
+        self.state.as_ref()
+    }
+    /// <p>The reason that the state changed for faster launching for the Windows AMI.</p>
+    pub fn state_transition_reason(&self) -> std::option::Option<&str> {
+        self.state_transition_reason.as_deref()
+    }
+    /// <p>The time that the state changed for faster launching for the Windows AMI.</p>
+    pub fn state_transition_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.state_transition_time.as_ref()
+    }
+}
+impl std::fmt::Debug for DisableFastLaunchOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisableFastLaunchOutput");
+        formatter.field("image_id", &self.image_id);
+        formatter.field("resource_type", &self.resource_type);
+        formatter.field("snapshot_configuration", &self.snapshot_configuration);
+        formatter.field("launch_template", &self.launch_template);
+        formatter.field("max_parallel_launches", &self.max_parallel_launches);
+        formatter.field("owner_id", &self.owner_id);
+        formatter.field("state", &self.state);
+        formatter.field("state_transition_reason", &self.state_transition_reason);
+        formatter.field("state_transition_time", &self.state_transition_time);
+        formatter.finish()
+    }
+}
+/// See [`DisableFastLaunchOutput`](crate::output::DisableFastLaunchOutput)
+pub mod disable_fast_launch_output {
+    /// A builder for [`DisableFastLaunchOutput`](crate::output::DisableFastLaunchOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) image_id: std::option::Option<std::string::String>,
+        pub(crate) resource_type: std::option::Option<crate::model::FastLaunchResourceType>,
+        pub(crate) snapshot_configuration:
+            std::option::Option<crate::model::FastLaunchSnapshotConfigurationResponse>,
+        pub(crate) launch_template:
+            std::option::Option<crate::model::FastLaunchLaunchTemplateSpecificationResponse>,
+        pub(crate) max_parallel_launches: std::option::Option<i32>,
+        pub(crate) owner_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::FastLaunchStateCode>,
+        pub(crate) state_transition_reason: std::option::Option<std::string::String>,
+        pub(crate) state_transition_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ID of the image for which faster-launching has been turned off.</p>
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the image for which faster-launching has been turned off.</p>
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_id = input;
+            self
+        }
+        /// <p>The pre-provisioning resource type that must be cleaned after turning off faster launching for the Windows AMI. Supported values include: <code>snapshot</code>.</p>
+        pub fn resource_type(mut self, input: crate::model::FastLaunchResourceType) -> Self {
+            self.resource_type = Some(input);
+            self
+        }
+        /// <p>The pre-provisioning resource type that must be cleaned after turning off faster launching for the Windows AMI. Supported values include: <code>snapshot</code>.</p>
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::FastLaunchResourceType>,
+        ) -> Self {
+            self.resource_type = input;
+            self
+        }
+        /// <p>Parameters that were used for faster launching for the Windows AMI before faster launching was turned off. This informs the clean-up process.</p>
+        pub fn snapshot_configuration(
+            mut self,
+            input: crate::model::FastLaunchSnapshotConfigurationResponse,
+        ) -> Self {
+            self.snapshot_configuration = Some(input);
+            self
+        }
+        /// <p>Parameters that were used for faster launching for the Windows AMI before faster launching was turned off. This informs the clean-up process.</p>
+        pub fn set_snapshot_configuration(
+            mut self,
+            input: std::option::Option<crate::model::FastLaunchSnapshotConfigurationResponse>,
+        ) -> Self {
+            self.snapshot_configuration = input;
+            self
+        }
+        /// <p>The launch template that was used to launch Windows instances from pre-provisioned snapshots.</p>
+        pub fn launch_template(
+            mut self,
+            input: crate::model::FastLaunchLaunchTemplateSpecificationResponse,
+        ) -> Self {
+            self.launch_template = Some(input);
+            self
+        }
+        /// <p>The launch template that was used to launch Windows instances from pre-provisioned snapshots.</p>
+        pub fn set_launch_template(
+            mut self,
+            input: std::option::Option<crate::model::FastLaunchLaunchTemplateSpecificationResponse>,
+        ) -> Self {
+            self.launch_template = input;
+            self
+        }
+        /// <p>The maximum number of parallel instances to launch for creating resources.</p>
+        pub fn max_parallel_launches(mut self, input: i32) -> Self {
+            self.max_parallel_launches = Some(input);
+            self
+        }
+        /// <p>The maximum number of parallel instances to launch for creating resources.</p>
+        pub fn set_max_parallel_launches(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_parallel_launches = input;
+            self
+        }
+        /// <p>The owner of the Windows AMI for which faster launching was turned off.</p>
+        pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_id = Some(input.into());
+            self
+        }
+        /// <p>The owner of the Windows AMI for which faster launching was turned off.</p>
+        pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_id = input;
+            self
+        }
+        /// <p>The current state of faster launching for the specified Windows AMI.</p>
+        pub fn state(mut self, input: crate::model::FastLaunchStateCode) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The current state of faster launching for the specified Windows AMI.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::FastLaunchStateCode>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The reason that the state changed for faster launching for the Windows AMI.</p>
+        pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_transition_reason = Some(input.into());
+            self
+        }
+        /// <p>The reason that the state changed for faster launching for the Windows AMI.</p>
+        pub fn set_state_transition_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.state_transition_reason = input;
+            self
+        }
+        /// <p>The time that the state changed for faster launching for the Windows AMI.</p>
+        pub fn state_transition_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.state_transition_time = Some(input);
+            self
+        }
+        /// <p>The time that the state changed for faster launching for the Windows AMI.</p>
+        pub fn set_state_transition_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.state_transition_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisableFastLaunchOutput`](crate::output::DisableFastLaunchOutput)
+        pub fn build(self) -> crate::output::DisableFastLaunchOutput {
+            crate::output::DisableFastLaunchOutput {
+                image_id: self.image_id,
+                resource_type: self.resource_type,
+                snapshot_configuration: self.snapshot_configuration,
+                launch_template: self.launch_template,
+                max_parallel_launches: self.max_parallel_launches,
+                owner_id: self.owner_id,
+                state: self.state,
+                state_transition_reason: self.state_transition_reason,
+                state_transition_time: self.state_transition_time,
+            }
+        }
+    }
+}
+impl DisableFastLaunchOutput {
+    /// Creates a new builder-style object to manufacture [`DisableFastLaunchOutput`](crate::output::DisableFastLaunchOutput)
+    pub fn builder() -> crate::output::disable_fast_launch_output::Builder {
+        crate::output::disable_fast_launch_output::Builder::default()
     }
 }
 
@@ -23820,6 +24296,97 @@ impl DescribeFastSnapshotRestoresOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFastSnapshotRestoresOutput`](crate::output::DescribeFastSnapshotRestoresOutput)
     pub fn builder() -> crate::output::describe_fast_snapshot_restores_output::Builder {
         crate::output::describe_fast_snapshot_restores_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeFastLaunchImagesOutput {
+    /// <p>A collection of details about the fast-launch enabled Windows images that meet the requested criteria.</p>
+    pub fast_launch_images:
+        std::option::Option<std::vec::Vec<crate::model::DescribeFastLaunchImagesSuccessItem>>,
+    /// <p>The token to use for the next set of results. This value is null when there are no more results to return.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeFastLaunchImagesOutput {
+    /// <p>A collection of details about the fast-launch enabled Windows images that meet the requested criteria.</p>
+    pub fn fast_launch_images(
+        &self,
+    ) -> std::option::Option<&[crate::model::DescribeFastLaunchImagesSuccessItem]> {
+        self.fast_launch_images.as_deref()
+    }
+    /// <p>The token to use for the next set of results. This value is null when there are no more results to return.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeFastLaunchImagesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeFastLaunchImagesOutput");
+        formatter.field("fast_launch_images", &self.fast_launch_images);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeFastLaunchImagesOutput`](crate::output::DescribeFastLaunchImagesOutput)
+pub mod describe_fast_launch_images_output {
+    /// A builder for [`DescribeFastLaunchImagesOutput`](crate::output::DescribeFastLaunchImagesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) fast_launch_images:
+            std::option::Option<std::vec::Vec<crate::model::DescribeFastLaunchImagesSuccessItem>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `fast_launch_images`.
+        ///
+        /// To override the contents of this collection use [`set_fast_launch_images`](Self::set_fast_launch_images).
+        ///
+        /// <p>A collection of details about the fast-launch enabled Windows images that meet the requested criteria.</p>
+        pub fn fast_launch_images(
+            mut self,
+            input: crate::model::DescribeFastLaunchImagesSuccessItem,
+        ) -> Self {
+            let mut v = self.fast_launch_images.unwrap_or_default();
+            v.push(input);
+            self.fast_launch_images = Some(v);
+            self
+        }
+        /// <p>A collection of details about the fast-launch enabled Windows images that meet the requested criteria.</p>
+        pub fn set_fast_launch_images(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::DescribeFastLaunchImagesSuccessItem>,
+            >,
+        ) -> Self {
+            self.fast_launch_images = input;
+            self
+        }
+        /// <p>The token to use for the next set of results. This value is null when there are no more results to return.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token to use for the next set of results. This value is null when there are no more results to return.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeFastLaunchImagesOutput`](crate::output::DescribeFastLaunchImagesOutput)
+        pub fn build(self) -> crate::output::DescribeFastLaunchImagesOutput {
+            crate::output::DescribeFastLaunchImagesOutput {
+                fast_launch_images: self.fast_launch_images,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeFastLaunchImagesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFastLaunchImagesOutput`](crate::output::DescribeFastLaunchImagesOutput)
+    pub fn builder() -> crate::output::describe_fast_launch_images_output::Builder {
+        crate::output::describe_fast_launch_images_output::Builder::default()
     }
 }
 

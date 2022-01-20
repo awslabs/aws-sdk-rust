@@ -11,21 +11,21 @@ sha2 = "0.9.5"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.4.1"
+version = "0.5.1"
 
 [dependencies.aws-sdk-ebs]
 package = "aws-sdk-ebs"
 path = "../../sdk/ebs"
-version = "0.4.1"
+version = "0.5.0"
 
 [dependencies.aws-sdk-ec2]
 package = "aws-sdk-ec2"
 path = "../../sdk/ec2"
-version = "0.4.1"
+version = "0.5.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.4.1"
+version = "0.5.1"
 
 [dependencies.tokio]
 version = "1"

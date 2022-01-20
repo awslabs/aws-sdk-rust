@@ -83,213 +83,337 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `BatchGetChannel` operation.
+    /// Constructs a fluent builder for the [`BatchGetChannel`](crate::client::fluent_builders::BatchGetChannel) operation.
     ///
-    /// See [`BatchGetChannel`](crate::client::fluent_builders::BatchGetChannel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arns(Vec<String>)`](crate::client::fluent_builders::BatchGetChannel::arns) / [`set_arns(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetChannel::set_arns): <p>Array of ARNs, one per channel.</p>
+    /// - On success, responds with [`BatchGetChannelOutput`](crate::output::BatchGetChannelOutput) with field(s):
+    ///   - [`channels(Option<Vec<Channel>>)`](crate::output::BatchGetChannelOutput::channels): <p></p>
+    ///   - [`errors(Option<Vec<BatchError>>)`](crate::output::BatchGetChannelOutput::errors): <p>Each error object is related to a specific ARN in the request.</p>
+    /// - On failure, responds with [`SdkError<BatchGetChannelError>`](crate::error::BatchGetChannelError)
     pub fn batch_get_channel(&self) -> fluent_builders::BatchGetChannel<C, M, R> {
         fluent_builders::BatchGetChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetStreamKey` operation.
+    /// Constructs a fluent builder for the [`BatchGetStreamKey`](crate::client::fluent_builders::BatchGetStreamKey) operation.
     ///
-    /// See [`BatchGetStreamKey`](crate::client::fluent_builders::BatchGetStreamKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arns(Vec<String>)`](crate::client::fluent_builders::BatchGetStreamKey::arns) / [`set_arns(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetStreamKey::set_arns): <p>Array of ARNs, one per channel.</p>
+    /// - On success, responds with [`BatchGetStreamKeyOutput`](crate::output::BatchGetStreamKeyOutput) with field(s):
+    ///   - [`stream_keys(Option<Vec<StreamKey>>)`](crate::output::BatchGetStreamKeyOutput::stream_keys): <p></p>
+    ///   - [`errors(Option<Vec<BatchError>>)`](crate::output::BatchGetStreamKeyOutput::errors): <p></p>
+    /// - On failure, responds with [`SdkError<BatchGetStreamKeyError>`](crate::error::BatchGetStreamKeyError)
     pub fn batch_get_stream_key(&self) -> fluent_builders::BatchGetStreamKey<C, M, R> {
         fluent_builders::BatchGetStreamKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateChannel` operation.
+    /// Constructs a fluent builder for the [`CreateChannel`](crate::client::fluent_builders::CreateChannel) operation.
     ///
-    /// See [`CreateChannel`](crate::client::fluent_builders::CreateChannel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_name): <p>Channel name.</p>
+    ///   - [`latency_mode(ChannelLatencyMode)`](crate::client::fluent_builders::CreateChannel::latency_mode) / [`set_latency_mode(Option<ChannelLatencyMode>)`](crate::client::fluent_builders::CreateChannel::set_latency_mode): <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
+    ///   - [`r#type(ChannelType)`](crate::client::fluent_builders::CreateChannel::r#type) / [`set_type(Option<ChannelType>)`](crate::client::fluent_builders::CreateChannel::set_type): <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>  <ul>   <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>   <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>  </ul>
+    ///   - [`authorized(bool)`](crate::client::fluent_builders::CreateChannel::authorized) / [`set_authorized(bool)`](crate::client::fluent_builders::CreateChannel::set_authorized): <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
+    ///   - [`recording_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::recording_configuration_arn) / [`set_recording_configuration_arn(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_recording_configuration_arn): <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateChannel::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChannel::set_tags): <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// - On success, responds with [`CreateChannelOutput`](crate::output::CreateChannelOutput) with field(s):
+    ///   - [`channel(Option<Channel>)`](crate::output::CreateChannelOutput::channel): <p></p>
+    ///   - [`stream_key(Option<StreamKey>)`](crate::output::CreateChannelOutput::stream_key): <p></p>
+    /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::error::CreateChannelError)
     pub fn create_channel(&self) -> fluent_builders::CreateChannel<C, M, R> {
         fluent_builders::CreateChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRecordingConfiguration` operation.
+    /// Constructs a fluent builder for the [`CreateRecordingConfiguration`](crate::client::fluent_builders::CreateRecordingConfiguration) operation.
     ///
-    /// See [`CreateRecordingConfiguration`](crate::client::fluent_builders::CreateRecordingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRecordingConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_name): <p>Recording-configuration name. The value does not need to be unique.</p>
+    ///   - [`destination_configuration(DestinationConfiguration)`](crate::client::fluent_builders::CreateRecordingConfiguration::destination_configuration) / [`set_destination_configuration(Option<DestinationConfiguration>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_destination_configuration): <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRecordingConfiguration::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_tags): <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    ///   - [`thumbnail_configuration(ThumbnailConfiguration)`](crate::client::fluent_builders::CreateRecordingConfiguration::thumbnail_configuration) / [`set_thumbnail_configuration(Option<ThumbnailConfiguration>)`](crate::client::fluent_builders::CreateRecordingConfiguration::set_thumbnail_configuration): <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+    /// - On success, responds with [`CreateRecordingConfigurationOutput`](crate::output::CreateRecordingConfigurationOutput) with field(s):
+    ///   - [`recording_configuration(Option<RecordingConfiguration>)`](crate::output::CreateRecordingConfigurationOutput::recording_configuration): (undocumented)
+    /// - On failure, responds with [`SdkError<CreateRecordingConfigurationError>`](crate::error::CreateRecordingConfigurationError)
     pub fn create_recording_configuration(
         &self,
     ) -> fluent_builders::CreateRecordingConfiguration<C, M, R> {
         fluent_builders::CreateRecordingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateStreamKey` operation.
+    /// Constructs a fluent builder for the [`CreateStreamKey`](crate::client::fluent_builders::CreateStreamKey) operation.
     ///
-    /// See [`CreateStreamKey`](crate::client::fluent_builders::CreateStreamKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStreamKey::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::CreateStreamKey::set_channel_arn): <p>ARN of the channel for which to create the stream key.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStreamKey::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStreamKey::set_tags): <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
+    /// - On success, responds with [`CreateStreamKeyOutput`](crate::output::CreateStreamKeyOutput) with field(s):
+    ///   - [`stream_key(Option<StreamKey>)`](crate::output::CreateStreamKeyOutput::stream_key): <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
+    /// - On failure, responds with [`SdkError<CreateStreamKeyError>`](crate::error::CreateStreamKeyError)
     pub fn create_stream_key(&self) -> fluent_builders::CreateStreamKey<C, M, R> {
         fluent_builders::CreateStreamKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteChannel` operation.
+    /// Constructs a fluent builder for the [`DeleteChannel`](crate::client::fluent_builders::DeleteChannel) operation.
     ///
-    /// See [`DeleteChannel`](crate::client::fluent_builders::DeleteChannel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannel::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannel::set_arn): <p>ARN of the channel to be deleted.</p>
+    /// - On success, responds with [`DeleteChannelOutput`](crate::output::DeleteChannelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::error::DeleteChannelError)
     pub fn delete_channel(&self) -> fluent_builders::DeleteChannel<C, M, R> {
         fluent_builders::DeleteChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePlaybackKeyPair` operation.
+    /// Constructs a fluent builder for the [`DeletePlaybackKeyPair`](crate::client::fluent_builders::DeletePlaybackKeyPair) operation.
     ///
-    /// See [`DeletePlaybackKeyPair`](crate::client::fluent_builders::DeletePlaybackKeyPair) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeletePlaybackKeyPair::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeletePlaybackKeyPair::set_arn): <p>ARN of the key pair to be deleted.</p>
+    /// - On success, responds with [`DeletePlaybackKeyPairOutput`](crate::output::DeletePlaybackKeyPairOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePlaybackKeyPairError>`](crate::error::DeletePlaybackKeyPairError)
     pub fn delete_playback_key_pair(&self) -> fluent_builders::DeletePlaybackKeyPair<C, M, R> {
         fluent_builders::DeletePlaybackKeyPair::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRecordingConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteRecordingConfiguration`](crate::client::fluent_builders::DeleteRecordingConfiguration) operation.
     ///
-    /// See [`DeleteRecordingConfiguration`](crate::client::fluent_builders::DeleteRecordingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteRecordingConfiguration::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteRecordingConfiguration::set_arn): <p>ARN of the recording configuration to be deleted.</p>
+    /// - On success, responds with [`DeleteRecordingConfigurationOutput`](crate::output::DeleteRecordingConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRecordingConfigurationError>`](crate::error::DeleteRecordingConfigurationError)
     pub fn delete_recording_configuration(
         &self,
     ) -> fluent_builders::DeleteRecordingConfiguration<C, M, R> {
         fluent_builders::DeleteRecordingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteStreamKey` operation.
+    /// Constructs a fluent builder for the [`DeleteStreamKey`](crate::client::fluent_builders::DeleteStreamKey) operation.
     ///
-    /// See [`DeleteStreamKey`](crate::client::fluent_builders::DeleteStreamKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamKey::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteStreamKey::set_arn): <p>ARN of the stream key to be deleted.</p>
+    /// - On success, responds with [`DeleteStreamKeyOutput`](crate::output::DeleteStreamKeyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteStreamKeyError>`](crate::error::DeleteStreamKeyError)
     pub fn delete_stream_key(&self) -> fluent_builders::DeleteStreamKey<C, M, R> {
         fluent_builders::DeleteStreamKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetChannel` operation.
+    /// Constructs a fluent builder for the [`GetChannel`](crate::client::fluent_builders::GetChannel) operation.
     ///
-    /// See [`GetChannel`](crate::client::fluent_builders::GetChannel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetChannel::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetChannel::set_arn): <p>ARN of the channel for which the configuration is to be retrieved.</p>
+    /// - On success, responds with [`GetChannelOutput`](crate::output::GetChannelOutput) with field(s):
+    ///   - [`channel(Option<Channel>)`](crate::output::GetChannelOutput::channel): <p></p>
+    /// - On failure, responds with [`SdkError<GetChannelError>`](crate::error::GetChannelError)
     pub fn get_channel(&self) -> fluent_builders::GetChannel<C, M, R> {
         fluent_builders::GetChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPlaybackKeyPair` operation.
+    /// Constructs a fluent builder for the [`GetPlaybackKeyPair`](crate::client::fluent_builders::GetPlaybackKeyPair) operation.
     ///
-    /// See [`GetPlaybackKeyPair`](crate::client::fluent_builders::GetPlaybackKeyPair) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetPlaybackKeyPair::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetPlaybackKeyPair::set_arn): <p>ARN of the key pair to be returned.</p>
+    /// - On success, responds with [`GetPlaybackKeyPairOutput`](crate::output::GetPlaybackKeyPairOutput) with field(s):
+    ///   - [`key_pair(Option<PlaybackKeyPair>)`](crate::output::GetPlaybackKeyPairOutput::key_pair): (undocumented)
+    /// - On failure, responds with [`SdkError<GetPlaybackKeyPairError>`](crate::error::GetPlaybackKeyPairError)
     pub fn get_playback_key_pair(&self) -> fluent_builders::GetPlaybackKeyPair<C, M, R> {
         fluent_builders::GetPlaybackKeyPair::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRecordingConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetRecordingConfiguration`](crate::client::fluent_builders::GetRecordingConfiguration) operation.
     ///
-    /// See [`GetRecordingConfiguration`](crate::client::fluent_builders::GetRecordingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetRecordingConfiguration::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetRecordingConfiguration::set_arn): <p>ARN of the recording configuration to be retrieved.</p>
+    /// - On success, responds with [`GetRecordingConfigurationOutput`](crate::output::GetRecordingConfigurationOutput) with field(s):
+    ///   - [`recording_configuration(Option<RecordingConfiguration>)`](crate::output::GetRecordingConfigurationOutput::recording_configuration): (undocumented)
+    /// - On failure, responds with [`SdkError<GetRecordingConfigurationError>`](crate::error::GetRecordingConfigurationError)
     pub fn get_recording_configuration(
         &self,
     ) -> fluent_builders::GetRecordingConfiguration<C, M, R> {
         fluent_builders::GetRecordingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetStream` operation.
+    /// Constructs a fluent builder for the [`GetStream`](crate::client::fluent_builders::GetStream) operation.
     ///
-    /// See [`GetStream`](crate::client::fluent_builders::GetStream) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::GetStream::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::GetStream::set_channel_arn): <p>Channel ARN for stream to be accessed.</p>
+    /// - On success, responds with [`GetStreamOutput`](crate::output::GetStreamOutput) with field(s):
+    ///   - [`stream(Option<Stream>)`](crate::output::GetStreamOutput::stream): <p></p>
+    /// - On failure, responds with [`SdkError<GetStreamError>`](crate::error::GetStreamError)
     pub fn get_stream(&self) -> fluent_builders::GetStream<C, M, R> {
         fluent_builders::GetStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetStreamKey` operation.
+    /// Constructs a fluent builder for the [`GetStreamKey`](crate::client::fluent_builders::GetStreamKey) operation.
     ///
-    /// See [`GetStreamKey`](crate::client::fluent_builders::GetStreamKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetStreamKey::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetStreamKey::set_arn): <p>ARN for the stream key to be retrieved.</p>
+    /// - On success, responds with [`GetStreamKeyOutput`](crate::output::GetStreamKeyOutput) with field(s):
+    ///   - [`stream_key(Option<StreamKey>)`](crate::output::GetStreamKeyOutput::stream_key): (undocumented)
+    /// - On failure, responds with [`SdkError<GetStreamKeyError>`](crate::error::GetStreamKeyError)
     pub fn get_stream_key(&self) -> fluent_builders::GetStreamKey<C, M, R> {
         fluent_builders::GetStreamKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetStreamSession` operation.
+    /// Constructs a fluent builder for the [`GetStreamSession`](crate::client::fluent_builders::GetStreamSession) operation.
     ///
-    /// See [`GetStreamSession`](crate::client::fluent_builders::GetStreamSession) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::GetStreamSession::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::GetStreamSession::set_channel_arn): <p>ARN of the channel resource</p>
+    ///   - [`stream_id(impl Into<String>)`](crate::client::fluent_builders::GetStreamSession::stream_id) / [`set_stream_id(Option<String>)`](crate::client::fluent_builders::GetStreamSession::set_stream_id): <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
+    /// - On success, responds with [`GetStreamSessionOutput`](crate::output::GetStreamSessionOutput) with field(s):
+    ///   - [`stream_session(Option<StreamSession>)`](crate::output::GetStreamSessionOutput::stream_session): <p>List of stream details.</p>
+    /// - On failure, responds with [`SdkError<GetStreamSessionError>`](crate::error::GetStreamSessionError)
     pub fn get_stream_session(&self) -> fluent_builders::GetStreamSession<C, M, R> {
         fluent_builders::GetStreamSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ImportPlaybackKeyPair` operation.
+    /// Constructs a fluent builder for the [`ImportPlaybackKeyPair`](crate::client::fluent_builders::ImportPlaybackKeyPair) operation.
     ///
-    /// See [`ImportPlaybackKeyPair`](crate::client::fluent_builders::ImportPlaybackKeyPair) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`public_key_material(impl Into<String>)`](crate::client::fluent_builders::ImportPlaybackKeyPair::public_key_material) / [`set_public_key_material(Option<String>)`](crate::client::fluent_builders::ImportPlaybackKeyPair::set_public_key_material): <p>The public portion of a customer-generated key pair.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ImportPlaybackKeyPair::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ImportPlaybackKeyPair::set_name): <p>Playback-key-pair name. The value does not need to be unique.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ImportPlaybackKeyPair::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ImportPlaybackKeyPair::set_tags): <p>Any tags provided with the request are added to the playback key pair tags.</p>
+    /// - On success, responds with [`ImportPlaybackKeyPairOutput`](crate::output::ImportPlaybackKeyPairOutput) with field(s):
+    ///   - [`key_pair(Option<PlaybackKeyPair>)`](crate::output::ImportPlaybackKeyPairOutput::key_pair): <p></p>
+    /// - On failure, responds with [`SdkError<ImportPlaybackKeyPairError>`](crate::error::ImportPlaybackKeyPairError)
     pub fn import_playback_key_pair(&self) -> fluent_builders::ImportPlaybackKeyPair<C, M, R> {
         fluent_builders::ImportPlaybackKeyPair::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChannels` operation.
+    /// Constructs a fluent builder for the [`ListChannels`](crate::client::fluent_builders::ListChannels) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
     ///
-    /// See [`ListChannels`](crate::client::fluent_builders::ListChannels) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`filter_by_name(impl Into<String>)`](crate::client::fluent_builders::ListChannels::filter_by_name) / [`set_filter_by_name(Option<String>)`](crate::client::fluent_builders::ListChannels::set_filter_by_name): <p>Filters the channel list to match the specified name.</p>
+    ///   - [`filter_by_recording_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannels::filter_by_recording_configuration_arn) / [`set_filter_by_recording_configuration_arn(Option<String>)`](crate::client::fluent_builders::ListChannels::set_filter_by_recording_configuration_arn): <p>Filters the channel list to match the specified recording-configuration ARN.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannels::set_next_token): <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannels::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListChannels::set_max_results): <p>Maximum number of channels to return. Default: 50.</p>
+    /// - On success, responds with [`ListChannelsOutput`](crate::output::ListChannelsOutput) with field(s):
+    ///   - [`channels(Option<Vec<ChannelSummary>>)`](crate::output::ListChannelsOutput::channels): <p>List of the matching channels.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChannelsOutput::next_token): <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::error::ListChannelsError)
     pub fn list_channels(&self) -> fluent_builders::ListChannels<C, M, R> {
         fluent_builders::ListChannels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPlaybackKeyPairs` operation.
+    /// Constructs a fluent builder for the [`ListPlaybackKeyPairs`](crate::client::fluent_builders::ListPlaybackKeyPairs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPlaybackKeyPairs::into_paginator).
     ///
-    /// See [`ListPlaybackKeyPairs`](crate::client::fluent_builders::ListPlaybackKeyPairs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPlaybackKeyPairs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPlaybackKeyPairs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPlaybackKeyPairs::set_next_token): <p>Maximum number of key pairs to return.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPlaybackKeyPairs::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPlaybackKeyPairs::set_max_results): <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
+    /// - On success, responds with [`ListPlaybackKeyPairsOutput`](crate::output::ListPlaybackKeyPairsOutput) with field(s):
+    ///   - [`key_pairs(Option<Vec<PlaybackKeyPairSummary>>)`](crate::output::ListPlaybackKeyPairsOutput::key_pairs): <p>List of key pairs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPlaybackKeyPairsOutput::next_token): <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    /// - On failure, responds with [`SdkError<ListPlaybackKeyPairsError>`](crate::error::ListPlaybackKeyPairsError)
     pub fn list_playback_key_pairs(&self) -> fluent_builders::ListPlaybackKeyPairs<C, M, R> {
         fluent_builders::ListPlaybackKeyPairs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRecordingConfigurations` operation.
+    /// Constructs a fluent builder for the [`ListRecordingConfigurations`](crate::client::fluent_builders::ListRecordingConfigurations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecordingConfigurations::into_paginator).
     ///
-    /// See [`ListRecordingConfigurations`](crate::client::fluent_builders::ListRecordingConfigurations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecordingConfigurations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecordingConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecordingConfigurations::set_next_token): <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecordingConfigurations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRecordingConfigurations::set_max_results): <p>Maximum number of recording configurations to return. Default: 50. </p>
+    /// - On success, responds with [`ListRecordingConfigurationsOutput`](crate::output::ListRecordingConfigurationsOutput) with field(s):
+    ///   - [`recording_configurations(Option<Vec<RecordingConfigurationSummary>>)`](crate::output::ListRecordingConfigurationsOutput::recording_configurations): <p>List of the matching recording configurations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRecordingConfigurationsOutput::next_token): <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    /// - On failure, responds with [`SdkError<ListRecordingConfigurationsError>`](crate::error::ListRecordingConfigurationsError)
     pub fn list_recording_configurations(
         &self,
     ) -> fluent_builders::ListRecordingConfigurations<C, M, R> {
         fluent_builders::ListRecordingConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListStreamKeys` operation.
+    /// Constructs a fluent builder for the [`ListStreamKeys`](crate::client::fluent_builders::ListStreamKeys) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreamKeys::into_paginator).
     ///
-    /// See [`ListStreamKeys`](crate::client::fluent_builders::ListStreamKeys) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStreamKeys::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::ListStreamKeys::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::ListStreamKeys::set_channel_arn): <p>Channel ARN used to filter the list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreamKeys::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreamKeys::set_next_token): <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStreamKeys::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListStreamKeys::set_max_results): <p>Maximum number of streamKeys to return. Default: 50.</p>
+    /// - On success, responds with [`ListStreamKeysOutput`](crate::output::ListStreamKeysOutput) with field(s):
+    ///   - [`stream_keys(Option<Vec<StreamKeySummary>>)`](crate::output::ListStreamKeysOutput::stream_keys): <p>List of stream keys.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListStreamKeysOutput::next_token): <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    /// - On failure, responds with [`SdkError<ListStreamKeysError>`](crate::error::ListStreamKeysError)
     pub fn list_stream_keys(&self) -> fluent_builders::ListStreamKeys<C, M, R> {
         fluent_builders::ListStreamKeys::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListStreams` operation.
+    /// Constructs a fluent builder for the [`ListStreams`](crate::client::fluent_builders::ListStreams) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreams::into_paginator).
     ///
-    /// See [`ListStreams`](crate::client::fluent_builders::ListStreams) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStreams::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`filter_by(StreamFilters)`](crate::client::fluent_builders::ListStreams::filter_by) / [`set_filter_by(Option<StreamFilters>)`](crate::client::fluent_builders::ListStreams::set_filter_by): <p>Filters the stream list to match the specified criterion.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreams::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreams::set_next_token): <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStreams::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListStreams::set_max_results): <p>Maximum number of streams to return. Default: 50.</p>
+    /// - On success, responds with [`ListStreamsOutput`](crate::output::ListStreamsOutput) with field(s):
+    ///   - [`streams(Option<Vec<StreamSummary>>)`](crate::output::ListStreamsOutput::streams): <p>List of streams.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListStreamsOutput::next_token): <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    /// - On failure, responds with [`SdkError<ListStreamsError>`](crate::error::ListStreamsError)
     pub fn list_streams(&self) -> fluent_builders::ListStreams<C, M, R> {
         fluent_builders::ListStreams::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListStreamSessions` operation.
+    /// Constructs a fluent builder for the [`ListStreamSessions`](crate::client::fluent_builders::ListStreamSessions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreamSessions::into_paginator).
     ///
-    /// See [`ListStreamSessions`](crate::client::fluent_builders::ListStreamSessions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStreamSessions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::ListStreamSessions::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::ListStreamSessions::set_channel_arn): <p>Channel ARN used to filter the list.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreamSessions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreamSessions::set_next_token): <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStreamSessions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListStreamSessions::set_max_results): <p>Maximum number of streams to return. Default: 50.</p>
+    /// - On success, responds with [`ListStreamSessionsOutput`](crate::output::ListStreamSessionsOutput) with field(s):
+    ///   - [`stream_sessions(Option<Vec<StreamSessionSummary>>)`](crate::output::ListStreamSessionsOutput::stream_sessions): <p>List of stream sessions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListStreamSessionsOutput::next_token): <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
+    /// - On failure, responds with [`SdkError<ListStreamSessionsError>`](crate::error::ListStreamSessionsError)
     pub fn list_stream_sessions(&self) -> fluent_builders::ListStreamSessions<C, M, R> {
         fluent_builders::ListStreamSessions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource to be retrieved.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p></p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutMetadata` operation.
+    /// Constructs a fluent builder for the [`PutMetadata`](crate::client::fluent_builders::PutMetadata) operation.
     ///
-    /// See [`PutMetadata`](crate::client::fluent_builders::PutMetadata) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::PutMetadata::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::PutMetadata::set_channel_arn): <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
+    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::PutMetadata::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::PutMetadata::set_metadata): <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
+    /// - On success, responds with [`PutMetadataOutput`](crate::output::PutMetadataOutput)
+
+    /// - On failure, responds with [`SdkError<PutMetadataError>`](crate::error::PutMetadataError)
     pub fn put_metadata(&self) -> fluent_builders::PutMetadata<C, M, R> {
         fluent_builders::PutMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopStream` operation.
+    /// Constructs a fluent builder for the [`StopStream`](crate::client::fluent_builders::StopStream) operation.
     ///
-    /// See [`StopStream`](crate::client::fluent_builders::StopStream) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::StopStream::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::StopStream::set_channel_arn): <p>ARN of the channel for which the stream is to be stopped.</p>
+    /// - On success, responds with [`StopStreamOutput`](crate::output::StopStreamOutput)
+
+    /// - On failure, responds with [`SdkError<StopStreamError>`](crate::error::StopStreamError)
     pub fn stop_stream(&self) -> fluent_builders::StopStream<C, M, R> {
         fluent_builders::StopStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>ARN of the resource for which tags are to be added or updated.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Array of tags to be added or updated.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>ARN of the resource for which tags are to be removed.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Array of tags to be removed.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateChannel` operation.
+    /// Constructs a fluent builder for the [`UpdateChannel`](crate::client::fluent_builders::UpdateChannel) operation.
     ///
-    /// See [`UpdateChannel`](crate::client::fluent_builders::UpdateChannel) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_arn): <p>ARN of the channel to be updated.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_name): <p>Channel name.</p>
+    ///   - [`latency_mode(ChannelLatencyMode)`](crate::client::fluent_builders::UpdateChannel::latency_mode) / [`set_latency_mode(Option<ChannelLatencyMode>)`](crate::client::fluent_builders::UpdateChannel::set_latency_mode): <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
+    ///   - [`r#type(ChannelType)`](crate::client::fluent_builders::UpdateChannel::r#type) / [`set_type(Option<ChannelType>)`](crate::client::fluent_builders::UpdateChannel::set_type): <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>  <ul>   <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>   <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>  </ul>
+    ///   - [`authorized(bool)`](crate::client::fluent_builders::UpdateChannel::authorized) / [`set_authorized(bool)`](crate::client::fluent_builders::UpdateChannel::set_authorized): <p>Whether the channel is private (enabled for playback authorization).</p>
+    ///   - [`recording_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::recording_configuration_arn) / [`set_recording_configuration_arn(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_recording_configuration_arn): <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
+    /// - On success, responds with [`UpdateChannelOutput`](crate::output::UpdateChannelOutput) with field(s):
+    ///   - [`channel(Option<Channel>)`](crate::output::UpdateChannelOutput::channel): <p>Object specifying a channel.</p>
+    /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::error::UpdateChannelError)
     pub fn update_channel(&self) -> fluent_builders::UpdateChannel<C, M, R> {
         fluent_builders::UpdateChannel::new(self.handle.clone())
     }
@@ -714,6 +838,22 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+        pub fn thumbnail_configuration(
+            mut self,
+            input: crate::model::ThumbnailConfiguration,
+        ) -> Self {
+            self.inner = self.inner.thumbnail_configuration(input);
+            self
+        }
+        /// <p>A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.</p>
+        pub fn set_thumbnail_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ThumbnailConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_thumbnail_configuration(input);
             self
         }
     }

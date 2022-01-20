@@ -83,25 +83,41 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateEndpoint` operation.
+    /// Constructs a fluent builder for the [`CreateEndpoint`](crate::client::fluent_builders::CreateEndpoint) operation.
     ///
-    /// See [`CreateEndpoint`](crate::client::fluent_builders::CreateEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_outpost_id): <p>The ID of the AWS Outposts. </p>
+    ///   - [`subnet_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::subnet_id) / [`set_subnet_id(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_subnet_id): <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
+    ///   - [`security_group_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::security_group_id) / [`set_security_group_id(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_security_group_id): <p>The ID of the security group to use with the endpoint.</p>
+    ///   - [`access_type(EndpointAccessType)`](crate::client::fluent_builders::CreateEndpoint::access_type) / [`set_access_type(Option<EndpointAccessType>)`](crate::client::fluent_builders::CreateEndpoint::set_access_type): <p>The type of access for the on-premise network connectivity for the Outpost endpoint. To access the endpoint from an on-premises network, you must specify the access type and provide the customer owned IPv4 pool.</p>
+    ///   - [`customer_owned_ipv4_pool(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::customer_owned_ipv4_pool) / [`set_customer_owned_ipv4_pool(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_customer_owned_ipv4_pool): <p>The ID of the customer-owned IPv4 pool for the endpoint. IP addresses will be allocated from this pool for the endpoint.</p>
+    /// - On success, responds with [`CreateEndpointOutput`](crate::output::CreateEndpointOutput) with field(s):
+    ///   - [`endpoint_arn(Option<String>)`](crate::output::CreateEndpointOutput::endpoint_arn): <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    /// - On failure, responds with [`SdkError<CreateEndpointError>`](crate::error::CreateEndpointError)
     pub fn create_endpoint(&self) -> fluent_builders::CreateEndpoint<C, M, R> {
         fluent_builders::CreateEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEndpoint` operation.
+    /// Constructs a fluent builder for the [`DeleteEndpoint`](crate::client::fluent_builders::DeleteEndpoint) operation.
     ///
-    /// See [`DeleteEndpoint`](crate::client::fluent_builders::DeleteEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEndpoint::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::client::fluent_builders::DeleteEndpoint::set_endpoint_id): <p>The ID of the endpoint.</p>
+    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEndpoint::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::DeleteEndpoint::set_outpost_id): <p>The ID of the AWS Outposts. </p>
+    /// - On success, responds with [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEndpointError>`](crate::error::DeleteEndpointError)
     pub fn delete_endpoint(&self) -> fluent_builders::DeleteEndpoint<C, M, R> {
         fluent_builders::DeleteEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEndpoints` operation.
+    /// Constructs a fluent builder for the [`ListEndpoints`](crate::client::fluent_builders::ListEndpoints) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEndpoints::into_paginator).
     ///
-    /// See [`ListEndpoints`](crate::client::fluent_builders::ListEndpoints) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEndpoints::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEndpoints::set_next_token): <p>The next endpoint requested in the list.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEndpoints::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListEndpoints::set_max_results): <p>The max number of endpoints that can be returned on the request.</p>
+    /// - On success, responds with [`ListEndpointsOutput`](crate::output::ListEndpointsOutput) with field(s):
+    ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::output::ListEndpointsOutput::endpoints): <p>Returns an array of endpoints associated with AWS Outposts.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEndpointsOutput::next_token): <p>The next endpoint returned in the list.</p>
+    /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::error::ListEndpointsError)
     pub fn list_endpoints(&self) -> fluent_builders::ListEndpoints<C, M, R> {
         fluent_builders::ListEndpoints::new(self.handle.clone())
     }

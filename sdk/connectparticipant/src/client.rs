@@ -83,62 +83,115 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CompleteAttachmentUpload` operation.
+    /// Constructs a fluent builder for the [`CompleteAttachmentUpload`](crate::client::fluent_builders::CompleteAttachmentUpload) operation.
     ///
-    /// See [`CompleteAttachmentUpload`](crate::client::fluent_builders::CompleteAttachmentUpload) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`attachment_ids(Vec<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::attachment_ids) / [`set_attachment_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CompleteAttachmentUpload::set_attachment_ids): <p>A list of unique identifiers for the attachments.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::CompleteAttachmentUpload::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
+    /// - On success, responds with [`CompleteAttachmentUploadOutput`](crate::output::CompleteAttachmentUploadOutput)
+
+    /// - On failure, responds with [`SdkError<CompleteAttachmentUploadError>`](crate::error::CompleteAttachmentUploadError)
     pub fn complete_attachment_upload(&self) -> fluent_builders::CompleteAttachmentUpload<C, M, R> {
         fluent_builders::CompleteAttachmentUpload::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateParticipantConnection` operation.
+    /// Constructs a fluent builder for the [`CreateParticipantConnection`](crate::client::fluent_builders::CreateParticipantConnection) operation.
     ///
-    /// See [`CreateParticipantConnection`](crate::client::fluent_builders::CreateParticipantConnection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`r#type(Vec<ConnectionType>)`](crate::client::fluent_builders::CreateParticipantConnection::r#type) / [`set_type(Option<Vec<ConnectionType>>)`](crate::client::fluent_builders::CreateParticipantConnection::set_type): <p>Type of connection information required.</p>
+    ///   - [`participant_token(impl Into<String>)`](crate::client::fluent_builders::CreateParticipantConnection::participant_token) / [`set_participant_token(Option<String>)`](crate::client::fluent_builders::CreateParticipantConnection::set_participant_token): <p>This is a header parameter.</p>  <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
+    ///   - [`connect_participant(bool)`](crate::client::fluent_builders::CreateParticipantConnection::connect_participant) / [`set_connect_participant(Option<bool>)`](crate::client::fluent_builders::CreateParticipantConnection::set_connect_participant): <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
+    /// - On success, responds with [`CreateParticipantConnectionOutput`](crate::output::CreateParticipantConnectionOutput) with field(s):
+    ///   - [`websocket(Option<Websocket>)`](crate::output::CreateParticipantConnectionOutput::websocket): <p>Creates the participant's websocket connection.</p>
+    ///   - [`connection_credentials(Option<ConnectionCredentials>)`](crate::output::CreateParticipantConnectionOutput::connection_credentials): <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
+    /// - On failure, responds with [`SdkError<CreateParticipantConnectionError>`](crate::error::CreateParticipantConnectionError)
     pub fn create_participant_connection(
         &self,
     ) -> fluent_builders::CreateParticipantConnection<C, M, R> {
         fluent_builders::CreateParticipantConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisconnectParticipant` operation.
+    /// Constructs a fluent builder for the [`DisconnectParticipant`](crate::client::fluent_builders::DisconnectParticipant) operation.
     ///
-    /// See [`DisconnectParticipant`](crate::client::fluent_builders::DisconnectParticipant) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DisconnectParticipant::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DisconnectParticipant::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::DisconnectParticipant::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::DisconnectParticipant::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
+    /// - On success, responds with [`DisconnectParticipantOutput`](crate::output::DisconnectParticipantOutput)
+
+    /// - On failure, responds with [`SdkError<DisconnectParticipantError>`](crate::error::DisconnectParticipantError)
     pub fn disconnect_participant(&self) -> fluent_builders::DisconnectParticipant<C, M, R> {
         fluent_builders::DisconnectParticipant::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAttachment` operation.
+    /// Constructs a fluent builder for the [`GetAttachment`](crate::client::fluent_builders::GetAttachment) operation.
     ///
-    /// See [`GetAttachment`](crate::client::fluent_builders::GetAttachment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`attachment_id(impl Into<String>)`](crate::client::fluent_builders::GetAttachment::attachment_id) / [`set_attachment_id(Option<String>)`](crate::client::fluent_builders::GetAttachment::set_attachment_id): <p>A unique identifier for the attachment.</p>
+    ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::GetAttachment::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::GetAttachment::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
+    /// - On success, responds with [`GetAttachmentOutput`](crate::output::GetAttachmentOutput) with field(s):
+    ///   - [`url(Option<String>)`](crate::output::GetAttachmentOutput::url): <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
+    ///   - [`url_expiry(Option<String>)`](crate::output::GetAttachmentOutput::url_expiry): <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    /// - On failure, responds with [`SdkError<GetAttachmentError>`](crate::error::GetAttachmentError)
     pub fn get_attachment(&self) -> fluent_builders::GetAttachment<C, M, R> {
         fluent_builders::GetAttachment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTranscript` operation.
+    /// Constructs a fluent builder for the [`GetTranscript`](crate::client::fluent_builders::GetTranscript) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetTranscript::into_paginator).
     ///
-    /// See [`GetTranscript`](crate::client::fluent_builders::GetTranscript) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTranscript::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::GetTranscript::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::GetTranscript::set_contact_id): <p>The contactId from the current contact chain for which transcript is needed.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetTranscript::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetTranscript::set_max_results): <p>The maximum number of results to return in the page. Default: 10. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetTranscript::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetTranscript::set_next_token): <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
+    ///   - [`scan_direction(ScanDirection)`](crate::client::fluent_builders::GetTranscript::scan_direction) / [`set_scan_direction(Option<ScanDirection>)`](crate::client::fluent_builders::GetTranscript::set_scan_direction): <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
+    ///   - [`sort_order(SortKey)`](crate::client::fluent_builders::GetTranscript::sort_order) / [`set_sort_order(Option<SortKey>)`](crate::client::fluent_builders::GetTranscript::set_sort_order): <p>The sort order for the records. Default: DESCENDING.</p>
+    ///   - [`start_position(StartPosition)`](crate::client::fluent_builders::GetTranscript::start_position) / [`set_start_position(Option<StartPosition>)`](crate::client::fluent_builders::GetTranscript::set_start_position): <p>A filtering option for where to start.</p>
+    ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::GetTranscript::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::GetTranscript::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
+    /// - On success, responds with [`GetTranscriptOutput`](crate::output::GetTranscriptOutput) with field(s):
+    ///   - [`initial_contact_id(Option<String>)`](crate::output::GetTranscriptOutput::initial_contact_id): <p>The initial contact ID for the contact. </p>
+    ///   - [`transcript(Option<Vec<Item>>)`](crate::output::GetTranscriptOutput::transcript): <p>The list of messages in the session.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetTranscriptOutput::next_token): <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<GetTranscriptError>`](crate::error::GetTranscriptError)
     pub fn get_transcript(&self) -> fluent_builders::GetTranscript<C, M, R> {
         fluent_builders::GetTranscript::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendEvent` operation.
+    /// Constructs a fluent builder for the [`SendEvent`](crate::client::fluent_builders::SendEvent) operation.
     ///
-    /// See [`SendEvent`](crate::client::fluent_builders::SendEvent) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::SendEvent::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::SendEvent::set_content_type): <p>The content type of the request. Supported types are:</p>  <ul>   <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>   <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>  </ul>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::SendEvent::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::SendEvent::set_content): <p>The content of the event to be sent (for example, message text). This is not yet supported.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::SendEvent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::SendEvent::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::SendEvent::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::SendEvent::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
+    /// - On success, responds with [`SendEventOutput`](crate::output::SendEventOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::SendEventOutput::id): <p>The ID of the response.</p>
+    ///   - [`absolute_time(Option<String>)`](crate::output::SendEventOutput::absolute_time): <p>The time when the event was sent.</p>  <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    /// - On failure, responds with [`SdkError<SendEventError>`](crate::error::SendEventError)
     pub fn send_event(&self) -> fluent_builders::SendEvent<C, M, R> {
         fluent_builders::SendEvent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendMessage` operation.
+    /// Constructs a fluent builder for the [`SendMessage`](crate::client::fluent_builders::SendMessage) operation.
     ///
-    /// See [`SendMessage`](crate::client::fluent_builders::SendMessage) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::SendMessage::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::SendMessage::set_content_type): <p>The type of the content. Supported types are text/plain.</p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::SendMessage::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::SendMessage::set_content): <p>The content of the message.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::SendMessage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::SendMessage::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::SendMessage::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::SendMessage::set_connection_token): <p>The authentication token associated with the connection.</p>
+    /// - On success, responds with [`SendMessageOutput`](crate::output::SendMessageOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::SendMessageOutput::id): <p>The ID of the message.</p>
+    ///   - [`absolute_time(Option<String>)`](crate::output::SendMessageOutput::absolute_time): <p>The time when the message was sent.</p>  <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    /// - On failure, responds with [`SdkError<SendMessageError>`](crate::error::SendMessageError)
     pub fn send_message(&self) -> fluent_builders::SendMessage<C, M, R> {
         fluent_builders::SendMessage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartAttachmentUpload` operation.
+    /// Constructs a fluent builder for the [`StartAttachmentUpload`](crate::client::fluent_builders::StartAttachmentUpload) operation.
     ///
-    /// See [`StartAttachmentUpload`](crate::client::fluent_builders::StartAttachmentUpload) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::StartAttachmentUpload::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::StartAttachmentUpload::set_content_type): <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    ///   - [`attachment_size_in_bytes(i64)`](crate::client::fluent_builders::StartAttachmentUpload::attachment_size_in_bytes) / [`set_attachment_size_in_bytes(i64)`](crate::client::fluent_builders::StartAttachmentUpload::set_attachment_size_in_bytes): <p>The size of the attachment in bytes.</p>
+    ///   - [`attachment_name(impl Into<String>)`](crate::client::fluent_builders::StartAttachmentUpload::attachment_name) / [`set_attachment_name(Option<String>)`](crate::client::fluent_builders::StartAttachmentUpload::set_attachment_name): <p>A case-sensitive name of the attachment being uploaded.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartAttachmentUpload::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartAttachmentUpload::set_client_token): <p>A unique case sensitive identifier to support idempotency of request.</p>
+    ///   - [`connection_token(impl Into<String>)`](crate::client::fluent_builders::StartAttachmentUpload::connection_token) / [`set_connection_token(Option<String>)`](crate::client::fluent_builders::StartAttachmentUpload::set_connection_token): <p>The authentication token associated with the participant's connection.</p>
+    /// - On success, responds with [`StartAttachmentUploadOutput`](crate::output::StartAttachmentUploadOutput) with field(s):
+    ///   - [`attachment_id(Option<String>)`](crate::output::StartAttachmentUploadOutput::attachment_id): <p>A unique identifier for the attachment.</p>
+    ///   - [`upload_metadata(Option<UploadMetadata>)`](crate::output::StartAttachmentUploadOutput::upload_metadata): <p>Fields to be used while uploading the attachment.</p>
+    /// - On failure, responds with [`SdkError<StartAttachmentUploadError>`](crate::error::StartAttachmentUploadError)
     pub fn start_attachment_upload(&self) -> fluent_builders::StartAttachmentUpload<C, M, R> {
         fluent_builders::StartAttachmentUpload::new(self.handle.clone())
     }

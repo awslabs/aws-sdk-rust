@@ -83,49 +83,89 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateScalingPlan` operation.
+    /// Constructs a fluent builder for the [`CreateScalingPlan`](crate::client::fluent_builders::CreateScalingPlan) operation.
     ///
-    /// See [`CreateScalingPlan`](crate::client::fluent_builders::CreateScalingPlan) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scaling_plan_name(impl Into<String>)`](crate::client::fluent_builders::CreateScalingPlan::scaling_plan_name) / [`set_scaling_plan_name(Option<String>)`](crate::client::fluent_builders::CreateScalingPlan::set_scaling_plan_name): <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
+    ///   - [`application_source(ApplicationSource)`](crate::client::fluent_builders::CreateScalingPlan::application_source) / [`set_application_source(Option<ApplicationSource>)`](crate::client::fluent_builders::CreateScalingPlan::set_application_source): <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    ///   - [`scaling_instructions(Vec<ScalingInstruction>)`](crate::client::fluent_builders::CreateScalingPlan::scaling_instructions) / [`set_scaling_instructions(Option<Vec<ScalingInstruction>>)`](crate::client::fluent_builders::CreateScalingPlan::set_scaling_instructions): <p>The scaling instructions.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    /// - On success, responds with [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput) with field(s):
+    ///   - [`scaling_plan_version(Option<i64>)`](crate::output::CreateScalingPlanOutput::scaling_plan_version): <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
+    /// - On failure, responds with [`SdkError<CreateScalingPlanError>`](crate::error::CreateScalingPlanError)
     pub fn create_scaling_plan(&self) -> fluent_builders::CreateScalingPlan<C, M, R> {
         fluent_builders::CreateScalingPlan::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteScalingPlan` operation.
+    /// Constructs a fluent builder for the [`DeleteScalingPlan`](crate::client::fluent_builders::DeleteScalingPlan) operation.
     ///
-    /// See [`DeleteScalingPlan`](crate::client::fluent_builders::DeleteScalingPlan) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scaling_plan_name(impl Into<String>)`](crate::client::fluent_builders::DeleteScalingPlan::scaling_plan_name) / [`set_scaling_plan_name(Option<String>)`](crate::client::fluent_builders::DeleteScalingPlan::set_scaling_plan_name): <p>The name of the scaling plan.</p>
+    ///   - [`scaling_plan_version(i64)`](crate::client::fluent_builders::DeleteScalingPlan::scaling_plan_version) / [`set_scaling_plan_version(Option<i64>)`](crate::client::fluent_builders::DeleteScalingPlan::set_scaling_plan_version): <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
+    /// - On success, responds with [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteScalingPlanError>`](crate::error::DeleteScalingPlanError)
     pub fn delete_scaling_plan(&self) -> fluent_builders::DeleteScalingPlan<C, M, R> {
         fluent_builders::DeleteScalingPlan::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeScalingPlanResources` operation.
+    /// Constructs a fluent builder for the [`DescribeScalingPlanResources`](crate::client::fluent_builders::DescribeScalingPlanResources) operation.
     ///
-    /// See [`DescribeScalingPlanResources`](crate::client::fluent_builders::DescribeScalingPlanResources) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scaling_plan_name(impl Into<String>)`](crate::client::fluent_builders::DescribeScalingPlanResources::scaling_plan_name) / [`set_scaling_plan_name(Option<String>)`](crate::client::fluent_builders::DescribeScalingPlanResources::set_scaling_plan_name): <p>The name of the scaling plan.</p>
+    ///   - [`scaling_plan_version(i64)`](crate::client::fluent_builders::DescribeScalingPlanResources::scaling_plan_version) / [`set_scaling_plan_version(Option<i64>)`](crate::client::fluent_builders::DescribeScalingPlanResources::set_scaling_plan_version): <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeScalingPlanResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeScalingPlanResources::set_max_results): <p>The maximum number of scalable resources to return. The value must be between 1 and 50. The default value is 50.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeScalingPlanResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeScalingPlanResources::set_next_token): <p>The token for the next set of results.</p>
+    /// - On success, responds with [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput) with field(s):
+    ///   - [`scaling_plan_resources(Option<Vec<ScalingPlanResource>>)`](crate::output::DescribeScalingPlanResourcesOutput::scaling_plan_resources): <p>Information about the scalable resources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeScalingPlanResourcesOutput::next_token): <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<DescribeScalingPlanResourcesError>`](crate::error::DescribeScalingPlanResourcesError)
     pub fn describe_scaling_plan_resources(
         &self,
     ) -> fluent_builders::DescribeScalingPlanResources<C, M, R> {
         fluent_builders::DescribeScalingPlanResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeScalingPlans` operation.
+    /// Constructs a fluent builder for the [`DescribeScalingPlans`](crate::client::fluent_builders::DescribeScalingPlans) operation.
     ///
-    /// See [`DescribeScalingPlans`](crate::client::fluent_builders::DescribeScalingPlans) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scaling_plan_names(Vec<String>)`](crate::client::fluent_builders::DescribeScalingPlans::scaling_plan_names) / [`set_scaling_plan_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeScalingPlans::set_scaling_plan_names): <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
+    ///   - [`scaling_plan_version(i64)`](crate::client::fluent_builders::DescribeScalingPlans::scaling_plan_version) / [`set_scaling_plan_version(Option<i64>)`](crate::client::fluent_builders::DescribeScalingPlans::set_scaling_plan_version): <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>   <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>  </note>
+    ///   - [`application_sources(Vec<ApplicationSource>)`](crate::client::fluent_builders::DescribeScalingPlans::application_sources) / [`set_application_sources(Option<Vec<ApplicationSource>>)`](crate::client::fluent_builders::DescribeScalingPlans::set_application_sources): <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeScalingPlans::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeScalingPlans::set_max_results): <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeScalingPlans::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeScalingPlans::set_next_token): <p>The token for the next set of results.</p>
+    /// - On success, responds with [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput) with field(s):
+    ///   - [`scaling_plans(Option<Vec<ScalingPlan>>)`](crate::output::DescribeScalingPlansOutput::scaling_plans): <p>Information about the scaling plans.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeScalingPlansOutput::next_token): <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<DescribeScalingPlansError>`](crate::error::DescribeScalingPlansError)
     pub fn describe_scaling_plans(&self) -> fluent_builders::DescribeScalingPlans<C, M, R> {
         fluent_builders::DescribeScalingPlans::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetScalingPlanResourceForecastData` operation.
+    /// Constructs a fluent builder for the [`GetScalingPlanResourceForecastData`](crate::client::fluent_builders::GetScalingPlanResourceForecastData) operation.
     ///
-    /// See [`GetScalingPlanResourceForecastData`](crate::client::fluent_builders::GetScalingPlanResourceForecastData) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scaling_plan_name(impl Into<String>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::scaling_plan_name) / [`set_scaling_plan_name(Option<String>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_scaling_plan_name): <p>The name of the scaling plan.</p>
+    ///   - [`scaling_plan_version(i64)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::scaling_plan_version) / [`set_scaling_plan_version(Option<i64>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_scaling_plan_version): <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
+    ///   - [`service_namespace(ServiceNamespace)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::service_namespace) / [`set_service_namespace(Option<ServiceNamespace>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_service_namespace): <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_resource_id): <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
+    ///   - [`scalable_dimension(ScalableDimension)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::scalable_dimension) / [`set_scalable_dimension(Option<ScalableDimension>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_scalable_dimension): <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
+    ///   - [`forecast_data_type(ForecastDataType)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::forecast_data_type) / [`set_forecast_data_type(Option<ForecastDataType>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_forecast_data_type): <p>The type of forecast data to get.</p>  <ul>   <li> <p> <code>LoadForecast</code>: The load metric forecast. </p> </li>   <li> <p> <code>CapacityForecast</code>: The capacity forecast. </p> </li>   <li> <p> <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p> </li>   <li> <p> <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p> </li>  </ul>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_start_time): <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetScalingPlanResourceForecastData::set_end_time): <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>  <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
+    /// - On success, responds with [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput) with field(s):
+    ///   - [`datapoints(Option<Vec<Datapoint>>)`](crate::output::GetScalingPlanResourceForecastDataOutput::datapoints): <p>The data points to return.</p>
+    /// - On failure, responds with [`SdkError<GetScalingPlanResourceForecastDataError>`](crate::error::GetScalingPlanResourceForecastDataError)
     pub fn get_scaling_plan_resource_forecast_data(
         &self,
     ) -> fluent_builders::GetScalingPlanResourceForecastData<C, M, R> {
         fluent_builders::GetScalingPlanResourceForecastData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateScalingPlan` operation.
+    /// Constructs a fluent builder for the [`UpdateScalingPlan`](crate::client::fluent_builders::UpdateScalingPlan) operation.
     ///
-    /// See [`UpdateScalingPlan`](crate::client::fluent_builders::UpdateScalingPlan) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scaling_plan_name(impl Into<String>)`](crate::client::fluent_builders::UpdateScalingPlan::scaling_plan_name) / [`set_scaling_plan_name(Option<String>)`](crate::client::fluent_builders::UpdateScalingPlan::set_scaling_plan_name): <p>The name of the scaling plan.</p>
+    ///   - [`scaling_plan_version(i64)`](crate::client::fluent_builders::UpdateScalingPlan::scaling_plan_version) / [`set_scaling_plan_version(Option<i64>)`](crate::client::fluent_builders::UpdateScalingPlan::set_scaling_plan_version): <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
+    ///   - [`application_source(ApplicationSource)`](crate::client::fluent_builders::UpdateScalingPlan::application_source) / [`set_application_source(Option<ApplicationSource>)`](crate::client::fluent_builders::UpdateScalingPlan::set_application_source): <p>A CloudFormation stack or set of tags.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    ///   - [`scaling_instructions(Vec<ScalingInstruction>)`](crate::client::fluent_builders::UpdateScalingPlan::scaling_instructions) / [`set_scaling_instructions(Option<Vec<ScalingInstruction>>)`](crate::client::fluent_builders::UpdateScalingPlan::set_scaling_instructions): <p>The scaling instructions.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    /// - On success, responds with [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateScalingPlanError>`](crate::error::UpdateScalingPlanError)
     pub fn update_scaling_plan(&self) -> fluent_builders::UpdateScalingPlan<C, M, R> {
         fluent_builders::UpdateScalingPlan::new(self.handle.clone())
     }

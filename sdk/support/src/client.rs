@@ -83,113 +83,185 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddAttachmentsToSet` operation.
+    /// Constructs a fluent builder for the [`AddAttachmentsToSet`](crate::client::fluent_builders::AddAttachmentsToSet) operation.
     ///
-    /// See [`AddAttachmentsToSet`](crate::client::fluent_builders::AddAttachmentsToSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`attachment_set_id(impl Into<String>)`](crate::client::fluent_builders::AddAttachmentsToSet::attachment_set_id) / [`set_attachment_set_id(Option<String>)`](crate::client::fluent_builders::AddAttachmentsToSet::set_attachment_set_id): <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
+    ///   - [`attachments(Vec<Attachment>)`](crate::client::fluent_builders::AddAttachmentsToSet::attachments) / [`set_attachments(Option<Vec<Attachment>>)`](crate::client::fluent_builders::AddAttachmentsToSet::set_attachments): <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>  <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
+    /// - On success, responds with [`AddAttachmentsToSetOutput`](crate::output::AddAttachmentsToSetOutput) with field(s):
+    ///   - [`attachment_set_id(Option<String>)`](crate::output::AddAttachmentsToSetOutput::attachment_set_id): <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>
+    ///   - [`expiry_time(Option<String>)`](crate::output::AddAttachmentsToSetOutput::expiry_time): <p>The time and date when the attachment set expires.</p>
+    /// - On failure, responds with [`SdkError<AddAttachmentsToSetError>`](crate::error::AddAttachmentsToSetError)
     pub fn add_attachments_to_set(&self) -> fluent_builders::AddAttachmentsToSet<C, M, R> {
         fluent_builders::AddAttachmentsToSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AddCommunicationToCase` operation.
+    /// Constructs a fluent builder for the [`AddCommunicationToCase`](crate::client::fluent_builders::AddCommunicationToCase) operation.
     ///
-    /// See [`AddCommunicationToCase`](crate::client::fluent_builders::AddCommunicationToCase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`case_id(impl Into<String>)`](crate::client::fluent_builders::AddCommunicationToCase::case_id) / [`set_case_id(Option<String>)`](crate::client::fluent_builders::AddCommunicationToCase::set_case_id): <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    ///   - [`communication_body(impl Into<String>)`](crate::client::fluent_builders::AddCommunicationToCase::communication_body) / [`set_communication_body(Option<String>)`](crate::client::fluent_builders::AddCommunicationToCase::set_communication_body): <p>The body of an email communication to add to the support case.</p>
+    ///   - [`cc_email_addresses(Vec<String>)`](crate::client::fluent_builders::AddCommunicationToCase::cc_email_addresses) / [`set_cc_email_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::AddCommunicationToCase::set_cc_email_addresses): <p>The email addresses in the CC line of an email to be added to the support case.</p>
+    ///   - [`attachment_set_id(impl Into<String>)`](crate::client::fluent_builders::AddCommunicationToCase::attachment_set_id) / [`set_attachment_set_id(Option<String>)`](crate::client::fluent_builders::AddCommunicationToCase::set_attachment_set_id): <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
+    /// - On success, responds with [`AddCommunicationToCaseOutput`](crate::output::AddCommunicationToCaseOutput) with field(s):
+    ///   - [`result(bool)`](crate::output::AddCommunicationToCaseOutput::result): <p>True if <code>AddCommunicationToCase</code> succeeds. Otherwise, returns an error.</p>
+    /// - On failure, responds with [`SdkError<AddCommunicationToCaseError>`](crate::error::AddCommunicationToCaseError)
     pub fn add_communication_to_case(&self) -> fluent_builders::AddCommunicationToCase<C, M, R> {
         fluent_builders::AddCommunicationToCase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCase` operation.
+    /// Constructs a fluent builder for the [`CreateCase`](crate::client::fluent_builders::CreateCase) operation.
     ///
-    /// See [`CreateCase`](crate::client::fluent_builders::CreateCase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`subject(impl Into<String>)`](crate::client::fluent_builders::CreateCase::subject) / [`set_subject(Option<String>)`](crate::client::fluent_builders::CreateCase::set_subject): <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+    ///   - [`service_code(impl Into<String>)`](crate::client::fluent_builders::CreateCase::service_code) / [`set_service_code(Option<String>)`](crate::client::fluent_builders::CreateCase::set_service_code): <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
+    ///   - [`severity_code(impl Into<String>)`](crate::client::fluent_builders::CreateCase::severity_code) / [`set_severity_code(Option<String>)`](crate::client::fluent_builders::CreateCase::set_severity_code): <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>  <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>   <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>  </note>
+    ///   - [`category_code(impl Into<String>)`](crate::client::fluent_builders::CreateCase::category_code) / [`set_category_code(Option<String>)`](crate::client::fluent_builders::CreateCase::set_category_code): <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
+    ///   - [`communication_body(impl Into<String>)`](crate::client::fluent_builders::CreateCase::communication_body) / [`set_communication_body(Option<String>)`](crate::client::fluent_builders::CreateCase::set_communication_body): <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+    ///   - [`cc_email_addresses(Vec<String>)`](crate::client::fluent_builders::CreateCase::cc_email_addresses) / [`set_cc_email_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCase::set_cc_email_addresses): <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::CreateCase::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::CreateCase::set_language): <p>The language in which Amazon Web Services Support handles the case. You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language. Currently, English ("en") and Japanese ("ja") are supported.</p>
+    ///   - [`issue_type(impl Into<String>)`](crate::client::fluent_builders::CreateCase::issue_type) / [`set_issue_type(Option<String>)`](crate::client::fluent_builders::CreateCase::set_issue_type): <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
+    ///   - [`attachment_set_id(impl Into<String>)`](crate::client::fluent_builders::CreateCase::attachment_set_id) / [`set_attachment_set_id(Option<String>)`](crate::client::fluent_builders::CreateCase::set_attachment_set_id): <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
+    /// - On success, responds with [`CreateCaseOutput`](crate::output::CreateCaseOutput) with field(s):
+    ///   - [`case_id(Option<String>)`](crate::output::CreateCaseOutput::case_id): <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    /// - On failure, responds with [`SdkError<CreateCaseError>`](crate::error::CreateCaseError)
     pub fn create_case(&self) -> fluent_builders::CreateCase<C, M, R> {
         fluent_builders::CreateCase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAttachment` operation.
+    /// Constructs a fluent builder for the [`DescribeAttachment`](crate::client::fluent_builders::DescribeAttachment) operation.
     ///
-    /// See [`DescribeAttachment`](crate::client::fluent_builders::DescribeAttachment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`attachment_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAttachment::attachment_id) / [`set_attachment_id(Option<String>)`](crate::client::fluent_builders::DescribeAttachment::set_attachment_id): <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
+    /// - On success, responds with [`DescribeAttachmentOutput`](crate::output::DescribeAttachmentOutput) with field(s):
+    ///   - [`attachment(Option<Attachment>)`](crate::output::DescribeAttachmentOutput::attachment): <p>This object includes the attachment content and file name.</p>  <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
+    /// - On failure, responds with [`SdkError<DescribeAttachmentError>`](crate::error::DescribeAttachmentError)
     pub fn describe_attachment(&self) -> fluent_builders::DescribeAttachment<C, M, R> {
         fluent_builders::DescribeAttachment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCases` operation.
+    /// Constructs a fluent builder for the [`DescribeCases`](crate::client::fluent_builders::DescribeCases) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeCases::into_paginator).
     ///
-    /// See [`DescribeCases`](crate::client::fluent_builders::DescribeCases) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCases::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`case_id_list(Vec<String>)`](crate::client::fluent_builders::DescribeCases::case_id_list) / [`set_case_id_list(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeCases::set_case_id_list): <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
+    ///   - [`display_id(impl Into<String>)`](crate::client::fluent_builders::DescribeCases::display_id) / [`set_display_id(Option<String>)`](crate::client::fluent_builders::DescribeCases::set_display_id): <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
+    ///   - [`after_time(impl Into<String>)`](crate::client::fluent_builders::DescribeCases::after_time) / [`set_after_time(Option<String>)`](crate::client::fluent_builders::DescribeCases::set_after_time): <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    ///   - [`before_time(impl Into<String>)`](crate::client::fluent_builders::DescribeCases::before_time) / [`set_before_time(Option<String>)`](crate::client::fluent_builders::DescribeCases::set_before_time): <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    ///   - [`include_resolved_cases(bool)`](crate::client::fluent_builders::DescribeCases::include_resolved_cases) / [`set_include_resolved_cases(bool)`](crate::client::fluent_builders::DescribeCases::set_include_resolved_cases): <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeCases::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeCases::set_next_token): <p>A resumption point for pagination.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeCases::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeCases::set_max_results): <p>The maximum number of results to return before paginating.</p>
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeCases::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeCases::set_language): <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    ///   - [`include_communications(bool)`](crate::client::fluent_builders::DescribeCases::include_communications) / [`set_include_communications(Option<bool>)`](crate::client::fluent_builders::DescribeCases::set_include_communications): <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
+    /// - On success, responds with [`DescribeCasesOutput`](crate::output::DescribeCasesOutput) with field(s):
+    ///   - [`cases(Option<Vec<CaseDetails>>)`](crate::output::DescribeCasesOutput::cases): <p>The details for the cases that match the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeCasesOutput::next_token): <p>A resumption point for pagination.</p>
+    /// - On failure, responds with [`SdkError<DescribeCasesError>`](crate::error::DescribeCasesError)
     pub fn describe_cases(&self) -> fluent_builders::DescribeCases<C, M, R> {
         fluent_builders::DescribeCases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCommunications` operation.
+    /// Constructs a fluent builder for the [`DescribeCommunications`](crate::client::fluent_builders::DescribeCommunications) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeCommunications::into_paginator).
     ///
-    /// See [`DescribeCommunications`](crate::client::fluent_builders::DescribeCommunications) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCommunications::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`case_id(impl Into<String>)`](crate::client::fluent_builders::DescribeCommunications::case_id) / [`set_case_id(Option<String>)`](crate::client::fluent_builders::DescribeCommunications::set_case_id): <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    ///   - [`before_time(impl Into<String>)`](crate::client::fluent_builders::DescribeCommunications::before_time) / [`set_before_time(Option<String>)`](crate::client::fluent_builders::DescribeCommunications::set_before_time): <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    ///   - [`after_time(impl Into<String>)`](crate::client::fluent_builders::DescribeCommunications::after_time) / [`set_after_time(Option<String>)`](crate::client::fluent_builders::DescribeCommunications::set_after_time): <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeCommunications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeCommunications::set_next_token): <p>A resumption point for pagination.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeCommunications::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeCommunications::set_max_results): <p>The maximum number of results to return before paginating.</p>
+    /// - On success, responds with [`DescribeCommunicationsOutput`](crate::output::DescribeCommunicationsOutput) with field(s):
+    ///   - [`communications(Option<Vec<Communication>>)`](crate::output::DescribeCommunicationsOutput::communications): <p>The communications for the case.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeCommunicationsOutput::next_token): <p>A resumption point for pagination.</p>
+    /// - On failure, responds with [`SdkError<DescribeCommunicationsError>`](crate::error::DescribeCommunicationsError)
     pub fn describe_communications(&self) -> fluent_builders::DescribeCommunications<C, M, R> {
         fluent_builders::DescribeCommunications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeServices` operation.
+    /// Constructs a fluent builder for the [`DescribeServices`](crate::client::fluent_builders::DescribeServices) operation.
     ///
-    /// See [`DescribeServices`](crate::client::fluent_builders::DescribeServices) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_code_list(Vec<String>)`](crate::client::fluent_builders::DescribeServices::service_code_list) / [`set_service_code_list(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeServices::set_service_code_list): <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeServices::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeServices::set_language): <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    /// - On success, responds with [`DescribeServicesOutput`](crate::output::DescribeServicesOutput) with field(s):
+    ///   - [`services(Option<Vec<Service>>)`](crate::output::DescribeServicesOutput::services): <p>A JSON-formatted list of Amazon Web Services services.</p>
+    /// - On failure, responds with [`SdkError<DescribeServicesError>`](crate::error::DescribeServicesError)
     pub fn describe_services(&self) -> fluent_builders::DescribeServices<C, M, R> {
         fluent_builders::DescribeServices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSeverityLevels` operation.
+    /// Constructs a fluent builder for the [`DescribeSeverityLevels`](crate::client::fluent_builders::DescribeSeverityLevels) operation.
     ///
-    /// See [`DescribeSeverityLevels`](crate::client::fluent_builders::DescribeSeverityLevels) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeSeverityLevels::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeSeverityLevels::set_language): <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    /// - On success, responds with [`DescribeSeverityLevelsOutput`](crate::output::DescribeSeverityLevelsOutput) with field(s):
+    ///   - [`severity_levels(Option<Vec<SeverityLevel>>)`](crate::output::DescribeSeverityLevelsOutput::severity_levels): <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
+    /// - On failure, responds with [`SdkError<DescribeSeverityLevelsError>`](crate::error::DescribeSeverityLevelsError)
     pub fn describe_severity_levels(&self) -> fluent_builders::DescribeSeverityLevels<C, M, R> {
         fluent_builders::DescribeSeverityLevels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTrustedAdvisorCheckRefreshStatuses` operation.
+    /// Constructs a fluent builder for the [`DescribeTrustedAdvisorCheckRefreshStatuses`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckRefreshStatuses) operation.
     ///
-    /// See [`DescribeTrustedAdvisorCheckRefreshStatuses`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckRefreshStatuses) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`check_ids(Vec<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckRefreshStatuses::check_ids) / [`set_check_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckRefreshStatuses::set_check_ids): <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>   <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>  </note>
+    /// - On success, responds with [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput) with field(s):
+    ///   - [`statuses(Option<Vec<TrustedAdvisorCheckRefreshStatus>>)`](crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput::statuses): <p>The refresh status of the specified Trusted Advisor checks.</p>
+    /// - On failure, responds with [`SdkError<DescribeTrustedAdvisorCheckRefreshStatusesError>`](crate::error::DescribeTrustedAdvisorCheckRefreshStatusesError)
     pub fn describe_trusted_advisor_check_refresh_statuses(
         &self,
     ) -> fluent_builders::DescribeTrustedAdvisorCheckRefreshStatuses<C, M, R> {
         fluent_builders::DescribeTrustedAdvisorCheckRefreshStatuses::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTrustedAdvisorCheckResult` operation.
+    /// Constructs a fluent builder for the [`DescribeTrustedAdvisorCheckResult`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckResult) operation.
     ///
-    /// See [`DescribeTrustedAdvisorCheckResult`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckResult) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`check_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckResult::check_id) / [`set_check_id(Option<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckResult::set_check_id): <p>The unique identifier for the Trusted Advisor check.</p>
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckResult::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckResult::set_language): <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    /// - On success, responds with [`DescribeTrustedAdvisorCheckResultOutput`](crate::output::DescribeTrustedAdvisorCheckResultOutput) with field(s):
+    ///   - [`result(Option<TrustedAdvisorCheckResult>)`](crate::output::DescribeTrustedAdvisorCheckResultOutput::result): <p>The detailed results of the Trusted Advisor check.</p>
+    /// - On failure, responds with [`SdkError<DescribeTrustedAdvisorCheckResultError>`](crate::error::DescribeTrustedAdvisorCheckResultError)
     pub fn describe_trusted_advisor_check_result(
         &self,
     ) -> fluent_builders::DescribeTrustedAdvisorCheckResult<C, M, R> {
         fluent_builders::DescribeTrustedAdvisorCheckResult::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTrustedAdvisorChecks` operation.
+    /// Constructs a fluent builder for the [`DescribeTrustedAdvisorChecks`](crate::client::fluent_builders::DescribeTrustedAdvisorChecks) operation.
     ///
-    /// See [`DescribeTrustedAdvisorChecks`](crate::client::fluent_builders::DescribeTrustedAdvisorChecks) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorChecks::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorChecks::set_language): <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
+    /// - On success, responds with [`DescribeTrustedAdvisorChecksOutput`](crate::output::DescribeTrustedAdvisorChecksOutput) with field(s):
+    ///   - [`checks(Option<Vec<TrustedAdvisorCheckDescription>>)`](crate::output::DescribeTrustedAdvisorChecksOutput::checks): <p>Information about all available Trusted Advisor checks.</p>
+    /// - On failure, responds with [`SdkError<DescribeTrustedAdvisorChecksError>`](crate::error::DescribeTrustedAdvisorChecksError)
     pub fn describe_trusted_advisor_checks(
         &self,
     ) -> fluent_builders::DescribeTrustedAdvisorChecks<C, M, R> {
         fluent_builders::DescribeTrustedAdvisorChecks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTrustedAdvisorCheckSummaries` operation.
+    /// Constructs a fluent builder for the [`DescribeTrustedAdvisorCheckSummaries`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckSummaries) operation.
     ///
-    /// See [`DescribeTrustedAdvisorCheckSummaries`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckSummaries) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`check_ids(Vec<String>)`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckSummaries::check_ids) / [`set_check_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeTrustedAdvisorCheckSummaries::set_check_ids): <p>The IDs of the Trusted Advisor checks.</p>
+    /// - On success, responds with [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::output::DescribeTrustedAdvisorCheckSummariesOutput) with field(s):
+    ///   - [`summaries(Option<Vec<TrustedAdvisorCheckSummary>>)`](crate::output::DescribeTrustedAdvisorCheckSummariesOutput::summaries): <p>The summary information for the requested Trusted Advisor checks.</p>
+    /// - On failure, responds with [`SdkError<DescribeTrustedAdvisorCheckSummariesError>`](crate::error::DescribeTrustedAdvisorCheckSummariesError)
     pub fn describe_trusted_advisor_check_summaries(
         &self,
     ) -> fluent_builders::DescribeTrustedAdvisorCheckSummaries<C, M, R> {
         fluent_builders::DescribeTrustedAdvisorCheckSummaries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RefreshTrustedAdvisorCheck` operation.
+    /// Constructs a fluent builder for the [`RefreshTrustedAdvisorCheck`](crate::client::fluent_builders::RefreshTrustedAdvisorCheck) operation.
     ///
-    /// See [`RefreshTrustedAdvisorCheck`](crate::client::fluent_builders::RefreshTrustedAdvisorCheck) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`check_id(impl Into<String>)`](crate::client::fluent_builders::RefreshTrustedAdvisorCheck::check_id) / [`set_check_id(Option<String>)`](crate::client::fluent_builders::RefreshTrustedAdvisorCheck::set_check_id): <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>   <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>  </note>
+    /// - On success, responds with [`RefreshTrustedAdvisorCheckOutput`](crate::output::RefreshTrustedAdvisorCheckOutput) with field(s):
+    ///   - [`status(Option<TrustedAdvisorCheckRefreshStatus>)`](crate::output::RefreshTrustedAdvisorCheckOutput::status): <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
+    /// - On failure, responds with [`SdkError<RefreshTrustedAdvisorCheckError>`](crate::error::RefreshTrustedAdvisorCheckError)
     pub fn refresh_trusted_advisor_check(
         &self,
     ) -> fluent_builders::RefreshTrustedAdvisorCheck<C, M, R> {
         fluent_builders::RefreshTrustedAdvisorCheck::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResolveCase` operation.
+    /// Constructs a fluent builder for the [`ResolveCase`](crate::client::fluent_builders::ResolveCase) operation.
     ///
-    /// See [`ResolveCase`](crate::client::fluent_builders::ResolveCase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`case_id(impl Into<String>)`](crate::client::fluent_builders::ResolveCase::case_id) / [`set_case_id(Option<String>)`](crate::client::fluent_builders::ResolveCase::set_case_id): <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    /// - On success, responds with [`ResolveCaseOutput`](crate::output::ResolveCaseOutput) with field(s):
+    ///   - [`initial_case_status(Option<String>)`](crate::output::ResolveCaseOutput::initial_case_status): <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
+    ///   - [`final_case_status(Option<String>)`](crate::output::ResolveCaseOutput::final_case_status): <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
+    /// - On failure, responds with [`SdkError<ResolveCaseError>`](crate::error::ResolveCaseError)
     pub fn resolve_case(&self) -> fluent_builders::ResolveCase<C, M, R> {
         fluent_builders::ResolveCase::new(self.handle.clone())
     }

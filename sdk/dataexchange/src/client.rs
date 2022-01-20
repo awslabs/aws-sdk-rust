@@ -83,204 +83,436 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CancelJob` operation.
+    /// Constructs a fluent builder for the [`CancelJob`](crate::client::fluent_builders::CancelJob) operation.
     ///
-    /// See [`CancelJob`](crate::client::fluent_builders::CancelJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::CancelJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::CancelJob::set_job_id): <p>The unique identifier for a job.</p>
+    /// - On success, responds with [`CancelJobOutput`](crate::output::CancelJobOutput)
+
+    /// - On failure, responds with [`SdkError<CancelJobError>`](crate::error::CancelJobError)
     pub fn cancel_job(&self) -> fluent_builders::CancelJob<C, M, R> {
         fluent_builders::CancelJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDataSet` operation.
+    /// Constructs a fluent builder for the [`CreateDataSet`](crate::client::fluent_builders::CreateDataSet) operation.
     ///
-    /// See [`CreateDataSet`](crate::client::fluent_builders::CreateDataSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`asset_type(AssetType)`](crate::client::fluent_builders::CreateDataSet::asset_type) / [`set_asset_type(Option<AssetType>)`](crate::client::fluent_builders::CreateDataSet::set_asset_type): <p>The type of asset that is added to a data set.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDataSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDataSet::set_description): <p>A description for the data set. This value can be up to 16,348 characters long.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDataSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDataSet::set_name): <p>The name of the data set.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDataSet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDataSet::set_tags): <p>A data set tag is an optional label that you can assign to a data set when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
+    /// - On success, responds with [`CreateDataSetOutput`](crate::output::CreateDataSetOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateDataSetOutput::arn): <p>The ARN for the data set.</p>
+    ///   - [`asset_type(Option<AssetType>)`](crate::output::CreateDataSetOutput::asset_type): <p>The type of asset that is added to a data set.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateDataSetOutput::created_at): <p>The date and time that the data set was created, in ISO 8601 format.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateDataSetOutput::description): <p>The description for the data set.</p>
+    ///   - [`id(Option<String>)`](crate::output::CreateDataSetOutput::id): <p>The unique identifier for the data set.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateDataSetOutput::name): <p>The name of the data set.</p>
+    ///   - [`origin(Option<Origin>)`](crate::output::CreateDataSetOutput::origin): <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    ///   - [`origin_details(Option<OriginDetails>)`](crate::output::CreateDataSetOutput::origin_details): <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
+    ///   - [`source_id(Option<String>)`](crate::output::CreateDataSetOutput::source_id): <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateDataSetOutput::tags): <p>The tags for the data set.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::CreateDataSetOutput::updated_at): <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
+    /// - On failure, responds with [`SdkError<CreateDataSetError>`](crate::error::CreateDataSetError)
     pub fn create_data_set(&self) -> fluent_builders::CreateDataSet<C, M, R> {
         fluent_builders::CreateDataSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEventAction` operation.
+    /// Constructs a fluent builder for the [`CreateEventAction`](crate::client::fluent_builders::CreateEventAction) operation.
     ///
-    /// See [`CreateEventAction`](crate::client::fluent_builders::CreateEventAction) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`action(Action)`](crate::client::fluent_builders::CreateEventAction::action) / [`set_action(Option<Action>)`](crate::client::fluent_builders::CreateEventAction::set_action): <p>What occurs after a certain event.</p>
+    ///   - [`event(Event)`](crate::client::fluent_builders::CreateEventAction::event) / [`set_event(Option<Event>)`](crate::client::fluent_builders::CreateEventAction::set_event): <p>What occurs to start an action.</p>
+    /// - On success, responds with [`CreateEventActionOutput`](crate::output::CreateEventActionOutput) with field(s):
+    ///   - [`action(Option<Action>)`](crate::output::CreateEventActionOutput::action): <p>What occurs after a certain event.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateEventActionOutput::arn): <p>The ARN for the event action.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateEventActionOutput::created_at): <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    ///   - [`event(Option<Event>)`](crate::output::CreateEventActionOutput::event): <p>What occurs to start an action.</p>
+    ///   - [`id(Option<String>)`](crate::output::CreateEventActionOutput::id): <p>The unique identifier for the event action.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::CreateEventActionOutput::updated_at): <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    /// - On failure, responds with [`SdkError<CreateEventActionError>`](crate::error::CreateEventActionError)
     pub fn create_event_action(&self) -> fluent_builders::CreateEventAction<C, M, R> {
         fluent_builders::CreateEventAction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateJob` operation.
+    /// Constructs a fluent builder for the [`CreateJob`](crate::client::fluent_builders::CreateJob) operation.
     ///
-    /// See [`CreateJob`](crate::client::fluent_builders::CreateJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`details(RequestDetails)`](crate::client::fluent_builders::CreateJob::details) / [`set_details(Option<RequestDetails>)`](crate::client::fluent_builders::CreateJob::set_details): <p>The details for the CreateJob request.</p>
+    ///   - [`r#type(Type)`](crate::client::fluent_builders::CreateJob::r#type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::CreateJob::set_type): <p>The type of job to be created.</p>
+    /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateJobOutput::arn): <p>The ARN for the job.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateJobOutput::created_at): <p>The date and time that the job was created, in ISO 8601 format.</p>
+    ///   - [`details(Option<ResponseDetails>)`](crate::output::CreateJobOutput::details): <p>Details about the job.</p>
+    ///   - [`errors(Option<Vec<JobError>>)`](crate::output::CreateJobOutput::errors): <p>The errors associated with jobs.</p>
+    ///   - [`id(Option<String>)`](crate::output::CreateJobOutput::id): <p>The unique identifier for the job.</p>
+    ///   - [`state(Option<State>)`](crate::output::CreateJobOutput::state): <p>The state of the job.</p>
+    ///   - [`r#type(Option<Type>)`](crate::output::CreateJobOutput::type): <p>The job type.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::CreateJobOutput::updated_at): <p>The date and time that the job was last updated, in ISO 8601 format.</p>
+    /// - On failure, responds with [`SdkError<CreateJobError>`](crate::error::CreateJobError)
     pub fn create_job(&self) -> fluent_builders::CreateJob<C, M, R> {
         fluent_builders::CreateJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRevision` operation.
+    /// Constructs a fluent builder for the [`CreateRevision`](crate::client::fluent_builders::CreateRevision) operation.
     ///
-    /// See [`CreateRevision`](crate::client::fluent_builders::CreateRevision) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`comment(impl Into<String>)`](crate::client::fluent_builders::CreateRevision::comment) / [`set_comment(Option<String>)`](crate::client::fluent_builders::CreateRevision::set_comment): <p>An optional comment about the revision.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::CreateRevision::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::CreateRevision::set_data_set_id): <p>The unique identifier for a data set.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRevision::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRevision::set_tags): <p>A revision tag is an optional label that you can assign to a revision when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to these data sets and revisions.</p>
+    /// - On success, responds with [`CreateRevisionOutput`](crate::output::CreateRevisionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateRevisionOutput::arn): <p>The ARN for the revision.</p>
+    ///   - [`comment(Option<String>)`](crate::output::CreateRevisionOutput::comment): <p>An optional comment about the revision.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateRevisionOutput::created_at): <p>The date and time that the revision was created, in ISO 8601 format.</p>
+    ///   - [`data_set_id(Option<String>)`](crate::output::CreateRevisionOutput::data_set_id): <p>The unique identifier for the data set associated with this revision.</p>
+    ///   - [`finalized(bool)`](crate::output::CreateRevisionOutput::finalized): <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>  <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    ///   - [`id(Option<String>)`](crate::output::CreateRevisionOutput::id): <p>The unique identifier for the revision.</p>
+    ///   - [`source_id(Option<String>)`](crate::output::CreateRevisionOutput::source_id): <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRevisionOutput::tags): <p>The tags for the revision.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::CreateRevisionOutput::updated_at): <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    /// - On failure, responds with [`SdkError<CreateRevisionError>`](crate::error::CreateRevisionError)
     pub fn create_revision(&self) -> fluent_builders::CreateRevision<C, M, R> {
         fluent_builders::CreateRevision::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAsset` operation.
+    /// Constructs a fluent builder for the [`DeleteAsset`](crate::client::fluent_builders::DeleteAsset) operation.
     ///
-    /// See [`DeleteAsset`](crate::client::fluent_builders::DeleteAsset) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAsset::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::DeleteAsset::set_asset_id): <p>The unique identifier for an asset.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAsset::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::DeleteAsset::set_data_set_id): <p>The unique identifier for a data set.</p>
+    ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAsset::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::DeleteAsset::set_revision_id): <p>The unique identifier for a revision.</p>
+    /// - On success, responds with [`DeleteAssetOutput`](crate::output::DeleteAssetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAssetError>`](crate::error::DeleteAssetError)
     pub fn delete_asset(&self) -> fluent_builders::DeleteAsset<C, M, R> {
         fluent_builders::DeleteAsset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDataSet` operation.
+    /// Constructs a fluent builder for the [`DeleteDataSet`](crate::client::fluent_builders::DeleteDataSet) operation.
     ///
-    /// See [`DeleteDataSet`](crate::client::fluent_builders::DeleteDataSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSet::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSet::set_data_set_id): <p>The unique identifier for a data set.</p>
+    /// - On success, responds with [`DeleteDataSetOutput`](crate::output::DeleteDataSetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDataSetError>`](crate::error::DeleteDataSetError)
     pub fn delete_data_set(&self) -> fluent_builders::DeleteDataSet<C, M, R> {
         fluent_builders::DeleteDataSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEventAction` operation.
+    /// Constructs a fluent builder for the [`DeleteEventAction`](crate::client::fluent_builders::DeleteEventAction) operation.
     ///
-    /// See [`DeleteEventAction`](crate::client::fluent_builders::DeleteEventAction) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`event_action_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEventAction::event_action_id) / [`set_event_action_id(Option<String>)`](crate::client::fluent_builders::DeleteEventAction::set_event_action_id): <p>The unique identifier for the event action.</p>
+    /// - On success, responds with [`DeleteEventActionOutput`](crate::output::DeleteEventActionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEventActionError>`](crate::error::DeleteEventActionError)
     pub fn delete_event_action(&self) -> fluent_builders::DeleteEventAction<C, M, R> {
         fluent_builders::DeleteEventAction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRevision` operation.
+    /// Constructs a fluent builder for the [`DeleteRevision`](crate::client::fluent_builders::DeleteRevision) operation.
     ///
-    /// See [`DeleteRevision`](crate::client::fluent_builders::DeleteRevision) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRevision::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::DeleteRevision::set_data_set_id): <p>The unique identifier for a data set.</p>
+    ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRevision::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::DeleteRevision::set_revision_id): <p>The unique identifier for a revision.</p>
+    /// - On success, responds with [`DeleteRevisionOutput`](crate::output::DeleteRevisionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRevisionError>`](crate::error::DeleteRevisionError)
     pub fn delete_revision(&self) -> fluent_builders::DeleteRevision<C, M, R> {
         fluent_builders::DeleteRevision::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAsset` operation.
+    /// Constructs a fluent builder for the [`GetAsset`](crate::client::fluent_builders::GetAsset) operation.
     ///
-    /// See [`GetAsset`](crate::client::fluent_builders::GetAsset) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::GetAsset::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::GetAsset::set_asset_id): <p>The unique identifier for an asset.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::GetAsset::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::GetAsset::set_data_set_id): <p>The unique identifier for a data set.</p>
+    ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::GetAsset::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::GetAsset::set_revision_id): <p>The unique identifier for a revision.</p>
+    /// - On success, responds with [`GetAssetOutput`](crate::output::GetAssetOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetAssetOutput::arn): <p>The ARN for the asset.</p>
+    ///   - [`asset_details(Option<AssetDetails>)`](crate::output::GetAssetOutput::asset_details): <p>Information about the asset.</p>
+    ///   - [`asset_type(Option<AssetType>)`](crate::output::GetAssetOutput::asset_type): <p>The type of asset that is added to a data set.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetAssetOutput::created_at): <p>The date and time that the asset was created, in ISO 8601 format.</p>
+    ///   - [`data_set_id(Option<String>)`](crate::output::GetAssetOutput::data_set_id): <p>The unique identifier for the data set associated with this asset.</p>
+    ///   - [`id(Option<String>)`](crate::output::GetAssetOutput::id): <p>The unique identifier for the asset.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetAssetOutput::name): <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::GetAssetOutput::revision_id): <p>The unique identifier for the revision associated with this asset.</p>
+    ///   - [`source_id(Option<String>)`](crate::output::GetAssetOutput::source_id): <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::GetAssetOutput::updated_at): <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
+    /// - On failure, responds with [`SdkError<GetAssetError>`](crate::error::GetAssetError)
     pub fn get_asset(&self) -> fluent_builders::GetAsset<C, M, R> {
         fluent_builders::GetAsset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDataSet` operation.
+    /// Constructs a fluent builder for the [`GetDataSet`](crate::client::fluent_builders::GetDataSet) operation.
     ///
-    /// See [`GetDataSet`](crate::client::fluent_builders::GetDataSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::GetDataSet::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::GetDataSet::set_data_set_id): <p>The unique identifier for a data set.</p>
+    /// - On success, responds with [`GetDataSetOutput`](crate::output::GetDataSetOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetDataSetOutput::arn): <p>The ARN for the data set.</p>
+    ///   - [`asset_type(Option<AssetType>)`](crate::output::GetDataSetOutput::asset_type): <p>The type of asset that is added to a data set.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetDataSetOutput::created_at): <p>The date and time that the data set was created, in ISO 8601 format.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetDataSetOutput::description): <p>The description for the data set.</p>
+    ///   - [`id(Option<String>)`](crate::output::GetDataSetOutput::id): <p>The unique identifier for the data set.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetDataSetOutput::name): <p>The name of the data set.</p>
+    ///   - [`origin(Option<Origin>)`](crate::output::GetDataSetOutput::origin): <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    ///   - [`origin_details(Option<OriginDetails>)`](crate::output::GetDataSetOutput::origin_details): <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
+    ///   - [`source_id(Option<String>)`](crate::output::GetDataSetOutput::source_id): <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetDataSetOutput::tags): <p>The tags for the data set.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::GetDataSetOutput::updated_at): <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
+    /// - On failure, responds with [`SdkError<GetDataSetError>`](crate::error::GetDataSetError)
     pub fn get_data_set(&self) -> fluent_builders::GetDataSet<C, M, R> {
         fluent_builders::GetDataSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEventAction` operation.
+    /// Constructs a fluent builder for the [`GetEventAction`](crate::client::fluent_builders::GetEventAction) operation.
     ///
-    /// See [`GetEventAction`](crate::client::fluent_builders::GetEventAction) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`event_action_id(impl Into<String>)`](crate::client::fluent_builders::GetEventAction::event_action_id) / [`set_event_action_id(Option<String>)`](crate::client::fluent_builders::GetEventAction::set_event_action_id): <p>The unique identifier for the event action.</p>
+    /// - On success, responds with [`GetEventActionOutput`](crate::output::GetEventActionOutput) with field(s):
+    ///   - [`action(Option<Action>)`](crate::output::GetEventActionOutput::action): <p>What occurs after a certain event.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetEventActionOutput::arn): <p>The ARN for the event action.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetEventActionOutput::created_at): <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    ///   - [`event(Option<Event>)`](crate::output::GetEventActionOutput::event): <p>What occurs to start an action.</p>
+    ///   - [`id(Option<String>)`](crate::output::GetEventActionOutput::id): <p>The unique identifier for the event action.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::GetEventActionOutput::updated_at): <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    /// - On failure, responds with [`SdkError<GetEventActionError>`](crate::error::GetEventActionError)
     pub fn get_event_action(&self) -> fluent_builders::GetEventAction<C, M, R> {
         fluent_builders::GetEventAction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJob` operation.
+    /// Constructs a fluent builder for the [`GetJob`](crate::client::fluent_builders::GetJob) operation.
     ///
-    /// See [`GetJob`](crate::client::fluent_builders::GetJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetJob::set_job_id): <p>The unique identifier for a job.</p>
+    /// - On success, responds with [`GetJobOutput`](crate::output::GetJobOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetJobOutput::arn): <p>The ARN for the job.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetJobOutput::created_at): <p>The date and time that the job was created, in ISO 8601 format.</p>
+    ///   - [`details(Option<ResponseDetails>)`](crate::output::GetJobOutput::details): <p>Details about the job.</p>
+    ///   - [`errors(Option<Vec<JobError>>)`](crate::output::GetJobOutput::errors): <p>The errors associated with jobs.</p>
+    ///   - [`id(Option<String>)`](crate::output::GetJobOutput::id): <p>The unique identifier for the job.</p>
+    ///   - [`state(Option<State>)`](crate::output::GetJobOutput::state): <p>The state of the job.</p>
+    ///   - [`r#type(Option<Type>)`](crate::output::GetJobOutput::type): <p>The job type.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::GetJobOutput::updated_at): <p>The date and time that the job was last updated, in ISO 8601 format.</p>
+    /// - On failure, responds with [`SdkError<GetJobError>`](crate::error::GetJobError)
     pub fn get_job(&self) -> fluent_builders::GetJob<C, M, R> {
         fluent_builders::GetJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRevision` operation.
+    /// Constructs a fluent builder for the [`GetRevision`](crate::client::fluent_builders::GetRevision) operation.
     ///
-    /// See [`GetRevision`](crate::client::fluent_builders::GetRevision) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::GetRevision::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::GetRevision::set_data_set_id): <p>The unique identifier for a data set.</p>
+    ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::GetRevision::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::GetRevision::set_revision_id): <p>The unique identifier for a revision.</p>
+    /// - On success, responds with [`GetRevisionOutput`](crate::output::GetRevisionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetRevisionOutput::arn): <p>The ARN for the revision.</p>
+    ///   - [`comment(Option<String>)`](crate::output::GetRevisionOutput::comment): <p>An optional comment about the revision.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetRevisionOutput::created_at): <p>The date and time that the revision was created, in ISO 8601 format.</p>
+    ///   - [`data_set_id(Option<String>)`](crate::output::GetRevisionOutput::data_set_id): <p>The unique identifier for the data set associated with this revision.</p>
+    ///   - [`finalized(bool)`](crate::output::GetRevisionOutput::finalized): <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>  <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    ///   - [`id(Option<String>)`](crate::output::GetRevisionOutput::id): <p>The unique identifier for the revision.</p>
+    ///   - [`source_id(Option<String>)`](crate::output::GetRevisionOutput::source_id): <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetRevisionOutput::tags): <p>The tags for the revision.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::GetRevisionOutput::updated_at): <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    /// - On failure, responds with [`SdkError<GetRevisionError>`](crate::error::GetRevisionError)
     pub fn get_revision(&self) -> fluent_builders::GetRevision<C, M, R> {
         fluent_builders::GetRevision::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDataSetRevisions` operation.
+    /// Constructs a fluent builder for the [`ListDataSetRevisions`](crate::client::fluent_builders::ListDataSetRevisions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataSetRevisions::into_paginator).
     ///
-    /// See [`ListDataSetRevisions`](crate::client::fluent_builders::ListDataSetRevisions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataSetRevisions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSetRevisions::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::ListDataSetRevisions::set_data_set_id): <p>The unique identifier for a data set.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSetRevisions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDataSetRevisions::set_max_results): <p>The maximum number of results returned by a single call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSetRevisions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSetRevisions::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
+    /// - On success, responds with [`ListDataSetRevisionsOutput`](crate::output::ListDataSetRevisionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListDataSetRevisionsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
+    ///   - [`revisions(Option<Vec<RevisionEntry>>)`](crate::output::ListDataSetRevisionsOutput::revisions): <p>The asset objects listed by the request.</p>
+    /// - On failure, responds with [`SdkError<ListDataSetRevisionsError>`](crate::error::ListDataSetRevisionsError)
     pub fn list_data_set_revisions(&self) -> fluent_builders::ListDataSetRevisions<C, M, R> {
         fluent_builders::ListDataSetRevisions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDataSets` operation.
+    /// Constructs a fluent builder for the [`ListDataSets`](crate::client::fluent_builders::ListDataSets) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataSets::into_paginator).
     ///
-    /// See [`ListDataSets`](crate::client::fluent_builders::ListDataSets) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataSets::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSets::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDataSets::set_max_results): <p>The maximum number of results returned by a single call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSets::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
+    ///   - [`origin(impl Into<String>)`](crate::client::fluent_builders::ListDataSets::origin) / [`set_origin(Option<String>)`](crate::client::fluent_builders::ListDataSets::set_origin): <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    /// - On success, responds with [`ListDataSetsOutput`](crate::output::ListDataSetsOutput) with field(s):
+    ///   - [`data_sets(Option<Vec<DataSetEntry>>)`](crate::output::ListDataSetsOutput::data_sets): <p>The data set objects listed by the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDataSetsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListDataSetsError>`](crate::error::ListDataSetsError)
     pub fn list_data_sets(&self) -> fluent_builders::ListDataSets<C, M, R> {
         fluent_builders::ListDataSets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEventActions` operation.
+    /// Constructs a fluent builder for the [`ListEventActions`](crate::client::fluent_builders::ListEventActions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEventActions::into_paginator).
     ///
-    /// See [`ListEventActions`](crate::client::fluent_builders::ListEventActions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEventActions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`event_source_id(impl Into<String>)`](crate::client::fluent_builders::ListEventActions::event_source_id) / [`set_event_source_id(Option<String>)`](crate::client::fluent_builders::ListEventActions::set_event_source_id): <p>The unique identifier for the event source.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEventActions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListEventActions::set_max_results): <p>The maximum number of results returned by a single call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEventActions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEventActions::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
+    /// - On success, responds with [`ListEventActionsOutput`](crate::output::ListEventActionsOutput) with field(s):
+    ///   - [`event_actions(Option<Vec<EventActionEntry>>)`](crate::output::ListEventActionsOutput::event_actions): <p>The event action objects listed by the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEventActionsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListEventActionsError>`](crate::error::ListEventActionsError)
     pub fn list_event_actions(&self) -> fluent_builders::ListEventActions<C, M, R> {
         fluent_builders::ListEventActions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListJobs` operation.
+    /// Constructs a fluent builder for the [`ListJobs`](crate::client::fluent_builders::ListJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
     ///
-    /// See [`ListJobs`](crate::client::fluent_builders::ListJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::ListJobs::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::ListJobs::set_data_set_id): <p>The unique identifier for a data set.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListJobs::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListJobs::set_max_results): <p>The maximum number of results returned by a single call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListJobs::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
+    ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::ListJobs::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::ListJobs::set_revision_id): <p>The unique identifier for a revision.</p>
+    /// - On success, responds with [`ListJobsOutput`](crate::output::ListJobsOutput) with field(s):
+    ///   - [`jobs(Option<Vec<JobEntry>>)`](crate::output::ListJobsOutput::jobs): <p>The jobs listed by the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListJobsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListJobsError>`](crate::error::ListJobsError)
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRevisionAssets` operation.
+    /// Constructs a fluent builder for the [`ListRevisionAssets`](crate::client::fluent_builders::ListRevisionAssets) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRevisionAssets::into_paginator).
     ///
-    /// See [`ListRevisionAssets`](crate::client::fluent_builders::ListRevisionAssets) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRevisionAssets::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::ListRevisionAssets::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::ListRevisionAssets::set_data_set_id): <p>The unique identifier for a data set.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRevisionAssets::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRevisionAssets::set_max_results): <p>The maximum number of results returned by a single call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRevisionAssets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRevisionAssets::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
+    ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::ListRevisionAssets::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::ListRevisionAssets::set_revision_id): <p>The unique identifier for a revision.</p>
+    /// - On success, responds with [`ListRevisionAssetsOutput`](crate::output::ListRevisionAssetsOutput) with field(s):
+    ///   - [`assets(Option<Vec<AssetEntry>>)`](crate::output::ListRevisionAssetsOutput::assets): <p>The asset objects listed by the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRevisionAssetsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListRevisionAssetsError>`](crate::error::ListRevisionAssetsError)
     pub fn list_revision_assets(&self) -> fluent_builders::ListRevisionAssets<C, M, R> {
         fluent_builders::ListRevisionAssets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): A label that consists of a customer-defined key and an optional value.
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendApiAsset` operation.
+    /// Constructs a fluent builder for the [`SendApiAsset`](crate::client::fluent_builders::SendApiAsset) operation.
     ///
-    /// See [`SendApiAsset`](crate::client::fluent_builders::SendApiAsset) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`body(impl Into<String>)`](crate::client::fluent_builders::SendApiAsset::body) / [`set_body(Option<String>)`](crate::client::fluent_builders::SendApiAsset::set_body): <p>The request body.</p>
+    ///   - [`query_string_parameters(HashMap<String, String>)`](crate::client::fluent_builders::SendApiAsset::query_string_parameters) / [`set_query_string_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::SendApiAsset::set_query_string_parameters): <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::SendApiAsset::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::SendApiAsset::set_asset_id): <p>Asset ID value for the API request.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::SendApiAsset::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::SendApiAsset::set_data_set_id): <p>Data set ID value for the API request.</p>
+    ///   - [`request_headers(HashMap<String, String>)`](crate::client::fluent_builders::SendApiAsset::request_headers) / [`set_request_headers(Option<HashMap<String, String>>)`](crate::client::fluent_builders::SendApiAsset::set_request_headers): <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
+    ///   - [`method(impl Into<String>)`](crate::client::fluent_builders::SendApiAsset::method) / [`set_method(Option<String>)`](crate::client::fluent_builders::SendApiAsset::set_method): <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
+    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::SendApiAsset::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::SendApiAsset::set_path): <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
+    ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::SendApiAsset::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::SendApiAsset::set_revision_id): <p>Revision ID value for the API request.</p>
+    /// - On success, responds with [`SendApiAssetOutput`](crate::output::SendApiAssetOutput) with field(s):
+    ///   - [`body(Option<String>)`](crate::output::SendApiAssetOutput::body): <p>The response body from the underlying API tracked by the API asset.</p>
+    ///   - [`response_headers(Option<HashMap<String, String>>)`](crate::output::SendApiAssetOutput::response_headers): <p>The response headers from the underlying API tracked by the API asset.</p>
+    /// - On failure, responds with [`SdkError<SendApiAssetError>`](crate::error::SendApiAssetError)
     pub fn send_api_asset(&self) -> fluent_builders::SendApiAsset<C, M, R> {
         fluent_builders::SendApiAsset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartJob` operation.
+    /// Constructs a fluent builder for the [`StartJob`](crate::client::fluent_builders::StartJob) operation.
     ///
-    /// See [`StartJob`](crate::client::fluent_builders::StartJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::StartJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::StartJob::set_job_id): <p>The unique identifier for a job.</p>
+    /// - On success, responds with [`StartJobOutput`](crate::output::StartJobOutput)
+
+    /// - On failure, responds with [`SdkError<StartJobError>`](crate::error::StartJobError)
     pub fn start_job(&self) -> fluent_builders::StartJob<C, M, R> {
         fluent_builders::StartJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): A label that consists of a customer-defined key and an optional value.
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): The key tags.
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAsset` operation.
+    /// Constructs a fluent builder for the [`UpdateAsset`](crate::client::fluent_builders::UpdateAsset) operation.
     ///
-    /// See [`UpdateAsset`](crate::client::fluent_builders::UpdateAsset) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`asset_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::asset_id) / [`set_asset_id(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_asset_id): <p>The unique identifier for an asset.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_data_set_id): <p>The unique identifier for a data set.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_name): <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+    ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAsset::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::UpdateAsset::set_revision_id): <p>The unique identifier for a revision.</p>
+    /// - On success, responds with [`UpdateAssetOutput`](crate::output::UpdateAssetOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateAssetOutput::arn): <p>The ARN for the asset.</p>
+    ///   - [`asset_details(Option<AssetDetails>)`](crate::output::UpdateAssetOutput::asset_details): <p>Information about the asset.</p>
+    ///   - [`asset_type(Option<AssetType>)`](crate::output::UpdateAssetOutput::asset_type): <p>The type of asset that is added to a data set.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::UpdateAssetOutput::created_at): <p>The date and time that the asset was created, in ISO 8601 format.</p>
+    ///   - [`data_set_id(Option<String>)`](crate::output::UpdateAssetOutput::data_set_id): <p>The unique identifier for the data set associated with this asset.</p>
+    ///   - [`id(Option<String>)`](crate::output::UpdateAssetOutput::id): <p>The unique identifier for the asset.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateAssetOutput::name): <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::UpdateAssetOutput::revision_id): <p>The unique identifier for the revision associated with this asset.</p>
+    ///   - [`source_id(Option<String>)`](crate::output::UpdateAssetOutput::source_id): <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::UpdateAssetOutput::updated_at): <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
+    /// - On failure, responds with [`SdkError<UpdateAssetError>`](crate::error::UpdateAssetError)
     pub fn update_asset(&self) -> fluent_builders::UpdateAsset<C, M, R> {
         fluent_builders::UpdateAsset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDataSet` operation.
+    /// Constructs a fluent builder for the [`UpdateDataSet`](crate::client::fluent_builders::UpdateDataSet) operation.
     ///
-    /// See [`UpdateDataSet`](crate::client::fluent_builders::UpdateDataSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSet::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSet::set_data_set_id): <p>The unique identifier for a data set.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDataSet::set_description): <p>The description for the data set.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDataSet::set_name): <p>The name of the data set.</p>
+    /// - On success, responds with [`UpdateDataSetOutput`](crate::output::UpdateDataSetOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateDataSetOutput::arn): <p>The ARN for the data set.</p>
+    ///   - [`asset_type(Option<AssetType>)`](crate::output::UpdateDataSetOutput::asset_type): <p>The type of asset that is added to a data set.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::UpdateDataSetOutput::created_at): <p>The date and time that the data set was created, in ISO 8601 format.</p>
+    ///   - [`description(Option<String>)`](crate::output::UpdateDataSetOutput::description): <p>The description for the data set.</p>
+    ///   - [`id(Option<String>)`](crate::output::UpdateDataSetOutput::id): <p>The unique identifier for the data set.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateDataSetOutput::name): <p>The name of the data set.</p>
+    ///   - [`origin(Option<Origin>)`](crate::output::UpdateDataSetOutput::origin): <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    ///   - [`origin_details(Option<OriginDetails>)`](crate::output::UpdateDataSetOutput::origin_details): <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
+    ///   - [`source_id(Option<String>)`](crate::output::UpdateDataSetOutput::source_id): <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::UpdateDataSetOutput::updated_at): <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
+    /// - On failure, responds with [`SdkError<UpdateDataSetError>`](crate::error::UpdateDataSetError)
     pub fn update_data_set(&self) -> fluent_builders::UpdateDataSet<C, M, R> {
         fluent_builders::UpdateDataSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEventAction` operation.
+    /// Constructs a fluent builder for the [`UpdateEventAction`](crate::client::fluent_builders::UpdateEventAction) operation.
     ///
-    /// See [`UpdateEventAction`](crate::client::fluent_builders::UpdateEventAction) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`action(Action)`](crate::client::fluent_builders::UpdateEventAction::action) / [`set_action(Option<Action>)`](crate::client::fluent_builders::UpdateEventAction::set_action): <p>What occurs after a certain event.</p>
+    ///   - [`event_action_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEventAction::event_action_id) / [`set_event_action_id(Option<String>)`](crate::client::fluent_builders::UpdateEventAction::set_event_action_id): <p>The unique identifier for the event action.</p>
+    /// - On success, responds with [`UpdateEventActionOutput`](crate::output::UpdateEventActionOutput) with field(s):
+    ///   - [`action(Option<Action>)`](crate::output::UpdateEventActionOutput::action): <p>What occurs after a certain event.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateEventActionOutput::arn): <p>The ARN for the event action.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::UpdateEventActionOutput::created_at): <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    ///   - [`event(Option<Event>)`](crate::output::UpdateEventActionOutput::event): <p>What occurs to start an action.</p>
+    ///   - [`id(Option<String>)`](crate::output::UpdateEventActionOutput::id): <p>The unique identifier for the event action.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::UpdateEventActionOutput::updated_at): <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    /// - On failure, responds with [`SdkError<UpdateEventActionError>`](crate::error::UpdateEventActionError)
     pub fn update_event_action(&self) -> fluent_builders::UpdateEventAction<C, M, R> {
         fluent_builders::UpdateEventAction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRevision` operation.
+    /// Constructs a fluent builder for the [`UpdateRevision`](crate::client::fluent_builders::UpdateRevision) operation.
     ///
-    /// See [`UpdateRevision`](crate::client::fluent_builders::UpdateRevision) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`comment(impl Into<String>)`](crate::client::fluent_builders::UpdateRevision::comment) / [`set_comment(Option<String>)`](crate::client::fluent_builders::UpdateRevision::set_comment): <p>An optional comment about the revision.</p>
+    ///   - [`data_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRevision::data_set_id) / [`set_data_set_id(Option<String>)`](crate::client::fluent_builders::UpdateRevision::set_data_set_id): <p>The unique identifier for a data set.</p>
+    ///   - [`finalized(bool)`](crate::client::fluent_builders::UpdateRevision::finalized) / [`set_finalized(bool)`](crate::client::fluent_builders::UpdateRevision::set_finalized): <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+    ///   - [`revision_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRevision::revision_id) / [`set_revision_id(Option<String>)`](crate::client::fluent_builders::UpdateRevision::set_revision_id): <p>The unique identifier for a revision.</p>
+    /// - On success, responds with [`UpdateRevisionOutput`](crate::output::UpdateRevisionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateRevisionOutput::arn): <p>The ARN for the revision.</p>
+    ///   - [`comment(Option<String>)`](crate::output::UpdateRevisionOutput::comment): <p>An optional comment about the revision.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::UpdateRevisionOutput::created_at): <p>The date and time that the revision was created, in ISO 8601 format.</p>
+    ///   - [`data_set_id(Option<String>)`](crate::output::UpdateRevisionOutput::data_set_id): <p>The unique identifier for the data set associated with this revision.</p>
+    ///   - [`finalized(bool)`](crate::output::UpdateRevisionOutput::finalized): <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>  <p>Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
+    ///   - [`id(Option<String>)`](crate::output::UpdateRevisionOutput::id): <p>The unique identifier for the revision.</p>
+    ///   - [`source_id(Option<String>)`](crate::output::UpdateRevisionOutput::source_id): <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::UpdateRevisionOutput::updated_at): <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
+    /// - On failure, responds with [`SdkError<UpdateRevisionError>`](crate::error::UpdateRevisionError)
     pub fn update_revision(&self) -> fluent_builders::UpdateRevision<C, M, R> {
         fluent_builders::UpdateRevision::new(self.handle.clone())
     }

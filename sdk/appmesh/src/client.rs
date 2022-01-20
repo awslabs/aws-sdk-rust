@@ -83,277 +83,516 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateGatewayRoute` operation.
+    /// Constructs a fluent builder for the [`CreateGatewayRoute`](crate::client::fluent_builders::CreateGatewayRoute) operation.
     ///
-    /// See [`CreateGatewayRoute`](crate::client::fluent_builders::CreateGatewayRoute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_route_name(impl Into<String>)`](crate::client::fluent_builders::CreateGatewayRoute::gateway_route_name) / [`set_gateway_route_name(Option<String>)`](crate::client::fluent_builders::CreateGatewayRoute::set_gateway_route_name): <p>The name to use for the gateway route.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::CreateGatewayRoute::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::CreateGatewayRoute::set_mesh_name): <p>The name of the service mesh to create the gateway route in.</p>
+    ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::CreateGatewayRoute::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::CreateGatewayRoute::set_virtual_gateway_name): <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
+    ///   - [`spec(GatewayRouteSpec)`](crate::client::fluent_builders::CreateGatewayRoute::spec) / [`set_spec(Option<GatewayRouteSpec>)`](crate::client::fluent_builders::CreateGatewayRoute::set_spec): <p>The gateway route specification to apply.</p>
+    ///   - [`tags(Vec<TagRef>)`](crate::client::fluent_builders::CreateGatewayRoute::tags) / [`set_tags(Option<Vec<TagRef>>)`](crate::client::fluent_builders::CreateGatewayRoute::set_tags): <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateGatewayRoute::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateGatewayRoute::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateGatewayRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateGatewayRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput) with field(s):
+    ///   - [`gateway_route(Option<GatewayRouteData>)`](crate::output::CreateGatewayRouteOutput::gateway_route): <p>The full description of your gateway route following the create call.</p>
+    /// - On failure, responds with [`SdkError<CreateGatewayRouteError>`](crate::error::CreateGatewayRouteError)
     pub fn create_gateway_route(&self) -> fluent_builders::CreateGatewayRoute<C, M, R> {
         fluent_builders::CreateGatewayRoute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMesh` operation.
+    /// Constructs a fluent builder for the [`CreateMesh`](crate::client::fluent_builders::CreateMesh) operation.
     ///
-    /// See [`CreateMesh`](crate::client::fluent_builders::CreateMesh) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::CreateMesh::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::CreateMesh::set_mesh_name): <p>The name to use for the service mesh.</p>
+    ///   - [`spec(MeshSpec)`](crate::client::fluent_builders::CreateMesh::spec) / [`set_spec(Option<MeshSpec>)`](crate::client::fluent_builders::CreateMesh::set_spec): <p>The service mesh specification to apply.</p>
+    ///   - [`tags(Vec<TagRef>)`](crate::client::fluent_builders::CreateMesh::tags) / [`set_tags(Option<Vec<TagRef>>)`](crate::client::fluent_builders::CreateMesh::set_tags): <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateMesh::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateMesh::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// - On success, responds with [`CreateMeshOutput`](crate::output::CreateMeshOutput) with field(s):
+    ///   - [`mesh(Option<MeshData>)`](crate::output::CreateMeshOutput::mesh): <p>The full description of your service mesh following the create call.</p>
+    /// - On failure, responds with [`SdkError<CreateMeshError>`](crate::error::CreateMeshError)
     pub fn create_mesh(&self) -> fluent_builders::CreateMesh<C, M, R> {
         fluent_builders::CreateMesh::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRoute` operation.
+    /// Constructs a fluent builder for the [`CreateRoute`](crate::client::fluent_builders::CreateRoute) operation.
     ///
-    /// See [`CreateRoute`](crate::client::fluent_builders::CreateRoute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`route_name(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::route_name) / [`set_route_name(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_route_name): <p>The name to use for the route.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_mesh_name): <p>The name of the service mesh to create the route in.</p>
+    ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_virtual_router_name): <p>The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.</p>
+    ///   - [`spec(RouteSpec)`](crate::client::fluent_builders::CreateRoute::spec) / [`set_spec(Option<RouteSpec>)`](crate::client::fluent_builders::CreateRoute::set_spec): <p>The route specification to apply.</p>
+    ///   - [`tags(Vec<TagRef>)`](crate::client::fluent_builders::CreateRoute::tags) / [`set_tags(Option<Vec<TagRef>>)`](crate::client::fluent_builders::CreateRoute::set_tags): <p>Optional metadata that you can apply to the route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`CreateRouteOutput`](crate::output::CreateRouteOutput) with field(s):
+    ///   - [`route(Option<RouteData>)`](crate::output::CreateRouteOutput::route): <p>The full description of your mesh following the create call.</p>
+    /// - On failure, responds with [`SdkError<CreateRouteError>`](crate::error::CreateRouteError)
     pub fn create_route(&self) -> fluent_builders::CreateRoute<C, M, R> {
         fluent_builders::CreateRoute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVirtualGateway` operation.
+    /// Constructs a fluent builder for the [`CreateVirtualGateway`](crate::client::fluent_builders::CreateVirtualGateway) operation.
     ///
-    /// See [`CreateVirtualGateway`](crate::client::fluent_builders::CreateVirtualGateway) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualGateway::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::CreateVirtualGateway::set_virtual_gateway_name): <p>The name to use for the virtual gateway.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualGateway::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::CreateVirtualGateway::set_mesh_name): <p>The name of the service mesh to create the virtual gateway in.</p>
+    ///   - [`spec(VirtualGatewaySpec)`](crate::client::fluent_builders::CreateVirtualGateway::spec) / [`set_spec(Option<VirtualGatewaySpec>)`](crate::client::fluent_builders::CreateVirtualGateway::set_spec): <p>The virtual gateway specification to apply.</p>
+    ///   - [`tags(Vec<TagRef>)`](crate::client::fluent_builders::CreateVirtualGateway::tags) / [`set_tags(Option<Vec<TagRef>>)`](crate::client::fluent_builders::CreateVirtualGateway::set_tags): <p>Optional metadata that you can apply to the virtual gateway to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualGateway::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVirtualGateway::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualGateway::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateVirtualGateway::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput) with field(s):
+    ///   - [`virtual_gateway(Option<VirtualGatewayData>)`](crate::output::CreateVirtualGatewayOutput::virtual_gateway): <p>The full description of your virtual gateway following the create call.</p>
+    /// - On failure, responds with [`SdkError<CreateVirtualGatewayError>`](crate::error::CreateVirtualGatewayError)
     pub fn create_virtual_gateway(&self) -> fluent_builders::CreateVirtualGateway<C, M, R> {
         fluent_builders::CreateVirtualGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVirtualNode` operation.
+    /// Constructs a fluent builder for the [`CreateVirtualNode`](crate::client::fluent_builders::CreateVirtualNode) operation.
     ///
-    /// See [`CreateVirtualNode`](crate::client::fluent_builders::CreateVirtualNode) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_node_name(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualNode::virtual_node_name) / [`set_virtual_node_name(Option<String>)`](crate::client::fluent_builders::CreateVirtualNode::set_virtual_node_name): <p>The name to use for the virtual node.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualNode::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::CreateVirtualNode::set_mesh_name): <p>The name of the service mesh to create the virtual node in.</p>
+    ///   - [`spec(VirtualNodeSpec)`](crate::client::fluent_builders::CreateVirtualNode::spec) / [`set_spec(Option<VirtualNodeSpec>)`](crate::client::fluent_builders::CreateVirtualNode::set_spec): <p>The virtual node specification to apply.</p>
+    ///   - [`tags(Vec<TagRef>)`](crate::client::fluent_builders::CreateVirtualNode::tags) / [`set_tags(Option<Vec<TagRef>>)`](crate::client::fluent_builders::CreateVirtualNode::set_tags): <p>Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualNode::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVirtualNode::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualNode::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateVirtualNode::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput) with field(s):
+    ///   - [`virtual_node(Option<VirtualNodeData>)`](crate::output::CreateVirtualNodeOutput::virtual_node): <p>The full description of your virtual node following the create call.</p>
+    /// - On failure, responds with [`SdkError<CreateVirtualNodeError>`](crate::error::CreateVirtualNodeError)
     pub fn create_virtual_node(&self) -> fluent_builders::CreateVirtualNode<C, M, R> {
         fluent_builders::CreateVirtualNode::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVirtualRouter` operation.
+    /// Constructs a fluent builder for the [`CreateVirtualRouter`](crate::client::fluent_builders::CreateVirtualRouter) operation.
     ///
-    /// See [`CreateVirtualRouter`](crate::client::fluent_builders::CreateVirtualRouter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualRouter::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::CreateVirtualRouter::set_virtual_router_name): <p>The name to use for the virtual router.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualRouter::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::CreateVirtualRouter::set_mesh_name): <p>The name of the service mesh to create the virtual router in.</p>
+    ///   - [`spec(VirtualRouterSpec)`](crate::client::fluent_builders::CreateVirtualRouter::spec) / [`set_spec(Option<VirtualRouterSpec>)`](crate::client::fluent_builders::CreateVirtualRouter::set_spec): <p>The virtual router specification to apply.</p>
+    ///   - [`tags(Vec<TagRef>)`](crate::client::fluent_builders::CreateVirtualRouter::tags) / [`set_tags(Option<Vec<TagRef>>)`](crate::client::fluent_builders::CreateVirtualRouter::set_tags): <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualRouter::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVirtualRouter::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualRouter::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateVirtualRouter::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput) with field(s):
+    ///   - [`virtual_router(Option<VirtualRouterData>)`](crate::output::CreateVirtualRouterOutput::virtual_router): <p>The full description of your virtual router following the create call.</p>
+    /// - On failure, responds with [`SdkError<CreateVirtualRouterError>`](crate::error::CreateVirtualRouterError)
     pub fn create_virtual_router(&self) -> fluent_builders::CreateVirtualRouter<C, M, R> {
         fluent_builders::CreateVirtualRouter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVirtualService` operation.
+    /// Constructs a fluent builder for the [`CreateVirtualService`](crate::client::fluent_builders::CreateVirtualService) operation.
     ///
-    /// See [`CreateVirtualService`](crate::client::fluent_builders::CreateVirtualService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_service_name(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualService::virtual_service_name) / [`set_virtual_service_name(Option<String>)`](crate::client::fluent_builders::CreateVirtualService::set_virtual_service_name): <p>The name to use for the virtual service.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualService::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::CreateVirtualService::set_mesh_name): <p>The name of the service mesh to create the virtual service in.</p>
+    ///   - [`spec(VirtualServiceSpec)`](crate::client::fluent_builders::CreateVirtualService::spec) / [`set_spec(Option<VirtualServiceSpec>)`](crate::client::fluent_builders::CreateVirtualService::set_spec): <p>The virtual service specification to apply.</p>
+    ///   - [`tags(Vec<TagRef>)`](crate::client::fluent_builders::CreateVirtualService::tags) / [`set_tags(Option<Vec<TagRef>>)`](crate::client::fluent_builders::CreateVirtualService::set_tags): <p>Optional metadata that you can apply to the virtual service to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualService::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVirtualService::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::CreateVirtualService::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::CreateVirtualService::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput) with field(s):
+    ///   - [`virtual_service(Option<VirtualServiceData>)`](crate::output::CreateVirtualServiceOutput::virtual_service): <p>The full description of your virtual service following the create call.</p>
+    /// - On failure, responds with [`SdkError<CreateVirtualServiceError>`](crate::error::CreateVirtualServiceError)
     pub fn create_virtual_service(&self) -> fluent_builders::CreateVirtualService<C, M, R> {
         fluent_builders::CreateVirtualService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGatewayRoute` operation.
+    /// Constructs a fluent builder for the [`DeleteGatewayRoute`](crate::client::fluent_builders::DeleteGatewayRoute) operation.
     ///
-    /// See [`DeleteGatewayRoute`](crate::client::fluent_builders::DeleteGatewayRoute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_route_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::gateway_route_name) / [`set_gateway_route_name(Option<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::set_gateway_route_name): <p>The name of the gateway route to delete.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::set_mesh_name): <p>The name of the service mesh to delete the gateway route from.</p>
+    ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::set_virtual_gateway_name): <p>The name of the virtual gateway to delete the route from.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteGatewayRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput) with field(s):
+    ///   - [`gateway_route(Option<GatewayRouteData>)`](crate::output::DeleteGatewayRouteOutput::gateway_route): <p>The gateway route that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteGatewayRouteError>`](crate::error::DeleteGatewayRouteError)
     pub fn delete_gateway_route(&self) -> fluent_builders::DeleteGatewayRoute<C, M, R> {
         fluent_builders::DeleteGatewayRoute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMesh` operation.
+    /// Constructs a fluent builder for the [`DeleteMesh`](crate::client::fluent_builders::DeleteMesh) operation.
     ///
-    /// See [`DeleteMesh`](crate::client::fluent_builders::DeleteMesh) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DeleteMesh::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DeleteMesh::set_mesh_name): <p>The name of the service mesh to delete.</p>
+    /// - On success, responds with [`DeleteMeshOutput`](crate::output::DeleteMeshOutput) with field(s):
+    ///   - [`mesh(Option<MeshData>)`](crate::output::DeleteMeshOutput::mesh): <p>The service mesh that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteMeshError>`](crate::error::DeleteMeshError)
     pub fn delete_mesh(&self) -> fluent_builders::DeleteMesh<C, M, R> {
         fluent_builders::DeleteMesh::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRoute` operation.
+    /// Constructs a fluent builder for the [`DeleteRoute`](crate::client::fluent_builders::DeleteRoute) operation.
     ///
-    /// See [`DeleteRoute`](crate::client::fluent_builders::DeleteRoute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`route_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRoute::route_name) / [`set_route_name(Option<String>)`](crate::client::fluent_builders::DeleteRoute::set_route_name): <p>The name of the route to delete.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRoute::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DeleteRoute::set_mesh_name): <p>The name of the service mesh to delete the route in.</p>
+    ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRoute::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::DeleteRoute::set_virtual_router_name): <p>The name of the virtual router to delete the route in.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`DeleteRouteOutput`](crate::output::DeleteRouteOutput) with field(s):
+    ///   - [`route(Option<RouteData>)`](crate::output::DeleteRouteOutput::route): <p>The route that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteRouteError>`](crate::error::DeleteRouteError)
     pub fn delete_route(&self) -> fluent_builders::DeleteRoute<C, M, R> {
         fluent_builders::DeleteRoute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVirtualGateway` operation.
+    /// Constructs a fluent builder for the [`DeleteVirtualGateway`](crate::client::fluent_builders::DeleteVirtualGateway) operation.
     ///
-    /// See [`DeleteVirtualGateway`](crate::client::fluent_builders::DeleteVirtualGateway) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualGateway::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualGateway::set_virtual_gateway_name): <p>The name of the virtual gateway to delete.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualGateway::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualGateway::set_mesh_name): <p>The name of the service mesh to delete the virtual gateway from.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualGateway::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteVirtualGateway::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput) with field(s):
+    ///   - [`virtual_gateway(Option<VirtualGatewayData>)`](crate::output::DeleteVirtualGatewayOutput::virtual_gateway): <p>The virtual gateway that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteVirtualGatewayError>`](crate::error::DeleteVirtualGatewayError)
     pub fn delete_virtual_gateway(&self) -> fluent_builders::DeleteVirtualGateway<C, M, R> {
         fluent_builders::DeleteVirtualGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVirtualNode` operation.
+    /// Constructs a fluent builder for the [`DeleteVirtualNode`](crate::client::fluent_builders::DeleteVirtualNode) operation.
     ///
-    /// See [`DeleteVirtualNode`](crate::client::fluent_builders::DeleteVirtualNode) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_node_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualNode::virtual_node_name) / [`set_virtual_node_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualNode::set_virtual_node_name): <p>The name of the virtual node to delete.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualNode::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualNode::set_mesh_name): <p>The name of the service mesh to delete the virtual node in.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualNode::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteVirtualNode::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput) with field(s):
+    ///   - [`virtual_node(Option<VirtualNodeData>)`](crate::output::DeleteVirtualNodeOutput::virtual_node): <p>The virtual node that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteVirtualNodeError>`](crate::error::DeleteVirtualNodeError)
     pub fn delete_virtual_node(&self) -> fluent_builders::DeleteVirtualNode<C, M, R> {
         fluent_builders::DeleteVirtualNode::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVirtualRouter` operation.
+    /// Constructs a fluent builder for the [`DeleteVirtualRouter`](crate::client::fluent_builders::DeleteVirtualRouter) operation.
     ///
-    /// See [`DeleteVirtualRouter`](crate::client::fluent_builders::DeleteVirtualRouter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualRouter::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualRouter::set_virtual_router_name): <p>The name of the virtual router to delete.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualRouter::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualRouter::set_mesh_name): <p>The name of the service mesh to delete the virtual router in.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualRouter::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteVirtualRouter::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput) with field(s):
+    ///   - [`virtual_router(Option<VirtualRouterData>)`](crate::output::DeleteVirtualRouterOutput::virtual_router): <p>The virtual router that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteVirtualRouterError>`](crate::error::DeleteVirtualRouterError)
     pub fn delete_virtual_router(&self) -> fluent_builders::DeleteVirtualRouter<C, M, R> {
         fluent_builders::DeleteVirtualRouter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVirtualService` operation.
+    /// Constructs a fluent builder for the [`DeleteVirtualService`](crate::client::fluent_builders::DeleteVirtualService) operation.
     ///
-    /// See [`DeleteVirtualService`](crate::client::fluent_builders::DeleteVirtualService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_service_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualService::virtual_service_name) / [`set_virtual_service_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualService::set_virtual_service_name): <p>The name of the virtual service to delete.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualService::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DeleteVirtualService::set_mesh_name): <p>The name of the service mesh to delete the virtual service in.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DeleteVirtualService::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DeleteVirtualService::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput) with field(s):
+    ///   - [`virtual_service(Option<VirtualServiceData>)`](crate::output::DeleteVirtualServiceOutput::virtual_service): <p>The virtual service that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteVirtualServiceError>`](crate::error::DeleteVirtualServiceError)
     pub fn delete_virtual_service(&self) -> fluent_builders::DeleteVirtualService<C, M, R> {
         fluent_builders::DeleteVirtualService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeGatewayRoute` operation.
+    /// Constructs a fluent builder for the [`DescribeGatewayRoute`](crate::client::fluent_builders::DescribeGatewayRoute) operation.
     ///
-    /// See [`DescribeGatewayRoute`](crate::client::fluent_builders::DescribeGatewayRoute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_route_name(impl Into<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::gateway_route_name) / [`set_gateway_route_name(Option<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::set_gateway_route_name): <p>The name of the gateway route to describe.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::set_mesh_name): <p>The name of the service mesh that the gateway route resides in.</p>
+    ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::set_virtual_gateway_name): <p>The name of the virtual gateway that the gateway route is associated with.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeGatewayRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput) with field(s):
+    ///   - [`gateway_route(Option<GatewayRouteData>)`](crate::output::DescribeGatewayRouteOutput::gateway_route): <p>The full description of your gateway route.</p>
+    /// - On failure, responds with [`SdkError<DescribeGatewayRouteError>`](crate::error::DescribeGatewayRouteError)
     pub fn describe_gateway_route(&self) -> fluent_builders::DescribeGatewayRoute<C, M, R> {
         fluent_builders::DescribeGatewayRoute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMesh` operation.
+    /// Constructs a fluent builder for the [`DescribeMesh`](crate::client::fluent_builders::DescribeMesh) operation.
     ///
-    /// See [`DescribeMesh`](crate::client::fluent_builders::DescribeMesh) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DescribeMesh::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DescribeMesh::set_mesh_name): <p>The name of the service mesh to describe.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeMesh::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeMesh::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`DescribeMeshOutput`](crate::output::DescribeMeshOutput) with field(s):
+    ///   - [`mesh(Option<MeshData>)`](crate::output::DescribeMeshOutput::mesh): <p>The full description of your service mesh.</p>
+    /// - On failure, responds with [`SdkError<DescribeMeshError>`](crate::error::DescribeMeshError)
     pub fn describe_mesh(&self) -> fluent_builders::DescribeMesh<C, M, R> {
         fluent_builders::DescribeMesh::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRoute` operation.
+    /// Constructs a fluent builder for the [`DescribeRoute`](crate::client::fluent_builders::DescribeRoute) operation.
     ///
-    /// See [`DescribeRoute`](crate::client::fluent_builders::DescribeRoute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`route_name(impl Into<String>)`](crate::client::fluent_builders::DescribeRoute::route_name) / [`set_route_name(Option<String>)`](crate::client::fluent_builders::DescribeRoute::set_route_name): <p>The name of the route to describe.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DescribeRoute::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DescribeRoute::set_mesh_name): <p>The name of the service mesh that the route resides in.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::DescribeRoute::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::DescribeRoute::set_virtual_router_name): <p>The name of the virtual router that the route is associated with.</p>
+    /// - On success, responds with [`DescribeRouteOutput`](crate::output::DescribeRouteOutput) with field(s):
+    ///   - [`route(Option<RouteData>)`](crate::output::DescribeRouteOutput::route): <p>The full description of your route.</p>
+    /// - On failure, responds with [`SdkError<DescribeRouteError>`](crate::error::DescribeRouteError)
     pub fn describe_route(&self) -> fluent_builders::DescribeRoute<C, M, R> {
         fluent_builders::DescribeRoute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeVirtualGateway` operation.
+    /// Constructs a fluent builder for the [`DescribeVirtualGateway`](crate::client::fluent_builders::DescribeVirtualGateway) operation.
     ///
-    /// See [`DescribeVirtualGateway`](crate::client::fluent_builders::DescribeVirtualGateway) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualGateway::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualGateway::set_virtual_gateway_name): <p>The name of the virtual gateway to describe.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualGateway::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualGateway::set_mesh_name): <p>The name of the service mesh that the gateway route resides in.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualGateway::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeVirtualGateway::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput) with field(s):
+    ///   - [`virtual_gateway(Option<VirtualGatewayData>)`](crate::output::DescribeVirtualGatewayOutput::virtual_gateway): <p>The full description of your virtual gateway.</p>
+    /// - On failure, responds with [`SdkError<DescribeVirtualGatewayError>`](crate::error::DescribeVirtualGatewayError)
     pub fn describe_virtual_gateway(&self) -> fluent_builders::DescribeVirtualGateway<C, M, R> {
         fluent_builders::DescribeVirtualGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeVirtualNode` operation.
+    /// Constructs a fluent builder for the [`DescribeVirtualNode`](crate::client::fluent_builders::DescribeVirtualNode) operation.
     ///
-    /// See [`DescribeVirtualNode`](crate::client::fluent_builders::DescribeVirtualNode) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_node_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualNode::virtual_node_name) / [`set_virtual_node_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualNode::set_virtual_node_name): <p>The name of the virtual node to describe.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualNode::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualNode::set_mesh_name): <p>The name of the service mesh that the virtual node resides in.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualNode::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeVirtualNode::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput) with field(s):
+    ///   - [`virtual_node(Option<VirtualNodeData>)`](crate::output::DescribeVirtualNodeOutput::virtual_node): <p>The full description of your virtual node.</p>
+    /// - On failure, responds with [`SdkError<DescribeVirtualNodeError>`](crate::error::DescribeVirtualNodeError)
     pub fn describe_virtual_node(&self) -> fluent_builders::DescribeVirtualNode<C, M, R> {
         fluent_builders::DescribeVirtualNode::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeVirtualRouter` operation.
+    /// Constructs a fluent builder for the [`DescribeVirtualRouter`](crate::client::fluent_builders::DescribeVirtualRouter) operation.
     ///
-    /// See [`DescribeVirtualRouter`](crate::client::fluent_builders::DescribeVirtualRouter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualRouter::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualRouter::set_virtual_router_name): <p>The name of the virtual router to describe.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualRouter::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualRouter::set_mesh_name): <p>The name of the service mesh that the virtual router resides in.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualRouter::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeVirtualRouter::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput) with field(s):
+    ///   - [`virtual_router(Option<VirtualRouterData>)`](crate::output::DescribeVirtualRouterOutput::virtual_router): <p>The full description of your virtual router.</p>
+    /// - On failure, responds with [`SdkError<DescribeVirtualRouterError>`](crate::error::DescribeVirtualRouterError)
     pub fn describe_virtual_router(&self) -> fluent_builders::DescribeVirtualRouter<C, M, R> {
         fluent_builders::DescribeVirtualRouter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeVirtualService` operation.
+    /// Constructs a fluent builder for the [`DescribeVirtualService`](crate::client::fluent_builders::DescribeVirtualService) operation.
     ///
-    /// See [`DescribeVirtualService`](crate::client::fluent_builders::DescribeVirtualService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_service_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualService::virtual_service_name) / [`set_virtual_service_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualService::set_virtual_service_name): <p>The name of the virtual service to describe.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualService::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::DescribeVirtualService::set_mesh_name): <p>The name of the service mesh that the virtual service resides in.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::DescribeVirtualService::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::DescribeVirtualService::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput) with field(s):
+    ///   - [`virtual_service(Option<VirtualServiceData>)`](crate::output::DescribeVirtualServiceOutput::virtual_service): <p>The full description of your virtual service.</p>
+    /// - On failure, responds with [`SdkError<DescribeVirtualServiceError>`](crate::error::DescribeVirtualServiceError)
     pub fn describe_virtual_service(&self) -> fluent_builders::DescribeVirtualService<C, M, R> {
         fluent_builders::DescribeVirtualService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGatewayRoutes` operation.
+    /// Constructs a fluent builder for the [`ListGatewayRoutes`](crate::client::fluent_builders::ListGatewayRoutes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGatewayRoutes::into_paginator).
     ///
-    /// See [`ListGatewayRoutes`](crate::client::fluent_builders::ListGatewayRoutes) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGatewayRoutes::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::ListGatewayRoutes::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::ListGatewayRoutes::set_mesh_name): <p>The name of the service mesh to list gateway routes in.</p>
+    ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::ListGatewayRoutes::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::ListGatewayRoutes::set_virtual_gateway_name): <p>The name of the virtual gateway to list gateway routes in.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGatewayRoutes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGatewayRoutes::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListGatewayRoutes::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListGatewayRoutes::set_limit): <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated output. When you use this parameter, <code>ListGatewayRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListGatewayRoutes::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListGatewayRoutes::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput) with field(s):
+    ///   - [`gateway_routes(Option<Vec<GatewayRouteRef>>)`](crate::output::ListGatewayRoutesOutput::gateway_routes): <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGatewayRoutesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListGatewayRoutesError>`](crate::error::ListGatewayRoutesError)
     pub fn list_gateway_routes(&self) -> fluent_builders::ListGatewayRoutes<C, M, R> {
         fluent_builders::ListGatewayRoutes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMeshes` operation.
+    /// Constructs a fluent builder for the [`ListMeshes`](crate::client::fluent_builders::ListMeshes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMeshes::into_paginator).
     ///
-    /// See [`ListMeshes`](crate::client::fluent_builders::ListMeshes) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMeshes::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMeshes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMeshes::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListMeshes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>   <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListMeshes::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListMeshes::set_limit): <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output. When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListMeshes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListMeshes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// - On success, responds with [`ListMeshesOutput`](crate::output::ListMeshesOutput) with field(s):
+    ///   - [`meshes(Option<Vec<MeshRef>>)`](crate::output::ListMeshesOutput::meshes): <p>The list of existing service meshes.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMeshesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListMeshesError>`](crate::error::ListMeshesError)
     pub fn list_meshes(&self) -> fluent_builders::ListMeshes<C, M, R> {
         fluent_builders::ListMeshes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRoutes` operation.
+    /// Constructs a fluent builder for the [`ListRoutes`](crate::client::fluent_builders::ListRoutes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRoutes::into_paginator).
     ///
-    /// See [`ListRoutes`](crate::client::fluent_builders::ListRoutes) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRoutes::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::ListRoutes::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::ListRoutes::set_mesh_name): <p>The name of the service mesh to list routes in.</p>
+    ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::ListRoutes::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::ListRoutes::set_virtual_router_name): <p>The name of the virtual router to list routes in.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRoutes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRoutes::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListRoutes::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListRoutes::set_limit): <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListRoutes::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListRoutes::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`ListRoutesOutput`](crate::output::ListRoutesOutput) with field(s):
+    ///   - [`routes(Option<Vec<RouteRef>>)`](crate::output::ListRoutesOutput::routes): <p>The list of existing routes for the specified service mesh and virtual router.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRoutesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListRoutesError>`](crate::error::ListRoutesError)
     pub fn list_routes(&self) -> fluent_builders::ListRoutes<C, M, R> {
         fluent_builders::ListRoutes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListTagsForResource</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListTagsForResource::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListTagsForResource::set_limit): <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in paginated output. When this parameter is used, <code>ListTagsForResource</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListTagsForResource</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListTagsForResource</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<TagRef>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags for the resource.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code> request. When the results of a <code>ListTagsForResource</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVirtualGateways` operation.
+    /// Constructs a fluent builder for the [`ListVirtualGateways`](crate::client::fluent_builders::ListVirtualGateways) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVirtualGateways::into_paginator).
     ///
-    /// See [`ListVirtualGateways`](crate::client::fluent_builders::ListVirtualGateways) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVirtualGateways::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::ListVirtualGateways::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::ListVirtualGateways::set_mesh_name): <p>The name of the service mesh to list virtual gateways in.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVirtualGateways::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVirtualGateways::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualGateways</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListVirtualGateways::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListVirtualGateways::set_limit): <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated output. When you use this parameter, <code>ListVirtualGateways</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualGateways</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListVirtualGateways::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListVirtualGateways::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput) with field(s):
+    ///   - [`virtual_gateways(Option<Vec<VirtualGatewayRef>>)`](crate::output::ListVirtualGatewaysOutput::virtual_gateways): <p>The list of existing virtual gateways for the specified service mesh.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVirtualGatewaysOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListVirtualGatewaysError>`](crate::error::ListVirtualGatewaysError)
     pub fn list_virtual_gateways(&self) -> fluent_builders::ListVirtualGateways<C, M, R> {
         fluent_builders::ListVirtualGateways::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVirtualNodes` operation.
+    /// Constructs a fluent builder for the [`ListVirtualNodes`](crate::client::fluent_builders::ListVirtualNodes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVirtualNodes::into_paginator).
     ///
-    /// See [`ListVirtualNodes`](crate::client::fluent_builders::ListVirtualNodes) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVirtualNodes::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::ListVirtualNodes::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::ListVirtualNodes::set_mesh_name): <p>The name of the service mesh to list virtual nodes in.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVirtualNodes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVirtualNodes::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListVirtualNodes::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListVirtualNodes::set_limit): <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListVirtualNodes::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListVirtualNodes::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput) with field(s):
+    ///   - [`virtual_nodes(Option<Vec<VirtualNodeRef>>)`](crate::output::ListVirtualNodesOutput::virtual_nodes): <p>The list of existing virtual nodes for the specified service mesh.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVirtualNodesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListVirtualNodesError>`](crate::error::ListVirtualNodesError)
     pub fn list_virtual_nodes(&self) -> fluent_builders::ListVirtualNodes<C, M, R> {
         fluent_builders::ListVirtualNodes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVirtualRouters` operation.
+    /// Constructs a fluent builder for the [`ListVirtualRouters`](crate::client::fluent_builders::ListVirtualRouters) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVirtualRouters::into_paginator).
     ///
-    /// See [`ListVirtualRouters`](crate::client::fluent_builders::ListVirtualRouters) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVirtualRouters::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::ListVirtualRouters::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::ListVirtualRouters::set_mesh_name): <p>The name of the service mesh to list virtual routers in.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVirtualRouters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVirtualRouters::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListVirtualRouters::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListVirtualRouters::set_limit): <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated output. When you use this parameter, <code>ListVirtualRouters</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualRouters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListVirtualRouters::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListVirtualRouters::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput) with field(s):
+    ///   - [`virtual_routers(Option<Vec<VirtualRouterRef>>)`](crate::output::ListVirtualRoutersOutput::virtual_routers): <p>The list of existing virtual routers for the specified service mesh.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVirtualRoutersOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListVirtualRoutersError>`](crate::error::ListVirtualRoutersError)
     pub fn list_virtual_routers(&self) -> fluent_builders::ListVirtualRouters<C, M, R> {
         fluent_builders::ListVirtualRouters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVirtualServices` operation.
+    /// Constructs a fluent builder for the [`ListVirtualServices`](crate::client::fluent_builders::ListVirtualServices) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVirtualServices::into_paginator).
     ///
-    /// See [`ListVirtualServices`](crate::client::fluent_builders::ListVirtualServices) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVirtualServices::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::ListVirtualServices::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::ListVirtualServices::set_mesh_name): <p>The name of the service mesh to list virtual services in.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVirtualServices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVirtualServices::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualServices</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListVirtualServices::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListVirtualServices::set_limit): <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated output. When you use this parameter, <code>ListVirtualServices</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualServices</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::ListVirtualServices::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::ListVirtualServices::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput) with field(s):
+    ///   - [`virtual_services(Option<Vec<VirtualServiceRef>>)`](crate::output::ListVirtualServicesOutput::virtual_services): <p>The list of existing virtual services for the specified service mesh.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVirtualServicesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListVirtualServicesError>`](crate::error::ListVirtualServicesError)
     pub fn list_virtual_services(&self) -> fluent_builders::ListVirtualServices<C, M, R> {
         fluent_builders::ListVirtualServices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to add tags to.</p>
+    ///   - [`tags(Vec<TagRef>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<TagRef>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to delete tags from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys of the tags to be removed.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGatewayRoute` operation.
+    /// Constructs a fluent builder for the [`UpdateGatewayRoute`](crate::client::fluent_builders::UpdateGatewayRoute) operation.
     ///
-    /// See [`UpdateGatewayRoute`](crate::client::fluent_builders::UpdateGatewayRoute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_route_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::gateway_route_name) / [`set_gateway_route_name(Option<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::set_gateway_route_name): <p>The name of the gateway route to update.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::set_mesh_name): <p>The name of the service mesh that the gateway route resides in.</p>
+    ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::set_virtual_gateway_name): <p>The name of the virtual gateway that the gateway route is associated with.</p>
+    ///   - [`spec(GatewayRouteSpec)`](crate::client::fluent_builders::UpdateGatewayRoute::spec) / [`set_spec(Option<GatewayRouteSpec>)`](crate::client::fluent_builders::UpdateGatewayRoute::set_spec): <p>The new gateway route specification to apply. This overwrites the existing data.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateGatewayRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput) with field(s):
+    ///   - [`gateway_route(Option<GatewayRouteData>)`](crate::output::UpdateGatewayRouteOutput::gateway_route): <p>A full description of the gateway route that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateGatewayRouteError>`](crate::error::UpdateGatewayRouteError)
     pub fn update_gateway_route(&self) -> fluent_builders::UpdateGatewayRoute<C, M, R> {
         fluent_builders::UpdateGatewayRoute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMesh` operation.
+    /// Constructs a fluent builder for the [`UpdateMesh`](crate::client::fluent_builders::UpdateMesh) operation.
     ///
-    /// See [`UpdateMesh`](crate::client::fluent_builders::UpdateMesh) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::UpdateMesh::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::UpdateMesh::set_mesh_name): <p>The name of the service mesh to update.</p>
+    ///   - [`spec(MeshSpec)`](crate::client::fluent_builders::UpdateMesh::spec) / [`set_spec(Option<MeshSpec>)`](crate::client::fluent_builders::UpdateMesh::set_spec): <p>The service mesh specification to apply.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateMesh::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateMesh::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    /// - On success, responds with [`UpdateMeshOutput`](crate::output::UpdateMeshOutput) with field(s):
+    ///   - [`mesh(Option<MeshData>)`](crate::output::UpdateMeshOutput::mesh): <p>An object that represents a service mesh returned by a describe operation.</p>
+    /// - On failure, responds with [`SdkError<UpdateMeshError>`](crate::error::UpdateMeshError)
     pub fn update_mesh(&self) -> fluent_builders::UpdateMesh<C, M, R> {
         fluent_builders::UpdateMesh::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRoute` operation.
+    /// Constructs a fluent builder for the [`UpdateRoute`](crate::client::fluent_builders::UpdateRoute) operation.
     ///
-    /// See [`UpdateRoute`](crate::client::fluent_builders::UpdateRoute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`route_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::route_name) / [`set_route_name(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_route_name): <p>The name of the route to update.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_mesh_name): <p>The name of the service mesh that the route resides in.</p>
+    ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_virtual_router_name): <p>The name of the virtual router that the route is associated with.</p>
+    ///   - [`spec(RouteSpec)`](crate::client::fluent_builders::UpdateRoute::spec) / [`set_spec(Option<RouteSpec>)`](crate::client::fluent_builders::UpdateRoute::set_spec): <p>The new route specification to apply. This overwrites the existing data.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateRoute::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateRoute::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`UpdateRouteOutput`](crate::output::UpdateRouteOutput) with field(s):
+    ///   - [`route(Option<RouteData>)`](crate::output::UpdateRouteOutput::route): <p>A full description of the route that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateRouteError>`](crate::error::UpdateRouteError)
     pub fn update_route(&self) -> fluent_builders::UpdateRoute<C, M, R> {
         fluent_builders::UpdateRoute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateVirtualGateway` operation.
+    /// Constructs a fluent builder for the [`UpdateVirtualGateway`](crate::client::fluent_builders::UpdateVirtualGateway) operation.
     ///
-    /// See [`UpdateVirtualGateway`](crate::client::fluent_builders::UpdateVirtualGateway) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_gateway_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::virtual_gateway_name) / [`set_virtual_gateway_name(Option<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::set_virtual_gateway_name): <p>The name of the virtual gateway to update.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::set_mesh_name): <p>The name of the service mesh that the virtual gateway resides in.</p>
+    ///   - [`spec(VirtualGatewaySpec)`](crate::client::fluent_builders::UpdateVirtualGateway::spec) / [`set_spec(Option<VirtualGatewaySpec>)`](crate::client::fluent_builders::UpdateVirtualGateway::set_spec): <p>The new virtual gateway specification to apply. This overwrites the existing data.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateVirtualGateway::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput) with field(s):
+    ///   - [`virtual_gateway(Option<VirtualGatewayData>)`](crate::output::UpdateVirtualGatewayOutput::virtual_gateway): <p>A full description of the virtual gateway that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateVirtualGatewayError>`](crate::error::UpdateVirtualGatewayError)
     pub fn update_virtual_gateway(&self) -> fluent_builders::UpdateVirtualGateway<C, M, R> {
         fluent_builders::UpdateVirtualGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateVirtualNode` operation.
+    /// Constructs a fluent builder for the [`UpdateVirtualNode`](crate::client::fluent_builders::UpdateVirtualNode) operation.
     ///
-    /// See [`UpdateVirtualNode`](crate::client::fluent_builders::UpdateVirtualNode) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_node_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualNode::virtual_node_name) / [`set_virtual_node_name(Option<String>)`](crate::client::fluent_builders::UpdateVirtualNode::set_virtual_node_name): <p>The name of the virtual node to update.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualNode::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::UpdateVirtualNode::set_mesh_name): <p>The name of the service mesh that the virtual node resides in.</p>
+    ///   - [`spec(VirtualNodeSpec)`](crate::client::fluent_builders::UpdateVirtualNode::spec) / [`set_spec(Option<VirtualNodeSpec>)`](crate::client::fluent_builders::UpdateVirtualNode::set_spec): <p>The new virtual node specification to apply. This overwrites the existing data.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualNode::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateVirtualNode::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualNode::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateVirtualNode::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput) with field(s):
+    ///   - [`virtual_node(Option<VirtualNodeData>)`](crate::output::UpdateVirtualNodeOutput::virtual_node): <p>A full description of the virtual node that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateVirtualNodeError>`](crate::error::UpdateVirtualNodeError)
     pub fn update_virtual_node(&self) -> fluent_builders::UpdateVirtualNode<C, M, R> {
         fluent_builders::UpdateVirtualNode::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateVirtualRouter` operation.
+    /// Constructs a fluent builder for the [`UpdateVirtualRouter`](crate::client::fluent_builders::UpdateVirtualRouter) operation.
     ///
-    /// See [`UpdateVirtualRouter`](crate::client::fluent_builders::UpdateVirtualRouter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_router_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::virtual_router_name) / [`set_virtual_router_name(Option<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::set_virtual_router_name): <p>The name of the virtual router to update.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::set_mesh_name): <p>The name of the service mesh that the virtual router resides in.</p>
+    ///   - [`spec(VirtualRouterSpec)`](crate::client::fluent_builders::UpdateVirtualRouter::spec) / [`set_spec(Option<VirtualRouterSpec>)`](crate::client::fluent_builders::UpdateVirtualRouter::set_spec): <p>The new virtual router specification to apply. This overwrites the existing data.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateVirtualRouter::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput) with field(s):
+    ///   - [`virtual_router(Option<VirtualRouterData>)`](crate::output::UpdateVirtualRouterOutput::virtual_router): <p>A full description of the virtual router that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateVirtualRouterError>`](crate::error::UpdateVirtualRouterError)
     pub fn update_virtual_router(&self) -> fluent_builders::UpdateVirtualRouter<C, M, R> {
         fluent_builders::UpdateVirtualRouter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateVirtualService` operation.
+    /// Constructs a fluent builder for the [`UpdateVirtualService`](crate::client::fluent_builders::UpdateVirtualService) operation.
     ///
-    /// See [`UpdateVirtualService`](crate::client::fluent_builders::UpdateVirtualService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`virtual_service_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualService::virtual_service_name) / [`set_virtual_service_name(Option<String>)`](crate::client::fluent_builders::UpdateVirtualService::set_virtual_service_name): <p>The name of the virtual service to update.</p>
+    ///   - [`mesh_name(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualService::mesh_name) / [`set_mesh_name(Option<String>)`](crate::client::fluent_builders::UpdateVirtualService::set_mesh_name): <p>The name of the service mesh that the virtual service resides in.</p>
+    ///   - [`spec(VirtualServiceSpec)`](crate::client::fluent_builders::UpdateVirtualService::spec) / [`set_spec(Option<VirtualServiceSpec>)`](crate::client::fluent_builders::UpdateVirtualService::set_spec): <p>The new virtual service specification to apply. This overwrites the existing data.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualService::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateVirtualService::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+    ///   - [`mesh_owner(impl Into<String>)`](crate::client::fluent_builders::UpdateVirtualService::mesh_owner) / [`set_mesh_owner(Option<String>)`](crate::client::fluent_builders::UpdateVirtualService::set_mesh_owner): <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// - On success, responds with [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput) with field(s):
+    ///   - [`virtual_service(Option<VirtualServiceData>)`](crate::output::UpdateVirtualServiceOutput::virtual_service): <p>A full description of the virtual service that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateVirtualServiceError>`](crate::error::UpdateVirtualServiceError)
     pub fn update_virtual_service(&self) -> fluent_builders::UpdateVirtualService<C, M, R> {
         fluent_builders::UpdateVirtualService::new(self.handle.clone())
     }

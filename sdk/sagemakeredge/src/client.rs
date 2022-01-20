@@ -83,17 +83,29 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `GetDeviceRegistration` operation.
+    /// Constructs a fluent builder for the [`GetDeviceRegistration`](crate::client::fluent_builders::GetDeviceRegistration) operation.
     ///
-    /// See [`GetDeviceRegistration`](crate::client::fluent_builders::GetDeviceRegistration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::GetDeviceRegistration::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::GetDeviceRegistration::set_device_name): <p>The unique name of the device you want to get the registration status from.</p>
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::GetDeviceRegistration::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::GetDeviceRegistration::set_device_fleet_name): <p>The name of the fleet that the device belongs to.</p>
+    /// - On success, responds with [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput) with field(s):
+    ///   - [`device_registration(Option<String>)`](crate::output::GetDeviceRegistrationOutput::device_registration): <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
+    ///   - [`cache_ttl(Option<String>)`](crate::output::GetDeviceRegistrationOutput::cache_ttl): <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
+    /// - On failure, responds with [`SdkError<GetDeviceRegistrationError>`](crate::error::GetDeviceRegistrationError)
     pub fn get_device_registration(&self) -> fluent_builders::GetDeviceRegistration<C, M, R> {
         fluent_builders::GetDeviceRegistration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendHeartbeat` operation.
+    /// Constructs a fluent builder for the [`SendHeartbeat`](crate::client::fluent_builders::SendHeartbeat) operation.
     ///
-    /// See [`SendHeartbeat`](crate::client::fluent_builders::SendHeartbeat) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`agent_metrics(Vec<EdgeMetric>)`](crate::client::fluent_builders::SendHeartbeat::agent_metrics) / [`set_agent_metrics(Option<Vec<EdgeMetric>>)`](crate::client::fluent_builders::SendHeartbeat::set_agent_metrics): <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
+    ///   - [`models(Vec<Model>)`](crate::client::fluent_builders::SendHeartbeat::models) / [`set_models(Option<Vec<Model>>)`](crate::client::fluent_builders::SendHeartbeat::set_models): <p>Returns a list of models deployed on the the device.</p>
+    ///   - [`agent_version(impl Into<String>)`](crate::client::fluent_builders::SendHeartbeat::agent_version) / [`set_agent_version(Option<String>)`](crate::client::fluent_builders::SendHeartbeat::set_agent_version): <p>Returns the version of the agent.</p>
+    ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::SendHeartbeat::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::SendHeartbeat::set_device_name): <p>The unique name of the device.</p>
+    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::SendHeartbeat::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::SendHeartbeat::set_device_fleet_name): <p>The name of the fleet that the device belongs to.</p>
+    /// - On success, responds with [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput)
+
+    /// - On failure, responds with [`SdkError<SendHeartbeatError>`](crate::error::SendHeartbeatError)
     pub fn send_heartbeat(&self) -> fluent_builders::SendHeartbeat<C, M, R> {
         fluent_builders::SendHeartbeat::new(self.handle.clone())
     }

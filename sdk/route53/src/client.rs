@@ -83,502 +83,872 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `ActivateKeySigningKey` operation.
+    /// Constructs a fluent builder for the [`ActivateKeySigningKey`](crate::client::fluent_builders::ActivateKeySigningKey) operation.
     ///
-    /// See [`ActivateKeySigningKey`](crate::client::fluent_builders::ActivateKeySigningKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::ActivateKeySigningKey::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::ActivateKeySigningKey::set_hosted_zone_id): <p>A unique string used to identify a hosted zone.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ActivateKeySigningKey::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ActivateKeySigningKey::set_name): <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
+    /// - On success, responds with [`ActivateKeySigningKeyOutput`](crate::output::ActivateKeySigningKeyOutput) with field(s):
+    ///   - [`change_info(Option<ChangeInfo>)`](crate::output::ActivateKeySigningKeyOutput::change_info): <p>A complex type that describes change information about changes made to your hosted zone.</p>
+    /// - On failure, responds with [`SdkError<ActivateKeySigningKeyError>`](crate::error::ActivateKeySigningKeyError)
     pub fn activate_key_signing_key(&self) -> fluent_builders::ActivateKeySigningKey<C, M, R> {
         fluent_builders::ActivateKeySigningKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateVPCWithHostedZone` operation.
+    /// Constructs a fluent builder for the [`AssociateVPCWithHostedZone`](crate::client::fluent_builders::AssociateVPCWithHostedZone) operation.
     ///
-    /// See [`AssociateVPCWithHostedZone`](crate::client::fluent_builders::AssociateVPCWithHostedZone) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::AssociateVPCWithHostedZone::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::AssociateVPCWithHostedZone::set_hosted_zone_id): <p>The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>  <p>Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.</p>
+    ///   - [`vpc(Vpc)`](crate::client::fluent_builders::AssociateVPCWithHostedZone::vpc) / [`set_vpc(Option<Vpc>)`](crate::client::fluent_builders::AssociateVPCWithHostedZone::set_vpc): <p>A complex type that contains information about the VPC that you want to associate with a private hosted zone.</p>
+    ///   - [`comment(impl Into<String>)`](crate::client::fluent_builders::AssociateVPCWithHostedZone::comment) / [`set_comment(Option<String>)`](crate::client::fluent_builders::AssociateVPCWithHostedZone::set_comment): <p> <i>Optional:</i> A comment about the association request.</p>
+    /// - On success, responds with [`AssociateVpcWithHostedZoneOutput`](crate::output::AssociateVpcWithHostedZoneOutput) with field(s):
+    ///   - [`change_info(Option<ChangeInfo>)`](crate::output::AssociateVpcWithHostedZoneOutput::change_info): <p>A complex type that describes the changes made to your hosted zone.</p>
+    /// - On failure, responds with [`SdkError<AssociateVPCWithHostedZoneError>`](crate::error::AssociateVPCWithHostedZoneError)
     pub fn associate_vpc_with_hosted_zone(
         &self,
     ) -> fluent_builders::AssociateVPCWithHostedZone<C, M, R> {
         fluent_builders::AssociateVPCWithHostedZone::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ChangeResourceRecordSets` operation.
+    /// Constructs a fluent builder for the [`ChangeResourceRecordSets`](crate::client::fluent_builders::ChangeResourceRecordSets) operation.
     ///
-    /// See [`ChangeResourceRecordSets`](crate::client::fluent_builders::ChangeResourceRecordSets) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::ChangeResourceRecordSets::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::ChangeResourceRecordSets::set_hosted_zone_id): <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
+    ///   - [`change_batch(ChangeBatch)`](crate::client::fluent_builders::ChangeResourceRecordSets::change_batch) / [`set_change_batch(Option<ChangeBatch>)`](crate::client::fluent_builders::ChangeResourceRecordSets::set_change_batch): <p>A complex type that contains an optional comment and the <code>Changes</code> element.</p>
+    /// - On success, responds with [`ChangeResourceRecordSetsOutput`](crate::output::ChangeResourceRecordSetsOutput) with field(s):
+    ///   - [`change_info(Option<ChangeInfo>)`](crate::output::ChangeResourceRecordSetsOutput::change_info): <p>A complex type that contains information about changes made to your hosted zone.</p>  <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
+    /// - On failure, responds with [`SdkError<ChangeResourceRecordSetsError>`](crate::error::ChangeResourceRecordSetsError)
     pub fn change_resource_record_sets(
         &self,
     ) -> fluent_builders::ChangeResourceRecordSets<C, M, R> {
         fluent_builders::ChangeResourceRecordSets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ChangeTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ChangeTagsForResource`](crate::client::fluent_builders::ChangeTagsForResource) operation.
     ///
-    /// See [`ChangeTagsForResource`](crate::client::fluent_builders::ChangeTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(TagResourceType)`](crate::client::fluent_builders::ChangeTagsForResource::resource_type) / [`set_resource_type(Option<TagResourceType>)`](crate::client::fluent_builders::ChangeTagsForResource::set_resource_type): <p>The type of the resource.</p>  <ul>   <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>   <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>  </ul>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ChangeTagsForResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ChangeTagsForResource::set_resource_id): <p>The ID of the resource for which you want to add, change, or delete tags.</p>
+    ///   - [`add_tags(Vec<Tag>)`](crate::client::fluent_builders::ChangeTagsForResource::add_tags) / [`set_add_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ChangeTagsForResource::set_add_tags): <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>  <p>You can add a maximum of 10 tags to a health check or a hosted zone.</p>
+    ///   - [`remove_tag_keys(Vec<String>)`](crate::client::fluent_builders::ChangeTagsForResource::remove_tag_keys) / [`set_remove_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::ChangeTagsForResource::set_remove_tag_keys): <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
+    /// - On success, responds with [`ChangeTagsForResourceOutput`](crate::output::ChangeTagsForResourceOutput)
+
+    /// - On failure, responds with [`SdkError<ChangeTagsForResourceError>`](crate::error::ChangeTagsForResourceError)
     pub fn change_tags_for_resource(&self) -> fluent_builders::ChangeTagsForResource<C, M, R> {
         fluent_builders::ChangeTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateHealthCheck` operation.
+    /// Constructs a fluent builder for the [`CreateHealthCheck`](crate::client::fluent_builders::CreateHealthCheck) operation.
     ///
-    /// See [`CreateHealthCheck`](crate::client::fluent_builders::CreateHealthCheck) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`caller_reference(impl Into<String>)`](crate::client::fluent_builders::CreateHealthCheck::caller_reference) / [`set_caller_reference(Option<String>)`](crate::client::fluent_builders::CreateHealthCheck::set_caller_reference): <p>A unique string that identifies the request and that allows you to retry a failed <code>CreateHealthCheck</code> request without the risk of creating two identical health checks:</p>  <ul>   <li> <p>If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code> and settings as a previous request, and if the health check doesn't exist, Amazon Route 53 creates the health check. If the health check does exist, Route 53 returns the settings for the existing health check.</p> </li>   <li> <p>If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code> as a deleted health check, regardless of the settings, Route 53 returns a <code>HealthCheckAlreadyExists</code> error.</p> </li>   <li> <p>If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code> as an existing health check but with different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code> error.</p> </li>   <li> <p>If you send a <code>CreateHealthCheck</code> request with a unique <code>CallerReference</code> but settings identical to an existing health check, Route 53 creates the health check.</p> </li>  </ul>
+    ///   - [`health_check_config(HealthCheckConfig)`](crate::client::fluent_builders::CreateHealthCheck::health_check_config) / [`set_health_check_config(Option<HealthCheckConfig>)`](crate::client::fluent_builders::CreateHealthCheck::set_health_check_config): <p>A complex type that contains settings for a new health check.</p>
+    /// - On success, responds with [`CreateHealthCheckOutput`](crate::output::CreateHealthCheckOutput) with field(s):
+    ///   - [`health_check(Option<HealthCheck>)`](crate::output::CreateHealthCheckOutput::health_check): <p>A complex type that contains identifying information about the health check.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreateHealthCheckOutput::location): <p>The unique URL representing the new health check.</p>
+    /// - On failure, responds with [`SdkError<CreateHealthCheckError>`](crate::error::CreateHealthCheckError)
     pub fn create_health_check(&self) -> fluent_builders::CreateHealthCheck<C, M, R> {
         fluent_builders::CreateHealthCheck::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateHostedZone` operation.
+    /// Constructs a fluent builder for the [`CreateHostedZone`](crate::client::fluent_builders::CreateHostedZone) operation.
     ///
-    /// See [`CreateHostedZone`](crate::client::fluent_builders::CreateHostedZone) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateHostedZone::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateHostedZone::set_name): <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>  <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
+    ///   - [`vpc(Vpc)`](crate::client::fluent_builders::CreateHostedZone::vpc) / [`set_vpc(Option<Vpc>)`](crate::client::fluent_builders::CreateHostedZone::set_vpc): <p>(Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating with this hosted zone.</p>  <p>You can specify only one Amazon VPC when you create a private hosted zone. If you are associating a VPC with a hosted zone with this request, the paramaters <code>VPCId</code> and <code>VPCRegion</code> are also required.</p>  <p>To associate additional Amazon VPCs with the hosted zone, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
+    ///   - [`caller_reference(impl Into<String>)`](crate::client::fluent_builders::CreateHostedZone::caller_reference) / [`set_caller_reference(Option<String>)`](crate::client::fluent_builders::CreateHostedZone::set_caller_reference): <p>A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.</p>
+    ///   - [`hosted_zone_config(HostedZoneConfig)`](crate::client::fluent_builders::CreateHostedZone::hosted_zone_config) / [`set_hosted_zone_config(Option<HostedZoneConfig>)`](crate::client::fluent_builders::CreateHostedZone::set_hosted_zone_config): <p>(Optional) A complex type that contains the following optional values:</p>  <ul>   <li> <p>For public and private hosted zones, an optional comment</p> </li>   <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>  </ul>  <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
+    ///   - [`delegation_set_id(impl Into<String>)`](crate::client::fluent_builders::CreateHostedZone::delegation_set_id) / [`set_delegation_set_id(Option<String>)`](crate::client::fluent_builders::CreateHostedZone::set_delegation_set_id): <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
+    /// - On success, responds with [`CreateHostedZoneOutput`](crate::output::CreateHostedZoneOutput) with field(s):
+    ///   - [`hosted_zone(Option<HostedZone>)`](crate::output::CreateHostedZoneOutput::hosted_zone): <p>A complex type that contains general information about the hosted zone.</p>
+    ///   - [`change_info(Option<ChangeInfo>)`](crate::output::CreateHostedZoneOutput::change_info): <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
+    ///   - [`delegation_set(Option<DelegationSet>)`](crate::output::CreateHostedZoneOutput::delegation_set): <p>A complex type that describes the name servers for this hosted zone.</p>
+    ///   - [`vpc(Option<Vpc>)`](crate::output::CreateHostedZoneOutput::vpc): <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreateHostedZoneOutput::location): <p>The unique URL representing the new hosted zone.</p>
+    /// - On failure, responds with [`SdkError<CreateHostedZoneError>`](crate::error::CreateHostedZoneError)
     pub fn create_hosted_zone(&self) -> fluent_builders::CreateHostedZone<C, M, R> {
         fluent_builders::CreateHostedZone::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateKeySigningKey` operation.
+    /// Constructs a fluent builder for the [`CreateKeySigningKey`](crate::client::fluent_builders::CreateKeySigningKey) operation.
     ///
-    /// See [`CreateKeySigningKey`](crate::client::fluent_builders::CreateKeySigningKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`caller_reference(impl Into<String>)`](crate::client::fluent_builders::CreateKeySigningKey::caller_reference) / [`set_caller_reference(Option<String>)`](crate::client::fluent_builders::CreateKeySigningKey::set_caller_reference): <p>A unique string that identifies the request.</p>
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::CreateKeySigningKey::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::CreateKeySigningKey::set_hosted_zone_id): <p>The unique string (ID) used to identify a hosted zone.</p>
+    ///   - [`key_management_service_arn(impl Into<String>)`](crate::client::fluent_builders::CreateKeySigningKey::key_management_service_arn) / [`set_key_management_service_arn(Option<String>)`](crate::client::fluent_builders::CreateKeySigningKey::set_key_management_service_arn): <p>The Amazon resource name (ARN) for a customer managed key in Key Management Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>. </p>  <p>You must configure the customer managed customer managed key as follows:</p>  <dl>   <dt>   Status  </dt>   <dd>    <p>Enabled</p>   </dd>   <dt>   Key spec  </dt>   <dd>    <p>ECC_NIST_P256</p>   </dd>   <dt>   Key usage  </dt>   <dd>    <p>Sign and verify</p>   </dd>   <dt>   Key policy  </dt>   <dd>    <p>The key policy must give permission for the following actions:</p>    <ul>     <li> <p>DescribeKey</p> </li>     <li> <p>GetPublicKey</p> </li>     <li> <p>Sign</p> </li>    </ul>    <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>    <ul>     <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li>    </ul>   </dd>  </dl>  <p>For more information about working with a customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateKeySigningKey::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateKeySigningKey::set_name): <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
+    ///   - [`status(impl Into<String>)`](crate::client::fluent_builders::CreateKeySigningKey::status) / [`set_status(Option<String>)`](crate::client::fluent_builders::CreateKeySigningKey::set_status): <p>A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    /// - On success, responds with [`CreateKeySigningKeyOutput`](crate::output::CreateKeySigningKeyOutput) with field(s):
+    ///   - [`change_info(Option<ChangeInfo>)`](crate::output::CreateKeySigningKeyOutput::change_info): <p>A complex type that describes change information about changes made to your hosted zone.</p>
+    ///   - [`key_signing_key(Option<KeySigningKey>)`](crate::output::CreateKeySigningKeyOutput::key_signing_key): <p>The key-signing key (KSK) that the request creates.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreateKeySigningKeyOutput::location): <p>The unique URL representing the new key-signing key (KSK).</p>
+    /// - On failure, responds with [`SdkError<CreateKeySigningKeyError>`](crate::error::CreateKeySigningKeyError)
     pub fn create_key_signing_key(&self) -> fluent_builders::CreateKeySigningKey<C, M, R> {
         fluent_builders::CreateKeySigningKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateQueryLoggingConfig` operation.
+    /// Constructs a fluent builder for the [`CreateQueryLoggingConfig`](crate::client::fluent_builders::CreateQueryLoggingConfig) operation.
     ///
-    /// See [`CreateQueryLoggingConfig`](crate::client::fluent_builders::CreateQueryLoggingConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::CreateQueryLoggingConfig::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::CreateQueryLoggingConfig::set_hosted_zone_id): <p>The ID of the hosted zone that you want to log queries for. You can log queries only for public hosted zones.</p>
+    ///   - [`cloud_watch_logs_log_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateQueryLoggingConfig::cloud_watch_logs_log_group_arn) / [`set_cloud_watch_logs_log_group_arn(Option<String>)`](crate::client::fluent_builders::CreateQueryLoggingConfig::set_cloud_watch_logs_log_group_arn): <p>The Amazon Resource Name (ARN) for the log group that you want to Amazon Route 53 to send query logs to. This is the format of the ARN:</p>  <p>arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i> </p>  <p>To get the ARN for a log group, you can use the CloudWatch console, the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogGroups.html">DescribeLogGroups</a> API action, the <a href="https://docs.aws.amazon.com/cli/latest/reference/logs/describe-log-groups.html">describe-log-groups</a> command, or the applicable command in one of the Amazon Web Services SDKs.</p>
+    /// - On success, responds with [`CreateQueryLoggingConfigOutput`](crate::output::CreateQueryLoggingConfigOutput) with field(s):
+    ///   - [`query_logging_config(Option<QueryLoggingConfig>)`](crate::output::CreateQueryLoggingConfigOutput::query_logging_config): <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreateQueryLoggingConfigOutput::location): <p>The unique URL representing the new query logging configuration.</p>
+    /// - On failure, responds with [`SdkError<CreateQueryLoggingConfigError>`](crate::error::CreateQueryLoggingConfigError)
     pub fn create_query_logging_config(
         &self,
     ) -> fluent_builders::CreateQueryLoggingConfig<C, M, R> {
         fluent_builders::CreateQueryLoggingConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateReusableDelegationSet` operation.
+    /// Constructs a fluent builder for the [`CreateReusableDelegationSet`](crate::client::fluent_builders::CreateReusableDelegationSet) operation.
     ///
-    /// See [`CreateReusableDelegationSet`](crate::client::fluent_builders::CreateReusableDelegationSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`caller_reference(impl Into<String>)`](crate::client::fluent_builders::CreateReusableDelegationSet::caller_reference) / [`set_caller_reference(Option<String>)`](crate::client::fluent_builders::CreateReusableDelegationSet::set_caller_reference): <p>A unique string that identifies the request, and that allows you to retry failed <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string, for example a date/time stamp.</p>
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::CreateReusableDelegationSet::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::CreateReusableDelegationSet::set_hosted_zone_id): <p>If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted zone.</p>
+    /// - On success, responds with [`CreateReusableDelegationSetOutput`](crate::output::CreateReusableDelegationSetOutput) with field(s):
+    ///   - [`delegation_set(Option<DelegationSet>)`](crate::output::CreateReusableDelegationSetOutput::delegation_set): <p>A complex type that contains name server information.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreateReusableDelegationSetOutput::location): <p>The unique URL representing the new reusable delegation set.</p>
+    /// - On failure, responds with [`SdkError<CreateReusableDelegationSetError>`](crate::error::CreateReusableDelegationSetError)
     pub fn create_reusable_delegation_set(
         &self,
     ) -> fluent_builders::CreateReusableDelegationSet<C, M, R> {
         fluent_builders::CreateReusableDelegationSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTrafficPolicy` operation.
+    /// Constructs a fluent builder for the [`CreateTrafficPolicy`](crate::client::fluent_builders::CreateTrafficPolicy) operation.
     ///
-    /// See [`CreateTrafficPolicy`](crate::client::fluent_builders::CreateTrafficPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateTrafficPolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateTrafficPolicy::set_name): <p>The name of the traffic policy.</p>
+    ///   - [`document(impl Into<String>)`](crate::client::fluent_builders::CreateTrafficPolicy::document) / [`set_document(Option<String>)`](crate::client::fluent_builders::CreateTrafficPolicy::set_document): <p>The definition of this traffic policy in JSON format. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
+    ///   - [`comment(impl Into<String>)`](crate::client::fluent_builders::CreateTrafficPolicy::comment) / [`set_comment(Option<String>)`](crate::client::fluent_builders::CreateTrafficPolicy::set_comment): <p>(Optional) Any comments that you want to include about the traffic policy.</p>
+    /// - On success, responds with [`CreateTrafficPolicyOutput`](crate::output::CreateTrafficPolicyOutput) with field(s):
+    ///   - [`traffic_policy(Option<TrafficPolicy>)`](crate::output::CreateTrafficPolicyOutput::traffic_policy): <p>A complex type that contains settings for the new traffic policy.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreateTrafficPolicyOutput::location): <p>A unique URL that represents a new traffic policy.</p>
+    /// - On failure, responds with [`SdkError<CreateTrafficPolicyError>`](crate::error::CreateTrafficPolicyError)
     pub fn create_traffic_policy(&self) -> fluent_builders::CreateTrafficPolicy<C, M, R> {
         fluent_builders::CreateTrafficPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTrafficPolicyInstance` operation.
+    /// Constructs a fluent builder for the [`CreateTrafficPolicyInstance`](crate::client::fluent_builders::CreateTrafficPolicyInstance) operation.
     ///
-    /// See [`CreateTrafficPolicyInstance`](crate::client::fluent_builders::CreateTrafficPolicyInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::CreateTrafficPolicyInstance::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::CreateTrafficPolicyInstance::set_hosted_zone_id): <p>The ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the configuration in a traffic policy.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateTrafficPolicyInstance::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateTrafficPolicyInstance::set_name): <p>The domain name (such as example.com) or subdomain name (such as www.example.com) for which Amazon Route 53 responds to DNS queries by using the resource record sets that Route 53 creates for this traffic policy instance.</p>
+    ///   - [`ttl(i64)`](crate::client::fluent_builders::CreateTrafficPolicyInstance::ttl) / [`set_ttl(Option<i64>)`](crate::client::fluent_builders::CreateTrafficPolicyInstance::set_ttl): <p>(Optional) The TTL that you want Amazon Route 53 to assign to all of the resource record sets that it creates in the specified hosted zone.</p>
+    ///   - [`traffic_policy_id(impl Into<String>)`](crate::client::fluent_builders::CreateTrafficPolicyInstance::traffic_policy_id) / [`set_traffic_policy_id(Option<String>)`](crate::client::fluent_builders::CreateTrafficPolicyInstance::set_traffic_policy_id): <p>The ID of the traffic policy that you want to use to create resource record sets in the specified hosted zone.</p>
+    ///   - [`traffic_policy_version(i32)`](crate::client::fluent_builders::CreateTrafficPolicyInstance::traffic_policy_version) / [`set_traffic_policy_version(Option<i32>)`](crate::client::fluent_builders::CreateTrafficPolicyInstance::set_traffic_policy_version): <p>The version of the traffic policy that you want to use to create resource record sets in the specified hosted zone.</p>
+    /// - On success, responds with [`CreateTrafficPolicyInstanceOutput`](crate::output::CreateTrafficPolicyInstanceOutput) with field(s):
+    ///   - [`traffic_policy_instance(Option<TrafficPolicyInstance>)`](crate::output::CreateTrafficPolicyInstanceOutput::traffic_policy_instance): <p>A complex type that contains settings for the new traffic policy instance.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreateTrafficPolicyInstanceOutput::location): <p>A unique URL that represents a new traffic policy instance.</p>
+    /// - On failure, responds with [`SdkError<CreateTrafficPolicyInstanceError>`](crate::error::CreateTrafficPolicyInstanceError)
     pub fn create_traffic_policy_instance(
         &self,
     ) -> fluent_builders::CreateTrafficPolicyInstance<C, M, R> {
         fluent_builders::CreateTrafficPolicyInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTrafficPolicyVersion` operation.
+    /// Constructs a fluent builder for the [`CreateTrafficPolicyVersion`](crate::client::fluent_builders::CreateTrafficPolicyVersion) operation.
     ///
-    /// See [`CreateTrafficPolicyVersion`](crate::client::fluent_builders::CreateTrafficPolicyVersion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::CreateTrafficPolicyVersion::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::CreateTrafficPolicyVersion::set_id): <p>The ID of the traffic policy for which you want to create a new version.</p>
+    ///   - [`document(impl Into<String>)`](crate::client::fluent_builders::CreateTrafficPolicyVersion::document) / [`set_document(Option<String>)`](crate::client::fluent_builders::CreateTrafficPolicyVersion::set_document): <p>The definition of this version of the traffic policy, in JSON format. You specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>.</p>
+    ///   - [`comment(impl Into<String>)`](crate::client::fluent_builders::CreateTrafficPolicyVersion::comment) / [`set_comment(Option<String>)`](crate::client::fluent_builders::CreateTrafficPolicyVersion::set_comment): <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code> request, if any.</p>
+    /// - On success, responds with [`CreateTrafficPolicyVersionOutput`](crate::output::CreateTrafficPolicyVersionOutput) with field(s):
+    ///   - [`traffic_policy(Option<TrafficPolicy>)`](crate::output::CreateTrafficPolicyVersionOutput::traffic_policy): <p>A complex type that contains settings for the new version of the traffic policy.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreateTrafficPolicyVersionOutput::location): <p>A unique URL that represents a new traffic policy version.</p>
+    /// - On failure, responds with [`SdkError<CreateTrafficPolicyVersionError>`](crate::error::CreateTrafficPolicyVersionError)
     pub fn create_traffic_policy_version(
         &self,
     ) -> fluent_builders::CreateTrafficPolicyVersion<C, M, R> {
         fluent_builders::CreateTrafficPolicyVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVPCAssociationAuthorization` operation.
+    /// Constructs a fluent builder for the [`CreateVPCAssociationAuthorization`](crate::client::fluent_builders::CreateVPCAssociationAuthorization) operation.
     ///
-    /// See [`CreateVPCAssociationAuthorization`](crate::client::fluent_builders::CreateVPCAssociationAuthorization) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::CreateVPCAssociationAuthorization::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::CreateVPCAssociationAuthorization::set_hosted_zone_id): <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
+    ///   - [`vpc(Vpc)`](crate::client::fluent_builders::CreateVPCAssociationAuthorization::vpc) / [`set_vpc(Option<Vpc>)`](crate::client::fluent_builders::CreateVPCAssociationAuthorization::set_vpc): <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating with your hosted zone.</p>
+    /// - On success, responds with [`CreateVpcAssociationAuthorizationOutput`](crate::output::CreateVpcAssociationAuthorizationOutput) with field(s):
+    ///   - [`hosted_zone_id(Option<String>)`](crate::output::CreateVpcAssociationAuthorizationOutput::hosted_zone_id): <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
+    ///   - [`vpc(Option<Vpc>)`](crate::output::CreateVpcAssociationAuthorizationOutput::vpc): <p>The VPC that you authorized associating with a hosted zone.</p>
+    /// - On failure, responds with [`SdkError<CreateVPCAssociationAuthorizationError>`](crate::error::CreateVPCAssociationAuthorizationError)
     pub fn create_vpc_association_authorization(
         &self,
     ) -> fluent_builders::CreateVPCAssociationAuthorization<C, M, R> {
         fluent_builders::CreateVPCAssociationAuthorization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeactivateKeySigningKey` operation.
+    /// Constructs a fluent builder for the [`DeactivateKeySigningKey`](crate::client::fluent_builders::DeactivateKeySigningKey) operation.
     ///
-    /// See [`DeactivateKeySigningKey`](crate::client::fluent_builders::DeactivateKeySigningKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::DeactivateKeySigningKey::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::DeactivateKeySigningKey::set_hosted_zone_id): <p>A unique string used to identify a hosted zone.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeactivateKeySigningKey::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeactivateKeySigningKey::set_name): <p>A string used to identify a key-signing key (KSK).</p>
+    /// - On success, responds with [`DeactivateKeySigningKeyOutput`](crate::output::DeactivateKeySigningKeyOutput) with field(s):
+    ///   - [`change_info(Option<ChangeInfo>)`](crate::output::DeactivateKeySigningKeyOutput::change_info): <p>A complex type that describes change information about changes made to your hosted zone.</p>
+    /// - On failure, responds with [`SdkError<DeactivateKeySigningKeyError>`](crate::error::DeactivateKeySigningKeyError)
     pub fn deactivate_key_signing_key(&self) -> fluent_builders::DeactivateKeySigningKey<C, M, R> {
         fluent_builders::DeactivateKeySigningKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteHealthCheck` operation.
+    /// Constructs a fluent builder for the [`DeleteHealthCheck`](crate::client::fluent_builders::DeleteHealthCheck) operation.
     ///
-    /// See [`DeleteHealthCheck`](crate::client::fluent_builders::DeleteHealthCheck) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`health_check_id(impl Into<String>)`](crate::client::fluent_builders::DeleteHealthCheck::health_check_id) / [`set_health_check_id(Option<String>)`](crate::client::fluent_builders::DeleteHealthCheck::set_health_check_id): <p>The ID of the health check that you want to delete.</p>
+    /// - On success, responds with [`DeleteHealthCheckOutput`](crate::output::DeleteHealthCheckOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteHealthCheckError>`](crate::error::DeleteHealthCheckError)
     pub fn delete_health_check(&self) -> fluent_builders::DeleteHealthCheck<C, M, R> {
         fluent_builders::DeleteHealthCheck::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteHostedZone` operation.
+    /// Constructs a fluent builder for the [`DeleteHostedZone`](crate::client::fluent_builders::DeleteHostedZone) operation.
     ///
-    /// See [`DeleteHostedZone`](crate::client::fluent_builders::DeleteHostedZone) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteHostedZone::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteHostedZone::set_id): <p>The ID of the hosted zone you want to delete.</p>
+    /// - On success, responds with [`DeleteHostedZoneOutput`](crate::output::DeleteHostedZoneOutput) with field(s):
+    ///   - [`change_info(Option<ChangeInfo>)`](crate::output::DeleteHostedZoneOutput::change_info): <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
+    /// - On failure, responds with [`SdkError<DeleteHostedZoneError>`](crate::error::DeleteHostedZoneError)
     pub fn delete_hosted_zone(&self) -> fluent_builders::DeleteHostedZone<C, M, R> {
         fluent_builders::DeleteHostedZone::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteKeySigningKey` operation.
+    /// Constructs a fluent builder for the [`DeleteKeySigningKey`](crate::client::fluent_builders::DeleteKeySigningKey) operation.
     ///
-    /// See [`DeleteKeySigningKey`](crate::client::fluent_builders::DeleteKeySigningKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::DeleteKeySigningKey::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::DeleteKeySigningKey::set_hosted_zone_id): <p>A unique string used to identify a hosted zone.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteKeySigningKey::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteKeySigningKey::set_name): <p>A string used to identify a key-signing key (KSK).</p>
+    /// - On success, responds with [`DeleteKeySigningKeyOutput`](crate::output::DeleteKeySigningKeyOutput) with field(s):
+    ///   - [`change_info(Option<ChangeInfo>)`](crate::output::DeleteKeySigningKeyOutput::change_info): <p>A complex type that describes change information about changes made to your hosted zone.</p>
+    /// - On failure, responds with [`SdkError<DeleteKeySigningKeyError>`](crate::error::DeleteKeySigningKeyError)
     pub fn delete_key_signing_key(&self) -> fluent_builders::DeleteKeySigningKey<C, M, R> {
         fluent_builders::DeleteKeySigningKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteQueryLoggingConfig` operation.
+    /// Constructs a fluent builder for the [`DeleteQueryLoggingConfig`](crate::client::fluent_builders::DeleteQueryLoggingConfig) operation.
     ///
-    /// See [`DeleteQueryLoggingConfig`](crate::client::fluent_builders::DeleteQueryLoggingConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteQueryLoggingConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteQueryLoggingConfig::set_id): <p>The ID of the configuration that you want to delete. </p>
+    /// - On success, responds with [`DeleteQueryLoggingConfigOutput`](crate::output::DeleteQueryLoggingConfigOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteQueryLoggingConfigError>`](crate::error::DeleteQueryLoggingConfigError)
     pub fn delete_query_logging_config(
         &self,
     ) -> fluent_builders::DeleteQueryLoggingConfig<C, M, R> {
         fluent_builders::DeleteQueryLoggingConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteReusableDelegationSet` operation.
+    /// Constructs a fluent builder for the [`DeleteReusableDelegationSet`](crate::client::fluent_builders::DeleteReusableDelegationSet) operation.
     ///
-    /// See [`DeleteReusableDelegationSet`](crate::client::fluent_builders::DeleteReusableDelegationSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteReusableDelegationSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteReusableDelegationSet::set_id): <p>The ID of the reusable delegation set that you want to delete.</p>
+    /// - On success, responds with [`DeleteReusableDelegationSetOutput`](crate::output::DeleteReusableDelegationSetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteReusableDelegationSetError>`](crate::error::DeleteReusableDelegationSetError)
     pub fn delete_reusable_delegation_set(
         &self,
     ) -> fluent_builders::DeleteReusableDelegationSet<C, M, R> {
         fluent_builders::DeleteReusableDelegationSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTrafficPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteTrafficPolicy`](crate::client::fluent_builders::DeleteTrafficPolicy) operation.
     ///
-    /// See [`DeleteTrafficPolicy`](crate::client::fluent_builders::DeleteTrafficPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteTrafficPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteTrafficPolicy::set_id): <p>The ID of the traffic policy that you want to delete.</p>
+    ///   - [`version(i32)`](crate::client::fluent_builders::DeleteTrafficPolicy::version) / [`set_version(Option<i32>)`](crate::client::fluent_builders::DeleteTrafficPolicy::set_version): <p>The version number of the traffic policy that you want to delete.</p>
+    /// - On success, responds with [`DeleteTrafficPolicyOutput`](crate::output::DeleteTrafficPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTrafficPolicyError>`](crate::error::DeleteTrafficPolicyError)
     pub fn delete_traffic_policy(&self) -> fluent_builders::DeleteTrafficPolicy<C, M, R> {
         fluent_builders::DeleteTrafficPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTrafficPolicyInstance` operation.
+    /// Constructs a fluent builder for the [`DeleteTrafficPolicyInstance`](crate::client::fluent_builders::DeleteTrafficPolicyInstance) operation.
     ///
-    /// See [`DeleteTrafficPolicyInstance`](crate::client::fluent_builders::DeleteTrafficPolicyInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteTrafficPolicyInstance::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteTrafficPolicyInstance::set_id): <p>The ID of the traffic policy instance that you want to delete. </p> <important>   <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p>  </important>
+    /// - On success, responds with [`DeleteTrafficPolicyInstanceOutput`](crate::output::DeleteTrafficPolicyInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTrafficPolicyInstanceError>`](crate::error::DeleteTrafficPolicyInstanceError)
     pub fn delete_traffic_policy_instance(
         &self,
     ) -> fluent_builders::DeleteTrafficPolicyInstance<C, M, R> {
         fluent_builders::DeleteTrafficPolicyInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVPCAssociationAuthorization` operation.
+    /// Constructs a fluent builder for the [`DeleteVPCAssociationAuthorization`](crate::client::fluent_builders::DeleteVPCAssociationAuthorization) operation.
     ///
-    /// See [`DeleteVPCAssociationAuthorization`](crate::client::fluent_builders::DeleteVPCAssociationAuthorization) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVPCAssociationAuthorization::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::DeleteVPCAssociationAuthorization::set_hosted_zone_id): <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account, the ID of the hosted zone.</p>
+    ///   - [`vpc(Vpc)`](crate::client::fluent_builders::DeleteVPCAssociationAuthorization::vpc) / [`set_vpc(Option<Vpc>)`](crate::client::fluent_builders::DeleteVPCAssociationAuthorization::set_vpc): <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account, a complex type that includes the ID and region of the VPC.</p>
+    /// - On success, responds with [`DeleteVpcAssociationAuthorizationOutput`](crate::output::DeleteVpcAssociationAuthorizationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteVPCAssociationAuthorizationError>`](crate::error::DeleteVPCAssociationAuthorizationError)
     pub fn delete_vpc_association_authorization(
         &self,
     ) -> fluent_builders::DeleteVPCAssociationAuthorization<C, M, R> {
         fluent_builders::DeleteVPCAssociationAuthorization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableHostedZoneDNSSEC` operation.
+    /// Constructs a fluent builder for the [`DisableHostedZoneDNSSEC`](crate::client::fluent_builders::DisableHostedZoneDNSSEC) operation.
     ///
-    /// See [`DisableHostedZoneDNSSEC`](crate::client::fluent_builders::DisableHostedZoneDNSSEC) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::DisableHostedZoneDNSSEC::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::DisableHostedZoneDNSSEC::set_hosted_zone_id): <p>A unique string used to identify a hosted zone.</p>
+    /// - On success, responds with [`DisableHostedZoneDnssecOutput`](crate::output::DisableHostedZoneDnssecOutput) with field(s):
+    ///   - [`change_info(Option<ChangeInfo>)`](crate::output::DisableHostedZoneDnssecOutput::change_info): <p>A complex type that describes change information about changes made to your hosted zone.</p>
+    /// - On failure, responds with [`SdkError<DisableHostedZoneDNSSECError>`](crate::error::DisableHostedZoneDNSSECError)
     pub fn disable_hosted_zone_dnssec(&self) -> fluent_builders::DisableHostedZoneDNSSEC<C, M, R> {
         fluent_builders::DisableHostedZoneDNSSEC::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateVPCFromHostedZone` operation.
+    /// Constructs a fluent builder for the [`DisassociateVPCFromHostedZone`](crate::client::fluent_builders::DisassociateVPCFromHostedZone) operation.
     ///
-    /// See [`DisassociateVPCFromHostedZone`](crate::client::fluent_builders::DisassociateVPCFromHostedZone) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateVPCFromHostedZone::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::DisassociateVPCFromHostedZone::set_hosted_zone_id): <p>The ID of the private hosted zone that you want to disassociate a VPC from.</p>
+    ///   - [`vpc(Vpc)`](crate::client::fluent_builders::DisassociateVPCFromHostedZone::vpc) / [`set_vpc(Option<Vpc>)`](crate::client::fluent_builders::DisassociateVPCFromHostedZone::set_vpc): <p>A complex type that contains information about the VPC that you're disassociating from the specified hosted zone.</p>
+    ///   - [`comment(impl Into<String>)`](crate::client::fluent_builders::DisassociateVPCFromHostedZone::comment) / [`set_comment(Option<String>)`](crate::client::fluent_builders::DisassociateVPCFromHostedZone::set_comment): <p> <i>Optional:</i> A comment about the disassociation request.</p>
+    /// - On success, responds with [`DisassociateVpcFromHostedZoneOutput`](crate::output::DisassociateVpcFromHostedZoneOutput) with field(s):
+    ///   - [`change_info(Option<ChangeInfo>)`](crate::output::DisassociateVpcFromHostedZoneOutput::change_info): <p>A complex type that describes the changes made to the specified private hosted zone.</p>
+    /// - On failure, responds with [`SdkError<DisassociateVPCFromHostedZoneError>`](crate::error::DisassociateVPCFromHostedZoneError)
     pub fn disassociate_vpc_from_hosted_zone(
         &self,
     ) -> fluent_builders::DisassociateVPCFromHostedZone<C, M, R> {
         fluent_builders::DisassociateVPCFromHostedZone::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableHostedZoneDNSSEC` operation.
+    /// Constructs a fluent builder for the [`EnableHostedZoneDNSSEC`](crate::client::fluent_builders::EnableHostedZoneDNSSEC) operation.
     ///
-    /// See [`EnableHostedZoneDNSSEC`](crate::client::fluent_builders::EnableHostedZoneDNSSEC) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::EnableHostedZoneDNSSEC::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::EnableHostedZoneDNSSEC::set_hosted_zone_id): <p>A unique string used to identify a hosted zone.</p>
+    /// - On success, responds with [`EnableHostedZoneDnssecOutput`](crate::output::EnableHostedZoneDnssecOutput) with field(s):
+    ///   - [`change_info(Option<ChangeInfo>)`](crate::output::EnableHostedZoneDnssecOutput::change_info): <p>A complex type that describes change information about changes made to your hosted zone.</p>
+    /// - On failure, responds with [`SdkError<EnableHostedZoneDNSSECError>`](crate::error::EnableHostedZoneDNSSECError)
     pub fn enable_hosted_zone_dnssec(&self) -> fluent_builders::EnableHostedZoneDNSSEC<C, M, R> {
         fluent_builders::EnableHostedZoneDNSSEC::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccountLimit` operation.
+    /// Constructs a fluent builder for the [`GetAccountLimit`](crate::client::fluent_builders::GetAccountLimit) operation.
     ///
-    /// See [`GetAccountLimit`](crate::client::fluent_builders::GetAccountLimit) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`r#type(AccountLimitType)`](crate::client::fluent_builders::GetAccountLimit::r#type) / [`set_type(Option<AccountLimitType>)`](crate::client::fluent_builders::GetAccountLimit::set_type): <p>The limit that you want to get. Valid values include the following:</p>  <ul>   <li> <p> <b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p> </li>   <li> <p> <b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p> </li>   <li> <p> <b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p> </li>   <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>   <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>  </ul>
+    /// - On success, responds with [`GetAccountLimitOutput`](crate::output::GetAccountLimitOutput) with field(s):
+    ///   - [`limit(Option<AccountLimit>)`](crate::output::GetAccountLimitOutput::limit): <p>The current setting for the specified limit. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of health checks that you can create using the current account.</p>
+    ///   - [`count(i64)`](crate::output::GetAccountLimitOutput::count): <p>The current number of entities that you have created of the specified type. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Count</code> is the current number of health checks that you have created using the current account.</p>
+    /// - On failure, responds with [`SdkError<GetAccountLimitError>`](crate::error::GetAccountLimitError)
     pub fn get_account_limit(&self) -> fluent_builders::GetAccountLimit<C, M, R> {
         fluent_builders::GetAccountLimit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetChange` operation.
+    /// Constructs a fluent builder for the [`GetChange`](crate::client::fluent_builders::GetChange) operation.
     ///
-    /// See [`GetChange`](crate::client::fluent_builders::GetChange) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetChange::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetChange::set_id): <p>The ID of the change batch request. The value that you specify here is the value that <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the request.</p>
+    /// - On success, responds with [`GetChangeOutput`](crate::output::GetChangeOutput) with field(s):
+    ///   - [`change_info(Option<ChangeInfo>)`](crate::output::GetChangeOutput::change_info): <p>A complex type that contains information about the specified change batch.</p>
+    /// - On failure, responds with [`SdkError<GetChangeError>`](crate::error::GetChangeError)
     pub fn get_change(&self) -> fluent_builders::GetChange<C, M, R> {
         fluent_builders::GetChange::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCheckerIpRanges` operation.
+    /// Constructs a fluent builder for the [`GetCheckerIpRanges`](crate::client::fluent_builders::GetCheckerIpRanges) operation.
     ///
-    /// See [`GetCheckerIpRanges`](crate::client::fluent_builders::GetCheckerIpRanges) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetCheckerIpRanges::send) it.
+
+    /// - On success, responds with [`GetCheckerIpRangesOutput`](crate::output::GetCheckerIpRangesOutput) with field(s):
+    ///   - [`checker_ip_ranges(Option<Vec<String>>)`](crate::output::GetCheckerIpRangesOutput::checker_ip_ranges): <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health checkers.</p>
+    /// - On failure, responds with [`SdkError<GetCheckerIpRangesError>`](crate::error::GetCheckerIpRangesError)
     pub fn get_checker_ip_ranges(&self) -> fluent_builders::GetCheckerIpRanges<C, M, R> {
         fluent_builders::GetCheckerIpRanges::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDNSSEC` operation.
+    /// Constructs a fluent builder for the [`GetDNSSEC`](crate::client::fluent_builders::GetDNSSEC) operation.
     ///
-    /// See [`GetDNSSEC`](crate::client::fluent_builders::GetDNSSEC) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::GetDNSSEC::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::GetDNSSEC::set_hosted_zone_id): <p>A unique string used to identify a hosted zone.</p>
+    /// - On success, responds with [`GetDnssecOutput`](crate::output::GetDnssecOutput) with field(s):
+    ///   - [`status(Option<DnssecStatus>)`](crate::output::GetDnssecOutput::status): <p>A string repesenting the status of DNSSEC.</p>
+    ///   - [`key_signing_keys(Option<Vec<KeySigningKey>>)`](crate::output::GetDnssecOutput::key_signing_keys): <p>The key-signing keys (KSKs) in your account.</p>
+    /// - On failure, responds with [`SdkError<GetDNSSECError>`](crate::error::GetDNSSECError)
     pub fn get_dnssec(&self) -> fluent_builders::GetDNSSEC<C, M, R> {
         fluent_builders::GetDNSSEC::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGeoLocation` operation.
+    /// Constructs a fluent builder for the [`GetGeoLocation`](crate::client::fluent_builders::GetGeoLocation) operation.
     ///
-    /// See [`GetGeoLocation`](crate::client::fluent_builders::GetGeoLocation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`continent_code(impl Into<String>)`](crate::client::fluent_builders::GetGeoLocation::continent_code) / [`set_continent_code(Option<String>)`](crate::client::fluent_builders::GetGeoLocation::set_continent_code): <p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p>  <ul>   <li> <p> <b>AF</b>: Africa</p> </li>   <li> <p> <b>AN</b>: Antarctica</p> </li>   <li> <p> <b>AS</b>: Asia</p> </li>   <li> <p> <b>EU</b>: Europe</p> </li>   <li> <p> <b>OC</b>: Oceania</p> </li>   <li> <p> <b>NA</b>: North America</p> </li>   <li> <p> <b>SA</b>: South America</p> </li>  </ul>
+    ///   - [`country_code(impl Into<String>)`](crate::client::fluent_builders::GetGeoLocation::country_code) / [`set_country_code(Option<String>)`](crate::client::fluent_builders::GetGeoLocation::set_country_code): <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
+    ///   - [`subdivision_code(impl Into<String>)`](crate::client::fluent_builders::GetGeoLocation::subdivision_code) / [`set_subdivision_code(Option<String>)`](crate::client::fluent_builders::GetGeoLocation::set_subdivision_code): <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
+    /// - On success, responds with [`GetGeoLocationOutput`](crate::output::GetGeoLocationOutput) with field(s):
+    ///   - [`geo_location_details(Option<GeoLocationDetails>)`](crate::output::GetGeoLocationOutput::geo_location_details): <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
+    /// - On failure, responds with [`SdkError<GetGeoLocationError>`](crate::error::GetGeoLocationError)
     pub fn get_geo_location(&self) -> fluent_builders::GetGeoLocation<C, M, R> {
         fluent_builders::GetGeoLocation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetHealthCheck` operation.
+    /// Constructs a fluent builder for the [`GetHealthCheck`](crate::client::fluent_builders::GetHealthCheck) operation.
     ///
-    /// See [`GetHealthCheck`](crate::client::fluent_builders::GetHealthCheck) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`health_check_id(impl Into<String>)`](crate::client::fluent_builders::GetHealthCheck::health_check_id) / [`set_health_check_id(Option<String>)`](crate::client::fluent_builders::GetHealthCheck::set_health_check_id): <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
+    /// - On success, responds with [`GetHealthCheckOutput`](crate::output::GetHealthCheckOutput) with field(s):
+    ///   - [`health_check(Option<HealthCheck>)`](crate::output::GetHealthCheckOutput::health_check): <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
+    /// - On failure, responds with [`SdkError<GetHealthCheckError>`](crate::error::GetHealthCheckError)
     pub fn get_health_check(&self) -> fluent_builders::GetHealthCheck<C, M, R> {
         fluent_builders::GetHealthCheck::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetHealthCheckCount` operation.
+    /// Constructs a fluent builder for the [`GetHealthCheckCount`](crate::client::fluent_builders::GetHealthCheckCount) operation.
     ///
-    /// See [`GetHealthCheckCount`](crate::client::fluent_builders::GetHealthCheckCount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetHealthCheckCount::send) it.
+
+    /// - On success, responds with [`GetHealthCheckCountOutput`](crate::output::GetHealthCheckCountOutput) with field(s):
+    ///   - [`health_check_count(Option<i64>)`](crate::output::GetHealthCheckCountOutput::health_check_count): <p>The number of health checks associated with the current Amazon Web Services account.</p>
+    /// - On failure, responds with [`SdkError<GetHealthCheckCountError>`](crate::error::GetHealthCheckCountError)
     pub fn get_health_check_count(&self) -> fluent_builders::GetHealthCheckCount<C, M, R> {
         fluent_builders::GetHealthCheckCount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetHealthCheckLastFailureReason` operation.
+    /// Constructs a fluent builder for the [`GetHealthCheckLastFailureReason`](crate::client::fluent_builders::GetHealthCheckLastFailureReason) operation.
     ///
-    /// See [`GetHealthCheckLastFailureReason`](crate::client::fluent_builders::GetHealthCheckLastFailureReason) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`health_check_id(impl Into<String>)`](crate::client::fluent_builders::GetHealthCheckLastFailureReason::health_check_id) / [`set_health_check_id(Option<String>)`](crate::client::fluent_builders::GetHealthCheckLastFailureReason::set_health_check_id): <p>The ID for the health check for which you want the last failure reason. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note>   <p>If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>  </note>
+    /// - On success, responds with [`GetHealthCheckLastFailureReasonOutput`](crate::output::GetHealthCheckLastFailureReasonOutput) with field(s):
+    ///   - [`health_check_observations(Option<Vec<HealthCheckObservation>>)`](crate::output::GetHealthCheckLastFailureReasonOutput::health_check_observations): <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
+    /// - On failure, responds with [`SdkError<GetHealthCheckLastFailureReasonError>`](crate::error::GetHealthCheckLastFailureReasonError)
     pub fn get_health_check_last_failure_reason(
         &self,
     ) -> fluent_builders::GetHealthCheckLastFailureReason<C, M, R> {
         fluent_builders::GetHealthCheckLastFailureReason::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetHealthCheckStatus` operation.
+    /// Constructs a fluent builder for the [`GetHealthCheckStatus`](crate::client::fluent_builders::GetHealthCheckStatus) operation.
     ///
-    /// See [`GetHealthCheckStatus`](crate::client::fluent_builders::GetHealthCheckStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`health_check_id(impl Into<String>)`](crate::client::fluent_builders::GetHealthCheckStatus::health_check_id) / [`set_health_check_id(Option<String>)`](crate::client::fluent_builders::GetHealthCheckStatus::set_health_check_id): <p>The ID for the health check that you want the current status for. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note>   <p>If you want to check the status of a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckStatus</code> to get the status of a calculated health check.</p>  </note>
+    /// - On success, responds with [`GetHealthCheckStatusOutput`](crate::output::GetHealthCheckStatusOutput) with field(s):
+    ///   - [`health_check_observations(Option<Vec<HealthCheckObservation>>)`](crate::output::GetHealthCheckStatusOutput::health_check_observations): <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status about the health check endpoint.</p>
+    /// - On failure, responds with [`SdkError<GetHealthCheckStatusError>`](crate::error::GetHealthCheckStatusError)
     pub fn get_health_check_status(&self) -> fluent_builders::GetHealthCheckStatus<C, M, R> {
         fluent_builders::GetHealthCheckStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetHostedZone` operation.
+    /// Constructs a fluent builder for the [`GetHostedZone`](crate::client::fluent_builders::GetHostedZone) operation.
     ///
-    /// See [`GetHostedZone`](crate::client::fluent_builders::GetHostedZone) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetHostedZone::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetHostedZone::set_id): <p>The ID of the hosted zone that you want to get information about.</p>
+    /// - On success, responds with [`GetHostedZoneOutput`](crate::output::GetHostedZoneOutput) with field(s):
+    ///   - [`hosted_zone(Option<HostedZone>)`](crate::output::GetHostedZoneOutput::hosted_zone): <p>A complex type that contains general information about the specified hosted zone.</p>
+    ///   - [`delegation_set(Option<DelegationSet>)`](crate::output::GetHostedZoneOutput::delegation_set): <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
+    ///   - [`vp_cs(Option<Vec<Vpc>>)`](crate::output::GetHostedZoneOutput::vp_cs): <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
+    /// - On failure, responds with [`SdkError<GetHostedZoneError>`](crate::error::GetHostedZoneError)
     pub fn get_hosted_zone(&self) -> fluent_builders::GetHostedZone<C, M, R> {
         fluent_builders::GetHostedZone::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetHostedZoneCount` operation.
+    /// Constructs a fluent builder for the [`GetHostedZoneCount`](crate::client::fluent_builders::GetHostedZoneCount) operation.
     ///
-    /// See [`GetHostedZoneCount`](crate::client::fluent_builders::GetHostedZoneCount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetHostedZoneCount::send) it.
+
+    /// - On success, responds with [`GetHostedZoneCountOutput`](crate::output::GetHostedZoneCountOutput) with field(s):
+    ///   - [`hosted_zone_count(Option<i64>)`](crate::output::GetHostedZoneCountOutput::hosted_zone_count): <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
+    /// - On failure, responds with [`SdkError<GetHostedZoneCountError>`](crate::error::GetHostedZoneCountError)
     pub fn get_hosted_zone_count(&self) -> fluent_builders::GetHostedZoneCount<C, M, R> {
         fluent_builders::GetHostedZoneCount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetHostedZoneLimit` operation.
+    /// Constructs a fluent builder for the [`GetHostedZoneLimit`](crate::client::fluent_builders::GetHostedZoneLimit) operation.
     ///
-    /// See [`GetHostedZoneLimit`](crate::client::fluent_builders::GetHostedZoneLimit) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`r#type(HostedZoneLimitType)`](crate::client::fluent_builders::GetHostedZoneLimit::r#type) / [`set_type(Option<HostedZoneLimitType>)`](crate::client::fluent_builders::GetHostedZoneLimit::set_type): <p>The limit that you want to get. Valid values include the following:</p>  <ul>   <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>   <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>  </ul>
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::GetHostedZoneLimit::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::GetHostedZoneLimit::set_hosted_zone_id): <p>The ID of the hosted zone that you want to get a limit for.</p>
+    /// - On success, responds with [`GetHostedZoneLimitOutput`](crate::output::GetHostedZoneLimitOutput) with field(s):
+    ///   - [`limit(Option<HostedZoneLimit>)`](crate::output::GetHostedZoneLimitOutput::limit): <p>The current setting for the specified limit. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of records that you can create in the specified hosted zone.</p>
+    ///   - [`count(i64)`](crate::output::GetHostedZoneLimitOutput::count): <p>The current number of entities that you have created of the specified type. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Count</code> is the current number of records that you have created in the specified hosted zone.</p>
+    /// - On failure, responds with [`SdkError<GetHostedZoneLimitError>`](crate::error::GetHostedZoneLimitError)
     pub fn get_hosted_zone_limit(&self) -> fluent_builders::GetHostedZoneLimit<C, M, R> {
         fluent_builders::GetHostedZoneLimit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetQueryLoggingConfig` operation.
+    /// Constructs a fluent builder for the [`GetQueryLoggingConfig`](crate::client::fluent_builders::GetQueryLoggingConfig) operation.
     ///
-    /// See [`GetQueryLoggingConfig`](crate::client::fluent_builders::GetQueryLoggingConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetQueryLoggingConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetQueryLoggingConfig::set_id): <p>The ID of the configuration for DNS query logging that you want to get information about.</p>
+    /// - On success, responds with [`GetQueryLoggingConfigOutput`](crate::output::GetQueryLoggingConfigOutput) with field(s):
+    ///   - [`query_logging_config(Option<QueryLoggingConfig>)`](crate::output::GetQueryLoggingConfigOutput::query_logging_config): <p>A complex type that contains information about the query logging configuration that you specified in a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a> request.</p>
+    /// - On failure, responds with [`SdkError<GetQueryLoggingConfigError>`](crate::error::GetQueryLoggingConfigError)
     pub fn get_query_logging_config(&self) -> fluent_builders::GetQueryLoggingConfig<C, M, R> {
         fluent_builders::GetQueryLoggingConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetReusableDelegationSet` operation.
+    /// Constructs a fluent builder for the [`GetReusableDelegationSet`](crate::client::fluent_builders::GetReusableDelegationSet) operation.
     ///
-    /// See [`GetReusableDelegationSet`](crate::client::fluent_builders::GetReusableDelegationSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetReusableDelegationSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetReusableDelegationSet::set_id): <p>The ID of the reusable delegation set that you want to get a list of name servers for.</p>
+    /// - On success, responds with [`GetReusableDelegationSetOutput`](crate::output::GetReusableDelegationSetOutput) with field(s):
+    ///   - [`delegation_set(Option<DelegationSet>)`](crate::output::GetReusableDelegationSetOutput::delegation_set): <p>A complex type that contains information about the reusable delegation set.</p>
+    /// - On failure, responds with [`SdkError<GetReusableDelegationSetError>`](crate::error::GetReusableDelegationSetError)
     pub fn get_reusable_delegation_set(
         &self,
     ) -> fluent_builders::GetReusableDelegationSet<C, M, R> {
         fluent_builders::GetReusableDelegationSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetReusableDelegationSetLimit` operation.
+    /// Constructs a fluent builder for the [`GetReusableDelegationSetLimit`](crate::client::fluent_builders::GetReusableDelegationSetLimit) operation.
     ///
-    /// See [`GetReusableDelegationSetLimit`](crate::client::fluent_builders::GetReusableDelegationSetLimit) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`r#type(ReusableDelegationSetLimitType)`](crate::client::fluent_builders::GetReusableDelegationSetLimit::r#type) / [`set_type(Option<ReusableDelegationSetLimitType>)`](crate::client::fluent_builders::GetReusableDelegationSetLimit::set_type): <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
+    ///   - [`delegation_set_id(impl Into<String>)`](crate::client::fluent_builders::GetReusableDelegationSetLimit::delegation_set_id) / [`set_delegation_set_id(Option<String>)`](crate::client::fluent_builders::GetReusableDelegationSetLimit::set_delegation_set_id): <p>The ID of the delegation set that you want to get the limit for.</p>
+    /// - On success, responds with [`GetReusableDelegationSetLimitOutput`](crate::output::GetReusableDelegationSetLimitOutput) with field(s):
+    ///   - [`limit(Option<ReusableDelegationSetLimit>)`](crate::output::GetReusableDelegationSetLimitOutput::limit): <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
+    ///   - [`count(i64)`](crate::output::GetReusableDelegationSetLimitOutput::count): <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
+    /// - On failure, responds with [`SdkError<GetReusableDelegationSetLimitError>`](crate::error::GetReusableDelegationSetLimitError)
     pub fn get_reusable_delegation_set_limit(
         &self,
     ) -> fluent_builders::GetReusableDelegationSetLimit<C, M, R> {
         fluent_builders::GetReusableDelegationSetLimit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTrafficPolicy` operation.
+    /// Constructs a fluent builder for the [`GetTrafficPolicy`](crate::client::fluent_builders::GetTrafficPolicy) operation.
     ///
-    /// See [`GetTrafficPolicy`](crate::client::fluent_builders::GetTrafficPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetTrafficPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetTrafficPolicy::set_id): <p>The ID of the traffic policy that you want to get information about.</p>
+    ///   - [`version(i32)`](crate::client::fluent_builders::GetTrafficPolicy::version) / [`set_version(Option<i32>)`](crate::client::fluent_builders::GetTrafficPolicy::set_version): <p>The version number of the traffic policy that you want to get information about.</p>
+    /// - On success, responds with [`GetTrafficPolicyOutput`](crate::output::GetTrafficPolicyOutput) with field(s):
+    ///   - [`traffic_policy(Option<TrafficPolicy>)`](crate::output::GetTrafficPolicyOutput::traffic_policy): <p>A complex type that contains settings for the specified traffic policy.</p>
+    /// - On failure, responds with [`SdkError<GetTrafficPolicyError>`](crate::error::GetTrafficPolicyError)
     pub fn get_traffic_policy(&self) -> fluent_builders::GetTrafficPolicy<C, M, R> {
         fluent_builders::GetTrafficPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTrafficPolicyInstance` operation.
+    /// Constructs a fluent builder for the [`GetTrafficPolicyInstance`](crate::client::fluent_builders::GetTrafficPolicyInstance) operation.
     ///
-    /// See [`GetTrafficPolicyInstance`](crate::client::fluent_builders::GetTrafficPolicyInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetTrafficPolicyInstance::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetTrafficPolicyInstance::set_id): <p>The ID of the traffic policy instance that you want to get information about.</p>
+    /// - On success, responds with [`GetTrafficPolicyInstanceOutput`](crate::output::GetTrafficPolicyInstanceOutput) with field(s):
+    ///   - [`traffic_policy_instance(Option<TrafficPolicyInstance>)`](crate::output::GetTrafficPolicyInstanceOutput::traffic_policy_instance): <p>A complex type that contains settings for the traffic policy instance.</p>
+    /// - On failure, responds with [`SdkError<GetTrafficPolicyInstanceError>`](crate::error::GetTrafficPolicyInstanceError)
     pub fn get_traffic_policy_instance(
         &self,
     ) -> fluent_builders::GetTrafficPolicyInstance<C, M, R> {
         fluent_builders::GetTrafficPolicyInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTrafficPolicyInstanceCount` operation.
+    /// Constructs a fluent builder for the [`GetTrafficPolicyInstanceCount`](crate::client::fluent_builders::GetTrafficPolicyInstanceCount) operation.
     ///
-    /// See [`GetTrafficPolicyInstanceCount`](crate::client::fluent_builders::GetTrafficPolicyInstanceCount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetTrafficPolicyInstanceCount::send) it.
+
+    /// - On success, responds with [`GetTrafficPolicyInstanceCountOutput`](crate::output::GetTrafficPolicyInstanceCountOutput) with field(s):
+    ///   - [`traffic_policy_instance_count(Option<i32>)`](crate::output::GetTrafficPolicyInstanceCountOutput::traffic_policy_instance_count): <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
+    /// - On failure, responds with [`SdkError<GetTrafficPolicyInstanceCountError>`](crate::error::GetTrafficPolicyInstanceCountError)
     pub fn get_traffic_policy_instance_count(
         &self,
     ) -> fluent_builders::GetTrafficPolicyInstanceCount<C, M, R> {
         fluent_builders::GetTrafficPolicyInstanceCount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGeoLocations` operation.
+    /// Constructs a fluent builder for the [`ListGeoLocations`](crate::client::fluent_builders::ListGeoLocations) operation.
     ///
-    /// See [`ListGeoLocations`](crate::client::fluent_builders::ListGeoLocations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`start_continent_code(impl Into<String>)`](crate::client::fluent_builders::ListGeoLocations::start_continent_code) / [`set_start_continent_code(Option<String>)`](crate::client::fluent_builders::ListGeoLocations::set_start_continent_code): <p>The code for the continent with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in <code>startcontinentcode</code> to return the next page of results.</p>  <p>Include <code>startcontinentcode</code> only if you want to list continents. Don't include <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.</p>
+    ///   - [`start_country_code(impl Into<String>)`](crate::client::fluent_builders::ListGeoLocations::start_country_code) / [`set_start_country_code(Option<String>)`](crate::client::fluent_builders::ListGeoLocations::set_start_country_code): <p>The code for the country with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that value in <code>startcountrycode</code> to return the next page of results.</p>
+    ///   - [`start_subdivision_code(impl Into<String>)`](crate::client::fluent_builders::ListGeoLocations::start_subdivision_code) / [`set_start_subdivision_code(Option<String>)`](crate::client::fluent_builders::ListGeoLocations::set_start_subdivision_code): <p>The code for the state of the United States with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous response has a value, enter that value in <code>startsubdivisioncode</code> to return the next page of results.</p>  <p>To list subdivisions (U.S. states), you must include both <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListGeoLocations::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListGeoLocations::set_max_items): <p>(Optional) The maximum number of geolocations to be included in the response body for this request. If more than <code>maxitems</code> geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in the response is <code>true</code>.</p>
+    /// - On success, responds with [`ListGeoLocationsOutput`](crate::output::ListGeoLocationsOutput) with field(s):
+    ///   - [`geo_location_details_list(Option<Vec<GeoLocationDetails>>)`](crate::output::ListGeoLocationsOutput::geo_location_details_list): <p>A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53 supports for geolocation.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListGeoLocationsOutput::is_truncated): <p>A value that indicates whether more locations remain to be listed after the last location in this response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and <code>startsubdivisioncode</code>, as applicable.</p>
+    ///   - [`next_continent_code(Option<String>)`](crate::output::ListGeoLocationsOutput::next_continent_code): <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextContinentCode</code> in the <code>startcontinentcode</code> parameter in another <code>ListGeoLocations</code> request.</p>
+    ///   - [`next_country_code(Option<String>)`](crate::output::ListGeoLocationsOutput::next_country_code): <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter in another <code>ListGeoLocations</code> request.</p>
+    ///   - [`next_subdivision_code(Option<String>)`](crate::output::ListGeoLocationsOutput::next_subdivision_code): <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another <code>ListGeoLocations</code> request.</p>
+    ///   - [`max_items(Option<i32>)`](crate::output::ListGeoLocationsOutput::max_items): <p>The value that you specified for <code>MaxItems</code> in the request.</p>
+    /// - On failure, responds with [`SdkError<ListGeoLocationsError>`](crate::error::ListGeoLocationsError)
     pub fn list_geo_locations(&self) -> fluent_builders::ListGeoLocations<C, M, R> {
         fluent_builders::ListGeoLocations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListHealthChecks` operation.
+    /// Constructs a fluent builder for the [`ListHealthChecks`](crate::client::fluent_builders::ListHealthChecks) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListHealthChecks::into_paginator).
     ///
-    /// See [`ListHealthChecks`](crate::client::fluent_builders::ListHealthChecks) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHealthChecks::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListHealthChecks::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListHealthChecks::set_marker): <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more health checks. To get another group, submit another <code>ListHealthChecks</code> request. </p>  <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first health check that Amazon Route 53 will return if you submit another request.</p>  <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more health checks to get.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListHealthChecks::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListHealthChecks::set_max_items): <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request. Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than 100, Route 53 returns only the first 100 health checks. </p>
+    /// - On success, responds with [`ListHealthChecksOutput`](crate::output::ListHealthChecksOutput) with field(s):
+    ///   - [`health_checks(Option<Vec<HealthCheck>>)`](crate::output::ListHealthChecksOutput::health_checks): <p>A complex type that contains one <code>HealthCheck</code> element for each health check that is associated with the current Amazon Web Services account.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListHealthChecksOutput::marker): <p>For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the previous request.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListHealthChecksOutput::is_truncated): <p>A flag that indicates whether there are more health checks to be listed. If the response was truncated, you can get the next group of health checks by submitting another <code>ListHealthChecks</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::ListHealthChecksOutput::next_marker): <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first health check that Amazon Route 53 returns if you submit another <code>ListHealthChecks</code> request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
+    ///   - [`max_items(Option<i32>)`](crate::output::ListHealthChecksOutput::max_items): <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHealthChecks</code> that produced the current response.</p>
+    /// - On failure, responds with [`SdkError<ListHealthChecksError>`](crate::error::ListHealthChecksError)
     pub fn list_health_checks(&self) -> fluent_builders::ListHealthChecks<C, M, R> {
         fluent_builders::ListHealthChecks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListHostedZones` operation.
+    /// Constructs a fluent builder for the [`ListHostedZones`](crate::client::fluent_builders::ListHostedZones) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListHostedZones::into_paginator).
     ///
-    /// See [`ListHostedZones`](crate::client::fluent_builders::ListHostedZones) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHostedZones::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListHostedZones::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListHostedZones::set_marker): <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>  <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>  <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more hosted zones to get.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListHostedZones::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListHostedZones::set_max_items): <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Route 53 will return if you submit another request.</p>
+    ///   - [`delegation_set_id(impl Into<String>)`](crate::client::fluent_builders::ListHostedZones::delegation_set_id) / [`set_delegation_set_id(Option<String>)`](crate::client::fluent_builders::ListHostedZones::set_delegation_set_id): <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
+    /// - On success, responds with [`ListHostedZonesOutput`](crate::output::ListHostedZonesOutput) with field(s):
+    ///   - [`hosted_zones(Option<Vec<HostedZone>>)`](crate::output::ListHostedZonesOutput::hosted_zones): <p>A complex type that contains general information about the hosted zone.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListHostedZonesOutput::marker): <p>For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListHostedZonesOutput::is_truncated): <p>A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can get more hosted zones by submitting another <code>ListHostedZones</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::ListHostedZonesOutput::next_marker): <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first hosted zone in the next group of hosted zones. Submit another <code>ListHostedZones</code> request, and specify the value of <code>NextMarker</code> from the response in the <code>marker</code> parameter.</p>  <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
+    ///   - [`max_items(Option<i32>)`](crate::output::ListHostedZonesOutput::max_items): <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZones</code> that produced the current response.</p>
+    /// - On failure, responds with [`SdkError<ListHostedZonesError>`](crate::error::ListHostedZonesError)
     pub fn list_hosted_zones(&self) -> fluent_builders::ListHostedZones<C, M, R> {
         fluent_builders::ListHostedZones::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListHostedZonesByName` operation.
+    /// Constructs a fluent builder for the [`ListHostedZonesByName`](crate::client::fluent_builders::ListHostedZonesByName) operation.
     ///
-    /// See [`ListHostedZonesByName`](crate::client::fluent_builders::ListHostedZonesByName) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`dns_name(impl Into<String>)`](crate::client::fluent_builders::ListHostedZonesByName::dns_name) / [`set_dns_name(Option<String>)`](crate::client::fluent_builders::ListHostedZonesByName::set_dns_name): <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, include the <code>dnsname</code> parameter only if you want to specify the name of the first hosted zone in the response. If you don't include the <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones that were created by the current Amazon Web Services account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value of <code>NextDNSName</code> from the previous response.</p>
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::ListHostedZonesByName::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::ListHostedZonesByName::set_hosted_zone_id): <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the <code>hostedzoneid</code> parameter.</p>  <p>If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code> returns only the first <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted zones, submit another request to <code>ListHostedZonesByName</code> and include both <code>dnsname</code> and <code>hostedzoneid</code> parameters. For the value of <code>hostedzoneid</code>, specify the value of the <code>NextHostedZoneId</code> element from the previous response.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListHostedZonesByName::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListHostedZonesByName::set_max_items): <p>The maximum number of hosted zones to be included in the response body for this request. If you have more than <code>maxitems</code> hosted zones, then the value of the <code>IsTruncated</code> element in the response is true, and the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> specify the first hosted zone in the next group of <code>maxitems</code> hosted zones. </p>
+    /// - On success, responds with [`ListHostedZonesByNameOutput`](crate::output::ListHostedZonesByNameOutput) with field(s):
+    ///   - [`hosted_zones(Option<Vec<HostedZone>>)`](crate::output::ListHostedZonesByNameOutput::hosted_zones): <p>A complex type that contains general information about the hosted zone.</p>
+    ///   - [`dns_name(Option<String>)`](crate::output::ListHostedZonesByNameOutput::dns_name): <p>For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code> is the value that you specified for the <code>dnsname</code> parameter in the request that produced the current response.</p>
+    ///   - [`hosted_zone_id(Option<String>)`](crate::output::ListHostedZonesByNameOutput::hosted_zone_id): <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListHostedZonesByNameOutput::is_truncated): <p>A flag that indicates whether there are more hosted zones to be listed. If the response was truncated, you can get the next group of <code>maxitems</code> hosted zones by calling <code>ListHostedZonesByName</code> again and specifying the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the <code>dnsname</code> and <code>hostedzoneid</code> parameters.</p>
+    ///   - [`next_dns_name(Option<String>)`](crate::output::ListHostedZonesByNameOutput::next_dns_name): <p>If <code>IsTruncated</code> is true, the value of <code>NextDNSName</code> is the name of the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>  <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
+    ///   - [`next_hosted_zone_id(Option<String>)`](crate::output::ListHostedZonesByNameOutput::next_hosted_zone_id): <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextHostedZoneId</code> identifies the first hosted zone in the next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>  <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
+    ///   - [`max_items(Option<i32>)`](crate::output::ListHostedZonesByNameOutput::max_items): <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZonesByName</code> that produced the current response.</p>
+    /// - On failure, responds with [`SdkError<ListHostedZonesByNameError>`](crate::error::ListHostedZonesByNameError)
     pub fn list_hosted_zones_by_name(&self) -> fluent_builders::ListHostedZonesByName<C, M, R> {
         fluent_builders::ListHostedZonesByName::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListHostedZonesByVPC` operation.
+    /// Constructs a fluent builder for the [`ListHostedZonesByVPC`](crate::client::fluent_builders::ListHostedZonesByVPC) operation.
     ///
-    /// See [`ListHostedZonesByVPC`](crate::client::fluent_builders::ListHostedZonesByVPC) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vpc_id(impl Into<String>)`](crate::client::fluent_builders::ListHostedZonesByVPC::vpc_id) / [`set_vpc_id(Option<String>)`](crate::client::fluent_builders::ListHostedZonesByVPC::set_vpc_id): <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
+    ///   - [`vpc_region(VpcRegion)`](crate::client::fluent_builders::ListHostedZonesByVPC::vpc_region) / [`set_vpc_region(Option<VpcRegion>)`](crate::client::fluent_builders::ListHostedZonesByVPC::set_vpc_region): <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in. </p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListHostedZonesByVPC::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListHostedZonesByVPC::set_max_items): <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is associated with more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first hosted zone that Route 53 will return if you submit another request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHostedZonesByVPC::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHostedZonesByVPC::set_next_token): <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request. </p>  <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p>  <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
+    /// - On success, responds with [`ListHostedZonesByVpcOutput`](crate::output::ListHostedZonesByVpcOutput) with field(s):
+    ///   - [`hosted_zone_summaries(Option<Vec<HostedZoneSummary>>)`](crate::output::ListHostedZonesByVpcOutput::hosted_zone_summaries): <p>A list that contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
+    ///   - [`max_items(Option<i32>)`](crate::output::ListHostedZonesByVpcOutput::max_items): <p>The value that you specified for <code>MaxItems</code> in the most recent <code>ListHostedZonesByVPC</code> request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListHostedZonesByVpcOutput::next_token): <p>The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code> request.</p>
+    /// - On failure, responds with [`SdkError<ListHostedZonesByVPCError>`](crate::error::ListHostedZonesByVPCError)
     pub fn list_hosted_zones_by_vpc(&self) -> fluent_builders::ListHostedZonesByVPC<C, M, R> {
         fluent_builders::ListHostedZonesByVPC::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListQueryLoggingConfigs` operation.
+    /// Constructs a fluent builder for the [`ListQueryLoggingConfigs`](crate::client::fluent_builders::ListQueryLoggingConfigs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListQueryLoggingConfigs::into_paginator).
     ///
-    /// See [`ListQueryLoggingConfigs`](crate::client::fluent_builders::ListQueryLoggingConfigs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQueryLoggingConfigs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::ListQueryLoggingConfigs::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::ListQueryLoggingConfigs::set_hosted_zone_id): <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>  <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations that are associated with the current Amazon Web Services account.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListQueryLoggingConfigs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListQueryLoggingConfigs::set_next_token): <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> query logging configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p>  <p>For the first <code>ListQueryLoggingConfigs</code> request, omit this value.</p>  <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQueryLoggingConfigs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListQueryLoggingConfigs::set_max_results): <p>(Optional) The maximum number of query logging configurations that you want Amazon Route 53 to return in response to the current request. If the current Amazon Web Services account has more than <code>MaxResults</code> configurations, use the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a> in the response to get the next page of results.</p>  <p>If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
+    /// - On success, responds with [`ListQueryLoggingConfigsOutput`](crate::output::ListQueryLoggingConfigsOutput) with field(s):
+    ///   - [`query_logging_configs(Option<Vec<QueryLoggingConfig>>)`](crate::output::ListQueryLoggingConfigsOutput::query_logging_configs): <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListQueryLoggingConfigsOutput::next_token): <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>  <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListQueryLoggingConfigsError>`](crate::error::ListQueryLoggingConfigsError)
     pub fn list_query_logging_configs(&self) -> fluent_builders::ListQueryLoggingConfigs<C, M, R> {
         fluent_builders::ListQueryLoggingConfigs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResourceRecordSets` operation.
+    /// Constructs a fluent builder for the [`ListResourceRecordSets`](crate::client::fluent_builders::ListResourceRecordSets) operation.
     ///
-    /// See [`ListResourceRecordSets`](crate::client::fluent_builders::ListResourceRecordSets) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::ListResourceRecordSets::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::ListResourceRecordSets::set_hosted_zone_id): <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
+    ///   - [`start_record_name(impl Into<String>)`](crate::client::fluent_builders::ListResourceRecordSets::start_record_name) / [`set_start_record_name(Option<String>)`](crate::client::fluent_builders::ListResourceRecordSets::set_start_record_name): <p>The first name in the lexicographic ordering of resource record sets that you want to list. If the specified record name doesn't exist, the results begin with the first resource record set that has a name greater than the value of <code>name</code>.</p>
+    ///   - [`start_record_type(RrType)`](crate::client::fluent_builders::ListResourceRecordSets::start_record_type) / [`set_start_record_type(Option<RrType>)`](crate::client::fluent_builders::ListResourceRecordSets::set_start_record_type): <p>The type of resource record set to begin the record listing from.</p>  <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>  <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>  <p>Values for alias resource record sets: </p>  <ul>   <li> <p> <b>API Gateway custom regional API or edge-optimized API</b>: A</p> </li>   <li> <p> <b>CloudFront distribution</b>: A or AAAA</p> </li>   <li> <p> <b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p> </li>   <li> <p> <b>Elastic Load Balancing load balancer</b>: A | AAAA</p> </li>   <li> <p> <b>S3 bucket</b>: A</p> </li>   <li> <p> <b>VPC interface VPC endpoint</b>: A</p> </li>   <li> <p> <b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p> </li>  </ul>  <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
+    ///   - [`start_record_identifier(impl Into<String>)`](crate::client::fluent_builders::ListResourceRecordSets::start_record_identifier) / [`set_start_record_identifier(Option<String>)`](crate::client::fluent_builders::ListResourceRecordSets::set_start_record_identifier): <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListResourceRecordSets::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListResourceRecordSets::set_max_items): <p>(Optional) The maximum number of resource records sets to include in the response body for this request. If the response includes more than <code>maxitems</code> resource record sets, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of the <code>NextRecordName</code> and <code>NextRecordType</code> elements in the response identify the first resource record set in the next group of <code>maxitems</code> resource record sets.</p>
+    /// - On success, responds with [`ListResourceRecordSetsOutput`](crate::output::ListResourceRecordSetsOutput) with field(s):
+    ///   - [`resource_record_sets(Option<Vec<ResourceRecordSet>>)`](crate::output::ListResourceRecordSetsOutput::resource_record_sets): <p>Information about multiple resource record sets.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListResourceRecordSetsOutput::is_truncated): <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.</p>
+    ///   - [`next_record_name(Option<String>)`](crate::output::ListResourceRecordSetsOutput::next_record_name): <p>If the results were truncated, the name of the next record in the list.</p>  <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    ///   - [`next_record_type(Option<RrType>)`](crate::output::ListResourceRecordSetsOutput::next_record_type): <p>If the results were truncated, the type of the next record in the list.</p>  <p>This element is present only if <code>IsTruncated</code> is true. </p>
+    ///   - [`next_record_identifier(Option<String>)`](crate::output::ListResourceRecordSetsOutput::next_record_identifier): <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>  <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    ///   - [`max_items(Option<i32>)`](crate::output::ListResourceRecordSetsOutput::max_items): <p>The maximum number of records you requested.</p>
+    /// - On failure, responds with [`SdkError<ListResourceRecordSetsError>`](crate::error::ListResourceRecordSetsError)
     pub fn list_resource_record_sets(&self) -> fluent_builders::ListResourceRecordSets<C, M, R> {
         fluent_builders::ListResourceRecordSets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListReusableDelegationSets` operation.
+    /// Constructs a fluent builder for the [`ListReusableDelegationSets`](crate::client::fluent_builders::ListReusableDelegationSets) operation.
     ///
-    /// See [`ListReusableDelegationSets`](crate::client::fluent_builders::ListReusableDelegationSets) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListReusableDelegationSets::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListReusableDelegationSets::set_marker): <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more reusable delegation sets. To get another group, submit another <code>ListReusableDelegationSets</code> request. </p>  <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first reusable delegation set that Amazon Route 53 will return if you submit another request.</p>  <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more reusable delegation sets to get.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListReusableDelegationSets::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListReusableDelegationSets::set_max_items): <p>The number of reusable delegation sets that you want Amazon Route 53 to return in the response to this request. If you specify a value greater than 100, Route 53 returns only the first 100 reusable delegation sets.</p>
+    /// - On success, responds with [`ListReusableDelegationSetsOutput`](crate::output::ListReusableDelegationSetsOutput) with field(s):
+    ///   - [`delegation_sets(Option<Vec<DelegationSet>>)`](crate::output::ListReusableDelegationSetsOutput::delegation_sets): <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created by the current Amazon Web Services account.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListReusableDelegationSetsOutput::marker): <p>For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListReusableDelegationSetsOutput::is_truncated): <p>A flag that indicates whether there are more reusable delegation sets to be listed.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::ListReusableDelegationSetsOutput::next_marker): <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next reusable delegation set that Amazon Route 53 will return if you submit another <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
+    ///   - [`max_items(Option<i32>)`](crate::output::ListReusableDelegationSetsOutput::max_items): <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListReusableDelegationSets</code> that produced the current response.</p>
+    /// - On failure, responds with [`SdkError<ListReusableDelegationSetsError>`](crate::error::ListReusableDelegationSetsError)
     pub fn list_reusable_delegation_sets(
         &self,
     ) -> fluent_builders::ListReusableDelegationSets<C, M, R> {
         fluent_builders::ListReusableDelegationSets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(TagResourceType)`](crate::client::fluent_builders::ListTagsForResource::resource_type) / [`set_resource_type(Option<TagResourceType>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_type): <p>The type of the resource.</p>  <ul>   <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>   <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>  </ul>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_id): <p>The ID of the resource for which you want to retrieve tags.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`resource_tag_set(Option<ResourceTagSet>)`](crate::output::ListTagsForResourceOutput::resource_tag_set): <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResources` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResources`](crate::client::fluent_builders::ListTagsForResources) operation.
     ///
-    /// See [`ListTagsForResources`](crate::client::fluent_builders::ListTagsForResources) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(TagResourceType)`](crate::client::fluent_builders::ListTagsForResources::resource_type) / [`set_resource_type(Option<TagResourceType>)`](crate::client::fluent_builders::ListTagsForResources::set_resource_type): <p>The type of the resources.</p>  <ul>   <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>   <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>  </ul>
+    ///   - [`resource_ids(Vec<String>)`](crate::client::fluent_builders::ListTagsForResources::resource_ids) / [`set_resource_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ListTagsForResources::set_resource_ids): <p>A complex type that contains the ResourceId element for each resource for which you want to get a list of tags.</p>
+    /// - On success, responds with [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput) with field(s):
+    ///   - [`resource_tag_sets(Option<Vec<ResourceTagSet>>)`](crate::output::ListTagsForResourcesOutput::resource_tag_sets): <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourcesError>`](crate::error::ListTagsForResourcesError)
     pub fn list_tags_for_resources(&self) -> fluent_builders::ListTagsForResources<C, M, R> {
         fluent_builders::ListTagsForResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTrafficPolicies` operation.
+    /// Constructs a fluent builder for the [`ListTrafficPolicies`](crate::client::fluent_builders::ListTrafficPolicies) operation.
     ///
-    /// See [`ListTrafficPolicies`](crate::client::fluent_builders::ListTrafficPolicies) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`traffic_policy_id_marker(impl Into<String>)`](crate::client::fluent_builders::ListTrafficPolicies::traffic_policy_id_marker) / [`set_traffic_policy_id_marker(Option<String>)`](crate::client::fluent_builders::ListTrafficPolicies::set_traffic_policy_id_marker): <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the <code>TrafficPolicyIdMarker</code> parameter.</p>  <p>If you have more traffic policies than the value of <code>MaxItems</code>, <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code> traffic policies. To get the next group of policies, submit another request to <code>ListTrafficPolicies</code>. For the value of <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code> that was returned in the previous response.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListTrafficPolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListTrafficPolicies::set_max_items): <p>(Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this request. If you have more than <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Route 53 will return if you submit another request.</p>
+    /// - On success, responds with [`ListTrafficPoliciesOutput`](crate::output::ListTrafficPoliciesOutput) with field(s):
+    ///   - [`traffic_policy_summaries(Option<Vec<TrafficPolicySummary>>)`](crate::output::ListTrafficPoliciesOutput::traffic_policy_summaries): <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListTrafficPoliciesOutput::is_truncated): <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
+    ///   - [`traffic_policy_id_marker(Option<String>)`](crate::output::ListTrafficPoliciesOutput::traffic_policy_id_marker): <p>If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies.</p>
+    ///   - [`max_items(Option<i32>)`](crate::output::ListTrafficPoliciesOutput::max_items): <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code> request that produced the current response.</p>
+    /// - On failure, responds with [`SdkError<ListTrafficPoliciesError>`](crate::error::ListTrafficPoliciesError)
     pub fn list_traffic_policies(&self) -> fluent_builders::ListTrafficPolicies<C, M, R> {
         fluent_builders::ListTrafficPolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTrafficPolicyInstances` operation.
+    /// Constructs a fluent builder for the [`ListTrafficPolicyInstances`](crate::client::fluent_builders::ListTrafficPolicyInstances) operation.
     ///
-    /// See [`ListTrafficPolicyInstances`](crate::client::fluent_builders::ListTrafficPolicyInstances) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id_marker(impl Into<String>)`](crate::client::fluent_builders::ListTrafficPolicyInstances::hosted_zone_id_marker) / [`set_hosted_zone_id_marker(Option<String>)`](crate::client::fluent_builders::ListTrafficPolicyInstances::set_hosted_zone_id_marker): <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>HostedZoneId</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance in the next group of traffic policy instances.</p>  <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    ///   - [`traffic_policy_instance_name_marker(impl Into<String>)`](crate::client::fluent_builders::ListTrafficPolicyInstances::traffic_policy_instance_name_marker) / [`set_traffic_policy_instance_name_marker(Option<String>)`](crate::client::fluent_builders::ListTrafficPolicyInstances::set_traffic_policy_instance_name_marker): <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance in the next group of traffic policy instances.</p>  <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    ///   - [`traffic_policy_instance_type_marker(RrType)`](crate::client::fluent_builders::ListTrafficPolicyInstances::traffic_policy_instance_type_marker) / [`set_traffic_policy_instance_type_marker(Option<RrType>)`](crate::client::fluent_builders::ListTrafficPolicyInstances::set_traffic_policy_instance_type_marker): <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the type of the first traffic policy instance in the next group of traffic policy instances.</p>  <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListTrafficPolicyInstances::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListTrafficPolicyInstances::set_max_items): <p>The maximum number of traffic policy instances that you want Amazon Route 53 to return in response to a <code>ListTrafficPolicyInstances</code> request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.</p>
+    /// - On success, responds with [`ListTrafficPolicyInstancesOutput`](crate::output::ListTrafficPolicyInstancesOutput) with field(s):
+    ///   - [`traffic_policy_instances(Option<Vec<TrafficPolicyInstance>>)`](crate::output::ListTrafficPolicyInstancesOutput::traffic_policy_instances): <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
+    ///   - [`hosted_zone_id_marker(Option<String>)`](crate::output::ListTrafficPolicyInstancesOutput::hosted_zone_id_marker): <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
+    ///   - [`traffic_policy_instance_name_marker(Option<String>)`](crate::output::ListTrafficPolicyInstancesOutput::traffic_policy_instance_name_marker): <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
+    ///   - [`traffic_policy_instance_type_marker(Option<RrType>)`](crate::output::ListTrafficPolicyInstancesOutput::traffic_policy_instance_type_marker): <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
+    ///   - [`is_truncated(bool)`](crate::output::ListTrafficPolicyInstancesOutput::is_truncated): <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get more traffic policy instances by calling <code>ListTrafficPolicyInstances</code> again and specifying the values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.</p>
+    ///   - [`max_items(Option<i32>)`](crate::output::ListTrafficPolicyInstancesOutput::max_items): <p>The value that you specified for the <code>MaxItems</code> parameter in the call to <code>ListTrafficPolicyInstances</code> that produced the current response.</p>
+    /// - On failure, responds with [`SdkError<ListTrafficPolicyInstancesError>`](crate::error::ListTrafficPolicyInstancesError)
     pub fn list_traffic_policy_instances(
         &self,
     ) -> fluent_builders::ListTrafficPolicyInstances<C, M, R> {
         fluent_builders::ListTrafficPolicyInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTrafficPolicyInstancesByHostedZone` operation.
+    /// Constructs a fluent builder for the [`ListTrafficPolicyInstancesByHostedZone`](crate::client::fluent_builders::ListTrafficPolicyInstancesByHostedZone) operation.
     ///
-    /// See [`ListTrafficPolicyInstancesByHostedZone`](crate::client::fluent_builders::ListTrafficPolicyInstancesByHostedZone) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByHostedZone::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByHostedZone::set_hosted_zone_id): <p>The ID of the hosted zone that you want to list traffic policy instances for.</p>
+    ///   - [`traffic_policy_instance_name_marker(impl Into<String>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByHostedZone::traffic_policy_instance_name_marker) / [`set_traffic_policy_instance_name_marker(Option<String>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByHostedZone::set_traffic_policy_instance_name_marker): <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance in the next group of traffic policy instances.</p>  <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    ///   - [`traffic_policy_instance_type_marker(RrType)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByHostedZone::traffic_policy_instance_type_marker) / [`set_traffic_policy_instance_type_marker(Option<RrType>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByHostedZone::set_traffic_policy_instance_type_marker): <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the type of the first traffic policy instance in the next group of traffic policy instances.</p>  <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByHostedZone::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByHostedZone::set_max_items): <p>The maximum number of traffic policy instances to be included in the response body for this request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    /// - On success, responds with [`ListTrafficPolicyInstancesByHostedZoneOutput`](crate::output::ListTrafficPolicyInstancesByHostedZoneOutput) with field(s):
+    ///   - [`traffic_policy_instances(Option<Vec<TrafficPolicyInstance>>)`](crate::output::ListTrafficPolicyInstancesByHostedZoneOutput::traffic_policy_instances): <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request. </p>
+    ///   - [`traffic_policy_instance_name_marker(Option<String>)`](crate::output::ListTrafficPolicyInstancesByHostedZoneOutput::traffic_policy_instance_name_marker): <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance in the next group of traffic policy instances.</p>
+    ///   - [`traffic_policy_instance_type_marker(Option<RrType>)`](crate::output::ListTrafficPolicyInstancesByHostedZoneOutput::traffic_policy_instance_type_marker): <p>If <code>IsTruncated</code> is true, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance in the next group of traffic policy instances.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListTrafficPolicyInstancesByHostedZoneOutput::is_truncated): <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get the next group of traffic policy instances by submitting another <code>ListTrafficPolicyInstancesByHostedZone</code> request and specifying the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.</p>
+    ///   - [`max_items(Option<i32>)`](crate::output::ListTrafficPolicyInstancesByHostedZoneOutput::max_items): <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicyInstancesByHostedZone</code> request that produced the current response.</p>
+    /// - On failure, responds with [`SdkError<ListTrafficPolicyInstancesByHostedZoneError>`](crate::error::ListTrafficPolicyInstancesByHostedZoneError)
     pub fn list_traffic_policy_instances_by_hosted_zone(
         &self,
     ) -> fluent_builders::ListTrafficPolicyInstancesByHostedZone<C, M, R> {
         fluent_builders::ListTrafficPolicyInstancesByHostedZone::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTrafficPolicyInstancesByPolicy` operation.
+    /// Constructs a fluent builder for the [`ListTrafficPolicyInstancesByPolicy`](crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy) operation.
     ///
-    /// See [`ListTrafficPolicyInstancesByPolicy`](crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`traffic_policy_id(impl Into<String>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy::traffic_policy_id) / [`set_traffic_policy_id(Option<String>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy::set_traffic_policy_id): <p>The ID of the traffic policy for which you want to list traffic policy instances.</p>
+    ///   - [`traffic_policy_version(i32)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy::traffic_policy_version) / [`set_traffic_policy_version(Option<i32>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy::set_traffic_policy_version): <p>The version of the traffic policy for which you want to list traffic policy instances. The version must be associated with the traffic policy that is specified by <code>TrafficPolicyId</code>.</p>
+    ///   - [`hosted_zone_id_marker(impl Into<String>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy::hosted_zone_id_marker) / [`set_hosted_zone_id_marker(Option<String>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy::set_hosted_zone_id_marker): <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request. </p>  <p>For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>  <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    ///   - [`traffic_policy_instance_name_marker(impl Into<String>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy::traffic_policy_instance_name_marker) / [`set_traffic_policy_instance_name_marker(Option<String>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy::set_traffic_policy_instance_name_marker): <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>  <p>For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>  <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    ///   - [`traffic_policy_instance_type_marker(RrType)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy::traffic_policy_instance_type_marker) / [`set_traffic_policy_instance_type_marker(Option<RrType>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy::set_traffic_policy_instance_type_marker): <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>  <p>For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>  <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy::set_max_items): <p>The maximum number of traffic policy instances to be included in the response body for this request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    /// - On success, responds with [`ListTrafficPolicyInstancesByPolicyOutput`](crate::output::ListTrafficPolicyInstancesByPolicyOutput) with field(s):
+    ///   - [`traffic_policy_instances(Option<Vec<TrafficPolicyInstance>>)`](crate::output::ListTrafficPolicyInstancesByPolicyOutput::traffic_policy_instances): <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
+    ///   - [`hosted_zone_id_marker(Option<String>)`](crate::output::ListTrafficPolicyInstancesByPolicyOutput::hosted_zone_id_marker): <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first traffic policy instance in the next group of traffic policy instances.</p>
+    ///   - [`traffic_policy_instance_name_marker(Option<String>)`](crate::output::ListTrafficPolicyInstancesByPolicyOutput::traffic_policy_instance_name_marker): <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.</p>
+    ///   - [`traffic_policy_instance_type_marker(Option<RrType>)`](crate::output::ListTrafficPolicyInstancesByPolicyOutput::traffic_policy_instance_type_marker): <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are associated with the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListTrafficPolicyInstancesByPolicyOutput::is_truncated): <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get the next group of traffic policy instances by calling <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.</p>
+    ///   - [`max_items(Option<i32>)`](crate::output::ListTrafficPolicyInstancesByPolicyOutput::max_items): <p>The value that you specified for the <code>MaxItems</code> parameter in the call to <code>ListTrafficPolicyInstancesByPolicy</code> that produced the current response.</p>
+    /// - On failure, responds with [`SdkError<ListTrafficPolicyInstancesByPolicyError>`](crate::error::ListTrafficPolicyInstancesByPolicyError)
     pub fn list_traffic_policy_instances_by_policy(
         &self,
     ) -> fluent_builders::ListTrafficPolicyInstancesByPolicy<C, M, R> {
         fluent_builders::ListTrafficPolicyInstancesByPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTrafficPolicyVersions` operation.
+    /// Constructs a fluent builder for the [`ListTrafficPolicyVersions`](crate::client::fluent_builders::ListTrafficPolicyVersions) operation.
     ///
-    /// See [`ListTrafficPolicyVersions`](crate::client::fluent_builders::ListTrafficPolicyVersions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ListTrafficPolicyVersions::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ListTrafficPolicyVersions::set_id): <p>Specify the value of <code>Id</code> of the traffic policy for which you want to list all versions.</p>
+    ///   - [`traffic_policy_version_marker(impl Into<String>)`](crate::client::fluent_builders::ListTrafficPolicyVersions::traffic_policy_version_marker) / [`set_traffic_policy_version_marker(Option<String>)`](crate::client::fluent_builders::ListTrafficPolicyVersions::set_traffic_policy_version_marker): <p>For your first request to <code>ListTrafficPolicyVersions</code>, don't include the <code>TrafficPolicyVersionMarker</code> parameter.</p>  <p>If you have more traffic policy versions than the value of <code>MaxItems</code>, <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the value of <code>TrafficPolicyVersionMarker</code>, specify the value of <code>TrafficPolicyVersionMarker</code> in the previous response.</p>
+    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListTrafficPolicyVersions::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListTrafficPolicyVersions::set_max_items): <p>The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of the <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you submit another request.</p>
+    /// - On success, responds with [`ListTrafficPolicyVersionsOutput`](crate::output::ListTrafficPolicyVersionsOutput) with field(s):
+    ///   - [`traffic_policies(Option<Vec<TrafficPolicy>>)`](crate::output::ListTrafficPolicyVersionsOutput::traffic_policies): <p>A list that contains one <code>TrafficPolicy</code> element for each traffic policy version that is associated with the specified traffic policy.</p>
+    ///   - [`is_truncated(bool)`](crate::output::ListTrafficPolicyVersionsOutput::is_truncated): <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
+    ///   - [`traffic_policy_version_marker(Option<String>)`](crate::output::ListTrafficPolicyVersionsOutput::traffic_policy_version_marker): <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that Amazon Route 53 will return if you submit another request. Call <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request parameter.</p>  <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
+    ///   - [`max_items(Option<i32>)`](crate::output::ListTrafficPolicyVersionsOutput::max_items): <p>The value that you specified for the <code>maxitems</code> parameter in the <code>ListTrafficPolicyVersions</code> request that produced the current response.</p>
+    /// - On failure, responds with [`SdkError<ListTrafficPolicyVersionsError>`](crate::error::ListTrafficPolicyVersionsError)
     pub fn list_traffic_policy_versions(
         &self,
     ) -> fluent_builders::ListTrafficPolicyVersions<C, M, R> {
         fluent_builders::ListTrafficPolicyVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVPCAssociationAuthorizations` operation.
+    /// Constructs a fluent builder for the [`ListVPCAssociationAuthorizations`](crate::client::fluent_builders::ListVPCAssociationAuthorizations) operation.
     ///
-    /// See [`ListVPCAssociationAuthorizations`](crate::client::fluent_builders::ListVPCAssociationAuthorizations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::ListVPCAssociationAuthorizations::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::ListVPCAssociationAuthorizations::set_hosted_zone_id): <p>The ID of the hosted zone for which you want a list of VPCs that can be associated with the hosted zone.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVPCAssociationAuthorizations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVPCAssociationAuthorizations::set_next_token): <p> <i>Optional</i>: If a response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the specified hosted zone. To get the next page of results, submit another request, and include the value of <code>NextToken</code> from the response in the <code>nexttoken</code> parameter in another <code>ListVPCAssociationAuthorizations</code> request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVPCAssociationAuthorizations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListVPCAssociationAuthorizations::set_max_results): <p> <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.</p>
+    /// - On success, responds with [`ListVpcAssociationAuthorizationsOutput`](crate::output::ListVpcAssociationAuthorizationsOutput) with field(s):
+    ///   - [`hosted_zone_id(Option<String>)`](crate::output::ListVpcAssociationAuthorizationsOutput::hosted_zone_id): <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVpcAssociationAuthorizationsOutput::next_token): <p>When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request, and include the value of the <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.</p>
+    ///   - [`vp_cs(Option<Vec<Vpc>>)`](crate::output::ListVpcAssociationAuthorizationsOutput::vp_cs): <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
+    /// - On failure, responds with [`SdkError<ListVPCAssociationAuthorizationsError>`](crate::error::ListVPCAssociationAuthorizationsError)
     pub fn list_vpc_association_authorizations(
         &self,
     ) -> fluent_builders::ListVPCAssociationAuthorizations<C, M, R> {
         fluent_builders::ListVPCAssociationAuthorizations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TestDNSAnswer` operation.
+    /// Constructs a fluent builder for the [`TestDNSAnswer`](crate::client::fluent_builders::TestDNSAnswer) operation.
     ///
-    /// See [`TestDNSAnswer`](crate::client::fluent_builders::TestDNSAnswer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hosted_zone_id(impl Into<String>)`](crate::client::fluent_builders::TestDNSAnswer::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::client::fluent_builders::TestDNSAnswer::set_hosted_zone_id): <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.</p>
+    ///   - [`record_name(impl Into<String>)`](crate::client::fluent_builders::TestDNSAnswer::record_name) / [`set_record_name(Option<String>)`](crate::client::fluent_builders::TestDNSAnswer::set_record_name): <p>The name of the resource record set that you want Amazon Route 53 to simulate a query for.</p>
+    ///   - [`record_type(RrType)`](crate::client::fluent_builders::TestDNSAnswer::record_type) / [`set_record_type(Option<RrType>)`](crate::client::fluent_builders::TestDNSAnswer::set_record_type): <p>The type of the resource record set.</p>
+    ///   - [`resolver_ip(impl Into<String>)`](crate::client::fluent_builders::TestDNSAnswer::resolver_ip) / [`set_resolver_ip(Option<String>)`](crate::client::fluent_builders::TestDNSAnswer::set_resolver_ip): <p>If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the Amazon Web Services US East (N. Virginia) Region (<code>us-east-1</code>).</p>
+    ///   - [`edns0_client_subnet_ip(impl Into<String>)`](crate::client::fluent_builders::TestDNSAnswer::edns0_client_subnet_ip) / [`set_edns0_client_subnet_ip(Option<String>)`](crate::client::fluent_builders::TestDNSAnswer::set_edns0_client_subnet_ip): <p>If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client in the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.</p>
+    ///   - [`edns0_client_subnet_mask(impl Into<String>)`](crate::client::fluent_builders::TestDNSAnswer::edns0_client_subnet_mask) / [`set_edns0_client_subnet_mask(Option<String>)`](crate::client::fluent_builders::TestDNSAnswer::set_edns0_client_subnet_mask): <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p>  <p>The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:</p>  <ul>   <li> <p> <b>IPv4</b>: Specify a value between 0 and 32</p> </li>   <li> <p> <b>IPv6</b>: Specify a value between 0 and 128</p> </li>  </ul>
+    /// - On success, responds with [`TestDnsAnswerOutput`](crate::output::TestDnsAnswerOutput) with field(s):
+    ///   - [`nameserver(Option<String>)`](crate::output::TestDnsAnswerOutput::nameserver): <p>The Amazon Route 53 name server used to respond to the request.</p>
+    ///   - [`record_name(Option<String>)`](crate::output::TestDnsAnswerOutput::record_name): <p>The name of the resource record set that you submitted a request for.</p>
+    ///   - [`record_type(Option<RrType>)`](crate::output::TestDnsAnswerOutput::record_type): <p>The type of the resource record set that you submitted a request for.</p>
+    ///   - [`record_data(Option<Vec<String>>)`](crate::output::TestDnsAnswerOutput::record_data): <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
+    ///   - [`response_code(Option<String>)`](crate::output::TestDnsAnswerOutput::response_code): <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website. </p>
+    ///   - [`protocol(Option<String>)`](crate::output::TestDnsAnswerOutput::protocol): <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>. </p>
+    /// - On failure, responds with [`SdkError<TestDNSAnswerError>`](crate::error::TestDNSAnswerError)
     pub fn test_dns_answer(&self) -> fluent_builders::TestDNSAnswer<C, M, R> {
         fluent_builders::TestDNSAnswer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateHealthCheck` operation.
+    /// Constructs a fluent builder for the [`UpdateHealthCheck`](crate::client::fluent_builders::UpdateHealthCheck) operation.
     ///
-    /// See [`UpdateHealthCheck`](crate::client::fluent_builders::UpdateHealthCheck) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`health_check_id(impl Into<String>)`](crate::client::fluent_builders::UpdateHealthCheck::health_check_id) / [`set_health_check_id(Option<String>)`](crate::client::fluent_builders::UpdateHealthCheck::set_health_check_id): <p>The ID for the health check for which you want detailed information. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p>
+    ///   - [`health_check_version(i64)`](crate::client::fluent_builders::UpdateHealthCheck::health_check_version) / [`set_health_check_version(Option<i64>)`](crate::client::fluent_builders::UpdateHealthCheck::set_health_check_version): <p>A sequential counter that Amazon Route 53 sets to <code>1</code> when you create a health check and increments by 1 each time you update settings for the health check.</p>  <p>We recommend that you use <code>GetHealthCheck</code> or <code>ListHealthChecks</code> to get the current value of <code>HealthCheckVersion</code> for the health check that you want to update, and that you include that value in your <code>UpdateHealthCheck</code> request. This prevents Route 53 from overwriting an intervening update:</p>  <ul>   <li> <p>If the value in the <code>UpdateHealthCheck</code> request matches the value of <code>HealthCheckVersion</code> in the health check, Route 53 updates the health check with the new settings.</p> </li>   <li> <p>If the value of <code>HealthCheckVersion</code> in the health check is greater, the health check was changed after you got the version number. Route 53 does not update the health check, and it returns a <code>HealthCheckVersionMismatch</code> error.</p> </li>  </ul>
+    ///   - [`ip_address(impl Into<String>)`](crate::client::fluent_builders::UpdateHealthCheck::ip_address) / [`set_ip_address(Option<String>)`](crate::client::fluent_builders::UpdateHealthCheck::set_ip_address): <p>The IPv4 or IPv6 IP address for the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address that is returned by DNS, Route 53 then checks the health of the endpoint.</p>  <p>Use one of the following formats for the value of <code>IPAddress</code>: </p>  <ul>   <li> <p> <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example, <code>192.0.2.44</code>.</p> </li>   <li> <p> <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p> </li>  </ul>  <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance never changes. For more information, see the applicable documentation:</p>  <ul>   <li> <p>Linux: <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> </p> </li>   <li> <p>Windows: <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i> </p> </li>  </ul> <note>   <p>If a health check already has a value for <code>IPAddress</code>, you can change the value. However, you can't update an existing health check to add or remove the value of <code>IPAddress</code>. </p>  </note>  <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>. </p>  <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p>  <ul>   <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> </p> </li>   <li> <p> <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a> </p> </li>   <li> <p> <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a> </p> </li>  </ul>
+    ///   - [`port(i32)`](crate::client::fluent_builders::UpdateHealthCheck::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::UpdateHealthCheck::set_port): <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note>   <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.</p>  </note>
+    ///   - [`resource_path(impl Into<String>)`](crate::client::fluent_builders::UpdateHealthCheck::resource_path) / [`set_resource_path(Option<String>)`](crate::client::fluent_builders::UpdateHealthCheck::set_resource_path): <p>The path that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example the file /docs/route53-health-check.html. You can also include query string parameters, for example, <code>/welcome.html?language=jp&amp;login=y</code>. </p>  <p>Specify this value only if you want to change it.</p>
+    ///   - [`fully_qualified_domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateHealthCheck::fully_qualified_domain_name) / [`set_fully_qualified_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateHealthCheck::set_fully_qualified_domain_name): <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p> <note>   <p>If a health check already has a value for <code>IPAddress</code>, you can change the value. However, you can't update an existing health check to add or remove the value of <code>IPAddress</code>. </p>  </note>  <p> <b>If you specify a value for</b> <code>IPAddress</code>:</p>  <p>Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP health checks. This is typically the fully qualified DNS name of the endpoint on which you want Route 53 to perform health checks.</p>  <p>When Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code> header:</p>  <ul>   <li> <p>If you specify a value of <code>80</code> for <code>Port</code> and <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.</p> </li>   <li> <p>If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.</p> </li>   <li> <p>If you specify another value for <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>, Route 53 passes <i> <code>FullyQualifiedDomainName</code>:<code>Port</code> </i> to the endpoint in the <code>Host</code> header.</p> </li>  </ul>  <p>If you don't specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes the value of <code>IPAddress</code> in the <code>Host</code> header in each of the above cases.</p>  <p> <b>If you don't specify a value for</b> <code>IPAddress</code>:</p>  <p>If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to the domain that you specify in <code>FullyQualifiedDomainName</code> at the interval you specify in <code>RequestInterval</code>. Using an IPv4 address that is returned by DNS, Route 53 then checks the health of the endpoint.</p> <note>   <p>If you don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send health checks to the endpoint. If there's no resource record set with a type of A for the name that you specify for <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.</p>  </note>  <p>If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check for each endpoint. For example, create a health check for each HTTP server that is serving content for www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record sets (www.example.com).</p> <important>   <p>In this configuration, if the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p>  </important>  <p>In addition, if the value of <code>Type</code> is <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does when you specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code> header.</p>
+    ///   - [`search_string(impl Into<String>)`](crate::client::fluent_builders::UpdateHealthCheck::search_string) / [`set_search_string(Option<String>)`](crate::client::fluent_builders::UpdateHealthCheck::set_search_string): <p>If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy. (You can't change the value of <code>Type</code> when you update a health check.)</p>
+    ///   - [`failure_threshold(i32)`](crate::client::fluent_builders::UpdateHealthCheck::failure_threshold) / [`set_failure_threshold(Option<i32>)`](crate::client::fluent_builders::UpdateHealthCheck::set_failure_threshold): <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>  <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
+    ///   - [`inverted(bool)`](crate::client::fluent_builders::UpdateHealthCheck::inverted) / [`set_inverted(Option<bool>)`](crate::client::fluent_builders::UpdateHealthCheck::set_inverted): <p>Specify whether you want Amazon Route 53 to invert the status of a health check, for example, to consider a health check unhealthy when it otherwise would be considered healthy.</p>
+    ///   - [`disabled(bool)`](crate::client::fluent_builders::UpdateHealthCheck::disabled) / [`set_disabled(Option<bool>)`](crate::client::fluent_builders::UpdateHealthCheck::set_disabled): <p>Stops Route 53 from performing health checks. When you disable a health check, here's what happens:</p>  <ul>   <li> <p> <b>Health checks that check the health of endpoints:</b> Route 53 stops submitting requests to your application, server, or other resource.</p> </li>   <li> <p> <b>Calculated health checks:</b> Route 53 stops aggregating the status of the referenced health checks.</p> </li>   <li> <p> <b>Health checks that monitor CloudWatch alarms:</b> Route 53 stops monitoring the corresponding CloudWatch metrics.</p> </li>  </ul>  <p>After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop routing traffic to a resource, change the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>. </p>  <p>Charges for a health check still apply when the health check is disabled. For more information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
+    ///   - [`health_threshold(i32)`](crate::client::fluent_builders::UpdateHealthCheck::health_threshold) / [`set_health_threshold(Option<i32>)`](crate::client::fluent_builders::UpdateHealthCheck::set_health_threshold): <p>The number of child health checks that are associated with a <code>CALCULATED</code> health that Amazon Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <code>ChildHealthChecks</code> and <code>ChildHealthCheck</code> elements.</p>  <p>Note the following:</p>  <ul>   <li> <p>If you specify a number greater than the number of child health checks, Route 53 always considers this health check to be unhealthy.</p> </li>   <li> <p>If you specify <code>0</code>, Route 53 always considers this health check to be healthy.</p> </li>  </ul>
+    ///   - [`child_health_checks(Vec<String>)`](crate::client::fluent_builders::UpdateHealthCheck::child_health_checks) / [`set_child_health_checks(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateHealthCheck::set_child_health_checks): <p>A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
+    ///   - [`enable_sni(bool)`](crate::client::fluent_builders::UpdateHealthCheck::enable_sni) / [`set_enable_sni(Option<bool>)`](crate::client::fluent_builders::UpdateHealthCheck::set_enable_sni): <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during <code>TLS</code> negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p>  <p>Some endpoints require that HTTPS requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be SSL alert <code>handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p>  <p>The SSL/TLS certificate on your endpoint includes a domain name in the <code>Common Name</code> field and possibly several more in the <code>Subject Alternative Names</code> field. One of the domain names in the certificate should match the value that you specify for <code>FullyQualifiedDomainName</code>. If the endpoint responds to the <code>client_hello</code> message with a certificate that does not include the domain name that you specified in <code>FullyQualifiedDomainName</code>, a health checker will retry the handshake. In the second attempt, the health checker will omit <code>FullyQualifiedDomainName</code> from the <code>client_hello</code> message.</p>
+    ///   - [`regions(Vec<HealthCheckRegion>)`](crate::client::fluent_builders::UpdateHealthCheck::regions) / [`set_regions(Option<Vec<HealthCheckRegion>>)`](crate::client::fluent_builders::UpdateHealthCheck::set_regions): <p>A complex type that contains one <code>Region</code> element for each region that you want Amazon Route 53 health checkers to check the specified endpoint from.</p>
+    ///   - [`alarm_identifier(AlarmIdentifier)`](crate::client::fluent_builders::UpdateHealthCheck::alarm_identifier) / [`set_alarm_identifier(Option<AlarmIdentifier>)`](crate::client::fluent_builders::UpdateHealthCheck::set_alarm_identifier): <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
+    ///   - [`insufficient_data_health_status(InsufficientDataHealthStatus)`](crate::client::fluent_builders::UpdateHealthCheck::insufficient_data_health_status) / [`set_insufficient_data_health_status(Option<InsufficientDataHealthStatus>)`](crate::client::fluent_builders::UpdateHealthCheck::set_insufficient_data_health_status): <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p>  <ul>   <li> <p> <code>Healthy</code>: Route 53 considers the health check to be healthy.</p> </li>   <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li>   <li> <p> <code>LastKnownStatus</code>: By default, Route 53 uses the status of the health check from the last time CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the status for the health check is healthy.</p> </li>  </ul>
+    ///   - [`reset_elements(Vec<ResettableElementName>)`](crate::client::fluent_builders::UpdateHealthCheck::reset_elements) / [`set_reset_elements(Option<Vec<ResettableElementName>>)`](crate::client::fluent_builders::UpdateHealthCheck::set_reset_elements): <p>A complex type that contains one <code>ResettableElementName</code> element for each element that you want to reset to the default value. Valid values for <code>ResettableElementName</code> include the following:</p>  <ul>   <li> <p> <code>ChildHealthChecks</code>: Amazon Route 53 resets <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-ChildHealthChecks">ChildHealthChecks</a> to null.</p> </li>   <li> <p> <code>FullyQualifiedDomainName</code>: Route 53 resets <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>. to null.</p> </li>   <li> <p> <code>Regions</code>: Route 53 resets the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a> list to the default set of regions. </p> </li>   <li> <p> <code>ResourcePath</code>: Route 53 resets <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-ResourcePath">ResourcePath</a> to null.</p> </li>  </ul>
+    /// - On success, responds with [`UpdateHealthCheckOutput`](crate::output::UpdateHealthCheckOutput) with field(s):
+    ///   - [`health_check(Option<HealthCheck>)`](crate::output::UpdateHealthCheckOutput::health_check): <p>A complex type that contains the response to an <code>UpdateHealthCheck</code> request.</p>
+    /// - On failure, responds with [`SdkError<UpdateHealthCheckError>`](crate::error::UpdateHealthCheckError)
     pub fn update_health_check(&self) -> fluent_builders::UpdateHealthCheck<C, M, R> {
         fluent_builders::UpdateHealthCheck::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateHostedZoneComment` operation.
+    /// Constructs a fluent builder for the [`UpdateHostedZoneComment`](crate::client::fluent_builders::UpdateHostedZoneComment) operation.
     ///
-    /// See [`UpdateHostedZoneComment`](crate::client::fluent_builders::UpdateHostedZoneComment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateHostedZoneComment::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateHostedZoneComment::set_id): <p>The ID for the hosted zone that you want to update the comment for.</p>
+    ///   - [`comment(impl Into<String>)`](crate::client::fluent_builders::UpdateHostedZoneComment::comment) / [`set_comment(Option<String>)`](crate::client::fluent_builders::UpdateHostedZoneComment::set_comment): <p>The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53 deletes the existing value of the <code>Comment</code> element, if any.</p>
+    /// - On success, responds with [`UpdateHostedZoneCommentOutput`](crate::output::UpdateHostedZoneCommentOutput) with field(s):
+    ///   - [`hosted_zone(Option<HostedZone>)`](crate::output::UpdateHostedZoneCommentOutput::hosted_zone): <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
+    /// - On failure, responds with [`SdkError<UpdateHostedZoneCommentError>`](crate::error::UpdateHostedZoneCommentError)
     pub fn update_hosted_zone_comment(&self) -> fluent_builders::UpdateHostedZoneComment<C, M, R> {
         fluent_builders::UpdateHostedZoneComment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateTrafficPolicyComment` operation.
+    /// Constructs a fluent builder for the [`UpdateTrafficPolicyComment`](crate::client::fluent_builders::UpdateTrafficPolicyComment) operation.
     ///
-    /// See [`UpdateTrafficPolicyComment`](crate::client::fluent_builders::UpdateTrafficPolicyComment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateTrafficPolicyComment::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateTrafficPolicyComment::set_id): <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
+    ///   - [`version(i32)`](crate::client::fluent_builders::UpdateTrafficPolicyComment::version) / [`set_version(Option<i32>)`](crate::client::fluent_builders::UpdateTrafficPolicyComment::set_version): <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
+    ///   - [`comment(impl Into<String>)`](crate::client::fluent_builders::UpdateTrafficPolicyComment::comment) / [`set_comment(Option<String>)`](crate::client::fluent_builders::UpdateTrafficPolicyComment::set_comment): <p>The new comment for the specified traffic policy and version.</p>
+    /// - On success, responds with [`UpdateTrafficPolicyCommentOutput`](crate::output::UpdateTrafficPolicyCommentOutput) with field(s):
+    ///   - [`traffic_policy(Option<TrafficPolicy>)`](crate::output::UpdateTrafficPolicyCommentOutput::traffic_policy): <p>A complex type that contains settings for the specified traffic policy.</p>
+    /// - On failure, responds with [`SdkError<UpdateTrafficPolicyCommentError>`](crate::error::UpdateTrafficPolicyCommentError)
     pub fn update_traffic_policy_comment(
         &self,
     ) -> fluent_builders::UpdateTrafficPolicyComment<C, M, R> {
         fluent_builders::UpdateTrafficPolicyComment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateTrafficPolicyInstance` operation.
+    /// Constructs a fluent builder for the [`UpdateTrafficPolicyInstance`](crate::client::fluent_builders::UpdateTrafficPolicyInstance) operation.
     ///
-    /// See [`UpdateTrafficPolicyInstance`](crate::client::fluent_builders::UpdateTrafficPolicyInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateTrafficPolicyInstance::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateTrafficPolicyInstance::set_id): <p>The ID of the traffic policy instance that you want to update.</p>
+    ///   - [`ttl(i64)`](crate::client::fluent_builders::UpdateTrafficPolicyInstance::ttl) / [`set_ttl(Option<i64>)`](crate::client::fluent_builders::UpdateTrafficPolicyInstance::set_ttl): <p>The TTL that you want Amazon Route 53 to assign to all of the updated resource record sets.</p>
+    ///   - [`traffic_policy_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTrafficPolicyInstance::traffic_policy_id) / [`set_traffic_policy_id(Option<String>)`](crate::client::fluent_builders::UpdateTrafficPolicyInstance::set_traffic_policy_id): <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
+    ///   - [`traffic_policy_version(i32)`](crate::client::fluent_builders::UpdateTrafficPolicyInstance::traffic_policy_version) / [`set_traffic_policy_version(Option<i32>)`](crate::client::fluent_builders::UpdateTrafficPolicyInstance::set_traffic_policy_version): <p>The version of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
+    /// - On success, responds with [`UpdateTrafficPolicyInstanceOutput`](crate::output::UpdateTrafficPolicyInstanceOutput) with field(s):
+    ///   - [`traffic_policy_instance(Option<TrafficPolicyInstance>)`](crate::output::UpdateTrafficPolicyInstanceOutput::traffic_policy_instance): <p>A complex type that contains settings for the updated traffic policy instance.</p>
+    /// - On failure, responds with [`SdkError<UpdateTrafficPolicyInstanceError>`](crate::error::UpdateTrafficPolicyInstanceError)
     pub fn update_traffic_policy_instance(
         &self,
     ) -> fluent_builders::UpdateTrafficPolicyInstance<C, M, R> {

@@ -83,712 +83,1210 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `ApproveSkill` operation.
+    /// Constructs a fluent builder for the [`ApproveSkill`](crate::client::fluent_builders::ApproveSkill) operation.
     ///
-    /// See [`ApproveSkill`](crate::client::fluent_builders::ApproveSkill) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`skill_id(impl Into<String>)`](crate::client::fluent_builders::ApproveSkill::skill_id) / [`set_skill_id(Option<String>)`](crate::client::fluent_builders::ApproveSkill::set_skill_id): <p>The unique identifier of the skill.</p>
+    /// - On success, responds with [`ApproveSkillOutput`](crate::output::ApproveSkillOutput)
+
+    /// - On failure, responds with [`SdkError<ApproveSkillError>`](crate::error::ApproveSkillError)
     pub fn approve_skill(&self) -> fluent_builders::ApproveSkill<C, M, R> {
         fluent_builders::ApproveSkill::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateContactWithAddressBook` operation.
+    /// Constructs a fluent builder for the [`AssociateContactWithAddressBook`](crate::client::fluent_builders::AssociateContactWithAddressBook) operation.
     ///
-    /// See [`AssociateContactWithAddressBook`](crate::client::fluent_builders::AssociateContactWithAddressBook) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`contact_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateContactWithAddressBook::contact_arn) / [`set_contact_arn(Option<String>)`](crate::client::fluent_builders::AssociateContactWithAddressBook::set_contact_arn): <p>The ARN of the contact to associate with an address book.</p>
+    ///   - [`address_book_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateContactWithAddressBook::address_book_arn) / [`set_address_book_arn(Option<String>)`](crate::client::fluent_builders::AssociateContactWithAddressBook::set_address_book_arn): <p>The ARN of the address book with which to associate the contact.</p>
+    /// - On success, responds with [`AssociateContactWithAddressBookOutput`](crate::output::AssociateContactWithAddressBookOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateContactWithAddressBookError>`](crate::error::AssociateContactWithAddressBookError)
     pub fn associate_contact_with_address_book(
         &self,
     ) -> fluent_builders::AssociateContactWithAddressBook<C, M, R> {
         fluent_builders::AssociateContactWithAddressBook::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateDeviceWithNetworkProfile` operation.
+    /// Constructs a fluent builder for the [`AssociateDeviceWithNetworkProfile`](crate::client::fluent_builders::AssociateDeviceWithNetworkProfile) operation.
     ///
-    /// See [`AssociateDeviceWithNetworkProfile`](crate::client::fluent_builders::AssociateDeviceWithNetworkProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`device_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateDeviceWithNetworkProfile::device_arn) / [`set_device_arn(Option<String>)`](crate::client::fluent_builders::AssociateDeviceWithNetworkProfile::set_device_arn): <p>The device ARN.</p>
+    ///   - [`network_profile_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateDeviceWithNetworkProfile::network_profile_arn) / [`set_network_profile_arn(Option<String>)`](crate::client::fluent_builders::AssociateDeviceWithNetworkProfile::set_network_profile_arn): <p>The ARN of the network profile to associate with a device.</p>
+    /// - On success, responds with [`AssociateDeviceWithNetworkProfileOutput`](crate::output::AssociateDeviceWithNetworkProfileOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateDeviceWithNetworkProfileError>`](crate::error::AssociateDeviceWithNetworkProfileError)
     pub fn associate_device_with_network_profile(
         &self,
     ) -> fluent_builders::AssociateDeviceWithNetworkProfile<C, M, R> {
         fluent_builders::AssociateDeviceWithNetworkProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateDeviceWithRoom` operation.
+    /// Constructs a fluent builder for the [`AssociateDeviceWithRoom`](crate::client::fluent_builders::AssociateDeviceWithRoom) operation.
     ///
-    /// See [`AssociateDeviceWithRoom`](crate::client::fluent_builders::AssociateDeviceWithRoom) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`device_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateDeviceWithRoom::device_arn) / [`set_device_arn(Option<String>)`](crate::client::fluent_builders::AssociateDeviceWithRoom::set_device_arn): <p>The ARN of the device to associate to a room. Required.</p>
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateDeviceWithRoom::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::AssociateDeviceWithRoom::set_room_arn): <p>The ARN of the room with which to associate the device. Required.</p>
+    /// - On success, responds with [`AssociateDeviceWithRoomOutput`](crate::output::AssociateDeviceWithRoomOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateDeviceWithRoomError>`](crate::error::AssociateDeviceWithRoomError)
     pub fn associate_device_with_room(&self) -> fluent_builders::AssociateDeviceWithRoom<C, M, R> {
         fluent_builders::AssociateDeviceWithRoom::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateSkillGroupWithRoom` operation.
+    /// Constructs a fluent builder for the [`AssociateSkillGroupWithRoom`](crate::client::fluent_builders::AssociateSkillGroupWithRoom) operation.
     ///
-    /// See [`AssociateSkillGroupWithRoom`](crate::client::fluent_builders::AssociateSkillGroupWithRoom) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`skill_group_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateSkillGroupWithRoom::skill_group_arn) / [`set_skill_group_arn(Option<String>)`](crate::client::fluent_builders::AssociateSkillGroupWithRoom::set_skill_group_arn): <p>The ARN of the skill group to associate with a room. Required.</p>
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateSkillGroupWithRoom::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::AssociateSkillGroupWithRoom::set_room_arn): <p>The ARN of the room with which to associate the skill group. Required.</p>
+    /// - On success, responds with [`AssociateSkillGroupWithRoomOutput`](crate::output::AssociateSkillGroupWithRoomOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateSkillGroupWithRoomError>`](crate::error::AssociateSkillGroupWithRoomError)
     pub fn associate_skill_group_with_room(
         &self,
     ) -> fluent_builders::AssociateSkillGroupWithRoom<C, M, R> {
         fluent_builders::AssociateSkillGroupWithRoom::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateSkillWithSkillGroup` operation.
+    /// Constructs a fluent builder for the [`AssociateSkillWithSkillGroup`](crate::client::fluent_builders::AssociateSkillWithSkillGroup) operation.
     ///
-    /// See [`AssociateSkillWithSkillGroup`](crate::client::fluent_builders::AssociateSkillWithSkillGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`skill_group_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateSkillWithSkillGroup::skill_group_arn) / [`set_skill_group_arn(Option<String>)`](crate::client::fluent_builders::AssociateSkillWithSkillGroup::set_skill_group_arn): <p>The ARN of the skill group to associate the skill to. Required.</p>
+    ///   - [`skill_id(impl Into<String>)`](crate::client::fluent_builders::AssociateSkillWithSkillGroup::skill_id) / [`set_skill_id(Option<String>)`](crate::client::fluent_builders::AssociateSkillWithSkillGroup::set_skill_id): <p>The unique identifier of the skill.</p>
+    /// - On success, responds with [`AssociateSkillWithSkillGroupOutput`](crate::output::AssociateSkillWithSkillGroupOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateSkillWithSkillGroupError>`](crate::error::AssociateSkillWithSkillGroupError)
     pub fn associate_skill_with_skill_group(
         &self,
     ) -> fluent_builders::AssociateSkillWithSkillGroup<C, M, R> {
         fluent_builders::AssociateSkillWithSkillGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateSkillWithUsers` operation.
+    /// Constructs a fluent builder for the [`AssociateSkillWithUsers`](crate::client::fluent_builders::AssociateSkillWithUsers) operation.
     ///
-    /// See [`AssociateSkillWithUsers`](crate::client::fluent_builders::AssociateSkillWithUsers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`skill_id(impl Into<String>)`](crate::client::fluent_builders::AssociateSkillWithUsers::skill_id) / [`set_skill_id(Option<String>)`](crate::client::fluent_builders::AssociateSkillWithUsers::set_skill_id): <p>The private skill ID you want to make available to enrolled users.</p>
+    /// - On success, responds with [`AssociateSkillWithUsersOutput`](crate::output::AssociateSkillWithUsersOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateSkillWithUsersError>`](crate::error::AssociateSkillWithUsersError)
     pub fn associate_skill_with_users(&self) -> fluent_builders::AssociateSkillWithUsers<C, M, R> {
         fluent_builders::AssociateSkillWithUsers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAddressBook` operation.
+    /// Constructs a fluent builder for the [`CreateAddressBook`](crate::client::fluent_builders::CreateAddressBook) operation.
     ///
-    /// See [`CreateAddressBook`](crate::client::fluent_builders::CreateAddressBook) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAddressBook::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAddressBook::set_name): <p>The name of the address book.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateAddressBook::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateAddressBook::set_description): <p>The description of the address book.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateAddressBook::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateAddressBook::set_client_request_token): <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAddressBook::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAddressBook::set_tags): <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    /// - On success, responds with [`CreateAddressBookOutput`](crate::output::CreateAddressBookOutput) with field(s):
+    ///   - [`address_book_arn(Option<String>)`](crate::output::CreateAddressBookOutput::address_book_arn): <p>The ARN of the newly created address book.</p>
+    /// - On failure, responds with [`SdkError<CreateAddressBookError>`](crate::error::CreateAddressBookError)
     pub fn create_address_book(&self) -> fluent_builders::CreateAddressBook<C, M, R> {
         fluent_builders::CreateAddressBook::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBusinessReportSchedule` operation.
+    /// Constructs a fluent builder for the [`CreateBusinessReportSchedule`](crate::client::fluent_builders::CreateBusinessReportSchedule) operation.
     ///
-    /// See [`CreateBusinessReportSchedule`](crate::client::fluent_builders::CreateBusinessReportSchedule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`schedule_name(impl Into<String>)`](crate::client::fluent_builders::CreateBusinessReportSchedule::schedule_name) / [`set_schedule_name(Option<String>)`](crate::client::fluent_builders::CreateBusinessReportSchedule::set_schedule_name): <p>The name identifier of the schedule.</p>
+    ///   - [`s3_bucket_name(impl Into<String>)`](crate::client::fluent_builders::CreateBusinessReportSchedule::s3_bucket_name) / [`set_s3_bucket_name(Option<String>)`](crate::client::fluent_builders::CreateBusinessReportSchedule::set_s3_bucket_name): <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
+    ///   - [`s3_key_prefix(impl Into<String>)`](crate::client::fluent_builders::CreateBusinessReportSchedule::s3_key_prefix) / [`set_s3_key_prefix(Option<String>)`](crate::client::fluent_builders::CreateBusinessReportSchedule::set_s3_key_prefix): <p>The S3 key where the report is delivered.</p>
+    ///   - [`format(BusinessReportFormat)`](crate::client::fluent_builders::CreateBusinessReportSchedule::format) / [`set_format(Option<BusinessReportFormat>)`](crate::client::fluent_builders::CreateBusinessReportSchedule::set_format): <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
+    ///   - [`content_range(BusinessReportContentRange)`](crate::client::fluent_builders::CreateBusinessReportSchedule::content_range) / [`set_content_range(Option<BusinessReportContentRange>)`](crate::client::fluent_builders::CreateBusinessReportSchedule::set_content_range): <p>The content range of the reports.</p>
+    ///   - [`recurrence(BusinessReportRecurrence)`](crate::client::fluent_builders::CreateBusinessReportSchedule::recurrence) / [`set_recurrence(Option<BusinessReportRecurrence>)`](crate::client::fluent_builders::CreateBusinessReportSchedule::set_recurrence): <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateBusinessReportSchedule::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateBusinessReportSchedule::set_client_request_token): <p>The client request token.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateBusinessReportSchedule::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateBusinessReportSchedule::set_tags): <p>The tags for the business report schedule.</p>
+    /// - On success, responds with [`CreateBusinessReportScheduleOutput`](crate::output::CreateBusinessReportScheduleOutput) with field(s):
+    ///   - [`schedule_arn(Option<String>)`](crate::output::CreateBusinessReportScheduleOutput::schedule_arn): <p>The ARN of the business report schedule.</p>
+    /// - On failure, responds with [`SdkError<CreateBusinessReportScheduleError>`](crate::error::CreateBusinessReportScheduleError)
     pub fn create_business_report_schedule(
         &self,
     ) -> fluent_builders::CreateBusinessReportSchedule<C, M, R> {
         fluent_builders::CreateBusinessReportSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateConferenceProvider` operation.
+    /// Constructs a fluent builder for the [`CreateConferenceProvider`](crate::client::fluent_builders::CreateConferenceProvider) operation.
     ///
-    /// See [`CreateConferenceProvider`](crate::client::fluent_builders::CreateConferenceProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`conference_provider_name(impl Into<String>)`](crate::client::fluent_builders::CreateConferenceProvider::conference_provider_name) / [`set_conference_provider_name(Option<String>)`](crate::client::fluent_builders::CreateConferenceProvider::set_conference_provider_name): <p>The name of the conference provider.</p>
+    ///   - [`conference_provider_type(ConferenceProviderType)`](crate::client::fluent_builders::CreateConferenceProvider::conference_provider_type) / [`set_conference_provider_type(Option<ConferenceProviderType>)`](crate::client::fluent_builders::CreateConferenceProvider::set_conference_provider_type): <p>Represents a type within a list of predefined types.</p>
+    ///   - [`ip_dial_in(IpDialIn)`](crate::client::fluent_builders::CreateConferenceProvider::ip_dial_in) / [`set_ip_dial_in(Option<IpDialIn>)`](crate::client::fluent_builders::CreateConferenceProvider::set_ip_dial_in): <p>The IP endpoint and protocol for calling.</p>
+    ///   - [`pstn_dial_in(PstnDialIn)`](crate::client::fluent_builders::CreateConferenceProvider::pstn_dial_in) / [`set_pstn_dial_in(Option<PstnDialIn>)`](crate::client::fluent_builders::CreateConferenceProvider::set_pstn_dial_in): <p>The information for PSTN conferencing.</p>
+    ///   - [`meeting_setting(MeetingSetting)`](crate::client::fluent_builders::CreateConferenceProvider::meeting_setting) / [`set_meeting_setting(Option<MeetingSetting>)`](crate::client::fluent_builders::CreateConferenceProvider::set_meeting_setting): <p>The meeting settings for the conference provider.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateConferenceProvider::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateConferenceProvider::set_client_request_token): <p>The request token of the client.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateConferenceProvider::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateConferenceProvider::set_tags): <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    /// - On success, responds with [`CreateConferenceProviderOutput`](crate::output::CreateConferenceProviderOutput) with field(s):
+    ///   - [`conference_provider_arn(Option<String>)`](crate::output::CreateConferenceProviderOutput::conference_provider_arn): <p>The ARN of the newly-created conference provider.</p>
+    /// - On failure, responds with [`SdkError<CreateConferenceProviderError>`](crate::error::CreateConferenceProviderError)
     pub fn create_conference_provider(&self) -> fluent_builders::CreateConferenceProvider<C, M, R> {
         fluent_builders::CreateConferenceProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateContact` operation.
+    /// Constructs a fluent builder for the [`CreateContact`](crate::client::fluent_builders::CreateContact) operation.
     ///
-    /// See [`CreateContact`](crate::client::fluent_builders::CreateContact) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateContact::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateContact::set_display_name): <p>The name of the contact to display on the console.</p>
+    ///   - [`first_name(impl Into<String>)`](crate::client::fluent_builders::CreateContact::first_name) / [`set_first_name(Option<String>)`](crate::client::fluent_builders::CreateContact::set_first_name): <p>The first name of the contact that is used to call the contact on the device.</p>
+    ///   - [`last_name(impl Into<String>)`](crate::client::fluent_builders::CreateContact::last_name) / [`set_last_name(Option<String>)`](crate::client::fluent_builders::CreateContact::set_last_name): <p>The last name of the contact that is used to call the contact on the device.</p>
+    ///   - [`phone_number(impl Into<String>)`](crate::client::fluent_builders::CreateContact::phone_number) / [`set_phone_number(Option<String>)`](crate::client::fluent_builders::CreateContact::set_phone_number): <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
+    ///   - [`phone_numbers(Vec<PhoneNumber>)`](crate::client::fluent_builders::CreateContact::phone_numbers) / [`set_phone_numbers(Option<Vec<PhoneNumber>>)`](crate::client::fluent_builders::CreateContact::set_phone_numbers): <p>The list of phone numbers for the contact.</p>
+    ///   - [`sip_addresses(Vec<SipAddress>)`](crate::client::fluent_builders::CreateContact::sip_addresses) / [`set_sip_addresses(Option<Vec<SipAddress>>)`](crate::client::fluent_builders::CreateContact::set_sip_addresses): <p>The list of SIP addresses for the contact.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateContact::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateContact::set_client_request_token): <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateContact::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateContact::set_tags): <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    /// - On success, responds with [`CreateContactOutput`](crate::output::CreateContactOutput) with field(s):
+    ///   - [`contact_arn(Option<String>)`](crate::output::CreateContactOutput::contact_arn): <p>The ARN of the newly created address book.</p>
+    /// - On failure, responds with [`SdkError<CreateContactError>`](crate::error::CreateContactError)
     pub fn create_contact(&self) -> fluent_builders::CreateContact<C, M, R> {
         fluent_builders::CreateContact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGatewayGroup` operation.
+    /// Constructs a fluent builder for the [`CreateGatewayGroup`](crate::client::fluent_builders::CreateGatewayGroup) operation.
     ///
-    /// See [`CreateGatewayGroup`](crate::client::fluent_builders::CreateGatewayGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateGatewayGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateGatewayGroup::set_name): <p>The name of the gateway group.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateGatewayGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateGatewayGroup::set_description): <p>The description of the gateway group.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateGatewayGroup::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateGatewayGroup::set_client_request_token): <p> A unique, user-specified identifier for the request that ensures idempotency.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateGatewayGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateGatewayGroup::set_tags): <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    /// - On success, responds with [`CreateGatewayGroupOutput`](crate::output::CreateGatewayGroupOutput) with field(s):
+    ///   - [`gateway_group_arn(Option<String>)`](crate::output::CreateGatewayGroupOutput::gateway_group_arn): <p>The ARN of the created gateway group.</p>
+    /// - On failure, responds with [`SdkError<CreateGatewayGroupError>`](crate::error::CreateGatewayGroupError)
     pub fn create_gateway_group(&self) -> fluent_builders::CreateGatewayGroup<C, M, R> {
         fluent_builders::CreateGatewayGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateNetworkProfile` operation.
+    /// Constructs a fluent builder for the [`CreateNetworkProfile`](crate::client::fluent_builders::CreateNetworkProfile) operation.
     ///
-    /// See [`CreateNetworkProfile`](crate::client::fluent_builders::CreateNetworkProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`network_profile_name(impl Into<String>)`](crate::client::fluent_builders::CreateNetworkProfile::network_profile_name) / [`set_network_profile_name(Option<String>)`](crate::client::fluent_builders::CreateNetworkProfile::set_network_profile_name): <p>The name of the network profile associated with a device.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateNetworkProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateNetworkProfile::set_description): <p>Detailed information about a device's network profile.</p>
+    ///   - [`ssid(impl Into<String>)`](crate::client::fluent_builders::CreateNetworkProfile::ssid) / [`set_ssid(Option<String>)`](crate::client::fluent_builders::CreateNetworkProfile::set_ssid): <p>The SSID of the Wi-Fi network.</p>
+    ///   - [`security_type(NetworkSecurityType)`](crate::client::fluent_builders::CreateNetworkProfile::security_type) / [`set_security_type(Option<NetworkSecurityType>)`](crate::client::fluent_builders::CreateNetworkProfile::set_security_type): <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
+    ///   - [`eap_method(NetworkEapMethod)`](crate::client::fluent_builders::CreateNetworkProfile::eap_method) / [`set_eap_method(Option<NetworkEapMethod>)`](crate::client::fluent_builders::CreateNetworkProfile::set_eap_method): <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
+    ///   - [`current_password(impl Into<String>)`](crate::client::fluent_builders::CreateNetworkProfile::current_password) / [`set_current_password(Option<String>)`](crate::client::fluent_builders::CreateNetworkProfile::set_current_password): <p>The current password of the Wi-Fi network.</p>
+    ///   - [`next_password(impl Into<String>)`](crate::client::fluent_builders::CreateNetworkProfile::next_password) / [`set_next_password(Option<String>)`](crate::client::fluent_builders::CreateNetworkProfile::set_next_password): <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    ///   - [`certificate_authority_arn(impl Into<String>)`](crate::client::fluent_builders::CreateNetworkProfile::certificate_authority_arn) / [`set_certificate_authority_arn(Option<String>)`](crate::client::fluent_builders::CreateNetworkProfile::set_certificate_authority_arn): <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    ///   - [`trust_anchors(Vec<String>)`](crate::client::fluent_builders::CreateNetworkProfile::trust_anchors) / [`set_trust_anchors(Option<Vec<String>>)`](crate::client::fluent_builders::CreateNetworkProfile::set_trust_anchors): <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateNetworkProfile::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateNetworkProfile::set_client_request_token): <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateNetworkProfile::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateNetworkProfile::set_tags): <p>The tags to be added to the specified resource. Do not provide system tags. </p>
+    /// - On success, responds with [`CreateNetworkProfileOutput`](crate::output::CreateNetworkProfileOutput) with field(s):
+    ///   - [`network_profile_arn(Option<String>)`](crate::output::CreateNetworkProfileOutput::network_profile_arn): <p>The ARN of the network profile associated with a device.</p>
+    /// - On failure, responds with [`SdkError<CreateNetworkProfileError>`](crate::error::CreateNetworkProfileError)
     pub fn create_network_profile(&self) -> fluent_builders::CreateNetworkProfile<C, M, R> {
         fluent_builders::CreateNetworkProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProfile` operation.
+    /// Constructs a fluent builder for the [`CreateProfile`](crate::client::fluent_builders::CreateProfile) operation.
     ///
-    /// See [`CreateProfile`](crate::client::fluent_builders::CreateProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profile_name(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::profile_name) / [`set_profile_name(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_profile_name): <p>The name of a room profile.</p>
+    ///   - [`timezone(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::timezone) / [`set_timezone(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_timezone): <p>The time zone used by a room profile.</p>
+    ///   - [`address(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::address) / [`set_address(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_address): <p>The valid address for the room.</p>
+    ///   - [`distance_unit(DistanceUnit)`](crate::client::fluent_builders::CreateProfile::distance_unit) / [`set_distance_unit(Option<DistanceUnit>)`](crate::client::fluent_builders::CreateProfile::set_distance_unit): <p>The distance unit to be used by devices in the profile.</p>
+    ///   - [`temperature_unit(TemperatureUnit)`](crate::client::fluent_builders::CreateProfile::temperature_unit) / [`set_temperature_unit(Option<TemperatureUnit>)`](crate::client::fluent_builders::CreateProfile::set_temperature_unit): <p>The temperature unit to be used by devices in the profile.</p>
+    ///   - [`wake_word(WakeWord)`](crate::client::fluent_builders::CreateProfile::wake_word) / [`set_wake_word(Option<WakeWord>)`](crate::client::fluent_builders::CreateProfile::set_wake_word): <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
+    ///   - [`locale(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::locale) / [`set_locale(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_locale): <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_client_request_token): <p>The user-specified token that is used during the creation of a profile.</p>
+    ///   - [`setup_mode_disabled(bool)`](crate::client::fluent_builders::CreateProfile::setup_mode_disabled) / [`set_setup_mode_disabled(Option<bool>)`](crate::client::fluent_builders::CreateProfile::set_setup_mode_disabled): <p>Whether room profile setup is enabled.</p>
+    ///   - [`max_volume_limit(i32)`](crate::client::fluent_builders::CreateProfile::max_volume_limit) / [`set_max_volume_limit(Option<i32>)`](crate::client::fluent_builders::CreateProfile::set_max_volume_limit): <p>The maximum volume limit for a room profile.</p>
+    ///   - [`pstn_enabled(bool)`](crate::client::fluent_builders::CreateProfile::pstn_enabled) / [`set_pstn_enabled(Option<bool>)`](crate::client::fluent_builders::CreateProfile::set_pstn_enabled): <p>Whether PSTN calling is enabled.</p>
+    ///   - [`data_retention_opt_in(bool)`](crate::client::fluent_builders::CreateProfile::data_retention_opt_in) / [`set_data_retention_opt_in(Option<bool>)`](crate::client::fluent_builders::CreateProfile::set_data_retention_opt_in): <p>Whether data retention of the profile is enabled.</p>
+    ///   - [`meeting_room_configuration(CreateMeetingRoomConfiguration)`](crate::client::fluent_builders::CreateProfile::meeting_room_configuration) / [`set_meeting_room_configuration(Option<CreateMeetingRoomConfiguration>)`](crate::client::fluent_builders::CreateProfile::set_meeting_room_configuration): <p>The meeting room settings of a room profile.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateProfile::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateProfile::set_tags): <p>The tags for the profile.</p>
+    /// - On success, responds with [`CreateProfileOutput`](crate::output::CreateProfileOutput) with field(s):
+    ///   - [`profile_arn(Option<String>)`](crate::output::CreateProfileOutput::profile_arn): <p>The ARN of the newly created room profile in the response.</p>
+    /// - On failure, responds with [`SdkError<CreateProfileError>`](crate::error::CreateProfileError)
     pub fn create_profile(&self) -> fluent_builders::CreateProfile<C, M, R> {
         fluent_builders::CreateProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRoom` operation.
+    /// Constructs a fluent builder for the [`CreateRoom`](crate::client::fluent_builders::CreateRoom) operation.
     ///
-    /// See [`CreateRoom`](crate::client::fluent_builders::CreateRoom) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`room_name(impl Into<String>)`](crate::client::fluent_builders::CreateRoom::room_name) / [`set_room_name(Option<String>)`](crate::client::fluent_builders::CreateRoom::set_room_name): <p>The name for the room.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRoom::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRoom::set_description): <p>The description for the room.</p>
+    ///   - [`profile_arn(impl Into<String>)`](crate::client::fluent_builders::CreateRoom::profile_arn) / [`set_profile_arn(Option<String>)`](crate::client::fluent_builders::CreateRoom::set_profile_arn): <p>The profile ARN for the room. This is required.</p>
+    ///   - [`provider_calendar_id(impl Into<String>)`](crate::client::fluent_builders::CreateRoom::provider_calendar_id) / [`set_provider_calendar_id(Option<String>)`](crate::client::fluent_builders::CreateRoom::set_provider_calendar_id): <p>The calendar ARN for the room.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateRoom::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateRoom::set_client_request_token): <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRoom::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRoom::set_tags): <p>The tags for the room.</p>
+    /// - On success, responds with [`CreateRoomOutput`](crate::output::CreateRoomOutput) with field(s):
+    ///   - [`room_arn(Option<String>)`](crate::output::CreateRoomOutput::room_arn): <p>The ARN of the newly created room in the response.</p>
+    /// - On failure, responds with [`SdkError<CreateRoomError>`](crate::error::CreateRoomError)
     pub fn create_room(&self) -> fluent_builders::CreateRoom<C, M, R> {
         fluent_builders::CreateRoom::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSkillGroup` operation.
+    /// Constructs a fluent builder for the [`CreateSkillGroup`](crate::client::fluent_builders::CreateSkillGroup) operation.
     ///
-    /// See [`CreateSkillGroup`](crate::client::fluent_builders::CreateSkillGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`skill_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateSkillGroup::skill_group_name) / [`set_skill_group_name(Option<String>)`](crate::client::fluent_builders::CreateSkillGroup::set_skill_group_name): <p>The name for the skill group.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSkillGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSkillGroup::set_description): <p>The description for the skill group.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateSkillGroup::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateSkillGroup::set_client_request_token): <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateSkillGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateSkillGroup::set_tags): <p>The tags for the skill group.</p>
+    /// - On success, responds with [`CreateSkillGroupOutput`](crate::output::CreateSkillGroupOutput) with field(s):
+    ///   - [`skill_group_arn(Option<String>)`](crate::output::CreateSkillGroupOutput::skill_group_arn): <p>The ARN of the newly created skill group in the response.</p>
+    /// - On failure, responds with [`SdkError<CreateSkillGroupError>`](crate::error::CreateSkillGroupError)
     pub fn create_skill_group(&self) -> fluent_builders::CreateSkillGroup<C, M, R> {
         fluent_builders::CreateSkillGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUser` operation.
+    /// Constructs a fluent builder for the [`CreateUser`](crate::client::fluent_builders::CreateUser) operation.
     ///
-    /// See [`CreateUser`](crate::client::fluent_builders::CreateUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::CreateUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::CreateUser::set_user_id): <p>The ARN for the user.</p>
+    ///   - [`first_name(impl Into<String>)`](crate::client::fluent_builders::CreateUser::first_name) / [`set_first_name(Option<String>)`](crate::client::fluent_builders::CreateUser::set_first_name): <p>The first name for the user.</p>
+    ///   - [`last_name(impl Into<String>)`](crate::client::fluent_builders::CreateUser::last_name) / [`set_last_name(Option<String>)`](crate::client::fluent_builders::CreateUser::set_last_name): <p>The last name for the user.</p>
+    ///   - [`email(impl Into<String>)`](crate::client::fluent_builders::CreateUser::email) / [`set_email(Option<String>)`](crate::client::fluent_builders::CreateUser::set_email): <p>The email address for the user.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateUser::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateUser::set_client_request_token): <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateUser::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateUser::set_tags): <p>The tags for the user.</p>
+    /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput) with field(s):
+    ///   - [`user_arn(Option<String>)`](crate::output::CreateUserOutput::user_arn): <p>The ARN of the newly created user in the response.</p>
+    /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
     pub fn create_user(&self) -> fluent_builders::CreateUser<C, M, R> {
         fluent_builders::CreateUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAddressBook` operation.
+    /// Constructs a fluent builder for the [`DeleteAddressBook`](crate::client::fluent_builders::DeleteAddressBook) operation.
     ///
-    /// See [`DeleteAddressBook`](crate::client::fluent_builders::DeleteAddressBook) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`address_book_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAddressBook::address_book_arn) / [`set_address_book_arn(Option<String>)`](crate::client::fluent_builders::DeleteAddressBook::set_address_book_arn): <p>The ARN of the address book to delete.</p>
+    /// - On success, responds with [`DeleteAddressBookOutput`](crate::output::DeleteAddressBookOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAddressBookError>`](crate::error::DeleteAddressBookError)
     pub fn delete_address_book(&self) -> fluent_builders::DeleteAddressBook<C, M, R> {
         fluent_builders::DeleteAddressBook::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBusinessReportSchedule` operation.
+    /// Constructs a fluent builder for the [`DeleteBusinessReportSchedule`](crate::client::fluent_builders::DeleteBusinessReportSchedule) operation.
     ///
-    /// See [`DeleteBusinessReportSchedule`](crate::client::fluent_builders::DeleteBusinessReportSchedule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`schedule_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteBusinessReportSchedule::schedule_arn) / [`set_schedule_arn(Option<String>)`](crate::client::fluent_builders::DeleteBusinessReportSchedule::set_schedule_arn): <p>The ARN of the business report schedule.</p>
+    /// - On success, responds with [`DeleteBusinessReportScheduleOutput`](crate::output::DeleteBusinessReportScheduleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBusinessReportScheduleError>`](crate::error::DeleteBusinessReportScheduleError)
     pub fn delete_business_report_schedule(
         &self,
     ) -> fluent_builders::DeleteBusinessReportSchedule<C, M, R> {
         fluent_builders::DeleteBusinessReportSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConferenceProvider` operation.
+    /// Constructs a fluent builder for the [`DeleteConferenceProvider`](crate::client::fluent_builders::DeleteConferenceProvider) operation.
     ///
-    /// See [`DeleteConferenceProvider`](crate::client::fluent_builders::DeleteConferenceProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`conference_provider_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteConferenceProvider::conference_provider_arn) / [`set_conference_provider_arn(Option<String>)`](crate::client::fluent_builders::DeleteConferenceProvider::set_conference_provider_arn): <p>The ARN of the conference provider.</p>
+    /// - On success, responds with [`DeleteConferenceProviderOutput`](crate::output::DeleteConferenceProviderOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteConferenceProviderError>`](crate::error::DeleteConferenceProviderError)
     pub fn delete_conference_provider(&self) -> fluent_builders::DeleteConferenceProvider<C, M, R> {
         fluent_builders::DeleteConferenceProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteContact` operation.
+    /// Constructs a fluent builder for the [`DeleteContact`](crate::client::fluent_builders::DeleteContact) operation.
     ///
-    /// See [`DeleteContact`](crate::client::fluent_builders::DeleteContact) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`contact_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteContact::contact_arn) / [`set_contact_arn(Option<String>)`](crate::client::fluent_builders::DeleteContact::set_contact_arn): <p>The ARN of the contact to delete.</p>
+    /// - On success, responds with [`DeleteContactOutput`](crate::output::DeleteContactOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteContactError>`](crate::error::DeleteContactError)
     pub fn delete_contact(&self) -> fluent_builders::DeleteContact<C, M, R> {
         fluent_builders::DeleteContact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDevice` operation.
+    /// Constructs a fluent builder for the [`DeleteDevice`](crate::client::fluent_builders::DeleteDevice) operation.
     ///
-    /// See [`DeleteDevice`](crate::client::fluent_builders::DeleteDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`device_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteDevice::device_arn) / [`set_device_arn(Option<String>)`](crate::client::fluent_builders::DeleteDevice::set_device_arn): <p>The ARN of the device for which to request details.</p>
+    /// - On success, responds with [`DeleteDeviceOutput`](crate::output::DeleteDeviceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDeviceError>`](crate::error::DeleteDeviceError)
     pub fn delete_device(&self) -> fluent_builders::DeleteDevice<C, M, R> {
         fluent_builders::DeleteDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDeviceUsageData` operation.
+    /// Constructs a fluent builder for the [`DeleteDeviceUsageData`](crate::client::fluent_builders::DeleteDeviceUsageData) operation.
     ///
-    /// See [`DeleteDeviceUsageData`](crate::client::fluent_builders::DeleteDeviceUsageData) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`device_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteDeviceUsageData::device_arn) / [`set_device_arn(Option<String>)`](crate::client::fluent_builders::DeleteDeviceUsageData::set_device_arn): <p>The ARN of the device.</p>
+    ///   - [`device_usage_type(DeviceUsageType)`](crate::client::fluent_builders::DeleteDeviceUsageData::device_usage_type) / [`set_device_usage_type(Option<DeviceUsageType>)`](crate::client::fluent_builders::DeleteDeviceUsageData::set_device_usage_type): <p>The type of usage data to delete.</p>
+    /// - On success, responds with [`DeleteDeviceUsageDataOutput`](crate::output::DeleteDeviceUsageDataOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDeviceUsageDataError>`](crate::error::DeleteDeviceUsageDataError)
     pub fn delete_device_usage_data(&self) -> fluent_builders::DeleteDeviceUsageData<C, M, R> {
         fluent_builders::DeleteDeviceUsageData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGatewayGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteGatewayGroup`](crate::client::fluent_builders::DeleteGatewayGroup) operation.
     ///
-    /// See [`DeleteGatewayGroup`](crate::client::fluent_builders::DeleteGatewayGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_group_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteGatewayGroup::gateway_group_arn) / [`set_gateway_group_arn(Option<String>)`](crate::client::fluent_builders::DeleteGatewayGroup::set_gateway_group_arn): <p>The ARN of the gateway group to delete.</p>
+    /// - On success, responds with [`DeleteGatewayGroupOutput`](crate::output::DeleteGatewayGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteGatewayGroupError>`](crate::error::DeleteGatewayGroupError)
     pub fn delete_gateway_group(&self) -> fluent_builders::DeleteGatewayGroup<C, M, R> {
         fluent_builders::DeleteGatewayGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteNetworkProfile` operation.
+    /// Constructs a fluent builder for the [`DeleteNetworkProfile`](crate::client::fluent_builders::DeleteNetworkProfile) operation.
     ///
-    /// See [`DeleteNetworkProfile`](crate::client::fluent_builders::DeleteNetworkProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`network_profile_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteNetworkProfile::network_profile_arn) / [`set_network_profile_arn(Option<String>)`](crate::client::fluent_builders::DeleteNetworkProfile::set_network_profile_arn): <p>The ARN of the network profile associated with a device.</p>
+    /// - On success, responds with [`DeleteNetworkProfileOutput`](crate::output::DeleteNetworkProfileOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteNetworkProfileError>`](crate::error::DeleteNetworkProfileError)
     pub fn delete_network_profile(&self) -> fluent_builders::DeleteNetworkProfile<C, M, R> {
         fluent_builders::DeleteNetworkProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProfile` operation.
+    /// Constructs a fluent builder for the [`DeleteProfile`](crate::client::fluent_builders::DeleteProfile) operation.
     ///
-    /// See [`DeleteProfile`](crate::client::fluent_builders::DeleteProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profile_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteProfile::profile_arn) / [`set_profile_arn(Option<String>)`](crate::client::fluent_builders::DeleteProfile::set_profile_arn): <p>The ARN of the room profile to delete. Required.</p>
+    /// - On success, responds with [`DeleteProfileOutput`](crate::output::DeleteProfileOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteProfileError>`](crate::error::DeleteProfileError)
     pub fn delete_profile(&self) -> fluent_builders::DeleteProfile<C, M, R> {
         fluent_builders::DeleteProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRoom` operation.
+    /// Constructs a fluent builder for the [`DeleteRoom`](crate::client::fluent_builders::DeleteRoom) operation.
     ///
-    /// See [`DeleteRoom`](crate::client::fluent_builders::DeleteRoom) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteRoom::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::DeleteRoom::set_room_arn): <p>The ARN of the room to delete. Required.</p>
+    /// - On success, responds with [`DeleteRoomOutput`](crate::output::DeleteRoomOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRoomError>`](crate::error::DeleteRoomError)
     pub fn delete_room(&self) -> fluent_builders::DeleteRoom<C, M, R> {
         fluent_builders::DeleteRoom::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRoomSkillParameter` operation.
+    /// Constructs a fluent builder for the [`DeleteRoomSkillParameter`](crate::client::fluent_builders::DeleteRoomSkillParameter) operation.
     ///
-    /// See [`DeleteRoomSkillParameter`](crate::client::fluent_builders::DeleteRoomSkillParameter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteRoomSkillParameter::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::DeleteRoomSkillParameter::set_room_arn): <p>The ARN of the room from which to remove the room skill parameter details.</p>
+    ///   - [`skill_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRoomSkillParameter::skill_id) / [`set_skill_id(Option<String>)`](crate::client::fluent_builders::DeleteRoomSkillParameter::set_skill_id): <p>The ID of the skill from which to remove the room skill parameter details.</p>
+    ///   - [`parameter_key(impl Into<String>)`](crate::client::fluent_builders::DeleteRoomSkillParameter::parameter_key) / [`set_parameter_key(Option<String>)`](crate::client::fluent_builders::DeleteRoomSkillParameter::set_parameter_key): <p>The room skill parameter key for which to remove details.</p>
+    /// - On success, responds with [`DeleteRoomSkillParameterOutput`](crate::output::DeleteRoomSkillParameterOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRoomSkillParameterError>`](crate::error::DeleteRoomSkillParameterError)
     pub fn delete_room_skill_parameter(
         &self,
     ) -> fluent_builders::DeleteRoomSkillParameter<C, M, R> {
         fluent_builders::DeleteRoomSkillParameter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSkillAuthorization` operation.
+    /// Constructs a fluent builder for the [`DeleteSkillAuthorization`](crate::client::fluent_builders::DeleteSkillAuthorization) operation.
     ///
-    /// See [`DeleteSkillAuthorization`](crate::client::fluent_builders::DeleteSkillAuthorization) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`skill_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSkillAuthorization::skill_id) / [`set_skill_id(Option<String>)`](crate::client::fluent_builders::DeleteSkillAuthorization::set_skill_id): <p>The unique identifier of a skill.</p>
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteSkillAuthorization::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::DeleteSkillAuthorization::set_room_arn): <p>The room that the skill is authorized for.</p>
+    /// - On success, responds with [`DeleteSkillAuthorizationOutput`](crate::output::DeleteSkillAuthorizationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSkillAuthorizationError>`](crate::error::DeleteSkillAuthorizationError)
     pub fn delete_skill_authorization(&self) -> fluent_builders::DeleteSkillAuthorization<C, M, R> {
         fluent_builders::DeleteSkillAuthorization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSkillGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteSkillGroup`](crate::client::fluent_builders::DeleteSkillGroup) operation.
     ///
-    /// See [`DeleteSkillGroup`](crate::client::fluent_builders::DeleteSkillGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`skill_group_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteSkillGroup::skill_group_arn) / [`set_skill_group_arn(Option<String>)`](crate::client::fluent_builders::DeleteSkillGroup::set_skill_group_arn): <p>The ARN of the skill group to delete. Required.</p>
+    /// - On success, responds with [`DeleteSkillGroupOutput`](crate::output::DeleteSkillGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSkillGroupError>`](crate::error::DeleteSkillGroupError)
     pub fn delete_skill_group(&self) -> fluent_builders::DeleteSkillGroup<C, M, R> {
         fluent_builders::DeleteSkillGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUser` operation.
+    /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
     ///
-    /// See [`DeleteUser`](crate::client::fluent_builders::DeleteUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::user_arn) / [`set_user_arn(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_user_arn): <p>The ARN of the user to delete in the organization. Required.</p>
+    ///   - [`enrollment_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::enrollment_id) / [`set_enrollment_id(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_enrollment_id): <p>The ARN of the user's enrollment in the organization. Required.</p>
+    /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::error::DeleteUserError)
     pub fn delete_user(&self) -> fluent_builders::DeleteUser<C, M, R> {
         fluent_builders::DeleteUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateContactFromAddressBook` operation.
+    /// Constructs a fluent builder for the [`DisassociateContactFromAddressBook`](crate::client::fluent_builders::DisassociateContactFromAddressBook) operation.
     ///
-    /// See [`DisassociateContactFromAddressBook`](crate::client::fluent_builders::DisassociateContactFromAddressBook) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`contact_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateContactFromAddressBook::contact_arn) / [`set_contact_arn(Option<String>)`](crate::client::fluent_builders::DisassociateContactFromAddressBook::set_contact_arn): <p>The ARN of the contact to disassociate from an address book.</p>
+    ///   - [`address_book_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateContactFromAddressBook::address_book_arn) / [`set_address_book_arn(Option<String>)`](crate::client::fluent_builders::DisassociateContactFromAddressBook::set_address_book_arn): <p>The ARN of the address from which to disassociate the contact.</p>
+    /// - On success, responds with [`DisassociateContactFromAddressBookOutput`](crate::output::DisassociateContactFromAddressBookOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateContactFromAddressBookError>`](crate::error::DisassociateContactFromAddressBookError)
     pub fn disassociate_contact_from_address_book(
         &self,
     ) -> fluent_builders::DisassociateContactFromAddressBook<C, M, R> {
         fluent_builders::DisassociateContactFromAddressBook::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateDeviceFromRoom` operation.
+    /// Constructs a fluent builder for the [`DisassociateDeviceFromRoom`](crate::client::fluent_builders::DisassociateDeviceFromRoom) operation.
     ///
-    /// See [`DisassociateDeviceFromRoom`](crate::client::fluent_builders::DisassociateDeviceFromRoom) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`device_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateDeviceFromRoom::device_arn) / [`set_device_arn(Option<String>)`](crate::client::fluent_builders::DisassociateDeviceFromRoom::set_device_arn): <p>The ARN of the device to disassociate from a room. Required.</p>
+    /// - On success, responds with [`DisassociateDeviceFromRoomOutput`](crate::output::DisassociateDeviceFromRoomOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateDeviceFromRoomError>`](crate::error::DisassociateDeviceFromRoomError)
     pub fn disassociate_device_from_room(
         &self,
     ) -> fluent_builders::DisassociateDeviceFromRoom<C, M, R> {
         fluent_builders::DisassociateDeviceFromRoom::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateSkillFromSkillGroup` operation.
+    /// Constructs a fluent builder for the [`DisassociateSkillFromSkillGroup`](crate::client::fluent_builders::DisassociateSkillFromSkillGroup) operation.
     ///
-    /// See [`DisassociateSkillFromSkillGroup`](crate::client::fluent_builders::DisassociateSkillFromSkillGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`skill_group_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateSkillFromSkillGroup::skill_group_arn) / [`set_skill_group_arn(Option<String>)`](crate::client::fluent_builders::DisassociateSkillFromSkillGroup::set_skill_group_arn): <p>The unique identifier of a skill. Required.</p>
+    ///   - [`skill_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateSkillFromSkillGroup::skill_id) / [`set_skill_id(Option<String>)`](crate::client::fluent_builders::DisassociateSkillFromSkillGroup::set_skill_id): <p>The ARN of a skill group to associate to a skill.</p>
+    /// - On success, responds with [`DisassociateSkillFromSkillGroupOutput`](crate::output::DisassociateSkillFromSkillGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateSkillFromSkillGroupError>`](crate::error::DisassociateSkillFromSkillGroupError)
     pub fn disassociate_skill_from_skill_group(
         &self,
     ) -> fluent_builders::DisassociateSkillFromSkillGroup<C, M, R> {
         fluent_builders::DisassociateSkillFromSkillGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateSkillFromUsers` operation.
+    /// Constructs a fluent builder for the [`DisassociateSkillFromUsers`](crate::client::fluent_builders::DisassociateSkillFromUsers) operation.
     ///
-    /// See [`DisassociateSkillFromUsers`](crate::client::fluent_builders::DisassociateSkillFromUsers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`skill_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateSkillFromUsers::skill_id) / [`set_skill_id(Option<String>)`](crate::client::fluent_builders::DisassociateSkillFromUsers::set_skill_id): <p> The private skill ID you want to make unavailable for enrolled users.</p>
+    /// - On success, responds with [`DisassociateSkillFromUsersOutput`](crate::output::DisassociateSkillFromUsersOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateSkillFromUsersError>`](crate::error::DisassociateSkillFromUsersError)
     pub fn disassociate_skill_from_users(
         &self,
     ) -> fluent_builders::DisassociateSkillFromUsers<C, M, R> {
         fluent_builders::DisassociateSkillFromUsers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateSkillGroupFromRoom` operation.
+    /// Constructs a fluent builder for the [`DisassociateSkillGroupFromRoom`](crate::client::fluent_builders::DisassociateSkillGroupFromRoom) operation.
     ///
-    /// See [`DisassociateSkillGroupFromRoom`](crate::client::fluent_builders::DisassociateSkillGroupFromRoom) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`skill_group_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateSkillGroupFromRoom::skill_group_arn) / [`set_skill_group_arn(Option<String>)`](crate::client::fluent_builders::DisassociateSkillGroupFromRoom::set_skill_group_arn): <p>The ARN of the skill group to disassociate from a room. Required.</p>
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateSkillGroupFromRoom::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::DisassociateSkillGroupFromRoom::set_room_arn): <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
+    /// - On success, responds with [`DisassociateSkillGroupFromRoomOutput`](crate::output::DisassociateSkillGroupFromRoomOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateSkillGroupFromRoomError>`](crate::error::DisassociateSkillGroupFromRoomError)
     pub fn disassociate_skill_group_from_room(
         &self,
     ) -> fluent_builders::DisassociateSkillGroupFromRoom<C, M, R> {
         fluent_builders::DisassociateSkillGroupFromRoom::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ForgetSmartHomeAppliances` operation.
+    /// Constructs a fluent builder for the [`ForgetSmartHomeAppliances`](crate::client::fluent_builders::ForgetSmartHomeAppliances) operation.
     ///
-    /// See [`ForgetSmartHomeAppliances`](crate::client::fluent_builders::ForgetSmartHomeAppliances) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::ForgetSmartHomeAppliances::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::ForgetSmartHomeAppliances::set_room_arn): <p>The room that the appliances are associated with.</p>
+    /// - On success, responds with [`ForgetSmartHomeAppliancesOutput`](crate::output::ForgetSmartHomeAppliancesOutput)
+
+    /// - On failure, responds with [`SdkError<ForgetSmartHomeAppliancesError>`](crate::error::ForgetSmartHomeAppliancesError)
     pub fn forget_smart_home_appliances(
         &self,
     ) -> fluent_builders::ForgetSmartHomeAppliances<C, M, R> {
         fluent_builders::ForgetSmartHomeAppliances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAddressBook` operation.
+    /// Constructs a fluent builder for the [`GetAddressBook`](crate::client::fluent_builders::GetAddressBook) operation.
     ///
-    /// See [`GetAddressBook`](crate::client::fluent_builders::GetAddressBook) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`address_book_arn(impl Into<String>)`](crate::client::fluent_builders::GetAddressBook::address_book_arn) / [`set_address_book_arn(Option<String>)`](crate::client::fluent_builders::GetAddressBook::set_address_book_arn): <p>The ARN of the address book for which to request details.</p>
+    /// - On success, responds with [`GetAddressBookOutput`](crate::output::GetAddressBookOutput) with field(s):
+    ///   - [`address_book(Option<AddressBook>)`](crate::output::GetAddressBookOutput::address_book): <p>The details of the requested address book.</p>
+    /// - On failure, responds with [`SdkError<GetAddressBookError>`](crate::error::GetAddressBookError)
     pub fn get_address_book(&self) -> fluent_builders::GetAddressBook<C, M, R> {
         fluent_builders::GetAddressBook::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConferencePreference` operation.
+    /// Constructs a fluent builder for the [`GetConferencePreference`](crate::client::fluent_builders::GetConferencePreference) operation.
     ///
-    /// See [`GetConferencePreference`](crate::client::fluent_builders::GetConferencePreference) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetConferencePreference::send) it.
+
+    /// - On success, responds with [`GetConferencePreferenceOutput`](crate::output::GetConferencePreferenceOutput) with field(s):
+    ///   - [`preference(Option<ConferencePreference>)`](crate::output::GetConferencePreferenceOutput::preference): <p>The conference preference.</p>
+    /// - On failure, responds with [`SdkError<GetConferencePreferenceError>`](crate::error::GetConferencePreferenceError)
     pub fn get_conference_preference(&self) -> fluent_builders::GetConferencePreference<C, M, R> {
         fluent_builders::GetConferencePreference::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConferenceProvider` operation.
+    /// Constructs a fluent builder for the [`GetConferenceProvider`](crate::client::fluent_builders::GetConferenceProvider) operation.
     ///
-    /// See [`GetConferenceProvider`](crate::client::fluent_builders::GetConferenceProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`conference_provider_arn(impl Into<String>)`](crate::client::fluent_builders::GetConferenceProvider::conference_provider_arn) / [`set_conference_provider_arn(Option<String>)`](crate::client::fluent_builders::GetConferenceProvider::set_conference_provider_arn): <p>The ARN of the newly created conference provider.</p>
+    /// - On success, responds with [`GetConferenceProviderOutput`](crate::output::GetConferenceProviderOutput) with field(s):
+    ///   - [`conference_provider(Option<ConferenceProvider>)`](crate::output::GetConferenceProviderOutput::conference_provider): <p>The conference provider.</p>
+    /// - On failure, responds with [`SdkError<GetConferenceProviderError>`](crate::error::GetConferenceProviderError)
     pub fn get_conference_provider(&self) -> fluent_builders::GetConferenceProvider<C, M, R> {
         fluent_builders::GetConferenceProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContact` operation.
+    /// Constructs a fluent builder for the [`GetContact`](crate::client::fluent_builders::GetContact) operation.
     ///
-    /// See [`GetContact`](crate::client::fluent_builders::GetContact) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`contact_arn(impl Into<String>)`](crate::client::fluent_builders::GetContact::contact_arn) / [`set_contact_arn(Option<String>)`](crate::client::fluent_builders::GetContact::set_contact_arn): <p>The ARN of the contact for which to request details.</p>
+    /// - On success, responds with [`GetContactOutput`](crate::output::GetContactOutput) with field(s):
+    ///   - [`contact(Option<Contact>)`](crate::output::GetContactOutput::contact): <p>The details of the requested contact.</p>
+    /// - On failure, responds with [`SdkError<GetContactError>`](crate::error::GetContactError)
     pub fn get_contact(&self) -> fluent_builders::GetContact<C, M, R> {
         fluent_builders::GetContact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDevice` operation.
+    /// Constructs a fluent builder for the [`GetDevice`](crate::client::fluent_builders::GetDevice) operation.
     ///
-    /// See [`GetDevice`](crate::client::fluent_builders::GetDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`device_arn(impl Into<String>)`](crate::client::fluent_builders::GetDevice::device_arn) / [`set_device_arn(Option<String>)`](crate::client::fluent_builders::GetDevice::set_device_arn): <p>The ARN of the device for which to request details. Required.</p>
+    /// - On success, responds with [`GetDeviceOutput`](crate::output::GetDeviceOutput) with field(s):
+    ///   - [`device(Option<Device>)`](crate::output::GetDeviceOutput::device): <p>The details of the device requested. Required.</p>
+    /// - On failure, responds with [`SdkError<GetDeviceError>`](crate::error::GetDeviceError)
     pub fn get_device(&self) -> fluent_builders::GetDevice<C, M, R> {
         fluent_builders::GetDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGateway` operation.
+    /// Constructs a fluent builder for the [`GetGateway`](crate::client::fluent_builders::GetGateway) operation.
     ///
-    /// See [`GetGateway`](crate::client::fluent_builders::GetGateway) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_arn(impl Into<String>)`](crate::client::fluent_builders::GetGateway::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::client::fluent_builders::GetGateway::set_gateway_arn): <p>The ARN of the gateway to get.</p>
+    /// - On success, responds with [`GetGatewayOutput`](crate::output::GetGatewayOutput) with field(s):
+    ///   - [`gateway(Option<Gateway>)`](crate::output::GetGatewayOutput::gateway): <p>The details of the gateway.</p>
+    /// - On failure, responds with [`SdkError<GetGatewayError>`](crate::error::GetGatewayError)
     pub fn get_gateway(&self) -> fluent_builders::GetGateway<C, M, R> {
         fluent_builders::GetGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGatewayGroup` operation.
+    /// Constructs a fluent builder for the [`GetGatewayGroup`](crate::client::fluent_builders::GetGatewayGroup) operation.
     ///
-    /// See [`GetGatewayGroup`](crate::client::fluent_builders::GetGatewayGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_group_arn(impl Into<String>)`](crate::client::fluent_builders::GetGatewayGroup::gateway_group_arn) / [`set_gateway_group_arn(Option<String>)`](crate::client::fluent_builders::GetGatewayGroup::set_gateway_group_arn): <p>The ARN of the gateway group to get.</p>
+    /// - On success, responds with [`GetGatewayGroupOutput`](crate::output::GetGatewayGroupOutput) with field(s):
+    ///   - [`gateway_group(Option<GatewayGroup>)`](crate::output::GetGatewayGroupOutput::gateway_group): <p>The details of the gateway group.</p>
+    /// - On failure, responds with [`SdkError<GetGatewayGroupError>`](crate::error::GetGatewayGroupError)
     pub fn get_gateway_group(&self) -> fluent_builders::GetGatewayGroup<C, M, R> {
         fluent_builders::GetGatewayGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInvitationConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetInvitationConfiguration`](crate::client::fluent_builders::GetInvitationConfiguration) operation.
     ///
-    /// See [`GetInvitationConfiguration`](crate::client::fluent_builders::GetInvitationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetInvitationConfiguration::send) it.
+
+    /// - On success, responds with [`GetInvitationConfigurationOutput`](crate::output::GetInvitationConfigurationOutput) with field(s):
+    ///   - [`organization_name(Option<String>)`](crate::output::GetInvitationConfigurationOutput::organization_name): <p>The name of the organization sending the enrollment invite to a user.</p>
+    ///   - [`contact_email(Option<String>)`](crate::output::GetInvitationConfigurationOutput::contact_email): <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
+    ///   - [`private_skill_ids(Option<Vec<String>>)`](crate::output::GetInvitationConfigurationOutput::private_skill_ids): <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
+    /// - On failure, responds with [`SdkError<GetInvitationConfigurationError>`](crate::error::GetInvitationConfigurationError)
     pub fn get_invitation_configuration(
         &self,
     ) -> fluent_builders::GetInvitationConfiguration<C, M, R> {
         fluent_builders::GetInvitationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetNetworkProfile` operation.
+    /// Constructs a fluent builder for the [`GetNetworkProfile`](crate::client::fluent_builders::GetNetworkProfile) operation.
     ///
-    /// See [`GetNetworkProfile`](crate::client::fluent_builders::GetNetworkProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`network_profile_arn(impl Into<String>)`](crate::client::fluent_builders::GetNetworkProfile::network_profile_arn) / [`set_network_profile_arn(Option<String>)`](crate::client::fluent_builders::GetNetworkProfile::set_network_profile_arn): <p>The ARN of the network profile associated with a device.</p>
+    /// - On success, responds with [`GetNetworkProfileOutput`](crate::output::GetNetworkProfileOutput) with field(s):
+    ///   - [`network_profile(Option<NetworkProfile>)`](crate::output::GetNetworkProfileOutput::network_profile): <p>The network profile associated with a device.</p>
+    /// - On failure, responds with [`SdkError<GetNetworkProfileError>`](crate::error::GetNetworkProfileError)
     pub fn get_network_profile(&self) -> fluent_builders::GetNetworkProfile<C, M, R> {
         fluent_builders::GetNetworkProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetProfile` operation.
+    /// Constructs a fluent builder for the [`GetProfile`](crate::client::fluent_builders::GetProfile) operation.
     ///
-    /// See [`GetProfile`](crate::client::fluent_builders::GetProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profile_arn(impl Into<String>)`](crate::client::fluent_builders::GetProfile::profile_arn) / [`set_profile_arn(Option<String>)`](crate::client::fluent_builders::GetProfile::set_profile_arn): <p>The ARN of the room profile for which to request details. Required.</p>
+    /// - On success, responds with [`GetProfileOutput`](crate::output::GetProfileOutput) with field(s):
+    ///   - [`profile(Option<Profile>)`](crate::output::GetProfileOutput::profile): <p>The details of the room profile requested. Required.</p>
+    /// - On failure, responds with [`SdkError<GetProfileError>`](crate::error::GetProfileError)
     pub fn get_profile(&self) -> fluent_builders::GetProfile<C, M, R> {
         fluent_builders::GetProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRoom` operation.
+    /// Constructs a fluent builder for the [`GetRoom`](crate::client::fluent_builders::GetRoom) operation.
     ///
-    /// See [`GetRoom`](crate::client::fluent_builders::GetRoom) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::GetRoom::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::GetRoom::set_room_arn): <p>The ARN of the room for which to request details. Required.</p>
+    /// - On success, responds with [`GetRoomOutput`](crate::output::GetRoomOutput) with field(s):
+    ///   - [`room(Option<Room>)`](crate::output::GetRoomOutput::room): <p>The details of the room requested.</p>
+    /// - On failure, responds with [`SdkError<GetRoomError>`](crate::error::GetRoomError)
     pub fn get_room(&self) -> fluent_builders::GetRoom<C, M, R> {
         fluent_builders::GetRoom::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRoomSkillParameter` operation.
+    /// Constructs a fluent builder for the [`GetRoomSkillParameter`](crate::client::fluent_builders::GetRoomSkillParameter) operation.
     ///
-    /// See [`GetRoomSkillParameter`](crate::client::fluent_builders::GetRoomSkillParameter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::GetRoomSkillParameter::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::GetRoomSkillParameter::set_room_arn): <p>The ARN of the room from which to get the room skill parameter details. </p>
+    ///   - [`skill_id(impl Into<String>)`](crate::client::fluent_builders::GetRoomSkillParameter::skill_id) / [`set_skill_id(Option<String>)`](crate::client::fluent_builders::GetRoomSkillParameter::set_skill_id): <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
+    ///   - [`parameter_key(impl Into<String>)`](crate::client::fluent_builders::GetRoomSkillParameter::parameter_key) / [`set_parameter_key(Option<String>)`](crate::client::fluent_builders::GetRoomSkillParameter::set_parameter_key): <p>The room skill parameter key for which to get details. Required.</p>
+    /// - On success, responds with [`GetRoomSkillParameterOutput`](crate::output::GetRoomSkillParameterOutput) with field(s):
+    ///   - [`room_skill_parameter(Option<RoomSkillParameter>)`](crate::output::GetRoomSkillParameterOutput::room_skill_parameter): <p>The details of the room skill parameter requested. Required.</p>
+    /// - On failure, responds with [`SdkError<GetRoomSkillParameterError>`](crate::error::GetRoomSkillParameterError)
     pub fn get_room_skill_parameter(&self) -> fluent_builders::GetRoomSkillParameter<C, M, R> {
         fluent_builders::GetRoomSkillParameter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSkillGroup` operation.
+    /// Constructs a fluent builder for the [`GetSkillGroup`](crate::client::fluent_builders::GetSkillGroup) operation.
     ///
-    /// See [`GetSkillGroup`](crate::client::fluent_builders::GetSkillGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`skill_group_arn(impl Into<String>)`](crate::client::fluent_builders::GetSkillGroup::skill_group_arn) / [`set_skill_group_arn(Option<String>)`](crate::client::fluent_builders::GetSkillGroup::set_skill_group_arn): <p>The ARN of the skill group for which to get details. Required.</p>
+    /// - On success, responds with [`GetSkillGroupOutput`](crate::output::GetSkillGroupOutput) with field(s):
+    ///   - [`skill_group(Option<SkillGroup>)`](crate::output::GetSkillGroupOutput::skill_group): <p>The details of the skill group requested. Required.</p>
+    /// - On failure, responds with [`SdkError<GetSkillGroupError>`](crate::error::GetSkillGroupError)
     pub fn get_skill_group(&self) -> fluent_builders::GetSkillGroup<C, M, R> {
         fluent_builders::GetSkillGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBusinessReportSchedules` operation.
+    /// Constructs a fluent builder for the [`ListBusinessReportSchedules`](crate::client::fluent_builders::ListBusinessReportSchedules) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBusinessReportSchedules::into_paginator).
     ///
-    /// See [`ListBusinessReportSchedules`](crate::client::fluent_builders::ListBusinessReportSchedules) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBusinessReportSchedules::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBusinessReportSchedules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBusinessReportSchedules::set_next_token): <p>The token used to list the remaining schedules from the previous API call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBusinessReportSchedules::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBusinessReportSchedules::set_max_results): <p>The maximum number of schedules listed in the call.</p>
+    /// - On success, responds with [`ListBusinessReportSchedulesOutput`](crate::output::ListBusinessReportSchedulesOutput) with field(s):
+    ///   - [`business_report_schedules(Option<Vec<BusinessReportSchedule>>)`](crate::output::ListBusinessReportSchedulesOutput::business_report_schedules): <p>The schedule of the reports.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBusinessReportSchedulesOutput::next_token): <p>The token used to list the remaining schedules from the previous API call.</p>
+    /// - On failure, responds with [`SdkError<ListBusinessReportSchedulesError>`](crate::error::ListBusinessReportSchedulesError)
     pub fn list_business_report_schedules(
         &self,
     ) -> fluent_builders::ListBusinessReportSchedules<C, M, R> {
         fluent_builders::ListBusinessReportSchedules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListConferenceProviders` operation.
+    /// Constructs a fluent builder for the [`ListConferenceProviders`](crate::client::fluent_builders::ListConferenceProviders) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConferenceProviders::into_paginator).
     ///
-    /// See [`ListConferenceProviders`](crate::client::fluent_builders::ListConferenceProviders) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConferenceProviders::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConferenceProviders::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConferenceProviders::set_next_token): <p>The tokens used for pagination.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConferenceProviders::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListConferenceProviders::set_max_results): <p>The maximum number of conference providers to be returned, per paginated calls.</p>
+    /// - On success, responds with [`ListConferenceProvidersOutput`](crate::output::ListConferenceProvidersOutput) with field(s):
+    ///   - [`conference_providers(Option<Vec<ConferenceProvider>>)`](crate::output::ListConferenceProvidersOutput::conference_providers): <p>The conference providers.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListConferenceProvidersOutput::next_token): <p>The tokens used for pagination.</p>
+    /// - On failure, responds with [`SdkError<ListConferenceProvidersError>`](crate::error::ListConferenceProvidersError)
     pub fn list_conference_providers(&self) -> fluent_builders::ListConferenceProviders<C, M, R> {
         fluent_builders::ListConferenceProviders::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDeviceEvents` operation.
+    /// Constructs a fluent builder for the [`ListDeviceEvents`](crate::client::fluent_builders::ListDeviceEvents) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeviceEvents::into_paginator).
     ///
-    /// See [`ListDeviceEvents`](crate::client::fluent_builders::ListDeviceEvents) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeviceEvents::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`device_arn(impl Into<String>)`](crate::client::fluent_builders::ListDeviceEvents::device_arn) / [`set_device_arn(Option<String>)`](crate::client::fluent_builders::ListDeviceEvents::set_device_arn): <p>The ARN of a device.</p>
+    ///   - [`event_type(DeviceEventType)`](crate::client::fluent_builders::ListDeviceEvents::event_type) / [`set_event_type(Option<DeviceEventType>)`](crate::client::fluent_builders::ListDeviceEvents::set_event_type): <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeviceEvents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeviceEvents::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDeviceEvents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDeviceEvents::set_max_results): <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
+    /// - On success, responds with [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput) with field(s):
+    ///   - [`device_events(Option<Vec<DeviceEvent>>)`](crate::output::ListDeviceEventsOutput::device_events): <p>The device events requested for the device ARN.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDeviceEventsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
+    /// - On failure, responds with [`SdkError<ListDeviceEventsError>`](crate::error::ListDeviceEventsError)
     pub fn list_device_events(&self) -> fluent_builders::ListDeviceEvents<C, M, R> {
         fluent_builders::ListDeviceEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGatewayGroups` operation.
+    /// Constructs a fluent builder for the [`ListGatewayGroups`](crate::client::fluent_builders::ListGatewayGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGatewayGroups::into_paginator).
     ///
-    /// See [`ListGatewayGroups`](crate::client::fluent_builders::ListGatewayGroups) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGatewayGroups::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGatewayGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGatewayGroups::set_next_token): <p>The token used to paginate though multiple pages of gateway group summaries.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGatewayGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGatewayGroups::set_max_results): <p>The maximum number of gateway group summaries to return. The default is 50.</p>
+    /// - On success, responds with [`ListGatewayGroupsOutput`](crate::output::ListGatewayGroupsOutput) with field(s):
+    ///   - [`gateway_groups(Option<Vec<GatewayGroupSummary>>)`](crate::output::ListGatewayGroupsOutput::gateway_groups): <p>The gateway groups in the list.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGatewayGroupsOutput::next_token): <p>The token used to paginate though multiple pages of gateway group summaries.</p>
+    /// - On failure, responds with [`SdkError<ListGatewayGroupsError>`](crate::error::ListGatewayGroupsError)
     pub fn list_gateway_groups(&self) -> fluent_builders::ListGatewayGroups<C, M, R> {
         fluent_builders::ListGatewayGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGateways` operation.
+    /// Constructs a fluent builder for the [`ListGateways`](crate::client::fluent_builders::ListGateways) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGateways::into_paginator).
     ///
-    /// See [`ListGateways`](crate::client::fluent_builders::ListGateways) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGateways::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_group_arn(impl Into<String>)`](crate::client::fluent_builders::ListGateways::gateway_group_arn) / [`set_gateway_group_arn(Option<String>)`](crate::client::fluent_builders::ListGateways::set_gateway_group_arn): <p>The gateway group ARN for which to list gateways.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGateways::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGateways::set_next_token): <p>The token used to paginate though multiple pages of gateway summaries.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGateways::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGateways::set_max_results): <p>The maximum number of gateway summaries to return. The default is 50.</p>
+    /// - On success, responds with [`ListGatewaysOutput`](crate::output::ListGatewaysOutput) with field(s):
+    ///   - [`gateways(Option<Vec<GatewaySummary>>)`](crate::output::ListGatewaysOutput::gateways): <p>The gateways in the list.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGatewaysOutput::next_token): <p>The token used to paginate though multiple pages of gateway summaries.</p>
+    /// - On failure, responds with [`SdkError<ListGatewaysError>`](crate::error::ListGatewaysError)
     pub fn list_gateways(&self) -> fluent_builders::ListGateways<C, M, R> {
         fluent_builders::ListGateways::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSkills` operation.
+    /// Constructs a fluent builder for the [`ListSkills`](crate::client::fluent_builders::ListSkills) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSkills::into_paginator).
     ///
-    /// See [`ListSkills`](crate::client::fluent_builders::ListSkills) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSkills::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`skill_group_arn(impl Into<String>)`](crate::client::fluent_builders::ListSkills::skill_group_arn) / [`set_skill_group_arn(Option<String>)`](crate::client::fluent_builders::ListSkills::set_skill_group_arn): <p>The ARN of the skill group for which to list enabled skills.</p>
+    ///   - [`enablement_type(EnablementTypeFilter)`](crate::client::fluent_builders::ListSkills::enablement_type) / [`set_enablement_type(Option<EnablementTypeFilter>)`](crate::client::fluent_builders::ListSkills::set_enablement_type): <p>Whether the skill is enabled under the user's account.</p>
+    ///   - [`skill_type(SkillTypeFilter)`](crate::client::fluent_builders::ListSkills::skill_type) / [`set_skill_type(Option<SkillTypeFilter>)`](crate::client::fluent_builders::ListSkills::set_skill_type): <p>Whether the skill is publicly available or is a private skill.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSkills::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSkills::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSkills::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSkills::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// - On success, responds with [`ListSkillsOutput`](crate::output::ListSkillsOutput) with field(s):
+    ///   - [`skill_summaries(Option<Vec<SkillSummary>>)`](crate::output::ListSkillsOutput::skill_summaries): <p>The list of enabled skills requested. Required.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSkillsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
+    /// - On failure, responds with [`SdkError<ListSkillsError>`](crate::error::ListSkillsError)
     pub fn list_skills(&self) -> fluent_builders::ListSkills<C, M, R> {
         fluent_builders::ListSkills::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSkillsStoreCategories` operation.
+    /// Constructs a fluent builder for the [`ListSkillsStoreCategories`](crate::client::fluent_builders::ListSkillsStoreCategories) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSkillsStoreCategories::into_paginator).
     ///
-    /// See [`ListSkillsStoreCategories`](crate::client::fluent_builders::ListSkillsStoreCategories) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSkillsStoreCategories::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSkillsStoreCategories::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSkillsStoreCategories::set_next_token): <p>The tokens used for pagination.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSkillsStoreCategories::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSkillsStoreCategories::set_max_results): <p>The maximum number of categories returned, per paginated calls.</p>
+    /// - On success, responds with [`ListSkillsStoreCategoriesOutput`](crate::output::ListSkillsStoreCategoriesOutput) with field(s):
+    ///   - [`category_list(Option<Vec<Category>>)`](crate::output::ListSkillsStoreCategoriesOutput::category_list): <p>The list of categories.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSkillsStoreCategoriesOutput::next_token): <p>The tokens used for pagination.</p>
+    /// - On failure, responds with [`SdkError<ListSkillsStoreCategoriesError>`](crate::error::ListSkillsStoreCategoriesError)
     pub fn list_skills_store_categories(
         &self,
     ) -> fluent_builders::ListSkillsStoreCategories<C, M, R> {
         fluent_builders::ListSkillsStoreCategories::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSkillsStoreSkillsByCategory` operation.
+    /// Constructs a fluent builder for the [`ListSkillsStoreSkillsByCategory`](crate::client::fluent_builders::ListSkillsStoreSkillsByCategory) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSkillsStoreSkillsByCategory::into_paginator).
     ///
-    /// See [`ListSkillsStoreSkillsByCategory`](crate::client::fluent_builders::ListSkillsStoreSkillsByCategory) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSkillsStoreSkillsByCategory::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`category_id(i64)`](crate::client::fluent_builders::ListSkillsStoreSkillsByCategory::category_id) / [`set_category_id(Option<i64>)`](crate::client::fluent_builders::ListSkillsStoreSkillsByCategory::set_category_id): <p>The category ID for which the skills are being retrieved from the skill store.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSkillsStoreSkillsByCategory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSkillsStoreSkillsByCategory::set_next_token): <p>The tokens used for pagination.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSkillsStoreSkillsByCategory::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSkillsStoreSkillsByCategory::set_max_results): <p>The maximum number of skills returned per paginated calls.</p>
+    /// - On success, responds with [`ListSkillsStoreSkillsByCategoryOutput`](crate::output::ListSkillsStoreSkillsByCategoryOutput) with field(s):
+    ///   - [`skills_store_skills(Option<Vec<SkillsStoreSkill>>)`](crate::output::ListSkillsStoreSkillsByCategoryOutput::skills_store_skills): <p>The skill store skills.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSkillsStoreSkillsByCategoryOutput::next_token): <p>The tokens used for pagination.</p>
+    /// - On failure, responds with [`SdkError<ListSkillsStoreSkillsByCategoryError>`](crate::error::ListSkillsStoreSkillsByCategoryError)
     pub fn list_skills_store_skills_by_category(
         &self,
     ) -> fluent_builders::ListSkillsStoreSkillsByCategory<C, M, R> {
         fluent_builders::ListSkillsStoreSkillsByCategory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSmartHomeAppliances` operation.
+    /// Constructs a fluent builder for the [`ListSmartHomeAppliances`](crate::client::fluent_builders::ListSmartHomeAppliances) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSmartHomeAppliances::into_paginator).
     ///
-    /// See [`ListSmartHomeAppliances`](crate::client::fluent_builders::ListSmartHomeAppliances) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSmartHomeAppliances::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::ListSmartHomeAppliances::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::ListSmartHomeAppliances::set_room_arn): <p>The room that the appliances are associated with.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSmartHomeAppliances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSmartHomeAppliances::set_max_results): <p>The maximum number of appliances to be returned, per paginated calls.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSmartHomeAppliances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSmartHomeAppliances::set_next_token): <p>The tokens used for pagination.</p>
+    /// - On success, responds with [`ListSmartHomeAppliancesOutput`](crate::output::ListSmartHomeAppliancesOutput) with field(s):
+    ///   - [`smart_home_appliances(Option<Vec<SmartHomeAppliance>>)`](crate::output::ListSmartHomeAppliancesOutput::smart_home_appliances): <p>The smart home appliances.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSmartHomeAppliancesOutput::next_token): <p>The tokens used for pagination.</p>
+    /// - On failure, responds with [`SdkError<ListSmartHomeAppliancesError>`](crate::error::ListSmartHomeAppliancesError)
     pub fn list_smart_home_appliances(&self) -> fluent_builders::ListSmartHomeAppliances<C, M, R> {
         fluent_builders::ListSmartHomeAppliances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTags` operation.
+    /// Constructs a fluent builder for the [`ListTags`](crate::client::fluent_builders::ListTags) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
     ///
-    /// See [`ListTags`](crate::client::fluent_builders::ListTags) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListTags::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListTags::set_arn): <p>The ARN of the specified resource for which to list tags.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTags::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTags::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTags::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTags::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsOutput::tags): <p>The tags requested for the specified resource.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
+    /// - On failure, responds with [`SdkError<ListTagsError>`](crate::error::ListTagsError)
     pub fn list_tags(&self) -> fluent_builders::ListTags<C, M, R> {
         fluent_builders::ListTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutConferencePreference` operation.
+    /// Constructs a fluent builder for the [`PutConferencePreference`](crate::client::fluent_builders::PutConferencePreference) operation.
     ///
-    /// See [`PutConferencePreference`](crate::client::fluent_builders::PutConferencePreference) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`conference_preference(ConferencePreference)`](crate::client::fluent_builders::PutConferencePreference::conference_preference) / [`set_conference_preference(Option<ConferencePreference>)`](crate::client::fluent_builders::PutConferencePreference::set_conference_preference): <p>The conference preference of a specific conference provider.</p>
+    /// - On success, responds with [`PutConferencePreferenceOutput`](crate::output::PutConferencePreferenceOutput)
+
+    /// - On failure, responds with [`SdkError<PutConferencePreferenceError>`](crate::error::PutConferencePreferenceError)
     pub fn put_conference_preference(&self) -> fluent_builders::PutConferencePreference<C, M, R> {
         fluent_builders::PutConferencePreference::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutInvitationConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutInvitationConfiguration`](crate::client::fluent_builders::PutInvitationConfiguration) operation.
     ///
-    /// See [`PutInvitationConfiguration`](crate::client::fluent_builders::PutInvitationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`organization_name(impl Into<String>)`](crate::client::fluent_builders::PutInvitationConfiguration::organization_name) / [`set_organization_name(Option<String>)`](crate::client::fluent_builders::PutInvitationConfiguration::set_organization_name): <p>The name of the organization sending the enrollment invite to a user.</p>
+    ///   - [`contact_email(impl Into<String>)`](crate::client::fluent_builders::PutInvitationConfiguration::contact_email) / [`set_contact_email(Option<String>)`](crate::client::fluent_builders::PutInvitationConfiguration::set_contact_email): <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
+    ///   - [`private_skill_ids(Vec<String>)`](crate::client::fluent_builders::PutInvitationConfiguration::private_skill_ids) / [`set_private_skill_ids(Option<Vec<String>>)`](crate::client::fluent_builders::PutInvitationConfiguration::set_private_skill_ids): <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
+    /// - On success, responds with [`PutInvitationConfigurationOutput`](crate::output::PutInvitationConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<PutInvitationConfigurationError>`](crate::error::PutInvitationConfigurationError)
     pub fn put_invitation_configuration(
         &self,
     ) -> fluent_builders::PutInvitationConfiguration<C, M, R> {
         fluent_builders::PutInvitationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRoomSkillParameter` operation.
+    /// Constructs a fluent builder for the [`PutRoomSkillParameter`](crate::client::fluent_builders::PutRoomSkillParameter) operation.
     ///
-    /// See [`PutRoomSkillParameter`](crate::client::fluent_builders::PutRoomSkillParameter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::PutRoomSkillParameter::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::PutRoomSkillParameter::set_room_arn): <p>The ARN of the room associated with the room skill parameter. Required.</p>
+    ///   - [`skill_id(impl Into<String>)`](crate::client::fluent_builders::PutRoomSkillParameter::skill_id) / [`set_skill_id(Option<String>)`](crate::client::fluent_builders::PutRoomSkillParameter::set_skill_id): <p>The ARN of the skill associated with the room skill parameter. Required.</p>
+    ///   - [`room_skill_parameter(RoomSkillParameter)`](crate::client::fluent_builders::PutRoomSkillParameter::room_skill_parameter) / [`set_room_skill_parameter(Option<RoomSkillParameter>)`](crate::client::fluent_builders::PutRoomSkillParameter::set_room_skill_parameter): <p>The updated room skill parameter. Required.</p>
+    /// - On success, responds with [`PutRoomSkillParameterOutput`](crate::output::PutRoomSkillParameterOutput)
+
+    /// - On failure, responds with [`SdkError<PutRoomSkillParameterError>`](crate::error::PutRoomSkillParameterError)
     pub fn put_room_skill_parameter(&self) -> fluent_builders::PutRoomSkillParameter<C, M, R> {
         fluent_builders::PutRoomSkillParameter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutSkillAuthorization` operation.
+    /// Constructs a fluent builder for the [`PutSkillAuthorization`](crate::client::fluent_builders::PutSkillAuthorization) operation.
     ///
-    /// See [`PutSkillAuthorization`](crate::client::fluent_builders::PutSkillAuthorization) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`authorization_result(HashMap<String, String>)`](crate::client::fluent_builders::PutSkillAuthorization::authorization_result) / [`set_authorization_result(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PutSkillAuthorization::set_authorization_result): <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
+    ///   - [`skill_id(impl Into<String>)`](crate::client::fluent_builders::PutSkillAuthorization::skill_id) / [`set_skill_id(Option<String>)`](crate::client::fluent_builders::PutSkillAuthorization::set_skill_id): <p>The unique identifier of a skill.</p>
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::PutSkillAuthorization::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::PutSkillAuthorization::set_room_arn): <p>The room that the skill is authorized for.</p>
+    /// - On success, responds with [`PutSkillAuthorizationOutput`](crate::output::PutSkillAuthorizationOutput)
+
+    /// - On failure, responds with [`SdkError<PutSkillAuthorizationError>`](crate::error::PutSkillAuthorizationError)
     pub fn put_skill_authorization(&self) -> fluent_builders::PutSkillAuthorization<C, M, R> {
         fluent_builders::PutSkillAuthorization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterAVSDevice` operation.
+    /// Constructs a fluent builder for the [`RegisterAVSDevice`](crate::client::fluent_builders::RegisterAVSDevice) operation.
     ///
-    /// See [`RegisterAVSDevice`](crate::client::fluent_builders::RegisterAVSDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::RegisterAVSDevice::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::RegisterAVSDevice::set_client_id): <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
+    ///   - [`user_code(impl Into<String>)`](crate::client::fluent_builders::RegisterAVSDevice::user_code) / [`set_user_code(Option<String>)`](crate::client::fluent_builders::RegisterAVSDevice::set_user_code): <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
+    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::RegisterAVSDevice::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::RegisterAVSDevice::set_product_id): <p>The product ID used to identify your AVS device during authorization.</p>
+    ///   - [`device_serial_number(impl Into<String>)`](crate::client::fluent_builders::RegisterAVSDevice::device_serial_number) / [`set_device_serial_number(Option<String>)`](crate::client::fluent_builders::RegisterAVSDevice::set_device_serial_number): <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
+    ///   - [`amazon_id(impl Into<String>)`](crate::client::fluent_builders::RegisterAVSDevice::amazon_id) / [`set_amazon_id(Option<String>)`](crate::client::fluent_builders::RegisterAVSDevice::set_amazon_id): <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::RegisterAVSDevice::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::RegisterAVSDevice::set_room_arn): <p>The Amazon Resource Name (ARN) of the room with which to associate your AVS device.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RegisterAVSDevice::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RegisterAVSDevice::set_tags): <p>The tags to be added to the specified resource. Do not provide system tags.</p>
+    /// - On success, responds with [`RegisterAvsDeviceOutput`](crate::output::RegisterAvsDeviceOutput) with field(s):
+    ///   - [`device_arn(Option<String>)`](crate::output::RegisterAvsDeviceOutput::device_arn): <p>The ARN of the device.</p>
+    /// - On failure, responds with [`SdkError<RegisterAVSDeviceError>`](crate::error::RegisterAVSDeviceError)
     pub fn register_avs_device(&self) -> fluent_builders::RegisterAVSDevice<C, M, R> {
         fluent_builders::RegisterAVSDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RejectSkill` operation.
+    /// Constructs a fluent builder for the [`RejectSkill`](crate::client::fluent_builders::RejectSkill) operation.
     ///
-    /// See [`RejectSkill`](crate::client::fluent_builders::RejectSkill) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`skill_id(impl Into<String>)`](crate::client::fluent_builders::RejectSkill::skill_id) / [`set_skill_id(Option<String>)`](crate::client::fluent_builders::RejectSkill::set_skill_id): <p>The unique identifier of the skill.</p>
+    /// - On success, responds with [`RejectSkillOutput`](crate::output::RejectSkillOutput)
+
+    /// - On failure, responds with [`SdkError<RejectSkillError>`](crate::error::RejectSkillError)
     pub fn reject_skill(&self) -> fluent_builders::RejectSkill<C, M, R> {
         fluent_builders::RejectSkill::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResolveRoom` operation.
+    /// Constructs a fluent builder for the [`ResolveRoom`](crate::client::fluent_builders::ResolveRoom) operation.
     ///
-    /// See [`ResolveRoom`](crate::client::fluent_builders::ResolveRoom) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::ResolveRoom::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::ResolveRoom::set_user_id): <p>The ARN of the user. Required.</p>
+    ///   - [`skill_id(impl Into<String>)`](crate::client::fluent_builders::ResolveRoom::skill_id) / [`set_skill_id(Option<String>)`](crate::client::fluent_builders::ResolveRoom::set_skill_id): <p>The ARN of the skill that was requested. Required.</p>
+    /// - On success, responds with [`ResolveRoomOutput`](crate::output::ResolveRoomOutput) with field(s):
+    ///   - [`room_arn(Option<String>)`](crate::output::ResolveRoomOutput::room_arn): <p>The ARN of the room from which the skill request was invoked.</p>
+    ///   - [`room_name(Option<String>)`](crate::output::ResolveRoomOutput::room_name): <p>The name of the room from which the skill request was invoked.</p>
+    ///   - [`room_skill_parameters(Option<Vec<RoomSkillParameter>>)`](crate::output::ResolveRoomOutput::room_skill_parameters): <p>Response to get the room profile request. Required.</p>
+    /// - On failure, responds with [`SdkError<ResolveRoomError>`](crate::error::ResolveRoomError)
     pub fn resolve_room(&self) -> fluent_builders::ResolveRoom<C, M, R> {
         fluent_builders::ResolveRoom::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RevokeInvitation` operation.
+    /// Constructs a fluent builder for the [`RevokeInvitation`](crate::client::fluent_builders::RevokeInvitation) operation.
     ///
-    /// See [`RevokeInvitation`](crate::client::fluent_builders::RevokeInvitation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_arn(impl Into<String>)`](crate::client::fluent_builders::RevokeInvitation::user_arn) / [`set_user_arn(Option<String>)`](crate::client::fluent_builders::RevokeInvitation::set_user_arn): <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
+    ///   - [`enrollment_id(impl Into<String>)`](crate::client::fluent_builders::RevokeInvitation::enrollment_id) / [`set_enrollment_id(Option<String>)`](crate::client::fluent_builders::RevokeInvitation::set_enrollment_id): <p>The ARN of the enrollment invitation to revoke. Required.</p>
+    /// - On success, responds with [`RevokeInvitationOutput`](crate::output::RevokeInvitationOutput)
+
+    /// - On failure, responds with [`SdkError<RevokeInvitationError>`](crate::error::RevokeInvitationError)
     pub fn revoke_invitation(&self) -> fluent_builders::RevokeInvitation<C, M, R> {
         fluent_builders::RevokeInvitation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchAddressBooks` operation.
+    /// Constructs a fluent builder for the [`SearchAddressBooks`](crate::client::fluent_builders::SearchAddressBooks) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchAddressBooks::into_paginator).
     ///
-    /// See [`SearchAddressBooks`](crate::client::fluent_builders::SearchAddressBooks) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchAddressBooks::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::SearchAddressBooks::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::SearchAddressBooks::set_filters): <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
+    ///   - [`sort_criteria(Vec<Sort>)`](crate::client::fluent_builders::SearchAddressBooks::sort_criteria) / [`set_sort_criteria(Option<Vec<Sort>>)`](crate::client::fluent_builders::SearchAddressBooks::set_sort_criteria): <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchAddressBooks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchAddressBooks::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchAddressBooks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchAddressBooks::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// - On success, responds with [`SearchAddressBooksOutput`](crate::output::SearchAddressBooksOutput) with field(s):
+    ///   - [`address_books(Option<Vec<AddressBookData>>)`](crate::output::SearchAddressBooksOutput::address_books): <p>The address books that meet the specified set of filter criteria, in sort order.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchAddressBooksOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
+    ///   - [`total_count(Option<i32>)`](crate::output::SearchAddressBooksOutput::total_count): <p>The total number of address books returned.</p>
+    /// - On failure, responds with [`SdkError<SearchAddressBooksError>`](crate::error::SearchAddressBooksError)
     pub fn search_address_books(&self) -> fluent_builders::SearchAddressBooks<C, M, R> {
         fluent_builders::SearchAddressBooks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchContacts` operation.
+    /// Constructs a fluent builder for the [`SearchContacts`](crate::client::fluent_builders::SearchContacts) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchContacts::into_paginator).
     ///
-    /// See [`SearchContacts`](crate::client::fluent_builders::SearchContacts) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchContacts::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::SearchContacts::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::SearchContacts::set_filters): <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
+    ///   - [`sort_criteria(Vec<Sort>)`](crate::client::fluent_builders::SearchContacts::sort_criteria) / [`set_sort_criteria(Option<Vec<Sort>>)`](crate::client::fluent_builders::SearchContacts::set_sort_criteria): <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchContacts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchContacts::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchContacts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchContacts::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// - On success, responds with [`SearchContactsOutput`](crate::output::SearchContactsOutput) with field(s):
+    ///   - [`contacts(Option<Vec<ContactData>>)`](crate::output::SearchContactsOutput::contacts): <p>The contacts that meet the specified set of filter criteria, in sort order.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchContactsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
+    ///   - [`total_count(Option<i32>)`](crate::output::SearchContactsOutput::total_count): <p>The total number of contacts returned.</p>
+    /// - On failure, responds with [`SdkError<SearchContactsError>`](crate::error::SearchContactsError)
     pub fn search_contacts(&self) -> fluent_builders::SearchContacts<C, M, R> {
         fluent_builders::SearchContacts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchDevices` operation.
+    /// Constructs a fluent builder for the [`SearchDevices`](crate::client::fluent_builders::SearchDevices) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchDevices::into_paginator).
     ///
-    /// See [`SearchDevices`](crate::client::fluent_builders::SearchDevices) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchDevices::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchDevices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchDevices::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchDevices::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchDevices::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::SearchDevices::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::SearchDevices::set_filters): <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+    ///   - [`sort_criteria(Vec<Sort>)`](crate::client::fluent_builders::SearchDevices::sort_criteria) / [`set_sort_criteria(Option<Vec<Sort>>)`](crate::client::fluent_builders::SearchDevices::set_sort_criteria): <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+    /// - On success, responds with [`SearchDevicesOutput`](crate::output::SearchDevicesOutput) with field(s):
+    ///   - [`devices(Option<Vec<DeviceData>>)`](crate::output::SearchDevicesOutput::devices): <p>The devices that meet the specified set of filter criteria, in sort order.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchDevicesOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
+    ///   - [`total_count(Option<i32>)`](crate::output::SearchDevicesOutput::total_count): <p>The total number of devices returned.</p>
+    /// - On failure, responds with [`SdkError<SearchDevicesError>`](crate::error::SearchDevicesError)
     pub fn search_devices(&self) -> fluent_builders::SearchDevices<C, M, R> {
         fluent_builders::SearchDevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchNetworkProfiles` operation.
+    /// Constructs a fluent builder for the [`SearchNetworkProfiles`](crate::client::fluent_builders::SearchNetworkProfiles) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchNetworkProfiles::into_paginator).
     ///
-    /// See [`SearchNetworkProfiles`](crate::client::fluent_builders::SearchNetworkProfiles) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchNetworkProfiles::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchNetworkProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchNetworkProfiles::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchNetworkProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchNetworkProfiles::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::SearchNetworkProfiles::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::SearchNetworkProfiles::set_filters): <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
+    ///   - [`sort_criteria(Vec<Sort>)`](crate::client::fluent_builders::SearchNetworkProfiles::sort_criteria) / [`set_sort_criteria(Option<Vec<Sort>>)`](crate::client::fluent_builders::SearchNetworkProfiles::set_sort_criteria): <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
+    /// - On success, responds with [`SearchNetworkProfilesOutput`](crate::output::SearchNetworkProfilesOutput) with field(s):
+    ///   - [`network_profiles(Option<Vec<NetworkProfileData>>)`](crate::output::SearchNetworkProfilesOutput::network_profiles): <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchNetworkProfilesOutput::next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
+    ///   - [`total_count(Option<i32>)`](crate::output::SearchNetworkProfilesOutput::total_count): <p>The total number of network profiles returned.</p>
+    /// - On failure, responds with [`SdkError<SearchNetworkProfilesError>`](crate::error::SearchNetworkProfilesError)
     pub fn search_network_profiles(&self) -> fluent_builders::SearchNetworkProfiles<C, M, R> {
         fluent_builders::SearchNetworkProfiles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchProfiles` operation.
+    /// Constructs a fluent builder for the [`SearchProfiles`](crate::client::fluent_builders::SearchProfiles) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchProfiles::into_paginator).
     ///
-    /// See [`SearchProfiles`](crate::client::fluent_builders::SearchProfiles) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchProfiles::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchProfiles::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchProfiles::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::SearchProfiles::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::SearchProfiles::set_filters): <p>The filters to use to list a specified set of room profiles. Supported filter keys are ProfileName and Address. Required. </p>
+    ///   - [`sort_criteria(Vec<Sort>)`](crate::client::fluent_builders::SearchProfiles::sort_criteria) / [`set_sort_criteria(Option<Vec<Sort>>)`](crate::client::fluent_builders::SearchProfiles::set_sort_criteria): <p>The sort order to use in listing the specified set of room profiles. Supported sort keys are ProfileName and Address.</p>
+    /// - On success, responds with [`SearchProfilesOutput`](crate::output::SearchProfilesOutput) with field(s):
+    ///   - [`profiles(Option<Vec<ProfileData>>)`](crate::output::SearchProfilesOutput::profiles): <p>The profiles that meet the specified set of filter criteria, in sort order.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchProfilesOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
+    ///   - [`total_count(Option<i32>)`](crate::output::SearchProfilesOutput::total_count): <p>The total number of room profiles returned.</p>
+    /// - On failure, responds with [`SdkError<SearchProfilesError>`](crate::error::SearchProfilesError)
     pub fn search_profiles(&self) -> fluent_builders::SearchProfiles<C, M, R> {
         fluent_builders::SearchProfiles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchRooms` operation.
+    /// Constructs a fluent builder for the [`SearchRooms`](crate::client::fluent_builders::SearchRooms) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchRooms::into_paginator).
     ///
-    /// See [`SearchRooms`](crate::client::fluent_builders::SearchRooms) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchRooms::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchRooms::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchRooms::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchRooms::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchRooms::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::SearchRooms::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::SearchRooms::set_filters): <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
+    ///   - [`sort_criteria(Vec<Sort>)`](crate::client::fluent_builders::SearchRooms::sort_criteria) / [`set_sort_criteria(Option<Vec<Sort>>)`](crate::client::fluent_builders::SearchRooms::set_sort_criteria): <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
+    /// - On success, responds with [`SearchRoomsOutput`](crate::output::SearchRoomsOutput) with field(s):
+    ///   - [`rooms(Option<Vec<RoomData>>)`](crate::output::SearchRoomsOutput::rooms): <p>The rooms that meet the specified set of filter criteria, in sort order.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchRoomsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
+    ///   - [`total_count(Option<i32>)`](crate::output::SearchRoomsOutput::total_count): <p>The total number of rooms returned.</p>
+    /// - On failure, responds with [`SdkError<SearchRoomsError>`](crate::error::SearchRoomsError)
     pub fn search_rooms(&self) -> fluent_builders::SearchRooms<C, M, R> {
         fluent_builders::SearchRooms::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchSkillGroups` operation.
+    /// Constructs a fluent builder for the [`SearchSkillGroups`](crate::client::fluent_builders::SearchSkillGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchSkillGroups::into_paginator).
     ///
-    /// See [`SearchSkillGroups`](crate::client::fluent_builders::SearchSkillGroups) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchSkillGroups::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchSkillGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchSkillGroups::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchSkillGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchSkillGroups::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::SearchSkillGroups::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::SearchSkillGroups::set_filters): <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
+    ///   - [`sort_criteria(Vec<Sort>)`](crate::client::fluent_builders::SearchSkillGroups::sort_criteria) / [`set_sort_criteria(Option<Vec<Sort>>)`](crate::client::fluent_builders::SearchSkillGroups::set_sort_criteria): <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
+    /// - On success, responds with [`SearchSkillGroupsOutput`](crate::output::SearchSkillGroupsOutput) with field(s):
+    ///   - [`skill_groups(Option<Vec<SkillGroupData>>)`](crate::output::SearchSkillGroupsOutput::skill_groups): <p>The skill groups that meet the filter criteria, in sort order.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchSkillGroupsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
+    ///   - [`total_count(Option<i32>)`](crate::output::SearchSkillGroupsOutput::total_count): <p>The total number of skill groups returned.</p>
+    /// - On failure, responds with [`SdkError<SearchSkillGroupsError>`](crate::error::SearchSkillGroupsError)
     pub fn search_skill_groups(&self) -> fluent_builders::SearchSkillGroups<C, M, R> {
         fluent_builders::SearchSkillGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchUsers` operation.
+    /// Constructs a fluent builder for the [`SearchUsers`](crate::client::fluent_builders::SearchUsers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchUsers::into_paginator).
     ///
-    /// See [`SearchUsers`](crate::client::fluent_builders::SearchUsers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchUsers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchUsers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchUsers::set_next_token): <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchUsers::set_max_results): <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::SearchUsers::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::SearchUsers::set_filters): <p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+    ///   - [`sort_criteria(Vec<Sort>)`](crate::client::fluent_builders::SearchUsers::sort_criteria) / [`set_sort_criteria(Option<Vec<Sort>>)`](crate::client::fluent_builders::SearchUsers::set_sort_criteria): <p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+    /// - On success, responds with [`SearchUsersOutput`](crate::output::SearchUsersOutput) with field(s):
+    ///   - [`users(Option<Vec<UserData>>)`](crate::output::SearchUsersOutput::users): <p>The users that meet the specified set of filter criteria, in sort order.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchUsersOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
+    ///   - [`total_count(Option<i32>)`](crate::output::SearchUsersOutput::total_count): <p>The total number of users returned.</p>
+    /// - On failure, responds with [`SdkError<SearchUsersError>`](crate::error::SearchUsersError)
     pub fn search_users(&self) -> fluent_builders::SearchUsers<C, M, R> {
         fluent_builders::SearchUsers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendAnnouncement` operation.
+    /// Constructs a fluent builder for the [`SendAnnouncement`](crate::client::fluent_builders::SendAnnouncement) operation.
     ///
-    /// See [`SendAnnouncement`](crate::client::fluent_builders::SendAnnouncement) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`room_filters(Vec<Filter>)`](crate::client::fluent_builders::SendAnnouncement::room_filters) / [`set_room_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::SendAnnouncement::set_room_filters): <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
+    ///   - [`content(Content)`](crate::client::fluent_builders::SendAnnouncement::content) / [`set_content(Option<Content>)`](crate::client::fluent_builders::SendAnnouncement::set_content): <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
+    ///   - [`time_to_live_in_seconds(i32)`](crate::client::fluent_builders::SendAnnouncement::time_to_live_in_seconds) / [`set_time_to_live_in_seconds(Option<i32>)`](crate::client::fluent_builders::SendAnnouncement::set_time_to_live_in_seconds): <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::SendAnnouncement::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::SendAnnouncement::set_client_request_token): <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
+    /// - On success, responds with [`SendAnnouncementOutput`](crate::output::SendAnnouncementOutput) with field(s):
+    ///   - [`announcement_arn(Option<String>)`](crate::output::SendAnnouncementOutput::announcement_arn): <p>The identifier of the announcement.</p>
+    /// - On failure, responds with [`SdkError<SendAnnouncementError>`](crate::error::SendAnnouncementError)
     pub fn send_announcement(&self) -> fluent_builders::SendAnnouncement<C, M, R> {
         fluent_builders::SendAnnouncement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendInvitation` operation.
+    /// Constructs a fluent builder for the [`SendInvitation`](crate::client::fluent_builders::SendInvitation) operation.
     ///
-    /// See [`SendInvitation`](crate::client::fluent_builders::SendInvitation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_arn(impl Into<String>)`](crate::client::fluent_builders::SendInvitation::user_arn) / [`set_user_arn(Option<String>)`](crate::client::fluent_builders::SendInvitation::set_user_arn): <p>The ARN of the user to whom to send an invitation. Required.</p>
+    /// - On success, responds with [`SendInvitationOutput`](crate::output::SendInvitationOutput)
+
+    /// - On failure, responds with [`SdkError<SendInvitationError>`](crate::error::SendInvitationError)
     pub fn send_invitation(&self) -> fluent_builders::SendInvitation<C, M, R> {
         fluent_builders::SendInvitation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartDeviceSync` operation.
+    /// Constructs a fluent builder for the [`StartDeviceSync`](crate::client::fluent_builders::StartDeviceSync) operation.
     ///
-    /// See [`StartDeviceSync`](crate::client::fluent_builders::StartDeviceSync) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::StartDeviceSync::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::StartDeviceSync::set_room_arn): <p>The ARN of the room with which the device to sync is associated. Required.</p>
+    ///   - [`device_arn(impl Into<String>)`](crate::client::fluent_builders::StartDeviceSync::device_arn) / [`set_device_arn(Option<String>)`](crate::client::fluent_builders::StartDeviceSync::set_device_arn): <p>The ARN of the device to sync. Required.</p>
+    ///   - [`features(Vec<Feature>)`](crate::client::fluent_builders::StartDeviceSync::features) / [`set_features(Option<Vec<Feature>>)`](crate::client::fluent_builders::StartDeviceSync::set_features): <p>Request structure to start the device sync. Required.</p>
+    /// - On success, responds with [`StartDeviceSyncOutput`](crate::output::StartDeviceSyncOutput)
+
+    /// - On failure, responds with [`SdkError<StartDeviceSyncError>`](crate::error::StartDeviceSyncError)
     pub fn start_device_sync(&self) -> fluent_builders::StartDeviceSync<C, M, R> {
         fluent_builders::StartDeviceSync::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartSmartHomeApplianceDiscovery` operation.
+    /// Constructs a fluent builder for the [`StartSmartHomeApplianceDiscovery`](crate::client::fluent_builders::StartSmartHomeApplianceDiscovery) operation.
     ///
-    /// See [`StartSmartHomeApplianceDiscovery`](crate::client::fluent_builders::StartSmartHomeApplianceDiscovery) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::StartSmartHomeApplianceDiscovery::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::StartSmartHomeApplianceDiscovery::set_room_arn): <p>The room where smart home appliance discovery was initiated.</p>
+    /// - On success, responds with [`StartSmartHomeApplianceDiscoveryOutput`](crate::output::StartSmartHomeApplianceDiscoveryOutput)
+
+    /// - On failure, responds with [`SdkError<StartSmartHomeApplianceDiscoveryError>`](crate::error::StartSmartHomeApplianceDiscoveryError)
     pub fn start_smart_home_appliance_discovery(
         &self,
     ) -> fluent_builders::StartSmartHomeApplianceDiscovery<C, M, R> {
         fluent_builders::StartSmartHomeApplianceDiscovery::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_arn): <p>The ARN of the resource to which to add metadata tags. Required. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_arn): <p>The ARN of the resource from which to remove metadata tags. Required. </p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAddressBook` operation.
+    /// Constructs a fluent builder for the [`UpdateAddressBook`](crate::client::fluent_builders::UpdateAddressBook) operation.
     ///
-    /// See [`UpdateAddressBook`](crate::client::fluent_builders::UpdateAddressBook) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`address_book_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAddressBook::address_book_arn) / [`set_address_book_arn(Option<String>)`](crate::client::fluent_builders::UpdateAddressBook::set_address_book_arn): <p>The ARN of the room to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAddressBook::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAddressBook::set_name): <p>The updated name of the room.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateAddressBook::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateAddressBook::set_description): <p>The updated description of the room.</p>
+    /// - On success, responds with [`UpdateAddressBookOutput`](crate::output::UpdateAddressBookOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateAddressBookError>`](crate::error::UpdateAddressBookError)
     pub fn update_address_book(&self) -> fluent_builders::UpdateAddressBook<C, M, R> {
         fluent_builders::UpdateAddressBook::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateBusinessReportSchedule` operation.
+    /// Constructs a fluent builder for the [`UpdateBusinessReportSchedule`](crate::client::fluent_builders::UpdateBusinessReportSchedule) operation.
     ///
-    /// See [`UpdateBusinessReportSchedule`](crate::client::fluent_builders::UpdateBusinessReportSchedule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`schedule_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateBusinessReportSchedule::schedule_arn) / [`set_schedule_arn(Option<String>)`](crate::client::fluent_builders::UpdateBusinessReportSchedule::set_schedule_arn): <p>The ARN of the business report schedule.</p>
+    ///   - [`s3_bucket_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBusinessReportSchedule::s3_bucket_name) / [`set_s3_bucket_name(Option<String>)`](crate::client::fluent_builders::UpdateBusinessReportSchedule::set_s3_bucket_name): <p>The S3 location of the output reports.</p>
+    ///   - [`s3_key_prefix(impl Into<String>)`](crate::client::fluent_builders::UpdateBusinessReportSchedule::s3_key_prefix) / [`set_s3_key_prefix(Option<String>)`](crate::client::fluent_builders::UpdateBusinessReportSchedule::set_s3_key_prefix): <p>The S3 key where the report is delivered.</p>
+    ///   - [`format(BusinessReportFormat)`](crate::client::fluent_builders::UpdateBusinessReportSchedule::format) / [`set_format(Option<BusinessReportFormat>)`](crate::client::fluent_builders::UpdateBusinessReportSchedule::set_format): <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
+    ///   - [`schedule_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBusinessReportSchedule::schedule_name) / [`set_schedule_name(Option<String>)`](crate::client::fluent_builders::UpdateBusinessReportSchedule::set_schedule_name): <p>The name identifier of the schedule.</p>
+    ///   - [`recurrence(BusinessReportRecurrence)`](crate::client::fluent_builders::UpdateBusinessReportSchedule::recurrence) / [`set_recurrence(Option<BusinessReportRecurrence>)`](crate::client::fluent_builders::UpdateBusinessReportSchedule::set_recurrence): <p>The recurrence of the reports.</p>
+    /// - On success, responds with [`UpdateBusinessReportScheduleOutput`](crate::output::UpdateBusinessReportScheduleOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateBusinessReportScheduleError>`](crate::error::UpdateBusinessReportScheduleError)
     pub fn update_business_report_schedule(
         &self,
     ) -> fluent_builders::UpdateBusinessReportSchedule<C, M, R> {
         fluent_builders::UpdateBusinessReportSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateConferenceProvider` operation.
+    /// Constructs a fluent builder for the [`UpdateConferenceProvider`](crate::client::fluent_builders::UpdateConferenceProvider) operation.
     ///
-    /// See [`UpdateConferenceProvider`](crate::client::fluent_builders::UpdateConferenceProvider) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`conference_provider_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateConferenceProvider::conference_provider_arn) / [`set_conference_provider_arn(Option<String>)`](crate::client::fluent_builders::UpdateConferenceProvider::set_conference_provider_arn): <p>The ARN of the conference provider.</p>
+    ///   - [`conference_provider_type(ConferenceProviderType)`](crate::client::fluent_builders::UpdateConferenceProvider::conference_provider_type) / [`set_conference_provider_type(Option<ConferenceProviderType>)`](crate::client::fluent_builders::UpdateConferenceProvider::set_conference_provider_type): <p>The type of the conference provider.</p>
+    ///   - [`ip_dial_in(IpDialIn)`](crate::client::fluent_builders::UpdateConferenceProvider::ip_dial_in) / [`set_ip_dial_in(Option<IpDialIn>)`](crate::client::fluent_builders::UpdateConferenceProvider::set_ip_dial_in): <p>The IP endpoint and protocol for calling.</p>
+    ///   - [`pstn_dial_in(PstnDialIn)`](crate::client::fluent_builders::UpdateConferenceProvider::pstn_dial_in) / [`set_pstn_dial_in(Option<PstnDialIn>)`](crate::client::fluent_builders::UpdateConferenceProvider::set_pstn_dial_in): <p>The information for PSTN conferencing.</p>
+    ///   - [`meeting_setting(MeetingSetting)`](crate::client::fluent_builders::UpdateConferenceProvider::meeting_setting) / [`set_meeting_setting(Option<MeetingSetting>)`](crate::client::fluent_builders::UpdateConferenceProvider::set_meeting_setting): <p>The meeting settings for the conference provider.</p>
+    /// - On success, responds with [`UpdateConferenceProviderOutput`](crate::output::UpdateConferenceProviderOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateConferenceProviderError>`](crate::error::UpdateConferenceProviderError)
     pub fn update_conference_provider(&self) -> fluent_builders::UpdateConferenceProvider<C, M, R> {
         fluent_builders::UpdateConferenceProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateContact` operation.
+    /// Constructs a fluent builder for the [`UpdateContact`](crate::client::fluent_builders::UpdateContact) operation.
     ///
-    /// See [`UpdateContact`](crate::client::fluent_builders::UpdateContact) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`contact_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateContact::contact_arn) / [`set_contact_arn(Option<String>)`](crate::client::fluent_builders::UpdateContact::set_contact_arn): <p>The ARN of the contact to update.</p>
+    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateContact::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateContact::set_display_name): <p>The updated display name of the contact.</p>
+    ///   - [`first_name(impl Into<String>)`](crate::client::fluent_builders::UpdateContact::first_name) / [`set_first_name(Option<String>)`](crate::client::fluent_builders::UpdateContact::set_first_name): <p>The updated first name of the contact.</p>
+    ///   - [`last_name(impl Into<String>)`](crate::client::fluent_builders::UpdateContact::last_name) / [`set_last_name(Option<String>)`](crate::client::fluent_builders::UpdateContact::set_last_name): <p>The updated last name of the contact.</p>
+    ///   - [`phone_number(impl Into<String>)`](crate::client::fluent_builders::UpdateContact::phone_number) / [`set_phone_number(Option<String>)`](crate::client::fluent_builders::UpdateContact::set_phone_number): <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
+    ///   - [`phone_numbers(Vec<PhoneNumber>)`](crate::client::fluent_builders::UpdateContact::phone_numbers) / [`set_phone_numbers(Option<Vec<PhoneNumber>>)`](crate::client::fluent_builders::UpdateContact::set_phone_numbers): <p>The list of phone numbers for the contact.</p>
+    ///   - [`sip_addresses(Vec<SipAddress>)`](crate::client::fluent_builders::UpdateContact::sip_addresses) / [`set_sip_addresses(Option<Vec<SipAddress>>)`](crate::client::fluent_builders::UpdateContact::set_sip_addresses): <p>The list of SIP addresses for the contact.</p>
+    /// - On success, responds with [`UpdateContactOutput`](crate::output::UpdateContactOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateContactError>`](crate::error::UpdateContactError)
     pub fn update_contact(&self) -> fluent_builders::UpdateContact<C, M, R> {
         fluent_builders::UpdateContact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDevice` operation.
+    /// Constructs a fluent builder for the [`UpdateDevice`](crate::client::fluent_builders::UpdateDevice) operation.
     ///
-    /// See [`UpdateDevice`](crate::client::fluent_builders::UpdateDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`device_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDevice::device_arn) / [`set_device_arn(Option<String>)`](crate::client::fluent_builders::UpdateDevice::set_device_arn): <p>The ARN of the device to update. Required.</p>
+    ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDevice::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::UpdateDevice::set_device_name): <p>The updated device name. Required.</p>
+    /// - On success, responds with [`UpdateDeviceOutput`](crate::output::UpdateDeviceOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDeviceError>`](crate::error::UpdateDeviceError)
     pub fn update_device(&self) -> fluent_builders::UpdateDevice<C, M, R> {
         fluent_builders::UpdateDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGateway` operation.
+    /// Constructs a fluent builder for the [`UpdateGateway`](crate::client::fluent_builders::UpdateGateway) operation.
     ///
-    /// See [`UpdateGateway`](crate::client::fluent_builders::UpdateGateway) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateGateway::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::client::fluent_builders::UpdateGateway::set_gateway_arn): <p>The ARN of the gateway to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateGateway::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateGateway::set_name): <p>The updated name of the gateway.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateGateway::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateGateway::set_description): <p>The updated description of the gateway.</p>
+    ///   - [`software_version(impl Into<String>)`](crate::client::fluent_builders::UpdateGateway::software_version) / [`set_software_version(Option<String>)`](crate::client::fluent_builders::UpdateGateway::set_software_version): <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
+    /// - On success, responds with [`UpdateGatewayOutput`](crate::output::UpdateGatewayOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateGatewayError>`](crate::error::UpdateGatewayError)
     pub fn update_gateway(&self) -> fluent_builders::UpdateGateway<C, M, R> {
         fluent_builders::UpdateGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGatewayGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateGatewayGroup`](crate::client::fluent_builders::UpdateGatewayGroup) operation.
     ///
-    /// See [`UpdateGatewayGroup`](crate::client::fluent_builders::UpdateGatewayGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`gateway_group_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayGroup::gateway_group_arn) / [`set_gateway_group_arn(Option<String>)`](crate::client::fluent_builders::UpdateGatewayGroup::set_gateway_group_arn): <p>The ARN of the gateway group to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateGatewayGroup::set_name): <p>The updated name of the gateway group.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateGatewayGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateGatewayGroup::set_description): <p>The updated description of the gateway group.</p>
+    /// - On success, responds with [`UpdateGatewayGroupOutput`](crate::output::UpdateGatewayGroupOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateGatewayGroupError>`](crate::error::UpdateGatewayGroupError)
     pub fn update_gateway_group(&self) -> fluent_builders::UpdateGatewayGroup<C, M, R> {
         fluent_builders::UpdateGatewayGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateNetworkProfile` operation.
+    /// Constructs a fluent builder for the [`UpdateNetworkProfile`](crate::client::fluent_builders::UpdateNetworkProfile) operation.
     ///
-    /// See [`UpdateNetworkProfile`](crate::client::fluent_builders::UpdateNetworkProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`network_profile_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::network_profile_arn) / [`set_network_profile_arn(Option<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_network_profile_arn): <p>The ARN of the network profile associated with a device.</p>
+    ///   - [`network_profile_name(impl Into<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::network_profile_name) / [`set_network_profile_name(Option<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_network_profile_name): <p>The name of the network profile associated with a device.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_description): <p>Detailed information about a device's network profile.</p>
+    ///   - [`current_password(impl Into<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::current_password) / [`set_current_password(Option<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_current_password): <p>The current password of the Wi-Fi network.</p>
+    ///   - [`next_password(impl Into<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::next_password) / [`set_next_password(Option<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_next_password): <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
+    ///   - [`certificate_authority_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::certificate_authority_arn) / [`set_certificate_authority_arn(Option<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_certificate_authority_arn): <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
+    ///   - [`trust_anchors(Vec<String>)`](crate::client::fluent_builders::UpdateNetworkProfile::trust_anchors) / [`set_trust_anchors(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateNetworkProfile::set_trust_anchors): <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
+    /// - On success, responds with [`UpdateNetworkProfileOutput`](crate::output::UpdateNetworkProfileOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateNetworkProfileError>`](crate::error::UpdateNetworkProfileError)
     pub fn update_network_profile(&self) -> fluent_builders::UpdateNetworkProfile<C, M, R> {
         fluent_builders::UpdateNetworkProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateProfile` operation.
+    /// Constructs a fluent builder for the [`UpdateProfile`](crate::client::fluent_builders::UpdateProfile) operation.
     ///
-    /// See [`UpdateProfile`](crate::client::fluent_builders::UpdateProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`profile_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::profile_arn) / [`set_profile_arn(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_profile_arn): <p>The ARN of the room profile to update. Required.</p>
+    ///   - [`profile_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::profile_name) / [`set_profile_name(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_profile_name): <p>The updated name for the room profile.</p>
+    ///   - [`is_default(bool)`](crate::client::fluent_builders::UpdateProfile::is_default) / [`set_is_default(Option<bool>)`](crate::client::fluent_builders::UpdateProfile::set_is_default): <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
+    ///   - [`timezone(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::timezone) / [`set_timezone(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_timezone): <p>The updated timezone for the room profile.</p>
+    ///   - [`address(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::address) / [`set_address(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_address): <p>The updated address for the room profile.</p>
+    ///   - [`distance_unit(DistanceUnit)`](crate::client::fluent_builders::UpdateProfile::distance_unit) / [`set_distance_unit(Option<DistanceUnit>)`](crate::client::fluent_builders::UpdateProfile::set_distance_unit): <p>The updated distance unit for the room profile.</p>
+    ///   - [`temperature_unit(TemperatureUnit)`](crate::client::fluent_builders::UpdateProfile::temperature_unit) / [`set_temperature_unit(Option<TemperatureUnit>)`](crate::client::fluent_builders::UpdateProfile::set_temperature_unit): <p>The updated temperature unit for the room profile.</p>
+    ///   - [`wake_word(WakeWord)`](crate::client::fluent_builders::UpdateProfile::wake_word) / [`set_wake_word(Option<WakeWord>)`](crate::client::fluent_builders::UpdateProfile::set_wake_word): <p>The updated wake word for the room profile.</p>
+    ///   - [`locale(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::locale) / [`set_locale(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_locale): <p>The updated locale for the room profile. (This is currently only available to a limited preview audience.)</p>
+    ///   - [`setup_mode_disabled(bool)`](crate::client::fluent_builders::UpdateProfile::setup_mode_disabled) / [`set_setup_mode_disabled(Option<bool>)`](crate::client::fluent_builders::UpdateProfile::set_setup_mode_disabled): <p>Whether the setup mode of the profile is enabled.</p>
+    ///   - [`max_volume_limit(i32)`](crate::client::fluent_builders::UpdateProfile::max_volume_limit) / [`set_max_volume_limit(Option<i32>)`](crate::client::fluent_builders::UpdateProfile::set_max_volume_limit): <p>The updated maximum volume limit for the room profile.</p>
+    ///   - [`pstn_enabled(bool)`](crate::client::fluent_builders::UpdateProfile::pstn_enabled) / [`set_pstn_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateProfile::set_pstn_enabled): <p>Whether the PSTN setting of the room profile is enabled.</p>
+    ///   - [`data_retention_opt_in(bool)`](crate::client::fluent_builders::UpdateProfile::data_retention_opt_in) / [`set_data_retention_opt_in(Option<bool>)`](crate::client::fluent_builders::UpdateProfile::set_data_retention_opt_in): <p>Whether data retention of the profile is enabled.</p>
+    ///   - [`meeting_room_configuration(UpdateMeetingRoomConfiguration)`](crate::client::fluent_builders::UpdateProfile::meeting_room_configuration) / [`set_meeting_room_configuration(Option<UpdateMeetingRoomConfiguration>)`](crate::client::fluent_builders::UpdateProfile::set_meeting_room_configuration): <p>The updated meeting room settings of a room profile.</p>
+    /// - On success, responds with [`UpdateProfileOutput`](crate::output::UpdateProfileOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateProfileError>`](crate::error::UpdateProfileError)
     pub fn update_profile(&self) -> fluent_builders::UpdateProfile<C, M, R> {
         fluent_builders::UpdateProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRoom` operation.
+    /// Constructs a fluent builder for the [`UpdateRoom`](crate::client::fluent_builders::UpdateRoom) operation.
     ///
-    /// See [`UpdateRoom`](crate::client::fluent_builders::UpdateRoom) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`room_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRoom::room_arn) / [`set_room_arn(Option<String>)`](crate::client::fluent_builders::UpdateRoom::set_room_arn): <p>The ARN of the room to update. </p>
+    ///   - [`room_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRoom::room_name) / [`set_room_name(Option<String>)`](crate::client::fluent_builders::UpdateRoom::set_room_name): <p>The updated name for the room.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRoom::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRoom::set_description): <p>The updated description for the room.</p>
+    ///   - [`provider_calendar_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoom::provider_calendar_id) / [`set_provider_calendar_id(Option<String>)`](crate::client::fluent_builders::UpdateRoom::set_provider_calendar_id): <p>The updated provider calendar ARN for the room.</p>
+    ///   - [`profile_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRoom::profile_arn) / [`set_profile_arn(Option<String>)`](crate::client::fluent_builders::UpdateRoom::set_profile_arn): <p>The updated profile ARN for the room.</p>
+    /// - On success, responds with [`UpdateRoomOutput`](crate::output::UpdateRoomOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRoomError>`](crate::error::UpdateRoomError)
     pub fn update_room(&self) -> fluent_builders::UpdateRoom<C, M, R> {
         fluent_builders::UpdateRoom::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSkillGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateSkillGroup`](crate::client::fluent_builders::UpdateSkillGroup) operation.
     ///
-    /// See [`UpdateSkillGroup`](crate::client::fluent_builders::UpdateSkillGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`skill_group_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateSkillGroup::skill_group_arn) / [`set_skill_group_arn(Option<String>)`](crate::client::fluent_builders::UpdateSkillGroup::set_skill_group_arn): <p>The ARN of the skill group to update. </p>
+    ///   - [`skill_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSkillGroup::skill_group_name) / [`set_skill_group_name(Option<String>)`](crate::client::fluent_builders::UpdateSkillGroup::set_skill_group_name): <p>The updated name for the skill group.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSkillGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSkillGroup::set_description): <p>The updated description for the skill group.</p>
+    /// - On success, responds with [`UpdateSkillGroupOutput`](crate::output::UpdateSkillGroupOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateSkillGroupError>`](crate::error::UpdateSkillGroupError)
     pub fn update_skill_group(&self) -> fluent_builders::UpdateSkillGroup<C, M, R> {
         fluent_builders::UpdateSkillGroup::new(self.handle.clone())
     }

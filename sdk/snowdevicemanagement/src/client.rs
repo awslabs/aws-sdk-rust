@@ -83,100 +83,185 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CancelTask` operation.
+    /// Constructs a fluent builder for the [`CancelTask`](crate::client::fluent_builders::CancelTask) operation.
     ///
-    /// See [`CancelTask`](crate::client::fluent_builders::CancelTask) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::CancelTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::CancelTask::set_task_id): <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
+    /// - On success, responds with [`CancelTaskOutput`](crate::output::CancelTaskOutput) with field(s):
+    ///   - [`task_id(Option<String>)`](crate::output::CancelTaskOutput::task_id): <p>The ID of the task that you are attempting to cancel.</p>
+    /// - On failure, responds with [`SdkError<CancelTaskError>`](crate::error::CancelTaskError)
     pub fn cancel_task(&self) -> fluent_builders::CancelTask<C, M, R> {
         fluent_builders::CancelTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTask` operation.
+    /// Constructs a fluent builder for the [`CreateTask`](crate::client::fluent_builders::CreateTask) operation.
     ///
-    /// See [`CreateTask`](crate::client::fluent_builders::CreateTask) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`targets(Vec<String>)`](crate::client::fluent_builders::CreateTask::targets) / [`set_targets(Option<Vec<String>>)`](crate::client::fluent_builders::CreateTask::set_targets): <p>A list of managed device IDs.</p>
+    ///   - [`command(Command)`](crate::client::fluent_builders::CreateTask::command) / [`set_command(Option<Command>)`](crate::client::fluent_builders::CreateTask::set_command): <p>The task to be performed. Only one task is executed on a device at a time.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateTask::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateTask::set_description): <p>A description of the task and its targets.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateTask::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTask::set_tags): <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateTask::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateTask::set_client_token): <p>A token ensuring that the action is called only once with the specified details.</p>
+    /// - On success, responds with [`CreateTaskOutput`](crate::output::CreateTaskOutput) with field(s):
+    ///   - [`task_id(Option<String>)`](crate::output::CreateTaskOutput::task_id): <p>The ID of the task that you created.</p>
+    ///   - [`task_arn(Option<String>)`](crate::output::CreateTaskOutput::task_arn): <p>The Amazon Resource Name (ARN) of the task that you created.</p>
+    /// - On failure, responds with [`SdkError<CreateTaskError>`](crate::error::CreateTaskError)
     pub fn create_task(&self) -> fluent_builders::CreateTask<C, M, R> {
         fluent_builders::CreateTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDevice` operation.
+    /// Constructs a fluent builder for the [`DescribeDevice`](crate::client::fluent_builders::DescribeDevice) operation.
     ///
-    /// See [`DescribeDevice`](crate::client::fluent_builders::DescribeDevice) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`managed_device_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDevice::managed_device_id) / [`set_managed_device_id(Option<String>)`](crate::client::fluent_builders::DescribeDevice::set_managed_device_id): <p>The ID of the device that you are checking the information of.</p>
+    /// - On success, responds with [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput) with field(s):
+    ///   - [`last_reached_out_at(Option<DateTime>)`](crate::output::DescribeDeviceOutput::last_reached_out_at): <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is online.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::DescribeDeviceOutput::last_updated_at): <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache was refreshed.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeDeviceOutput::tags): <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
+    ///   - [`managed_device_id(Option<String>)`](crate::output::DescribeDeviceOutput::managed_device_id): <p>The ID of the device that you checked the information for.</p>
+    ///   - [`managed_device_arn(Option<String>)`](crate::output::DescribeDeviceOutput::managed_device_arn): <p>The Amazon Resource Name (ARN) of the device.</p>
+    ///   - [`device_type(Option<String>)`](crate::output::DescribeDeviceOutput::device_type): <p>The type of Amazon Web Services Snow Family device.</p>
+    ///   - [`associated_with_job(Option<String>)`](crate::output::DescribeDeviceOutput::associated_with_job): <p>The ID of the job used when ordering the device.</p>
+    ///   - [`device_state(Option<UnlockState>)`](crate::output::DescribeDeviceOutput::device_state): <p>The current state of the device.</p>
+    ///   - [`physical_network_interfaces(Option<Vec<PhysicalNetworkInterface>>)`](crate::output::DescribeDeviceOutput::physical_network_interfaces): <p>The network interfaces available on the device.</p>
+    ///   - [`device_capacities(Option<Vec<Capacity>>)`](crate::output::DescribeDeviceOutput::device_capacities): <p>The hardware specifications of the device. </p>
+    ///   - [`software(Option<SoftwareInformation>)`](crate::output::DescribeDeviceOutput::software): <p>The software installed on the device.</p>
+    /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::error::DescribeDeviceError)
     pub fn describe_device(&self) -> fluent_builders::DescribeDevice<C, M, R> {
         fluent_builders::DescribeDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDeviceEc2Instances` operation.
+    /// Constructs a fluent builder for the [`DescribeDeviceEc2Instances`](crate::client::fluent_builders::DescribeDeviceEc2Instances) operation.
     ///
-    /// See [`DescribeDeviceEc2Instances`](crate::client::fluent_builders::DescribeDeviceEc2Instances) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`managed_device_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDeviceEc2Instances::managed_device_id) / [`set_managed_device_id(Option<String>)`](crate::client::fluent_builders::DescribeDeviceEc2Instances::set_managed_device_id): <p>The ID of the managed device.</p>
+    ///   - [`instance_ids(Vec<String>)`](crate::client::fluent_builders::DescribeDeviceEc2Instances::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeDeviceEc2Instances::set_instance_ids): <p>A list of instance IDs associated with the managed device.</p>
+    /// - On success, responds with [`DescribeDeviceEc2InstancesOutput`](crate::output::DescribeDeviceEc2InstancesOutput) with field(s):
+    ///   - [`instances(Option<Vec<InstanceSummary>>)`](crate::output::DescribeDeviceEc2InstancesOutput::instances): <p>A list of structures containing information about each instance. </p>
+    /// - On failure, responds with [`SdkError<DescribeDeviceEc2InstancesError>`](crate::error::DescribeDeviceEc2InstancesError)
     pub fn describe_device_ec2_instances(
         &self,
     ) -> fluent_builders::DescribeDeviceEc2Instances<C, M, R> {
         fluent_builders::DescribeDeviceEc2Instances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeExecution` operation.
+    /// Constructs a fluent builder for the [`DescribeExecution`](crate::client::fluent_builders::DescribeExecution) operation.
     ///
-    /// See [`DescribeExecution`](crate::client::fluent_builders::DescribeExecution) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::DescribeExecution::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::DescribeExecution::set_task_id): <p>The ID of the task that the action is describing.</p>
+    ///   - [`managed_device_id(impl Into<String>)`](crate::client::fluent_builders::DescribeExecution::managed_device_id) / [`set_managed_device_id(Option<String>)`](crate::client::fluent_builders::DescribeExecution::set_managed_device_id): <p>The ID of the managed device.</p>
+    /// - On success, responds with [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput) with field(s):
+    ///   - [`task_id(Option<String>)`](crate::output::DescribeExecutionOutput::task_id): <p>The ID of the task being executed on the device.</p>
+    ///   - [`execution_id(Option<String>)`](crate::output::DescribeExecutionOutput::execution_id): <p>The ID of the execution.</p>
+    ///   - [`managed_device_id(Option<String>)`](crate::output::DescribeExecutionOutput::managed_device_id): <p>The ID of the managed device that the task is being executed on.</p>
+    ///   - [`state(Option<ExecutionState>)`](crate::output::DescribeExecutionOutput::state): <p>The current state of the execution.</p>
+    ///   - [`started_at(Option<DateTime>)`](crate::output::DescribeExecutionOutput::started_at): <p>When the execution began.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::DescribeExecutionOutput::last_updated_at): <p>When the status of the execution was last updated.</p>
+    /// - On failure, responds with [`SdkError<DescribeExecutionError>`](crate::error::DescribeExecutionError)
     pub fn describe_execution(&self) -> fluent_builders::DescribeExecution<C, M, R> {
         fluent_builders::DescribeExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTask` operation.
+    /// Constructs a fluent builder for the [`DescribeTask`](crate::client::fluent_builders::DescribeTask) operation.
     ///
-    /// See [`DescribeTask`](crate::client::fluent_builders::DescribeTask) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::DescribeTask::set_task_id): <p>The ID of the task to be described.</p>
+    /// - On success, responds with [`DescribeTaskOutput`](crate::output::DescribeTaskOutput) with field(s):
+    ///   - [`task_id(Option<String>)`](crate::output::DescribeTaskOutput::task_id): <p>The ID of the task.</p>
+    ///   - [`task_arn(Option<String>)`](crate::output::DescribeTaskOutput::task_arn): <p>The Amazon Resource Name (ARN) of the task.</p>
+    ///   - [`targets(Option<Vec<String>>)`](crate::output::DescribeTaskOutput::targets): <p>The managed devices that the task was sent to.</p>
+    ///   - [`state(Option<TaskState>)`](crate::output::DescribeTaskOutput::state): <p>The current state of the task.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeTaskOutput::created_at): <p>When the <code>CreateTask</code> operation was called.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::DescribeTaskOutput::last_updated_at): <p>When the state of the task was last updated.</p>
+    ///   - [`completed_at(Option<DateTime>)`](crate::output::DescribeTaskOutput::completed_at): <p>When the task was completed.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeTaskOutput::description): <p>The description provided of the task and managed devices.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeTaskOutput::tags): <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    /// - On failure, responds with [`SdkError<DescribeTaskError>`](crate::error::DescribeTaskError)
     pub fn describe_task(&self) -> fluent_builders::DescribeTask<C, M, R> {
         fluent_builders::DescribeTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDeviceResources` operation.
+    /// Constructs a fluent builder for the [`ListDeviceResources`](crate::client::fluent_builders::ListDeviceResources) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeviceResources::into_paginator).
     ///
-    /// See [`ListDeviceResources`](crate::client::fluent_builders::ListDeviceResources) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeviceResources::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`managed_device_id(impl Into<String>)`](crate::client::fluent_builders::ListDeviceResources::managed_device_id) / [`set_managed_device_id(Option<String>)`](crate::client::fluent_builders::ListDeviceResources::set_managed_device_id): <p>The ID of the managed device that you are listing the resources of.</p>
+    ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::ListDeviceResources::r#type) / [`set_type(Option<String>)`](crate::client::fluent_builders::ListDeviceResources::set_type): <p>A structure used to filter the results by type of resource.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDeviceResources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDeviceResources::set_max_results): <p>The maximum number of resources per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeviceResources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeviceResources::set_next_token): <p>A pagination token to continue to the next page of results.</p>
+    /// - On success, responds with [`ListDeviceResourcesOutput`](crate::output::ListDeviceResourcesOutput) with field(s):
+    ///   - [`resources(Option<Vec<ResourceSummary>>)`](crate::output::ListDeviceResourcesOutput::resources): <p>A structure defining the resource's type, Amazon Resource Name (ARN), and ID.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDeviceResourcesOutput::next_token): <p>A pagination token to continue to the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListDeviceResourcesError>`](crate::error::ListDeviceResourcesError)
     pub fn list_device_resources(&self) -> fluent_builders::ListDeviceResources<C, M, R> {
         fluent_builders::ListDeviceResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDevices` operation.
+    /// Constructs a fluent builder for the [`ListDevices`](crate::client::fluent_builders::ListDevices) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDevices::into_paginator).
     ///
-    /// See [`ListDevices`](crate::client::fluent_builders::ListDevices) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevices::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::ListDevices::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::ListDevices::set_job_id): <p>The ID of the job used to order the device.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDevices::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDevices::set_max_results): <p>The maximum number of devices to list per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDevices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDevices::set_next_token): <p>A pagination token to continue to the next page of results.</p>
+    /// - On success, responds with [`ListDevicesOutput`](crate::output::ListDevicesOutput) with field(s):
+    ///   - [`devices(Option<Vec<DeviceSummary>>)`](crate::output::ListDevicesOutput::devices): <p>A list of device structures that contain information about the device.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDevicesOutput::next_token): <p>A pagination token to continue to the next page of devices.</p>
+    /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::error::ListDevicesError)
     pub fn list_devices(&self) -> fluent_builders::ListDevices<C, M, R> {
         fluent_builders::ListDevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListExecutions` operation.
+    /// Constructs a fluent builder for the [`ListExecutions`](crate::client::fluent_builders::ListExecutions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExecutions::into_paginator).
     ///
-    /// See [`ListExecutions`](crate::client::fluent_builders::ListExecutions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListExecutions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::ListExecutions::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::ListExecutions::set_task_id): <p>The ID of the task.</p>
+    ///   - [`state(ExecutionState)`](crate::client::fluent_builders::ListExecutions::state) / [`set_state(Option<ExecutionState>)`](crate::client::fluent_builders::ListExecutions::set_state): <p>A structure used to filter the tasks by their current state.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExecutions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListExecutions::set_max_results): <p>The maximum number of tasks to list per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExecutions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExecutions::set_next_token): <p>A pagination token to continue to the next page of tasks.</p>
+    /// - On success, responds with [`ListExecutionsOutput`](crate::output::ListExecutionsOutput) with field(s):
+    ///   - [`executions(Option<Vec<ExecutionSummary>>)`](crate::output::ListExecutionsOutput::executions): <p>A list of executions. Each execution contains the task ID, the device that the task is executing on, the execution ID, and the status of the execution.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListExecutionsOutput::next_token): <p>A pagination token to continue to the next page of executions.</p>
+    /// - On failure, responds with [`SdkError<ListExecutionsError>`](crate::error::ListExecutionsError)
     pub fn list_executions(&self) -> fluent_builders::ListExecutions<C, M, R> {
         fluent_builders::ListExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the device or task.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags for the device or task.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTasks` operation.
+    /// Constructs a fluent builder for the [`ListTasks`](crate::client::fluent_builders::ListTasks) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTasks::into_paginator).
     ///
-    /// See [`ListTasks`](crate::client::fluent_builders::ListTasks) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTasks::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`state(TaskState)`](crate::client::fluent_builders::ListTasks::state) / [`set_state(Option<TaskState>)`](crate::client::fluent_builders::ListTasks::set_state): <p>A structure used to filter the list of tasks.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTasks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTasks::set_max_results): <p>The maximum number of tasks per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTasks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTasks::set_next_token): <p>A pagination token to continue to the next page of tasks.</p>
+    /// - On success, responds with [`ListTasksOutput`](crate::output::ListTasksOutput) with field(s):
+    ///   - [`tasks(Option<Vec<TaskSummary>>)`](crate::output::ListTasksOutput::tasks): <p>A list of task structures containing details about each task.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTasksOutput::next_token): <p>A pagination token to continue to the next page of tasks.</p>
+    /// - On failure, responds with [`SdkError<ListTasksError>`](crate::error::ListTasksError)
     pub fn list_tasks(&self) -> fluent_builders::ListTasks<C, M, R> {
         fluent_builders::ListTasks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the device or task.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the device or task.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

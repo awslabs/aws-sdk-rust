@@ -33,28 +33,37 @@ pub fn serialize_structure_crate_input_describe_dimension_keys_input(
         crate::json_ser::serialize_structure_crate_model_dimension_group(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.partition_by {
-        let mut object_10 = object.key("PartitionBy").start_object();
-        crate::json_ser::serialize_structure_crate_model_dimension_group(&mut object_10, var_9)?;
-        object_10.finish();
-    }
-    if let Some(var_11) = &input.filter {
-        let mut object_12 = object.key("Filter").start_object();
-        for (key_13, value_14) in var_11 {
+    if let Some(var_9) = &input.additional_metrics {
+        let mut array_10 = object.key("AdditionalMetrics").start_array();
+        for item_11 in var_9 {
             {
-                object_12.key(key_13).string(value_14);
+                array_10.value().string(item_11);
             }
         }
-        object_12.finish();
+        array_10.finish();
     }
-    if let Some(var_15) = &input.max_results {
+    if let Some(var_12) = &input.partition_by {
+        let mut object_13 = object.key("PartitionBy").start_object();
+        crate::json_ser::serialize_structure_crate_model_dimension_group(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.filter {
+        let mut object_15 = object.key("Filter").start_object();
+        for (key_16, value_17) in var_14 {
+            {
+                object_15.key(key_16).string(value_17);
+            }
+        }
+        object_15.finish();
+    }
+    if let Some(var_18) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_15).into()),
+            aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
-    if let Some(var_16) = &input.next_token {
-        object.key("NextToken").string(var_16);
+    if let Some(var_19) = &input.next_token {
+        object.key("NextToken").string(var_19);
     }
     Ok(())
 }
@@ -63,26 +72,39 @@ pub fn serialize_structure_crate_input_get_dimension_key_details_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetDimensionKeyDetailsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_17) = &input.service_type {
-        object.key("ServiceType").string(var_17.as_str());
+    if let Some(var_20) = &input.service_type {
+        object.key("ServiceType").string(var_20.as_str());
     }
-    if let Some(var_18) = &input.identifier {
-        object.key("Identifier").string(var_18);
+    if let Some(var_21) = &input.identifier {
+        object.key("Identifier").string(var_21);
     }
-    if let Some(var_19) = &input.group {
-        object.key("Group").string(var_19);
+    if let Some(var_22) = &input.group {
+        object.key("Group").string(var_22);
     }
-    if let Some(var_20) = &input.group_identifier {
-        object.key("GroupIdentifier").string(var_20);
+    if let Some(var_23) = &input.group_identifier {
+        object.key("GroupIdentifier").string(var_23);
     }
-    if let Some(var_21) = &input.requested_dimensions {
-        let mut array_22 = object.key("RequestedDimensions").start_array();
-        for item_23 in var_21 {
+    if let Some(var_24) = &input.requested_dimensions {
+        let mut array_25 = object.key("RequestedDimensions").start_array();
+        for item_26 in var_24 {
             {
-                array_22.value().string(item_23);
+                array_25.value().string(item_26);
             }
         }
-        array_22.finish();
+        array_25.finish();
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_get_resource_metadata_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::GetResourceMetadataInput,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_27) = &input.service_type {
+        object.key("ServiceType").string(var_27.as_str());
+    }
+    if let Some(var_28) = &input.identifier {
+        object.key("Identifier").string(var_28);
     }
     Ok(())
 }
@@ -91,50 +113,112 @@ pub fn serialize_structure_crate_input_get_resource_metrics_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetResourceMetricsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_24) = &input.service_type {
-        object.key("ServiceType").string(var_24.as_str());
+    if let Some(var_29) = &input.service_type {
+        object.key("ServiceType").string(var_29.as_str());
     }
-    if let Some(var_25) = &input.identifier {
-        object.key("Identifier").string(var_25);
+    if let Some(var_30) = &input.identifier {
+        object.key("Identifier").string(var_30);
     }
-    if let Some(var_26) = &input.metric_queries {
-        let mut array_27 = object.key("MetricQueries").start_array();
-        for item_28 in var_26 {
+    if let Some(var_31) = &input.metric_queries {
+        let mut array_32 = object.key("MetricQueries").start_array();
+        for item_33 in var_31 {
             {
-                let mut object_29 = array_27.value().start_object();
+                let mut object_34 = array_32.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_metric_query(
-                    &mut object_29,
-                    item_28,
+                    &mut object_34,
+                    item_33,
                 )?;
-                object_29.finish();
+                object_34.finish();
             }
         }
-        array_27.finish();
+        array_32.finish();
     }
-    if let Some(var_30) = &input.start_time {
+    if let Some(var_35) = &input.start_time {
         object
             .key("StartTime")
-            .date_time(var_30, aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_35, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_31) = &input.end_time {
+    if let Some(var_36) = &input.end_time {
         object
             .key("EndTime")
-            .date_time(var_31, aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_36, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_32) = &input.period_in_seconds {
+    if let Some(var_37) = &input.period_in_seconds {
         object.key("PeriodInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_32).into()),
+            aws_smithy_types::Number::NegInt((*var_37).into()),
         );
     }
-    if let Some(var_33) = &input.max_results {
+    if let Some(var_38) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_33).into()),
+            aws_smithy_types::Number::NegInt((*var_38).into()),
         );
     }
-    if let Some(var_34) = &input.next_token {
-        object.key("NextToken").string(var_34);
+    if let Some(var_39) = &input.next_token {
+        object.key("NextToken").string(var_39);
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_list_available_resource_dimensions_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::ListAvailableResourceDimensionsInput,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_40) = &input.service_type {
+        object.key("ServiceType").string(var_40.as_str());
+    }
+    if let Some(var_41) = &input.identifier {
+        object.key("Identifier").string(var_41);
+    }
+    if let Some(var_42) = &input.metrics {
+        let mut array_43 = object.key("Metrics").start_array();
+        for item_44 in var_42 {
+            {
+                array_43.value().string(item_44);
+            }
+        }
+        array_43.finish();
+    }
+    if let Some(var_45) = &input.max_results {
+        object.key("MaxResults").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_45).into()),
+        );
+    }
+    if let Some(var_46) = &input.next_token {
+        object.key("NextToken").string(var_46);
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_list_available_resource_metrics_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::ListAvailableResourceMetricsInput,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_47) = &input.service_type {
+        object.key("ServiceType").string(var_47.as_str());
+    }
+    if let Some(var_48) = &input.identifier {
+        object.key("Identifier").string(var_48);
+    }
+    if let Some(var_49) = &input.metric_types {
+        let mut array_50 = object.key("MetricTypes").start_array();
+        for item_51 in var_49 {
+            {
+                array_50.value().string(item_51);
+            }
+        }
+        array_50.finish();
+    }
+    if let Some(var_52) = &input.next_token {
+        object.key("NextToken").string(var_52);
+    }
+    if let Some(var_53) = &input.max_results {
+        object.key("MaxResults").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_53).into()),
+        );
     }
     Ok(())
 }
@@ -143,22 +227,22 @@ pub fn serialize_structure_crate_model_dimension_group(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DimensionGroup,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_35) = &input.group {
-        object.key("Group").string(var_35);
+    if let Some(var_54) = &input.group {
+        object.key("Group").string(var_54);
     }
-    if let Some(var_36) = &input.dimensions {
-        let mut array_37 = object.key("Dimensions").start_array();
-        for item_38 in var_36 {
+    if let Some(var_55) = &input.dimensions {
+        let mut array_56 = object.key("Dimensions").start_array();
+        for item_57 in var_55 {
             {
-                array_37.value().string(item_38);
+                array_56.value().string(item_57);
             }
         }
-        array_37.finish();
+        array_56.finish();
     }
-    if let Some(var_39) = &input.limit {
+    if let Some(var_58) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_39).into()),
+            aws_smithy_types::Number::NegInt((*var_58).into()),
         );
     }
     Ok(())
@@ -168,22 +252,22 @@ pub fn serialize_structure_crate_model_metric_query(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MetricQuery,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_40) = &input.metric {
-        object.key("Metric").string(var_40);
+    if let Some(var_59) = &input.metric {
+        object.key("Metric").string(var_59);
     }
-    if let Some(var_41) = &input.group_by {
-        let mut object_42 = object.key("GroupBy").start_object();
-        crate::json_ser::serialize_structure_crate_model_dimension_group(&mut object_42, var_41)?;
-        object_42.finish();
+    if let Some(var_60) = &input.group_by {
+        let mut object_61 = object.key("GroupBy").start_object();
+        crate::json_ser::serialize_structure_crate_model_dimension_group(&mut object_61, var_60)?;
+        object_61.finish();
     }
-    if let Some(var_43) = &input.filter {
-        let mut object_44 = object.key("Filter").start_object();
-        for (key_45, value_46) in var_43 {
+    if let Some(var_62) = &input.filter {
+        let mut object_63 = object.key("Filter").start_object();
+        for (key_64, value_65) in var_62 {
             {
-                object_44.key(key_45).string(value_46);
+                object_63.key(key_64).string(value_65);
             }
         }
-        object_44.finish();
+        object_63.finish();
     }
     Ok(())
 }

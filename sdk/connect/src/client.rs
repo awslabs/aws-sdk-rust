@@ -83,1003 +83,1744 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateApprovedOrigin` operation.
+    /// Constructs a fluent builder for the [`AssociateApprovedOrigin`](crate::client::fluent_builders::AssociateApprovedOrigin) operation.
     ///
-    /// See [`AssociateApprovedOrigin`](crate::client::fluent_builders::AssociateApprovedOrigin) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssociateApprovedOrigin::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssociateApprovedOrigin::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`origin(impl Into<String>)`](crate::client::fluent_builders::AssociateApprovedOrigin::origin) / [`set_origin(Option<String>)`](crate::client::fluent_builders::AssociateApprovedOrigin::set_origin): <p>The domain to add to your allow list.</p>
+    /// - On success, responds with [`AssociateApprovedOriginOutput`](crate::output::AssociateApprovedOriginOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateApprovedOriginError>`](crate::error::AssociateApprovedOriginError)
     pub fn associate_approved_origin(&self) -> fluent_builders::AssociateApprovedOrigin<C, M, R> {
         fluent_builders::AssociateApprovedOrigin::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateBot` operation.
+    /// Constructs a fluent builder for the [`AssociateBot`](crate::client::fluent_builders::AssociateBot) operation.
     ///
-    /// See [`AssociateBot`](crate::client::fluent_builders::AssociateBot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssociateBot::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssociateBot::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`lex_bot(LexBot)`](crate::client::fluent_builders::AssociateBot::lex_bot) / [`set_lex_bot(Option<LexBot>)`](crate::client::fluent_builders::AssociateBot::set_lex_bot): <p>Configuration information of an Amazon Lex bot.</p>
+    ///   - [`lex_v2_bot(LexV2Bot)`](crate::client::fluent_builders::AssociateBot::lex_v2_bot) / [`set_lex_v2_bot(Option<LexV2Bot>)`](crate::client::fluent_builders::AssociateBot::set_lex_v2_bot): <p>The Amazon Lex V2 bot to associate with the instance.</p>
+    /// - On success, responds with [`AssociateBotOutput`](crate::output::AssociateBotOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateBotError>`](crate::error::AssociateBotError)
     pub fn associate_bot(&self) -> fluent_builders::AssociateBot<C, M, R> {
         fluent_builders::AssociateBot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateInstanceStorageConfig` operation.
+    /// Constructs a fluent builder for the [`AssociateInstanceStorageConfig`](crate::client::fluent_builders::AssociateInstanceStorageConfig) operation.
     ///
-    /// See [`AssociateInstanceStorageConfig`](crate::client::fluent_builders::AssociateInstanceStorageConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssociateInstanceStorageConfig::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssociateInstanceStorageConfig::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`resource_type(InstanceStorageResourceType)`](crate::client::fluent_builders::AssociateInstanceStorageConfig::resource_type) / [`set_resource_type(Option<InstanceStorageResourceType>)`](crate::client::fluent_builders::AssociateInstanceStorageConfig::set_resource_type): <p>A valid resource type.</p>
+    ///   - [`storage_config(InstanceStorageConfig)`](crate::client::fluent_builders::AssociateInstanceStorageConfig::storage_config) / [`set_storage_config(Option<InstanceStorageConfig>)`](crate::client::fluent_builders::AssociateInstanceStorageConfig::set_storage_config): <p>A valid storage type.</p>
+    /// - On success, responds with [`AssociateInstanceStorageConfigOutput`](crate::output::AssociateInstanceStorageConfigOutput) with field(s):
+    ///   - [`association_id(Option<String>)`](crate::output::AssociateInstanceStorageConfigOutput::association_id): <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    /// - On failure, responds with [`SdkError<AssociateInstanceStorageConfigError>`](crate::error::AssociateInstanceStorageConfigError)
     pub fn associate_instance_storage_config(
         &self,
     ) -> fluent_builders::AssociateInstanceStorageConfig<C, M, R> {
         fluent_builders::AssociateInstanceStorageConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateLambdaFunction` operation.
+    /// Constructs a fluent builder for the [`AssociateLambdaFunction`](crate::client::fluent_builders::AssociateLambdaFunction) operation.
     ///
-    /// See [`AssociateLambdaFunction`](crate::client::fluent_builders::AssociateLambdaFunction) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssociateLambdaFunction::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssociateLambdaFunction::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`function_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateLambdaFunction::function_arn) / [`set_function_arn(Option<String>)`](crate::client::fluent_builders::AssociateLambdaFunction::set_function_arn): <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is 140.</p>
+    /// - On success, responds with [`AssociateLambdaFunctionOutput`](crate::output::AssociateLambdaFunctionOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateLambdaFunctionError>`](crate::error::AssociateLambdaFunctionError)
     pub fn associate_lambda_function(&self) -> fluent_builders::AssociateLambdaFunction<C, M, R> {
         fluent_builders::AssociateLambdaFunction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateLexBot` operation.
+    /// Constructs a fluent builder for the [`AssociateLexBot`](crate::client::fluent_builders::AssociateLexBot) operation.
     ///
-    /// See [`AssociateLexBot`](crate::client::fluent_builders::AssociateLexBot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssociateLexBot::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssociateLexBot::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`lex_bot(LexBot)`](crate::client::fluent_builders::AssociateLexBot::lex_bot) / [`set_lex_bot(Option<LexBot>)`](crate::client::fluent_builders::AssociateLexBot::set_lex_bot): <p>The Amazon Lex bot to associate with the instance.</p>
+    /// - On success, responds with [`AssociateLexBotOutput`](crate::output::AssociateLexBotOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateLexBotError>`](crate::error::AssociateLexBotError)
     pub fn associate_lex_bot(&self) -> fluent_builders::AssociateLexBot<C, M, R> {
         fluent_builders::AssociateLexBot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateQueueQuickConnects` operation.
+    /// Constructs a fluent builder for the [`AssociateQueueQuickConnects`](crate::client::fluent_builders::AssociateQueueQuickConnects) operation.
     ///
-    /// See [`AssociateQueueQuickConnects`](crate::client::fluent_builders::AssociateQueueQuickConnects) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssociateQueueQuickConnects::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssociateQueueQuickConnects::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::AssociateQueueQuickConnects::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::AssociateQueueQuickConnects::set_queue_id): <p>The identifier for the queue.</p>
+    ///   - [`quick_connect_ids(Vec<String>)`](crate::client::fluent_builders::AssociateQueueQuickConnects::quick_connect_ids) / [`set_quick_connect_ids(Option<Vec<String>>)`](crate::client::fluent_builders::AssociateQueueQuickConnects::set_quick_connect_ids): <p>The quick connects to associate with this queue.</p>
+    /// - On success, responds with [`AssociateQueueQuickConnectsOutput`](crate::output::AssociateQueueQuickConnectsOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateQueueQuickConnectsError>`](crate::error::AssociateQueueQuickConnectsError)
     pub fn associate_queue_quick_connects(
         &self,
     ) -> fluent_builders::AssociateQueueQuickConnects<C, M, R> {
         fluent_builders::AssociateQueueQuickConnects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateRoutingProfileQueues` operation.
+    /// Constructs a fluent builder for the [`AssociateRoutingProfileQueues`](crate::client::fluent_builders::AssociateRoutingProfileQueues) operation.
     ///
-    /// See [`AssociateRoutingProfileQueues`](crate::client::fluent_builders::AssociateRoutingProfileQueues) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssociateRoutingProfileQueues::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssociateRoutingProfileQueues::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`routing_profile_id(impl Into<String>)`](crate::client::fluent_builders::AssociateRoutingProfileQueues::routing_profile_id) / [`set_routing_profile_id(Option<String>)`](crate::client::fluent_builders::AssociateRoutingProfileQueues::set_routing_profile_id): <p>The identifier of the routing profile.</p>
+    ///   - [`queue_configs(Vec<RoutingProfileQueueConfig>)`](crate::client::fluent_builders::AssociateRoutingProfileQueues::queue_configs) / [`set_queue_configs(Option<Vec<RoutingProfileQueueConfig>>)`](crate::client::fluent_builders::AssociateRoutingProfileQueues::set_queue_configs): <p>The queues to associate with this routing profile.</p>
+    /// - On success, responds with [`AssociateRoutingProfileQueuesOutput`](crate::output::AssociateRoutingProfileQueuesOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateRoutingProfileQueuesError>`](crate::error::AssociateRoutingProfileQueuesError)
     pub fn associate_routing_profile_queues(
         &self,
     ) -> fluent_builders::AssociateRoutingProfileQueues<C, M, R> {
         fluent_builders::AssociateRoutingProfileQueues::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateSecurityKey` operation.
+    /// Constructs a fluent builder for the [`AssociateSecurityKey`](crate::client::fluent_builders::AssociateSecurityKey) operation.
     ///
-    /// See [`AssociateSecurityKey`](crate::client::fluent_builders::AssociateSecurityKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssociateSecurityKey::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssociateSecurityKey::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`key(impl Into<String>)`](crate::client::fluent_builders::AssociateSecurityKey::key) / [`set_key(Option<String>)`](crate::client::fluent_builders::AssociateSecurityKey::set_key): <p>A valid security key in PEM format.</p>
+    /// - On success, responds with [`AssociateSecurityKeyOutput`](crate::output::AssociateSecurityKeyOutput) with field(s):
+    ///   - [`association_id(Option<String>)`](crate::output::AssociateSecurityKeyOutput::association_id): <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    /// - On failure, responds with [`SdkError<AssociateSecurityKeyError>`](crate::error::AssociateSecurityKeyError)
     pub fn associate_security_key(&self) -> fluent_builders::AssociateSecurityKey<C, M, R> {
         fluent_builders::AssociateSecurityKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAgentStatus` operation.
+    /// Constructs a fluent builder for the [`CreateAgentStatus`](crate::client::fluent_builders::CreateAgentStatus) operation.
     ///
-    /// See [`CreateAgentStatus`](crate::client::fluent_builders::CreateAgentStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateAgentStatus::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateAgentStatus::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAgentStatus::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAgentStatus::set_name): <p>The name of the status.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateAgentStatus::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateAgentStatus::set_description): <p>The description of the status.</p>
+    ///   - [`state(AgentStatusState)`](crate::client::fluent_builders::CreateAgentStatus::state) / [`set_state(Option<AgentStatusState>)`](crate::client::fluent_builders::CreateAgentStatus::set_state): <p>The state of the status.</p>
+    ///   - [`display_order(i32)`](crate::client::fluent_builders::CreateAgentStatus::display_order) / [`set_display_order(Option<i32>)`](crate::client::fluent_builders::CreateAgentStatus::set_display_order): <p>The display order of the status.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAgentStatus::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAgentStatus::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On success, responds with [`CreateAgentStatusOutput`](crate::output::CreateAgentStatusOutput) with field(s):
+    ///   - [`agent_status_arn(Option<String>)`](crate::output::CreateAgentStatusOutput::agent_status_arn): <p>The Amazon Resource Name (ARN) of the agent status.</p>
+    ///   - [`agent_status_id(Option<String>)`](crate::output::CreateAgentStatusOutput::agent_status_id): <p>The identifier of the agent status.</p>
+    /// - On failure, responds with [`SdkError<CreateAgentStatusError>`](crate::error::CreateAgentStatusError)
     pub fn create_agent_status(&self) -> fluent_builders::CreateAgentStatus<C, M, R> {
         fluent_builders::CreateAgentStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateContactFlow` operation.
+    /// Constructs a fluent builder for the [`CreateContactFlow`](crate::client::fluent_builders::CreateContactFlow) operation.
     ///
-    /// See [`CreateContactFlow`](crate::client::fluent_builders::CreateContactFlow) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlow::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateContactFlow::set_instance_id): <p>The identifier of the Amazon Connect instance.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlow::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateContactFlow::set_name): <p>The name of the contact flow.</p>
+    ///   - [`r#type(ContactFlowType)`](crate::client::fluent_builders::CreateContactFlow::r#type) / [`set_type(Option<ContactFlowType>)`](crate::client::fluent_builders::CreateContactFlow::set_type): <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlow::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateContactFlow::set_description): <p>The description of the contact flow. </p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlow::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::CreateContactFlow::set_content): <p>The content of the contact flow. </p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateContactFlow::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateContactFlow::set_tags): <p>One or more tags.</p>
+    /// - On success, responds with [`CreateContactFlowOutput`](crate::output::CreateContactFlowOutput) with field(s):
+    ///   - [`contact_flow_id(Option<String>)`](crate::output::CreateContactFlowOutput::contact_flow_id): <p>The identifier of the contact flow.</p>
+    ///   - [`contact_flow_arn(Option<String>)`](crate::output::CreateContactFlowOutput::contact_flow_arn): <p>The Amazon Resource Name (ARN) of the contact flow.</p>
+    /// - On failure, responds with [`SdkError<CreateContactFlowError>`](crate::error::CreateContactFlowError)
     pub fn create_contact_flow(&self) -> fluent_builders::CreateContactFlow<C, M, R> {
         fluent_builders::CreateContactFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateContactFlowModule` operation.
+    /// Constructs a fluent builder for the [`CreateContactFlowModule`](crate::client::fluent_builders::CreateContactFlowModule) operation.
     ///
-    /// See [`CreateContactFlowModule`](crate::client::fluent_builders::CreateContactFlowModule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_name): <p>The name of the contact flow module.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_description): <p>The description of the contact flow module. </p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_content): <p>The content of the contact flow module.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateContactFlowModule::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateContactFlowModule::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateContactFlowModule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateContactFlowModule::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`CreateContactFlowModuleOutput`](crate::output::CreateContactFlowModuleOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::CreateContactFlowModuleOutput::id): <p>The identifier of the contact flow module.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateContactFlowModuleOutput::arn): <p>The Amazon Resource Name (ARN) of the contact flow module.</p>
+    /// - On failure, responds with [`SdkError<CreateContactFlowModuleError>`](crate::error::CreateContactFlowModuleError)
     pub fn create_contact_flow_module(&self) -> fluent_builders::CreateContactFlowModule<C, M, R> {
         fluent_builders::CreateContactFlowModule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateHoursOfOperation` operation.
+    /// Constructs a fluent builder for the [`CreateHoursOfOperation`](crate::client::fluent_builders::CreateHoursOfOperation) operation.
     ///
-    /// See [`CreateHoursOfOperation`](crate::client::fluent_builders::CreateHoursOfOperation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateHoursOfOperation::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateHoursOfOperation::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateHoursOfOperation::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateHoursOfOperation::set_name): <p>The name of the hours of operation.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateHoursOfOperation::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateHoursOfOperation::set_description): <p>The description of the hours of operation.</p>
+    ///   - [`time_zone(impl Into<String>)`](crate::client::fluent_builders::CreateHoursOfOperation::time_zone) / [`set_time_zone(Option<String>)`](crate::client::fluent_builders::CreateHoursOfOperation::set_time_zone): <p>The time zone of the hours of operation.</p>
+    ///   - [`config(Vec<HoursOfOperationConfig>)`](crate::client::fluent_builders::CreateHoursOfOperation::config) / [`set_config(Option<Vec<HoursOfOperationConfig>>)`](crate::client::fluent_builders::CreateHoursOfOperation::set_config): <p>Configuration information for the hours of operation: day, start time, and end time.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateHoursOfOperation::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateHoursOfOperation::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On success, responds with [`CreateHoursOfOperationOutput`](crate::output::CreateHoursOfOperationOutput) with field(s):
+    ///   - [`hours_of_operation_id(Option<String>)`](crate::output::CreateHoursOfOperationOutput::hours_of_operation_id): <p>The identifier for the hours of operation.</p>
+    ///   - [`hours_of_operation_arn(Option<String>)`](crate::output::CreateHoursOfOperationOutput::hours_of_operation_arn): <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
+    /// - On failure, responds with [`SdkError<CreateHoursOfOperationError>`](crate::error::CreateHoursOfOperationError)
     pub fn create_hours_of_operation(&self) -> fluent_builders::CreateHoursOfOperation<C, M, R> {
         fluent_builders::CreateHoursOfOperation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateInstance` operation.
+    /// Constructs a fluent builder for the [`CreateInstance`](crate::client::fluent_builders::CreateInstance) operation.
     ///
-    /// See [`CreateInstance`](crate::client::fluent_builders::CreateInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateInstance::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateInstance::set_client_token): <p>The idempotency token.</p>
+    ///   - [`identity_management_type(DirectoryType)`](crate::client::fluent_builders::CreateInstance::identity_management_type) / [`set_identity_management_type(Option<DirectoryType>)`](crate::client::fluent_builders::CreateInstance::set_identity_management_type): <p>The type of identity management for your Amazon Connect users.</p>
+    ///   - [`instance_alias(impl Into<String>)`](crate::client::fluent_builders::CreateInstance::instance_alias) / [`set_instance_alias(Option<String>)`](crate::client::fluent_builders::CreateInstance::set_instance_alias): <p>The name for your instance.</p>
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::CreateInstance::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::CreateInstance::set_directory_id): <p>The identifier for the directory.</p>
+    ///   - [`inbound_calls_enabled(bool)`](crate::client::fluent_builders::CreateInstance::inbound_calls_enabled) / [`set_inbound_calls_enabled(Option<bool>)`](crate::client::fluent_builders::CreateInstance::set_inbound_calls_enabled): <p>Your contact center handles incoming contacts.</p>
+    ///   - [`outbound_calls_enabled(bool)`](crate::client::fluent_builders::CreateInstance::outbound_calls_enabled) / [`set_outbound_calls_enabled(Option<bool>)`](crate::client::fluent_builders::CreateInstance::set_outbound_calls_enabled): <p>Your contact center allows outbound calls.</p>
+    /// - On success, responds with [`CreateInstanceOutput`](crate::output::CreateInstanceOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::CreateInstanceOutput::id): <p>The identifier for the instance.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateInstanceOutput::arn): <p>The Amazon Resource Name (ARN) of the instance.</p>
+    /// - On failure, responds with [`SdkError<CreateInstanceError>`](crate::error::CreateInstanceError)
     pub fn create_instance(&self) -> fluent_builders::CreateInstance<C, M, R> {
         fluent_builders::CreateInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateIntegrationAssociation` operation.
+    /// Constructs a fluent builder for the [`CreateIntegrationAssociation`](crate::client::fluent_builders::CreateIntegrationAssociation) operation.
     ///
-    /// See [`CreateIntegrationAssociation`](crate::client::fluent_builders::CreateIntegrationAssociation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`integration_type(IntegrationType)`](crate::client::fluent_builders::CreateIntegrationAssociation::integration_type) / [`set_integration_type(Option<IntegrationType>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_integration_type): <p>The type of information to be ingested.</p>
+    ///   - [`integration_arn(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::integration_arn) / [`set_integration_arn(Option<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_integration_arn): <p>The Amazon Resource Name (ARN) of the integration.</p>
+    ///   - [`source_application_url(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::source_application_url) / [`set_source_application_url(Option<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_source_application_url): <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
+    ///   - [`source_application_name(impl Into<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::source_application_name) / [`set_source_application_name(Option<String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_source_application_name): <p>The name of the external application. This field is only required for the EVENT integration type.</p>
+    ///   - [`source_type(SourceType)`](crate::client::fluent_builders::CreateIntegrationAssociation::source_type) / [`set_source_type(Option<SourceType>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_source_type): <p>The type of the data source. This field is only required for the EVENT integration type.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateIntegrationAssociation::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIntegrationAssociation::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On success, responds with [`CreateIntegrationAssociationOutput`](crate::output::CreateIntegrationAssociationOutput) with field(s):
+    ///   - [`integration_association_id(Option<String>)`](crate::output::CreateIntegrationAssociationOutput::integration_association_id): <p>The identifier for the integration association.</p>
+    ///   - [`integration_association_arn(Option<String>)`](crate::output::CreateIntegrationAssociationOutput::integration_association_arn): <p>The Amazon Resource Name (ARN) for the association.</p>
+    /// - On failure, responds with [`SdkError<CreateIntegrationAssociationError>`](crate::error::CreateIntegrationAssociationError)
     pub fn create_integration_association(
         &self,
     ) -> fluent_builders::CreateIntegrationAssociation<C, M, R> {
         fluent_builders::CreateIntegrationAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateQueue` operation.
+    /// Constructs a fluent builder for the [`CreateQueue`](crate::client::fluent_builders::CreateQueue) operation.
     ///
-    /// See [`CreateQueue`](crate::client::fluent_builders::CreateQueue) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateQueue::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateQueue::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateQueue::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateQueue::set_name): <p>The name of the queue.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateQueue::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateQueue::set_description): <p>The description of the queue.</p>
+    ///   - [`outbound_caller_config(OutboundCallerConfig)`](crate::client::fluent_builders::CreateQueue::outbound_caller_config) / [`set_outbound_caller_config(Option<OutboundCallerConfig>)`](crate::client::fluent_builders::CreateQueue::set_outbound_caller_config): <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+    ///   - [`hours_of_operation_id(impl Into<String>)`](crate::client::fluent_builders::CreateQueue::hours_of_operation_id) / [`set_hours_of_operation_id(Option<String>)`](crate::client::fluent_builders::CreateQueue::set_hours_of_operation_id): <p>The identifier for the hours of operation.</p>
+    ///   - [`max_contacts(i32)`](crate::client::fluent_builders::CreateQueue::max_contacts) / [`set_max_contacts(Option<i32>)`](crate::client::fluent_builders::CreateQueue::set_max_contacts): <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+    ///   - [`quick_connect_ids(Vec<String>)`](crate::client::fluent_builders::CreateQueue::quick_connect_ids) / [`set_quick_connect_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateQueue::set_quick_connect_ids): <p>The quick connects available to agents who are working the queue.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateQueue::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateQueue::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On success, responds with [`CreateQueueOutput`](crate::output::CreateQueueOutput) with field(s):
+    ///   - [`queue_arn(Option<String>)`](crate::output::CreateQueueOutput::queue_arn): <p>The Amazon Resource Name (ARN) of the queue.</p>
+    ///   - [`queue_id(Option<String>)`](crate::output::CreateQueueOutput::queue_id): <p>The identifier for the queue.</p>
+    /// - On failure, responds with [`SdkError<CreateQueueError>`](crate::error::CreateQueueError)
     pub fn create_queue(&self) -> fluent_builders::CreateQueue<C, M, R> {
         fluent_builders::CreateQueue::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateQuickConnect` operation.
+    /// Constructs a fluent builder for the [`CreateQuickConnect`](crate::client::fluent_builders::CreateQuickConnect) operation.
     ///
-    /// See [`CreateQuickConnect`](crate::client::fluent_builders::CreateQuickConnect) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateQuickConnect::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateQuickConnect::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateQuickConnect::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateQuickConnect::set_name): <p>The name of the quick connect.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateQuickConnect::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateQuickConnect::set_description): <p>The description of the quick connect.</p>
+    ///   - [`quick_connect_config(QuickConnectConfig)`](crate::client::fluent_builders::CreateQuickConnect::quick_connect_config) / [`set_quick_connect_config(Option<QuickConnectConfig>)`](crate::client::fluent_builders::CreateQuickConnect::set_quick_connect_config): <p>Configuration settings for the quick connect.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateQuickConnect::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateQuickConnect::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On success, responds with [`CreateQuickConnectOutput`](crate::output::CreateQuickConnectOutput) with field(s):
+    ///   - [`quick_connect_arn(Option<String>)`](crate::output::CreateQuickConnectOutput::quick_connect_arn): <p>The Amazon Resource Name (ARN) for the quick connect. </p>
+    ///   - [`quick_connect_id(Option<String>)`](crate::output::CreateQuickConnectOutput::quick_connect_id): <p>The identifier for the quick connect. </p>
+    /// - On failure, responds with [`SdkError<CreateQuickConnectError>`](crate::error::CreateQuickConnectError)
     pub fn create_quick_connect(&self) -> fluent_builders::CreateQuickConnect<C, M, R> {
         fluent_builders::CreateQuickConnect::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRoutingProfile` operation.
+    /// Constructs a fluent builder for the [`CreateRoutingProfile`](crate::client::fluent_builders::CreateRoutingProfile) operation.
     ///
-    /// See [`CreateRoutingProfile`](crate::client::fluent_builders::CreateRoutingProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateRoutingProfile::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateRoutingProfile::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRoutingProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRoutingProfile::set_name): <p>The name of the routing profile. Must not be more than 127 characters.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRoutingProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRoutingProfile::set_description): <p>Description of the routing profile. Must not be more than 250 characters.</p>
+    ///   - [`default_outbound_queue_id(impl Into<String>)`](crate::client::fluent_builders::CreateRoutingProfile::default_outbound_queue_id) / [`set_default_outbound_queue_id(Option<String>)`](crate::client::fluent_builders::CreateRoutingProfile::set_default_outbound_queue_id): <p>The default outbound queue for the routing profile.</p>
+    ///   - [`queue_configs(Vec<RoutingProfileQueueConfig>)`](crate::client::fluent_builders::CreateRoutingProfile::queue_configs) / [`set_queue_configs(Option<Vec<RoutingProfileQueueConfig>>)`](crate::client::fluent_builders::CreateRoutingProfile::set_queue_configs): <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
+    ///   - [`media_concurrencies(Vec<MediaConcurrency>)`](crate::client::fluent_builders::CreateRoutingProfile::media_concurrencies) / [`set_media_concurrencies(Option<Vec<MediaConcurrency>>)`](crate::client::fluent_builders::CreateRoutingProfile::set_media_concurrencies): <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRoutingProfile::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRoutingProfile::set_tags): <p>One or more tags.</p>
+    /// - On success, responds with [`CreateRoutingProfileOutput`](crate::output::CreateRoutingProfileOutput) with field(s):
+    ///   - [`routing_profile_arn(Option<String>)`](crate::output::CreateRoutingProfileOutput::routing_profile_arn): <p>The Amazon Resource Name (ARN) of the routing profile.</p>
+    ///   - [`routing_profile_id(Option<String>)`](crate::output::CreateRoutingProfileOutput::routing_profile_id): <p>The identifier of the routing profile.</p>
+    /// - On failure, responds with [`SdkError<CreateRoutingProfileError>`](crate::error::CreateRoutingProfileError)
     pub fn create_routing_profile(&self) -> fluent_builders::CreateRoutingProfile<C, M, R> {
         fluent_builders::CreateRoutingProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSecurityProfile` operation.
+    /// Constructs a fluent builder for the [`CreateSecurityProfile`](crate::client::fluent_builders::CreateSecurityProfile) operation.
     ///
-    /// See [`CreateSecurityProfile`](crate::client::fluent_builders::CreateSecurityProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`security_profile_name(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityProfile::security_profile_name) / [`set_security_profile_name(Option<String>)`](crate::client::fluent_builders::CreateSecurityProfile::set_security_profile_name): <p>The name of the security profile.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSecurityProfile::set_description): <p>The description of the security profile.</p>
+    ///   - [`permissions(Vec<String>)`](crate::client::fluent_builders::CreateSecurityProfile::permissions) / [`set_permissions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_permissions): <p>Permissions assigned to the security profile.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityProfile::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateSecurityProfile::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSecurityProfile::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSecurityProfile::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On success, responds with [`CreateSecurityProfileOutput`](crate::output::CreateSecurityProfileOutput) with field(s):
+    ///   - [`security_profile_id(Option<String>)`](crate::output::CreateSecurityProfileOutput::security_profile_id): <p>The identifier for the security profle.</p>
+    ///   - [`security_profile_arn(Option<String>)`](crate::output::CreateSecurityProfileOutput::security_profile_arn): <p>The Amazon Resource Name (ARN) for the security profile.</p>
+    /// - On failure, responds with [`SdkError<CreateSecurityProfileError>`](crate::error::CreateSecurityProfileError)
     pub fn create_security_profile(&self) -> fluent_builders::CreateSecurityProfile<C, M, R> {
         fluent_builders::CreateSecurityProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUseCase` operation.
+    /// Constructs a fluent builder for the [`CreateUseCase`](crate::client::fluent_builders::CreateUseCase) operation.
     ///
-    /// See [`CreateUseCase`](crate::client::fluent_builders::CreateUseCase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateUseCase::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateUseCase::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`integration_association_id(impl Into<String>)`](crate::client::fluent_builders::CreateUseCase::integration_association_id) / [`set_integration_association_id(Option<String>)`](crate::client::fluent_builders::CreateUseCase::set_integration_association_id): <p>The identifier for the integration association.</p>
+    ///   - [`use_case_type(UseCaseType)`](crate::client::fluent_builders::CreateUseCase::use_case_type) / [`set_use_case_type(Option<UseCaseType>)`](crate::client::fluent_builders::CreateUseCase::set_use_case_type): <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateUseCase::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateUseCase::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On success, responds with [`CreateUseCaseOutput`](crate::output::CreateUseCaseOutput) with field(s):
+    ///   - [`use_case_id(Option<String>)`](crate::output::CreateUseCaseOutput::use_case_id): <p>The identifier of the use case.</p>
+    ///   - [`use_case_arn(Option<String>)`](crate::output::CreateUseCaseOutput::use_case_arn): <p>The Amazon Resource Name (ARN) for the use case.</p>
+    /// - On failure, responds with [`SdkError<CreateUseCaseError>`](crate::error::CreateUseCaseError)
     pub fn create_use_case(&self) -> fluent_builders::CreateUseCase<C, M, R> {
         fluent_builders::CreateUseCase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUser` operation.
+    /// Constructs a fluent builder for the [`CreateUser`](crate::client::fluent_builders::CreateUser) operation.
     ///
-    /// See [`CreateUser`](crate::client::fluent_builders::CreateUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::CreateUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::CreateUser::set_username): <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::CreateUser::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::CreateUser::set_password): <p>The password for the user account. A password is required if you are using Amazon Connect for identity management. Otherwise, it is an error to include a password.</p>
+    ///   - [`identity_info(UserIdentityInfo)`](crate::client::fluent_builders::CreateUser::identity_info) / [`set_identity_info(Option<UserIdentityInfo>)`](crate::client::fluent_builders::CreateUser::set_identity_info): <p>The information about the identity of the user.</p>
+    ///   - [`phone_config(UserPhoneConfig)`](crate::client::fluent_builders::CreateUser::phone_config) / [`set_phone_config(Option<UserPhoneConfig>)`](crate::client::fluent_builders::CreateUser::set_phone_config): <p>The phone settings for the user.</p>
+    ///   - [`directory_user_id(impl Into<String>)`](crate::client::fluent_builders::CreateUser::directory_user_id) / [`set_directory_user_id(Option<String>)`](crate::client::fluent_builders::CreateUser::set_directory_user_id): <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Amazon Connect cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.</p>  <p>This parameter is required if you are using an existing directory for identity management in Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.</p>
+    ///   - [`security_profile_ids(Vec<String>)`](crate::client::fluent_builders::CreateUser::security_profile_ids) / [`set_security_profile_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUser::set_security_profile_ids): <p>The identifier of the security profile for the user.</p>
+    ///   - [`routing_profile_id(impl Into<String>)`](crate::client::fluent_builders::CreateUser::routing_profile_id) / [`set_routing_profile_id(Option<String>)`](crate::client::fluent_builders::CreateUser::set_routing_profile_id): <p>The identifier of the routing profile for the user.</p>
+    ///   - [`hierarchy_group_id(impl Into<String>)`](crate::client::fluent_builders::CreateUser::hierarchy_group_id) / [`set_hierarchy_group_id(Option<String>)`](crate::client::fluent_builders::CreateUser::set_hierarchy_group_id): <p>The identifier of the hierarchy group for the user.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateUser::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateUser::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateUser::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateUser::set_tags): <p>One or more tags.</p>
+    /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput) with field(s):
+    ///   - [`user_id(Option<String>)`](crate::output::CreateUserOutput::user_id): <p>The identifier of the user account.</p>
+    ///   - [`user_arn(Option<String>)`](crate::output::CreateUserOutput::user_arn): <p>The Amazon Resource Name (ARN) of the user account.</p>
+    /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
     pub fn create_user(&self) -> fluent_builders::CreateUser<C, M, R> {
         fluent_builders::CreateUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUserHierarchyGroup` operation.
+    /// Constructs a fluent builder for the [`CreateUserHierarchyGroup`](crate::client::fluent_builders::CreateUserHierarchyGroup) operation.
     ///
-    /// See [`CreateUserHierarchyGroup`](crate::client::fluent_builders::CreateUserHierarchyGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::set_name): <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
+    ///   - [`parent_group_id(impl Into<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::parent_group_id) / [`set_parent_group_id(Option<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::set_parent_group_id): <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`CreateUserHierarchyGroupOutput`](crate::output::CreateUserHierarchyGroupOutput) with field(s):
+    ///   - [`hierarchy_group_id(Option<String>)`](crate::output::CreateUserHierarchyGroupOutput::hierarchy_group_id): <p>The identifier of the hierarchy group.</p>
+    ///   - [`hierarchy_group_arn(Option<String>)`](crate::output::CreateUserHierarchyGroupOutput::hierarchy_group_arn): <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
+    /// - On failure, responds with [`SdkError<CreateUserHierarchyGroupError>`](crate::error::CreateUserHierarchyGroupError)
     pub fn create_user_hierarchy_group(
         &self,
     ) -> fluent_builders::CreateUserHierarchyGroup<C, M, R> {
         fluent_builders::CreateUserHierarchyGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteContactFlow` operation.
+    /// Constructs a fluent builder for the [`DeleteContactFlow`](crate::client::fluent_builders::DeleteContactFlow) operation.
     ///
-    /// See [`DeleteContactFlow`](crate::client::fluent_builders::DeleteContactFlow) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContactFlow::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteContactFlow::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContactFlow::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::DeleteContactFlow::set_contact_flow_id): <p>The identifier of the contact flow.</p>
+    /// - On success, responds with [`DeleteContactFlowOutput`](crate::output::DeleteContactFlowOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteContactFlowError>`](crate::error::DeleteContactFlowError)
     pub fn delete_contact_flow(&self) -> fluent_builders::DeleteContactFlow<C, M, R> {
         fluent_builders::DeleteContactFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteContactFlowModule` operation.
+    /// Constructs a fluent builder for the [`DeleteContactFlowModule`](crate::client::fluent_builders::DeleteContactFlowModule) operation.
     ///
-    /// See [`DeleteContactFlowModule`](crate::client::fluent_builders::DeleteContactFlowModule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContactFlowModule::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteContactFlowModule::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_flow_module_id(impl Into<String>)`](crate::client::fluent_builders::DeleteContactFlowModule::contact_flow_module_id) / [`set_contact_flow_module_id(Option<String>)`](crate::client::fluent_builders::DeleteContactFlowModule::set_contact_flow_module_id): <p>The identifier of the contact flow module.</p>
+    /// - On success, responds with [`DeleteContactFlowModuleOutput`](crate::output::DeleteContactFlowModuleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteContactFlowModuleError>`](crate::error::DeleteContactFlowModuleError)
     pub fn delete_contact_flow_module(&self) -> fluent_builders::DeleteContactFlowModule<C, M, R> {
         fluent_builders::DeleteContactFlowModule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteHoursOfOperation` operation.
+    /// Constructs a fluent builder for the [`DeleteHoursOfOperation`](crate::client::fluent_builders::DeleteHoursOfOperation) operation.
     ///
-    /// See [`DeleteHoursOfOperation`](crate::client::fluent_builders::DeleteHoursOfOperation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteHoursOfOperation::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteHoursOfOperation::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`hours_of_operation_id(impl Into<String>)`](crate::client::fluent_builders::DeleteHoursOfOperation::hours_of_operation_id) / [`set_hours_of_operation_id(Option<String>)`](crate::client::fluent_builders::DeleteHoursOfOperation::set_hours_of_operation_id): <p>The identifier for the hours of operation.</p>
+    /// - On success, responds with [`DeleteHoursOfOperationOutput`](crate::output::DeleteHoursOfOperationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteHoursOfOperationError>`](crate::error::DeleteHoursOfOperationError)
     pub fn delete_hours_of_operation(&self) -> fluent_builders::DeleteHoursOfOperation<C, M, R> {
         fluent_builders::DeleteHoursOfOperation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInstance` operation.
+    /// Constructs a fluent builder for the [`DeleteInstance`](crate::client::fluent_builders::DeleteInstance) operation.
     ///
-    /// See [`DeleteInstance`](crate::client::fluent_builders::DeleteInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteInstance::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteInstance::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteInstanceError>`](crate::error::DeleteInstanceError)
     pub fn delete_instance(&self) -> fluent_builders::DeleteInstance<C, M, R> {
         fluent_builders::DeleteInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteIntegrationAssociation` operation.
+    /// Constructs a fluent builder for the [`DeleteIntegrationAssociation`](crate::client::fluent_builders::DeleteIntegrationAssociation) operation.
     ///
-    /// See [`DeleteIntegrationAssociation`](crate::client::fluent_builders::DeleteIntegrationAssociation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteIntegrationAssociation::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteIntegrationAssociation::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`integration_association_id(impl Into<String>)`](crate::client::fluent_builders::DeleteIntegrationAssociation::integration_association_id) / [`set_integration_association_id(Option<String>)`](crate::client::fluent_builders::DeleteIntegrationAssociation::set_integration_association_id): <p>The identifier for the integration association.</p>
+    /// - On success, responds with [`DeleteIntegrationAssociationOutput`](crate::output::DeleteIntegrationAssociationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteIntegrationAssociationError>`](crate::error::DeleteIntegrationAssociationError)
     pub fn delete_integration_association(
         &self,
     ) -> fluent_builders::DeleteIntegrationAssociation<C, M, R> {
         fluent_builders::DeleteIntegrationAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteQuickConnect` operation.
+    /// Constructs a fluent builder for the [`DeleteQuickConnect`](crate::client::fluent_builders::DeleteQuickConnect) operation.
     ///
-    /// See [`DeleteQuickConnect`](crate::client::fluent_builders::DeleteQuickConnect) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteQuickConnect::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteQuickConnect::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`quick_connect_id(impl Into<String>)`](crate::client::fluent_builders::DeleteQuickConnect::quick_connect_id) / [`set_quick_connect_id(Option<String>)`](crate::client::fluent_builders::DeleteQuickConnect::set_quick_connect_id): <p>The identifier for the quick connect.</p>
+    /// - On success, responds with [`DeleteQuickConnectOutput`](crate::output::DeleteQuickConnectOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteQuickConnectError>`](crate::error::DeleteQuickConnectError)
     pub fn delete_quick_connect(&self) -> fluent_builders::DeleteQuickConnect<C, M, R> {
         fluent_builders::DeleteQuickConnect::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSecurityProfile` operation.
+    /// Constructs a fluent builder for the [`DeleteSecurityProfile`](crate::client::fluent_builders::DeleteSecurityProfile) operation.
     ///
-    /// See [`DeleteSecurityProfile`](crate::client::fluent_builders::DeleteSecurityProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSecurityProfile::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteSecurityProfile::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`security_profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSecurityProfile::security_profile_id) / [`set_security_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteSecurityProfile::set_security_profile_id): <p>The identifier for the security profle.</p>
+    /// - On success, responds with [`DeleteSecurityProfileOutput`](crate::output::DeleteSecurityProfileOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSecurityProfileError>`](crate::error::DeleteSecurityProfileError)
     pub fn delete_security_profile(&self) -> fluent_builders::DeleteSecurityProfile<C, M, R> {
         fluent_builders::DeleteSecurityProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUseCase` operation.
+    /// Constructs a fluent builder for the [`DeleteUseCase`](crate::client::fluent_builders::DeleteUseCase) operation.
     ///
-    /// See [`DeleteUseCase`](crate::client::fluent_builders::DeleteUseCase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUseCase::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteUseCase::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`integration_association_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUseCase::integration_association_id) / [`set_integration_association_id(Option<String>)`](crate::client::fluent_builders::DeleteUseCase::set_integration_association_id): <p>The identifier for the integration association.</p>
+    ///   - [`use_case_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUseCase::use_case_id) / [`set_use_case_id(Option<String>)`](crate::client::fluent_builders::DeleteUseCase::set_use_case_id): <p>The identifier for the use case.</p>
+    /// - On success, responds with [`DeleteUseCaseOutput`](crate::output::DeleteUseCaseOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUseCaseError>`](crate::error::DeleteUseCaseError)
     pub fn delete_use_case(&self) -> fluent_builders::DeleteUseCase<C, M, R> {
         fluent_builders::DeleteUseCase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUser` operation.
+    /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
     ///
-    /// See [`DeleteUser`](crate::client::fluent_builders::DeleteUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_user_id): <p>The identifier of the user.</p>
+    /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::error::DeleteUserError)
     pub fn delete_user(&self) -> fluent_builders::DeleteUser<C, M, R> {
         fluent_builders::DeleteUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUserHierarchyGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteUserHierarchyGroup`](crate::client::fluent_builders::DeleteUserHierarchyGroup) operation.
     ///
-    /// See [`DeleteUserHierarchyGroup`](crate::client::fluent_builders::DeleteUserHierarchyGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hierarchy_group_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUserHierarchyGroup::hierarchy_group_id) / [`set_hierarchy_group_id(Option<String>)`](crate::client::fluent_builders::DeleteUserHierarchyGroup::set_hierarchy_group_id): <p>The identifier of the hierarchy group.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUserHierarchyGroup::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteUserHierarchyGroup::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`DeleteUserHierarchyGroupOutput`](crate::output::DeleteUserHierarchyGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserHierarchyGroupError>`](crate::error::DeleteUserHierarchyGroupError)
     pub fn delete_user_hierarchy_group(
         &self,
     ) -> fluent_builders::DeleteUserHierarchyGroup<C, M, R> {
         fluent_builders::DeleteUserHierarchyGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAgentStatus` operation.
+    /// Constructs a fluent builder for the [`DescribeAgentStatus`](crate::client::fluent_builders::DescribeAgentStatus) operation.
     ///
-    /// See [`DescribeAgentStatus`](crate::client::fluent_builders::DescribeAgentStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAgentStatus::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeAgentStatus::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`agent_status_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAgentStatus::agent_status_id) / [`set_agent_status_id(Option<String>)`](crate::client::fluent_builders::DescribeAgentStatus::set_agent_status_id): <p>The identifier for the agent status.</p>
+    /// - On success, responds with [`DescribeAgentStatusOutput`](crate::output::DescribeAgentStatusOutput) with field(s):
+    ///   - [`agent_status(Option<AgentStatus>)`](crate::output::DescribeAgentStatusOutput::agent_status): <p>The agent status.</p>
+    /// - On failure, responds with [`SdkError<DescribeAgentStatusError>`](crate::error::DescribeAgentStatusError)
     pub fn describe_agent_status(&self) -> fluent_builders::DescribeAgentStatus<C, M, R> {
         fluent_builders::DescribeAgentStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeContact` operation.
+    /// Constructs a fluent builder for the [`DescribeContact`](crate::client::fluent_builders::DescribeContact) operation.
     ///
-    /// See [`DescribeContact`](crate::client::fluent_builders::DescribeContact) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeContact::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeContact::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::DescribeContact::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::DescribeContact::set_contact_id): <p>The identifier of the contact.</p>
+    /// - On success, responds with [`DescribeContactOutput`](crate::output::DescribeContactOutput) with field(s):
+    ///   - [`contact(Option<Contact>)`](crate::output::DescribeContactOutput::contact): <p>Information about the contact.</p>
+    /// - On failure, responds with [`SdkError<DescribeContactError>`](crate::error::DescribeContactError)
     pub fn describe_contact(&self) -> fluent_builders::DescribeContact<C, M, R> {
         fluent_builders::DescribeContact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeContactFlow` operation.
+    /// Constructs a fluent builder for the [`DescribeContactFlow`](crate::client::fluent_builders::DescribeContactFlow) operation.
     ///
-    /// See [`DescribeContactFlow`](crate::client::fluent_builders::DescribeContactFlow) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeContactFlow::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeContactFlow::set_instance_id): <p>The identifier of the Amazon Connect instance.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::DescribeContactFlow::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::DescribeContactFlow::set_contact_flow_id): <p>The identifier of the contact flow.</p>
+    /// - On success, responds with [`DescribeContactFlowOutput`](crate::output::DescribeContactFlowOutput) with field(s):
+    ///   - [`contact_flow(Option<ContactFlow>)`](crate::output::DescribeContactFlowOutput::contact_flow): <p>Information about the contact flow.</p>
+    /// - On failure, responds with [`SdkError<DescribeContactFlowError>`](crate::error::DescribeContactFlowError)
     pub fn describe_contact_flow(&self) -> fluent_builders::DescribeContactFlow<C, M, R> {
         fluent_builders::DescribeContactFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeContactFlowModule` operation.
+    /// Constructs a fluent builder for the [`DescribeContactFlowModule`](crate::client::fluent_builders::DescribeContactFlowModule) operation.
     ///
-    /// See [`DescribeContactFlowModule`](crate::client::fluent_builders::DescribeContactFlowModule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeContactFlowModule::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeContactFlowModule::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_flow_module_id(impl Into<String>)`](crate::client::fluent_builders::DescribeContactFlowModule::contact_flow_module_id) / [`set_contact_flow_module_id(Option<String>)`](crate::client::fluent_builders::DescribeContactFlowModule::set_contact_flow_module_id): <p>The identifier of the contact flow module.</p>
+    /// - On success, responds with [`DescribeContactFlowModuleOutput`](crate::output::DescribeContactFlowModuleOutput) with field(s):
+    ///   - [`contact_flow_module(Option<ContactFlowModule>)`](crate::output::DescribeContactFlowModuleOutput::contact_flow_module): <p>Information about the contact flow module.</p>
+    /// - On failure, responds with [`SdkError<DescribeContactFlowModuleError>`](crate::error::DescribeContactFlowModuleError)
     pub fn describe_contact_flow_module(
         &self,
     ) -> fluent_builders::DescribeContactFlowModule<C, M, R> {
         fluent_builders::DescribeContactFlowModule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeHoursOfOperation` operation.
+    /// Constructs a fluent builder for the [`DescribeHoursOfOperation`](crate::client::fluent_builders::DescribeHoursOfOperation) operation.
     ///
-    /// See [`DescribeHoursOfOperation`](crate::client::fluent_builders::DescribeHoursOfOperation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeHoursOfOperation::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeHoursOfOperation::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`hours_of_operation_id(impl Into<String>)`](crate::client::fluent_builders::DescribeHoursOfOperation::hours_of_operation_id) / [`set_hours_of_operation_id(Option<String>)`](crate::client::fluent_builders::DescribeHoursOfOperation::set_hours_of_operation_id): <p>The identifier for the hours of operation.</p>
+    /// - On success, responds with [`DescribeHoursOfOperationOutput`](crate::output::DescribeHoursOfOperationOutput) with field(s):
+    ///   - [`hours_of_operation(Option<HoursOfOperation>)`](crate::output::DescribeHoursOfOperationOutput::hours_of_operation): <p>The hours of operation.</p>
+    /// - On failure, responds with [`SdkError<DescribeHoursOfOperationError>`](crate::error::DescribeHoursOfOperationError)
     pub fn describe_hours_of_operation(
         &self,
     ) -> fluent_builders::DescribeHoursOfOperation<C, M, R> {
         fluent_builders::DescribeHoursOfOperation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInstance` operation.
+    /// Constructs a fluent builder for the [`DescribeInstance`](crate::client::fluent_builders::DescribeInstance) operation.
     ///
-    /// See [`DescribeInstance`](crate::client::fluent_builders::DescribeInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeInstance::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeInstance::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`DescribeInstanceOutput`](crate::output::DescribeInstanceOutput) with field(s):
+    ///   - [`instance(Option<Instance>)`](crate::output::DescribeInstanceOutput::instance): <p>The name of the instance.</p>
+    /// - On failure, responds with [`SdkError<DescribeInstanceError>`](crate::error::DescribeInstanceError)
     pub fn describe_instance(&self) -> fluent_builders::DescribeInstance<C, M, R> {
         fluent_builders::DescribeInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInstanceAttribute` operation.
+    /// Constructs a fluent builder for the [`DescribeInstanceAttribute`](crate::client::fluent_builders::DescribeInstanceAttribute) operation.
     ///
-    /// See [`DescribeInstanceAttribute`](crate::client::fluent_builders::DescribeInstanceAttribute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeInstanceAttribute::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeInstanceAttribute::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`attribute_type(InstanceAttributeType)`](crate::client::fluent_builders::DescribeInstanceAttribute::attribute_type) / [`set_attribute_type(Option<InstanceAttributeType>)`](crate::client::fluent_builders::DescribeInstanceAttribute::set_attribute_type): <p>The type of attribute.</p>
+    /// - On success, responds with [`DescribeInstanceAttributeOutput`](crate::output::DescribeInstanceAttributeOutput) with field(s):
+    ///   - [`attribute(Option<Attribute>)`](crate::output::DescribeInstanceAttributeOutput::attribute): <p>The type of attribute.</p>
+    /// - On failure, responds with [`SdkError<DescribeInstanceAttributeError>`](crate::error::DescribeInstanceAttributeError)
     pub fn describe_instance_attribute(
         &self,
     ) -> fluent_builders::DescribeInstanceAttribute<C, M, R> {
         fluent_builders::DescribeInstanceAttribute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInstanceStorageConfig` operation.
+    /// Constructs a fluent builder for the [`DescribeInstanceStorageConfig`](crate::client::fluent_builders::DescribeInstanceStorageConfig) operation.
     ///
-    /// See [`DescribeInstanceStorageConfig`](crate::client::fluent_builders::DescribeInstanceStorageConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeInstanceStorageConfig::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeInstanceStorageConfig::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`association_id(impl Into<String>)`](crate::client::fluent_builders::DescribeInstanceStorageConfig::association_id) / [`set_association_id(Option<String>)`](crate::client::fluent_builders::DescribeInstanceStorageConfig::set_association_id): <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    ///   - [`resource_type(InstanceStorageResourceType)`](crate::client::fluent_builders::DescribeInstanceStorageConfig::resource_type) / [`set_resource_type(Option<InstanceStorageResourceType>)`](crate::client::fluent_builders::DescribeInstanceStorageConfig::set_resource_type): <p>A valid resource type.</p>
+    /// - On success, responds with [`DescribeInstanceStorageConfigOutput`](crate::output::DescribeInstanceStorageConfigOutput) with field(s):
+    ///   - [`storage_config(Option<InstanceStorageConfig>)`](crate::output::DescribeInstanceStorageConfigOutput::storage_config): <p>A valid storage type.</p>
+    /// - On failure, responds with [`SdkError<DescribeInstanceStorageConfigError>`](crate::error::DescribeInstanceStorageConfigError)
     pub fn describe_instance_storage_config(
         &self,
     ) -> fluent_builders::DescribeInstanceStorageConfig<C, M, R> {
         fluent_builders::DescribeInstanceStorageConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeQueue` operation.
+    /// Constructs a fluent builder for the [`DescribeQueue`](crate::client::fluent_builders::DescribeQueue) operation.
     ///
-    /// See [`DescribeQueue`](crate::client::fluent_builders::DescribeQueue) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeQueue::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeQueue::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::DescribeQueue::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::DescribeQueue::set_queue_id): <p>The identifier for the queue.</p>
+    /// - On success, responds with [`DescribeQueueOutput`](crate::output::DescribeQueueOutput) with field(s):
+    ///   - [`queue(Option<Queue>)`](crate::output::DescribeQueueOutput::queue): <p>The name of the queue.</p>
+    /// - On failure, responds with [`SdkError<DescribeQueueError>`](crate::error::DescribeQueueError)
     pub fn describe_queue(&self) -> fluent_builders::DescribeQueue<C, M, R> {
         fluent_builders::DescribeQueue::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeQuickConnect` operation.
+    /// Constructs a fluent builder for the [`DescribeQuickConnect`](crate::client::fluent_builders::DescribeQuickConnect) operation.
     ///
-    /// See [`DescribeQuickConnect`](crate::client::fluent_builders::DescribeQuickConnect) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeQuickConnect::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeQuickConnect::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`quick_connect_id(impl Into<String>)`](crate::client::fluent_builders::DescribeQuickConnect::quick_connect_id) / [`set_quick_connect_id(Option<String>)`](crate::client::fluent_builders::DescribeQuickConnect::set_quick_connect_id): <p>The identifier for the quick connect.</p>
+    /// - On success, responds with [`DescribeQuickConnectOutput`](crate::output::DescribeQuickConnectOutput) with field(s):
+    ///   - [`quick_connect(Option<QuickConnect>)`](crate::output::DescribeQuickConnectOutput::quick_connect): <p>Information about the quick connect.</p>
+    /// - On failure, responds with [`SdkError<DescribeQuickConnectError>`](crate::error::DescribeQuickConnectError)
     pub fn describe_quick_connect(&self) -> fluent_builders::DescribeQuickConnect<C, M, R> {
         fluent_builders::DescribeQuickConnect::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRoutingProfile` operation.
+    /// Constructs a fluent builder for the [`DescribeRoutingProfile`](crate::client::fluent_builders::DescribeRoutingProfile) operation.
     ///
-    /// See [`DescribeRoutingProfile`](crate::client::fluent_builders::DescribeRoutingProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeRoutingProfile::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeRoutingProfile::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`routing_profile_id(impl Into<String>)`](crate::client::fluent_builders::DescribeRoutingProfile::routing_profile_id) / [`set_routing_profile_id(Option<String>)`](crate::client::fluent_builders::DescribeRoutingProfile::set_routing_profile_id): <p>The identifier of the routing profile.</p>
+    /// - On success, responds with [`DescribeRoutingProfileOutput`](crate::output::DescribeRoutingProfileOutput) with field(s):
+    ///   - [`routing_profile(Option<RoutingProfile>)`](crate::output::DescribeRoutingProfileOutput::routing_profile): <p>The routing profile.</p>
+    /// - On failure, responds with [`SdkError<DescribeRoutingProfileError>`](crate::error::DescribeRoutingProfileError)
     pub fn describe_routing_profile(&self) -> fluent_builders::DescribeRoutingProfile<C, M, R> {
         fluent_builders::DescribeRoutingProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSecurityProfile` operation.
+    /// Constructs a fluent builder for the [`DescribeSecurityProfile`](crate::client::fluent_builders::DescribeSecurityProfile) operation.
     ///
-    /// See [`DescribeSecurityProfile`](crate::client::fluent_builders::DescribeSecurityProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`security_profile_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSecurityProfile::security_profile_id) / [`set_security_profile_id(Option<String>)`](crate::client::fluent_builders::DescribeSecurityProfile::set_security_profile_id): <p>The identifier for the security profle.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSecurityProfile::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeSecurityProfile::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`DescribeSecurityProfileOutput`](crate::output::DescribeSecurityProfileOutput) with field(s):
+    ///   - [`security_profile(Option<SecurityProfile>)`](crate::output::DescribeSecurityProfileOutput::security_profile): <p>The security profile.</p>
+    /// - On failure, responds with [`SdkError<DescribeSecurityProfileError>`](crate::error::DescribeSecurityProfileError)
     pub fn describe_security_profile(&self) -> fluent_builders::DescribeSecurityProfile<C, M, R> {
         fluent_builders::DescribeSecurityProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUser` operation.
+    /// Constructs a fluent builder for the [`DescribeUser`](crate::client::fluent_builders::DescribeUser) operation.
     ///
-    /// See [`DescribeUser`](crate::client::fluent_builders::DescribeUser) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DescribeUser::set_user_id): <p>The identifier of the user account.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUser::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeUser::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`DescribeUserOutput`](crate::output::DescribeUserOutput) with field(s):
+    ///   - [`user(Option<User>)`](crate::output::DescribeUserOutput::user): <p>Information about the user account and configuration settings.</p>
+    /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::error::DescribeUserError)
     pub fn describe_user(&self) -> fluent_builders::DescribeUser<C, M, R> {
         fluent_builders::DescribeUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUserHierarchyGroup` operation.
+    /// Constructs a fluent builder for the [`DescribeUserHierarchyGroup`](crate::client::fluent_builders::DescribeUserHierarchyGroup) operation.
     ///
-    /// See [`DescribeUserHierarchyGroup`](crate::client::fluent_builders::DescribeUserHierarchyGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hierarchy_group_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUserHierarchyGroup::hierarchy_group_id) / [`set_hierarchy_group_id(Option<String>)`](crate::client::fluent_builders::DescribeUserHierarchyGroup::set_hierarchy_group_id): <p>The identifier of the hierarchy group.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUserHierarchyGroup::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeUserHierarchyGroup::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`DescribeUserHierarchyGroupOutput`](crate::output::DescribeUserHierarchyGroupOutput) with field(s):
+    ///   - [`hierarchy_group(Option<HierarchyGroup>)`](crate::output::DescribeUserHierarchyGroupOutput::hierarchy_group): <p>Information about the hierarchy group.</p>
+    /// - On failure, responds with [`SdkError<DescribeUserHierarchyGroupError>`](crate::error::DescribeUserHierarchyGroupError)
     pub fn describe_user_hierarchy_group(
         &self,
     ) -> fluent_builders::DescribeUserHierarchyGroup<C, M, R> {
         fluent_builders::DescribeUserHierarchyGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUserHierarchyStructure` operation.
+    /// Constructs a fluent builder for the [`DescribeUserHierarchyStructure`](crate::client::fluent_builders::DescribeUserHierarchyStructure) operation.
     ///
-    /// See [`DescribeUserHierarchyStructure`](crate::client::fluent_builders::DescribeUserHierarchyStructure) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUserHierarchyStructure::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeUserHierarchyStructure::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`DescribeUserHierarchyStructureOutput`](crate::output::DescribeUserHierarchyStructureOutput) with field(s):
+    ///   - [`hierarchy_structure(Option<HierarchyStructure>)`](crate::output::DescribeUserHierarchyStructureOutput::hierarchy_structure): <p>Information about the hierarchy structure.</p>
+    /// - On failure, responds with [`SdkError<DescribeUserHierarchyStructureError>`](crate::error::DescribeUserHierarchyStructureError)
     pub fn describe_user_hierarchy_structure(
         &self,
     ) -> fluent_builders::DescribeUserHierarchyStructure<C, M, R> {
         fluent_builders::DescribeUserHierarchyStructure::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateApprovedOrigin` operation.
+    /// Constructs a fluent builder for the [`DisassociateApprovedOrigin`](crate::client::fluent_builders::DisassociateApprovedOrigin) operation.
     ///
-    /// See [`DisassociateApprovedOrigin`](crate::client::fluent_builders::DisassociateApprovedOrigin) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateApprovedOrigin::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DisassociateApprovedOrigin::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`origin(impl Into<String>)`](crate::client::fluent_builders::DisassociateApprovedOrigin::origin) / [`set_origin(Option<String>)`](crate::client::fluent_builders::DisassociateApprovedOrigin::set_origin): <p>The domain URL of the integrated application.</p>
+    /// - On success, responds with [`DisassociateApprovedOriginOutput`](crate::output::DisassociateApprovedOriginOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateApprovedOriginError>`](crate::error::DisassociateApprovedOriginError)
     pub fn disassociate_approved_origin(
         &self,
     ) -> fluent_builders::DisassociateApprovedOrigin<C, M, R> {
         fluent_builders::DisassociateApprovedOrigin::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateBot` operation.
+    /// Constructs a fluent builder for the [`DisassociateBot`](crate::client::fluent_builders::DisassociateBot) operation.
     ///
-    /// See [`DisassociateBot`](crate::client::fluent_builders::DisassociateBot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateBot::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DisassociateBot::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`lex_bot(LexBot)`](crate::client::fluent_builders::DisassociateBot::lex_bot) / [`set_lex_bot(Option<LexBot>)`](crate::client::fluent_builders::DisassociateBot::set_lex_bot): <p>Configuration information of an Amazon Lex bot.</p>
+    ///   - [`lex_v2_bot(LexV2Bot)`](crate::client::fluent_builders::DisassociateBot::lex_v2_bot) / [`set_lex_v2_bot(Option<LexV2Bot>)`](crate::client::fluent_builders::DisassociateBot::set_lex_v2_bot): <p>The Amazon Lex V2 bot to disassociate from the instance.</p>
+    /// - On success, responds with [`DisassociateBotOutput`](crate::output::DisassociateBotOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateBotError>`](crate::error::DisassociateBotError)
     pub fn disassociate_bot(&self) -> fluent_builders::DisassociateBot<C, M, R> {
         fluent_builders::DisassociateBot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateInstanceStorageConfig` operation.
+    /// Constructs a fluent builder for the [`DisassociateInstanceStorageConfig`](crate::client::fluent_builders::DisassociateInstanceStorageConfig) operation.
     ///
-    /// See [`DisassociateInstanceStorageConfig`](crate::client::fluent_builders::DisassociateInstanceStorageConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateInstanceStorageConfig::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DisassociateInstanceStorageConfig::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`association_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateInstanceStorageConfig::association_id) / [`set_association_id(Option<String>)`](crate::client::fluent_builders::DisassociateInstanceStorageConfig::set_association_id): <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    ///   - [`resource_type(InstanceStorageResourceType)`](crate::client::fluent_builders::DisassociateInstanceStorageConfig::resource_type) / [`set_resource_type(Option<InstanceStorageResourceType>)`](crate::client::fluent_builders::DisassociateInstanceStorageConfig::set_resource_type): <p>A valid resource type.</p>
+    /// - On success, responds with [`DisassociateInstanceStorageConfigOutput`](crate::output::DisassociateInstanceStorageConfigOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateInstanceStorageConfigError>`](crate::error::DisassociateInstanceStorageConfigError)
     pub fn disassociate_instance_storage_config(
         &self,
     ) -> fluent_builders::DisassociateInstanceStorageConfig<C, M, R> {
         fluent_builders::DisassociateInstanceStorageConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateLambdaFunction` operation.
+    /// Constructs a fluent builder for the [`DisassociateLambdaFunction`](crate::client::fluent_builders::DisassociateLambdaFunction) operation.
     ///
-    /// See [`DisassociateLambdaFunction`](crate::client::fluent_builders::DisassociateLambdaFunction) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateLambdaFunction::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DisassociateLambdaFunction::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance..</p>
+    ///   - [`function_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateLambdaFunction::function_arn) / [`set_function_arn(Option<String>)`](crate::client::fluent_builders::DisassociateLambdaFunction::set_function_arn): <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
+    /// - On success, responds with [`DisassociateLambdaFunctionOutput`](crate::output::DisassociateLambdaFunctionOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateLambdaFunctionError>`](crate::error::DisassociateLambdaFunctionError)
     pub fn disassociate_lambda_function(
         &self,
     ) -> fluent_builders::DisassociateLambdaFunction<C, M, R> {
         fluent_builders::DisassociateLambdaFunction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateLexBot` operation.
+    /// Constructs a fluent builder for the [`DisassociateLexBot`](crate::client::fluent_builders::DisassociateLexBot) operation.
     ///
-    /// See [`DisassociateLexBot`](crate::client::fluent_builders::DisassociateLexBot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateLexBot::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DisassociateLexBot::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`bot_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateLexBot::bot_name) / [`set_bot_name(Option<String>)`](crate::client::fluent_builders::DisassociateLexBot::set_bot_name): <p>The name of the Amazon Lex bot. Maximum character limit of 50.</p>
+    ///   - [`lex_region(impl Into<String>)`](crate::client::fluent_builders::DisassociateLexBot::lex_region) / [`set_lex_region(Option<String>)`](crate::client::fluent_builders::DisassociateLexBot::set_lex_region): <p>The Region in which the Amazon Lex bot has been created.</p>
+    /// - On success, responds with [`DisassociateLexBotOutput`](crate::output::DisassociateLexBotOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateLexBotError>`](crate::error::DisassociateLexBotError)
     pub fn disassociate_lex_bot(&self) -> fluent_builders::DisassociateLexBot<C, M, R> {
         fluent_builders::DisassociateLexBot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateQueueQuickConnects` operation.
+    /// Constructs a fluent builder for the [`DisassociateQueueQuickConnects`](crate::client::fluent_builders::DisassociateQueueQuickConnects) operation.
     ///
-    /// See [`DisassociateQueueQuickConnects`](crate::client::fluent_builders::DisassociateQueueQuickConnects) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateQueueQuickConnects::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DisassociateQueueQuickConnects::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateQueueQuickConnects::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::DisassociateQueueQuickConnects::set_queue_id): <p>The identifier for the queue.</p>
+    ///   - [`quick_connect_ids(Vec<String>)`](crate::client::fluent_builders::DisassociateQueueQuickConnects::quick_connect_ids) / [`set_quick_connect_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociateQueueQuickConnects::set_quick_connect_ids): <p>The quick connects to disassociate from the queue.</p>
+    /// - On success, responds with [`DisassociateQueueQuickConnectsOutput`](crate::output::DisassociateQueueQuickConnectsOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateQueueQuickConnectsError>`](crate::error::DisassociateQueueQuickConnectsError)
     pub fn disassociate_queue_quick_connects(
         &self,
     ) -> fluent_builders::DisassociateQueueQuickConnects<C, M, R> {
         fluent_builders::DisassociateQueueQuickConnects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateRoutingProfileQueues` operation.
+    /// Constructs a fluent builder for the [`DisassociateRoutingProfileQueues`](crate::client::fluent_builders::DisassociateRoutingProfileQueues) operation.
     ///
-    /// See [`DisassociateRoutingProfileQueues`](crate::client::fluent_builders::DisassociateRoutingProfileQueues) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateRoutingProfileQueues::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DisassociateRoutingProfileQueues::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`routing_profile_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateRoutingProfileQueues::routing_profile_id) / [`set_routing_profile_id(Option<String>)`](crate::client::fluent_builders::DisassociateRoutingProfileQueues::set_routing_profile_id): <p>The identifier of the routing profile.</p>
+    ///   - [`queue_references(Vec<RoutingProfileQueueReference>)`](crate::client::fluent_builders::DisassociateRoutingProfileQueues::queue_references) / [`set_queue_references(Option<Vec<RoutingProfileQueueReference>>)`](crate::client::fluent_builders::DisassociateRoutingProfileQueues::set_queue_references): <p>The queues to disassociate from this routing profile.</p>
+    /// - On success, responds with [`DisassociateRoutingProfileQueuesOutput`](crate::output::DisassociateRoutingProfileQueuesOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateRoutingProfileQueuesError>`](crate::error::DisassociateRoutingProfileQueuesError)
     pub fn disassociate_routing_profile_queues(
         &self,
     ) -> fluent_builders::DisassociateRoutingProfileQueues<C, M, R> {
         fluent_builders::DisassociateRoutingProfileQueues::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateSecurityKey` operation.
+    /// Constructs a fluent builder for the [`DisassociateSecurityKey`](crate::client::fluent_builders::DisassociateSecurityKey) operation.
     ///
-    /// See [`DisassociateSecurityKey`](crate::client::fluent_builders::DisassociateSecurityKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateSecurityKey::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DisassociateSecurityKey::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`association_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateSecurityKey::association_id) / [`set_association_id(Option<String>)`](crate::client::fluent_builders::DisassociateSecurityKey::set_association_id): <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    /// - On success, responds with [`DisassociateSecurityKeyOutput`](crate::output::DisassociateSecurityKeyOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateSecurityKeyError>`](crate::error::DisassociateSecurityKeyError)
     pub fn disassociate_security_key(&self) -> fluent_builders::DisassociateSecurityKey<C, M, R> {
         fluent_builders::DisassociateSecurityKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContactAttributes` operation.
+    /// Constructs a fluent builder for the [`GetContactAttributes`](crate::client::fluent_builders::GetContactAttributes) operation.
     ///
-    /// See [`GetContactAttributes`](crate::client::fluent_builders::GetContactAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::GetContactAttributes::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::GetContactAttributes::set_instance_id): <p>The identifier of the Amazon Connect instance.</p>
+    ///   - [`initial_contact_id(impl Into<String>)`](crate::client::fluent_builders::GetContactAttributes::initial_contact_id) / [`set_initial_contact_id(Option<String>)`](crate::client::fluent_builders::GetContactAttributes::set_initial_contact_id): <p>The identifier of the initial contact.</p>
+    /// - On success, responds with [`GetContactAttributesOutput`](crate::output::GetContactAttributesOutput) with field(s):
+    ///   - [`attributes(Option<HashMap<String, String>>)`](crate::output::GetContactAttributesOutput::attributes): <p>Information about the attributes.</p>
+    /// - On failure, responds with [`SdkError<GetContactAttributesError>`](crate::error::GetContactAttributesError)
     pub fn get_contact_attributes(&self) -> fluent_builders::GetContactAttributes<C, M, R> {
         fluent_builders::GetContactAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCurrentMetricData` operation.
+    /// Constructs a fluent builder for the [`GetCurrentMetricData`](crate::client::fluent_builders::GetCurrentMetricData) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetCurrentMetricData::into_paginator).
     ///
-    /// See [`GetCurrentMetricData`](crate::client::fluent_builders::GetCurrentMetricData) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCurrentMetricData::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::GetCurrentMetricData::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::GetCurrentMetricData::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`filters(Filters)`](crate::client::fluent_builders::GetCurrentMetricData::filters) / [`set_filters(Option<Filters>)`](crate::client::fluent_builders::GetCurrentMetricData::set_filters): <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+    ///   - [`groupings(Vec<Grouping>)`](crate::client::fluent_builders::GetCurrentMetricData::groupings) / [`set_groupings(Option<Vec<Grouping>>)`](crate::client::fluent_builders::GetCurrentMetricData::set_groupings): <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues. If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p>  <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p>
+    ///   - [`current_metrics(Vec<CurrentMetric>)`](crate::client::fluent_builders::GetCurrentMetricData::current_metrics) / [`set_current_metrics(Option<Vec<CurrentMetric>>)`](crate::client::fluent_builders::GetCurrentMetricData::set_current_metrics): <p>The metrics to retrieve. Specify the name and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>  <dl>   <dt>   AGENTS_AFTER_CONTACT_WORK  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time">ACW</a> </p>   </dd>   <dt>   AGENTS_AVAILABLE  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time">Available</a> </p>   </dd>   <dt>   AGENTS_ERROR  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time">Error</a> </p>   </dd>   <dt>   AGENTS_NON_PRODUCTIVE  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time">NPT (Non-Productive Time)</a> </p>   </dd>   <dt>   AGENTS_ON_CALL  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>   </dd>   <dt>   AGENTS_ON_CONTACT  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time">On contact</a> </p>   </dd>   <dt>   AGENTS_ONLINE  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time">Online</a> </p>   </dd>   <dt>   AGENTS_STAFFED  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time">Staffed</a> </p>   </dd>   <dt>   CONTACTS_IN_QUEUE  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time">In queue</a> </p>   </dd>   <dt>   CONTACTS_SCHEDULED  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a> </p>   </dd>   <dt>   OLDEST_CONTACT_AGE  </dt>   <dd>    <p>Unit: SECONDS</p>    <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p>    <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p>    <p> <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p>    <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a> </p>   </dd>   <dt>   SLOTS_ACTIVE  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time">Active</a> </p>   </dd>   <dt>   SLOTS_AVAILABLE  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Name in real-time metrics report: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a> </p>   </dd>  </dl>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetCurrentMetricData::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetCurrentMetricData::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>  <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetCurrentMetricData::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetCurrentMetricData::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`GetCurrentMetricDataOutput`](crate::output::GetCurrentMetricDataOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetCurrentMetricDataOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>  <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
+    ///   - [`metric_results(Option<Vec<CurrentMetricResult>>)`](crate::output::GetCurrentMetricDataOutput::metric_results): <p>Information about the real-time metrics.</p>
+    ///   - [`data_snapshot_time(Option<DateTime>)`](crate::output::GetCurrentMetricDataOutput::data_snapshot_time): <p>The time at which the metrics were retrieved and cached for pagination.</p>
+    /// - On failure, responds with [`SdkError<GetCurrentMetricDataError>`](crate::error::GetCurrentMetricDataError)
     pub fn get_current_metric_data(&self) -> fluent_builders::GetCurrentMetricData<C, M, R> {
         fluent_builders::GetCurrentMetricData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFederationToken` operation.
+    /// Constructs a fluent builder for the [`GetFederationToken`](crate::client::fluent_builders::GetFederationToken) operation.
     ///
-    /// See [`GetFederationToken`](crate::client::fluent_builders::GetFederationToken) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::GetFederationToken::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::GetFederationToken::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput) with field(s):
+    ///   - [`credentials(Option<Credentials>)`](crate::output::GetFederationTokenOutput::credentials): <p>The credentials to use for federation.</p>
+    /// - On failure, responds with [`SdkError<GetFederationTokenError>`](crate::error::GetFederationTokenError)
     pub fn get_federation_token(&self) -> fluent_builders::GetFederationToken<C, M, R> {
         fluent_builders::GetFederationToken::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMetricData` operation.
+    /// Constructs a fluent builder for the [`GetMetricData`](crate::client::fluent_builders::GetMetricData) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetMetricData::into_paginator).
     ///
-    /// See [`GetMetricData`](crate::client::fluent_builders::GetMetricData) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetMetricData::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::GetMetricData::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::GetMetricData::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetMetricData::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetMetricData::set_start_time): <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>  <p>The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetMetricData::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetMetricData::set_end_time): <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>  <p>The time range between the start and end time must be less than 24 hours.</p>
+    ///   - [`filters(Filters)`](crate::client::fluent_builders::GetMetricData::filters) / [`set_filters(Option<Filters>)`](crate::client::fluent_builders::GetMetricData::set_filters): <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>   <p>To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.</p>  </note>
+    ///   - [`groupings(Vec<Grouping>)`](crate::client::fluent_builders::GetMetricData::groupings) / [`set_groupings(Option<Vec<Grouping>>)`](crate::client::fluent_builders::GetMetricData::set_groupings): <p>The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>  <p>If no grouping is specified, a summary of metrics for all queues is returned.</p>
+    ///   - [`historical_metrics(Vec<HistoricalMetric>)`](crate::client::fluent_builders::GetMetricData::historical_metrics) / [`set_historical_metrics(Option<Vec<HistoricalMetric>>)`](crate::client::fluent_builders::GetMetricData::set_historical_metrics): <p>The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>   <p>This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list). </p>  </note>  <dl>   <dt>   ABANDON_TIME  </dt>   <dd>    <p>Unit: SECONDS</p>    <p>Statistic: AVG</p>   </dd>   <dt>   AFTER_CONTACT_WORK_TIME  </dt>   <dd>    <p>Unit: SECONDS</p>    <p>Statistic: AVG</p>   </dd>   <dt>   API_CONTACTS_HANDLED  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   CALLBACK_CONTACTS_HANDLED  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   CONTACTS_ABANDONED  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   CONTACTS_AGENT_HUNG_UP_FIRST  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   CONTACTS_CONSULTED  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   CONTACTS_HANDLED  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   CONTACTS_HANDLED_INCOMING  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   CONTACTS_HANDLED_OUTBOUND  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   CONTACTS_HOLD_ABANDONS  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   CONTACTS_MISSED  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   CONTACTS_QUEUED  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   CONTACTS_TRANSFERRED_IN  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   CONTACTS_TRANSFERRED_IN_FROM_QUEUE  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   CONTACTS_TRANSFERRED_OUT  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   CONTACTS_TRANSFERRED_OUT_FROM_QUEUE  </dt>   <dd>    <p>Unit: COUNT</p>    <p>Statistic: SUM</p>   </dd>   <dt>   HANDLE_TIME  </dt>   <dd>    <p>Unit: SECONDS</p>    <p>Statistic: AVG</p>   </dd>   <dt>   HOLD_TIME  </dt>   <dd>    <p>Unit: SECONDS</p>    <p>Statistic: AVG</p>   </dd>   <dt>   INTERACTION_AND_HOLD_TIME  </dt>   <dd>    <p>Unit: SECONDS</p>    <p>Statistic: AVG</p>   </dd>   <dt>   INTERACTION_TIME  </dt>   <dd>    <p>Unit: SECONDS</p>    <p>Statistic: AVG</p>   </dd>   <dt>   OCCUPANCY  </dt>   <dd>    <p>Unit: PERCENT</p>    <p>Statistic: AVG</p>   </dd>   <dt>   QUEUE_ANSWER_TIME  </dt>   <dd>    <p>Unit: SECONDS</p>    <p>Statistic: AVG</p>   </dd>   <dt>   QUEUED_TIME  </dt>   <dd>    <p>Unit: SECONDS</p>    <p>Statistic: MAX</p>   </dd>   <dt>   SERVICE_LEVEL  </dt>   <dd>    <p>You can include up to 20 SERVICE_LEVEL metrics in a request.</p>    <p>Unit: PERCENT</p>    <p>Statistic: AVG</p>    <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>   </dd>  </dl>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetMetricData::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetMetricData::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetMetricData::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetMetricData::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`GetMetricDataOutput`](crate::output::GetMetricDataOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetMetricDataOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>  <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
+    ///   - [`metric_results(Option<Vec<HistoricalMetricResult>>)`](crate::output::GetMetricDataOutput::metric_results): <p>Information about the historical metrics.</p>  <p>If no grouping is specified, a summary of metric data is returned.</p>
+    /// - On failure, responds with [`SdkError<GetMetricDataError>`](crate::error::GetMetricDataError)
     pub fn get_metric_data(&self) -> fluent_builders::GetMetricData<C, M, R> {
         fluent_builders::GetMetricData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAgentStatuses` operation.
+    /// Constructs a fluent builder for the [`ListAgentStatuses`](crate::client::fluent_builders::ListAgentStatuses) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAgentStatuses::into_paginator).
     ///
-    /// See [`ListAgentStatuses`](crate::client::fluent_builders::ListAgentStatuses) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAgentStatuses::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListAgentStatuses::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListAgentStatuses::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAgentStatuses::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAgentStatuses::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAgentStatuses::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAgentStatuses::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`agent_status_types(Vec<AgentStatusType>)`](crate::client::fluent_builders::ListAgentStatuses::agent_status_types) / [`set_agent_status_types(Option<Vec<AgentStatusType>>)`](crate::client::fluent_builders::ListAgentStatuses::set_agent_status_types): <p>Available agent status types.</p>
+    /// - On success, responds with [`ListAgentStatusesOutput`](crate::output::ListAgentStatusesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListAgentStatusesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    ///   - [`agent_status_summary_list(Option<Vec<AgentStatusSummary>>)`](crate::output::ListAgentStatusesOutput::agent_status_summary_list): <p>A summary of agent statuses.</p>
+    /// - On failure, responds with [`SdkError<ListAgentStatusesError>`](crate::error::ListAgentStatusesError)
     pub fn list_agent_statuses(&self) -> fluent_builders::ListAgentStatuses<C, M, R> {
         fluent_builders::ListAgentStatuses::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListApprovedOrigins` operation.
+    /// Constructs a fluent builder for the [`ListApprovedOrigins`](crate::client::fluent_builders::ListApprovedOrigins) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApprovedOrigins::into_paginator).
     ///
-    /// See [`ListApprovedOrigins`](crate::client::fluent_builders::ListApprovedOrigins) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApprovedOrigins::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListApprovedOrigins::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListApprovedOrigins::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApprovedOrigins::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApprovedOrigins::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListApprovedOrigins::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListApprovedOrigins::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListApprovedOriginsOutput`](crate::output::ListApprovedOriginsOutput) with field(s):
+    ///   - [`origins(Option<Vec<String>>)`](crate::output::ListApprovedOriginsOutput::origins): <p>The approved origins.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListApprovedOriginsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListApprovedOriginsError>`](crate::error::ListApprovedOriginsError)
     pub fn list_approved_origins(&self) -> fluent_builders::ListApprovedOrigins<C, M, R> {
         fluent_builders::ListApprovedOrigins::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBots` operation.
+    /// Constructs a fluent builder for the [`ListBots`](crate::client::fluent_builders::ListBots) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBots::into_paginator).
     ///
-    /// See [`ListBots`](crate::client::fluent_builders::ListBots) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBots::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListBots::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListBots::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBots::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBots::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBots::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBots::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`lex_version(LexVersion)`](crate::client::fluent_builders::ListBots::lex_version) / [`set_lex_version(Option<LexVersion>)`](crate::client::fluent_builders::ListBots::set_lex_version): <p>The version of Amazon Lex or Amazon Lex V2.</p>
+    /// - On success, responds with [`ListBotsOutput`](crate::output::ListBotsOutput) with field(s):
+    ///   - [`lex_bots(Option<Vec<LexBotConfig>>)`](crate::output::ListBotsOutput::lex_bots): <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBotsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListBotsError>`](crate::error::ListBotsError)
     pub fn list_bots(&self) -> fluent_builders::ListBots<C, M, R> {
         fluent_builders::ListBots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListContactFlowModules` operation.
+    /// Constructs a fluent builder for the [`ListContactFlowModules`](crate::client::fluent_builders::ListContactFlowModules) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListContactFlowModules::into_paginator).
     ///
-    /// See [`ListContactFlowModules`](crate::client::fluent_builders::ListContactFlowModules) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContactFlowModules::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListContactFlowModules::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListContactFlowModules::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContactFlowModules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContactFlowModules::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListContactFlowModules::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListContactFlowModules::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`contact_flow_module_state(ContactFlowModuleState)`](crate::client::fluent_builders::ListContactFlowModules::contact_flow_module_state) / [`set_contact_flow_module_state(Option<ContactFlowModuleState>)`](crate::client::fluent_builders::ListContactFlowModules::set_contact_flow_module_state): <p>The state of the contact flow module.</p>
+    /// - On success, responds with [`ListContactFlowModulesOutput`](crate::output::ListContactFlowModulesOutput) with field(s):
+    ///   - [`contact_flow_modules_summary_list(Option<Vec<ContactFlowModuleSummary>>)`](crate::output::ListContactFlowModulesOutput::contact_flow_modules_summary_list): <p>Information about the contact flow module.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListContactFlowModulesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListContactFlowModulesError>`](crate::error::ListContactFlowModulesError)
     pub fn list_contact_flow_modules(&self) -> fluent_builders::ListContactFlowModules<C, M, R> {
         fluent_builders::ListContactFlowModules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListContactFlows` operation.
+    /// Constructs a fluent builder for the [`ListContactFlows`](crate::client::fluent_builders::ListContactFlows) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListContactFlows::into_paginator).
     ///
-    /// See [`ListContactFlows`](crate::client::fluent_builders::ListContactFlows) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContactFlows::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListContactFlows::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListContactFlows::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_flow_types(Vec<ContactFlowType>)`](crate::client::fluent_builders::ListContactFlows::contact_flow_types) / [`set_contact_flow_types(Option<Vec<ContactFlowType>>)`](crate::client::fluent_builders::ListContactFlows::set_contact_flow_types): <p>The type of contact flow.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContactFlows::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContactFlows::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListContactFlows::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListContactFlows::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListContactFlowsOutput`](crate::output::ListContactFlowsOutput) with field(s):
+    ///   - [`contact_flow_summary_list(Option<Vec<ContactFlowSummary>>)`](crate::output::ListContactFlowsOutput::contact_flow_summary_list): <p>Information about the contact flows.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListContactFlowsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListContactFlowsError>`](crate::error::ListContactFlowsError)
     pub fn list_contact_flows(&self) -> fluent_builders::ListContactFlows<C, M, R> {
         fluent_builders::ListContactFlows::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListContactReferences` operation.
+    /// Constructs a fluent builder for the [`ListContactReferences`](crate::client::fluent_builders::ListContactReferences) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListContactReferences::into_paginator).
     ///
-    /// See [`ListContactReferences`](crate::client::fluent_builders::ListContactReferences) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContactReferences::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListContactReferences::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListContactReferences::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::ListContactReferences::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::ListContactReferences::set_contact_id): <p>The identifier of the initial contact.</p>
+    ///   - [`reference_types(Vec<ReferenceType>)`](crate::client::fluent_builders::ListContactReferences::reference_types) / [`set_reference_types(Option<Vec<ReferenceType>>)`](crate::client::fluent_builders::ListContactReferences::set_reference_types): <p>The type of reference.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListContactReferences::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListContactReferences::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>   <p>This is not expected to be set, because the value returned in the previous response is always null.</p>  </important>
+    /// - On success, responds with [`ListContactReferencesOutput`](crate::output::ListContactReferencesOutput) with field(s):
+    ///   - [`reference_summary_list(Option<Vec<ReferenceSummary>>)`](crate::output::ListContactReferencesOutput::reference_summary_list): <p>Information about the contact flows.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListContactReferencesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p> <important>   <p>This is always returned as null in the response.</p>  </important>
+    /// - On failure, responds with [`SdkError<ListContactReferencesError>`](crate::error::ListContactReferencesError)
     pub fn list_contact_references(&self) -> fluent_builders::ListContactReferences<C, M, R> {
         fluent_builders::ListContactReferences::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListHoursOfOperations` operation.
+    /// Constructs a fluent builder for the [`ListHoursOfOperations`](crate::client::fluent_builders::ListHoursOfOperations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListHoursOfOperations::into_paginator).
     ///
-    /// See [`ListHoursOfOperations`](crate::client::fluent_builders::ListHoursOfOperations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHoursOfOperations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListHoursOfOperations::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListHoursOfOperations::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHoursOfOperations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHoursOfOperations::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHoursOfOperations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListHoursOfOperations::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListHoursOfOperationsOutput`](crate::output::ListHoursOfOperationsOutput) with field(s):
+    ///   - [`hours_of_operation_summary_list(Option<Vec<HoursOfOperationSummary>>)`](crate::output::ListHoursOfOperationsOutput::hours_of_operation_summary_list): <p>Information about the hours of operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListHoursOfOperationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListHoursOfOperationsError>`](crate::error::ListHoursOfOperationsError)
     pub fn list_hours_of_operations(&self) -> fluent_builders::ListHoursOfOperations<C, M, R> {
         fluent_builders::ListHoursOfOperations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInstanceAttributes` operation.
+    /// Constructs a fluent builder for the [`ListInstanceAttributes`](crate::client::fluent_builders::ListInstanceAttributes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInstanceAttributes::into_paginator).
     ///
-    /// See [`ListInstanceAttributes`](crate::client::fluent_builders::ListInstanceAttributes) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstanceAttributes::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListInstanceAttributes::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListInstanceAttributes::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInstanceAttributes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInstanceAttributes::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInstanceAttributes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInstanceAttributes::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListInstanceAttributesOutput`](crate::output::ListInstanceAttributesOutput) with field(s):
+    ///   - [`attributes(Option<Vec<Attribute>>)`](crate::output::ListInstanceAttributesOutput::attributes): <p>The attribute types.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInstanceAttributesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListInstanceAttributesError>`](crate::error::ListInstanceAttributesError)
     pub fn list_instance_attributes(&self) -> fluent_builders::ListInstanceAttributes<C, M, R> {
         fluent_builders::ListInstanceAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInstances` operation.
+    /// Constructs a fluent builder for the [`ListInstances`](crate::client::fluent_builders::ListInstances) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInstances::into_paginator).
     ///
-    /// See [`ListInstances`](crate::client::fluent_builders::ListInstances) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstances::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInstances::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInstances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInstances::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListInstancesOutput`](crate::output::ListInstancesOutput) with field(s):
+    ///   - [`instance_summary_list(Option<Vec<InstanceSummary>>)`](crate::output::ListInstancesOutput::instance_summary_list): <p>Information about the instances.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInstancesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListInstancesError>`](crate::error::ListInstancesError)
     pub fn list_instances(&self) -> fluent_builders::ListInstances<C, M, R> {
         fluent_builders::ListInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInstanceStorageConfigs` operation.
+    /// Constructs a fluent builder for the [`ListInstanceStorageConfigs`](crate::client::fluent_builders::ListInstanceStorageConfigs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInstanceStorageConfigs::into_paginator).
     ///
-    /// See [`ListInstanceStorageConfigs`](crate::client::fluent_builders::ListInstanceStorageConfigs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstanceStorageConfigs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListInstanceStorageConfigs::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListInstanceStorageConfigs::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`resource_type(InstanceStorageResourceType)`](crate::client::fluent_builders::ListInstanceStorageConfigs::resource_type) / [`set_resource_type(Option<InstanceStorageResourceType>)`](crate::client::fluent_builders::ListInstanceStorageConfigs::set_resource_type): <p>A valid resource type.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInstanceStorageConfigs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInstanceStorageConfigs::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInstanceStorageConfigs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInstanceStorageConfigs::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListInstanceStorageConfigsOutput`](crate::output::ListInstanceStorageConfigsOutput) with field(s):
+    ///   - [`storage_configs(Option<Vec<InstanceStorageConfig>>)`](crate::output::ListInstanceStorageConfigsOutput::storage_configs): <p>A valid storage type.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInstanceStorageConfigsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListInstanceStorageConfigsError>`](crate::error::ListInstanceStorageConfigsError)
     pub fn list_instance_storage_configs(
         &self,
     ) -> fluent_builders::ListInstanceStorageConfigs<C, M, R> {
         fluent_builders::ListInstanceStorageConfigs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListIntegrationAssociations` operation.
+    /// Constructs a fluent builder for the [`ListIntegrationAssociations`](crate::client::fluent_builders::ListIntegrationAssociations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListIntegrationAssociations::into_paginator).
     ///
-    /// See [`ListIntegrationAssociations`](crate::client::fluent_builders::ListIntegrationAssociations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIntegrationAssociations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListIntegrationAssociations::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListIntegrationAssociations::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`integration_type(IntegrationType)`](crate::client::fluent_builders::ListIntegrationAssociations::integration_type) / [`set_integration_type(Option<IntegrationType>)`](crate::client::fluent_builders::ListIntegrationAssociations::set_integration_type): <p>The integration type.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIntegrationAssociations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIntegrationAssociations::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIntegrationAssociations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIntegrationAssociations::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListIntegrationAssociationsOutput`](crate::output::ListIntegrationAssociationsOutput) with field(s):
+    ///   - [`integration_association_summary_list(Option<Vec<IntegrationAssociationSummary>>)`](crate::output::ListIntegrationAssociationsOutput::integration_association_summary_list): <p>The associations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListIntegrationAssociationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListIntegrationAssociationsError>`](crate::error::ListIntegrationAssociationsError)
     pub fn list_integration_associations(
         &self,
     ) -> fluent_builders::ListIntegrationAssociations<C, M, R> {
         fluent_builders::ListIntegrationAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLambdaFunctions` operation.
+    /// Constructs a fluent builder for the [`ListLambdaFunctions`](crate::client::fluent_builders::ListLambdaFunctions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLambdaFunctions::into_paginator).
     ///
-    /// See [`ListLambdaFunctions`](crate::client::fluent_builders::ListLambdaFunctions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLambdaFunctions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListLambdaFunctions::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListLambdaFunctions::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLambdaFunctions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLambdaFunctions::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLambdaFunctions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLambdaFunctions::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListLambdaFunctionsOutput`](crate::output::ListLambdaFunctionsOutput) with field(s):
+    ///   - [`lambda_functions(Option<Vec<String>>)`](crate::output::ListLambdaFunctionsOutput::lambda_functions): <p>The Lambdafunction ARNs associated with the specified instance.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLambdaFunctionsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListLambdaFunctionsError>`](crate::error::ListLambdaFunctionsError)
     pub fn list_lambda_functions(&self) -> fluent_builders::ListLambdaFunctions<C, M, R> {
         fluent_builders::ListLambdaFunctions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLexBots` operation.
+    /// Constructs a fluent builder for the [`ListLexBots`](crate::client::fluent_builders::ListLexBots) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLexBots::into_paginator).
     ///
-    /// See [`ListLexBots`](crate::client::fluent_builders::ListLexBots) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLexBots::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListLexBots::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListLexBots::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLexBots::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLexBots::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLexBots::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLexBots::set_max_results): <p>The maximum number of results to return per page. If no value is specified, the default is 10. </p>
+    /// - On success, responds with [`ListLexBotsOutput`](crate::output::ListLexBotsOutput) with field(s):
+    ///   - [`lex_bots(Option<Vec<LexBot>>)`](crate::output::ListLexBotsOutput::lex_bots): <p>The names and Regions of the Amazon Lex bots associated with the specified instance.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLexBotsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListLexBotsError>`](crate::error::ListLexBotsError)
     pub fn list_lex_bots(&self) -> fluent_builders::ListLexBots<C, M, R> {
         fluent_builders::ListLexBots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPhoneNumbers` operation.
+    /// Constructs a fluent builder for the [`ListPhoneNumbers`](crate::client::fluent_builders::ListPhoneNumbers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPhoneNumbers::into_paginator).
     ///
-    /// See [`ListPhoneNumbers`](crate::client::fluent_builders::ListPhoneNumbers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPhoneNumbers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListPhoneNumbers::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListPhoneNumbers::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`phone_number_types(Vec<PhoneNumberType>)`](crate::client::fluent_builders::ListPhoneNumbers::phone_number_types) / [`set_phone_number_types(Option<Vec<PhoneNumberType>>)`](crate::client::fluent_builders::ListPhoneNumbers::set_phone_number_types): <p>The type of phone number.</p>
+    ///   - [`phone_number_country_codes(Vec<PhoneNumberCountryCode>)`](crate::client::fluent_builders::ListPhoneNumbers::phone_number_country_codes) / [`set_phone_number_country_codes(Option<Vec<PhoneNumberCountryCode>>)`](crate::client::fluent_builders::ListPhoneNumbers::set_phone_number_country_codes): <p>The ISO country code.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPhoneNumbers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPhoneNumbers::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPhoneNumbers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPhoneNumbers::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListPhoneNumbersOutput`](crate::output::ListPhoneNumbersOutput) with field(s):
+    ///   - [`phone_number_summary_list(Option<Vec<PhoneNumberSummary>>)`](crate::output::ListPhoneNumbersOutput::phone_number_summary_list): <p>Information about the phone numbers.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPhoneNumbersOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListPhoneNumbersError>`](crate::error::ListPhoneNumbersError)
     pub fn list_phone_numbers(&self) -> fluent_builders::ListPhoneNumbers<C, M, R> {
         fluent_builders::ListPhoneNumbers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPrompts` operation.
+    /// Constructs a fluent builder for the [`ListPrompts`](crate::client::fluent_builders::ListPrompts) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPrompts::into_paginator).
     ///
-    /// See [`ListPrompts`](crate::client::fluent_builders::ListPrompts) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPrompts::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListPrompts::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListPrompts::set_instance_id): <p>The identifier of the Amazon Connect instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPrompts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPrompts::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPrompts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPrompts::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListPromptsOutput`](crate::output::ListPromptsOutput) with field(s):
+    ///   - [`prompt_summary_list(Option<Vec<PromptSummary>>)`](crate::output::ListPromptsOutput::prompt_summary_list): <p>Information about the prompts.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPromptsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListPromptsError>`](crate::error::ListPromptsError)
     pub fn list_prompts(&self) -> fluent_builders::ListPrompts<C, M, R> {
         fluent_builders::ListPrompts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListQueueQuickConnects` operation.
+    /// Constructs a fluent builder for the [`ListQueueQuickConnects`](crate::client::fluent_builders::ListQueueQuickConnects) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListQueueQuickConnects::into_paginator).
     ///
-    /// See [`ListQueueQuickConnects`](crate::client::fluent_builders::ListQueueQuickConnects) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQueueQuickConnects::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListQueueQuickConnects::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListQueueQuickConnects::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::ListQueueQuickConnects::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::ListQueueQuickConnects::set_queue_id): <p>The identifier for the queue.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListQueueQuickConnects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListQueueQuickConnects::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQueueQuickConnects::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListQueueQuickConnects::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListQueueQuickConnectsOutput`](crate::output::ListQueueQuickConnectsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListQueueQuickConnectsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    ///   - [`quick_connect_summary_list(Option<Vec<QuickConnectSummary>>)`](crate::output::ListQueueQuickConnectsOutput::quick_connect_summary_list): <p>Information about the quick connects.</p>
+    /// - On failure, responds with [`SdkError<ListQueueQuickConnectsError>`](crate::error::ListQueueQuickConnectsError)
     pub fn list_queue_quick_connects(&self) -> fluent_builders::ListQueueQuickConnects<C, M, R> {
         fluent_builders::ListQueueQuickConnects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListQueues` operation.
+    /// Constructs a fluent builder for the [`ListQueues`](crate::client::fluent_builders::ListQueues) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListQueues::into_paginator).
     ///
-    /// See [`ListQueues`](crate::client::fluent_builders::ListQueues) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQueues::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListQueues::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListQueues::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`queue_types(Vec<QueueType>)`](crate::client::fluent_builders::ListQueues::queue_types) / [`set_queue_types(Option<Vec<QueueType>>)`](crate::client::fluent_builders::ListQueues::set_queue_types): <p>The type of queue.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListQueues::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListQueues::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQueues::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListQueues::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListQueuesOutput`](crate::output::ListQueuesOutput) with field(s):
+    ///   - [`queue_summary_list(Option<Vec<QueueSummary>>)`](crate::output::ListQueuesOutput::queue_summary_list): <p>Information about the queues.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListQueuesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListQueuesError>`](crate::error::ListQueuesError)
     pub fn list_queues(&self) -> fluent_builders::ListQueues<C, M, R> {
         fluent_builders::ListQueues::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListQuickConnects` operation.
+    /// Constructs a fluent builder for the [`ListQuickConnects`](crate::client::fluent_builders::ListQuickConnects) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListQuickConnects::into_paginator).
     ///
-    /// See [`ListQuickConnects`](crate::client::fluent_builders::ListQuickConnects) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQuickConnects::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListQuickConnects::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListQuickConnects::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListQuickConnects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListQuickConnects::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQuickConnects::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListQuickConnects::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`quick_connect_types(Vec<QuickConnectType>)`](crate::client::fluent_builders::ListQuickConnects::quick_connect_types) / [`set_quick_connect_types(Option<Vec<QuickConnectType>>)`](crate::client::fluent_builders::ListQuickConnects::set_quick_connect_types): <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// - On success, responds with [`ListQuickConnectsOutput`](crate::output::ListQuickConnectsOutput) with field(s):
+    ///   - [`quick_connect_summary_list(Option<Vec<QuickConnectSummary>>)`](crate::output::ListQuickConnectsOutput::quick_connect_summary_list): <p>Information about the quick connects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListQuickConnectsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListQuickConnectsError>`](crate::error::ListQuickConnectsError)
     pub fn list_quick_connects(&self) -> fluent_builders::ListQuickConnects<C, M, R> {
         fluent_builders::ListQuickConnects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRoutingProfileQueues` operation.
+    /// Constructs a fluent builder for the [`ListRoutingProfileQueues`](crate::client::fluent_builders::ListRoutingProfileQueues) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRoutingProfileQueues::into_paginator).
     ///
-    /// See [`ListRoutingProfileQueues`](crate::client::fluent_builders::ListRoutingProfileQueues) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRoutingProfileQueues::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListRoutingProfileQueues::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListRoutingProfileQueues::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`routing_profile_id(impl Into<String>)`](crate::client::fluent_builders::ListRoutingProfileQueues::routing_profile_id) / [`set_routing_profile_id(Option<String>)`](crate::client::fluent_builders::ListRoutingProfileQueues::set_routing_profile_id): <p>The identifier of the routing profile.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRoutingProfileQueues::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRoutingProfileQueues::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRoutingProfileQueues::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRoutingProfileQueues::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListRoutingProfileQueuesOutput`](crate::output::ListRoutingProfileQueuesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListRoutingProfileQueuesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    ///   - [`routing_profile_queue_config_summary_list(Option<Vec<RoutingProfileQueueConfigSummary>>)`](crate::output::ListRoutingProfileQueuesOutput::routing_profile_queue_config_summary_list): <p>Information about the routing profiles.</p>
+    /// - On failure, responds with [`SdkError<ListRoutingProfileQueuesError>`](crate::error::ListRoutingProfileQueuesError)
     pub fn list_routing_profile_queues(
         &self,
     ) -> fluent_builders::ListRoutingProfileQueues<C, M, R> {
         fluent_builders::ListRoutingProfileQueues::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRoutingProfiles` operation.
+    /// Constructs a fluent builder for the [`ListRoutingProfiles`](crate::client::fluent_builders::ListRoutingProfiles) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRoutingProfiles::into_paginator).
     ///
-    /// See [`ListRoutingProfiles`](crate::client::fluent_builders::ListRoutingProfiles) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRoutingProfiles::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListRoutingProfiles::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListRoutingProfiles::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRoutingProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRoutingProfiles::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRoutingProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRoutingProfiles::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListRoutingProfilesOutput`](crate::output::ListRoutingProfilesOutput) with field(s):
+    ///   - [`routing_profile_summary_list(Option<Vec<RoutingProfileSummary>>)`](crate::output::ListRoutingProfilesOutput::routing_profile_summary_list): <p>Information about the routing profiles.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRoutingProfilesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListRoutingProfilesError>`](crate::error::ListRoutingProfilesError)
     pub fn list_routing_profiles(&self) -> fluent_builders::ListRoutingProfiles<C, M, R> {
         fluent_builders::ListRoutingProfiles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSecurityKeys` operation.
+    /// Constructs a fluent builder for the [`ListSecurityKeys`](crate::client::fluent_builders::ListSecurityKeys) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSecurityKeys::into_paginator).
     ///
-    /// See [`ListSecurityKeys`](crate::client::fluent_builders::ListSecurityKeys) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSecurityKeys::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListSecurityKeys::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListSecurityKeys::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSecurityKeys::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSecurityKeys::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSecurityKeys::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSecurityKeys::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListSecurityKeysOutput`](crate::output::ListSecurityKeysOutput) with field(s):
+    ///   - [`security_keys(Option<Vec<SecurityKey>>)`](crate::output::ListSecurityKeysOutput::security_keys): <p>The security keys.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSecurityKeysOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListSecurityKeysError>`](crate::error::ListSecurityKeysError)
     pub fn list_security_keys(&self) -> fluent_builders::ListSecurityKeys<C, M, R> {
         fluent_builders::ListSecurityKeys::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSecurityProfilePermissions` operation.
+    /// Constructs a fluent builder for the [`ListSecurityProfilePermissions`](crate::client::fluent_builders::ListSecurityProfilePermissions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSecurityProfilePermissions::into_paginator).
     ///
-    /// See [`ListSecurityProfilePermissions`](crate::client::fluent_builders::ListSecurityProfilePermissions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSecurityProfilePermissions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`security_profile_id(impl Into<String>)`](crate::client::fluent_builders::ListSecurityProfilePermissions::security_profile_id) / [`set_security_profile_id(Option<String>)`](crate::client::fluent_builders::ListSecurityProfilePermissions::set_security_profile_id): <p>The identifier for the security profle.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListSecurityProfilePermissions::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListSecurityProfilePermissions::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSecurityProfilePermissions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSecurityProfilePermissions::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSecurityProfilePermissions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSecurityProfilePermissions::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListSecurityProfilePermissionsOutput`](crate::output::ListSecurityProfilePermissionsOutput) with field(s):
+    ///   - [`permissions(Option<Vec<String>>)`](crate::output::ListSecurityProfilePermissionsOutput::permissions): <p>The permissions granted to the security profile.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSecurityProfilePermissionsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListSecurityProfilePermissionsError>`](crate::error::ListSecurityProfilePermissionsError)
     pub fn list_security_profile_permissions(
         &self,
     ) -> fluent_builders::ListSecurityProfilePermissions<C, M, R> {
         fluent_builders::ListSecurityProfilePermissions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSecurityProfiles` operation.
+    /// Constructs a fluent builder for the [`ListSecurityProfiles`](crate::client::fluent_builders::ListSecurityProfiles) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSecurityProfiles::into_paginator).
     ///
-    /// See [`ListSecurityProfiles`](crate::client::fluent_builders::ListSecurityProfiles) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSecurityProfiles::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListSecurityProfiles::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListSecurityProfiles::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSecurityProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSecurityProfiles::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSecurityProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSecurityProfiles::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListSecurityProfilesOutput`](crate::output::ListSecurityProfilesOutput) with field(s):
+    ///   - [`security_profile_summary_list(Option<Vec<SecurityProfileSummary>>)`](crate::output::ListSecurityProfilesOutput::security_profile_summary_list): <p>Information about the security profiles.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSecurityProfilesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListSecurityProfilesError>`](crate::error::ListSecurityProfilesError)
     pub fn list_security_profiles(&self) -> fluent_builders::ListSecurityProfiles<C, M, R> {
         fluent_builders::ListSecurityProfiles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Information about the tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUseCases` operation.
+    /// Constructs a fluent builder for the [`ListUseCases`](crate::client::fluent_builders::ListUseCases) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUseCases::into_paginator).
     ///
-    /// See [`ListUseCases`](crate::client::fluent_builders::ListUseCases) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUseCases::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListUseCases::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListUseCases::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`integration_association_id(impl Into<String>)`](crate::client::fluent_builders::ListUseCases::integration_association_id) / [`set_integration_association_id(Option<String>)`](crate::client::fluent_builders::ListUseCases::set_integration_association_id): <p>The identifier for the integration association.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUseCases::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUseCases::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUseCases::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUseCases::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListUseCasesOutput`](crate::output::ListUseCasesOutput) with field(s):
+    ///   - [`use_case_summary_list(Option<Vec<UseCase>>)`](crate::output::ListUseCasesOutput::use_case_summary_list): <p>The use cases.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUseCasesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListUseCasesError>`](crate::error::ListUseCasesError)
     pub fn list_use_cases(&self) -> fluent_builders::ListUseCases<C, M, R> {
         fluent_builders::ListUseCases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUserHierarchyGroups` operation.
+    /// Constructs a fluent builder for the [`ListUserHierarchyGroups`](crate::client::fluent_builders::ListUserHierarchyGroups) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUserHierarchyGroups::into_paginator).
     ///
-    /// See [`ListUserHierarchyGroups`](crate::client::fluent_builders::ListUserHierarchyGroups) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUserHierarchyGroups::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListUserHierarchyGroups::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListUserHierarchyGroups::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUserHierarchyGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUserHierarchyGroups::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUserHierarchyGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUserHierarchyGroups::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListUserHierarchyGroupsOutput`](crate::output::ListUserHierarchyGroupsOutput) with field(s):
+    ///   - [`user_hierarchy_group_summary_list(Option<Vec<HierarchyGroupSummary>>)`](crate::output::ListUserHierarchyGroupsOutput::user_hierarchy_group_summary_list): <p>Information about the hierarchy groups.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUserHierarchyGroupsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListUserHierarchyGroupsError>`](crate::error::ListUserHierarchyGroupsError)
     pub fn list_user_hierarchy_groups(&self) -> fluent_builders::ListUserHierarchyGroups<C, M, R> {
         fluent_builders::ListUserHierarchyGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUsers` operation.
+    /// Constructs a fluent builder for the [`ListUsers`](crate::client::fluent_builders::ListUsers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
     ///
-    /// See [`ListUsers`](crate::client::fluent_builders::ListUsers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListUsers::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListUsers::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUsers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUsers::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUsers::set_max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListUsersOutput`](crate::output::ListUsersOutput) with field(s):
+    ///   - [`user_summary_list(Option<Vec<UserSummary>>)`](crate::output::ListUsersOutput::user_summary_list): <p>Information about the users.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUsersOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListUsersError>`](crate::error::ListUsersError)
     pub fn list_users(&self) -> fluent_builders::ListUsers<C, M, R> {
         fluent_builders::ListUsers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResumeContactRecording` operation.
+    /// Constructs a fluent builder for the [`ResumeContactRecording`](crate::client::fluent_builders::ResumeContactRecording) operation.
     ///
-    /// See [`ResumeContactRecording`](crate::client::fluent_builders::ResumeContactRecording) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ResumeContactRecording::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ResumeContactRecording::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::ResumeContactRecording::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::ResumeContactRecording::set_contact_id): <p>The identifier of the contact.</p>
+    ///   - [`initial_contact_id(impl Into<String>)`](crate::client::fluent_builders::ResumeContactRecording::initial_contact_id) / [`set_initial_contact_id(Option<String>)`](crate::client::fluent_builders::ResumeContactRecording::set_initial_contact_id): <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    /// - On success, responds with [`ResumeContactRecordingOutput`](crate::output::ResumeContactRecordingOutput)
+
+    /// - On failure, responds with [`SdkError<ResumeContactRecordingError>`](crate::error::ResumeContactRecordingError)
     pub fn resume_contact_recording(&self) -> fluent_builders::ResumeContactRecording<C, M, R> {
         fluent_builders::ResumeContactRecording::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartChatContact` operation.
+    /// Constructs a fluent builder for the [`StartChatContact`](crate::client::fluent_builders::StartChatContact) operation.
     ///
-    /// See [`StartChatContact`](crate::client::fluent_builders::StartChatContact) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StartChatContact::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StartChatContact::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::StartChatContact::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::StartChatContact::set_contact_flow_id): <p>The identifier of the contact flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>  <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::StartChatContact::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartChatContact::set_attributes): <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in contact flows just like any other contact attributes. </p>  <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    ///   - [`participant_details(ParticipantDetails)`](crate::client::fluent_builders::StartChatContact::participant_details) / [`set_participant_details(Option<ParticipantDetails>)`](crate::client::fluent_builders::StartChatContact::set_participant_details): <p>Information identifying the participant.</p>
+    ///   - [`initial_message(ChatMessage)`](crate::client::fluent_builders::StartChatContact::initial_message) / [`set_initial_message(Option<ChatMessage>)`](crate::client::fluent_builders::StartChatContact::set_initial_message): <p>The initial message to be sent to the newly created chat.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartChatContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartChatContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`StartChatContactOutput`](crate::output::StartChatContactOutput) with field(s):
+    ///   - [`contact_id(Option<String>)`](crate::output::StartChatContactOutput::contact_id): <p>The identifier of this contact within the Amazon Connect instance. </p>
+    ///   - [`participant_id(Option<String>)`](crate::output::StartChatContactOutput::participant_id): <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
+    ///   - [`participant_token(Option<String>)`](crate::output::StartChatContactOutput::participant_token): <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
+    /// - On failure, responds with [`SdkError<StartChatContactError>`](crate::error::StartChatContactError)
     pub fn start_chat_contact(&self) -> fluent_builders::StartChatContact<C, M, R> {
         fluent_builders::StartChatContact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartContactRecording` operation.
+    /// Constructs a fluent builder for the [`StartContactRecording`](crate::client::fluent_builders::StartContactRecording) operation.
     ///
-    /// See [`StartContactRecording`](crate::client::fluent_builders::StartContactRecording) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StartContactRecording::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StartContactRecording::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::StartContactRecording::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::StartContactRecording::set_contact_id): <p>The identifier of the contact.</p>
+    ///   - [`initial_contact_id(impl Into<String>)`](crate::client::fluent_builders::StartContactRecording::initial_contact_id) / [`set_initial_contact_id(Option<String>)`](crate::client::fluent_builders::StartContactRecording::set_initial_contact_id): <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    ///   - [`voice_recording_configuration(VoiceRecordingConfiguration)`](crate::client::fluent_builders::StartContactRecording::voice_recording_configuration) / [`set_voice_recording_configuration(Option<VoiceRecordingConfiguration>)`](crate::client::fluent_builders::StartContactRecording::set_voice_recording_configuration): <p>The person being recorded.</p>
+    /// - On success, responds with [`StartContactRecordingOutput`](crate::output::StartContactRecordingOutput)
+
+    /// - On failure, responds with [`SdkError<StartContactRecordingError>`](crate::error::StartContactRecordingError)
     pub fn start_contact_recording(&self) -> fluent_builders::StartContactRecording<C, M, R> {
         fluent_builders::StartContactRecording::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartContactStreaming` operation.
+    /// Constructs a fluent builder for the [`StartContactStreaming`](crate::client::fluent_builders::StartContactStreaming) operation.
     ///
-    /// See [`StartContactStreaming`](crate::client::fluent_builders::StartContactStreaming) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StartContactStreaming::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StartContactStreaming::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::StartContactStreaming::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::StartContactStreaming::set_contact_id): <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    ///   - [`chat_streaming_configuration(ChatStreamingConfiguration)`](crate::client::fluent_builders::StartContactStreaming::chat_streaming_configuration) / [`set_chat_streaming_configuration(Option<ChatStreamingConfiguration>)`](crate::client::fluent_builders::StartContactStreaming::set_chat_streaming_configuration): <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartContactStreaming::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartContactStreaming::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`StartContactStreamingOutput`](crate::output::StartContactStreamingOutput) with field(s):
+    ///   - [`streaming_id(Option<String>)`](crate::output::StartContactStreamingOutput::streaming_id): <p>The identifier of the streaming configuration enabled. </p>
+    /// - On failure, responds with [`SdkError<StartContactStreamingError>`](crate::error::StartContactStreamingError)
     pub fn start_contact_streaming(&self) -> fluent_builders::StartContactStreaming<C, M, R> {
         fluent_builders::StartContactStreaming::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartOutboundVoiceContact` operation.
+    /// Constructs a fluent builder for the [`StartOutboundVoiceContact`](crate::client::fluent_builders::StartOutboundVoiceContact) operation.
     ///
-    /// See [`StartOutboundVoiceContact`](crate::client::fluent_builders::StartOutboundVoiceContact) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`destination_phone_number(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::destination_phone_number) / [`set_destination_phone_number(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_destination_phone_number): <p>The phone number of the customer, in E.164 format.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_contact_flow_id): <p>The identifier of the contact flow for the outbound call. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>  <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned. </p>
+    ///   - [`source_phone_number(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::source_phone_number) / [`set_source_phone_number(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_source_phone_number): <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>
+    ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_queue_id): <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.</p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_attributes): <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>  <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    ///   - [`answer_machine_detection_config(AnswerMachineDetectionConfig)`](crate::client::fluent_builders::StartOutboundVoiceContact::answer_machine_detection_config) / [`set_answer_machine_detection_config(Option<AnswerMachineDetectionConfig>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_answer_machine_detection_config): <p>Configuration of the answering machine detection for this outbound call. </p>
+    ///   - [`campaign_id(impl Into<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::campaign_id) / [`set_campaign_id(Option<String>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_campaign_id): <p>The campaign identifier of the outbound communication.</p>
+    ///   - [`traffic_type(TrafficType)`](crate::client::fluent_builders::StartOutboundVoiceContact::traffic_type) / [`set_traffic_type(Option<TrafficType>)`](crate::client::fluent_builders::StartOutboundVoiceContact::set_traffic_type): <p>Denotes the class of traffic. Calls with different traffic types are handled differently by Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
+    /// - On success, responds with [`StartOutboundVoiceContactOutput`](crate::output::StartOutboundVoiceContactOutput) with field(s):
+    ///   - [`contact_id(Option<String>)`](crate::output::StartOutboundVoiceContactOutput::contact_id): <p>The identifier of this contact within the Amazon Connect instance.</p>
+    /// - On failure, responds with [`SdkError<StartOutboundVoiceContactError>`](crate::error::StartOutboundVoiceContactError)
     pub fn start_outbound_voice_contact(
         &self,
     ) -> fluent_builders::StartOutboundVoiceContact<C, M, R> {
         fluent_builders::StartOutboundVoiceContact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartTaskContact` operation.
+    /// Constructs a fluent builder for the [`StartTaskContact`](crate::client::fluent_builders::StartTaskContact) operation.
     ///
-    /// See [`StartTaskContact`](crate::client::fluent_builders::StartTaskContact) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`previous_contact_id(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::previous_contact_id) / [`set_previous_contact_id(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_previous_contact_id): <p>The identifier of the previous chat, voice, or task contact. </p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_contact_flow_id): <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the contact flow. On the contact flow page, under the name of the contact flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>  <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::StartTaskContact::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartTaskContact::set_attributes): <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.</p>  <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_name): <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
+    ///   - [`references(HashMap<String, Reference>)`](crate::client::fluent_builders::StartTaskContact::references) / [`set_references(Option<HashMap<String, Reference>>)`](crate::client::fluent_builders::StartTaskContact::set_references): <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_description): <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartTaskContact::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartTaskContact::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`scheduled_time(DateTime)`](crate::client::fluent_builders::StartTaskContact::scheduled_time) / [`set_scheduled_time(Option<DateTime>)`](crate::client::fluent_builders::StartTaskContact::set_scheduled_time): <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    /// - On success, responds with [`StartTaskContactOutput`](crate::output::StartTaskContactOutput) with field(s):
+    ///   - [`contact_id(Option<String>)`](crate::output::StartTaskContactOutput::contact_id): <p>The identifier of this contact within the Amazon Connect instance.</p>
+    /// - On failure, responds with [`SdkError<StartTaskContactError>`](crate::error::StartTaskContactError)
     pub fn start_task_contact(&self) -> fluent_builders::StartTaskContact<C, M, R> {
         fluent_builders::StartTaskContact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopContact` operation.
+    /// Constructs a fluent builder for the [`StopContact`](crate::client::fluent_builders::StopContact) operation.
     ///
-    /// See [`StopContact`](crate::client::fluent_builders::StopContact) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::StopContact::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::StopContact::set_contact_id): <p>The ID of the contact.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StopContact::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StopContact::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`StopContactOutput`](crate::output::StopContactOutput)
+
+    /// - On failure, responds with [`SdkError<StopContactError>`](crate::error::StopContactError)
     pub fn stop_contact(&self) -> fluent_builders::StopContact<C, M, R> {
         fluent_builders::StopContact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopContactRecording` operation.
+    /// Constructs a fluent builder for the [`StopContactRecording`](crate::client::fluent_builders::StopContactRecording) operation.
     ///
-    /// See [`StopContactRecording`](crate::client::fluent_builders::StopContactRecording) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StopContactRecording::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StopContactRecording::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::StopContactRecording::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::StopContactRecording::set_contact_id): <p>The identifier of the contact.</p>
+    ///   - [`initial_contact_id(impl Into<String>)`](crate::client::fluent_builders::StopContactRecording::initial_contact_id) / [`set_initial_contact_id(Option<String>)`](crate::client::fluent_builders::StopContactRecording::set_initial_contact_id): <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    /// - On success, responds with [`StopContactRecordingOutput`](crate::output::StopContactRecordingOutput)
+
+    /// - On failure, responds with [`SdkError<StopContactRecordingError>`](crate::error::StopContactRecordingError)
     pub fn stop_contact_recording(&self) -> fluent_builders::StopContactRecording<C, M, R> {
         fluent_builders::StopContactRecording::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopContactStreaming` operation.
+    /// Constructs a fluent builder for the [`StopContactStreaming`](crate::client::fluent_builders::StopContactStreaming) operation.
     ///
-    /// See [`StopContactStreaming`](crate::client::fluent_builders::StopContactStreaming) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::StopContactStreaming::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::StopContactStreaming::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::StopContactStreaming::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::StopContactStreaming::set_contact_id): <p>The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.</p>
+    ///   - [`streaming_id(impl Into<String>)`](crate::client::fluent_builders::StopContactStreaming::streaming_id) / [`set_streaming_id(Option<String>)`](crate::client::fluent_builders::StopContactStreaming::set_streaming_id): <p>The identifier of the streaming configuration enabled. </p>
+    /// - On success, responds with [`StopContactStreamingOutput`](crate::output::StopContactStreamingOutput)
+
+    /// - On failure, responds with [`SdkError<StopContactStreamingError>`](crate::error::StopContactStreamingError)
     pub fn stop_contact_streaming(&self) -> fluent_builders::StopContactStreaming<C, M, R> {
         fluent_builders::StopContactStreaming::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SuspendContactRecording` operation.
+    /// Constructs a fluent builder for the [`SuspendContactRecording`](crate::client::fluent_builders::SuspendContactRecording) operation.
     ///
-    /// See [`SuspendContactRecording`](crate::client::fluent_builders::SuspendContactRecording) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::SuspendContactRecording::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::SuspendContactRecording::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::SuspendContactRecording::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::SuspendContactRecording::set_contact_id): <p>The identifier of the contact.</p>
+    ///   - [`initial_contact_id(impl Into<String>)`](crate::client::fluent_builders::SuspendContactRecording::initial_contact_id) / [`set_initial_contact_id(Option<String>)`](crate::client::fluent_builders::SuspendContactRecording::set_initial_contact_id): <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    /// - On success, responds with [`SuspendContactRecordingOutput`](crate::output::SuspendContactRecordingOutput)
+
+    /// - On failure, responds with [`SdkError<SuspendContactRecordingError>`](crate::error::SuspendContactRecordingError)
     pub fn suspend_contact_recording(&self) -> fluent_builders::SuspendContactRecording<C, M, R> {
         fluent_builders::SuspendContactRecording::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAgentStatus` operation.
+    /// Constructs a fluent builder for the [`UpdateAgentStatus`](crate::client::fluent_builders::UpdateAgentStatus) operation.
     ///
-    /// See [`UpdateAgentStatus`](crate::client::fluent_builders::UpdateAgentStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAgentStatus::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateAgentStatus::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`agent_status_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAgentStatus::agent_status_id) / [`set_agent_status_id(Option<String>)`](crate::client::fluent_builders::UpdateAgentStatus::set_agent_status_id): <p>The identifier of the agent status.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAgentStatus::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAgentStatus::set_name): <p>The name of the agent status.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateAgentStatus::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateAgentStatus::set_description): <p>The description of the agent status.</p>
+    ///   - [`state(AgentStatusState)`](crate::client::fluent_builders::UpdateAgentStatus::state) / [`set_state(Option<AgentStatusState>)`](crate::client::fluent_builders::UpdateAgentStatus::set_state): <p>The state of the agent status.</p>
+    ///   - [`display_order(i32)`](crate::client::fluent_builders::UpdateAgentStatus::display_order) / [`set_display_order(Option<i32>)`](crate::client::fluent_builders::UpdateAgentStatus::set_display_order): <p>The display order of the agent status.</p>
+    ///   - [`reset_order_number(bool)`](crate::client::fluent_builders::UpdateAgentStatus::reset_order_number) / [`set_reset_order_number(bool)`](crate::client::fluent_builders::UpdateAgentStatus::set_reset_order_number): <p>A number indicating the reset order of the agent status.</p>
+    /// - On success, responds with [`UpdateAgentStatusOutput`](crate::output::UpdateAgentStatusOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateAgentStatusError>`](crate::error::UpdateAgentStatusError)
     pub fn update_agent_status(&self) -> fluent_builders::UpdateAgentStatus<C, M, R> {
         fluent_builders::UpdateAgentStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateContact` operation.
+    /// Constructs a fluent builder for the [`UpdateContact`](crate::client::fluent_builders::UpdateContact) operation.
     ///
-    /// See [`UpdateContact`](crate::client::fluent_builders::UpdateContact) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContact::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContact::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContact::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::UpdateContact::set_contact_id): <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with your contact center.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContact::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContact::set_name): <p>The name of the contact.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContact::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContact::set_description): <p>The description of the contact.</p>
+    ///   - [`references(HashMap<String, Reference>)`](crate::client::fluent_builders::UpdateContact::references) / [`set_references(Option<HashMap<String, Reference>>)`](crate::client::fluent_builders::UpdateContact::set_references): <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
+    /// - On success, responds with [`UpdateContactOutput`](crate::output::UpdateContactOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateContactError>`](crate::error::UpdateContactError)
     pub fn update_contact(&self) -> fluent_builders::UpdateContact<C, M, R> {
         fluent_builders::UpdateContact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateContactAttributes` operation.
+    /// Constructs a fluent builder for the [`UpdateContactAttributes`](crate::client::fluent_builders::UpdateContactAttributes) operation.
     ///
-    /// See [`UpdateContactAttributes`](crate::client::fluent_builders::UpdateContactAttributes) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`initial_contact_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactAttributes::initial_contact_id) / [`set_initial_contact_id(Option<String>)`](crate::client::fluent_builders::UpdateContactAttributes::set_initial_contact_id): <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactAttributes::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactAttributes::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::UpdateContactAttributes::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateContactAttributes::set_attributes): <p>The Amazon Connect attributes. These attributes can be accessed in contact flows just like any other contact attributes.</p>  <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    /// - On success, responds with [`UpdateContactAttributesOutput`](crate::output::UpdateContactAttributesOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateContactAttributesError>`](crate::error::UpdateContactAttributesError)
     pub fn update_contact_attributes(&self) -> fluent_builders::UpdateContactAttributes<C, M, R> {
         fluent_builders::UpdateContactAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateContactFlowContent` operation.
+    /// Constructs a fluent builder for the [`UpdateContactFlowContent`](crate::client::fluent_builders::UpdateContactFlowContent) operation.
     ///
-    /// See [`UpdateContactFlowContent`](crate::client::fluent_builders::UpdateContactFlowContent) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::set_instance_id): <p>The identifier of the Amazon Connect instance.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::set_contact_flow_id): <p>The identifier of the contact flow.</p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowContent::set_content): <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
+    /// - On success, responds with [`UpdateContactFlowContentOutput`](crate::output::UpdateContactFlowContentOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateContactFlowContentError>`](crate::error::UpdateContactFlowContentError)
     pub fn update_contact_flow_content(
         &self,
     ) -> fluent_builders::UpdateContactFlowContent<C, M, R> {
         fluent_builders::UpdateContactFlowContent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateContactFlowMetadata` operation.
+    /// Constructs a fluent builder for the [`UpdateContactFlowMetadata`](crate::client::fluent_builders::UpdateContactFlowMetadata) operation.
     ///
-    /// See [`UpdateContactFlowMetadata`](crate::client::fluent_builders::UpdateContactFlowMetadata) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_contact_flow_id): <p>The identifier of the contact flow.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_name): <p>TThe name of the contact flow.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_description): <p>The description of the contact flow.</p>
+    ///   - [`contact_flow_state(ContactFlowState)`](crate::client::fluent_builders::UpdateContactFlowMetadata::contact_flow_state) / [`set_contact_flow_state(Option<ContactFlowState>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_contact_flow_state): <p>The state of contact flow.</p>
+    /// - On success, responds with [`UpdateContactFlowMetadataOutput`](crate::output::UpdateContactFlowMetadataOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateContactFlowMetadataError>`](crate::error::UpdateContactFlowMetadataError)
     pub fn update_contact_flow_metadata(
         &self,
     ) -> fluent_builders::UpdateContactFlowMetadata<C, M, R> {
         fluent_builders::UpdateContactFlowMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateContactFlowModuleContent` operation.
+    /// Constructs a fluent builder for the [`UpdateContactFlowModuleContent`](crate::client::fluent_builders::UpdateContactFlowModuleContent) operation.
     ///
-    /// See [`UpdateContactFlowModuleContent`](crate::client::fluent_builders::UpdateContactFlowModuleContent) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_flow_module_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::contact_flow_module_id) / [`set_contact_flow_module_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::set_contact_flow_module_id): <p>The identifier of the contact flow module.</p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleContent::set_content): <p>The content of the contact flow module.</p>
+    /// - On success, responds with [`UpdateContactFlowModuleContentOutput`](crate::output::UpdateContactFlowModuleContentOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateContactFlowModuleContentError>`](crate::error::UpdateContactFlowModuleContentError)
     pub fn update_contact_flow_module_content(
         &self,
     ) -> fluent_builders::UpdateContactFlowModuleContent<C, M, R> {
         fluent_builders::UpdateContactFlowModuleContent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateContactFlowModuleMetadata` operation.
+    /// Constructs a fluent builder for the [`UpdateContactFlowModuleMetadata`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata) operation.
     ///
-    /// See [`UpdateContactFlowModuleMetadata`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_flow_module_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::contact_flow_module_id) / [`set_contact_flow_module_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::set_contact_flow_module_id): <p>The identifier of the contact flow module.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::set_name): <p>The name of the contact flow module.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::set_description): <p>The description of the contact flow module.</p>
+    ///   - [`state(ContactFlowModuleState)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::state) / [`set_state(Option<ContactFlowModuleState>)`](crate::client::fluent_builders::UpdateContactFlowModuleMetadata::set_state): <p>The state of contact flow module.</p>
+    /// - On success, responds with [`UpdateContactFlowModuleMetadataOutput`](crate::output::UpdateContactFlowModuleMetadataOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateContactFlowModuleMetadataError>`](crate::error::UpdateContactFlowModuleMetadataError)
     pub fn update_contact_flow_module_metadata(
         &self,
     ) -> fluent_builders::UpdateContactFlowModuleMetadata<C, M, R> {
         fluent_builders::UpdateContactFlowModuleMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateContactFlowName` operation.
+    /// Constructs a fluent builder for the [`UpdateContactFlowName`](crate::client::fluent_builders::UpdateContactFlowName) operation.
     ///
-    /// See [`UpdateContactFlowName`](crate::client::fluent_builders::UpdateContactFlowName) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowName::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowName::set_instance_id): <p>The identifier of the Amazon Connect instance.</p>
+    ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowName::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowName::set_contact_flow_id): <p>The identifier of the contact flow.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowName::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowName::set_name): <p>The name of the contact flow.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowName::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowName::set_description): <p>The description of the contact flow.</p>
+    /// - On success, responds with [`UpdateContactFlowNameOutput`](crate::output::UpdateContactFlowNameOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateContactFlowNameError>`](crate::error::UpdateContactFlowNameError)
     pub fn update_contact_flow_name(&self) -> fluent_builders::UpdateContactFlowName<C, M, R> {
         fluent_builders::UpdateContactFlowName::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateContactSchedule` operation.
+    /// Constructs a fluent builder for the [`UpdateContactSchedule`](crate::client::fluent_builders::UpdateContactSchedule) operation.
     ///
-    /// See [`UpdateContactSchedule`](crate::client::fluent_builders::UpdateContactSchedule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactSchedule::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactSchedule::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`contact_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactSchedule::contact_id) / [`set_contact_id(Option<String>)`](crate::client::fluent_builders::UpdateContactSchedule::set_contact_id): <p>The identifier of the contact.</p>
+    ///   - [`scheduled_time(DateTime)`](crate::client::fluent_builders::UpdateContactSchedule::scheduled_time) / [`set_scheduled_time(Option<DateTime>)`](crate::client::fluent_builders::UpdateContactSchedule::set_scheduled_time): <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    /// - On success, responds with [`UpdateContactScheduleOutput`](crate::output::UpdateContactScheduleOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateContactScheduleError>`](crate::error::UpdateContactScheduleError)
     pub fn update_contact_schedule(&self) -> fluent_builders::UpdateContactSchedule<C, M, R> {
         fluent_builders::UpdateContactSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateHoursOfOperation` operation.
+    /// Constructs a fluent builder for the [`UpdateHoursOfOperation`](crate::client::fluent_builders::UpdateHoursOfOperation) operation.
     ///
-    /// See [`UpdateHoursOfOperation`](crate::client::fluent_builders::UpdateHoursOfOperation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateHoursOfOperation::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateHoursOfOperation::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`hours_of_operation_id(impl Into<String>)`](crate::client::fluent_builders::UpdateHoursOfOperation::hours_of_operation_id) / [`set_hours_of_operation_id(Option<String>)`](crate::client::fluent_builders::UpdateHoursOfOperation::set_hours_of_operation_id): <p>The identifier of the hours of operation.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateHoursOfOperation::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateHoursOfOperation::set_name): <p>The name of the hours of operation.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateHoursOfOperation::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateHoursOfOperation::set_description): <p>The description of the hours of operation.</p>
+    ///   - [`time_zone(impl Into<String>)`](crate::client::fluent_builders::UpdateHoursOfOperation::time_zone) / [`set_time_zone(Option<String>)`](crate::client::fluent_builders::UpdateHoursOfOperation::set_time_zone): <p>The time zone of the hours of operation.</p>
+    ///   - [`config(Vec<HoursOfOperationConfig>)`](crate::client::fluent_builders::UpdateHoursOfOperation::config) / [`set_config(Option<Vec<HoursOfOperationConfig>>)`](crate::client::fluent_builders::UpdateHoursOfOperation::set_config): <p>Configuration information of the hours of operation.</p>
+    /// - On success, responds with [`UpdateHoursOfOperationOutput`](crate::output::UpdateHoursOfOperationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateHoursOfOperationError>`](crate::error::UpdateHoursOfOperationError)
     pub fn update_hours_of_operation(&self) -> fluent_builders::UpdateHoursOfOperation<C, M, R> {
         fluent_builders::UpdateHoursOfOperation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateInstanceAttribute` operation.
+    /// Constructs a fluent builder for the [`UpdateInstanceAttribute`](crate::client::fluent_builders::UpdateInstanceAttribute) operation.
     ///
-    /// See [`UpdateInstanceAttribute`](crate::client::fluent_builders::UpdateInstanceAttribute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateInstanceAttribute::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateInstanceAttribute::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`attribute_type(InstanceAttributeType)`](crate::client::fluent_builders::UpdateInstanceAttribute::attribute_type) / [`set_attribute_type(Option<InstanceAttributeType>)`](crate::client::fluent_builders::UpdateInstanceAttribute::set_attribute_type): <p>The type of attribute.</p> <note>   <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact AWS Support for allowlisting.</p>  </note>
+    ///   - [`value(impl Into<String>)`](crate::client::fluent_builders::UpdateInstanceAttribute::value) / [`set_value(Option<String>)`](crate::client::fluent_builders::UpdateInstanceAttribute::set_value): <p>The value for the attribute. Maximum character limit is 100. </p>
+    /// - On success, responds with [`UpdateInstanceAttributeOutput`](crate::output::UpdateInstanceAttributeOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateInstanceAttributeError>`](crate::error::UpdateInstanceAttributeError)
     pub fn update_instance_attribute(&self) -> fluent_builders::UpdateInstanceAttribute<C, M, R> {
         fluent_builders::UpdateInstanceAttribute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateInstanceStorageConfig` operation.
+    /// Constructs a fluent builder for the [`UpdateInstanceStorageConfig`](crate::client::fluent_builders::UpdateInstanceStorageConfig) operation.
     ///
-    /// See [`UpdateInstanceStorageConfig`](crate::client::fluent_builders::UpdateInstanceStorageConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateInstanceStorageConfig::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateInstanceStorageConfig::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`association_id(impl Into<String>)`](crate::client::fluent_builders::UpdateInstanceStorageConfig::association_id) / [`set_association_id(Option<String>)`](crate::client::fluent_builders::UpdateInstanceStorageConfig::set_association_id): <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
+    ///   - [`resource_type(InstanceStorageResourceType)`](crate::client::fluent_builders::UpdateInstanceStorageConfig::resource_type) / [`set_resource_type(Option<InstanceStorageResourceType>)`](crate::client::fluent_builders::UpdateInstanceStorageConfig::set_resource_type): <p>A valid resource type.</p>
+    ///   - [`storage_config(InstanceStorageConfig)`](crate::client::fluent_builders::UpdateInstanceStorageConfig::storage_config) / [`set_storage_config(Option<InstanceStorageConfig>)`](crate::client::fluent_builders::UpdateInstanceStorageConfig::set_storage_config): <p>The storage configuration for the instance.</p>
+    /// - On success, responds with [`UpdateInstanceStorageConfigOutput`](crate::output::UpdateInstanceStorageConfigOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateInstanceStorageConfigError>`](crate::error::UpdateInstanceStorageConfigError)
     pub fn update_instance_storage_config(
         &self,
     ) -> fluent_builders::UpdateInstanceStorageConfig<C, M, R> {
         fluent_builders::UpdateInstanceStorageConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateQueueHoursOfOperation` operation.
+    /// Constructs a fluent builder for the [`UpdateQueueHoursOfOperation`](crate::client::fluent_builders::UpdateQueueHoursOfOperation) operation.
     ///
-    /// See [`UpdateQueueHoursOfOperation`](crate::client::fluent_builders::UpdateQueueHoursOfOperation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQueueHoursOfOperation::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateQueueHoursOfOperation::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQueueHoursOfOperation::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::UpdateQueueHoursOfOperation::set_queue_id): <p>The identifier for the queue.</p>
+    ///   - [`hours_of_operation_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQueueHoursOfOperation::hours_of_operation_id) / [`set_hours_of_operation_id(Option<String>)`](crate::client::fluent_builders::UpdateQueueHoursOfOperation::set_hours_of_operation_id): <p>The identifier for the hours of operation.</p>
+    /// - On success, responds with [`UpdateQueueHoursOfOperationOutput`](crate::output::UpdateQueueHoursOfOperationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateQueueHoursOfOperationError>`](crate::error::UpdateQueueHoursOfOperationError)
     pub fn update_queue_hours_of_operation(
         &self,
     ) -> fluent_builders::UpdateQueueHoursOfOperation<C, M, R> {
         fluent_builders::UpdateQueueHoursOfOperation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateQueueMaxContacts` operation.
+    /// Constructs a fluent builder for the [`UpdateQueueMaxContacts`](crate::client::fluent_builders::UpdateQueueMaxContacts) operation.
     ///
-    /// See [`UpdateQueueMaxContacts`](crate::client::fluent_builders::UpdateQueueMaxContacts) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQueueMaxContacts::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateQueueMaxContacts::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQueueMaxContacts::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::UpdateQueueMaxContacts::set_queue_id): <p>The identifier for the queue.</p>
+    ///   - [`max_contacts(i32)`](crate::client::fluent_builders::UpdateQueueMaxContacts::max_contacts) / [`set_max_contacts(Option<i32>)`](crate::client::fluent_builders::UpdateQueueMaxContacts::set_max_contacts): <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+    /// - On success, responds with [`UpdateQueueMaxContactsOutput`](crate::output::UpdateQueueMaxContactsOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateQueueMaxContactsError>`](crate::error::UpdateQueueMaxContactsError)
     pub fn update_queue_max_contacts(&self) -> fluent_builders::UpdateQueueMaxContacts<C, M, R> {
         fluent_builders::UpdateQueueMaxContacts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateQueueName` operation.
+    /// Constructs a fluent builder for the [`UpdateQueueName`](crate::client::fluent_builders::UpdateQueueName) operation.
     ///
-    /// See [`UpdateQueueName`](crate::client::fluent_builders::UpdateQueueName) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQueueName::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateQueueName::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQueueName::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::UpdateQueueName::set_queue_id): <p>The identifier for the queue.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateQueueName::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateQueueName::set_name): <p>The name of the queue.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateQueueName::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateQueueName::set_description): <p>The description of the queue.</p>
+    /// - On success, responds with [`UpdateQueueNameOutput`](crate::output::UpdateQueueNameOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateQueueNameError>`](crate::error::UpdateQueueNameError)
     pub fn update_queue_name(&self) -> fluent_builders::UpdateQueueName<C, M, R> {
         fluent_builders::UpdateQueueName::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateQueueOutboundCallerConfig` operation.
+    /// Constructs a fluent builder for the [`UpdateQueueOutboundCallerConfig`](crate::client::fluent_builders::UpdateQueueOutboundCallerConfig) operation.
     ///
-    /// See [`UpdateQueueOutboundCallerConfig`](crate::client::fluent_builders::UpdateQueueOutboundCallerConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQueueOutboundCallerConfig::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateQueueOutboundCallerConfig::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQueueOutboundCallerConfig::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::UpdateQueueOutboundCallerConfig::set_queue_id): <p>The identifier for the queue.</p>
+    ///   - [`outbound_caller_config(OutboundCallerConfig)`](crate::client::fluent_builders::UpdateQueueOutboundCallerConfig::outbound_caller_config) / [`set_outbound_caller_config(Option<OutboundCallerConfig>)`](crate::client::fluent_builders::UpdateQueueOutboundCallerConfig::set_outbound_caller_config): <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+    /// - On success, responds with [`UpdateQueueOutboundCallerConfigOutput`](crate::output::UpdateQueueOutboundCallerConfigOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateQueueOutboundCallerConfigError>`](crate::error::UpdateQueueOutboundCallerConfigError)
     pub fn update_queue_outbound_caller_config(
         &self,
     ) -> fluent_builders::UpdateQueueOutboundCallerConfig<C, M, R> {
         fluent_builders::UpdateQueueOutboundCallerConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateQueueStatus` operation.
+    /// Constructs a fluent builder for the [`UpdateQueueStatus`](crate::client::fluent_builders::UpdateQueueStatus) operation.
     ///
-    /// See [`UpdateQueueStatus`](crate::client::fluent_builders::UpdateQueueStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQueueStatus::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateQueueStatus::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`queue_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQueueStatus::queue_id) / [`set_queue_id(Option<String>)`](crate::client::fluent_builders::UpdateQueueStatus::set_queue_id): <p>The identifier for the queue.</p>
+    ///   - [`status(QueueStatus)`](crate::client::fluent_builders::UpdateQueueStatus::status) / [`set_status(Option<QueueStatus>)`](crate::client::fluent_builders::UpdateQueueStatus::set_status): <p>The status of the queue.</p>
+    /// - On success, responds with [`UpdateQueueStatusOutput`](crate::output::UpdateQueueStatusOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateQueueStatusError>`](crate::error::UpdateQueueStatusError)
     pub fn update_queue_status(&self) -> fluent_builders::UpdateQueueStatus<C, M, R> {
         fluent_builders::UpdateQueueStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateQuickConnectConfig` operation.
+    /// Constructs a fluent builder for the [`UpdateQuickConnectConfig`](crate::client::fluent_builders::UpdateQuickConnectConfig) operation.
     ///
-    /// See [`UpdateQuickConnectConfig`](crate::client::fluent_builders::UpdateQuickConnectConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQuickConnectConfig::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateQuickConnectConfig::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`quick_connect_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQuickConnectConfig::quick_connect_id) / [`set_quick_connect_id(Option<String>)`](crate::client::fluent_builders::UpdateQuickConnectConfig::set_quick_connect_id): <p>The identifier for the quick connect.</p>
+    ///   - [`quick_connect_config(QuickConnectConfig)`](crate::client::fluent_builders::UpdateQuickConnectConfig::quick_connect_config) / [`set_quick_connect_config(Option<QuickConnectConfig>)`](crate::client::fluent_builders::UpdateQuickConnectConfig::set_quick_connect_config): <p>Information about the configuration settings for the quick connect.</p>
+    /// - On success, responds with [`UpdateQuickConnectConfigOutput`](crate::output::UpdateQuickConnectConfigOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateQuickConnectConfigError>`](crate::error::UpdateQuickConnectConfigError)
     pub fn update_quick_connect_config(
         &self,
     ) -> fluent_builders::UpdateQuickConnectConfig<C, M, R> {
         fluent_builders::UpdateQuickConnectConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateQuickConnectName` operation.
+    /// Constructs a fluent builder for the [`UpdateQuickConnectName`](crate::client::fluent_builders::UpdateQuickConnectName) operation.
     ///
-    /// See [`UpdateQuickConnectName`](crate::client::fluent_builders::UpdateQuickConnectName) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQuickConnectName::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateQuickConnectName::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`quick_connect_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQuickConnectName::quick_connect_id) / [`set_quick_connect_id(Option<String>)`](crate::client::fluent_builders::UpdateQuickConnectName::set_quick_connect_id): <p>The identifier for the quick connect.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateQuickConnectName::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateQuickConnectName::set_name): <p>The name of the quick connect.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateQuickConnectName::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateQuickConnectName::set_description): <p>The description of the quick connect.</p>
+    /// - On success, responds with [`UpdateQuickConnectNameOutput`](crate::output::UpdateQuickConnectNameOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateQuickConnectNameError>`](crate::error::UpdateQuickConnectNameError)
     pub fn update_quick_connect_name(&self) -> fluent_builders::UpdateQuickConnectName<C, M, R> {
         fluent_builders::UpdateQuickConnectName::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRoutingProfileConcurrency` operation.
+    /// Constructs a fluent builder for the [`UpdateRoutingProfileConcurrency`](crate::client::fluent_builders::UpdateRoutingProfileConcurrency) operation.
     ///
-    /// See [`UpdateRoutingProfileConcurrency`](crate::client::fluent_builders::UpdateRoutingProfileConcurrency) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingProfileConcurrency::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateRoutingProfileConcurrency::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`routing_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingProfileConcurrency::routing_profile_id) / [`set_routing_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateRoutingProfileConcurrency::set_routing_profile_id): <p>The identifier of the routing profile.</p>
+    ///   - [`media_concurrencies(Vec<MediaConcurrency>)`](crate::client::fluent_builders::UpdateRoutingProfileConcurrency::media_concurrencies) / [`set_media_concurrencies(Option<Vec<MediaConcurrency>>)`](crate::client::fluent_builders::UpdateRoutingProfileConcurrency::set_media_concurrencies): <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
+    /// - On success, responds with [`UpdateRoutingProfileConcurrencyOutput`](crate::output::UpdateRoutingProfileConcurrencyOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRoutingProfileConcurrencyError>`](crate::error::UpdateRoutingProfileConcurrencyError)
     pub fn update_routing_profile_concurrency(
         &self,
     ) -> fluent_builders::UpdateRoutingProfileConcurrency<C, M, R> {
         fluent_builders::UpdateRoutingProfileConcurrency::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRoutingProfileDefaultOutboundQueue` operation.
+    /// Constructs a fluent builder for the [`UpdateRoutingProfileDefaultOutboundQueue`](crate::client::fluent_builders::UpdateRoutingProfileDefaultOutboundQueue) operation.
     ///
-    /// See [`UpdateRoutingProfileDefaultOutboundQueue`](crate::client::fluent_builders::UpdateRoutingProfileDefaultOutboundQueue) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingProfileDefaultOutboundQueue::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateRoutingProfileDefaultOutboundQueue::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`routing_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingProfileDefaultOutboundQueue::routing_profile_id) / [`set_routing_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateRoutingProfileDefaultOutboundQueue::set_routing_profile_id): <p>The identifier of the routing profile.</p>
+    ///   - [`default_outbound_queue_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingProfileDefaultOutboundQueue::default_outbound_queue_id) / [`set_default_outbound_queue_id(Option<String>)`](crate::client::fluent_builders::UpdateRoutingProfileDefaultOutboundQueue::set_default_outbound_queue_id): <p>The identifier for the default outbound queue.</p>
+    /// - On success, responds with [`UpdateRoutingProfileDefaultOutboundQueueOutput`](crate::output::UpdateRoutingProfileDefaultOutboundQueueOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRoutingProfileDefaultOutboundQueueError>`](crate::error::UpdateRoutingProfileDefaultOutboundQueueError)
     pub fn update_routing_profile_default_outbound_queue(
         &self,
     ) -> fluent_builders::UpdateRoutingProfileDefaultOutboundQueue<C, M, R> {
         fluent_builders::UpdateRoutingProfileDefaultOutboundQueue::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRoutingProfileName` operation.
+    /// Constructs a fluent builder for the [`UpdateRoutingProfileName`](crate::client::fluent_builders::UpdateRoutingProfileName) operation.
     ///
-    /// See [`UpdateRoutingProfileName`](crate::client::fluent_builders::UpdateRoutingProfileName) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingProfileName::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateRoutingProfileName::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`routing_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingProfileName::routing_profile_id) / [`set_routing_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateRoutingProfileName::set_routing_profile_id): <p>The identifier of the routing profile.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingProfileName::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateRoutingProfileName::set_name): <p>The name of the routing profile. Must not be more than 127 characters.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingProfileName::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRoutingProfileName::set_description): <p>The description of the routing profile. Must not be more than 250 characters.</p>
+    /// - On success, responds with [`UpdateRoutingProfileNameOutput`](crate::output::UpdateRoutingProfileNameOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRoutingProfileNameError>`](crate::error::UpdateRoutingProfileNameError)
     pub fn update_routing_profile_name(
         &self,
     ) -> fluent_builders::UpdateRoutingProfileName<C, M, R> {
         fluent_builders::UpdateRoutingProfileName::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRoutingProfileQueues` operation.
+    /// Constructs a fluent builder for the [`UpdateRoutingProfileQueues`](crate::client::fluent_builders::UpdateRoutingProfileQueues) operation.
     ///
-    /// See [`UpdateRoutingProfileQueues`](crate::client::fluent_builders::UpdateRoutingProfileQueues) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingProfileQueues::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateRoutingProfileQueues::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`routing_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingProfileQueues::routing_profile_id) / [`set_routing_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateRoutingProfileQueues::set_routing_profile_id): <p>The identifier of the routing profile.</p>
+    ///   - [`queue_configs(Vec<RoutingProfileQueueConfig>)`](crate::client::fluent_builders::UpdateRoutingProfileQueues::queue_configs) / [`set_queue_configs(Option<Vec<RoutingProfileQueueConfig>>)`](crate::client::fluent_builders::UpdateRoutingProfileQueues::set_queue_configs): <p>The queues to be updated for this routing profile. Queues must first be associated to the routing profile. You can do this using AssociateRoutingProfileQueues.</p>
+    /// - On success, responds with [`UpdateRoutingProfileQueuesOutput`](crate::output::UpdateRoutingProfileQueuesOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRoutingProfileQueuesError>`](crate::error::UpdateRoutingProfileQueuesError)
     pub fn update_routing_profile_queues(
         &self,
     ) -> fluent_builders::UpdateRoutingProfileQueues<C, M, R> {
         fluent_builders::UpdateRoutingProfileQueues::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSecurityProfile` operation.
+    /// Constructs a fluent builder for the [`UpdateSecurityProfile`](crate::client::fluent_builders::UpdateSecurityProfile) operation.
     ///
-    /// See [`UpdateSecurityProfile`](crate::client::fluent_builders::UpdateSecurityProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_description): <p>The description of the security profile.</p>
+    ///   - [`permissions(Vec<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::permissions) / [`set_permissions(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_permissions): <p>The permissions granted to a security profile.</p>
+    ///   - [`security_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::security_profile_id) / [`set_security_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_security_profile_id): <p>The identifier for the security profle.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateSecurityProfile::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`UpdateSecurityProfileOutput`](crate::output::UpdateSecurityProfileOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateSecurityProfileError>`](crate::error::UpdateSecurityProfileError)
     pub fn update_security_profile(&self) -> fluent_builders::UpdateSecurityProfile<C, M, R> {
         fluent_builders::UpdateSecurityProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserHierarchy` operation.
+    /// Constructs a fluent builder for the [`UpdateUserHierarchy`](crate::client::fluent_builders::UpdateUserHierarchy) operation.
     ///
-    /// See [`UpdateUserHierarchy`](crate::client::fluent_builders::UpdateUserHierarchy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hierarchy_group_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserHierarchy::hierarchy_group_id) / [`set_hierarchy_group_id(Option<String>)`](crate::client::fluent_builders::UpdateUserHierarchy::set_hierarchy_group_id): <p>The identifier of the hierarchy group.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserHierarchy::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::UpdateUserHierarchy::set_user_id): <p>The identifier of the user account.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserHierarchy::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateUserHierarchy::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`UpdateUserHierarchyOutput`](crate::output::UpdateUserHierarchyOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateUserHierarchyError>`](crate::error::UpdateUserHierarchyError)
     pub fn update_user_hierarchy(&self) -> fluent_builders::UpdateUserHierarchy<C, M, R> {
         fluent_builders::UpdateUserHierarchy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserHierarchyGroupName` operation.
+    /// Constructs a fluent builder for the [`UpdateUserHierarchyGroupName`](crate::client::fluent_builders::UpdateUserHierarchyGroupName) operation.
     ///
-    /// See [`UpdateUserHierarchyGroupName`](crate::client::fluent_builders::UpdateUserHierarchyGroupName) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateUserHierarchyGroupName::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateUserHierarchyGroupName::set_name): <p>The name of the hierarchy group. Must not be more than 100 characters.</p>
+    ///   - [`hierarchy_group_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserHierarchyGroupName::hierarchy_group_id) / [`set_hierarchy_group_id(Option<String>)`](crate::client::fluent_builders::UpdateUserHierarchyGroupName::set_hierarchy_group_id): <p>The identifier of the hierarchy group.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserHierarchyGroupName::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateUserHierarchyGroupName::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`UpdateUserHierarchyGroupNameOutput`](crate::output::UpdateUserHierarchyGroupNameOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateUserHierarchyGroupNameError>`](crate::error::UpdateUserHierarchyGroupNameError)
     pub fn update_user_hierarchy_group_name(
         &self,
     ) -> fluent_builders::UpdateUserHierarchyGroupName<C, M, R> {
         fluent_builders::UpdateUserHierarchyGroupName::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserHierarchyStructure` operation.
+    /// Constructs a fluent builder for the [`UpdateUserHierarchyStructure`](crate::client::fluent_builders::UpdateUserHierarchyStructure) operation.
     ///
-    /// See [`UpdateUserHierarchyStructure`](crate::client::fluent_builders::UpdateUserHierarchyStructure) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hierarchy_structure(HierarchyStructureUpdate)`](crate::client::fluent_builders::UpdateUserHierarchyStructure::hierarchy_structure) / [`set_hierarchy_structure(Option<HierarchyStructureUpdate>)`](crate::client::fluent_builders::UpdateUserHierarchyStructure::set_hierarchy_structure): <p>The hierarchy levels to update.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserHierarchyStructure::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateUserHierarchyStructure::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`UpdateUserHierarchyStructureOutput`](crate::output::UpdateUserHierarchyStructureOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateUserHierarchyStructureError>`](crate::error::UpdateUserHierarchyStructureError)
     pub fn update_user_hierarchy_structure(
         &self,
     ) -> fluent_builders::UpdateUserHierarchyStructure<C, M, R> {
         fluent_builders::UpdateUserHierarchyStructure::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserIdentityInfo` operation.
+    /// Constructs a fluent builder for the [`UpdateUserIdentityInfo`](crate::client::fluent_builders::UpdateUserIdentityInfo) operation.
     ///
-    /// See [`UpdateUserIdentityInfo`](crate::client::fluent_builders::UpdateUserIdentityInfo) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`identity_info(UserIdentityInfo)`](crate::client::fluent_builders::UpdateUserIdentityInfo::identity_info) / [`set_identity_info(Option<UserIdentityInfo>)`](crate::client::fluent_builders::UpdateUserIdentityInfo::set_identity_info): <p>The identity information for the user.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserIdentityInfo::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::UpdateUserIdentityInfo::set_user_id): <p>The identifier of the user account.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserIdentityInfo::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateUserIdentityInfo::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`UpdateUserIdentityInfoOutput`](crate::output::UpdateUserIdentityInfoOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateUserIdentityInfoError>`](crate::error::UpdateUserIdentityInfoError)
     pub fn update_user_identity_info(&self) -> fluent_builders::UpdateUserIdentityInfo<C, M, R> {
         fluent_builders::UpdateUserIdentityInfo::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserPhoneConfig` operation.
+    /// Constructs a fluent builder for the [`UpdateUserPhoneConfig`](crate::client::fluent_builders::UpdateUserPhoneConfig) operation.
     ///
-    /// See [`UpdateUserPhoneConfig`](crate::client::fluent_builders::UpdateUserPhoneConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`phone_config(UserPhoneConfig)`](crate::client::fluent_builders::UpdateUserPhoneConfig::phone_config) / [`set_phone_config(Option<UserPhoneConfig>)`](crate::client::fluent_builders::UpdateUserPhoneConfig::set_phone_config): <p>Information about phone configuration settings for the user.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPhoneConfig::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::UpdateUserPhoneConfig::set_user_id): <p>The identifier of the user account.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPhoneConfig::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateUserPhoneConfig::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`UpdateUserPhoneConfigOutput`](crate::output::UpdateUserPhoneConfigOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateUserPhoneConfigError>`](crate::error::UpdateUserPhoneConfigError)
     pub fn update_user_phone_config(&self) -> fluent_builders::UpdateUserPhoneConfig<C, M, R> {
         fluent_builders::UpdateUserPhoneConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserRoutingProfile` operation.
+    /// Constructs a fluent builder for the [`UpdateUserRoutingProfile`](crate::client::fluent_builders::UpdateUserRoutingProfile) operation.
     ///
-    /// See [`UpdateUserRoutingProfile`](crate::client::fluent_builders::UpdateUserRoutingProfile) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`routing_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserRoutingProfile::routing_profile_id) / [`set_routing_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateUserRoutingProfile::set_routing_profile_id): <p>The identifier of the routing profile for the user.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserRoutingProfile::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::UpdateUserRoutingProfile::set_user_id): <p>The identifier of the user account.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserRoutingProfile::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateUserRoutingProfile::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`UpdateUserRoutingProfileOutput`](crate::output::UpdateUserRoutingProfileOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateUserRoutingProfileError>`](crate::error::UpdateUserRoutingProfileError)
     pub fn update_user_routing_profile(
         &self,
     ) -> fluent_builders::UpdateUserRoutingProfile<C, M, R> {
         fluent_builders::UpdateUserRoutingProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserSecurityProfiles` operation.
+    /// Constructs a fluent builder for the [`UpdateUserSecurityProfiles`](crate::client::fluent_builders::UpdateUserSecurityProfiles) operation.
     ///
-    /// See [`UpdateUserSecurityProfiles`](crate::client::fluent_builders::UpdateUserSecurityProfiles) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`security_profile_ids(Vec<String>)`](crate::client::fluent_builders::UpdateUserSecurityProfiles::security_profile_ids) / [`set_security_profile_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserSecurityProfiles::set_security_profile_ids): <p>The identifiers of the security profiles for the user.</p>
+    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserSecurityProfiles::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::UpdateUserSecurityProfiles::set_user_id): <p>The identifier of the user account.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserSecurityProfiles::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateUserSecurityProfiles::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    /// - On success, responds with [`UpdateUserSecurityProfilesOutput`](crate::output::UpdateUserSecurityProfilesOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateUserSecurityProfilesError>`](crate::error::UpdateUserSecurityProfilesError)
     pub fn update_user_security_profiles(
         &self,
     ) -> fluent_builders::UpdateUserSecurityProfiles<C, M, R> {

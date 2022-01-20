@@ -83,441 +83,755 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptInvitation` operation.
+    /// Constructs a fluent builder for the [`AcceptInvitation`](crate::client::fluent_builders::AcceptInvitation) operation.
     ///
-    /// See [`AcceptInvitation`](crate::client::fluent_builders::AcceptInvitation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::AcceptInvitation::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::AcceptInvitation::set_detector_id): <p>The unique ID of the detector of the GuardDuty member account.</p>
+    ///   - [`master_id(impl Into<String>)`](crate::client::fluent_builders::AcceptInvitation::master_id) / [`set_master_id(Option<String>)`](crate::client::fluent_builders::AcceptInvitation::set_master_id): <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
+    ///   - [`invitation_id(impl Into<String>)`](crate::client::fluent_builders::AcceptInvitation::invitation_id) / [`set_invitation_id(Option<String>)`](crate::client::fluent_builders::AcceptInvitation::set_invitation_id): <p>The value that is used to validate the administrator account to the member account.</p>
+    /// - On success, responds with [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput)
+
+    /// - On failure, responds with [`SdkError<AcceptInvitationError>`](crate::error::AcceptInvitationError)
     pub fn accept_invitation(&self) -> fluent_builders::AcceptInvitation<C, M, R> {
         fluent_builders::AcceptInvitation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ArchiveFindings` operation.
+    /// Constructs a fluent builder for the [`ArchiveFindings`](crate::client::fluent_builders::ArchiveFindings) operation.
     ///
-    /// See [`ArchiveFindings`](crate::client::fluent_builders::ArchiveFindings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::ArchiveFindings::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::ArchiveFindings::set_detector_id): <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
+    ///   - [`finding_ids(Vec<String>)`](crate::client::fluent_builders::ArchiveFindings::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ArchiveFindings::set_finding_ids): <p>The IDs of the findings that you want to archive.</p>
+    /// - On success, responds with [`ArchiveFindingsOutput`](crate::output::ArchiveFindingsOutput)
+
+    /// - On failure, responds with [`SdkError<ArchiveFindingsError>`](crate::error::ArchiveFindingsError)
     pub fn archive_findings(&self) -> fluent_builders::ArchiveFindings<C, M, R> {
         fluent_builders::ArchiveFindings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDetector` operation.
+    /// Constructs a fluent builder for the [`CreateDetector`](crate::client::fluent_builders::CreateDetector) operation.
     ///
-    /// See [`CreateDetector`](crate::client::fluent_builders::CreateDetector) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`enable(bool)`](crate::client::fluent_builders::CreateDetector::enable) / [`set_enable(bool)`](crate::client::fluent_builders::CreateDetector::set_enable): <p>A Boolean value that specifies whether the detector is to be enabled.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDetector::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDetector::set_client_token): <p>The idempotency token for the create request.</p>
+    ///   - [`finding_publishing_frequency(FindingPublishingFrequency)`](crate::client::fluent_builders::CreateDetector::finding_publishing_frequency) / [`set_finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::client::fluent_builders::CreateDetector::set_finding_publishing_frequency): <p>A value that specifies how frequently updated findings are exported.</p>
+    ///   - [`data_sources(DataSourceConfigurations)`](crate::client::fluent_builders::CreateDetector::data_sources) / [`set_data_sources(Option<DataSourceConfigurations>)`](crate::client::fluent_builders::CreateDetector::set_data_sources): <p>Describes which data sources will be enabled for the detector.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDetector::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDetector::set_tags): <p>The tags to be added to a new detector resource.</p>
+    /// - On success, responds with [`CreateDetectorOutput`](crate::output::CreateDetectorOutput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::output::CreateDetectorOutput::detector_id): <p>The unique ID of the created detector.</p>
+    /// - On failure, responds with [`SdkError<CreateDetectorError>`](crate::error::CreateDetectorError)
     pub fn create_detector(&self) -> fluent_builders::CreateDetector<C, M, R> {
         fluent_builders::CreateDetector::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFilter` operation.
+    /// Constructs a fluent builder for the [`CreateFilter`](crate::client::fluent_builders::CreateFilter) operation.
     ///
-    /// See [`CreateFilter`](crate::client::fluent_builders::CreateFilter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_detector_id): <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_name): <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_description): <p>The description of the filter.</p>
+    ///   - [`action(FilterAction)`](crate::client::fluent_builders::CreateFilter::action) / [`set_action(Option<FilterAction>)`](crate::client::fluent_builders::CreateFilter::set_action): <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    ///   - [`rank(i32)`](crate::client::fluent_builders::CreateFilter::rank) / [`set_rank(i32)`](crate::client::fluent_builders::CreateFilter::set_rank): <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
+    ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::CreateFilter::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::CreateFilter::set_finding_criteria): <p>Represents the criteria to be used in the filter for querying findings.</p>  <p>You can only use the following attributes to query findings:</p>  <ul>   <li> <p>accountId</p> </li>   <li> <p>region</p> </li>   <li> <p>confidence</p> </li>   <li> <p>id</p> </li>   <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>   <li> <p>resource.accessKeyDetails.principalId</p> </li>   <li> <p>resource.accessKeyDetails.userName</p> </li>   <li> <p>resource.accessKeyDetails.userType</p> </li>   <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>   <li> <p>resource.instanceDetails.imageId</p> </li>   <li> <p>resource.instanceDetails.instanceId</p> </li>   <li> <p>resource.instanceDetails.outpostArn</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>   <li> <p>resource.instanceDetails.tags.key</p> </li>   <li> <p>resource.instanceDetails.tags.value</p> </li>   <li> <p>resource.resourceType</p> </li>   <li> <p>service.action.actionType</p> </li>   <li> <p>service.action.awsApiCallAction.api</p> </li>   <li> <p>service.action.awsApiCallAction.callerType</p> </li>   <li> <p>service.action.awsApiCallAction.errorCode</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>   <li> <p>service.action.awsApiCallAction.serviceName</p> </li>   <li> <p>service.action.dnsRequestAction.domain</p> </li>   <li> <p>service.action.networkConnectionAction.blocked</p> </li>   <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>   <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>   <li> <p>service.action.networkConnectionAction.protocol</p> </li>   <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>   <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>   <li> <p>service.additionalInfo.threatListName</p> </li>   <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>   <li> <p>service.resourceRole</p> </li>   <li> <p>severity</p> </li>   <li> <p>type</p> </li>   <li> <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p> </li>  </ul>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_client_token): <p>The idempotency token for the create request.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateFilter::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateFilter::set_tags): <p>The tags to be added to a new filter resource.</p>
+    /// - On success, responds with [`CreateFilterOutput`](crate::output::CreateFilterOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateFilterOutput::name): <p>The name of the successfully created filter.</p>
+    /// - On failure, responds with [`SdkError<CreateFilterError>`](crate::error::CreateFilterError)
     pub fn create_filter(&self) -> fluent_builders::CreateFilter<C, M, R> {
         fluent_builders::CreateFilter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateIPSet` operation.
+    /// Constructs a fluent builder for the [`CreateIPSet`](crate::client::fluent_builders::CreateIPSet) operation.
     ///
-    /// See [`CreateIPSet`](crate::client::fluent_builders::CreateIPSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_detector_id): <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_name): <p>The user-friendly name to identify the IPSet.</p>  <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
+    ///   - [`format(IpSetFormat)`](crate::client::fluent_builders::CreateIPSet::format) / [`set_format(Option<IpSetFormat>)`](crate::client::fluent_builders::CreateIPSet::set_format): <p>The format of the file that contains the IPSet.</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_location): <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    ///   - [`activate(bool)`](crate::client::fluent_builders::CreateIPSet::activate) / [`set_activate(bool)`](crate::client::fluent_builders::CreateIPSet::set_activate): <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_client_token): <p>The idempotency token for the create request.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateIPSet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIPSet::set_tags): <p>The tags to be added to a new IP set resource.</p>
+    /// - On success, responds with [`CreateIpSetOutput`](crate::output::CreateIpSetOutput) with field(s):
+    ///   - [`ip_set_id(Option<String>)`](crate::output::CreateIpSetOutput::ip_set_id): <p>The ID of the IPSet resource.</p>
+    /// - On failure, responds with [`SdkError<CreateIPSetError>`](crate::error::CreateIPSetError)
     pub fn create_ip_set(&self) -> fluent_builders::CreateIPSet<C, M, R> {
         fluent_builders::CreateIPSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMembers` operation.
+    /// Constructs a fluent builder for the [`CreateMembers`](crate::client::fluent_builders::CreateMembers) operation.
     ///
-    /// See [`CreateMembers`](crate::client::fluent_builders::CreateMembers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::CreateMembers::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::CreateMembers::set_detector_id): <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
+    ///   - [`account_details(Vec<AccountDetail>)`](crate::client::fluent_builders::CreateMembers::account_details) / [`set_account_details(Option<Vec<AccountDetail>>)`](crate::client::fluent_builders::CreateMembers::set_account_details): <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
+    /// - On success, responds with [`CreateMembersOutput`](crate::output::CreateMembersOutput) with field(s):
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::CreateMembersOutput::unprocessed_accounts): <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string that explains why each was unprocessed.</p>
+    /// - On failure, responds with [`SdkError<CreateMembersError>`](crate::error::CreateMembersError)
     pub fn create_members(&self) -> fluent_builders::CreateMembers<C, M, R> {
         fluent_builders::CreateMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePublishingDestination` operation.
+    /// Constructs a fluent builder for the [`CreatePublishingDestination`](crate::client::fluent_builders::CreatePublishingDestination) operation.
     ///
-    /// See [`CreatePublishingDestination`](crate::client::fluent_builders::CreatePublishingDestination) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::CreatePublishingDestination::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::CreatePublishingDestination::set_detector_id): <p>The ID of the GuardDuty detector associated with the publishing destination.</p>
+    ///   - [`destination_type(DestinationType)`](crate::client::fluent_builders::CreatePublishingDestination::destination_type) / [`set_destination_type(Option<DestinationType>)`](crate::client::fluent_builders::CreatePublishingDestination::set_destination_type): <p>The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.</p>
+    ///   - [`destination_properties(DestinationProperties)`](crate::client::fluent_builders::CreatePublishingDestination::destination_properties) / [`set_destination_properties(Option<DestinationProperties>)`](crate::client::fluent_builders::CreatePublishingDestination::set_destination_properties): <p>The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreatePublishingDestination::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreatePublishingDestination::set_client_token): <p>The idempotency token for the request.</p>
+    /// - On success, responds with [`CreatePublishingDestinationOutput`](crate::output::CreatePublishingDestinationOutput) with field(s):
+    ///   - [`destination_id(Option<String>)`](crate::output::CreatePublishingDestinationOutput::destination_id): <p>The ID of the publishing destination that is created.</p>
+    /// - On failure, responds with [`SdkError<CreatePublishingDestinationError>`](crate::error::CreatePublishingDestinationError)
     pub fn create_publishing_destination(
         &self,
     ) -> fluent_builders::CreatePublishingDestination<C, M, R> {
         fluent_builders::CreatePublishingDestination::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSampleFindings` operation.
+    /// Constructs a fluent builder for the [`CreateSampleFindings`](crate::client::fluent_builders::CreateSampleFindings) operation.
     ///
-    /// See [`CreateSampleFindings`](crate::client::fluent_builders::CreateSampleFindings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::CreateSampleFindings::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::CreateSampleFindings::set_detector_id): <p>The ID of the detector to create sample findings for.</p>
+    ///   - [`finding_types(Vec<String>)`](crate::client::fluent_builders::CreateSampleFindings::finding_types) / [`set_finding_types(Option<Vec<String>>)`](crate::client::fluent_builders::CreateSampleFindings::set_finding_types): <p>The types of sample findings to generate.</p>
+    /// - On success, responds with [`CreateSampleFindingsOutput`](crate::output::CreateSampleFindingsOutput)
+
+    /// - On failure, responds with [`SdkError<CreateSampleFindingsError>`](crate::error::CreateSampleFindingsError)
     pub fn create_sample_findings(&self) -> fluent_builders::CreateSampleFindings<C, M, R> {
         fluent_builders::CreateSampleFindings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateThreatIntelSet` operation.
+    /// Constructs a fluent builder for the [`CreateThreatIntelSet`](crate::client::fluent_builders::CreateThreatIntelSet) operation.
     ///
-    /// See [`CreateThreatIntelSet`](crate::client::fluent_builders::CreateThreatIntelSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::set_detector_id): <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::set_name): <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
+    ///   - [`format(ThreatIntelSetFormat)`](crate::client::fluent_builders::CreateThreatIntelSet::format) / [`set_format(Option<ThreatIntelSetFormat>)`](crate::client::fluent_builders::CreateThreatIntelSet::set_format): <p>The format of the file that contains the ThreatIntelSet.</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::set_location): <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    ///   - [`activate(bool)`](crate::client::fluent_builders::CreateThreatIntelSet::activate) / [`set_activate(bool)`](crate::client::fluent_builders::CreateThreatIntelSet::set_activate): <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::set_client_token): <p>The idempotency token for the create request.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateThreatIntelSet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateThreatIntelSet::set_tags): <p>The tags to be added to a new threat list resource.</p>
+    /// - On success, responds with [`CreateThreatIntelSetOutput`](crate::output::CreateThreatIntelSetOutput) with field(s):
+    ///   - [`threat_intel_set_id(Option<String>)`](crate::output::CreateThreatIntelSetOutput::threat_intel_set_id): <p>The ID of the ThreatIntelSet resource.</p>
+    /// - On failure, responds with [`SdkError<CreateThreatIntelSetError>`](crate::error::CreateThreatIntelSetError)
     pub fn create_threat_intel_set(&self) -> fluent_builders::CreateThreatIntelSet<C, M, R> {
         fluent_builders::CreateThreatIntelSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeclineInvitations` operation.
+    /// Constructs a fluent builder for the [`DeclineInvitations`](crate::client::fluent_builders::DeclineInvitations) operation.
     ///
-    /// See [`DeclineInvitations`](crate::client::fluent_builders::DeclineInvitations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DeclineInvitations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeclineInvitations::set_account_ids): <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
+    /// - On success, responds with [`DeclineInvitationsOutput`](crate::output::DeclineInvitationsOutput) with field(s):
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::DeclineInvitationsOutput::unprocessed_accounts): <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+    /// - On failure, responds with [`SdkError<DeclineInvitationsError>`](crate::error::DeclineInvitationsError)
     pub fn decline_invitations(&self) -> fluent_builders::DeclineInvitations<C, M, R> {
         fluent_builders::DeclineInvitations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDetector` operation.
+    /// Constructs a fluent builder for the [`DeleteDetector`](crate::client::fluent_builders::DeleteDetector) operation.
     ///
-    /// See [`DeleteDetector`](crate::client::fluent_builders::DeleteDetector) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDetector::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::DeleteDetector::set_detector_id): <p>The unique ID of the detector that you want to delete.</p>
+    /// - On success, responds with [`DeleteDetectorOutput`](crate::output::DeleteDetectorOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDetectorError>`](crate::error::DeleteDetectorError)
     pub fn delete_detector(&self) -> fluent_builders::DeleteDetector<C, M, R> {
         fluent_builders::DeleteDetector::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFilter` operation.
+    /// Constructs a fluent builder for the [`DeleteFilter`](crate::client::fluent_builders::DeleteFilter) operation.
     ///
-    /// See [`DeleteFilter`](crate::client::fluent_builders::DeleteFilter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFilter::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::DeleteFilter::set_detector_id): <p>The unique ID of the detector that the filter is associated with.</p>
+    ///   - [`filter_name(impl Into<String>)`](crate::client::fluent_builders::DeleteFilter::filter_name) / [`set_filter_name(Option<String>)`](crate::client::fluent_builders::DeleteFilter::set_filter_name): <p>The name of the filter that you want to delete.</p>
+    /// - On success, responds with [`DeleteFilterOutput`](crate::output::DeleteFilterOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFilterError>`](crate::error::DeleteFilterError)
     pub fn delete_filter(&self) -> fluent_builders::DeleteFilter<C, M, R> {
         fluent_builders::DeleteFilter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInvitations` operation.
+    /// Constructs a fluent builder for the [`DeleteInvitations`](crate::client::fluent_builders::DeleteInvitations) operation.
     ///
-    /// See [`DeleteInvitations`](crate::client::fluent_builders::DeleteInvitations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DeleteInvitations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteInvitations::set_account_ids): <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
+    /// - On success, responds with [`DeleteInvitationsOutput`](crate::output::DeleteInvitationsOutput) with field(s):
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::DeleteInvitationsOutput::unprocessed_accounts): <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+    /// - On failure, responds with [`SdkError<DeleteInvitationsError>`](crate::error::DeleteInvitationsError)
     pub fn delete_invitations(&self) -> fluent_builders::DeleteInvitations<C, M, R> {
         fluent_builders::DeleteInvitations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteIPSet` operation.
+    /// Constructs a fluent builder for the [`DeleteIPSet`](crate::client::fluent_builders::DeleteIPSet) operation.
     ///
-    /// See [`DeleteIPSet`](crate::client::fluent_builders::DeleteIPSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::DeleteIPSet::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::DeleteIPSet::set_detector_id): <p>The unique ID of the detector associated with the IPSet.</p>
+    ///   - [`ip_set_id(impl Into<String>)`](crate::client::fluent_builders::DeleteIPSet::ip_set_id) / [`set_ip_set_id(Option<String>)`](crate::client::fluent_builders::DeleteIPSet::set_ip_set_id): <p>The unique ID of the IPSet to delete.</p>
+    /// - On success, responds with [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteIPSetError>`](crate::error::DeleteIPSetError)
     pub fn delete_ip_set(&self) -> fluent_builders::DeleteIPSet<C, M, R> {
         fluent_builders::DeleteIPSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMembers` operation.
+    /// Constructs a fluent builder for the [`DeleteMembers`](crate::client::fluent_builders::DeleteMembers) operation.
     ///
-    /// See [`DeleteMembers`](crate::client::fluent_builders::DeleteMembers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMembers::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::DeleteMembers::set_detector_id): <p>The unique ID of the detector of the GuardDuty account whose members you want to delete.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DeleteMembers::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteMembers::set_account_ids): <p>A list of account IDs of the GuardDuty member accounts that you want to delete.</p>
+    /// - On success, responds with [`DeleteMembersOutput`](crate::output::DeleteMembersOutput) with field(s):
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::DeleteMembersOutput::unprocessed_accounts): <p>The accounts that could not be processed.</p>
+    /// - On failure, responds with [`SdkError<DeleteMembersError>`](crate::error::DeleteMembersError)
     pub fn delete_members(&self) -> fluent_builders::DeleteMembers<C, M, R> {
         fluent_builders::DeleteMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePublishingDestination` operation.
+    /// Constructs a fluent builder for the [`DeletePublishingDestination`](crate::client::fluent_builders::DeletePublishingDestination) operation.
     ///
-    /// See [`DeletePublishingDestination`](crate::client::fluent_builders::DeletePublishingDestination) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::DeletePublishingDestination::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::DeletePublishingDestination::set_detector_id): <p>The unique ID of the detector associated with the publishing destination to delete.</p>
+    ///   - [`destination_id(impl Into<String>)`](crate::client::fluent_builders::DeletePublishingDestination::destination_id) / [`set_destination_id(Option<String>)`](crate::client::fluent_builders::DeletePublishingDestination::set_destination_id): <p>The ID of the publishing destination to delete.</p>
+    /// - On success, responds with [`DeletePublishingDestinationOutput`](crate::output::DeletePublishingDestinationOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePublishingDestinationError>`](crate::error::DeletePublishingDestinationError)
     pub fn delete_publishing_destination(
         &self,
     ) -> fluent_builders::DeletePublishingDestination<C, M, R> {
         fluent_builders::DeletePublishingDestination::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteThreatIntelSet` operation.
+    /// Constructs a fluent builder for the [`DeleteThreatIntelSet`](crate::client::fluent_builders::DeleteThreatIntelSet) operation.
     ///
-    /// See [`DeleteThreatIntelSet`](crate::client::fluent_builders::DeleteThreatIntelSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::DeleteThreatIntelSet::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::DeleteThreatIntelSet::set_detector_id): <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    ///   - [`threat_intel_set_id(impl Into<String>)`](crate::client::fluent_builders::DeleteThreatIntelSet::threat_intel_set_id) / [`set_threat_intel_set_id(Option<String>)`](crate::client::fluent_builders::DeleteThreatIntelSet::set_threat_intel_set_id): <p>The unique ID of the threatIntelSet that you want to delete.</p>
+    /// - On success, responds with [`DeleteThreatIntelSetOutput`](crate::output::DeleteThreatIntelSetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteThreatIntelSetError>`](crate::error::DeleteThreatIntelSetError)
     pub fn delete_threat_intel_set(&self) -> fluent_builders::DeleteThreatIntelSet<C, M, R> {
         fluent_builders::DeleteThreatIntelSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOrganizationConfiguration` operation.
+    /// Constructs a fluent builder for the [`DescribeOrganizationConfiguration`](crate::client::fluent_builders::DescribeOrganizationConfiguration) operation.
     ///
-    /// See [`DescribeOrganizationConfiguration`](crate::client::fluent_builders::DescribeOrganizationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::DescribeOrganizationConfiguration::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::DescribeOrganizationConfiguration::set_detector_id): <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
+    /// - On success, responds with [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput) with field(s):
+    ///   - [`auto_enable(bool)`](crate::output::DescribeOrganizationConfigurationOutput::auto_enable): <p>Indicates whether GuardDuty is automatically enabled for accounts added to the organization.</p>
+    ///   - [`member_account_limit_reached(bool)`](crate::output::DescribeOrganizationConfigurationOutput::member_account_limit_reached): <p>Indicates whether the maximum number of allowed member accounts are already associated with the delegated administrator account for your organization.</p>
+    ///   - [`data_sources(Option<OrganizationDataSourceConfigurationsResult>)`](crate::output::DescribeOrganizationConfigurationOutput::data_sources): <p>Describes which data sources are enabled automatically for member accounts.</p>
+    /// - On failure, responds with [`SdkError<DescribeOrganizationConfigurationError>`](crate::error::DescribeOrganizationConfigurationError)
     pub fn describe_organization_configuration(
         &self,
     ) -> fluent_builders::DescribeOrganizationConfiguration<C, M, R> {
         fluent_builders::DescribeOrganizationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePublishingDestination` operation.
+    /// Constructs a fluent builder for the [`DescribePublishingDestination`](crate::client::fluent_builders::DescribePublishingDestination) operation.
     ///
-    /// See [`DescribePublishingDestination`](crate::client::fluent_builders::DescribePublishingDestination) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::DescribePublishingDestination::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::DescribePublishingDestination::set_detector_id): <p>The unique ID of the detector associated with the publishing destination to retrieve.</p>
+    ///   - [`destination_id(impl Into<String>)`](crate::client::fluent_builders::DescribePublishingDestination::destination_id) / [`set_destination_id(Option<String>)`](crate::client::fluent_builders::DescribePublishingDestination::set_destination_id): <p>The ID of the publishing destination to retrieve.</p>
+    /// - On success, responds with [`DescribePublishingDestinationOutput`](crate::output::DescribePublishingDestinationOutput) with field(s):
+    ///   - [`destination_id(Option<String>)`](crate::output::DescribePublishingDestinationOutput::destination_id): <p>The ID of the publishing destination.</p>
+    ///   - [`destination_type(Option<DestinationType>)`](crate::output::DescribePublishingDestinationOutput::destination_type): <p>The type of publishing destination. Currently, only Amazon S3 buckets are supported.</p>
+    ///   - [`status(Option<PublishingStatus>)`](crate::output::DescribePublishingDestinationOutput::status): <p>The status of the publishing destination.</p>
+    ///   - [`publishing_failure_start_timestamp(i64)`](crate::output::DescribePublishingDestinationOutput::publishing_failure_start_timestamp): <p>The time, in epoch millisecond format, at which GuardDuty was first unable to publish findings to the destination.</p>
+    ///   - [`destination_properties(Option<DestinationProperties>)`](crate::output::DescribePublishingDestinationOutput::destination_properties): <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
+    /// - On failure, responds with [`SdkError<DescribePublishingDestinationError>`](crate::error::DescribePublishingDestinationError)
     pub fn describe_publishing_destination(
         &self,
     ) -> fluent_builders::DescribePublishingDestination<C, M, R> {
         fluent_builders::DescribePublishingDestination::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableOrganizationAdminAccount` operation.
+    /// Constructs a fluent builder for the [`DisableOrganizationAdminAccount`](crate::client::fluent_builders::DisableOrganizationAdminAccount) operation.
     ///
-    /// See [`DisableOrganizationAdminAccount`](crate::client::fluent_builders::DisableOrganizationAdminAccount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`admin_account_id(impl Into<String>)`](crate::client::fluent_builders::DisableOrganizationAdminAccount::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::client::fluent_builders::DisableOrganizationAdminAccount::set_admin_account_id): <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
+    /// - On success, responds with [`DisableOrganizationAdminAccountOutput`](crate::output::DisableOrganizationAdminAccountOutput)
+
+    /// - On failure, responds with [`SdkError<DisableOrganizationAdminAccountError>`](crate::error::DisableOrganizationAdminAccountError)
     pub fn disable_organization_admin_account(
         &self,
     ) -> fluent_builders::DisableOrganizationAdminAccount<C, M, R> {
         fluent_builders::DisableOrganizationAdminAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateFromMasterAccount` operation.
+    /// Constructs a fluent builder for the [`DisassociateFromMasterAccount`](crate::client::fluent_builders::DisassociateFromMasterAccount) operation.
     ///
-    /// See [`DisassociateFromMasterAccount`](crate::client::fluent_builders::DisassociateFromMasterAccount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateFromMasterAccount::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::DisassociateFromMasterAccount::set_detector_id): <p>The unique ID of the detector of the GuardDuty member account.</p>
+    /// - On success, responds with [`DisassociateFromMasterAccountOutput`](crate::output::DisassociateFromMasterAccountOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateFromMasterAccountError>`](crate::error::DisassociateFromMasterAccountError)
     pub fn disassociate_from_master_account(
         &self,
     ) -> fluent_builders::DisassociateFromMasterAccount<C, M, R> {
         fluent_builders::DisassociateFromMasterAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateMembers` operation.
+    /// Constructs a fluent builder for the [`DisassociateMembers`](crate::client::fluent_builders::DisassociateMembers) operation.
     ///
-    /// See [`DisassociateMembers`](crate::client::fluent_builders::DisassociateMembers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateMembers::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::DisassociateMembers::set_detector_id): <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DisassociateMembers::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociateMembers::set_account_ids): <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
+    /// - On success, responds with [`DisassociateMembersOutput`](crate::output::DisassociateMembersOutput) with field(s):
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::DisassociateMembersOutput::unprocessed_accounts): <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+    /// - On failure, responds with [`SdkError<DisassociateMembersError>`](crate::error::DisassociateMembersError)
     pub fn disassociate_members(&self) -> fluent_builders::DisassociateMembers<C, M, R> {
         fluent_builders::DisassociateMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableOrganizationAdminAccount` operation.
+    /// Constructs a fluent builder for the [`EnableOrganizationAdminAccount`](crate::client::fluent_builders::EnableOrganizationAdminAccount) operation.
     ///
-    /// See [`EnableOrganizationAdminAccount`](crate::client::fluent_builders::EnableOrganizationAdminAccount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`admin_account_id(impl Into<String>)`](crate::client::fluent_builders::EnableOrganizationAdminAccount::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::client::fluent_builders::EnableOrganizationAdminAccount::set_admin_account_id): <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
+    /// - On success, responds with [`EnableOrganizationAdminAccountOutput`](crate::output::EnableOrganizationAdminAccountOutput)
+
+    /// - On failure, responds with [`SdkError<EnableOrganizationAdminAccountError>`](crate::error::EnableOrganizationAdminAccountError)
     pub fn enable_organization_admin_account(
         &self,
     ) -> fluent_builders::EnableOrganizationAdminAccount<C, M, R> {
         fluent_builders::EnableOrganizationAdminAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDetector` operation.
+    /// Constructs a fluent builder for the [`GetDetector`](crate::client::fluent_builders::GetDetector) operation.
     ///
-    /// See [`GetDetector`](crate::client::fluent_builders::GetDetector) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetDetector::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetDetector::set_detector_id): <p>The unique ID of the detector that you want to get.</p>
+    /// - On success, responds with [`GetDetectorOutput`](crate::output::GetDetectorOutput) with field(s):
+    ///   - [`created_at(Option<String>)`](crate::output::GetDetectorOutput::created_at): <p>The timestamp of when the detector was created.</p>
+    ///   - [`finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::output::GetDetectorOutput::finding_publishing_frequency): <p>The publishing frequency of the finding.</p>
+    ///   - [`service_role(Option<String>)`](crate::output::GetDetectorOutput::service_role): <p>The GuardDuty service role.</p>
+    ///   - [`status(Option<DetectorStatus>)`](crate::output::GetDetectorOutput::status): <p>The detector status.</p>
+    ///   - [`updated_at(Option<String>)`](crate::output::GetDetectorOutput::updated_at): <p>The last-updated timestamp for the detector.</p>
+    ///   - [`data_sources(Option<DataSourceConfigurationsResult>)`](crate::output::GetDetectorOutput::data_sources): <p>Describes which data sources are enabled for the detector.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetDetectorOutput::tags): <p>The tags of the detector resource.</p>
+    /// - On failure, responds with [`SdkError<GetDetectorError>`](crate::error::GetDetectorError)
     pub fn get_detector(&self) -> fluent_builders::GetDetector<C, M, R> {
         fluent_builders::GetDetector::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFilter` operation.
+    /// Constructs a fluent builder for the [`GetFilter`](crate::client::fluent_builders::GetFilter) operation.
     ///
-    /// See [`GetFilter`](crate::client::fluent_builders::GetFilter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetFilter::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetFilter::set_detector_id): <p>The unique ID of the detector that the filter is associated with.</p>
+    ///   - [`filter_name(impl Into<String>)`](crate::client::fluent_builders::GetFilter::filter_name) / [`set_filter_name(Option<String>)`](crate::client::fluent_builders::GetFilter::set_filter_name): <p>The name of the filter you want to get.</p>
+    /// - On success, responds with [`GetFilterOutput`](crate::output::GetFilterOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetFilterOutput::name): <p>The name of the filter.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetFilterOutput::description): <p>The description of the filter.</p>
+    ///   - [`action(Option<FilterAction>)`](crate::output::GetFilterOutput::action): <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    ///   - [`rank(i32)`](crate::output::GetFilterOutput::rank): <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
+    ///   - [`finding_criteria(Option<FindingCriteria>)`](crate::output::GetFilterOutput::finding_criteria): <p>Represents the criteria to be used in the filter for querying findings.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetFilterOutput::tags): <p>The tags of the filter resource.</p>
+    /// - On failure, responds with [`SdkError<GetFilterError>`](crate::error::GetFilterError)
     pub fn get_filter(&self) -> fluent_builders::GetFilter<C, M, R> {
         fluent_builders::GetFilter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFindings` operation.
+    /// Constructs a fluent builder for the [`GetFindings`](crate::client::fluent_builders::GetFindings) operation.
     ///
-    /// See [`GetFindings`](crate::client::fluent_builders::GetFindings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetFindings::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetFindings::set_detector_id): <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
+    ///   - [`finding_ids(Vec<String>)`](crate::client::fluent_builders::GetFindings::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetFindings::set_finding_ids): <p>The IDs of the findings that you want to retrieve.</p>
+    ///   - [`sort_criteria(SortCriteria)`](crate::client::fluent_builders::GetFindings::sort_criteria) / [`set_sort_criteria(Option<SortCriteria>)`](crate::client::fluent_builders::GetFindings::set_sort_criteria): <p>Represents the criteria used for sorting findings.</p>
+    /// - On success, responds with [`GetFindingsOutput`](crate::output::GetFindingsOutput) with field(s):
+    ///   - [`findings(Option<Vec<Finding>>)`](crate::output::GetFindingsOutput::findings): <p>A list of findings.</p>
+    /// - On failure, responds with [`SdkError<GetFindingsError>`](crate::error::GetFindingsError)
     pub fn get_findings(&self) -> fluent_builders::GetFindings<C, M, R> {
         fluent_builders::GetFindings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFindingsStatistics` operation.
+    /// Constructs a fluent builder for the [`GetFindingsStatistics`](crate::client::fluent_builders::GetFindingsStatistics) operation.
     ///
-    /// See [`GetFindingsStatistics`](crate::client::fluent_builders::GetFindingsStatistics) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetFindingsStatistics::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetFindingsStatistics::set_detector_id): <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
+    ///   - [`finding_statistic_types(Vec<FindingStatisticType>)`](crate::client::fluent_builders::GetFindingsStatistics::finding_statistic_types) / [`set_finding_statistic_types(Option<Vec<FindingStatisticType>>)`](crate::client::fluent_builders::GetFindingsStatistics::set_finding_statistic_types): <p>The types of finding statistics to retrieve.</p>
+    ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::GetFindingsStatistics::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::GetFindingsStatistics::set_finding_criteria): <p>Represents the criteria that is used for querying findings.</p>
+    /// - On success, responds with [`GetFindingsStatisticsOutput`](crate::output::GetFindingsStatisticsOutput) with field(s):
+    ///   - [`finding_statistics(Option<FindingStatistics>)`](crate::output::GetFindingsStatisticsOutput::finding_statistics): <p>The finding statistics object.</p>
+    /// - On failure, responds with [`SdkError<GetFindingsStatisticsError>`](crate::error::GetFindingsStatisticsError)
     pub fn get_findings_statistics(&self) -> fluent_builders::GetFindingsStatistics<C, M, R> {
         fluent_builders::GetFindingsStatistics::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInvitationsCount` operation.
+    /// Constructs a fluent builder for the [`GetInvitationsCount`](crate::client::fluent_builders::GetInvitationsCount) operation.
     ///
-    /// See [`GetInvitationsCount`](crate::client::fluent_builders::GetInvitationsCount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetInvitationsCount::send) it.
+
+    /// - On success, responds with [`GetInvitationsCountOutput`](crate::output::GetInvitationsCountOutput) with field(s):
+    ///   - [`invitations_count(i32)`](crate::output::GetInvitationsCountOutput::invitations_count): <p>The number of received invitations.</p>
+    /// - On failure, responds with [`SdkError<GetInvitationsCountError>`](crate::error::GetInvitationsCountError)
     pub fn get_invitations_count(&self) -> fluent_builders::GetInvitationsCount<C, M, R> {
         fluent_builders::GetInvitationsCount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetIPSet` operation.
+    /// Constructs a fluent builder for the [`GetIPSet`](crate::client::fluent_builders::GetIPSet) operation.
     ///
-    /// See [`GetIPSet`](crate::client::fluent_builders::GetIPSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetIPSet::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetIPSet::set_detector_id): <p>The unique ID of the detector that the IPSet is associated with.</p>
+    ///   - [`ip_set_id(impl Into<String>)`](crate::client::fluent_builders::GetIPSet::ip_set_id) / [`set_ip_set_id(Option<String>)`](crate::client::fluent_builders::GetIPSet::set_ip_set_id): <p>The unique ID of the IPSet to retrieve.</p>
+    /// - On success, responds with [`GetIpSetOutput`](crate::output::GetIpSetOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetIpSetOutput::name): <p>The user-friendly name for the IPSet.</p>
+    ///   - [`format(Option<IpSetFormat>)`](crate::output::GetIpSetOutput::format): <p>The format of the file that contains the IPSet.</p>
+    ///   - [`location(Option<String>)`](crate::output::GetIpSetOutput::location): <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    ///   - [`status(Option<IpSetStatus>)`](crate::output::GetIpSetOutput::status): <p>The status of IPSet file that was uploaded.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetIpSetOutput::tags): <p>The tags of the IPSet resource.</p>
+    /// - On failure, responds with [`SdkError<GetIPSetError>`](crate::error::GetIPSetError)
     pub fn get_ip_set(&self) -> fluent_builders::GetIPSet<C, M, R> {
         fluent_builders::GetIPSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMasterAccount` operation.
+    /// Constructs a fluent builder for the [`GetMasterAccount`](crate::client::fluent_builders::GetMasterAccount) operation.
     ///
-    /// See [`GetMasterAccount`](crate::client::fluent_builders::GetMasterAccount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetMasterAccount::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetMasterAccount::set_detector_id): <p>The unique ID of the detector of the GuardDuty member account.</p>
+    /// - On success, responds with [`GetMasterAccountOutput`](crate::output::GetMasterAccountOutput) with field(s):
+    ///   - [`master(Option<Master>)`](crate::output::GetMasterAccountOutput::master): <p>The administrator account details.</p>
+    /// - On failure, responds with [`SdkError<GetMasterAccountError>`](crate::error::GetMasterAccountError)
     pub fn get_master_account(&self) -> fluent_builders::GetMasterAccount<C, M, R> {
         fluent_builders::GetMasterAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMemberDetectors` operation.
+    /// Constructs a fluent builder for the [`GetMemberDetectors`](crate::client::fluent_builders::GetMemberDetectors) operation.
     ///
-    /// See [`GetMemberDetectors`](crate::client::fluent_builders::GetMemberDetectors) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetMemberDetectors::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetMemberDetectors::set_detector_id): <p>The detector ID for the administrator account.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::GetMemberDetectors::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetMemberDetectors::set_account_ids): <p>The account ID of the member account.</p>
+    /// - On success, responds with [`GetMemberDetectorsOutput`](crate::output::GetMemberDetectorsOutput) with field(s):
+    ///   - [`member_data_source_configurations(Option<Vec<MemberDataSourceConfiguration>>)`](crate::output::GetMemberDetectorsOutput::member_data_source_configurations): <p>An object that describes which data sources are enabled for a member account.</p>
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::GetMemberDetectorsOutput::unprocessed_accounts): <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
+    /// - On failure, responds with [`SdkError<GetMemberDetectorsError>`](crate::error::GetMemberDetectorsError)
     pub fn get_member_detectors(&self) -> fluent_builders::GetMemberDetectors<C, M, R> {
         fluent_builders::GetMemberDetectors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMembers` operation.
+    /// Constructs a fluent builder for the [`GetMembers`](crate::client::fluent_builders::GetMembers) operation.
     ///
-    /// See [`GetMembers`](crate::client::fluent_builders::GetMembers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetMembers::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetMembers::set_detector_id): <p>The unique ID of the detector of the GuardDuty account whose members you want to retrieve.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::GetMembers::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetMembers::set_account_ids): <p>A list of account IDs of the GuardDuty member accounts that you want to describe.</p>
+    /// - On success, responds with [`GetMembersOutput`](crate::output::GetMembersOutput) with field(s):
+    ///   - [`members(Option<Vec<Member>>)`](crate::output::GetMembersOutput::members): <p>A list of members.</p>
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::GetMembersOutput::unprocessed_accounts): <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+    /// - On failure, responds with [`SdkError<GetMembersError>`](crate::error::GetMembersError)
     pub fn get_members(&self) -> fluent_builders::GetMembers<C, M, R> {
         fluent_builders::GetMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetThreatIntelSet` operation.
+    /// Constructs a fluent builder for the [`GetThreatIntelSet`](crate::client::fluent_builders::GetThreatIntelSet) operation.
     ///
-    /// See [`GetThreatIntelSet`](crate::client::fluent_builders::GetThreatIntelSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetThreatIntelSet::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetThreatIntelSet::set_detector_id): <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    ///   - [`threat_intel_set_id(impl Into<String>)`](crate::client::fluent_builders::GetThreatIntelSet::threat_intel_set_id) / [`set_threat_intel_set_id(Option<String>)`](crate::client::fluent_builders::GetThreatIntelSet::set_threat_intel_set_id): <p>The unique ID of the threatIntelSet that you want to get.</p>
+    /// - On success, responds with [`GetThreatIntelSetOutput`](crate::output::GetThreatIntelSetOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetThreatIntelSetOutput::name): <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
+    ///   - [`format(Option<ThreatIntelSetFormat>)`](crate::output::GetThreatIntelSetOutput::format): <p>The format of the threatIntelSet.</p>
+    ///   - [`location(Option<String>)`](crate::output::GetThreatIntelSetOutput::location): <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    ///   - [`status(Option<ThreatIntelSetStatus>)`](crate::output::GetThreatIntelSetOutput::status): <p>The status of threatIntelSet file uploaded.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetThreatIntelSetOutput::tags): <p>The tags of the threat list resource.</p>
+    /// - On failure, responds with [`SdkError<GetThreatIntelSetError>`](crate::error::GetThreatIntelSetError)
     pub fn get_threat_intel_set(&self) -> fluent_builders::GetThreatIntelSet<C, M, R> {
         fluent_builders::GetThreatIntelSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUsageStatistics` operation.
+    /// Constructs a fluent builder for the [`GetUsageStatistics`](crate::client::fluent_builders::GetUsageStatistics) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetUsageStatistics::into_paginator).
     ///
-    /// See [`GetUsageStatistics`](crate::client::fluent_builders::GetUsageStatistics) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetUsageStatistics::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetUsageStatistics::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetUsageStatistics::set_detector_id): <p>The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.</p>
+    ///   - [`usage_statistic_type(UsageStatisticType)`](crate::client::fluent_builders::GetUsageStatistics::usage_statistic_type) / [`set_usage_statistic_type(Option<UsageStatisticType>)`](crate::client::fluent_builders::GetUsageStatistics::set_usage_statistic_type): <p>The type of usage statistics to retrieve.</p>
+    ///   - [`usage_criteria(UsageCriteria)`](crate::client::fluent_builders::GetUsageStatistics::usage_criteria) / [`set_usage_criteria(Option<UsageCriteria>)`](crate::client::fluent_builders::GetUsageStatistics::set_usage_criteria): <p>Represents the criteria used for querying usage.</p>
+    ///   - [`unit(impl Into<String>)`](crate::client::fluent_builders::GetUsageStatistics::unit) / [`set_unit(Option<String>)`](crate::client::fluent_builders::GetUsageStatistics::set_unit): <p>The currency unit you would like to view your usage statistics in. Current valid values are USD.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetUsageStatistics::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetUsageStatistics::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetUsageStatistics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetUsageStatistics::set_next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p>
+    /// - On success, responds with [`GetUsageStatisticsOutput`](crate::output::GetUsageStatisticsOutput) with field(s):
+    ///   - [`usage_statistics(Option<UsageStatistics>)`](crate::output::GetUsageStatisticsOutput::usage_statistics): <p>The usage statistics object. If a UsageStatisticType was provided, the objects representing other types will be null.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetUsageStatisticsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// - On failure, responds with [`SdkError<GetUsageStatisticsError>`](crate::error::GetUsageStatisticsError)
     pub fn get_usage_statistics(&self) -> fluent_builders::GetUsageStatistics<C, M, R> {
         fluent_builders::GetUsageStatistics::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `InviteMembers` operation.
+    /// Constructs a fluent builder for the [`InviteMembers`](crate::client::fluent_builders::InviteMembers) operation.
     ///
-    /// See [`InviteMembers`](crate::client::fluent_builders::InviteMembers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::InviteMembers::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::InviteMembers::set_detector_id): <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::InviteMembers::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::InviteMembers::set_account_ids): <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
+    ///   - [`disable_email_notification(bool)`](crate::client::fluent_builders::InviteMembers::disable_email_notification) / [`set_disable_email_notification(bool)`](crate::client::fluent_builders::InviteMembers::set_disable_email_notification): <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
+    ///   - [`message(impl Into<String>)`](crate::client::fluent_builders::InviteMembers::message) / [`set_message(Option<String>)`](crate::client::fluent_builders::InviteMembers::set_message): <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
+    /// - On success, responds with [`InviteMembersOutput`](crate::output::InviteMembersOutput) with field(s):
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::InviteMembersOutput::unprocessed_accounts): <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+    /// - On failure, responds with [`SdkError<InviteMembersError>`](crate::error::InviteMembersError)
     pub fn invite_members(&self) -> fluent_builders::InviteMembers<C, M, R> {
         fluent_builders::InviteMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDetectors` operation.
+    /// Constructs a fluent builder for the [`ListDetectors`](crate::client::fluent_builders::ListDetectors) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDetectors::into_paginator).
     ///
-    /// See [`ListDetectors`](crate::client::fluent_builders::ListDetectors) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDetectors::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDetectors::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDetectors::set_max_results): <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDetectors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDetectors::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    /// - On success, responds with [`ListDetectorsOutput`](crate::output::ListDetectorsOutput) with field(s):
+    ///   - [`detector_ids(Option<Vec<String>>)`](crate::output::ListDetectorsOutput::detector_ids): <p>A list of detector IDs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDetectorsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// - On failure, responds with [`SdkError<ListDetectorsError>`](crate::error::ListDetectorsError)
     pub fn list_detectors(&self) -> fluent_builders::ListDetectors<C, M, R> {
         fluent_builders::ListDetectors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFilters` operation.
+    /// Constructs a fluent builder for the [`ListFilters`](crate::client::fluent_builders::ListFilters) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFilters::into_paginator).
     ///
-    /// See [`ListFilters`](crate::client::fluent_builders::ListFilters) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFilters::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::ListFilters::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::ListFilters::set_detector_id): <p>The unique ID of the detector that the filter is associated with.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFilters::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListFilters::set_max_results): <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFilters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFilters::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    /// - On success, responds with [`ListFiltersOutput`](crate::output::ListFiltersOutput) with field(s):
+    ///   - [`filter_names(Option<Vec<String>>)`](crate::output::ListFiltersOutput::filter_names): <p>A list of filter names.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFiltersOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// - On failure, responds with [`SdkError<ListFiltersError>`](crate::error::ListFiltersError)
     pub fn list_filters(&self) -> fluent_builders::ListFilters<C, M, R> {
         fluent_builders::ListFilters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFindings` operation.
+    /// Constructs a fluent builder for the [`ListFindings`](crate::client::fluent_builders::ListFindings) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
     ///
-    /// See [`ListFindings`](crate::client::fluent_builders::ListFindings) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::ListFindings::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::ListFindings::set_detector_id): <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
+    ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::ListFindings::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::ListFindings::set_finding_criteria): <p>Represents the criteria used for querying findings. Valid values include:</p>  <ul>   <li> <p>JSON field name</p> </li>   <li> <p>accountId</p> </li>   <li> <p>region</p> </li>   <li> <p>confidence</p> </li>   <li> <p>id</p> </li>   <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>   <li> <p>resource.accessKeyDetails.principalId</p> </li>   <li> <p>resource.accessKeyDetails.userName</p> </li>   <li> <p>resource.accessKeyDetails.userType</p> </li>   <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>   <li> <p>resource.instanceDetails.imageId</p> </li>   <li> <p>resource.instanceDetails.instanceId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>   <li> <p>resource.instanceDetails.tags.key</p> </li>   <li> <p>resource.instanceDetails.tags.value</p> </li>   <li> <p>resource.resourceType</p> </li>   <li> <p>service.action.actionType</p> </li>   <li> <p>service.action.awsApiCallAction.api</p> </li>   <li> <p>service.action.awsApiCallAction.callerType</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>   <li> <p>service.action.awsApiCallAction.serviceName</p> </li>   <li> <p>service.action.dnsRequestAction.domain</p> </li>   <li> <p>service.action.networkConnectionAction.blocked</p> </li>   <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>   <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>   <li> <p>service.action.networkConnectionAction.protocol</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>   <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>   <li> <p>service.additionalInfo.threatListName</p> </li>   <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>   <li> <p>service.resourceRole</p> </li>   <li> <p>severity</p> </li>   <li> <p>type</p> </li>   <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>  </ul>
+    ///   - [`sort_criteria(SortCriteria)`](crate::client::fluent_builders::ListFindings::sort_criteria) / [`set_sort_criteria(Option<SortCriteria>)`](crate::client::fluent_builders::ListFindings::set_sort_criteria): <p>Represents the criteria used for sorting findings.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFindings::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListFindings::set_max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFindings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFindings::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    /// - On success, responds with [`ListFindingsOutput`](crate::output::ListFindingsOutput) with field(s):
+    ///   - [`finding_ids(Option<Vec<String>>)`](crate::output::ListFindingsOutput::finding_ids): <p>The IDs of the findings that you're listing.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFindingsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// - On failure, responds with [`SdkError<ListFindingsError>`](crate::error::ListFindingsError)
     pub fn list_findings(&self) -> fluent_builders::ListFindings<C, M, R> {
         fluent_builders::ListFindings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInvitations` operation.
+    /// Constructs a fluent builder for the [`ListInvitations`](crate::client::fluent_builders::ListInvitations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
     ///
-    /// See [`ListInvitations`](crate::client::fluent_builders::ListInvitations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInvitations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListInvitations::set_max_results): <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInvitations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInvitations::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    /// - On success, responds with [`ListInvitationsOutput`](crate::output::ListInvitationsOutput) with field(s):
+    ///   - [`invitations(Option<Vec<Invitation>>)`](crate::output::ListInvitationsOutput::invitations): <p>A list of invitation descriptions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInvitationsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// - On failure, responds with [`SdkError<ListInvitationsError>`](crate::error::ListInvitationsError)
     pub fn list_invitations(&self) -> fluent_builders::ListInvitations<C, M, R> {
         fluent_builders::ListInvitations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListIPSets` operation.
+    /// Constructs a fluent builder for the [`ListIPSets`](crate::client::fluent_builders::ListIPSets) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListIPSets::into_paginator).
     ///
-    /// See [`ListIPSets`](crate::client::fluent_builders::ListIPSets) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIPSets::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::ListIPSets::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::ListIPSets::set_detector_id): <p>The unique ID of the detector that the IPSet is associated with.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIPSets::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListIPSets::set_max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIPSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIPSets::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    /// - On success, responds with [`ListIpSetsOutput`](crate::output::ListIpSetsOutput) with field(s):
+    ///   - [`ip_set_ids(Option<Vec<String>>)`](crate::output::ListIpSetsOutput::ip_set_ids): <p>The IDs of the IPSet resources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListIpSetsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// - On failure, responds with [`SdkError<ListIPSetsError>`](crate::error::ListIPSetsError)
     pub fn list_ip_sets(&self) -> fluent_builders::ListIPSets<C, M, R> {
         fluent_builders::ListIPSets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMembers` operation.
+    /// Constructs a fluent builder for the [`ListMembers`](crate::client::fluent_builders::ListMembers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
     ///
-    /// See [`ListMembers`](crate::client::fluent_builders::ListMembers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::ListMembers::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::ListMembers::set_detector_id): <p>The unique ID of the detector the member is associated with.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMembers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListMembers::set_max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMembers::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    ///   - [`only_associated(impl Into<String>)`](crate::client::fluent_builders::ListMembers::only_associated) / [`set_only_associated(Option<String>)`](crate::client::fluent_builders::ListMembers::set_only_associated): <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated).</p>
+    /// - On success, responds with [`ListMembersOutput`](crate::output::ListMembersOutput) with field(s):
+    ///   - [`members(Option<Vec<Member>>)`](crate::output::ListMembersOutput::members): <p>A list of members.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMembersOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// - On failure, responds with [`SdkError<ListMembersError>`](crate::error::ListMembersError)
     pub fn list_members(&self) -> fluent_builders::ListMembers<C, M, R> {
         fluent_builders::ListMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOrganizationAdminAccounts` operation.
+    /// Constructs a fluent builder for the [`ListOrganizationAdminAccounts`](crate::client::fluent_builders::ListOrganizationAdminAccounts) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationAdminAccounts::into_paginator).
     ///
-    /// See [`ListOrganizationAdminAccounts`](crate::client::fluent_builders::ListOrganizationAdminAccounts) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationAdminAccounts::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::set_next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    /// - On success, responds with [`ListOrganizationAdminAccountsOutput`](crate::output::ListOrganizationAdminAccountsOutput) with field(s):
+    ///   - [`admin_accounts(Option<Vec<AdminAccount>>)`](crate::output::ListOrganizationAdminAccountsOutput::admin_accounts): <p>A list of accounts configured as GuardDuty delegated administrators.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListOrganizationAdminAccountsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// - On failure, responds with [`SdkError<ListOrganizationAdminAccountsError>`](crate::error::ListOrganizationAdminAccountsError)
     pub fn list_organization_admin_accounts(
         &self,
     ) -> fluent_builders::ListOrganizationAdminAccounts<C, M, R> {
         fluent_builders::ListOrganizationAdminAccounts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPublishingDestinations` operation.
+    /// Constructs a fluent builder for the [`ListPublishingDestinations`](crate::client::fluent_builders::ListPublishingDestinations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPublishingDestinations::into_paginator).
     ///
-    /// See [`ListPublishingDestinations`](crate::client::fluent_builders::ListPublishingDestinations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPublishingDestinations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::ListPublishingDestinations::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::ListPublishingDestinations::set_detector_id): <p>The ID of the detector to retrieve publishing destinations for.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPublishingDestinations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListPublishingDestinations::set_max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPublishingDestinations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPublishingDestinations::set_next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    /// - On success, responds with [`ListPublishingDestinationsOutput`](crate::output::ListPublishingDestinationsOutput) with field(s):
+    ///   - [`destinations(Option<Vec<Destination>>)`](crate::output::ListPublishingDestinationsOutput::destinations): <p>A <code>Destinations</code> object that includes information about each publishing destination returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPublishingDestinationsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    /// - On failure, responds with [`SdkError<ListPublishingDestinationsError>`](crate::error::ListPublishingDestinationsError)
     pub fn list_publishing_destinations(
         &self,
     ) -> fluent_builders::ListPublishingDestinations<C, M, R> {
         fluent_builders::ListPublishingDestinations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for the given GuardDuty resource. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags associated with the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListThreatIntelSets` operation.
+    /// Constructs a fluent builder for the [`ListThreatIntelSets`](crate::client::fluent_builders::ListThreatIntelSets) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThreatIntelSets::into_paginator).
     ///
-    /// See [`ListThreatIntelSets`](crate::client::fluent_builders::ListThreatIntelSets) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListThreatIntelSets::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::ListThreatIntelSets::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::ListThreatIntelSets::set_detector_id): <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThreatIntelSets::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListThreatIntelSets::set_max_results): <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThreatIntelSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThreatIntelSets::set_next_token): <p>You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    /// - On success, responds with [`ListThreatIntelSetsOutput`](crate::output::ListThreatIntelSetsOutput) with field(s):
+    ///   - [`threat_intel_set_ids(Option<Vec<String>>)`](crate::output::ListThreatIntelSetsOutput::threat_intel_set_ids): <p>The IDs of the ThreatIntelSet resources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListThreatIntelSetsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// - On failure, responds with [`SdkError<ListThreatIntelSetsError>`](crate::error::ListThreatIntelSetsError)
     pub fn list_threat_intel_sets(&self) -> fluent_builders::ListThreatIntelSets<C, M, R> {
         fluent_builders::ListThreatIntelSets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartMonitoringMembers` operation.
+    /// Constructs a fluent builder for the [`StartMonitoringMembers`](crate::client::fluent_builders::StartMonitoringMembers) operation.
     ///
-    /// See [`StartMonitoringMembers`](crate::client::fluent_builders::StartMonitoringMembers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::StartMonitoringMembers::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::StartMonitoringMembers::set_detector_id): <p>The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::StartMonitoringMembers::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::StartMonitoringMembers::set_account_ids): <p>A list of account IDs of the GuardDuty member accounts to start monitoring.</p>
+    /// - On success, responds with [`StartMonitoringMembersOutput`](crate::output::StartMonitoringMembersOutput) with field(s):
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::StartMonitoringMembersOutput::unprocessed_accounts): <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
+    /// - On failure, responds with [`SdkError<StartMonitoringMembersError>`](crate::error::StartMonitoringMembersError)
     pub fn start_monitoring_members(&self) -> fluent_builders::StartMonitoringMembers<C, M, R> {
         fluent_builders::StartMonitoringMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopMonitoringMembers` operation.
+    /// Constructs a fluent builder for the [`StopMonitoringMembers`](crate::client::fluent_builders::StopMonitoringMembers) operation.
     ///
-    /// See [`StopMonitoringMembers`](crate::client::fluent_builders::StopMonitoringMembers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::StopMonitoringMembers::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::StopMonitoringMembers::set_detector_id): <p>The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::StopMonitoringMembers::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::StopMonitoringMembers::set_account_ids): <p>A list of account IDs for the member accounts to stop monitoring.</p>
+    /// - On success, responds with [`StopMonitoringMembersOutput`](crate::output::StopMonitoringMembersOutput) with field(s):
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::StopMonitoringMembersOutput::unprocessed_accounts): <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
+    /// - On failure, responds with [`SdkError<StopMonitoringMembersError>`](crate::error::StopMonitoringMembersError)
     pub fn stop_monitoring_members(&self) -> fluent_builders::StopMonitoringMembers<C, M, R> {
         fluent_builders::StopMonitoringMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for the GuardDuty resource to apply a tag to.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to be added to a resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UnarchiveFindings` operation.
+    /// Constructs a fluent builder for the [`UnarchiveFindings`](crate::client::fluent_builders::UnarchiveFindings) operation.
     ///
-    /// See [`UnarchiveFindings`](crate::client::fluent_builders::UnarchiveFindings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::UnarchiveFindings::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::UnarchiveFindings::set_detector_id): <p>The ID of the detector associated with the findings to unarchive.</p>
+    ///   - [`finding_ids(Vec<String>)`](crate::client::fluent_builders::UnarchiveFindings::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UnarchiveFindings::set_finding_ids): <p>The IDs of the findings to unarchive.</p>
+    /// - On success, responds with [`UnarchiveFindingsOutput`](crate::output::UnarchiveFindingsOutput)
+
+    /// - On failure, responds with [`SdkError<UnarchiveFindingsError>`](crate::error::UnarchiveFindingsError)
     pub fn unarchive_findings(&self) -> fluent_builders::UnarchiveFindings<C, M, R> {
         fluent_builders::UnarchiveFindings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDetector` operation.
+    /// Constructs a fluent builder for the [`UpdateDetector`](crate::client::fluent_builders::UpdateDetector) operation.
     ///
-    /// See [`UpdateDetector`](crate::client::fluent_builders::UpdateDetector) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDetector::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::UpdateDetector::set_detector_id): <p>The unique ID of the detector to update.</p>
+    ///   - [`enable(bool)`](crate::client::fluent_builders::UpdateDetector::enable) / [`set_enable(bool)`](crate::client::fluent_builders::UpdateDetector::set_enable): <p>Specifies whether the detector is enabled or not enabled.</p>
+    ///   - [`finding_publishing_frequency(FindingPublishingFrequency)`](crate::client::fluent_builders::UpdateDetector::finding_publishing_frequency) / [`set_finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::client::fluent_builders::UpdateDetector::set_finding_publishing_frequency): <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
+    ///   - [`data_sources(DataSourceConfigurations)`](crate::client::fluent_builders::UpdateDetector::data_sources) / [`set_data_sources(Option<DataSourceConfigurations>)`](crate::client::fluent_builders::UpdateDetector::set_data_sources): <p>Describes which data sources will be updated.</p>
+    /// - On success, responds with [`UpdateDetectorOutput`](crate::output::UpdateDetectorOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDetectorError>`](crate::error::UpdateDetectorError)
     pub fn update_detector(&self) -> fluent_builders::UpdateDetector<C, M, R> {
         fluent_builders::UpdateDetector::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFilter` operation.
+    /// Constructs a fluent builder for the [`UpdateFilter`](crate::client::fluent_builders::UpdateFilter) operation.
     ///
-    /// See [`UpdateFilter`](crate::client::fluent_builders::UpdateFilter) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFilter::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::UpdateFilter::set_detector_id): <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
+    ///   - [`filter_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFilter::filter_name) / [`set_filter_name(Option<String>)`](crate::client::fluent_builders::UpdateFilter::set_filter_name): <p>The name of the filter.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateFilter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateFilter::set_description): <p>The description of the filter.</p>
+    ///   - [`action(FilterAction)`](crate::client::fluent_builders::UpdateFilter::action) / [`set_action(Option<FilterAction>)`](crate::client::fluent_builders::UpdateFilter::set_action): <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    ///   - [`rank(i32)`](crate::client::fluent_builders::UpdateFilter::rank) / [`set_rank(i32)`](crate::client::fluent_builders::UpdateFilter::set_rank): <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
+    ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::UpdateFilter::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::UpdateFilter::set_finding_criteria): <p>Represents the criteria to be used in the filter for querying findings.</p>
+    /// - On success, responds with [`UpdateFilterOutput`](crate::output::UpdateFilterOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::UpdateFilterOutput::name): <p>The name of the filter.</p>
+    /// - On failure, responds with [`SdkError<UpdateFilterError>`](crate::error::UpdateFilterError)
     pub fn update_filter(&self) -> fluent_builders::UpdateFilter<C, M, R> {
         fluent_builders::UpdateFilter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFindingsFeedback` operation.
+    /// Constructs a fluent builder for the [`UpdateFindingsFeedback`](crate::client::fluent_builders::UpdateFindingsFeedback) operation.
     ///
-    /// See [`UpdateFindingsFeedback`](crate::client::fluent_builders::UpdateFindingsFeedback) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFeedback::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFeedback::set_detector_id): <p>The ID of the detector associated with the findings to update feedback for.</p>
+    ///   - [`finding_ids(Vec<String>)`](crate::client::fluent_builders::UpdateFindingsFeedback::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateFindingsFeedback::set_finding_ids): <p>The IDs of the findings that you want to mark as useful or not useful.</p>
+    ///   - [`feedback(Feedback)`](crate::client::fluent_builders::UpdateFindingsFeedback::feedback) / [`set_feedback(Option<Feedback>)`](crate::client::fluent_builders::UpdateFindingsFeedback::set_feedback): <p>The feedback for the finding.</p>
+    ///   - [`comments(impl Into<String>)`](crate::client::fluent_builders::UpdateFindingsFeedback::comments) / [`set_comments(Option<String>)`](crate::client::fluent_builders::UpdateFindingsFeedback::set_comments): <p>Additional feedback about the GuardDuty findings.</p>
+    /// - On success, responds with [`UpdateFindingsFeedbackOutput`](crate::output::UpdateFindingsFeedbackOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateFindingsFeedbackError>`](crate::error::UpdateFindingsFeedbackError)
     pub fn update_findings_feedback(&self) -> fluent_builders::UpdateFindingsFeedback<C, M, R> {
         fluent_builders::UpdateFindingsFeedback::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateIPSet` operation.
+    /// Constructs a fluent builder for the [`UpdateIPSet`](crate::client::fluent_builders::UpdateIPSet) operation.
     ///
-    /// See [`UpdateIPSet`](crate::client::fluent_builders::UpdateIPSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_detector_id): <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
+    ///   - [`ip_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::ip_set_id) / [`set_ip_set_id(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_ip_set_id): <p>The unique ID that specifies the IPSet that you want to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_name): <p>The unique ID that specifies the IPSet that you want to update.</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_location): <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    ///   - [`activate(bool)`](crate::client::fluent_builders::UpdateIPSet::activate) / [`set_activate(bool)`](crate::client::fluent_builders::UpdateIPSet::set_activate): <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
+    /// - On success, responds with [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateIPSetError>`](crate::error::UpdateIPSetError)
     pub fn update_ip_set(&self) -> fluent_builders::UpdateIPSet<C, M, R> {
         fluent_builders::UpdateIPSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMemberDetectors` operation.
+    /// Constructs a fluent builder for the [`UpdateMemberDetectors`](crate::client::fluent_builders::UpdateMemberDetectors) operation.
     ///
-    /// See [`UpdateMemberDetectors`](crate::client::fluent_builders::UpdateMemberDetectors) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::UpdateMemberDetectors::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::UpdateMemberDetectors::set_detector_id): <p>The detector ID of the administrator account.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::UpdateMemberDetectors::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateMemberDetectors::set_account_ids): <p>A list of member account IDs to be updated.</p>
+    ///   - [`data_sources(DataSourceConfigurations)`](crate::client::fluent_builders::UpdateMemberDetectors::data_sources) / [`set_data_sources(Option<DataSourceConfigurations>)`](crate::client::fluent_builders::UpdateMemberDetectors::set_data_sources): <p>Describes which data sources will be updated.</p>
+    /// - On success, responds with [`UpdateMemberDetectorsOutput`](crate::output::UpdateMemberDetectorsOutput) with field(s):
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::UpdateMemberDetectorsOutput::unprocessed_accounts): <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
+    /// - On failure, responds with [`SdkError<UpdateMemberDetectorsError>`](crate::error::UpdateMemberDetectorsError)
     pub fn update_member_detectors(&self) -> fluent_builders::UpdateMemberDetectors<C, M, R> {
         fluent_builders::UpdateMemberDetectors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateOrganizationConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateOrganizationConfiguration`](crate::client::fluent_builders::UpdateOrganizationConfiguration) operation.
     ///
-    /// See [`UpdateOrganizationConfiguration`](crate::client::fluent_builders::UpdateOrganizationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::set_detector_id): <p>The ID of the detector to update the delegated administrator for.</p>
+    ///   - [`auto_enable(bool)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::auto_enable) / [`set_auto_enable(bool)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::set_auto_enable): <p>Indicates whether to automatically enable member accounts in the organization.</p>
+    ///   - [`data_sources(OrganizationDataSourceConfigurations)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::data_sources) / [`set_data_sources(Option<OrganizationDataSourceConfigurations>)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::set_data_sources): <p>Describes which data sources will be updated.</p>
+    /// - On success, responds with [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateOrganizationConfigurationError>`](crate::error::UpdateOrganizationConfigurationError)
     pub fn update_organization_configuration(
         &self,
     ) -> fluent_builders::UpdateOrganizationConfiguration<C, M, R> {
         fluent_builders::UpdateOrganizationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePublishingDestination` operation.
+    /// Constructs a fluent builder for the [`UpdatePublishingDestination`](crate::client::fluent_builders::UpdatePublishingDestination) operation.
     ///
-    /// See [`UpdatePublishingDestination`](crate::client::fluent_builders::UpdatePublishingDestination) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePublishingDestination::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::UpdatePublishingDestination::set_detector_id): <p>The ID of the detector associated with the publishing destinations to update.</p>
+    ///   - [`destination_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePublishingDestination::destination_id) / [`set_destination_id(Option<String>)`](crate::client::fluent_builders::UpdatePublishingDestination::set_destination_id): <p>The ID of the publishing destination to update.</p>
+    ///   - [`destination_properties(DestinationProperties)`](crate::client::fluent_builders::UpdatePublishingDestination::destination_properties) / [`set_destination_properties(Option<DestinationProperties>)`](crate::client::fluent_builders::UpdatePublishingDestination::set_destination_properties): <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
+    /// - On success, responds with [`UpdatePublishingDestinationOutput`](crate::output::UpdatePublishingDestinationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdatePublishingDestinationError>`](crate::error::UpdatePublishingDestinationError)
     pub fn update_publishing_destination(
         &self,
     ) -> fluent_builders::UpdatePublishingDestination<C, M, R> {
         fluent_builders::UpdatePublishingDestination::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateThreatIntelSet` operation.
+    /// Constructs a fluent builder for the [`UpdateThreatIntelSet`](crate::client::fluent_builders::UpdateThreatIntelSet) operation.
     ///
-    /// See [`UpdateThreatIntelSet`](crate::client::fluent_builders::UpdateThreatIntelSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::UpdateThreatIntelSet::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::UpdateThreatIntelSet::set_detector_id): <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
+    ///   - [`threat_intel_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateThreatIntelSet::threat_intel_set_id) / [`set_threat_intel_set_id(Option<String>)`](crate::client::fluent_builders::UpdateThreatIntelSet::set_threat_intel_set_id): <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateThreatIntelSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateThreatIntelSet::set_name): <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::UpdateThreatIntelSet::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::UpdateThreatIntelSet::set_location): <p>The updated URI of the file that contains the ThreateIntelSet.</p>
+    ///   - [`activate(bool)`](crate::client::fluent_builders::UpdateThreatIntelSet::activate) / [`set_activate(bool)`](crate::client::fluent_builders::UpdateThreatIntelSet::set_activate): <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
+    /// - On success, responds with [`UpdateThreatIntelSetOutput`](crate::output::UpdateThreatIntelSetOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateThreatIntelSetError>`](crate::error::UpdateThreatIntelSetError)
     pub fn update_threat_intel_set(&self) -> fluent_builders::UpdateThreatIntelSet<C, M, R> {
         fluent_builders::UpdateThreatIntelSet::new(self.handle.clone())
     }

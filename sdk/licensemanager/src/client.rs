@@ -83,373 +83,718 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptGrant` operation.
+    /// Constructs a fluent builder for the [`AcceptGrant`](crate::client::fluent_builders::AcceptGrant) operation.
     ///
-    /// See [`AcceptGrant`](crate::client::fluent_builders::AcceptGrant) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`grant_arn(impl Into<String>)`](crate::client::fluent_builders::AcceptGrant::grant_arn) / [`set_grant_arn(Option<String>)`](crate::client::fluent_builders::AcceptGrant::set_grant_arn): <p>Amazon Resource Name (ARN) of the grant.</p>
+    /// - On success, responds with [`AcceptGrantOutput`](crate::output::AcceptGrantOutput) with field(s):
+    ///   - [`grant_arn(Option<String>)`](crate::output::AcceptGrantOutput::grant_arn): <p>Grant ARN.</p>
+    ///   - [`status(Option<GrantStatus>)`](crate::output::AcceptGrantOutput::status): <p>Grant status.</p>
+    ///   - [`version(Option<String>)`](crate::output::AcceptGrantOutput::version): <p>Grant version.</p>
+    /// - On failure, responds with [`SdkError<AcceptGrantError>`](crate::error::AcceptGrantError)
     pub fn accept_grant(&self) -> fluent_builders::AcceptGrant<C, M, R> {
         fluent_builders::AcceptGrant::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CheckInLicense` operation.
+    /// Constructs a fluent builder for the [`CheckInLicense`](crate::client::fluent_builders::CheckInLicense) operation.
     ///
-    /// See [`CheckInLicense`](crate::client::fluent_builders::CheckInLicense) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_consumption_token(impl Into<String>)`](crate::client::fluent_builders::CheckInLicense::license_consumption_token) / [`set_license_consumption_token(Option<String>)`](crate::client::fluent_builders::CheckInLicense::set_license_consumption_token): <p>License consumption token.</p>
+    ///   - [`beneficiary(impl Into<String>)`](crate::client::fluent_builders::CheckInLicense::beneficiary) / [`set_beneficiary(Option<String>)`](crate::client::fluent_builders::CheckInLicense::set_beneficiary): <p>License beneficiary.</p>
+    /// - On success, responds with [`CheckInLicenseOutput`](crate::output::CheckInLicenseOutput)
+
+    /// - On failure, responds with [`SdkError<CheckInLicenseError>`](crate::error::CheckInLicenseError)
     pub fn check_in_license(&self) -> fluent_builders::CheckInLicense<C, M, R> {
         fluent_builders::CheckInLicense::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CheckoutBorrowLicense` operation.
+    /// Constructs a fluent builder for the [`CheckoutBorrowLicense`](crate::client::fluent_builders::CheckoutBorrowLicense) operation.
     ///
-    /// See [`CheckoutBorrowLicense`](crate::client::fluent_builders::CheckoutBorrowLicense) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_arn(impl Into<String>)`](crate::client::fluent_builders::CheckoutBorrowLicense::license_arn) / [`set_license_arn(Option<String>)`](crate::client::fluent_builders::CheckoutBorrowLicense::set_license_arn): <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
+    ///   - [`entitlements(Vec<EntitlementData>)`](crate::client::fluent_builders::CheckoutBorrowLicense::entitlements) / [`set_entitlements(Option<Vec<EntitlementData>>)`](crate::client::fluent_builders::CheckoutBorrowLicense::set_entitlements): <p>License entitlements. Partial checkouts are not supported.</p>
+    ///   - [`digital_signature_method(DigitalSignatureMethod)`](crate::client::fluent_builders::CheckoutBorrowLicense::digital_signature_method) / [`set_digital_signature_method(Option<DigitalSignatureMethod>)`](crate::client::fluent_builders::CheckoutBorrowLicense::set_digital_signature_method): <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
+    ///   - [`node_id(impl Into<String>)`](crate::client::fluent_builders::CheckoutBorrowLicense::node_id) / [`set_node_id(Option<String>)`](crate::client::fluent_builders::CheckoutBorrowLicense::set_node_id): <p>Node ID.</p>
+    ///   - [`checkout_metadata(Vec<Metadata>)`](crate::client::fluent_builders::CheckoutBorrowLicense::checkout_metadata) / [`set_checkout_metadata(Option<Vec<Metadata>>)`](crate::client::fluent_builders::CheckoutBorrowLicense::set_checkout_metadata): <p>Information about constraints.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CheckoutBorrowLicense::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CheckoutBorrowLicense::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`CheckoutBorrowLicenseOutput`](crate::output::CheckoutBorrowLicenseOutput) with field(s):
+    ///   - [`license_arn(Option<String>)`](crate::output::CheckoutBorrowLicenseOutput::license_arn): <p>Amazon Resource Name (ARN) of the license.</p>
+    ///   - [`license_consumption_token(Option<String>)`](crate::output::CheckoutBorrowLicenseOutput::license_consumption_token): <p>License consumption token.</p>
+    ///   - [`entitlements_allowed(Option<Vec<EntitlementData>>)`](crate::output::CheckoutBorrowLicenseOutput::entitlements_allowed): <p>Allowed license entitlements.</p>
+    ///   - [`node_id(Option<String>)`](crate::output::CheckoutBorrowLicenseOutput::node_id): <p>Node ID.</p>
+    ///   - [`signed_token(Option<String>)`](crate::output::CheckoutBorrowLicenseOutput::signed_token): <p>Signed token.</p>
+    ///   - [`issued_at(Option<String>)`](crate::output::CheckoutBorrowLicenseOutput::issued_at): <p>Date and time at which the license checkout is issued.</p>
+    ///   - [`expiration(Option<String>)`](crate::output::CheckoutBorrowLicenseOutput::expiration): <p>Date and time at which the license checkout expires.</p>
+    ///   - [`checkout_metadata(Option<Vec<Metadata>>)`](crate::output::CheckoutBorrowLicenseOutput::checkout_metadata): <p>Information about constraints.</p>
+    /// - On failure, responds with [`SdkError<CheckoutBorrowLicenseError>`](crate::error::CheckoutBorrowLicenseError)
     pub fn checkout_borrow_license(&self) -> fluent_builders::CheckoutBorrowLicense<C, M, R> {
         fluent_builders::CheckoutBorrowLicense::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CheckoutLicense` operation.
+    /// Constructs a fluent builder for the [`CheckoutLicense`](crate::client::fluent_builders::CheckoutLicense) operation.
     ///
-    /// See [`CheckoutLicense`](crate::client::fluent_builders::CheckoutLicense) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`product_sku(impl Into<String>)`](crate::client::fluent_builders::CheckoutLicense::product_sku) / [`set_product_sku(Option<String>)`](crate::client::fluent_builders::CheckoutLicense::set_product_sku): <p>Product SKU.</p>
+    ///   - [`checkout_type(CheckoutType)`](crate::client::fluent_builders::CheckoutLicense::checkout_type) / [`set_checkout_type(Option<CheckoutType>)`](crate::client::fluent_builders::CheckoutLicense::set_checkout_type): <p>Checkout type.</p>
+    ///   - [`key_fingerprint(impl Into<String>)`](crate::client::fluent_builders::CheckoutLicense::key_fingerprint) / [`set_key_fingerprint(Option<String>)`](crate::client::fluent_builders::CheckoutLicense::set_key_fingerprint): <p>Key fingerprint identifying the license.</p>
+    ///   - [`entitlements(Vec<EntitlementData>)`](crate::client::fluent_builders::CheckoutLicense::entitlements) / [`set_entitlements(Option<Vec<EntitlementData>>)`](crate::client::fluent_builders::CheckoutLicense::set_entitlements): <p>License entitlements.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CheckoutLicense::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CheckoutLicense::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`beneficiary(impl Into<String>)`](crate::client::fluent_builders::CheckoutLicense::beneficiary) / [`set_beneficiary(Option<String>)`](crate::client::fluent_builders::CheckoutLicense::set_beneficiary): <p>License beneficiary.</p>
+    ///   - [`node_id(impl Into<String>)`](crate::client::fluent_builders::CheckoutLicense::node_id) / [`set_node_id(Option<String>)`](crate::client::fluent_builders::CheckoutLicense::set_node_id): <p>Node ID.</p>
+    /// - On success, responds with [`CheckoutLicenseOutput`](crate::output::CheckoutLicenseOutput) with field(s):
+    ///   - [`checkout_type(Option<CheckoutType>)`](crate::output::CheckoutLicenseOutput::checkout_type): <p>Checkout type.</p>
+    ///   - [`license_consumption_token(Option<String>)`](crate::output::CheckoutLicenseOutput::license_consumption_token): <p>License consumption token.</p>
+    ///   - [`entitlements_allowed(Option<Vec<EntitlementData>>)`](crate::output::CheckoutLicenseOutput::entitlements_allowed): <p>Allowed license entitlements.</p>
+    ///   - [`signed_token(Option<String>)`](crate::output::CheckoutLicenseOutput::signed_token): <p>Signed token.</p>
+    ///   - [`node_id(Option<String>)`](crate::output::CheckoutLicenseOutput::node_id): <p>Node ID.</p>
+    ///   - [`issued_at(Option<String>)`](crate::output::CheckoutLicenseOutput::issued_at): <p>Date and time at which the license checkout is issued.</p>
+    ///   - [`expiration(Option<String>)`](crate::output::CheckoutLicenseOutput::expiration): <p>Date and time at which the license checkout expires.</p>
+    ///   - [`license_arn(Option<String>)`](crate::output::CheckoutLicenseOutput::license_arn): <p>Amazon Resource Name (ARN) of the checkout license.</p>
+    /// - On failure, responds with [`SdkError<CheckoutLicenseError>`](crate::error::CheckoutLicenseError)
     pub fn checkout_license(&self) -> fluent_builders::CheckoutLicense<C, M, R> {
         fluent_builders::CheckoutLicense::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGrant` operation.
+    /// Constructs a fluent builder for the [`CreateGrant`](crate::client::fluent_builders::CreateGrant) operation.
     ///
-    /// See [`CreateGrant`](crate::client::fluent_builders::CreateGrant) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateGrant::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateGrant::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`grant_name(impl Into<String>)`](crate::client::fluent_builders::CreateGrant::grant_name) / [`set_grant_name(Option<String>)`](crate::client::fluent_builders::CreateGrant::set_grant_name): <p>Grant name.</p>
+    ///   - [`license_arn(impl Into<String>)`](crate::client::fluent_builders::CreateGrant::license_arn) / [`set_license_arn(Option<String>)`](crate::client::fluent_builders::CreateGrant::set_license_arn): <p>Amazon Resource Name (ARN) of the license.</p>
+    ///   - [`principals(Vec<String>)`](crate::client::fluent_builders::CreateGrant::principals) / [`set_principals(Option<Vec<String>>)`](crate::client::fluent_builders::CreateGrant::set_principals): <p>The grant principals.</p>
+    ///   - [`home_region(impl Into<String>)`](crate::client::fluent_builders::CreateGrant::home_region) / [`set_home_region(Option<String>)`](crate::client::fluent_builders::CreateGrant::set_home_region): <p>Home Region of the grant.</p>
+    ///   - [`allowed_operations(Vec<AllowedOperation>)`](crate::client::fluent_builders::CreateGrant::allowed_operations) / [`set_allowed_operations(Option<Vec<AllowedOperation>>)`](crate::client::fluent_builders::CreateGrant::set_allowed_operations): <p>Allowed operations for the grant.</p>
+    /// - On success, responds with [`CreateGrantOutput`](crate::output::CreateGrantOutput) with field(s):
+    ///   - [`grant_arn(Option<String>)`](crate::output::CreateGrantOutput::grant_arn): <p>Grant ARN.</p>
+    ///   - [`status(Option<GrantStatus>)`](crate::output::CreateGrantOutput::status): <p>Grant status.</p>
+    ///   - [`version(Option<String>)`](crate::output::CreateGrantOutput::version): <p>Grant version.</p>
+    /// - On failure, responds with [`SdkError<CreateGrantError>`](crate::error::CreateGrantError)
     pub fn create_grant(&self) -> fluent_builders::CreateGrant<C, M, R> {
         fluent_builders::CreateGrant::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGrantVersion` operation.
+    /// Constructs a fluent builder for the [`CreateGrantVersion`](crate::client::fluent_builders::CreateGrantVersion) operation.
     ///
-    /// See [`CreateGrantVersion`](crate::client::fluent_builders::CreateGrantVersion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateGrantVersion::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateGrantVersion::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`grant_arn(impl Into<String>)`](crate::client::fluent_builders::CreateGrantVersion::grant_arn) / [`set_grant_arn(Option<String>)`](crate::client::fluent_builders::CreateGrantVersion::set_grant_arn): <p>Amazon Resource Name (ARN) of the grant.</p>
+    ///   - [`grant_name(impl Into<String>)`](crate::client::fluent_builders::CreateGrantVersion::grant_name) / [`set_grant_name(Option<String>)`](crate::client::fluent_builders::CreateGrantVersion::set_grant_name): <p>Grant name.</p>
+    ///   - [`allowed_operations(Vec<AllowedOperation>)`](crate::client::fluent_builders::CreateGrantVersion::allowed_operations) / [`set_allowed_operations(Option<Vec<AllowedOperation>>)`](crate::client::fluent_builders::CreateGrantVersion::set_allowed_operations): <p>Allowed operations for the grant.</p>
+    ///   - [`status(GrantStatus)`](crate::client::fluent_builders::CreateGrantVersion::status) / [`set_status(Option<GrantStatus>)`](crate::client::fluent_builders::CreateGrantVersion::set_status): <p>Grant status.</p>
+    ///   - [`status_reason(impl Into<String>)`](crate::client::fluent_builders::CreateGrantVersion::status_reason) / [`set_status_reason(Option<String>)`](crate::client::fluent_builders::CreateGrantVersion::set_status_reason): <p>Grant status reason.</p>
+    ///   - [`source_version(impl Into<String>)`](crate::client::fluent_builders::CreateGrantVersion::source_version) / [`set_source_version(Option<String>)`](crate::client::fluent_builders::CreateGrantVersion::set_source_version): <p>Current version of the grant.</p>
+    /// - On success, responds with [`CreateGrantVersionOutput`](crate::output::CreateGrantVersionOutput) with field(s):
+    ///   - [`grant_arn(Option<String>)`](crate::output::CreateGrantVersionOutput::grant_arn): <p>Grant ARN.</p>
+    ///   - [`status(Option<GrantStatus>)`](crate::output::CreateGrantVersionOutput::status): <p>Grant status.</p>
+    ///   - [`version(Option<String>)`](crate::output::CreateGrantVersionOutput::version): <p>New version of the grant.</p>
+    /// - On failure, responds with [`SdkError<CreateGrantVersionError>`](crate::error::CreateGrantVersionError)
     pub fn create_grant_version(&self) -> fluent_builders::CreateGrantVersion<C, M, R> {
         fluent_builders::CreateGrantVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLicense` operation.
+    /// Constructs a fluent builder for the [`CreateLicense`](crate::client::fluent_builders::CreateLicense) operation.
     ///
-    /// See [`CreateLicense`](crate::client::fluent_builders::CreateLicense) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_name(impl Into<String>)`](crate::client::fluent_builders::CreateLicense::license_name) / [`set_license_name(Option<String>)`](crate::client::fluent_builders::CreateLicense::set_license_name): <p>License name.</p>
+    ///   - [`product_name(impl Into<String>)`](crate::client::fluent_builders::CreateLicense::product_name) / [`set_product_name(Option<String>)`](crate::client::fluent_builders::CreateLicense::set_product_name): <p>Product name.</p>
+    ///   - [`product_sku(impl Into<String>)`](crate::client::fluent_builders::CreateLicense::product_sku) / [`set_product_sku(Option<String>)`](crate::client::fluent_builders::CreateLicense::set_product_sku): <p>Product SKU.</p>
+    ///   - [`issuer(Issuer)`](crate::client::fluent_builders::CreateLicense::issuer) / [`set_issuer(Option<Issuer>)`](crate::client::fluent_builders::CreateLicense::set_issuer): <p>License issuer.</p>
+    ///   - [`home_region(impl Into<String>)`](crate::client::fluent_builders::CreateLicense::home_region) / [`set_home_region(Option<String>)`](crate::client::fluent_builders::CreateLicense::set_home_region): <p>Home Region for the license.</p>
+    ///   - [`validity(DatetimeRange)`](crate::client::fluent_builders::CreateLicense::validity) / [`set_validity(Option<DatetimeRange>)`](crate::client::fluent_builders::CreateLicense::set_validity): <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
+    ///   - [`entitlements(Vec<Entitlement>)`](crate::client::fluent_builders::CreateLicense::entitlements) / [`set_entitlements(Option<Vec<Entitlement>>)`](crate::client::fluent_builders::CreateLicense::set_entitlements): <p>License entitlements.</p>
+    ///   - [`beneficiary(impl Into<String>)`](crate::client::fluent_builders::CreateLicense::beneficiary) / [`set_beneficiary(Option<String>)`](crate::client::fluent_builders::CreateLicense::set_beneficiary): <p>License beneficiary.</p>
+    ///   - [`consumption_configuration(ConsumptionConfiguration)`](crate::client::fluent_builders::CreateLicense::consumption_configuration) / [`set_consumption_configuration(Option<ConsumptionConfiguration>)`](crate::client::fluent_builders::CreateLicense::set_consumption_configuration): <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
+    ///   - [`license_metadata(Vec<Metadata>)`](crate::client::fluent_builders::CreateLicense::license_metadata) / [`set_license_metadata(Option<Vec<Metadata>>)`](crate::client::fluent_builders::CreateLicense::set_license_metadata): <p>Information about the license.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateLicense::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateLicense::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`CreateLicenseOutput`](crate::output::CreateLicenseOutput) with field(s):
+    ///   - [`license_arn(Option<String>)`](crate::output::CreateLicenseOutput::license_arn): <p>Amazon Resource Name (ARN) of the license.</p>
+    ///   - [`status(Option<LicenseStatus>)`](crate::output::CreateLicenseOutput::status): <p>License status.</p>
+    ///   - [`version(Option<String>)`](crate::output::CreateLicenseOutput::version): <p>License version.</p>
+    /// - On failure, responds with [`SdkError<CreateLicenseError>`](crate::error::CreateLicenseError)
     pub fn create_license(&self) -> fluent_builders::CreateLicense<C, M, R> {
         fluent_builders::CreateLicense::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLicenseConfiguration` operation.
+    /// Constructs a fluent builder for the [`CreateLicenseConfiguration`](crate::client::fluent_builders::CreateLicenseConfiguration) operation.
     ///
-    /// See [`CreateLicenseConfiguration`](crate::client::fluent_builders::CreateLicenseConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateLicenseConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateLicenseConfiguration::set_name): <p>Name of the license configuration.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateLicenseConfiguration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateLicenseConfiguration::set_description): <p>Description of the license configuration.</p>
+    ///   - [`license_counting_type(LicenseCountingType)`](crate::client::fluent_builders::CreateLicenseConfiguration::license_counting_type) / [`set_license_counting_type(Option<LicenseCountingType>)`](crate::client::fluent_builders::CreateLicenseConfiguration::set_license_counting_type): <p>Dimension used to track the license inventory.</p>
+    ///   - [`license_count(i64)`](crate::client::fluent_builders::CreateLicenseConfiguration::license_count) / [`set_license_count(Option<i64>)`](crate::client::fluent_builders::CreateLicenseConfiguration::set_license_count): <p>Number of licenses managed by the license configuration.</p>
+    ///   - [`license_count_hard_limit(bool)`](crate::client::fluent_builders::CreateLicenseConfiguration::license_count_hard_limit) / [`set_license_count_hard_limit(Option<bool>)`](crate::client::fluent_builders::CreateLicenseConfiguration::set_license_count_hard_limit): <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
+    ///   - [`license_rules(Vec<String>)`](crate::client::fluent_builders::CreateLicenseConfiguration::license_rules) / [`set_license_rules(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLicenseConfiguration::set_license_rules): <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>  <ul>   <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li>   <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>   <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li>   <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>  </ul>  <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateLicenseConfiguration::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateLicenseConfiguration::set_tags): <p>Tags to add to the license configuration.</p>
+    ///   - [`disassociate_when_not_found(bool)`](crate::client::fluent_builders::CreateLicenseConfiguration::disassociate_when_not_found) / [`set_disassociate_when_not_found(Option<bool>)`](crate::client::fluent_builders::CreateLicenseConfiguration::set_disassociate_when_not_found): <p>When true, disassociates a resource when software is uninstalled.</p>
+    ///   - [`product_information_list(Vec<ProductInformation>)`](crate::client::fluent_builders::CreateLicenseConfiguration::product_information_list) / [`set_product_information_list(Option<Vec<ProductInformation>>)`](crate::client::fluent_builders::CreateLicenseConfiguration::set_product_information_list): <p>Product information.</p>
+    /// - On success, responds with [`CreateLicenseConfigurationOutput`](crate::output::CreateLicenseConfigurationOutput) with field(s):
+    ///   - [`license_configuration_arn(Option<String>)`](crate::output::CreateLicenseConfigurationOutput::license_configuration_arn): <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    /// - On failure, responds with [`SdkError<CreateLicenseConfigurationError>`](crate::error::CreateLicenseConfigurationError)
     pub fn create_license_configuration(
         &self,
     ) -> fluent_builders::CreateLicenseConfiguration<C, M, R> {
         fluent_builders::CreateLicenseConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLicenseConversionTaskForResource` operation.
+    /// Constructs a fluent builder for the [`CreateLicenseConversionTaskForResource`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource) operation.
     ///
-    /// See [`CreateLicenseConversionTaskForResource`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::set_resource_arn): <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
+    ///   - [`source_license_context(LicenseConversionContext)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::source_license_context) / [`set_source_license_context(Option<LicenseConversionContext>)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::set_source_license_context): <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+    ///   - [`destination_license_context(LicenseConversionContext)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::destination_license_context) / [`set_destination_license_context(Option<LicenseConversionContext>)`](crate::client::fluent_builders::CreateLicenseConversionTaskForResource::set_destination_license_context): <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+    /// - On success, responds with [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput) with field(s):
+    ///   - [`license_conversion_task_id(Option<String>)`](crate::output::CreateLicenseConversionTaskForResourceOutput::license_conversion_task_id): <p>The ID of the created license type conversion task.</p>
+    /// - On failure, responds with [`SdkError<CreateLicenseConversionTaskForResourceError>`](crate::error::CreateLicenseConversionTaskForResourceError)
     pub fn create_license_conversion_task_for_resource(
         &self,
     ) -> fluent_builders::CreateLicenseConversionTaskForResource<C, M, R> {
         fluent_builders::CreateLicenseConversionTaskForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLicenseManagerReportGenerator` operation.
+    /// Constructs a fluent builder for the [`CreateLicenseManagerReportGenerator`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator) operation.
     ///
-    /// See [`CreateLicenseManagerReportGenerator`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`report_generator_name(impl Into<String>)`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator::report_generator_name) / [`set_report_generator_name(Option<String>)`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator::set_report_generator_name): <p>Name of the report generator.</p>
+    ///   - [`r#type(Vec<ReportType>)`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator::r#type) / [`set_type(Option<Vec<ReportType>>)`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator::set_type): <p>Type of reports to generate. The following report types an be generated:</p>  <ul>   <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>   <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>  </ul>
+    ///   - [`report_context(ReportContext)`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator::report_context) / [`set_report_context(Option<ReportContext>)`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator::set_report_context): <p>Defines the type of license configuration the report generator tracks.</p>
+    ///   - [`report_frequency(ReportFrequency)`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator::report_frequency) / [`set_report_frequency(Option<ReportFrequency>)`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator::set_report_frequency): <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator::set_description): <p>Description of the report generator.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateLicenseManagerReportGenerator::set_tags): <p>Tags to add to the report generator.</p>
+    /// - On success, responds with [`CreateLicenseManagerReportGeneratorOutput`](crate::output::CreateLicenseManagerReportGeneratorOutput) with field(s):
+    ///   - [`license_manager_report_generator_arn(Option<String>)`](crate::output::CreateLicenseManagerReportGeneratorOutput::license_manager_report_generator_arn): <p>The Amazon Resource Name (ARN) of the new report generator.</p>
+    /// - On failure, responds with [`SdkError<CreateLicenseManagerReportGeneratorError>`](crate::error::CreateLicenseManagerReportGeneratorError)
     pub fn create_license_manager_report_generator(
         &self,
     ) -> fluent_builders::CreateLicenseManagerReportGenerator<C, M, R> {
         fluent_builders::CreateLicenseManagerReportGenerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLicenseVersion` operation.
+    /// Constructs a fluent builder for the [`CreateLicenseVersion`](crate::client::fluent_builders::CreateLicenseVersion) operation.
     ///
-    /// See [`CreateLicenseVersion`](crate::client::fluent_builders::CreateLicenseVersion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLicenseVersion::license_arn) / [`set_license_arn(Option<String>)`](crate::client::fluent_builders::CreateLicenseVersion::set_license_arn): <p>Amazon Resource Name (ARN) of the license.</p>
+    ///   - [`license_name(impl Into<String>)`](crate::client::fluent_builders::CreateLicenseVersion::license_name) / [`set_license_name(Option<String>)`](crate::client::fluent_builders::CreateLicenseVersion::set_license_name): <p>License name.</p>
+    ///   - [`product_name(impl Into<String>)`](crate::client::fluent_builders::CreateLicenseVersion::product_name) / [`set_product_name(Option<String>)`](crate::client::fluent_builders::CreateLicenseVersion::set_product_name): <p>Product name.</p>
+    ///   - [`issuer(Issuer)`](crate::client::fluent_builders::CreateLicenseVersion::issuer) / [`set_issuer(Option<Issuer>)`](crate::client::fluent_builders::CreateLicenseVersion::set_issuer): <p>License issuer.</p>
+    ///   - [`home_region(impl Into<String>)`](crate::client::fluent_builders::CreateLicenseVersion::home_region) / [`set_home_region(Option<String>)`](crate::client::fluent_builders::CreateLicenseVersion::set_home_region): <p>Home Region of the license.</p>
+    ///   - [`validity(DatetimeRange)`](crate::client::fluent_builders::CreateLicenseVersion::validity) / [`set_validity(Option<DatetimeRange>)`](crate::client::fluent_builders::CreateLicenseVersion::set_validity): <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
+    ///   - [`license_metadata(Vec<Metadata>)`](crate::client::fluent_builders::CreateLicenseVersion::license_metadata) / [`set_license_metadata(Option<Vec<Metadata>>)`](crate::client::fluent_builders::CreateLicenseVersion::set_license_metadata): <p>Information about the license.</p>
+    ///   - [`entitlements(Vec<Entitlement>)`](crate::client::fluent_builders::CreateLicenseVersion::entitlements) / [`set_entitlements(Option<Vec<Entitlement>>)`](crate::client::fluent_builders::CreateLicenseVersion::set_entitlements): <p>License entitlements.</p>
+    ///   - [`consumption_configuration(ConsumptionConfiguration)`](crate::client::fluent_builders::CreateLicenseVersion::consumption_configuration) / [`set_consumption_configuration(Option<ConsumptionConfiguration>)`](crate::client::fluent_builders::CreateLicenseVersion::set_consumption_configuration): <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
+    ///   - [`status(LicenseStatus)`](crate::client::fluent_builders::CreateLicenseVersion::status) / [`set_status(Option<LicenseStatus>)`](crate::client::fluent_builders::CreateLicenseVersion::set_status): <p>License status.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateLicenseVersion::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateLicenseVersion::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`source_version(impl Into<String>)`](crate::client::fluent_builders::CreateLicenseVersion::source_version) / [`set_source_version(Option<String>)`](crate::client::fluent_builders::CreateLicenseVersion::set_source_version): <p>Current version of the license.</p>
+    /// - On success, responds with [`CreateLicenseVersionOutput`](crate::output::CreateLicenseVersionOutput) with field(s):
+    ///   - [`license_arn(Option<String>)`](crate::output::CreateLicenseVersionOutput::license_arn): <p>License ARN.</p>
+    ///   - [`version(Option<String>)`](crate::output::CreateLicenseVersionOutput::version): <p>New version of the license.</p>
+    ///   - [`status(Option<LicenseStatus>)`](crate::output::CreateLicenseVersionOutput::status): <p>License status.</p>
+    /// - On failure, responds with [`SdkError<CreateLicenseVersionError>`](crate::error::CreateLicenseVersionError)
     pub fn create_license_version(&self) -> fluent_builders::CreateLicenseVersion<C, M, R> {
         fluent_builders::CreateLicenseVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateToken` operation.
+    /// Constructs a fluent builder for the [`CreateToken`](crate::client::fluent_builders::CreateToken) operation.
     ///
-    /// See [`CreateToken`](crate::client::fluent_builders::CreateToken) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_arn(impl Into<String>)`](crate::client::fluent_builders::CreateToken::license_arn) / [`set_license_arn(Option<String>)`](crate::client::fluent_builders::CreateToken::set_license_arn): <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
+    ///   - [`role_arns(Vec<String>)`](crate::client::fluent_builders::CreateToken::role_arns) / [`set_role_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateToken::set_role_arns): <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
+    ///   - [`expiration_in_days(i32)`](crate::client::fluent_builders::CreateToken::expiration_in_days) / [`set_expiration_in_days(Option<i32>)`](crate::client::fluent_builders::CreateToken::set_expiration_in_days): <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
+    ///   - [`token_properties(Vec<String>)`](crate::client::fluent_builders::CreateToken::token_properties) / [`set_token_properties(Option<Vec<String>>)`](crate::client::fluent_builders::CreateToken::set_token_properties): <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateToken::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateToken::set_client_token): <p>Idempotency token, valid for 10 minutes.</p>
+    /// - On success, responds with [`CreateTokenOutput`](crate::output::CreateTokenOutput) with field(s):
+    ///   - [`token_id(Option<String>)`](crate::output::CreateTokenOutput::token_id): <p>Token ID.</p>
+    ///   - [`token_type(Option<TokenType>)`](crate::output::CreateTokenOutput::token_type): <p>Token type.</p>
+    ///   - [`token(Option<String>)`](crate::output::CreateTokenOutput::token): <p>Refresh token, encoded as a JWT token.</p>
+    /// - On failure, responds with [`SdkError<CreateTokenError>`](crate::error::CreateTokenError)
     pub fn create_token(&self) -> fluent_builders::CreateToken<C, M, R> {
         fluent_builders::CreateToken::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGrant` operation.
+    /// Constructs a fluent builder for the [`DeleteGrant`](crate::client::fluent_builders::DeleteGrant) operation.
     ///
-    /// See [`DeleteGrant`](crate::client::fluent_builders::DeleteGrant) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`grant_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteGrant::grant_arn) / [`set_grant_arn(Option<String>)`](crate::client::fluent_builders::DeleteGrant::set_grant_arn): <p>Amazon Resource Name (ARN) of the grant.</p>
+    ///   - [`status_reason(impl Into<String>)`](crate::client::fluent_builders::DeleteGrant::status_reason) / [`set_status_reason(Option<String>)`](crate::client::fluent_builders::DeleteGrant::set_status_reason): <p>The Status reason for the delete request.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::DeleteGrant::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::DeleteGrant::set_version): <p>Current version of the grant.</p>
+    /// - On success, responds with [`DeleteGrantOutput`](crate::output::DeleteGrantOutput) with field(s):
+    ///   - [`grant_arn(Option<String>)`](crate::output::DeleteGrantOutput::grant_arn): <p>Grant ARN.</p>
+    ///   - [`status(Option<GrantStatus>)`](crate::output::DeleteGrantOutput::status): <p>Grant status.</p>
+    ///   - [`version(Option<String>)`](crate::output::DeleteGrantOutput::version): <p>Grant version.</p>
+    /// - On failure, responds with [`SdkError<DeleteGrantError>`](crate::error::DeleteGrantError)
     pub fn delete_grant(&self) -> fluent_builders::DeleteGrant<C, M, R> {
         fluent_builders::DeleteGrant::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLicense` operation.
+    /// Constructs a fluent builder for the [`DeleteLicense`](crate::client::fluent_builders::DeleteLicense) operation.
     ///
-    /// See [`DeleteLicense`](crate::client::fluent_builders::DeleteLicense) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteLicense::license_arn) / [`set_license_arn(Option<String>)`](crate::client::fluent_builders::DeleteLicense::set_license_arn): <p>Amazon Resource Name (ARN) of the license.</p>
+    ///   - [`source_version(impl Into<String>)`](crate::client::fluent_builders::DeleteLicense::source_version) / [`set_source_version(Option<String>)`](crate::client::fluent_builders::DeleteLicense::set_source_version): <p>Current version of the license.</p>
+    /// - On success, responds with [`DeleteLicenseOutput`](crate::output::DeleteLicenseOutput) with field(s):
+    ///   - [`status(Option<LicenseDeletionStatus>)`](crate::output::DeleteLicenseOutput::status): <p>License status.</p>
+    ///   - [`deletion_date(Option<String>)`](crate::output::DeleteLicenseOutput::deletion_date): <p>Date when the license is deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteLicenseError>`](crate::error::DeleteLicenseError)
     pub fn delete_license(&self) -> fluent_builders::DeleteLicense<C, M, R> {
         fluent_builders::DeleteLicense::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLicenseConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteLicenseConfiguration`](crate::client::fluent_builders::DeleteLicenseConfiguration) operation.
     ///
-    /// See [`DeleteLicenseConfiguration`](crate::client::fluent_builders::DeleteLicenseConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteLicenseConfiguration::license_configuration_arn) / [`set_license_configuration_arn(Option<String>)`](crate::client::fluent_builders::DeleteLicenseConfiguration::set_license_configuration_arn): <p>ID of the license configuration.</p>
+    /// - On success, responds with [`DeleteLicenseConfigurationOutput`](crate::output::DeleteLicenseConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLicenseConfigurationError>`](crate::error::DeleteLicenseConfigurationError)
     pub fn delete_license_configuration(
         &self,
     ) -> fluent_builders::DeleteLicenseConfiguration<C, M, R> {
         fluent_builders::DeleteLicenseConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLicenseManagerReportGenerator` operation.
+    /// Constructs a fluent builder for the [`DeleteLicenseManagerReportGenerator`](crate::client::fluent_builders::DeleteLicenseManagerReportGenerator) operation.
     ///
-    /// See [`DeleteLicenseManagerReportGenerator`](crate::client::fluent_builders::DeleteLicenseManagerReportGenerator) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_manager_report_generator_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteLicenseManagerReportGenerator::license_manager_report_generator_arn) / [`set_license_manager_report_generator_arn(Option<String>)`](crate::client::fluent_builders::DeleteLicenseManagerReportGenerator::set_license_manager_report_generator_arn): <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
+    /// - On success, responds with [`DeleteLicenseManagerReportGeneratorOutput`](crate::output::DeleteLicenseManagerReportGeneratorOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLicenseManagerReportGeneratorError>`](crate::error::DeleteLicenseManagerReportGeneratorError)
     pub fn delete_license_manager_report_generator(
         &self,
     ) -> fluent_builders::DeleteLicenseManagerReportGenerator<C, M, R> {
         fluent_builders::DeleteLicenseManagerReportGenerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteToken` operation.
+    /// Constructs a fluent builder for the [`DeleteToken`](crate::client::fluent_builders::DeleteToken) operation.
     ///
-    /// See [`DeleteToken`](crate::client::fluent_builders::DeleteToken) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`token_id(impl Into<String>)`](crate::client::fluent_builders::DeleteToken::token_id) / [`set_token_id(Option<String>)`](crate::client::fluent_builders::DeleteToken::set_token_id): <p>Token ID.</p>
+    /// - On success, responds with [`DeleteTokenOutput`](crate::output::DeleteTokenOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTokenError>`](crate::error::DeleteTokenError)
     pub fn delete_token(&self) -> fluent_builders::DeleteToken<C, M, R> {
         fluent_builders::DeleteToken::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ExtendLicenseConsumption` operation.
+    /// Constructs a fluent builder for the [`ExtendLicenseConsumption`](crate::client::fluent_builders::ExtendLicenseConsumption) operation.
     ///
-    /// See [`ExtendLicenseConsumption`](crate::client::fluent_builders::ExtendLicenseConsumption) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_consumption_token(impl Into<String>)`](crate::client::fluent_builders::ExtendLicenseConsumption::license_consumption_token) / [`set_license_consumption_token(Option<String>)`](crate::client::fluent_builders::ExtendLicenseConsumption::set_license_consumption_token): <p>License consumption token.</p>
+    ///   - [`dry_run(bool)`](crate::client::fluent_builders::ExtendLicenseConsumption::dry_run) / [`set_dry_run(bool)`](crate::client::fluent_builders::ExtendLicenseConsumption::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
+    /// - On success, responds with [`ExtendLicenseConsumptionOutput`](crate::output::ExtendLicenseConsumptionOutput) with field(s):
+    ///   - [`license_consumption_token(Option<String>)`](crate::output::ExtendLicenseConsumptionOutput::license_consumption_token): <p>License consumption token.</p>
+    ///   - [`expiration(Option<String>)`](crate::output::ExtendLicenseConsumptionOutput::expiration): <p>Date and time at which the license consumption expires.</p>
+    /// - On failure, responds with [`SdkError<ExtendLicenseConsumptionError>`](crate::error::ExtendLicenseConsumptionError)
     pub fn extend_license_consumption(&self) -> fluent_builders::ExtendLicenseConsumption<C, M, R> {
         fluent_builders::ExtendLicenseConsumption::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccessToken` operation.
+    /// Constructs a fluent builder for the [`GetAccessToken`](crate::client::fluent_builders::GetAccessToken) operation.
     ///
-    /// See [`GetAccessToken`](crate::client::fluent_builders::GetAccessToken) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::GetAccessToken::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::GetAccessToken::set_token): <p>Refresh token, encoded as a JWT token.</p>
+    ///   - [`token_properties(Vec<String>)`](crate::client::fluent_builders::GetAccessToken::token_properties) / [`set_token_properties(Option<Vec<String>>)`](crate::client::fluent_builders::GetAccessToken::set_token_properties): <p>Token properties to validate against those present in the JWT token.</p>
+    /// - On success, responds with [`GetAccessTokenOutput`](crate::output::GetAccessTokenOutput) with field(s):
+    ///   - [`access_token(Option<String>)`](crate::output::GetAccessTokenOutput::access_token): <p>Temporary access token.</p>
+    /// - On failure, responds with [`SdkError<GetAccessTokenError>`](crate::error::GetAccessTokenError)
     pub fn get_access_token(&self) -> fluent_builders::GetAccessToken<C, M, R> {
         fluent_builders::GetAccessToken::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGrant` operation.
+    /// Constructs a fluent builder for the [`GetGrant`](crate::client::fluent_builders::GetGrant) operation.
     ///
-    /// See [`GetGrant`](crate::client::fluent_builders::GetGrant) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`grant_arn(impl Into<String>)`](crate::client::fluent_builders::GetGrant::grant_arn) / [`set_grant_arn(Option<String>)`](crate::client::fluent_builders::GetGrant::set_grant_arn): <p>Amazon Resource Name (ARN) of the grant.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::GetGrant::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::GetGrant::set_version): <p>Grant version.</p>
+    /// - On success, responds with [`GetGrantOutput`](crate::output::GetGrantOutput) with field(s):
+    ///   - [`grant(Option<Grant>)`](crate::output::GetGrantOutput::grant): <p>Grant details.</p>
+    /// - On failure, responds with [`SdkError<GetGrantError>`](crate::error::GetGrantError)
     pub fn get_grant(&self) -> fluent_builders::GetGrant<C, M, R> {
         fluent_builders::GetGrant::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLicense` operation.
+    /// Constructs a fluent builder for the [`GetLicense`](crate::client::fluent_builders::GetLicense) operation.
     ///
-    /// See [`GetLicense`](crate::client::fluent_builders::GetLicense) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_arn(impl Into<String>)`](crate::client::fluent_builders::GetLicense::license_arn) / [`set_license_arn(Option<String>)`](crate::client::fluent_builders::GetLicense::set_license_arn): <p>Amazon Resource Name (ARN) of the license.</p>
+    ///   - [`version(impl Into<String>)`](crate::client::fluent_builders::GetLicense::version) / [`set_version(Option<String>)`](crate::client::fluent_builders::GetLicense::set_version): <p>License version.</p>
+    /// - On success, responds with [`GetLicenseOutput`](crate::output::GetLicenseOutput) with field(s):
+    ///   - [`license(Option<License>)`](crate::output::GetLicenseOutput::license): <p>License details.</p>
+    /// - On failure, responds with [`SdkError<GetLicenseError>`](crate::error::GetLicenseError)
     pub fn get_license(&self) -> fluent_builders::GetLicense<C, M, R> {
         fluent_builders::GetLicense::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLicenseConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetLicenseConfiguration`](crate::client::fluent_builders::GetLicenseConfiguration) operation.
     ///
-    /// See [`GetLicenseConfiguration`](crate::client::fluent_builders::GetLicenseConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::GetLicenseConfiguration::license_configuration_arn) / [`set_license_configuration_arn(Option<String>)`](crate::client::fluent_builders::GetLicenseConfiguration::set_license_configuration_arn): <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    /// - On success, responds with [`GetLicenseConfigurationOutput`](crate::output::GetLicenseConfigurationOutput) with field(s):
+    ///   - [`license_configuration_id(Option<String>)`](crate::output::GetLicenseConfigurationOutput::license_configuration_id): <p>Unique ID for the license configuration.</p>
+    ///   - [`license_configuration_arn(Option<String>)`](crate::output::GetLicenseConfigurationOutput::license_configuration_arn): <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetLicenseConfigurationOutput::name): <p>Name of the license configuration.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetLicenseConfigurationOutput::description): <p>Description of the license configuration.</p>
+    ///   - [`license_counting_type(Option<LicenseCountingType>)`](crate::output::GetLicenseConfigurationOutput::license_counting_type): <p>Dimension for which the licenses are counted.</p>
+    ///   - [`license_rules(Option<Vec<String>>)`](crate::output::GetLicenseConfigurationOutput::license_rules): <p>License rules.</p>
+    ///   - [`license_count(Option<i64>)`](crate::output::GetLicenseConfigurationOutput::license_count): <p>Number of available licenses.</p>
+    ///   - [`license_count_hard_limit(Option<bool>)`](crate::output::GetLicenseConfigurationOutput::license_count_hard_limit): <p>Sets the number of available licenses as a hard limit.</p>
+    ///   - [`consumed_licenses(Option<i64>)`](crate::output::GetLicenseConfigurationOutput::consumed_licenses): <p>Number of licenses assigned to resources.</p>
+    ///   - [`status(Option<String>)`](crate::output::GetLicenseConfigurationOutput::status): <p>License configuration status.</p>
+    ///   - [`owner_account_id(Option<String>)`](crate::output::GetLicenseConfigurationOutput::owner_account_id): <p>Account ID of the owner of the license configuration.</p>
+    ///   - [`consumed_license_summary_list(Option<Vec<ConsumedLicenseSummary>>)`](crate::output::GetLicenseConfigurationOutput::consumed_license_summary_list): <p>Summaries of the licenses consumed by resources.</p>
+    ///   - [`managed_resource_summary_list(Option<Vec<ManagedResourceSummary>>)`](crate::output::GetLicenseConfigurationOutput::managed_resource_summary_list): <p>Summaries of the managed resources.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::GetLicenseConfigurationOutput::tags): <p>Tags for the license configuration.</p>
+    ///   - [`product_information_list(Option<Vec<ProductInformation>>)`](crate::output::GetLicenseConfigurationOutput::product_information_list): <p>Product information.</p>
+    ///   - [`automated_discovery_information(Option<AutomatedDiscoveryInformation>)`](crate::output::GetLicenseConfigurationOutput::automated_discovery_information): <p>Automated discovery information.</p>
+    ///   - [`disassociate_when_not_found(Option<bool>)`](crate::output::GetLicenseConfigurationOutput::disassociate_when_not_found): <p>When true, disassociates a resource when software is uninstalled.</p>
+    /// - On failure, responds with [`SdkError<GetLicenseConfigurationError>`](crate::error::GetLicenseConfigurationError)
     pub fn get_license_configuration(&self) -> fluent_builders::GetLicenseConfiguration<C, M, R> {
         fluent_builders::GetLicenseConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLicenseConversionTask` operation.
+    /// Constructs a fluent builder for the [`GetLicenseConversionTask`](crate::client::fluent_builders::GetLicenseConversionTask) operation.
     ///
-    /// See [`GetLicenseConversionTask`](crate::client::fluent_builders::GetLicenseConversionTask) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_conversion_task_id(impl Into<String>)`](crate::client::fluent_builders::GetLicenseConversionTask::license_conversion_task_id) / [`set_license_conversion_task_id(Option<String>)`](crate::client::fluent_builders::GetLicenseConversionTask::set_license_conversion_task_id): <p>ID of the license type conversion task to retrieve information on.</p>
+    /// - On success, responds with [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput) with field(s):
+    ///   - [`license_conversion_task_id(Option<String>)`](crate::output::GetLicenseConversionTaskOutput::license_conversion_task_id): <p>ID of the license type conversion task.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::output::GetLicenseConversionTaskOutput::resource_arn): <p>Amazon Resource Names (ARN) of the resources the license conversion task is associated with.</p>
+    ///   - [`source_license_context(Option<LicenseConversionContext>)`](crate::output::GetLicenseConversionTaskOutput::source_license_context): <p>Information about the license type converted from.</p>
+    ///   - [`destination_license_context(Option<LicenseConversionContext>)`](crate::output::GetLicenseConversionTaskOutput::destination_license_context): <p>Information about the license type converted to.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::GetLicenseConversionTaskOutput::status_message): <p>The status message for the conversion task.</p>
+    ///   - [`status(Option<LicenseConversionTaskStatus>)`](crate::output::GetLicenseConversionTaskOutput::status): <p>Status of the license type conversion task.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::output::GetLicenseConversionTaskOutput::start_time): <p>Time at which the license type conversion task was started .</p>
+    ///   - [`license_conversion_time(Option<DateTime>)`](crate::output::GetLicenseConversionTaskOutput::license_conversion_time): <p>Amount of time to complete the license type conversion.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::output::GetLicenseConversionTaskOutput::end_time): <p>Time at which the license type conversion task was completed.</p>
+    /// - On failure, responds with [`SdkError<GetLicenseConversionTaskError>`](crate::error::GetLicenseConversionTaskError)
     pub fn get_license_conversion_task(
         &self,
     ) -> fluent_builders::GetLicenseConversionTask<C, M, R> {
         fluent_builders::GetLicenseConversionTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLicenseManagerReportGenerator` operation.
+    /// Constructs a fluent builder for the [`GetLicenseManagerReportGenerator`](crate::client::fluent_builders::GetLicenseManagerReportGenerator) operation.
     ///
-    /// See [`GetLicenseManagerReportGenerator`](crate::client::fluent_builders::GetLicenseManagerReportGenerator) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_manager_report_generator_arn(impl Into<String>)`](crate::client::fluent_builders::GetLicenseManagerReportGenerator::license_manager_report_generator_arn) / [`set_license_manager_report_generator_arn(Option<String>)`](crate::client::fluent_builders::GetLicenseManagerReportGenerator::set_license_manager_report_generator_arn): <p>Amazon Resource Name (ARN) of the report generator.</p>
+    /// - On success, responds with [`GetLicenseManagerReportGeneratorOutput`](crate::output::GetLicenseManagerReportGeneratorOutput) with field(s):
+    ///   - [`report_generator(Option<ReportGenerator>)`](crate::output::GetLicenseManagerReportGeneratorOutput::report_generator): <p>A report generator that creates periodic reports about your license configurations.</p>
+    /// - On failure, responds with [`SdkError<GetLicenseManagerReportGeneratorError>`](crate::error::GetLicenseManagerReportGeneratorError)
     pub fn get_license_manager_report_generator(
         &self,
     ) -> fluent_builders::GetLicenseManagerReportGenerator<C, M, R> {
         fluent_builders::GetLicenseManagerReportGenerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLicenseUsage` operation.
+    /// Constructs a fluent builder for the [`GetLicenseUsage`](crate::client::fluent_builders::GetLicenseUsage) operation.
     ///
-    /// See [`GetLicenseUsage`](crate::client::fluent_builders::GetLicenseUsage) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_arn(impl Into<String>)`](crate::client::fluent_builders::GetLicenseUsage::license_arn) / [`set_license_arn(Option<String>)`](crate::client::fluent_builders::GetLicenseUsage::set_license_arn): <p>Amazon Resource Name (ARN) of the license.</p>
+    /// - On success, responds with [`GetLicenseUsageOutput`](crate::output::GetLicenseUsageOutput) with field(s):
+    ///   - [`license_usage(Option<LicenseUsage>)`](crate::output::GetLicenseUsageOutput::license_usage): <p>License usage details.</p>
+    /// - On failure, responds with [`SdkError<GetLicenseUsageError>`](crate::error::GetLicenseUsageError)
     pub fn get_license_usage(&self) -> fluent_builders::GetLicenseUsage<C, M, R> {
         fluent_builders::GetLicenseUsage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServiceSettings` operation.
+    /// Constructs a fluent builder for the [`GetServiceSettings`](crate::client::fluent_builders::GetServiceSettings) operation.
     ///
-    /// See [`GetServiceSettings`](crate::client::fluent_builders::GetServiceSettings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetServiceSettings::send) it.
+
+    /// - On success, responds with [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput) with field(s):
+    ///   - [`s3_bucket_arn(Option<String>)`](crate::output::GetServiceSettingsOutput::s3_bucket_arn): <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::output::GetServiceSettingsOutput::sns_topic_arn): <p>SNS topic configured to receive notifications from License Manager.</p>
+    ///   - [`organization_configuration(Option<OrganizationConfiguration>)`](crate::output::GetServiceSettingsOutput::organization_configuration): <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
+    ///   - [`enable_cross_accounts_discovery(Option<bool>)`](crate::output::GetServiceSettingsOutput::enable_cross_accounts_discovery): <p>Indicates whether cross-account discovery is enabled.</p>
+    ///   - [`license_manager_resource_share_arn(Option<String>)`](crate::output::GetServiceSettingsOutput::license_manager_resource_share_arn): <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
+    /// - On failure, responds with [`SdkError<GetServiceSettingsError>`](crate::error::GetServiceSettingsError)
     pub fn get_service_settings(&self) -> fluent_builders::GetServiceSettings<C, M, R> {
         fluent_builders::GetServiceSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAssociationsForLicenseConfiguration` operation.
+    /// Constructs a fluent builder for the [`ListAssociationsForLicenseConfiguration`](crate::client::fluent_builders::ListAssociationsForLicenseConfiguration) operation.
     ///
-    /// See [`ListAssociationsForLicenseConfiguration`](crate::client::fluent_builders::ListAssociationsForLicenseConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::ListAssociationsForLicenseConfiguration::license_configuration_arn) / [`set_license_configuration_arn(Option<String>)`](crate::client::fluent_builders::ListAssociationsForLicenseConfiguration::set_license_configuration_arn): <p>Amazon Resource Name (ARN) of a license configuration.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAssociationsForLicenseConfiguration::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAssociationsForLicenseConfiguration::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAssociationsForLicenseConfiguration::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAssociationsForLicenseConfiguration::set_next_token): <p>Token for the next set of results.</p>
+    /// - On success, responds with [`ListAssociationsForLicenseConfigurationOutput`](crate::output::ListAssociationsForLicenseConfigurationOutput) with field(s):
+    ///   - [`license_configuration_associations(Option<Vec<LicenseConfigurationAssociation>>)`](crate::output::ListAssociationsForLicenseConfigurationOutput::license_configuration_associations): <p>Information about the associations for the license configuration.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssociationsForLicenseConfigurationOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListAssociationsForLicenseConfigurationError>`](crate::error::ListAssociationsForLicenseConfigurationError)
     pub fn list_associations_for_license_configuration(
         &self,
     ) -> fluent_builders::ListAssociationsForLicenseConfiguration<C, M, R> {
         fluent_builders::ListAssociationsForLicenseConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDistributedGrants` operation.
+    /// Constructs a fluent builder for the [`ListDistributedGrants`](crate::client::fluent_builders::ListDistributedGrants) operation.
     ///
-    /// See [`ListDistributedGrants`](crate::client::fluent_builders::ListDistributedGrants) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`grant_arns(Vec<String>)`](crate::client::fluent_builders::ListDistributedGrants::grant_arns) / [`set_grant_arns(Option<Vec<String>>)`](crate::client::fluent_builders::ListDistributedGrants::set_grant_arns): <p>Amazon Resource Names (ARNs) of the grants.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListDistributedGrants::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListDistributedGrants::set_filters): <p>Filters to scope the results. The following filters are supported:</p>  <ul>   <li> <p> <code>LicenseArn</code> </p> </li>   <li> <p> <code>GrantStatus</code> </p> </li>   <li> <p> <code>GranteePrincipalARN</code> </p> </li>   <li> <p> <code>ProductSKU</code> </p> </li>   <li> <p> <code>LicenseIssuerName</code> </p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDistributedGrants::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDistributedGrants::set_next_token): <p>Token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDistributedGrants::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDistributedGrants::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListDistributedGrantsOutput`](crate::output::ListDistributedGrantsOutput) with field(s):
+    ///   - [`grants(Option<Vec<Grant>>)`](crate::output::ListDistributedGrantsOutput::grants): <p>Distributed grant details.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDistributedGrantsOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListDistributedGrantsError>`](crate::error::ListDistributedGrantsError)
     pub fn list_distributed_grants(&self) -> fluent_builders::ListDistributedGrants<C, M, R> {
         fluent_builders::ListDistributedGrants::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFailuresForLicenseConfigurationOperations` operation.
+    /// Constructs a fluent builder for the [`ListFailuresForLicenseConfigurationOperations`](crate::client::fluent_builders::ListFailuresForLicenseConfigurationOperations) operation.
     ///
-    /// See [`ListFailuresForLicenseConfigurationOperations`](crate::client::fluent_builders::ListFailuresForLicenseConfigurationOperations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::ListFailuresForLicenseConfigurationOperations::license_configuration_arn) / [`set_license_configuration_arn(Option<String>)`](crate::client::fluent_builders::ListFailuresForLicenseConfigurationOperations::set_license_configuration_arn): <p>Amazon Resource Name of the license configuration.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFailuresForLicenseConfigurationOperations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFailuresForLicenseConfigurationOperations::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFailuresForLicenseConfigurationOperations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFailuresForLicenseConfigurationOperations::set_next_token): <p>Token for the next set of results.</p>
+    /// - On success, responds with [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput) with field(s):
+    ///   - [`license_operation_failure_list(Option<Vec<LicenseOperationFailure>>)`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput::license_operation_failure_list): <p>License configuration operations that failed.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListFailuresForLicenseConfigurationOperationsError>`](crate::error::ListFailuresForLicenseConfigurationOperationsError)
     pub fn list_failures_for_license_configuration_operations(
         &self,
     ) -> fluent_builders::ListFailuresForLicenseConfigurationOperations<C, M, R> {
         fluent_builders::ListFailuresForLicenseConfigurationOperations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLicenseConfigurations` operation.
+    /// Constructs a fluent builder for the [`ListLicenseConfigurations`](crate::client::fluent_builders::ListLicenseConfigurations) operation.
     ///
-    /// See [`ListLicenseConfigurations`](crate::client::fluent_builders::ListLicenseConfigurations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_configuration_arns(Vec<String>)`](crate::client::fluent_builders::ListLicenseConfigurations::license_configuration_arns) / [`set_license_configuration_arns(Option<Vec<String>>)`](crate::client::fluent_builders::ListLicenseConfigurations::set_license_configuration_arns): <p>Amazon Resource Names (ARN) of the license configurations.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLicenseConfigurations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLicenseConfigurations::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLicenseConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLicenseConfigurations::set_next_token): <p>Token for the next set of results.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListLicenseConfigurations::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListLicenseConfigurations::set_filters): <p>Filters to scope the results. The following filters and logical operators are supported:</p>  <ul>   <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>   <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>   <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>  </ul>
+    /// - On success, responds with [`ListLicenseConfigurationsOutput`](crate::output::ListLicenseConfigurationsOutput) with field(s):
+    ///   - [`license_configurations(Option<Vec<LicenseConfiguration>>)`](crate::output::ListLicenseConfigurationsOutput::license_configurations): <p>Information about the license configurations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLicenseConfigurationsOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListLicenseConfigurationsError>`](crate::error::ListLicenseConfigurationsError)
     pub fn list_license_configurations(
         &self,
     ) -> fluent_builders::ListLicenseConfigurations<C, M, R> {
         fluent_builders::ListLicenseConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLicenseConversionTasks` operation.
+    /// Constructs a fluent builder for the [`ListLicenseConversionTasks`](crate::client::fluent_builders::ListLicenseConversionTasks) operation.
     ///
-    /// See [`ListLicenseConversionTasks`](crate::client::fluent_builders::ListLicenseConversionTasks) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLicenseConversionTasks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLicenseConversionTasks::set_next_token): <p>Token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLicenseConversionTasks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLicenseConversionTasks::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListLicenseConversionTasks::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListLicenseConversionTasks::set_filters): <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
+    /// - On success, responds with [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput) with field(s):
+    ///   - [`license_conversion_tasks(Option<Vec<LicenseConversionTask>>)`](crate::output::ListLicenseConversionTasksOutput::license_conversion_tasks): <p>Information about the license configuration tasks for your account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLicenseConversionTasksOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListLicenseConversionTasksError>`](crate::error::ListLicenseConversionTasksError)
     pub fn list_license_conversion_tasks(
         &self,
     ) -> fluent_builders::ListLicenseConversionTasks<C, M, R> {
         fluent_builders::ListLicenseConversionTasks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLicenseManagerReportGenerators` operation.
+    /// Constructs a fluent builder for the [`ListLicenseManagerReportGenerators`](crate::client::fluent_builders::ListLicenseManagerReportGenerators) operation.
     ///
-    /// See [`ListLicenseManagerReportGenerators`](crate::client::fluent_builders::ListLicenseManagerReportGenerators) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListLicenseManagerReportGenerators::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListLicenseManagerReportGenerators::set_filters): <p>Filters to scope the results. The following filters are supported: </p>  <ul>   <li> <p> <code>LicenseConfigurationArn</code> </p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLicenseManagerReportGenerators::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLicenseManagerReportGenerators::set_next_token): <p>Token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLicenseManagerReportGenerators::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLicenseManagerReportGenerators::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListLicenseManagerReportGeneratorsOutput`](crate::output::ListLicenseManagerReportGeneratorsOutput) with field(s):
+    ///   - [`report_generators(Option<Vec<ReportGenerator>>)`](crate::output::ListLicenseManagerReportGeneratorsOutput::report_generators): <p>A report generator that creates periodic reports about your license configurations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLicenseManagerReportGeneratorsOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListLicenseManagerReportGeneratorsError>`](crate::error::ListLicenseManagerReportGeneratorsError)
     pub fn list_license_manager_report_generators(
         &self,
     ) -> fluent_builders::ListLicenseManagerReportGenerators<C, M, R> {
         fluent_builders::ListLicenseManagerReportGenerators::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLicenses` operation.
+    /// Constructs a fluent builder for the [`ListLicenses`](crate::client::fluent_builders::ListLicenses) operation.
     ///
-    /// See [`ListLicenses`](crate::client::fluent_builders::ListLicenses) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_arns(Vec<String>)`](crate::client::fluent_builders::ListLicenses::license_arns) / [`set_license_arns(Option<Vec<String>>)`](crate::client::fluent_builders::ListLicenses::set_license_arns): <p>Amazon Resource Names (ARNs) of the licenses.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListLicenses::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListLicenses::set_filters): <p>Filters to scope the results. The following filters are supported:</p>  <ul>   <li> <p> <code>Beneficiary</code> </p> </li>   <li> <p> <code>ProductSKU</code> </p> </li>   <li> <p> <code>Fingerprint</code> </p> </li>   <li> <p> <code>Status</code> </p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLicenses::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLicenses::set_next_token): <p>Token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLicenses::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLicenses::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListLicensesOutput`](crate::output::ListLicensesOutput) with field(s):
+    ///   - [`licenses(Option<Vec<License>>)`](crate::output::ListLicensesOutput::licenses): <p>License details.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLicensesOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListLicensesError>`](crate::error::ListLicensesError)
     pub fn list_licenses(&self) -> fluent_builders::ListLicenses<C, M, R> {
         fluent_builders::ListLicenses::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLicenseSpecificationsForResource` operation.
+    /// Constructs a fluent builder for the [`ListLicenseSpecificationsForResource`](crate::client::fluent_builders::ListLicenseSpecificationsForResource) operation.
     ///
-    /// See [`ListLicenseSpecificationsForResource`](crate::client::fluent_builders::ListLicenseSpecificationsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListLicenseSpecificationsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListLicenseSpecificationsForResource::set_resource_arn): <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLicenseSpecificationsForResource::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLicenseSpecificationsForResource::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLicenseSpecificationsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLicenseSpecificationsForResource::set_next_token): <p>Token for the next set of results.</p>
+    /// - On success, responds with [`ListLicenseSpecificationsForResourceOutput`](crate::output::ListLicenseSpecificationsForResourceOutput) with field(s):
+    ///   - [`license_specifications(Option<Vec<LicenseSpecification>>)`](crate::output::ListLicenseSpecificationsForResourceOutput::license_specifications): <p>License configurations associated with a resource.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLicenseSpecificationsForResourceOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListLicenseSpecificationsForResourceError>`](crate::error::ListLicenseSpecificationsForResourceError)
     pub fn list_license_specifications_for_resource(
         &self,
     ) -> fluent_builders::ListLicenseSpecificationsForResource<C, M, R> {
         fluent_builders::ListLicenseSpecificationsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLicenseVersions` operation.
+    /// Constructs a fluent builder for the [`ListLicenseVersions`](crate::client::fluent_builders::ListLicenseVersions) operation.
     ///
-    /// See [`ListLicenseVersions`](crate::client::fluent_builders::ListLicenseVersions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_arn(impl Into<String>)`](crate::client::fluent_builders::ListLicenseVersions::license_arn) / [`set_license_arn(Option<String>)`](crate::client::fluent_builders::ListLicenseVersions::set_license_arn): <p>Amazon Resource Name (ARN) of the license.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLicenseVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLicenseVersions::set_next_token): <p>Token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLicenseVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLicenseVersions::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListLicenseVersionsOutput`](crate::output::ListLicenseVersionsOutput) with field(s):
+    ///   - [`licenses(Option<Vec<License>>)`](crate::output::ListLicenseVersionsOutput::licenses): <p>License details.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLicenseVersionsOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListLicenseVersionsError>`](crate::error::ListLicenseVersionsError)
     pub fn list_license_versions(&self) -> fluent_builders::ListLicenseVersions<C, M, R> {
         fluent_builders::ListLicenseVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListReceivedGrants` operation.
+    /// Constructs a fluent builder for the [`ListReceivedGrants`](crate::client::fluent_builders::ListReceivedGrants) operation.
     ///
-    /// See [`ListReceivedGrants`](crate::client::fluent_builders::ListReceivedGrants) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`grant_arns(Vec<String>)`](crate::client::fluent_builders::ListReceivedGrants::grant_arns) / [`set_grant_arns(Option<Vec<String>>)`](crate::client::fluent_builders::ListReceivedGrants::set_grant_arns): <p>Amazon Resource Names (ARNs) of the grants.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListReceivedGrants::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListReceivedGrants::set_filters): <p>Filters to scope the results. The following filters are supported:</p>  <ul>   <li> <p> <code>ProductSKU</code> </p> </li>   <li> <p> <code>LicenseIssuerName</code> </p> </li>   <li> <p> <code>LicenseArn</code> </p> </li>   <li> <p> <code>GrantStatus</code> </p> </li>   <li> <p> <code>GranterAccountId</code> </p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReceivedGrants::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReceivedGrants::set_next_token): <p>Token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReceivedGrants::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListReceivedGrants::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListReceivedGrantsOutput`](crate::output::ListReceivedGrantsOutput) with field(s):
+    ///   - [`grants(Option<Vec<Grant>>)`](crate::output::ListReceivedGrantsOutput::grants): <p>Received grant details.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListReceivedGrantsOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListReceivedGrantsError>`](crate::error::ListReceivedGrantsError)
     pub fn list_received_grants(&self) -> fluent_builders::ListReceivedGrants<C, M, R> {
         fluent_builders::ListReceivedGrants::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListReceivedLicenses` operation.
+    /// Constructs a fluent builder for the [`ListReceivedLicenses`](crate::client::fluent_builders::ListReceivedLicenses) operation.
     ///
-    /// See [`ListReceivedLicenses`](crate::client::fluent_builders::ListReceivedLicenses) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_arns(Vec<String>)`](crate::client::fluent_builders::ListReceivedLicenses::license_arns) / [`set_license_arns(Option<Vec<String>>)`](crate::client::fluent_builders::ListReceivedLicenses::set_license_arns): <p>Amazon Resource Names (ARNs) of the licenses.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListReceivedLicenses::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListReceivedLicenses::set_filters): <p>Filters to scope the results. The following filters are supported:</p>  <ul>   <li> <p> <code>ProductSKU</code> </p> </li>   <li> <p> <code>Status</code> </p> </li>   <li> <p> <code>Fingerprint</code> </p> </li>   <li> <p> <code>IssuerName</code> </p> </li>   <li> <p> <code>Beneficiary</code> </p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReceivedLicenses::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReceivedLicenses::set_next_token): <p>Token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReceivedLicenses::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListReceivedLicenses::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListReceivedLicensesOutput`](crate::output::ListReceivedLicensesOutput) with field(s):
+    ///   - [`licenses(Option<Vec<GrantedLicense>>)`](crate::output::ListReceivedLicensesOutput::licenses): <p>Received license details.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListReceivedLicensesOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListReceivedLicensesError>`](crate::error::ListReceivedLicensesError)
     pub fn list_received_licenses(&self) -> fluent_builders::ListReceivedLicenses<C, M, R> {
         fluent_builders::ListReceivedLicenses::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResourceInventory` operation.
+    /// Constructs a fluent builder for the [`ListResourceInventory`](crate::client::fluent_builders::ListResourceInventory) operation.
     ///
-    /// See [`ListResourceInventory`](crate::client::fluent_builders::ListResourceInventory) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResourceInventory::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListResourceInventory::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourceInventory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourceInventory::set_next_token): <p>Token for the next set of results.</p>
+    ///   - [`filters(Vec<InventoryFilter>)`](crate::client::fluent_builders::ListResourceInventory::filters) / [`set_filters(Option<Vec<InventoryFilter>>)`](crate::client::fluent_builders::ListResourceInventory::set_filters): <p>Filters to scope the results. The following filters and logical operators are supported:</p>  <ul>   <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>   <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>   <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>   <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>   <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>   <li> <p> <code>tag:     <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>  </ul>
+    /// - On success, responds with [`ListResourceInventoryOutput`](crate::output::ListResourceInventoryOutput) with field(s):
+    ///   - [`resource_inventory_list(Option<Vec<ResourceInventory>>)`](crate::output::ListResourceInventoryOutput::resource_inventory_list): <p>Information about the resources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceInventoryOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListResourceInventoryError>`](crate::error::ListResourceInventoryError)
     pub fn list_resource_inventory(&self) -> fluent_builders::ListResourceInventory<C, M, R> {
         fluent_builders::ListResourceInventory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Information about the tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTokens` operation.
+    /// Constructs a fluent builder for the [`ListTokens`](crate::client::fluent_builders::ListTokens) operation.
     ///
-    /// See [`ListTokens`](crate::client::fluent_builders::ListTokens) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`token_ids(Vec<String>)`](crate::client::fluent_builders::ListTokens::token_ids) / [`set_token_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ListTokens::set_token_ids): <p>Token IDs.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListTokens::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListTokens::set_filters): <p>Filters to scope the results. The following filter is supported:</p>  <ul>   <li> <p> <code>LicenseArns</code> </p> </li>  </ul>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTokens::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTokens::set_next_token): <p>Token for the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTokens::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTokens::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListTokensOutput`](crate::output::ListTokensOutput) with field(s):
+    ///   - [`tokens(Option<Vec<TokenData>>)`](crate::output::ListTokensOutput::tokens): <p>Received token details.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTokensOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListTokensError>`](crate::error::ListTokensError)
     pub fn list_tokens(&self) -> fluent_builders::ListTokens<C, M, R> {
         fluent_builders::ListTokens::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUsageForLicenseConfiguration` operation.
+    /// Constructs a fluent builder for the [`ListUsageForLicenseConfiguration`](crate::client::fluent_builders::ListUsageForLicenseConfiguration) operation.
     ///
-    /// See [`ListUsageForLicenseConfiguration`](crate::client::fluent_builders::ListUsageForLicenseConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::ListUsageForLicenseConfiguration::license_configuration_arn) / [`set_license_configuration_arn(Option<String>)`](crate::client::fluent_builders::ListUsageForLicenseConfiguration::set_license_configuration_arn): <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUsageForLicenseConfiguration::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUsageForLicenseConfiguration::set_max_results): <p>Maximum number of results to return in a single call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUsageForLicenseConfiguration::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUsageForLicenseConfiguration::set_next_token): <p>Token for the next set of results.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListUsageForLicenseConfiguration::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListUsageForLicenseConfiguration::set_filters): <p>Filters to scope the results. The following filters and logical operators are supported:</p>  <ul>   <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>   <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>   <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>  </ul>
+    /// - On success, responds with [`ListUsageForLicenseConfigurationOutput`](crate::output::ListUsageForLicenseConfigurationOutput) with field(s):
+    ///   - [`license_configuration_usage_list(Option<Vec<LicenseConfigurationUsage>>)`](crate::output::ListUsageForLicenseConfigurationOutput::license_configuration_usage_list): <p>Information about the license configurations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUsageForLicenseConfigurationOutput::next_token): <p>Token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListUsageForLicenseConfigurationError>`](crate::error::ListUsageForLicenseConfigurationError)
     pub fn list_usage_for_license_configuration(
         &self,
     ) -> fluent_builders::ListUsageForLicenseConfiguration<C, M, R> {
         fluent_builders::ListUsageForLicenseConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RejectGrant` operation.
+    /// Constructs a fluent builder for the [`RejectGrant`](crate::client::fluent_builders::RejectGrant) operation.
     ///
-    /// See [`RejectGrant`](crate::client::fluent_builders::RejectGrant) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`grant_arn(impl Into<String>)`](crate::client::fluent_builders::RejectGrant::grant_arn) / [`set_grant_arn(Option<String>)`](crate::client::fluent_builders::RejectGrant::set_grant_arn): <p>Amazon Resource Name (ARN) of the grant.</p>
+    /// - On success, responds with [`RejectGrantOutput`](crate::output::RejectGrantOutput) with field(s):
+    ///   - [`grant_arn(Option<String>)`](crate::output::RejectGrantOutput::grant_arn): <p>Grant ARN.</p>
+    ///   - [`status(Option<GrantStatus>)`](crate::output::RejectGrantOutput::status): <p>Grant status.</p>
+    ///   - [`version(Option<String>)`](crate::output::RejectGrantOutput::version): <p>Grant version.</p>
+    /// - On failure, responds with [`SdkError<RejectGrantError>`](crate::error::RejectGrantError)
     pub fn reject_grant(&self) -> fluent_builders::RejectGrant<C, M, R> {
         fluent_builders::RejectGrant::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>One or more tags.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Keys identifying the tags to remove.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateLicenseConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateLicenseConfiguration`](crate::client::fluent_builders::UpdateLicenseConfiguration) operation.
     ///
-    /// See [`UpdateLicenseConfiguration`](crate::client::fluent_builders::UpdateLicenseConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_configuration_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateLicenseConfiguration::license_configuration_arn) / [`set_license_configuration_arn(Option<String>)`](crate::client::fluent_builders::UpdateLicenseConfiguration::set_license_configuration_arn): <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    ///   - [`license_configuration_status(LicenseConfigurationStatus)`](crate::client::fluent_builders::UpdateLicenseConfiguration::license_configuration_status) / [`set_license_configuration_status(Option<LicenseConfigurationStatus>)`](crate::client::fluent_builders::UpdateLicenseConfiguration::set_license_configuration_status): <p>New status of the license configuration.</p>
+    ///   - [`license_rules(Vec<String>)`](crate::client::fluent_builders::UpdateLicenseConfiguration::license_rules) / [`set_license_rules(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLicenseConfiguration::set_license_rules): <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
+    ///   - [`license_count(i64)`](crate::client::fluent_builders::UpdateLicenseConfiguration::license_count) / [`set_license_count(Option<i64>)`](crate::client::fluent_builders::UpdateLicenseConfiguration::set_license_count): <p>New number of licenses managed by the license configuration.</p>
+    ///   - [`license_count_hard_limit(bool)`](crate::client::fluent_builders::UpdateLicenseConfiguration::license_count_hard_limit) / [`set_license_count_hard_limit(Option<bool>)`](crate::client::fluent_builders::UpdateLicenseConfiguration::set_license_count_hard_limit): <p>New hard limit of the number of available licenses.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateLicenseConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateLicenseConfiguration::set_name): <p>New name of the license configuration.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateLicenseConfiguration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateLicenseConfiguration::set_description): <p>New description of the license configuration.</p>
+    ///   - [`product_information_list(Vec<ProductInformation>)`](crate::client::fluent_builders::UpdateLicenseConfiguration::product_information_list) / [`set_product_information_list(Option<Vec<ProductInformation>>)`](crate::client::fluent_builders::UpdateLicenseConfiguration::set_product_information_list): <p>New product information.</p>
+    ///   - [`disassociate_when_not_found(bool)`](crate::client::fluent_builders::UpdateLicenseConfiguration::disassociate_when_not_found) / [`set_disassociate_when_not_found(Option<bool>)`](crate::client::fluent_builders::UpdateLicenseConfiguration::set_disassociate_when_not_found): <p>When true, disassociates a resource when software is uninstalled.</p>
+    /// - On success, responds with [`UpdateLicenseConfigurationOutput`](crate::output::UpdateLicenseConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateLicenseConfigurationError>`](crate::error::UpdateLicenseConfigurationError)
     pub fn update_license_configuration(
         &self,
     ) -> fluent_builders::UpdateLicenseConfiguration<C, M, R> {
         fluent_builders::UpdateLicenseConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateLicenseManagerReportGenerator` operation.
+    /// Constructs a fluent builder for the [`UpdateLicenseManagerReportGenerator`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator) operation.
     ///
-    /// See [`UpdateLicenseManagerReportGenerator`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`license_manager_report_generator_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator::license_manager_report_generator_arn) / [`set_license_manager_report_generator_arn(Option<String>)`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator::set_license_manager_report_generator_arn): <p>Amazon Resource Name (ARN) of the report generator to update.</p>
+    ///   - [`report_generator_name(impl Into<String>)`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator::report_generator_name) / [`set_report_generator_name(Option<String>)`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator::set_report_generator_name): <p>Name of the report generator.</p>
+    ///   - [`r#type(Vec<ReportType>)`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator::r#type) / [`set_type(Option<Vec<ReportType>>)`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator::set_type): <p>Type of reports to generate. The following report types are supported:</p>  <ul>   <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>   <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>  </ul>
+    ///   - [`report_context(ReportContext)`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator::report_context) / [`set_report_context(Option<ReportContext>)`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator::set_report_context): <p>The report context.</p>
+    ///   - [`report_frequency(ReportFrequency)`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator::report_frequency) / [`set_report_frequency(Option<ReportFrequency>)`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator::set_report_frequency): <p>Frequency by which reports are generated.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateLicenseManagerReportGenerator::set_description): <p>Description of the report generator.</p>
+    /// - On success, responds with [`UpdateLicenseManagerReportGeneratorOutput`](crate::output::UpdateLicenseManagerReportGeneratorOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateLicenseManagerReportGeneratorError>`](crate::error::UpdateLicenseManagerReportGeneratorError)
     pub fn update_license_manager_report_generator(
         &self,
     ) -> fluent_builders::UpdateLicenseManagerReportGenerator<C, M, R> {
         fluent_builders::UpdateLicenseManagerReportGenerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateLicenseSpecificationsForResource` operation.
+    /// Constructs a fluent builder for the [`UpdateLicenseSpecificationsForResource`](crate::client::fluent_builders::UpdateLicenseSpecificationsForResource) operation.
     ///
-    /// See [`UpdateLicenseSpecificationsForResource`](crate::client::fluent_builders::UpdateLicenseSpecificationsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateLicenseSpecificationsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UpdateLicenseSpecificationsForResource::set_resource_arn): <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
+    ///   - [`add_license_specifications(Vec<LicenseSpecification>)`](crate::client::fluent_builders::UpdateLicenseSpecificationsForResource::add_license_specifications) / [`set_add_license_specifications(Option<Vec<LicenseSpecification>>)`](crate::client::fluent_builders::UpdateLicenseSpecificationsForResource::set_add_license_specifications): <p>ARNs of the license configurations to add.</p>
+    ///   - [`remove_license_specifications(Vec<LicenseSpecification>)`](crate::client::fluent_builders::UpdateLicenseSpecificationsForResource::remove_license_specifications) / [`set_remove_license_specifications(Option<Vec<LicenseSpecification>>)`](crate::client::fluent_builders::UpdateLicenseSpecificationsForResource::set_remove_license_specifications): <p>ARNs of the license configurations to remove.</p>
+    /// - On success, responds with [`UpdateLicenseSpecificationsForResourceOutput`](crate::output::UpdateLicenseSpecificationsForResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateLicenseSpecificationsForResourceError>`](crate::error::UpdateLicenseSpecificationsForResourceError)
     pub fn update_license_specifications_for_resource(
         &self,
     ) -> fluent_builders::UpdateLicenseSpecificationsForResource<C, M, R> {
         fluent_builders::UpdateLicenseSpecificationsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateServiceSettings` operation.
+    /// Constructs a fluent builder for the [`UpdateServiceSettings`](crate::client::fluent_builders::UpdateServiceSettings) operation.
     ///
-    /// See [`UpdateServiceSettings`](crate::client::fluent_builders::UpdateServiceSettings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`s3_bucket_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceSettings::s3_bucket_arn) / [`set_s3_bucket_arn(Option<String>)`](crate::client::fluent_builders::UpdateServiceSettings::set_s3_bucket_arn): <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
+    ///   - [`sns_topic_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceSettings::sns_topic_arn) / [`set_sns_topic_arn(Option<String>)`](crate::client::fluent_builders::UpdateServiceSettings::set_sns_topic_arn): <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
+    ///   - [`organization_configuration(OrganizationConfiguration)`](crate::client::fluent_builders::UpdateServiceSettings::organization_configuration) / [`set_organization_configuration(Option<OrganizationConfiguration>)`](crate::client::fluent_builders::UpdateServiceSettings::set_organization_configuration): <p>Enables integration with Organizations for cross-account discovery.</p>
+    ///   - [`enable_cross_accounts_discovery(bool)`](crate::client::fluent_builders::UpdateServiceSettings::enable_cross_accounts_discovery) / [`set_enable_cross_accounts_discovery(Option<bool>)`](crate::client::fluent_builders::UpdateServiceSettings::set_enable_cross_accounts_discovery): <p>Activates cross-account discovery.</p>
+    /// - On success, responds with [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateServiceSettingsError>`](crate::error::UpdateServiceSettingsError)
     pub fn update_service_settings(&self) -> fluent_builders::UpdateServiceSettings<C, M, R> {
         fluent_builders::UpdateServiceSettings::new(self.handle.clone())
     }

@@ -83,466 +83,760 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateAccessPoint` operation.
+    /// Constructs a fluent builder for the [`CreateAccessPoint`](crate::client::fluent_builders::CreateAccessPoint) operation.
     ///
-    /// See [`CreateAccessPoint`](crate::client::fluent_builders::CreateAccessPoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPoint::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateAccessPoint::set_account_id): <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPoint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAccessPoint::set_name): <p>The name you want to assign to this access point.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPoint::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::CreateAccessPoint::set_bucket): <p>The name of the bucket that you want to associate this access point with.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    ///   - [`vpc_configuration(VpcConfiguration)`](crate::client::fluent_builders::CreateAccessPoint::vpc_configuration) / [`set_vpc_configuration(Option<VpcConfiguration>)`](crate::client::fluent_builders::CreateAccessPoint::set_vpc_configuration): <p>If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual private cloud (VPC).</p> <note>   <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>  </note>
+    ///   - [`public_access_block_configuration(PublicAccessBlockConfiguration)`](crate::client::fluent_builders::CreateAccessPoint::public_access_block_configuration) / [`set_public_access_block_configuration(Option<PublicAccessBlockConfiguration>)`](crate::client::fluent_builders::CreateAccessPoint::set_public_access_block_configuration): <p> The <code>PublicAccessBlock</code> configuration that you want to apply to the access point. </p>
+    /// - On success, responds with [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput) with field(s):
+    ///   - [`access_point_arn(Option<String>)`](crate::output::CreateAccessPointOutput::access_point_arn): <p>The ARN of the access point.</p> <note>   <p>This is only supported by Amazon S3 on Outposts.</p>  </note>
+    ///   - [`alias(Option<String>)`](crate::output::CreateAccessPointOutput::alias): <p>The name or alias of the access point.</p>
+    /// - On failure, responds with [`SdkError<CreateAccessPointError>`](crate::error::CreateAccessPointError)
     pub fn create_access_point(&self) -> fluent_builders::CreateAccessPoint<C, M, R> {
         fluent_builders::CreateAccessPoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAccessPointForObjectLambda` operation.
+    /// Constructs a fluent builder for the [`CreateAccessPointForObjectLambda`](crate::client::fluent_builders::CreateAccessPointForObjectLambda) operation.
     ///
-    /// See [`CreateAccessPointForObjectLambda`](crate::client::fluent_builders::CreateAccessPointForObjectLambda) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPointForObjectLambda::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateAccessPointForObjectLambda::set_account_id): <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPointForObjectLambda::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAccessPointForObjectLambda::set_name): <p>The name you want to assign to this Object Lambda Access Point.</p>
+    ///   - [`configuration(ObjectLambdaConfiguration)`](crate::client::fluent_builders::CreateAccessPointForObjectLambda::configuration) / [`set_configuration(Option<ObjectLambdaConfiguration>)`](crate::client::fluent_builders::CreateAccessPointForObjectLambda::set_configuration): <p>Object Lambda Access Point configuration as a JSON document.</p>
+    /// - On success, responds with [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput) with field(s):
+    ///   - [`object_lambda_access_point_arn(Option<String>)`](crate::output::CreateAccessPointForObjectLambdaOutput::object_lambda_access_point_arn): <p>Specifies the ARN for the Object Lambda Access Point.</p>
+    /// - On failure, responds with [`SdkError<CreateAccessPointForObjectLambdaError>`](crate::error::CreateAccessPointForObjectLambdaError)
     pub fn create_access_point_for_object_lambda(
         &self,
     ) -> fluent_builders::CreateAccessPointForObjectLambda<C, M, R> {
         fluent_builders::CreateAccessPointForObjectLambda::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBucket` operation.
+    /// Constructs a fluent builder for the [`CreateBucket`](crate::client::fluent_builders::CreateBucket) operation.
     ///
-    /// See [`CreateBucket`](crate::client::fluent_builders::CreateBucket) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`acl(BucketCannedAcl)`](crate::client::fluent_builders::CreateBucket::acl) / [`set_acl(Option<BucketCannedAcl>)`](crate::client::fluent_builders::CreateBucket::set_acl): <p>The canned ACL to apply to the bucket.</p> <note>   <p>This is not supported by Amazon S3 on Outposts buckets.</p>  </note>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_bucket): <p>The name of the bucket.</p>
+    ///   - [`create_bucket_configuration(CreateBucketConfiguration)`](crate::client::fluent_builders::CreateBucket::create_bucket_configuration) / [`set_create_bucket_configuration(Option<CreateBucketConfiguration>)`](crate::client::fluent_builders::CreateBucket::set_create_bucket_configuration): <p>The configuration information for the bucket.</p> <note>   <p>This is not supported by Amazon S3 on Outposts buckets.</p>  </note>
+    ///   - [`grant_full_control(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::grant_full_control) / [`set_grant_full_control(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_grant_full_control): <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>   <p>This is not supported by Amazon S3 on Outposts buckets.</p>  </note>
+    ///   - [`grant_read(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::grant_read) / [`set_grant_read(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_grant_read): <p>Allows grantee to list the objects in the bucket.</p> <note>   <p>This is not supported by Amazon S3 on Outposts buckets.</p>  </note>
+    ///   - [`grant_read_acp(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::grant_read_acp) / [`set_grant_read_acp(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_grant_read_acp): <p>Allows grantee to read the bucket ACL.</p> <note>   <p>This is not supported by Amazon S3 on Outposts buckets.</p>  </note>
+    ///   - [`grant_write(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::grant_write) / [`set_grant_write(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_grant_write): <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note>   <p>This is not supported by Amazon S3 on Outposts buckets.</p>  </note>
+    ///   - [`grant_write_acp(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::grant_write_acp) / [`set_grant_write_acp(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_grant_write_acp): <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>   <p>This is not supported by Amazon S3 on Outposts buckets.</p>  </note>
+    ///   - [`object_lock_enabled_for_bucket(bool)`](crate::client::fluent_builders::CreateBucket::object_lock_enabled_for_bucket) / [`set_object_lock_enabled_for_bucket(bool)`](crate::client::fluent_builders::CreateBucket::set_object_lock_enabled_for_bucket): <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>   <p>This is not supported by Amazon S3 on Outposts buckets.</p>  </note>
+    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_outpost_id): <p>The ID of the Outposts where the bucket is being created.</p> <note>   <p>This is required by Amazon S3 on Outposts buckets.</p>  </note>
+    /// - On success, responds with [`CreateBucketOutput`](crate::output::CreateBucketOutput) with field(s):
+    ///   - [`location(Option<String>)`](crate::output::CreateBucketOutput::location): <p>The location of the bucket.</p>
+    ///   - [`bucket_arn(Option<String>)`](crate::output::CreateBucketOutput::bucket_arn): <p>The Amazon Resource Name (ARN) of the bucket.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// - On failure, responds with [`SdkError<CreateBucketError>`](crate::error::CreateBucketError)
     pub fn create_bucket(&self) -> fluent_builders::CreateBucket<C, M, R> {
         fluent_builders::CreateBucket::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateJob` operation.
+    /// Constructs a fluent builder for the [`CreateJob`](crate::client::fluent_builders::CreateJob) operation.
     ///
-    /// See [`CreateJob`](crate::client::fluent_builders::CreateJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateJob::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateJob::set_account_id): <p>The Amazon Web Services account ID that creates the job.</p>
+    ///   - [`confirmation_required(bool)`](crate::client::fluent_builders::CreateJob::confirmation_required) / [`set_confirmation_required(Option<bool>)`](crate::client::fluent_builders::CreateJob::set_confirmation_required): <p>Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation is only required for jobs created through the Amazon S3 console.</p>
+    ///   - [`operation(JobOperation)`](crate::client::fluent_builders::CreateJob::operation) / [`set_operation(Option<JobOperation>)`](crate::client::fluent_builders::CreateJob::set_operation): <p>The action that you want this job to perform on every object listed in the manifest. For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
+    ///   - [`report(JobReport)`](crate::client::fluent_builders::CreateJob::report) / [`set_report(Option<JobReport>)`](crate::client::fluent_builders::CreateJob::set_report): <p>Configuration parameters for the optional job-completion report.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateJob::set_client_request_token): <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
+    ///   - [`manifest(JobManifest)`](crate::client::fluent_builders::CreateJob::manifest) / [`set_manifest(Option<JobManifest>)`](crate::client::fluent_builders::CreateJob::set_manifest): <p>Configuration parameters for the manifest.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateJob::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateJob::set_description): <p>A description for this job. You can use any string within the permitted length. Descriptions don't need to be unique and can be used for multiple jobs.</p>
+    ///   - [`priority(i32)`](crate::client::fluent_builders::CreateJob::priority) / [`set_priority(Option<i32>)`](crate::client::fluent_builders::CreateJob::set_priority): <p>The numerical priority for this job. Higher numbers indicate higher priority.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateJob::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateJob::set_role_arn): <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role that Batch Operations will use to run this job's action on every object in the manifest.</p>
+    ///   - [`tags(Vec<S3Tag>)`](crate::client::fluent_builders::CreateJob::tags) / [`set_tags(Option<Vec<S3Tag>>)`](crate::client::fluent_builders::CreateJob::set_tags): <p>A set of tags to associate with the S3 Batch Operations job. This is an optional parameter. </p>
+    /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::CreateJobOutput::job_id): <p>The ID for this job. Amazon S3 generates this ID automatically and returns it after a successful <code>Create Job</code> request.</p>
+    /// - On failure, responds with [`SdkError<CreateJobError>`](crate::error::CreateJobError)
     pub fn create_job(&self) -> fluent_builders::CreateJob<C, M, R> {
         fluent_builders::CreateJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMultiRegionAccessPoint` operation.
+    /// Constructs a fluent builder for the [`CreateMultiRegionAccessPoint`](crate::client::fluent_builders::CreateMultiRegionAccessPoint) operation.
     ///
-    /// See [`CreateMultiRegionAccessPoint`](crate::client::fluent_builders::CreateMultiRegionAccessPoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateMultiRegionAccessPoint::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateMultiRegionAccessPoint::set_account_id): <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own the underlying buckets.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateMultiRegionAccessPoint::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateMultiRegionAccessPoint::set_client_token): <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
+    ///   - [`details(CreateMultiRegionAccessPointInput)`](crate::client::fluent_builders::CreateMultiRegionAccessPoint::details) / [`set_details(Option<CreateMultiRegionAccessPointInput>)`](crate::client::fluent_builders::CreateMultiRegionAccessPoint::set_details): <p>A container element containing details about the Multi-Region Access Point.</p>
+    /// - On success, responds with [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput) with field(s):
+    ///   - [`request_token_arn(Option<String>)`](crate::output::CreateMultiRegionAccessPointOutput::request_token_arn): <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
+    /// - On failure, responds with [`SdkError<CreateMultiRegionAccessPointError>`](crate::error::CreateMultiRegionAccessPointError)
     pub fn create_multi_region_access_point(
         &self,
     ) -> fluent_builders::CreateMultiRegionAccessPoint<C, M, R> {
         fluent_builders::CreateMultiRegionAccessPoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAccessPoint` operation.
+    /// Constructs a fluent builder for the [`DeleteAccessPoint`](crate::client::fluent_builders::DeleteAccessPoint) operation.
     ///
-    /// See [`DeleteAccessPoint`](crate::client::fluent_builders::DeleteAccessPoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPoint::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessPoint::set_account_id): <p>The account ID for the account that owns the specified access point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPoint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteAccessPoint::set_name): <p>The name of the access point you want to delete.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /accesspoint/      <my-accesspoint-name></my-accesspoint-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// - On success, responds with [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAccessPointError>`](crate::error::DeleteAccessPointError)
     pub fn delete_access_point(&self) -> fluent_builders::DeleteAccessPoint<C, M, R> {
         fluent_builders::DeleteAccessPoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAccessPointForObjectLambda` operation.
+    /// Constructs a fluent builder for the [`DeleteAccessPointForObjectLambda`](crate::client::fluent_builders::DeleteAccessPointForObjectLambda) operation.
     ///
-    /// See [`DeleteAccessPointForObjectLambda`](crate::client::fluent_builders::DeleteAccessPointForObjectLambda) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPointForObjectLambda::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessPointForObjectLambda::set_account_id): <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPointForObjectLambda::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteAccessPointForObjectLambda::set_name): <p>The name of the access point you want to delete.</p>
+    /// - On success, responds with [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAccessPointForObjectLambdaError>`](crate::error::DeleteAccessPointForObjectLambdaError)
     pub fn delete_access_point_for_object_lambda(
         &self,
     ) -> fluent_builders::DeleteAccessPointForObjectLambda<C, M, R> {
         fluent_builders::DeleteAccessPointForObjectLambda::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAccessPointPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteAccessPointPolicy`](crate::client::fluent_builders::DeleteAccessPointPolicy) operation.
     ///
-    /// See [`DeleteAccessPointPolicy`](crate::client::fluent_builders::DeleteAccessPointPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPointPolicy::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessPointPolicy::set_account_id): <p>The account ID for the account that owns the specified access point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPointPolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteAccessPointPolicy::set_name): <p>The name of the access point whose policy you want to delete.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /accesspoint/      <my-accesspoint-name></my-accesspoint-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// - On success, responds with [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAccessPointPolicyError>`](crate::error::DeleteAccessPointPolicyError)
     pub fn delete_access_point_policy(&self) -> fluent_builders::DeleteAccessPointPolicy<C, M, R> {
         fluent_builders::DeleteAccessPointPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAccessPointPolicyForObjectLambda` operation.
+    /// Constructs a fluent builder for the [`DeleteAccessPointPolicyForObjectLambda`](crate::client::fluent_builders::DeleteAccessPointPolicyForObjectLambda) operation.
     ///
-    /// See [`DeleteAccessPointPolicyForObjectLambda`](crate::client::fluent_builders::DeleteAccessPointPolicyForObjectLambda) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPointPolicyForObjectLambda::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessPointPolicyForObjectLambda::set_account_id): <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPointPolicyForObjectLambda::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteAccessPointPolicyForObjectLambda::set_name): <p>The name of the Object Lambda Access Point you want to delete the policy for.</p>
+    /// - On success, responds with [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAccessPointPolicyForObjectLambdaError>`](crate::error::DeleteAccessPointPolicyForObjectLambdaError)
     pub fn delete_access_point_policy_for_object_lambda(
         &self,
     ) -> fluent_builders::DeleteAccessPointPolicyForObjectLambda<C, M, R> {
         fluent_builders::DeleteAccessPointPolicyForObjectLambda::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBucket` operation.
+    /// Constructs a fluent builder for the [`DeleteBucket`](crate::client::fluent_builders::DeleteBucket) operation.
     ///
-    /// See [`DeleteBucket`](crate::client::fluent_builders::DeleteBucket) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBucket::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteBucket::set_account_id): <p>The account ID that owns the Outposts bucket.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::DeleteBucket::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::DeleteBucket::set_bucket): <p>Specifies the bucket being deleted.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// - On success, responds with [`DeleteBucketOutput`](crate::output::DeleteBucketOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBucketError>`](crate::error::DeleteBucketError)
     pub fn delete_bucket(&self) -> fluent_builders::DeleteBucket<C, M, R> {
         fluent_builders::DeleteBucket::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBucketLifecycleConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteBucketLifecycleConfiguration`](crate::client::fluent_builders::DeleteBucketLifecycleConfiguration) operation.
     ///
-    /// See [`DeleteBucketLifecycleConfiguration`](crate::client::fluent_builders::DeleteBucketLifecycleConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBucketLifecycleConfiguration::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteBucketLifecycleConfiguration::set_account_id): <p>The account ID of the lifecycle configuration to delete.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::DeleteBucketLifecycleConfiguration::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::DeleteBucketLifecycleConfiguration::set_bucket): <p>Specifies the bucket.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// - On success, responds with [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBucketLifecycleConfigurationError>`](crate::error::DeleteBucketLifecycleConfigurationError)
     pub fn delete_bucket_lifecycle_configuration(
         &self,
     ) -> fluent_builders::DeleteBucketLifecycleConfiguration<C, M, R> {
         fluent_builders::DeleteBucketLifecycleConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBucketPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteBucketPolicy`](crate::client::fluent_builders::DeleteBucketPolicy) operation.
     ///
-    /// See [`DeleteBucketPolicy`](crate::client::fluent_builders::DeleteBucketPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBucketPolicy::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteBucketPolicy::set_account_id): <p>The account ID of the Outposts bucket.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::DeleteBucketPolicy::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::DeleteBucketPolicy::set_bucket): <p>Specifies the bucket.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// - On success, responds with [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBucketPolicyError>`](crate::error::DeleteBucketPolicyError)
     pub fn delete_bucket_policy(&self) -> fluent_builders::DeleteBucketPolicy<C, M, R> {
         fluent_builders::DeleteBucketPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBucketTagging` operation.
+    /// Constructs a fluent builder for the [`DeleteBucketTagging`](crate::client::fluent_builders::DeleteBucketTagging) operation.
     ///
-    /// See [`DeleteBucketTagging`](crate::client::fluent_builders::DeleteBucketTagging) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBucketTagging::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteBucketTagging::set_account_id): <p>The Amazon Web Services account ID of the Outposts bucket tag set to be removed.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::DeleteBucketTagging::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::DeleteBucketTagging::set_bucket): <p>The bucket ARN that has the tag set to be removed.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// - On success, responds with [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBucketTaggingError>`](crate::error::DeleteBucketTaggingError)
     pub fn delete_bucket_tagging(&self) -> fluent_builders::DeleteBucketTagging<C, M, R> {
         fluent_builders::DeleteBucketTagging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteJobTagging` operation.
+    /// Constructs a fluent builder for the [`DeleteJobTagging`](crate::client::fluent_builders::DeleteJobTagging) operation.
     ///
-    /// See [`DeleteJobTagging`](crate::client::fluent_builders::DeleteJobTagging) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteJobTagging::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteJobTagging::set_account_id): <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DeleteJobTagging::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DeleteJobTagging::set_job_id): <p>The ID for the S3 Batch Operations job whose tags you want to delete.</p>
+    /// - On success, responds with [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteJobTaggingError>`](crate::error::DeleteJobTaggingError)
     pub fn delete_job_tagging(&self) -> fluent_builders::DeleteJobTagging<C, M, R> {
         fluent_builders::DeleteJobTagging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMultiRegionAccessPoint` operation.
+    /// Constructs a fluent builder for the [`DeleteMultiRegionAccessPoint`](crate::client::fluent_builders::DeleteMultiRegionAccessPoint) operation.
     ///
-    /// See [`DeleteMultiRegionAccessPoint`](crate::client::fluent_builders::DeleteMultiRegionAccessPoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMultiRegionAccessPoint::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteMultiRegionAccessPoint::set_account_id): <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteMultiRegionAccessPoint::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteMultiRegionAccessPoint::set_client_token): <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
+    ///   - [`details(DeleteMultiRegionAccessPointInput)`](crate::client::fluent_builders::DeleteMultiRegionAccessPoint::details) / [`set_details(Option<DeleteMultiRegionAccessPointInput>)`](crate::client::fluent_builders::DeleteMultiRegionAccessPoint::set_details): <p>A container element containing details about the Multi-Region Access Point.</p>
+    /// - On success, responds with [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput) with field(s):
+    ///   - [`request_token_arn(Option<String>)`](crate::output::DeleteMultiRegionAccessPointOutput::request_token_arn): <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
+    /// - On failure, responds with [`SdkError<DeleteMultiRegionAccessPointError>`](crate::error::DeleteMultiRegionAccessPointError)
     pub fn delete_multi_region_access_point(
         &self,
     ) -> fluent_builders::DeleteMultiRegionAccessPoint<C, M, R> {
         fluent_builders::DeleteMultiRegionAccessPoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePublicAccessBlock` operation.
+    /// Constructs a fluent builder for the [`DeletePublicAccessBlock`](crate::client::fluent_builders::DeletePublicAccessBlock) operation.
     ///
-    /// See [`DeletePublicAccessBlock`](crate::client::fluent_builders::DeletePublicAccessBlock) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeletePublicAccessBlock::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeletePublicAccessBlock::set_account_id): <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to remove.</p>
+    /// - On success, responds with [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePublicAccessBlockError>`](crate::error::DeletePublicAccessBlockError)
     pub fn delete_public_access_block(&self) -> fluent_builders::DeletePublicAccessBlock<C, M, R> {
         fluent_builders::DeletePublicAccessBlock::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteStorageLensConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteStorageLensConfiguration`](crate::client::fluent_builders::DeleteStorageLensConfiguration) operation.
     ///
-    /// See [`DeleteStorageLensConfiguration`](crate::client::fluent_builders::DeleteStorageLensConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStorageLensConfiguration::config_id) / [`set_config_id(Option<String>)`](crate::client::fluent_builders::DeleteStorageLensConfiguration::set_config_id): <p>The ID of the S3 Storage Lens configuration.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStorageLensConfiguration::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteStorageLensConfiguration::set_account_id): <p>The account ID of the requester.</p>
+    /// - On success, responds with [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteStorageLensConfigurationError>`](crate::error::DeleteStorageLensConfigurationError)
     pub fn delete_storage_lens_configuration(
         &self,
     ) -> fluent_builders::DeleteStorageLensConfiguration<C, M, R> {
         fluent_builders::DeleteStorageLensConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteStorageLensConfigurationTagging` operation.
+    /// Constructs a fluent builder for the [`DeleteStorageLensConfigurationTagging`](crate::client::fluent_builders::DeleteStorageLensConfigurationTagging) operation.
     ///
-    /// See [`DeleteStorageLensConfigurationTagging`](crate::client::fluent_builders::DeleteStorageLensConfigurationTagging) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStorageLensConfigurationTagging::config_id) / [`set_config_id(Option<String>)`](crate::client::fluent_builders::DeleteStorageLensConfigurationTagging::set_config_id): <p>The ID of the S3 Storage Lens configuration.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStorageLensConfigurationTagging::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteStorageLensConfigurationTagging::set_account_id): <p>The account ID of the requester.</p>
+    /// - On success, responds with [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteStorageLensConfigurationTaggingError>`](crate::error::DeleteStorageLensConfigurationTaggingError)
     pub fn delete_storage_lens_configuration_tagging(
         &self,
     ) -> fluent_builders::DeleteStorageLensConfigurationTagging<C, M, R> {
         fluent_builders::DeleteStorageLensConfigurationTagging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeJob` operation.
+    /// Constructs a fluent builder for the [`DescribeJob`](crate::client::fluent_builders::DescribeJob) operation.
     ///
-    /// See [`DescribeJob`](crate::client::fluent_builders::DescribeJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeJob::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeJob::set_account_id): <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeJob::set_job_id): <p>The ID for the job whose information you want to retrieve.</p>
+    /// - On success, responds with [`DescribeJobOutput`](crate::output::DescribeJobOutput) with field(s):
+    ///   - [`job(Option<JobDescriptor>)`](crate::output::DescribeJobOutput::job): <p>Contains the configuration parameters and status for the job specified in the <code>Describe Job</code> request.</p>
+    /// - On failure, responds with [`SdkError<DescribeJobError>`](crate::error::DescribeJobError)
     pub fn describe_job(&self) -> fluent_builders::DescribeJob<C, M, R> {
         fluent_builders::DescribeJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMultiRegionAccessPointOperation` operation.
+    /// Constructs a fluent builder for the [`DescribeMultiRegionAccessPointOperation`](crate::client::fluent_builders::DescribeMultiRegionAccessPointOperation) operation.
     ///
-    /// See [`DescribeMultiRegionAccessPointOperation`](crate::client::fluent_builders::DescribeMultiRegionAccessPointOperation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DescribeMultiRegionAccessPointOperation::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DescribeMultiRegionAccessPointOperation::set_account_id): <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    ///   - [`request_token_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeMultiRegionAccessPointOperation::request_token_arn) / [`set_request_token_arn(Option<String>)`](crate::client::fluent_builders::DescribeMultiRegionAccessPointOperation::set_request_token_arn): <p>The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.</p>
+    /// - On success, responds with [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput) with field(s):
+    ///   - [`async_operation(Option<AsyncOperation>)`](crate::output::DescribeMultiRegionAccessPointOperationOutput::async_operation): <p>A container element containing the details of the asynchronous operation.</p>
+    /// - On failure, responds with [`SdkError<DescribeMultiRegionAccessPointOperationError>`](crate::error::DescribeMultiRegionAccessPointOperationError)
     pub fn describe_multi_region_access_point_operation(
         &self,
     ) -> fluent_builders::DescribeMultiRegionAccessPointOperation<C, M, R> {
         fluent_builders::DescribeMultiRegionAccessPointOperation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccessPoint` operation.
+    /// Constructs a fluent builder for the [`GetAccessPoint`](crate::client::fluent_builders::GetAccessPoint) operation.
     ///
-    /// See [`GetAccessPoint`](crate::client::fluent_builders::GetAccessPoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessPoint::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetAccessPoint::set_account_id): <p>The account ID for the account that owns the specified access point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetAccessPoint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetAccessPoint::set_name): <p>The name of the access point whose configuration information you want to retrieve.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /accesspoint/      <my-accesspoint-name></my-accesspoint-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// - On success, responds with [`GetAccessPointOutput`](crate::output::GetAccessPointOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetAccessPointOutput::name): <p>The name of the specified access point.</p>
+    ///   - [`bucket(Option<String>)`](crate::output::GetAccessPointOutput::bucket): <p>The name of the bucket associated with the specified access point.</p>
+    ///   - [`network_origin(Option<NetworkOrigin>)`](crate::output::GetAccessPointOutput::network_origin): <p>Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public internet, subject to the access point and bucket access policies.</p>  <p>This will always be true for an Amazon S3 on Outposts access point</p>
+    ///   - [`vpc_configuration(Option<VpcConfiguration>)`](crate::output::GetAccessPointOutput::vpc_configuration): <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>   <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>  </note>
+    ///   - [`public_access_block_configuration(Option<PublicAccessBlockConfiguration>)`](crate::output::GetAccessPointOutput::public_access_block_configuration): <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This is not supported for Amazon S3 on Outposts.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::GetAccessPointOutput::creation_date): <p>The date and time when the specified access point was created.</p>
+    ///   - [`alias(Option<String>)`](crate::output::GetAccessPointOutput::alias): <p>The name or alias of the access point.</p>
+    ///   - [`access_point_arn(Option<String>)`](crate::output::GetAccessPointOutput::access_point_arn): <p>The ARN of the access point.</p>
+    ///   - [`endpoints(Option<HashMap<String, String>>)`](crate::output::GetAccessPointOutput::endpoints): <p>The VPC endpoint for the access point.</p>
+    /// - On failure, responds with [`SdkError<GetAccessPointError>`](crate::error::GetAccessPointError)
     pub fn get_access_point(&self) -> fluent_builders::GetAccessPoint<C, M, R> {
         fluent_builders::GetAccessPoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccessPointConfigurationForObjectLambda` operation.
+    /// Constructs a fluent builder for the [`GetAccessPointConfigurationForObjectLambda`](crate::client::fluent_builders::GetAccessPointConfigurationForObjectLambda) operation.
     ///
-    /// See [`GetAccessPointConfigurationForObjectLambda`](crate::client::fluent_builders::GetAccessPointConfigurationForObjectLambda) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessPointConfigurationForObjectLambda::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetAccessPointConfigurationForObjectLambda::set_account_id): <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetAccessPointConfigurationForObjectLambda::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetAccessPointConfigurationForObjectLambda::set_name): <p>The name of the Object Lambda Access Point you want to return the configuration for.</p>
+    /// - On success, responds with [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput) with field(s):
+    ///   - [`configuration(Option<ObjectLambdaConfiguration>)`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput::configuration): <p>Object Lambda Access Point configuration document.</p>
+    /// - On failure, responds with [`SdkError<GetAccessPointConfigurationForObjectLambdaError>`](crate::error::GetAccessPointConfigurationForObjectLambdaError)
     pub fn get_access_point_configuration_for_object_lambda(
         &self,
     ) -> fluent_builders::GetAccessPointConfigurationForObjectLambda<C, M, R> {
         fluent_builders::GetAccessPointConfigurationForObjectLambda::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccessPointForObjectLambda` operation.
+    /// Constructs a fluent builder for the [`GetAccessPointForObjectLambda`](crate::client::fluent_builders::GetAccessPointForObjectLambda) operation.
     ///
-    /// See [`GetAccessPointForObjectLambda`](crate::client::fluent_builders::GetAccessPointForObjectLambda) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessPointForObjectLambda::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetAccessPointForObjectLambda::set_account_id): <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetAccessPointForObjectLambda::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetAccessPointForObjectLambda::set_name): <p>The name of the Object Lambda Access Point.</p>
+    /// - On success, responds with [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetAccessPointForObjectLambdaOutput::name): <p>The name of the Object Lambda Access Point.</p>
+    ///   - [`public_access_block_configuration(Option<PublicAccessBlockConfiguration>)`](crate::output::GetAccessPointForObjectLambdaOutput::public_access_block_configuration): <p>Configuration to block all public access. This setting is turned on and can not be edited. </p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::GetAccessPointForObjectLambdaOutput::creation_date): <p>The date and time when the specified Object Lambda Access Point was created.</p>
+    /// - On failure, responds with [`SdkError<GetAccessPointForObjectLambdaError>`](crate::error::GetAccessPointForObjectLambdaError)
     pub fn get_access_point_for_object_lambda(
         &self,
     ) -> fluent_builders::GetAccessPointForObjectLambda<C, M, R> {
         fluent_builders::GetAccessPointForObjectLambda::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccessPointPolicy` operation.
+    /// Constructs a fluent builder for the [`GetAccessPointPolicy`](crate::client::fluent_builders::GetAccessPointPolicy) operation.
     ///
-    /// See [`GetAccessPointPolicy`](crate::client::fluent_builders::GetAccessPointPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessPointPolicy::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetAccessPointPolicy::set_account_id): <p>The account ID for the account that owns the specified access point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetAccessPointPolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetAccessPointPolicy::set_name): <p>The name of the access point whose policy you want to retrieve.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /accesspoint/      <my-accesspoint-name></my-accesspoint-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    /// - On success, responds with [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::output::GetAccessPointPolicyOutput::policy): <p>The access point policy associated with the specified access point.</p>
+    /// - On failure, responds with [`SdkError<GetAccessPointPolicyError>`](crate::error::GetAccessPointPolicyError)
     pub fn get_access_point_policy(&self) -> fluent_builders::GetAccessPointPolicy<C, M, R> {
         fluent_builders::GetAccessPointPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccessPointPolicyForObjectLambda` operation.
+    /// Constructs a fluent builder for the [`GetAccessPointPolicyForObjectLambda`](crate::client::fluent_builders::GetAccessPointPolicyForObjectLambda) operation.
     ///
-    /// See [`GetAccessPointPolicyForObjectLambda`](crate::client::fluent_builders::GetAccessPointPolicyForObjectLambda) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessPointPolicyForObjectLambda::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetAccessPointPolicyForObjectLambda::set_account_id): <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetAccessPointPolicyForObjectLambda::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetAccessPointPolicyForObjectLambda::set_name): <p>The name of the Object Lambda Access Point.</p>
+    /// - On success, responds with [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::output::GetAccessPointPolicyForObjectLambdaOutput::policy): <p>Object Lambda Access Point resource policy document.</p>
+    /// - On failure, responds with [`SdkError<GetAccessPointPolicyForObjectLambdaError>`](crate::error::GetAccessPointPolicyForObjectLambdaError)
     pub fn get_access_point_policy_for_object_lambda(
         &self,
     ) -> fluent_builders::GetAccessPointPolicyForObjectLambda<C, M, R> {
         fluent_builders::GetAccessPointPolicyForObjectLambda::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccessPointPolicyStatus` operation.
+    /// Constructs a fluent builder for the [`GetAccessPointPolicyStatus`](crate::client::fluent_builders::GetAccessPointPolicyStatus) operation.
     ///
-    /// See [`GetAccessPointPolicyStatus`](crate::client::fluent_builders::GetAccessPointPolicyStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessPointPolicyStatus::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetAccessPointPolicyStatus::set_account_id): <p>The account ID for the account that owns the specified access point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetAccessPointPolicyStatus::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetAccessPointPolicyStatus::set_name): <p>The name of the access point whose policy status you want to retrieve.</p>
+    /// - On success, responds with [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput) with field(s):
+    ///   - [`policy_status(Option<PolicyStatus>)`](crate::output::GetAccessPointPolicyStatusOutput::policy_status): <p>Indicates the current policy status of the specified access point.</p>
+    /// - On failure, responds with [`SdkError<GetAccessPointPolicyStatusError>`](crate::error::GetAccessPointPolicyStatusError)
     pub fn get_access_point_policy_status(
         &self,
     ) -> fluent_builders::GetAccessPointPolicyStatus<C, M, R> {
         fluent_builders::GetAccessPointPolicyStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccessPointPolicyStatusForObjectLambda` operation.
+    /// Constructs a fluent builder for the [`GetAccessPointPolicyStatusForObjectLambda`](crate::client::fluent_builders::GetAccessPointPolicyStatusForObjectLambda) operation.
     ///
-    /// See [`GetAccessPointPolicyStatusForObjectLambda`](crate::client::fluent_builders::GetAccessPointPolicyStatusForObjectLambda) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessPointPolicyStatusForObjectLambda::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetAccessPointPolicyStatusForObjectLambda::set_account_id): <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetAccessPointPolicyStatusForObjectLambda::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetAccessPointPolicyStatusForObjectLambda::set_name): <p>The name of the Object Lambda Access Point.</p>
+    /// - On success, responds with [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput) with field(s):
+    ///   - [`policy_status(Option<PolicyStatus>)`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput::policy_status): <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
+    /// - On failure, responds with [`SdkError<GetAccessPointPolicyStatusForObjectLambdaError>`](crate::error::GetAccessPointPolicyStatusForObjectLambdaError)
     pub fn get_access_point_policy_status_for_object_lambda(
         &self,
     ) -> fluent_builders::GetAccessPointPolicyStatusForObjectLambda<C, M, R> {
         fluent_builders::GetAccessPointPolicyStatusForObjectLambda::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBucket` operation.
+    /// Constructs a fluent builder for the [`GetBucket`](crate::client::fluent_builders::GetBucket) operation.
     ///
-    /// See [`GetBucket`](crate::client::fluent_builders::GetBucket) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetBucket::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetBucket::set_account_id): <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::GetBucket::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::GetBucket::set_bucket): <p>Specifies the bucket.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// - On success, responds with [`GetBucketOutput`](crate::output::GetBucketOutput) with field(s):
+    ///   - [`bucket(Option<String>)`](crate::output::GetBucketOutput::bucket): <p>The Outposts bucket requested.</p>
+    ///   - [`public_access_block_enabled(bool)`](crate::output::GetBucketOutput::public_access_block_enabled): <p></p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::GetBucketOutput::creation_date): <p>The creation date of the Outposts bucket.</p>
+    /// - On failure, responds with [`SdkError<GetBucketError>`](crate::error::GetBucketError)
     pub fn get_bucket(&self) -> fluent_builders::GetBucket<C, M, R> {
         fluent_builders::GetBucket::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBucketLifecycleConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetBucketLifecycleConfiguration`](crate::client::fluent_builders::GetBucketLifecycleConfiguration) operation.
     ///
-    /// See [`GetBucketLifecycleConfiguration`](crate::client::fluent_builders::GetBucketLifecycleConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetBucketLifecycleConfiguration::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetBucketLifecycleConfiguration::set_account_id): <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::GetBucketLifecycleConfiguration::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::GetBucketLifecycleConfiguration::set_bucket): <p>The Amazon Resource Name (ARN) of the bucket.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// - On success, responds with [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput) with field(s):
+    ///   - [`rules(Option<Vec<LifecycleRule>>)`](crate::output::GetBucketLifecycleConfigurationOutput::rules): <p>Container for the lifecycle rule of the Outposts bucket.</p>
+    /// - On failure, responds with [`SdkError<GetBucketLifecycleConfigurationError>`](crate::error::GetBucketLifecycleConfigurationError)
     pub fn get_bucket_lifecycle_configuration(
         &self,
     ) -> fluent_builders::GetBucketLifecycleConfiguration<C, M, R> {
         fluent_builders::GetBucketLifecycleConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBucketPolicy` operation.
+    /// Constructs a fluent builder for the [`GetBucketPolicy`](crate::client::fluent_builders::GetBucketPolicy) operation.
     ///
-    /// See [`GetBucketPolicy`](crate::client::fluent_builders::GetBucketPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetBucketPolicy::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetBucketPolicy::set_account_id): <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::GetBucketPolicy::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::GetBucketPolicy::set_bucket): <p>Specifies the bucket.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// - On success, responds with [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::output::GetBucketPolicyOutput::policy): <p>The policy of the Outposts bucket.</p>
+    /// - On failure, responds with [`SdkError<GetBucketPolicyError>`](crate::error::GetBucketPolicyError)
     pub fn get_bucket_policy(&self) -> fluent_builders::GetBucketPolicy<C, M, R> {
         fluent_builders::GetBucketPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBucketTagging` operation.
+    /// Constructs a fluent builder for the [`GetBucketTagging`](crate::client::fluent_builders::GetBucketTagging) operation.
     ///
-    /// See [`GetBucketTagging`](crate::client::fluent_builders::GetBucketTagging) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetBucketTagging::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetBucketTagging::set_account_id): <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::GetBucketTagging::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::GetBucketTagging::set_bucket): <p>Specifies the bucket.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    /// - On success, responds with [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput) with field(s):
+    ///   - [`tag_set(Option<Vec<S3Tag>>)`](crate::output::GetBucketTaggingOutput::tag_set): <p>The tags set of the Outposts bucket.</p>
+    /// - On failure, responds with [`SdkError<GetBucketTaggingError>`](crate::error::GetBucketTaggingError)
     pub fn get_bucket_tagging(&self) -> fluent_builders::GetBucketTagging<C, M, R> {
         fluent_builders::GetBucketTagging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJobTagging` operation.
+    /// Constructs a fluent builder for the [`GetJobTagging`](crate::client::fluent_builders::GetJobTagging) operation.
     ///
-    /// See [`GetJobTagging`](crate::client::fluent_builders::GetJobTagging) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetJobTagging::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetJobTagging::set_account_id): <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetJobTagging::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetJobTagging::set_job_id): <p>The ID for the S3 Batch Operations job whose tags you want to retrieve.</p>
+    /// - On success, responds with [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput) with field(s):
+    ///   - [`tags(Option<Vec<S3Tag>>)`](crate::output::GetJobTaggingOutput::tags): <p>The set of tags associated with the S3 Batch Operations job.</p>
+    /// - On failure, responds with [`SdkError<GetJobTaggingError>`](crate::error::GetJobTaggingError)
     pub fn get_job_tagging(&self) -> fluent_builders::GetJobTagging<C, M, R> {
         fluent_builders::GetJobTagging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMultiRegionAccessPoint` operation.
+    /// Constructs a fluent builder for the [`GetMultiRegionAccessPoint`](crate::client::fluent_builders::GetMultiRegionAccessPoint) operation.
     ///
-    /// See [`GetMultiRegionAccessPoint`](crate::client::fluent_builders::GetMultiRegionAccessPoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPoint::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPoint::set_account_id): <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPoint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPoint::set_name): <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// - On success, responds with [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput) with field(s):
+    ///   - [`access_point(Option<MultiRegionAccessPointReport>)`](crate::output::GetMultiRegionAccessPointOutput::access_point): <p>A container element containing the details of the requested Multi-Region Access Point.</p>
+    /// - On failure, responds with [`SdkError<GetMultiRegionAccessPointError>`](crate::error::GetMultiRegionAccessPointError)
     pub fn get_multi_region_access_point(
         &self,
     ) -> fluent_builders::GetMultiRegionAccessPoint<C, M, R> {
         fluent_builders::GetMultiRegionAccessPoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMultiRegionAccessPointPolicy` operation.
+    /// Constructs a fluent builder for the [`GetMultiRegionAccessPointPolicy`](crate::client::fluent_builders::GetMultiRegionAccessPointPolicy) operation.
     ///
-    /// See [`GetMultiRegionAccessPointPolicy`](crate::client::fluent_builders::GetMultiRegionAccessPointPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPointPolicy::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPointPolicy::set_account_id): <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPointPolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPointPolicy::set_name): <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// - On success, responds with [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput) with field(s):
+    ///   - [`policy(Option<MultiRegionAccessPointPolicyDocument>)`](crate::output::GetMultiRegionAccessPointPolicyOutput::policy): <p>The policy associated with the specified Multi-Region Access Point.</p>
+    /// - On failure, responds with [`SdkError<GetMultiRegionAccessPointPolicyError>`](crate::error::GetMultiRegionAccessPointPolicyError)
     pub fn get_multi_region_access_point_policy(
         &self,
     ) -> fluent_builders::GetMultiRegionAccessPointPolicy<C, M, R> {
         fluent_builders::GetMultiRegionAccessPointPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMultiRegionAccessPointPolicyStatus` operation.
+    /// Constructs a fluent builder for the [`GetMultiRegionAccessPointPolicyStatus`](crate::client::fluent_builders::GetMultiRegionAccessPointPolicyStatus) operation.
     ///
-    /// See [`GetMultiRegionAccessPointPolicyStatus`](crate::client::fluent_builders::GetMultiRegionAccessPointPolicyStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPointPolicyStatus::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPointPolicyStatus::set_account_id): <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPointPolicyStatus::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetMultiRegionAccessPointPolicyStatus::set_name): <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// - On success, responds with [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput) with field(s):
+    ///   - [`established(Option<PolicyStatus>)`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput::established): <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
+    /// - On failure, responds with [`SdkError<GetMultiRegionAccessPointPolicyStatusError>`](crate::error::GetMultiRegionAccessPointPolicyStatusError)
     pub fn get_multi_region_access_point_policy_status(
         &self,
     ) -> fluent_builders::GetMultiRegionAccessPointPolicyStatus<C, M, R> {
         fluent_builders::GetMultiRegionAccessPointPolicyStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPublicAccessBlock` operation.
+    /// Constructs a fluent builder for the [`GetPublicAccessBlock`](crate::client::fluent_builders::GetPublicAccessBlock) operation.
     ///
-    /// See [`GetPublicAccessBlock`](crate::client::fluent_builders::GetPublicAccessBlock) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetPublicAccessBlock::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetPublicAccessBlock::set_account_id): <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
+    /// - On success, responds with [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput) with field(s):
+    ///   - [`public_access_block_configuration(Option<PublicAccessBlockConfiguration>)`](crate::output::GetPublicAccessBlockOutput::public_access_block_configuration): <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
+    /// - On failure, responds with [`SdkError<GetPublicAccessBlockError>`](crate::error::GetPublicAccessBlockError)
     pub fn get_public_access_block(&self) -> fluent_builders::GetPublicAccessBlock<C, M, R> {
         fluent_builders::GetPublicAccessBlock::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetStorageLensConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetStorageLensConfiguration`](crate::client::fluent_builders::GetStorageLensConfiguration) operation.
     ///
-    /// See [`GetStorageLensConfiguration`](crate::client::fluent_builders::GetStorageLensConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_id(impl Into<String>)`](crate::client::fluent_builders::GetStorageLensConfiguration::config_id) / [`set_config_id(Option<String>)`](crate::client::fluent_builders::GetStorageLensConfiguration::set_config_id): <p>The ID of the Amazon S3 Storage Lens configuration.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetStorageLensConfiguration::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetStorageLensConfiguration::set_account_id): <p>The account ID of the requester.</p>
+    /// - On success, responds with [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput) with field(s):
+    ///   - [`storage_lens_configuration(Option<StorageLensConfiguration>)`](crate::output::GetStorageLensConfigurationOutput::storage_lens_configuration): <p>The S3 Storage Lens configuration requested.</p>
+    /// - On failure, responds with [`SdkError<GetStorageLensConfigurationError>`](crate::error::GetStorageLensConfigurationError)
     pub fn get_storage_lens_configuration(
         &self,
     ) -> fluent_builders::GetStorageLensConfiguration<C, M, R> {
         fluent_builders::GetStorageLensConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetStorageLensConfigurationTagging` operation.
+    /// Constructs a fluent builder for the [`GetStorageLensConfigurationTagging`](crate::client::fluent_builders::GetStorageLensConfigurationTagging) operation.
     ///
-    /// See [`GetStorageLensConfigurationTagging`](crate::client::fluent_builders::GetStorageLensConfigurationTagging) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_id(impl Into<String>)`](crate::client::fluent_builders::GetStorageLensConfigurationTagging::config_id) / [`set_config_id(Option<String>)`](crate::client::fluent_builders::GetStorageLensConfigurationTagging::set_config_id): <p>The ID of the Amazon S3 Storage Lens configuration.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetStorageLensConfigurationTagging::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetStorageLensConfigurationTagging::set_account_id): <p>The account ID of the requester.</p>
+    /// - On success, responds with [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput) with field(s):
+    ///   - [`tags(Option<Vec<StorageLensTag>>)`](crate::output::GetStorageLensConfigurationTaggingOutput::tags): <p>The tags of S3 Storage Lens configuration requested.</p>
+    /// - On failure, responds with [`SdkError<GetStorageLensConfigurationTaggingError>`](crate::error::GetStorageLensConfigurationTaggingError)
     pub fn get_storage_lens_configuration_tagging(
         &self,
     ) -> fluent_builders::GetStorageLensConfigurationTagging<C, M, R> {
         fluent_builders::GetStorageLensConfigurationTagging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAccessPoints` operation.
+    /// Constructs a fluent builder for the [`ListAccessPoints`](crate::client::fluent_builders::ListAccessPoints) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccessPoints::into_paginator).
     ///
-    /// See [`ListAccessPoints`](crate::client::fluent_builders::ListAccessPoints) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccessPoints::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListAccessPoints::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListAccessPoints::set_account_id): <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::ListAccessPoints::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::ListAccessPoints::set_bucket): <p>The name of the bucket whose associated access points you want to list.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccessPoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccessPoints::set_next_token): <p>A continuation token. If a previous call to <code>ListAccessPoints</code> returned a continuation token in the <code>NextToken</code> field, then providing that value here causes Amazon S3 to retrieve the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccessPoints::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListAccessPoints::set_max_results): <p>The maximum number of access points that you want to include in the list. If the specified bucket has more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
+    /// - On success, responds with [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput) with field(s):
+    ///   - [`access_point_list(Option<Vec<AccessPoint>>)`](crate::output::ListAccessPointsOutput::access_point_list): <p>Contains identification and configuration information for one or more access points associated with the specified bucket.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAccessPointsOutput::next_token): <p>If the specified bucket has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
+    /// - On failure, responds with [`SdkError<ListAccessPointsError>`](crate::error::ListAccessPointsError)
     pub fn list_access_points(&self) -> fluent_builders::ListAccessPoints<C, M, R> {
         fluent_builders::ListAccessPoints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAccessPointsForObjectLambda` operation.
+    /// Constructs a fluent builder for the [`ListAccessPointsForObjectLambda`](crate::client::fluent_builders::ListAccessPointsForObjectLambda) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::into_paginator).
     ///
-    /// See [`ListAccessPointsForObjectLambda`](crate::client::fluent_builders::ListAccessPointsForObjectLambda) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::set_account_id): <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::set_next_token): <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListAccessPointsForObjectLambda::set_max_results): <p>The maximum number of access points that you want to include in the list. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
+    /// - On success, responds with [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput) with field(s):
+    ///   - [`object_lambda_access_point_list(Option<Vec<ObjectLambdaAccessPoint>>)`](crate::output::ListAccessPointsForObjectLambdaOutput::object_lambda_access_point_list): <p>Returns list of Object Lambda Access Points.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAccessPointsForObjectLambdaOutput::next_token): <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
+    /// - On failure, responds with [`SdkError<ListAccessPointsForObjectLambdaError>`](crate::error::ListAccessPointsForObjectLambdaError)
     pub fn list_access_points_for_object_lambda(
         &self,
     ) -> fluent_builders::ListAccessPointsForObjectLambda<C, M, R> {
         fluent_builders::ListAccessPointsForObjectLambda::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListJobs` operation.
+    /// Constructs a fluent builder for the [`ListJobs`](crate::client::fluent_builders::ListJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
     ///
-    /// See [`ListJobs`](crate::client::fluent_builders::ListJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListJobs::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListJobs::set_account_id): <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    ///   - [`job_statuses(Vec<JobStatus>)`](crate::client::fluent_builders::ListJobs::job_statuses) / [`set_job_statuses(Option<Vec<JobStatus>>)`](crate::client::fluent_builders::ListJobs::set_job_statuses): <p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListJobs::set_next_token): <p>A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListJobs::set_max_results): <p>The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code> response. If there are more jobs than this number, the response will include a pagination token in the <code>NextToken</code> field to enable you to retrieve the next page of results.</p>
+    /// - On success, responds with [`ListJobsOutput`](crate::output::ListJobsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListJobsOutput::next_token): <p>If the <code>List Jobs</code> request produced more than the maximum number of results, you can pass this value into a subsequent <code>List Jobs</code> request in order to retrieve the next page of results.</p>
+    ///   - [`jobs(Option<Vec<JobListDescriptor>>)`](crate::output::ListJobsOutput::jobs): <p>The list of current jobs and jobs that have ended within the last 30 days.</p>
+    /// - On failure, responds with [`SdkError<ListJobsError>`](crate::error::ListJobsError)
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMultiRegionAccessPoints` operation.
+    /// Constructs a fluent builder for the [`ListMultiRegionAccessPoints`](crate::client::fluent_builders::ListMultiRegionAccessPoints) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMultiRegionAccessPoints::into_paginator).
     ///
-    /// See [`ListMultiRegionAccessPoints`](crate::client::fluent_builders::ListMultiRegionAccessPoints) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMultiRegionAccessPoints::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListMultiRegionAccessPoints::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListMultiRegionAccessPoints::set_account_id): <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMultiRegionAccessPoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMultiRegionAccessPoints::set_next_token): <p>Not currently used. Do not use this parameter.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMultiRegionAccessPoints::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListMultiRegionAccessPoints::set_max_results): <p>Not currently used. Do not use this parameter.</p>
+    /// - On success, responds with [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput) with field(s):
+    ///   - [`access_points(Option<Vec<MultiRegionAccessPointReport>>)`](crate::output::ListMultiRegionAccessPointsOutput::access_points): <p>The list of Multi-Region Access Points associated with the user.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMultiRegionAccessPointsOutput::next_token): <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
+    /// - On failure, responds with [`SdkError<ListMultiRegionAccessPointsError>`](crate::error::ListMultiRegionAccessPointsError)
     pub fn list_multi_region_access_points(
         &self,
     ) -> fluent_builders::ListMultiRegionAccessPoints<C, M, R> {
         fluent_builders::ListMultiRegionAccessPoints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRegionalBuckets` operation.
+    /// Constructs a fluent builder for the [`ListRegionalBuckets`](crate::client::fluent_builders::ListRegionalBuckets) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRegionalBuckets::into_paginator).
     ///
-    /// See [`ListRegionalBuckets`](crate::client::fluent_builders::ListRegionalBuckets) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRegionalBuckets::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListRegionalBuckets::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListRegionalBuckets::set_account_id): <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRegionalBuckets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRegionalBuckets::set_next_token): <p></p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRegionalBuckets::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRegionalBuckets::set_max_results): <p></p>
+    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::ListRegionalBuckets::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::ListRegionalBuckets::set_outpost_id): <p>The ID of the Outposts.</p> <note>   <p>This is required by Amazon S3 on Outposts buckets.</p>  </note>
+    /// - On success, responds with [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput) with field(s):
+    ///   - [`regional_bucket_list(Option<Vec<RegionalBucket>>)`](crate::output::ListRegionalBucketsOutput::regional_bucket_list): <p></p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRegionalBucketsOutput::next_token): <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means there are more buckets that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextToken</code>. <code>NextToken</code> is obfuscated and is not a real key.</p>
+    /// - On failure, responds with [`SdkError<ListRegionalBucketsError>`](crate::error::ListRegionalBucketsError)
     pub fn list_regional_buckets(&self) -> fluent_builders::ListRegionalBuckets<C, M, R> {
         fluent_builders::ListRegionalBuckets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListStorageLensConfigurations` operation.
+    /// Constructs a fluent builder for the [`ListStorageLensConfigurations`](crate::client::fluent_builders::ListStorageLensConfigurations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStorageLensConfigurations::into_paginator).
     ///
-    /// See [`ListStorageLensConfigurations`](crate::client::fluent_builders::ListStorageLensConfigurations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStorageLensConfigurations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListStorageLensConfigurations::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListStorageLensConfigurations::set_account_id): <p>The account ID of the requester.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStorageLensConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStorageLensConfigurations::set_next_token): <p>A pagination token to request the next page of results.</p>
+    /// - On success, responds with [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListStorageLensConfigurationsOutput::next_token): <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
+    ///   - [`storage_lens_configuration_list(Option<Vec<ListStorageLensConfigurationEntry>>)`](crate::output::ListStorageLensConfigurationsOutput::storage_lens_configuration_list): <p>A list of S3 Storage Lens configurations.</p>
+    /// - On failure, responds with [`SdkError<ListStorageLensConfigurationsError>`](crate::error::ListStorageLensConfigurationsError)
     pub fn list_storage_lens_configurations(
         &self,
     ) -> fluent_builders::ListStorageLensConfigurations<C, M, R> {
         fluent_builders::ListStorageLensConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutAccessPointConfigurationForObjectLambda` operation.
+    /// Constructs a fluent builder for the [`PutAccessPointConfigurationForObjectLambda`](crate::client::fluent_builders::PutAccessPointConfigurationForObjectLambda) operation.
     ///
-    /// See [`PutAccessPointConfigurationForObjectLambda`](crate::client::fluent_builders::PutAccessPointConfigurationForObjectLambda) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PutAccessPointConfigurationForObjectLambda::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PutAccessPointConfigurationForObjectLambda::set_account_id): <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PutAccessPointConfigurationForObjectLambda::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PutAccessPointConfigurationForObjectLambda::set_name): <p>The name of the Object Lambda Access Point.</p>
+    ///   - [`configuration(ObjectLambdaConfiguration)`](crate::client::fluent_builders::PutAccessPointConfigurationForObjectLambda::configuration) / [`set_configuration(Option<ObjectLambdaConfiguration>)`](crate::client::fluent_builders::PutAccessPointConfigurationForObjectLambda::set_configuration): <p>Object Lambda Access Point configuration document.</p>
+    /// - On success, responds with [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput)
+
+    /// - On failure, responds with [`SdkError<PutAccessPointConfigurationForObjectLambdaError>`](crate::error::PutAccessPointConfigurationForObjectLambdaError)
     pub fn put_access_point_configuration_for_object_lambda(
         &self,
     ) -> fluent_builders::PutAccessPointConfigurationForObjectLambda<C, M, R> {
         fluent_builders::PutAccessPointConfigurationForObjectLambda::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutAccessPointPolicy` operation.
+    /// Constructs a fluent builder for the [`PutAccessPointPolicy`](crate::client::fluent_builders::PutAccessPointPolicy) operation.
     ///
-    /// See [`PutAccessPointPolicy`](crate::client::fluent_builders::PutAccessPointPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PutAccessPointPolicy::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PutAccessPointPolicy::set_account_id): <p>The Amazon Web Services account ID for owner of the bucket associated with the specified access point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PutAccessPointPolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PutAccessPointPolicy::set_name): <p>The name of the access point that you want to associate with the specified policy.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /accesspoint/      <my-accesspoint-name></my-accesspoint-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutAccessPointPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutAccessPointPolicy::set_policy): <p>The policy that you want to apply to the specified access point. For more information about access point policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// - On success, responds with [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutAccessPointPolicyError>`](crate::error::PutAccessPointPolicyError)
     pub fn put_access_point_policy(&self) -> fluent_builders::PutAccessPointPolicy<C, M, R> {
         fluent_builders::PutAccessPointPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutAccessPointPolicyForObjectLambda` operation.
+    /// Constructs a fluent builder for the [`PutAccessPointPolicyForObjectLambda`](crate::client::fluent_builders::PutAccessPointPolicyForObjectLambda) operation.
     ///
-    /// See [`PutAccessPointPolicyForObjectLambda`](crate::client::fluent_builders::PutAccessPointPolicyForObjectLambda) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PutAccessPointPolicyForObjectLambda::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PutAccessPointPolicyForObjectLambda::set_account_id): <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PutAccessPointPolicyForObjectLambda::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PutAccessPointPolicyForObjectLambda::set_name): <p>The name of the Object Lambda Access Point.</p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutAccessPointPolicyForObjectLambda::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutAccessPointPolicyForObjectLambda::set_policy): <p>Object Lambda Access Point resource policy document.</p>
+    /// - On success, responds with [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput)
+
+    /// - On failure, responds with [`SdkError<PutAccessPointPolicyForObjectLambdaError>`](crate::error::PutAccessPointPolicyForObjectLambdaError)
     pub fn put_access_point_policy_for_object_lambda(
         &self,
     ) -> fluent_builders::PutAccessPointPolicyForObjectLambda<C, M, R> {
         fluent_builders::PutAccessPointPolicyForObjectLambda::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutBucketLifecycleConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutBucketLifecycleConfiguration`](crate::client::fluent_builders::PutBucketLifecycleConfiguration) operation.
     ///
-    /// See [`PutBucketLifecycleConfiguration`](crate::client::fluent_builders::PutBucketLifecycleConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PutBucketLifecycleConfiguration::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PutBucketLifecycleConfiguration::set_account_id): <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::PutBucketLifecycleConfiguration::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::PutBucketLifecycleConfiguration::set_bucket): <p>The name of the bucket for which to set the configuration.</p>
+    ///   - [`lifecycle_configuration(LifecycleConfiguration)`](crate::client::fluent_builders::PutBucketLifecycleConfiguration::lifecycle_configuration) / [`set_lifecycle_configuration(Option<LifecycleConfiguration>)`](crate::client::fluent_builders::PutBucketLifecycleConfiguration::set_lifecycle_configuration): <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
+    /// - On success, responds with [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<PutBucketLifecycleConfigurationError>`](crate::error::PutBucketLifecycleConfigurationError)
     pub fn put_bucket_lifecycle_configuration(
         &self,
     ) -> fluent_builders::PutBucketLifecycleConfiguration<C, M, R> {
         fluent_builders::PutBucketLifecycleConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutBucketPolicy` operation.
+    /// Constructs a fluent builder for the [`PutBucketPolicy`](crate::client::fluent_builders::PutBucketPolicy) operation.
     ///
-    /// See [`PutBucketPolicy`](crate::client::fluent_builders::PutBucketPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PutBucketPolicy::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PutBucketPolicy::set_account_id): <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::PutBucketPolicy::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::PutBucketPolicy::set_bucket): <p>Specifies the bucket.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    ///   - [`confirm_remove_self_bucket_access(bool)`](crate::client::fluent_builders::PutBucketPolicy::confirm_remove_self_bucket_access) / [`set_confirm_remove_self_bucket_access(bool)`](crate::client::fluent_builders::PutBucketPolicy::set_confirm_remove_self_bucket_access): <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p> <note>   <p>This is not supported by Amazon S3 on Outposts buckets.</p>  </note>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutBucketPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutBucketPolicy::set_policy): <p>The bucket policy as a JSON document.</p>
+    /// - On success, responds with [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutBucketPolicyError>`](crate::error::PutBucketPolicyError)
     pub fn put_bucket_policy(&self) -> fluent_builders::PutBucketPolicy<C, M, R> {
         fluent_builders::PutBucketPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutBucketTagging` operation.
+    /// Constructs a fluent builder for the [`PutBucketTagging`](crate::client::fluent_builders::PutBucketTagging) operation.
     ///
-    /// See [`PutBucketTagging`](crate::client::fluent_builders::PutBucketTagging) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PutBucketTagging::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PutBucketTagging::set_account_id): <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    ///   - [`bucket(impl Into<String>)`](crate::client::fluent_builders::PutBucketTagging::bucket) / [`set_bucket(Option<String>)`](crate::client::fluent_builders::PutBucketTagging::set_bucket): <p>The Amazon Resource Name (ARN) of the bucket.</p>  <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>  <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:   <region>    :    <account-id>     :outpost/     <outpost-id>      /bucket/      <my-bucket-name></my-bucket-name>     </outpost-id>    </account-id>   </region></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    ///   - [`tagging(Tagging)`](crate::client::fluent_builders::PutBucketTagging::tagging) / [`set_tagging(Option<Tagging>)`](crate::client::fluent_builders::PutBucketTagging::set_tagging): <p></p>
+    /// - On success, responds with [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput)
+
+    /// - On failure, responds with [`SdkError<PutBucketTaggingError>`](crate::error::PutBucketTaggingError)
     pub fn put_bucket_tagging(&self) -> fluent_builders::PutBucketTagging<C, M, R> {
         fluent_builders::PutBucketTagging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutJobTagging` operation.
+    /// Constructs a fluent builder for the [`PutJobTagging`](crate::client::fluent_builders::PutJobTagging) operation.
     ///
-    /// See [`PutJobTagging`](crate::client::fluent_builders::PutJobTagging) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PutJobTagging::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PutJobTagging::set_account_id): <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::PutJobTagging::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::PutJobTagging::set_job_id): <p>The ID for the S3 Batch Operations job whose tags you want to replace.</p>
+    ///   - [`tags(Vec<S3Tag>)`](crate::client::fluent_builders::PutJobTagging::tags) / [`set_tags(Option<Vec<S3Tag>>)`](crate::client::fluent_builders::PutJobTagging::set_tags): <p>The set of tags to associate with the S3 Batch Operations job.</p>
+    /// - On success, responds with [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput)
+
+    /// - On failure, responds with [`SdkError<PutJobTaggingError>`](crate::error::PutJobTaggingError)
     pub fn put_job_tagging(&self) -> fluent_builders::PutJobTagging<C, M, R> {
         fluent_builders::PutJobTagging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutMultiRegionAccessPointPolicy` operation.
+    /// Constructs a fluent builder for the [`PutMultiRegionAccessPointPolicy`](crate::client::fluent_builders::PutMultiRegionAccessPointPolicy) operation.
     ///
-    /// See [`PutMultiRegionAccessPointPolicy`](crate::client::fluent_builders::PutMultiRegionAccessPointPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PutMultiRegionAccessPointPolicy::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PutMultiRegionAccessPointPolicy::set_account_id): <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::PutMultiRegionAccessPointPolicy::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::PutMultiRegionAccessPointPolicy::set_client_token): <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
+    ///   - [`details(PutMultiRegionAccessPointPolicyInput)`](crate::client::fluent_builders::PutMultiRegionAccessPointPolicy::details) / [`set_details(Option<PutMultiRegionAccessPointPolicyInput>)`](crate::client::fluent_builders::PutMultiRegionAccessPointPolicy::set_details): <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
+    /// - On success, responds with [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput) with field(s):
+    ///   - [`request_token_arn(Option<String>)`](crate::output::PutMultiRegionAccessPointPolicyOutput::request_token_arn): <p>The request token associated with the request. You can use this token with <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeMultiRegionAccessPointOperation.html">DescribeMultiRegionAccessPointOperation</a> to determine the status of asynchronous requests.</p>
+    /// - On failure, responds with [`SdkError<PutMultiRegionAccessPointPolicyError>`](crate::error::PutMultiRegionAccessPointPolicyError)
     pub fn put_multi_region_access_point_policy(
         &self,
     ) -> fluent_builders::PutMultiRegionAccessPointPolicy<C, M, R> {
         fluent_builders::PutMultiRegionAccessPointPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutPublicAccessBlock` operation.
+    /// Constructs a fluent builder for the [`PutPublicAccessBlock`](crate::client::fluent_builders::PutPublicAccessBlock) operation.
     ///
-    /// See [`PutPublicAccessBlock`](crate::client::fluent_builders::PutPublicAccessBlock) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`public_access_block_configuration(PublicAccessBlockConfiguration)`](crate::client::fluent_builders::PutPublicAccessBlock::public_access_block_configuration) / [`set_public_access_block_configuration(Option<PublicAccessBlockConfiguration>)`](crate::client::fluent_builders::PutPublicAccessBlock::set_public_access_block_configuration): <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PutPublicAccessBlock::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PutPublicAccessBlock::set_account_id): <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
+    /// - On success, responds with [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput)
+
+    /// - On failure, responds with [`SdkError<PutPublicAccessBlockError>`](crate::error::PutPublicAccessBlockError)
     pub fn put_public_access_block(&self) -> fluent_builders::PutPublicAccessBlock<C, M, R> {
         fluent_builders::PutPublicAccessBlock::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutStorageLensConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutStorageLensConfiguration`](crate::client::fluent_builders::PutStorageLensConfiguration) operation.
     ///
-    /// See [`PutStorageLensConfiguration`](crate::client::fluent_builders::PutStorageLensConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_id(impl Into<String>)`](crate::client::fluent_builders::PutStorageLensConfiguration::config_id) / [`set_config_id(Option<String>)`](crate::client::fluent_builders::PutStorageLensConfiguration::set_config_id): <p>The ID of the S3 Storage Lens configuration.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PutStorageLensConfiguration::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PutStorageLensConfiguration::set_account_id): <p>The account ID of the requester.</p>
+    ///   - [`storage_lens_configuration(StorageLensConfiguration)`](crate::client::fluent_builders::PutStorageLensConfiguration::storage_lens_configuration) / [`set_storage_lens_configuration(Option<StorageLensConfiguration>)`](crate::client::fluent_builders::PutStorageLensConfiguration::set_storage_lens_configuration): <p>The S3 Storage Lens configuration.</p>
+    ///   - [`tags(Vec<StorageLensTag>)`](crate::client::fluent_builders::PutStorageLensConfiguration::tags) / [`set_tags(Option<Vec<StorageLensTag>>)`](crate::client::fluent_builders::PutStorageLensConfiguration::set_tags): <p>The tag set of the S3 Storage Lens configuration.</p> <note>   <p>You can set up to a maximum of 50 tags.</p>  </note>
+    /// - On success, responds with [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<PutStorageLensConfigurationError>`](crate::error::PutStorageLensConfigurationError)
     pub fn put_storage_lens_configuration(
         &self,
     ) -> fluent_builders::PutStorageLensConfiguration<C, M, R> {
         fluent_builders::PutStorageLensConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutStorageLensConfigurationTagging` operation.
+    /// Constructs a fluent builder for the [`PutStorageLensConfigurationTagging`](crate::client::fluent_builders::PutStorageLensConfigurationTagging) operation.
     ///
-    /// See [`PutStorageLensConfigurationTagging`](crate::client::fluent_builders::PutStorageLensConfigurationTagging) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`config_id(impl Into<String>)`](crate::client::fluent_builders::PutStorageLensConfigurationTagging::config_id) / [`set_config_id(Option<String>)`](crate::client::fluent_builders::PutStorageLensConfigurationTagging::set_config_id): <p>The ID of the S3 Storage Lens configuration.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PutStorageLensConfigurationTagging::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PutStorageLensConfigurationTagging::set_account_id): <p>The account ID of the requester.</p>
+    ///   - [`tags(Vec<StorageLensTag>)`](crate::client::fluent_builders::PutStorageLensConfigurationTagging::tags) / [`set_tags(Option<Vec<StorageLensTag>>)`](crate::client::fluent_builders::PutStorageLensConfigurationTagging::set_tags): <p>The tag set of the S3 Storage Lens configuration.</p> <note>   <p>You can set up to a maximum of 50 tags.</p>  </note>
+    /// - On success, responds with [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput)
+
+    /// - On failure, responds with [`SdkError<PutStorageLensConfigurationTaggingError>`](crate::error::PutStorageLensConfigurationTaggingError)
     pub fn put_storage_lens_configuration_tagging(
         &self,
     ) -> fluent_builders::PutStorageLensConfigurationTagging<C, M, R> {
         fluent_builders::PutStorageLensConfigurationTagging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateJobPriority` operation.
+    /// Constructs a fluent builder for the [`UpdateJobPriority`](crate::client::fluent_builders::UpdateJobPriority) operation.
     ///
-    /// See [`UpdateJobPriority`](crate::client::fluent_builders::UpdateJobPriority) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateJobPriority::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateJobPriority::set_account_id): <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::UpdateJobPriority::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::UpdateJobPriority::set_job_id): <p>The ID for the job whose priority you want to update.</p>
+    ///   - [`priority(i32)`](crate::client::fluent_builders::UpdateJobPriority::priority) / [`set_priority(i32)`](crate::client::fluent_builders::UpdateJobPriority::set_priority): <p>The priority you want to assign to this job.</p>
+    /// - On success, responds with [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::UpdateJobPriorityOutput::job_id): <p>The ID for the job whose priority Amazon S3 updated.</p>
+    ///   - [`priority(i32)`](crate::output::UpdateJobPriorityOutput::priority): <p>The new priority assigned to the specified job.</p>
+    /// - On failure, responds with [`SdkError<UpdateJobPriorityError>`](crate::error::UpdateJobPriorityError)
     pub fn update_job_priority(&self) -> fluent_builders::UpdateJobPriority<C, M, R> {
         fluent_builders::UpdateJobPriority::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateJobStatus` operation.
+    /// Constructs a fluent builder for the [`UpdateJobStatus`](crate::client::fluent_builders::UpdateJobStatus) operation.
     ///
-    /// See [`UpdateJobStatus`](crate::client::fluent_builders::UpdateJobStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateJobStatus::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateJobStatus::set_account_id): <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::UpdateJobStatus::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::UpdateJobStatus::set_job_id): <p>The ID of the job whose status you want to update.</p>
+    ///   - [`requested_job_status(RequestedJobStatus)`](crate::client::fluent_builders::UpdateJobStatus::requested_job_status) / [`set_requested_job_status(Option<RequestedJobStatus>)`](crate::client::fluent_builders::UpdateJobStatus::set_requested_job_status): <p>The status that you want to move the specified job to.</p>
+    ///   - [`status_update_reason(impl Into<String>)`](crate::client::fluent_builders::UpdateJobStatus::status_update_reason) / [`set_status_update_reason(Option<String>)`](crate::client::fluent_builders::UpdateJobStatus::set_status_update_reason): <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
+    /// - On success, responds with [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::UpdateJobStatusOutput::job_id): <p>The ID for the job whose status was updated.</p>
+    ///   - [`status(Option<JobStatus>)`](crate::output::UpdateJobStatusOutput::status): <p>The current status for the specified job.</p>
+    ///   - [`status_update_reason(Option<String>)`](crate::output::UpdateJobStatusOutput::status_update_reason): <p>The reason that the specified job's status was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateJobStatusError>`](crate::error::UpdateJobStatusError)
     pub fn update_job_status(&self) -> fluent_builders::UpdateJobStatus<C, M, R> {
         fluent_builders::UpdateJobStatus::new(self.handle.clone())
     }

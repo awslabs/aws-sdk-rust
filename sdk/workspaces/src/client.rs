@@ -83,418 +83,725 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateConnectionAlias` operation.
+    /// Constructs a fluent builder for the [`AssociateConnectionAlias`](crate::client::fluent_builders::AssociateConnectionAlias) operation.
     ///
-    /// See [`AssociateConnectionAlias`](crate::client::fluent_builders::AssociateConnectionAlias) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`alias_id(impl Into<String>)`](crate::client::fluent_builders::AssociateConnectionAlias::alias_id) / [`set_alias_id(Option<String>)`](crate::client::fluent_builders::AssociateConnectionAlias::set_alias_id): <p>The identifier of the connection alias.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::AssociateConnectionAlias::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::AssociateConnectionAlias::set_resource_id): <p>The identifier of the directory to associate the connection alias with.</p>
+    /// - On success, responds with [`AssociateConnectionAliasOutput`](crate::output::AssociateConnectionAliasOutput) with field(s):
+    ///   - [`connection_identifier(Option<String>)`](crate::output::AssociateConnectionAliasOutput::connection_identifier): <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies. </p>
+    /// - On failure, responds with [`SdkError<AssociateConnectionAliasError>`](crate::error::AssociateConnectionAliasError)
     pub fn associate_connection_alias(&self) -> fluent_builders::AssociateConnectionAlias<C, M, R> {
         fluent_builders::AssociateConnectionAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateIpGroups` operation.
+    /// Constructs a fluent builder for the [`AssociateIpGroups`](crate::client::fluent_builders::AssociateIpGroups) operation.
     ///
-    /// See [`AssociateIpGroups`](crate::client::fluent_builders::AssociateIpGroups) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::AssociateIpGroups::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::AssociateIpGroups::set_directory_id): <p>The identifier of the directory.</p>
+    ///   - [`group_ids(Vec<String>)`](crate::client::fluent_builders::AssociateIpGroups::group_ids) / [`set_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::AssociateIpGroups::set_group_ids): <p>The identifiers of one or more IP access control groups.</p>
+    /// - On success, responds with [`AssociateIpGroupsOutput`](crate::output::AssociateIpGroupsOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateIpGroupsError>`](crate::error::AssociateIpGroupsError)
     pub fn associate_ip_groups(&self) -> fluent_builders::AssociateIpGroups<C, M, R> {
         fluent_builders::AssociateIpGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AuthorizeIpRules` operation.
+    /// Constructs a fluent builder for the [`AuthorizeIpRules`](crate::client::fluent_builders::AuthorizeIpRules) operation.
     ///
-    /// See [`AuthorizeIpRules`](crate::client::fluent_builders::AuthorizeIpRules) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::AuthorizeIpRules::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::AuthorizeIpRules::set_group_id): <p>The identifier of the group.</p>
+    ///   - [`user_rules(Vec<IpRuleItem>)`](crate::client::fluent_builders::AuthorizeIpRules::user_rules) / [`set_user_rules(Option<Vec<IpRuleItem>>)`](crate::client::fluent_builders::AuthorizeIpRules::set_user_rules): <p>The rules to add to the group.</p>
+    /// - On success, responds with [`AuthorizeIpRulesOutput`](crate::output::AuthorizeIpRulesOutput)
+
+    /// - On failure, responds with [`SdkError<AuthorizeIpRulesError>`](crate::error::AuthorizeIpRulesError)
     pub fn authorize_ip_rules(&self) -> fluent_builders::AuthorizeIpRules<C, M, R> {
         fluent_builders::AuthorizeIpRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CopyWorkspaceImage` operation.
+    /// Constructs a fluent builder for the [`CopyWorkspaceImage`](crate::client::fluent_builders::CopyWorkspaceImage) operation.
     ///
-    /// See [`CopyWorkspaceImage`](crate::client::fluent_builders::CopyWorkspaceImage) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CopyWorkspaceImage::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CopyWorkspaceImage::set_name): <p>The name of the image.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CopyWorkspaceImage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CopyWorkspaceImage::set_description): <p>A description of the image.</p>
+    ///   - [`source_image_id(impl Into<String>)`](crate::client::fluent_builders::CopyWorkspaceImage::source_image_id) / [`set_source_image_id(Option<String>)`](crate::client::fluent_builders::CopyWorkspaceImage::set_source_image_id): <p>The identifier of the source image.</p>
+    ///   - [`source_region(impl Into<String>)`](crate::client::fluent_builders::CopyWorkspaceImage::source_region) / [`set_source_region(Option<String>)`](crate::client::fluent_builders::CopyWorkspaceImage::set_source_region): <p>The identifier of the source Region.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CopyWorkspaceImage::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CopyWorkspaceImage::set_tags): <p>The tags for the image.</p>
+    /// - On success, responds with [`CopyWorkspaceImageOutput`](crate::output::CopyWorkspaceImageOutput) with field(s):
+    ///   - [`image_id(Option<String>)`](crate::output::CopyWorkspaceImageOutput::image_id): <p>The identifier of the image.</p>
+    /// - On failure, responds with [`SdkError<CopyWorkspaceImageError>`](crate::error::CopyWorkspaceImageError)
     pub fn copy_workspace_image(&self) -> fluent_builders::CopyWorkspaceImage<C, M, R> {
         fluent_builders::CopyWorkspaceImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateConnectionAlias` operation.
+    /// Constructs a fluent builder for the [`CreateConnectClientAddIn`](crate::client::fluent_builders::CreateConnectClientAddIn) operation.
     ///
-    /// See [`CreateConnectionAlias`](crate::client::fluent_builders::CreateConnectionAlias) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::CreateConnectClientAddIn::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::CreateConnectClientAddIn::set_resource_id): <p>The directory identifier for which to configure the client add-in.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateConnectClientAddIn::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateConnectClientAddIn::set_name): <p>The name of the client add-in.</p>
+    ///   - [`url(impl Into<String>)`](crate::client::fluent_builders::CreateConnectClientAddIn::url) / [`set_url(Option<String>)`](crate::client::fluent_builders::CreateConnectClientAddIn::set_url): <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// - On success, responds with [`CreateConnectClientAddInOutput`](crate::output::CreateConnectClientAddInOutput) with field(s):
+    ///   - [`add_in_id(Option<String>)`](crate::output::CreateConnectClientAddInOutput::add_in_id): <p>The client add-in identifier.</p>
+    /// - On failure, responds with [`SdkError<CreateConnectClientAddInError>`](crate::error::CreateConnectClientAddInError)
+    pub fn create_connect_client_add_in(
+        &self,
+    ) -> fluent_builders::CreateConnectClientAddIn<C, M, R> {
+        fluent_builders::CreateConnectClientAddIn::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateConnectionAlias`](crate::client::fluent_builders::CreateConnectionAlias) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`connection_string(impl Into<String>)`](crate::client::fluent_builders::CreateConnectionAlias::connection_string) / [`set_connection_string(Option<String>)`](crate::client::fluent_builders::CreateConnectionAlias::set_connection_string): <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p> <important>   <p>After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.</p>  </important>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateConnectionAlias::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateConnectionAlias::set_tags): <p>The tags to associate with the connection alias.</p>
+    /// - On success, responds with [`CreateConnectionAliasOutput`](crate::output::CreateConnectionAliasOutput) with field(s):
+    ///   - [`alias_id(Option<String>)`](crate::output::CreateConnectionAliasOutput::alias_id): <p>The identifier of the connection alias.</p>
+    /// - On failure, responds with [`SdkError<CreateConnectionAliasError>`](crate::error::CreateConnectionAliasError)
     pub fn create_connection_alias(&self) -> fluent_builders::CreateConnectionAlias<C, M, R> {
         fluent_builders::CreateConnectionAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateIpGroup` operation.
+    /// Constructs a fluent builder for the [`CreateIpGroup`](crate::client::fluent_builders::CreateIpGroup) operation.
     ///
-    /// See [`CreateIpGroup`](crate::client::fluent_builders::CreateIpGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::CreateIpGroup::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::CreateIpGroup::set_group_name): <p>The name of the group.</p>
+    ///   - [`group_desc(impl Into<String>)`](crate::client::fluent_builders::CreateIpGroup::group_desc) / [`set_group_desc(Option<String>)`](crate::client::fluent_builders::CreateIpGroup::set_group_desc): <p>The description of the group.</p>
+    ///   - [`user_rules(Vec<IpRuleItem>)`](crate::client::fluent_builders::CreateIpGroup::user_rules) / [`set_user_rules(Option<Vec<IpRuleItem>>)`](crate::client::fluent_builders::CreateIpGroup::set_user_rules): <p>The rules to add to the group.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateIpGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateIpGroup::set_tags): <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+    /// - On success, responds with [`CreateIpGroupOutput`](crate::output::CreateIpGroupOutput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::output::CreateIpGroupOutput::group_id): <p>The identifier of the group.</p>
+    /// - On failure, responds with [`SdkError<CreateIpGroupError>`](crate::error::CreateIpGroupError)
     pub fn create_ip_group(&self) -> fluent_builders::CreateIpGroup<C, M, R> {
         fluent_builders::CreateIpGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTags` operation.
+    /// Constructs a fluent builder for the [`CreateTags`](crate::client::fluent_builders::CreateTags) operation.
     ///
-    /// See [`CreateTags`](crate::client::fluent_builders::CreateTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::CreateTags::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::CreateTags::set_resource_id): <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTags::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTags::set_tags): <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+    /// - On success, responds with [`CreateTagsOutput`](crate::output::CreateTagsOutput)
+
+    /// - On failure, responds with [`SdkError<CreateTagsError>`](crate::error::CreateTagsError)
     pub fn create_tags(&self) -> fluent_builders::CreateTags<C, M, R> {
         fluent_builders::CreateTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUpdatedWorkspaceImage` operation.
+    /// Constructs a fluent builder for the [`CreateUpdatedWorkspaceImage`](crate::client::fluent_builders::CreateUpdatedWorkspaceImage) operation.
     ///
-    /// See [`CreateUpdatedWorkspaceImage`](crate::client::fluent_builders::CreateUpdatedWorkspaceImage) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateUpdatedWorkspaceImage::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateUpdatedWorkspaceImage::set_name): <p>The name of the new updated WorkSpace image.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateUpdatedWorkspaceImage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateUpdatedWorkspaceImage::set_description): <p>A description of whether updates for the WorkSpace image are available.</p>
+    ///   - [`source_image_id(impl Into<String>)`](crate::client::fluent_builders::CreateUpdatedWorkspaceImage::source_image_id) / [`set_source_image_id(Option<String>)`](crate::client::fluent_builders::CreateUpdatedWorkspaceImage::set_source_image_id): <p>The identifier of the source WorkSpace image.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateUpdatedWorkspaceImage::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateUpdatedWorkspaceImage::set_tags): <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>   <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>  </note>
+    /// - On success, responds with [`CreateUpdatedWorkspaceImageOutput`](crate::output::CreateUpdatedWorkspaceImageOutput) with field(s):
+    ///   - [`image_id(Option<String>)`](crate::output::CreateUpdatedWorkspaceImageOutput::image_id): <p>The identifier of the new updated WorkSpace image.</p>
+    /// - On failure, responds with [`SdkError<CreateUpdatedWorkspaceImageError>`](crate::error::CreateUpdatedWorkspaceImageError)
     pub fn create_updated_workspace_image(
         &self,
     ) -> fluent_builders::CreateUpdatedWorkspaceImage<C, M, R> {
         fluent_builders::CreateUpdatedWorkspaceImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWorkspaceBundle` operation.
+    /// Constructs a fluent builder for the [`CreateWorkspaceBundle`](crate::client::fluent_builders::CreateWorkspaceBundle) operation.
     ///
-    /// See [`CreateWorkspaceBundle`](crate::client::fluent_builders::CreateWorkspaceBundle) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`bundle_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceBundle::bundle_name) / [`set_bundle_name(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceBundle::set_bundle_name): <p>The name of the bundle.</p>
+    ///   - [`bundle_description(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceBundle::bundle_description) / [`set_bundle_description(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceBundle::set_bundle_description): <p>The description of the bundle.</p>
+    ///   - [`image_id(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceBundle::image_id) / [`set_image_id(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceBundle::set_image_id): <p>The identifier of the image that is used to create the bundle.</p>
+    ///   - [`compute_type(ComputeType)`](crate::client::fluent_builders::CreateWorkspaceBundle::compute_type) / [`set_compute_type(Option<ComputeType>)`](crate::client::fluent_builders::CreateWorkspaceBundle::set_compute_type): <p>Describes the compute type of the bundle.</p>
+    ///   - [`user_storage(UserStorage)`](crate::client::fluent_builders::CreateWorkspaceBundle::user_storage) / [`set_user_storage(Option<UserStorage>)`](crate::client::fluent_builders::CreateWorkspaceBundle::set_user_storage): <p>Describes the user volume for a WorkSpace bundle.</p>
+    ///   - [`root_storage(RootStorage)`](crate::client::fluent_builders::CreateWorkspaceBundle::root_storage) / [`set_root_storage(Option<RootStorage>)`](crate::client::fluent_builders::CreateWorkspaceBundle::set_root_storage): <p>Describes the root volume for a WorkSpace bundle.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWorkspaceBundle::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWorkspaceBundle::set_tags): <p>The tags associated with the bundle.</p> <note>   <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>  </note>
+    /// - On success, responds with [`CreateWorkspaceBundleOutput`](crate::output::CreateWorkspaceBundleOutput) with field(s):
+    ///   - [`workspace_bundle(Option<WorkspaceBundle>)`](crate::output::CreateWorkspaceBundleOutput::workspace_bundle): <p>Describes a WorkSpace bundle.</p>
+    /// - On failure, responds with [`SdkError<CreateWorkspaceBundleError>`](crate::error::CreateWorkspaceBundleError)
     pub fn create_workspace_bundle(&self) -> fluent_builders::CreateWorkspaceBundle<C, M, R> {
         fluent_builders::CreateWorkspaceBundle::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWorkspaces` operation.
+    /// Constructs a fluent builder for the [`CreateWorkspaces`](crate::client::fluent_builders::CreateWorkspaces) operation.
     ///
-    /// See [`CreateWorkspaces`](crate::client::fluent_builders::CreateWorkspaces) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`workspaces(Vec<WorkspaceRequest>)`](crate::client::fluent_builders::CreateWorkspaces::workspaces) / [`set_workspaces(Option<Vec<WorkspaceRequest>>)`](crate::client::fluent_builders::CreateWorkspaces::set_workspaces): <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
+    /// - On success, responds with [`CreateWorkspacesOutput`](crate::output::CreateWorkspacesOutput) with field(s):
+    ///   - [`failed_requests(Option<Vec<FailedCreateWorkspaceRequest>>)`](crate::output::CreateWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be created.</p>
+    ///   - [`pending_requests(Option<Vec<Workspace>>)`](crate::output::CreateWorkspacesOutput::pending_requests): <p>Information about the WorkSpaces that were created.</p>  <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <code>DescribeWorkspaces</code> before the WorkSpace is created, the information returned can be incomplete.</p>
+    /// - On failure, responds with [`SdkError<CreateWorkspacesError>`](crate::error::CreateWorkspacesError)
     pub fn create_workspaces(&self) -> fluent_builders::CreateWorkspaces<C, M, R> {
         fluent_builders::CreateWorkspaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConnectionAlias` operation.
+    /// Constructs a fluent builder for the [`DeleteConnectClientAddIn`](crate::client::fluent_builders::DeleteConnectClientAddIn) operation.
     ///
-    /// See [`DeleteConnectionAlias`](crate::client::fluent_builders::DeleteConnectionAlias) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`add_in_id(impl Into<String>)`](crate::client::fluent_builders::DeleteConnectClientAddIn::add_in_id) / [`set_add_in_id(Option<String>)`](crate::client::fluent_builders::DeleteConnectClientAddIn::set_add_in_id): <p>The identifier of the client add-in to delete.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DeleteConnectClientAddIn::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DeleteConnectClientAddIn::set_resource_id): <p>The directory identifier for which the client add-in is configured.</p>
+    /// - On success, responds with [`DeleteConnectClientAddInOutput`](crate::output::DeleteConnectClientAddInOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteConnectClientAddInError>`](crate::error::DeleteConnectClientAddInError)
+    pub fn delete_connect_client_add_in(
+        &self,
+    ) -> fluent_builders::DeleteConnectClientAddIn<C, M, R> {
+        fluent_builders::DeleteConnectClientAddIn::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteConnectionAlias`](crate::client::fluent_builders::DeleteConnectionAlias) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`alias_id(impl Into<String>)`](crate::client::fluent_builders::DeleteConnectionAlias::alias_id) / [`set_alias_id(Option<String>)`](crate::client::fluent_builders::DeleteConnectionAlias::set_alias_id): <p>The identifier of the connection alias to delete.</p>
+    /// - On success, responds with [`DeleteConnectionAliasOutput`](crate::output::DeleteConnectionAliasOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteConnectionAliasError>`](crate::error::DeleteConnectionAliasError)
     pub fn delete_connection_alias(&self) -> fluent_builders::DeleteConnectionAlias<C, M, R> {
         fluent_builders::DeleteConnectionAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteIpGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteIpGroup`](crate::client::fluent_builders::DeleteIpGroup) operation.
     ///
-    /// See [`DeleteIpGroup`](crate::client::fluent_builders::DeleteIpGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::DeleteIpGroup::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::DeleteIpGroup::set_group_id): <p>The identifier of the IP access control group.</p>
+    /// - On success, responds with [`DeleteIpGroupOutput`](crate::output::DeleteIpGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteIpGroupError>`](crate::error::DeleteIpGroupError)
     pub fn delete_ip_group(&self) -> fluent_builders::DeleteIpGroup<C, M, R> {
         fluent_builders::DeleteIpGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTags` operation.
+    /// Constructs a fluent builder for the [`DeleteTags`](crate::client::fluent_builders::DeleteTags) operation.
     ///
-    /// See [`DeleteTags`](crate::client::fluent_builders::DeleteTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTags::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DeleteTags::set_resource_id): <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::DeleteTags::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteTags::set_tag_keys): <p>The tag keys.</p>
+    /// - On success, responds with [`DeleteTagsOutput`](crate::output::DeleteTagsOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::error::DeleteTagsError)
     pub fn delete_tags(&self) -> fluent_builders::DeleteTags<C, M, R> {
         fluent_builders::DeleteTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWorkspaceBundle` operation.
+    /// Constructs a fluent builder for the [`DeleteWorkspaceBundle`](crate::client::fluent_builders::DeleteWorkspaceBundle) operation.
     ///
-    /// See [`DeleteWorkspaceBundle`](crate::client::fluent_builders::DeleteWorkspaceBundle) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkspaceBundle::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::DeleteWorkspaceBundle::set_bundle_id): <p>The identifier of the bundle.</p>
+    /// - On success, responds with [`DeleteWorkspaceBundleOutput`](crate::output::DeleteWorkspaceBundleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWorkspaceBundleError>`](crate::error::DeleteWorkspaceBundleError)
     pub fn delete_workspace_bundle(&self) -> fluent_builders::DeleteWorkspaceBundle<C, M, R> {
         fluent_builders::DeleteWorkspaceBundle::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWorkspaceImage` operation.
+    /// Constructs a fluent builder for the [`DeleteWorkspaceImage`](crate::client::fluent_builders::DeleteWorkspaceImage) operation.
     ///
-    /// See [`DeleteWorkspaceImage`](crate::client::fluent_builders::DeleteWorkspaceImage) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`image_id(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkspaceImage::image_id) / [`set_image_id(Option<String>)`](crate::client::fluent_builders::DeleteWorkspaceImage::set_image_id): <p>The identifier of the image.</p>
+    /// - On success, responds with [`DeleteWorkspaceImageOutput`](crate::output::DeleteWorkspaceImageOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWorkspaceImageError>`](crate::error::DeleteWorkspaceImageError)
     pub fn delete_workspace_image(&self) -> fluent_builders::DeleteWorkspaceImage<C, M, R> {
         fluent_builders::DeleteWorkspaceImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterWorkspaceDirectory` operation.
+    /// Constructs a fluent builder for the [`DeregisterWorkspaceDirectory`](crate::client::fluent_builders::DeregisterWorkspaceDirectory) operation.
     ///
-    /// See [`DeregisterWorkspaceDirectory`](crate::client::fluent_builders::DeregisterWorkspaceDirectory) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterWorkspaceDirectory::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DeregisterWorkspaceDirectory::set_directory_id): <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
+    /// - On success, responds with [`DeregisterWorkspaceDirectoryOutput`](crate::output::DeregisterWorkspaceDirectoryOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterWorkspaceDirectoryError>`](crate::error::DeregisterWorkspaceDirectoryError)
     pub fn deregister_workspace_directory(
         &self,
     ) -> fluent_builders::DeregisterWorkspaceDirectory<C, M, R> {
         fluent_builders::DeregisterWorkspaceDirectory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAccount` operation.
+    /// Constructs a fluent builder for the [`DescribeAccount`](crate::client::fluent_builders::DescribeAccount) operation.
     ///
-    /// See [`DescribeAccount`](crate::client::fluent_builders::DescribeAccount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeAccount::send) it.
+
+    /// - On success, responds with [`DescribeAccountOutput`](crate::output::DescribeAccountOutput) with field(s):
+    ///   - [`dedicated_tenancy_support(Option<DedicatedTenancySupportResultEnum>)`](crate::output::DescribeAccountOutput::dedicated_tenancy_support): <p>The status of BYOL (whether BYOL is enabled or disabled).</p>
+    ///   - [`dedicated_tenancy_management_cidr_range(Option<String>)`](crate::output::DescribeAccountOutput::dedicated_tenancy_management_cidr_range): <p>The IP address range, specified as an IPv4 CIDR block, used for the management network interface.</p>  <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
+    /// - On failure, responds with [`SdkError<DescribeAccountError>`](crate::error::DescribeAccountError)
     pub fn describe_account(&self) -> fluent_builders::DescribeAccount<C, M, R> {
         fluent_builders::DescribeAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAccountModifications` operation.
+    /// Constructs a fluent builder for the [`DescribeAccountModifications`](crate::client::fluent_builders::DescribeAccountModifications) operation.
     ///
-    /// See [`DescribeAccountModifications`](crate::client::fluent_builders::DescribeAccountModifications) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeAccountModifications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeAccountModifications::set_next_token): <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    /// - On success, responds with [`DescribeAccountModificationsOutput`](crate::output::DescribeAccountModificationsOutput) with field(s):
+    ///   - [`account_modifications(Option<Vec<AccountModification>>)`](crate::output::DescribeAccountModificationsOutput::account_modifications): <p>The list of modifications to the configuration of BYOL.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAccountModificationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<DescribeAccountModificationsError>`](crate::error::DescribeAccountModificationsError)
     pub fn describe_account_modifications(
         &self,
     ) -> fluent_builders::DescribeAccountModifications<C, M, R> {
         fluent_builders::DescribeAccountModifications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeClientProperties` operation.
+    /// Constructs a fluent builder for the [`DescribeClientProperties`](crate::client::fluent_builders::DescribeClientProperties) operation.
     ///
-    /// See [`DescribeClientProperties`](crate::client::fluent_builders::DescribeClientProperties) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_ids(Vec<String>)`](crate::client::fluent_builders::DescribeClientProperties::resource_ids) / [`set_resource_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeClientProperties::set_resource_ids): <p>The resource identifier, in the form of directory IDs.</p>
+    /// - On success, responds with [`DescribeClientPropertiesOutput`](crate::output::DescribeClientPropertiesOutput) with field(s):
+    ///   - [`client_properties_list(Option<Vec<ClientPropertiesResult>>)`](crate::output::DescribeClientPropertiesOutput::client_properties_list): <p>Information about the specified Amazon WorkSpaces clients.</p>
+    /// - On failure, responds with [`SdkError<DescribeClientPropertiesError>`](crate::error::DescribeClientPropertiesError)
     pub fn describe_client_properties(&self) -> fluent_builders::DescribeClientProperties<C, M, R> {
         fluent_builders::DescribeClientProperties::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConnectionAliases` operation.
+    /// Constructs a fluent builder for the [`DescribeConnectClientAddIns`](crate::client::fluent_builders::DescribeConnectClientAddIns) operation.
     ///
-    /// See [`DescribeConnectionAliases`](crate::client::fluent_builders::DescribeConnectionAliases) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DescribeConnectClientAddIns::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DescribeConnectClientAddIns::set_resource_id): <p>The directory identifier for which the client add-in is configured.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeConnectClientAddIns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeConnectClientAddIns::set_next_token): <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeConnectClientAddIns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeConnectClientAddIns::set_max_results): <p>The maximum number of items to return.</p>
+    /// - On success, responds with [`DescribeConnectClientAddInsOutput`](crate::output::DescribeConnectClientAddInsOutput) with field(s):
+    ///   - [`add_ins(Option<Vec<ConnectClientAddIn>>)`](crate::output::DescribeConnectClientAddInsOutput::add_ins): <p>Information about client add-ins.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeConnectClientAddInsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<DescribeConnectClientAddInsError>`](crate::error::DescribeConnectClientAddInsError)
+    pub fn describe_connect_client_add_ins(
+        &self,
+    ) -> fluent_builders::DescribeConnectClientAddIns<C, M, R> {
+        fluent_builders::DescribeConnectClientAddIns::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeConnectionAliases`](crate::client::fluent_builders::DescribeConnectionAliases) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`alias_ids(Vec<String>)`](crate::client::fluent_builders::DescribeConnectionAliases::alias_ids) / [`set_alias_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeConnectionAliases::set_alias_ids): <p>The identifiers of the connection aliases to describe.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DescribeConnectionAliases::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DescribeConnectionAliases::set_resource_id): <p>The identifier of the directory associated with the connection alias.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeConnectionAliases::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeConnectionAliases::set_limit): <p>The maximum number of connection aliases to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeConnectionAliases::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeConnectionAliases::set_next_token): <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
+    /// - On success, responds with [`DescribeConnectionAliasesOutput`](crate::output::DescribeConnectionAliasesOutput) with field(s):
+    ///   - [`connection_aliases(Option<Vec<ConnectionAlias>>)`](crate::output::DescribeConnectionAliasesOutput::connection_aliases): <p>Information about the specified connection aliases.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeConnectionAliasesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<DescribeConnectionAliasesError>`](crate::error::DescribeConnectionAliasesError)
     pub fn describe_connection_aliases(
         &self,
     ) -> fluent_builders::DescribeConnectionAliases<C, M, R> {
         fluent_builders::DescribeConnectionAliases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConnectionAliasPermissions` operation.
+    /// Constructs a fluent builder for the [`DescribeConnectionAliasPermissions`](crate::client::fluent_builders::DescribeConnectionAliasPermissions) operation.
     ///
-    /// See [`DescribeConnectionAliasPermissions`](crate::client::fluent_builders::DescribeConnectionAliasPermissions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`alias_id(impl Into<String>)`](crate::client::fluent_builders::DescribeConnectionAliasPermissions::alias_id) / [`set_alias_id(Option<String>)`](crate::client::fluent_builders::DescribeConnectionAliasPermissions::set_alias_id): <p>The identifier of the connection alias.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeConnectionAliasPermissions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeConnectionAliasPermissions::set_next_token): <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeConnectionAliasPermissions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeConnectionAliasPermissions::set_max_results): <p>The maximum number of results to return.</p>
+    /// - On success, responds with [`DescribeConnectionAliasPermissionsOutput`](crate::output::DescribeConnectionAliasPermissionsOutput) with field(s):
+    ///   - [`alias_id(Option<String>)`](crate::output::DescribeConnectionAliasPermissionsOutput::alias_id): <p>The identifier of the connection alias.</p>
+    ///   - [`connection_alias_permissions(Option<Vec<ConnectionAliasPermission>>)`](crate::output::DescribeConnectionAliasPermissionsOutput::connection_alias_permissions): <p>The permissions associated with a connection alias.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeConnectionAliasPermissionsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<DescribeConnectionAliasPermissionsError>`](crate::error::DescribeConnectionAliasPermissionsError)
     pub fn describe_connection_alias_permissions(
         &self,
     ) -> fluent_builders::DescribeConnectionAliasPermissions<C, M, R> {
         fluent_builders::DescribeConnectionAliasPermissions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeIpGroups` operation.
+    /// Constructs a fluent builder for the [`DescribeIpGroups`](crate::client::fluent_builders::DescribeIpGroups) operation.
     ///
-    /// See [`DescribeIpGroups`](crate::client::fluent_builders::DescribeIpGroups) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_ids(Vec<String>)`](crate::client::fluent_builders::DescribeIpGroups::group_ids) / [`set_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeIpGroups::set_group_ids): <p>The identifiers of one or more IP access control groups.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeIpGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeIpGroups::set_next_token): <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeIpGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeIpGroups::set_max_results): <p>The maximum number of items to return.</p>
+    /// - On success, responds with [`DescribeIpGroupsOutput`](crate::output::DescribeIpGroupsOutput) with field(s):
+    ///   - [`result(Option<Vec<WorkspacesIpGroup>>)`](crate::output::DescribeIpGroupsOutput::result): <p>Information about the IP access control groups.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeIpGroupsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<DescribeIpGroupsError>`](crate::error::DescribeIpGroupsError)
     pub fn describe_ip_groups(&self) -> fluent_builders::DescribeIpGroups<C, M, R> {
         fluent_builders::DescribeIpGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTags` operation.
+    /// Constructs a fluent builder for the [`DescribeTags`](crate::client::fluent_builders::DescribeTags) operation.
     ///
-    /// See [`DescribeTags`](crate::client::fluent_builders::DescribeTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTags::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DescribeTags::set_resource_id): <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    /// - On success, responds with [`DescribeTagsOutput`](crate::output::DescribeTagsOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::DescribeTagsOutput::tag_list): <p>The tags.</p>
+    /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::error::DescribeTagsError)
     pub fn describe_tags(&self) -> fluent_builders::DescribeTags<C, M, R> {
         fluent_builders::DescribeTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorkspaceBundles` operation.
+    /// Constructs a fluent builder for the [`DescribeWorkspaceBundles`](crate::client::fluent_builders::DescribeWorkspaceBundles) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeWorkspaceBundles::into_paginator).
     ///
-    /// See [`DescribeWorkspaceBundles`](crate::client::fluent_builders::DescribeWorkspaceBundles) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeWorkspaceBundles::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`bundle_ids(Vec<String>)`](crate::client::fluent_builders::DescribeWorkspaceBundles::bundle_ids) / [`set_bundle_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeWorkspaceBundles::set_bundle_ids): <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
+    ///   - [`owner(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspaceBundles::owner) / [`set_owner(Option<String>)`](crate::client::fluent_builders::DescribeWorkspaceBundles::set_owner): <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>  <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspaceBundles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeWorkspaceBundles::set_next_token): <p>The token for the next set of results. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeWorkspaceBundlesOutput`](crate::output::DescribeWorkspaceBundlesOutput) with field(s):
+    ///   - [`bundles(Option<Vec<WorkspaceBundle>>)`](crate::output::DescribeWorkspaceBundlesOutput::bundles): <p>Information about the bundles.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeWorkspaceBundlesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. This token is valid for one day and must be used within that time frame.</p>
+    /// - On failure, responds with [`SdkError<DescribeWorkspaceBundlesError>`](crate::error::DescribeWorkspaceBundlesError)
     pub fn describe_workspace_bundles(&self) -> fluent_builders::DescribeWorkspaceBundles<C, M, R> {
         fluent_builders::DescribeWorkspaceBundles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorkspaceDirectories` operation.
+    /// Constructs a fluent builder for the [`DescribeWorkspaceDirectories`](crate::client::fluent_builders::DescribeWorkspaceDirectories) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeWorkspaceDirectories::into_paginator).
     ///
-    /// See [`DescribeWorkspaceDirectories`](crate::client::fluent_builders::DescribeWorkspaceDirectories) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeWorkspaceDirectories::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`directory_ids(Vec<String>)`](crate::client::fluent_builders::DescribeWorkspaceDirectories::directory_ids) / [`set_directory_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeWorkspaceDirectories::set_directory_ids): <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeWorkspaceDirectories::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeWorkspaceDirectories::set_limit): <p>The maximum number of directories to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspaceDirectories::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeWorkspaceDirectories::set_next_token): <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    /// - On success, responds with [`DescribeWorkspaceDirectoriesOutput`](crate::output::DescribeWorkspaceDirectoriesOutput) with field(s):
+    ///   - [`directories(Option<Vec<WorkspaceDirectory>>)`](crate::output::DescribeWorkspaceDirectoriesOutput::directories): <p>Information about the directories.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeWorkspaceDirectoriesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<DescribeWorkspaceDirectoriesError>`](crate::error::DescribeWorkspaceDirectoriesError)
     pub fn describe_workspace_directories(
         &self,
     ) -> fluent_builders::DescribeWorkspaceDirectories<C, M, R> {
         fluent_builders::DescribeWorkspaceDirectories::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorkspaceImagePermissions` operation.
+    /// Constructs a fluent builder for the [`DescribeWorkspaceImagePermissions`](crate::client::fluent_builders::DescribeWorkspaceImagePermissions) operation.
     ///
-    /// See [`DescribeWorkspaceImagePermissions`](crate::client::fluent_builders::DescribeWorkspaceImagePermissions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`image_id(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspaceImagePermissions::image_id) / [`set_image_id(Option<String>)`](crate::client::fluent_builders::DescribeWorkspaceImagePermissions::set_image_id): <p>The identifier of the image.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspaceImagePermissions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeWorkspaceImagePermissions::set_next_token): <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeWorkspaceImagePermissions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeWorkspaceImagePermissions::set_max_results): <p>The maximum number of items to return.</p>
+    /// - On success, responds with [`DescribeWorkspaceImagePermissionsOutput`](crate::output::DescribeWorkspaceImagePermissionsOutput) with field(s):
+    ///   - [`image_id(Option<String>)`](crate::output::DescribeWorkspaceImagePermissionsOutput::image_id): <p>The identifier of the image.</p>
+    ///   - [`image_permissions(Option<Vec<ImagePermission>>)`](crate::output::DescribeWorkspaceImagePermissionsOutput::image_permissions): <p>The identifiers of the Amazon Web Services accounts that the image has been shared with.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeWorkspaceImagePermissionsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<DescribeWorkspaceImagePermissionsError>`](crate::error::DescribeWorkspaceImagePermissionsError)
     pub fn describe_workspace_image_permissions(
         &self,
     ) -> fluent_builders::DescribeWorkspaceImagePermissions<C, M, R> {
         fluent_builders::DescribeWorkspaceImagePermissions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorkspaceImages` operation.
+    /// Constructs a fluent builder for the [`DescribeWorkspaceImages`](crate::client::fluent_builders::DescribeWorkspaceImages) operation.
     ///
-    /// See [`DescribeWorkspaceImages`](crate::client::fluent_builders::DescribeWorkspaceImages) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`image_ids(Vec<String>)`](crate::client::fluent_builders::DescribeWorkspaceImages::image_ids) / [`set_image_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeWorkspaceImages::set_image_ids): <p>The identifier of the image.</p>
+    ///   - [`image_type(ImageType)`](crate::client::fluent_builders::DescribeWorkspaceImages::image_type) / [`set_image_type(Option<ImageType>)`](crate::client::fluent_builders::DescribeWorkspaceImages::set_image_type): <p>The type (owned or shared) of the image.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspaceImages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeWorkspaceImages::set_next_token): <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeWorkspaceImages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeWorkspaceImages::set_max_results): <p>The maximum number of items to return.</p>
+    /// - On success, responds with [`DescribeWorkspaceImagesOutput`](crate::output::DescribeWorkspaceImagesOutput) with field(s):
+    ///   - [`images(Option<Vec<WorkspaceImage>>)`](crate::output::DescribeWorkspaceImagesOutput::images): <p>Information about the images.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeWorkspaceImagesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<DescribeWorkspaceImagesError>`](crate::error::DescribeWorkspaceImagesError)
     pub fn describe_workspace_images(&self) -> fluent_builders::DescribeWorkspaceImages<C, M, R> {
         fluent_builders::DescribeWorkspaceImages::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorkspaces` operation.
+    /// Constructs a fluent builder for the [`DescribeWorkspaces`](crate::client::fluent_builders::DescribeWorkspaces) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeWorkspaces::into_paginator).
     ///
-    /// See [`DescribeWorkspaces`](crate::client::fluent_builders::DescribeWorkspaces) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeWorkspaces::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_ids(Vec<String>)`](crate::client::fluent_builders::DescribeWorkspaces::workspace_ids) / [`set_workspace_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeWorkspaces::set_workspace_ids): <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>  <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspaces::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeWorkspaces::set_directory_id): <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
+    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspaces::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::DescribeWorkspaces::set_user_name): <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
+    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspaces::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::DescribeWorkspaces::set_bundle_id): <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeWorkspaces::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeWorkspaces::set_limit): <p>The maximum number of items to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspaces::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeWorkspaces::set_next_token): <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    /// - On success, responds with [`DescribeWorkspacesOutput`](crate::output::DescribeWorkspacesOutput) with field(s):
+    ///   - [`workspaces(Option<Vec<Workspace>>)`](crate::output::DescribeWorkspacesOutput::workspaces): <p>Information about the WorkSpaces.</p>  <p>Because <code>CreateWorkspaces</code> is an asynchronous operation, some of the returned information could be incomplete.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeWorkspacesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<DescribeWorkspacesError>`](crate::error::DescribeWorkspacesError)
     pub fn describe_workspaces(&self) -> fluent_builders::DescribeWorkspaces<C, M, R> {
         fluent_builders::DescribeWorkspaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorkspacesConnectionStatus` operation.
+    /// Constructs a fluent builder for the [`DescribeWorkspacesConnectionStatus`](crate::client::fluent_builders::DescribeWorkspacesConnectionStatus) operation.
     ///
-    /// See [`DescribeWorkspacesConnectionStatus`](crate::client::fluent_builders::DescribeWorkspacesConnectionStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_ids(Vec<String>)`](crate::client::fluent_builders::DescribeWorkspacesConnectionStatus::workspace_ids) / [`set_workspace_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeWorkspacesConnectionStatus::set_workspace_ids): <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspacesConnectionStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeWorkspacesConnectionStatus::set_next_token): <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    /// - On success, responds with [`DescribeWorkspacesConnectionStatusOutput`](crate::output::DescribeWorkspacesConnectionStatusOutput) with field(s):
+    ///   - [`workspaces_connection_status(Option<Vec<WorkspaceConnectionStatus>>)`](crate::output::DescribeWorkspacesConnectionStatusOutput::workspaces_connection_status): <p>Information about the connection status of the WorkSpace.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeWorkspacesConnectionStatusOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<DescribeWorkspacesConnectionStatusError>`](crate::error::DescribeWorkspacesConnectionStatusError)
     pub fn describe_workspaces_connection_status(
         &self,
     ) -> fluent_builders::DescribeWorkspacesConnectionStatus<C, M, R> {
         fluent_builders::DescribeWorkspacesConnectionStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorkspaceSnapshots` operation.
+    /// Constructs a fluent builder for the [`DescribeWorkspaceSnapshots`](crate::client::fluent_builders::DescribeWorkspaceSnapshots) operation.
     ///
-    /// See [`DescribeWorkspaceSnapshots`](crate::client::fluent_builders::DescribeWorkspaceSnapshots) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspaceSnapshots::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::DescribeWorkspaceSnapshots::set_workspace_id): <p>The identifier of the WorkSpace.</p>
+    /// - On success, responds with [`DescribeWorkspaceSnapshotsOutput`](crate::output::DescribeWorkspaceSnapshotsOutput) with field(s):
+    ///   - [`rebuild_snapshots(Option<Vec<Snapshot>>)`](crate::output::DescribeWorkspaceSnapshotsOutput::rebuild_snapshots): <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
+    ///   - [`restore_snapshots(Option<Vec<Snapshot>>)`](crate::output::DescribeWorkspaceSnapshotsOutput::restore_snapshots): <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>
+    /// - On failure, responds with [`SdkError<DescribeWorkspaceSnapshotsError>`](crate::error::DescribeWorkspaceSnapshotsError)
     pub fn describe_workspace_snapshots(
         &self,
     ) -> fluent_builders::DescribeWorkspaceSnapshots<C, M, R> {
         fluent_builders::DescribeWorkspaceSnapshots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateConnectionAlias` operation.
+    /// Constructs a fluent builder for the [`DisassociateConnectionAlias`](crate::client::fluent_builders::DisassociateConnectionAlias) operation.
     ///
-    /// See [`DisassociateConnectionAlias`](crate::client::fluent_builders::DisassociateConnectionAlias) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`alias_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateConnectionAlias::alias_id) / [`set_alias_id(Option<String>)`](crate::client::fluent_builders::DisassociateConnectionAlias::set_alias_id): <p>The identifier of the connection alias to disassociate.</p>
+    /// - On success, responds with [`DisassociateConnectionAliasOutput`](crate::output::DisassociateConnectionAliasOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateConnectionAliasError>`](crate::error::DisassociateConnectionAliasError)
     pub fn disassociate_connection_alias(
         &self,
     ) -> fluent_builders::DisassociateConnectionAlias<C, M, R> {
         fluent_builders::DisassociateConnectionAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateIpGroups` operation.
+    /// Constructs a fluent builder for the [`DisassociateIpGroups`](crate::client::fluent_builders::DisassociateIpGroups) operation.
     ///
-    /// See [`DisassociateIpGroups`](crate::client::fluent_builders::DisassociateIpGroups) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateIpGroups::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DisassociateIpGroups::set_directory_id): <p>The identifier of the directory.</p>
+    ///   - [`group_ids(Vec<String>)`](crate::client::fluent_builders::DisassociateIpGroups::group_ids) / [`set_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociateIpGroups::set_group_ids): <p>The identifiers of one or more IP access control groups.</p>
+    /// - On success, responds with [`DisassociateIpGroupsOutput`](crate::output::DisassociateIpGroupsOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateIpGroupsError>`](crate::error::DisassociateIpGroupsError)
     pub fn disassociate_ip_groups(&self) -> fluent_builders::DisassociateIpGroups<C, M, R> {
         fluent_builders::DisassociateIpGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ImportWorkspaceImage` operation.
+    /// Constructs a fluent builder for the [`ImportWorkspaceImage`](crate::client::fluent_builders::ImportWorkspaceImage) operation.
     ///
-    /// See [`ImportWorkspaceImage`](crate::client::fluent_builders::ImportWorkspaceImage) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`ec2_image_id(impl Into<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::ec2_image_id) / [`set_ec2_image_id(Option<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_ec2_image_id): <p>The identifier of the EC2 image.</p>
+    ///   - [`ingestion_process(WorkspaceImageIngestionProcess)`](crate::client::fluent_builders::ImportWorkspaceImage::ingestion_process) / [`set_ingestion_process(Option<WorkspaceImageIngestionProcess>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_ingestion_process): <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. </p>  <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+    ///   - [`image_name(impl Into<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::image_name) / [`set_image_name(Option<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_image_name): <p>The name of the WorkSpace image.</p>
+    ///   - [`image_description(impl Into<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::image_description) / [`set_image_description(Option<String>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_image_description): <p>The description of the WorkSpace image.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportWorkspaceImage::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_tags): <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+    ///   - [`applications(Vec<Application>)`](crate::client::fluent_builders::ImportWorkspaceImage::applications) / [`set_applications(Option<Vec<Application>>)`](crate::client::fluent_builders::ImportWorkspaceImage::set_applications): <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>   <p>Although this parameter is an array, only one item is allowed at this time.</p>  </note>
+    /// - On success, responds with [`ImportWorkspaceImageOutput`](crate::output::ImportWorkspaceImageOutput) with field(s):
+    ///   - [`image_id(Option<String>)`](crate::output::ImportWorkspaceImageOutput::image_id): <p>The identifier of the WorkSpace image.</p>
+    /// - On failure, responds with [`SdkError<ImportWorkspaceImageError>`](crate::error::ImportWorkspaceImageError)
     pub fn import_workspace_image(&self) -> fluent_builders::ImportWorkspaceImage<C, M, R> {
         fluent_builders::ImportWorkspaceImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAvailableManagementCidrRanges` operation.
+    /// Constructs a fluent builder for the [`ListAvailableManagementCidrRanges`](crate::client::fluent_builders::ListAvailableManagementCidrRanges) operation.
     ///
-    /// See [`ListAvailableManagementCidrRanges`](crate::client::fluent_builders::ListAvailableManagementCidrRanges) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`management_cidr_range_constraint(impl Into<String>)`](crate::client::fluent_builders::ListAvailableManagementCidrRanges::management_cidr_range_constraint) / [`set_management_cidr_range_constraint(Option<String>)`](crate::client::fluent_builders::ListAvailableManagementCidrRanges::set_management_cidr_range_constraint): <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAvailableManagementCidrRanges::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAvailableManagementCidrRanges::set_max_results): <p>The maximum number of items to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAvailableManagementCidrRanges::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAvailableManagementCidrRanges::set_next_token): <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    /// - On success, responds with [`ListAvailableManagementCidrRangesOutput`](crate::output::ListAvailableManagementCidrRangesOutput) with field(s):
+    ///   - [`management_cidr_ranges(Option<Vec<String>>)`](crate::output::ListAvailableManagementCidrRangesOutput::management_cidr_ranges): <p>The list of available IP address ranges, specified as IPv4 CIDR blocks.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAvailableManagementCidrRangesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<ListAvailableManagementCidrRangesError>`](crate::error::ListAvailableManagementCidrRangesError)
     pub fn list_available_management_cidr_ranges(
         &self,
     ) -> fluent_builders::ListAvailableManagementCidrRanges<C, M, R> {
         fluent_builders::ListAvailableManagementCidrRanges::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `MigrateWorkspace` operation.
+    /// Constructs a fluent builder for the [`MigrateWorkspace`](crate::client::fluent_builders::MigrateWorkspace) operation.
     ///
-    /// See [`MigrateWorkspace`](crate::client::fluent_builders::MigrateWorkspace) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`source_workspace_id(impl Into<String>)`](crate::client::fluent_builders::MigrateWorkspace::source_workspace_id) / [`set_source_workspace_id(Option<String>)`](crate::client::fluent_builders::MigrateWorkspace::set_source_workspace_id): <p>The identifier of the WorkSpace to migrate from.</p>
+    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::MigrateWorkspace::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::MigrateWorkspace::set_bundle_id): <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
+    /// - On success, responds with [`MigrateWorkspaceOutput`](crate::output::MigrateWorkspaceOutput) with field(s):
+    ///   - [`source_workspace_id(Option<String>)`](crate::output::MigrateWorkspaceOutput::source_workspace_id): <p>The original identifier of the WorkSpace that is being migrated.</p>
+    ///   - [`target_workspace_id(Option<String>)`](crate::output::MigrateWorkspaceOutput::target_workspace_id): <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed, the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
+    /// - On failure, responds with [`SdkError<MigrateWorkspaceError>`](crate::error::MigrateWorkspaceError)
     pub fn migrate_workspace(&self) -> fluent_builders::MigrateWorkspace<C, M, R> {
         fluent_builders::MigrateWorkspace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyAccount` operation.
+    /// Constructs a fluent builder for the [`ModifyAccount`](crate::client::fluent_builders::ModifyAccount) operation.
     ///
-    /// See [`ModifyAccount`](crate::client::fluent_builders::ModifyAccount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`dedicated_tenancy_support(DedicatedTenancySupportEnum)`](crate::client::fluent_builders::ModifyAccount::dedicated_tenancy_support) / [`set_dedicated_tenancy_support(Option<DedicatedTenancySupportEnum>)`](crate::client::fluent_builders::ModifyAccount::set_dedicated_tenancy_support): <p>The status of BYOL.</p>
+    ///   - [`dedicated_tenancy_management_cidr_range(impl Into<String>)`](crate::client::fluent_builders::ModifyAccount::dedicated_tenancy_management_cidr_range) / [`set_dedicated_tenancy_management_cidr_range(Option<String>)`](crate::client::fluent_builders::ModifyAccount::set_dedicated_tenancy_management_cidr_range): <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
+    /// - On success, responds with [`ModifyAccountOutput`](crate::output::ModifyAccountOutput)
+
+    /// - On failure, responds with [`SdkError<ModifyAccountError>`](crate::error::ModifyAccountError)
     pub fn modify_account(&self) -> fluent_builders::ModifyAccount<C, M, R> {
         fluent_builders::ModifyAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyClientProperties` operation.
+    /// Constructs a fluent builder for the [`ModifyClientProperties`](crate::client::fluent_builders::ModifyClientProperties) operation.
     ///
-    /// See [`ModifyClientProperties`](crate::client::fluent_builders::ModifyClientProperties) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ModifyClientProperties::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ModifyClientProperties::set_resource_id): <p>The resource identifiers, in the form of directory IDs.</p>
+    ///   - [`client_properties(ClientProperties)`](crate::client::fluent_builders::ModifyClientProperties::client_properties) / [`set_client_properties(Option<ClientProperties>)`](crate::client::fluent_builders::ModifyClientProperties::set_client_properties): <p>Information about the Amazon WorkSpaces client.</p>
+    /// - On success, responds with [`ModifyClientPropertiesOutput`](crate::output::ModifyClientPropertiesOutput)
+
+    /// - On failure, responds with [`SdkError<ModifyClientPropertiesError>`](crate::error::ModifyClientPropertiesError)
     pub fn modify_client_properties(&self) -> fluent_builders::ModifyClientProperties<C, M, R> {
         fluent_builders::ModifyClientProperties::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifySelfservicePermissions` operation.
+    /// Constructs a fluent builder for the [`ModifySelfservicePermissions`](crate::client::fluent_builders::ModifySelfservicePermissions) operation.
     ///
-    /// See [`ModifySelfservicePermissions`](crate::client::fluent_builders::ModifySelfservicePermissions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ModifySelfservicePermissions::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ModifySelfservicePermissions::set_resource_id): <p>The identifier of the directory.</p>
+    ///   - [`selfservice_permissions(SelfservicePermissions)`](crate::client::fluent_builders::ModifySelfservicePermissions::selfservice_permissions) / [`set_selfservice_permissions(Option<SelfservicePermissions>)`](crate::client::fluent_builders::ModifySelfservicePermissions::set_selfservice_permissions): <p>The permissions to enable or disable self-service capabilities.</p>
+    /// - On success, responds with [`ModifySelfservicePermissionsOutput`](crate::output::ModifySelfservicePermissionsOutput)
+
+    /// - On failure, responds with [`SdkError<ModifySelfservicePermissionsError>`](crate::error::ModifySelfservicePermissionsError)
     pub fn modify_selfservice_permissions(
         &self,
     ) -> fluent_builders::ModifySelfservicePermissions<C, M, R> {
         fluent_builders::ModifySelfservicePermissions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyWorkspaceAccessProperties` operation.
+    /// Constructs a fluent builder for the [`ModifyWorkspaceAccessProperties`](crate::client::fluent_builders::ModifyWorkspaceAccessProperties) operation.
     ///
-    /// See [`ModifyWorkspaceAccessProperties`](crate::client::fluent_builders::ModifyWorkspaceAccessProperties) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ModifyWorkspaceAccessProperties::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ModifyWorkspaceAccessProperties::set_resource_id): <p>The identifier of the directory.</p>
+    ///   - [`workspace_access_properties(WorkspaceAccessProperties)`](crate::client::fluent_builders::ModifyWorkspaceAccessProperties::workspace_access_properties) / [`set_workspace_access_properties(Option<WorkspaceAccessProperties>)`](crate::client::fluent_builders::ModifyWorkspaceAccessProperties::set_workspace_access_properties): <p>The device types and operating systems to enable or disable for access.</p>
+    /// - On success, responds with [`ModifyWorkspaceAccessPropertiesOutput`](crate::output::ModifyWorkspaceAccessPropertiesOutput)
+
+    /// - On failure, responds with [`SdkError<ModifyWorkspaceAccessPropertiesError>`](crate::error::ModifyWorkspaceAccessPropertiesError)
     pub fn modify_workspace_access_properties(
         &self,
     ) -> fluent_builders::ModifyWorkspaceAccessProperties<C, M, R> {
         fluent_builders::ModifyWorkspaceAccessProperties::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyWorkspaceCreationProperties` operation.
+    /// Constructs a fluent builder for the [`ModifyWorkspaceCreationProperties`](crate::client::fluent_builders::ModifyWorkspaceCreationProperties) operation.
     ///
-    /// See [`ModifyWorkspaceCreationProperties`](crate::client::fluent_builders::ModifyWorkspaceCreationProperties) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ModifyWorkspaceCreationProperties::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ModifyWorkspaceCreationProperties::set_resource_id): <p>The identifier of the directory.</p>
+    ///   - [`workspace_creation_properties(WorkspaceCreationProperties)`](crate::client::fluent_builders::ModifyWorkspaceCreationProperties::workspace_creation_properties) / [`set_workspace_creation_properties(Option<WorkspaceCreationProperties>)`](crate::client::fluent_builders::ModifyWorkspaceCreationProperties::set_workspace_creation_properties): <p>The default properties for creating WorkSpaces.</p>
+    /// - On success, responds with [`ModifyWorkspaceCreationPropertiesOutput`](crate::output::ModifyWorkspaceCreationPropertiesOutput)
+
+    /// - On failure, responds with [`SdkError<ModifyWorkspaceCreationPropertiesError>`](crate::error::ModifyWorkspaceCreationPropertiesError)
     pub fn modify_workspace_creation_properties(
         &self,
     ) -> fluent_builders::ModifyWorkspaceCreationProperties<C, M, R> {
         fluent_builders::ModifyWorkspaceCreationProperties::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyWorkspaceProperties` operation.
+    /// Constructs a fluent builder for the [`ModifyWorkspaceProperties`](crate::client::fluent_builders::ModifyWorkspaceProperties) operation.
     ///
-    /// See [`ModifyWorkspaceProperties`](crate::client::fluent_builders::ModifyWorkspaceProperties) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::ModifyWorkspaceProperties::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::ModifyWorkspaceProperties::set_workspace_id): <p>The identifier of the WorkSpace.</p>
+    ///   - [`workspace_properties(WorkspaceProperties)`](crate::client::fluent_builders::ModifyWorkspaceProperties::workspace_properties) / [`set_workspace_properties(Option<WorkspaceProperties>)`](crate::client::fluent_builders::ModifyWorkspaceProperties::set_workspace_properties): <p>The properties of the WorkSpace.</p>
+    /// - On success, responds with [`ModifyWorkspacePropertiesOutput`](crate::output::ModifyWorkspacePropertiesOutput)
+
+    /// - On failure, responds with [`SdkError<ModifyWorkspacePropertiesError>`](crate::error::ModifyWorkspacePropertiesError)
     pub fn modify_workspace_properties(
         &self,
     ) -> fluent_builders::ModifyWorkspaceProperties<C, M, R> {
         fluent_builders::ModifyWorkspaceProperties::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyWorkspaceState` operation.
+    /// Constructs a fluent builder for the [`ModifyWorkspaceState`](crate::client::fluent_builders::ModifyWorkspaceState) operation.
     ///
-    /// See [`ModifyWorkspaceState`](crate::client::fluent_builders::ModifyWorkspaceState) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::ModifyWorkspaceState::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::ModifyWorkspaceState::set_workspace_id): <p>The identifier of the WorkSpace.</p>
+    ///   - [`workspace_state(TargetWorkspaceState)`](crate::client::fluent_builders::ModifyWorkspaceState::workspace_state) / [`set_workspace_state(Option<TargetWorkspaceState>)`](crate::client::fluent_builders::ModifyWorkspaceState::set_workspace_state): <p>The WorkSpace state.</p>
+    /// - On success, responds with [`ModifyWorkspaceStateOutput`](crate::output::ModifyWorkspaceStateOutput)
+
+    /// - On failure, responds with [`SdkError<ModifyWorkspaceStateError>`](crate::error::ModifyWorkspaceStateError)
     pub fn modify_workspace_state(&self) -> fluent_builders::ModifyWorkspaceState<C, M, R> {
         fluent_builders::ModifyWorkspaceState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RebootWorkspaces` operation.
+    /// Constructs a fluent builder for the [`RebootWorkspaces`](crate::client::fluent_builders::RebootWorkspaces) operation.
     ///
-    /// See [`RebootWorkspaces`](crate::client::fluent_builders::RebootWorkspaces) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`reboot_workspace_requests(Vec<RebootRequest>)`](crate::client::fluent_builders::RebootWorkspaces::reboot_workspace_requests) / [`set_reboot_workspace_requests(Option<Vec<RebootRequest>>)`](crate::client::fluent_builders::RebootWorkspaces::set_reboot_workspace_requests): <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
+    /// - On success, responds with [`RebootWorkspacesOutput`](crate::output::RebootWorkspacesOutput) with field(s):
+    ///   - [`failed_requests(Option<Vec<FailedWorkspaceChangeRequest>>)`](crate::output::RebootWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be rebooted.</p>
+    /// - On failure, responds with [`SdkError<RebootWorkspacesError>`](crate::error::RebootWorkspacesError)
     pub fn reboot_workspaces(&self) -> fluent_builders::RebootWorkspaces<C, M, R> {
         fluent_builders::RebootWorkspaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RebuildWorkspaces` operation.
+    /// Constructs a fluent builder for the [`RebuildWorkspaces`](crate::client::fluent_builders::RebuildWorkspaces) operation.
     ///
-    /// See [`RebuildWorkspaces`](crate::client::fluent_builders::RebuildWorkspaces) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`rebuild_workspace_requests(Vec<RebuildRequest>)`](crate::client::fluent_builders::RebuildWorkspaces::rebuild_workspace_requests) / [`set_rebuild_workspace_requests(Option<Vec<RebuildRequest>>)`](crate::client::fluent_builders::RebuildWorkspaces::set_rebuild_workspace_requests): <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
+    /// - On success, responds with [`RebuildWorkspacesOutput`](crate::output::RebuildWorkspacesOutput) with field(s):
+    ///   - [`failed_requests(Option<Vec<FailedWorkspaceChangeRequest>>)`](crate::output::RebuildWorkspacesOutput::failed_requests): <p>Information about the WorkSpace that could not be rebuilt.</p>
+    /// - On failure, responds with [`SdkError<RebuildWorkspacesError>`](crate::error::RebuildWorkspacesError)
     pub fn rebuild_workspaces(&self) -> fluent_builders::RebuildWorkspaces<C, M, R> {
         fluent_builders::RebuildWorkspaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterWorkspaceDirectory` operation.
+    /// Constructs a fluent builder for the [`RegisterWorkspaceDirectory`](crate::client::fluent_builders::RegisterWorkspaceDirectory) operation.
     ///
-    /// See [`RegisterWorkspaceDirectory`](crate::client::fluent_builders::RegisterWorkspaceDirectory) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::RegisterWorkspaceDirectory::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::RegisterWorkspaceDirectory::set_directory_id): <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
+    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::RegisterWorkspaceDirectory::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::RegisterWorkspaceDirectory::set_subnet_ids): <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
+    ///   - [`enable_work_docs(bool)`](crate::client::fluent_builders::RegisterWorkspaceDirectory::enable_work_docs) / [`set_enable_work_docs(Option<bool>)`](crate::client::fluent_builders::RegisterWorkspaceDirectory::set_enable_work_docs): <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
+    ///   - [`enable_self_service(bool)`](crate::client::fluent_builders::RegisterWorkspaceDirectory::enable_self_service) / [`set_enable_self_service(Option<bool>)`](crate::client::fluent_builders::RegisterWorkspaceDirectory::set_enable_self_service): <p>Indicates whether self-service capabilities are enabled or disabled.</p>
+    ///   - [`tenancy(Tenancy)`](crate::client::fluent_builders::RegisterWorkspaceDirectory::tenancy) / [`set_tenancy(Option<Tenancy>)`](crate::client::fluent_builders::RegisterWorkspaceDirectory::set_tenancy): <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RegisterWorkspaceDirectory::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RegisterWorkspaceDirectory::set_tags): <p>The tags associated with the directory.</p>
+    /// - On success, responds with [`RegisterWorkspaceDirectoryOutput`](crate::output::RegisterWorkspaceDirectoryOutput)
+
+    /// - On failure, responds with [`SdkError<RegisterWorkspaceDirectoryError>`](crate::error::RegisterWorkspaceDirectoryError)
     pub fn register_workspace_directory(
         &self,
     ) -> fluent_builders::RegisterWorkspaceDirectory<C, M, R> {
         fluent_builders::RegisterWorkspaceDirectory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestoreWorkspace` operation.
+    /// Constructs a fluent builder for the [`RestoreWorkspace`](crate::client::fluent_builders::RestoreWorkspace) operation.
     ///
-    /// See [`RestoreWorkspace`](crate::client::fluent_builders::RestoreWorkspace) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::RestoreWorkspace::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::RestoreWorkspace::set_workspace_id): <p>The identifier of the WorkSpace.</p>
+    /// - On success, responds with [`RestoreWorkspaceOutput`](crate::output::RestoreWorkspaceOutput)
+
+    /// - On failure, responds with [`SdkError<RestoreWorkspaceError>`](crate::error::RestoreWorkspaceError)
     pub fn restore_workspace(&self) -> fluent_builders::RestoreWorkspace<C, M, R> {
         fluent_builders::RestoreWorkspace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RevokeIpRules` operation.
+    /// Constructs a fluent builder for the [`RevokeIpRules`](crate::client::fluent_builders::RevokeIpRules) operation.
     ///
-    /// See [`RevokeIpRules`](crate::client::fluent_builders::RevokeIpRules) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::RevokeIpRules::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::RevokeIpRules::set_group_id): <p>The identifier of the group.</p>
+    ///   - [`user_rules(Vec<String>)`](crate::client::fluent_builders::RevokeIpRules::user_rules) / [`set_user_rules(Option<Vec<String>>)`](crate::client::fluent_builders::RevokeIpRules::set_user_rules): <p>The rules to remove from the group.</p>
+    /// - On success, responds with [`RevokeIpRulesOutput`](crate::output::RevokeIpRulesOutput)
+
+    /// - On failure, responds with [`SdkError<RevokeIpRulesError>`](crate::error::RevokeIpRulesError)
     pub fn revoke_ip_rules(&self) -> fluent_builders::RevokeIpRules<C, M, R> {
         fluent_builders::RevokeIpRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartWorkspaces` operation.
+    /// Constructs a fluent builder for the [`StartWorkspaces`](crate::client::fluent_builders::StartWorkspaces) operation.
     ///
-    /// See [`StartWorkspaces`](crate::client::fluent_builders::StartWorkspaces) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`start_workspace_requests(Vec<StartRequest>)`](crate::client::fluent_builders::StartWorkspaces::start_workspace_requests) / [`set_start_workspace_requests(Option<Vec<StartRequest>>)`](crate::client::fluent_builders::StartWorkspaces::set_start_workspace_requests): <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
+    /// - On success, responds with [`StartWorkspacesOutput`](crate::output::StartWorkspacesOutput) with field(s):
+    ///   - [`failed_requests(Option<Vec<FailedWorkspaceChangeRequest>>)`](crate::output::StartWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be started.</p>
+    /// - On failure, responds with [`SdkError<StartWorkspacesError>`](crate::error::StartWorkspacesError)
     pub fn start_workspaces(&self) -> fluent_builders::StartWorkspaces<C, M, R> {
         fluent_builders::StartWorkspaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopWorkspaces` operation.
+    /// Constructs a fluent builder for the [`StopWorkspaces`](crate::client::fluent_builders::StopWorkspaces) operation.
     ///
-    /// See [`StopWorkspaces`](crate::client::fluent_builders::StopWorkspaces) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`stop_workspace_requests(Vec<StopRequest>)`](crate::client::fluent_builders::StopWorkspaces::stop_workspace_requests) / [`set_stop_workspace_requests(Option<Vec<StopRequest>>)`](crate::client::fluent_builders::StopWorkspaces::set_stop_workspace_requests): <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
+    /// - On success, responds with [`StopWorkspacesOutput`](crate::output::StopWorkspacesOutput) with field(s):
+    ///   - [`failed_requests(Option<Vec<FailedWorkspaceChangeRequest>>)`](crate::output::StopWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be stopped.</p>
+    /// - On failure, responds with [`SdkError<StopWorkspacesError>`](crate::error::StopWorkspacesError)
     pub fn stop_workspaces(&self) -> fluent_builders::StopWorkspaces<C, M, R> {
         fluent_builders::StopWorkspaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TerminateWorkspaces` operation.
+    /// Constructs a fluent builder for the [`TerminateWorkspaces`](crate::client::fluent_builders::TerminateWorkspaces) operation.
     ///
-    /// See [`TerminateWorkspaces`](crate::client::fluent_builders::TerminateWorkspaces) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`terminate_workspace_requests(Vec<TerminateRequest>)`](crate::client::fluent_builders::TerminateWorkspaces::terminate_workspace_requests) / [`set_terminate_workspace_requests(Option<Vec<TerminateRequest>>)`](crate::client::fluent_builders::TerminateWorkspaces::set_terminate_workspace_requests): <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
+    /// - On success, responds with [`TerminateWorkspacesOutput`](crate::output::TerminateWorkspacesOutput) with field(s):
+    ///   - [`failed_requests(Option<Vec<FailedWorkspaceChangeRequest>>)`](crate::output::TerminateWorkspacesOutput::failed_requests): <p>Information about the WorkSpaces that could not be terminated.</p>
+    /// - On failure, responds with [`SdkError<TerminateWorkspacesError>`](crate::error::TerminateWorkspacesError)
     pub fn terminate_workspaces(&self) -> fluent_builders::TerminateWorkspaces<C, M, R> {
         fluent_builders::TerminateWorkspaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateConnectionAliasPermission` operation.
+    /// Constructs a fluent builder for the [`UpdateConnectClientAddIn`](crate::client::fluent_builders::UpdateConnectClientAddIn) operation.
     ///
-    /// See [`UpdateConnectionAliasPermission`](crate::client::fluent_builders::UpdateConnectionAliasPermission) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`add_in_id(impl Into<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::add_in_id) / [`set_add_in_id(Option<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::set_add_in_id): <p>The identifier of the client add-in to update.</p>
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::set_resource_id): <p>The directory identifier for which the client add-in is configured.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::set_name): <p>The name of the client add-in.</p>
+    ///   - [`url(impl Into<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::url) / [`set_url(Option<String>)`](crate::client::fluent_builders::UpdateConnectClientAddIn::set_url): <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    /// - On success, responds with [`UpdateConnectClientAddInOutput`](crate::output::UpdateConnectClientAddInOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateConnectClientAddInError>`](crate::error::UpdateConnectClientAddInError)
+    pub fn update_connect_client_add_in(
+        &self,
+    ) -> fluent_builders::UpdateConnectClientAddIn<C, M, R> {
+        fluent_builders::UpdateConnectClientAddIn::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateConnectionAliasPermission`](crate::client::fluent_builders::UpdateConnectionAliasPermission) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`alias_id(impl Into<String>)`](crate::client::fluent_builders::UpdateConnectionAliasPermission::alias_id) / [`set_alias_id(Option<String>)`](crate::client::fluent_builders::UpdateConnectionAliasPermission::set_alias_id): <p>The identifier of the connection alias that you want to update permissions for.</p>
+    ///   - [`connection_alias_permission(ConnectionAliasPermission)`](crate::client::fluent_builders::UpdateConnectionAliasPermission::connection_alias_permission) / [`set_connection_alias_permission(Option<ConnectionAliasPermission>)`](crate::client::fluent_builders::UpdateConnectionAliasPermission::set_connection_alias_permission): <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
+    /// - On success, responds with [`UpdateConnectionAliasPermissionOutput`](crate::output::UpdateConnectionAliasPermissionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateConnectionAliasPermissionError>`](crate::error::UpdateConnectionAliasPermissionError)
     pub fn update_connection_alias_permission(
         &self,
     ) -> fluent_builders::UpdateConnectionAliasPermission<C, M, R> {
         fluent_builders::UpdateConnectionAliasPermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRulesOfIpGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateRulesOfIpGroup`](crate::client::fluent_builders::UpdateRulesOfIpGroup) operation.
     ///
-    /// See [`UpdateRulesOfIpGroup`](crate::client::fluent_builders::UpdateRulesOfIpGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRulesOfIpGroup::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::UpdateRulesOfIpGroup::set_group_id): <p>The identifier of the group.</p>
+    ///   - [`user_rules(Vec<IpRuleItem>)`](crate::client::fluent_builders::UpdateRulesOfIpGroup::user_rules) / [`set_user_rules(Option<Vec<IpRuleItem>>)`](crate::client::fluent_builders::UpdateRulesOfIpGroup::set_user_rules): <p>One or more rules.</p>
+    /// - On success, responds with [`UpdateRulesOfIpGroupOutput`](crate::output::UpdateRulesOfIpGroupOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRulesOfIpGroupError>`](crate::error::UpdateRulesOfIpGroupError)
     pub fn update_rules_of_ip_group(&self) -> fluent_builders::UpdateRulesOfIpGroup<C, M, R> {
         fluent_builders::UpdateRulesOfIpGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateWorkspaceBundle` operation.
+    /// Constructs a fluent builder for the [`UpdateWorkspaceBundle`](crate::client::fluent_builders::UpdateWorkspaceBundle) operation.
     ///
-    /// See [`UpdateWorkspaceBundle`](crate::client::fluent_builders::UpdateWorkspaceBundle) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspaceBundle::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::UpdateWorkspaceBundle::set_bundle_id): <p>The identifier of the bundle.</p>
+    ///   - [`image_id(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspaceBundle::image_id) / [`set_image_id(Option<String>)`](crate::client::fluent_builders::UpdateWorkspaceBundle::set_image_id): <p>The identifier of the image.</p>
+    /// - On success, responds with [`UpdateWorkspaceBundleOutput`](crate::output::UpdateWorkspaceBundleOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateWorkspaceBundleError>`](crate::error::UpdateWorkspaceBundleError)
     pub fn update_workspace_bundle(&self) -> fluent_builders::UpdateWorkspaceBundle<C, M, R> {
         fluent_builders::UpdateWorkspaceBundle::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateWorkspaceImagePermission` operation.
+    /// Constructs a fluent builder for the [`UpdateWorkspaceImagePermission`](crate::client::fluent_builders::UpdateWorkspaceImagePermission) operation.
     ///
-    /// See [`UpdateWorkspaceImagePermission`](crate::client::fluent_builders::UpdateWorkspaceImagePermission) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`image_id(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspaceImagePermission::image_id) / [`set_image_id(Option<String>)`](crate::client::fluent_builders::UpdateWorkspaceImagePermission::set_image_id): <p>The identifier of the image.</p>
+    ///   - [`allow_copy_image(bool)`](crate::client::fluent_builders::UpdateWorkspaceImagePermission::allow_copy_image) / [`set_allow_copy_image(Option<bool>)`](crate::client::fluent_builders::UpdateWorkspaceImagePermission::set_allow_copy_image): <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
+    ///   - [`shared_account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspaceImagePermission::shared_account_id) / [`set_shared_account_id(Option<String>)`](crate::client::fluent_builders::UpdateWorkspaceImagePermission::set_shared_account_id): <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>   <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>  </important>
+    /// - On success, responds with [`UpdateWorkspaceImagePermissionOutput`](crate::output::UpdateWorkspaceImagePermissionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateWorkspaceImagePermissionError>`](crate::error::UpdateWorkspaceImagePermissionError)
     pub fn update_workspace_image_permission(
         &self,
     ) -> fluent_builders::UpdateWorkspaceImagePermission<C, M, R> {
@@ -890,6 +1197,97 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateConnectClientAddIn`.
+    ///
+    /// <p>Creates a client-add-in for Amazon Connect within a directory. You can create only one Amazon Connect client add-in within a directory.</p>
+    /// <p>This client add-in allows WorkSpaces users to seamlessly connect to Amazon Connect.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateConnectClientAddIn<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_connect_client_add_in_input::Builder,
+    }
+    impl<C, M, R> CreateConnectClientAddIn<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateConnectClientAddIn`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateConnectClientAddInOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateConnectClientAddInError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateConnectClientAddInInputOperationOutputAlias,
+                crate::output::CreateConnectClientAddInOutput,
+                crate::error::CreateConnectClientAddInError,
+                crate::input::CreateConnectClientAddInInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The directory identifier for which to configure the client add-in.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
+            self
+        }
+        /// <p>The directory identifier for which to configure the client add-in.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
+            self
+        }
+        /// <p>The name of the client add-in.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the client add-in.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.url(input.into());
+            self
+        }
+        /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_url(input);
             self
         }
     }
@@ -1542,6 +1940,86 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteConnectClientAddIn`.
+    ///
+    /// <p>Deletes a client-add-in for Amazon Connect that is configured within a directory.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteConnectClientAddIn<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_connect_client_add_in_input::Builder,
+    }
+    impl<C, M, R> DeleteConnectClientAddIn<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteConnectClientAddIn`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteConnectClientAddInOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteConnectClientAddInError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteConnectClientAddInInputOperationOutputAlias,
+                crate::output::DeleteConnectClientAddInOutput,
+                crate::error::DeleteConnectClientAddInError,
+                crate::input::DeleteConnectClientAddInInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the client add-in to delete.</p>
+        pub fn add_in_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.add_in_id(input.into());
+            self
+        }
+        /// <p>The identifier of the client add-in to delete.</p>
+        pub fn set_add_in_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_add_in_id(input);
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteConnectionAlias`.
     ///
     /// <p>Deletes the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p> <important>
@@ -2191,6 +2669,96 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_resource_ids(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeConnectClientAddIns`.
+    ///
+    /// <p>Retrieves a list of Amazon Connect client add-ins that have been created.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeConnectClientAddIns<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_connect_client_add_ins_input::Builder,
+    }
+    impl<C, M, R> DescribeConnectClientAddIns<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeConnectClientAddIns`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeConnectClientAddInsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeConnectClientAddInsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeConnectClientAddInsInputOperationOutputAlias,
+                crate::output::DescribeConnectClientAddInsOutput,
+                crate::error::DescribeConnectClientAddInsError,
+                crate::input::DescribeConnectClientAddInsInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
+            self
+        }
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of items to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of items to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -5056,6 +5624,106 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::TerminateRequest>>,
         ) -> Self {
             self.inner = self.inner.set_terminate_workspace_requests(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateConnectClientAddIn`.
+    ///
+    /// <p>Updates a Amazon Connect client add-in. Use this action to update the name and endpoint URL of a Amazon Connect client add-in.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateConnectClientAddIn<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_connect_client_add_in_input::Builder,
+    }
+    impl<C, M, R> UpdateConnectClientAddIn<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateConnectClientAddIn`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateConnectClientAddInOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateConnectClientAddInError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateConnectClientAddInInputOperationOutputAlias,
+                crate::output::UpdateConnectClientAddInOutput,
+                crate::error::UpdateConnectClientAddInError,
+                crate::input::UpdateConnectClientAddInInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the client add-in to update.</p>
+        pub fn add_in_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.add_in_id(input.into());
+            self
+        }
+        /// <p>The identifier of the client add-in to update.</p>
+        pub fn set_add_in_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_add_in_id(input);
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
+            self
+        }
+        /// <p>The directory identifier for which the client add-in is configured.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
+            self
+        }
+        /// <p>The name of the client add-in.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the client add-in.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.url(input.into());
+            self
+        }
+        /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_url(input);
             self
         }
     }

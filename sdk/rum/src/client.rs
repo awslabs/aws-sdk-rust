@@ -83,75 +83,126 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateAppMonitor` operation.
+    /// Constructs a fluent builder for the [`CreateAppMonitor`](crate::client::fluent_builders::CreateAppMonitor) operation.
     ///
-    /// See [`CreateAppMonitor`](crate::client::fluent_builders::CreateAppMonitor) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAppMonitor::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAppMonitor::set_name): <p>A name for the app monitor.</p>
+    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CreateAppMonitor::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CreateAppMonitor::set_domain): <p>The top-level internet domain name for which your application has administrative authority.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAppMonitor::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAppMonitor::set_tags): <p>Assigns one or more tags (key-value pairs) to the app monitor.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>  <p>You can associate as many as 50 tags with an app monitor.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    ///   - [`app_monitor_configuration(AppMonitorConfiguration)`](crate::client::fluent_builders::CreateAppMonitor::app_monitor_configuration) / [`set_app_monitor_configuration(Option<AppMonitorConfiguration>)`](crate::client::fluent_builders::CreateAppMonitor::set_app_monitor_configuration): <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>  <p>If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.</p>
+    ///   - [`cw_log_enabled(bool)`](crate::client::fluent_builders::CreateAppMonitor::cw_log_enabled) / [`set_cw_log_enabled(Option<bool>)`](crate::client::fluent_builders::CreateAppMonitor::set_cw_log_enabled): <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>  <p>If you omit this parameter, the default is <code>false</code>.</p>
+    /// - On success, responds with [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::CreateAppMonitorOutput::id): <p>The unique ID of the new app monitor.</p>
+    /// - On failure, responds with [`SdkError<CreateAppMonitorError>`](crate::error::CreateAppMonitorError)
     pub fn create_app_monitor(&self) -> fluent_builders::CreateAppMonitor<C, M, R> {
         fluent_builders::CreateAppMonitor::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAppMonitor` operation.
+    /// Constructs a fluent builder for the [`DeleteAppMonitor`](crate::client::fluent_builders::DeleteAppMonitor) operation.
     ///
-    /// See [`DeleteAppMonitor`](crate::client::fluent_builders::DeleteAppMonitor) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteAppMonitor::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteAppMonitor::set_name): <p>The name of the app monitor to delete.</p>
+    /// - On success, responds with [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAppMonitorError>`](crate::error::DeleteAppMonitorError)
     pub fn delete_app_monitor(&self) -> fluent_builders::DeleteAppMonitor<C, M, R> {
         fluent_builders::DeleteAppMonitor::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAppMonitor` operation.
+    /// Constructs a fluent builder for the [`GetAppMonitor`](crate::client::fluent_builders::GetAppMonitor) operation.
     ///
-    /// See [`GetAppMonitor`](crate::client::fluent_builders::GetAppMonitor) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetAppMonitor::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetAppMonitor::set_name): <p>The app monitor to retrieve information for.</p>
+    /// - On success, responds with [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput) with field(s):
+    ///   - [`app_monitor(Option<AppMonitor>)`](crate::output::GetAppMonitorOutput::app_monitor): <p>A structure containing all the configuration information for the app monitor.</p>
+    /// - On failure, responds with [`SdkError<GetAppMonitorError>`](crate::error::GetAppMonitorError)
     pub fn get_app_monitor(&self) -> fluent_builders::GetAppMonitor<C, M, R> {
         fluent_builders::GetAppMonitor::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAppMonitorData` operation.
+    /// Constructs a fluent builder for the [`GetAppMonitorData`](crate::client::fluent_builders::GetAppMonitorData) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetAppMonitorData::into_paginator).
     ///
-    /// See [`GetAppMonitorData`](crate::client::fluent_builders::GetAppMonitorData) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAppMonitorData::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetAppMonitorData::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetAppMonitorData::set_name): <p>The name of the app monitor that collected the data that you want to retrieve.</p>
+    ///   - [`time_range(TimeRange)`](crate::client::fluent_builders::GetAppMonitorData::time_range) / [`set_time_range(Option<TimeRange>)`](crate::client::fluent_builders::GetAppMonitorData::set_time_range): <p>A structure that defines the time range that you want to retrieve results from.</p>
+    ///   - [`filters(Vec<QueryFilter>)`](crate::client::fluent_builders::GetAppMonitorData::filters) / [`set_filters(Option<Vec<QueryFilter>>)`](crate::client::fluent_builders::GetAppMonitorData::set_filters): <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetAppMonitorData::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetAppMonitorData::set_max_results): <p>The maximum number of results to return in one operation. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetAppMonitorData::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetAppMonitorData::set_next_token): <p>Use the token returned by the previous operation to request the next page of results.</p>
+    /// - On success, responds with [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput) with field(s):
+    ///   - [`events(Option<Vec<String>>)`](crate::output::GetAppMonitorDataOutput::events): <p>The events that RUM collected that match your request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetAppMonitorDataOutput::next_token): <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<GetAppMonitorDataError>`](crate::error::GetAppMonitorDataError)
     pub fn get_app_monitor_data(&self) -> fluent_builders::GetAppMonitorData<C, M, R> {
         fluent_builders::GetAppMonitorData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAppMonitors` operation.
+    /// Constructs a fluent builder for the [`ListAppMonitors`](crate::client::fluent_builders::ListAppMonitors) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppMonitors::into_paginator).
     ///
-    /// See [`ListAppMonitors`](crate::client::fluent_builders::ListAppMonitors) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppMonitors::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppMonitors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppMonitors::set_max_results): <p>The maximum number of results to return in one operation. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppMonitors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppMonitors::set_next_token): <p>Use the token returned by the previous operation to request the next page of results.</p>
+    /// - On success, responds with [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListAppMonitorsOutput::next_token): <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+    ///   - [`app_monitor_summaries(Option<Vec<AppMonitorSummary>>)`](crate::output::ListAppMonitorsOutput::app_monitor_summaries): <p>An array of structures that contain information about the returned app monitors.</p>
+    /// - On failure, responds with [`SdkError<ListAppMonitorsError>`](crate::error::ListAppMonitorsError)
     pub fn list_app_monitors(&self) -> fluent_builders::ListAppMonitors<C, M, R> {
         fluent_builders::ListAppMonitors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource that you want to see the tags of.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::output::ListTagsForResourceOutput::resource_arn): <p>The ARN of the resource that you are viewing.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tag keys and values associated with the resource you specified.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRumEvents` operation.
+    /// Constructs a fluent builder for the [`PutRumEvents`](crate::client::fluent_builders::PutRumEvents) operation.
     ///
-    /// See [`PutRumEvents`](crate::client::fluent_builders::PutRumEvents) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::PutRumEvents::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::PutRumEvents::set_id): <p>The ID of the app monitor that is sending this data.</p>
+    ///   - [`batch_id(impl Into<String>)`](crate::client::fluent_builders::PutRumEvents::batch_id) / [`set_batch_id(Option<String>)`](crate::client::fluent_builders::PutRumEvents::set_batch_id): <p>A unique identifier for this batch of RUM event data.</p>
+    ///   - [`app_monitor_details(AppMonitorDetails)`](crate::client::fluent_builders::PutRumEvents::app_monitor_details) / [`set_app_monitor_details(Option<AppMonitorDetails>)`](crate::client::fluent_builders::PutRumEvents::set_app_monitor_details): <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
+    ///   - [`user_details(UserDetails)`](crate::client::fluent_builders::PutRumEvents::user_details) / [`set_user_details(Option<UserDetails>)`](crate::client::fluent_builders::PutRumEvents::set_user_details): <p>A structure that contains information about the user session that this batch of events was collected from.</p>
+    ///   - [`rum_events(Vec<RumEvent>)`](crate::client::fluent_builders::PutRumEvents::rum_events) / [`set_rum_events(Option<Vec<RumEvent>>)`](crate::client::fluent_builders::PutRumEvents::set_rum_events): <p>An array of structures that contain the telemetry event data.</p>
+    /// - On success, responds with [`PutRumEventsOutput`](crate::output::PutRumEventsOutput)
+
+    /// - On failure, responds with [`SdkError<PutRumEventsError>`](crate::error::PutRumEventsError)
     pub fn put_rum_events(&self) -> fluent_builders::PutRumEvents<C, M, R> {
         fluent_builders::PutRumEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the CloudWatch RUM resource that you're adding tags to.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of key-value pairs to associate with the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the CloudWatch RUM resource that you're removing tags from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tag keys to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAppMonitor` operation.
+    /// Constructs a fluent builder for the [`UpdateAppMonitor`](crate::client::fluent_builders::UpdateAppMonitor) operation.
     ///
-    /// See [`UpdateAppMonitor`](crate::client::fluent_builders::UpdateAppMonitor) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAppMonitor::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAppMonitor::set_name): <p>The name of the app monitor to update.</p>
+    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::UpdateAppMonitor::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::UpdateAppMonitor::set_domain): <p>The top-level internet domain name for which your application has administrative authority.</p>
+    ///   - [`app_monitor_configuration(AppMonitorConfiguration)`](crate::client::fluent_builders::UpdateAppMonitor::app_monitor_configuration) / [`set_app_monitor_configuration(Option<AppMonitorConfiguration>)`](crate::client::fluent_builders::UpdateAppMonitor::set_app_monitor_configuration): <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
+    ///   - [`cw_log_enabled(bool)`](crate::client::fluent_builders::UpdateAppMonitor::cw_log_enabled) / [`set_cw_log_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateAppMonitor::set_cw_log_enabled): <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
+    /// - On success, responds with [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateAppMonitorError>`](crate::error::UpdateAppMonitorError)
     pub fn update_app_monitor(&self) -> fluent_builders::UpdateAppMonitor<C, M, R> {
         fluent_builders::UpdateAppMonitor::new(self.handle.clone())
     }

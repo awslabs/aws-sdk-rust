@@ -83,39 +83,76 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `DeleteObject` operation.
+    /// Constructs a fluent builder for the [`DeleteObject`](crate::client::fluent_builders::DeleteObject) operation.
     ///
-    /// See [`DeleteObject`](crate::client::fluent_builders::DeleteObject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::DeleteObject::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::DeleteObject::set_path): <p>The path (including the file name) where the object is stored in the container. Format: <folder name>   /   <folder name>    /    <file name></file>   </folder>  </folder></p>
+    /// - On success, responds with [`DeleteObjectOutput`](crate::output::DeleteObjectOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteObjectError>`](crate::error::DeleteObjectError)
     pub fn delete_object(&self) -> fluent_builders::DeleteObject<C, M, R> {
         fluent_builders::DeleteObject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeObject` operation.
+    /// Constructs a fluent builder for the [`DescribeObject`](crate::client::fluent_builders::DescribeObject) operation.
     ///
-    /// See [`DescribeObject`](crate::client::fluent_builders::DescribeObject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::DescribeObject::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::DescribeObject::set_path): <p>The path (including the file name) where the object is stored in the container. Format: <folder name>   /   <folder name>    /    <file name></file>   </folder>  </folder></p>
+    /// - On success, responds with [`DescribeObjectOutput`](crate::output::DescribeObjectOutput) with field(s):
+    ///   - [`e_tag(Option<String>)`](crate::output::DescribeObjectOutput::e_tag): <p>The ETag that represents a unique instance of the object.</p>
+    ///   - [`content_type(Option<String>)`](crate::output::DescribeObjectOutput::content_type): <p>The content type of the object.</p>
+    ///   - [`content_length(Option<i64>)`](crate::output::DescribeObjectOutput::content_length): <p>The length of the object in bytes.</p>
+    ///   - [`cache_control(Option<String>)`](crate::output::DescribeObjectOutput::cache_control): <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>  <p>Headers with a custom user-defined value are also accepted.</p>
+    ///   - [`last_modified(Option<DateTime>)`](crate::output::DescribeObjectOutput::last_modified): <p>The date and time that the object was last modified.</p>
+    /// - On failure, responds with [`SdkError<DescribeObjectError>`](crate::error::DescribeObjectError)
     pub fn describe_object(&self) -> fluent_builders::DescribeObject<C, M, R> {
         fluent_builders::DescribeObject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetObject` operation.
+    /// Constructs a fluent builder for the [`GetObject`](crate::client::fluent_builders::GetObject) operation.
     ///
-    /// See [`GetObject`](crate::client::fluent_builders::GetObject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::GetObject::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::GetObject::set_path): <p>The path (including the file name) where the object is stored in the container. Format: <folder name>   /   <folder name>    /    <file name></file>   </folder>  </folder></p>  <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p>  <p>Do not include the container name in this path.</p>  <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p>  <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>  <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>  <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
+    ///   - [`range(impl Into<String>)`](crate::client::fluent_builders::GetObject::range) / [`set_range(Option<String>)`](crate::client::fluent_builders::GetObject::set_range): <p>The range bytes of an object to retrieve. For more information about the <code>Range</code> header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>. AWS Elemental MediaStore ignores this header for partially uploaded objects that have streaming upload availability.</p>
+    /// - On success, responds with [`GetObjectOutput`](crate::output::GetObjectOutput) with field(s):
+    ///   - [`body(byte_stream::ByteStream)`](crate::output::GetObjectOutput::body): <p>The bytes of the object. </p>
+    ///   - [`cache_control(Option<String>)`](crate::output::GetObjectOutput::cache_control): <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>  <p>Headers with a custom user-defined value are also accepted.</p>
+    ///   - [`content_range(Option<String>)`](crate::output::GetObjectOutput::content_range): <p>The range of bytes to retrieve.</p>
+    ///   - [`content_length(Option<i64>)`](crate::output::GetObjectOutput::content_length): <p>The length of the object in bytes.</p>
+    ///   - [`content_type(Option<String>)`](crate::output::GetObjectOutput::content_type): <p>The content type of the object.</p>
+    ///   - [`e_tag(Option<String>)`](crate::output::GetObjectOutput::e_tag): <p>The ETag that represents a unique instance of the object.</p>
+    ///   - [`last_modified(Option<DateTime>)`](crate::output::GetObjectOutput::last_modified): <p>The date and time that the object was last modified.</p>
+    ///   - [`status_code(i32)`](crate::output::GetObjectOutput::status_code): <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
+    /// - On failure, responds with [`SdkError<GetObjectError>`](crate::error::GetObjectError)
     pub fn get_object(&self) -> fluent_builders::GetObject<C, M, R> {
         fluent_builders::GetObject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListItems` operation.
+    /// Constructs a fluent builder for the [`ListItems`](crate::client::fluent_builders::ListItems) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListItems::into_paginator).
     ///
-    /// See [`ListItems`](crate::client::fluent_builders::ListItems) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListItems::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::ListItems::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::ListItems::set_path): <p>The path in the container from which to retrieve items. Format: <folder name>   /   <folder name>    /    <file name></file>   </folder>  </folder></p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListItems::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListItems::set_max_results): <p>The maximum number of results to return per API request. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service returns no more than the first 500 items. (The service also returns a <code>NextToken</code> value that you can use to fetch the next batch of results.) The service might return fewer results than the <code>MaxResults</code> value.</p>  <p>If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a maximum of 1,000 results per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListItems::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListItems::set_next_token): <p>The token that identifies which batch of results that you want to see. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.</p>  <p>Tokens expire after 15 minutes.</p>
+    /// - On success, responds with [`ListItemsOutput`](crate::output::ListItemsOutput) with field(s):
+    ///   - [`items(Option<Vec<Item>>)`](crate::output::ListItemsOutput::items): <p>The metadata entries for the folders and objects at the requested path.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListItemsOutput::next_token): <p>The token that can be used in a request to view the next set of results. For example, you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of results.</p>
+    /// - On failure, responds with [`SdkError<ListItemsError>`](crate::error::ListItemsError)
     pub fn list_items(&self) -> fluent_builders::ListItems<C, M, R> {
         fluent_builders::ListItems::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutObject` operation.
+    /// Constructs a fluent builder for the [`PutObject`](crate::client::fluent_builders::PutObject) operation.
     ///
-    /// See [`PutObject`](crate::client::fluent_builders::PutObject) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`body(byte_stream::ByteStream)`](crate::client::fluent_builders::PutObject::body) / [`set_body(byte_stream::ByteStream)`](crate::client::fluent_builders::PutObject::set_body): <p>The bytes to be stored. </p>
+    ///   - [`path(impl Into<String>)`](crate::client::fluent_builders::PutObject::path) / [`set_path(Option<String>)`](crate::client::fluent_builders::PutObject::set_path): <p>The path (including the file name) where the object is stored in the container. Format: <folder name>   /   <folder name>    /    <file name></file>   </folder>  </folder></p>  <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p>  <p>Do not include the container name in this path.</p>  <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p>  <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>  <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>  <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
+    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::PutObject::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::PutObject::set_content_type): <p>The content type of the object.</p>
+    ///   - [`cache_control(impl Into<String>)`](crate::client::fluent_builders::PutObject::cache_control) / [`set_cache_control(Option<String>)`](crate::client::fluent_builders::PutObject::set_cache_control): <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>  <p>Headers with a custom user-defined value are also accepted.</p>
+    ///   - [`storage_class(StorageClass)`](crate::client::fluent_builders::PutObject::storage_class) / [`set_storage_class(Option<StorageClass>)`](crate::client::fluent_builders::PutObject::set_storage_class): <p>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.</p>
+    ///   - [`upload_availability(UploadAvailability)`](crate::client::fluent_builders::PutObject::upload_availability) / [`set_upload_availability(Option<UploadAvailability>)`](crate::client::fluent_builders::PutObject::set_upload_availability): <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>  <p>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+    /// - On success, responds with [`PutObjectOutput`](crate::output::PutObjectOutput) with field(s):
+    ///   - [`content_sha256(Option<String>)`](crate::output::PutObjectOutput::content_sha256): <p>The SHA256 digest of the object that is persisted.</p>
+    ///   - [`e_tag(Option<String>)`](crate::output::PutObjectOutput::e_tag): <p>Unique identifier of the object in the container.</p>
+    ///   - [`storage_class(Option<StorageClass>)`](crate::output::PutObjectOutput::storage_class): <p>The storage class where the object was persisted. The class should be “Temporal”.</p>
+    /// - On failure, responds with [`SdkError<PutObjectError>`](crate::error::PutObjectError)
     pub fn put_object(&self) -> fluent_builders::PutObject<C, M, R> {
         fluent_builders::PutObject::new(self.handle.clone())
     }

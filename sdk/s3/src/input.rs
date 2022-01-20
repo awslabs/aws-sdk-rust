@@ -1982,15 +1982,10 @@ impl CopyObjectInput {
                             })?;
                     use std::convert::TryFrom;
                     let header_value = AsRef::<str>::as_ref(v);
-                    let header_value =
-                        http::header::HeaderValue::try_from(header_value).map_err(|err| {
-                            aws_smithy_http::operation::BuildError::InvalidField {
-                                field: "metadata",
-                                details: format!(
-                                    "`{}` cannot be used as a header value: {}",
-                                    v, err
-                                ),
-                            }
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "metadata",
+                            details: format!("`{}` cannot be used as a header value: {}", v, err),
                         })?;
                     builder = builder.header(header_name, header_value);
                 }
@@ -3513,15 +3508,10 @@ impl CreateMultipartUploadInput {
                             })?;
                     use std::convert::TryFrom;
                     let header_value = AsRef::<str>::as_ref(v);
-                    let header_value =
-                        http::header::HeaderValue::try_from(header_value).map_err(|err| {
-                            aws_smithy_http::operation::BuildError::InvalidField {
-                                field: "metadata",
-                                details: format!(
-                                    "`{}` cannot be used as a header value: {}",
-                                    v, err
-                                ),
-                            }
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "metadata",
+                            details: format!("`{}` cannot be used as a header value: {}", v, err),
                         })?;
                     builder = builder.header(header_name, header_value);
                 }
@@ -23342,15 +23332,10 @@ impl PutObjectInput {
                             })?;
                     use std::convert::TryFrom;
                     let header_value = AsRef::<str>::as_ref(v);
-                    let header_value =
-                        http::header::HeaderValue::try_from(header_value).map_err(|err| {
-                            aws_smithy_http::operation::BuildError::InvalidField {
-                                field: "metadata",
-                                details: format!(
-                                    "`{}` cannot be used as a header value: {}",
-                                    v, err
-                                ),
-                            }
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "metadata",
+                            details: format!("`{}` cannot be used as a header value: {}", v, err),
                         })?;
                     builder = builder.header(header_name, header_value);
                 }
@@ -28940,15 +28925,10 @@ impl WriteGetObjectResponseInput {
                             })?;
                     use std::convert::TryFrom;
                     let header_value = AsRef::<str>::as_ref(v);
-                    let header_value =
-                        http::header::HeaderValue::try_from(header_value).map_err(|err| {
-                            aws_smithy_http::operation::BuildError::InvalidField {
-                                field: "metadata",
-                                details: format!(
-                                    "`{}` cannot be used as a header value: {}",
-                                    v, err
-                                ),
-                            }
+                    let header_value = http::header::HeaderValue::try_from(&*header_value)
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
+                            field: "metadata",
+                            details: format!("`{}` cannot be used as a header value: {}", v, err),
                         })?;
                     builder = builder.header(header_name, header_value);
                 }

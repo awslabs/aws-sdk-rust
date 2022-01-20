@@ -83,143 +83,262 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddTagsToResource` operation.
+    /// Constructs a fluent builder for the [`AddTagsToResource`](crate::client::fluent_builders::AddTagsToResource) operation.
     ///
-    /// See [`AddTagsToResource`](crate::client::fluent_builders::AddTagsToResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::AddTagsToResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::AddTagsToResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>
+    ///   - [`tag_list(Vec<Tag>)`](crate::client::fluent_builders::AddTagsToResource::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::client::fluent_builders::AddTagsToResource::set_tag_list): <p>One or more tags.</p>
+    /// - On success, responds with [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput) with field(s):
+    ///   - [`status(Option<String>)`](crate::output::AddTagsToResourceOutput::status): <p>The status of the operation.</p>
+    /// - On failure, responds with [`SdkError<AddTagsToResourceError>`](crate::error::AddTagsToResourceError)
     pub fn add_tags_to_resource(&self) -> fluent_builders::AddTagsToResource<C, M, R> {
         fluent_builders::AddTagsToResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateHapg` operation.
+    /// Constructs a fluent builder for the [`CreateHapg`](crate::client::fluent_builders::CreateHapg) operation.
     ///
-    /// See [`CreateHapg`](crate::client::fluent_builders::CreateHapg) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`label(impl Into<String>)`](crate::client::fluent_builders::CreateHapg::label) / [`set_label(Option<String>)`](crate::client::fluent_builders::CreateHapg::set_label): <p>The label of the new high-availability partition group.</p>
+    /// - On success, responds with [`CreateHapgOutput`](crate::output::CreateHapgOutput) with field(s):
+    ///   - [`hapg_arn(Option<String>)`](crate::output::CreateHapgOutput::hapg_arn): <p>The ARN of the high-availability partition group.</p>
+    /// - On failure, responds with [`SdkError<CreateHapgError>`](crate::error::CreateHapgError)
     pub fn create_hapg(&self) -> fluent_builders::CreateHapg<C, M, R> {
         fluent_builders::CreateHapg::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateHsm` operation.
+    /// Constructs a fluent builder for the [`CreateHsm`](crate::client::fluent_builders::CreateHsm) operation.
     ///
-    /// See [`CreateHsm`](crate::client::fluent_builders::CreateHsm) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`subnet_id(impl Into<String>)`](crate::client::fluent_builders::CreateHsm::subnet_id) / [`set_subnet_id(Option<String>)`](crate::client::fluent_builders::CreateHsm::set_subnet_id): <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
+    ///   - [`ssh_key(impl Into<String>)`](crate::client::fluent_builders::CreateHsm::ssh_key) / [`set_ssh_key(Option<String>)`](crate::client::fluent_builders::CreateHsm::set_ssh_key): <p>The SSH public key to install on the HSM.</p>
+    ///   - [`eni_ip(impl Into<String>)`](crate::client::fluent_builders::CreateHsm::eni_ip) / [`set_eni_ip(Option<String>)`](crate::client::fluent_builders::CreateHsm::set_eni_ip): <p>The IP address to assign to the HSM's ENI.</p>  <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
+    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateHsm::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::CreateHsm::set_iam_role_arn): <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
+    ///   - [`external_id(impl Into<String>)`](crate::client::fluent_builders::CreateHsm::external_id) / [`set_external_id(Option<String>)`](crate::client::fluent_builders::CreateHsm::set_external_id): <p>The external ID from <code>IamRoleArn</code>, if present.</p>
+    ///   - [`subscription_type(SubscriptionType)`](crate::client::fluent_builders::CreateHsm::subscription_type) / [`set_subscription_type(Option<SubscriptionType>)`](crate::client::fluent_builders::CreateHsm::set_subscription_type): <p>Specifies the type of subscription for the HSM.</p>  <ul>   <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>   <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>  </ul>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateHsm::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateHsm::set_client_token): <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
+    ///   - [`syslog_ip(impl Into<String>)`](crate::client::fluent_builders::CreateHsm::syslog_ip) / [`set_syslog_ip(Option<String>)`](crate::client::fluent_builders::CreateHsm::set_syslog_ip): <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
+    /// - On success, responds with [`CreateHsmOutput`](crate::output::CreateHsmOutput) with field(s):
+    ///   - [`hsm_arn(Option<String>)`](crate::output::CreateHsmOutput::hsm_arn): <p>The ARN of the HSM.</p>
+    /// - On failure, responds with [`SdkError<CreateHsmError>`](crate::error::CreateHsmError)
     pub fn create_hsm(&self) -> fluent_builders::CreateHsm<C, M, R> {
         fluent_builders::CreateHsm::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLunaClient` operation.
+    /// Constructs a fluent builder for the [`CreateLunaClient`](crate::client::fluent_builders::CreateLunaClient) operation.
     ///
-    /// See [`CreateLunaClient`](crate::client::fluent_builders::CreateLunaClient) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`label(impl Into<String>)`](crate::client::fluent_builders::CreateLunaClient::label) / [`set_label(Option<String>)`](crate::client::fluent_builders::CreateLunaClient::set_label): <p>The label for the client.</p>
+    ///   - [`certificate(impl Into<String>)`](crate::client::fluent_builders::CreateLunaClient::certificate) / [`set_certificate(Option<String>)`](crate::client::fluent_builders::CreateLunaClient::set_certificate): <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>
+    /// - On success, responds with [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput) with field(s):
+    ///   - [`client_arn(Option<String>)`](crate::output::CreateLunaClientOutput::client_arn): <p>The ARN of the client.</p>
+    /// - On failure, responds with [`SdkError<CreateLunaClientError>`](crate::error::CreateLunaClientError)
     pub fn create_luna_client(&self) -> fluent_builders::CreateLunaClient<C, M, R> {
         fluent_builders::CreateLunaClient::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteHapg` operation.
+    /// Constructs a fluent builder for the [`DeleteHapg`](crate::client::fluent_builders::DeleteHapg) operation.
     ///
-    /// See [`DeleteHapg`](crate::client::fluent_builders::DeleteHapg) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hapg_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteHapg::hapg_arn) / [`set_hapg_arn(Option<String>)`](crate::client::fluent_builders::DeleteHapg::set_hapg_arn): <p>The ARN of the high-availability partition group to delete.</p>
+    /// - On success, responds with [`DeleteHapgOutput`](crate::output::DeleteHapgOutput) with field(s):
+    ///   - [`status(Option<String>)`](crate::output::DeleteHapgOutput::status): <p>The status of the action.</p>
+    /// - On failure, responds with [`SdkError<DeleteHapgError>`](crate::error::DeleteHapgError)
     pub fn delete_hapg(&self) -> fluent_builders::DeleteHapg<C, M, R> {
         fluent_builders::DeleteHapg::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteHsm` operation.
+    /// Constructs a fluent builder for the [`DeleteHsm`](crate::client::fluent_builders::DeleteHsm) operation.
     ///
-    /// See [`DeleteHsm`](crate::client::fluent_builders::DeleteHsm) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hsm_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteHsm::hsm_arn) / [`set_hsm_arn(Option<String>)`](crate::client::fluent_builders::DeleteHsm::set_hsm_arn): <p>The ARN of the HSM to delete.</p>
+    /// - On success, responds with [`DeleteHsmOutput`](crate::output::DeleteHsmOutput) with field(s):
+    ///   - [`status(Option<String>)`](crate::output::DeleteHsmOutput::status): <p>The status of the operation.</p>
+    /// - On failure, responds with [`SdkError<DeleteHsmError>`](crate::error::DeleteHsmError)
     pub fn delete_hsm(&self) -> fluent_builders::DeleteHsm<C, M, R> {
         fluent_builders::DeleteHsm::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLunaClient` operation.
+    /// Constructs a fluent builder for the [`DeleteLunaClient`](crate::client::fluent_builders::DeleteLunaClient) operation.
     ///
-    /// See [`DeleteLunaClient`](crate::client::fluent_builders::DeleteLunaClient) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteLunaClient::client_arn) / [`set_client_arn(Option<String>)`](crate::client::fluent_builders::DeleteLunaClient::set_client_arn): <p>The ARN of the client to delete.</p>
+    /// - On success, responds with [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput) with field(s):
+    ///   - [`status(Option<String>)`](crate::output::DeleteLunaClientOutput::status): <p>The status of the action.</p>
+    /// - On failure, responds with [`SdkError<DeleteLunaClientError>`](crate::error::DeleteLunaClientError)
     pub fn delete_luna_client(&self) -> fluent_builders::DeleteLunaClient<C, M, R> {
         fluent_builders::DeleteLunaClient::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeHapg` operation.
+    /// Constructs a fluent builder for the [`DescribeHapg`](crate::client::fluent_builders::DescribeHapg) operation.
     ///
-    /// See [`DescribeHapg`](crate::client::fluent_builders::DescribeHapg) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hapg_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeHapg::hapg_arn) / [`set_hapg_arn(Option<String>)`](crate::client::fluent_builders::DescribeHapg::set_hapg_arn): <p>The ARN of the high-availability partition group to describe.</p>
+    /// - On success, responds with [`DescribeHapgOutput`](crate::output::DescribeHapgOutput) with field(s):
+    ///   - [`hapg_arn(Option<String>)`](crate::output::DescribeHapgOutput::hapg_arn): <p>The ARN of the high-availability partition group.</p>
+    ///   - [`hapg_serial(Option<String>)`](crate::output::DescribeHapgOutput::hapg_serial): <p>The serial number of the high-availability partition group.</p>
+    ///   - [`hsms_last_action_failed(Option<Vec<String>>)`](crate::output::DescribeHapgOutput::hsms_last_action_failed): <p></p>
+    ///   - [`hsms_pending_deletion(Option<Vec<String>>)`](crate::output::DescribeHapgOutput::hsms_pending_deletion): <p></p>
+    ///   - [`hsms_pending_registration(Option<Vec<String>>)`](crate::output::DescribeHapgOutput::hsms_pending_registration): <p></p>
+    ///   - [`label(Option<String>)`](crate::output::DescribeHapgOutput::label): <p>The label for the high-availability partition group.</p>
+    ///   - [`last_modified_timestamp(Option<String>)`](crate::output::DescribeHapgOutput::last_modified_timestamp): <p>The date and time the high-availability partition group was last modified.</p>
+    ///   - [`partition_serial_list(Option<Vec<String>>)`](crate::output::DescribeHapgOutput::partition_serial_list): <p>The list of partition serial numbers that belong to the high-availability partition group.</p>
+    ///   - [`state(Option<CloudHsmObjectState>)`](crate::output::DescribeHapgOutput::state): <p>The state of the high-availability partition group.</p>
+    /// - On failure, responds with [`SdkError<DescribeHapgError>`](crate::error::DescribeHapgError)
     pub fn describe_hapg(&self) -> fluent_builders::DescribeHapg<C, M, R> {
         fluent_builders::DescribeHapg::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeHsm` operation.
+    /// Constructs a fluent builder for the [`DescribeHsm`](crate::client::fluent_builders::DescribeHsm) operation.
     ///
-    /// See [`DescribeHsm`](crate::client::fluent_builders::DescribeHsm) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hsm_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeHsm::hsm_arn) / [`set_hsm_arn(Option<String>)`](crate::client::fluent_builders::DescribeHsm::set_hsm_arn): <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>
+    ///   - [`hsm_serial_number(impl Into<String>)`](crate::client::fluent_builders::DescribeHsm::hsm_serial_number) / [`set_hsm_serial_number(Option<String>)`](crate::client::fluent_builders::DescribeHsm::set_hsm_serial_number): <p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>
+    /// - On success, responds with [`DescribeHsmOutput`](crate::output::DescribeHsmOutput) with field(s):
+    ///   - [`hsm_arn(Option<String>)`](crate::output::DescribeHsmOutput::hsm_arn): <p>The ARN of the HSM.</p>
+    ///   - [`status(Option<HsmStatus>)`](crate::output::DescribeHsmOutput::status): <p>The status of the HSM.</p>
+    ///   - [`status_details(Option<String>)`](crate::output::DescribeHsmOutput::status_details): <p>Contains additional information about the status of the HSM.</p>
+    ///   - [`availability_zone(Option<String>)`](crate::output::DescribeHsmOutput::availability_zone): <p>The Availability Zone that the HSM is in.</p>
+    ///   - [`eni_id(Option<String>)`](crate::output::DescribeHsmOutput::eni_id): <p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>
+    ///   - [`eni_ip(Option<String>)`](crate::output::DescribeHsmOutput::eni_ip): <p>The IP address assigned to the HSM's ENI.</p>
+    ///   - [`subscription_type(Option<SubscriptionType>)`](crate::output::DescribeHsmOutput::subscription_type): <p>Specifies the type of subscription for the HSM.</p>  <ul>   <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>   <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>  </ul>
+    ///   - [`subscription_start_date(Option<String>)`](crate::output::DescribeHsmOutput::subscription_start_date): <p>The subscription start date.</p>
+    ///   - [`subscription_end_date(Option<String>)`](crate::output::DescribeHsmOutput::subscription_end_date): <p>The subscription end date.</p>
+    ///   - [`vpc_id(Option<String>)`](crate::output::DescribeHsmOutput::vpc_id): <p>The identifier of the VPC that the HSM is in.</p>
+    ///   - [`subnet_id(Option<String>)`](crate::output::DescribeHsmOutput::subnet_id): <p>The identifier of the subnet that the HSM is in.</p>
+    ///   - [`iam_role_arn(Option<String>)`](crate::output::DescribeHsmOutput::iam_role_arn): <p>The ARN of the IAM role assigned to the HSM.</p>
+    ///   - [`serial_number(Option<String>)`](crate::output::DescribeHsmOutput::serial_number): <p>The serial number of the HSM.</p>
+    ///   - [`vendor_name(Option<String>)`](crate::output::DescribeHsmOutput::vendor_name): <p>The name of the HSM vendor.</p>
+    ///   - [`hsm_type(Option<String>)`](crate::output::DescribeHsmOutput::hsm_type): <p>The HSM model type.</p>
+    ///   - [`software_version(Option<String>)`](crate::output::DescribeHsmOutput::software_version): <p>The HSM software version.</p>
+    ///   - [`ssh_public_key(Option<String>)`](crate::output::DescribeHsmOutput::ssh_public_key): <p>The public SSH key.</p>
+    ///   - [`ssh_key_last_updated(Option<String>)`](crate::output::DescribeHsmOutput::ssh_key_last_updated): <p>The date and time that the SSH key was last updated.</p>
+    ///   - [`server_cert_uri(Option<String>)`](crate::output::DescribeHsmOutput::server_cert_uri): <p>The URI of the certificate server.</p>
+    ///   - [`server_cert_last_updated(Option<String>)`](crate::output::DescribeHsmOutput::server_cert_last_updated): <p>The date and time that the server certificate was last updated.</p>
+    ///   - [`partitions(Option<Vec<String>>)`](crate::output::DescribeHsmOutput::partitions): <p>The list of partitions on the HSM.</p>
+    /// - On failure, responds with [`SdkError<DescribeHsmError>`](crate::error::DescribeHsmError)
     pub fn describe_hsm(&self) -> fluent_builders::DescribeHsm<C, M, R> {
         fluent_builders::DescribeHsm::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLunaClient` operation.
+    /// Constructs a fluent builder for the [`DescribeLunaClient`](crate::client::fluent_builders::DescribeLunaClient) operation.
     ///
-    /// See [`DescribeLunaClient`](crate::client::fluent_builders::DescribeLunaClient) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeLunaClient::client_arn) / [`set_client_arn(Option<String>)`](crate::client::fluent_builders::DescribeLunaClient::set_client_arn): <p>The ARN of the client.</p>
+    ///   - [`certificate_fingerprint(impl Into<String>)`](crate::client::fluent_builders::DescribeLunaClient::certificate_fingerprint) / [`set_certificate_fingerprint(Option<String>)`](crate::client::fluent_builders::DescribeLunaClient::set_certificate_fingerprint): <p>The certificate fingerprint.</p>
+    /// - On success, responds with [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput) with field(s):
+    ///   - [`client_arn(Option<String>)`](crate::output::DescribeLunaClientOutput::client_arn): <p>The ARN of the client.</p>
+    ///   - [`certificate(Option<String>)`](crate::output::DescribeLunaClientOutput::certificate): <p>The certificate installed on the HSMs used by this client.</p>
+    ///   - [`certificate_fingerprint(Option<String>)`](crate::output::DescribeLunaClientOutput::certificate_fingerprint): <p>The certificate fingerprint.</p>
+    ///   - [`last_modified_timestamp(Option<String>)`](crate::output::DescribeLunaClientOutput::last_modified_timestamp): <p>The date and time the client was last modified.</p>
+    ///   - [`label(Option<String>)`](crate::output::DescribeLunaClientOutput::label): <p>The label of the client.</p>
+    /// - On failure, responds with [`SdkError<DescribeLunaClientError>`](crate::error::DescribeLunaClientError)
     pub fn describe_luna_client(&self) -> fluent_builders::DescribeLunaClient<C, M, R> {
         fluent_builders::DescribeLunaClient::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConfig` operation.
+    /// Constructs a fluent builder for the [`GetConfig`](crate::client::fluent_builders::GetConfig) operation.
     ///
-    /// See [`GetConfig`](crate::client::fluent_builders::GetConfig) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_arn(impl Into<String>)`](crate::client::fluent_builders::GetConfig::client_arn) / [`set_client_arn(Option<String>)`](crate::client::fluent_builders::GetConfig::set_client_arn): <p>The ARN of the client.</p>
+    ///   - [`client_version(ClientVersion)`](crate::client::fluent_builders::GetConfig::client_version) / [`set_client_version(Option<ClientVersion>)`](crate::client::fluent_builders::GetConfig::set_client_version): <p>The client version.</p>
+    ///   - [`hapg_list(Vec<String>)`](crate::client::fluent_builders::GetConfig::hapg_list) / [`set_hapg_list(Option<Vec<String>>)`](crate::client::fluent_builders::GetConfig::set_hapg_list): <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
+    /// - On success, responds with [`GetConfigOutput`](crate::output::GetConfigOutput) with field(s):
+    ///   - [`config_type(Option<String>)`](crate::output::GetConfigOutput::config_type): <p>The type of credentials.</p>
+    ///   - [`config_file(Option<String>)`](crate::output::GetConfigOutput::config_file): <p>The chrystoki.conf configuration file.</p>
+    ///   - [`config_cred(Option<String>)`](crate::output::GetConfigOutput::config_cred): <p>The certificate file containing the server.pem files of the HSMs.</p>
+    /// - On failure, responds with [`SdkError<GetConfigError>`](crate::error::GetConfigError)
     pub fn get_config(&self) -> fluent_builders::GetConfig<C, M, R> {
         fluent_builders::GetConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAvailableZones` operation.
+    /// Constructs a fluent builder for the [`ListAvailableZones`](crate::client::fluent_builders::ListAvailableZones) operation.
     ///
-    /// See [`ListAvailableZones`](crate::client::fluent_builders::ListAvailableZones) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::ListAvailableZones::send) it.
+
+    /// - On success, responds with [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput) with field(s):
+    ///   - [`az_list(Option<Vec<String>>)`](crate::output::ListAvailableZonesOutput::az_list): <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
+    /// - On failure, responds with [`SdkError<ListAvailableZonesError>`](crate::error::ListAvailableZonesError)
     pub fn list_available_zones(&self) -> fluent_builders::ListAvailableZones<C, M, R> {
         fluent_builders::ListAvailableZones::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListHapgs` operation.
+    /// Constructs a fluent builder for the [`ListHapgs`](crate::client::fluent_builders::ListHapgs) operation.
     ///
-    /// See [`ListHapgs`](crate::client::fluent_builders::ListHapgs) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHapgs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHapgs::set_next_token): <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass null if this is the first call.</p>
+    /// - On success, responds with [`ListHapgsOutput`](crate::output::ListHapgsOutput) with field(s):
+    ///   - [`hapg_list(Option<Vec<String>>)`](crate::output::ListHapgsOutput::hapg_list): <p>The list of high-availability partition groups.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListHapgsOutput::next_token): <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>
+    /// - On failure, responds with [`SdkError<ListHapgsError>`](crate::error::ListHapgsError)
     pub fn list_hapgs(&self) -> fluent_builders::ListHapgs<C, M, R> {
         fluent_builders::ListHapgs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListHsms` operation.
+    /// Constructs a fluent builder for the [`ListHsms`](crate::client::fluent_builders::ListHsms) operation.
     ///
-    /// See [`ListHsms`](crate::client::fluent_builders::ListHsms) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHsms::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHsms::set_next_token): <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass null if this is the first call.</p>
+    /// - On success, responds with [`ListHsmsOutput`](crate::output::ListHsmsOutput) with field(s):
+    ///   - [`hsm_list(Option<Vec<String>>)`](crate::output::ListHsmsOutput::hsm_list): <p>The list of ARNs that identify the HSMs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListHsmsOutput::next_token): <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
+    /// - On failure, responds with [`SdkError<ListHsmsError>`](crate::error::ListHsmsError)
     pub fn list_hsms(&self) -> fluent_builders::ListHsms<C, M, R> {
         fluent_builders::ListHsms::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLunaClients` operation.
+    /// Constructs a fluent builder for the [`ListLunaClients`](crate::client::fluent_builders::ListLunaClients) operation.
     ///
-    /// See [`ListLunaClients`](crate::client::fluent_builders::ListLunaClients) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLunaClients::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLunaClients::set_next_token): <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.</p>
+    /// - On success, responds with [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput) with field(s):
+    ///   - [`client_list(Option<Vec<String>>)`](crate::output::ListLunaClientsOutput::client_list): <p>The list of clients.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLunaClientsOutput::next_token): <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
+    /// - On failure, responds with [`SdkError<ListLunaClientsError>`](crate::error::ListLunaClientsError)
     pub fn list_luna_clients(&self) -> fluent_builders::ListLunaClients<C, M, R> {
         fluent_builders::ListLunaClients::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tag_list): <p>One or more tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyHapg` operation.
+    /// Constructs a fluent builder for the [`ModifyHapg`](crate::client::fluent_builders::ModifyHapg) operation.
     ///
-    /// See [`ModifyHapg`](crate::client::fluent_builders::ModifyHapg) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hapg_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyHapg::hapg_arn) / [`set_hapg_arn(Option<String>)`](crate::client::fluent_builders::ModifyHapg::set_hapg_arn): <p>The ARN of the high-availability partition group to modify.</p>
+    ///   - [`label(impl Into<String>)`](crate::client::fluent_builders::ModifyHapg::label) / [`set_label(Option<String>)`](crate::client::fluent_builders::ModifyHapg::set_label): <p>The new label for the high-availability partition group.</p>
+    ///   - [`partition_serial_list(Vec<String>)`](crate::client::fluent_builders::ModifyHapg::partition_serial_list) / [`set_partition_serial_list(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyHapg::set_partition_serial_list): <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
+    /// - On success, responds with [`ModifyHapgOutput`](crate::output::ModifyHapgOutput) with field(s):
+    ///   - [`hapg_arn(Option<String>)`](crate::output::ModifyHapgOutput::hapg_arn): <p>The ARN of the high-availability partition group.</p>
+    /// - On failure, responds with [`SdkError<ModifyHapgError>`](crate::error::ModifyHapgError)
     pub fn modify_hapg(&self) -> fluent_builders::ModifyHapg<C, M, R> {
         fluent_builders::ModifyHapg::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyHsm` operation.
+    /// Constructs a fluent builder for the [`ModifyHsm`](crate::client::fluent_builders::ModifyHsm) operation.
     ///
-    /// See [`ModifyHsm`](crate::client::fluent_builders::ModifyHsm) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`hsm_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyHsm::hsm_arn) / [`set_hsm_arn(Option<String>)`](crate::client::fluent_builders::ModifyHsm::set_hsm_arn): <p>The ARN of the HSM to modify.</p>
+    ///   - [`subnet_id(impl Into<String>)`](crate::client::fluent_builders::ModifyHsm::subnet_id) / [`set_subnet_id(Option<String>)`](crate::client::fluent_builders::ModifyHsm::set_subnet_id): <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
+    ///   - [`eni_ip(impl Into<String>)`](crate::client::fluent_builders::ModifyHsm::eni_ip) / [`set_eni_ip(Option<String>)`](crate::client::fluent_builders::ModifyHsm::set_eni_ip): <p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p>  <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>
+    ///   - [`iam_role_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyHsm::iam_role_arn) / [`set_iam_role_arn(Option<String>)`](crate::client::fluent_builders::ModifyHsm::set_iam_role_arn): <p>The new IAM role ARN.</p>
+    ///   - [`external_id(impl Into<String>)`](crate::client::fluent_builders::ModifyHsm::external_id) / [`set_external_id(Option<String>)`](crate::client::fluent_builders::ModifyHsm::set_external_id): <p>The new external ID.</p>
+    ///   - [`syslog_ip(impl Into<String>)`](crate::client::fluent_builders::ModifyHsm::syslog_ip) / [`set_syslog_ip(Option<String>)`](crate::client::fluent_builders::ModifyHsm::set_syslog_ip): <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
+    /// - On success, responds with [`ModifyHsmOutput`](crate::output::ModifyHsmOutput) with field(s):
+    ///   - [`hsm_arn(Option<String>)`](crate::output::ModifyHsmOutput::hsm_arn): <p>The ARN of the HSM.</p>
+    /// - On failure, responds with [`SdkError<ModifyHsmError>`](crate::error::ModifyHsmError)
     pub fn modify_hsm(&self) -> fluent_builders::ModifyHsm<C, M, R> {
         fluent_builders::ModifyHsm::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyLunaClient` operation.
+    /// Constructs a fluent builder for the [`ModifyLunaClient`](crate::client::fluent_builders::ModifyLunaClient) operation.
     ///
-    /// See [`ModifyLunaClient`](crate::client::fluent_builders::ModifyLunaClient) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyLunaClient::client_arn) / [`set_client_arn(Option<String>)`](crate::client::fluent_builders::ModifyLunaClient::set_client_arn): <p>The ARN of the client.</p>
+    ///   - [`certificate(impl Into<String>)`](crate::client::fluent_builders::ModifyLunaClient::certificate) / [`set_certificate(Option<String>)`](crate::client::fluent_builders::ModifyLunaClient::set_certificate): <p>The new certificate for the client.</p>
+    /// - On success, responds with [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput) with field(s):
+    ///   - [`client_arn(Option<String>)`](crate::output::ModifyLunaClientOutput::client_arn): <p>The ARN of the client.</p>
+    /// - On failure, responds with [`SdkError<ModifyLunaClientError>`](crate::error::ModifyLunaClientError)
     pub fn modify_luna_client(&self) -> fluent_builders::ModifyLunaClient<C, M, R> {
         fluent_builders::ModifyLunaClient::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveTagsFromResource` operation.
+    /// Constructs a fluent builder for the [`RemoveTagsFromResource`](crate::client::fluent_builders::RemoveTagsFromResource) operation.
     ///
-    /// See [`RemoveTagsFromResource`](crate::client::fluent_builders::RemoveTagsFromResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveTagsFromResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::RemoveTagsFromResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
+    ///   - [`tag_key_list(Vec<String>)`](crate::client::fluent_builders::RemoveTagsFromResource::tag_key_list) / [`set_tag_key_list(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveTagsFromResource::set_tag_key_list): <p>The tag key or keys to remove.</p>  <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
+    /// - On success, responds with [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput) with field(s):
+    ///   - [`status(Option<String>)`](crate::output::RemoveTagsFromResourceOutput::status): <p>The status of the operation.</p>
+    /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::error::RemoveTagsFromResourceError)
     pub fn remove_tags_from_resource(&self) -> fluent_builders::RemoveTagsFromResource<C, M, R> {
         fluent_builders::RemoveTagsFromResource::new(self.handle.clone())
     }

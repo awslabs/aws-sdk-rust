@@ -83,167 +83,330 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CancelRotateSecret` operation.
+    /// Constructs a fluent builder for the [`CancelRotateSecret`](crate::client::fluent_builders::CancelRotateSecret) operation.
     ///
-    /// See [`CancelRotateSecret`](crate::client::fluent_builders::CancelRotateSecret) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::CancelRotateSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::CancelRotateSecret::set_secret_id): <p>The ARN or name of the secret.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// - On success, responds with [`CancelRotateSecretOutput`](crate::output::CancelRotateSecretOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CancelRotateSecretOutput::arn): <p>The ARN of the secret.</p>
+    ///   - [`name(Option<String>)`](crate::output::CancelRotateSecretOutput::name): <p>The name of the secret.</p>
+    ///   - [`version_id(Option<String>)`](crate::output::CancelRotateSecretOutput::version_id): <p>The unique identifier of the version of the secret created during the rotation. This version might not be complete, and should be evaluated for possible deletion. We recommend that you remove the <code>VersionStage</code> value <code>AWSPENDING</code> from this version so that Secrets Manager can delete it. Failing to clean up a cancelled rotation can block you from starting future rotations.</p>
+    /// - On failure, responds with [`SdkError<CancelRotateSecretError>`](crate::error::CancelRotateSecretError)
     pub fn cancel_rotate_secret(&self) -> fluent_builders::CancelRotateSecret<C, M, R> {
         fluent_builders::CancelRotateSecret::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSecret` operation.
+    /// Constructs a fluent builder for the [`CreateSecret`](crate::client::fluent_builders::CreateSecret) operation.
     ///
-    /// See [`CreateSecret`](crate::client::fluent_builders::CreateSecret) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSecret::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSecret::set_name): <p>The name of the new secret.</p>  <p>The secret name can contain ASCII letters, numbers, and the following characters: /_+=.@-</p>  <p>Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and six random characters after the secret name at the end of the ARN.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateSecret::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateSecret::set_client_request_token): <p>If you include <code>SecretString</code> or <code>SecretBinary</code>, then Secrets Manager creates an initial version for the secret, and this parameter specifies the unique identifier for the new version. </p> <note>   <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.</p>  </note>  <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during a rotation. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness of your versions within the specified secret. </p>  <ul>   <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>   <li> <p>If a version with this value already exists and the version <code>SecretString</code> and <code>SecretBinary</code> values are the same as those in the request, then the request is ignored.</p> </li>   <li> <p>If a version with this value already exists and that version's <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request, then the request fails because you cannot modify an existing version. Instead, use <code>PutSecretValue</code> to create a new version.</p> </li>  </ul>  <p>This value becomes the <code>VersionId</code> of the new version.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSecret::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSecret::set_description): <p>The description of the secret.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateSecret::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateSecret::set_kms_key_id): <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret.</p>  <p>To use a KMS key in a different account, use the key ARN or the alias ARN.</p>  <p>If you don't specify this value, then Secrets Manager uses the key <code>aws/secretsmanager</code>. If that key doesn't yet exist, then Secrets Manager creates it for you automatically the first time it encrypts the secret value.</p>  <p>If the secret is in a different Amazon Web Services account from the credentials calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret, and you must create and use a customer managed KMS key. </p>
+    ///   - [`secret_binary(Blob)`](crate::client::fluent_builders::CreateSecret::secret_binary) / [`set_secret_binary(Option<Blob>)`](crate::client::fluent_builders::CreateSecret::set_secret_binary): <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>  <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>  <p>This parameter is not available in the Secrets Manager console.</p>
+    ///   - [`secret_string(impl Into<String>)`](crate::client::fluent_builders::CreateSecret::secret_string) / [`set_secret_string(Option<String>)`](crate::client::fluent_builders::CreateSecret::set_secret_string): <p>The text data to encrypt and store in this new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value.</p>  <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both.</p>  <p>If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the information as a JSON structure of key/value pairs that a Lambda rotation function can parse.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateSecret::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateSecret::set_tags): <p>A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text string, for example:</p>  <p> <code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code> </p>  <p>Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key "abc".</p>  <p>If you check tags in permissions policies as part of your security strategy, then adding or removing a tag can change permissions. If the completion of this operation would result in you losing your permissions for this secret, then Secrets Manager blocks the operation and returns an <code>Access Denied</code> error. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#tag-secrets-abac">Control access to secrets using tags</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#auth-and-access_tags2">Limit access to identities with tags that match secrets' tags</a>.</p>  <p>For information about how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a>. If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to avoid confusion with the double quotes required in the JSON text.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per secret: 50</p> </li>   <li> <p>Maximum key length: 127 Unicode characters in UTF-8</p> </li>   <li> <p>Maximum value length: 255 Unicode characters in UTF-8</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it for Amazon Web Services use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags per secret limit.</p> </li>   <li> <p>If you use your tagging schema across multiple services and resources, other services might have restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers representable in UTF-8, plus the following special characters: + - = . _ : / @.</p> </li>  </ul>
+    ///   - [`add_replica_regions(Vec<ReplicaRegionType>)`](crate::client::fluent_builders::CreateSecret::add_replica_regions) / [`set_add_replica_regions(Option<Vec<ReplicaRegionType>>)`](crate::client::fluent_builders::CreateSecret::set_add_replica_regions): <p>A list of Regions and KMS keys to replicate secrets.</p>
+    ///   - [`force_overwrite_replica_secret(bool)`](crate::client::fluent_builders::CreateSecret::force_overwrite_replica_secret) / [`set_force_overwrite_replica_secret(bool)`](crate::client::fluent_builders::CreateSecret::set_force_overwrite_replica_secret): <p>Specifies whether to overwrite a secret with the same name in the destination Region.</p>
+    /// - On success, responds with [`CreateSecretOutput`](crate::output::CreateSecretOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateSecretOutput::arn): <p>The ARN of the new secret. The ARN includes the name of the secret followed by six random characters. This ensures that if you create a new secret with the same name as a deleted secret, then users with access to the old secret don't get access to the new secret because the ARNs are different.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateSecretOutput::name): <p>The name of the new secret.</p>
+    ///   - [`version_id(Option<String>)`](crate::output::CreateSecretOutput::version_id): <p>The unique identifier associated with the version of the new secret.</p>
+    ///   - [`replication_status(Option<Vec<ReplicationStatusType>>)`](crate::output::CreateSecretOutput::replication_status): <p>A list of the replicas of this secret and their status:</p>  <ul>   <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>   <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>   <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<CreateSecretError>`](crate::error::CreateSecretError)
     pub fn create_secret(&self) -> fluent_builders::CreateSecret<C, M, R> {
         fluent_builders::CreateSecret::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) operation.
     ///
-    /// See [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_secret_id): <p>The ARN or name of the secret to delete the attached resource-based policy for.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// - On success, responds with [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DeleteResourcePolicyOutput::arn): <p>The ARN of the secret that the resource-based policy was deleted for.</p>
+    ///   - [`name(Option<String>)`](crate::output::DeleteResourcePolicyOutput::name): <p>The name of the secret that the resource-based policy was deleted for.</p>
+    /// - On failure, responds with [`SdkError<DeleteResourcePolicyError>`](crate::error::DeleteResourcePolicyError)
     pub fn delete_resource_policy(&self) -> fluent_builders::DeleteResourcePolicy<C, M, R> {
         fluent_builders::DeleteResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSecret` operation.
+    /// Constructs a fluent builder for the [`DeleteSecret`](crate::client::fluent_builders::DeleteSecret) operation.
     ///
-    /// See [`DeleteSecret`](crate::client::fluent_builders::DeleteSecret) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::DeleteSecret::set_secret_id): <p>The ARN or name of the secret to delete.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`recovery_window_in_days(i64)`](crate::client::fluent_builders::DeleteSecret::recovery_window_in_days) / [`set_recovery_window_in_days(Option<i64>)`](crate::client::fluent_builders::DeleteSecret::set_recovery_window_in_days): <p>The number of days from 7 to 30 that Secrets Manager waits before permanently deleting the secret. You can't use both this parameter and <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use either, then Secrets Manager defaults to a 30 day recovery window.</p>
+    ///   - [`force_delete_without_recovery(bool)`](crate::client::fluent_builders::DeleteSecret::force_delete_without_recovery) / [`set_force_delete_without_recovery(Option<bool>)`](crate::client::fluent_builders::DeleteSecret::set_force_delete_without_recovery): <p>Specifies whether to delete the secret without any recovery window. You can't use both this parameter and <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager defaults to a 30 day recovery window.</p>  <p>Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a short delay before the secret is permanently deleted. If you delete a secret and then immediately create a secret with the same name, use appropriate back off and retry logic.</p> <important>   <p>Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover the secret. You lose the secret permanently.</p>  </important>
+    /// - On success, responds with [`DeleteSecretOutput`](crate::output::DeleteSecretOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DeleteSecretOutput::arn): <p>The ARN of the secret.</p>
+    ///   - [`name(Option<String>)`](crate::output::DeleteSecretOutput::name): <p>The name of the secret.</p>
+    ///   - [`deletion_date(Option<DateTime>)`](crate::output::DeleteSecretOutput::deletion_date): <p>The date and time after which this secret Secrets Manager can permanently delete this secret, and it can no longer be restored. This value is the date and time of the delete request plus the number of days in <code>RecoveryWindowInDays</code>.</p>
+    /// - On failure, responds with [`SdkError<DeleteSecretError>`](crate::error::DeleteSecretError)
     pub fn delete_secret(&self) -> fluent_builders::DeleteSecret<C, M, R> {
         fluent_builders::DeleteSecret::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSecret` operation.
+    /// Constructs a fluent builder for the [`DescribeSecret`](crate::client::fluent_builders::DescribeSecret) operation.
     ///
-    /// See [`DescribeSecret`](crate::client::fluent_builders::DescribeSecret) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::DescribeSecret::set_secret_id): <p>The ARN or name of the secret. </p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// - On success, responds with [`DescribeSecretOutput`](crate::output::DescribeSecretOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeSecretOutput::arn): <p>The ARN of the secret.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeSecretOutput::name): <p>The name of the secret.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeSecretOutput::description): <p>The description of the secret.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::DescribeSecretOutput::kms_key_id): <p>The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>, this field is omitted.</p>
+    ///   - [`rotation_enabled(Option<bool>)`](crate::output::DescribeSecretOutput::rotation_enabled): <p>Specifies whether automatic rotation is turned on for this secret.</p>  <p>To turn on rotation, use <code>RotateSecret</code>. To turn off rotation, use <code>CancelRotateSecret</code>.</p>
+    ///   - [`rotation_lambda_arn(Option<String>)`](crate::output::DescribeSecretOutput::rotation_lambda_arn): <p>The ARN of the Lambda function that Secrets Manager invokes to rotate the secret. </p>
+    ///   - [`rotation_rules(Option<RotationRulesType>)`](crate::output::DescribeSecretOutput::rotation_rules): <p>The rotation schedule and Lambda function for this secret. If the secret previously had rotation turned on, but it is now turned off, this field shows the previous rotation schedule and rotation function. If the secret never had rotation turned on, this field is omitted.</p>
+    ///   - [`last_rotated_date(Option<DateTime>)`](crate::output::DescribeSecretOutput::last_rotated_date): <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
+    ///   - [`last_changed_date(Option<DateTime>)`](crate::output::DescribeSecretOutput::last_changed_date): <p>The last date and time that this secret was modified in any way.</p>
+    ///   - [`last_accessed_date(Option<DateTime>)`](crate::output::DescribeSecretOutput::last_accessed_date): <p>The last date that the secret value was retrieved. This value does not include the time. This field is omitted if the secret has never been retrieved.</p>
+    ///   - [`deleted_date(Option<DateTime>)`](crate::output::DescribeSecretOutput::deleted_date): <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p>  <p>If a secret is scheduled for deletion, then its details, including the encrypted secret value, is not accessible. To cancel a scheduled deletion and restore access to the secret, use <code>RestoreSecret</code>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::DescribeSecretOutput::tags): <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
+    ///   - [`version_ids_to_stages(Option<HashMap<String, Vec<String>>>)`](crate::output::DescribeSecretOutput::version_ids_to_stages): <p>A list of the versions of the secret that have staging labels attached. Versions that don't have staging labels are considered deprecated and Secrets Manager can delete them.</p>  <p>Secrets Manager uses staging labels to indicate the status of a secret version during rotation. The three staging labels for rotation are: </p>  <ul>   <li> <p> <code>AWSCURRENT</code>, which indicates the current version of the secret.</p> </li>   <li> <p> <code>AWSPENDING</code>, which indicates the version of the secret that contains new secret information that will become the next current version when rotation finishes.</p> <p>During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before creating the new secret version. To check if a secret version exists, call <code>GetSecretValue</code>.</p> </li>   <li> <p> <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret. You can use this as the <i>last known good</i> version.</p> </li>  </ul>  <p>For more information about rotation and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How rotation works</a>.</p>
+    ///   - [`owning_service(Option<String>)`](crate::output::DescribeSecretOutput::owning_service): <p>The name of the service that created this secret.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::DescribeSecretOutput::created_date): <p>The date the secret was created.</p>
+    ///   - [`primary_region(Option<String>)`](crate::output::DescribeSecretOutput::primary_region): <p>The Region the secret is in. If a secret is replicated to other Regions, the replicas are listed in <code>ReplicationStatus</code>. </p>
+    ///   - [`replication_status(Option<Vec<ReplicationStatusType>>)`](crate::output::DescribeSecretOutput::replication_status): <p>A list of the replicas of this secret and their status: </p>  <ul>   <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>   <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>   <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribeSecretError>`](crate::error::DescribeSecretError)
     pub fn describe_secret(&self) -> fluent_builders::DescribeSecret<C, M, R> {
         fluent_builders::DescribeSecret::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRandomPassword` operation.
+    /// Constructs a fluent builder for the [`GetRandomPassword`](crate::client::fluent_builders::GetRandomPassword) operation.
     ///
-    /// See [`GetRandomPassword`](crate::client::fluent_builders::GetRandomPassword) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`password_length(i64)`](crate::client::fluent_builders::GetRandomPassword::password_length) / [`set_password_length(Option<i64>)`](crate::client::fluent_builders::GetRandomPassword::set_password_length): <p>The length of the password. If you don't include this parameter, the default length is 32 characters.</p>
+    ///   - [`exclude_characters(impl Into<String>)`](crate::client::fluent_builders::GetRandomPassword::exclude_characters) / [`set_exclude_characters(Option<String>)`](crate::client::fluent_builders::GetRandomPassword::set_exclude_characters): <p>A string of the characters that you don't want in the password.</p>
+    ///   - [`exclude_numbers(bool)`](crate::client::fluent_builders::GetRandomPassword::exclude_numbers) / [`set_exclude_numbers(Option<bool>)`](crate::client::fluent_builders::GetRandomPassword::set_exclude_numbers): <p>Specifies whether to exclude numbers from the password. If you don't include this switch, the password can contain numbers.</p>
+    ///   - [`exclude_punctuation(bool)`](crate::client::fluent_builders::GetRandomPassword::exclude_punctuation) / [`set_exclude_punctuation(Option<bool>)`](crate::client::fluent_builders::GetRandomPassword::set_exclude_punctuation): <p>Specifies whether to exclude the following punctuation characters from the password: <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code>. If you don't include this switch, the password can contain punctuation.</p>
+    ///   - [`exclude_uppercase(bool)`](crate::client::fluent_builders::GetRandomPassword::exclude_uppercase) / [`set_exclude_uppercase(Option<bool>)`](crate::client::fluent_builders::GetRandomPassword::set_exclude_uppercase): <p>Specifies whether to exclude uppercase letters from the password. If you don't include this switch, the password can contain uppercase letters.</p>
+    ///   - [`exclude_lowercase(bool)`](crate::client::fluent_builders::GetRandomPassword::exclude_lowercase) / [`set_exclude_lowercase(Option<bool>)`](crate::client::fluent_builders::GetRandomPassword::set_exclude_lowercase): <p>Specifies whether to exclude lowercase letters from the password. If you don't include this switch, the password can contain lowercase letters.</p>
+    ///   - [`include_space(bool)`](crate::client::fluent_builders::GetRandomPassword::include_space) / [`set_include_space(Option<bool>)`](crate::client::fluent_builders::GetRandomPassword::set_include_space): <p>Specifies whether to include the space character. If you include this switch, the password can contain space characters.</p>
+    ///   - [`require_each_included_type(bool)`](crate::client::fluent_builders::GetRandomPassword::require_each_included_type) / [`set_require_each_included_type(Option<bool>)`](crate::client::fluent_builders::GetRandomPassword::set_require_each_included_type): <p>Specifies whether to include at least one upper and lowercase letter, one number, and one punctuation. If you don't include this switch, the password contains at least one of every character type.</p>
+    /// - On success, responds with [`GetRandomPasswordOutput`](crate::output::GetRandomPasswordOutput) with field(s):
+    ///   - [`random_password(Option<String>)`](crate::output::GetRandomPasswordOutput::random_password): <p>A string with the password.</p>
+    /// - On failure, responds with [`SdkError<GetRandomPasswordError>`](crate::error::GetRandomPasswordError)
     pub fn get_random_password(&self) -> fluent_builders::GetRandomPassword<C, M, R> {
         fluent_builders::GetRandomPassword::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`GetResourcePolicy`](crate::client::fluent_builders::GetResourcePolicy) operation.
     ///
-    /// See [`GetResourcePolicy`](crate::client::fluent_builders::GetResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::GetResourcePolicy::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::GetResourcePolicy::set_secret_id): <p>The ARN or name of the secret to retrieve the attached resource-based policy for.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// - On success, responds with [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetResourcePolicyOutput::arn): <p>The ARN of the secret that the resource-based policy was retrieved for.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetResourcePolicyOutput::name): <p>The name of the secret that the resource-based policy was retrieved for.</p>
+    ///   - [`resource_policy(Option<String>)`](crate::output::GetResourcePolicyOutput::resource_policy): <p>A JSON-formatted string that contains the permissions policy attached to the secret. For more information about permissions policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control for Secrets Manager</a>.</p>
+    /// - On failure, responds with [`SdkError<GetResourcePolicyError>`](crate::error::GetResourcePolicyError)
     pub fn get_resource_policy(&self) -> fluent_builders::GetResourcePolicy<C, M, R> {
         fluent_builders::GetResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSecretValue` operation.
+    /// Constructs a fluent builder for the [`GetSecretValue`](crate::client::fluent_builders::GetSecretValue) operation.
     ///
-    /// See [`GetSecretValue`](crate::client::fluent_builders::GetSecretValue) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::GetSecretValue::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::GetSecretValue::set_secret_id): <p>The ARN or name of the secret to retrieve.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::GetSecretValue::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::GetSecretValue::set_version_id): <p>The unique identifier of the version of the secret to retrieve. If you include both this parameter and <code>VersionStage</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, then Secrets Manager returns the <code>AWSCURRENT</code> version.</p>  <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with 32 hexadecimal digits.</p>
+    ///   - [`version_stage(impl Into<String>)`](crate::client::fluent_builders::GetSecretValue::version_stage) / [`set_version_stage(Option<String>)`](crate::client::fluent_builders::GetSecretValue::set_version_stage): <p>The staging label of the version of the secret to retrieve. </p>  <p>Secrets Manager uses staging labels to keep track of different versions during the rotation process. If you include both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, Secrets Manager returns the <code>AWSCURRENT</code> version.</p>
+    /// - On success, responds with [`GetSecretValueOutput`](crate::output::GetSecretValueOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetSecretValueOutput::arn): <p>The ARN of the secret.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetSecretValueOutput::name): <p>The friendly name of the secret.</p>
+    ///   - [`version_id(Option<String>)`](crate::output::GetSecretValueOutput::version_id): <p>The unique identifier of this version of the secret.</p>
+    ///   - [`secret_binary(Option<Blob>)`](crate::output::GetSecretValueOutput::secret_binary): <p>The decrypted secret value, if the secret value was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>  <p>If the secret was created by using the Secrets Manager console, or if the secret value was originally provided as a string, then this field is omitted. The secret value appears in <code>SecretString</code> instead.</p>
+    ///   - [`secret_string(Option<String>)`](crate::output::GetSecretValueOutput::secret_string): <p>The decrypted secret value, if the secret value was originally provided as a string or through the Secrets Manager console.</p>  <p>If this secret was created by using the console, then Secrets Manager stores the information as a JSON structure of key/value pairs. </p>
+    ///   - [`version_stages(Option<Vec<String>>)`](crate::output::GetSecretValueOutput::version_stages): <p>A list of all of the staging labels currently attached to this version of the secret.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::GetSecretValueOutput::created_date): <p>The date and time that this version of the secret was created. If you don't specify which version in <code>VersionId</code> or <code>VersionStage</code>, then Secrets Manager uses the <code>AWSCURRENT</code> version.</p>
+    /// - On failure, responds with [`SdkError<GetSecretValueError>`](crate::error::GetSecretValueError)
     pub fn get_secret_value(&self) -> fluent_builders::GetSecretValue<C, M, R> {
         fluent_builders::GetSecretValue::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSecrets` operation.
+    /// Constructs a fluent builder for the [`ListSecrets`](crate::client::fluent_builders::ListSecrets) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSecrets::into_paginator).
     ///
-    /// See [`ListSecrets`](crate::client::fluent_builders::ListSecrets) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSecrets::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSecrets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSecrets::set_max_results): <p>The number of results to include in the response.</p>  <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>ListSecrets</code> again with the value from <code>NextToken</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSecrets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSecrets::set_next_token): <p>A token that indicates where the output should continue from, if a previous call did not show all results. To get the next results, call <code>ListSecrets</code> again with this value.</p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListSecrets::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListSecrets::set_filters): <p>The filters to apply to the list of secrets.</p>
+    ///   - [`sort_order(SortOrderType)`](crate::client::fluent_builders::ListSecrets::sort_order) / [`set_sort_order(Option<SortOrderType>)`](crate::client::fluent_builders::ListSecrets::set_sort_order): <p>Lists secrets in the requested order. </p>
+    /// - On success, responds with [`ListSecretsOutput`](crate::output::ListSecretsOutput) with field(s):
+    ///   - [`secret_list(Option<Vec<SecretListEntry>>)`](crate::output::ListSecretsOutput::secret_list): <p>A list of the secrets in the account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSecretsOutput::next_token): <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecrets</code> again with this value.</p>
+    /// - On failure, responds with [`SdkError<ListSecretsError>`](crate::error::ListSecretsError)
     pub fn list_secrets(&self) -> fluent_builders::ListSecrets<C, M, R> {
         fluent_builders::ListSecrets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSecretVersionIds` operation.
+    /// Constructs a fluent builder for the [`ListSecretVersionIds`](crate::client::fluent_builders::ListSecretVersionIds) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSecretVersionIds::into_paginator).
     ///
-    /// See [`ListSecretVersionIds`](crate::client::fluent_builders::ListSecretVersionIds) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSecretVersionIds::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::ListSecretVersionIds::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::ListSecretVersionIds::set_secret_id): <p>The ARN or name of the secret whose versions you want to list.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSecretVersionIds::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSecretVersionIds::set_max_results): <p>The number of results to include in the response.</p>  <p>If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>. To get the next results, call <code>ListSecretVersionIds</code> again with the value from <code>NextToken</code>. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSecretVersionIds::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSecretVersionIds::set_next_token): <p>A token that indicates where the output should continue from, if a previous call did not show all results. To get the next results, call <code>ListSecretVersionIds</code> again with this value.</p>
+    ///   - [`include_deprecated(bool)`](crate::client::fluent_builders::ListSecretVersionIds::include_deprecated) / [`set_include_deprecated(Option<bool>)`](crate::client::fluent_builders::ListSecretVersionIds::set_include_deprecated): <p>Specifies whether to include versions of secrets that don't have any staging labels attached to them. Versions without staging labels are considered deprecated and are subject to deletion by Secrets Manager.</p>
+    /// - On success, responds with [`ListSecretVersionIdsOutput`](crate::output::ListSecretVersionIdsOutput) with field(s):
+    ///   - [`versions(Option<Vec<SecretVersionsListEntry>>)`](crate::output::ListSecretVersionIdsOutput::versions): <p>A list of the versions of the secret.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSecretVersionIdsOutput::next_token): <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>ListSecretVersionIds</code> again with this value. </p>
+    ///   - [`arn(Option<String>)`](crate::output::ListSecretVersionIdsOutput::arn): <p>The ARN of the secret.</p>
+    ///   - [`name(Option<String>)`](crate::output::ListSecretVersionIdsOutput::name): <p>The name of the secret.</p>
+    /// - On failure, responds with [`SdkError<ListSecretVersionIdsError>`](crate::error::ListSecretVersionIdsError)
     pub fn list_secret_version_ids(&self) -> fluent_builders::ListSecretVersionIds<C, M, R> {
         fluent_builders::ListSecretVersionIds::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) operation.
     ///
-    /// See [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_secret_id): <p>The ARN or name of the secret to attach the resource-based policy.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`resource_policy(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::resource_policy) / [`set_resource_policy(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_resource_policy): <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
+    ///   - [`block_public_policy(bool)`](crate::client::fluent_builders::PutResourcePolicy::block_public_policy) / [`set_block_public_policy(Option<bool>)`](crate::client::fluent_builders::PutResourcePolicy::set_block_public_policy): <p>Specifies whether to block resource-based policies that allow broad access to the secret. By default, Secrets Manager blocks policies that allow broad access, for example those that use a wildcard for the principal.</p>
+    /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::PutResourcePolicyOutput::arn): <p>The ARN of the secret.</p>
+    ///   - [`name(Option<String>)`](crate::output::PutResourcePolicyOutput::name): <p>The name of the secret.</p>
+    /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::error::PutResourcePolicyError)
     pub fn put_resource_policy(&self) -> fluent_builders::PutResourcePolicy<C, M, R> {
         fluent_builders::PutResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutSecretValue` operation.
+    /// Constructs a fluent builder for the [`PutSecretValue`](crate::client::fluent_builders::PutSecretValue) operation.
     ///
-    /// See [`PutSecretValue`](crate::client::fluent_builders::PutSecretValue) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::PutSecretValue::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::PutSecretValue::set_secret_id): <p>The ARN or name of the secret to add a new version to.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>  <p>If the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::PutSecretValue::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::PutSecretValue::set_client_request_token): <p>A unique identifier for the new version of the secret. </p> <note>   <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you can leave this parameter empty because they generate a random UUID for you. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request. </p>  </note>  <p>This value helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during the Lambda rotation function processing. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>  <ul>   <li> <p>If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new version of the secret is created. </p> </li>   <li> <p>If a version with this value already exists and that version's <code>SecretString</code> or <code>SecretBinary</code> values are the same as those in the request then the request is ignored. The operation is idempotent. </p> </li>   <li> <p>If a version with this value already exists and the version of the <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request, then the request fails because you can't modify a secret version. You can only create new versions to store new secret values.</p> </li>  </ul>  <p>This value becomes the <code>VersionId</code> of the new version.</p>
+    ///   - [`secret_binary(Blob)`](crate::client::fluent_builders::PutSecretValue::secret_binary) / [`set_secret_binary(Option<Blob>)`](crate::client::fluent_builders::PutSecretValue::set_secret_binary): <p>The binary data to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then pass the contents of the file as a parameter. </p>  <p>You must include <code>SecretBinary</code> or <code>SecretString</code>, but not both.</p>  <p>You can't access this value from the Secrets Manager console.</p>
+    ///   - [`secret_string(impl Into<String>)`](crate::client::fluent_builders::PutSecretValue::secret_string) / [`set_secret_string(Option<String>)`](crate::client::fluent_builders::PutSecretValue::set_secret_string): <p>The text to encrypt and store in the new version of the secret. </p>  <p>You must include <code>SecretBinary</code> or <code>SecretString</code>, but not both.</p>  <p>We recommend you create the secret string as JSON key/value pairs, as shown in the example.</p>
+    ///   - [`version_stages(Vec<String>)`](crate::client::fluent_builders::PutSecretValue::version_stages) / [`set_version_stages(Option<Vec<String>>)`](crate::client::fluent_builders::PutSecretValue::set_version_stages): <p>A list of staging labels to attach to this version of the secret. Secrets Manager uses staging labels to track versions of a secret through the rotation process.</p>  <p>If you specify a staging label that's already associated with a different version of the same secret, then Secrets Manager removes the label from the other version and attaches it to this version. If you specify <code>AWSCURRENT</code>, and it is already attached to another version, then Secrets Manager also moves the staging label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.</p>  <p>If you don't include <code>VersionStages</code>, then Secrets Manager automatically moves the staging label <code>AWSCURRENT</code> to this version.</p>
+    /// - On success, responds with [`PutSecretValueOutput`](crate::output::PutSecretValueOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::PutSecretValueOutput::arn): <p>The ARN of the secret.</p>
+    ///   - [`name(Option<String>)`](crate::output::PutSecretValueOutput::name): <p>The name of the secret.</p>
+    ///   - [`version_id(Option<String>)`](crate::output::PutSecretValueOutput::version_id): <p>The unique identifier of the version of the secret.</p>
+    ///   - [`version_stages(Option<Vec<String>>)`](crate::output::PutSecretValueOutput::version_stages): <p>The list of staging labels that are currently attached to this version of the secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process.</p>
+    /// - On failure, responds with [`SdkError<PutSecretValueError>`](crate::error::PutSecretValueError)
     pub fn put_secret_value(&self) -> fluent_builders::PutSecretValue<C, M, R> {
         fluent_builders::PutSecretValue::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveRegionsFromReplication` operation.
+    /// Constructs a fluent builder for the [`RemoveRegionsFromReplication`](crate::client::fluent_builders::RemoveRegionsFromReplication) operation.
     ///
-    /// See [`RemoveRegionsFromReplication`](crate::client::fluent_builders::RemoveRegionsFromReplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::RemoveRegionsFromReplication::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::RemoveRegionsFromReplication::set_secret_id): <p>The ARN or name of the secret.</p>
+    ///   - [`remove_replica_regions(Vec<String>)`](crate::client::fluent_builders::RemoveRegionsFromReplication::remove_replica_regions) / [`set_remove_replica_regions(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveRegionsFromReplication::set_remove_replica_regions): <p>The Regions of the replicas to remove.</p>
+    /// - On success, responds with [`RemoveRegionsFromReplicationOutput`](crate::output::RemoveRegionsFromReplicationOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::RemoveRegionsFromReplicationOutput::arn): <p>The ARN of the primary secret.</p>
+    ///   - [`replication_status(Option<Vec<ReplicationStatusType>>)`](crate::output::RemoveRegionsFromReplicationOutput::replication_status): <p>The status of replicas for this secret after you remove Regions.</p>
+    /// - On failure, responds with [`SdkError<RemoveRegionsFromReplicationError>`](crate::error::RemoveRegionsFromReplicationError)
     pub fn remove_regions_from_replication(
         &self,
     ) -> fluent_builders::RemoveRegionsFromReplication<C, M, R> {
         fluent_builders::RemoveRegionsFromReplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ReplicateSecretToRegions` operation.
+    /// Constructs a fluent builder for the [`ReplicateSecretToRegions`](crate::client::fluent_builders::ReplicateSecretToRegions) operation.
     ///
-    /// See [`ReplicateSecretToRegions`](crate::client::fluent_builders::ReplicateSecretToRegions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::ReplicateSecretToRegions::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::ReplicateSecretToRegions::set_secret_id): <p>The ARN or name of the secret to replicate.</p>
+    ///   - [`add_replica_regions(Vec<ReplicaRegionType>)`](crate::client::fluent_builders::ReplicateSecretToRegions::add_replica_regions) / [`set_add_replica_regions(Option<Vec<ReplicaRegionType>>)`](crate::client::fluent_builders::ReplicateSecretToRegions::set_add_replica_regions): <p>A list of Regions in which to replicate the secret.</p>
+    ///   - [`force_overwrite_replica_secret(bool)`](crate::client::fluent_builders::ReplicateSecretToRegions::force_overwrite_replica_secret) / [`set_force_overwrite_replica_secret(bool)`](crate::client::fluent_builders::ReplicateSecretToRegions::set_force_overwrite_replica_secret): <p>Specifies whether to overwrite a secret with the same name in the destination Region.</p>
+    /// - On success, responds with [`ReplicateSecretToRegionsOutput`](crate::output::ReplicateSecretToRegionsOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::ReplicateSecretToRegionsOutput::arn): <p>The ARN of the primary secret.</p>
+    ///   - [`replication_status(Option<Vec<ReplicationStatusType>>)`](crate::output::ReplicateSecretToRegionsOutput::replication_status): <p>The status of replication.</p>
+    /// - On failure, responds with [`SdkError<ReplicateSecretToRegionsError>`](crate::error::ReplicateSecretToRegionsError)
     pub fn replicate_secret_to_regions(
         &self,
     ) -> fluent_builders::ReplicateSecretToRegions<C, M, R> {
         fluent_builders::ReplicateSecretToRegions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestoreSecret` operation.
+    /// Constructs a fluent builder for the [`RestoreSecret`](crate::client::fluent_builders::RestoreSecret) operation.
     ///
-    /// See [`RestoreSecret`](crate::client::fluent_builders::RestoreSecret) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::RestoreSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::RestoreSecret::set_secret_id): <p>The ARN or name of the secret to restore.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    /// - On success, responds with [`RestoreSecretOutput`](crate::output::RestoreSecretOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::RestoreSecretOutput::arn): <p>The ARN of the secret that was restored.</p>
+    ///   - [`name(Option<String>)`](crate::output::RestoreSecretOutput::name): <p>The name of the secret that was restored.</p>
+    /// - On failure, responds with [`SdkError<RestoreSecretError>`](crate::error::RestoreSecretError)
     pub fn restore_secret(&self) -> fluent_builders::RestoreSecret<C, M, R> {
         fluent_builders::RestoreSecret::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RotateSecret` operation.
+    /// Constructs a fluent builder for the [`RotateSecret`](crate::client::fluent_builders::RotateSecret) operation.
     ///
-    /// See [`RotateSecret`](crate::client::fluent_builders::RotateSecret) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::RotateSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::RotateSecret::set_secret_id): <p>The ARN or name of the secret to rotate.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::RotateSecret::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::RotateSecret::set_client_request_token): <p>A unique identifier for the new version of the secret that helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during rotation. This value becomes the <code>VersionId</code> of the new version.</p>  <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.</p>  <p>You only need to specify this value if you implement your own retry logic and you want to ensure that Secrets Manager doesn't attempt to create a secret version twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
+    ///   - [`rotation_lambda_arn(impl Into<String>)`](crate::client::fluent_builders::RotateSecret::rotation_lambda_arn) / [`set_rotation_lambda_arn(Option<String>)`](crate::client::fluent_builders::RotateSecret::set_rotation_lambda_arn): <p>The ARN of the Lambda rotation function that can rotate the secret.</p>
+    ///   - [`rotation_rules(RotationRulesType)`](crate::client::fluent_builders::RotateSecret::rotation_rules) / [`set_rotation_rules(Option<RotationRulesType>)`](crate::client::fluent_builders::RotateSecret::set_rotation_rules): <p>A structure that defines the rotation configuration for this secret.</p>
+    /// - On success, responds with [`RotateSecretOutput`](crate::output::RotateSecretOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::RotateSecretOutput::arn): <p>The ARN of the secret.</p>
+    ///   - [`name(Option<String>)`](crate::output::RotateSecretOutput::name): <p>The name of the secret.</p>
+    ///   - [`version_id(Option<String>)`](crate::output::RotateSecretOutput::version_id): <p>The ID of the new version of the secret.</p>
+    /// - On failure, responds with [`SdkError<RotateSecretError>`](crate::error::RotateSecretError)
     pub fn rotate_secret(&self) -> fluent_builders::RotateSecret<C, M, R> {
         fluent_builders::RotateSecret::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopReplicationToReplica` operation.
+    /// Constructs a fluent builder for the [`StopReplicationToReplica`](crate::client::fluent_builders::StopReplicationToReplica) operation.
     ///
-    /// See [`StopReplicationToReplica`](crate::client::fluent_builders::StopReplicationToReplica) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::StopReplicationToReplica::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::StopReplicationToReplica::set_secret_id): <p>The ARN of the primary secret. </p>
+    /// - On success, responds with [`StopReplicationToReplicaOutput`](crate::output::StopReplicationToReplicaOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::StopReplicationToReplicaOutput::arn): <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
+    /// - On failure, responds with [`SdkError<StopReplicationToReplicaError>`](crate::error::StopReplicationToReplicaError)
     pub fn stop_replication_to_replica(
         &self,
     ) -> fluent_builders::StopReplicationToReplica<C, M, R> {
         fluent_builders::StopReplicationToReplica::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::TagResource::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::TagResource::set_secret_id): <p>The identifier for the secret to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to attach to the secret as a JSON text string argument. Each element in the list consists of a <code>Key</code> and a <code>Value</code>.</p>  <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::UntagResource::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::UntagResource::set_secret_id): <p>The ARN or name of the secret.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of tag key names to remove from the secret. You don't specify the value. Both the key and its associated value are removed.</p>  <p>This parameter requires a JSON text string argument.</p>  <p>For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a> in the Amazon Web Services CLI User Guide.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSecret` operation.
+    /// Constructs a fluent builder for the [`UpdateSecret`](crate::client::fluent_builders::UpdateSecret) operation.
     ///
-    /// See [`UpdateSecret`](crate::client::fluent_builders::UpdateSecret) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecret::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::UpdateSecret::set_secret_id): <p>The ARN or name of the secret.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::UpdateSecret::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::UpdateSecret::set_client_request_token): <p>If you include <code>SecretString</code> or <code>SecretBinary</code>, then Secrets Manager creates a new version for the secret, and this parameter specifies the unique identifier for the new version.</p> <note>   <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.</p>  </note>  <p>This value becomes the <code>VersionId</code> of the new version.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSecret::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSecret::set_description): <p>The description of the secret.</p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecret::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::UpdateSecret::set_kms_key_id): <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt new secret versions as well as any existing versions the staging labels <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>. For more information about versions and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts: Version</a>.</p> <important>   <p>You can only use the Amazon Web Services managed key <code>aws/secretsmanager</code> if you call this operation using credentials from the same Amazon Web Services account that owns the secret. If the secret is in a different account, then you must use a customer managed key and provide the ARN of that KMS key in this field. The user making the call must have permissions to both the secret and the KMS key in their respective accounts.</p>  </important>
+    ///   - [`secret_binary(Blob)`](crate::client::fluent_builders::UpdateSecret::secret_binary) / [`set_secret_binary(Option<Blob>)`](crate::client::fluent_builders::UpdateSecret::set_secret_binary): <p>The binary data to encrypt and store in the new version of the secret. We recommend that you store your binary data in a file and then pass the contents of the file as a parameter. </p>  <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both.</p>  <p>You can't access this parameter in the Secrets Manager console.</p>
+    ///   - [`secret_string(impl Into<String>)`](crate::client::fluent_builders::UpdateSecret::secret_string) / [`set_secret_string(Option<String>)`](crate::client::fluent_builders::UpdateSecret::set_secret_string): <p>The text data to encrypt and store in the new version of the secret. We recommend you use a JSON structure of key/value pairs for your secret value. </p>  <p>Either <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. </p>
+    /// - On success, responds with [`UpdateSecretOutput`](crate::output::UpdateSecretOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateSecretOutput::arn): <p>The ARN of the secret that was updated.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateSecretOutput::name): <p>The name of the secret that was updated.</p>
+    ///   - [`version_id(Option<String>)`](crate::output::UpdateSecretOutput::version_id): <p>If Secrets Manager created a new version of the secret during this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
+    /// - On failure, responds with [`SdkError<UpdateSecretError>`](crate::error::UpdateSecretError)
     pub fn update_secret(&self) -> fluent_builders::UpdateSecret<C, M, R> {
         fluent_builders::UpdateSecret::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSecretVersionStage` operation.
+    /// Constructs a fluent builder for the [`UpdateSecretVersionStage`](crate::client::fluent_builders::UpdateSecretVersionStage) operation.
     ///
-    /// See [`UpdateSecretVersionStage`](crate::client::fluent_builders::UpdateSecretVersionStage) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::set_secret_id): <p>The ARN or the name of the secret with the version and staging labelsto modify.</p>  <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN.</p>
+    ///   - [`version_stage(impl Into<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::version_stage) / [`set_version_stage(Option<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::set_version_stage): <p>The staging label to add to this version.</p>
+    ///   - [`remove_from_version_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::remove_from_version_id) / [`set_remove_from_version_id(Option<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::set_remove_from_version_id): <p>The ID of the version that the staging label is to be removed from. If the staging label you are trying to attach to one version is already attached to a different version, then you must include this parameter and specify the version that the label is to be removed from. If the label is attached and you either do not specify this parameter, or the version ID does not match, then the operation fails.</p>
+    ///   - [`move_to_version_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::move_to_version_id) / [`set_move_to_version_id(Option<String>)`](crate::client::fluent_builders::UpdateSecretVersionStage::set_move_to_version_id): <p>The ID of the version to add the staging label to. To remove a label from a version, then do not specify this parameter.</p>  <p>If the staging label is already attached to a different version of the secret, then you must also specify the <code>RemoveFromVersionId</code> parameter. </p>
+    /// - On success, responds with [`UpdateSecretVersionStageOutput`](crate::output::UpdateSecretVersionStageOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateSecretVersionStageOutput::arn): <p>The ARN of the secret that was updated.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateSecretVersionStageOutput::name): <p>The name of the secret that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateSecretVersionStageError>`](crate::error::UpdateSecretVersionStageError)
     pub fn update_secret_version_stage(
         &self,
     ) -> fluent_builders::UpdateSecretVersionStage<C, M, R> {
         fluent_builders::UpdateSecretVersionStage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ValidateResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`ValidateResourcePolicy`](crate::client::fluent_builders::ValidateResourcePolicy) operation.
     ///
-    /// See [`ValidateResourcePolicy`](crate::client::fluent_builders::ValidateResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`secret_id(impl Into<String>)`](crate::client::fluent_builders::ValidateResourcePolicy::secret_id) / [`set_secret_id(Option<String>)`](crate::client::fluent_builders::ValidateResourcePolicy::set_secret_id): <p>This field is reserved for internal use.</p>
+    ///   - [`resource_policy(impl Into<String>)`](crate::client::fluent_builders::ValidateResourcePolicy::resource_policy) / [`set_resource_policy(Option<String>)`](crate::client::fluent_builders::ValidateResourcePolicy::set_resource_policy): <p>A JSON-formatted string that contains an Amazon Web Services resource-based policy. The policy in the string identifies who can access or manage this secret and its versions. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
+    /// - On success, responds with [`ValidateResourcePolicyOutput`](crate::output::ValidateResourcePolicyOutput) with field(s):
+    ///   - [`policy_validation_passed(bool)`](crate::output::ValidateResourcePolicyOutput::policy_validation_passed): <p>True if your policy passes validation, otherwise false.</p>
+    ///   - [`validation_errors(Option<Vec<ValidationErrorsEntry>>)`](crate::output::ValidateResourcePolicyOutput::validation_errors): <p>Validation errors if your policy didn't pass validation.</p>
+    /// - On failure, responds with [`SdkError<ValidateResourcePolicyError>`](crate::error::ValidateResourcePolicyError)
     pub fn validate_resource_policy(&self) -> fluent_builders::ValidateResourcePolicy<C, M, R> {
         fluent_builders::ValidateResourcePolicy::new(self.handle.clone())
     }

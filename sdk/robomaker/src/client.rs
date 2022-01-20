@@ -83,441 +83,950 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `BatchDeleteWorlds` operation.
+    /// Constructs a fluent builder for the [`BatchDeleteWorlds`](crate::client::fluent_builders::BatchDeleteWorlds) operation.
     ///
-    /// See [`BatchDeleteWorlds`](crate::client::fluent_builders::BatchDeleteWorlds) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`worlds(Vec<String>)`](crate::client::fluent_builders::BatchDeleteWorlds::worlds) / [`set_worlds(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDeleteWorlds::set_worlds): <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
+    /// - On success, responds with [`BatchDeleteWorldsOutput`](crate::output::BatchDeleteWorldsOutput) with field(s):
+    ///   - [`unprocessed_worlds(Option<Vec<String>>)`](crate::output::BatchDeleteWorldsOutput::unprocessed_worlds): <p>A list of unprocessed worlds associated with the call. These worlds were not deleted.</p>
+    /// - On failure, responds with [`SdkError<BatchDeleteWorldsError>`](crate::error::BatchDeleteWorldsError)
     pub fn batch_delete_worlds(&self) -> fluent_builders::BatchDeleteWorlds<C, M, R> {
         fluent_builders::BatchDeleteWorlds::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDescribeSimulationJob` operation.
+    /// Constructs a fluent builder for the [`BatchDescribeSimulationJob`](crate::client::fluent_builders::BatchDescribeSimulationJob) operation.
     ///
-    /// See [`BatchDescribeSimulationJob`](crate::client::fluent_builders::BatchDescribeSimulationJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`jobs(Vec<String>)`](crate::client::fluent_builders::BatchDescribeSimulationJob::jobs) / [`set_jobs(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDescribeSimulationJob::set_jobs): <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
+    /// - On success, responds with [`BatchDescribeSimulationJobOutput`](crate::output::BatchDescribeSimulationJobOutput) with field(s):
+    ///   - [`jobs(Option<Vec<SimulationJob>>)`](crate::output::BatchDescribeSimulationJobOutput::jobs): <p>A list of simulation jobs.</p>
+    ///   - [`unprocessed_jobs(Option<Vec<String>>)`](crate::output::BatchDescribeSimulationJobOutput::unprocessed_jobs): <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>
+    /// - On failure, responds with [`SdkError<BatchDescribeSimulationJobError>`](crate::error::BatchDescribeSimulationJobError)
     pub fn batch_describe_simulation_job(
         &self,
     ) -> fluent_builders::BatchDescribeSimulationJob<C, M, R> {
         fluent_builders::BatchDescribeSimulationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelDeploymentJob` operation.
+    /// Constructs a fluent builder for the [`CancelDeploymentJob`](crate::client::fluent_builders::CancelDeploymentJob) operation.
     ///
-    /// See [`CancelDeploymentJob`](crate::client::fluent_builders::CancelDeploymentJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job(impl Into<String>)`](crate::client::fluent_builders::CancelDeploymentJob::job) / [`set_job(Option<String>)`](crate::client::fluent_builders::CancelDeploymentJob::set_job): <p>The deployment job ARN to cancel.</p>
+    /// - On success, responds with [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput)
+
+    /// - On failure, responds with [`SdkError<CancelDeploymentJobError>`](crate::error::CancelDeploymentJobError)
     pub fn cancel_deployment_job(&self) -> fluent_builders::CancelDeploymentJob<C, M, R> {
         fluent_builders::CancelDeploymentJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelSimulationJob` operation.
+    /// Constructs a fluent builder for the [`CancelSimulationJob`](crate::client::fluent_builders::CancelSimulationJob) operation.
     ///
-    /// See [`CancelSimulationJob`](crate::client::fluent_builders::CancelSimulationJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job(impl Into<String>)`](crate::client::fluent_builders::CancelSimulationJob::job) / [`set_job(Option<String>)`](crate::client::fluent_builders::CancelSimulationJob::set_job): <p>The simulation job ARN to cancel.</p>
+    /// - On success, responds with [`CancelSimulationJobOutput`](crate::output::CancelSimulationJobOutput)
+
+    /// - On failure, responds with [`SdkError<CancelSimulationJobError>`](crate::error::CancelSimulationJobError)
     pub fn cancel_simulation_job(&self) -> fluent_builders::CancelSimulationJob<C, M, R> {
         fluent_builders::CancelSimulationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelSimulationJobBatch` operation.
+    /// Constructs a fluent builder for the [`CancelSimulationJobBatch`](crate::client::fluent_builders::CancelSimulationJobBatch) operation.
     ///
-    /// See [`CancelSimulationJobBatch`](crate::client::fluent_builders::CancelSimulationJobBatch) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`batch(impl Into<String>)`](crate::client::fluent_builders::CancelSimulationJobBatch::batch) / [`set_batch(Option<String>)`](crate::client::fluent_builders::CancelSimulationJobBatch::set_batch): <p>The id of the batch to cancel.</p>
+    /// - On success, responds with [`CancelSimulationJobBatchOutput`](crate::output::CancelSimulationJobBatchOutput)
+
+    /// - On failure, responds with [`SdkError<CancelSimulationJobBatchError>`](crate::error::CancelSimulationJobBatchError)
     pub fn cancel_simulation_job_batch(
         &self,
     ) -> fluent_builders::CancelSimulationJobBatch<C, M, R> {
         fluent_builders::CancelSimulationJobBatch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelWorldExportJob` operation.
+    /// Constructs a fluent builder for the [`CancelWorldExportJob`](crate::client::fluent_builders::CancelWorldExportJob) operation.
     ///
-    /// See [`CancelWorldExportJob`](crate::client::fluent_builders::CancelWorldExportJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job(impl Into<String>)`](crate::client::fluent_builders::CancelWorldExportJob::job) / [`set_job(Option<String>)`](crate::client::fluent_builders::CancelWorldExportJob::set_job): <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
+    /// - On success, responds with [`CancelWorldExportJobOutput`](crate::output::CancelWorldExportJobOutput)
+
+    /// - On failure, responds with [`SdkError<CancelWorldExportJobError>`](crate::error::CancelWorldExportJobError)
     pub fn cancel_world_export_job(&self) -> fluent_builders::CancelWorldExportJob<C, M, R> {
         fluent_builders::CancelWorldExportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelWorldGenerationJob` operation.
+    /// Constructs a fluent builder for the [`CancelWorldGenerationJob`](crate::client::fluent_builders::CancelWorldGenerationJob) operation.
     ///
-    /// See [`CancelWorldGenerationJob`](crate::client::fluent_builders::CancelWorldGenerationJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job(impl Into<String>)`](crate::client::fluent_builders::CancelWorldGenerationJob::job) / [`set_job(Option<String>)`](crate::client::fluent_builders::CancelWorldGenerationJob::set_job): <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
+    /// - On success, responds with [`CancelWorldGenerationJobOutput`](crate::output::CancelWorldGenerationJobOutput)
+
+    /// - On failure, responds with [`SdkError<CancelWorldGenerationJobError>`](crate::error::CancelWorldGenerationJobError)
     pub fn cancel_world_generation_job(
         &self,
     ) -> fluent_builders::CancelWorldGenerationJob<C, M, R> {
         fluent_builders::CancelWorldGenerationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDeploymentJob` operation.
+    /// Constructs a fluent builder for the [`CreateDeploymentJob`](crate::client::fluent_builders::CreateDeploymentJob) operation.
     ///
-    /// See [`CreateDeploymentJob`](crate::client::fluent_builders::CreateDeploymentJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`deployment_config(DeploymentConfig)`](crate::client::fluent_builders::CreateDeploymentJob::deployment_config) / [`set_deployment_config(Option<DeploymentConfig>)`](crate::client::fluent_builders::CreateDeploymentJob::set_deployment_config): <p>The requested deployment configuration.</p>
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateDeploymentJob::set_client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`fleet(impl Into<String>)`](crate::client::fluent_builders::CreateDeploymentJob::fleet) / [`set_fleet(Option<String>)`](crate::client::fluent_builders::CreateDeploymentJob::set_fleet): <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
+    ///   - [`deployment_application_configs(Vec<DeploymentApplicationConfig>)`](crate::client::fluent_builders::CreateDeploymentJob::deployment_application_configs) / [`set_deployment_application_configs(Option<Vec<DeploymentApplicationConfig>>)`](crate::client::fluent_builders::CreateDeploymentJob::set_deployment_application_configs): <p>The deployment application configuration.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDeploymentJob::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDeploymentJob::set_tags): <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
+    /// - On success, responds with [`CreateDeploymentJobOutput`](crate::output::CreateDeploymentJobOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateDeploymentJobOutput::arn): <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    ///   - [`fleet(Option<String>)`](crate::output::CreateDeploymentJobOutput::fleet): <p>The target fleet for the deployment job.</p>
+    ///   - [`status(Option<DeploymentStatus>)`](crate::output::CreateDeploymentJobOutput::status): <p>The status of the deployment job.</p>
+    ///   - [`deployment_application_configs(Option<Vec<DeploymentApplicationConfig>>)`](crate::output::CreateDeploymentJobOutput::deployment_application_configs): <p>The deployment application configuration.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::CreateDeploymentJobOutput::failure_reason): <p>The failure reason of the deployment job if it failed.</p>
+    ///   - [`failure_code(Option<DeploymentJobErrorCode>)`](crate::output::CreateDeploymentJobOutput::failure_code): <p>The failure code of the simulation job if it failed:</p>  <dl>   <dt>   BadPermissionError  </dt>   <dd>    <p>AWS Greengrass requires a service-level role permission to access other services. The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"> <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>   </dd>   <dt>   ExtractingBundleFailure  </dt>   <dd>    <p>The robot application could not be extracted from the bundle.</p>   </dd>   <dt>   FailureThresholdBreached  </dt>   <dd>    <p>The percentage of robots that could not be updated exceeded the percentage set for the deployment.</p>   </dd>   <dt>   GreengrassDeploymentFailed  </dt>   <dd>    <p>The robot application could not be deployed to the robot.</p>   </dd>   <dt>   GreengrassGroupVersionDoesNotExist  </dt>   <dd>    <p>The AWS Greengrass group or version associated with a robot is missing.</p>   </dd>   <dt>   InternalServerError  </dt>   <dd>    <p>An internal error has occurred. Retry your request, but if the problem persists, contact us with details.</p>   </dd>   <dt>   MissingRobotApplicationArchitecture  </dt>   <dd>    <p>The robot application does not have a source that matches the architecture of the robot.</p>   </dd>   <dt>   MissingRobotDeploymentResource  </dt>   <dd>    <p>One or more of the resources specified for the robot application are missing. For example, does the robot application have the correct launch package and launch file?</p>   </dd>   <dt>   PostLaunchFileFailure  </dt>   <dd>    <p>The post-launch script failed.</p>   </dd>   <dt>   PreLaunchFileFailure  </dt>   <dd>    <p>The pre-launch script failed.</p>   </dd>   <dt>   ResourceNotFound  </dt>   <dd>    <p>One or more deployment resources are missing. For example, do robot application source bundles still exist? </p>   </dd>   <dt>   RobotDeploymentNoResponse  </dt>   <dd>    <p>There is no response from the robot. It might not be powered on or connected to the internet.</p>   </dd>  </dl>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateDeploymentJobOutput::created_at): <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
+    ///   - [`deployment_config(Option<DeploymentConfig>)`](crate::output::CreateDeploymentJobOutput::deployment_config): <p>The deployment configuration.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateDeploymentJobOutput::tags): <p>The list of all tags added to the deployment job.</p>
+    /// - On failure, responds with [`SdkError<CreateDeploymentJobError>`](crate::error::CreateDeploymentJobError)
     pub fn create_deployment_job(&self) -> fluent_builders::CreateDeploymentJob<C, M, R> {
         fluent_builders::CreateDeploymentJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFleet` operation.
+    /// Constructs a fluent builder for the [`CreateFleet`](crate::client::fluent_builders::CreateFleet) operation.
     ///
-    /// See [`CreateFleet`](crate::client::fluent_builders::CreateFleet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_name): <p>The name of the fleet.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateFleet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateFleet::set_tags): <p>A map that contains tag keys and tag values that are attached to the fleet.</p>
+    /// - On success, responds with [`CreateFleetOutput`](crate::output::CreateFleetOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateFleetOutput::arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateFleetOutput::name): <p>The name of the fleet.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateFleetOutput::created_at): <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateFleetOutput::tags): <p>The list of all tags added to the fleet.</p>
+    /// - On failure, responds with [`SdkError<CreateFleetError>`](crate::error::CreateFleetError)
     pub fn create_fleet(&self) -> fluent_builders::CreateFleet<C, M, R> {
         fluent_builders::CreateFleet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRobot` operation.
+    /// Constructs a fluent builder for the [`CreateRobot`](crate::client::fluent_builders::CreateRobot) operation.
     ///
-    /// See [`CreateRobot`](crate::client::fluent_builders::CreateRobot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRobot::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRobot::set_name): <p>The name for the robot.</p>
+    ///   - [`architecture(Architecture)`](crate::client::fluent_builders::CreateRobot::architecture) / [`set_architecture(Option<Architecture>)`](crate::client::fluent_builders::CreateRobot::set_architecture): <p>The target architecture of the robot.</p>
+    ///   - [`greengrass_group_id(impl Into<String>)`](crate::client::fluent_builders::CreateRobot::greengrass_group_id) / [`set_greengrass_group_id(Option<String>)`](crate::client::fluent_builders::CreateRobot::set_greengrass_group_id): <p>The Greengrass group id.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRobot::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRobot::set_tags): <p>A map that contains tag keys and tag values that are attached to the robot.</p>
+    /// - On success, responds with [`CreateRobotOutput`](crate::output::CreateRobotOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateRobotOutput::arn): <p>The Amazon Resource Name (ARN) of the robot.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateRobotOutput::name): <p>The name of the robot.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateRobotOutput::created_at): <p>The time, in milliseconds since the epoch, when the robot was created.</p>
+    ///   - [`greengrass_group_id(Option<String>)`](crate::output::CreateRobotOutput::greengrass_group_id): <p>The Amazon Resource Name (ARN) of the Greengrass group associated with the robot.</p>
+    ///   - [`architecture(Option<Architecture>)`](crate::output::CreateRobotOutput::architecture): <p>The target architecture of the robot.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRobotOutput::tags): <p>The list of all tags added to the robot.</p>
+    /// - On failure, responds with [`SdkError<CreateRobotError>`](crate::error::CreateRobotError)
     pub fn create_robot(&self) -> fluent_builders::CreateRobot<C, M, R> {
         fluent_builders::CreateRobot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRobotApplication` operation.
+    /// Constructs a fluent builder for the [`CreateRobotApplication`](crate::client::fluent_builders::CreateRobotApplication) operation.
     ///
-    /// See [`CreateRobotApplication`](crate::client::fluent_builders::CreateRobotApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRobotApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRobotApplication::set_name): <p>The name of the robot application.</p>
+    ///   - [`sources(Vec<SourceConfig>)`](crate::client::fluent_builders::CreateRobotApplication::sources) / [`set_sources(Option<Vec<SourceConfig>>)`](crate::client::fluent_builders::CreateRobotApplication::set_sources): <p>The sources of the robot application.</p>
+    ///   - [`robot_software_suite(RobotSoftwareSuite)`](crate::client::fluent_builders::CreateRobotApplication::robot_software_suite) / [`set_robot_software_suite(Option<RobotSoftwareSuite>)`](crate::client::fluent_builders::CreateRobotApplication::set_robot_software_suite): <p>The robot software suite (ROS distribuition) used by the robot application.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRobotApplication::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRobotApplication::set_tags): <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
+    ///   - [`environment(Environment)`](crate::client::fluent_builders::CreateRobotApplication::environment) / [`set_environment(Option<Environment>)`](crate::client::fluent_builders::CreateRobotApplication::set_environment): <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
+    /// - On success, responds with [`CreateRobotApplicationOutput`](crate::output::CreateRobotApplicationOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateRobotApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateRobotApplicationOutput::name): <p>The name of the robot application.</p>
+    ///   - [`version(Option<String>)`](crate::output::CreateRobotApplicationOutput::version): <p>The version of the robot application.</p>
+    ///   - [`sources(Option<Vec<Source>>)`](crate::output::CreateRobotApplicationOutput::sources): <p>The sources of the robot application.</p>
+    ///   - [`robot_software_suite(Option<RobotSoftwareSuite>)`](crate::output::CreateRobotApplicationOutput::robot_software_suite): <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::CreateRobotApplicationOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::CreateRobotApplicationOutput::revision_id): <p>The revision id of the robot application.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRobotApplicationOutput::tags): <p>The list of all tags added to the robot application.</p>
+    ///   - [`environment(Option<Environment>)`](crate::output::CreateRobotApplicationOutput::environment): <p>An object that contains the Docker image URI used to a create your robot application.</p>
+    /// - On failure, responds with [`SdkError<CreateRobotApplicationError>`](crate::error::CreateRobotApplicationError)
     pub fn create_robot_application(&self) -> fluent_builders::CreateRobotApplication<C, M, R> {
         fluent_builders::CreateRobotApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRobotApplicationVersion` operation.
+    /// Constructs a fluent builder for the [`CreateRobotApplicationVersion`](crate::client::fluent_builders::CreateRobotApplicationVersion) operation.
     ///
-    /// See [`CreateRobotApplicationVersion`](crate::client::fluent_builders::CreateRobotApplicationVersion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::CreateRobotApplicationVersion::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::CreateRobotApplicationVersion::set_application): <p>The application information for the robot application.</p>
+    ///   - [`current_revision_id(impl Into<String>)`](crate::client::fluent_builders::CreateRobotApplicationVersion::current_revision_id) / [`set_current_revision_id(Option<String>)`](crate::client::fluent_builders::CreateRobotApplicationVersion::set_current_revision_id): <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
+    ///   - [`s3_etags(Vec<String>)`](crate::client::fluent_builders::CreateRobotApplicationVersion::s3_etags) / [`set_s3_etags(Option<Vec<String>>)`](crate::client::fluent_builders::CreateRobotApplicationVersion::set_s3_etags): <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
+    ///   - [`image_digest(impl Into<String>)`](crate::client::fluent_builders::CreateRobotApplicationVersion::image_digest) / [`set_image_digest(Option<String>)`](crate::client::fluent_builders::CreateRobotApplicationVersion::set_image_digest): <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
+    /// - On success, responds with [`CreateRobotApplicationVersionOutput`](crate::output::CreateRobotApplicationVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateRobotApplicationVersionOutput::arn): <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateRobotApplicationVersionOutput::name): <p>The name of the robot application.</p>
+    ///   - [`version(Option<String>)`](crate::output::CreateRobotApplicationVersionOutput::version): <p>The version of the robot application.</p>
+    ///   - [`sources(Option<Vec<Source>>)`](crate::output::CreateRobotApplicationVersionOutput::sources): <p>The sources of the robot application.</p>
+    ///   - [`robot_software_suite(Option<RobotSoftwareSuite>)`](crate::output::CreateRobotApplicationVersionOutput::robot_software_suite): <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::CreateRobotApplicationVersionOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::CreateRobotApplicationVersionOutput::revision_id): <p>The revision id of the robot application.</p>
+    ///   - [`environment(Option<Environment>)`](crate::output::CreateRobotApplicationVersionOutput::environment): <p>The object that contains the Docker image URI used to create your robot application.</p>
+    /// - On failure, responds with [`SdkError<CreateRobotApplicationVersionError>`](crate::error::CreateRobotApplicationVersionError)
     pub fn create_robot_application_version(
         &self,
     ) -> fluent_builders::CreateRobotApplicationVersion<C, M, R> {
         fluent_builders::CreateRobotApplicationVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSimulationApplication` operation.
+    /// Constructs a fluent builder for the [`CreateSimulationApplication`](crate::client::fluent_builders::CreateSimulationApplication) operation.
     ///
-    /// See [`CreateSimulationApplication`](crate::client::fluent_builders::CreateSimulationApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSimulationApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSimulationApplication::set_name): <p>The name of the simulation application.</p>
+    ///   - [`sources(Vec<SourceConfig>)`](crate::client::fluent_builders::CreateSimulationApplication::sources) / [`set_sources(Option<Vec<SourceConfig>>)`](crate::client::fluent_builders::CreateSimulationApplication::set_sources): <p>The sources of the simulation application.</p>
+    ///   - [`simulation_software_suite(SimulationSoftwareSuite)`](crate::client::fluent_builders::CreateSimulationApplication::simulation_software_suite) / [`set_simulation_software_suite(Option<SimulationSoftwareSuite>)`](crate::client::fluent_builders::CreateSimulationApplication::set_simulation_software_suite): <p>The simulation software suite used by the simulation application.</p>
+    ///   - [`robot_software_suite(RobotSoftwareSuite)`](crate::client::fluent_builders::CreateSimulationApplication::robot_software_suite) / [`set_robot_software_suite(Option<RobotSoftwareSuite>)`](crate::client::fluent_builders::CreateSimulationApplication::set_robot_software_suite): <p>The robot software suite (ROS distribution) used by the simulation application.</p>
+    ///   - [`rendering_engine(RenderingEngine)`](crate::client::fluent_builders::CreateSimulationApplication::rendering_engine) / [`set_rendering_engine(Option<RenderingEngine>)`](crate::client::fluent_builders::CreateSimulationApplication::set_rendering_engine): <p>The rendering engine for the simulation application.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSimulationApplication::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSimulationApplication::set_tags): <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
+    ///   - [`environment(Environment)`](crate::client::fluent_builders::CreateSimulationApplication::environment) / [`set_environment(Option<Environment>)`](crate::client::fluent_builders::CreateSimulationApplication::set_environment): <p>The object that contains the Docker image URI used to create your simulation application.</p>
+    /// - On success, responds with [`CreateSimulationApplicationOutput`](crate::output::CreateSimulationApplicationOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateSimulationApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the simulation application.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateSimulationApplicationOutput::name): <p>The name of the simulation application.</p>
+    ///   - [`version(Option<String>)`](crate::output::CreateSimulationApplicationOutput::version): <p>The version of the simulation application.</p>
+    ///   - [`sources(Option<Vec<Source>>)`](crate::output::CreateSimulationApplicationOutput::sources): <p>The sources of the simulation application.</p>
+    ///   - [`simulation_software_suite(Option<SimulationSoftwareSuite>)`](crate::output::CreateSimulationApplicationOutput::simulation_software_suite): <p>The simulation software suite used by the simulation application.</p>
+    ///   - [`robot_software_suite(Option<RobotSoftwareSuite>)`](crate::output::CreateSimulationApplicationOutput::robot_software_suite): <p>Information about the robot software suite (ROS distribution).</p>
+    ///   - [`rendering_engine(Option<RenderingEngine>)`](crate::output::CreateSimulationApplicationOutput::rendering_engine): <p>The rendering engine for the simulation application.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::CreateSimulationApplicationOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::CreateSimulationApplicationOutput::revision_id): <p>The revision id of the simulation application.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateSimulationApplicationOutput::tags): <p>The list of all tags added to the simulation application.</p>
+    ///   - [`environment(Option<Environment>)`](crate::output::CreateSimulationApplicationOutput::environment): <p>The object that contains the Docker image URI that you used to create your simulation application.</p>
+    /// - On failure, responds with [`SdkError<CreateSimulationApplicationError>`](crate::error::CreateSimulationApplicationError)
     pub fn create_simulation_application(
         &self,
     ) -> fluent_builders::CreateSimulationApplication<C, M, R> {
         fluent_builders::CreateSimulationApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSimulationApplicationVersion` operation.
+    /// Constructs a fluent builder for the [`CreateSimulationApplicationVersion`](crate::client::fluent_builders::CreateSimulationApplicationVersion) operation.
     ///
-    /// See [`CreateSimulationApplicationVersion`](crate::client::fluent_builders::CreateSimulationApplicationVersion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::CreateSimulationApplicationVersion::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::CreateSimulationApplicationVersion::set_application): <p>The application information for the simulation application.</p>
+    ///   - [`current_revision_id(impl Into<String>)`](crate::client::fluent_builders::CreateSimulationApplicationVersion::current_revision_id) / [`set_current_revision_id(Option<String>)`](crate::client::fluent_builders::CreateSimulationApplicationVersion::set_current_revision_id): <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
+    ///   - [`s3_etags(Vec<String>)`](crate::client::fluent_builders::CreateSimulationApplicationVersion::s3_etags) / [`set_s3_etags(Option<Vec<String>>)`](crate::client::fluent_builders::CreateSimulationApplicationVersion::set_s3_etags): <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
+    ///   - [`image_digest(impl Into<String>)`](crate::client::fluent_builders::CreateSimulationApplicationVersion::image_digest) / [`set_image_digest(Option<String>)`](crate::client::fluent_builders::CreateSimulationApplicationVersion::set_image_digest): <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
+    /// - On success, responds with [`CreateSimulationApplicationVersionOutput`](crate::output::CreateSimulationApplicationVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateSimulationApplicationVersionOutput::arn): <p>The Amazon Resource Name (ARN) of the simulation application.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateSimulationApplicationVersionOutput::name): <p>The name of the simulation application.</p>
+    ///   - [`version(Option<String>)`](crate::output::CreateSimulationApplicationVersionOutput::version): <p>The version of the simulation application.</p>
+    ///   - [`sources(Option<Vec<Source>>)`](crate::output::CreateSimulationApplicationVersionOutput::sources): <p>The sources of the simulation application.</p>
+    ///   - [`simulation_software_suite(Option<SimulationSoftwareSuite>)`](crate::output::CreateSimulationApplicationVersionOutput::simulation_software_suite): <p>The simulation software suite used by the simulation application.</p>
+    ///   - [`robot_software_suite(Option<RobotSoftwareSuite>)`](crate::output::CreateSimulationApplicationVersionOutput::robot_software_suite): <p>Information about the robot software suite (ROS distribution).</p>
+    ///   - [`rendering_engine(Option<RenderingEngine>)`](crate::output::CreateSimulationApplicationVersionOutput::rendering_engine): <p>The rendering engine for the simulation application.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::CreateSimulationApplicationVersionOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::CreateSimulationApplicationVersionOutput::revision_id): <p>The revision ID of the simulation application.</p>
+    ///   - [`environment(Option<Environment>)`](crate::output::CreateSimulationApplicationVersionOutput::environment): <p>The object that contains the Docker image URI used to create the simulation application.</p>
+    /// - On failure, responds with [`SdkError<CreateSimulationApplicationVersionError>`](crate::error::CreateSimulationApplicationVersionError)
     pub fn create_simulation_application_version(
         &self,
     ) -> fluent_builders::CreateSimulationApplicationVersion<C, M, R> {
         fluent_builders::CreateSimulationApplicationVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSimulationJob` operation.
+    /// Constructs a fluent builder for the [`CreateSimulationJob`](crate::client::fluent_builders::CreateSimulationJob) operation.
     ///
-    /// See [`CreateSimulationJob`](crate::client::fluent_builders::CreateSimulationJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateSimulationJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateSimulationJob::set_client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`output_location(OutputLocation)`](crate::client::fluent_builders::CreateSimulationJob::output_location) / [`set_output_location(Option<OutputLocation>)`](crate::client::fluent_builders::CreateSimulationJob::set_output_location): <p>Location for output files generated by the simulation job.</p>
+    ///   - [`logging_config(LoggingConfig)`](crate::client::fluent_builders::CreateSimulationJob::logging_config) / [`set_logging_config(Option<LoggingConfig>)`](crate::client::fluent_builders::CreateSimulationJob::set_logging_config): <p>The logging configuration.</p>
+    ///   - [`max_job_duration_in_seconds(i64)`](crate::client::fluent_builders::CreateSimulationJob::max_job_duration_in_seconds) / [`set_max_job_duration_in_seconds(i64)`](crate::client::fluent_builders::CreateSimulationJob::set_max_job_duration_in_seconds): <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
+    ///   - [`iam_role(impl Into<String>)`](crate::client::fluent_builders::CreateSimulationJob::iam_role) / [`set_iam_role(Option<String>)`](crate::client::fluent_builders::CreateSimulationJob::set_iam_role): <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
+    ///   - [`failure_behavior(FailureBehavior)`](crate::client::fluent_builders::CreateSimulationJob::failure_behavior) / [`set_failure_behavior(Option<FailureBehavior>)`](crate::client::fluent_builders::CreateSimulationJob::set_failure_behavior): <p>The failure behavior the simulation job.</p>  <dl>   <dt>   Continue  </dt>   <dd>    <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>   </dd>   <dt>   Fail  </dt>   <dd>    <p>Stop the simulation job and terminate the instance.</p>   </dd>  </dl>
+    ///   - [`robot_applications(Vec<RobotApplicationConfig>)`](crate::client::fluent_builders::CreateSimulationJob::robot_applications) / [`set_robot_applications(Option<Vec<RobotApplicationConfig>>)`](crate::client::fluent_builders::CreateSimulationJob::set_robot_applications): <p>The robot application to use in the simulation job.</p>
+    ///   - [`simulation_applications(Vec<SimulationApplicationConfig>)`](crate::client::fluent_builders::CreateSimulationJob::simulation_applications) / [`set_simulation_applications(Option<Vec<SimulationApplicationConfig>>)`](crate::client::fluent_builders::CreateSimulationJob::set_simulation_applications): <p>The simulation application to use in the simulation job.</p>
+    ///   - [`data_sources(Vec<DataSourceConfig>)`](crate::client::fluent_builders::CreateSimulationJob::data_sources) / [`set_data_sources(Option<Vec<DataSourceConfig>>)`](crate::client::fluent_builders::CreateSimulationJob::set_data_sources): <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>   <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>  </note>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSimulationJob::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSimulationJob::set_tags): <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
+    ///   - [`vpc_config(VpcConfig)`](crate::client::fluent_builders::CreateSimulationJob::vpc_config) / [`set_vpc_config(Option<VpcConfig>)`](crate::client::fluent_builders::CreateSimulationJob::set_vpc_config): <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>
+    ///   - [`compute(Compute)`](crate::client::fluent_builders::CreateSimulationJob::compute) / [`set_compute(Option<Compute>)`](crate::client::fluent_builders::CreateSimulationJob::set_compute): <p>Compute information for the simulation job.</p>
+    /// - On success, responds with [`CreateSimulationJobOutput`](crate::output::CreateSimulationJobOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateSimulationJobOutput::arn): <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+    ///   - [`status(Option<SimulationJobStatus>)`](crate::output::CreateSimulationJobOutput::status): <p>The status of the simulation job.</p>
+    ///   - [`last_started_at(Option<DateTime>)`](crate::output::CreateSimulationJobOutput::last_started_at): <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::CreateSimulationJobOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
+    ///   - [`failure_behavior(Option<FailureBehavior>)`](crate::output::CreateSimulationJobOutput::failure_behavior): <p>the failure behavior for the simulation job.</p>
+    ///   - [`failure_code(Option<SimulationJobErrorCode>)`](crate::output::CreateSimulationJobOutput::failure_code): <p>The failure code of the simulation job if it failed:</p>  <dl>   <dt>   InternalServiceError  </dt>   <dd>    <p>Internal service error.</p>   </dd>   <dt>   RobotApplicationCrash  </dt>   <dd>    <p>Robot application exited abnormally.</p>   </dd>   <dt>   SimulationApplicationCrash  </dt>   <dd>    <p> Simulation application exited abnormally.</p>   </dd>   <dt>   BadPermissionsRobotApplication  </dt>   <dd>    <p>Robot application bundle could not be downloaded.</p>   </dd>   <dt>   BadPermissionsSimulationApplication  </dt>   <dd>    <p>Simulation application bundle could not be downloaded.</p>   </dd>   <dt>   BadPermissionsS3Output  </dt>   <dd>    <p>Unable to publish outputs to customer-provided S3 bucket.</p>   </dd>   <dt>   BadPermissionsCloudwatchLogs  </dt>   <dd>    <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>   </dd>   <dt>   SubnetIpLimitExceeded  </dt>   <dd>    <p>Subnet IP limit exceeded.</p>   </dd>   <dt>   ENILimitExceeded  </dt>   <dd>    <p>ENI limit exceeded.</p>   </dd>   <dt>   BadPermissionsUserCredentials  </dt>   <dd>    <p>Unable to use the Role provided.</p>   </dd>   <dt>   InvalidBundleRobotApplication  </dt>   <dd>    <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>   </dd>   <dt>   InvalidBundleSimulationApplication  </dt>   <dd>    <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>   </dd>   <dt>   RobotApplicationVersionMismatchedEtag  </dt>   <dd>    <p>Etag for RobotApplication does not match value during version creation.</p>   </dd>   <dt>   SimulationApplicationVersionMismatchedEtag  </dt>   <dd>    <p>Etag for SimulationApplication does not match value during version creation.</p>   </dd>  </dl>
+    ///   - [`client_request_token(Option<String>)`](crate::output::CreateSimulationJobOutput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`output_location(Option<OutputLocation>)`](crate::output::CreateSimulationJobOutput::output_location): <p>Simulation job output files location.</p>
+    ///   - [`logging_config(Option<LoggingConfig>)`](crate::output::CreateSimulationJobOutput::logging_config): <p>The logging configuration.</p>
+    ///   - [`max_job_duration_in_seconds(i64)`](crate::output::CreateSimulationJobOutput::max_job_duration_in_seconds): <p>The maximum simulation job duration in seconds. </p>
+    ///   - [`simulation_time_millis(i64)`](crate::output::CreateSimulationJobOutput::simulation_time_millis): <p>The simulation job execution duration in milliseconds.</p>
+    ///   - [`iam_role(Option<String>)`](crate::output::CreateSimulationJobOutput::iam_role): <p>The IAM role that allows the simulation job to call the AWS APIs that are specified in its associated policies on your behalf.</p>
+    ///   - [`robot_applications(Option<Vec<RobotApplicationConfig>>)`](crate::output::CreateSimulationJobOutput::robot_applications): <p>The robot application used by the simulation job.</p>
+    ///   - [`simulation_applications(Option<Vec<SimulationApplicationConfig>>)`](crate::output::CreateSimulationJobOutput::simulation_applications): <p>The simulation application used by the simulation job.</p>
+    ///   - [`data_sources(Option<Vec<DataSource>>)`](crate::output::CreateSimulationJobOutput::data_sources): <p>The data sources for the simulation job.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateSimulationJobOutput::tags): <p>The list of all tags added to the simulation job.</p>
+    ///   - [`vpc_config(Option<VpcConfigResponse>)`](crate::output::CreateSimulationJobOutput::vpc_config): <p>Information about the vpc configuration.</p>
+    ///   - [`compute(Option<ComputeResponse>)`](crate::output::CreateSimulationJobOutput::compute): <p>Compute information for the simulation job.</p>
+    /// - On failure, responds with [`SdkError<CreateSimulationJobError>`](crate::error::CreateSimulationJobError)
     pub fn create_simulation_job(&self) -> fluent_builders::CreateSimulationJob<C, M, R> {
         fluent_builders::CreateSimulationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWorldExportJob` operation.
+    /// Constructs a fluent builder for the [`CreateWorldExportJob`](crate::client::fluent_builders::CreateWorldExportJob) operation.
     ///
-    /// See [`CreateWorldExportJob`](crate::client::fluent_builders::CreateWorldExportJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateWorldExportJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateWorldExportJob::set_client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`worlds(Vec<String>)`](crate::client::fluent_builders::CreateWorldExportJob::worlds) / [`set_worlds(Option<Vec<String>>)`](crate::client::fluent_builders::CreateWorldExportJob::set_worlds): <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
+    ///   - [`output_location(OutputLocation)`](crate::client::fluent_builders::CreateWorldExportJob::output_location) / [`set_output_location(Option<OutputLocation>)`](crate::client::fluent_builders::CreateWorldExportJob::set_output_location): <p>The output location.</p>
+    ///   - [`iam_role(impl Into<String>)`](crate::client::fluent_builders::CreateWorldExportJob::iam_role) / [`set_iam_role(Option<String>)`](crate::client::fluent_builders::CreateWorldExportJob::set_iam_role): <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateWorldExportJob::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateWorldExportJob::set_tags): <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
+    /// - On success, responds with [`CreateWorldExportJobOutput`](crate::output::CreateWorldExportJobOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateWorldExportJobOutput::arn): <p>The Amazon Resource Name (ARN) of the world export job.</p>
+    ///   - [`status(Option<WorldExportJobStatus>)`](crate::output::CreateWorldExportJobOutput::status): <p>The status of the world export job.</p>  <dl>   <dt>   Pending  </dt>   <dd>    <p>The world export job request is pending.</p>   </dd>   <dt>   Running  </dt>   <dd>    <p>The world export job is running. </p>   </dd>   <dt>   Completed  </dt>   <dd>    <p>The world export job completed. </p>   </dd>   <dt>   Failed  </dt>   <dd>    <p>The world export job failed. See <code>failureCode</code> for more information. </p>   </dd>   <dt>   Canceled  </dt>   <dd>    <p>The world export job was cancelled.</p>   </dd>   <dt>   Canceling  </dt>   <dd>    <p>The world export job is being cancelled.</p>   </dd>  </dl>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateWorldExportJobOutput::created_at): <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
+    ///   - [`failure_code(Option<WorldExportJobErrorCode>)`](crate::output::CreateWorldExportJobOutput::failure_code): <p>The failure code of the world export job if it failed:</p>  <dl>   <dt>   InternalServiceError  </dt>   <dd>    <p>Internal service error.</p>   </dd>   <dt>   LimitExceeded  </dt>   <dd>    <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>   </dd>   <dt>   ResourceNotFound  </dt>   <dd>    <p>The specified resource could not be found. </p>   </dd>   <dt>   RequestThrottled  </dt>   <dd>    <p>The request was throttled.</p>   </dd>   <dt>   InvalidInput  </dt>   <dd>    <p>An input parameter in the request is not valid.</p>   </dd>   <dt>   AllWorldGenerationFailed  </dt>   <dd>    <p>All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code> is greater than 50 or less than 1. </p>   </dd>  </dl>  <p>For more information about troubleshooting WorldForge, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting-worldforge.html">Troubleshooting Simulation WorldForge</a>. </p>
+    ///   - [`client_request_token(Option<String>)`](crate::output::CreateWorldExportJobOutput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`output_location(Option<OutputLocation>)`](crate::output::CreateWorldExportJobOutput::output_location): <p>The output location.</p>
+    ///   - [`iam_role(Option<String>)`](crate::output::CreateWorldExportJobOutput::iam_role): <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateWorldExportJobOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
+    /// - On failure, responds with [`SdkError<CreateWorldExportJobError>`](crate::error::CreateWorldExportJobError)
     pub fn create_world_export_job(&self) -> fluent_builders::CreateWorldExportJob<C, M, R> {
         fluent_builders::CreateWorldExportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWorldGenerationJob` operation.
+    /// Constructs a fluent builder for the [`CreateWorldGenerationJob`](crate::client::fluent_builders::CreateWorldGenerationJob) operation.
     ///
-    /// See [`CreateWorldGenerationJob`](crate::client::fluent_builders::CreateWorldGenerationJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateWorldGenerationJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateWorldGenerationJob::set_client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`template(impl Into<String>)`](crate::client::fluent_builders::CreateWorldGenerationJob::template) / [`set_template(Option<String>)`](crate::client::fluent_builders::CreateWorldGenerationJob::set_template): <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
+    ///   - [`world_count(WorldCount)`](crate::client::fluent_builders::CreateWorldGenerationJob::world_count) / [`set_world_count(Option<WorldCount>)`](crate::client::fluent_builders::CreateWorldGenerationJob::set_world_count): <p>Information about the world count.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateWorldGenerationJob::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateWorldGenerationJob::set_tags): <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
+    ///   - [`world_tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateWorldGenerationJob::world_tags) / [`set_world_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateWorldGenerationJob::set_world_tags): <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
+    /// - On success, responds with [`CreateWorldGenerationJobOutput`](crate::output::CreateWorldGenerationJobOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateWorldGenerationJobOutput::arn): <p>The Amazon Resource Name (ARN) of the world generator job.</p>
+    ///   - [`status(Option<WorldGenerationJobStatus>)`](crate::output::CreateWorldGenerationJobOutput::status): <p>The status of the world generator job.</p>  <dl>   <dt>   Pending  </dt>   <dd>    <p>The world generator job request is pending.</p>   </dd>   <dt>   Running  </dt>   <dd>    <p>The world generator job is running. </p>   </dd>   <dt>   Completed  </dt>   <dd>    <p>The world generator job completed. </p>   </dd>   <dt>   Failed  </dt>   <dd>    <p>The world generator job failed. See <code>failureCode</code> for more information. </p>   </dd>   <dt>   PartialFailed  </dt>   <dd>    <p>Some worlds did not generate.</p>   </dd>   <dt>   Canceled  </dt>   <dd>    <p>The world generator job was cancelled.</p>   </dd>   <dt>   Canceling  </dt>   <dd>    <p>The world generator job is being cancelled.</p>   </dd>  </dl>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateWorldGenerationJobOutput::created_at): <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
+    ///   - [`failure_code(Option<WorldGenerationJobErrorCode>)`](crate::output::CreateWorldGenerationJobOutput::failure_code): <p>The failure code of the world generator job if it failed:</p>  <dl>   <dt>   InternalServiceError  </dt>   <dd>    <p>Internal service error.</p>   </dd>   <dt>   LimitExceeded  </dt>   <dd>    <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>   </dd>   <dt>   ResourceNotFound  </dt>   <dd>    <p>The specified resource could not be found. </p>   </dd>   <dt>   RequestThrottled  </dt>   <dd>    <p>The request was throttled.</p>   </dd>   <dt>   InvalidInput  </dt>   <dd>    <p>An input parameter in the request is not valid.</p>   </dd>  </dl>
+    ///   - [`client_request_token(Option<String>)`](crate::output::CreateWorldGenerationJobOutput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`template(Option<String>)`](crate::output::CreateWorldGenerationJobOutput::template): <p>The Amazon Resource Name (arn) of the world template.</p>
+    ///   - [`world_count(Option<WorldCount>)`](crate::output::CreateWorldGenerationJobOutput::world_count): <p>Information about the world count. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateWorldGenerationJobOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
+    ///   - [`world_tags(Option<HashMap<String, String>>)`](crate::output::CreateWorldGenerationJobOutput::world_tags): <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
+    /// - On failure, responds with [`SdkError<CreateWorldGenerationJobError>`](crate::error::CreateWorldGenerationJobError)
     pub fn create_world_generation_job(
         &self,
     ) -> fluent_builders::CreateWorldGenerationJob<C, M, R> {
         fluent_builders::CreateWorldGenerationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWorldTemplate` operation.
+    /// Constructs a fluent builder for the [`CreateWorldTemplate`](crate::client::fluent_builders::CreateWorldTemplate) operation.
     ///
-    /// See [`CreateWorldTemplate`](crate::client::fluent_builders::CreateWorldTemplate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateWorldTemplate::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateWorldTemplate::set_client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWorldTemplate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWorldTemplate::set_name): <p>The name of the world template.</p>
+    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::CreateWorldTemplate::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::CreateWorldTemplate::set_template_body): <p>The world template body.</p>
+    ///   - [`template_location(TemplateLocation)`](crate::client::fluent_builders::CreateWorldTemplate::template_location) / [`set_template_location(Option<TemplateLocation>)`](crate::client::fluent_builders::CreateWorldTemplate::set_template_location): <p>The location of the world template.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateWorldTemplate::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateWorldTemplate::set_tags): <p>A map that contains tag keys and tag values that are attached to the world template.</p>
+    /// - On success, responds with [`CreateWorldTemplateOutput`](crate::output::CreateWorldTemplateOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateWorldTemplateOutput::arn): <p>The Amazon Resource Name (ARN) of the world template.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::output::CreateWorldTemplateOutput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateWorldTemplateOutput::created_at): <p>The time, in milliseconds since the epoch, when the world template was created.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateWorldTemplateOutput::name): <p>The name of the world template.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateWorldTemplateOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world template.</p>
+    /// - On failure, responds with [`SdkError<CreateWorldTemplateError>`](crate::error::CreateWorldTemplateError)
     pub fn create_world_template(&self) -> fluent_builders::CreateWorldTemplate<C, M, R> {
         fluent_builders::CreateWorldTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFleet` operation.
+    /// Constructs a fluent builder for the [`DeleteFleet`](crate::client::fluent_builders::DeleteFleet) operation.
     ///
-    /// See [`DeleteFleet`](crate::client::fluent_builders::DeleteFleet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`fleet(impl Into<String>)`](crate::client::fluent_builders::DeleteFleet::fleet) / [`set_fleet(Option<String>)`](crate::client::fluent_builders::DeleteFleet::set_fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// - On success, responds with [`DeleteFleetOutput`](crate::output::DeleteFleetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFleetError>`](crate::error::DeleteFleetError)
     pub fn delete_fleet(&self) -> fluent_builders::DeleteFleet<C, M, R> {
         fluent_builders::DeleteFleet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRobot` operation.
+    /// Constructs a fluent builder for the [`DeleteRobot`](crate::client::fluent_builders::DeleteRobot) operation.
     ///
-    /// See [`DeleteRobot`](crate::client::fluent_builders::DeleteRobot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`robot(impl Into<String>)`](crate::client::fluent_builders::DeleteRobot::robot) / [`set_robot(Option<String>)`](crate::client::fluent_builders::DeleteRobot::set_robot): <p>The Amazon Resource Name (ARN) of the robot.</p>
+    /// - On success, responds with [`DeleteRobotOutput`](crate::output::DeleteRobotOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRobotError>`](crate::error::DeleteRobotError)
     pub fn delete_robot(&self) -> fluent_builders::DeleteRobot<C, M, R> {
         fluent_builders::DeleteRobot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRobotApplication` operation.
+    /// Constructs a fluent builder for the [`DeleteRobotApplication`](crate::client::fluent_builders::DeleteRobotApplication) operation.
     ///
-    /// See [`DeleteRobotApplication`](crate::client::fluent_builders::DeleteRobotApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::DeleteRobotApplication::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::DeleteRobotApplication::set_application): <p>The Amazon Resource Name (ARN) of the the robot application.</p>
+    ///   - [`application_version(impl Into<String>)`](crate::client::fluent_builders::DeleteRobotApplication::application_version) / [`set_application_version(Option<String>)`](crate::client::fluent_builders::DeleteRobotApplication::set_application_version): <p>The version of the robot application to delete.</p>
+    /// - On success, responds with [`DeleteRobotApplicationOutput`](crate::output::DeleteRobotApplicationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRobotApplicationError>`](crate::error::DeleteRobotApplicationError)
     pub fn delete_robot_application(&self) -> fluent_builders::DeleteRobotApplication<C, M, R> {
         fluent_builders::DeleteRobotApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSimulationApplication` operation.
+    /// Constructs a fluent builder for the [`DeleteSimulationApplication`](crate::client::fluent_builders::DeleteSimulationApplication) operation.
     ///
-    /// See [`DeleteSimulationApplication`](crate::client::fluent_builders::DeleteSimulationApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::DeleteSimulationApplication::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::DeleteSimulationApplication::set_application): <p>The application information for the simulation application to delete.</p>
+    ///   - [`application_version(impl Into<String>)`](crate::client::fluent_builders::DeleteSimulationApplication::application_version) / [`set_application_version(Option<String>)`](crate::client::fluent_builders::DeleteSimulationApplication::set_application_version): <p>The version of the simulation application to delete.</p>
+    /// - On success, responds with [`DeleteSimulationApplicationOutput`](crate::output::DeleteSimulationApplicationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSimulationApplicationError>`](crate::error::DeleteSimulationApplicationError)
     pub fn delete_simulation_application(
         &self,
     ) -> fluent_builders::DeleteSimulationApplication<C, M, R> {
         fluent_builders::DeleteSimulationApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWorldTemplate` operation.
+    /// Constructs a fluent builder for the [`DeleteWorldTemplate`](crate::client::fluent_builders::DeleteWorldTemplate) operation.
     ///
-    /// See [`DeleteWorldTemplate`](crate::client::fluent_builders::DeleteWorldTemplate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`template(impl Into<String>)`](crate::client::fluent_builders::DeleteWorldTemplate::template) / [`set_template(Option<String>)`](crate::client::fluent_builders::DeleteWorldTemplate::set_template): <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
+    /// - On success, responds with [`DeleteWorldTemplateOutput`](crate::output::DeleteWorldTemplateOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWorldTemplateError>`](crate::error::DeleteWorldTemplateError)
     pub fn delete_world_template(&self) -> fluent_builders::DeleteWorldTemplate<C, M, R> {
         fluent_builders::DeleteWorldTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterRobot` operation.
+    /// Constructs a fluent builder for the [`DeregisterRobot`](crate::client::fluent_builders::DeregisterRobot) operation.
     ///
-    /// See [`DeregisterRobot`](crate::client::fluent_builders::DeregisterRobot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`fleet(impl Into<String>)`](crate::client::fluent_builders::DeregisterRobot::fleet) / [`set_fleet(Option<String>)`](crate::client::fluent_builders::DeregisterRobot::set_fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`robot(impl Into<String>)`](crate::client::fluent_builders::DeregisterRobot::robot) / [`set_robot(Option<String>)`](crate::client::fluent_builders::DeregisterRobot::set_robot): <p>The Amazon Resource Name (ARN) of the robot.</p>
+    /// - On success, responds with [`DeregisterRobotOutput`](crate::output::DeregisterRobotOutput) with field(s):
+    ///   - [`fleet(Option<String>)`](crate::output::DeregisterRobotOutput::fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`robot(Option<String>)`](crate::output::DeregisterRobotOutput::robot): <p>The Amazon Resource Name (ARN) of the robot.</p>
+    /// - On failure, responds with [`SdkError<DeregisterRobotError>`](crate::error::DeregisterRobotError)
     pub fn deregister_robot(&self) -> fluent_builders::DeregisterRobot<C, M, R> {
         fluent_builders::DeregisterRobot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDeploymentJob` operation.
+    /// Constructs a fluent builder for the [`DescribeDeploymentJob`](crate::client::fluent_builders::DescribeDeploymentJob) operation.
     ///
-    /// See [`DescribeDeploymentJob`](crate::client::fluent_builders::DescribeDeploymentJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job(impl Into<String>)`](crate::client::fluent_builders::DescribeDeploymentJob::job) / [`set_job(Option<String>)`](crate::client::fluent_builders::DescribeDeploymentJob::set_job): <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    /// - On success, responds with [`DescribeDeploymentJobOutput`](crate::output::DescribeDeploymentJobOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeDeploymentJobOutput::arn): <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    ///   - [`fleet(Option<String>)`](crate::output::DescribeDeploymentJobOutput::fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`status(Option<DeploymentStatus>)`](crate::output::DescribeDeploymentJobOutput::status): <p>The status of the deployment job.</p>
+    ///   - [`deployment_config(Option<DeploymentConfig>)`](crate::output::DescribeDeploymentJobOutput::deployment_config): <p>The deployment configuration.</p>
+    ///   - [`deployment_application_configs(Option<Vec<DeploymentApplicationConfig>>)`](crate::output::DescribeDeploymentJobOutput::deployment_application_configs): <p>The deployment application configuration.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::DescribeDeploymentJobOutput::failure_reason): <p>A short description of the reason why the deployment job failed.</p>
+    ///   - [`failure_code(Option<DeploymentJobErrorCode>)`](crate::output::DescribeDeploymentJobOutput::failure_code): <p>The deployment job failure code.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeDeploymentJobOutput::created_at): <p>The time, in milliseconds since the epoch, when the deployment job was created.</p>
+    ///   - [`robot_deployment_summary(Option<Vec<RobotDeployment>>)`](crate::output::DescribeDeploymentJobOutput::robot_deployment_summary): <p>A list of robot deployment summaries.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeDeploymentJobOutput::tags): <p>The list of all tags added to the specified deployment job.</p>
+    /// - On failure, responds with [`SdkError<DescribeDeploymentJobError>`](crate::error::DescribeDeploymentJobError)
     pub fn describe_deployment_job(&self) -> fluent_builders::DescribeDeploymentJob<C, M, R> {
         fluent_builders::DescribeDeploymentJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFleet` operation.
+    /// Constructs a fluent builder for the [`DescribeFleet`](crate::client::fluent_builders::DescribeFleet) operation.
     ///
-    /// See [`DescribeFleet`](crate::client::fluent_builders::DescribeFleet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`fleet(impl Into<String>)`](crate::client::fluent_builders::DescribeFleet::fleet) / [`set_fleet(Option<String>)`](crate::client::fluent_builders::DescribeFleet::set_fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// - On success, responds with [`DescribeFleetOutput`](crate::output::DescribeFleetOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DescribeFleetOutput::name): <p>The name of the fleet.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DescribeFleetOutput::arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`robots(Option<Vec<Robot>>)`](crate::output::DescribeFleetOutput::robots): <p>A list of robots.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeFleetOutput::created_at): <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
+    ///   - [`last_deployment_status(Option<DeploymentStatus>)`](crate::output::DescribeFleetOutput::last_deployment_status): <p>The status of the last deployment.</p>
+    ///   - [`last_deployment_job(Option<String>)`](crate::output::DescribeFleetOutput::last_deployment_job): <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
+    ///   - [`last_deployment_time(Option<DateTime>)`](crate::output::DescribeFleetOutput::last_deployment_time): <p>The time of the last deployment.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeFleetOutput::tags): <p>The list of all tags added to the specified fleet.</p>
+    /// - On failure, responds with [`SdkError<DescribeFleetError>`](crate::error::DescribeFleetError)
     pub fn describe_fleet(&self) -> fluent_builders::DescribeFleet<C, M, R> {
         fluent_builders::DescribeFleet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRobot` operation.
+    /// Constructs a fluent builder for the [`DescribeRobot`](crate::client::fluent_builders::DescribeRobot) operation.
     ///
-    /// See [`DescribeRobot`](crate::client::fluent_builders::DescribeRobot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`robot(impl Into<String>)`](crate::client::fluent_builders::DescribeRobot::robot) / [`set_robot(Option<String>)`](crate::client::fluent_builders::DescribeRobot::set_robot): <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
+    /// - On success, responds with [`DescribeRobotOutput`](crate::output::DescribeRobotOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeRobotOutput::arn): <p>The Amazon Resource Name (ARN) of the robot.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeRobotOutput::name): <p>The name of the robot.</p>
+    ///   - [`fleet_arn(Option<String>)`](crate::output::DescribeRobotOutput::fleet_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`status(Option<RobotStatus>)`](crate::output::DescribeRobotOutput::status): <p>The status of the fleet.</p>
+    ///   - [`greengrass_group_id(Option<String>)`](crate::output::DescribeRobotOutput::greengrass_group_id): <p>The Greengrass group id.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeRobotOutput::created_at): <p>The time, in milliseconds since the epoch, when the robot was created.</p>
+    ///   - [`architecture(Option<Architecture>)`](crate::output::DescribeRobotOutput::architecture): <p>The target architecture of the robot application.</p>
+    ///   - [`last_deployment_job(Option<String>)`](crate::output::DescribeRobotOutput::last_deployment_job): <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
+    ///   - [`last_deployment_time(Option<DateTime>)`](crate::output::DescribeRobotOutput::last_deployment_time): <p>The time of the last deployment job.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeRobotOutput::tags): <p>The list of all tags added to the specified robot.</p>
+    /// - On failure, responds with [`SdkError<DescribeRobotError>`](crate::error::DescribeRobotError)
     pub fn describe_robot(&self) -> fluent_builders::DescribeRobot<C, M, R> {
         fluent_builders::DescribeRobot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRobotApplication` operation.
+    /// Constructs a fluent builder for the [`DescribeRobotApplication`](crate::client::fluent_builders::DescribeRobotApplication) operation.
     ///
-    /// See [`DescribeRobotApplication`](crate::client::fluent_builders::DescribeRobotApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::DescribeRobotApplication::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::DescribeRobotApplication::set_application): <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    ///   - [`application_version(impl Into<String>)`](crate::client::fluent_builders::DescribeRobotApplication::application_version) / [`set_application_version(Option<String>)`](crate::client::fluent_builders::DescribeRobotApplication::set_application_version): <p>The version of the robot application to describe.</p>
+    /// - On success, responds with [`DescribeRobotApplicationOutput`](crate::output::DescribeRobotApplicationOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeRobotApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the robot application.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeRobotApplicationOutput::name): <p>The name of the robot application.</p>
+    ///   - [`version(Option<String>)`](crate::output::DescribeRobotApplicationOutput::version): <p>The version of the robot application.</p>
+    ///   - [`sources(Option<Vec<Source>>)`](crate::output::DescribeRobotApplicationOutput::sources): <p>The sources of the robot application.</p>
+    ///   - [`robot_software_suite(Option<RobotSoftwareSuite>)`](crate::output::DescribeRobotApplicationOutput::robot_software_suite): <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::DescribeRobotApplicationOutput::revision_id): <p>The revision id of the robot application.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::DescribeRobotApplicationOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeRobotApplicationOutput::tags): <p>The list of all tags added to the specified robot application.</p>
+    ///   - [`environment(Option<Environment>)`](crate::output::DescribeRobotApplicationOutput::environment): <p>The object that contains the Docker image URI used to create the robot application.</p>
+    ///   - [`image_digest(Option<String>)`](crate::output::DescribeRobotApplicationOutput::image_digest): <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
+    /// - On failure, responds with [`SdkError<DescribeRobotApplicationError>`](crate::error::DescribeRobotApplicationError)
     pub fn describe_robot_application(&self) -> fluent_builders::DescribeRobotApplication<C, M, R> {
         fluent_builders::DescribeRobotApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSimulationApplication` operation.
+    /// Constructs a fluent builder for the [`DescribeSimulationApplication`](crate::client::fluent_builders::DescribeSimulationApplication) operation.
     ///
-    /// See [`DescribeSimulationApplication`](crate::client::fluent_builders::DescribeSimulationApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::DescribeSimulationApplication::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::DescribeSimulationApplication::set_application): <p>The application information for the simulation application.</p>
+    ///   - [`application_version(impl Into<String>)`](crate::client::fluent_builders::DescribeSimulationApplication::application_version) / [`set_application_version(Option<String>)`](crate::client::fluent_builders::DescribeSimulationApplication::set_application_version): <p>The version of the simulation application to describe.</p>
+    /// - On success, responds with [`DescribeSimulationApplicationOutput`](crate::output::DescribeSimulationApplicationOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeSimulationApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the robot simulation application.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeSimulationApplicationOutput::name): <p>The name of the simulation application.</p>
+    ///   - [`version(Option<String>)`](crate::output::DescribeSimulationApplicationOutput::version): <p>The version of the simulation application.</p>
+    ///   - [`sources(Option<Vec<Source>>)`](crate::output::DescribeSimulationApplicationOutput::sources): <p>The sources of the simulation application.</p>
+    ///   - [`simulation_software_suite(Option<SimulationSoftwareSuite>)`](crate::output::DescribeSimulationApplicationOutput::simulation_software_suite): <p>The simulation software suite used by the simulation application.</p>
+    ///   - [`robot_software_suite(Option<RobotSoftwareSuite>)`](crate::output::DescribeSimulationApplicationOutput::robot_software_suite): <p>Information about the robot software suite (ROS distribution).</p>
+    ///   - [`rendering_engine(Option<RenderingEngine>)`](crate::output::DescribeSimulationApplicationOutput::rendering_engine): <p>The rendering engine for the simulation application.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::DescribeSimulationApplicationOutput::revision_id): <p>The revision id of the simulation application.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::DescribeSimulationApplicationOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeSimulationApplicationOutput::tags): <p>The list of all tags added to the specified simulation application.</p>
+    ///   - [`environment(Option<Environment>)`](crate::output::DescribeSimulationApplicationOutput::environment): <p>The object that contains the Docker image URI used to create the simulation application.</p>
+    ///   - [`image_digest(Option<String>)`](crate::output::DescribeSimulationApplicationOutput::image_digest): <p>A SHA256 identifier for the Docker image that you use for your simulation application.</p>
+    /// - On failure, responds with [`SdkError<DescribeSimulationApplicationError>`](crate::error::DescribeSimulationApplicationError)
     pub fn describe_simulation_application(
         &self,
     ) -> fluent_builders::DescribeSimulationApplication<C, M, R> {
         fluent_builders::DescribeSimulationApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSimulationJob` operation.
+    /// Constructs a fluent builder for the [`DescribeSimulationJob`](crate::client::fluent_builders::DescribeSimulationJob) operation.
     ///
-    /// See [`DescribeSimulationJob`](crate::client::fluent_builders::DescribeSimulationJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job(impl Into<String>)`](crate::client::fluent_builders::DescribeSimulationJob::job) / [`set_job(Option<String>)`](crate::client::fluent_builders::DescribeSimulationJob::set_job): <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
+    /// - On success, responds with [`DescribeSimulationJobOutput`](crate::output::DescribeSimulationJobOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeSimulationJobOutput::arn): <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeSimulationJobOutput::name): <p>The name of the simulation job.</p>
+    ///   - [`status(Option<SimulationJobStatus>)`](crate::output::DescribeSimulationJobOutput::status): <p>The status of the simulation job.</p>
+    ///   - [`last_started_at(Option<DateTime>)`](crate::output::DescribeSimulationJobOutput::last_started_at): <p>The time, in milliseconds since the epoch, when the simulation job was last started.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::DescribeSimulationJobOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
+    ///   - [`failure_behavior(Option<FailureBehavior>)`](crate::output::DescribeSimulationJobOutput::failure_behavior): <p>The failure behavior for the simulation job.</p>
+    ///   - [`failure_code(Option<SimulationJobErrorCode>)`](crate::output::DescribeSimulationJobOutput::failure_code): <p>The failure code of the simulation job if it failed:</p>  <dl>   <dt>   InternalServiceError  </dt>   <dd>    <p>Internal service error.</p>   </dd>   <dt>   RobotApplicationCrash  </dt>   <dd>    <p>Robot application exited abnormally.</p>   </dd>   <dt>   SimulationApplicationCrash  </dt>   <dd>    <p> Simulation application exited abnormally.</p>   </dd>   <dt>   BadPermissionsRobotApplication  </dt>   <dd>    <p>Robot application bundle could not be downloaded.</p>   </dd>   <dt>   BadPermissionsSimulationApplication  </dt>   <dd>    <p>Simulation application bundle could not be downloaded.</p>   </dd>   <dt>   BadPermissionsS3Output  </dt>   <dd>    <p>Unable to publish outputs to customer-provided S3 bucket.</p>   </dd>   <dt>   BadPermissionsCloudwatchLogs  </dt>   <dd>    <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>   </dd>   <dt>   SubnetIpLimitExceeded  </dt>   <dd>    <p>Subnet IP limit exceeded.</p>   </dd>   <dt>   ENILimitExceeded  </dt>   <dd>    <p>ENI limit exceeded.</p>   </dd>   <dt>   BadPermissionsUserCredentials  </dt>   <dd>    <p>Unable to use the Role provided.</p>   </dd>   <dt>   InvalidBundleRobotApplication  </dt>   <dd>    <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>   </dd>   <dt>   InvalidBundleSimulationApplication  </dt>   <dd>    <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>   </dd>   <dt>   RobotApplicationVersionMismatchedEtag  </dt>   <dd>    <p>Etag for RobotApplication does not match value during version creation.</p>   </dd>   <dt>   SimulationApplicationVersionMismatchedEtag  </dt>   <dd>    <p>Etag for SimulationApplication does not match value during version creation.</p>   </dd>  </dl>
+    ///   - [`failure_reason(Option<String>)`](crate::output::DescribeSimulationJobOutput::failure_reason): <p>Details about why the simulation job failed. For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/troubleshooting.html">Troubleshooting</a>.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::output::DescribeSimulationJobOutput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`output_location(Option<OutputLocation>)`](crate::output::DescribeSimulationJobOutput::output_location): <p>Location for output files generated by the simulation job.</p>
+    ///   - [`logging_config(Option<LoggingConfig>)`](crate::output::DescribeSimulationJobOutput::logging_config): <p>The logging configuration.</p>
+    ///   - [`max_job_duration_in_seconds(i64)`](crate::output::DescribeSimulationJobOutput::max_job_duration_in_seconds): <p>The maximum job duration in seconds. The value must be 8 days (691,200 seconds) or less.</p>
+    ///   - [`simulation_time_millis(i64)`](crate::output::DescribeSimulationJobOutput::simulation_time_millis): <p>The simulation job execution duration in milliseconds.</p>
+    ///   - [`iam_role(Option<String>)`](crate::output::DescribeSimulationJobOutput::iam_role): <p>The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf.</p>
+    ///   - [`robot_applications(Option<Vec<RobotApplicationConfig>>)`](crate::output::DescribeSimulationJobOutput::robot_applications): <p>A list of robot applications.</p>
+    ///   - [`simulation_applications(Option<Vec<SimulationApplicationConfig>>)`](crate::output::DescribeSimulationJobOutput::simulation_applications): <p>A list of simulation applications.</p>
+    ///   - [`data_sources(Option<Vec<DataSource>>)`](crate::output::DescribeSimulationJobOutput::data_sources): <p>The data sources for the simulation job.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeSimulationJobOutput::tags): <p>The list of all tags added to the specified simulation job.</p>
+    ///   - [`vpc_config(Option<VpcConfigResponse>)`](crate::output::DescribeSimulationJobOutput::vpc_config): <p>The VPC configuration.</p>
+    ///   - [`network_interface(Option<NetworkInterface>)`](crate::output::DescribeSimulationJobOutput::network_interface): <p>The network interface information for the simulation job.</p>
+    ///   - [`compute(Option<ComputeResponse>)`](crate::output::DescribeSimulationJobOutput::compute): <p>Compute information for the simulation job.</p>
+    /// - On failure, responds with [`SdkError<DescribeSimulationJobError>`](crate::error::DescribeSimulationJobError)
     pub fn describe_simulation_job(&self) -> fluent_builders::DescribeSimulationJob<C, M, R> {
         fluent_builders::DescribeSimulationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSimulationJobBatch` operation.
+    /// Constructs a fluent builder for the [`DescribeSimulationJobBatch`](crate::client::fluent_builders::DescribeSimulationJobBatch) operation.
     ///
-    /// See [`DescribeSimulationJobBatch`](crate::client::fluent_builders::DescribeSimulationJobBatch) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`batch(impl Into<String>)`](crate::client::fluent_builders::DescribeSimulationJobBatch::batch) / [`set_batch(Option<String>)`](crate::client::fluent_builders::DescribeSimulationJobBatch::set_batch): <p>The id of the batch to describe.</p>
+    /// - On success, responds with [`DescribeSimulationJobBatchOutput`](crate::output::DescribeSimulationJobBatchOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeSimulationJobBatchOutput::arn): <p>The Amazon Resource Name (ARN) of the batch.</p>
+    ///   - [`status(Option<SimulationJobBatchStatus>)`](crate::output::DescribeSimulationJobBatchOutput::status): <p>The status of the batch.</p>  <dl>   <dt>   Pending  </dt>   <dd>    <p>The simulation job batch request is pending.</p>   </dd>   <dt>   InProgress  </dt>   <dd>    <p>The simulation job batch is in progress. </p>   </dd>   <dt>   Failed  </dt>   <dd>    <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>   </dd>   <dt>   Completed  </dt>   <dd>    <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>   </dd>   <dt>   Canceled  </dt>   <dd>    <p>The simulation batch job was cancelled.</p>   </dd>   <dt>   Canceling  </dt>   <dd>    <p>The simulation batch job is being cancelled.</p>   </dd>   <dt>   Completing  </dt>   <dd>    <p>The simulation batch job is completing.</p>   </dd>   <dt>   TimingOut  </dt>   <dd>    <p>The simulation job batch is timing out.</p>    <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>   </dd>   <dt>   TimedOut  </dt>   <dd>    <p>The simulation batch job timed out.</p>   </dd>  </dl>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::DescribeSimulationJobBatchOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeSimulationJobBatchOutput::created_at): <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::output::DescribeSimulationJobBatchOutput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`batch_policy(Option<BatchPolicy>)`](crate::output::DescribeSimulationJobBatchOutput::batch_policy): <p>The batch policy.</p>
+    ///   - [`failure_code(Option<SimulationJobBatchErrorCode>)`](crate::output::DescribeSimulationJobBatchOutput::failure_code): <p>The failure code of the simulation job batch.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::DescribeSimulationJobBatchOutput::failure_reason): <p>The reason the simulation job batch failed.</p>
+    ///   - [`failed_requests(Option<Vec<FailedCreateSimulationJobRequest>>)`](crate::output::DescribeSimulationJobBatchOutput::failed_requests): <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
+    ///   - [`pending_requests(Option<Vec<SimulationJobRequest>>)`](crate::output::DescribeSimulationJobBatchOutput::pending_requests): <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
+    ///   - [`created_requests(Option<Vec<SimulationJobSummary>>)`](crate::output::DescribeSimulationJobBatchOutput::created_requests): <p>A list of created simulation job summaries.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeSimulationJobBatchOutput::tags): <p>A map that contains tag keys and tag values that are attached to the simulation job batch.</p>
+    /// - On failure, responds with [`SdkError<DescribeSimulationJobBatchError>`](crate::error::DescribeSimulationJobBatchError)
     pub fn describe_simulation_job_batch(
         &self,
     ) -> fluent_builders::DescribeSimulationJobBatch<C, M, R> {
         fluent_builders::DescribeSimulationJobBatch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorld` operation.
+    /// Constructs a fluent builder for the [`DescribeWorld`](crate::client::fluent_builders::DescribeWorld) operation.
     ///
-    /// See [`DescribeWorld`](crate::client::fluent_builders::DescribeWorld) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`world(impl Into<String>)`](crate::client::fluent_builders::DescribeWorld::world) / [`set_world(Option<String>)`](crate::client::fluent_builders::DescribeWorld::set_world): <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
+    /// - On success, responds with [`DescribeWorldOutput`](crate::output::DescribeWorldOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeWorldOutput::arn): <p>The Amazon Resource Name (arn) of the world.</p>
+    ///   - [`generation_job(Option<String>)`](crate::output::DescribeWorldOutput::generation_job): <p>The Amazon Resource Name (arn) of the world generation job that generated the world.</p>
+    ///   - [`template(Option<String>)`](crate::output::DescribeWorldOutput::template): <p>The world template.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeWorldOutput::created_at): <p>The time, in milliseconds since the epoch, when the world was created.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeWorldOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world.</p>
+    ///   - [`world_description_body(Option<String>)`](crate::output::DescribeWorldOutput::world_description_body): <p>Returns the JSON formatted string that describes the contents of your world.</p>
+    /// - On failure, responds with [`SdkError<DescribeWorldError>`](crate::error::DescribeWorldError)
     pub fn describe_world(&self) -> fluent_builders::DescribeWorld<C, M, R> {
         fluent_builders::DescribeWorld::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorldExportJob` operation.
+    /// Constructs a fluent builder for the [`DescribeWorldExportJob`](crate::client::fluent_builders::DescribeWorldExportJob) operation.
     ///
-    /// See [`DescribeWorldExportJob`](crate::client::fluent_builders::DescribeWorldExportJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job(impl Into<String>)`](crate::client::fluent_builders::DescribeWorldExportJob::job) / [`set_job(Option<String>)`](crate::client::fluent_builders::DescribeWorldExportJob::set_job): <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
+    /// - On success, responds with [`DescribeWorldExportJobOutput`](crate::output::DescribeWorldExportJobOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeWorldExportJobOutput::arn): <p>The Amazon Resource Name (ARN) of the world export job.</p>
+    ///   - [`status(Option<WorldExportJobStatus>)`](crate::output::DescribeWorldExportJobOutput::status): <p>The status of the world export job.</p>  <dl>   <dt>   Pending  </dt>   <dd>    <p>The world export job request is pending.</p>   </dd>   <dt>   Running  </dt>   <dd>    <p>The world export job is running. </p>   </dd>   <dt>   Completed  </dt>   <dd>    <p>The world export job completed. </p>   </dd>   <dt>   Failed  </dt>   <dd>    <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information. </p>   </dd>   <dt>   Canceled  </dt>   <dd>    <p>The world export job was cancelled.</p>   </dd>   <dt>   Canceling  </dt>   <dd>    <p>The world export job is being cancelled.</p>   </dd>  </dl>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeWorldExportJobOutput::created_at): <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
+    ///   - [`failure_code(Option<WorldExportJobErrorCode>)`](crate::output::DescribeWorldExportJobOutput::failure_code): <p>The failure code of the world export job if it failed:</p>  <dl>   <dt>   InternalServiceError  </dt>   <dd>    <p>Internal service error.</p>   </dd>   <dt>   LimitExceeded  </dt>   <dd>    <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>   </dd>   <dt>   ResourceNotFound  </dt>   <dd>    <p>The specified resource could not be found. </p>   </dd>   <dt>   RequestThrottled  </dt>   <dd>    <p>The request was throttled.</p>   </dd>   <dt>   InvalidInput  </dt>   <dd>    <p>An input parameter in the request is not valid.</p>   </dd>  </dl>
+    ///   - [`failure_reason(Option<String>)`](crate::output::DescribeWorldExportJobOutput::failure_reason): <p>The reason why the world export job failed.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::output::DescribeWorldExportJobOutput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`worlds(Option<Vec<String>>)`](crate::output::DescribeWorldExportJobOutput::worlds): <p>A list of Amazon Resource Names (arns) that correspond to worlds to be exported.</p>
+    ///   - [`output_location(Option<OutputLocation>)`](crate::output::DescribeWorldExportJobOutput::output_location): <p>The output location.</p>
+    ///   - [`iam_role(Option<String>)`](crate::output::DescribeWorldExportJobOutput::iam_role): <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeWorldExportJobOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
+    /// - On failure, responds with [`SdkError<DescribeWorldExportJobError>`](crate::error::DescribeWorldExportJobError)
     pub fn describe_world_export_job(&self) -> fluent_builders::DescribeWorldExportJob<C, M, R> {
         fluent_builders::DescribeWorldExportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorldGenerationJob` operation.
+    /// Constructs a fluent builder for the [`DescribeWorldGenerationJob`](crate::client::fluent_builders::DescribeWorldGenerationJob) operation.
     ///
-    /// See [`DescribeWorldGenerationJob`](crate::client::fluent_builders::DescribeWorldGenerationJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job(impl Into<String>)`](crate::client::fluent_builders::DescribeWorldGenerationJob::job) / [`set_job(Option<String>)`](crate::client::fluent_builders::DescribeWorldGenerationJob::set_job): <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
+    /// - On success, responds with [`DescribeWorldGenerationJobOutput`](crate::output::DescribeWorldGenerationJobOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeWorldGenerationJobOutput::arn): <p>The Amazon Resource Name (ARN) of the world generation job.</p>
+    ///   - [`status(Option<WorldGenerationJobStatus>)`](crate::output::DescribeWorldGenerationJobOutput::status): <p>The status of the world generation job:</p>  <dl>   <dt>   Pending  </dt>   <dd>    <p>The world generation job request is pending.</p>   </dd>   <dt>   Running  </dt>   <dd>    <p>The world generation job is running. </p>   </dd>   <dt>   Completed  </dt>   <dd>    <p>The world generation job completed. </p>   </dd>   <dt>   Failed  </dt>   <dd>    <p>The world generation job failed. See <code>failureCode</code> for more information. </p>   </dd>   <dt>   PartialFailed  </dt>   <dd>    <p>Some worlds did not generate.</p>   </dd>   <dt>   Canceled  </dt>   <dd>    <p>The world generation job was cancelled.</p>   </dd>   <dt>   Canceling  </dt>   <dd>    <p>The world generation job is being cancelled.</p>   </dd>  </dl>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeWorldGenerationJobOutput::created_at): <p>The time, in milliseconds since the epoch, when the world generation job was created.</p>
+    ///   - [`failure_code(Option<WorldGenerationJobErrorCode>)`](crate::output::DescribeWorldGenerationJobOutput::failure_code): <p>The failure code of the world generation job if it failed:</p>  <dl>   <dt>   InternalServiceError  </dt>   <dd>    <p>Internal service error.</p>   </dd>   <dt>   LimitExceeded  </dt>   <dd>    <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>   </dd>   <dt>   ResourceNotFound  </dt>   <dd>    <p>The specified resource could not be found. </p>   </dd>   <dt>   RequestThrottled  </dt>   <dd>    <p>The request was throttled.</p>   </dd>   <dt>   InvalidInput  </dt>   <dd>    <p>An input parameter in the request is not valid.</p>   </dd>  </dl>
+    ///   - [`failure_reason(Option<String>)`](crate::output::DescribeWorldGenerationJobOutput::failure_reason): <p>The reason why the world generation job failed.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::output::DescribeWorldGenerationJobOutput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`template(Option<String>)`](crate::output::DescribeWorldGenerationJobOutput::template): <p>The Amazon Resource Name (arn) of the world template.</p>
+    ///   - [`world_count(Option<WorldCount>)`](crate::output::DescribeWorldGenerationJobOutput::world_count): <p>Information about the world count.</p>
+    ///   - [`finished_worlds_summary(Option<FinishedWorldsSummary>)`](crate::output::DescribeWorldGenerationJobOutput::finished_worlds_summary): <p>Summary information about finished worlds.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeWorldGenerationJobOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world generation job.</p>
+    ///   - [`world_tags(Option<HashMap<String, String>>)`](crate::output::DescribeWorldGenerationJobOutput::world_tags): <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
+    /// - On failure, responds with [`SdkError<DescribeWorldGenerationJobError>`](crate::error::DescribeWorldGenerationJobError)
     pub fn describe_world_generation_job(
         &self,
     ) -> fluent_builders::DescribeWorldGenerationJob<C, M, R> {
         fluent_builders::DescribeWorldGenerationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorldTemplate` operation.
+    /// Constructs a fluent builder for the [`DescribeWorldTemplate`](crate::client::fluent_builders::DescribeWorldTemplate) operation.
     ///
-    /// See [`DescribeWorldTemplate`](crate::client::fluent_builders::DescribeWorldTemplate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`template(impl Into<String>)`](crate::client::fluent_builders::DescribeWorldTemplate::template) / [`set_template(Option<String>)`](crate::client::fluent_builders::DescribeWorldTemplate::set_template): <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
+    /// - On success, responds with [`DescribeWorldTemplateOutput`](crate::output::DescribeWorldTemplateOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeWorldTemplateOutput::arn): <p>The Amazon Resource Name (ARN) of the world template.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::output::DescribeWorldTemplateOutput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeWorldTemplateOutput::name): <p>The name of the world template.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeWorldTemplateOutput::created_at): <p>The time, in milliseconds since the epoch, when the world template was created.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::DescribeWorldTemplateOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeWorldTemplateOutput::tags): <p>A map that contains tag keys and tag values that are attached to the world template.</p>
+    ///   - [`version(Option<String>)`](crate::output::DescribeWorldTemplateOutput::version): <p>The version of the world template that you're using.</p>
+    /// - On failure, responds with [`SdkError<DescribeWorldTemplateError>`](crate::error::DescribeWorldTemplateError)
     pub fn describe_world_template(&self) -> fluent_builders::DescribeWorldTemplate<C, M, R> {
         fluent_builders::DescribeWorldTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetWorldTemplateBody` operation.
+    /// Constructs a fluent builder for the [`GetWorldTemplateBody`](crate::client::fluent_builders::GetWorldTemplateBody) operation.
     ///
-    /// See [`GetWorldTemplateBody`](crate::client::fluent_builders::GetWorldTemplateBody) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`template(impl Into<String>)`](crate::client::fluent_builders::GetWorldTemplateBody::template) / [`set_template(Option<String>)`](crate::client::fluent_builders::GetWorldTemplateBody::set_template): <p>The Amazon Resource Name (arn) of the world template.</p>
+    ///   - [`generation_job(impl Into<String>)`](crate::client::fluent_builders::GetWorldTemplateBody::generation_job) / [`set_generation_job(Option<String>)`](crate::client::fluent_builders::GetWorldTemplateBody::set_generation_job): <p>The Amazon Resource Name (arn) of the world generator job.</p>
+    /// - On success, responds with [`GetWorldTemplateBodyOutput`](crate::output::GetWorldTemplateBodyOutput) with field(s):
+    ///   - [`template_body(Option<String>)`](crate::output::GetWorldTemplateBodyOutput::template_body): <p>The world template body.</p>
+    /// - On failure, responds with [`SdkError<GetWorldTemplateBodyError>`](crate::error::GetWorldTemplateBodyError)
     pub fn get_world_template_body(&self) -> fluent_builders::GetWorldTemplateBody<C, M, R> {
         fluent_builders::GetWorldTemplateBody::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDeploymentJobs` operation.
+    /// Constructs a fluent builder for the [`ListDeploymentJobs`](crate::client::fluent_builders::ListDeploymentJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentJobs::into_paginator).
     ///
-    /// See [`ListDeploymentJobs`](crate::client::fluent_builders::ListDeploymentJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListDeploymentJobs::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListDeploymentJobs::set_filters): <p>Optional filters to limit results.</p>  <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeploymentJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeploymentJobs::set_next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDeploymentJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDeploymentJobs::set_max_results): <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
+    /// - On success, responds with [`ListDeploymentJobsOutput`](crate::output::ListDeploymentJobsOutput) with field(s):
+    ///   - [`deployment_jobs(Option<Vec<DeploymentJob>>)`](crate::output::ListDeploymentJobsOutput::deployment_jobs): <p>A list of deployment jobs that meet the criteria of the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDeploymentJobsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    /// - On failure, responds with [`SdkError<ListDeploymentJobsError>`](crate::error::ListDeploymentJobsError)
     pub fn list_deployment_jobs(&self) -> fluent_builders::ListDeploymentJobs<C, M, R> {
         fluent_builders::ListDeploymentJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFleets` operation.
+    /// Constructs a fluent builder for the [`ListFleets`](crate::client::fluent_builders::ListFleets) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFleets::into_paginator).
     ///
-    /// See [`ListFleets`](crate::client::fluent_builders::ListFleets) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFleets::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFleets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFleets::set_next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>   <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFleets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFleets::set_max_results): <p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListFleets::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListFleets::set_filters): <p>Optional filters to limit results.</p>  <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
+    /// - On success, responds with [`ListFleetsOutput`](crate::output::ListFleetsOutput) with field(s):
+    ///   - [`fleet_details(Option<Vec<Fleet>>)`](crate::output::ListFleetsOutput::fleet_details): <p>A list of fleet details meeting the request criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFleetsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    /// - On failure, responds with [`SdkError<ListFleetsError>`](crate::error::ListFleetsError)
     pub fn list_fleets(&self) -> fluent_builders::ListFleets<C, M, R> {
         fluent_builders::ListFleets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRobotApplications` operation.
+    /// Constructs a fluent builder for the [`ListRobotApplications`](crate::client::fluent_builders::ListRobotApplications) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRobotApplications::into_paginator).
     ///
-    /// See [`ListRobotApplications`](crate::client::fluent_builders::ListRobotApplications) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRobotApplications::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`version_qualifier(impl Into<String>)`](crate::client::fluent_builders::ListRobotApplications::version_qualifier) / [`set_version_qualifier(Option<String>)`](crate::client::fluent_builders::ListRobotApplications::set_version_qualifier): <p>The version qualifier of the robot application.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRobotApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRobotApplications::set_next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRobotApplications::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRobotApplications::set_max_results): <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListRobotApplications::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListRobotApplications::set_filters): <p>Optional filters to limit results.</p>  <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
+    /// - On success, responds with [`ListRobotApplicationsOutput`](crate::output::ListRobotApplicationsOutput) with field(s):
+    ///   - [`robot_application_summaries(Option<Vec<RobotApplicationSummary>>)`](crate::output::ListRobotApplicationsOutput::robot_application_summaries): <p>A list of robot application summaries that meet the criteria of the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRobotApplicationsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    /// - On failure, responds with [`SdkError<ListRobotApplicationsError>`](crate::error::ListRobotApplicationsError)
     pub fn list_robot_applications(&self) -> fluent_builders::ListRobotApplications<C, M, R> {
         fluent_builders::ListRobotApplications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRobots` operation.
+    /// Constructs a fluent builder for the [`ListRobots`](crate::client::fluent_builders::ListRobots) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRobots::into_paginator).
     ///
-    /// See [`ListRobots`](crate::client::fluent_builders::ListRobots) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRobots::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRobots::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRobots::set_next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRobots::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRobots::set_max_results): <p>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListRobots::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListRobots::set_filters): <p>Optional filters to limit results.</p>  <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
+    /// - On success, responds with [`ListRobotsOutput`](crate::output::ListRobotsOutput) with field(s):
+    ///   - [`robots(Option<Vec<Robot>>)`](crate::output::ListRobotsOutput::robots): <p>A list of robots that meet the criteria of the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRobotsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    /// - On failure, responds with [`SdkError<ListRobotsError>`](crate::error::ListRobotsError)
     pub fn list_robots(&self) -> fluent_builders::ListRobots<C, M, R> {
         fluent_builders::ListRobots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSimulationApplications` operation.
+    /// Constructs a fluent builder for the [`ListSimulationApplications`](crate::client::fluent_builders::ListSimulationApplications) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSimulationApplications::into_paginator).
     ///
-    /// See [`ListSimulationApplications`](crate::client::fluent_builders::ListSimulationApplications) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSimulationApplications::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`version_qualifier(impl Into<String>)`](crate::client::fluent_builders::ListSimulationApplications::version_qualifier) / [`set_version_qualifier(Option<String>)`](crate::client::fluent_builders::ListSimulationApplications::set_version_qualifier): <p>The version qualifier of the simulation application.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSimulationApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSimulationApplications::set_next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSimulationApplications::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSimulationApplications::set_max_results): <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListSimulationApplications::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListSimulationApplications::set_filters): <p>Optional list of filters to limit results.</p>  <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
+    /// - On success, responds with [`ListSimulationApplicationsOutput`](crate::output::ListSimulationApplicationsOutput) with field(s):
+    ///   - [`simulation_application_summaries(Option<Vec<SimulationApplicationSummary>>)`](crate::output::ListSimulationApplicationsOutput::simulation_application_summaries): <p>A list of simulation application summaries that meet the criteria of the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSimulationApplicationsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    /// - On failure, responds with [`SdkError<ListSimulationApplicationsError>`](crate::error::ListSimulationApplicationsError)
     pub fn list_simulation_applications(
         &self,
     ) -> fluent_builders::ListSimulationApplications<C, M, R> {
         fluent_builders::ListSimulationApplications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSimulationJobBatches` operation.
+    /// Constructs a fluent builder for the [`ListSimulationJobBatches`](crate::client::fluent_builders::ListSimulationJobBatches) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSimulationJobBatches::into_paginator).
     ///
-    /// See [`ListSimulationJobBatches`](crate::client::fluent_builders::ListSimulationJobBatches) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSimulationJobBatches::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSimulationJobBatches::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSimulationJobBatches::set_next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSimulationJobBatches::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSimulationJobBatches::set_max_results): <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListSimulationJobBatches::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListSimulationJobBatches::set_filters): <p>Optional filters to limit results.</p>
+    /// - On success, responds with [`ListSimulationJobBatchesOutput`](crate::output::ListSimulationJobBatchesOutput) with field(s):
+    ///   - [`simulation_job_batch_summaries(Option<Vec<SimulationJobBatchSummary>>)`](crate::output::ListSimulationJobBatchesOutput::simulation_job_batch_summaries): <p>A list of simulation job batch summaries.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSimulationJobBatchesOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    /// - On failure, responds with [`SdkError<ListSimulationJobBatchesError>`](crate::error::ListSimulationJobBatchesError)
     pub fn list_simulation_job_batches(
         &self,
     ) -> fluent_builders::ListSimulationJobBatches<C, M, R> {
         fluent_builders::ListSimulationJobBatches::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSimulationJobs` operation.
+    /// Constructs a fluent builder for the [`ListSimulationJobs`](crate::client::fluent_builders::ListSimulationJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSimulationJobs::into_paginator).
     ///
-    /// See [`ListSimulationJobs`](crate::client::fluent_builders::ListSimulationJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSimulationJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSimulationJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSimulationJobs::set_next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSimulationJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSimulationJobs::set_max_results): <p>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListSimulationJobs::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListSimulationJobs::set_filters): <p>Optional filters to limit results.</p>  <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
+    /// - On success, responds with [`ListSimulationJobsOutput`](crate::output::ListSimulationJobsOutput) with field(s):
+    ///   - [`simulation_job_summaries(Option<Vec<SimulationJobSummary>>)`](crate::output::ListSimulationJobsOutput::simulation_job_summaries): <p>A list of simulation job summaries that meet the criteria of the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSimulationJobsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    /// - On failure, responds with [`SdkError<ListSimulationJobsError>`](crate::error::ListSimulationJobsError)
     pub fn list_simulation_jobs(&self) -> fluent_builders::ListSimulationJobs<C, M, R> {
         fluent_builders::ListSimulationJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of all tags added to the specified resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWorldExportJobs` operation.
+    /// Constructs a fluent builder for the [`ListWorldExportJobs`](crate::client::fluent_builders::ListWorldExportJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorldExportJobs::into_paginator).
     ///
-    /// See [`ListWorldExportJobs`](crate::client::fluent_builders::ListWorldExportJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorldExportJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorldExportJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorldExportJobs::set_next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorldExportJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorldExportJobs::set_max_results): <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListWorldExportJobs::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListWorldExportJobs::set_filters): <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
+    /// - On success, responds with [`ListWorldExportJobsOutput`](crate::output::ListWorldExportJobsOutput) with field(s):
+    ///   - [`world_export_job_summaries(Option<Vec<WorldExportJobSummary>>)`](crate::output::ListWorldExportJobsOutput::world_export_job_summaries): <p>Summary information for world export jobs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWorldExportJobsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    /// - On failure, responds with [`SdkError<ListWorldExportJobsError>`](crate::error::ListWorldExportJobsError)
     pub fn list_world_export_jobs(&self) -> fluent_builders::ListWorldExportJobs<C, M, R> {
         fluent_builders::ListWorldExportJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWorldGenerationJobs` operation.
+    /// Constructs a fluent builder for the [`ListWorldGenerationJobs`](crate::client::fluent_builders::ListWorldGenerationJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorldGenerationJobs::into_paginator).
     ///
-    /// See [`ListWorldGenerationJobs`](crate::client::fluent_builders::ListWorldGenerationJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorldGenerationJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorldGenerationJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorldGenerationJobs::set_next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorldGenerationJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorldGenerationJobs::set_max_results): <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListWorldGenerationJobs::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListWorldGenerationJobs::set_filters): <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
+    /// - On success, responds with [`ListWorldGenerationJobsOutput`](crate::output::ListWorldGenerationJobsOutput) with field(s):
+    ///   - [`world_generation_job_summaries(Option<Vec<WorldGenerationJobSummary>>)`](crate::output::ListWorldGenerationJobsOutput::world_generation_job_summaries): <p>Summary information for world generator jobs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWorldGenerationJobsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGeneratorJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    /// - On failure, responds with [`SdkError<ListWorldGenerationJobsError>`](crate::error::ListWorldGenerationJobsError)
     pub fn list_world_generation_jobs(&self) -> fluent_builders::ListWorldGenerationJobs<C, M, R> {
         fluent_builders::ListWorldGenerationJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWorlds` operation.
+    /// Constructs a fluent builder for the [`ListWorlds`](crate::client::fluent_builders::ListWorlds) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorlds::into_paginator).
     ///
-    /// See [`ListWorlds`](crate::client::fluent_builders::ListWorlds) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorlds::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorlds::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorlds::set_next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorlds::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorlds::set_max_results): <p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListWorlds::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListWorlds::set_filters): <p>Optional filters to limit results. You can use <code>status</code>.</p>
+    /// - On success, responds with [`ListWorldsOutput`](crate::output::ListWorldsOutput) with field(s):
+    ///   - [`world_summaries(Option<Vec<WorldSummary>>)`](crate::output::ListWorldsOutput::world_summaries): <p>Summary information for worlds.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWorldsOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    /// - On failure, responds with [`SdkError<ListWorldsError>`](crate::error::ListWorldsError)
     pub fn list_worlds(&self) -> fluent_builders::ListWorlds<C, M, R> {
         fluent_builders::ListWorlds::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWorldTemplates` operation.
+    /// Constructs a fluent builder for the [`ListWorldTemplates`](crate::client::fluent_builders::ListWorldTemplates) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorldTemplates::into_paginator).
     ///
-    /// See [`ListWorldTemplates`](crate::client::fluent_builders::ListWorldTemplates) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorldTemplates::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorldTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorldTemplates::set_next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorldTemplates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorldTemplates::set_max_results): <p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    /// - On success, responds with [`ListWorldTemplatesOutput`](crate::output::ListWorldTemplatesOutput) with field(s):
+    ///   - [`template_summaries(Option<Vec<TemplateSummary>>)`](crate::output::ListWorldTemplatesOutput::template_summaries): <p>Summary information for templates.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWorldTemplatesOutput::next_token): <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+    /// - On failure, responds with [`SdkError<ListWorldTemplatesError>`](crate::error::ListWorldTemplatesError)
     pub fn list_world_templates(&self) -> fluent_builders::ListWorldTemplates<C, M, R> {
         fluent_builders::ListWorldTemplates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterRobot` operation.
+    /// Constructs a fluent builder for the [`RegisterRobot`](crate::client::fluent_builders::RegisterRobot) operation.
     ///
-    /// See [`RegisterRobot`](crate::client::fluent_builders::RegisterRobot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`fleet(impl Into<String>)`](crate::client::fluent_builders::RegisterRobot::fleet) / [`set_fleet(Option<String>)`](crate::client::fluent_builders::RegisterRobot::set_fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`robot(impl Into<String>)`](crate::client::fluent_builders::RegisterRobot::robot) / [`set_robot(Option<String>)`](crate::client::fluent_builders::RegisterRobot::set_robot): <p>The Amazon Resource Name (ARN) of the robot.</p>
+    /// - On success, responds with [`RegisterRobotOutput`](crate::output::RegisterRobotOutput) with field(s):
+    ///   - [`fleet(Option<String>)`](crate::output::RegisterRobotOutput::fleet): <p>The Amazon Resource Name (ARN) of the fleet that the robot will join.</p>
+    ///   - [`robot(Option<String>)`](crate::output::RegisterRobotOutput::robot): <p>Information about the robot registration.</p>
+    /// - On failure, responds with [`SdkError<RegisterRobotError>`](crate::error::RegisterRobotError)
     pub fn register_robot(&self) -> fluent_builders::RegisterRobot<C, M, R> {
         fluent_builders::RegisterRobot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestartSimulationJob` operation.
+    /// Constructs a fluent builder for the [`RestartSimulationJob`](crate::client::fluent_builders::RestartSimulationJob) operation.
     ///
-    /// See [`RestartSimulationJob`](crate::client::fluent_builders::RestartSimulationJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job(impl Into<String>)`](crate::client::fluent_builders::RestartSimulationJob::job) / [`set_job(Option<String>)`](crate::client::fluent_builders::RestartSimulationJob::set_job): <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+    /// - On success, responds with [`RestartSimulationJobOutput`](crate::output::RestartSimulationJobOutput)
+
+    /// - On failure, responds with [`SdkError<RestartSimulationJobError>`](crate::error::RestartSimulationJobError)
     pub fn restart_simulation_job(&self) -> fluent_builders::RestartSimulationJob<C, M, R> {
         fluent_builders::RestartSimulationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartSimulationJobBatch` operation.
+    /// Constructs a fluent builder for the [`StartSimulationJobBatch`](crate::client::fluent_builders::StartSimulationJobBatch) operation.
     ///
-    /// See [`StartSimulationJobBatch`](crate::client::fluent_builders::StartSimulationJobBatch) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartSimulationJobBatch::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartSimulationJobBatch::set_client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`batch_policy(BatchPolicy)`](crate::client::fluent_builders::StartSimulationJobBatch::batch_policy) / [`set_batch_policy(Option<BatchPolicy>)`](crate::client::fluent_builders::StartSimulationJobBatch::set_batch_policy): <p>The batch policy.</p>
+    ///   - [`create_simulation_job_requests(Vec<SimulationJobRequest>)`](crate::client::fluent_builders::StartSimulationJobBatch::create_simulation_job_requests) / [`set_create_simulation_job_requests(Option<Vec<SimulationJobRequest>>)`](crate::client::fluent_builders::StartSimulationJobBatch::set_create_simulation_job_requests): <p>A list of simulation job requests to create in the batch.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::StartSimulationJobBatch::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartSimulationJobBatch::set_tags): <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
+    /// - On success, responds with [`StartSimulationJobBatchOutput`](crate::output::StartSimulationJobBatchOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::StartSimulationJobBatchOutput::arn): <p>The Amazon Resource Name (arn) of the batch.</p>
+    ///   - [`status(Option<SimulationJobBatchStatus>)`](crate::output::StartSimulationJobBatchOutput::status): <p>The status of the simulation job batch.</p>  <dl>   <dt>   Pending  </dt>   <dd>    <p>The simulation job batch request is pending.</p>   </dd>   <dt>   InProgress  </dt>   <dd>    <p>The simulation job batch is in progress. </p>   </dd>   <dt>   Failed  </dt>   <dd>    <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>   </dd>   <dt>   Completed  </dt>   <dd>    <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>   </dd>   <dt>   Canceled  </dt>   <dd>    <p>The simulation batch job was cancelled.</p>   </dd>   <dt>   Canceling  </dt>   <dd>    <p>The simulation batch job is being cancelled.</p>   </dd>   <dt>   Completing  </dt>   <dd>    <p>The simulation batch job is completing.</p>   </dd>   <dt>   TimingOut  </dt>   <dd>    <p>The simulation job batch is timing out.</p>    <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>   </dd>   <dt>   TimedOut  </dt>   <dd>    <p>The simulation batch job timed out.</p>   </dd>  </dl>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::StartSimulationJobBatchOutput::created_at): <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::output::StartSimulationJobBatchOutput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`batch_policy(Option<BatchPolicy>)`](crate::output::StartSimulationJobBatchOutput::batch_policy): <p>The batch policy.</p>
+    ///   - [`failure_code(Option<SimulationJobBatchErrorCode>)`](crate::output::StartSimulationJobBatchOutput::failure_code): <p>The failure code if the simulation job batch failed.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::StartSimulationJobBatchOutput::failure_reason): <p>The reason the simulation job batch failed.</p>
+    ///   - [`failed_requests(Option<Vec<FailedCreateSimulationJobRequest>>)`](crate::output::StartSimulationJobBatchOutput::failed_requests): <p>A list of failed simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
+    ///   - [`pending_requests(Option<Vec<SimulationJobRequest>>)`](crate::output::StartSimulationJobBatchOutput::pending_requests): <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
+    ///   - [`created_requests(Option<Vec<SimulationJobSummary>>)`](crate::output::StartSimulationJobBatchOutput::created_requests): <p>A list of created simulation job request summaries.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::StartSimulationJobBatchOutput::tags): <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
+    /// - On failure, responds with [`SdkError<StartSimulationJobBatchError>`](crate::error::StartSimulationJobBatchError)
     pub fn start_simulation_job_batch(&self) -> fluent_builders::StartSimulationJobBatch<C, M, R> {
         fluent_builders::StartSimulationJobBatch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SyncDeploymentJob` operation.
+    /// Constructs a fluent builder for the [`SyncDeploymentJob`](crate::client::fluent_builders::SyncDeploymentJob) operation.
     ///
-    /// See [`SyncDeploymentJob`](crate::client::fluent_builders::SyncDeploymentJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::SyncDeploymentJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::SyncDeploymentJob::set_client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`fleet(impl Into<String>)`](crate::client::fluent_builders::SyncDeploymentJob::fleet) / [`set_fleet(Option<String>)`](crate::client::fluent_builders::SyncDeploymentJob::set_fleet): <p>The target fleet for the synchronization.</p>
+    /// - On success, responds with [`SyncDeploymentJobOutput`](crate::output::SyncDeploymentJobOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::SyncDeploymentJobOutput::arn): <p>The Amazon Resource Name (ARN) of the synchronization request.</p>
+    ///   - [`fleet(Option<String>)`](crate::output::SyncDeploymentJobOutput::fleet): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`status(Option<DeploymentStatus>)`](crate::output::SyncDeploymentJobOutput::status): <p>The status of the synchronization job.</p>
+    ///   - [`deployment_config(Option<DeploymentConfig>)`](crate::output::SyncDeploymentJobOutput::deployment_config): <p>Information about the deployment configuration.</p>
+    ///   - [`deployment_application_configs(Option<Vec<DeploymentApplicationConfig>>)`](crate::output::SyncDeploymentJobOutput::deployment_application_configs): <p>Information about the deployment application configurations.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::SyncDeploymentJobOutput::failure_reason): <p>The failure reason if the job fails.</p>
+    ///   - [`failure_code(Option<DeploymentJobErrorCode>)`](crate::output::SyncDeploymentJobOutput::failure_code): <p>The failure code if the job fails:</p>  <dl>   <dt>   InternalServiceError  </dt>   <dd>    <p>Internal service error.</p>   </dd>   <dt>   RobotApplicationCrash  </dt>   <dd>    <p>Robot application exited abnormally.</p>   </dd>   <dt>   SimulationApplicationCrash  </dt>   <dd>    <p> Simulation application exited abnormally.</p>   </dd>   <dt>   BadPermissionsRobotApplication  </dt>   <dd>    <p>Robot application bundle could not be downloaded.</p>   </dd>   <dt>   BadPermissionsSimulationApplication  </dt>   <dd>    <p>Simulation application bundle could not be downloaded.</p>   </dd>   <dt>   BadPermissionsS3Output  </dt>   <dd>    <p>Unable to publish outputs to customer-provided S3 bucket.</p>   </dd>   <dt>   BadPermissionsCloudwatchLogs  </dt>   <dd>    <p>Unable to publish logs to customer-provided CloudWatch Logs resource.</p>   </dd>   <dt>   SubnetIpLimitExceeded  </dt>   <dd>    <p>Subnet IP limit exceeded.</p>   </dd>   <dt>   ENILimitExceeded  </dt>   <dd>    <p>ENI limit exceeded.</p>   </dd>   <dt>   BadPermissionsUserCredentials  </dt>   <dd>    <p>Unable to use the Role provided.</p>   </dd>   <dt>   InvalidBundleRobotApplication  </dt>   <dd>    <p>Robot bundle cannot be extracted (invalid format, bundling error, or other issue).</p>   </dd>   <dt>   InvalidBundleSimulationApplication  </dt>   <dd>    <p>Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).</p>   </dd>   <dt>   RobotApplicationVersionMismatchedEtag  </dt>   <dd>    <p>Etag for RobotApplication does not match value during version creation.</p>   </dd>   <dt>   SimulationApplicationVersionMismatchedEtag  </dt>   <dd>    <p>Etag for SimulationApplication does not match value during version creation.</p>   </dd>  </dl>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::SyncDeploymentJobOutput::created_at): <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
+    /// - On failure, responds with [`SdkError<SyncDeploymentJobError>`](crate::error::SyncDeploymentJobError)
     pub fn sync_deployment_job(&self) -> fluent_builders::SyncDeploymentJob<C, M, R> {
         fluent_builders::SyncDeploymentJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A map that contains tag keys and tag values that are attached to the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A map that contains tag keys and tag values that will be unattached from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRobotApplication` operation.
+    /// Constructs a fluent builder for the [`UpdateRobotApplication`](crate::client::fluent_builders::UpdateRobotApplication) operation.
     ///
-    /// See [`UpdateRobotApplication`](crate::client::fluent_builders::UpdateRobotApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::UpdateRobotApplication::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::UpdateRobotApplication::set_application): <p>The application information for the robot application.</p>
+    ///   - [`sources(Vec<SourceConfig>)`](crate::client::fluent_builders::UpdateRobotApplication::sources) / [`set_sources(Option<Vec<SourceConfig>>)`](crate::client::fluent_builders::UpdateRobotApplication::set_sources): <p>The sources of the robot application.</p>
+    ///   - [`robot_software_suite(RobotSoftwareSuite)`](crate::client::fluent_builders::UpdateRobotApplication::robot_software_suite) / [`set_robot_software_suite(Option<RobotSoftwareSuite>)`](crate::client::fluent_builders::UpdateRobotApplication::set_robot_software_suite): <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    ///   - [`current_revision_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRobotApplication::current_revision_id) / [`set_current_revision_id(Option<String>)`](crate::client::fluent_builders::UpdateRobotApplication::set_current_revision_id): <p>The revision id for the robot application.</p>
+    ///   - [`environment(Environment)`](crate::client::fluent_builders::UpdateRobotApplication::environment) / [`set_environment(Option<Environment>)`](crate::client::fluent_builders::UpdateRobotApplication::set_environment): <p>The object that contains the Docker image URI for your robot application.</p>
+    /// - On success, responds with [`UpdateRobotApplicationOutput`](crate::output::UpdateRobotApplicationOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateRobotApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the updated robot application.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateRobotApplicationOutput::name): <p>The name of the robot application.</p>
+    ///   - [`version(Option<String>)`](crate::output::UpdateRobotApplicationOutput::version): <p>The version of the robot application.</p>
+    ///   - [`sources(Option<Vec<Source>>)`](crate::output::UpdateRobotApplicationOutput::sources): <p>The sources of the robot application.</p>
+    ///   - [`robot_software_suite(Option<RobotSoftwareSuite>)`](crate::output::UpdateRobotApplicationOutput::robot_software_suite): <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::UpdateRobotApplicationOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the robot application was last updated.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::UpdateRobotApplicationOutput::revision_id): <p>The revision id of the robot application.</p>
+    ///   - [`environment(Option<Environment>)`](crate::output::UpdateRobotApplicationOutput::environment): <p>The object that contains the Docker image URI for your robot application.</p>
+    /// - On failure, responds with [`SdkError<UpdateRobotApplicationError>`](crate::error::UpdateRobotApplicationError)
     pub fn update_robot_application(&self) -> fluent_builders::UpdateRobotApplication<C, M, R> {
         fluent_builders::UpdateRobotApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSimulationApplication` operation.
+    /// Constructs a fluent builder for the [`UpdateSimulationApplication`](crate::client::fluent_builders::UpdateSimulationApplication) operation.
     ///
-    /// See [`UpdateSimulationApplication`](crate::client::fluent_builders::UpdateSimulationApplication) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`application(impl Into<String>)`](crate::client::fluent_builders::UpdateSimulationApplication::application) / [`set_application(Option<String>)`](crate::client::fluent_builders::UpdateSimulationApplication::set_application): <p>The application information for the simulation application.</p>
+    ///   - [`sources(Vec<SourceConfig>)`](crate::client::fluent_builders::UpdateSimulationApplication::sources) / [`set_sources(Option<Vec<SourceConfig>>)`](crate::client::fluent_builders::UpdateSimulationApplication::set_sources): <p>The sources of the simulation application.</p>
+    ///   - [`simulation_software_suite(SimulationSoftwareSuite)`](crate::client::fluent_builders::UpdateSimulationApplication::simulation_software_suite) / [`set_simulation_software_suite(Option<SimulationSoftwareSuite>)`](crate::client::fluent_builders::UpdateSimulationApplication::set_simulation_software_suite): <p>The simulation software suite used by the simulation application.</p>
+    ///   - [`robot_software_suite(RobotSoftwareSuite)`](crate::client::fluent_builders::UpdateSimulationApplication::robot_software_suite) / [`set_robot_software_suite(Option<RobotSoftwareSuite>)`](crate::client::fluent_builders::UpdateSimulationApplication::set_robot_software_suite): <p>Information about the robot software suite (ROS distribution).</p>
+    ///   - [`rendering_engine(RenderingEngine)`](crate::client::fluent_builders::UpdateSimulationApplication::rendering_engine) / [`set_rendering_engine(Option<RenderingEngine>)`](crate::client::fluent_builders::UpdateSimulationApplication::set_rendering_engine): <p>The rendering engine for the simulation application.</p>
+    ///   - [`current_revision_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSimulationApplication::current_revision_id) / [`set_current_revision_id(Option<String>)`](crate::client::fluent_builders::UpdateSimulationApplication::set_current_revision_id): <p>The revision id for the robot application.</p>
+    ///   - [`environment(Environment)`](crate::client::fluent_builders::UpdateSimulationApplication::environment) / [`set_environment(Option<Environment>)`](crate::client::fluent_builders::UpdateSimulationApplication::set_environment): <p>The object that contains the Docker image URI for your simulation application.</p>
+    /// - On success, responds with [`UpdateSimulationApplicationOutput`](crate::output::UpdateSimulationApplicationOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateSimulationApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the updated simulation application.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateSimulationApplicationOutput::name): <p>The name of the simulation application.</p>
+    ///   - [`version(Option<String>)`](crate::output::UpdateSimulationApplicationOutput::version): <p>The version of the robot application.</p>
+    ///   - [`sources(Option<Vec<Source>>)`](crate::output::UpdateSimulationApplicationOutput::sources): <p>The sources of the simulation application.</p>
+    ///   - [`simulation_software_suite(Option<SimulationSoftwareSuite>)`](crate::output::UpdateSimulationApplicationOutput::simulation_software_suite): <p>The simulation software suite used by the simulation application.</p>
+    ///   - [`robot_software_suite(Option<RobotSoftwareSuite>)`](crate::output::UpdateSimulationApplicationOutput::robot_software_suite): <p>Information about the robot software suite (ROS distribution).</p>
+    ///   - [`rendering_engine(Option<RenderingEngine>)`](crate::output::UpdateSimulationApplicationOutput::rendering_engine): <p>The rendering engine for the simulation application.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::UpdateSimulationApplicationOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::UpdateSimulationApplicationOutput::revision_id): <p>The revision id of the simulation application.</p>
+    ///   - [`environment(Option<Environment>)`](crate::output::UpdateSimulationApplicationOutput::environment): <p>The object that contains the Docker image URI used for your simulation application.</p>
+    /// - On failure, responds with [`SdkError<UpdateSimulationApplicationError>`](crate::error::UpdateSimulationApplicationError)
     pub fn update_simulation_application(
         &self,
     ) -> fluent_builders::UpdateSimulationApplication<C, M, R> {
         fluent_builders::UpdateSimulationApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateWorldTemplate` operation.
+    /// Constructs a fluent builder for the [`UpdateWorldTemplate`](crate::client::fluent_builders::UpdateWorldTemplate) operation.
     ///
-    /// See [`UpdateWorldTemplate`](crate::client::fluent_builders::UpdateWorldTemplate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`template(impl Into<String>)`](crate::client::fluent_builders::UpdateWorldTemplate::template) / [`set_template(Option<String>)`](crate::client::fluent_builders::UpdateWorldTemplate::set_template): <p>The Amazon Resource Name (arn) of the world template to update.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateWorldTemplate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateWorldTemplate::set_name): <p>The name of the template.</p>
+    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::UpdateWorldTemplate::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::UpdateWorldTemplate::set_template_body): <p>The world template body.</p>
+    ///   - [`template_location(TemplateLocation)`](crate::client::fluent_builders::UpdateWorldTemplate::template_location) / [`set_template_location(Option<TemplateLocation>)`](crate::client::fluent_builders::UpdateWorldTemplate::set_template_location): <p>The location of the world template.</p>
+    /// - On success, responds with [`UpdateWorldTemplateOutput`](crate::output::UpdateWorldTemplateOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateWorldTemplateOutput::arn): <p>The Amazon Resource Name (arn) of the world template.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateWorldTemplateOutput::name): <p>The name of the world template.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::UpdateWorldTemplateOutput::created_at): <p>The time, in milliseconds since the epoch, when the world template was created.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::UpdateWorldTemplateOutput::last_updated_at): <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateWorldTemplateError>`](crate::error::UpdateWorldTemplateError)
     pub fn update_world_template(&self) -> fluent_builders::UpdateWorldTemplate<C, M, R> {
         fluent_builders::UpdateWorldTemplate::new(self.handle.clone())
     }

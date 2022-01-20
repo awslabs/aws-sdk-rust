@@ -14437,6 +14437,19 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "programDateTimeClock" => {
+                                builder = builder.set_program_date_time_clock(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::HlsProgramDateTimeClock::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "programDateTimePeriod" => {
                                 builder = builder.set_program_date_time_period(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(

@@ -83,336 +83,617 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateWebACL` operation.
+    /// Constructs a fluent builder for the [`AssociateWebACL`](crate::client::fluent_builders::AssociateWebACL) operation.
     ///
-    /// See [`AssociateWebACL`](crate::client::fluent_builders::AssociateWebACL) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`web_acl_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateWebACL::web_acl_arn) / [`set_web_acl_arn(Option<String>)`](crate::client::fluent_builders::AssociateWebACL::set_web_acl_arn): <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateWebACL::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::AssociateWebACL::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to associate with the web ACL. </p>  <p>The ARN must be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>   <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>  </ul>
+    /// - On success, responds with [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateWebACLError>`](crate::error::AssociateWebACLError)
     pub fn associate_web_acl(&self) -> fluent_builders::AssociateWebACL<C, M, R> {
         fluent_builders::AssociateWebACL::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CheckCapacity` operation.
+    /// Constructs a fluent builder for the [`CheckCapacity`](crate::client::fluent_builders::CheckCapacity) operation.
     ///
-    /// See [`CheckCapacity`](crate::client::fluent_builders::CheckCapacity) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::CheckCapacity::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CheckCapacity::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::CheckCapacity::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::CheckCapacity::set_rules): <p>An array of <code>Rule</code> that you're configuring to use in a rule group or web ACL. </p>
+    /// - On success, responds with [`CheckCapacityOutput`](crate::output::CheckCapacityOutput) with field(s):
+    ///   - [`capacity(i64)`](crate::output::CheckCapacityOutput::capacity): <p>The capacity required by the rules and scope.</p>
+    /// - On failure, responds with [`SdkError<CheckCapacityError>`](crate::error::CheckCapacityError)
     pub fn check_capacity(&self) -> fluent_builders::CheckCapacity<C, M, R> {
         fluent_builders::CheckCapacity::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateIPSet` operation.
+    /// Constructs a fluent builder for the [`CreateIPSet`](crate::client::fluent_builders::CreateIPSet) operation.
     ///
-    /// See [`CreateIPSet`](crate::client::fluent_builders::CreateIPSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_name): <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::CreateIPSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CreateIPSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_description): <p>A description of the IP set that helps with identification. </p>
+    ///   - [`ip_address_version(IpAddressVersion)`](crate::client::fluent_builders::CreateIPSet::ip_address_version) / [`set_ip_address_version(Option<IpAddressVersion>)`](crate::client::fluent_builders::CreateIPSet::set_ip_address_version): <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
+    ///   - [`addresses(Vec<String>)`](crate::client::fluent_builders::CreateIPSet::addresses) / [`set_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::CreateIPSet::set_addresses): <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>  <p>Examples: </p>  <ul>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>  </ul>  <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateIPSet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateIPSet::set_tags): <p>An array of key:value pairs to associate with the resource.</p>
+    /// - On success, responds with [`CreateIpSetOutput`](crate::output::CreateIpSetOutput) with field(s):
+    ///   - [`summary(Option<IpSetSummary>)`](crate::output::CreateIpSetOutput::summary): <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
+    /// - On failure, responds with [`SdkError<CreateIPSetError>`](crate::error::CreateIPSetError)
     pub fn create_ip_set(&self) -> fluent_builders::CreateIPSet<C, M, R> {
         fluent_builders::CreateIPSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRegexPatternSet` operation.
+    /// Constructs a fluent builder for the [`CreateRegexPatternSet`](crate::client::fluent_builders::CreateRegexPatternSet) operation.
     ///
-    /// See [`CreateRegexPatternSet`](crate::client::fluent_builders::CreateRegexPatternSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRegexPatternSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRegexPatternSet::set_name): <p>The name of the set. You cannot change the name after you create the set.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::CreateRegexPatternSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CreateRegexPatternSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRegexPatternSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRegexPatternSet::set_description): <p>A description of the set that helps with identification. </p>
+    ///   - [`regular_expression_list(Vec<Regex>)`](crate::client::fluent_builders::CreateRegexPatternSet::regular_expression_list) / [`set_regular_expression_list(Option<Vec<Regex>>)`](crate::client::fluent_builders::CreateRegexPatternSet::set_regular_expression_list): <p>Array of regular expression strings. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRegexPatternSet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRegexPatternSet::set_tags): <p>An array of key:value pairs to associate with the resource.</p>
+    /// - On success, responds with [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput) with field(s):
+    ///   - [`summary(Option<RegexPatternSetSummary>)`](crate::output::CreateRegexPatternSetOutput::summary): <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
+    /// - On failure, responds with [`SdkError<CreateRegexPatternSetError>`](crate::error::CreateRegexPatternSetError)
     pub fn create_regex_pattern_set(&self) -> fluent_builders::CreateRegexPatternSet<C, M, R> {
         fluent_builders::CreateRegexPatternSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRuleGroup` operation.
+    /// Constructs a fluent builder for the [`CreateRuleGroup`](crate::client::fluent_builders::CreateRuleGroup) operation.
     ///
-    /// See [`CreateRuleGroup`](crate::client::fluent_builders::CreateRuleGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRuleGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRuleGroup::set_name): <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::CreateRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CreateRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`capacity(i64)`](crate::client::fluent_builders::CreateRuleGroup::capacity) / [`set_capacity(i64)`](crate::client::fluent_builders::CreateRuleGroup::set_capacity): <p>The web ACL capacity units (WCUs) required for this rule group.</p>  <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>  <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRuleGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRuleGroup::set_description): <p>A description of the rule group that helps with identification. </p>
+    ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::CreateRuleGroup::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::CreateRuleGroup::set_rules): <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
+    ///   - [`visibility_config(VisibilityConfig)`](crate::client::fluent_builders::CreateRuleGroup::visibility_config) / [`set_visibility_config(Option<VisibilityConfig>)`](crate::client::fluent_builders::CreateRuleGroup::set_visibility_config): <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRuleGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRuleGroup::set_tags): <p>An array of key:value pairs to associate with the resource.</p>
+    ///   - [`custom_response_bodies(HashMap<String, CustomResponseBody>)`](crate::client::fluent_builders::CreateRuleGroup::custom_response_bodies) / [`set_custom_response_bodies(Option<HashMap<String, CustomResponseBody>>)`](crate::client::fluent_builders::CreateRuleGroup::set_custom_response_bodies): <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>  <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>  <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// - On success, responds with [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput) with field(s):
+    ///   - [`summary(Option<RuleGroupSummary>)`](crate::output::CreateRuleGroupOutput::summary): <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
+    /// - On failure, responds with [`SdkError<CreateRuleGroupError>`](crate::error::CreateRuleGroupError)
     pub fn create_rule_group(&self) -> fluent_builders::CreateRuleGroup<C, M, R> {
         fluent_builders::CreateRuleGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWebACL` operation.
+    /// Constructs a fluent builder for the [`CreateWebACL`](crate::client::fluent_builders::CreateWebACL) operation.
     ///
-    /// See [`CreateWebACL`](crate::client::fluent_builders::CreateWebACL) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWebACL::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWebACL::set_name): <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::CreateWebACL::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CreateWebACL::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`default_action(DefaultAction)`](crate::client::fluent_builders::CreateWebACL::default_action) / [`set_default_action(Option<DefaultAction>)`](crate::client::fluent_builders::CreateWebACL::set_default_action): <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateWebACL::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateWebACL::set_description): <p>A description of the web ACL that helps with identification. </p>
+    ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::CreateWebACL::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::CreateWebACL::set_rules): <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
+    ///   - [`visibility_config(VisibilityConfig)`](crate::client::fluent_builders::CreateWebACL::visibility_config) / [`set_visibility_config(Option<VisibilityConfig>)`](crate::client::fluent_builders::CreateWebACL::set_visibility_config): <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWebACL::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWebACL::set_tags): <p>An array of key:value pairs to associate with the resource.</p>
+    ///   - [`custom_response_bodies(HashMap<String, CustomResponseBody>)`](crate::client::fluent_builders::CreateWebACL::custom_response_bodies) / [`set_custom_response_bodies(Option<HashMap<String, CustomResponseBody>>)`](crate::client::fluent_builders::CreateWebACL::set_custom_response_bodies): <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>  <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>  <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    ///   - [`captcha_config(CaptchaConfig)`](crate::client::fluent_builders::CreateWebACL::captcha_config) / [`set_captcha_config(Option<CaptchaConfig>)`](crate::client::fluent_builders::CreateWebACL::set_captcha_config): <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+    /// - On success, responds with [`CreateWebAclOutput`](crate::output::CreateWebAclOutput) with field(s):
+    ///   - [`summary(Option<WebAclSummary>)`](crate::output::CreateWebAclOutput::summary): <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
+    /// - On failure, responds with [`SdkError<CreateWebACLError>`](crate::error::CreateWebACLError)
     pub fn create_web_acl(&self) -> fluent_builders::CreateWebACL<C, M, R> {
         fluent_builders::CreateWebACL::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFirewallManagerRuleGroups` operation.
+    /// Constructs a fluent builder for the [`DeleteFirewallManagerRuleGroups`](crate::client::fluent_builders::DeleteFirewallManagerRuleGroups) operation.
     ///
-    /// See [`DeleteFirewallManagerRuleGroups`](crate::client::fluent_builders::DeleteFirewallManagerRuleGroups) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`web_acl_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteFirewallManagerRuleGroups::web_acl_arn) / [`set_web_acl_arn(Option<String>)`](crate::client::fluent_builders::DeleteFirewallManagerRuleGroups::set_web_acl_arn): <p>The Amazon Resource Name (ARN) of the web ACL.</p>
+    ///   - [`web_acl_lock_token(impl Into<String>)`](crate::client::fluent_builders::DeleteFirewallManagerRuleGroups::web_acl_lock_token) / [`set_web_acl_lock_token(Option<String>)`](crate::client::fluent_builders::DeleteFirewallManagerRuleGroups::set_web_acl_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On success, responds with [`DeleteFirewallManagerRuleGroupsOutput`](crate::output::DeleteFirewallManagerRuleGroupsOutput) with field(s):
+    ///   - [`next_web_acl_lock_token(Option<String>)`](crate::output::DeleteFirewallManagerRuleGroupsOutput::next_web_acl_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On failure, responds with [`SdkError<DeleteFirewallManagerRuleGroupsError>`](crate::error::DeleteFirewallManagerRuleGroupsError)
     pub fn delete_firewall_manager_rule_groups(
         &self,
     ) -> fluent_builders::DeleteFirewallManagerRuleGroups<C, M, R> {
         fluent_builders::DeleteFirewallManagerRuleGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteIPSet` operation.
+    /// Constructs a fluent builder for the [`DeleteIPSet`](crate::client::fluent_builders::DeleteIPSet) operation.
     ///
-    /// See [`DeleteIPSet`](crate::client::fluent_builders::DeleteIPSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteIPSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteIPSet::set_name): <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteIPSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteIPSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteIPSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteIPSet::set_id): <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::DeleteIPSet::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::DeleteIPSet::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On success, responds with [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteIPSetError>`](crate::error::DeleteIPSetError)
     pub fn delete_ip_set(&self) -> fluent_builders::DeleteIPSet<C, M, R> {
         fluent_builders::DeleteIPSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLoggingConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteLoggingConfiguration`](crate::client::fluent_builders::DeleteLoggingConfiguration) operation.
     ///
-    /// See [`DeleteLoggingConfiguration`](crate::client::fluent_builders::DeleteLoggingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteLoggingConfiguration::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DeleteLoggingConfiguration::set_resource_arn): <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
+    /// - On success, responds with [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLoggingConfigurationError>`](crate::error::DeleteLoggingConfigurationError)
     pub fn delete_logging_configuration(
         &self,
     ) -> fluent_builders::DeleteLoggingConfiguration<C, M, R> {
         fluent_builders::DeleteLoggingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePermissionPolicy` operation.
+    /// Constructs a fluent builder for the [`DeletePermissionPolicy`](crate::client::fluent_builders::DeletePermissionPolicy) operation.
     ///
-    /// See [`DeletePermissionPolicy`](crate::client::fluent_builders::DeletePermissionPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DeletePermissionPolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DeletePermissionPolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the policy.</p>  <p>You must be the owner of the rule group to perform this operation.</p>
+    /// - On success, responds with [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePermissionPolicyError>`](crate::error::DeletePermissionPolicyError)
     pub fn delete_permission_policy(&self) -> fluent_builders::DeletePermissionPolicy<C, M, R> {
         fluent_builders::DeletePermissionPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRegexPatternSet` operation.
+    /// Constructs a fluent builder for the [`DeleteRegexPatternSet`](crate::client::fluent_builders::DeleteRegexPatternSet) operation.
     ///
-    /// See [`DeleteRegexPatternSet`](crate::client::fluent_builders::DeleteRegexPatternSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::set_name): <p>The name of the set. You cannot change the name after you create the set.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteRegexPatternSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteRegexPatternSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::set_id): <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On success, responds with [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRegexPatternSetError>`](crate::error::DeleteRegexPatternSetError)
     pub fn delete_regex_pattern_set(&self) -> fluent_builders::DeleteRegexPatternSet<C, M, R> {
         fluent_builders::DeleteRegexPatternSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRuleGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteRuleGroup`](crate::client::fluent_builders::DeleteRuleGroup) operation.
     ///
-    /// See [`DeleteRuleGroup`](crate::client::fluent_builders::DeleteRuleGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteRuleGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteRuleGroup::set_name): <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteRuleGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteRuleGroup::set_id): <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::DeleteRuleGroup::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::DeleteRuleGroup::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On success, responds with [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRuleGroupError>`](crate::error::DeleteRuleGroupError)
     pub fn delete_rule_group(&self) -> fluent_builders::DeleteRuleGroup<C, M, R> {
         fluent_builders::DeleteRuleGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWebACL` operation.
+    /// Constructs a fluent builder for the [`DeleteWebACL`](crate::client::fluent_builders::DeleteWebACL) operation.
     ///
-    /// See [`DeleteWebACL`](crate::client::fluent_builders::DeleteWebACL) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteWebACL::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteWebACL::set_name): <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteWebACL::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteWebACL::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteWebACL::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteWebACL::set_id): <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::DeleteWebACL::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::DeleteWebACL::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On success, responds with [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWebACLError>`](crate::error::DeleteWebACLError)
     pub fn delete_web_acl(&self) -> fluent_builders::DeleteWebACL<C, M, R> {
         fluent_builders::DeleteWebACL::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeManagedRuleGroup` operation.
+    /// Constructs a fluent builder for the [`DescribeManagedRuleGroup`](crate::client::fluent_builders::DescribeManagedRuleGroup) operation.
     ///
-    /// See [`DescribeManagedRuleGroup`](crate::client::fluent_builders::DescribeManagedRuleGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vendor_name(impl Into<String>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::vendor_name) / [`set_vendor_name(Option<String>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::set_vendor_name): <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::set_name): <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::DescribeManagedRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`version_name(impl Into<String>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::version_name) / [`set_version_name(Option<String>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::set_version_name): <p>The version of the rule group. You can only use a version that is not scheduled for expiration. If you don't provide this, WAF uses the vendor's default version. </p>
+    /// - On success, responds with [`DescribeManagedRuleGroupOutput`](crate::output::DescribeManagedRuleGroupOutput) with field(s):
+    ///   - [`version_name(Option<String>)`](crate::output::DescribeManagedRuleGroupOutput::version_name): <p>The managed rule group's version. </p>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::output::DescribeManagedRuleGroupOutput::sns_topic_arn): <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
+    ///   - [`capacity(i64)`](crate::output::DescribeManagedRuleGroupOutput::capacity): <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
+    ///   - [`rules(Option<Vec<RuleSummary>>)`](crate::output::DescribeManagedRuleGroupOutput::rules): <p></p>
+    ///   - [`label_namespace(Option<String>)`](crate::output::DescribeManagedRuleGroupOutput::label_namespace): <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>  <ul>   <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:     <vendor>      :      <rule group name></rule>     </vendor></code>:</p> </li>   <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>  </ul>
+    ///   - [`available_labels(Option<Vec<LabelSummary>>)`](crate::output::DescribeManagedRuleGroupOutput::available_labels): <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
+    ///   - [`consumed_labels(Option<Vec<LabelSummary>>)`](crate::output::DescribeManagedRuleGroupOutput::consumed_labels): <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
+    /// - On failure, responds with [`SdkError<DescribeManagedRuleGroupError>`](crate::error::DescribeManagedRuleGroupError)
     pub fn describe_managed_rule_group(
         &self,
     ) -> fluent_builders::DescribeManagedRuleGroup<C, M, R> {
         fluent_builders::DescribeManagedRuleGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateWebACL` operation.
+    /// Constructs a fluent builder for the [`DisassociateWebACL`](crate::client::fluent_builders::DisassociateWebACL) operation.
     ///
-    /// See [`DisassociateWebACL`](crate::client::fluent_builders::DisassociateWebACL) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateWebACL::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DisassociateWebACL::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web ACL. </p>  <p>The ARN must be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>   <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>  </ul>
+    /// - On success, responds with [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateWebACLError>`](crate::error::DisassociateWebACLError)
     pub fn disassociate_web_acl(&self) -> fluent_builders::DisassociateWebACL<C, M, R> {
         fluent_builders::DisassociateWebACL::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetIPSet` operation.
+    /// Constructs a fluent builder for the [`GetIPSet`](crate::client::fluent_builders::GetIPSet) operation.
     ///
-    /// See [`GetIPSet`](crate::client::fluent_builders::GetIPSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetIPSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetIPSet::set_name): <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetIPSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetIPSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetIPSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetIPSet::set_id): <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    /// - On success, responds with [`GetIpSetOutput`](crate::output::GetIpSetOutput) with field(s):
+    ///   - [`ip_set(Option<IpSet>)`](crate::output::GetIpSetOutput::ip_set): <p></p>
+    ///   - [`lock_token(Option<String>)`](crate::output::GetIpSetOutput::lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On failure, responds with [`SdkError<GetIPSetError>`](crate::error::GetIPSetError)
     pub fn get_ip_set(&self) -> fluent_builders::GetIPSet<C, M, R> {
         fluent_builders::GetIPSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLoggingConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetLoggingConfiguration`](crate::client::fluent_builders::GetLoggingConfiguration) operation.
     ///
-    /// See [`GetLoggingConfiguration`](crate::client::fluent_builders::GetLoggingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetLoggingConfiguration::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetLoggingConfiguration::set_resource_arn): <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
+    /// - On success, responds with [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput) with field(s):
+    ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::output::GetLoggingConfigurationOutput::logging_configuration): <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
+    /// - On failure, responds with [`SdkError<GetLoggingConfigurationError>`](crate::error::GetLoggingConfigurationError)
     pub fn get_logging_configuration(&self) -> fluent_builders::GetLoggingConfiguration<C, M, R> {
         fluent_builders::GetLoggingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetManagedRuleSet` operation.
+    /// Constructs a fluent builder for the [`GetManagedRuleSet`](crate::client::fluent_builders::GetManagedRuleSet) operation.
     ///
-    /// See [`GetManagedRuleSet`](crate::client::fluent_builders::GetManagedRuleSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetManagedRuleSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetManagedRuleSet::set_name): <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>  <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetManagedRuleSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetManagedRuleSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetManagedRuleSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetManagedRuleSet::set_id): <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+    /// - On success, responds with [`GetManagedRuleSetOutput`](crate::output::GetManagedRuleSetOutput) with field(s):
+    ///   - [`managed_rule_set(Option<ManagedRuleSet>)`](crate::output::GetManagedRuleSetOutput::managed_rule_set): <p>The managed rule set that you requested. </p>
+    ///   - [`lock_token(Option<String>)`](crate::output::GetManagedRuleSetOutput::lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On failure, responds with [`SdkError<GetManagedRuleSetError>`](crate::error::GetManagedRuleSetError)
     pub fn get_managed_rule_set(&self) -> fluent_builders::GetManagedRuleSet<C, M, R> {
         fluent_builders::GetManagedRuleSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPermissionPolicy` operation.
+    /// Constructs a fluent builder for the [`GetPermissionPolicy`](crate::client::fluent_builders::GetPermissionPolicy) operation.
     ///
-    /// See [`GetPermissionPolicy`](crate::client::fluent_builders::GetPermissionPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetPermissionPolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetPermissionPolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the policy.</p>
+    /// - On success, responds with [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::output::GetPermissionPolicyOutput::policy): <p>The IAM policy that is attached to the specified rule group.</p>
+    /// - On failure, responds with [`SdkError<GetPermissionPolicyError>`](crate::error::GetPermissionPolicyError)
     pub fn get_permission_policy(&self) -> fluent_builders::GetPermissionPolicy<C, M, R> {
         fluent_builders::GetPermissionPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRateBasedStatementManagedKeys` operation.
+    /// Constructs a fluent builder for the [`GetRateBasedStatementManagedKeys`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys) operation.
     ///
-    /// See [`GetRateBasedStatementManagedKeys`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`web_acl_name(impl Into<String>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::web_acl_name) / [`set_web_acl_name(Option<String>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::set_web_acl_name): <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
+    ///   - [`web_acl_id(impl Into<String>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::web_acl_id) / [`set_web_acl_id(Option<String>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::set_web_acl_id): <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    ///   - [`rule_group_rule_name(impl Into<String>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::rule_group_rule_name) / [`set_rule_group_rule_name(Option<String>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::set_rule_group_rule_name): <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested inside a rule group. </p>
+    ///   - [`rule_name(impl Into<String>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::rule_name) / [`set_rule_name(Option<String>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::set_rule_name): <p>The name of the rate-based rule to get the keys for. If you have the rule defined inside a rule group that you're using in your web ACL, also provide the name of the rule group reference statement in the request parameter <code>RuleGroupRuleName</code>.</p>
+    /// - On success, responds with [`GetRateBasedStatementManagedKeysOutput`](crate::output::GetRateBasedStatementManagedKeysOutput) with field(s):
+    ///   - [`managed_keys_ipv4(Option<RateBasedStatementManagedKeysIpSet>)`](crate::output::GetRateBasedStatementManagedKeysOutput::managed_keys_ipv4): <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
+    ///   - [`managed_keys_ipv6(Option<RateBasedStatementManagedKeysIpSet>)`](crate::output::GetRateBasedStatementManagedKeysOutput::managed_keys_ipv6): <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
+    /// - On failure, responds with [`SdkError<GetRateBasedStatementManagedKeysError>`](crate::error::GetRateBasedStatementManagedKeysError)
     pub fn get_rate_based_statement_managed_keys(
         &self,
     ) -> fluent_builders::GetRateBasedStatementManagedKeys<C, M, R> {
         fluent_builders::GetRateBasedStatementManagedKeys::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRegexPatternSet` operation.
+    /// Constructs a fluent builder for the [`GetRegexPatternSet`](crate::client::fluent_builders::GetRegexPatternSet) operation.
     ///
-    /// See [`GetRegexPatternSet`](crate::client::fluent_builders::GetRegexPatternSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetRegexPatternSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetRegexPatternSet::set_name): <p>The name of the set. You cannot change the name after you create the set.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetRegexPatternSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetRegexPatternSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetRegexPatternSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetRegexPatternSet::set_id): <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    /// - On success, responds with [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput) with field(s):
+    ///   - [`regex_pattern_set(Option<RegexPatternSet>)`](crate::output::GetRegexPatternSetOutput::regex_pattern_set): <p></p>
+    ///   - [`lock_token(Option<String>)`](crate::output::GetRegexPatternSetOutput::lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On failure, responds with [`SdkError<GetRegexPatternSetError>`](crate::error::GetRegexPatternSetError)
     pub fn get_regex_pattern_set(&self) -> fluent_builders::GetRegexPatternSet<C, M, R> {
         fluent_builders::GetRegexPatternSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRuleGroup` operation.
+    /// Constructs a fluent builder for the [`GetRuleGroup`](crate::client::fluent_builders::GetRuleGroup) operation.
     ///
-    /// See [`GetRuleGroup`](crate::client::fluent_builders::GetRuleGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetRuleGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetRuleGroup::set_name): <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetRuleGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetRuleGroup::set_id): <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetRuleGroup::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetRuleGroup::set_arn): <p>The Amazon Resource Name (ARN) of the entity.</p>
+    /// - On success, responds with [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput) with field(s):
+    ///   - [`rule_group(Option<RuleGroup>)`](crate::output::GetRuleGroupOutput::rule_group): <p></p>
+    ///   - [`lock_token(Option<String>)`](crate::output::GetRuleGroupOutput::lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On failure, responds with [`SdkError<GetRuleGroupError>`](crate::error::GetRuleGroupError)
     pub fn get_rule_group(&self) -> fluent_builders::GetRuleGroup<C, M, R> {
         fluent_builders::GetRuleGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSampledRequests` operation.
+    /// Constructs a fluent builder for the [`GetSampledRequests`](crate::client::fluent_builders::GetSampledRequests) operation.
     ///
-    /// See [`GetSampledRequests`](crate::client::fluent_builders::GetSampledRequests) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`web_acl_arn(impl Into<String>)`](crate::client::fluent_builders::GetSampledRequests::web_acl_arn) / [`set_web_acl_arn(Option<String>)`](crate::client::fluent_builders::GetSampledRequests::set_web_acl_arn): <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
+    ///   - [`rule_metric_name(impl Into<String>)`](crate::client::fluent_builders::GetSampledRequests::rule_metric_name) / [`set_rule_metric_name(Option<String>)`](crate::client::fluent_builders::GetSampledRequests::set_rule_metric_name): <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of requests.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetSampledRequests::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetSampledRequests::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`time_window(TimeWindow)`](crate::client::fluent_builders::GetSampledRequests::time_window) / [`set_time_window(Option<TimeWindow>)`](crate::client::fluent_builders::GetSampledRequests::set_time_window): <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
+    ///   - [`max_items(i64)`](crate::client::fluent_builders::GetSampledRequests::max_items) / [`set_max_items(i64)`](crate::client::fluent_builders::GetSampledRequests::set_max_items): <p>The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web Services resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
+    /// - On success, responds with [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput) with field(s):
+    ///   - [`sampled_requests(Option<Vec<SampledHttpRequest>>)`](crate::output::GetSampledRequestsOutput::sampled_requests): <p>A complex type that contains detailed information about each of the requests in the sample.</p>
+    ///   - [`population_size(i64)`](crate::output::GetSampledRequestsOutput::population_size): <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource received during the specified time range.</p>
+    ///   - [`time_window(Option<TimeWindow>)`](crate::output::GetSampledRequestsOutput::time_window): <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
+    /// - On failure, responds with [`SdkError<GetSampledRequestsError>`](crate::error::GetSampledRequestsError)
     pub fn get_sampled_requests(&self) -> fluent_builders::GetSampledRequests<C, M, R> {
         fluent_builders::GetSampledRequests::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetWebACL` operation.
+    /// Constructs a fluent builder for the [`GetWebACL`](crate::client::fluent_builders::GetWebACL) operation.
     ///
-    /// See [`GetWebACL`](crate::client::fluent_builders::GetWebACL) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetWebACL::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetWebACL::set_name): <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetWebACL::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetWebACL::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetWebACL::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetWebACL::set_id): <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    /// - On success, responds with [`GetWebAclOutput`](crate::output::GetWebAclOutput) with field(s):
+    ///   - [`web_acl(Option<WebAcl>)`](crate::output::GetWebAclOutput::web_acl): <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
+    ///   - [`lock_token(Option<String>)`](crate::output::GetWebAclOutput::lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On failure, responds with [`SdkError<GetWebACLError>`](crate::error::GetWebACLError)
     pub fn get_web_acl(&self) -> fluent_builders::GetWebACL<C, M, R> {
         fluent_builders::GetWebACL::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetWebACLForResource` operation.
+    /// Constructs a fluent builder for the [`GetWebACLForResource`](crate::client::fluent_builders::GetWebACLForResource) operation.
     ///
-    /// See [`GetWebACLForResource`](crate::client::fluent_builders::GetWebACLForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetWebACLForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetWebACLForResource::set_resource_arn): <p>The ARN (Amazon Resource Name) of the resource.</p>
+    /// - On success, responds with [`GetWebAclForResourceOutput`](crate::output::GetWebAclForResourceOutput) with field(s):
+    ///   - [`web_acl(Option<WebAcl>)`](crate::output::GetWebAclForResourceOutput::web_acl): <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
+    /// - On failure, responds with [`SdkError<GetWebACLForResourceError>`](crate::error::GetWebACLForResourceError)
     pub fn get_web_acl_for_resource(&self) -> fluent_builders::GetWebACLForResource<C, M, R> {
         fluent_builders::GetWebACLForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAvailableManagedRuleGroups` operation.
+    /// Constructs a fluent builder for the [`ListAvailableManagedRuleGroups`](crate::client::fluent_builders::ListAvailableManagedRuleGroups) operation.
     ///
-    /// See [`ListAvailableManagedRuleGroups`](crate::client::fluent_builders::ListAvailableManagedRuleGroups) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListAvailableManagedRuleGroups::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroups::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroups::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroups::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListAvailableManagedRuleGroups::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroups::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// - On success, responds with [`ListAvailableManagedRuleGroupsOutput`](crate::output::ListAvailableManagedRuleGroupsOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListAvailableManagedRuleGroupsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`managed_rule_groups(Option<Vec<ManagedRuleGroupSummary>>)`](crate::output::ListAvailableManagedRuleGroupsOutput::managed_rule_groups): <p></p>
+    /// - On failure, responds with [`SdkError<ListAvailableManagedRuleGroupsError>`](crate::error::ListAvailableManagedRuleGroupsError)
     pub fn list_available_managed_rule_groups(
         &self,
     ) -> fluent_builders::ListAvailableManagedRuleGroups<C, M, R> {
         fluent_builders::ListAvailableManagedRuleGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAvailableManagedRuleGroupVersions` operation.
+    /// Constructs a fluent builder for the [`ListAvailableManagedRuleGroupVersions`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions) operation.
     ///
-    /// See [`ListAvailableManagedRuleGroupVersions`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`vendor_name(impl Into<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::vendor_name) / [`set_vendor_name(Option<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::set_vendor_name): <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::set_name): <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// - On success, responds with [`ListAvailableManagedRuleGroupVersionsOutput`](crate::output::ListAvailableManagedRuleGroupVersionsOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListAvailableManagedRuleGroupVersionsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`versions(Option<Vec<ManagedRuleGroupVersion>>)`](crate::output::ListAvailableManagedRuleGroupVersionsOutput::versions): <p>The versions that are currently available for the specified managed rule group. </p>
+    /// - On failure, responds with [`SdkError<ListAvailableManagedRuleGroupVersionsError>`](crate::error::ListAvailableManagedRuleGroupVersionsError)
     pub fn list_available_managed_rule_group_versions(
         &self,
     ) -> fluent_builders::ListAvailableManagedRuleGroupVersions<C, M, R> {
         fluent_builders::ListAvailableManagedRuleGroupVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListIPSets` operation.
+    /// Constructs a fluent builder for the [`ListIPSets`](crate::client::fluent_builders::ListIPSets) operation.
     ///
-    /// See [`ListIPSets`](crate::client::fluent_builders::ListIPSets) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListIPSets::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListIPSets::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListIPSets::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListIPSets::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListIPSets::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListIPSets::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// - On success, responds with [`ListIpSetsOutput`](crate::output::ListIpSetsOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListIpSetsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`ip_sets(Option<Vec<IpSetSummary>>)`](crate::output::ListIpSetsOutput::ip_sets): <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code> specification for this request.</p>
+    /// - On failure, responds with [`SdkError<ListIPSetsError>`](crate::error::ListIPSetsError)
     pub fn list_ip_sets(&self) -> fluent_builders::ListIPSets<C, M, R> {
         fluent_builders::ListIPSets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLoggingConfigurations` operation.
+    /// Constructs a fluent builder for the [`ListLoggingConfigurations`](crate::client::fluent_builders::ListLoggingConfigurations) operation.
     ///
-    /// See [`ListLoggingConfigurations`](crate::client::fluent_builders::ListLoggingConfigurations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListLoggingConfigurations::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListLoggingConfigurations::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListLoggingConfigurations::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListLoggingConfigurations::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListLoggingConfigurations::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListLoggingConfigurations::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// - On success, responds with [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput) with field(s):
+    ///   - [`logging_configurations(Option<Vec<LoggingConfiguration>>)`](crate::output::ListLoggingConfigurationsOutput::logging_configurations): <p></p>
+    ///   - [`next_marker(Option<String>)`](crate::output::ListLoggingConfigurationsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// - On failure, responds with [`SdkError<ListLoggingConfigurationsError>`](crate::error::ListLoggingConfigurationsError)
     pub fn list_logging_configurations(
         &self,
     ) -> fluent_builders::ListLoggingConfigurations<C, M, R> {
         fluent_builders::ListLoggingConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListManagedRuleSets` operation.
+    /// Constructs a fluent builder for the [`ListManagedRuleSets`](crate::client::fluent_builders::ListManagedRuleSets) operation.
     ///
-    /// See [`ListManagedRuleSets`](crate::client::fluent_builders::ListManagedRuleSets) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListManagedRuleSets::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListManagedRuleSets::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListManagedRuleSets::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListManagedRuleSets::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListManagedRuleSets::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListManagedRuleSets::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// - On success, responds with [`ListManagedRuleSetsOutput`](crate::output::ListManagedRuleSetsOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListManagedRuleSetsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`managed_rule_sets(Option<Vec<ManagedRuleSetSummary>>)`](crate::output::ListManagedRuleSetsOutput::managed_rule_sets): <p>Your managed rule sets. </p>
+    /// - On failure, responds with [`SdkError<ListManagedRuleSetsError>`](crate::error::ListManagedRuleSetsError)
     pub fn list_managed_rule_sets(&self) -> fluent_builders::ListManagedRuleSets<C, M, R> {
         fluent_builders::ListManagedRuleSets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRegexPatternSets` operation.
+    /// Constructs a fluent builder for the [`ListRegexPatternSets`](crate::client::fluent_builders::ListRegexPatternSets) operation.
     ///
-    /// See [`ListRegexPatternSets`](crate::client::fluent_builders::ListRegexPatternSets) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListRegexPatternSets::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListRegexPatternSets::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListRegexPatternSets::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListRegexPatternSets::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListRegexPatternSets::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListRegexPatternSets::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// - On success, responds with [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListRegexPatternSetsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`regex_pattern_sets(Option<Vec<RegexPatternSetSummary>>)`](crate::output::ListRegexPatternSetsOutput::regex_pattern_sets): <p></p>
+    /// - On failure, responds with [`SdkError<ListRegexPatternSetsError>`](crate::error::ListRegexPatternSetsError)
     pub fn list_regex_pattern_sets(&self) -> fluent_builders::ListRegexPatternSets<C, M, R> {
         fluent_builders::ListRegexPatternSets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResourcesForWebACL` operation.
+    /// Constructs a fluent builder for the [`ListResourcesForWebACL`](crate::client::fluent_builders::ListResourcesForWebACL) operation.
     ///
-    /// See [`ListResourcesForWebACL`](crate::client::fluent_builders::ListResourcesForWebACL) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`web_acl_arn(impl Into<String>)`](crate::client::fluent_builders::ListResourcesForWebACL::web_acl_arn) / [`set_web_acl_arn(Option<String>)`](crate::client::fluent_builders::ListResourcesForWebACL::set_web_acl_arn): <p>The Amazon Resource Name (ARN) of the web ACL.</p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::ListResourcesForWebACL::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::ListResourcesForWebACL::set_resource_type): <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+    /// - On success, responds with [`ListResourcesForWebAclOutput`](crate::output::ListResourcesForWebAclOutput) with field(s):
+    ///   - [`resource_arns(Option<Vec<String>>)`](crate::output::ListResourcesForWebAclOutput::resource_arns): <p>The array of Amazon Resource Names (ARNs) of the associated resources.</p>
+    /// - On failure, responds with [`SdkError<ListResourcesForWebACLError>`](crate::error::ListResourcesForWebACLError)
     pub fn list_resources_for_web_acl(&self) -> fluent_builders::ListResourcesForWebACL<C, M, R> {
         fluent_builders::ListResourcesForWebACL::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRuleGroups` operation.
+    /// Constructs a fluent builder for the [`ListRuleGroups`](crate::client::fluent_builders::ListRuleGroups) operation.
     ///
-    /// See [`ListRuleGroups`](crate::client::fluent_builders::ListRuleGroups) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListRuleGroups::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListRuleGroups::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListRuleGroups::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListRuleGroups::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListRuleGroups::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListRuleGroups::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// - On success, responds with [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListRuleGroupsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`rule_groups(Option<Vec<RuleGroupSummary>>)`](crate::output::ListRuleGroupsOutput::rule_groups): <p></p>
+    /// - On failure, responds with [`SdkError<ListRuleGroupsError>`](crate::error::ListRuleGroupsError)
     pub fn list_rule_groups(&self) -> fluent_builders::ListRuleGroups<C, M, R> {
         fluent_builders::ListRuleGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListTagsForResource::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListTagsForResource::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListTagsForResourceOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`tag_info_for_resource(Option<TagInfoForResource>)`](crate::output::ListTagsForResourceOutput::tag_info_for_resource): <p>The collection of tagging definitions for the resource. </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWebACLs` operation.
+    /// Constructs a fluent builder for the [`ListWebACLs`](crate::client::fluent_builders::ListWebACLs) operation.
     ///
-    /// See [`ListWebACLs`](crate::client::fluent_builders::ListWebACLs) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListWebACLs::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListWebACLs::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListWebACLs::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListWebACLs::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`limit(i32)`](crate::client::fluent_builders::ListWebACLs::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListWebACLs::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// - On success, responds with [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListWebAcLsOutput::next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    ///   - [`web_ac_ls(Option<Vec<WebAclSummary>>)`](crate::output::ListWebAcLsOutput::web_ac_ls): <p></p>
+    /// - On failure, responds with [`SdkError<ListWebACLsError>`](crate::error::ListWebACLsError)
     pub fn list_web_ac_ls(&self) -> fluent_builders::ListWebACLs<C, M, R> {
         fluent_builders::ListWebACLs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutLoggingConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutLoggingConfiguration`](crate::client::fluent_builders::PutLoggingConfiguration) operation.
     ///
-    /// See [`PutLoggingConfiguration`](crate::client::fluent_builders::PutLoggingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`logging_configuration(LoggingConfiguration)`](crate::client::fluent_builders::PutLoggingConfiguration::logging_configuration) / [`set_logging_configuration(Option<LoggingConfiguration>)`](crate::client::fluent_builders::PutLoggingConfiguration::set_logging_configuration): <p></p>
+    /// - On success, responds with [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput) with field(s):
+    ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::output::PutLoggingConfigurationOutput::logging_configuration): <p></p>
+    /// - On failure, responds with [`SdkError<PutLoggingConfigurationError>`](crate::error::PutLoggingConfigurationError)
     pub fn put_logging_configuration(&self) -> fluent_builders::PutLoggingConfiguration<C, M, R> {
         fluent_builders::PutLoggingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutManagedRuleSetVersions` operation.
+    /// Constructs a fluent builder for the [`PutManagedRuleSetVersions`](crate::client::fluent_builders::PutManagedRuleSetVersions) operation.
     ///
-    /// See [`PutManagedRuleSetVersions`](crate::client::fluent_builders::PutManagedRuleSetVersions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::set_name): <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>  <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::PutManagedRuleSetVersions::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::set_id): <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+    ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    ///   - [`recommended_version(impl Into<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::recommended_version) / [`set_recommended_version(Option<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::set_recommended_version): <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings. </p>
+    ///   - [`versions_to_publish(HashMap<String, VersionToPublish>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::versions_to_publish) / [`set_versions_to_publish(Option<HashMap<String, VersionToPublish>>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::set_versions_to_publish): <p>The versions of the named managed rule group that you want to offer to your customers. </p>
+    /// - On success, responds with [`PutManagedRuleSetVersionsOutput`](crate::output::PutManagedRuleSetVersionsOutput) with field(s):
+    ///   - [`next_lock_token(Option<String>)`](crate::output::PutManagedRuleSetVersionsOutput::next_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On failure, responds with [`SdkError<PutManagedRuleSetVersionsError>`](crate::error::PutManagedRuleSetVersionsError)
     pub fn put_managed_rule_set_versions(
         &self,
     ) -> fluent_builders::PutManagedRuleSetVersions<C, M, R> {
         fluent_builders::PutManagedRuleSetVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutPermissionPolicy` operation.
+    /// Constructs a fluent builder for the [`PutPermissionPolicy`](crate::client::fluent_builders::PutPermissionPolicy) operation.
     ///
-    /// See [`PutPermissionPolicy`](crate::client::fluent_builders::PutPermissionPolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutPermissionPolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::PutPermissionPolicy::set_resource_arn): <p>The Amazon Resource Name (ARN) of the <code>RuleGroup</code> to which you want to attach the policy.</p>
+    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutPermissionPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutPermissionPolicy::set_policy): <p>The policy to attach to the specified rule group. </p>  <p>The policy specifications must conform to the following:</p>  <ul>   <li> <p>The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>   <li> <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p> </li>   <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p> </li>   <li> <p> <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code>. WAF rejects any extra actions or wildcard actions in the policy.</p> </li>   <li> <p>The policy must not include a <code>Resource</code> parameter.</p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>. </p>
+    /// - On success, responds with [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutPermissionPolicyError>`](crate::error::PutPermissionPolicyError)
     pub fn put_permission_policy(&self) -> fluent_builders::PutPermissionPolicy<C, M, R> {
         fluent_builders::PutPermissionPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>An array of key:value pairs to associate with the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>An array of keys identifying the tags to disassociate from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateIPSet` operation.
+    /// Constructs a fluent builder for the [`UpdateIPSet`](crate::client::fluent_builders::UpdateIPSet) operation.
     ///
-    /// See [`UpdateIPSet`](crate::client::fluent_builders::UpdateIPSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_name): <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateIPSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateIPSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_id): <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_description): <p>A description of the IP set that helps with identification. </p>
+    ///   - [`addresses(Vec<String>)`](crate::client::fluent_builders::UpdateIPSet::addresses) / [`set_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateIPSet::set_addresses): <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>  <p>Examples: </p>  <ul>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>  </ul>  <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+    ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On success, responds with [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput) with field(s):
+    ///   - [`next_lock_token(Option<String>)`](crate::output::UpdateIpSetOutput::next_lock_token): <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
+    /// - On failure, responds with [`SdkError<UpdateIPSetError>`](crate::error::UpdateIPSetError)
     pub fn update_ip_set(&self) -> fluent_builders::UpdateIPSet<C, M, R> {
         fluent_builders::UpdateIPSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateManagedRuleSetVersionExpiryDate` operation.
+    /// Constructs a fluent builder for the [`UpdateManagedRuleSetVersionExpiryDate`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate) operation.
     ///
-    /// See [`UpdateManagedRuleSetVersionExpiryDate`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::set_name): <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>  <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::set_id): <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+    ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    ///   - [`version_to_expire(impl Into<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::version_to_expire) / [`set_version_to_expire(Option<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::set_version_to_expire): <p>The version that you want to remove from your list of offerings for the named managed rule group. </p>
+    ///   - [`expiry_timestamp(DateTime)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::expiry_timestamp) / [`set_expiry_timestamp(Option<DateTime>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::set_expiry_timestamp): <p>The time that you want the version to expire.</p>  <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
+    /// - On success, responds with [`UpdateManagedRuleSetVersionExpiryDateOutput`](crate::output::UpdateManagedRuleSetVersionExpiryDateOutput) with field(s):
+    ///   - [`expiring_version(Option<String>)`](crate::output::UpdateManagedRuleSetVersionExpiryDateOutput::expiring_version): <p>The version that is set to expire. </p>
+    ///   - [`expiry_timestamp(Option<DateTime>)`](crate::output::UpdateManagedRuleSetVersionExpiryDateOutput::expiry_timestamp): <p>The time that the version will expire. </p>  <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
+    ///   - [`next_lock_token(Option<String>)`](crate::output::UpdateManagedRuleSetVersionExpiryDateOutput::next_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On failure, responds with [`SdkError<UpdateManagedRuleSetVersionExpiryDateError>`](crate::error::UpdateManagedRuleSetVersionExpiryDateError)
     pub fn update_managed_rule_set_version_expiry_date(
         &self,
     ) -> fluent_builders::UpdateManagedRuleSetVersionExpiryDate<C, M, R> {
         fluent_builders::UpdateManagedRuleSetVersionExpiryDate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRegexPatternSet` operation.
+    /// Constructs a fluent builder for the [`UpdateRegexPatternSet`](crate::client::fluent_builders::UpdateRegexPatternSet) operation.
     ///
-    /// See [`UpdateRegexPatternSet`](crate::client::fluent_builders::UpdateRegexPatternSet) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_name): <p>The name of the set. You cannot change the name after you create the set.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateRegexPatternSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_id): <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_description): <p>A description of the set that helps with identification. </p>
+    ///   - [`regular_expression_list(Vec<Regex>)`](crate::client::fluent_builders::UpdateRegexPatternSet::regular_expression_list) / [`set_regular_expression_list(Option<Vec<Regex>>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_regular_expression_list): <p></p>
+    ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    /// - On success, responds with [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput) with field(s):
+    ///   - [`next_lock_token(Option<String>)`](crate::output::UpdateRegexPatternSetOutput::next_lock_token): <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
+    /// - On failure, responds with [`SdkError<UpdateRegexPatternSetError>`](crate::error::UpdateRegexPatternSetError)
     pub fn update_regex_pattern_set(&self) -> fluent_builders::UpdateRegexPatternSet<C, M, R> {
         fluent_builders::UpdateRegexPatternSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRuleGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateRuleGroup`](crate::client::fluent_builders::UpdateRuleGroup) operation.
     ///
-    /// See [`UpdateRuleGroup`](crate::client::fluent_builders::UpdateRuleGroup) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateRuleGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateRuleGroup::set_name): <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateRuleGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateRuleGroup::set_id): <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRuleGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRuleGroup::set_description): <p>A description of the rule group that helps with identification. </p>
+    ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::UpdateRuleGroup::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::UpdateRuleGroup::set_rules): <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
+    ///   - [`visibility_config(VisibilityConfig)`](crate::client::fluent_builders::UpdateRuleGroup::visibility_config) / [`set_visibility_config(Option<VisibilityConfig>)`](crate::client::fluent_builders::UpdateRuleGroup::set_visibility_config): <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::UpdateRuleGroup::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::UpdateRuleGroup::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    ///   - [`custom_response_bodies(HashMap<String, CustomResponseBody>)`](crate::client::fluent_builders::UpdateRuleGroup::custom_response_bodies) / [`set_custom_response_bodies(Option<HashMap<String, CustomResponseBody>>)`](crate::client::fluent_builders::UpdateRuleGroup::set_custom_response_bodies): <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>  <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>  <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    /// - On success, responds with [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput) with field(s):
+    ///   - [`next_lock_token(Option<String>)`](crate::output::UpdateRuleGroupOutput::next_lock_token): <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
+    /// - On failure, responds with [`SdkError<UpdateRuleGroupError>`](crate::error::UpdateRuleGroupError)
     pub fn update_rule_group(&self) -> fluent_builders::UpdateRuleGroup<C, M, R> {
         fluent_builders::UpdateRuleGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateWebACL` operation.
+    /// Constructs a fluent builder for the [`UpdateWebACL`](crate::client::fluent_builders::UpdateWebACL) operation.
     ///
-    /// See [`UpdateWebACL`](crate::client::fluent_builders::UpdateWebACL) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateWebACL::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateWebACL::set_name): <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateWebACL::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateWebACL::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateWebACL::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateWebACL::set_id): <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    ///   - [`default_action(DefaultAction)`](crate::client::fluent_builders::UpdateWebACL::default_action) / [`set_default_action(Option<DefaultAction>)`](crate::client::fluent_builders::UpdateWebACL::set_default_action): <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateWebACL::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateWebACL::set_description): <p>A description of the web ACL that helps with identification. </p>
+    ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::UpdateWebACL::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::UpdateWebACL::set_rules): <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
+    ///   - [`visibility_config(VisibilityConfig)`](crate::client::fluent_builders::UpdateWebACL::visibility_config) / [`set_visibility_config(Option<VisibilityConfig>)`](crate::client::fluent_builders::UpdateWebACL::set_visibility_config): <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::UpdateWebACL::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::UpdateWebACL::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    ///   - [`custom_response_bodies(HashMap<String, CustomResponseBody>)`](crate::client::fluent_builders::UpdateWebACL::custom_response_bodies) / [`set_custom_response_bodies(Option<HashMap<String, CustomResponseBody>>)`](crate::client::fluent_builders::UpdateWebACL::set_custom_response_bodies): <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>  <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>  <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
+    ///   - [`captcha_config(CaptchaConfig)`](crate::client::fluent_builders::UpdateWebACL::captcha_config) / [`set_captcha_config(Option<CaptchaConfig>)`](crate::client::fluent_builders::UpdateWebACL::set_captcha_config): <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+    /// - On success, responds with [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput) with field(s):
+    ///   - [`next_lock_token(Option<String>)`](crate::output::UpdateWebAclOutput::next_lock_token): <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
+    /// - On failure, responds with [`SdkError<UpdateWebACLError>`](crate::error::UpdateWebACLError)
     pub fn update_web_acl(&self) -> fluent_builders::UpdateWebACL<C, M, R> {
         fluent_builders::UpdateWebACL::new(self.handle.clone())
     }

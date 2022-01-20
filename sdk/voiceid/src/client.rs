@@ -83,166 +83,276 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateDomain` operation.
+    /// Constructs a fluent builder for the [`CreateDomain`](crate::client::fluent_builders::CreateDomain) operation.
     ///
-    /// See [`CreateDomain`](crate::client::fluent_builders::CreateDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_name): <p>The name of the domain.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_description): <p>A brief description of this domain.</p>
+    ///   - [`server_side_encryption_configuration(ServerSideEncryptionConfiguration)`](crate::client::fluent_builders::CreateDomain::server_side_encryption_configuration) / [`set_server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::client::fluent_builders::CreateDomain::set_server_side_encryption_configuration): <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used. </p>
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_client_token): <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDomain::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDomain::set_tags): <p>A list of tags you want added to the domain.</p>
+    /// - On success, responds with [`CreateDomainOutput`](crate::output::CreateDomainOutput) with field(s):
+    ///   - [`domain(Option<Domain>)`](crate::output::CreateDomainOutput::domain): <p>Information about the newly created domain.</p>
+    /// - On failure, responds with [`SdkError<CreateDomainError>`](crate::error::CreateDomainError)
     pub fn create_domain(&self) -> fluent_builders::CreateDomain<C, M, R> {
         fluent_builders::CreateDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDomain` operation.
+    /// Constructs a fluent builder for the [`DeleteDomain`](crate::client::fluent_builders::DeleteDomain) operation.
     ///
-    /// See [`DeleteDomain`](crate::client::fluent_builders::DeleteDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDomain::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DeleteDomain::set_domain_id): <p>The identifier of the domain you want to delete.</p>
+    /// - On success, responds with [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::error::DeleteDomainError)
     pub fn delete_domain(&self) -> fluent_builders::DeleteDomain<C, M, R> {
         fluent_builders::DeleteDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFraudster` operation.
+    /// Constructs a fluent builder for the [`DeleteFraudster`](crate::client::fluent_builders::DeleteFraudster) operation.
     ///
-    /// See [`DeleteFraudster`](crate::client::fluent_builders::DeleteFraudster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFraudster::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DeleteFraudster::set_domain_id): <p>The identifier of the domain containing the fraudster.</p>
+    ///   - [`fraudster_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFraudster::fraudster_id) / [`set_fraudster_id(Option<String>)`](crate::client::fluent_builders::DeleteFraudster::set_fraudster_id): <p>The identifier of the fraudster you want to delete.</p>
+    /// - On success, responds with [`DeleteFraudsterOutput`](crate::output::DeleteFraudsterOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFraudsterError>`](crate::error::DeleteFraudsterError)
     pub fn delete_fraudster(&self) -> fluent_builders::DeleteFraudster<C, M, R> {
         fluent_builders::DeleteFraudster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSpeaker` operation.
+    /// Constructs a fluent builder for the [`DeleteSpeaker`](crate::client::fluent_builders::DeleteSpeaker) operation.
     ///
-    /// See [`DeleteSpeaker`](crate::client::fluent_builders::DeleteSpeaker) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSpeaker::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DeleteSpeaker::set_domain_id): <p>The identifier of the domain containing the speaker.</p>
+    ///   - [`speaker_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSpeaker::speaker_id) / [`set_speaker_id(Option<String>)`](crate::client::fluent_builders::DeleteSpeaker::set_speaker_id): <p>The identifier of the speaker you want to delete.</p>
+    /// - On success, responds with [`DeleteSpeakerOutput`](crate::output::DeleteSpeakerOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSpeakerError>`](crate::error::DeleteSpeakerError)
     pub fn delete_speaker(&self) -> fluent_builders::DeleteSpeaker<C, M, R> {
         fluent_builders::DeleteSpeaker::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDomain` operation.
+    /// Constructs a fluent builder for the [`DescribeDomain`](crate::client::fluent_builders::DescribeDomain) operation.
     ///
-    /// See [`DescribeDomain`](crate::client::fluent_builders::DescribeDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDomain::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DescribeDomain::set_domain_id): <p>The identifier of the domain you are describing.</p>
+    /// - On success, responds with [`DescribeDomainOutput`](crate::output::DescribeDomainOutput) with field(s):
+    ///   - [`domain(Option<Domain>)`](crate::output::DescribeDomainOutput::domain): <p>Information about the specified domain.</p>
+    /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::error::DescribeDomainError)
     pub fn describe_domain(&self) -> fluent_builders::DescribeDomain<C, M, R> {
         fluent_builders::DescribeDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFraudster` operation.
+    /// Constructs a fluent builder for the [`DescribeFraudster`](crate::client::fluent_builders::DescribeFraudster) operation.
     ///
-    /// See [`DescribeFraudster`](crate::client::fluent_builders::DescribeFraudster) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFraudster::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DescribeFraudster::set_domain_id): <p>The identifier of the domain containing the fraudster.</p>
+    ///   - [`fraudster_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFraudster::fraudster_id) / [`set_fraudster_id(Option<String>)`](crate::client::fluent_builders::DescribeFraudster::set_fraudster_id): <p>The identifier of the fraudster you are describing.</p>
+    /// - On success, responds with [`DescribeFraudsterOutput`](crate::output::DescribeFraudsterOutput) with field(s):
+    ///   - [`fraudster(Option<Fraudster>)`](crate::output::DescribeFraudsterOutput::fraudster): <p>Information about the specified fraudster.</p>
+    /// - On failure, responds with [`SdkError<DescribeFraudsterError>`](crate::error::DescribeFraudsterError)
     pub fn describe_fraudster(&self) -> fluent_builders::DescribeFraudster<C, M, R> {
         fluent_builders::DescribeFraudster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFraudsterRegistrationJob` operation.
+    /// Constructs a fluent builder for the [`DescribeFraudsterRegistrationJob`](crate::client::fluent_builders::DescribeFraudsterRegistrationJob) operation.
     ///
-    /// See [`DescribeFraudsterRegistrationJob`](crate::client::fluent_builders::DescribeFraudsterRegistrationJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFraudsterRegistrationJob::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DescribeFraudsterRegistrationJob::set_domain_id): <p>The identifier for the domain containing the fraudster registration job.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFraudsterRegistrationJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeFraudsterRegistrationJob::set_job_id): <p>The identifier for the fraudster registration job you are describing.</p>
+    /// - On success, responds with [`DescribeFraudsterRegistrationJobOutput`](crate::output::DescribeFraudsterRegistrationJobOutput) with field(s):
+    ///   - [`job(Option<FraudsterRegistrationJob>)`](crate::output::DescribeFraudsterRegistrationJobOutput::job): <p>Contains details about the specified fraudster registration job.</p>
+    /// - On failure, responds with [`SdkError<DescribeFraudsterRegistrationJobError>`](crate::error::DescribeFraudsterRegistrationJobError)
     pub fn describe_fraudster_registration_job(
         &self,
     ) -> fluent_builders::DescribeFraudsterRegistrationJob<C, M, R> {
         fluent_builders::DescribeFraudsterRegistrationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSpeaker` operation.
+    /// Constructs a fluent builder for the [`DescribeSpeaker`](crate::client::fluent_builders::DescribeSpeaker) operation.
     ///
-    /// See [`DescribeSpeaker`](crate::client::fluent_builders::DescribeSpeaker) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSpeaker::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DescribeSpeaker::set_domain_id): <p>The identifier of the domain that contains the speaker.</p>
+    ///   - [`speaker_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSpeaker::speaker_id) / [`set_speaker_id(Option<String>)`](crate::client::fluent_builders::DescribeSpeaker::set_speaker_id): <p>The identifier of the speaker you are describing.</p>
+    /// - On success, responds with [`DescribeSpeakerOutput`](crate::output::DescribeSpeakerOutput) with field(s):
+    ///   - [`speaker(Option<Speaker>)`](crate::output::DescribeSpeakerOutput::speaker): <p>Information about the specified speaker.</p>
+    /// - On failure, responds with [`SdkError<DescribeSpeakerError>`](crate::error::DescribeSpeakerError)
     pub fn describe_speaker(&self) -> fluent_builders::DescribeSpeaker<C, M, R> {
         fluent_builders::DescribeSpeaker::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSpeakerEnrollmentJob` operation.
+    /// Constructs a fluent builder for the [`DescribeSpeakerEnrollmentJob`](crate::client::fluent_builders::DescribeSpeakerEnrollmentJob) operation.
     ///
-    /// See [`DescribeSpeakerEnrollmentJob`](crate::client::fluent_builders::DescribeSpeakerEnrollmentJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSpeakerEnrollmentJob::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::DescribeSpeakerEnrollmentJob::set_domain_id): <p>The identifier of the domain containing the speaker enrollment job.</p>
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeSpeakerEnrollmentJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeSpeakerEnrollmentJob::set_job_id): <p>The identifier of the speaker enrollment job you are describing.</p>
+    /// - On success, responds with [`DescribeSpeakerEnrollmentJobOutput`](crate::output::DescribeSpeakerEnrollmentJobOutput) with field(s):
+    ///   - [`job(Option<SpeakerEnrollmentJob>)`](crate::output::DescribeSpeakerEnrollmentJobOutput::job): <p>Contains details about the specified speaker enrollment job.</p>
+    /// - On failure, responds with [`SdkError<DescribeSpeakerEnrollmentJobError>`](crate::error::DescribeSpeakerEnrollmentJobError)
     pub fn describe_speaker_enrollment_job(
         &self,
     ) -> fluent_builders::DescribeSpeakerEnrollmentJob<C, M, R> {
         fluent_builders::DescribeSpeakerEnrollmentJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EvaluateSession` operation.
+    /// Constructs a fluent builder for the [`EvaluateSession`](crate::client::fluent_builders::EvaluateSession) operation.
     ///
-    /// See [`EvaluateSession`](crate::client::fluent_builders::EvaluateSession) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::EvaluateSession::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::EvaluateSession::set_domain_id): <p>The identifier of the domain where the session started.</p>
+    ///   - [`session_name_or_id(impl Into<String>)`](crate::client::fluent_builders::EvaluateSession::session_name_or_id) / [`set_session_name_or_id(Option<String>)`](crate::client::fluent_builders::EvaluateSession::set_session_name_or_id): <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
+    /// - On success, responds with [`EvaluateSessionOutput`](crate::output::EvaluateSessionOutput) with field(s):
+    ///   - [`domain_id(Option<String>)`](crate::output::EvaluateSessionOutput::domain_id): <p>The identifier of the domain containing the session.</p>
+    ///   - [`session_id(Option<String>)`](crate::output::EvaluateSessionOutput::session_id): <p>The service-generated identifier of the session.</p>
+    ///   - [`session_name(Option<String>)`](crate::output::EvaluateSessionOutput::session_name): <p>The client-provided name of the session.</p>
+    ///   - [`streaming_status(Option<StreamingStatus>)`](crate::output::EvaluateSessionOutput::streaming_status): <p>The current status of audio streaming for this session. This field is useful to infer next steps when the Authentication or Fraud Detection results are empty or the decision is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code> is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should call the API again later, once Voice ID has enough audio to produce a result. If the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code> is <code>ENDED</code>, it means that the previously streamed session did not have enough speech to perform evaluation, and a new streaming session is needed to try again.</p>
+    ///   - [`authentication_result(Option<AuthenticationResult>)`](crate::output::EvaluateSessionOutput::authentication_result): <p>Details resulting from the authentication process, such as authentication decision and authentication score.</p>
+    ///   - [`fraud_detection_result(Option<FraudDetectionResult>)`](crate::output::EvaluateSessionOutput::fraud_detection_result): <p>Details resulting from the fraud detection process, such as fraud detection decision and risk score.</p>
+    /// - On failure, responds with [`SdkError<EvaluateSessionError>`](crate::error::EvaluateSessionError)
     pub fn evaluate_session(&self) -> fluent_builders::EvaluateSession<C, M, R> {
         fluent_builders::EvaluateSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDomains` operation.
+    /// Constructs a fluent builder for the [`ListDomains`](crate::client::fluent_builders::ListDomains) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
     ///
-    /// See [`ListDomains`](crate::client::fluent_builders::ListDomains) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDomains::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDomains::set_max_results): <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDomains::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDomains::set_next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    /// - On success, responds with [`ListDomainsOutput`](crate::output::ListDomainsOutput) with field(s):
+    ///   - [`domain_summaries(Option<Vec<DomainSummary>>)`](crate::output::ListDomainsOutput::domain_summaries): <p>A list containing details about each domain in the Amazon Web Services account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDomainsOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::error::ListDomainsError)
     pub fn list_domains(&self) -> fluent_builders::ListDomains<C, M, R> {
         fluent_builders::ListDomains::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFraudsterRegistrationJobs` operation.
+    /// Constructs a fluent builder for the [`ListFraudsterRegistrationJobs`](crate::client::fluent_builders::ListFraudsterRegistrationJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFraudsterRegistrationJobs::into_paginator).
     ///
-    /// See [`ListFraudsterRegistrationJobs`](crate::client::fluent_builders::ListFraudsterRegistrationJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFraudsterRegistrationJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::ListFraudsterRegistrationJobs::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::ListFraudsterRegistrationJobs::set_domain_id): <p>The identifier of the domain containing the fraudster registration Jobs.</p>
+    ///   - [`job_status(FraudsterRegistrationJobStatus)`](crate::client::fluent_builders::ListFraudsterRegistrationJobs::job_status) / [`set_job_status(Option<FraudsterRegistrationJobStatus>)`](crate::client::fluent_builders::ListFraudsterRegistrationJobs::set_job_status): <p>Provides the status of your fraudster registration job.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFraudsterRegistrationJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFraudsterRegistrationJobs::set_max_results): <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFraudsterRegistrationJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFraudsterRegistrationJobs::set_next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    /// - On success, responds with [`ListFraudsterRegistrationJobsOutput`](crate::output::ListFraudsterRegistrationJobsOutput) with field(s):
+    ///   - [`job_summaries(Option<Vec<FraudsterRegistrationJobSummary>>)`](crate::output::ListFraudsterRegistrationJobsOutput::job_summaries): <p>A list containing details about each specified fraudster registration job.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFraudsterRegistrationJobsOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    /// - On failure, responds with [`SdkError<ListFraudsterRegistrationJobsError>`](crate::error::ListFraudsterRegistrationJobsError)
     pub fn list_fraudster_registration_jobs(
         &self,
     ) -> fluent_builders::ListFraudsterRegistrationJobs<C, M, R> {
         fluent_builders::ListFraudsterRegistrationJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSpeakerEnrollmentJobs` operation.
+    /// Constructs a fluent builder for the [`ListSpeakerEnrollmentJobs`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs::into_paginator).
     ///
-    /// See [`ListSpeakerEnrollmentJobs`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs::set_domain_id): <p>The identifier of the domain containing the speaker enrollment jobs.</p>
+    ///   - [`job_status(SpeakerEnrollmentJobStatus)`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs::job_status) / [`set_job_status(Option<SpeakerEnrollmentJobStatus>)`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs::set_job_status): <p>Provides the status of your speaker enrollment Job.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs::set_max_results): <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs::set_next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    /// - On success, responds with [`ListSpeakerEnrollmentJobsOutput`](crate::output::ListSpeakerEnrollmentJobsOutput) with field(s):
+    ///   - [`job_summaries(Option<Vec<SpeakerEnrollmentJobSummary>>)`](crate::output::ListSpeakerEnrollmentJobsOutput::job_summaries): <p>A list containing details about each specified speaker enrollment job.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSpeakerEnrollmentJobsOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    /// - On failure, responds with [`SdkError<ListSpeakerEnrollmentJobsError>`](crate::error::ListSpeakerEnrollmentJobsError)
     pub fn list_speaker_enrollment_jobs(
         &self,
     ) -> fluent_builders::ListSpeakerEnrollmentJobs<C, M, R> {
         fluent_builders::ListSpeakerEnrollmentJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSpeakers` operation.
+    /// Constructs a fluent builder for the [`ListSpeakers`](crate::client::fluent_builders::ListSpeakers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSpeakers::into_paginator).
     ///
-    /// See [`ListSpeakers`](crate::client::fluent_builders::ListSpeakers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSpeakers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::ListSpeakers::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::ListSpeakers::set_domain_id): <p>The identifier of the domain.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSpeakers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSpeakers::set_max_results): <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSpeakers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSpeakers::set_next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    /// - On success, responds with [`ListSpeakersOutput`](crate::output::ListSpeakersOutput) with field(s):
+    ///   - [`speaker_summaries(Option<Vec<SpeakerSummary>>)`](crate::output::ListSpeakersOutput::speaker_summaries): <p>A list containing details about each speaker in the Amazon Web Services account. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSpeakersOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    /// - On failure, responds with [`SdkError<ListSpeakersError>`](crate::error::ListSpeakersError)
     pub fn list_speakers(&self) -> fluent_builders::ListSpeakers<C, M, R> {
         fluent_builders::ListSpeakers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Voice ID resource for which you want to list the tags.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags associated with the specified resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `OptOutSpeaker` operation.
+    /// Constructs a fluent builder for the [`OptOutSpeaker`](crate::client::fluent_builders::OptOutSpeaker) operation.
     ///
-    /// See [`OptOutSpeaker`](crate::client::fluent_builders::OptOutSpeaker) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::OptOutSpeaker::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::OptOutSpeaker::set_domain_id): <p>The identifier of the domain containing the speaker.</p>
+    ///   - [`speaker_id(impl Into<String>)`](crate::client::fluent_builders::OptOutSpeaker::speaker_id) / [`set_speaker_id(Option<String>)`](crate::client::fluent_builders::OptOutSpeaker::set_speaker_id): <p>The identifier of the speaker you want opted-out.</p>
+    /// - On success, responds with [`OptOutSpeakerOutput`](crate::output::OptOutSpeakerOutput) with field(s):
+    ///   - [`speaker(Option<Speaker>)`](crate::output::OptOutSpeakerOutput::speaker): <p>Details about the opted-out speaker.</p>
+    /// - On failure, responds with [`SdkError<OptOutSpeakerError>`](crate::error::OptOutSpeakerError)
     pub fn opt_out_speaker(&self) -> fluent_builders::OptOutSpeaker<C, M, R> {
         fluent_builders::OptOutSpeaker::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartFraudsterRegistrationJob` operation.
+    /// Constructs a fluent builder for the [`StartFraudsterRegistrationJob`](crate::client::fluent_builders::StartFraudsterRegistrationJob) operation.
     ///
-    /// See [`StartFraudsterRegistrationJob`](crate::client::fluent_builders::StartFraudsterRegistrationJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_client_token): <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services SDK populates this field.</p>
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_job_name): <p>The name of the new fraudster registration job.</p>
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_domain_id): <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are registered.</p>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_data_access_role_arn): <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
+    ///   - [`registration_config(RegistrationConfig)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::registration_config) / [`set_registration_config(Option<RegistrationConfig>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_registration_config): <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_input_data_config): <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
+    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartFraudsterRegistrationJob::set_output_data_config): <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
+    /// - On success, responds with [`StartFraudsterRegistrationJobOutput`](crate::output::StartFraudsterRegistrationJobOutput) with field(s):
+    ///   - [`job(Option<FraudsterRegistrationJob>)`](crate::output::StartFraudsterRegistrationJobOutput::job): <p>Details about the started fraudster registration job.</p>
+    /// - On failure, responds with [`SdkError<StartFraudsterRegistrationJobError>`](crate::error::StartFraudsterRegistrationJobError)
     pub fn start_fraudster_registration_job(
         &self,
     ) -> fluent_builders::StartFraudsterRegistrationJob<C, M, R> {
         fluent_builders::StartFraudsterRegistrationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartSpeakerEnrollmentJob` operation.
+    /// Constructs a fluent builder for the [`StartSpeakerEnrollmentJob`](crate::client::fluent_builders::StartSpeakerEnrollmentJob) operation.
     ///
-    /// See [`StartSpeakerEnrollmentJob`](crate::client::fluent_builders::StartSpeakerEnrollmentJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_client_token): <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services SDK populates this field.</p>
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_job_name): <p>A name for your speaker enrollment job.</p>
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_domain_id): <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
+    ///   - [`data_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::data_access_role_arn) / [`set_data_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_data_access_role_arn): <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
+    ///   - [`enrollment_config(EnrollmentConfig)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::enrollment_config) / [`set_enrollment_config(Option<EnrollmentConfig>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_enrollment_config): <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
+    ///   - [`input_data_config(InputDataConfig)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::input_data_config) / [`set_input_data_config(Option<InputDataConfig>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_input_data_config): <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
+    ///   - [`output_data_config(OutputDataConfig)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::output_data_config) / [`set_output_data_config(Option<OutputDataConfig>)`](crate::client::fluent_builders::StartSpeakerEnrollmentJob::set_output_data_config): <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
+    /// - On success, responds with [`StartSpeakerEnrollmentJobOutput`](crate::output::StartSpeakerEnrollmentJobOutput) with field(s):
+    ///   - [`job(Option<SpeakerEnrollmentJob>)`](crate::output::StartSpeakerEnrollmentJobOutput::job): <p>Details about the started speaker enrollment job.</p>
+    /// - On failure, responds with [`SdkError<StartSpeakerEnrollmentJobError>`](crate::error::StartSpeakerEnrollmentJobError)
     pub fn start_speaker_enrollment_job(
         &self,
     ) -> fluent_builders::StartSpeakerEnrollmentJob<C, M, R> {
         fluent_builders::StartSpeakerEnrollmentJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to tag.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of tags to assign to the specified resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to remove tags from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tag keys you want to remove from the specified resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDomain` operation.
+    /// Constructs a fluent builder for the [`UpdateDomain`](crate::client::fluent_builders::UpdateDomain) operation.
     ///
-    /// See [`UpdateDomain`](crate::client::fluent_builders::UpdateDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::domain_id) / [`set_domain_id(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_domain_id): <p>The identifier of the domain to be updated.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_name): <p>The name of the domain.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDomain::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDomain::set_description): <p>A brief description about this domain.</p>
+    ///   - [`server_side_encryption_configuration(ServerSideEncryptionConfiguration)`](crate::client::fluent_builders::UpdateDomain::server_side_encryption_configuration) / [`set_server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::client::fluent_builders::UpdateDomain::set_server_side_encryption_configuration): <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+    /// - On success, responds with [`UpdateDomainOutput`](crate::output::UpdateDomainOutput) with field(s):
+    ///   - [`domain(Option<Domain>)`](crate::output::UpdateDomainOutput::domain): <p>Details about the updated domain</p>
+    /// - On failure, responds with [`SdkError<UpdateDomainError>`](crate::error::UpdateDomainError)
     pub fn update_domain(&self) -> fluent_builders::UpdateDomain<C, M, R> {
         fluent_builders::UpdateDomain::new(self.handle.clone())
     }

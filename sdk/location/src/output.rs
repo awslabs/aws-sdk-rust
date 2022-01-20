@@ -1065,10 +1065,9 @@ pub struct DescribeTrackerOutput {
     pub tracker_arn: std::option::Option<std::string::String>,
     /// <p>The optional description for the tracker resource.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The pricing plan selected for the specified tracker resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
-    /// <p>The specified data provider for the tracker resource.</p>
+    /// <p>No longer used. Always returns an empty string.</p>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>The tags associated with the tracker resource.</p>
     pub tags:
@@ -1098,12 +1097,11 @@ impl DescribeTrackerOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The pricing plan selected for the specified tracker resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
-    /// <p>The specified data provider for the tracker resource.</p>
+    /// <p>No longer used. Always returns an empty string.</p>
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }
@@ -1203,14 +1201,12 @@ pub mod describe_tracker_output {
             self.description = input;
             self
         }
-        /// <p>The pricing plan selected for the specified tracker resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>Always returns <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>The pricing plan selected for the specified tracker resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>Always returns <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -1218,12 +1214,12 @@ pub mod describe_tracker_output {
             self.pricing_plan = input;
             self
         }
-        /// <p>The specified data provider for the tracker resource.</p>
+        /// <p>No longer used. Always returns an empty string.</p>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
-        /// <p>The specified data provider for the tracker resource.</p>
+        /// <p>No longer used. Always returns an empty string.</p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1329,12 +1325,170 @@ impl DescribeTrackerOutput {
     }
 }
 
+/// <p>Returns the result of the route matrix calculation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CalculateRouteMatrixOutput {
+    /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
+    pub route_matrix:
+        std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::RouteMatrixEntry>>>,
+    /// <p>For routes calculated using an Esri route calculator resource, departure positions are snapped to the closest road. For Esri route calculator resources, this returns the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.</p>
+    pub snapped_departure_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+    /// <p>The list of destination positions for the route matrix used for calculation of the <code>RouteMatrix</code>.</p>
+    pub snapped_destination_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+    /// <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
+    pub summary: std::option::Option<crate::model::CalculateRouteMatrixSummary>,
+}
+impl CalculateRouteMatrixOutput {
+    /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
+    pub fn route_matrix(
+        &self,
+    ) -> std::option::Option<&[std::vec::Vec<crate::model::RouteMatrixEntry>]> {
+        self.route_matrix.as_deref()
+    }
+    /// <p>For routes calculated using an Esri route calculator resource, departure positions are snapped to the closest road. For Esri route calculator resources, this returns the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.</p>
+    pub fn snapped_departure_positions(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
+        self.snapped_departure_positions.as_deref()
+    }
+    /// <p>The list of destination positions for the route matrix used for calculation of the <code>RouteMatrix</code>.</p>
+    pub fn snapped_destination_positions(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
+        self.snapped_destination_positions.as_deref()
+    }
+    /// <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
+    pub fn summary(&self) -> std::option::Option<&crate::model::CalculateRouteMatrixSummary> {
+        self.summary.as_ref()
+    }
+}
+impl std::fmt::Debug for CalculateRouteMatrixOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CalculateRouteMatrixOutput");
+        formatter.field("route_matrix", &self.route_matrix);
+        formatter.field(
+            "snapped_departure_positions",
+            &self.snapped_departure_positions,
+        );
+        formatter.field(
+            "snapped_destination_positions",
+            &self.snapped_destination_positions,
+        );
+        formatter.field("summary", &self.summary);
+        formatter.finish()
+    }
+}
+/// See [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput)
+pub mod calculate_route_matrix_output {
+    /// A builder for [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) route_matrix:
+            std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::RouteMatrixEntry>>>,
+        pub(crate) snapped_departure_positions:
+            std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        pub(crate) snapped_destination_positions:
+            std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        pub(crate) summary: std::option::Option<crate::model::CalculateRouteMatrixSummary>,
+    }
+    impl Builder {
+        /// Appends an item to `route_matrix`.
+        ///
+        /// To override the contents of this collection use [`set_route_matrix`](Self::set_route_matrix).
+        ///
+        /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
+        pub fn route_matrix(
+            mut self,
+            input: std::vec::Vec<crate::model::RouteMatrixEntry>,
+        ) -> Self {
+            let mut v = self.route_matrix.unwrap_or_default();
+            v.push(input);
+            self.route_matrix = Some(v);
+            self
+        }
+        /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
+        pub fn set_route_matrix(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<std::vec::Vec<crate::model::RouteMatrixEntry>>,
+            >,
+        ) -> Self {
+            self.route_matrix = input;
+            self
+        }
+        /// Appends an item to `snapped_departure_positions`.
+        ///
+        /// To override the contents of this collection use [`set_snapped_departure_positions`](Self::set_snapped_departure_positions).
+        ///
+        /// <p>For routes calculated using an Esri route calculator resource, departure positions are snapped to the closest road. For Esri route calculator resources, this returns the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.</p>
+        pub fn snapped_departure_positions(mut self, input: std::vec::Vec<f64>) -> Self {
+            let mut v = self.snapped_departure_positions.unwrap_or_default();
+            v.push(input);
+            self.snapped_departure_positions = Some(v);
+            self
+        }
+        /// <p>For routes calculated using an Esri route calculator resource, departure positions are snapped to the closest road. For Esri route calculator resources, this returns the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.</p>
+        pub fn set_snapped_departure_positions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        ) -> Self {
+            self.snapped_departure_positions = input;
+            self
+        }
+        /// Appends an item to `snapped_destination_positions`.
+        ///
+        /// To override the contents of this collection use [`set_snapped_destination_positions`](Self::set_snapped_destination_positions).
+        ///
+        /// <p>The list of destination positions for the route matrix used for calculation of the <code>RouteMatrix</code>.</p>
+        pub fn snapped_destination_positions(mut self, input: std::vec::Vec<f64>) -> Self {
+            let mut v = self.snapped_destination_positions.unwrap_or_default();
+            v.push(input);
+            self.snapped_destination_positions = Some(v);
+            self
+        }
+        /// <p>The list of destination positions for the route matrix used for calculation of the <code>RouteMatrix</code>.</p>
+        pub fn set_snapped_destination_positions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        ) -> Self {
+            self.snapped_destination_positions = input;
+            self
+        }
+        /// <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
+        pub fn summary(mut self, input: crate::model::CalculateRouteMatrixSummary) -> Self {
+            self.summary = Some(input);
+            self
+        }
+        /// <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
+        pub fn set_summary(
+            mut self,
+            input: std::option::Option<crate::model::CalculateRouteMatrixSummary>,
+        ) -> Self {
+            self.summary = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput)
+        pub fn build(self) -> crate::output::CalculateRouteMatrixOutput {
+            crate::output::CalculateRouteMatrixOutput {
+                route_matrix: self.route_matrix,
+                snapped_departure_positions: self.snapped_departure_positions,
+                snapped_destination_positions: self.snapped_destination_positions,
+                summary: self.summary,
+            }
+        }
+    }
+}
+impl CalculateRouteMatrixOutput {
+    /// Creates a new builder-style object to manufacture [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput)
+    pub fn builder() -> crate::output::calculate_route_matrix_output::Builder {
+        crate::output::calculate_route_matrix_output::Builder::default()
+    }
+}
+
 /// <p>Returns the result of the route calculation. Metadata includes legs and route summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CalculateRouteOutput {
     /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
-    /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
+    /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
     /// <ul>
     /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
     /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
@@ -1350,7 +1504,7 @@ pub struct CalculateRouteOutput {
 }
 impl CalculateRouteOutput {
     /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
-    /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
+    /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
     /// <ul>
     /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
     /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
@@ -1391,7 +1545,7 @@ pub mod calculate_route_output {
         /// To override the contents of this collection use [`set_legs`](Self::set_legs).
         ///
         /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
-        /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
+        /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
         /// <ul>
         /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
         /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
@@ -1408,7 +1562,7 @@ pub mod calculate_route_output {
             self
         }
         /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
-        /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
+        /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
         /// <ul>
         /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
         /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
@@ -1833,8 +1987,7 @@ pub struct DescribeRouteCalculatorOutput {
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
     pub calculator_arn: std::option::Option<std::string::String>,
-    /// <p>The pricing plan selected for the specified route calculator resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description of the route calculator resource.</p>
     pub description: std::option::Option<std::string::String>,
@@ -1871,8 +2024,7 @@ impl DescribeRouteCalculatorOutput {
     pub fn calculator_arn(&self) -> std::option::Option<&str> {
         self.calculator_arn.as_deref()
     }
-    /// <p>The pricing plan selected for the specified route calculator resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>Always returns <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -1975,14 +2127,12 @@ pub mod describe_route_calculator_output {
             self.calculator_arn = input;
             self
         }
-        /// <p>The pricing plan selected for the specified route calculator resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>Always returns <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>The pricing plan selected for the specified route calculator resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>Always returns <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2708,8 +2858,7 @@ pub struct DescribePlaceIndexOutput {
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     pub index_arn: std::option::Option<std::string::String>,
-    /// <p>The pricing plan selected for the specified place index resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description for the place index resource.</p>
     pub description: std::option::Option<std::string::String>,
@@ -2742,8 +2891,7 @@ impl DescribePlaceIndexOutput {
     pub fn index_arn(&self) -> std::option::Option<&str> {
         self.index_arn.as_deref()
     }
-    /// <p>The pricing plan selected for the specified place index resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -2843,14 +2991,12 @@ pub mod describe_place_index_output {
             self.index_arn = input;
             self
         }
-        /// <p>The pricing plan selected for the specified place index resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>The pricing plan selected for the specified place index resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -3607,8 +3753,7 @@ pub struct DescribeMapOutput {
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
     /// </ul>
     pub map_arn: std::option::Option<std::string::String>,
-    /// <p>The pricing plan selected for the specified map resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Specifies the data provider for the associated map tiles.</p>
     pub data_source: std::option::Option<std::string::String>,
@@ -3636,8 +3781,7 @@ impl DescribeMapOutput {
     pub fn map_arn(&self) -> std::option::Option<&str> {
         self.map_arn.as_deref()
     }
-    /// <p>The pricing plan selected for the specified map resource.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -3729,14 +3873,12 @@ pub mod describe_map_output {
             self.map_arn = input;
             self
         }
-        /// <p>The pricing plan selected for the specified map resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>The pricing plan selected for the specified map resource.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -4779,10 +4921,9 @@ pub struct DescribeGeofenceCollectionOutput {
     pub collection_arn: std::option::Option<std::string::String>,
     /// <p>The optional description for the geofence collection.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The pricing plan selected for the specified geofence collection.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
+    /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
-    /// <p>The specified data provider for the geofence collection.</p>
+    /// <p>No longer used. Always returns an empty string.</p>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource</p>
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -4810,12 +4951,11 @@ impl DescribeGeofenceCollectionOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The pricing plan selected for the specified geofence collection.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
+    /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
-    /// <p>The specified data provider for the geofence collection.</p>
+    /// <p>No longer used. Always returns an empty string.</p>
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }
@@ -4915,14 +5055,12 @@ pub mod describe_geofence_collection_output {
             self.description = input;
             self
         }
-        /// <p>The pricing plan selected for the specified geofence collection.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
+        /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
-        /// <p>The pricing plan selected for the specified geofence collection.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
+        /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -4930,12 +5068,12 @@ pub mod describe_geofence_collection_output {
             self.pricing_plan = input;
             self
         }
-        /// <p>The specified data provider for the geofence collection.</p>
+        /// <p>No longer used. Always returns an empty string.</p>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
-        /// <p>The specified data provider for the geofence collection.</p>
+        /// <p>No longer used. Always returns an empty string.</p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,

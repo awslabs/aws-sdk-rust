@@ -83,1272 +83,2359 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `BatchCreatePartition` operation.
+    /// Constructs a fluent builder for the [`BatchCreatePartition`](crate::client::fluent_builders::BatchCreatePartition) operation.
     ///
-    /// See [`BatchCreatePartition`](crate::client::fluent_builders::BatchCreatePartition) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::BatchCreatePartition::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::BatchCreatePartition::set_catalog_id): <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::BatchCreatePartition::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::BatchCreatePartition::set_database_name): <p>The name of the metadata database in which the partition is to be created.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::BatchCreatePartition::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::BatchCreatePartition::set_table_name): <p>The name of the metadata table in which the partition is to be created.</p>
+    ///   - [`partition_input_list(Vec<PartitionInput>)`](crate::client::fluent_builders::BatchCreatePartition::partition_input_list) / [`set_partition_input_list(Option<Vec<PartitionInput>>)`](crate::client::fluent_builders::BatchCreatePartition::set_partition_input_list): <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
+    /// - On success, responds with [`BatchCreatePartitionOutput`](crate::output::BatchCreatePartitionOutput) with field(s):
+    ///   - [`errors(Option<Vec<PartitionError>>)`](crate::output::BatchCreatePartitionOutput::errors): <p>The errors encountered when trying to create the requested partitions.</p>
+    /// - On failure, responds with [`SdkError<BatchCreatePartitionError>`](crate::error::BatchCreatePartitionError)
     pub fn batch_create_partition(&self) -> fluent_builders::BatchCreatePartition<C, M, R> {
         fluent_builders::BatchCreatePartition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDeleteConnection` operation.
+    /// Constructs a fluent builder for the [`BatchDeleteConnection`](crate::client::fluent_builders::BatchDeleteConnection) operation.
     ///
-    /// See [`BatchDeleteConnection`](crate::client::fluent_builders::BatchDeleteConnection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteConnection::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::BatchDeleteConnection::set_catalog_id): <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`connection_name_list(Vec<String>)`](crate::client::fluent_builders::BatchDeleteConnection::connection_name_list) / [`set_connection_name_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDeleteConnection::set_connection_name_list): <p>A list of names of the connections to delete.</p>
+    /// - On success, responds with [`BatchDeleteConnectionOutput`](crate::output::BatchDeleteConnectionOutput) with field(s):
+    ///   - [`succeeded(Option<Vec<String>>)`](crate::output::BatchDeleteConnectionOutput::succeeded): <p>A list of names of the connection definitions that were successfully deleted.</p>
+    ///   - [`errors(Option<HashMap<String, ErrorDetail>>)`](crate::output::BatchDeleteConnectionOutput::errors): <p>A map of the names of connections that were not successfully deleted to error details.</p>
+    /// - On failure, responds with [`SdkError<BatchDeleteConnectionError>`](crate::error::BatchDeleteConnectionError)
     pub fn batch_delete_connection(&self) -> fluent_builders::BatchDeleteConnection<C, M, R> {
         fluent_builders::BatchDeleteConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDeletePartition` operation.
+    /// Constructs a fluent builder for the [`BatchDeletePartition`](crate::client::fluent_builders::BatchDeletePartition) operation.
     ///
-    /// See [`BatchDeletePartition`](crate::client::fluent_builders::BatchDeletePartition) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::BatchDeletePartition::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::BatchDeletePartition::set_catalog_id): <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::BatchDeletePartition::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::BatchDeletePartition::set_database_name): <p>The name of the catalog database in which the table in question resides.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::BatchDeletePartition::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::BatchDeletePartition::set_table_name): <p>The name of the table that contains the partitions to be deleted.</p>
+    ///   - [`partitions_to_delete(Vec<PartitionValueList>)`](crate::client::fluent_builders::BatchDeletePartition::partitions_to_delete) / [`set_partitions_to_delete(Option<Vec<PartitionValueList>>)`](crate::client::fluent_builders::BatchDeletePartition::set_partitions_to_delete): <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
+    /// - On success, responds with [`BatchDeletePartitionOutput`](crate::output::BatchDeletePartitionOutput) with field(s):
+    ///   - [`errors(Option<Vec<PartitionError>>)`](crate::output::BatchDeletePartitionOutput::errors): <p>The errors encountered when trying to delete the requested partitions.</p>
+    /// - On failure, responds with [`SdkError<BatchDeletePartitionError>`](crate::error::BatchDeletePartitionError)
     pub fn batch_delete_partition(&self) -> fluent_builders::BatchDeletePartition<C, M, R> {
         fluent_builders::BatchDeletePartition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDeleteTable` operation.
+    /// Constructs a fluent builder for the [`BatchDeleteTable`](crate::client::fluent_builders::BatchDeleteTable) operation.
     ///
-    /// See [`BatchDeleteTable`](crate::client::fluent_builders::BatchDeleteTable) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteTable::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::BatchDeleteTable::set_catalog_id): <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteTable::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::BatchDeleteTable::set_database_name): <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`tables_to_delete(Vec<String>)`](crate::client::fluent_builders::BatchDeleteTable::tables_to_delete) / [`set_tables_to_delete(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDeleteTable::set_tables_to_delete): <p>A list of the table to delete.</p>
+    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteTable::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::BatchDeleteTable::set_transaction_id): <p>The transaction ID at which to delete the table contents.</p>
+    /// - On success, responds with [`BatchDeleteTableOutput`](crate::output::BatchDeleteTableOutput) with field(s):
+    ///   - [`errors(Option<Vec<TableError>>)`](crate::output::BatchDeleteTableOutput::errors): <p>A list of errors encountered in attempting to delete the specified tables.</p>
+    /// - On failure, responds with [`SdkError<BatchDeleteTableError>`](crate::error::BatchDeleteTableError)
     pub fn batch_delete_table(&self) -> fluent_builders::BatchDeleteTable<C, M, R> {
         fluent_builders::BatchDeleteTable::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDeleteTableVersion` operation.
+    /// Constructs a fluent builder for the [`BatchDeleteTableVersion`](crate::client::fluent_builders::BatchDeleteTableVersion) operation.
     ///
-    /// See [`BatchDeleteTableVersion`](crate::client::fluent_builders::BatchDeleteTableVersion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteTableVersion::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::BatchDeleteTableVersion::set_catalog_id): <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteTableVersion::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::BatchDeleteTableVersion::set_database_name): <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteTableVersion::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::BatchDeleteTableVersion::set_table_name): <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`version_ids(Vec<String>)`](crate::client::fluent_builders::BatchDeleteTableVersion::version_ids) / [`set_version_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDeleteTableVersion::set_version_ids): <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
+    /// - On success, responds with [`BatchDeleteTableVersionOutput`](crate::output::BatchDeleteTableVersionOutput) with field(s):
+    ///   - [`errors(Option<Vec<TableVersionError>>)`](crate::output::BatchDeleteTableVersionOutput::errors): <p>A list of errors encountered while trying to delete the specified table versions.</p>
+    /// - On failure, responds with [`SdkError<BatchDeleteTableVersionError>`](crate::error::BatchDeleteTableVersionError)
     pub fn batch_delete_table_version(&self) -> fluent_builders::BatchDeleteTableVersion<C, M, R> {
         fluent_builders::BatchDeleteTableVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetBlueprints` operation.
+    /// Constructs a fluent builder for the [`BatchGetBlueprints`](crate::client::fluent_builders::BatchGetBlueprints) operation.
     ///
-    /// See [`BatchGetBlueprints`](crate::client::fluent_builders::BatchGetBlueprints) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::BatchGetBlueprints::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetBlueprints::set_names): <p>A list of blueprint names.</p>
+    ///   - [`include_blueprint(bool)`](crate::client::fluent_builders::BatchGetBlueprints::include_blueprint) / [`set_include_blueprint(Option<bool>)`](crate::client::fluent_builders::BatchGetBlueprints::set_include_blueprint): <p>Specifies whether or not to include the blueprint in the response.</p>
+    ///   - [`include_parameter_spec(bool)`](crate::client::fluent_builders::BatchGetBlueprints::include_parameter_spec) / [`set_include_parameter_spec(Option<bool>)`](crate::client::fluent_builders::BatchGetBlueprints::set_include_parameter_spec): <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
+    /// - On success, responds with [`BatchGetBlueprintsOutput`](crate::output::BatchGetBlueprintsOutput) with field(s):
+    ///   - [`blueprints(Option<Vec<Blueprint>>)`](crate::output::BatchGetBlueprintsOutput::blueprints): <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
+    ///   - [`missing_blueprints(Option<Vec<String>>)`](crate::output::BatchGetBlueprintsOutput::missing_blueprints): <p>Returns a list of <code>BlueprintNames</code> that were not found.</p>
+    /// - On failure, responds with [`SdkError<BatchGetBlueprintsError>`](crate::error::BatchGetBlueprintsError)
     pub fn batch_get_blueprints(&self) -> fluent_builders::BatchGetBlueprints<C, M, R> {
         fluent_builders::BatchGetBlueprints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetCrawlers` operation.
+    /// Constructs a fluent builder for the [`BatchGetCrawlers`](crate::client::fluent_builders::BatchGetCrawlers) operation.
     ///
-    /// See [`BatchGetCrawlers`](crate::client::fluent_builders::BatchGetCrawlers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`crawler_names(Vec<String>)`](crate::client::fluent_builders::BatchGetCrawlers::crawler_names) / [`set_crawler_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetCrawlers::set_crawler_names): <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
+    /// - On success, responds with [`BatchGetCrawlersOutput`](crate::output::BatchGetCrawlersOutput) with field(s):
+    ///   - [`crawlers(Option<Vec<Crawler>>)`](crate::output::BatchGetCrawlersOutput::crawlers): <p>A list of crawler definitions.</p>
+    ///   - [`crawlers_not_found(Option<Vec<String>>)`](crate::output::BatchGetCrawlersOutput::crawlers_not_found): <p>A list of names of crawlers that were not found.</p>
+    /// - On failure, responds with [`SdkError<BatchGetCrawlersError>`](crate::error::BatchGetCrawlersError)
     pub fn batch_get_crawlers(&self) -> fluent_builders::BatchGetCrawlers<C, M, R> {
         fluent_builders::BatchGetCrawlers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetDevEndpoints` operation.
+    /// Constructs a fluent builder for the [`BatchGetDevEndpoints`](crate::client::fluent_builders::BatchGetDevEndpoints) operation.
     ///
-    /// See [`BatchGetDevEndpoints`](crate::client::fluent_builders::BatchGetDevEndpoints) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`dev_endpoint_names(Vec<String>)`](crate::client::fluent_builders::BatchGetDevEndpoints::dev_endpoint_names) / [`set_dev_endpoint_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetDevEndpoints::set_dev_endpoint_names): <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
+    /// - On success, responds with [`BatchGetDevEndpointsOutput`](crate::output::BatchGetDevEndpointsOutput) with field(s):
+    ///   - [`dev_endpoints(Option<Vec<DevEndpoint>>)`](crate::output::BatchGetDevEndpointsOutput::dev_endpoints): <p>A list of <code>DevEndpoint</code> definitions.</p>
+    ///   - [`dev_endpoints_not_found(Option<Vec<String>>)`](crate::output::BatchGetDevEndpointsOutput::dev_endpoints_not_found): <p>A list of <code>DevEndpoints</code> not found.</p>
+    /// - On failure, responds with [`SdkError<BatchGetDevEndpointsError>`](crate::error::BatchGetDevEndpointsError)
     pub fn batch_get_dev_endpoints(&self) -> fluent_builders::BatchGetDevEndpoints<C, M, R> {
         fluent_builders::BatchGetDevEndpoints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetJobs` operation.
+    /// Constructs a fluent builder for the [`BatchGetJobs`](crate::client::fluent_builders::BatchGetJobs) operation.
     ///
-    /// See [`BatchGetJobs`](crate::client::fluent_builders::BatchGetJobs) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_names(Vec<String>)`](crate::client::fluent_builders::BatchGetJobs::job_names) / [`set_job_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetJobs::set_job_names): <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
+    /// - On success, responds with [`BatchGetJobsOutput`](crate::output::BatchGetJobsOutput) with field(s):
+    ///   - [`jobs(Option<Vec<Job>>)`](crate::output::BatchGetJobsOutput::jobs): <p>A list of job definitions.</p>
+    ///   - [`jobs_not_found(Option<Vec<String>>)`](crate::output::BatchGetJobsOutput::jobs_not_found): <p>A list of names of jobs not found.</p>
+    /// - On failure, responds with [`SdkError<BatchGetJobsError>`](crate::error::BatchGetJobsError)
     pub fn batch_get_jobs(&self) -> fluent_builders::BatchGetJobs<C, M, R> {
         fluent_builders::BatchGetJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetPartition` operation.
+    /// Constructs a fluent builder for the [`BatchGetPartition`](crate::client::fluent_builders::BatchGetPartition) operation.
     ///
-    /// See [`BatchGetPartition`](crate::client::fluent_builders::BatchGetPartition) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::BatchGetPartition::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::BatchGetPartition::set_catalog_id): <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::BatchGetPartition::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::BatchGetPartition::set_database_name): <p>The name of the catalog database where the partitions reside.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::BatchGetPartition::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::BatchGetPartition::set_table_name): <p>The name of the partitions' table.</p>
+    ///   - [`partitions_to_get(Vec<PartitionValueList>)`](crate::client::fluent_builders::BatchGetPartition::partitions_to_get) / [`set_partitions_to_get(Option<Vec<PartitionValueList>>)`](crate::client::fluent_builders::BatchGetPartition::set_partitions_to_get): <p>A list of partition values identifying the partitions to retrieve.</p>
+    /// - On success, responds with [`BatchGetPartitionOutput`](crate::output::BatchGetPartitionOutput) with field(s):
+    ///   - [`partitions(Option<Vec<Partition>>)`](crate::output::BatchGetPartitionOutput::partitions): <p>A list of the requested partitions.</p>
+    ///   - [`unprocessed_keys(Option<Vec<PartitionValueList>>)`](crate::output::BatchGetPartitionOutput::unprocessed_keys): <p>A list of the partition values in the request for which partitions were not returned.</p>
+    /// - On failure, responds with [`SdkError<BatchGetPartitionError>`](crate::error::BatchGetPartitionError)
     pub fn batch_get_partition(&self) -> fluent_builders::BatchGetPartition<C, M, R> {
         fluent_builders::BatchGetPartition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetTriggers` operation.
+    /// Constructs a fluent builder for the [`BatchGetTriggers`](crate::client::fluent_builders::BatchGetTriggers) operation.
     ///
-    /// See [`BatchGetTriggers`](crate::client::fluent_builders::BatchGetTriggers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`trigger_names(Vec<String>)`](crate::client::fluent_builders::BatchGetTriggers::trigger_names) / [`set_trigger_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetTriggers::set_trigger_names): <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
+    /// - On success, responds with [`BatchGetTriggersOutput`](crate::output::BatchGetTriggersOutput) with field(s):
+    ///   - [`triggers(Option<Vec<Trigger>>)`](crate::output::BatchGetTriggersOutput::triggers): <p>A list of trigger definitions.</p>
+    ///   - [`triggers_not_found(Option<Vec<String>>)`](crate::output::BatchGetTriggersOutput::triggers_not_found): <p>A list of names of triggers not found.</p>
+    /// - On failure, responds with [`SdkError<BatchGetTriggersError>`](crate::error::BatchGetTriggersError)
     pub fn batch_get_triggers(&self) -> fluent_builders::BatchGetTriggers<C, M, R> {
         fluent_builders::BatchGetTriggers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetWorkflows` operation.
+    /// Constructs a fluent builder for the [`BatchGetWorkflows`](crate::client::fluent_builders::BatchGetWorkflows) operation.
     ///
-    /// See [`BatchGetWorkflows`](crate::client::fluent_builders::BatchGetWorkflows) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::BatchGetWorkflows::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetWorkflows::set_names): <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
+    ///   - [`include_graph(bool)`](crate::client::fluent_builders::BatchGetWorkflows::include_graph) / [`set_include_graph(Option<bool>)`](crate::client::fluent_builders::BatchGetWorkflows::set_include_graph): <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
+    /// - On success, responds with [`BatchGetWorkflowsOutput`](crate::output::BatchGetWorkflowsOutput) with field(s):
+    ///   - [`workflows(Option<Vec<Workflow>>)`](crate::output::BatchGetWorkflowsOutput::workflows): <p>A list of workflow resource metadata.</p>
+    ///   - [`missing_workflows(Option<Vec<String>>)`](crate::output::BatchGetWorkflowsOutput::missing_workflows): <p>A list of names of workflows not found.</p>
+    /// - On failure, responds with [`SdkError<BatchGetWorkflowsError>`](crate::error::BatchGetWorkflowsError)
     pub fn batch_get_workflows(&self) -> fluent_builders::BatchGetWorkflows<C, M, R> {
         fluent_builders::BatchGetWorkflows::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchStopJobRun` operation.
+    /// Constructs a fluent builder for the [`BatchStopJobRun`](crate::client::fluent_builders::BatchStopJobRun) operation.
     ///
-    /// See [`BatchStopJobRun`](crate::client::fluent_builders::BatchStopJobRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::BatchStopJobRun::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::BatchStopJobRun::set_job_name): <p>The name of the job definition for which to stop job runs.</p>
+    ///   - [`job_run_ids(Vec<String>)`](crate::client::fluent_builders::BatchStopJobRun::job_run_ids) / [`set_job_run_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchStopJobRun::set_job_run_ids): <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
+    /// - On success, responds with [`BatchStopJobRunOutput`](crate::output::BatchStopJobRunOutput) with field(s):
+    ///   - [`successful_submissions(Option<Vec<BatchStopJobRunSuccessfulSubmission>>)`](crate::output::BatchStopJobRunOutput::successful_submissions): <p>A list of the JobRuns that were successfully submitted for stopping.</p>
+    ///   - [`errors(Option<Vec<BatchStopJobRunError>>)`](crate::output::BatchStopJobRunOutput::errors): <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
+    /// - On failure, responds with [`SdkError<BatchStopJobRunError>`](crate::error::BatchStopJobRunError)
     pub fn batch_stop_job_run(&self) -> fluent_builders::BatchStopJobRun<C, M, R> {
         fluent_builders::BatchStopJobRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchUpdatePartition` operation.
+    /// Constructs a fluent builder for the [`BatchUpdatePartition`](crate::client::fluent_builders::BatchUpdatePartition) operation.
     ///
-    /// See [`BatchUpdatePartition`](crate::client::fluent_builders::BatchUpdatePartition) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::BatchUpdatePartition::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::BatchUpdatePartition::set_catalog_id): <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::BatchUpdatePartition::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::BatchUpdatePartition::set_database_name): <p>The name of the metadata database in which the partition is to be updated.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::BatchUpdatePartition::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::BatchUpdatePartition::set_table_name): <p>The name of the metadata table in which the partition is to be updated.</p>
+    ///   - [`entries(Vec<BatchUpdatePartitionRequestEntry>)`](crate::client::fluent_builders::BatchUpdatePartition::entries) / [`set_entries(Option<Vec<BatchUpdatePartitionRequestEntry>>)`](crate::client::fluent_builders::BatchUpdatePartition::set_entries): <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
+    /// - On success, responds with [`BatchUpdatePartitionOutput`](crate::output::BatchUpdatePartitionOutput) with field(s):
+    ///   - [`errors(Option<Vec<BatchUpdatePartitionFailureEntry>>)`](crate::output::BatchUpdatePartitionOutput::errors): <p>The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code> objects.</p>
+    /// - On failure, responds with [`SdkError<BatchUpdatePartitionError>`](crate::error::BatchUpdatePartitionError)
     pub fn batch_update_partition(&self) -> fluent_builders::BatchUpdatePartition<C, M, R> {
         fluent_builders::BatchUpdatePartition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelMLTaskRun` operation.
+    /// Constructs a fluent builder for the [`CancelMLTaskRun`](crate::client::fluent_builders::CancelMLTaskRun) operation.
     ///
-    /// See [`CancelMLTaskRun`](crate::client::fluent_builders::CancelMLTaskRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`transform_id(impl Into<String>)`](crate::client::fluent_builders::CancelMLTaskRun::transform_id) / [`set_transform_id(Option<String>)`](crate::client::fluent_builders::CancelMLTaskRun::set_transform_id): <p>The unique identifier of the machine learning transform.</p>
+    ///   - [`task_run_id(impl Into<String>)`](crate::client::fluent_builders::CancelMLTaskRun::task_run_id) / [`set_task_run_id(Option<String>)`](crate::client::fluent_builders::CancelMLTaskRun::set_task_run_id): <p>A unique identifier for the task run.</p>
+    /// - On success, responds with [`CancelMlTaskRunOutput`](crate::output::CancelMlTaskRunOutput) with field(s):
+    ///   - [`transform_id(Option<String>)`](crate::output::CancelMlTaskRunOutput::transform_id): <p>The unique identifier of the machine learning transform.</p>
+    ///   - [`task_run_id(Option<String>)`](crate::output::CancelMlTaskRunOutput::task_run_id): <p>The unique identifier for the task run.</p>
+    ///   - [`status(Option<TaskStatusType>)`](crate::output::CancelMlTaskRunOutput::status): <p>The status for this run.</p>
+    /// - On failure, responds with [`SdkError<CancelMLTaskRunError>`](crate::error::CancelMLTaskRunError)
     pub fn cancel_ml_task_run(&self) -> fluent_builders::CancelMLTaskRun<C, M, R> {
         fluent_builders::CancelMLTaskRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CheckSchemaVersionValidity` operation.
+    /// Constructs a fluent builder for the [`CheckSchemaVersionValidity`](crate::client::fluent_builders::CheckSchemaVersionValidity) operation.
     ///
-    /// See [`CheckSchemaVersionValidity`](crate::client::fluent_builders::CheckSchemaVersionValidity) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`data_format(DataFormat)`](crate::client::fluent_builders::CheckSchemaVersionValidity::data_format) / [`set_data_format(Option<DataFormat>)`](crate::client::fluent_builders::CheckSchemaVersionValidity::set_data_format): <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    ///   - [`schema_definition(impl Into<String>)`](crate::client::fluent_builders::CheckSchemaVersionValidity::schema_definition) / [`set_schema_definition(Option<String>)`](crate::client::fluent_builders::CheckSchemaVersionValidity::set_schema_definition): <p>The definition of the schema that has to be validated.</p>
+    /// - On success, responds with [`CheckSchemaVersionValidityOutput`](crate::output::CheckSchemaVersionValidityOutput) with field(s):
+    ///   - [`valid(bool)`](crate::output::CheckSchemaVersionValidityOutput::valid): <p>Return true, if the schema is valid and false otherwise.</p>
+    ///   - [`error(Option<String>)`](crate::output::CheckSchemaVersionValidityOutput::error): <p>A validation failure error message.</p>
+    /// - On failure, responds with [`SdkError<CheckSchemaVersionValidityError>`](crate::error::CheckSchemaVersionValidityError)
     pub fn check_schema_version_validity(
         &self,
     ) -> fluent_builders::CheckSchemaVersionValidity<C, M, R> {
         fluent_builders::CheckSchemaVersionValidity::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBlueprint` operation.
+    /// Constructs a fluent builder for the [`CreateBlueprint`](crate::client::fluent_builders::CreateBlueprint) operation.
     ///
-    /// See [`CreateBlueprint`](crate::client::fluent_builders::CreateBlueprint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateBlueprint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateBlueprint::set_name): <p>The name of the blueprint.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateBlueprint::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateBlueprint::set_description): <p>A description of the blueprint.</p>
+    ///   - [`blueprint_location(impl Into<String>)`](crate::client::fluent_builders::CreateBlueprint::blueprint_location) / [`set_blueprint_location(Option<String>)`](crate::client::fluent_builders::CreateBlueprint::set_blueprint_location): <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateBlueprint::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateBlueprint::set_tags): <p>The tags to be applied to this blueprint.</p>
+    /// - On success, responds with [`CreateBlueprintOutput`](crate::output::CreateBlueprintOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateBlueprintOutput::name): <p>Returns the name of the blueprint that was registered.</p>
+    /// - On failure, responds with [`SdkError<CreateBlueprintError>`](crate::error::CreateBlueprintError)
     pub fn create_blueprint(&self) -> fluent_builders::CreateBlueprint<C, M, R> {
         fluent_builders::CreateBlueprint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateClassifier` operation.
+    /// Constructs a fluent builder for the [`CreateClassifier`](crate::client::fluent_builders::CreateClassifier) operation.
     ///
-    /// See [`CreateClassifier`](crate::client::fluent_builders::CreateClassifier) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`grok_classifier(CreateGrokClassifierRequest)`](crate::client::fluent_builders::CreateClassifier::grok_classifier) / [`set_grok_classifier(Option<CreateGrokClassifierRequest>)`](crate::client::fluent_builders::CreateClassifier::set_grok_classifier): <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
+    ///   - [`xml_classifier(CreateXmlClassifierRequest)`](crate::client::fluent_builders::CreateClassifier::xml_classifier) / [`set_xml_classifier(Option<CreateXmlClassifierRequest>)`](crate::client::fluent_builders::CreateClassifier::set_xml_classifier): <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
+    ///   - [`json_classifier(CreateJsonClassifierRequest)`](crate::client::fluent_builders::CreateClassifier::json_classifier) / [`set_json_classifier(Option<CreateJsonClassifierRequest>)`](crate::client::fluent_builders::CreateClassifier::set_json_classifier): <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
+    ///   - [`csv_classifier(CreateCsvClassifierRequest)`](crate::client::fluent_builders::CreateClassifier::csv_classifier) / [`set_csv_classifier(Option<CreateCsvClassifierRequest>)`](crate::client::fluent_builders::CreateClassifier::set_csv_classifier): <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
+    /// - On success, responds with [`CreateClassifierOutput`](crate::output::CreateClassifierOutput)
+
+    /// - On failure, responds with [`SdkError<CreateClassifierError>`](crate::error::CreateClassifierError)
     pub fn create_classifier(&self) -> fluent_builders::CreateClassifier<C, M, R> {
         fluent_builders::CreateClassifier::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateConnection` operation.
+    /// Constructs a fluent builder for the [`CreateConnection`](crate::client::fluent_builders::CreateConnection) operation.
     ///
-    /// See [`CreateConnection`](crate::client::fluent_builders::CreateConnection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::CreateConnection::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::CreateConnection::set_catalog_id): <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`connection_input(ConnectionInput)`](crate::client::fluent_builders::CreateConnection::connection_input) / [`set_connection_input(Option<ConnectionInput>)`](crate::client::fluent_builders::CreateConnection::set_connection_input): <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateConnection::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateConnection::set_tags): <p>The tags you assign to the connection.</p>
+    /// - On success, responds with [`CreateConnectionOutput`](crate::output::CreateConnectionOutput)
+
+    /// - On failure, responds with [`SdkError<CreateConnectionError>`](crate::error::CreateConnectionError)
     pub fn create_connection(&self) -> fluent_builders::CreateConnection<C, M, R> {
         fluent_builders::CreateConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCrawler` operation.
+    /// Constructs a fluent builder for the [`CreateCrawler`](crate::client::fluent_builders::CreateCrawler) operation.
     ///
-    /// See [`CreateCrawler`](crate::client::fluent_builders::CreateCrawler) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_name): <p>Name of the new crawler.</p>
+    ///   - [`role(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::role) / [`set_role(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_role): <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to access customer resources.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_database_name): <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_description): <p>A description of the new crawler.</p>
+    ///   - [`targets(CrawlerTargets)`](crate::client::fluent_builders::CreateCrawler::targets) / [`set_targets(Option<CrawlerTargets>)`](crate::client::fluent_builders::CreateCrawler::set_targets): <p>A list of collection of targets to crawl.</p>
+    ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_schedule): <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+    ///   - [`classifiers(Vec<String>)`](crate::client::fluent_builders::CreateCrawler::classifiers) / [`set_classifiers(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCrawler::set_classifiers): <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
+    ///   - [`table_prefix(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::table_prefix) / [`set_table_prefix(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_table_prefix): <p>The table prefix used for catalog tables that are created.</p>
+    ///   - [`schema_change_policy(SchemaChangePolicy)`](crate::client::fluent_builders::CreateCrawler::schema_change_policy) / [`set_schema_change_policy(Option<SchemaChangePolicy>)`](crate::client::fluent_builders::CreateCrawler::set_schema_change_policy): <p>The policy for the crawler's update and deletion behavior.</p>
+    ///   - [`recrawl_policy(RecrawlPolicy)`](crate::client::fluent_builders::CreateCrawler::recrawl_policy) / [`set_recrawl_policy(Option<RecrawlPolicy>)`](crate::client::fluent_builders::CreateCrawler::set_recrawl_policy): <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
+    ///   - [`lineage_configuration(LineageConfiguration)`](crate::client::fluent_builders::CreateCrawler::lineage_configuration) / [`set_lineage_configuration(Option<LineageConfiguration>)`](crate::client::fluent_builders::CreateCrawler::set_lineage_configuration): <p>Specifies data lineage configuration settings for the crawler.</p>
+    ///   - [`lake_formation_configuration(LakeFormationConfiguration)`](crate::client::fluent_builders::CreateCrawler::lake_formation_configuration) / [`set_lake_formation_configuration(Option<LakeFormationConfiguration>)`](crate::client::fluent_builders::CreateCrawler::set_lake_formation_configuration): (undocumented)
+    ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_configuration): <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    ///   - [`crawler_security_configuration(impl Into<String>)`](crate::client::fluent_builders::CreateCrawler::crawler_security_configuration) / [`set_crawler_security_configuration(Option<String>)`](crate::client::fluent_builders::CreateCrawler::set_crawler_security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateCrawler::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCrawler::set_tags): <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
+    /// - On success, responds with [`CreateCrawlerOutput`](crate::output::CreateCrawlerOutput)
+
+    /// - On failure, responds with [`SdkError<CreateCrawlerError>`](crate::error::CreateCrawlerError)
     pub fn create_crawler(&self) -> fluent_builders::CreateCrawler<C, M, R> {
         fluent_builders::CreateCrawler::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDatabase` operation.
+    /// Constructs a fluent builder for the [`CreateDatabase`](crate::client::fluent_builders::CreateDatabase) operation.
     ///
-    /// See [`CreateDatabase`](crate::client::fluent_builders::CreateDatabase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::CreateDatabase::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::CreateDatabase::set_catalog_id): <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_input(DatabaseInput)`](crate::client::fluent_builders::CreateDatabase::database_input) / [`set_database_input(Option<DatabaseInput>)`](crate::client::fluent_builders::CreateDatabase::set_database_input): <p>The metadata for the database.</p>
+    /// - On success, responds with [`CreateDatabaseOutput`](crate::output::CreateDatabaseOutput)
+
+    /// - On failure, responds with [`SdkError<CreateDatabaseError>`](crate::error::CreateDatabaseError)
     pub fn create_database(&self) -> fluent_builders::CreateDatabase<C, M, R> {
         fluent_builders::CreateDatabase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDevEndpoint` operation.
+    /// Constructs a fluent builder for the [`CreateDevEndpoint`](crate::client::fluent_builders::CreateDevEndpoint) operation.
     ///
-    /// See [`CreateDevEndpoint`](crate::client::fluent_builders::CreateDevEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::CreateDevEndpoint::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::CreateDevEndpoint::set_endpoint_name): <p>The name to be assigned to the new <code>DevEndpoint</code>.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDevEndpoint::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDevEndpoint::set_role_arn): <p>The IAM role for the <code>DevEndpoint</code>.</p>
+    ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateDevEndpoint::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDevEndpoint::set_security_group_ids): <p>Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.</p>
+    ///   - [`subnet_id(impl Into<String>)`](crate::client::fluent_builders::CreateDevEndpoint::subnet_id) / [`set_subnet_id(Option<String>)`](crate::client::fluent_builders::CreateDevEndpoint::set_subnet_id): <p>The subnet ID for the new <code>DevEndpoint</code> to use.</p>
+    ///   - [`public_key(impl Into<String>)`](crate::client::fluent_builders::CreateDevEndpoint::public_key) / [`set_public_key(Option<String>)`](crate::client::fluent_builders::CreateDevEndpoint::set_public_key): <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
+    ///   - [`public_keys(Vec<String>)`](crate::client::fluent_builders::CreateDevEndpoint::public_keys) / [`set_public_keys(Option<Vec<String>>)`](crate::client::fluent_builders::CreateDevEndpoint::set_public_keys): <p>A list of public keys to be used by the development endpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>   <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>  </note>
+    ///   - [`number_of_nodes(i32)`](crate::client::fluent_builders::CreateDevEndpoint::number_of_nodes) / [`set_number_of_nodes(i32)`](crate::client::fluent_builders::CreateDevEndpoint::set_number_of_nodes): <p>The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.</p>
+    ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::CreateDevEndpoint::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::CreateDevEndpoint::set_worker_type): <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>  </ul>  <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+    ///   - [`glue_version(impl Into<String>)`](crate::client::fluent_builders::CreateDevEndpoint::glue_version) / [`set_glue_version(Option<String>)`](crate::client::fluent_builders::CreateDevEndpoint::set_glue_version): <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>  <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>  <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::CreateDevEndpoint::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::CreateDevEndpoint::set_number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>  <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+    ///   - [`extra_python_libs_s3_path(impl Into<String>)`](crate::client::fluent_builders::CreateDevEndpoint::extra_python_libs_s3_path) / [`set_extra_python_libs_s3_path(Option<String>)`](crate::client::fluent_builders::CreateDevEndpoint::set_extra_python_libs_s3_path): <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>   <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet supported.</p>  </note>
+    ///   - [`extra_jars_s3_path(impl Into<String>)`](crate::client::fluent_builders::CreateDevEndpoint::extra_jars_s3_path) / [`set_extra_jars_s3_path(Option<String>)`](crate::client::fluent_builders::CreateDevEndpoint::set_extra_jars_s3_path): <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p>
+    ///   - [`security_configuration(impl Into<String>)`](crate::client::fluent_builders::CreateDevEndpoint::security_configuration) / [`set_security_configuration(Option<String>)`](crate::client::fluent_builders::CreateDevEndpoint::set_security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateDevEndpoint::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDevEndpoint::set_tags): <p>The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
+    ///   - [`arguments(HashMap<String, String>)`](crate::client::fluent_builders::CreateDevEndpoint::arguments) / [`set_arguments(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateDevEndpoint::set_arguments): <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
+    /// - On success, responds with [`CreateDevEndpointOutput`](crate::output::CreateDevEndpointOutput) with field(s):
+    ///   - [`endpoint_name(Option<String>)`](crate::output::CreateDevEndpointOutput::endpoint_name): <p>The name assigned to the new <code>DevEndpoint</code>.</p>
+    ///   - [`status(Option<String>)`](crate::output::CreateDevEndpointOutput::status): <p>The current status of the new <code>DevEndpoint</code>.</p>
+    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::output::CreateDevEndpointOutput::security_group_ids): <p>The security groups assigned to the new <code>DevEndpoint</code>.</p>
+    ///   - [`subnet_id(Option<String>)`](crate::output::CreateDevEndpointOutput::subnet_id): <p>The subnet ID assigned to the new <code>DevEndpoint</code>.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::CreateDevEndpointOutput::role_arn): <p>The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.</p>
+    ///   - [`yarn_endpoint_address(Option<String>)`](crate::output::CreateDevEndpointOutput::yarn_endpoint_address): <p>The address of the YARN endpoint used by this <code>DevEndpoint</code>.</p>
+    ///   - [`zeppelin_remote_spark_interpreter_port(i32)`](crate::output::CreateDevEndpointOutput::zeppelin_remote_spark_interpreter_port): <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
+    ///   - [`number_of_nodes(i32)`](crate::output::CreateDevEndpointOutput::number_of_nodes): <p>The number of Glue Data Processing Units (DPUs) allocated to this DevEndpoint.</p>
+    ///   - [`worker_type(Option<WorkerType>)`](crate::output::CreateDevEndpointOutput::worker_type): <p>The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or G.2X.</p>
+    ///   - [`glue_version(Option<String>)`](crate::output::CreateDevEndpointOutput::glue_version): <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>  <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    ///   - [`number_of_workers(Option<i32>)`](crate::output::CreateDevEndpointOutput::number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
+    ///   - [`availability_zone(Option<String>)`](crate::output::CreateDevEndpointOutput::availability_zone): <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
+    ///   - [`vpc_id(Option<String>)`](crate::output::CreateDevEndpointOutput::vpc_id): <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
+    ///   - [`extra_python_libs_s3_path(Option<String>)`](crate::output::CreateDevEndpointOutput::extra_python_libs_s3_path): <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
+    ///   - [`extra_jars_s3_path(Option<String>)`](crate::output::CreateDevEndpointOutput::extra_jars_s3_path): <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::CreateDevEndpointOutput::failure_reason): <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
+    ///   - [`security_configuration(Option<String>)`](crate::output::CreateDevEndpointOutput::security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
+    ///   - [`created_timestamp(Option<DateTime>)`](crate::output::CreateDevEndpointOutput::created_timestamp): <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
+    ///   - [`arguments(Option<HashMap<String, String>>)`](crate::output::CreateDevEndpointOutput::arguments): <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>  <p>Valid arguments are:</p>  <ul>   <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>  </ul>  <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    /// - On failure, responds with [`SdkError<CreateDevEndpointError>`](crate::error::CreateDevEndpointError)
     pub fn create_dev_endpoint(&self) -> fluent_builders::CreateDevEndpoint<C, M, R> {
         fluent_builders::CreateDevEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateJob` operation.
+    /// Constructs a fluent builder for the [`CreateJob`](crate::client::fluent_builders::CreateJob) operation.
     ///
-    /// See [`CreateJob`](crate::client::fluent_builders::CreateJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateJob::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateJob::set_name): <p>The name you assign to this job definition. It must be unique in your account.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateJob::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateJob::set_description): <p>Description of the job being defined.</p>
+    ///   - [`log_uri(impl Into<String>)`](crate::client::fluent_builders::CreateJob::log_uri) / [`set_log_uri(Option<String>)`](crate::client::fluent_builders::CreateJob::set_log_uri): <p>This field is reserved for future use.</p>
+    ///   - [`role(impl Into<String>)`](crate::client::fluent_builders::CreateJob::role) / [`set_role(Option<String>)`](crate::client::fluent_builders::CreateJob::set_role): <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
+    ///   - [`execution_property(ExecutionProperty)`](crate::client::fluent_builders::CreateJob::execution_property) / [`set_execution_property(Option<ExecutionProperty>)`](crate::client::fluent_builders::CreateJob::set_execution_property): <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
+    ///   - [`command(JobCommand)`](crate::client::fluent_builders::CreateJob::command) / [`set_command(Option<JobCommand>)`](crate::client::fluent_builders::CreateJob::set_command): <p>The <code>JobCommand</code> that runs this job.</p>
+    ///   - [`default_arguments(HashMap<String, String>)`](crate::client::fluent_builders::CreateJob::default_arguments) / [`set_default_arguments(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateJob::set_default_arguments): <p>The default arguments for this job.</p>  <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>  <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>  <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    ///   - [`non_overridable_arguments(HashMap<String, String>)`](crate::client::fluent_builders::CreateJob::non_overridable_arguments) / [`set_non_overridable_arguments(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateJob::set_non_overridable_arguments): <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+    ///   - [`connections(ConnectionsList)`](crate::client::fluent_builders::CreateJob::connections) / [`set_connections(Option<ConnectionsList>)`](crate::client::fluent_builders::CreateJob::set_connections): <p>The connections used for this job.</p>
+    ///   - [`max_retries(i32)`](crate::client::fluent_builders::CreateJob::max_retries) / [`set_max_retries(i32)`](crate::client::fluent_builders::CreateJob::set_max_retries): <p>The maximum number of times to retry this job if it fails.</p>
+    ///   - [`allocated_capacity(i32)`](crate::client::fluent_builders::CreateJob::allocated_capacity) / [`set_allocated_capacity(i32)`](crate::client::fluent_builders::CreateJob::set_allocated_capacity): <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>  <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    ///   - [`timeout(i32)`](crate::client::fluent_builders::CreateJob::timeout) / [`set_timeout(Option<i32>)`](crate::client::fluent_builders::CreateJob::set_timeout): <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    ///   - [`max_capacity(f64)`](crate::client::fluent_builders::CreateJob::max_capacity) / [`set_max_capacity(Option<f64>)`](crate::client::fluent_builders::CreateJob::set_max_capacity): <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>  <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>  <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>  <ul>   <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>   <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>  </ul>  <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
+    ///   - [`security_configuration(impl Into<String>)`](crate::client::fluent_builders::CreateJob::security_configuration) / [`set_security_configuration(Option<String>)`](crate::client::fluent_builders::CreateJob::set_security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateJob::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateJob::set_tags): <p>The tags to use with this job. You may use tags to limit access to the job. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
+    ///   - [`notification_property(NotificationProperty)`](crate::client::fluent_builders::CreateJob::notification_property) / [`set_notification_property(Option<NotificationProperty>)`](crate::client::fluent_builders::CreateJob::set_notification_property): <p>Specifies configuration properties of a job notification.</p>
+    ///   - [`glue_version(impl Into<String>)`](crate::client::fluent_builders::CreateJob::glue_version) / [`set_glue_version(Option<String>)`](crate::client::fluent_builders::CreateJob::set_glue_version): <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>  <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>  <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
+    ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::CreateJob::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::CreateJob::set_number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>  <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+    ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::CreateJob::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::CreateJob::set_worker_type): <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>  </ul>
+    /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateJobOutput::name): <p>The unique name that was provided for this job definition.</p>
+    /// - On failure, responds with [`SdkError<CreateJobError>`](crate::error::CreateJobError)
     pub fn create_job(&self) -> fluent_builders::CreateJob<C, M, R> {
         fluent_builders::CreateJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMLTransform` operation.
+    /// Constructs a fluent builder for the [`CreateMLTransform`](crate::client::fluent_builders::CreateMLTransform) operation.
     ///
-    /// See [`CreateMLTransform`](crate::client::fluent_builders::CreateMLTransform) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateMLTransform::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateMLTransform::set_name): <p>The unique name that you give the transform when you create it.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateMLTransform::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateMLTransform::set_description): <p>A description of the machine learning transform that is being defined. The default is an empty string.</p>
+    ///   - [`input_record_tables(Vec<GlueTable>)`](crate::client::fluent_builders::CreateMLTransform::input_record_tables) / [`set_input_record_tables(Option<Vec<GlueTable>>)`](crate::client::fluent_builders::CreateMLTransform::set_input_record_tables): <p>A list of Glue table definitions used by the transform.</p>
+    ///   - [`parameters(TransformParameters)`](crate::client::fluent_builders::CreateMLTransform::parameters) / [`set_parameters(Option<TransformParameters>)`](crate::client::fluent_builders::CreateMLTransform::set_parameters): <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
+    ///   - [`role(impl Into<String>)`](crate::client::fluent_builders::CreateMLTransform::role) / [`set_role(Option<String>)`](crate::client::fluent_builders::CreateMLTransform::set_role): <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>  <ul>   <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>   <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>  </ul>
+    ///   - [`glue_version(impl Into<String>)`](crate::client::fluent_builders::CreateMLTransform::glue_version) / [`set_glue_version(Option<String>)`](crate::client::fluent_builders::CreateMLTransform::set_glue_version): <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    ///   - [`max_capacity(f64)`](crate::client::fluent_builders::CreateMLTransform::max_capacity) / [`set_max_capacity(Option<f64>)`](crate::client::fluent_builders::CreateMLTransform::set_max_capacity): <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>  <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>  <ul>   <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>   <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>   <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>   <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>  </ul>  <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>  <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+    ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::CreateMLTransform::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::CreateMLTransform::set_worker_type): <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>  </ul>  <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>  <ul>   <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>   <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>   <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>   <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>  </ul>
+    ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::CreateMLTransform::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::CreateMLTransform::set_number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>  <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+    ///   - [`timeout(i32)`](crate::client::fluent_builders::CreateMLTransform::timeout) / [`set_timeout(Option<i32>)`](crate::client::fluent_builders::CreateMLTransform::set_timeout): <p>The timeout of the task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    ///   - [`max_retries(i32)`](crate::client::fluent_builders::CreateMLTransform::max_retries) / [`set_max_retries(Option<i32>)`](crate::client::fluent_builders::CreateMLTransform::set_max_retries): <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateMLTransform::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateMLTransform::set_tags): <p>The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
+    ///   - [`transform_encryption(TransformEncryption)`](crate::client::fluent_builders::CreateMLTransform::transform_encryption) / [`set_transform_encryption(Option<TransformEncryption>)`](crate::client::fluent_builders::CreateMLTransform::set_transform_encryption): <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
+    /// - On success, responds with [`CreateMlTransformOutput`](crate::output::CreateMlTransformOutput) with field(s):
+    ///   - [`transform_id(Option<String>)`](crate::output::CreateMlTransformOutput::transform_id): <p>A unique identifier that is generated for the transform.</p>
+    /// - On failure, responds with [`SdkError<CreateMLTransformError>`](crate::error::CreateMLTransformError)
     pub fn create_ml_transform(&self) -> fluent_builders::CreateMLTransform<C, M, R> {
         fluent_builders::CreateMLTransform::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePartition` operation.
+    /// Constructs a fluent builder for the [`CreatePartition`](crate::client::fluent_builders::CreatePartition) operation.
     ///
-    /// See [`CreatePartition`](crate::client::fluent_builders::CreatePartition) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::CreatePartition::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::CreatePartition::set_catalog_id): <p>The Amazon Web Services account ID of the catalog in which the partition is to be created.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::CreatePartition::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::CreatePartition::set_database_name): <p>The name of the metadata database in which the partition is to be created.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::CreatePartition::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::CreatePartition::set_table_name): <p>The name of the metadata table in which the partition is to be created.</p>
+    ///   - [`partition_input(PartitionInput)`](crate::client::fluent_builders::CreatePartition::partition_input) / [`set_partition_input(Option<PartitionInput>)`](crate::client::fluent_builders::CreatePartition::set_partition_input): <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
+    /// - On success, responds with [`CreatePartitionOutput`](crate::output::CreatePartitionOutput)
+
+    /// - On failure, responds with [`SdkError<CreatePartitionError>`](crate::error::CreatePartitionError)
     pub fn create_partition(&self) -> fluent_builders::CreatePartition<C, M, R> {
         fluent_builders::CreatePartition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePartitionIndex` operation.
+    /// Constructs a fluent builder for the [`CreatePartitionIndex`](crate::client::fluent_builders::CreatePartitionIndex) operation.
     ///
-    /// See [`CreatePartitionIndex`](crate::client::fluent_builders::CreatePartitionIndex) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::CreatePartitionIndex::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::CreatePartitionIndex::set_catalog_id): <p>The catalog ID where the table resides.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::CreatePartitionIndex::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::CreatePartitionIndex::set_database_name): <p>Specifies the name of a database in which you want to create a partition index.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::CreatePartitionIndex::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::CreatePartitionIndex::set_table_name): <p>Specifies the name of a table in which you want to create a partition index.</p>
+    ///   - [`partition_index(PartitionIndex)`](crate::client::fluent_builders::CreatePartitionIndex::partition_index) / [`set_partition_index(Option<PartitionIndex>)`](crate::client::fluent_builders::CreatePartitionIndex::set_partition_index): <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
+    /// - On success, responds with [`CreatePartitionIndexOutput`](crate::output::CreatePartitionIndexOutput)
+
+    /// - On failure, responds with [`SdkError<CreatePartitionIndexError>`](crate::error::CreatePartitionIndexError)
     pub fn create_partition_index(&self) -> fluent_builders::CreatePartitionIndex<C, M, R> {
         fluent_builders::CreatePartitionIndex::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRegistry` operation.
+    /// Constructs a fluent builder for the [`CreateRegistry`](crate::client::fluent_builders::CreateRegistry) operation.
     ///
-    /// See [`CreateRegistry`](crate::client::fluent_builders::CreateRegistry) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::CreateRegistry::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::CreateRegistry::set_registry_name): <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRegistry::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRegistry::set_description): <p>A description of the registry. If description is not provided, there will not be any default value for this.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRegistry::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRegistry::set_tags): <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API.</p>
+    /// - On success, responds with [`CreateRegistryOutput`](crate::output::CreateRegistryOutput) with field(s):
+    ///   - [`registry_arn(Option<String>)`](crate::output::CreateRegistryOutput::registry_arn): <p>The Amazon Resource Name (ARN) of the newly created registry.</p>
+    ///   - [`registry_name(Option<String>)`](crate::output::CreateRegistryOutput::registry_name): <p>The name of the registry.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateRegistryOutput::description): <p>A description of the registry.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRegistryOutput::tags): <p>The tags for the registry.</p>
+    /// - On failure, responds with [`SdkError<CreateRegistryError>`](crate::error::CreateRegistryError)
     pub fn create_registry(&self) -> fluent_builders::CreateRegistry<C, M, R> {
         fluent_builders::CreateRegistry::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSchema` operation.
+    /// Constructs a fluent builder for the [`CreateSchema`](crate::client::fluent_builders::CreateSchema) operation.
     ///
-    /// See [`CreateSchema`](crate::client::fluent_builders::CreateSchema) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`registry_id(RegistryId)`](crate::client::fluent_builders::CreateSchema::registry_id) / [`set_registry_id(Option<RegistryId>)`](crate::client::fluent_builders::CreateSchema::set_registry_id): <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:   <customer id>    :registry/default-registry:random-5-letter-id   </customer></code>.</p>
+    ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::CreateSchema::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::CreateSchema::set_schema_name): <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
+    ///   - [`data_format(DataFormat)`](crate::client::fluent_builders::CreateSchema::data_format) / [`set_data_format(Option<DataFormat>)`](crate::client::fluent_builders::CreateSchema::set_data_format): <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    ///   - [`compatibility(Compatibility)`](crate::client::fluent_builders::CreateSchema::compatibility) / [`set_compatibility(Option<Compatibility>)`](crate::client::fluent_builders::CreateSchema::set_compatibility): <p>The compatibility mode of the schema. The possible values are:</p>  <ul>   <li> <p> <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p> </li>   <li> <p> <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p> </li>   <li> <p> <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p> </li>   <li> <p> <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p> </li>   <li> <p> <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p> </li>   <li> <p> <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p> </li>   <li> <p> <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p> </li>   <li> <p> <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p> </li>  </ul>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSchema::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSchema::set_description): <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSchema::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSchema::set_tags): <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
+    ///   - [`schema_definition(impl Into<String>)`](crate::client::fluent_builders::CreateSchema::schema_definition) / [`set_schema_definition(Option<String>)`](crate::client::fluent_builders::CreateSchema::set_schema_definition): <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
+    /// - On success, responds with [`CreateSchemaOutput`](crate::output::CreateSchemaOutput) with field(s):
+    ///   - [`registry_name(Option<String>)`](crate::output::CreateSchemaOutput::registry_name): <p>The name of the registry.</p>
+    ///   - [`registry_arn(Option<String>)`](crate::output::CreateSchemaOutput::registry_arn): <p>The Amazon Resource Name (ARN) of the registry.</p>
+    ///   - [`schema_name(Option<String>)`](crate::output::CreateSchemaOutput::schema_name): <p>The name of the schema.</p>
+    ///   - [`schema_arn(Option<String>)`](crate::output::CreateSchemaOutput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateSchemaOutput::description): <p>A description of the schema if specified when created.</p>
+    ///   - [`data_format(Option<DataFormat>)`](crate::output::CreateSchemaOutput::data_format): <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    ///   - [`compatibility(Option<Compatibility>)`](crate::output::CreateSchemaOutput::compatibility): <p>The schema compatibility mode.</p>
+    ///   - [`schema_checkpoint(i64)`](crate::output::CreateSchemaOutput::schema_checkpoint): <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
+    ///   - [`latest_schema_version(i64)`](crate::output::CreateSchemaOutput::latest_schema_version): <p>The latest version of the schema associated with the returned schema definition.</p>
+    ///   - [`next_schema_version(i64)`](crate::output::CreateSchemaOutput::next_schema_version): <p>The next version of the schema associated with the returned schema definition.</p>
+    ///   - [`schema_status(Option<SchemaStatus>)`](crate::output::CreateSchemaOutput::schema_status): <p>The status of the schema. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateSchemaOutput::tags): <p>The tags for the schema.</p>
+    ///   - [`schema_version_id(Option<String>)`](crate::output::CreateSchemaOutput::schema_version_id): <p>The unique identifier of the first schema version.</p>
+    ///   - [`schema_version_status(Option<SchemaVersionStatus>)`](crate::output::CreateSchemaOutput::schema_version_status): <p>The status of the first schema version created.</p>
+    /// - On failure, responds with [`SdkError<CreateSchemaError>`](crate::error::CreateSchemaError)
     pub fn create_schema(&self) -> fluent_builders::CreateSchema<C, M, R> {
         fluent_builders::CreateSchema::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateScript` operation.
+    /// Constructs a fluent builder for the [`CreateScript`](crate::client::fluent_builders::CreateScript) operation.
     ///
-    /// See [`CreateScript`](crate::client::fluent_builders::CreateScript) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`dag_nodes(Vec<CodeGenNode>)`](crate::client::fluent_builders::CreateScript::dag_nodes) / [`set_dag_nodes(Option<Vec<CodeGenNode>>)`](crate::client::fluent_builders::CreateScript::set_dag_nodes): <p>A list of the nodes in the DAG.</p>
+    ///   - [`dag_edges(Vec<CodeGenEdge>)`](crate::client::fluent_builders::CreateScript::dag_edges) / [`set_dag_edges(Option<Vec<CodeGenEdge>>)`](crate::client::fluent_builders::CreateScript::set_dag_edges): <p>A list of the edges in the DAG.</p>
+    ///   - [`language(Language)`](crate::client::fluent_builders::CreateScript::language) / [`set_language(Option<Language>)`](crate::client::fluent_builders::CreateScript::set_language): <p>The programming language of the resulting code from the DAG.</p>
+    /// - On success, responds with [`CreateScriptOutput`](crate::output::CreateScriptOutput) with field(s):
+    ///   - [`python_script(Option<String>)`](crate::output::CreateScriptOutput::python_script): <p>The Python script generated from the DAG.</p>
+    ///   - [`scala_code(Option<String>)`](crate::output::CreateScriptOutput::scala_code): <p>The Scala code generated from the DAG.</p>
+    /// - On failure, responds with [`SdkError<CreateScriptError>`](crate::error::CreateScriptError)
     pub fn create_script(&self) -> fluent_builders::CreateScript<C, M, R> {
         fluent_builders::CreateScript::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSecurityConfiguration` operation.
+    /// Constructs a fluent builder for the [`CreateSecurityConfiguration`](crate::client::fluent_builders::CreateSecurityConfiguration) operation.
     ///
-    /// See [`CreateSecurityConfiguration`](crate::client::fluent_builders::CreateSecurityConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSecurityConfiguration::set_name): <p>The name for the new security configuration.</p>
+    ///   - [`encryption_configuration(EncryptionConfiguration)`](crate::client::fluent_builders::CreateSecurityConfiguration::encryption_configuration) / [`set_encryption_configuration(Option<EncryptionConfiguration>)`](crate::client::fluent_builders::CreateSecurityConfiguration::set_encryption_configuration): <p>The encryption configuration for the new security configuration.</p>
+    /// - On success, responds with [`CreateSecurityConfigurationOutput`](crate::output::CreateSecurityConfigurationOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateSecurityConfigurationOutput::name): <p>The name assigned to the new security configuration.</p>
+    ///   - [`created_timestamp(Option<DateTime>)`](crate::output::CreateSecurityConfigurationOutput::created_timestamp): <p>The time at which the new security configuration was created.</p>
+    /// - On failure, responds with [`SdkError<CreateSecurityConfigurationError>`](crate::error::CreateSecurityConfigurationError)
     pub fn create_security_configuration(
         &self,
     ) -> fluent_builders::CreateSecurityConfiguration<C, M, R> {
         fluent_builders::CreateSecurityConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTable` operation.
+    /// Constructs a fluent builder for the [`CreateTable`](crate::client::fluent_builders::CreateTable) operation.
     ///
-    /// See [`CreateTable`](crate::client::fluent_builders::CreateTable) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::CreateTable::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::CreateTable::set_catalog_id): <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::CreateTable::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::CreateTable::set_database_name): <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`table_input(TableInput)`](crate::client::fluent_builders::CreateTable::table_input) / [`set_table_input(Option<TableInput>)`](crate::client::fluent_builders::CreateTable::set_table_input): <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
+    ///   - [`partition_indexes(Vec<PartitionIndex>)`](crate::client::fluent_builders::CreateTable::partition_indexes) / [`set_partition_indexes(Option<Vec<PartitionIndex>>)`](crate::client::fluent_builders::CreateTable::set_partition_indexes): <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
+    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::CreateTable::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::CreateTable::set_transaction_id): <p>The ID of the transaction.</p>
+    /// - On success, responds with [`CreateTableOutput`](crate::output::CreateTableOutput)
+
+    /// - On failure, responds with [`SdkError<CreateTableError>`](crate::error::CreateTableError)
     pub fn create_table(&self) -> fluent_builders::CreateTable<C, M, R> {
         fluent_builders::CreateTable::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTrigger` operation.
+    /// Constructs a fluent builder for the [`CreateTrigger`](crate::client::fluent_builders::CreateTrigger) operation.
     ///
-    /// See [`CreateTrigger`](crate::client::fluent_builders::CreateTrigger) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateTrigger::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateTrigger::set_name): <p>The name of the trigger.</p>
+    ///   - [`workflow_name(impl Into<String>)`](crate::client::fluent_builders::CreateTrigger::workflow_name) / [`set_workflow_name(Option<String>)`](crate::client::fluent_builders::CreateTrigger::set_workflow_name): <p>The name of the workflow associated with the trigger.</p>
+    ///   - [`r#type(TriggerType)`](crate::client::fluent_builders::CreateTrigger::r#type) / [`set_type(Option<TriggerType>)`](crate::client::fluent_builders::CreateTrigger::set_type): <p>The type of the new trigger.</p>
+    ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::CreateTrigger::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::CreateTrigger::set_schedule): <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>  <p>This field is required when the trigger type is SCHEDULED.</p>
+    ///   - [`predicate(Predicate)`](crate::client::fluent_builders::CreateTrigger::predicate) / [`set_predicate(Option<Predicate>)`](crate::client::fluent_builders::CreateTrigger::set_predicate): <p>A predicate to specify when the new trigger should fire.</p>  <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
+    ///   - [`actions(Vec<Action>)`](crate::client::fluent_builders::CreateTrigger::actions) / [`set_actions(Option<Vec<Action>>)`](crate::client::fluent_builders::CreateTrigger::set_actions): <p>The actions initiated by this trigger when it fires.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateTrigger::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateTrigger::set_description): <p>A description of the new trigger.</p>
+    ///   - [`start_on_creation(bool)`](crate::client::fluent_builders::CreateTrigger::start_on_creation) / [`set_start_on_creation(bool)`](crate::client::fluent_builders::CreateTrigger::set_start_on_creation): <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateTrigger::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTrigger::set_tags): <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
+    ///   - [`event_batching_condition(EventBatchingCondition)`](crate::client::fluent_builders::CreateTrigger::event_batching_condition) / [`set_event_batching_condition(Option<EventBatchingCondition>)`](crate::client::fluent_builders::CreateTrigger::set_event_batching_condition): <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
+    /// - On success, responds with [`CreateTriggerOutput`](crate::output::CreateTriggerOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateTriggerOutput::name): <p>The name of the trigger.</p>
+    /// - On failure, responds with [`SdkError<CreateTriggerError>`](crate::error::CreateTriggerError)
     pub fn create_trigger(&self) -> fluent_builders::CreateTrigger<C, M, R> {
         fluent_builders::CreateTrigger::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUserDefinedFunction` operation.
+    /// Constructs a fluent builder for the [`CreateUserDefinedFunction`](crate::client::fluent_builders::CreateUserDefinedFunction) operation.
     ///
-    /// See [`CreateUserDefinedFunction`](crate::client::fluent_builders::CreateUserDefinedFunction) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::CreateUserDefinedFunction::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::CreateUserDefinedFunction::set_catalog_id): <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::CreateUserDefinedFunction::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::CreateUserDefinedFunction::set_database_name): <p>The name of the catalog database in which to create the function.</p>
+    ///   - [`function_input(UserDefinedFunctionInput)`](crate::client::fluent_builders::CreateUserDefinedFunction::function_input) / [`set_function_input(Option<UserDefinedFunctionInput>)`](crate::client::fluent_builders::CreateUserDefinedFunction::set_function_input): <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
+    /// - On success, responds with [`CreateUserDefinedFunctionOutput`](crate::output::CreateUserDefinedFunctionOutput)
+
+    /// - On failure, responds with [`SdkError<CreateUserDefinedFunctionError>`](crate::error::CreateUserDefinedFunctionError)
     pub fn create_user_defined_function(
         &self,
     ) -> fluent_builders::CreateUserDefinedFunction<C, M, R> {
         fluent_builders::CreateUserDefinedFunction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWorkflow` operation.
+    /// Constructs a fluent builder for the [`CreateWorkflow`](crate::client::fluent_builders::CreateWorkflow) operation.
     ///
-    /// See [`CreateWorkflow`](crate::client::fluent_builders::CreateWorkflow) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkflow::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWorkflow::set_name): <p>The name to be assigned to the workflow. It should be unique within your account.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateWorkflow::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateWorkflow::set_description): <p>A description of the workflow.</p>
+    ///   - [`default_run_properties(HashMap<String, String>)`](crate::client::fluent_builders::CreateWorkflow::default_run_properties) / [`set_default_run_properties(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateWorkflow::set_default_run_properties): <p>A collection of properties to be used as part of each execution of the workflow.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateWorkflow::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateWorkflow::set_tags): <p>The tags to be used with this workflow.</p>
+    ///   - [`max_concurrent_runs(i32)`](crate::client::fluent_builders::CreateWorkflow::max_concurrent_runs) / [`set_max_concurrent_runs(Option<i32>)`](crate::client::fluent_builders::CreateWorkflow::set_max_concurrent_runs): <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
+    /// - On success, responds with [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateWorkflowOutput::name): <p>The name of the workflow which was provided as part of the request.</p>
+    /// - On failure, responds with [`SdkError<CreateWorkflowError>`](crate::error::CreateWorkflowError)
     pub fn create_workflow(&self) -> fluent_builders::CreateWorkflow<C, M, R> {
         fluent_builders::CreateWorkflow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBlueprint` operation.
+    /// Constructs a fluent builder for the [`DeleteBlueprint`](crate::client::fluent_builders::DeleteBlueprint) operation.
     ///
-    /// See [`DeleteBlueprint`](crate::client::fluent_builders::DeleteBlueprint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteBlueprint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteBlueprint::set_name): <p>The name of the blueprint to delete.</p>
+    /// - On success, responds with [`DeleteBlueprintOutput`](crate::output::DeleteBlueprintOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DeleteBlueprintOutput::name): <p>Returns the name of the blueprint that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteBlueprintError>`](crate::error::DeleteBlueprintError)
     pub fn delete_blueprint(&self) -> fluent_builders::DeleteBlueprint<C, M, R> {
         fluent_builders::DeleteBlueprint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteClassifier` operation.
+    /// Constructs a fluent builder for the [`DeleteClassifier`](crate::client::fluent_builders::DeleteClassifier) operation.
     ///
-    /// See [`DeleteClassifier`](crate::client::fluent_builders::DeleteClassifier) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteClassifier::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteClassifier::set_name): <p>Name of the classifier to remove.</p>
+    /// - On success, responds with [`DeleteClassifierOutput`](crate::output::DeleteClassifierOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteClassifierError>`](crate::error::DeleteClassifierError)
     pub fn delete_classifier(&self) -> fluent_builders::DeleteClassifier<C, M, R> {
         fluent_builders::DeleteClassifier::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteColumnStatisticsForPartition` operation.
+    /// Constructs a fluent builder for the [`DeleteColumnStatisticsForPartition`](crate::client::fluent_builders::DeleteColumnStatisticsForPartition) operation.
     ///
-    /// See [`DeleteColumnStatisticsForPartition`](crate::client::fluent_builders::DeleteColumnStatisticsForPartition) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForPartition::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForPartition::set_catalog_id): <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForPartition::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForPartition::set_database_name): <p>The name of the catalog database where the partitions reside.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForPartition::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForPartition::set_table_name): <p>The name of the partitions' table.</p>
+    ///   - [`partition_values(Vec<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForPartition::partition_values) / [`set_partition_values(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteColumnStatisticsForPartition::set_partition_values): <p>A list of partition values identifying the partition.</p>
+    ///   - [`column_name(impl Into<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForPartition::column_name) / [`set_column_name(Option<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForPartition::set_column_name): <p>Name of the column.</p>
+    /// - On success, responds with [`DeleteColumnStatisticsForPartitionOutput`](crate::output::DeleteColumnStatisticsForPartitionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteColumnStatisticsForPartitionError>`](crate::error::DeleteColumnStatisticsForPartitionError)
     pub fn delete_column_statistics_for_partition(
         &self,
     ) -> fluent_builders::DeleteColumnStatisticsForPartition<C, M, R> {
         fluent_builders::DeleteColumnStatisticsForPartition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteColumnStatisticsForTable` operation.
+    /// Constructs a fluent builder for the [`DeleteColumnStatisticsForTable`](crate::client::fluent_builders::DeleteColumnStatisticsForTable) operation.
     ///
-    /// See [`DeleteColumnStatisticsForTable`](crate::client::fluent_builders::DeleteColumnStatisticsForTable) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForTable::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForTable::set_catalog_id): <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForTable::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForTable::set_database_name): <p>The name of the catalog database where the partitions reside.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForTable::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForTable::set_table_name): <p>The name of the partitions' table.</p>
+    ///   - [`column_name(impl Into<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForTable::column_name) / [`set_column_name(Option<String>)`](crate::client::fluent_builders::DeleteColumnStatisticsForTable::set_column_name): <p>The name of the column.</p>
+    /// - On success, responds with [`DeleteColumnStatisticsForTableOutput`](crate::output::DeleteColumnStatisticsForTableOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteColumnStatisticsForTableError>`](crate::error::DeleteColumnStatisticsForTableError)
     pub fn delete_column_statistics_for_table(
         &self,
     ) -> fluent_builders::DeleteColumnStatisticsForTable<C, M, R> {
         fluent_builders::DeleteColumnStatisticsForTable::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConnection` operation.
+    /// Constructs a fluent builder for the [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) operation.
     ///
-    /// See [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::DeleteConnection::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::DeleteConnection::set_catalog_id): <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`connection_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConnection::connection_name) / [`set_connection_name(Option<String>)`](crate::client::fluent_builders::DeleteConnection::set_connection_name): <p>The name of the connection to delete.</p>
+    /// - On success, responds with [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::error::DeleteConnectionError)
     pub fn delete_connection(&self) -> fluent_builders::DeleteConnection<C, M, R> {
         fluent_builders::DeleteConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCrawler` operation.
+    /// Constructs a fluent builder for the [`DeleteCrawler`](crate::client::fluent_builders::DeleteCrawler) operation.
     ///
-    /// See [`DeleteCrawler`](crate::client::fluent_builders::DeleteCrawler) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteCrawler::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteCrawler::set_name): <p>The name of the crawler to remove.</p>
+    /// - On success, responds with [`DeleteCrawlerOutput`](crate::output::DeleteCrawlerOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCrawlerError>`](crate::error::DeleteCrawlerError)
     pub fn delete_crawler(&self) -> fluent_builders::DeleteCrawler<C, M, R> {
         fluent_builders::DeleteCrawler::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDatabase` operation.
+    /// Constructs a fluent builder for the [`DeleteDatabase`](crate::client::fluent_builders::DeleteDatabase) operation.
     ///
-    /// See [`DeleteDatabase`](crate::client::fluent_builders::DeleteDatabase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDatabase::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::DeleteDatabase::set_catalog_id): <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteDatabase::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteDatabase::set_name): <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
+    /// - On success, responds with [`DeleteDatabaseOutput`](crate::output::DeleteDatabaseOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDatabaseError>`](crate::error::DeleteDatabaseError)
     pub fn delete_database(&self) -> fluent_builders::DeleteDatabase<C, M, R> {
         fluent_builders::DeleteDatabase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDevEndpoint` operation.
+    /// Constructs a fluent builder for the [`DeleteDevEndpoint`](crate::client::fluent_builders::DeleteDevEndpoint) operation.
     ///
-    /// See [`DeleteDevEndpoint`](crate::client::fluent_builders::DeleteDevEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDevEndpoint::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::DeleteDevEndpoint::set_endpoint_name): <p>The name of the <code>DevEndpoint</code>.</p>
+    /// - On success, responds with [`DeleteDevEndpointOutput`](crate::output::DeleteDevEndpointOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDevEndpointError>`](crate::error::DeleteDevEndpointError)
     pub fn delete_dev_endpoint(&self) -> fluent_builders::DeleteDevEndpoint<C, M, R> {
         fluent_builders::DeleteDevEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteJob` operation.
+    /// Constructs a fluent builder for the [`DeleteJob`](crate::client::fluent_builders::DeleteJob) operation.
     ///
-    /// See [`DeleteJob`](crate::client::fluent_builders::DeleteJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::DeleteJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::DeleteJob::set_job_name): <p>The name of the job definition to delete.</p>
+    /// - On success, responds with [`DeleteJobOutput`](crate::output::DeleteJobOutput) with field(s):
+    ///   - [`job_name(Option<String>)`](crate::output::DeleteJobOutput::job_name): <p>The name of the job definition that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteJobError>`](crate::error::DeleteJobError)
     pub fn delete_job(&self) -> fluent_builders::DeleteJob<C, M, R> {
         fluent_builders::DeleteJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMLTransform` operation.
+    /// Constructs a fluent builder for the [`DeleteMLTransform`](crate::client::fluent_builders::DeleteMLTransform) operation.
     ///
-    /// See [`DeleteMLTransform`](crate::client::fluent_builders::DeleteMLTransform) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`transform_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMLTransform::transform_id) / [`set_transform_id(Option<String>)`](crate::client::fluent_builders::DeleteMLTransform::set_transform_id): <p>The unique identifier of the transform to delete.</p>
+    /// - On success, responds with [`DeleteMlTransformOutput`](crate::output::DeleteMlTransformOutput) with field(s):
+    ///   - [`transform_id(Option<String>)`](crate::output::DeleteMlTransformOutput::transform_id): <p>The unique identifier of the transform that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteMLTransformError>`](crate::error::DeleteMLTransformError)
     pub fn delete_ml_transform(&self) -> fluent_builders::DeleteMLTransform<C, M, R> {
         fluent_builders::DeleteMLTransform::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePartition` operation.
+    /// Constructs a fluent builder for the [`DeletePartition`](crate::client::fluent_builders::DeletePartition) operation.
     ///
-    /// See [`DeletePartition`](crate::client::fluent_builders::DeletePartition) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::DeletePartition::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::DeletePartition::set_catalog_id): <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::DeletePartition::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::DeletePartition::set_database_name): <p>The name of the catalog database in which the table in question resides.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::DeletePartition::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::DeletePartition::set_table_name): <p>The name of the table that contains the partition to be deleted.</p>
+    ///   - [`partition_values(Vec<String>)`](crate::client::fluent_builders::DeletePartition::partition_values) / [`set_partition_values(Option<Vec<String>>)`](crate::client::fluent_builders::DeletePartition::set_partition_values): <p>The values that define the partition.</p>
+    /// - On success, responds with [`DeletePartitionOutput`](crate::output::DeletePartitionOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePartitionError>`](crate::error::DeletePartitionError)
     pub fn delete_partition(&self) -> fluent_builders::DeletePartition<C, M, R> {
         fluent_builders::DeletePartition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePartitionIndex` operation.
+    /// Constructs a fluent builder for the [`DeletePartitionIndex`](crate::client::fluent_builders::DeletePartitionIndex) operation.
     ///
-    /// See [`DeletePartitionIndex`](crate::client::fluent_builders::DeletePartitionIndex) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::DeletePartitionIndex::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::DeletePartitionIndex::set_catalog_id): <p>The catalog ID where the table resides.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::DeletePartitionIndex::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::DeletePartitionIndex::set_database_name): <p>Specifies the name of a database from which you want to delete a partition index.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::DeletePartitionIndex::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::DeletePartitionIndex::set_table_name): <p>Specifies the name of a table from which you want to delete a partition index.</p>
+    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::DeletePartitionIndex::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::DeletePartitionIndex::set_index_name): <p>The name of the partition index to be deleted.</p>
+    /// - On success, responds with [`DeletePartitionIndexOutput`](crate::output::DeletePartitionIndexOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePartitionIndexError>`](crate::error::DeletePartitionIndexError)
     pub fn delete_partition_index(&self) -> fluent_builders::DeletePartitionIndex<C, M, R> {
         fluent_builders::DeletePartitionIndex::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRegistry` operation.
+    /// Constructs a fluent builder for the [`DeleteRegistry`](crate::client::fluent_builders::DeleteRegistry) operation.
     ///
-    /// See [`DeleteRegistry`](crate::client::fluent_builders::DeleteRegistry) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`registry_id(RegistryId)`](crate::client::fluent_builders::DeleteRegistry::registry_id) / [`set_registry_id(Option<RegistryId>)`](crate::client::fluent_builders::DeleteRegistry::set_registry_id): <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    /// - On success, responds with [`DeleteRegistryOutput`](crate::output::DeleteRegistryOutput) with field(s):
+    ///   - [`registry_name(Option<String>)`](crate::output::DeleteRegistryOutput::registry_name): <p>The name of the registry being deleted.</p>
+    ///   - [`registry_arn(Option<String>)`](crate::output::DeleteRegistryOutput::registry_arn): <p>The Amazon Resource Name (ARN) of the registry being deleted.</p>
+    ///   - [`status(Option<RegistryStatus>)`](crate::output::DeleteRegistryOutput::status): <p>The status of the registry. A successful operation will return the <code>Deleting</code> status.</p>
+    /// - On failure, responds with [`SdkError<DeleteRegistryError>`](crate::error::DeleteRegistryError)
     pub fn delete_registry(&self) -> fluent_builders::DeleteRegistry<C, M, R> {
         fluent_builders::DeleteRegistry::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) operation.
     ///
-    /// See [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`policy_hash_condition(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::policy_hash_condition) / [`set_policy_hash_condition(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_policy_hash_condition): <p>The hash value returned when this policy was set.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DeleteResourcePolicy::set_resource_arn): <p>The ARN of the Glue resource for the resource policy to be deleted.</p>
+    /// - On success, responds with [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourcePolicyError>`](crate::error::DeleteResourcePolicyError)
     pub fn delete_resource_policy(&self) -> fluent_builders::DeleteResourcePolicy<C, M, R> {
         fluent_builders::DeleteResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSchema` operation.
+    /// Constructs a fluent builder for the [`DeleteSchema`](crate::client::fluent_builders::DeleteSchema) operation.
     ///
-    /// See [`DeleteSchema`](crate::client::fluent_builders::DeleteSchema) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`schema_id(SchemaId)`](crate::client::fluent_builders::DeleteSchema::schema_id) / [`set_schema_id(Option<SchemaId>)`](crate::client::fluent_builders::DeleteSchema::set_schema_id): <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    /// - On success, responds with [`DeleteSchemaOutput`](crate::output::DeleteSchemaOutput) with field(s):
+    ///   - [`schema_arn(Option<String>)`](crate::output::DeleteSchemaOutput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
+    ///   - [`schema_name(Option<String>)`](crate::output::DeleteSchemaOutput::schema_name): <p>The name of the schema being deleted.</p>
+    ///   - [`status(Option<SchemaStatus>)`](crate::output::DeleteSchemaOutput::status): <p>The status of the schema.</p>
+    /// - On failure, responds with [`SdkError<DeleteSchemaError>`](crate::error::DeleteSchemaError)
     pub fn delete_schema(&self) -> fluent_builders::DeleteSchema<C, M, R> {
         fluent_builders::DeleteSchema::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSchemaVersions` operation.
+    /// Constructs a fluent builder for the [`DeleteSchemaVersions`](crate::client::fluent_builders::DeleteSchemaVersions) operation.
     ///
-    /// See [`DeleteSchemaVersions`](crate::client::fluent_builders::DeleteSchemaVersions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`schema_id(SchemaId)`](crate::client::fluent_builders::DeleteSchemaVersions::schema_id) / [`set_schema_id(Option<SchemaId>)`](crate::client::fluent_builders::DeleteSchemaVersions::set_schema_id): <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    ///   - [`versions(impl Into<String>)`](crate::client::fluent_builders::DeleteSchemaVersions::versions) / [`set_versions(Option<String>)`](crate::client::fluent_builders::DeleteSchemaVersions::set_versions): <p>A version range may be supplied which may be of the format:</p>  <ul>   <li> <p>a single version number, 5</p> </li>   <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>  </ul>
+    /// - On success, responds with [`DeleteSchemaVersionsOutput`](crate::output::DeleteSchemaVersionsOutput) with field(s):
+    ///   - [`schema_version_errors(Option<Vec<SchemaVersionErrorItem>>)`](crate::output::DeleteSchemaVersionsOutput::schema_version_errors): <p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>
+    /// - On failure, responds with [`SdkError<DeleteSchemaVersionsError>`](crate::error::DeleteSchemaVersionsError)
     pub fn delete_schema_versions(&self) -> fluent_builders::DeleteSchemaVersions<C, M, R> {
         fluent_builders::DeleteSchemaVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSecurityConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteSecurityConfiguration`](crate::client::fluent_builders::DeleteSecurityConfiguration) operation.
     ///
-    /// See [`DeleteSecurityConfiguration`](crate::client::fluent_builders::DeleteSecurityConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteSecurityConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteSecurityConfiguration::set_name): <p>The name of the security configuration to delete.</p>
+    /// - On success, responds with [`DeleteSecurityConfigurationOutput`](crate::output::DeleteSecurityConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSecurityConfigurationError>`](crate::error::DeleteSecurityConfigurationError)
     pub fn delete_security_configuration(
         &self,
     ) -> fluent_builders::DeleteSecurityConfiguration<C, M, R> {
         fluent_builders::DeleteSecurityConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTable` operation.
+    /// Constructs a fluent builder for the [`DeleteTable`](crate::client::fluent_builders::DeleteTable) operation.
     ///
-    /// See [`DeleteTable`](crate::client::fluent_builders::DeleteTable) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTable::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::DeleteTable::set_catalog_id): <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::DeleteTable::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::DeleteTable::set_database_name): <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteTable::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteTable::set_name): <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTable::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::DeleteTable::set_transaction_id): <p>The transaction ID at which to delete the table contents.</p>
+    /// - On success, responds with [`DeleteTableOutput`](crate::output::DeleteTableOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTableError>`](crate::error::DeleteTableError)
     pub fn delete_table(&self) -> fluent_builders::DeleteTable<C, M, R> {
         fluent_builders::DeleteTable::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTableVersion` operation.
+    /// Constructs a fluent builder for the [`DeleteTableVersion`](crate::client::fluent_builders::DeleteTableVersion) operation.
     ///
-    /// See [`DeleteTableVersion`](crate::client::fluent_builders::DeleteTableVersion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTableVersion::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::DeleteTableVersion::set_catalog_id): <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::DeleteTableVersion::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::DeleteTableVersion::set_database_name): <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::DeleteTableVersion::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::DeleteTableVersion::set_table_name): <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTableVersion::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::DeleteTableVersion::set_version_id): <p>The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
+    /// - On success, responds with [`DeleteTableVersionOutput`](crate::output::DeleteTableVersionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTableVersionError>`](crate::error::DeleteTableVersionError)
     pub fn delete_table_version(&self) -> fluent_builders::DeleteTableVersion<C, M, R> {
         fluent_builders::DeleteTableVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTrigger` operation.
+    /// Constructs a fluent builder for the [`DeleteTrigger`](crate::client::fluent_builders::DeleteTrigger) operation.
     ///
-    /// See [`DeleteTrigger`](crate::client::fluent_builders::DeleteTrigger) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteTrigger::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteTrigger::set_name): <p>The name of the trigger to delete.</p>
+    /// - On success, responds with [`DeleteTriggerOutput`](crate::output::DeleteTriggerOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DeleteTriggerOutput::name): <p>The name of the trigger that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteTriggerError>`](crate::error::DeleteTriggerError)
     pub fn delete_trigger(&self) -> fluent_builders::DeleteTrigger<C, M, R> {
         fluent_builders::DeleteTrigger::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUserDefinedFunction` operation.
+    /// Constructs a fluent builder for the [`DeleteUserDefinedFunction`](crate::client::fluent_builders::DeleteUserDefinedFunction) operation.
     ///
-    /// See [`DeleteUserDefinedFunction`](crate::client::fluent_builders::DeleteUserDefinedFunction) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUserDefinedFunction::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::DeleteUserDefinedFunction::set_catalog_id): <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::DeleteUserDefinedFunction::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::DeleteUserDefinedFunction::set_database_name): <p>The name of the catalog database where the function is located.</p>
+    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::DeleteUserDefinedFunction::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::DeleteUserDefinedFunction::set_function_name): <p>The name of the function definition to be deleted.</p>
+    /// - On success, responds with [`DeleteUserDefinedFunctionOutput`](crate::output::DeleteUserDefinedFunctionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserDefinedFunctionError>`](crate::error::DeleteUserDefinedFunctionError)
     pub fn delete_user_defined_function(
         &self,
     ) -> fluent_builders::DeleteUserDefinedFunction<C, M, R> {
         fluent_builders::DeleteUserDefinedFunction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWorkflow` operation.
+    /// Constructs a fluent builder for the [`DeleteWorkflow`](crate::client::fluent_builders::DeleteWorkflow) operation.
     ///
-    /// See [`DeleteWorkflow`](crate::client::fluent_builders::DeleteWorkflow) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkflow::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteWorkflow::set_name): <p>Name of the workflow to be deleted.</p>
+    /// - On success, responds with [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DeleteWorkflowOutput::name): <p>Name of the workflow specified in input.</p>
+    /// - On failure, responds with [`SdkError<DeleteWorkflowError>`](crate::error::DeleteWorkflowError)
     pub fn delete_workflow(&self) -> fluent_builders::DeleteWorkflow<C, M, R> {
         fluent_builders::DeleteWorkflow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBlueprint` operation.
+    /// Constructs a fluent builder for the [`GetBlueprint`](crate::client::fluent_builders::GetBlueprint) operation.
     ///
-    /// See [`GetBlueprint`](crate::client::fluent_builders::GetBlueprint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetBlueprint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetBlueprint::set_name): <p>The name of the blueprint.</p>
+    ///   - [`include_blueprint(bool)`](crate::client::fluent_builders::GetBlueprint::include_blueprint) / [`set_include_blueprint(Option<bool>)`](crate::client::fluent_builders::GetBlueprint::set_include_blueprint): <p>Specifies whether or not to include the blueprint in the response.</p>
+    ///   - [`include_parameter_spec(bool)`](crate::client::fluent_builders::GetBlueprint::include_parameter_spec) / [`set_include_parameter_spec(Option<bool>)`](crate::client::fluent_builders::GetBlueprint::set_include_parameter_spec): <p>Specifies whether or not to include the parameter specification.</p>
+    /// - On success, responds with [`GetBlueprintOutput`](crate::output::GetBlueprintOutput) with field(s):
+    ///   - [`blueprint(Option<Blueprint>)`](crate::output::GetBlueprintOutput::blueprint): <p>Returns a <code>Blueprint</code> object.</p>
+    /// - On failure, responds with [`SdkError<GetBlueprintError>`](crate::error::GetBlueprintError)
     pub fn get_blueprint(&self) -> fluent_builders::GetBlueprint<C, M, R> {
         fluent_builders::GetBlueprint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBlueprintRun` operation.
+    /// Constructs a fluent builder for the [`GetBlueprintRun`](crate::client::fluent_builders::GetBlueprintRun) operation.
     ///
-    /// See [`GetBlueprintRun`](crate::client::fluent_builders::GetBlueprintRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`blueprint_name(impl Into<String>)`](crate::client::fluent_builders::GetBlueprintRun::blueprint_name) / [`set_blueprint_name(Option<String>)`](crate::client::fluent_builders::GetBlueprintRun::set_blueprint_name): <p>The name of the blueprint.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::client::fluent_builders::GetBlueprintRun::run_id) / [`set_run_id(Option<String>)`](crate::client::fluent_builders::GetBlueprintRun::set_run_id): <p>The run ID for the blueprint run you want to retrieve.</p>
+    /// - On success, responds with [`GetBlueprintRunOutput`](crate::output::GetBlueprintRunOutput) with field(s):
+    ///   - [`blueprint_run(Option<BlueprintRun>)`](crate::output::GetBlueprintRunOutput::blueprint_run): <p>Returns a <code>BlueprintRun</code> object.</p>
+    /// - On failure, responds with [`SdkError<GetBlueprintRunError>`](crate::error::GetBlueprintRunError)
     pub fn get_blueprint_run(&self) -> fluent_builders::GetBlueprintRun<C, M, R> {
         fluent_builders::GetBlueprintRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBlueprintRuns` operation.
+    /// Constructs a fluent builder for the [`GetBlueprintRuns`](crate::client::fluent_builders::GetBlueprintRuns) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetBlueprintRuns::into_paginator).
     ///
-    /// See [`GetBlueprintRuns`](crate::client::fluent_builders::GetBlueprintRuns) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetBlueprintRuns::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`blueprint_name(impl Into<String>)`](crate::client::fluent_builders::GetBlueprintRuns::blueprint_name) / [`set_blueprint_name(Option<String>)`](crate::client::fluent_builders::GetBlueprintRuns::set_blueprint_name): <p>The name of the blueprint.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetBlueprintRuns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetBlueprintRuns::set_next_token): <p>A continuation token, if this is a continuation request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetBlueprintRuns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetBlueprintRuns::set_max_results): <p>The maximum size of a list to return.</p>
+    /// - On success, responds with [`GetBlueprintRunsOutput`](crate::output::GetBlueprintRunsOutput) with field(s):
+    ///   - [`blueprint_runs(Option<Vec<BlueprintRun>>)`](crate::output::GetBlueprintRunsOutput::blueprint_runs): <p>Returns a list of <code>BlueprintRun</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetBlueprintRunsOutput::next_token): <p>A continuation token, if not all blueprint runs have been returned.</p>
+    /// - On failure, responds with [`SdkError<GetBlueprintRunsError>`](crate::error::GetBlueprintRunsError)
     pub fn get_blueprint_runs(&self) -> fluent_builders::GetBlueprintRuns<C, M, R> {
         fluent_builders::GetBlueprintRuns::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCatalogImportStatus` operation.
+    /// Constructs a fluent builder for the [`GetCatalogImportStatus`](crate::client::fluent_builders::GetCatalogImportStatus) operation.
     ///
-    /// See [`GetCatalogImportStatus`](crate::client::fluent_builders::GetCatalogImportStatus) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetCatalogImportStatus::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetCatalogImportStatus::set_catalog_id): <p>The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID.</p>
+    /// - On success, responds with [`GetCatalogImportStatusOutput`](crate::output::GetCatalogImportStatusOutput) with field(s):
+    ///   - [`import_status(Option<CatalogImportStatus>)`](crate::output::GetCatalogImportStatusOutput::import_status): <p>The status of the specified catalog migration.</p>
+    /// - On failure, responds with [`SdkError<GetCatalogImportStatusError>`](crate::error::GetCatalogImportStatusError)
     pub fn get_catalog_import_status(&self) -> fluent_builders::GetCatalogImportStatus<C, M, R> {
         fluent_builders::GetCatalogImportStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetClassifier` operation.
+    /// Constructs a fluent builder for the [`GetClassifier`](crate::client::fluent_builders::GetClassifier) operation.
     ///
-    /// See [`GetClassifier`](crate::client::fluent_builders::GetClassifier) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetClassifier::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetClassifier::set_name): <p>Name of the classifier to retrieve.</p>
+    /// - On success, responds with [`GetClassifierOutput`](crate::output::GetClassifierOutput) with field(s):
+    ///   - [`classifier(Option<Classifier>)`](crate::output::GetClassifierOutput::classifier): <p>The requested classifier.</p>
+    /// - On failure, responds with [`SdkError<GetClassifierError>`](crate::error::GetClassifierError)
     pub fn get_classifier(&self) -> fluent_builders::GetClassifier<C, M, R> {
         fluent_builders::GetClassifier::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetClassifiers` operation.
+    /// Constructs a fluent builder for the [`GetClassifiers`](crate::client::fluent_builders::GetClassifiers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetClassifiers::into_paginator).
     ///
-    /// See [`GetClassifiers`](crate::client::fluent_builders::GetClassifiers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetClassifiers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetClassifiers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetClassifiers::set_max_results): <p>The size of the list to return (optional).</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetClassifiers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetClassifiers::set_next_token): <p>An optional continuation token.</p>
+    /// - On success, responds with [`GetClassifiersOutput`](crate::output::GetClassifiersOutput) with field(s):
+    ///   - [`classifiers(Option<Vec<Classifier>>)`](crate::output::GetClassifiersOutput::classifiers): <p>The requested list of classifier objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetClassifiersOutput::next_token): <p>A continuation token.</p>
+    /// - On failure, responds with [`SdkError<GetClassifiersError>`](crate::error::GetClassifiersError)
     pub fn get_classifiers(&self) -> fluent_builders::GetClassifiers<C, M, R> {
         fluent_builders::GetClassifiers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetColumnStatisticsForPartition` operation.
+    /// Constructs a fluent builder for the [`GetColumnStatisticsForPartition`](crate::client::fluent_builders::GetColumnStatisticsForPartition) operation.
     ///
-    /// See [`GetColumnStatisticsForPartition`](crate::client::fluent_builders::GetColumnStatisticsForPartition) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetColumnStatisticsForPartition::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetColumnStatisticsForPartition::set_catalog_id): <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetColumnStatisticsForPartition::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetColumnStatisticsForPartition::set_database_name): <p>The name of the catalog database where the partitions reside.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::GetColumnStatisticsForPartition::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::GetColumnStatisticsForPartition::set_table_name): <p>The name of the partitions' table.</p>
+    ///   - [`partition_values(Vec<String>)`](crate::client::fluent_builders::GetColumnStatisticsForPartition::partition_values) / [`set_partition_values(Option<Vec<String>>)`](crate::client::fluent_builders::GetColumnStatisticsForPartition::set_partition_values): <p>A list of partition values identifying the partition.</p>
+    ///   - [`column_names(Vec<String>)`](crate::client::fluent_builders::GetColumnStatisticsForPartition::column_names) / [`set_column_names(Option<Vec<String>>)`](crate::client::fluent_builders::GetColumnStatisticsForPartition::set_column_names): <p>A list of the column names.</p>
+    /// - On success, responds with [`GetColumnStatisticsForPartitionOutput`](crate::output::GetColumnStatisticsForPartitionOutput) with field(s):
+    ///   - [`column_statistics_list(Option<Vec<ColumnStatistics>>)`](crate::output::GetColumnStatisticsForPartitionOutput::column_statistics_list): <p>List of ColumnStatistics that failed to be retrieved.</p>
+    ///   - [`errors(Option<Vec<ColumnError>>)`](crate::output::GetColumnStatisticsForPartitionOutput::errors): <p>Error occurred during retrieving column statistics data.</p>
+    /// - On failure, responds with [`SdkError<GetColumnStatisticsForPartitionError>`](crate::error::GetColumnStatisticsForPartitionError)
     pub fn get_column_statistics_for_partition(
         &self,
     ) -> fluent_builders::GetColumnStatisticsForPartition<C, M, R> {
         fluent_builders::GetColumnStatisticsForPartition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetColumnStatisticsForTable` operation.
+    /// Constructs a fluent builder for the [`GetColumnStatisticsForTable`](crate::client::fluent_builders::GetColumnStatisticsForTable) operation.
     ///
-    /// See [`GetColumnStatisticsForTable`](crate::client::fluent_builders::GetColumnStatisticsForTable) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetColumnStatisticsForTable::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetColumnStatisticsForTable::set_catalog_id): <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetColumnStatisticsForTable::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetColumnStatisticsForTable::set_database_name): <p>The name of the catalog database where the partitions reside.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::GetColumnStatisticsForTable::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::GetColumnStatisticsForTable::set_table_name): <p>The name of the partitions' table.</p>
+    ///   - [`column_names(Vec<String>)`](crate::client::fluent_builders::GetColumnStatisticsForTable::column_names) / [`set_column_names(Option<Vec<String>>)`](crate::client::fluent_builders::GetColumnStatisticsForTable::set_column_names): <p>A list of the column names.</p>
+    /// - On success, responds with [`GetColumnStatisticsForTableOutput`](crate::output::GetColumnStatisticsForTableOutput) with field(s):
+    ///   - [`column_statistics_list(Option<Vec<ColumnStatistics>>)`](crate::output::GetColumnStatisticsForTableOutput::column_statistics_list): <p>List of ColumnStatistics that failed to be retrieved.</p>
+    ///   - [`errors(Option<Vec<ColumnError>>)`](crate::output::GetColumnStatisticsForTableOutput::errors): <p>List of ColumnStatistics that failed to be retrieved.</p>
+    /// - On failure, responds with [`SdkError<GetColumnStatisticsForTableError>`](crate::error::GetColumnStatisticsForTableError)
     pub fn get_column_statistics_for_table(
         &self,
     ) -> fluent_builders::GetColumnStatisticsForTable<C, M, R> {
         fluent_builders::GetColumnStatisticsForTable::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConnection` operation.
+    /// Constructs a fluent builder for the [`GetConnection`](crate::client::fluent_builders::GetConnection) operation.
     ///
-    /// See [`GetConnection`](crate::client::fluent_builders::GetConnection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetConnection::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetConnection::set_catalog_id): <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetConnection::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetConnection::set_name): <p>The name of the connection definition to retrieve.</p>
+    ///   - [`hide_password(bool)`](crate::client::fluent_builders::GetConnection::hide_password) / [`set_hide_password(bool)`](crate::client::fluent_builders::GetConnection::set_hide_password): <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
+    /// - On success, responds with [`GetConnectionOutput`](crate::output::GetConnectionOutput) with field(s):
+    ///   - [`connection(Option<Connection>)`](crate::output::GetConnectionOutput::connection): <p>The requested connection definition.</p>
+    /// - On failure, responds with [`SdkError<GetConnectionError>`](crate::error::GetConnectionError)
     pub fn get_connection(&self) -> fluent_builders::GetConnection<C, M, R> {
         fluent_builders::GetConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConnections` operation.
+    /// Constructs a fluent builder for the [`GetConnections`](crate::client::fluent_builders::GetConnections) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetConnections::into_paginator).
     ///
-    /// See [`GetConnections`](crate::client::fluent_builders::GetConnections) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetConnections::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetConnections::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetConnections::set_catalog_id): <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`filter(GetConnectionsFilter)`](crate::client::fluent_builders::GetConnections::filter) / [`set_filter(Option<GetConnectionsFilter>)`](crate::client::fluent_builders::GetConnections::set_filter): <p>A filter that controls which connections are returned.</p>
+    ///   - [`hide_password(bool)`](crate::client::fluent_builders::GetConnections::hide_password) / [`set_hide_password(bool)`](crate::client::fluent_builders::GetConnections::set_hide_password): <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetConnections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetConnections::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetConnections::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetConnections::set_max_results): <p>The maximum number of connections to return in one response.</p>
+    /// - On success, responds with [`GetConnectionsOutput`](crate::output::GetConnectionsOutput) with field(s):
+    ///   - [`connection_list(Option<Vec<Connection>>)`](crate::output::GetConnectionsOutput::connection_list): <p>A list of requested connection definitions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetConnectionsOutput::next_token): <p>A continuation token, if the list of connections returned does not include the last of the filtered connections.</p>
+    /// - On failure, responds with [`SdkError<GetConnectionsError>`](crate::error::GetConnectionsError)
     pub fn get_connections(&self) -> fluent_builders::GetConnections<C, M, R> {
         fluent_builders::GetConnections::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCrawler` operation.
+    /// Constructs a fluent builder for the [`GetCrawler`](crate::client::fluent_builders::GetCrawler) operation.
     ///
-    /// See [`GetCrawler`](crate::client::fluent_builders::GetCrawler) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetCrawler::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetCrawler::set_name): <p>The name of the crawler to retrieve metadata for.</p>
+    /// - On success, responds with [`GetCrawlerOutput`](crate::output::GetCrawlerOutput) with field(s):
+    ///   - [`crawler(Option<Crawler>)`](crate::output::GetCrawlerOutput::crawler): <p>The metadata for the specified crawler.</p>
+    /// - On failure, responds with [`SdkError<GetCrawlerError>`](crate::error::GetCrawlerError)
     pub fn get_crawler(&self) -> fluent_builders::GetCrawler<C, M, R> {
         fluent_builders::GetCrawler::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCrawlerMetrics` operation.
+    /// Constructs a fluent builder for the [`GetCrawlerMetrics`](crate::client::fluent_builders::GetCrawlerMetrics) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetCrawlerMetrics::into_paginator).
     ///
-    /// See [`GetCrawlerMetrics`](crate::client::fluent_builders::GetCrawlerMetrics) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCrawlerMetrics::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`crawler_name_list(Vec<String>)`](crate::client::fluent_builders::GetCrawlerMetrics::crawler_name_list) / [`set_crawler_name_list(Option<Vec<String>>)`](crate::client::fluent_builders::GetCrawlerMetrics::set_crawler_name_list): <p>A list of the names of crawlers about which to retrieve metrics.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetCrawlerMetrics::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetCrawlerMetrics::set_max_results): <p>The maximum size of a list to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetCrawlerMetrics::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetCrawlerMetrics::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    /// - On success, responds with [`GetCrawlerMetricsOutput`](crate::output::GetCrawlerMetricsOutput) with field(s):
+    ///   - [`crawler_metrics_list(Option<Vec<CrawlerMetrics>>)`](crate::output::GetCrawlerMetricsOutput::crawler_metrics_list): <p>A list of metrics for the specified crawler.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetCrawlerMetricsOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>
+    /// - On failure, responds with [`SdkError<GetCrawlerMetricsError>`](crate::error::GetCrawlerMetricsError)
     pub fn get_crawler_metrics(&self) -> fluent_builders::GetCrawlerMetrics<C, M, R> {
         fluent_builders::GetCrawlerMetrics::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCrawlers` operation.
+    /// Constructs a fluent builder for the [`GetCrawlers`](crate::client::fluent_builders::GetCrawlers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetCrawlers::into_paginator).
     ///
-    /// See [`GetCrawlers`](crate::client::fluent_builders::GetCrawlers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCrawlers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetCrawlers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetCrawlers::set_max_results): <p>The number of crawlers to return on each call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetCrawlers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetCrawlers::set_next_token): <p>A continuation token, if this is a continuation request.</p>
+    /// - On success, responds with [`GetCrawlersOutput`](crate::output::GetCrawlersOutput) with field(s):
+    ///   - [`crawlers(Option<Vec<Crawler>>)`](crate::output::GetCrawlersOutput::crawlers): <p>A list of crawler metadata.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetCrawlersOutput::next_token): <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
+    /// - On failure, responds with [`SdkError<GetCrawlersError>`](crate::error::GetCrawlersError)
     pub fn get_crawlers(&self) -> fluent_builders::GetCrawlers<C, M, R> {
         fluent_builders::GetCrawlers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDatabase` operation.
+    /// Constructs a fluent builder for the [`GetDatabase`](crate::client::fluent_builders::GetDatabase) operation.
     ///
-    /// See [`GetDatabase`](crate::client::fluent_builders::GetDatabase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetDatabase::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetDatabase::set_catalog_id): <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetDatabase::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetDatabase::set_name): <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
+    /// - On success, responds with [`GetDatabaseOutput`](crate::output::GetDatabaseOutput) with field(s):
+    ///   - [`database(Option<Database>)`](crate::output::GetDatabaseOutput::database): <p>The definition of the specified database in the Data Catalog.</p>
+    /// - On failure, responds with [`SdkError<GetDatabaseError>`](crate::error::GetDatabaseError)
     pub fn get_database(&self) -> fluent_builders::GetDatabase<C, M, R> {
         fluent_builders::GetDatabase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDatabases` operation.
+    /// Constructs a fluent builder for the [`GetDatabases`](crate::client::fluent_builders::GetDatabases) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetDatabases::into_paginator).
     ///
-    /// See [`GetDatabases`](crate::client::fluent_builders::GetDatabases) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDatabases::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetDatabases::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetDatabases::set_catalog_id): <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetDatabases::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetDatabases::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetDatabases::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetDatabases::set_max_results): <p>The maximum number of databases to return in one response.</p>
+    ///   - [`resource_share_type(ResourceShareType)`](crate::client::fluent_builders::GetDatabases::resource_share_type) / [`set_resource_share_type(Option<ResourceShareType>)`](crate::client::fluent_builders::GetDatabases::set_resource_share_type): <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>  <ul>   <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>   <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>  </ul>
+    /// - On success, responds with [`GetDatabasesOutput`](crate::output::GetDatabasesOutput) with field(s):
+    ///   - [`database_list(Option<Vec<Database>>)`](crate::output::GetDatabasesOutput::database_list): <p>A list of <code>Database</code> objects from the specified catalog.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetDatabasesOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    /// - On failure, responds with [`SdkError<GetDatabasesError>`](crate::error::GetDatabasesError)
     pub fn get_databases(&self) -> fluent_builders::GetDatabases<C, M, R> {
         fluent_builders::GetDatabases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDataCatalogEncryptionSettings` operation.
+    /// Constructs a fluent builder for the [`GetDataCatalogEncryptionSettings`](crate::client::fluent_builders::GetDataCatalogEncryptionSettings) operation.
     ///
-    /// See [`GetDataCatalogEncryptionSettings`](crate::client::fluent_builders::GetDataCatalogEncryptionSettings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetDataCatalogEncryptionSettings::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetDataCatalogEncryptionSettings::set_catalog_id): <p>The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    /// - On success, responds with [`GetDataCatalogEncryptionSettingsOutput`](crate::output::GetDataCatalogEncryptionSettingsOutput) with field(s):
+    ///   - [`data_catalog_encryption_settings(Option<DataCatalogEncryptionSettings>)`](crate::output::GetDataCatalogEncryptionSettingsOutput::data_catalog_encryption_settings): <p>The requested security configuration.</p>
+    /// - On failure, responds with [`SdkError<GetDataCatalogEncryptionSettingsError>`](crate::error::GetDataCatalogEncryptionSettingsError)
     pub fn get_data_catalog_encryption_settings(
         &self,
     ) -> fluent_builders::GetDataCatalogEncryptionSettings<C, M, R> {
         fluent_builders::GetDataCatalogEncryptionSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDataflowGraph` operation.
+    /// Constructs a fluent builder for the [`GetDataflowGraph`](crate::client::fluent_builders::GetDataflowGraph) operation.
     ///
-    /// See [`GetDataflowGraph`](crate::client::fluent_builders::GetDataflowGraph) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`python_script(impl Into<String>)`](crate::client::fluent_builders::GetDataflowGraph::python_script) / [`set_python_script(Option<String>)`](crate::client::fluent_builders::GetDataflowGraph::set_python_script): <p>The Python script to transform.</p>
+    /// - On success, responds with [`GetDataflowGraphOutput`](crate::output::GetDataflowGraphOutput) with field(s):
+    ///   - [`dag_nodes(Option<Vec<CodeGenNode>>)`](crate::output::GetDataflowGraphOutput::dag_nodes): <p>A list of the nodes in the resulting DAG.</p>
+    ///   - [`dag_edges(Option<Vec<CodeGenEdge>>)`](crate::output::GetDataflowGraphOutput::dag_edges): <p>A list of the edges in the resulting DAG.</p>
+    /// - On failure, responds with [`SdkError<GetDataflowGraphError>`](crate::error::GetDataflowGraphError)
     pub fn get_dataflow_graph(&self) -> fluent_builders::GetDataflowGraph<C, M, R> {
         fluent_builders::GetDataflowGraph::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDevEndpoint` operation.
+    /// Constructs a fluent builder for the [`GetDevEndpoint`](crate::client::fluent_builders::GetDevEndpoint) operation.
     ///
-    /// See [`GetDevEndpoint`](crate::client::fluent_builders::GetDevEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::GetDevEndpoint::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::GetDevEndpoint::set_endpoint_name): <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
+    /// - On success, responds with [`GetDevEndpointOutput`](crate::output::GetDevEndpointOutput) with field(s):
+    ///   - [`dev_endpoint(Option<DevEndpoint>)`](crate::output::GetDevEndpointOutput::dev_endpoint): <p>A <code>DevEndpoint</code> definition.</p>
+    /// - On failure, responds with [`SdkError<GetDevEndpointError>`](crate::error::GetDevEndpointError)
     pub fn get_dev_endpoint(&self) -> fluent_builders::GetDevEndpoint<C, M, R> {
         fluent_builders::GetDevEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDevEndpoints` operation.
+    /// Constructs a fluent builder for the [`GetDevEndpoints`](crate::client::fluent_builders::GetDevEndpoints) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetDevEndpoints::into_paginator).
     ///
-    /// See [`GetDevEndpoints`](crate::client::fluent_builders::GetDevEndpoints) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDevEndpoints::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetDevEndpoints::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetDevEndpoints::set_max_results): <p>The maximum size of information to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetDevEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetDevEndpoints::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    /// - On success, responds with [`GetDevEndpointsOutput`](crate::output::GetDevEndpointsOutput) with field(s):
+    ///   - [`dev_endpoints(Option<Vec<DevEndpoint>>)`](crate::output::GetDevEndpointsOutput::dev_endpoints): <p>A list of <code>DevEndpoint</code> definitions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetDevEndpointsOutput::next_token): <p>A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.</p>
+    /// - On failure, responds with [`SdkError<GetDevEndpointsError>`](crate::error::GetDevEndpointsError)
     pub fn get_dev_endpoints(&self) -> fluent_builders::GetDevEndpoints<C, M, R> {
         fluent_builders::GetDevEndpoints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJob` operation.
+    /// Constructs a fluent builder for the [`GetJob`](crate::client::fluent_builders::GetJob) operation.
     ///
-    /// See [`GetJob`](crate::client::fluent_builders::GetJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::GetJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::GetJob::set_job_name): <p>The name of the job definition to retrieve.</p>
+    /// - On success, responds with [`GetJobOutput`](crate::output::GetJobOutput) with field(s):
+    ///   - [`job(Option<Job>)`](crate::output::GetJobOutput::job): <p>The requested job definition.</p>
+    /// - On failure, responds with [`SdkError<GetJobError>`](crate::error::GetJobError)
     pub fn get_job(&self) -> fluent_builders::GetJob<C, M, R> {
         fluent_builders::GetJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJobBookmark` operation.
+    /// Constructs a fluent builder for the [`GetJobBookmark`](crate::client::fluent_builders::GetJobBookmark) operation.
     ///
-    /// See [`GetJobBookmark`](crate::client::fluent_builders::GetJobBookmark) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::GetJobBookmark::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::GetJobBookmark::set_job_name): <p>The name of the job in question.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::client::fluent_builders::GetJobBookmark::run_id) / [`set_run_id(Option<String>)`](crate::client::fluent_builders::GetJobBookmark::set_run_id): <p>The unique run identifier associated with this job run.</p>
+    /// - On success, responds with [`GetJobBookmarkOutput`](crate::output::GetJobBookmarkOutput) with field(s):
+    ///   - [`job_bookmark_entry(Option<JobBookmarkEntry>)`](crate::output::GetJobBookmarkOutput::job_bookmark_entry): <p>A structure that defines a point that a job can resume processing.</p>
+    /// - On failure, responds with [`SdkError<GetJobBookmarkError>`](crate::error::GetJobBookmarkError)
     pub fn get_job_bookmark(&self) -> fluent_builders::GetJobBookmark<C, M, R> {
         fluent_builders::GetJobBookmark::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJobRun` operation.
+    /// Constructs a fluent builder for the [`GetJobRun`](crate::client::fluent_builders::GetJobRun) operation.
     ///
-    /// See [`GetJobRun`](crate::client::fluent_builders::GetJobRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::GetJobRun::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::GetJobRun::set_job_name): <p>Name of the job definition being run.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::client::fluent_builders::GetJobRun::run_id) / [`set_run_id(Option<String>)`](crate::client::fluent_builders::GetJobRun::set_run_id): <p>The ID of the job run.</p>
+    ///   - [`predecessors_included(bool)`](crate::client::fluent_builders::GetJobRun::predecessors_included) / [`set_predecessors_included(bool)`](crate::client::fluent_builders::GetJobRun::set_predecessors_included): <p>True if a list of predecessor runs should be returned.</p>
+    /// - On success, responds with [`GetJobRunOutput`](crate::output::GetJobRunOutput) with field(s):
+    ///   - [`job_run(Option<JobRun>)`](crate::output::GetJobRunOutput::job_run): <p>The requested job-run metadata.</p>
+    /// - On failure, responds with [`SdkError<GetJobRunError>`](crate::error::GetJobRunError)
     pub fn get_job_run(&self) -> fluent_builders::GetJobRun<C, M, R> {
         fluent_builders::GetJobRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJobRuns` operation.
+    /// Constructs a fluent builder for the [`GetJobRuns`](crate::client::fluent_builders::GetJobRuns) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetJobRuns::into_paginator).
     ///
-    /// See [`GetJobRuns`](crate::client::fluent_builders::GetJobRuns) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetJobRuns::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::GetJobRuns::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::GetJobRuns::set_job_name): <p>The name of the job definition for which to retrieve all job runs.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetJobRuns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetJobRuns::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetJobRuns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetJobRuns::set_max_results): <p>The maximum size of the response.</p>
+    /// - On success, responds with [`GetJobRunsOutput`](crate::output::GetJobRunsOutput) with field(s):
+    ///   - [`job_runs(Option<Vec<JobRun>>)`](crate::output::GetJobRunsOutput::job_runs): <p>A list of job-run metadata objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetJobRunsOutput::next_token): <p>A continuation token, if not all requested job runs have been returned.</p>
+    /// - On failure, responds with [`SdkError<GetJobRunsError>`](crate::error::GetJobRunsError)
     pub fn get_job_runs(&self) -> fluent_builders::GetJobRuns<C, M, R> {
         fluent_builders::GetJobRuns::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJobs` operation.
+    /// Constructs a fluent builder for the [`GetJobs`](crate::client::fluent_builders::GetJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetJobs::into_paginator).
     ///
-    /// See [`GetJobs`](crate::client::fluent_builders::GetJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetJobs::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetJobs::set_max_results): <p>The maximum size of the response.</p>
+    /// - On success, responds with [`GetJobsOutput`](crate::output::GetJobsOutput) with field(s):
+    ///   - [`jobs(Option<Vec<Job>>)`](crate::output::GetJobsOutput::jobs): <p>A list of job definitions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetJobsOutput::next_token): <p>A continuation token, if not all job definitions have yet been returned.</p>
+    /// - On failure, responds with [`SdkError<GetJobsError>`](crate::error::GetJobsError)
     pub fn get_jobs(&self) -> fluent_builders::GetJobs<C, M, R> {
         fluent_builders::GetJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMapping` operation.
+    /// Constructs a fluent builder for the [`GetMapping`](crate::client::fluent_builders::GetMapping) operation.
     ///
-    /// See [`GetMapping`](crate::client::fluent_builders::GetMapping) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`source(CatalogEntry)`](crate::client::fluent_builders::GetMapping::source) / [`set_source(Option<CatalogEntry>)`](crate::client::fluent_builders::GetMapping::set_source): <p>Specifies the source table.</p>
+    ///   - [`sinks(Vec<CatalogEntry>)`](crate::client::fluent_builders::GetMapping::sinks) / [`set_sinks(Option<Vec<CatalogEntry>>)`](crate::client::fluent_builders::GetMapping::set_sinks): <p>A list of target tables.</p>
+    ///   - [`location(Location)`](crate::client::fluent_builders::GetMapping::location) / [`set_location(Option<Location>)`](crate::client::fluent_builders::GetMapping::set_location): <p>Parameters for the mapping.</p>
+    /// - On success, responds with [`GetMappingOutput`](crate::output::GetMappingOutput) with field(s):
+    ///   - [`mapping(Option<Vec<MappingEntry>>)`](crate::output::GetMappingOutput::mapping): <p>A list of mappings to the specified targets.</p>
+    /// - On failure, responds with [`SdkError<GetMappingError>`](crate::error::GetMappingError)
     pub fn get_mapping(&self) -> fluent_builders::GetMapping<C, M, R> {
         fluent_builders::GetMapping::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMLTaskRun` operation.
+    /// Constructs a fluent builder for the [`GetMLTaskRun`](crate::client::fluent_builders::GetMLTaskRun) operation.
     ///
-    /// See [`GetMLTaskRun`](crate::client::fluent_builders::GetMLTaskRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`transform_id(impl Into<String>)`](crate::client::fluent_builders::GetMLTaskRun::transform_id) / [`set_transform_id(Option<String>)`](crate::client::fluent_builders::GetMLTaskRun::set_transform_id): <p>The unique identifier of the machine learning transform.</p>
+    ///   - [`task_run_id(impl Into<String>)`](crate::client::fluent_builders::GetMLTaskRun::task_run_id) / [`set_task_run_id(Option<String>)`](crate::client::fluent_builders::GetMLTaskRun::set_task_run_id): <p>The unique identifier of the task run.</p>
+    /// - On success, responds with [`GetMlTaskRunOutput`](crate::output::GetMlTaskRunOutput) with field(s):
+    ///   - [`transform_id(Option<String>)`](crate::output::GetMlTaskRunOutput::transform_id): <p>The unique identifier of the task run.</p>
+    ///   - [`task_run_id(Option<String>)`](crate::output::GetMlTaskRunOutput::task_run_id): <p>The unique run identifier associated with this run.</p>
+    ///   - [`status(Option<TaskStatusType>)`](crate::output::GetMlTaskRunOutput::status): <p>The status for this task run.</p>
+    ///   - [`log_group_name(Option<String>)`](crate::output::GetMlTaskRunOutput::log_group_name): <p>The names of the log groups that are associated with the task run.</p>
+    ///   - [`properties(Option<TaskRunProperties>)`](crate::output::GetMlTaskRunOutput::properties): <p>The list of properties that are associated with the task run.</p>
+    ///   - [`error_string(Option<String>)`](crate::output::GetMlTaskRunOutput::error_string): <p>The error strings that are associated with the task run.</p>
+    ///   - [`started_on(Option<DateTime>)`](crate::output::GetMlTaskRunOutput::started_on): <p>The date and time when this task run started.</p>
+    ///   - [`last_modified_on(Option<DateTime>)`](crate::output::GetMlTaskRunOutput::last_modified_on): <p>The date and time when this task run was last modified.</p>
+    ///   - [`completed_on(Option<DateTime>)`](crate::output::GetMlTaskRunOutput::completed_on): <p>The date and time when this task run was completed.</p>
+    ///   - [`execution_time(i32)`](crate::output::GetMlTaskRunOutput::execution_time): <p>The amount of time (in seconds) that the task run consumed resources.</p>
+    /// - On failure, responds with [`SdkError<GetMLTaskRunError>`](crate::error::GetMLTaskRunError)
     pub fn get_ml_task_run(&self) -> fluent_builders::GetMLTaskRun<C, M, R> {
         fluent_builders::GetMLTaskRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMLTaskRuns` operation.
+    /// Constructs a fluent builder for the [`GetMLTaskRuns`](crate::client::fluent_builders::GetMLTaskRuns) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetMLTaskRuns::into_paginator).
     ///
-    /// See [`GetMLTaskRuns`](crate::client::fluent_builders::GetMLTaskRuns) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetMLTaskRuns::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`transform_id(impl Into<String>)`](crate::client::fluent_builders::GetMLTaskRuns::transform_id) / [`set_transform_id(Option<String>)`](crate::client::fluent_builders::GetMLTaskRuns::set_transform_id): <p>The unique identifier of the machine learning transform.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetMLTaskRuns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetMLTaskRuns::set_next_token): <p>A token for pagination of the results. The default is empty.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetMLTaskRuns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetMLTaskRuns::set_max_results): <p>The maximum number of results to return. </p>
+    ///   - [`filter(TaskRunFilterCriteria)`](crate::client::fluent_builders::GetMLTaskRuns::filter) / [`set_filter(Option<TaskRunFilterCriteria>)`](crate::client::fluent_builders::GetMLTaskRuns::set_filter): <p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p>
+    ///   - [`sort(TaskRunSortCriteria)`](crate::client::fluent_builders::GetMLTaskRuns::sort) / [`set_sort(Option<TaskRunSortCriteria>)`](crate::client::fluent_builders::GetMLTaskRuns::set_sort): <p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p>
+    /// - On success, responds with [`GetMlTaskRunsOutput`](crate::output::GetMlTaskRunsOutput) with field(s):
+    ///   - [`task_runs(Option<Vec<TaskRun>>)`](crate::output::GetMlTaskRunsOutput::task_runs): <p>A list of task runs that are associated with the transform.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetMlTaskRunsOutput::next_token): <p>A pagination token, if more results are available.</p>
+    /// - On failure, responds with [`SdkError<GetMLTaskRunsError>`](crate::error::GetMLTaskRunsError)
     pub fn get_ml_task_runs(&self) -> fluent_builders::GetMLTaskRuns<C, M, R> {
         fluent_builders::GetMLTaskRuns::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMLTransform` operation.
+    /// Constructs a fluent builder for the [`GetMLTransform`](crate::client::fluent_builders::GetMLTransform) operation.
     ///
-    /// See [`GetMLTransform`](crate::client::fluent_builders::GetMLTransform) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`transform_id(impl Into<String>)`](crate::client::fluent_builders::GetMLTransform::transform_id) / [`set_transform_id(Option<String>)`](crate::client::fluent_builders::GetMLTransform::set_transform_id): <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
+    /// - On success, responds with [`GetMlTransformOutput`](crate::output::GetMlTransformOutput) with field(s):
+    ///   - [`transform_id(Option<String>)`](crate::output::GetMlTransformOutput::transform_id): <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetMlTransformOutput::name): <p>The unique name given to the transform when it was created.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetMlTransformOutput::description): <p>A description of the transform.</p>
+    ///   - [`status(Option<TransformStatusType>)`](crate::output::GetMlTransformOutput::status): <p>The last known status of the transform (to indicate whether it can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
+    ///   - [`created_on(Option<DateTime>)`](crate::output::GetMlTransformOutput::created_on): <p>The date and time when the transform was created.</p>
+    ///   - [`last_modified_on(Option<DateTime>)`](crate::output::GetMlTransformOutput::last_modified_on): <p>The date and time when the transform was last modified.</p>
+    ///   - [`input_record_tables(Option<Vec<GlueTable>>)`](crate::output::GetMlTransformOutput::input_record_tables): <p>A list of Glue table definitions used by the transform.</p>
+    ///   - [`parameters(Option<TransformParameters>)`](crate::output::GetMlTransformOutput::parameters): <p>The configuration parameters that are specific to the algorithm used.</p>
+    ///   - [`evaluation_metrics(Option<EvaluationMetrics>)`](crate::output::GetMlTransformOutput::evaluation_metrics): <p>The latest evaluation metrics.</p>
+    ///   - [`label_count(i32)`](crate::output::GetMlTransformOutput::label_count): <p>The number of labels available for this transform.</p>
+    ///   - [`schema(Option<Vec<SchemaColumn>>)`](crate::output::GetMlTransformOutput::schema): <p>The <code>Map   <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
+    ///   - [`role(Option<String>)`](crate::output::GetMlTransformOutput::role): <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
+    ///   - [`glue_version(Option<String>)`](crate::output::GetMlTransformOutput::glue_version): <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    ///   - [`max_capacity(Option<f64>)`](crate::output::GetMlTransformOutput::max_capacity): <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>  <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+    ///   - [`worker_type(Option<WorkerType>)`](crate::output::GetMlTransformOutput::worker_type): <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>  </ul>
+    ///   - [`number_of_workers(Option<i32>)`](crate::output::GetMlTransformOutput::number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
+    ///   - [`timeout(Option<i32>)`](crate::output::GetMlTransformOutput::timeout): <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    ///   - [`max_retries(Option<i32>)`](crate::output::GetMlTransformOutput::max_retries): <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
+    ///   - [`transform_encryption(Option<TransformEncryption>)`](crate::output::GetMlTransformOutput::transform_encryption): <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
+    /// - On failure, responds with [`SdkError<GetMLTransformError>`](crate::error::GetMLTransformError)
     pub fn get_ml_transform(&self) -> fluent_builders::GetMLTransform<C, M, R> {
         fluent_builders::GetMLTransform::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMLTransforms` operation.
+    /// Constructs a fluent builder for the [`GetMLTransforms`](crate::client::fluent_builders::GetMLTransforms) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetMLTransforms::into_paginator).
     ///
-    /// See [`GetMLTransforms`](crate::client::fluent_builders::GetMLTransforms) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetMLTransforms::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetMLTransforms::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetMLTransforms::set_next_token): <p>A paginated token to offset the results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetMLTransforms::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetMLTransforms::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`filter(TransformFilterCriteria)`](crate::client::fluent_builders::GetMLTransforms::filter) / [`set_filter(Option<TransformFilterCriteria>)`](crate::client::fluent_builders::GetMLTransforms::set_filter): <p>The filter transformation criteria.</p>
+    ///   - [`sort(TransformSortCriteria)`](crate::client::fluent_builders::GetMLTransforms::sort) / [`set_sort(Option<TransformSortCriteria>)`](crate::client::fluent_builders::GetMLTransforms::set_sort): <p>The sorting criteria.</p>
+    /// - On success, responds with [`GetMlTransformsOutput`](crate::output::GetMlTransformsOutput) with field(s):
+    ///   - [`transforms(Option<Vec<MlTransform>>)`](crate::output::GetMlTransformsOutput::transforms): <p>A list of machine learning transforms.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetMlTransformsOutput::next_token): <p>A pagination token, if more results are available.</p>
+    /// - On failure, responds with [`SdkError<GetMLTransformsError>`](crate::error::GetMLTransformsError)
     pub fn get_ml_transforms(&self) -> fluent_builders::GetMLTransforms<C, M, R> {
         fluent_builders::GetMLTransforms::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPartition` operation.
+    /// Constructs a fluent builder for the [`GetPartition`](crate::client::fluent_builders::GetPartition) operation.
     ///
-    /// See [`GetPartition`](crate::client::fluent_builders::GetPartition) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetPartition::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetPartition::set_catalog_id): <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetPartition::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetPartition::set_database_name): <p>The name of the catalog database where the partition resides.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::GetPartition::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::GetPartition::set_table_name): <p>The name of the partition's table.</p>
+    ///   - [`partition_values(Vec<String>)`](crate::client::fluent_builders::GetPartition::partition_values) / [`set_partition_values(Option<Vec<String>>)`](crate::client::fluent_builders::GetPartition::set_partition_values): <p>The values that define the partition.</p>
+    /// - On success, responds with [`GetPartitionOutput`](crate::output::GetPartitionOutput) with field(s):
+    ///   - [`partition(Option<Partition>)`](crate::output::GetPartitionOutput::partition): <p>The requested information, in the form of a <code>Partition</code> object.</p>
+    /// - On failure, responds with [`SdkError<GetPartitionError>`](crate::error::GetPartitionError)
     pub fn get_partition(&self) -> fluent_builders::GetPartition<C, M, R> {
         fluent_builders::GetPartition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPartitionIndexes` operation.
+    /// Constructs a fluent builder for the [`GetPartitionIndexes`](crate::client::fluent_builders::GetPartitionIndexes) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetPartitionIndexes::into_paginator).
     ///
-    /// See [`GetPartitionIndexes`](crate::client::fluent_builders::GetPartitionIndexes) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetPartitionIndexes::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetPartitionIndexes::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetPartitionIndexes::set_catalog_id): <p>The catalog ID where the table resides.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetPartitionIndexes::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetPartitionIndexes::set_database_name): <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::GetPartitionIndexes::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::GetPartitionIndexes::set_table_name): <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetPartitionIndexes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetPartitionIndexes::set_next_token): <p>A continuation token, included if this is a continuation call.</p>
+    /// - On success, responds with [`GetPartitionIndexesOutput`](crate::output::GetPartitionIndexesOutput) with field(s):
+    ///   - [`partition_index_descriptor_list(Option<Vec<PartitionIndexDescriptor>>)`](crate::output::GetPartitionIndexesOutput::partition_index_descriptor_list): <p>A list of index descriptors.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetPartitionIndexesOutput::next_token): <p>A continuation token, present if the current list segment is not the last.</p>
+    /// - On failure, responds with [`SdkError<GetPartitionIndexesError>`](crate::error::GetPartitionIndexesError)
     pub fn get_partition_indexes(&self) -> fluent_builders::GetPartitionIndexes<C, M, R> {
         fluent_builders::GetPartitionIndexes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPartitions` operation.
+    /// Constructs a fluent builder for the [`GetPartitions`](crate::client::fluent_builders::GetPartitions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetPartitions::into_paginator).
     ///
-    /// See [`GetPartitions`](crate::client::fluent_builders::GetPartitions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetPartitions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetPartitions::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetPartitions::set_catalog_id): <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetPartitions::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetPartitions::set_database_name): <p>The name of the catalog database where the partitions reside.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::GetPartitions::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::GetPartitions::set_table_name): <p>The name of the partitions' table.</p>
+    ///   - [`expression(impl Into<String>)`](crate::client::fluent_builders::GetPartitions::expression) / [`set_expression(Option<String>)`](crate::client::fluent_builders::GetPartitions::set_expression): <p>An expression that filters the partitions to be returned.</p>  <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>  <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>  <dl>   <dt>   =  </dt>   <dd>    <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>    <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>    <p>(a = b) is not true.</p>   </dd>   <dt>   &lt; &gt;  </dt>   <dd>    <p>Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.</p>    <p>Example: (a &lt; &gt; b) is true.</p>   </dd>   <dt>   &gt;  </dt>   <dd>    <p>Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.</p>    <p>Example: (a &gt; b) is not true.</p>   </dd>   <dt>   &lt;  </dt>   <dd>    <p>Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.</p>    <p>Example: (a &lt; b) is true.</p>   </dd>   <dt>   &gt;=  </dt>   <dd>    <p>Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.</p>    <p>Example: (a &gt;= b) is not true.</p>   </dd>   <dt>   &lt;=  </dt>   <dd>    <p>Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.</p>    <p>Example: (a &lt;= b) is true.</p>   </dd>   <dt>   AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL  </dt>   <dd>    <p>Logical operators.</p>   </dd>  </dl>  <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>  <ul>   <li> <p> <code>string</code> </p> </li>   <li> <p> <code>date</code> </p> </li>   <li> <p> <code>timestamp</code> </p> </li>   <li> <p> <code>int</code> </p> </li>   <li> <p> <code>bigint</code> </p> </li>   <li> <p> <code>long</code> </p> </li>   <li> <p> <code>tinyint</code> </p> </li>   <li> <p> <code>smallint</code> </p> </li>   <li> <p> <code>decimal</code> </p> </li>  </ul>  <p>If an type is encountered that is not valid, an exception is thrown. </p>  <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions. </p>  <p> <i>Sample API Call</i>: </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetPartitions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetPartitions::set_next_token): <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
+    ///   - [`segment(Segment)`](crate::client::fluent_builders::GetPartitions::segment) / [`set_segment(Option<Segment>)`](crate::client::fluent_builders::GetPartitions::set_segment): <p>The segment of the table's partitions to scan in this request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetPartitions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetPartitions::set_max_results): <p>The maximum number of partitions to return in a single response.</p>
+    ///   - [`exclude_column_schema(bool)`](crate::client::fluent_builders::GetPartitions::exclude_column_schema) / [`set_exclude_column_schema(Option<bool>)`](crate::client::fluent_builders::GetPartitions::set_exclude_column_schema): <p>When true, specifies not returning the partition column schema. Useful when you are interested only in other partition attributes such as partition values or location. This approach avoids the problem of a large response by not returning duplicate data.</p>
+    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::GetPartitions::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::GetPartitions::set_transaction_id): <p>The transaction ID at which to read the partition contents.</p>
+    ///   - [`query_as_of_time(DateTime)`](crate::client::fluent_builders::GetPartitions::query_as_of_time) / [`set_query_as_of_time(Option<DateTime>)`](crate::client::fluent_builders::GetPartitions::set_query_as_of_time): <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    /// - On success, responds with [`GetPartitionsOutput`](crate::output::GetPartitionsOutput) with field(s):
+    ///   - [`partitions(Option<Vec<Partition>>)`](crate::output::GetPartitionsOutput::partitions): <p>A list of requested partitions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetPartitionsOutput::next_token): <p>A continuation token, if the returned list of partitions does not include the last one.</p>
+    /// - On failure, responds with [`SdkError<GetPartitionsError>`](crate::error::GetPartitionsError)
     pub fn get_partitions(&self) -> fluent_builders::GetPartitions<C, M, R> {
         fluent_builders::GetPartitions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPlan` operation.
+    /// Constructs a fluent builder for the [`GetPlan`](crate::client::fluent_builders::GetPlan) operation.
     ///
-    /// See [`GetPlan`](crate::client::fluent_builders::GetPlan) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`mapping(Vec<MappingEntry>)`](crate::client::fluent_builders::GetPlan::mapping) / [`set_mapping(Option<Vec<MappingEntry>>)`](crate::client::fluent_builders::GetPlan::set_mapping): <p>The list of mappings from a source table to target tables.</p>
+    ///   - [`source(CatalogEntry)`](crate::client::fluent_builders::GetPlan::source) / [`set_source(Option<CatalogEntry>)`](crate::client::fluent_builders::GetPlan::set_source): <p>The source table.</p>
+    ///   - [`sinks(Vec<CatalogEntry>)`](crate::client::fluent_builders::GetPlan::sinks) / [`set_sinks(Option<Vec<CatalogEntry>>)`](crate::client::fluent_builders::GetPlan::set_sinks): <p>The target tables.</p>
+    ///   - [`location(Location)`](crate::client::fluent_builders::GetPlan::location) / [`set_location(Option<Location>)`](crate::client::fluent_builders::GetPlan::set_location): <p>The parameters for the mapping.</p>
+    ///   - [`language(Language)`](crate::client::fluent_builders::GetPlan::language) / [`set_language(Option<Language>)`](crate::client::fluent_builders::GetPlan::set_language): <p>The programming language of the code to perform the mapping.</p>
+    ///   - [`additional_plan_options_map(HashMap<String, String>)`](crate::client::fluent_builders::GetPlan::additional_plan_options_map) / [`set_additional_plan_options_map(Option<HashMap<String, String>>)`](crate::client::fluent_builders::GetPlan::set_additional_plan_options_map): <p>A map to hold additional optional key-value parameters.</p>  <p>Currently, these key-value pairs are supported:</p>  <ul>   <li> <p> <code>inferSchema</code>&nbsp; — &nbsp;Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p> <p> <code>--additional-plan-options-map '{"inferSchema":"true"}'</code> </p> </li>  </ul>
+    /// - On success, responds with [`GetPlanOutput`](crate::output::GetPlanOutput) with field(s):
+    ///   - [`python_script(Option<String>)`](crate::output::GetPlanOutput::python_script): <p>A Python script to perform the mapping.</p>
+    ///   - [`scala_code(Option<String>)`](crate::output::GetPlanOutput::scala_code): <p>The Scala code to perform the mapping.</p>
+    /// - On failure, responds with [`SdkError<GetPlanError>`](crate::error::GetPlanError)
     pub fn get_plan(&self) -> fluent_builders::GetPlan<C, M, R> {
         fluent_builders::GetPlan::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRegistry` operation.
+    /// Constructs a fluent builder for the [`GetRegistry`](crate::client::fluent_builders::GetRegistry) operation.
     ///
-    /// See [`GetRegistry`](crate::client::fluent_builders::GetRegistry) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`registry_id(RegistryId)`](crate::client::fluent_builders::GetRegistry::registry_id) / [`set_registry_id(Option<RegistryId>)`](crate::client::fluent_builders::GetRegistry::set_registry_id): <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    /// - On success, responds with [`GetRegistryOutput`](crate::output::GetRegistryOutput) with field(s):
+    ///   - [`registry_name(Option<String>)`](crate::output::GetRegistryOutput::registry_name): <p>The name of the registry.</p>
+    ///   - [`registry_arn(Option<String>)`](crate::output::GetRegistryOutput::registry_arn): <p>The Amazon Resource Name (ARN) of the registry.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetRegistryOutput::description): <p>A description of the registry.</p>
+    ///   - [`status(Option<RegistryStatus>)`](crate::output::GetRegistryOutput::status): <p>The status of the registry.</p>
+    ///   - [`created_time(Option<String>)`](crate::output::GetRegistryOutput::created_time): <p>The date and time the registry was created.</p>
+    ///   - [`updated_time(Option<String>)`](crate::output::GetRegistryOutput::updated_time): <p>The date and time the registry was updated.</p>
+    /// - On failure, responds with [`SdkError<GetRegistryError>`](crate::error::GetRegistryError)
     pub fn get_registry(&self) -> fluent_builders::GetRegistry<C, M, R> {
         fluent_builders::GetRegistry::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetResourcePolicies` operation.
+    /// Constructs a fluent builder for the [`GetResourcePolicies`](crate::client::fluent_builders::GetResourcePolicies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetResourcePolicies::into_paginator).
     ///
-    /// See [`GetResourcePolicies`](crate::client::fluent_builders::GetResourcePolicies) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourcePolicies::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetResourcePolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetResourcePolicies::set_next_token): <p>A continuation token, if this is a continuation request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetResourcePolicies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetResourcePolicies::set_max_results): <p>The maximum size of a list to return.</p>
+    /// - On success, responds with [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput) with field(s):
+    ///   - [`get_resource_policies_response_list(Option<Vec<GluePolicy>>)`](crate::output::GetResourcePoliciesOutput::get_resource_policies_response_list): <p>A list of the individual resource policies and the account-level resource policy.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetResourcePoliciesOutput::next_token): <p>A continuation token, if the returned list does not contain the last resource policy available.</p>
+    /// - On failure, responds with [`SdkError<GetResourcePoliciesError>`](crate::error::GetResourcePoliciesError)
     pub fn get_resource_policies(&self) -> fluent_builders::GetResourcePolicies<C, M, R> {
         fluent_builders::GetResourcePolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`GetResourcePolicy`](crate::client::fluent_builders::GetResourcePolicy) operation.
     ///
-    /// See [`GetResourcePolicy`](crate::client::fluent_builders::GetResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetResourcePolicy::set_resource_arn): <p>The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>. </p>
+    /// - On success, responds with [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput) with field(s):
+    ///   - [`policy_in_json(Option<String>)`](crate::output::GetResourcePolicyOutput::policy_in_json): <p>Contains the requested policy document, in JSON format.</p>
+    ///   - [`policy_hash(Option<String>)`](crate::output::GetResourcePolicyOutput::policy_hash): <p>Contains the hash value associated with this policy.</p>
+    ///   - [`create_time(Option<DateTime>)`](crate::output::GetResourcePolicyOutput::create_time): <p>The date and time at which the policy was created.</p>
+    ///   - [`update_time(Option<DateTime>)`](crate::output::GetResourcePolicyOutput::update_time): <p>The date and time at which the policy was last updated.</p>
+    /// - On failure, responds with [`SdkError<GetResourcePolicyError>`](crate::error::GetResourcePolicyError)
     pub fn get_resource_policy(&self) -> fluent_builders::GetResourcePolicy<C, M, R> {
         fluent_builders::GetResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSchema` operation.
+    /// Constructs a fluent builder for the [`GetSchema`](crate::client::fluent_builders::GetSchema) operation.
     ///
-    /// See [`GetSchema`](crate::client::fluent_builders::GetSchema) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`schema_id(SchemaId)`](crate::client::fluent_builders::GetSchema::schema_id) / [`set_schema_id(Option<SchemaId>)`](crate::client::fluent_builders::GetSchema::set_schema_id): <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>  <ul>   <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>   <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>  </ul>
+    /// - On success, responds with [`GetSchemaOutput`](crate::output::GetSchemaOutput) with field(s):
+    ///   - [`registry_name(Option<String>)`](crate::output::GetSchemaOutput::registry_name): <p>The name of the registry.</p>
+    ///   - [`registry_arn(Option<String>)`](crate::output::GetSchemaOutput::registry_arn): <p>The Amazon Resource Name (ARN) of the registry.</p>
+    ///   - [`schema_name(Option<String>)`](crate::output::GetSchemaOutput::schema_name): <p>The name of the schema.</p>
+    ///   - [`schema_arn(Option<String>)`](crate::output::GetSchemaOutput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetSchemaOutput::description): <p>A description of schema if specified when created</p>
+    ///   - [`data_format(Option<DataFormat>)`](crate::output::GetSchemaOutput::data_format): <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    ///   - [`compatibility(Option<Compatibility>)`](crate::output::GetSchemaOutput::compatibility): <p>The compatibility mode of the schema.</p>
+    ///   - [`schema_checkpoint(i64)`](crate::output::GetSchemaOutput::schema_checkpoint): <p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>
+    ///   - [`latest_schema_version(i64)`](crate::output::GetSchemaOutput::latest_schema_version): <p>The latest version of the schema associated with the returned schema definition.</p>
+    ///   - [`next_schema_version(i64)`](crate::output::GetSchemaOutput::next_schema_version): <p>The next version of the schema associated with the returned schema definition.</p>
+    ///   - [`schema_status(Option<SchemaStatus>)`](crate::output::GetSchemaOutput::schema_status): <p>The status of the schema.</p>
+    ///   - [`created_time(Option<String>)`](crate::output::GetSchemaOutput::created_time): <p>The date and time the schema was created.</p>
+    ///   - [`updated_time(Option<String>)`](crate::output::GetSchemaOutput::updated_time): <p>The date and time the schema was updated.</p>
+    /// - On failure, responds with [`SdkError<GetSchemaError>`](crate::error::GetSchemaError)
     pub fn get_schema(&self) -> fluent_builders::GetSchema<C, M, R> {
         fluent_builders::GetSchema::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSchemaByDefinition` operation.
+    /// Constructs a fluent builder for the [`GetSchemaByDefinition`](crate::client::fluent_builders::GetSchemaByDefinition) operation.
     ///
-    /// See [`GetSchemaByDefinition`](crate::client::fluent_builders::GetSchemaByDefinition) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`schema_id(SchemaId)`](crate::client::fluent_builders::GetSchemaByDefinition::schema_id) / [`set_schema_id(Option<SchemaId>)`](crate::client::fluent_builders::GetSchemaByDefinition::set_schema_id): <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>  <ul>   <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>   <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>  </ul>
+    ///   - [`schema_definition(impl Into<String>)`](crate::client::fluent_builders::GetSchemaByDefinition::schema_definition) / [`set_schema_definition(Option<String>)`](crate::client::fluent_builders::GetSchemaByDefinition::set_schema_definition): <p>The definition of the schema for which schema details are required.</p>
+    /// - On success, responds with [`GetSchemaByDefinitionOutput`](crate::output::GetSchemaByDefinitionOutput) with field(s):
+    ///   - [`schema_version_id(Option<String>)`](crate::output::GetSchemaByDefinitionOutput::schema_version_id): <p>The schema ID of the schema version.</p>
+    ///   - [`schema_arn(Option<String>)`](crate::output::GetSchemaByDefinitionOutput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema.</p>
+    ///   - [`data_format(Option<DataFormat>)`](crate::output::GetSchemaByDefinitionOutput::data_format): <p>The data format of the schema definition. Currently only <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    ///   - [`status(Option<SchemaVersionStatus>)`](crate::output::GetSchemaByDefinitionOutput::status): <p>The status of the schema version.</p>
+    ///   - [`created_time(Option<String>)`](crate::output::GetSchemaByDefinitionOutput::created_time): <p>The date and time the schema was created.</p>
+    /// - On failure, responds with [`SdkError<GetSchemaByDefinitionError>`](crate::error::GetSchemaByDefinitionError)
     pub fn get_schema_by_definition(&self) -> fluent_builders::GetSchemaByDefinition<C, M, R> {
         fluent_builders::GetSchemaByDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSchemaVersion` operation.
+    /// Constructs a fluent builder for the [`GetSchemaVersion`](crate::client::fluent_builders::GetSchemaVersion) operation.
     ///
-    /// See [`GetSchemaVersion`](crate::client::fluent_builders::GetSchemaVersion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`schema_id(SchemaId)`](crate::client::fluent_builders::GetSchemaVersion::schema_id) / [`set_schema_id(Option<SchemaId>)`](crate::client::fluent_builders::GetSchemaVersion::set_schema_id): <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>  <ul>   <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>   <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>  </ul>
+    ///   - [`schema_version_id(impl Into<String>)`](crate::client::fluent_builders::GetSchemaVersion::schema_version_id) / [`set_schema_version_id(Option<String>)`](crate::client::fluent_builders::GetSchemaVersion::set_schema_version_id): <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
+    ///   - [`schema_version_number(SchemaVersionNumber)`](crate::client::fluent_builders::GetSchemaVersion::schema_version_number) / [`set_schema_version_number(Option<SchemaVersionNumber>)`](crate::client::fluent_builders::GetSchemaVersion::set_schema_version_number): <p>The version number of the schema.</p>
+    /// - On success, responds with [`GetSchemaVersionOutput`](crate::output::GetSchemaVersionOutput) with field(s):
+    ///   - [`schema_version_id(Option<String>)`](crate::output::GetSchemaVersionOutput::schema_version_id): <p>The <code>SchemaVersionId</code> of the schema version.</p>
+    ///   - [`schema_definition(Option<String>)`](crate::output::GetSchemaVersionOutput::schema_definition): <p>The schema definition for the schema ID.</p>
+    ///   - [`data_format(Option<DataFormat>)`](crate::output::GetSchemaVersionOutput::data_format): <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
+    ///   - [`schema_arn(Option<String>)`](crate::output::GetSchemaVersionOutput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema.</p>
+    ///   - [`version_number(i64)`](crate::output::GetSchemaVersionOutput::version_number): <p>The version number of the schema.</p>
+    ///   - [`status(Option<SchemaVersionStatus>)`](crate::output::GetSchemaVersionOutput::status): <p>The status of the schema version. </p>
+    ///   - [`created_time(Option<String>)`](crate::output::GetSchemaVersionOutput::created_time): <p>The date and time the schema version was created.</p>
+    /// - On failure, responds with [`SdkError<GetSchemaVersionError>`](crate::error::GetSchemaVersionError)
     pub fn get_schema_version(&self) -> fluent_builders::GetSchemaVersion<C, M, R> {
         fluent_builders::GetSchemaVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSchemaVersionsDiff` operation.
+    /// Constructs a fluent builder for the [`GetSchemaVersionsDiff`](crate::client::fluent_builders::GetSchemaVersionsDiff) operation.
     ///
-    /// See [`GetSchemaVersionsDiff`](crate::client::fluent_builders::GetSchemaVersionsDiff) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`schema_id(SchemaId)`](crate::client::fluent_builders::GetSchemaVersionsDiff::schema_id) / [`set_schema_id(Option<SchemaId>)`](crate::client::fluent_builders::GetSchemaVersionsDiff::set_schema_id): <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>  <ul>   <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>   <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>  </ul>
+    ///   - [`first_schema_version_number(SchemaVersionNumber)`](crate::client::fluent_builders::GetSchemaVersionsDiff::first_schema_version_number) / [`set_first_schema_version_number(Option<SchemaVersionNumber>)`](crate::client::fluent_builders::GetSchemaVersionsDiff::set_first_schema_version_number): <p>The first of the two schema versions to be compared.</p>
+    ///   - [`second_schema_version_number(SchemaVersionNumber)`](crate::client::fluent_builders::GetSchemaVersionsDiff::second_schema_version_number) / [`set_second_schema_version_number(Option<SchemaVersionNumber>)`](crate::client::fluent_builders::GetSchemaVersionsDiff::set_second_schema_version_number): <p>The second of the two schema versions to be compared.</p>
+    ///   - [`schema_diff_type(SchemaDiffType)`](crate::client::fluent_builders::GetSchemaVersionsDiff::schema_diff_type) / [`set_schema_diff_type(Option<SchemaDiffType>)`](crate::client::fluent_builders::GetSchemaVersionsDiff::set_schema_diff_type): <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
+    /// - On success, responds with [`GetSchemaVersionsDiffOutput`](crate::output::GetSchemaVersionsDiffOutput) with field(s):
+    ///   - [`diff(Option<String>)`](crate::output::GetSchemaVersionsDiffOutput::diff): <p>The difference between schemas as a string in JsonPatch format.</p>
+    /// - On failure, responds with [`SdkError<GetSchemaVersionsDiffError>`](crate::error::GetSchemaVersionsDiffError)
     pub fn get_schema_versions_diff(&self) -> fluent_builders::GetSchemaVersionsDiff<C, M, R> {
         fluent_builders::GetSchemaVersionsDiff::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSecurityConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetSecurityConfiguration`](crate::client::fluent_builders::GetSecurityConfiguration) operation.
     ///
-    /// See [`GetSecurityConfiguration`](crate::client::fluent_builders::GetSecurityConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetSecurityConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetSecurityConfiguration::set_name): <p>The name of the security configuration to retrieve.</p>
+    /// - On success, responds with [`GetSecurityConfigurationOutput`](crate::output::GetSecurityConfigurationOutput) with field(s):
+    ///   - [`security_configuration(Option<SecurityConfiguration>)`](crate::output::GetSecurityConfigurationOutput::security_configuration): <p>The requested security configuration.</p>
+    /// - On failure, responds with [`SdkError<GetSecurityConfigurationError>`](crate::error::GetSecurityConfigurationError)
     pub fn get_security_configuration(&self) -> fluent_builders::GetSecurityConfiguration<C, M, R> {
         fluent_builders::GetSecurityConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSecurityConfigurations` operation.
+    /// Constructs a fluent builder for the [`GetSecurityConfigurations`](crate::client::fluent_builders::GetSecurityConfigurations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetSecurityConfigurations::into_paginator).
     ///
-    /// See [`GetSecurityConfigurations`](crate::client::fluent_builders::GetSecurityConfigurations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSecurityConfigurations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetSecurityConfigurations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetSecurityConfigurations::set_max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetSecurityConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetSecurityConfigurations::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    /// - On success, responds with [`GetSecurityConfigurationsOutput`](crate::output::GetSecurityConfigurationsOutput) with field(s):
+    ///   - [`security_configurations(Option<Vec<SecurityConfiguration>>)`](crate::output::GetSecurityConfigurationsOutput::security_configurations): <p>A list of security configurations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetSecurityConfigurationsOutput::next_token): <p>A continuation token, if there are more security configurations to return.</p>
+    /// - On failure, responds with [`SdkError<GetSecurityConfigurationsError>`](crate::error::GetSecurityConfigurationsError)
     pub fn get_security_configurations(
         &self,
     ) -> fluent_builders::GetSecurityConfigurations<C, M, R> {
         fluent_builders::GetSecurityConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTable` operation.
+    /// Constructs a fluent builder for the [`GetTable`](crate::client::fluent_builders::GetTable) operation.
     ///
-    /// See [`GetTable`](crate::client::fluent_builders::GetTable) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetTable::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetTable::set_catalog_id): <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetTable::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetTable::set_database_name): <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetTable::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetTable::set_name): <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::GetTable::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::GetTable::set_transaction_id): <p>The transaction ID at which to read the table contents. </p>
+    ///   - [`query_as_of_time(DateTime)`](crate::client::fluent_builders::GetTable::query_as_of_time) / [`set_query_as_of_time(Option<DateTime>)`](crate::client::fluent_builders::GetTable::set_query_as_of_time): <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    /// - On success, responds with [`GetTableOutput`](crate::output::GetTableOutput) with field(s):
+    ///   - [`table(Option<Table>)`](crate::output::GetTableOutput::table): <p>The <code>Table</code> object that defines the specified table.</p>
+    /// - On failure, responds with [`SdkError<GetTableError>`](crate::error::GetTableError)
     pub fn get_table(&self) -> fluent_builders::GetTable<C, M, R> {
         fluent_builders::GetTable::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTables` operation.
+    /// Constructs a fluent builder for the [`GetTables`](crate::client::fluent_builders::GetTables) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetTables::into_paginator).
     ///
-    /// See [`GetTables`](crate::client::fluent_builders::GetTables) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTables::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetTables::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetTables::set_catalog_id): <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetTables::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetTables::set_database_name): <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`expression(impl Into<String>)`](crate::client::fluent_builders::GetTables::expression) / [`set_expression(Option<String>)`](crate::client::fluent_builders::GetTables::set_expression): <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetTables::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetTables::set_next_token): <p>A continuation token, included if this is a continuation call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetTables::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetTables::set_max_results): <p>The maximum number of tables to return in a single response.</p>
+    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::GetTables::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::GetTables::set_transaction_id): <p>The transaction ID at which to read the table contents.</p>
+    ///   - [`query_as_of_time(DateTime)`](crate::client::fluent_builders::GetTables::query_as_of_time) / [`set_query_as_of_time(Option<DateTime>)`](crate::client::fluent_builders::GetTables::set_query_as_of_time): <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    /// - On success, responds with [`GetTablesOutput`](crate::output::GetTablesOutput) with field(s):
+    ///   - [`table_list(Option<Vec<Table>>)`](crate::output::GetTablesOutput::table_list): <p>A list of the requested <code>Table</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetTablesOutput::next_token): <p>A continuation token, present if the current list segment is not the last.</p>
+    /// - On failure, responds with [`SdkError<GetTablesError>`](crate::error::GetTablesError)
     pub fn get_tables(&self) -> fluent_builders::GetTables<C, M, R> {
         fluent_builders::GetTables::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTableVersion` operation.
+    /// Constructs a fluent builder for the [`GetTableVersion`](crate::client::fluent_builders::GetTableVersion) operation.
     ///
-    /// See [`GetTableVersion`](crate::client::fluent_builders::GetTableVersion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetTableVersion::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetTableVersion::set_catalog_id): <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetTableVersion::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetTableVersion::set_database_name): <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::GetTableVersion::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::GetTableVersion::set_table_name): <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`version_id(impl Into<String>)`](crate::client::fluent_builders::GetTableVersion::version_id) / [`set_version_id(Option<String>)`](crate::client::fluent_builders::GetTableVersion::set_version_id): <p>The ID value of the table version to be retrieved. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1. </p>
+    /// - On success, responds with [`GetTableVersionOutput`](crate::output::GetTableVersionOutput) with field(s):
+    ///   - [`table_version(Option<TableVersion>)`](crate::output::GetTableVersionOutput::table_version): <p>The requested table version.</p>
+    /// - On failure, responds with [`SdkError<GetTableVersionError>`](crate::error::GetTableVersionError)
     pub fn get_table_version(&self) -> fluent_builders::GetTableVersion<C, M, R> {
         fluent_builders::GetTableVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTableVersions` operation.
+    /// Constructs a fluent builder for the [`GetTableVersions`](crate::client::fluent_builders::GetTableVersions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetTableVersions::into_paginator).
     ///
-    /// See [`GetTableVersions`](crate::client::fluent_builders::GetTableVersions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTableVersions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetTableVersions::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetTableVersions::set_catalog_id): <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetTableVersions::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetTableVersions::set_database_name): <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::GetTableVersions::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::GetTableVersions::set_table_name): <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetTableVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetTableVersions::set_next_token): <p>A continuation token, if this is not the first call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetTableVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetTableVersions::set_max_results): <p>The maximum number of table versions to return in one response.</p>
+    /// - On success, responds with [`GetTableVersionsOutput`](crate::output::GetTableVersionsOutput) with field(s):
+    ///   - [`table_versions(Option<Vec<TableVersion>>)`](crate::output::GetTableVersionsOutput::table_versions): <p>A list of strings identifying available versions of the specified table.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetTableVersionsOutput::next_token): <p>A continuation token, if the list of available versions does not include the last one.</p>
+    /// - On failure, responds with [`SdkError<GetTableVersionsError>`](crate::error::GetTableVersionsError)
     pub fn get_table_versions(&self) -> fluent_builders::GetTableVersions<C, M, R> {
         fluent_builders::GetTableVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTags` operation.
+    /// Constructs a fluent builder for the [`GetTags`](crate::client::fluent_builders::GetTags) operation.
     ///
-    /// See [`GetTags`](crate::client::fluent_builders::GetTags) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetTags::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetTags::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which to retrieve tags.</p>
+    /// - On success, responds with [`GetTagsOutput`](crate::output::GetTagsOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetTagsOutput::tags): <p>The requested tags.</p>
+    /// - On failure, responds with [`SdkError<GetTagsError>`](crate::error::GetTagsError)
     pub fn get_tags(&self) -> fluent_builders::GetTags<C, M, R> {
         fluent_builders::GetTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTrigger` operation.
+    /// Constructs a fluent builder for the [`GetTrigger`](crate::client::fluent_builders::GetTrigger) operation.
     ///
-    /// See [`GetTrigger`](crate::client::fluent_builders::GetTrigger) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetTrigger::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetTrigger::set_name): <p>The name of the trigger to retrieve.</p>
+    /// - On success, responds with [`GetTriggerOutput`](crate::output::GetTriggerOutput) with field(s):
+    ///   - [`trigger(Option<Trigger>)`](crate::output::GetTriggerOutput::trigger): <p>The requested trigger definition.</p>
+    /// - On failure, responds with [`SdkError<GetTriggerError>`](crate::error::GetTriggerError)
     pub fn get_trigger(&self) -> fluent_builders::GetTrigger<C, M, R> {
         fluent_builders::GetTrigger::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTriggers` operation.
+    /// Constructs a fluent builder for the [`GetTriggers`](crate::client::fluent_builders::GetTriggers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetTriggers::into_paginator).
     ///
-    /// See [`GetTriggers`](crate::client::fluent_builders::GetTriggers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTriggers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetTriggers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetTriggers::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    ///   - [`dependent_job_name(impl Into<String>)`](crate::client::fluent_builders::GetTriggers::dependent_job_name) / [`set_dependent_job_name(Option<String>)`](crate::client::fluent_builders::GetTriggers::set_dependent_job_name): <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetTriggers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetTriggers::set_max_results): <p>The maximum size of the response.</p>
+    /// - On success, responds with [`GetTriggersOutput`](crate::output::GetTriggersOutput) with field(s):
+    ///   - [`triggers(Option<Vec<Trigger>>)`](crate::output::GetTriggersOutput::triggers): <p>A list of triggers for the specified job.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetTriggersOutput::next_token): <p>A continuation token, if not all the requested triggers have yet been returned.</p>
+    /// - On failure, responds with [`SdkError<GetTriggersError>`](crate::error::GetTriggersError)
     pub fn get_triggers(&self) -> fluent_builders::GetTriggers<C, M, R> {
         fluent_builders::GetTriggers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUnfilteredPartitionMetadata` operation.
+    /// Constructs a fluent builder for the [`GetUnfilteredPartitionMetadata`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata) operation.
     ///
-    /// See [`GetUnfilteredPartitionMetadata`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::set_catalog_id): (undocumented)
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::set_database_name): (undocumented)
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::set_table_name): (undocumented)
+    ///   - [`partition_values(Vec<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::partition_values) / [`set_partition_values(Option<Vec<String>>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::set_partition_values): (undocumented)
+    ///   - [`audit_context(AuditContext)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::audit_context) / [`set_audit_context(Option<AuditContext>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::set_audit_context): (undocumented)
+    ///   - [`supported_permission_types(Vec<PermissionType>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::supported_permission_types) / [`set_supported_permission_types(Option<Vec<PermissionType>>)`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata::set_supported_permission_types): (undocumented)
+    /// - On success, responds with [`GetUnfilteredPartitionMetadataOutput`](crate::output::GetUnfilteredPartitionMetadataOutput) with field(s):
+    ///   - [`partition(Option<Partition>)`](crate::output::GetUnfilteredPartitionMetadataOutput::partition): <p>Represents a slice of table data.</p>
+    ///   - [`authorized_columns(Option<Vec<String>>)`](crate::output::GetUnfilteredPartitionMetadataOutput::authorized_columns): (undocumented)
+    ///   - [`is_registered_with_lake_formation(bool)`](crate::output::GetUnfilteredPartitionMetadataOutput::is_registered_with_lake_formation): (undocumented)
+    /// - On failure, responds with [`SdkError<GetUnfilteredPartitionMetadataError>`](crate::error::GetUnfilteredPartitionMetadataError)
     pub fn get_unfiltered_partition_metadata(
         &self,
     ) -> fluent_builders::GetUnfilteredPartitionMetadata<C, M, R> {
         fluent_builders::GetUnfilteredPartitionMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUnfilteredPartitionsMetadata` operation.
+    /// Constructs a fluent builder for the [`GetUnfilteredPartitionsMetadata`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::into_paginator).
     ///
-    /// See [`GetUnfilteredPartitionsMetadata`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_catalog_id): (undocumented)
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_database_name): (undocumented)
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_table_name): (undocumented)
+    ///   - [`expression(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::expression) / [`set_expression(Option<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_expression): (undocumented)
+    ///   - [`audit_context(AuditContext)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::audit_context) / [`set_audit_context(Option<AuditContext>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_audit_context): (undocumented)
+    ///   - [`supported_permission_types(Vec<PermissionType>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::supported_permission_types) / [`set_supported_permission_types(Option<Vec<PermissionType>>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_supported_permission_types): (undocumented)
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_next_token): (undocumented)
+    ///   - [`segment(Segment)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::segment) / [`set_segment(Option<Segment>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_segment): <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::set_max_results): (undocumented)
+    /// - On success, responds with [`GetUnfilteredPartitionsMetadataOutput`](crate::output::GetUnfilteredPartitionsMetadataOutput) with field(s):
+    ///   - [`unfiltered_partitions(Option<Vec<UnfilteredPartition>>)`](crate::output::GetUnfilteredPartitionsMetadataOutput::unfiltered_partitions): (undocumented)
+    ///   - [`next_token(Option<String>)`](crate::output::GetUnfilteredPartitionsMetadataOutput::next_token): (undocumented)
+    /// - On failure, responds with [`SdkError<GetUnfilteredPartitionsMetadataError>`](crate::error::GetUnfilteredPartitionsMetadataError)
     pub fn get_unfiltered_partitions_metadata(
         &self,
     ) -> fluent_builders::GetUnfilteredPartitionsMetadata<C, M, R> {
         fluent_builders::GetUnfilteredPartitionsMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUnfilteredTableMetadata` operation.
+    /// Constructs a fluent builder for the [`GetUnfilteredTableMetadata`](crate::client::fluent_builders::GetUnfilteredTableMetadata) operation.
     ///
-    /// See [`GetUnfilteredTableMetadata`](crate::client::fluent_builders::GetUnfilteredTableMetadata) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::set_catalog_id): (undocumented)
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::set_database_name): (undocumented)
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::set_name): (undocumented)
+    ///   - [`audit_context(AuditContext)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::audit_context) / [`set_audit_context(Option<AuditContext>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::set_audit_context): (undocumented)
+    ///   - [`supported_permission_types(Vec<PermissionType>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::supported_permission_types) / [`set_supported_permission_types(Option<Vec<PermissionType>>)`](crate::client::fluent_builders::GetUnfilteredTableMetadata::set_supported_permission_types): (undocumented)
+    /// - On success, responds with [`GetUnfilteredTableMetadataOutput`](crate::output::GetUnfilteredTableMetadataOutput) with field(s):
+    ///   - [`table(Option<Table>)`](crate::output::GetUnfilteredTableMetadataOutput::table): <p>Represents a collection of related data organized in columns and rows.</p>
+    ///   - [`authorized_columns(Option<Vec<String>>)`](crate::output::GetUnfilteredTableMetadataOutput::authorized_columns): (undocumented)
+    ///   - [`is_registered_with_lake_formation(bool)`](crate::output::GetUnfilteredTableMetadataOutput::is_registered_with_lake_formation): (undocumented)
+    ///   - [`cell_filters(Option<Vec<ColumnRowFilter>>)`](crate::output::GetUnfilteredTableMetadataOutput::cell_filters): (undocumented)
+    /// - On failure, responds with [`SdkError<GetUnfilteredTableMetadataError>`](crate::error::GetUnfilteredTableMetadataError)
     pub fn get_unfiltered_table_metadata(
         &self,
     ) -> fluent_builders::GetUnfilteredTableMetadata<C, M, R> {
         fluent_builders::GetUnfilteredTableMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUserDefinedFunction` operation.
+    /// Constructs a fluent builder for the [`GetUserDefinedFunction`](crate::client::fluent_builders::GetUserDefinedFunction) operation.
     ///
-    /// See [`GetUserDefinedFunction`](crate::client::fluent_builders::GetUserDefinedFunction) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetUserDefinedFunction::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetUserDefinedFunction::set_catalog_id): <p>The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetUserDefinedFunction::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetUserDefinedFunction::set_database_name): <p>The name of the catalog database where the function is located.</p>
+    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::GetUserDefinedFunction::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::GetUserDefinedFunction::set_function_name): <p>The name of the function.</p>
+    /// - On success, responds with [`GetUserDefinedFunctionOutput`](crate::output::GetUserDefinedFunctionOutput) with field(s):
+    ///   - [`user_defined_function(Option<UserDefinedFunction>)`](crate::output::GetUserDefinedFunctionOutput::user_defined_function): <p>The requested function definition.</p>
+    /// - On failure, responds with [`SdkError<GetUserDefinedFunctionError>`](crate::error::GetUserDefinedFunctionError)
     pub fn get_user_defined_function(&self) -> fluent_builders::GetUserDefinedFunction<C, M, R> {
         fluent_builders::GetUserDefinedFunction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUserDefinedFunctions` operation.
+    /// Constructs a fluent builder for the [`GetUserDefinedFunctions`](crate::client::fluent_builders::GetUserDefinedFunctions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetUserDefinedFunctions::into_paginator).
     ///
-    /// See [`GetUserDefinedFunctions`](crate::client::fluent_builders::GetUserDefinedFunctions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetUserDefinedFunctions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::GetUserDefinedFunctions::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::GetUserDefinedFunctions::set_catalog_id): <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::GetUserDefinedFunctions::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::GetUserDefinedFunctions::set_database_name): <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
+    ///   - [`pattern(impl Into<String>)`](crate::client::fluent_builders::GetUserDefinedFunctions::pattern) / [`set_pattern(Option<String>)`](crate::client::fluent_builders::GetUserDefinedFunctions::set_pattern): <p>An optional function-name pattern string that filters the function definitions returned.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetUserDefinedFunctions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetUserDefinedFunctions::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetUserDefinedFunctions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetUserDefinedFunctions::set_max_results): <p>The maximum number of functions to return in one response.</p>
+    /// - On success, responds with [`GetUserDefinedFunctionsOutput`](crate::output::GetUserDefinedFunctionsOutput) with field(s):
+    ///   - [`user_defined_functions(Option<Vec<UserDefinedFunction>>)`](crate::output::GetUserDefinedFunctionsOutput::user_defined_functions): <p>A list of requested function definitions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetUserDefinedFunctionsOutput::next_token): <p>A continuation token, if the list of functions returned does not include the last requested function.</p>
+    /// - On failure, responds with [`SdkError<GetUserDefinedFunctionsError>`](crate::error::GetUserDefinedFunctionsError)
     pub fn get_user_defined_functions(&self) -> fluent_builders::GetUserDefinedFunctions<C, M, R> {
         fluent_builders::GetUserDefinedFunctions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetWorkflow` operation.
+    /// Constructs a fluent builder for the [`GetWorkflow`](crate::client::fluent_builders::GetWorkflow) operation.
     ///
-    /// See [`GetWorkflow`](crate::client::fluent_builders::GetWorkflow) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetWorkflow::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetWorkflow::set_name): <p>The name of the workflow to retrieve.</p>
+    ///   - [`include_graph(bool)`](crate::client::fluent_builders::GetWorkflow::include_graph) / [`set_include_graph(Option<bool>)`](crate::client::fluent_builders::GetWorkflow::set_include_graph): <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
+    /// - On success, responds with [`GetWorkflowOutput`](crate::output::GetWorkflowOutput) with field(s):
+    ///   - [`workflow(Option<Workflow>)`](crate::output::GetWorkflowOutput::workflow): <p>The resource metadata for the workflow.</p>
+    /// - On failure, responds with [`SdkError<GetWorkflowError>`](crate::error::GetWorkflowError)
     pub fn get_workflow(&self) -> fluent_builders::GetWorkflow<C, M, R> {
         fluent_builders::GetWorkflow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetWorkflowRun` operation.
+    /// Constructs a fluent builder for the [`GetWorkflowRun`](crate::client::fluent_builders::GetWorkflowRun) operation.
     ///
-    /// See [`GetWorkflowRun`](crate::client::fluent_builders::GetWorkflowRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetWorkflowRun::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetWorkflowRun::set_name): <p>Name of the workflow being run.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::client::fluent_builders::GetWorkflowRun::run_id) / [`set_run_id(Option<String>)`](crate::client::fluent_builders::GetWorkflowRun::set_run_id): <p>The ID of the workflow run.</p>
+    ///   - [`include_graph(bool)`](crate::client::fluent_builders::GetWorkflowRun::include_graph) / [`set_include_graph(Option<bool>)`](crate::client::fluent_builders::GetWorkflowRun::set_include_graph): <p>Specifies whether to include the workflow graph in response or not.</p>
+    /// - On success, responds with [`GetWorkflowRunOutput`](crate::output::GetWorkflowRunOutput) with field(s):
+    ///   - [`run(Option<WorkflowRun>)`](crate::output::GetWorkflowRunOutput::run): <p>The requested workflow run metadata.</p>
+    /// - On failure, responds with [`SdkError<GetWorkflowRunError>`](crate::error::GetWorkflowRunError)
     pub fn get_workflow_run(&self) -> fluent_builders::GetWorkflowRun<C, M, R> {
         fluent_builders::GetWorkflowRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetWorkflowRunProperties` operation.
+    /// Constructs a fluent builder for the [`GetWorkflowRunProperties`](crate::client::fluent_builders::GetWorkflowRunProperties) operation.
     ///
-    /// See [`GetWorkflowRunProperties`](crate::client::fluent_builders::GetWorkflowRunProperties) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetWorkflowRunProperties::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetWorkflowRunProperties::set_name): <p>Name of the workflow which was run.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::client::fluent_builders::GetWorkflowRunProperties::run_id) / [`set_run_id(Option<String>)`](crate::client::fluent_builders::GetWorkflowRunProperties::set_run_id): <p>The ID of the workflow run whose run properties should be returned.</p>
+    /// - On success, responds with [`GetWorkflowRunPropertiesOutput`](crate::output::GetWorkflowRunPropertiesOutput) with field(s):
+    ///   - [`run_properties(Option<HashMap<String, String>>)`](crate::output::GetWorkflowRunPropertiesOutput::run_properties): <p>The workflow run properties which were set during the specified run.</p>
+    /// - On failure, responds with [`SdkError<GetWorkflowRunPropertiesError>`](crate::error::GetWorkflowRunPropertiesError)
     pub fn get_workflow_run_properties(
         &self,
     ) -> fluent_builders::GetWorkflowRunProperties<C, M, R> {
         fluent_builders::GetWorkflowRunProperties::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetWorkflowRuns` operation.
+    /// Constructs a fluent builder for the [`GetWorkflowRuns`](crate::client::fluent_builders::GetWorkflowRuns) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetWorkflowRuns::into_paginator).
     ///
-    /// See [`GetWorkflowRuns`](crate::client::fluent_builders::GetWorkflowRuns) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetWorkflowRuns::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetWorkflowRuns::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetWorkflowRuns::set_name): <p>Name of the workflow whose metadata of runs should be returned.</p>
+    ///   - [`include_graph(bool)`](crate::client::fluent_builders::GetWorkflowRuns::include_graph) / [`set_include_graph(Option<bool>)`](crate::client::fluent_builders::GetWorkflowRuns::set_include_graph): <p>Specifies whether to include the workflow graph in response or not.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetWorkflowRuns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetWorkflowRuns::set_next_token): <p>The maximum size of the response.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetWorkflowRuns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetWorkflowRuns::set_max_results): <p>The maximum number of workflow runs to be included in the response.</p>
+    /// - On success, responds with [`GetWorkflowRunsOutput`](crate::output::GetWorkflowRunsOutput) with field(s):
+    ///   - [`runs(Option<Vec<WorkflowRun>>)`](crate::output::GetWorkflowRunsOutput::runs): <p>A list of workflow run metadata objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetWorkflowRunsOutput::next_token): <p>A continuation token, if not all requested workflow runs have been returned.</p>
+    /// - On failure, responds with [`SdkError<GetWorkflowRunsError>`](crate::error::GetWorkflowRunsError)
     pub fn get_workflow_runs(&self) -> fluent_builders::GetWorkflowRuns<C, M, R> {
         fluent_builders::GetWorkflowRuns::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ImportCatalogToGlue` operation.
+    /// Constructs a fluent builder for the [`ImportCatalogToGlue`](crate::client::fluent_builders::ImportCatalogToGlue) operation.
     ///
-    /// See [`ImportCatalogToGlue`](crate::client::fluent_builders::ImportCatalogToGlue) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::ImportCatalogToGlue::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::ImportCatalogToGlue::set_catalog_id): <p>The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.</p>
+    /// - On success, responds with [`ImportCatalogToGlueOutput`](crate::output::ImportCatalogToGlueOutput)
+
+    /// - On failure, responds with [`SdkError<ImportCatalogToGlueError>`](crate::error::ImportCatalogToGlueError)
     pub fn import_catalog_to_glue(&self) -> fluent_builders::ImportCatalogToGlue<C, M, R> {
         fluent_builders::ImportCatalogToGlue::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBlueprints` operation.
+    /// Constructs a fluent builder for the [`ListBlueprints`](crate::client::fluent_builders::ListBlueprints) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBlueprints::into_paginator).
     ///
-    /// See [`ListBlueprints`](crate::client::fluent_builders::ListBlueprints) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBlueprints::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBlueprints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBlueprints::set_next_token): <p>A continuation token, if this is a continuation request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBlueprints::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBlueprints::set_max_results): <p>The maximum size of a list to return.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ListBlueprints::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ListBlueprints::set_tags): <p>Filters the list by an Amazon Web Services resource tag.</p>
+    /// - On success, responds with [`ListBlueprintsOutput`](crate::output::ListBlueprintsOutput) with field(s):
+    ///   - [`blueprints(Option<Vec<String>>)`](crate::output::ListBlueprintsOutput::blueprints): <p>List of names of blueprints in the account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBlueprintsOutput::next_token): <p>A continuation token, if not all blueprint names have been returned.</p>
+    /// - On failure, responds with [`SdkError<ListBlueprintsError>`](crate::error::ListBlueprintsError)
     pub fn list_blueprints(&self) -> fluent_builders::ListBlueprints<C, M, R> {
         fluent_builders::ListBlueprints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCrawlers` operation.
+    /// Constructs a fluent builder for the [`ListCrawlers`](crate::client::fluent_builders::ListCrawlers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCrawlers::into_paginator).
     ///
-    /// See [`ListCrawlers`](crate::client::fluent_builders::ListCrawlers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCrawlers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCrawlers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCrawlers::set_max_results): <p>The maximum size of a list to return.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCrawlers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCrawlers::set_next_token): <p>A continuation token, if this is a continuation request.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ListCrawlers::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ListCrawlers::set_tags): <p>Specifies to return only these tagged resources.</p>
+    /// - On success, responds with [`ListCrawlersOutput`](crate::output::ListCrawlersOutput) with field(s):
+    ///   - [`crawler_names(Option<Vec<String>>)`](crate::output::ListCrawlersOutput::crawler_names): <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCrawlersOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>
+    /// - On failure, responds with [`SdkError<ListCrawlersError>`](crate::error::ListCrawlersError)
     pub fn list_crawlers(&self) -> fluent_builders::ListCrawlers<C, M, R> {
         fluent_builders::ListCrawlers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDevEndpoints` operation.
+    /// Constructs a fluent builder for the [`ListDevEndpoints`](crate::client::fluent_builders::ListDevEndpoints) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDevEndpoints::into_paginator).
     ///
-    /// See [`ListDevEndpoints`](crate::client::fluent_builders::ListDevEndpoints) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevEndpoints::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDevEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDevEndpoints::set_next_token): <p>A continuation token, if this is a continuation request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDevEndpoints::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDevEndpoints::set_max_results): <p>The maximum size of a list to return.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ListDevEndpoints::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ListDevEndpoints::set_tags): <p>Specifies to return only these tagged resources.</p>
+    /// - On success, responds with [`ListDevEndpointsOutput`](crate::output::ListDevEndpointsOutput) with field(s):
+    ///   - [`dev_endpoint_names(Option<Vec<String>>)`](crate::output::ListDevEndpointsOutput::dev_endpoint_names): <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDevEndpointsOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>
+    /// - On failure, responds with [`SdkError<ListDevEndpointsError>`](crate::error::ListDevEndpointsError)
     pub fn list_dev_endpoints(&self) -> fluent_builders::ListDevEndpoints<C, M, R> {
         fluent_builders::ListDevEndpoints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListJobs` operation.
+    /// Constructs a fluent builder for the [`ListJobs`](crate::client::fluent_builders::ListJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
     ///
-    /// See [`ListJobs`](crate::client::fluent_builders::ListJobs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListJobs::set_next_token): <p>A continuation token, if this is a continuation request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListJobs::set_max_results): <p>The maximum size of a list to return.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ListJobs::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ListJobs::set_tags): <p>Specifies to return only these tagged resources.</p>
+    /// - On success, responds with [`ListJobsOutput`](crate::output::ListJobsOutput) with field(s):
+    ///   - [`job_names(Option<Vec<String>>)`](crate::output::ListJobsOutput::job_names): <p>The names of all jobs in the account, or the jobs with the specified tags.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListJobsOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>
+    /// - On failure, responds with [`SdkError<ListJobsError>`](crate::error::ListJobsError)
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMLTransforms` operation.
+    /// Constructs a fluent builder for the [`ListMLTransforms`](crate::client::fluent_builders::ListMLTransforms) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMLTransforms::into_paginator).
     ///
-    /// See [`ListMLTransforms`](crate::client::fluent_builders::ListMLTransforms) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMLTransforms::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMLTransforms::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMLTransforms::set_next_token): <p>A continuation token, if this is a continuation request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMLTransforms::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMLTransforms::set_max_results): <p>The maximum size of a list to return.</p>
+    ///   - [`filter(TransformFilterCriteria)`](crate::client::fluent_builders::ListMLTransforms::filter) / [`set_filter(Option<TransformFilterCriteria>)`](crate::client::fluent_builders::ListMLTransforms::set_filter): <p>A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.</p>
+    ///   - [`sort(TransformSortCriteria)`](crate::client::fluent_builders::ListMLTransforms::sort) / [`set_sort(Option<TransformSortCriteria>)`](crate::client::fluent_builders::ListMLTransforms::set_sort): <p>A <code>TransformSortCriteria</code> used to sort the machine learning transforms.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ListMLTransforms::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ListMLTransforms::set_tags): <p>Specifies to return only these tagged resources.</p>
+    /// - On success, responds with [`ListMlTransformsOutput`](crate::output::ListMlTransformsOutput) with field(s):
+    ///   - [`transform_ids(Option<Vec<String>>)`](crate::output::ListMlTransformsOutput::transform_ids): <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMlTransformsOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>
+    /// - On failure, responds with [`SdkError<ListMLTransformsError>`](crate::error::ListMLTransformsError)
     pub fn list_ml_transforms(&self) -> fluent_builders::ListMLTransforms<C, M, R> {
         fluent_builders::ListMLTransforms::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRegistries` operation.
+    /// Constructs a fluent builder for the [`ListRegistries`](crate::client::fluent_builders::ListRegistries) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRegistries::into_paginator).
     ///
-    /// See [`ListRegistries`](crate::client::fluent_builders::ListRegistries) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRegistries::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRegistries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRegistries::set_max_results): <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRegistries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRegistries::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    /// - On success, responds with [`ListRegistriesOutput`](crate::output::ListRegistriesOutput) with field(s):
+    ///   - [`registries(Option<Vec<RegistryListItem>>)`](crate::output::ListRegistriesOutput::registries): <p>An array of <code>RegistryDetailedListItem</code> objects containing minimal details of each registry.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRegistriesOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    /// - On failure, responds with [`SdkError<ListRegistriesError>`](crate::error::ListRegistriesError)
     pub fn list_registries(&self) -> fluent_builders::ListRegistries<C, M, R> {
         fluent_builders::ListRegistries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSchemas` operation.
+    /// Constructs a fluent builder for the [`ListSchemas`](crate::client::fluent_builders::ListSchemas) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSchemas::into_paginator).
     ///
-    /// See [`ListSchemas`](crate::client::fluent_builders::ListSchemas) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSchemas::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`registry_id(RegistryId)`](crate::client::fluent_builders::ListSchemas::registry_id) / [`set_registry_id(Option<RegistryId>)`](crate::client::fluent_builders::ListSchemas::set_registry_id): <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSchemas::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSchemas::set_max_results): <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSchemas::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSchemas::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    /// - On success, responds with [`ListSchemasOutput`](crate::output::ListSchemasOutput) with field(s):
+    ///   - [`schemas(Option<Vec<SchemaListItem>>)`](crate::output::ListSchemasOutput::schemas): <p>An array of <code>SchemaListItem</code> objects containing details of each schema.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSchemasOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::error::ListSchemasError)
     pub fn list_schemas(&self) -> fluent_builders::ListSchemas<C, M, R> {
         fluent_builders::ListSchemas::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSchemaVersions` operation.
+    /// Constructs a fluent builder for the [`ListSchemaVersions`](crate::client::fluent_builders::ListSchemaVersions) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSchemaVersions::into_paginator).
     ///
-    /// See [`ListSchemaVersions`](crate::client::fluent_builders::ListSchemaVersions) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSchemaVersions::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`schema_id(SchemaId)`](crate::client::fluent_builders::ListSchemaVersions::schema_id) / [`set_schema_id(Option<SchemaId>)`](crate::client::fluent_builders::ListSchemaVersions::set_schema_id): <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>  <ul>   <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>   <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>  </ul>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSchemaVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSchemaVersions::set_max_results): <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSchemaVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSchemaVersions::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    /// - On success, responds with [`ListSchemaVersionsOutput`](crate::output::ListSchemaVersionsOutput) with field(s):
+    ///   - [`schemas(Option<Vec<SchemaVersionListItem>>)`](crate::output::ListSchemaVersionsOutput::schemas): <p>An array of <code>SchemaVersionList</code> objects containing details of each schema version.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSchemaVersionsOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    /// - On failure, responds with [`SdkError<ListSchemaVersionsError>`](crate::error::ListSchemaVersionsError)
     pub fn list_schema_versions(&self) -> fluent_builders::ListSchemaVersions<C, M, R> {
         fluent_builders::ListSchemaVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTriggers` operation.
+    /// Constructs a fluent builder for the [`ListTriggers`](crate::client::fluent_builders::ListTriggers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTriggers::into_paginator).
     ///
-    /// See [`ListTriggers`](crate::client::fluent_builders::ListTriggers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTriggers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTriggers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTriggers::set_next_token): <p>A continuation token, if this is a continuation request.</p>
+    ///   - [`dependent_job_name(impl Into<String>)`](crate::client::fluent_builders::ListTriggers::dependent_job_name) / [`set_dependent_job_name(Option<String>)`](crate::client::fluent_builders::ListTriggers::set_dependent_job_name): <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTriggers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTriggers::set_max_results): <p>The maximum size of a list to return.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::ListTriggers::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ListTriggers::set_tags): <p>Specifies to return only these tagged resources.</p>
+    /// - On success, responds with [`ListTriggersOutput`](crate::output::ListTriggersOutput) with field(s):
+    ///   - [`trigger_names(Option<Vec<String>>)`](crate::output::ListTriggersOutput::trigger_names): <p>The names of all triggers in the account, or the triggers with the specified tags.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTriggersOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>
+    /// - On failure, responds with [`SdkError<ListTriggersError>`](crate::error::ListTriggersError)
     pub fn list_triggers(&self) -> fluent_builders::ListTriggers<C, M, R> {
         fluent_builders::ListTriggers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWorkflows` operation.
+    /// Constructs a fluent builder for the [`ListWorkflows`](crate::client::fluent_builders::ListWorkflows) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorkflows::into_paginator).
     ///
-    /// See [`ListWorkflows`](crate::client::fluent_builders::ListWorkflows) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkflows::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorkflows::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorkflows::set_next_token): <p>A continuation token, if this is a continuation request.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorkflows::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorkflows::set_max_results): <p>The maximum size of a list to return.</p>
+    /// - On success, responds with [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput) with field(s):
+    ///   - [`workflows(Option<Vec<String>>)`](crate::output::ListWorkflowsOutput::workflows): <p>List of names of workflows in the account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWorkflowsOutput::next_token): <p>A continuation token, if not all workflow names have been returned.</p>
+    /// - On failure, responds with [`SdkError<ListWorkflowsError>`](crate::error::ListWorkflowsError)
     pub fn list_workflows(&self) -> fluent_builders::ListWorkflows<C, M, R> {
         fluent_builders::ListWorkflows::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutDataCatalogEncryptionSettings` operation.
+    /// Constructs a fluent builder for the [`PutDataCatalogEncryptionSettings`](crate::client::fluent_builders::PutDataCatalogEncryptionSettings) operation.
     ///
-    /// See [`PutDataCatalogEncryptionSettings`](crate::client::fluent_builders::PutDataCatalogEncryptionSettings) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::PutDataCatalogEncryptionSettings::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::PutDataCatalogEncryptionSettings::set_catalog_id): <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`data_catalog_encryption_settings(DataCatalogEncryptionSettings)`](crate::client::fluent_builders::PutDataCatalogEncryptionSettings::data_catalog_encryption_settings) / [`set_data_catalog_encryption_settings(Option<DataCatalogEncryptionSettings>)`](crate::client::fluent_builders::PutDataCatalogEncryptionSettings::set_data_catalog_encryption_settings): <p>The security configuration to set.</p>
+    /// - On success, responds with [`PutDataCatalogEncryptionSettingsOutput`](crate::output::PutDataCatalogEncryptionSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<PutDataCatalogEncryptionSettingsError>`](crate::error::PutDataCatalogEncryptionSettingsError)
     pub fn put_data_catalog_encryption_settings(
         &self,
     ) -> fluent_builders::PutDataCatalogEncryptionSettings<C, M, R> {
         fluent_builders::PutDataCatalogEncryptionSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) operation.
     ///
-    /// See [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`policy_in_json(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy_in_json) / [`set_policy_in_json(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy_in_json): <p>Contains the policy document to set, in JSON format.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_resource_arn): <p>Do not use. For internal use only.</p>
+    ///   - [`policy_hash_condition(impl Into<String>)`](crate::client::fluent_builders::PutResourcePolicy::policy_hash_condition) / [`set_policy_hash_condition(Option<String>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy_hash_condition): <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
+    ///   - [`policy_exists_condition(ExistCondition)`](crate::client::fluent_builders::PutResourcePolicy::policy_exists_condition) / [`set_policy_exists_condition(Option<ExistCondition>)`](crate::client::fluent_builders::PutResourcePolicy::set_policy_exists_condition): <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
+    ///   - [`enable_hybrid(EnableHybridValues)`](crate::client::fluent_builders::PutResourcePolicy::enable_hybrid) / [`set_enable_hybrid(Option<EnableHybridValues>)`](crate::client::fluent_builders::PutResourcePolicy::set_enable_hybrid): <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>  <ul>   <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>   <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>  </ul>  <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
+    /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput) with field(s):
+    ///   - [`policy_hash(Option<String>)`](crate::output::PutResourcePolicyOutput::policy_hash): <p>A hash of the policy that has just been set. This must be included in a subsequent call that overwrites or updates this policy.</p>
+    /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::error::PutResourcePolicyError)
     pub fn put_resource_policy(&self) -> fluent_builders::PutResourcePolicy<C, M, R> {
         fluent_builders::PutResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutSchemaVersionMetadata` operation.
+    /// Constructs a fluent builder for the [`PutSchemaVersionMetadata`](crate::client::fluent_builders::PutSchemaVersionMetadata) operation.
     ///
-    /// See [`PutSchemaVersionMetadata`](crate::client::fluent_builders::PutSchemaVersionMetadata) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`schema_id(SchemaId)`](crate::client::fluent_builders::PutSchemaVersionMetadata::schema_id) / [`set_schema_id(Option<SchemaId>)`](crate::client::fluent_builders::PutSchemaVersionMetadata::set_schema_id): <p>The unique ID for the schema.</p>
+    ///   - [`schema_version_number(SchemaVersionNumber)`](crate::client::fluent_builders::PutSchemaVersionMetadata::schema_version_number) / [`set_schema_version_number(Option<SchemaVersionNumber>)`](crate::client::fluent_builders::PutSchemaVersionMetadata::set_schema_version_number): <p>The version number of the schema.</p>
+    ///   - [`schema_version_id(impl Into<String>)`](crate::client::fluent_builders::PutSchemaVersionMetadata::schema_version_id) / [`set_schema_version_id(Option<String>)`](crate::client::fluent_builders::PutSchemaVersionMetadata::set_schema_version_id): <p>The unique version ID of the schema version.</p>
+    ///   - [`metadata_key_value(MetadataKeyValuePair)`](crate::client::fluent_builders::PutSchemaVersionMetadata::metadata_key_value) / [`set_metadata_key_value(Option<MetadataKeyValuePair>)`](crate::client::fluent_builders::PutSchemaVersionMetadata::set_metadata_key_value): <p>The metadata key's corresponding value.</p>
+    /// - On success, responds with [`PutSchemaVersionMetadataOutput`](crate::output::PutSchemaVersionMetadataOutput) with field(s):
+    ///   - [`schema_arn(Option<String>)`](crate::output::PutSchemaVersionMetadataOutput::schema_arn): <p>The Amazon Resource Name (ARN) for the schema.</p>
+    ///   - [`schema_name(Option<String>)`](crate::output::PutSchemaVersionMetadataOutput::schema_name): <p>The name for the schema.</p>
+    ///   - [`registry_name(Option<String>)`](crate::output::PutSchemaVersionMetadataOutput::registry_name): <p>The name for the registry.</p>
+    ///   - [`latest_version(bool)`](crate::output::PutSchemaVersionMetadataOutput::latest_version): <p>The latest version of the schema.</p>
+    ///   - [`version_number(i64)`](crate::output::PutSchemaVersionMetadataOutput::version_number): <p>The version number of the schema.</p>
+    ///   - [`schema_version_id(Option<String>)`](crate::output::PutSchemaVersionMetadataOutput::schema_version_id): <p>The unique version ID of the schema version.</p>
+    ///   - [`metadata_key(Option<String>)`](crate::output::PutSchemaVersionMetadataOutput::metadata_key): <p>The metadata key.</p>
+    ///   - [`metadata_value(Option<String>)`](crate::output::PutSchemaVersionMetadataOutput::metadata_value): <p>The value of the metadata key.</p>
+    /// - On failure, responds with [`SdkError<PutSchemaVersionMetadataError>`](crate::error::PutSchemaVersionMetadataError)
     pub fn put_schema_version_metadata(
         &self,
     ) -> fluent_builders::PutSchemaVersionMetadata<C, M, R> {
         fluent_builders::PutSchemaVersionMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutWorkflowRunProperties` operation.
+    /// Constructs a fluent builder for the [`PutWorkflowRunProperties`](crate::client::fluent_builders::PutWorkflowRunProperties) operation.
     ///
-    /// See [`PutWorkflowRunProperties`](crate::client::fluent_builders::PutWorkflowRunProperties) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PutWorkflowRunProperties::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PutWorkflowRunProperties::set_name): <p>Name of the workflow which was run.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::client::fluent_builders::PutWorkflowRunProperties::run_id) / [`set_run_id(Option<String>)`](crate::client::fluent_builders::PutWorkflowRunProperties::set_run_id): <p>The ID of the workflow run for which the run properties should be updated.</p>
+    ///   - [`run_properties(HashMap<String, String>)`](crate::client::fluent_builders::PutWorkflowRunProperties::run_properties) / [`set_run_properties(Option<HashMap<String, String>>)`](crate::client::fluent_builders::PutWorkflowRunProperties::set_run_properties): <p>The properties to put for the specified run.</p>
+    /// - On success, responds with [`PutWorkflowRunPropertiesOutput`](crate::output::PutWorkflowRunPropertiesOutput)
+
+    /// - On failure, responds with [`SdkError<PutWorkflowRunPropertiesError>`](crate::error::PutWorkflowRunPropertiesError)
     pub fn put_workflow_run_properties(
         &self,
     ) -> fluent_builders::PutWorkflowRunProperties<C, M, R> {
         fluent_builders::PutWorkflowRunProperties::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `QuerySchemaVersionMetadata` operation.
+    /// Constructs a fluent builder for the [`QuerySchemaVersionMetadata`](crate::client::fluent_builders::QuerySchemaVersionMetadata) operation.
     ///
-    /// See [`QuerySchemaVersionMetadata`](crate::client::fluent_builders::QuerySchemaVersionMetadata) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`schema_id(SchemaId)`](crate::client::fluent_builders::QuerySchemaVersionMetadata::schema_id) / [`set_schema_id(Option<SchemaId>)`](crate::client::fluent_builders::QuerySchemaVersionMetadata::set_schema_id): <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    ///   - [`schema_version_number(SchemaVersionNumber)`](crate::client::fluent_builders::QuerySchemaVersionMetadata::schema_version_number) / [`set_schema_version_number(Option<SchemaVersionNumber>)`](crate::client::fluent_builders::QuerySchemaVersionMetadata::set_schema_version_number): <p>The version number of the schema.</p>
+    ///   - [`schema_version_id(impl Into<String>)`](crate::client::fluent_builders::QuerySchemaVersionMetadata::schema_version_id) / [`set_schema_version_id(Option<String>)`](crate::client::fluent_builders::QuerySchemaVersionMetadata::set_schema_version_id): <p>The unique version ID of the schema version.</p>
+    ///   - [`metadata_list(Vec<MetadataKeyValuePair>)`](crate::client::fluent_builders::QuerySchemaVersionMetadata::metadata_list) / [`set_metadata_list(Option<Vec<MetadataKeyValuePair>>)`](crate::client::fluent_builders::QuerySchemaVersionMetadata::set_metadata_list): <p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::QuerySchemaVersionMetadata::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::QuerySchemaVersionMetadata::set_max_results): <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::QuerySchemaVersionMetadata::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::QuerySchemaVersionMetadata::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    /// - On success, responds with [`QuerySchemaVersionMetadataOutput`](crate::output::QuerySchemaVersionMetadataOutput) with field(s):
+    ///   - [`metadata_info_map(Option<HashMap<String, MetadataInfo>>)`](crate::output::QuerySchemaVersionMetadataOutput::metadata_info_map): <p>A map of a metadata key and associated values.</p>
+    ///   - [`schema_version_id(Option<String>)`](crate::output::QuerySchemaVersionMetadataOutput::schema_version_id): <p>The unique version ID of the schema version.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::QuerySchemaVersionMetadataOutput::next_token): <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    /// - On failure, responds with [`SdkError<QuerySchemaVersionMetadataError>`](crate::error::QuerySchemaVersionMetadataError)
     pub fn query_schema_version_metadata(
         &self,
     ) -> fluent_builders::QuerySchemaVersionMetadata<C, M, R> {
         fluent_builders::QuerySchemaVersionMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterSchemaVersion` operation.
+    /// Constructs a fluent builder for the [`RegisterSchemaVersion`](crate::client::fluent_builders::RegisterSchemaVersion) operation.
     ///
-    /// See [`RegisterSchemaVersion`](crate::client::fluent_builders::RegisterSchemaVersion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`schema_id(SchemaId)`](crate::client::fluent_builders::RegisterSchemaVersion::schema_id) / [`set_schema_id(Option<SchemaId>)`](crate::client::fluent_builders::RegisterSchemaVersion::set_schema_id): <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>  <ul>   <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>   <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>  </ul>
+    ///   - [`schema_definition(impl Into<String>)`](crate::client::fluent_builders::RegisterSchemaVersion::schema_definition) / [`set_schema_definition(Option<String>)`](crate::client::fluent_builders::RegisterSchemaVersion::set_schema_definition): <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
+    /// - On success, responds with [`RegisterSchemaVersionOutput`](crate::output::RegisterSchemaVersionOutput) with field(s):
+    ///   - [`schema_version_id(Option<String>)`](crate::output::RegisterSchemaVersionOutput::schema_version_id): <p>The unique ID that represents the version of this schema.</p>
+    ///   - [`version_number(i64)`](crate::output::RegisterSchemaVersionOutput::version_number): <p>The version of this schema (for sync flow only, in case this is the first version).</p>
+    ///   - [`status(Option<SchemaVersionStatus>)`](crate::output::RegisterSchemaVersionOutput::status): <p>The status of the schema version.</p>
+    /// - On failure, responds with [`SdkError<RegisterSchemaVersionError>`](crate::error::RegisterSchemaVersionError)
     pub fn register_schema_version(&self) -> fluent_builders::RegisterSchemaVersion<C, M, R> {
         fluent_builders::RegisterSchemaVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveSchemaVersionMetadata` operation.
+    /// Constructs a fluent builder for the [`RemoveSchemaVersionMetadata`](crate::client::fluent_builders::RemoveSchemaVersionMetadata) operation.
     ///
-    /// See [`RemoveSchemaVersionMetadata`](crate::client::fluent_builders::RemoveSchemaVersionMetadata) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`schema_id(SchemaId)`](crate::client::fluent_builders::RemoveSchemaVersionMetadata::schema_id) / [`set_schema_id(Option<SchemaId>)`](crate::client::fluent_builders::RemoveSchemaVersionMetadata::set_schema_id): <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    ///   - [`schema_version_number(SchemaVersionNumber)`](crate::client::fluent_builders::RemoveSchemaVersionMetadata::schema_version_number) / [`set_schema_version_number(Option<SchemaVersionNumber>)`](crate::client::fluent_builders::RemoveSchemaVersionMetadata::set_schema_version_number): <p>The version number of the schema.</p>
+    ///   - [`schema_version_id(impl Into<String>)`](crate::client::fluent_builders::RemoveSchemaVersionMetadata::schema_version_id) / [`set_schema_version_id(Option<String>)`](crate::client::fluent_builders::RemoveSchemaVersionMetadata::set_schema_version_id): <p>The unique version ID of the schema version.</p>
+    ///   - [`metadata_key_value(MetadataKeyValuePair)`](crate::client::fluent_builders::RemoveSchemaVersionMetadata::metadata_key_value) / [`set_metadata_key_value(Option<MetadataKeyValuePair>)`](crate::client::fluent_builders::RemoveSchemaVersionMetadata::set_metadata_key_value): <p>The value of the metadata key.</p>
+    /// - On success, responds with [`RemoveSchemaVersionMetadataOutput`](crate::output::RemoveSchemaVersionMetadataOutput) with field(s):
+    ///   - [`schema_arn(Option<String>)`](crate::output::RemoveSchemaVersionMetadataOutput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema.</p>
+    ///   - [`schema_name(Option<String>)`](crate::output::RemoveSchemaVersionMetadataOutput::schema_name): <p>The name of the schema.</p>
+    ///   - [`registry_name(Option<String>)`](crate::output::RemoveSchemaVersionMetadataOutput::registry_name): <p>The name of the registry.</p>
+    ///   - [`latest_version(bool)`](crate::output::RemoveSchemaVersionMetadataOutput::latest_version): <p>The latest version of the schema.</p>
+    ///   - [`version_number(i64)`](crate::output::RemoveSchemaVersionMetadataOutput::version_number): <p>The version number of the schema.</p>
+    ///   - [`schema_version_id(Option<String>)`](crate::output::RemoveSchemaVersionMetadataOutput::schema_version_id): <p>The version ID for the schema version.</p>
+    ///   - [`metadata_key(Option<String>)`](crate::output::RemoveSchemaVersionMetadataOutput::metadata_key): <p>The metadata key.</p>
+    ///   - [`metadata_value(Option<String>)`](crate::output::RemoveSchemaVersionMetadataOutput::metadata_value): <p>The value of the metadata key.</p>
+    /// - On failure, responds with [`SdkError<RemoveSchemaVersionMetadataError>`](crate::error::RemoveSchemaVersionMetadataError)
     pub fn remove_schema_version_metadata(
         &self,
     ) -> fluent_builders::RemoveSchemaVersionMetadata<C, M, R> {
         fluent_builders::RemoveSchemaVersionMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResetJobBookmark` operation.
+    /// Constructs a fluent builder for the [`ResetJobBookmark`](crate::client::fluent_builders::ResetJobBookmark) operation.
     ///
-    /// See [`ResetJobBookmark`](crate::client::fluent_builders::ResetJobBookmark) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::ResetJobBookmark::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::ResetJobBookmark::set_job_name): <p>The name of the job in question.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::client::fluent_builders::ResetJobBookmark::run_id) / [`set_run_id(Option<String>)`](crate::client::fluent_builders::ResetJobBookmark::set_run_id): <p>The unique run identifier associated with this job run.</p>
+    /// - On success, responds with [`ResetJobBookmarkOutput`](crate::output::ResetJobBookmarkOutput) with field(s):
+    ///   - [`job_bookmark_entry(Option<JobBookmarkEntry>)`](crate::output::ResetJobBookmarkOutput::job_bookmark_entry): <p>The reset bookmark entry.</p>
+    /// - On failure, responds with [`SdkError<ResetJobBookmarkError>`](crate::error::ResetJobBookmarkError)
     pub fn reset_job_bookmark(&self) -> fluent_builders::ResetJobBookmark<C, M, R> {
         fluent_builders::ResetJobBookmark::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResumeWorkflowRun` operation.
+    /// Constructs a fluent builder for the [`ResumeWorkflowRun`](crate::client::fluent_builders::ResumeWorkflowRun) operation.
     ///
-    /// See [`ResumeWorkflowRun`](crate::client::fluent_builders::ResumeWorkflowRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ResumeWorkflowRun::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ResumeWorkflowRun::set_name): <p>The name of the workflow to resume.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::client::fluent_builders::ResumeWorkflowRun::run_id) / [`set_run_id(Option<String>)`](crate::client::fluent_builders::ResumeWorkflowRun::set_run_id): <p>The ID of the workflow run to resume.</p>
+    ///   - [`node_ids(Vec<String>)`](crate::client::fluent_builders::ResumeWorkflowRun::node_ids) / [`set_node_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ResumeWorkflowRun::set_node_ids): <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
+    /// - On success, responds with [`ResumeWorkflowRunOutput`](crate::output::ResumeWorkflowRunOutput) with field(s):
+    ///   - [`run_id(Option<String>)`](crate::output::ResumeWorkflowRunOutput::run_id): <p>The new ID assigned to the resumed workflow run. Each resume of a workflow run will have a new run ID.</p>
+    ///   - [`node_ids(Option<Vec<String>>)`](crate::output::ResumeWorkflowRunOutput::node_ids): <p>A list of the node IDs for the nodes that were actually restarted.</p>
+    /// - On failure, responds with [`SdkError<ResumeWorkflowRunError>`](crate::error::ResumeWorkflowRunError)
     pub fn resume_workflow_run(&self) -> fluent_builders::ResumeWorkflowRun<C, M, R> {
         fluent_builders::ResumeWorkflowRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchTables` operation.
+    /// Constructs a fluent builder for the [`SearchTables`](crate::client::fluent_builders::SearchTables) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchTables::into_paginator).
     ///
-    /// See [`SearchTables`](crate::client::fluent_builders::SearchTables) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchTables::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::SearchTables::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::SearchTables::set_catalog_id): <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchTables::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchTables::set_next_token): <p>A continuation token, included if this is a continuation call.</p>
+    ///   - [`filters(Vec<PropertyPredicate>)`](crate::client::fluent_builders::SearchTables::filters) / [`set_filters(Option<Vec<PropertyPredicate>>)`](crate::client::fluent_builders::SearchTables::set_filters): <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>  <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
+    ///   - [`search_text(impl Into<String>)`](crate::client::fluent_builders::SearchTables::search_text) / [`set_search_text(Option<String>)`](crate::client::fluent_builders::SearchTables::set_search_text): <p>A string used for a text search.</p>  <p>Specifying a value in quotes filters based on an exact match to the value.</p>
+    ///   - [`sort_criteria(Vec<SortCriterion>)`](crate::client::fluent_builders::SearchTables::sort_criteria) / [`set_sort_criteria(Option<Vec<SortCriterion>>)`](crate::client::fluent_builders::SearchTables::set_sort_criteria): <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchTables::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchTables::set_max_results): <p>The maximum number of tables to return in a single response.</p>
+    ///   - [`resource_share_type(ResourceShareType)`](crate::client::fluent_builders::SearchTables::resource_share_type) / [`set_resource_share_type(Option<ResourceShareType>)`](crate::client::fluent_builders::SearchTables::set_resource_share_type): <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>  <ul>   <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>   <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>  </ul>
+    /// - On success, responds with [`SearchTablesOutput`](crate::output::SearchTablesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::SearchTablesOutput::next_token): <p>A continuation token, present if the current list segment is not the last.</p>
+    ///   - [`table_list(Option<Vec<Table>>)`](crate::output::SearchTablesOutput::table_list): <p>A list of the requested <code>Table</code> objects. The <code>SearchTables</code> response returns only the tables that you have access to.</p>
+    /// - On failure, responds with [`SdkError<SearchTablesError>`](crate::error::SearchTablesError)
     pub fn search_tables(&self) -> fluent_builders::SearchTables<C, M, R> {
         fluent_builders::SearchTables::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartBlueprintRun` operation.
+    /// Constructs a fluent builder for the [`StartBlueprintRun`](crate::client::fluent_builders::StartBlueprintRun) operation.
     ///
-    /// See [`StartBlueprintRun`](crate::client::fluent_builders::StartBlueprintRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`blueprint_name(impl Into<String>)`](crate::client::fluent_builders::StartBlueprintRun::blueprint_name) / [`set_blueprint_name(Option<String>)`](crate::client::fluent_builders::StartBlueprintRun::set_blueprint_name): <p>The name of the blueprint.</p>
+    ///   - [`parameters(impl Into<String>)`](crate::client::fluent_builders::StartBlueprintRun::parameters) / [`set_parameters(Option<String>)`](crate::client::fluent_builders::StartBlueprintRun::set_parameters): <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::StartBlueprintRun::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::StartBlueprintRun::set_role_arn): <p>Specifies the IAM role used to create the workflow.</p>
+    /// - On success, responds with [`StartBlueprintRunOutput`](crate::output::StartBlueprintRunOutput) with field(s):
+    ///   - [`run_id(Option<String>)`](crate::output::StartBlueprintRunOutput::run_id): <p>The run ID for this blueprint run.</p>
+    /// - On failure, responds with [`SdkError<StartBlueprintRunError>`](crate::error::StartBlueprintRunError)
     pub fn start_blueprint_run(&self) -> fluent_builders::StartBlueprintRun<C, M, R> {
         fluent_builders::StartBlueprintRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartCrawler` operation.
+    /// Constructs a fluent builder for the [`StartCrawler`](crate::client::fluent_builders::StartCrawler) operation.
     ///
-    /// See [`StartCrawler`](crate::client::fluent_builders::StartCrawler) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartCrawler::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartCrawler::set_name): <p>Name of the crawler to start.</p>
+    /// - On success, responds with [`StartCrawlerOutput`](crate::output::StartCrawlerOutput)
+
+    /// - On failure, responds with [`SdkError<StartCrawlerError>`](crate::error::StartCrawlerError)
     pub fn start_crawler(&self) -> fluent_builders::StartCrawler<C, M, R> {
         fluent_builders::StartCrawler::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartCrawlerSchedule` operation.
+    /// Constructs a fluent builder for the [`StartCrawlerSchedule`](crate::client::fluent_builders::StartCrawlerSchedule) operation.
     ///
-    /// See [`StartCrawlerSchedule`](crate::client::fluent_builders::StartCrawlerSchedule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`crawler_name(impl Into<String>)`](crate::client::fluent_builders::StartCrawlerSchedule::crawler_name) / [`set_crawler_name(Option<String>)`](crate::client::fluent_builders::StartCrawlerSchedule::set_crawler_name): <p>Name of the crawler to schedule.</p>
+    /// - On success, responds with [`StartCrawlerScheduleOutput`](crate::output::StartCrawlerScheduleOutput)
+
+    /// - On failure, responds with [`SdkError<StartCrawlerScheduleError>`](crate::error::StartCrawlerScheduleError)
     pub fn start_crawler_schedule(&self) -> fluent_builders::StartCrawlerSchedule<C, M, R> {
         fluent_builders::StartCrawlerSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartExportLabelsTaskRun` operation.
+    /// Constructs a fluent builder for the [`StartExportLabelsTaskRun`](crate::client::fluent_builders::StartExportLabelsTaskRun) operation.
     ///
-    /// See [`StartExportLabelsTaskRun`](crate::client::fluent_builders::StartExportLabelsTaskRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`transform_id(impl Into<String>)`](crate::client::fluent_builders::StartExportLabelsTaskRun::transform_id) / [`set_transform_id(Option<String>)`](crate::client::fluent_builders::StartExportLabelsTaskRun::set_transform_id): <p>The unique identifier of the machine learning transform.</p>
+    ///   - [`output_s3_path(impl Into<String>)`](crate::client::fluent_builders::StartExportLabelsTaskRun::output_s3_path) / [`set_output_s3_path(Option<String>)`](crate::client::fluent_builders::StartExportLabelsTaskRun::set_output_s3_path): <p>The Amazon S3 path where you export the labels.</p>
+    /// - On success, responds with [`StartExportLabelsTaskRunOutput`](crate::output::StartExportLabelsTaskRunOutput) with field(s):
+    ///   - [`task_run_id(Option<String>)`](crate::output::StartExportLabelsTaskRunOutput::task_run_id): <p>The unique identifier for the task run.</p>
+    /// - On failure, responds with [`SdkError<StartExportLabelsTaskRunError>`](crate::error::StartExportLabelsTaskRunError)
     pub fn start_export_labels_task_run(
         &self,
     ) -> fluent_builders::StartExportLabelsTaskRun<C, M, R> {
         fluent_builders::StartExportLabelsTaskRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartImportLabelsTaskRun` operation.
+    /// Constructs a fluent builder for the [`StartImportLabelsTaskRun`](crate::client::fluent_builders::StartImportLabelsTaskRun) operation.
     ///
-    /// See [`StartImportLabelsTaskRun`](crate::client::fluent_builders::StartImportLabelsTaskRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`transform_id(impl Into<String>)`](crate::client::fluent_builders::StartImportLabelsTaskRun::transform_id) / [`set_transform_id(Option<String>)`](crate::client::fluent_builders::StartImportLabelsTaskRun::set_transform_id): <p>The unique identifier of the machine learning transform.</p>
+    ///   - [`input_s3_path(impl Into<String>)`](crate::client::fluent_builders::StartImportLabelsTaskRun::input_s3_path) / [`set_input_s3_path(Option<String>)`](crate::client::fluent_builders::StartImportLabelsTaskRun::set_input_s3_path): <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
+    ///   - [`replace_all_labels(bool)`](crate::client::fluent_builders::StartImportLabelsTaskRun::replace_all_labels) / [`set_replace_all_labels(bool)`](crate::client::fluent_builders::StartImportLabelsTaskRun::set_replace_all_labels): <p>Indicates whether to overwrite your existing labels.</p>
+    /// - On success, responds with [`StartImportLabelsTaskRunOutput`](crate::output::StartImportLabelsTaskRunOutput) with field(s):
+    ///   - [`task_run_id(Option<String>)`](crate::output::StartImportLabelsTaskRunOutput::task_run_id): <p>The unique identifier for the task run.</p>
+    /// - On failure, responds with [`SdkError<StartImportLabelsTaskRunError>`](crate::error::StartImportLabelsTaskRunError)
     pub fn start_import_labels_task_run(
         &self,
     ) -> fluent_builders::StartImportLabelsTaskRun<C, M, R> {
         fluent_builders::StartImportLabelsTaskRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartJobRun` operation.
+    /// Constructs a fluent builder for the [`StartJobRun`](crate::client::fluent_builders::StartJobRun) operation.
     ///
-    /// See [`StartJobRun`](crate::client::fluent_builders::StartJobRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::StartJobRun::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::StartJobRun::set_job_name): <p>The name of the job definition to use.</p>
+    ///   - [`job_run_id(impl Into<String>)`](crate::client::fluent_builders::StartJobRun::job_run_id) / [`set_job_run_id(Option<String>)`](crate::client::fluent_builders::StartJobRun::set_job_run_id): <p>The ID of a previous <code>JobRun</code> to retry.</p>
+    ///   - [`arguments(HashMap<String, String>)`](crate::client::fluent_builders::StartJobRun::arguments) / [`set_arguments(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartJobRun::set_arguments): <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>  <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>  <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>  <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    ///   - [`allocated_capacity(i32)`](crate::client::fluent_builders::StartJobRun::allocated_capacity) / [`set_allocated_capacity(i32)`](crate::client::fluent_builders::StartJobRun::set_allocated_capacity): <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>  <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    ///   - [`timeout(i32)`](crate::client::fluent_builders::StartJobRun::timeout) / [`set_timeout(Option<i32>)`](crate::client::fluent_builders::StartJobRun::set_timeout): <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+    ///   - [`max_capacity(f64)`](crate::client::fluent_builders::StartJobRun::max_capacity) / [`set_max_capacity(Option<f64>)`](crate::client::fluent_builders::StartJobRun::set_max_capacity): <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>  <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>  <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, or an Apache Spark ETL job:</p>  <ul>   <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>   <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>  </ul>
+    ///   - [`security_configuration(impl Into<String>)`](crate::client::fluent_builders::StartJobRun::security_configuration) / [`set_security_configuration(Option<String>)`](crate::client::fluent_builders::StartJobRun::set_security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
+    ///   - [`notification_property(NotificationProperty)`](crate::client::fluent_builders::StartJobRun::notification_property) / [`set_notification_property(Option<NotificationProperty>)`](crate::client::fluent_builders::StartJobRun::set_notification_property): <p>Specifies configuration properties of a job run notification.</p>
+    ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::StartJobRun::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::StartJobRun::set_worker_type): <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>  </ul>
+    ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::StartJobRun::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::StartJobRun::set_number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>  <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+    /// - On success, responds with [`StartJobRunOutput`](crate::output::StartJobRunOutput) with field(s):
+    ///   - [`job_run_id(Option<String>)`](crate::output::StartJobRunOutput::job_run_id): <p>The ID assigned to this job run.</p>
+    /// - On failure, responds with [`SdkError<StartJobRunError>`](crate::error::StartJobRunError)
     pub fn start_job_run(&self) -> fluent_builders::StartJobRun<C, M, R> {
         fluent_builders::StartJobRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartMLEvaluationTaskRun` operation.
+    /// Constructs a fluent builder for the [`StartMLEvaluationTaskRun`](crate::client::fluent_builders::StartMLEvaluationTaskRun) operation.
     ///
-    /// See [`StartMLEvaluationTaskRun`](crate::client::fluent_builders::StartMLEvaluationTaskRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`transform_id(impl Into<String>)`](crate::client::fluent_builders::StartMLEvaluationTaskRun::transform_id) / [`set_transform_id(Option<String>)`](crate::client::fluent_builders::StartMLEvaluationTaskRun::set_transform_id): <p>The unique identifier of the machine learning transform.</p>
+    /// - On success, responds with [`StartMlEvaluationTaskRunOutput`](crate::output::StartMlEvaluationTaskRunOutput) with field(s):
+    ///   - [`task_run_id(Option<String>)`](crate::output::StartMlEvaluationTaskRunOutput::task_run_id): <p>The unique identifier associated with this run.</p>
+    /// - On failure, responds with [`SdkError<StartMLEvaluationTaskRunError>`](crate::error::StartMLEvaluationTaskRunError)
     pub fn start_ml_evaluation_task_run(
         &self,
     ) -> fluent_builders::StartMLEvaluationTaskRun<C, M, R> {
         fluent_builders::StartMLEvaluationTaskRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartMLLabelingSetGenerationTaskRun` operation.
+    /// Constructs a fluent builder for the [`StartMLLabelingSetGenerationTaskRun`](crate::client::fluent_builders::StartMLLabelingSetGenerationTaskRun) operation.
     ///
-    /// See [`StartMLLabelingSetGenerationTaskRun`](crate::client::fluent_builders::StartMLLabelingSetGenerationTaskRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`transform_id(impl Into<String>)`](crate::client::fluent_builders::StartMLLabelingSetGenerationTaskRun::transform_id) / [`set_transform_id(Option<String>)`](crate::client::fluent_builders::StartMLLabelingSetGenerationTaskRun::set_transform_id): <p>The unique identifier of the machine learning transform.</p>
+    ///   - [`output_s3_path(impl Into<String>)`](crate::client::fluent_builders::StartMLLabelingSetGenerationTaskRun::output_s3_path) / [`set_output_s3_path(Option<String>)`](crate::client::fluent_builders::StartMLLabelingSetGenerationTaskRun::set_output_s3_path): <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
+    /// - On success, responds with [`StartMlLabelingSetGenerationTaskRunOutput`](crate::output::StartMlLabelingSetGenerationTaskRunOutput) with field(s):
+    ///   - [`task_run_id(Option<String>)`](crate::output::StartMlLabelingSetGenerationTaskRunOutput::task_run_id): <p>The unique run identifier that is associated with this task run.</p>
+    /// - On failure, responds with [`SdkError<StartMLLabelingSetGenerationTaskRunError>`](crate::error::StartMLLabelingSetGenerationTaskRunError)
     pub fn start_ml_labeling_set_generation_task_run(
         &self,
     ) -> fluent_builders::StartMLLabelingSetGenerationTaskRun<C, M, R> {
         fluent_builders::StartMLLabelingSetGenerationTaskRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartTrigger` operation.
+    /// Constructs a fluent builder for the [`StartTrigger`](crate::client::fluent_builders::StartTrigger) operation.
     ///
-    /// See [`StartTrigger`](crate::client::fluent_builders::StartTrigger) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartTrigger::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartTrigger::set_name): <p>The name of the trigger to start.</p>
+    /// - On success, responds with [`StartTriggerOutput`](crate::output::StartTriggerOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::StartTriggerOutput::name): <p>The name of the trigger that was started.</p>
+    /// - On failure, responds with [`SdkError<StartTriggerError>`](crate::error::StartTriggerError)
     pub fn start_trigger(&self) -> fluent_builders::StartTrigger<C, M, R> {
         fluent_builders::StartTrigger::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartWorkflowRun` operation.
+    /// Constructs a fluent builder for the [`StartWorkflowRun`](crate::client::fluent_builders::StartWorkflowRun) operation.
     ///
-    /// See [`StartWorkflowRun`](crate::client::fluent_builders::StartWorkflowRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StartWorkflowRun::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StartWorkflowRun::set_name): <p>The name of the workflow to start.</p>
+    ///   - [`run_properties(HashMap<String, String>)`](crate::client::fluent_builders::StartWorkflowRun::run_properties) / [`set_run_properties(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartWorkflowRun::set_run_properties): <p>The workflow run properties for the new workflow run.</p>
+    /// - On success, responds with [`StartWorkflowRunOutput`](crate::output::StartWorkflowRunOutput) with field(s):
+    ///   - [`run_id(Option<String>)`](crate::output::StartWorkflowRunOutput::run_id): <p>An Id for the new run.</p>
+    /// - On failure, responds with [`SdkError<StartWorkflowRunError>`](crate::error::StartWorkflowRunError)
     pub fn start_workflow_run(&self) -> fluent_builders::StartWorkflowRun<C, M, R> {
         fluent_builders::StartWorkflowRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopCrawler` operation.
+    /// Constructs a fluent builder for the [`StopCrawler`](crate::client::fluent_builders::StopCrawler) operation.
     ///
-    /// See [`StopCrawler`](crate::client::fluent_builders::StopCrawler) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StopCrawler::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StopCrawler::set_name): <p>Name of the crawler to stop.</p>
+    /// - On success, responds with [`StopCrawlerOutput`](crate::output::StopCrawlerOutput)
+
+    /// - On failure, responds with [`SdkError<StopCrawlerError>`](crate::error::StopCrawlerError)
     pub fn stop_crawler(&self) -> fluent_builders::StopCrawler<C, M, R> {
         fluent_builders::StopCrawler::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopCrawlerSchedule` operation.
+    /// Constructs a fluent builder for the [`StopCrawlerSchedule`](crate::client::fluent_builders::StopCrawlerSchedule) operation.
     ///
-    /// See [`StopCrawlerSchedule`](crate::client::fluent_builders::StopCrawlerSchedule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`crawler_name(impl Into<String>)`](crate::client::fluent_builders::StopCrawlerSchedule::crawler_name) / [`set_crawler_name(Option<String>)`](crate::client::fluent_builders::StopCrawlerSchedule::set_crawler_name): <p>Name of the crawler whose schedule state to set.</p>
+    /// - On success, responds with [`StopCrawlerScheduleOutput`](crate::output::StopCrawlerScheduleOutput)
+
+    /// - On failure, responds with [`SdkError<StopCrawlerScheduleError>`](crate::error::StopCrawlerScheduleError)
     pub fn stop_crawler_schedule(&self) -> fluent_builders::StopCrawlerSchedule<C, M, R> {
         fluent_builders::StopCrawlerSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopTrigger` operation.
+    /// Constructs a fluent builder for the [`StopTrigger`](crate::client::fluent_builders::StopTrigger) operation.
     ///
-    /// See [`StopTrigger`](crate::client::fluent_builders::StopTrigger) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StopTrigger::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StopTrigger::set_name): <p>The name of the trigger to stop.</p>
+    /// - On success, responds with [`StopTriggerOutput`](crate::output::StopTriggerOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::StopTriggerOutput::name): <p>The name of the trigger that was stopped.</p>
+    /// - On failure, responds with [`SdkError<StopTriggerError>`](crate::error::StopTriggerError)
     pub fn stop_trigger(&self) -> fluent_builders::StopTrigger<C, M, R> {
         fluent_builders::StopTrigger::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopWorkflowRun` operation.
+    /// Constructs a fluent builder for the [`StopWorkflowRun`](crate::client::fluent_builders::StopWorkflowRun) operation.
     ///
-    /// See [`StopWorkflowRun`](crate::client::fluent_builders::StopWorkflowRun) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::StopWorkflowRun::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::StopWorkflowRun::set_name): <p>The name of the workflow to stop.</p>
+    ///   - [`run_id(impl Into<String>)`](crate::client::fluent_builders::StopWorkflowRun::run_id) / [`set_run_id(Option<String>)`](crate::client::fluent_builders::StopWorkflowRun::set_run_id): <p>The ID of the workflow run to stop.</p>
+    /// - On success, responds with [`StopWorkflowRunOutput`](crate::output::StopWorkflowRunOutput)
+
+    /// - On failure, responds with [`SdkError<StopWorkflowRunError>`](crate::error::StopWorkflowRunError)
     pub fn stop_workflow_run(&self) -> fluent_builders::StopWorkflowRun<C, M, R> {
         fluent_builders::StopWorkflowRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
+    ///   - [`tags_to_add(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags_to_add) / [`set_tags_to_add(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags_to_add): <p>Tags to add to this resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource from which to remove the tags.</p>
+    ///   - [`tags_to_remove(Vec<String>)`](crate::client::fluent_builders::UntagResource::tags_to_remove) / [`set_tags_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tags_to_remove): <p>Tags to remove from this resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateBlueprint` operation.
+    /// Constructs a fluent builder for the [`UpdateBlueprint`](crate::client::fluent_builders::UpdateBlueprint) operation.
     ///
-    /// See [`UpdateBlueprint`](crate::client::fluent_builders::UpdateBlueprint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateBlueprint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateBlueprint::set_name): <p>The name of the blueprint.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateBlueprint::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateBlueprint::set_description): <p>A description of the blueprint.</p>
+    ///   - [`blueprint_location(impl Into<String>)`](crate::client::fluent_builders::UpdateBlueprint::blueprint_location) / [`set_blueprint_location(Option<String>)`](crate::client::fluent_builders::UpdateBlueprint::set_blueprint_location): <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
+    /// - On success, responds with [`UpdateBlueprintOutput`](crate::output::UpdateBlueprintOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::UpdateBlueprintOutput::name): <p>Returns the name of the blueprint that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateBlueprintError>`](crate::error::UpdateBlueprintError)
     pub fn update_blueprint(&self) -> fluent_builders::UpdateBlueprint<C, M, R> {
         fluent_builders::UpdateBlueprint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateClassifier` operation.
+    /// Constructs a fluent builder for the [`UpdateClassifier`](crate::client::fluent_builders::UpdateClassifier) operation.
     ///
-    /// See [`UpdateClassifier`](crate::client::fluent_builders::UpdateClassifier) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`grok_classifier(UpdateGrokClassifierRequest)`](crate::client::fluent_builders::UpdateClassifier::grok_classifier) / [`set_grok_classifier(Option<UpdateGrokClassifierRequest>)`](crate::client::fluent_builders::UpdateClassifier::set_grok_classifier): <p>A <code>GrokClassifier</code> object with updated fields.</p>
+    ///   - [`xml_classifier(UpdateXmlClassifierRequest)`](crate::client::fluent_builders::UpdateClassifier::xml_classifier) / [`set_xml_classifier(Option<UpdateXmlClassifierRequest>)`](crate::client::fluent_builders::UpdateClassifier::set_xml_classifier): <p>An <code>XMLClassifier</code> object with updated fields.</p>
+    ///   - [`json_classifier(UpdateJsonClassifierRequest)`](crate::client::fluent_builders::UpdateClassifier::json_classifier) / [`set_json_classifier(Option<UpdateJsonClassifierRequest>)`](crate::client::fluent_builders::UpdateClassifier::set_json_classifier): <p>A <code>JsonClassifier</code> object with updated fields.</p>
+    ///   - [`csv_classifier(UpdateCsvClassifierRequest)`](crate::client::fluent_builders::UpdateClassifier::csv_classifier) / [`set_csv_classifier(Option<UpdateCsvClassifierRequest>)`](crate::client::fluent_builders::UpdateClassifier::set_csv_classifier): <p>A <code>CsvClassifier</code> object with updated fields.</p>
+    /// - On success, responds with [`UpdateClassifierOutput`](crate::output::UpdateClassifierOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateClassifierError>`](crate::error::UpdateClassifierError)
     pub fn update_classifier(&self) -> fluent_builders::UpdateClassifier<C, M, R> {
         fluent_builders::UpdateClassifier::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateColumnStatisticsForPartition` operation.
+    /// Constructs a fluent builder for the [`UpdateColumnStatisticsForPartition`](crate::client::fluent_builders::UpdateColumnStatisticsForPartition) operation.
     ///
-    /// See [`UpdateColumnStatisticsForPartition`](crate::client::fluent_builders::UpdateColumnStatisticsForPartition) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::UpdateColumnStatisticsForPartition::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::UpdateColumnStatisticsForPartition::set_catalog_id): <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::UpdateColumnStatisticsForPartition::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::UpdateColumnStatisticsForPartition::set_database_name): <p>The name of the catalog database where the partitions reside.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::UpdateColumnStatisticsForPartition::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::UpdateColumnStatisticsForPartition::set_table_name): <p>The name of the partitions' table.</p>
+    ///   - [`partition_values(Vec<String>)`](crate::client::fluent_builders::UpdateColumnStatisticsForPartition::partition_values) / [`set_partition_values(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateColumnStatisticsForPartition::set_partition_values): <p>A list of partition values identifying the partition.</p>
+    ///   - [`column_statistics_list(Vec<ColumnStatistics>)`](crate::client::fluent_builders::UpdateColumnStatisticsForPartition::column_statistics_list) / [`set_column_statistics_list(Option<Vec<ColumnStatistics>>)`](crate::client::fluent_builders::UpdateColumnStatisticsForPartition::set_column_statistics_list): <p>A list of the column statistics.</p>
+    /// - On success, responds with [`UpdateColumnStatisticsForPartitionOutput`](crate::output::UpdateColumnStatisticsForPartitionOutput) with field(s):
+    ///   - [`errors(Option<Vec<ColumnStatisticsError>>)`](crate::output::UpdateColumnStatisticsForPartitionOutput::errors): <p>Error occurred during updating column statistics data.</p>
+    /// - On failure, responds with [`SdkError<UpdateColumnStatisticsForPartitionError>`](crate::error::UpdateColumnStatisticsForPartitionError)
     pub fn update_column_statistics_for_partition(
         &self,
     ) -> fluent_builders::UpdateColumnStatisticsForPartition<C, M, R> {
         fluent_builders::UpdateColumnStatisticsForPartition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateColumnStatisticsForTable` operation.
+    /// Constructs a fluent builder for the [`UpdateColumnStatisticsForTable`](crate::client::fluent_builders::UpdateColumnStatisticsForTable) operation.
     ///
-    /// See [`UpdateColumnStatisticsForTable`](crate::client::fluent_builders::UpdateColumnStatisticsForTable) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::UpdateColumnStatisticsForTable::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::UpdateColumnStatisticsForTable::set_catalog_id): <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::UpdateColumnStatisticsForTable::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::UpdateColumnStatisticsForTable::set_database_name): <p>The name of the catalog database where the partitions reside.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::UpdateColumnStatisticsForTable::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::UpdateColumnStatisticsForTable::set_table_name): <p>The name of the partitions' table.</p>
+    ///   - [`column_statistics_list(Vec<ColumnStatistics>)`](crate::client::fluent_builders::UpdateColumnStatisticsForTable::column_statistics_list) / [`set_column_statistics_list(Option<Vec<ColumnStatistics>>)`](crate::client::fluent_builders::UpdateColumnStatisticsForTable::set_column_statistics_list): <p>A list of the column statistics.</p>
+    /// - On success, responds with [`UpdateColumnStatisticsForTableOutput`](crate::output::UpdateColumnStatisticsForTableOutput) with field(s):
+    ///   - [`errors(Option<Vec<ColumnStatisticsError>>)`](crate::output::UpdateColumnStatisticsForTableOutput::errors): <p>List of ColumnStatisticsErrors.</p>
+    /// - On failure, responds with [`SdkError<UpdateColumnStatisticsForTableError>`](crate::error::UpdateColumnStatisticsForTableError)
     pub fn update_column_statistics_for_table(
         &self,
     ) -> fluent_builders::UpdateColumnStatisticsForTable<C, M, R> {
         fluent_builders::UpdateColumnStatisticsForTable::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateConnection` operation.
+    /// Constructs a fluent builder for the [`UpdateConnection`](crate::client::fluent_builders::UpdateConnection) operation.
     ///
-    /// See [`UpdateConnection`](crate::client::fluent_builders::UpdateConnection) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::UpdateConnection::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::UpdateConnection::set_catalog_id): <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateConnection::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateConnection::set_name): <p>The name of the connection definition to update.</p>
+    ///   - [`connection_input(ConnectionInput)`](crate::client::fluent_builders::UpdateConnection::connection_input) / [`set_connection_input(Option<ConnectionInput>)`](crate::client::fluent_builders::UpdateConnection::set_connection_input): <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
+    /// - On success, responds with [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateConnectionError>`](crate::error::UpdateConnectionError)
     pub fn update_connection(&self) -> fluent_builders::UpdateConnection<C, M, R> {
         fluent_builders::UpdateConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCrawler` operation.
+    /// Constructs a fluent builder for the [`UpdateCrawler`](crate::client::fluent_builders::UpdateCrawler) operation.
     ///
-    /// See [`UpdateCrawler`](crate::client::fluent_builders::UpdateCrawler) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_name): <p>Name of the new crawler.</p>
+    ///   - [`role(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::role) / [`set_role(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_role): <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer resources.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_database_name): <p>The Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_description): <p>A description of the new crawler.</p>
+    ///   - [`targets(CrawlerTargets)`](crate::client::fluent_builders::UpdateCrawler::targets) / [`set_targets(Option<CrawlerTargets>)`](crate::client::fluent_builders::UpdateCrawler::set_targets): <p>A list of targets to crawl.</p>
+    ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_schedule): <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+    ///   - [`classifiers(Vec<String>)`](crate::client::fluent_builders::UpdateCrawler::classifiers) / [`set_classifiers(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateCrawler::set_classifiers): <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
+    ///   - [`table_prefix(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::table_prefix) / [`set_table_prefix(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_table_prefix): <p>The table prefix used for catalog tables that are created.</p>
+    ///   - [`schema_change_policy(SchemaChangePolicy)`](crate::client::fluent_builders::UpdateCrawler::schema_change_policy) / [`set_schema_change_policy(Option<SchemaChangePolicy>)`](crate::client::fluent_builders::UpdateCrawler::set_schema_change_policy): <p>The policy for the crawler's update and deletion behavior.</p>
+    ///   - [`recrawl_policy(RecrawlPolicy)`](crate::client::fluent_builders::UpdateCrawler::recrawl_policy) / [`set_recrawl_policy(Option<RecrawlPolicy>)`](crate::client::fluent_builders::UpdateCrawler::set_recrawl_policy): <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
+    ///   - [`lineage_configuration(LineageConfiguration)`](crate::client::fluent_builders::UpdateCrawler::lineage_configuration) / [`set_lineage_configuration(Option<LineageConfiguration>)`](crate::client::fluent_builders::UpdateCrawler::set_lineage_configuration): <p>Specifies data lineage configuration settings for the crawler.</p>
+    ///   - [`lake_formation_configuration(LakeFormationConfiguration)`](crate::client::fluent_builders::UpdateCrawler::lake_formation_configuration) / [`set_lake_formation_configuration(Option<LakeFormationConfiguration>)`](crate::client::fluent_builders::UpdateCrawler::set_lake_formation_configuration): (undocumented)
+    ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_configuration): <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+    ///   - [`crawler_security_configuration(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawler::crawler_security_configuration) / [`set_crawler_security_configuration(Option<String>)`](crate::client::fluent_builders::UpdateCrawler::set_crawler_security_configuration): <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
+    /// - On success, responds with [`UpdateCrawlerOutput`](crate::output::UpdateCrawlerOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateCrawlerError>`](crate::error::UpdateCrawlerError)
     pub fn update_crawler(&self) -> fluent_builders::UpdateCrawler<C, M, R> {
         fluent_builders::UpdateCrawler::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCrawlerSchedule` operation.
+    /// Constructs a fluent builder for the [`UpdateCrawlerSchedule`](crate::client::fluent_builders::UpdateCrawlerSchedule) operation.
     ///
-    /// See [`UpdateCrawlerSchedule`](crate::client::fluent_builders::UpdateCrawlerSchedule) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`crawler_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawlerSchedule::crawler_name) / [`set_crawler_name(Option<String>)`](crate::client::fluent_builders::UpdateCrawlerSchedule::set_crawler_name): <p>The name of the crawler whose schedule to update.</p>
+    ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::UpdateCrawlerSchedule::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::UpdateCrawlerSchedule::set_schedule): <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+    /// - On success, responds with [`UpdateCrawlerScheduleOutput`](crate::output::UpdateCrawlerScheduleOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateCrawlerScheduleError>`](crate::error::UpdateCrawlerScheduleError)
     pub fn update_crawler_schedule(&self) -> fluent_builders::UpdateCrawlerSchedule<C, M, R> {
         fluent_builders::UpdateCrawlerSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDatabase` operation.
+    /// Constructs a fluent builder for the [`UpdateDatabase`](crate::client::fluent_builders::UpdateDatabase) operation.
     ///
-    /// See [`UpdateDatabase`](crate::client::fluent_builders::UpdateDatabase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDatabase::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::UpdateDatabase::set_catalog_id): <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDatabase::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDatabase::set_name): <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
+    ///   - [`database_input(DatabaseInput)`](crate::client::fluent_builders::UpdateDatabase::database_input) / [`set_database_input(Option<DatabaseInput>)`](crate::client::fluent_builders::UpdateDatabase::set_database_input): <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
+    /// - On success, responds with [`UpdateDatabaseOutput`](crate::output::UpdateDatabaseOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDatabaseError>`](crate::error::UpdateDatabaseError)
     pub fn update_database(&self) -> fluent_builders::UpdateDatabase<C, M, R> {
         fluent_builders::UpdateDatabase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDevEndpoint` operation.
+    /// Constructs a fluent builder for the [`UpdateDevEndpoint`](crate::client::fluent_builders::UpdateDevEndpoint) operation.
     ///
-    /// See [`UpdateDevEndpoint`](crate::client::fluent_builders::UpdateDevEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`endpoint_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDevEndpoint::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::client::fluent_builders::UpdateDevEndpoint::set_endpoint_name): <p>The name of the <code>DevEndpoint</code> to be updated.</p>
+    ///   - [`public_key(impl Into<String>)`](crate::client::fluent_builders::UpdateDevEndpoint::public_key) / [`set_public_key(Option<String>)`](crate::client::fluent_builders::UpdateDevEndpoint::set_public_key): <p>The public key for the <code>DevEndpoint</code> to use.</p>
+    ///   - [`add_public_keys(Vec<String>)`](crate::client::fluent_builders::UpdateDevEndpoint::add_public_keys) / [`set_add_public_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateDevEndpoint::set_add_public_keys): <p>The list of public keys for the <code>DevEndpoint</code> to use.</p>
+    ///   - [`delete_public_keys(Vec<String>)`](crate::client::fluent_builders::UpdateDevEndpoint::delete_public_keys) / [`set_delete_public_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateDevEndpoint::set_delete_public_keys): <p>The list of public keys to be deleted from the <code>DevEndpoint</code>.</p>
+    ///   - [`custom_libraries(DevEndpointCustomLibraries)`](crate::client::fluent_builders::UpdateDevEndpoint::custom_libraries) / [`set_custom_libraries(Option<DevEndpointCustomLibraries>)`](crate::client::fluent_builders::UpdateDevEndpoint::set_custom_libraries): <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
+    ///   - [`update_etl_libraries(bool)`](crate::client::fluent_builders::UpdateDevEndpoint::update_etl_libraries) / [`set_update_etl_libraries(bool)`](crate::client::fluent_builders::UpdateDevEndpoint::set_update_etl_libraries): <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
+    ///   - [`delete_arguments(Vec<String>)`](crate::client::fluent_builders::UpdateDevEndpoint::delete_arguments) / [`set_delete_arguments(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateDevEndpoint::set_delete_arguments): <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
+    ///   - [`add_arguments(HashMap<String, String>)`](crate::client::fluent_builders::UpdateDevEndpoint::add_arguments) / [`set_add_arguments(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateDevEndpoint::set_add_arguments): <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>  <p>Valid arguments are:</p>  <ul>   <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>  </ul>  <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    /// - On success, responds with [`UpdateDevEndpointOutput`](crate::output::UpdateDevEndpointOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDevEndpointError>`](crate::error::UpdateDevEndpointError)
     pub fn update_dev_endpoint(&self) -> fluent_builders::UpdateDevEndpoint<C, M, R> {
         fluent_builders::UpdateDevEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateJob` operation.
+    /// Constructs a fluent builder for the [`UpdateJob`](crate::client::fluent_builders::UpdateJob) operation.
     ///
-    /// See [`UpdateJob`](crate::client::fluent_builders::UpdateJob) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::UpdateJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::UpdateJob::set_job_name): <p>The name of the job definition to update.</p>
+    ///   - [`job_update(JobUpdate)`](crate::client::fluent_builders::UpdateJob::job_update) / [`set_job_update(Option<JobUpdate>)`](crate::client::fluent_builders::UpdateJob::set_job_update): <p>Specifies the values with which to update the job definition.</p>
+    /// - On success, responds with [`UpdateJobOutput`](crate::output::UpdateJobOutput) with field(s):
+    ///   - [`job_name(Option<String>)`](crate::output::UpdateJobOutput::job_name): <p>Returns the name of the updated job definition.</p>
+    /// - On failure, responds with [`SdkError<UpdateJobError>`](crate::error::UpdateJobError)
     pub fn update_job(&self) -> fluent_builders::UpdateJob<C, M, R> {
         fluent_builders::UpdateJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMLTransform` operation.
+    /// Constructs a fluent builder for the [`UpdateMLTransform`](crate::client::fluent_builders::UpdateMLTransform) operation.
     ///
-    /// See [`UpdateMLTransform`](crate::client::fluent_builders::UpdateMLTransform) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`transform_id(impl Into<String>)`](crate::client::fluent_builders::UpdateMLTransform::transform_id) / [`set_transform_id(Option<String>)`](crate::client::fluent_builders::UpdateMLTransform::set_transform_id): <p>A unique identifier that was generated when the transform was created.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateMLTransform::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateMLTransform::set_name): <p>The unique name that you gave the transform when you created it.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateMLTransform::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateMLTransform::set_description): <p>A description of the transform. The default is an empty string.</p>
+    ///   - [`parameters(TransformParameters)`](crate::client::fluent_builders::UpdateMLTransform::parameters) / [`set_parameters(Option<TransformParameters>)`](crate::client::fluent_builders::UpdateMLTransform::set_parameters): <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
+    ///   - [`role(impl Into<String>)`](crate::client::fluent_builders::UpdateMLTransform::role) / [`set_role(Option<String>)`](crate::client::fluent_builders::UpdateMLTransform::set_role): <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
+    ///   - [`glue_version(impl Into<String>)`](crate::client::fluent_builders::UpdateMLTransform::glue_version) / [`set_glue_version(Option<String>)`](crate::client::fluent_builders::UpdateMLTransform::set_glue_version): <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    ///   - [`max_capacity(f64)`](crate::client::fluent_builders::UpdateMLTransform::max_capacity) / [`set_max_capacity(Option<f64>)`](crate::client::fluent_builders::UpdateMLTransform::set_max_capacity): <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>  <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+    ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::UpdateMLTransform::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::UpdateMLTransform::set_worker_type): <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>  </ul>
+    ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::UpdateMLTransform::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::UpdateMLTransform::set_number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
+    ///   - [`timeout(i32)`](crate::client::fluent_builders::UpdateMLTransform::timeout) / [`set_timeout(Option<i32>)`](crate::client::fluent_builders::UpdateMLTransform::set_timeout): <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    ///   - [`max_retries(i32)`](crate::client::fluent_builders::UpdateMLTransform::max_retries) / [`set_max_retries(Option<i32>)`](crate::client::fluent_builders::UpdateMLTransform::set_max_retries): <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
+    /// - On success, responds with [`UpdateMlTransformOutput`](crate::output::UpdateMlTransformOutput) with field(s):
+    ///   - [`transform_id(Option<String>)`](crate::output::UpdateMlTransformOutput::transform_id): <p>The unique identifier for the transform that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateMLTransformError>`](crate::error::UpdateMLTransformError)
     pub fn update_ml_transform(&self) -> fluent_builders::UpdateMLTransform<C, M, R> {
         fluent_builders::UpdateMLTransform::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePartition` operation.
+    /// Constructs a fluent builder for the [`UpdatePartition`](crate::client::fluent_builders::UpdatePartition) operation.
     ///
-    /// See [`UpdatePartition`](crate::client::fluent_builders::UpdatePartition) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePartition::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::UpdatePartition::set_catalog_id): <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePartition::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::UpdatePartition::set_database_name): <p>The name of the catalog database in which the table in question resides.</p>
+    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePartition::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::UpdatePartition::set_table_name): <p>The name of the table in which the partition to be updated is located.</p>
+    ///   - [`partition_value_list(Vec<String>)`](crate::client::fluent_builders::UpdatePartition::partition_value_list) / [`set_partition_value_list(Option<Vec<String>>)`](crate::client::fluent_builders::UpdatePartition::set_partition_value_list): <p>List of partition key values that define the partition to update.</p>
+    ///   - [`partition_input(PartitionInput)`](crate::client::fluent_builders::UpdatePartition::partition_input) / [`set_partition_input(Option<PartitionInput>)`](crate::client::fluent_builders::UpdatePartition::set_partition_input): <p>The new partition object to update the partition to.</p>  <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
+    /// - On success, responds with [`UpdatePartitionOutput`](crate::output::UpdatePartitionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdatePartitionError>`](crate::error::UpdatePartitionError)
     pub fn update_partition(&self) -> fluent_builders::UpdatePartition<C, M, R> {
         fluent_builders::UpdatePartition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRegistry` operation.
+    /// Constructs a fluent builder for the [`UpdateRegistry`](crate::client::fluent_builders::UpdateRegistry) operation.
     ///
-    /// See [`UpdateRegistry`](crate::client::fluent_builders::UpdateRegistry) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`registry_id(RegistryId)`](crate::client::fluent_builders::UpdateRegistry::registry_id) / [`set_registry_id(Option<RegistryId>)`](crate::client::fluent_builders::UpdateRegistry::set_registry_id): <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRegistry::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRegistry::set_description): <p>A description of the registry. If description is not provided, this field will not be updated.</p>
+    /// - On success, responds with [`UpdateRegistryOutput`](crate::output::UpdateRegistryOutput) with field(s):
+    ///   - [`registry_name(Option<String>)`](crate::output::UpdateRegistryOutput::registry_name): <p>The name of the updated registry.</p>
+    ///   - [`registry_arn(Option<String>)`](crate::output::UpdateRegistryOutput::registry_arn): <p>The Amazon Resource name (ARN) of the updated registry.</p>
+    /// - On failure, responds with [`SdkError<UpdateRegistryError>`](crate::error::UpdateRegistryError)
     pub fn update_registry(&self) -> fluent_builders::UpdateRegistry<C, M, R> {
         fluent_builders::UpdateRegistry::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSchema` operation.
+    /// Constructs a fluent builder for the [`UpdateSchema`](crate::client::fluent_builders::UpdateSchema) operation.
     ///
-    /// See [`UpdateSchema`](crate::client::fluent_builders::UpdateSchema) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`schema_id(SchemaId)`](crate::client::fluent_builders::UpdateSchema::schema_id) / [`set_schema_id(Option<SchemaId>)`](crate::client::fluent_builders::UpdateSchema::set_schema_id): <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>  <ul>   <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>   <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>  </ul>
+    ///   - [`schema_version_number(SchemaVersionNumber)`](crate::client::fluent_builders::UpdateSchema::schema_version_number) / [`set_schema_version_number(Option<SchemaVersionNumber>)`](crate::client::fluent_builders::UpdateSchema::set_schema_version_number): <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
+    ///   - [`compatibility(Compatibility)`](crate::client::fluent_builders::UpdateSchema::compatibility) / [`set_compatibility(Option<Compatibility>)`](crate::client::fluent_builders::UpdateSchema::set_compatibility): <p>The new compatibility setting for the schema.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSchema::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSchema::set_description): <p>The new description for the schema.</p>
+    /// - On success, responds with [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput) with field(s):
+    ///   - [`schema_arn(Option<String>)`](crate::output::UpdateSchemaOutput::schema_arn): <p>The Amazon Resource Name (ARN) of the schema.</p>
+    ///   - [`schema_name(Option<String>)`](crate::output::UpdateSchemaOutput::schema_name): <p>The name of the schema.</p>
+    ///   - [`registry_name(Option<String>)`](crate::output::UpdateSchemaOutput::registry_name): <p>The name of the registry that contains the schema.</p>
+    /// - On failure, responds with [`SdkError<UpdateSchemaError>`](crate::error::UpdateSchemaError)
     pub fn update_schema(&self) -> fluent_builders::UpdateSchema<C, M, R> {
         fluent_builders::UpdateSchema::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateTable` operation.
+    /// Constructs a fluent builder for the [`UpdateTable`](crate::client::fluent_builders::UpdateTable) operation.
     ///
-    /// See [`UpdateTable`](crate::client::fluent_builders::UpdateTable) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTable::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::UpdateTable::set_catalog_id): <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTable::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::UpdateTable::set_database_name): <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    ///   - [`table_input(TableInput)`](crate::client::fluent_builders::UpdateTable::table_input) / [`set_table_input(Option<TableInput>)`](crate::client::fluent_builders::UpdateTable::set_table_input): <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
+    ///   - [`skip_archive(bool)`](crate::client::fluent_builders::UpdateTable::skip_archive) / [`set_skip_archive(Option<bool>)`](crate::client::fluent_builders::UpdateTable::set_skip_archive): <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
+    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTable::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::UpdateTable::set_transaction_id): <p>The transaction ID at which to update the table contents. </p>
+    /// - On success, responds with [`UpdateTableOutput`](crate::output::UpdateTableOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateTableError>`](crate::error::UpdateTableError)
     pub fn update_table(&self) -> fluent_builders::UpdateTable<C, M, R> {
         fluent_builders::UpdateTable::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateTrigger` operation.
+    /// Constructs a fluent builder for the [`UpdateTrigger`](crate::client::fluent_builders::UpdateTrigger) operation.
     ///
-    /// See [`UpdateTrigger`](crate::client::fluent_builders::UpdateTrigger) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateTrigger::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateTrigger::set_name): <p>The name of the trigger to update.</p>
+    ///   - [`trigger_update(TriggerUpdate)`](crate::client::fluent_builders::UpdateTrigger::trigger_update) / [`set_trigger_update(Option<TriggerUpdate>)`](crate::client::fluent_builders::UpdateTrigger::set_trigger_update): <p>The new values with which to update the trigger.</p>
+    /// - On success, responds with [`UpdateTriggerOutput`](crate::output::UpdateTriggerOutput) with field(s):
+    ///   - [`trigger(Option<Trigger>)`](crate::output::UpdateTriggerOutput::trigger): <p>The resulting trigger definition.</p>
+    /// - On failure, responds with [`SdkError<UpdateTriggerError>`](crate::error::UpdateTriggerError)
     pub fn update_trigger(&self) -> fluent_builders::UpdateTrigger<C, M, R> {
         fluent_builders::UpdateTrigger::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserDefinedFunction` operation.
+    /// Constructs a fluent builder for the [`UpdateUserDefinedFunction`](crate::client::fluent_builders::UpdateUserDefinedFunction) operation.
     ///
-    /// See [`UpdateUserDefinedFunction`](crate::client::fluent_builders::UpdateUserDefinedFunction) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`catalog_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserDefinedFunction::catalog_id) / [`set_catalog_id(Option<String>)`](crate::client::fluent_builders::UpdateUserDefinedFunction::set_catalog_id): <p>The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::UpdateUserDefinedFunction::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::UpdateUserDefinedFunction::set_database_name): <p>The name of the catalog database where the function to be updated is located.</p>
+    ///   - [`function_name(impl Into<String>)`](crate::client::fluent_builders::UpdateUserDefinedFunction::function_name) / [`set_function_name(Option<String>)`](crate::client::fluent_builders::UpdateUserDefinedFunction::set_function_name): <p>The name of the function.</p>
+    ///   - [`function_input(UserDefinedFunctionInput)`](crate::client::fluent_builders::UpdateUserDefinedFunction::function_input) / [`set_function_input(Option<UserDefinedFunctionInput>)`](crate::client::fluent_builders::UpdateUserDefinedFunction::set_function_input): <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
+    /// - On success, responds with [`UpdateUserDefinedFunctionOutput`](crate::output::UpdateUserDefinedFunctionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateUserDefinedFunctionError>`](crate::error::UpdateUserDefinedFunctionError)
     pub fn update_user_defined_function(
         &self,
     ) -> fluent_builders::UpdateUserDefinedFunction<C, M, R> {
         fluent_builders::UpdateUserDefinedFunction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateWorkflow` operation.
+    /// Constructs a fluent builder for the [`UpdateWorkflow`](crate::client::fluent_builders::UpdateWorkflow) operation.
     ///
-    /// See [`UpdateWorkflow`](crate::client::fluent_builders::UpdateWorkflow) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkflow::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateWorkflow::set_name): <p>Name of the workflow to be updated.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkflow::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateWorkflow::set_description): <p>The description of the workflow.</p>
+    ///   - [`default_run_properties(HashMap<String, String>)`](crate::client::fluent_builders::UpdateWorkflow::default_run_properties) / [`set_default_run_properties(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateWorkflow::set_default_run_properties): <p>A collection of properties to be used as part of each execution of the workflow.</p>
+    ///   - [`max_concurrent_runs(i32)`](crate::client::fluent_builders::UpdateWorkflow::max_concurrent_runs) / [`set_max_concurrent_runs(Option<i32>)`](crate::client::fluent_builders::UpdateWorkflow::set_max_concurrent_runs): <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
+    /// - On success, responds with [`UpdateWorkflowOutput`](crate::output::UpdateWorkflowOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::UpdateWorkflowOutput::name): <p>The name of the workflow which was specified in input.</p>
+    /// - On failure, responds with [`SdkError<UpdateWorkflowError>`](crate::error::UpdateWorkflowError)
     pub fn update_workflow(&self) -> fluent_builders::UpdateWorkflow<C, M, R> {
         fluent_builders::UpdateWorkflow::new(self.handle.clone())
     }
@@ -16544,6 +17631,29 @@ pub mod fluent_builders {
         /// <p>The name of the workflow to start.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
+            self
+        }
+        /// Adds a key-value pair to `RunProperties`.
+        ///
+        /// To override the contents of this collection use [`set_run_properties`](Self::set_run_properties).
+        ///
+        /// <p>The workflow run properties for the new workflow run.</p>
+        pub fn run_properties(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.run_properties(k.into(), v.into());
+            self
+        }
+        /// <p>The workflow run properties for the new workflow run.</p>
+        pub fn set_run_properties(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_run_properties(input);
             self
         }
     }

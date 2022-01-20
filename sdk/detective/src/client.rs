@@ -83,155 +83,236 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptInvitation` operation.
+    /// Constructs a fluent builder for the [`AcceptInvitation`](crate::client::fluent_builders::AcceptInvitation) operation.
     ///
-    /// See [`AcceptInvitation`](crate::client::fluent_builders::AcceptInvitation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arn(impl Into<String>)`](crate::client::fluent_builders::AcceptInvitation::graph_arn) / [`set_graph_arn(Option<String>)`](crate::client::fluent_builders::AcceptInvitation::set_graph_arn): <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>  <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
+    /// - On success, responds with [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput)
+
+    /// - On failure, responds with [`SdkError<AcceptInvitationError>`](crate::error::AcceptInvitationError)
     pub fn accept_invitation(&self) -> fluent_builders::AcceptInvitation<C, M, R> {
         fluent_builders::AcceptInvitation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGraph` operation.
+    /// Constructs a fluent builder for the [`CreateGraph`](crate::client::fluent_builders::CreateGraph) operation.
     ///
-    /// See [`CreateGraph`](crate::client::fluent_builders::CreateGraph) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateGraph::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateGraph::set_tags): <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
+    /// - On success, responds with [`CreateGraphOutput`](crate::output::CreateGraphOutput) with field(s):
+    ///   - [`graph_arn(Option<String>)`](crate::output::CreateGraphOutput::graph_arn): <p>The ARN of the new behavior graph.</p>
+    /// - On failure, responds with [`SdkError<CreateGraphError>`](crate::error::CreateGraphError)
     pub fn create_graph(&self) -> fluent_builders::CreateGraph<C, M, R> {
         fluent_builders::CreateGraph::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMembers` operation.
+    /// Constructs a fluent builder for the [`CreateMembers`](crate::client::fluent_builders::CreateMembers) operation.
     ///
-    /// See [`CreateMembers`](crate::client::fluent_builders::CreateMembers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arn(impl Into<String>)`](crate::client::fluent_builders::CreateMembers::graph_arn) / [`set_graph_arn(Option<String>)`](crate::client::fluent_builders::CreateMembers::set_graph_arn): <p>The ARN of the behavior graph.</p>
+    ///   - [`message(impl Into<String>)`](crate::client::fluent_builders::CreateMembers::message) / [`set_message(Option<String>)`](crate::client::fluent_builders::CreateMembers::set_message): <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
+    ///   - [`disable_email_notification(bool)`](crate::client::fluent_builders::CreateMembers::disable_email_notification) / [`set_disable_email_notification(bool)`](crate::client::fluent_builders::CreateMembers::set_disable_email_notification): <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>  <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
+    ///   - [`accounts(Vec<Account>)`](crate::client::fluent_builders::CreateMembers::accounts) / [`set_accounts(Option<Vec<Account>>)`](crate::client::fluent_builders::CreateMembers::set_accounts): <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
+    /// - On success, responds with [`CreateMembersOutput`](crate::output::CreateMembersOutput) with field(s):
+    ///   - [`members(Option<Vec<MemberDetail>>)`](crate::output::CreateMembersOutput::members): <p>The set of member account invitation or enablement requests that Detective was able to process. This includes accounts that are being verified, that failed verification, and that passed verification and are being sent an invitation or are being enabled.</p>
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::CreateMembersOutput::unprocessed_accounts): <p>The list of accounts for which Detective was unable to process the invitation or enablement request. For each account, the list provides the reason why the request could not be processed. The list includes accounts that are already member accounts in the behavior graph.</p>
+    /// - On failure, responds with [`SdkError<CreateMembersError>`](crate::error::CreateMembersError)
     pub fn create_members(&self) -> fluent_builders::CreateMembers<C, M, R> {
         fluent_builders::CreateMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGraph` operation.
+    /// Constructs a fluent builder for the [`DeleteGraph`](crate::client::fluent_builders::DeleteGraph) operation.
     ///
-    /// See [`DeleteGraph`](crate::client::fluent_builders::DeleteGraph) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteGraph::graph_arn) / [`set_graph_arn(Option<String>)`](crate::client::fluent_builders::DeleteGraph::set_graph_arn): <p>The ARN of the behavior graph to disable.</p>
+    /// - On success, responds with [`DeleteGraphOutput`](crate::output::DeleteGraphOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteGraphError>`](crate::error::DeleteGraphError)
     pub fn delete_graph(&self) -> fluent_builders::DeleteGraph<C, M, R> {
         fluent_builders::DeleteGraph::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMembers` operation.
+    /// Constructs a fluent builder for the [`DeleteMembers`](crate::client::fluent_builders::DeleteMembers) operation.
     ///
-    /// See [`DeleteMembers`](crate::client::fluent_builders::DeleteMembers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteMembers::graph_arn) / [`set_graph_arn(Option<String>)`](crate::client::fluent_builders::DeleteMembers::set_graph_arn): <p>The ARN of the behavior graph to remove members from.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DeleteMembers::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteMembers::set_account_ids): <p>The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.</p>
+    /// - On success, responds with [`DeleteMembersOutput`](crate::output::DeleteMembersOutput) with field(s):
+    ///   - [`account_ids(Option<Vec<String>>)`](crate::output::DeleteMembersOutput::account_ids): <p>The list of Amazon Web Services account identifiers for the member accounts that Detective successfully removed from the behavior graph.</p>
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::DeleteMembersOutput::unprocessed_accounts): <p>The list of member accounts that Detective was not able to remove from the behavior graph. For each member account, provides the reason that the deletion could not be processed.</p>
+    /// - On failure, responds with [`SdkError<DeleteMembersError>`](crate::error::DeleteMembersError)
     pub fn delete_members(&self) -> fluent_builders::DeleteMembers<C, M, R> {
         fluent_builders::DeleteMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOrganizationConfiguration` operation.
+    /// Constructs a fluent builder for the [`DescribeOrganizationConfiguration`](crate::client::fluent_builders::DescribeOrganizationConfiguration) operation.
     ///
-    /// See [`DescribeOrganizationConfiguration`](crate::client::fluent_builders::DescribeOrganizationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeOrganizationConfiguration::graph_arn) / [`set_graph_arn(Option<String>)`](crate::client::fluent_builders::DescribeOrganizationConfiguration::set_graph_arn): <p>The ARN of the organization behavior graph.</p>
+    /// - On success, responds with [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput) with field(s):
+    ///   - [`auto_enable(bool)`](crate::output::DescribeOrganizationConfigurationOutput::auto_enable): <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
+    /// - On failure, responds with [`SdkError<DescribeOrganizationConfigurationError>`](crate::error::DescribeOrganizationConfigurationError)
     pub fn describe_organization_configuration(
         &self,
     ) -> fluent_builders::DescribeOrganizationConfiguration<C, M, R> {
         fluent_builders::DescribeOrganizationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableOrganizationAdminAccount` operation.
+    /// Constructs a fluent builder for the [`DisableOrganizationAdminAccount`](crate::client::fluent_builders::DisableOrganizationAdminAccount) operation.
     ///
-    /// See [`DisableOrganizationAdminAccount`](crate::client::fluent_builders::DisableOrganizationAdminAccount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DisableOrganizationAdminAccount::send) it.
+
+    /// - On success, responds with [`DisableOrganizationAdminAccountOutput`](crate::output::DisableOrganizationAdminAccountOutput)
+
+    /// - On failure, responds with [`SdkError<DisableOrganizationAdminAccountError>`](crate::error::DisableOrganizationAdminAccountError)
     pub fn disable_organization_admin_account(
         &self,
     ) -> fluent_builders::DisableOrganizationAdminAccount<C, M, R> {
         fluent_builders::DisableOrganizationAdminAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateMembership` operation.
+    /// Constructs a fluent builder for the [`DisassociateMembership`](crate::client::fluent_builders::DisassociateMembership) operation.
     ///
-    /// See [`DisassociateMembership`](crate::client::fluent_builders::DisassociateMembership) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateMembership::graph_arn) / [`set_graph_arn(Option<String>)`](crate::client::fluent_builders::DisassociateMembership::set_graph_arn): <p>The ARN of the behavior graph to remove the member account from.</p>  <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
+    /// - On success, responds with [`DisassociateMembershipOutput`](crate::output::DisassociateMembershipOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateMembershipError>`](crate::error::DisassociateMembershipError)
     pub fn disassociate_membership(&self) -> fluent_builders::DisassociateMembership<C, M, R> {
         fluent_builders::DisassociateMembership::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableOrganizationAdminAccount` operation.
+    /// Constructs a fluent builder for the [`EnableOrganizationAdminAccount`](crate::client::fluent_builders::EnableOrganizationAdminAccount) operation.
     ///
-    /// See [`EnableOrganizationAdminAccount`](crate::client::fluent_builders::EnableOrganizationAdminAccount) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::EnableOrganizationAdminAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::EnableOrganizationAdminAccount::set_account_id): <p>The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.</p>
+    /// - On success, responds with [`EnableOrganizationAdminAccountOutput`](crate::output::EnableOrganizationAdminAccountOutput)
+
+    /// - On failure, responds with [`SdkError<EnableOrganizationAdminAccountError>`](crate::error::EnableOrganizationAdminAccountError)
     pub fn enable_organization_admin_account(
         &self,
     ) -> fluent_builders::EnableOrganizationAdminAccount<C, M, R> {
         fluent_builders::EnableOrganizationAdminAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMembers` operation.
+    /// Constructs a fluent builder for the [`GetMembers`](crate::client::fluent_builders::GetMembers) operation.
     ///
-    /// See [`GetMembers`](crate::client::fluent_builders::GetMembers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arn(impl Into<String>)`](crate::client::fluent_builders::GetMembers::graph_arn) / [`set_graph_arn(Option<String>)`](crate::client::fluent_builders::GetMembers::set_graph_arn): <p>The ARN of the behavior graph for which to request the member details.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::GetMembers::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetMembers::set_account_ids): <p>The list of Amazon Web Services account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>  <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
+    /// - On success, responds with [`GetMembersOutput`](crate::output::GetMembersOutput) with field(s):
+    ///   - [`member_details(Option<Vec<MemberDetail>>)`](crate::output::GetMembersOutput::member_details): <p>The member account details that Detective is returning in response to the request.</p>
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::GetMembersOutput::unprocessed_accounts): <p>The requested member accounts for which Detective was unable to return member details.</p>  <p>For each account, provides the reason why the request could not be processed.</p>
+    /// - On failure, responds with [`SdkError<GetMembersError>`](crate::error::GetMembersError)
     pub fn get_members(&self) -> fluent_builders::GetMembers<C, M, R> {
         fluent_builders::GetMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGraphs` operation.
+    /// Constructs a fluent builder for the [`ListGraphs`](crate::client::fluent_builders::ListGraphs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGraphs::into_paginator).
     ///
-    /// See [`ListGraphs`](crate::client::fluent_builders::ListGraphs) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGraphs::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGraphs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGraphs::set_next_token): <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGraphs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGraphs::set_max_results): <p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
+    /// - On success, responds with [`ListGraphsOutput`](crate::output::ListGraphsOutput) with field(s):
+    ///   - [`graph_list(Option<Vec<Graph>>)`](crate::output::ListGraphsOutput::graph_list): <p>A list of behavior graphs that the account is an administrator account for.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGraphsOutput::next_token): <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
+    /// - On failure, responds with [`SdkError<ListGraphsError>`](crate::error::ListGraphsError)
     pub fn list_graphs(&self) -> fluent_builders::ListGraphs<C, M, R> {
         fluent_builders::ListGraphs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInvitations` operation.
+    /// Constructs a fluent builder for the [`ListInvitations`](crate::client::fluent_builders::ListInvitations) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
     ///
-    /// See [`ListInvitations`](crate::client::fluent_builders::ListInvitations) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInvitations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInvitations::set_next_token): <p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInvitations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInvitations::set_max_results): <p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
+    /// - On success, responds with [`ListInvitationsOutput`](crate::output::ListInvitationsOutput) with field(s):
+    ///   - [`invitations(Option<Vec<MemberDetail>>)`](crate::output::ListInvitationsOutput::invitations): <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInvitationsOutput::next_token): <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
+    /// - On failure, responds with [`SdkError<ListInvitationsError>`](crate::error::ListInvitationsError)
     pub fn list_invitations(&self) -> fluent_builders::ListInvitations<C, M, R> {
         fluent_builders::ListInvitations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMembers` operation.
+    /// Constructs a fluent builder for the [`ListMembers`](crate::client::fluent_builders::ListMembers) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
     ///
-    /// See [`ListMembers`](crate::client::fluent_builders::ListMembers) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arn(impl Into<String>)`](crate::client::fluent_builders::ListMembers::graph_arn) / [`set_graph_arn(Option<String>)`](crate::client::fluent_builders::ListMembers::set_graph_arn): <p>The ARN of the behavior graph for which to retrieve the list of member accounts.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMembers::set_next_token): <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMembers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMembers::set_max_results): <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
+    /// - On success, responds with [`ListMembersOutput`](crate::output::ListMembersOutput) with field(s):
+    ///   - [`member_details(Option<Vec<MemberDetail>>)`](crate::output::ListMembersOutput::member_details): <p>The list of member accounts in the behavior graph.</p>  <p>For invited accounts, the results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.</p>  <p>For the organization behavior graph, the results do not include organization accounts that the Detective administrator account has not enabled as member accounts.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMembersOutput::next_token): <p>If there are more member accounts remaining in the results, then use this pagination token to request the next page of member accounts.</p>
+    /// - On failure, responds with [`SdkError<ListMembersError>`](crate::error::ListMembersError)
     pub fn list_members(&self) -> fluent_builders::ListMembers<C, M, R> {
         fluent_builders::ListMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOrganizationAdminAccounts` operation.
+    /// Constructs a fluent builder for the [`ListOrganizationAdminAccounts`](crate::client::fluent_builders::ListOrganizationAdminAccounts) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationAdminAccounts::into_paginator).
     ///
-    /// See [`ListOrganizationAdminAccounts`](crate::client::fluent_builders::ListOrganizationAdminAccounts) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationAdminAccounts::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::set_next_token): <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::set_max_results): <p>The maximum number of results to return.</p>
+    /// - On success, responds with [`ListOrganizationAdminAccountsOutput`](crate::output::ListOrganizationAdminAccountsOutput) with field(s):
+    ///   - [`administrators(Option<Vec<Administrator>>)`](crate::output::ListOrganizationAdminAccountsOutput::administrators): <p>The list of delegated administrator accounts.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListOrganizationAdminAccountsOutput::next_token): <p>If there are more accounts remaining in the results, then this is the pagination token to use to request the next page of accounts.</p>
+    /// - On failure, responds with [`SdkError<ListOrganizationAdminAccountsError>`](crate::error::ListOrganizationAdminAccountsError)
     pub fn list_organization_admin_accounts(
         &self,
     ) -> fluent_builders::ListOrganizationAdminAccounts<C, M, R> {
         fluent_builders::ListOrganizationAdminAccounts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the behavior graph for which to retrieve the tag values.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tag values that are assigned to the behavior graph. The request returns up to 50 tag values.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RejectInvitation` operation.
+    /// Constructs a fluent builder for the [`RejectInvitation`](crate::client::fluent_builders::RejectInvitation) operation.
     ///
-    /// See [`RejectInvitation`](crate::client::fluent_builders::RejectInvitation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arn(impl Into<String>)`](crate::client::fluent_builders::RejectInvitation::graph_arn) / [`set_graph_arn(Option<String>)`](crate::client::fluent_builders::RejectInvitation::set_graph_arn): <p>The ARN of the behavior graph to reject the invitation to.</p>  <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
+    /// - On success, responds with [`RejectInvitationOutput`](crate::output::RejectInvitationOutput)
+
+    /// - On failure, responds with [`SdkError<RejectInvitationError>`](crate::error::RejectInvitationError)
     pub fn reject_invitation(&self) -> fluent_builders::RejectInvitation<C, M, R> {
         fluent_builders::RejectInvitation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartMonitoringMember` operation.
+    /// Constructs a fluent builder for the [`StartMonitoringMember`](crate::client::fluent_builders::StartMonitoringMember) operation.
     ///
-    /// See [`StartMonitoringMember`](crate::client::fluent_builders::StartMonitoringMember) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arn(impl Into<String>)`](crate::client::fluent_builders::StartMonitoringMember::graph_arn) / [`set_graph_arn(Option<String>)`](crate::client::fluent_builders::StartMonitoringMember::set_graph_arn): <p>The ARN of the behavior graph.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::StartMonitoringMember::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::StartMonitoringMember::set_account_id): <p>The account ID of the member account to try to enable.</p>  <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
+    /// - On success, responds with [`StartMonitoringMemberOutput`](crate::output::StartMonitoringMemberOutput)
+
+    /// - On failure, responds with [`SdkError<StartMonitoringMemberError>`](crate::error::StartMonitoringMemberError)
     pub fn start_monitoring_member(&self) -> fluent_builders::StartMonitoringMember<C, M, R> {
         fluent_builders::StartMonitoringMember::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the behavior graph to assign the tags to.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the behavior graph to remove the tags from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateOrganizationConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateOrganizationConfiguration`](crate::client::fluent_builders::UpdateOrganizationConfiguration) operation.
     ///
-    /// See [`UpdateOrganizationConfiguration`](crate::client::fluent_builders::UpdateOrganizationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::graph_arn) / [`set_graph_arn(Option<String>)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::set_graph_arn): <p>The ARN of the organization behavior graph.</p>
+    ///   - [`auto_enable(bool)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::auto_enable) / [`set_auto_enable(bool)`](crate::client::fluent_builders::UpdateOrganizationConfiguration::set_auto_enable): <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
+    /// - On success, responds with [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateOrganizationConfigurationError>`](crate::error::UpdateOrganizationConfigurationError)
     pub fn update_organization_configuration(
         &self,
     ) -> fluent_builders::UpdateOrganizationConfiguration<C, M, R> {

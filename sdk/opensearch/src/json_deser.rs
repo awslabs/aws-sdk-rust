@@ -4621,6 +4621,21 @@ where
                                     crate::json_deser::deser_structure_crate_model_saml_options_output(tokens)?
                                 );
                             }
+                            "AnonymousAuthDisableDate" => {
+                                builder = builder.set_anonymous_auth_disable_date(
+                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        aws_smithy_types::date_time::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            "AnonymousAuthEnabled" => {
+                                builder = builder.set_anonymous_auth_enabled(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

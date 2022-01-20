@@ -83,27 +83,43 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateHomeRegionControl` operation.
+    /// Constructs a fluent builder for the [`CreateHomeRegionControl`](crate::client::fluent_builders::CreateHomeRegionControl) operation.
     ///
-    /// See [`CreateHomeRegionControl`](crate::client::fluent_builders::CreateHomeRegionControl) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`home_region(impl Into<String>)`](crate::client::fluent_builders::CreateHomeRegionControl::home_region) / [`set_home_region(Option<String>)`](crate::client::fluent_builders::CreateHomeRegionControl::set_home_region): <p>The name of the home region of the calling account.</p>
+    ///   - [`target(Target)`](crate::client::fluent_builders::CreateHomeRegionControl::target) / [`set_target(Option<Target>)`](crate::client::fluent_builders::CreateHomeRegionControl::set_target): <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
+    ///   - [`dry_run(bool)`](crate::client::fluent_builders::CreateHomeRegionControl::dry_run) / [`set_dry_run(bool)`](crate::client::fluent_builders::CreateHomeRegionControl::set_dry_run): <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
+    /// - On success, responds with [`CreateHomeRegionControlOutput`](crate::output::CreateHomeRegionControlOutput) with field(s):
+    ///   - [`home_region_control(Option<HomeRegionControl>)`](crate::output::CreateHomeRegionControlOutput::home_region_control): <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
+    /// - On failure, responds with [`SdkError<CreateHomeRegionControlError>`](crate::error::CreateHomeRegionControlError)
     pub fn create_home_region_control(&self) -> fluent_builders::CreateHomeRegionControl<C, M, R> {
         fluent_builders::CreateHomeRegionControl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeHomeRegionControls` operation.
+    /// Constructs a fluent builder for the [`DescribeHomeRegionControls`](crate::client::fluent_builders::DescribeHomeRegionControls) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeHomeRegionControls::into_paginator).
     ///
-    /// See [`DescribeHomeRegionControls`](crate::client::fluent_builders::DescribeHomeRegionControls) for more information about the
-    /// operation and its arguments.
-    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeHomeRegionControls::into_paginator).
+    /// - The fluent builder is configurable:
+    ///   - [`control_id(impl Into<String>)`](crate::client::fluent_builders::DescribeHomeRegionControls::control_id) / [`set_control_id(Option<String>)`](crate::client::fluent_builders::DescribeHomeRegionControls::set_control_id): <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
+    ///   - [`home_region(impl Into<String>)`](crate::client::fluent_builders::DescribeHomeRegionControls::home_region) / [`set_home_region(Option<String>)`](crate::client::fluent_builders::DescribeHomeRegionControls::set_home_region): <p>The name of the home region you'd like to view.</p>
+    ///   - [`target(Target)`](crate::client::fluent_builders::DescribeHomeRegionControls::target) / [`set_target(Option<Target>)`](crate::client::fluent_builders::DescribeHomeRegionControls::set_target): <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeHomeRegionControls::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeHomeRegionControls::set_max_results): <p>The maximum number of filtering results to display per page. </p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeHomeRegionControls::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeHomeRegionControls::set_next_token): <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    /// - On success, responds with [`DescribeHomeRegionControlsOutput`](crate::output::DescribeHomeRegionControlsOutput) with field(s):
+    ///   - [`home_region_controls(Option<Vec<HomeRegionControl>>)`](crate::output::DescribeHomeRegionControlsOutput::home_region_controls): <p>An array that contains your <code>HomeRegionControl</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeHomeRegionControlsOutput::next_token): <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    /// - On failure, responds with [`SdkError<DescribeHomeRegionControlsError>`](crate::error::DescribeHomeRegionControlsError)
     pub fn describe_home_region_controls(
         &self,
     ) -> fluent_builders::DescribeHomeRegionControls<C, M, R> {
         fluent_builders::DescribeHomeRegionControls::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetHomeRegion` operation.
+    /// Constructs a fluent builder for the [`GetHomeRegion`](crate::client::fluent_builders::GetHomeRegion) operation.
     ///
-    /// See [`GetHomeRegion`](crate::client::fluent_builders::GetHomeRegion) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetHomeRegion::send) it.
+
+    /// - On success, responds with [`GetHomeRegionOutput`](crate::output::GetHomeRegionOutput) with field(s):
+    ///   - [`home_region(Option<String>)`](crate::output::GetHomeRegionOutput::home_region): <p>The name of the home region of the calling account.</p>
+    /// - On failure, responds with [`SdkError<GetHomeRegionError>`](crate::error::GetHomeRegionError)
     pub fn get_home_region(&self) -> fluent_builders::GetHomeRegion<C, M, R> {
         fluent_builders::GetHomeRegion::new(self.handle.clone())
     }

@@ -2517,6 +2517,14 @@ where
                                     )?,
                                 );
                             }
+                            "maxBatchSize" => {
+                                builder = builder.set_max_batch_size(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -2771,6 +2779,14 @@ where
                                     crate::json_deser::deser_structure_crate_model_caching_config(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "maxBatchSize" => {
+                                builder = builder.set_max_batch_size(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

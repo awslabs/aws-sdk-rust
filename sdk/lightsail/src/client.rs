@@ -83,1152 +83,1894 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AllocateStaticIp` operation.
+    /// Constructs a fluent builder for the [`AllocateStaticIp`](crate::client::fluent_builders::AllocateStaticIp) operation.
     ///
-    /// See [`AllocateStaticIp`](crate::client::fluent_builders::AllocateStaticIp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`static_ip_name(impl Into<String>)`](crate::client::fluent_builders::AllocateStaticIp::static_ip_name) / [`set_static_ip_name(Option<String>)`](crate::client::fluent_builders::AllocateStaticIp::set_static_ip_name): <p>The name of the static IP address.</p>
+    /// - On success, responds with [`AllocateStaticIpOutput`](crate::output::AllocateStaticIpOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::AllocateStaticIpOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<AllocateStaticIpError>`](crate::error::AllocateStaticIpError)
     pub fn allocate_static_ip(&self) -> fluent_builders::AllocateStaticIp<C, M, R> {
         fluent_builders::AllocateStaticIp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AttachCertificateToDistribution` operation.
+    /// Constructs a fluent builder for the [`AttachCertificateToDistribution`](crate::client::fluent_builders::AttachCertificateToDistribution) operation.
     ///
-    /// See [`AttachCertificateToDistribution`](crate::client::fluent_builders::AttachCertificateToDistribution) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::AttachCertificateToDistribution::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::AttachCertificateToDistribution::set_distribution_name): <p>The name of the distribution that the certificate will be attached to.</p>  <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    ///   - [`certificate_name(impl Into<String>)`](crate::client::fluent_builders::AttachCertificateToDistribution::certificate_name) / [`set_certificate_name(Option<String>)`](crate::client::fluent_builders::AttachCertificateToDistribution::set_certificate_name): <p>The name of the certificate to attach to a distribution.</p>  <p>Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.</p>  <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p> <note>   <p>This is the name of the certificate resource type and is used only to reference the certificate in other API actions. It can be different than the domain name of the certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code> and the domain name of the certificate might be <code>example.com</code>.</p>  </note>
+    /// - On success, responds with [`AttachCertificateToDistributionOutput`](crate::output::AttachCertificateToDistributionOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::AttachCertificateToDistributionOutput::operation): <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<AttachCertificateToDistributionError>`](crate::error::AttachCertificateToDistributionError)
     pub fn attach_certificate_to_distribution(
         &self,
     ) -> fluent_builders::AttachCertificateToDistribution<C, M, R> {
         fluent_builders::AttachCertificateToDistribution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AttachDisk` operation.
+    /// Constructs a fluent builder for the [`AttachDisk`](crate::client::fluent_builders::AttachDisk) operation.
     ///
-    /// See [`AttachDisk`](crate::client::fluent_builders::AttachDisk) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`disk_name(impl Into<String>)`](crate::client::fluent_builders::AttachDisk::disk_name) / [`set_disk_name(Option<String>)`](crate::client::fluent_builders::AttachDisk::set_disk_name): <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::AttachDisk::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::AttachDisk::set_instance_name): <p>The name of the Lightsail instance where you want to utilize the storage disk.</p>
+    ///   - [`disk_path(impl Into<String>)`](crate::client::fluent_builders::AttachDisk::disk_path) / [`set_disk_path(Option<String>)`](crate::client::fluent_builders::AttachDisk::set_disk_path): <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+    /// - On success, responds with [`AttachDiskOutput`](crate::output::AttachDiskOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::AttachDiskOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<AttachDiskError>`](crate::error::AttachDiskError)
     pub fn attach_disk(&self) -> fluent_builders::AttachDisk<C, M, R> {
         fluent_builders::AttachDisk::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AttachInstancesToLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`AttachInstancesToLoadBalancer`](crate::client::fluent_builders::AttachInstancesToLoadBalancer) operation.
     ///
-    /// See [`AttachInstancesToLoadBalancer`](crate::client::fluent_builders::AttachInstancesToLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`load_balancer_name(impl Into<String>)`](crate::client::fluent_builders::AttachInstancesToLoadBalancer::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::client::fluent_builders::AttachInstancesToLoadBalancer::set_load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`instance_names(Vec<String>)`](crate::client::fluent_builders::AttachInstancesToLoadBalancer::instance_names) / [`set_instance_names(Option<Vec<String>>)`](crate::client::fluent_builders::AttachInstancesToLoadBalancer::set_instance_names): <p>An array of strings representing the instance name(s) you want to attach to your load balancer.</p>  <p>An instance must be <code>running</code> before you can attach it to your load balancer.</p>  <p>There are no additional limits on the number of instances you can attach to your load balancer, aside from the limit of Lightsail instances you can create in your account (20).</p>
+    /// - On success, responds with [`AttachInstancesToLoadBalancerOutput`](crate::output::AttachInstancesToLoadBalancerOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::AttachInstancesToLoadBalancerOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<AttachInstancesToLoadBalancerError>`](crate::error::AttachInstancesToLoadBalancerError)
     pub fn attach_instances_to_load_balancer(
         &self,
     ) -> fluent_builders::AttachInstancesToLoadBalancer<C, M, R> {
         fluent_builders::AttachInstancesToLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AttachLoadBalancerTlsCertificate` operation.
+    /// Constructs a fluent builder for the [`AttachLoadBalancerTlsCertificate`](crate::client::fluent_builders::AttachLoadBalancerTlsCertificate) operation.
     ///
-    /// See [`AttachLoadBalancerTlsCertificate`](crate::client::fluent_builders::AttachLoadBalancerTlsCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`load_balancer_name(impl Into<String>)`](crate::client::fluent_builders::AttachLoadBalancerTlsCertificate::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::client::fluent_builders::AttachLoadBalancerTlsCertificate::set_load_balancer_name): <p>The name of the load balancer to which you want to associate the SSL/TLS certificate.</p>
+    ///   - [`certificate_name(impl Into<String>)`](crate::client::fluent_builders::AttachLoadBalancerTlsCertificate::certificate_name) / [`set_certificate_name(Option<String>)`](crate::client::fluent_builders::AttachLoadBalancerTlsCertificate::set_certificate_name): <p>The name of your SSL/TLS certificate.</p>
+    /// - On success, responds with [`AttachLoadBalancerTlsCertificateOutput`](crate::output::AttachLoadBalancerTlsCertificateOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::AttachLoadBalancerTlsCertificateOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>  <p>These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it for another purpose.</p>
+    /// - On failure, responds with [`SdkError<AttachLoadBalancerTlsCertificateError>`](crate::error::AttachLoadBalancerTlsCertificateError)
     pub fn attach_load_balancer_tls_certificate(
         &self,
     ) -> fluent_builders::AttachLoadBalancerTlsCertificate<C, M, R> {
         fluent_builders::AttachLoadBalancerTlsCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AttachStaticIp` operation.
+    /// Constructs a fluent builder for the [`AttachStaticIp`](crate::client::fluent_builders::AttachStaticIp) operation.
     ///
-    /// See [`AttachStaticIp`](crate::client::fluent_builders::AttachStaticIp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`static_ip_name(impl Into<String>)`](crate::client::fluent_builders::AttachStaticIp::static_ip_name) / [`set_static_ip_name(Option<String>)`](crate::client::fluent_builders::AttachStaticIp::set_static_ip_name): <p>The name of the static IP.</p>
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::AttachStaticIp::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::AttachStaticIp::set_instance_name): <p>The instance name to which you want to attach the static IP address.</p>
+    /// - On success, responds with [`AttachStaticIpOutput`](crate::output::AttachStaticIpOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::AttachStaticIpOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<AttachStaticIpError>`](crate::error::AttachStaticIpError)
     pub fn attach_static_ip(&self) -> fluent_builders::AttachStaticIp<C, M, R> {
         fluent_builders::AttachStaticIp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CloseInstancePublicPorts` operation.
+    /// Constructs a fluent builder for the [`CloseInstancePublicPorts`](crate::client::fluent_builders::CloseInstancePublicPorts) operation.
     ///
-    /// See [`CloseInstancePublicPorts`](crate::client::fluent_builders::CloseInstancePublicPorts) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`port_info(PortInfo)`](crate::client::fluent_builders::CloseInstancePublicPorts::port_info) / [`set_port_info(Option<PortInfo>)`](crate::client::fluent_builders::CloseInstancePublicPorts::set_port_info): <p>An object to describe the ports to close for the specified instance.</p>
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::CloseInstancePublicPorts::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::CloseInstancePublicPorts::set_instance_name): <p>The name of the instance for which to close ports.</p>
+    /// - On success, responds with [`CloseInstancePublicPortsOutput`](crate::output::CloseInstancePublicPortsOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::CloseInstancePublicPortsOutput::operation): <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CloseInstancePublicPortsError>`](crate::error::CloseInstancePublicPortsError)
     pub fn close_instance_public_ports(
         &self,
     ) -> fluent_builders::CloseInstancePublicPorts<C, M, R> {
         fluent_builders::CloseInstancePublicPorts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CopySnapshot` operation.
+    /// Constructs a fluent builder for the [`CopySnapshot`](crate::client::fluent_builders::CopySnapshot) operation.
     ///
-    /// See [`CopySnapshot`](crate::client::fluent_builders::CopySnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`source_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::CopySnapshot::source_snapshot_name) / [`set_source_snapshot_name(Option<String>)`](crate::client::fluent_builders::CopySnapshot::set_source_snapshot_name): <p>The name of the source manual snapshot to copy.</p>  <p>Constraint:</p>  <ul>   <li> <p>Define this parameter only when copying a manual snapshot as another manual snapshot.</p> </li>  </ul>
+    ///   - [`source_resource_name(impl Into<String>)`](crate::client::fluent_builders::CopySnapshot::source_resource_name) / [`set_source_resource_name(Option<String>)`](crate::client::fluent_builders::CopySnapshot::set_source_resource_name): <p>The name of the source instance or disk from which the source automatic snapshot was created.</p>  <p>Constraint:</p>  <ul>   <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>  </ul>
+    ///   - [`restore_date(impl Into<String>)`](crate::client::fluent_builders::CopySnapshot::restore_date) / [`set_restore_date(Option<String>)`](crate::client::fluent_builders::CopySnapshot::set_restore_date): <p>The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>   <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>   <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>  </ul>
+    ///   - [`use_latest_restorable_auto_snapshot(bool)`](crate::client::fluent_builders::CopySnapshot::use_latest_restorable_auto_snapshot) / [`set_use_latest_restorable_auto_snapshot(Option<bool>)`](crate::client::fluent_builders::CopySnapshot::set_use_latest_restorable_auto_snapshot): <p>A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source instance or disk.</p>  <p>Constraints:</p>  <ul>   <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>   <li> <p>Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>  </ul>
+    ///   - [`target_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::CopySnapshot::target_snapshot_name) / [`set_target_snapshot_name(Option<String>)`](crate::client::fluent_builders::CopySnapshot::set_target_snapshot_name): <p>The name of the new manual snapshot to be created as a copy.</p>
+    ///   - [`source_region(RegionName)`](crate::client::fluent_builders::CopySnapshot::source_region) / [`set_source_region(Option<RegionName>)`](crate::client::fluent_builders::CopySnapshot::set_source_region): <p>The AWS Region where the source manual or automatic snapshot is located.</p>
+    /// - On success, responds with [`CopySnapshotOutput`](crate::output::CopySnapshotOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CopySnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CopySnapshotError>`](crate::error::CopySnapshotError)
     pub fn copy_snapshot(&self) -> fluent_builders::CopySnapshot<C, M, R> {
         fluent_builders::CopySnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBucket` operation.
+    /// Constructs a fluent builder for the [`CreateBucket`](crate::client::fluent_builders::CreateBucket) operation.
     ///
-    /// See [`CreateBucket`](crate::client::fluent_builders::CreateBucket) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_bucket_name): <p>The name for the bucket.</p>  <p>For more information about bucket names, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/bucket-naming-rules-in-amazon-lightsail">Bucket naming rules in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::CreateBucket::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::CreateBucket::set_bundle_id): <p>The ID of the bundle to use for the bucket.</p>  <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>  <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>  <p>Use the <code>UpdateBucketBundle</code> action to change the bundle after the bucket is created.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateBucket::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateBucket::set_tags): <p>The tag keys and optional values to add to the bucket during creation.</p>  <p>Use the <code>TagResource</code> action to tag the bucket after it's created.</p>
+    ///   - [`enable_object_versioning(bool)`](crate::client::fluent_builders::CreateBucket::enable_object_versioning) / [`set_enable_object_versioning(Option<bool>)`](crate::client::fluent_builders::CreateBucket::set_enable_object_versioning): <p>A Boolean value that indicates whether to enable versioning of objects in the bucket.</p>  <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    /// - On success, responds with [`CreateBucketOutput`](crate::output::CreateBucketOutput) with field(s):
+    ///   - [`bucket(Option<Bucket>)`](crate::output::CreateBucketOutput::bucket): <p>An object that describes the bucket that is created.</p>
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateBucketOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateBucketError>`](crate::error::CreateBucketError)
     pub fn create_bucket(&self) -> fluent_builders::CreateBucket<C, M, R> {
         fluent_builders::CreateBucket::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBucketAccessKey` operation.
+    /// Constructs a fluent builder for the [`CreateBucketAccessKey`](crate::client::fluent_builders::CreateBucketAccessKey) operation.
     ///
-    /// See [`CreateBucketAccessKey`](crate::client::fluent_builders::CreateBucketAccessKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::CreateBucketAccessKey::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::CreateBucketAccessKey::set_bucket_name): <p>The name of the bucket that the new access key will belong to, and grant access to.</p>
+    /// - On success, responds with [`CreateBucketAccessKeyOutput`](crate::output::CreateBucketAccessKeyOutput) with field(s):
+    ///   - [`access_key(Option<AccessKey>)`](crate::output::CreateBucketAccessKeyOutput::access_key): <p>An object that describes the access key that is created.</p>
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateBucketAccessKeyOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateBucketAccessKeyError>`](crate::error::CreateBucketAccessKeyError)
     pub fn create_bucket_access_key(&self) -> fluent_builders::CreateBucketAccessKey<C, M, R> {
         fluent_builders::CreateBucketAccessKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCertificate` operation.
+    /// Constructs a fluent builder for the [`CreateCertificate`](crate::client::fluent_builders::CreateCertificate) operation.
     ///
-    /// See [`CreateCertificate`](crate::client::fluent_builders::CreateCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_name(impl Into<String>)`](crate::client::fluent_builders::CreateCertificate::certificate_name) / [`set_certificate_name(Option<String>)`](crate::client::fluent_builders::CreateCertificate::set_certificate_name): <p>The name for the certificate.</p>
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateCertificate::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateCertificate::set_domain_name): <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
+    ///   - [`subject_alternative_names(Vec<String>)`](crate::client::fluent_builders::CreateCertificate::subject_alternative_names) / [`set_subject_alternative_names(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCertificate::set_subject_alternative_names): <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>  <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>  <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCertificate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCertificate::set_tags): <p>The tag keys and optional values to add to the certificate during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    /// - On success, responds with [`CreateCertificateOutput`](crate::output::CreateCertificateOutput) with field(s):
+    ///   - [`certificate(Option<CertificateSummary>)`](crate::output::CreateCertificateOutput::certificate): <p>An object that describes the certificate created.</p>
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateCertificateOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateCertificateError>`](crate::error::CreateCertificateError)
     pub fn create_certificate(&self) -> fluent_builders::CreateCertificate<C, M, R> {
         fluent_builders::CreateCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCloudFormationStack` operation.
+    /// Constructs a fluent builder for the [`CreateCloudFormationStack`](crate::client::fluent_builders::CreateCloudFormationStack) operation.
     ///
-    /// See [`CreateCloudFormationStack`](crate::client::fluent_builders::CreateCloudFormationStack) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instances(Vec<InstanceEntry>)`](crate::client::fluent_builders::CreateCloudFormationStack::instances) / [`set_instances(Option<Vec<InstanceEntry>>)`](crate::client::fluent_builders::CreateCloudFormationStack::set_instances): <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only pass one instance entry at a time in this array. You will get an invalid parameter error if you pass more than one instance entry in this array.</p>
+    /// - On success, responds with [`CreateCloudFormationStackOutput`](crate::output::CreateCloudFormationStackOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateCloudFormationStackOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateCloudFormationStackError>`](crate::error::CreateCloudFormationStackError)
     pub fn create_cloud_formation_stack(
         &self,
     ) -> fluent_builders::CreateCloudFormationStack<C, M, R> {
         fluent_builders::CreateCloudFormationStack::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateContactMethod` operation.
+    /// Constructs a fluent builder for the [`CreateContactMethod`](crate::client::fluent_builders::CreateContactMethod) operation.
     ///
-    /// See [`CreateContactMethod`](crate::client::fluent_builders::CreateContactMethod) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`protocol(ContactProtocol)`](crate::client::fluent_builders::CreateContactMethod::protocol) / [`set_protocol(Option<ContactProtocol>)`](crate::client::fluent_builders::CreateContactMethod::set_protocol): <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>  <p>The <code>SMS</code> protocol is supported only in the following AWS Regions.</p>  <ul>   <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>   <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>   <li> <p>Europe (Ireland) (<code>eu-west-1</code>)</p> </li>   <li> <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p> </li>   <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>   <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>  </ul>  <p>For a list of countries/regions where SMS text messages can be sent, and the latest AWS Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>  <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    ///   - [`contact_endpoint(impl Into<String>)`](crate::client::fluent_builders::CreateContactMethod::contact_endpoint) / [`set_contact_endpoint(Option<String>)`](crate::client::fluent_builders::CreateContactMethod::set_contact_endpoint): <p>The destination of the contact method, such as an email address or a mobile phone number.</p>  <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the phone number structure used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
+    /// - On success, responds with [`CreateContactMethodOutput`](crate::output::CreateContactMethodOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateContactMethodOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateContactMethodError>`](crate::error::CreateContactMethodError)
     pub fn create_contact_method(&self) -> fluent_builders::CreateContactMethod<C, M, R> {
         fluent_builders::CreateContactMethod::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateContainerService` operation.
+    /// Constructs a fluent builder for the [`CreateContainerService`](crate::client::fluent_builders::CreateContainerService) operation.
     ///
-    /// See [`CreateContainerService`](crate::client::fluent_builders::CreateContainerService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::CreateContainerService::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::CreateContainerService::set_service_name): <p>The name for the container service.</p>  <p>The name that you specify for your container service will make up part of its default domain. The default domain of a container service is typically <code>https://   <servicename>    .    <randomguid>     .     <awsregion>      .cs.amazonlightsail.com     </awsregion>    </randomguid>   </servicename></code>. If the name of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code> </p>  <p>The following are the requirements for container service names:</p>  <ul>   <li> <p>Must be unique within each AWS Region in your Lightsail account.</p> </li>   <li> <p>Must contain 1 to 63 characters.</p> </li>   <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>   <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>  </ul>
+    ///   - [`power(ContainerServicePowerName)`](crate::client::fluent_builders::CreateContainerService::power) / [`set_power(Option<ContainerServicePowerName>)`](crate::client::fluent_builders::CreateContainerService::set_power): <p>The power specification for the container service.</p>  <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>  <p>Use the <code>GetContainerServicePowers</code> action to get a list of power options that you can specify using this parameter, and their base monthly cost.</p>
+    ///   - [`scale(i32)`](crate::client::fluent_builders::CreateContainerService::scale) / [`set_scale(Option<i32>)`](crate::client::fluent_builders::CreateContainerService::set_scale): <p>The scale specification for the container service.</p>  <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateContainerService::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateContainerService::set_tags): <p>The tag keys and optional values to add to the container service during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>  <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    ///   - [`public_domain_names(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::CreateContainerService::public_domain_names) / [`set_public_domain_names(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::CreateContainerService::set_public_domain_names): <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>  <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>  <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>   <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>  </important>  <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
+    ///   - [`deployment(ContainerServiceDeploymentRequest)`](crate::client::fluent_builders::CreateContainerService::deployment) / [`set_deployment(Option<ContainerServiceDeploymentRequest>)`](crate::client::fluent_builders::CreateContainerService::set_deployment): <p>An object that describes a deployment for the container service.</p>  <p>A deployment specifies the containers that will be launched on the container service and their settings, such as the ports to open, the environment variables to apply, and the launch command to run. It also specifies the container that will serve as the public endpoint of the deployment and its settings, such as the HTTP or HTTPS port to use, and the health check configuration.</p>
+    /// - On success, responds with [`CreateContainerServiceOutput`](crate::output::CreateContainerServiceOutput) with field(s):
+    ///   - [`container_service(Option<ContainerService>)`](crate::output::CreateContainerServiceOutput::container_service): <p>An object that describes a container service.</p>
+    /// - On failure, responds with [`SdkError<CreateContainerServiceError>`](crate::error::CreateContainerServiceError)
     pub fn create_container_service(&self) -> fluent_builders::CreateContainerService<C, M, R> {
         fluent_builders::CreateContainerService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateContainerServiceDeployment` operation.
+    /// Constructs a fluent builder for the [`CreateContainerServiceDeployment`](crate::client::fluent_builders::CreateContainerServiceDeployment) operation.
     ///
-    /// See [`CreateContainerServiceDeployment`](crate::client::fluent_builders::CreateContainerServiceDeployment) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::CreateContainerServiceDeployment::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::CreateContainerServiceDeployment::set_service_name): <p>The name of the container service for which to create the deployment.</p>
+    ///   - [`containers(HashMap<String, Container>)`](crate::client::fluent_builders::CreateContainerServiceDeployment::containers) / [`set_containers(Option<HashMap<String, Container>>)`](crate::client::fluent_builders::CreateContainerServiceDeployment::set_containers): <p>An object that describes the settings of the containers that will be launched on the container service.</p>
+    ///   - [`public_endpoint(EndpointRequest)`](crate::client::fluent_builders::CreateContainerServiceDeployment::public_endpoint) / [`set_public_endpoint(Option<EndpointRequest>)`](crate::client::fluent_builders::CreateContainerServiceDeployment::set_public_endpoint): <p>An object that describes the settings of the public endpoint for the container service.</p>
+    /// - On success, responds with [`CreateContainerServiceDeploymentOutput`](crate::output::CreateContainerServiceDeploymentOutput) with field(s):
+    ///   - [`container_service(Option<ContainerService>)`](crate::output::CreateContainerServiceDeploymentOutput::container_service): <p>An object that describes a container service.</p>
+    /// - On failure, responds with [`SdkError<CreateContainerServiceDeploymentError>`](crate::error::CreateContainerServiceDeploymentError)
     pub fn create_container_service_deployment(
         &self,
     ) -> fluent_builders::CreateContainerServiceDeployment<C, M, R> {
         fluent_builders::CreateContainerServiceDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateContainerServiceRegistryLogin` operation.
+    /// Constructs a fluent builder for the [`CreateContainerServiceRegistryLogin`](crate::client::fluent_builders::CreateContainerServiceRegistryLogin) operation.
     ///
-    /// See [`CreateContainerServiceRegistryLogin`](crate::client::fluent_builders::CreateContainerServiceRegistryLogin) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::CreateContainerServiceRegistryLogin::send) it.
+
+    /// - On success, responds with [`CreateContainerServiceRegistryLoginOutput`](crate::output::CreateContainerServiceRegistryLoginOutput) with field(s):
+    ///   - [`registry_login(Option<ContainerServiceRegistryLogin>)`](crate::output::CreateContainerServiceRegistryLoginOutput::registry_login): <p>An object that describes the log in information for the container service registry of your Lightsail account.</p>
+    /// - On failure, responds with [`SdkError<CreateContainerServiceRegistryLoginError>`](crate::error::CreateContainerServiceRegistryLoginError)
     pub fn create_container_service_registry_login(
         &self,
     ) -> fluent_builders::CreateContainerServiceRegistryLogin<C, M, R> {
         fluent_builders::CreateContainerServiceRegistryLogin::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDisk` operation.
+    /// Constructs a fluent builder for the [`CreateDisk`](crate::client::fluent_builders::CreateDisk) operation.
     ///
-    /// See [`CreateDisk`](crate::client::fluent_builders::CreateDisk) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`disk_name(impl Into<String>)`](crate::client::fluent_builders::CreateDisk::disk_name) / [`set_disk_name(Option<String>)`](crate::client::fluent_builders::CreateDisk::set_disk_name): <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateDisk::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateDisk::set_availability_zone): <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>  <p>Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.</p>
+    ///   - [`size_in_gb(i32)`](crate::client::fluent_builders::CreateDisk::size_in_gb) / [`set_size_in_gb(Option<i32>)`](crate::client::fluent_builders::CreateDisk::set_size_in_gb): <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDisk::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDisk::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    ///   - [`add_ons(Vec<AddOnRequest>)`](crate::client::fluent_builders::CreateDisk::add_ons) / [`set_add_ons(Option<Vec<AddOnRequest>>)`](crate::client::fluent_builders::CreateDisk::set_add_ons): <p>An array of objects that represent the add-ons to enable for the new disk.</p>
+    /// - On success, responds with [`CreateDiskOutput`](crate::output::CreateDiskOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateDiskOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateDiskError>`](crate::error::CreateDiskError)
     pub fn create_disk(&self) -> fluent_builders::CreateDisk<C, M, R> {
         fluent_builders::CreateDisk::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDiskFromSnapshot` operation.
+    /// Constructs a fluent builder for the [`CreateDiskFromSnapshot`](crate::client::fluent_builders::CreateDiskFromSnapshot) operation.
     ///
-    /// See [`CreateDiskFromSnapshot`](crate::client::fluent_builders::CreateDiskFromSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`disk_name(impl Into<String>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::disk_name) / [`set_disk_name(Option<String>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::set_disk_name): <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    ///   - [`disk_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::disk_snapshot_name) / [`set_disk_snapshot_name(Option<String>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::set_disk_snapshot_name): <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.</p>  <p>Constraint:</p>  <ul>   <li> <p>This parameter cannot be defined together with the <code>source disk name</code> parameter. The <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.</p> </li>  </ul>
+    ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::set_availability_zone): <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>  <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.</p>
+    ///   - [`size_in_gb(i32)`](crate::client::fluent_builders::CreateDiskFromSnapshot::size_in_gb) / [`set_size_in_gb(Option<i32>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::set_size_in_gb): <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    ///   - [`add_ons(Vec<AddOnRequest>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::add_ons) / [`set_add_ons(Option<Vec<AddOnRequest>>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::set_add_ons): <p>An array of objects that represent the add-ons to enable for the new disk.</p>
+    ///   - [`source_disk_name(impl Into<String>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::source_disk_name) / [`set_source_disk_name(Option<String>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::set_source_disk_name): <p>The name of the source disk from which the source automatic snapshot was created.</p>  <p>Constraints:</p>  <ul>   <li> <p>This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.</p> </li>   <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>  </ul>
+    ///   - [`restore_date(impl Into<String>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::restore_date) / [`set_restore_date(Option<String>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::set_restore_date): <p>The date of the automatic snapshot to use for the new disk. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>   <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>   <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>  </ul>
+    ///   - [`use_latest_restorable_auto_snapshot(bool)`](crate::client::fluent_builders::CreateDiskFromSnapshot::use_latest_restorable_auto_snapshot) / [`set_use_latest_restorable_auto_snapshot(Option<bool>)`](crate::client::fluent_builders::CreateDiskFromSnapshot::set_use_latest_restorable_auto_snapshot): <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>  <p>Constraints:</p>  <ul>   <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>   <li> <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>  </ul>
+    /// - On success, responds with [`CreateDiskFromSnapshotOutput`](crate::output::CreateDiskFromSnapshotOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateDiskFromSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateDiskFromSnapshotError>`](crate::error::CreateDiskFromSnapshotError)
     pub fn create_disk_from_snapshot(&self) -> fluent_builders::CreateDiskFromSnapshot<C, M, R> {
         fluent_builders::CreateDiskFromSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDiskSnapshot` operation.
+    /// Constructs a fluent builder for the [`CreateDiskSnapshot`](crate::client::fluent_builders::CreateDiskSnapshot) operation.
     ///
-    /// See [`CreateDiskSnapshot`](crate::client::fluent_builders::CreateDiskSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`disk_name(impl Into<String>)`](crate::client::fluent_builders::CreateDiskSnapshot::disk_name) / [`set_disk_name(Option<String>)`](crate::client::fluent_builders::CreateDiskSnapshot::set_disk_name): <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>   <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>  </note>
+    ///   - [`disk_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::CreateDiskSnapshot::disk_snapshot_name) / [`set_disk_snapshot_name(Option<String>)`](crate::client::fluent_builders::CreateDiskSnapshot::set_disk_snapshot_name): <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::CreateDiskSnapshot::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::CreateDiskSnapshot::set_instance_name): <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>   <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDiskSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDiskSnapshot::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    /// - On success, responds with [`CreateDiskSnapshotOutput`](crate::output::CreateDiskSnapshotOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateDiskSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateDiskSnapshotError>`](crate::error::CreateDiskSnapshotError)
     pub fn create_disk_snapshot(&self) -> fluent_builders::CreateDiskSnapshot<C, M, R> {
         fluent_builders::CreateDiskSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDistribution` operation.
+    /// Constructs a fluent builder for the [`CreateDistribution`](crate::client::fluent_builders::CreateDistribution) operation.
     ///
-    /// See [`CreateDistribution`](crate::client::fluent_builders::CreateDistribution) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::CreateDistribution::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::CreateDistribution::set_distribution_name): <p>The name for the distribution.</p>
+    ///   - [`origin(InputOrigin)`](crate::client::fluent_builders::CreateDistribution::origin) / [`set_origin(Option<InputOrigin>)`](crate::client::fluent_builders::CreateDistribution::set_origin): <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>  <p>The distribution pulls, caches, and serves content from the origin.</p>
+    ///   - [`default_cache_behavior(CacheBehavior)`](crate::client::fluent_builders::CreateDistribution::default_cache_behavior) / [`set_default_cache_behavior(Option<CacheBehavior>)`](crate::client::fluent_builders::CreateDistribution::set_default_cache_behavior): <p>An object that describes the default cache behavior for the distribution.</p>
+    ///   - [`cache_behavior_settings(CacheSettings)`](crate::client::fluent_builders::CreateDistribution::cache_behavior_settings) / [`set_cache_behavior_settings(Option<CacheSettings>)`](crate::client::fluent_builders::CreateDistribution::set_cache_behavior_settings): <p>An object that describes the cache behavior settings for the distribution.</p>
+    ///   - [`cache_behaviors(Vec<CacheBehaviorPerPath>)`](crate::client::fluent_builders::CreateDistribution::cache_behaviors) / [`set_cache_behaviors(Option<Vec<CacheBehaviorPerPath>>)`](crate::client::fluent_builders::CreateDistribution::set_cache_behaviors): <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
+    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::CreateDistribution::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::CreateDistribution::set_bundle_id): <p>The bundle ID to use for the distribution.</p>  <p>A distribution bundle describes the specifications of your distribution, such as the monthly cost and monthly network transfer quota.</p>  <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
+    ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::CreateDistribution::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::CreateDistribution::set_ip_address_type): <p>The IP address type for the distribution.</p>  <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>  <p>The default value is <code>dualstack</code>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDistribution::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDistribution::set_tags): <p>The tag keys and optional values to add to the distribution during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    /// - On success, responds with [`CreateDistributionOutput`](crate::output::CreateDistributionOutput) with field(s):
+    ///   - [`distribution(Option<LightsailDistribution>)`](crate::output::CreateDistributionOutput::distribution): <p>An object that describes the distribution created.</p>
+    ///   - [`operation(Option<Operation>)`](crate::output::CreateDistributionOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateDistributionError>`](crate::error::CreateDistributionError)
     pub fn create_distribution(&self) -> fluent_builders::CreateDistribution<C, M, R> {
         fluent_builders::CreateDistribution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDomain` operation.
+    /// Constructs a fluent builder for the [`CreateDomain`](crate::client::fluent_builders::CreateDomain) operation.
     ///
-    /// See [`CreateDomain`](crate::client::fluent_builders::CreateDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateDomain::set_domain_name): <p>The domain name to manage (e.g., <code>example.com</code>).</p> <note>   <p>You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or another domain name registrar. If you have already registered your domain, you can enter its name in this parameter to manage the DNS records for that domain using Lightsail.</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDomain::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDomain::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    /// - On success, responds with [`CreateDomainOutput`](crate::output::CreateDomainOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::CreateDomainOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateDomainError>`](crate::error::CreateDomainError)
     pub fn create_domain(&self) -> fluent_builders::CreateDomain<C, M, R> {
         fluent_builders::CreateDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDomainEntry` operation.
+    /// Constructs a fluent builder for the [`CreateDomainEntry`](crate::client::fluent_builders::CreateDomainEntry) operation.
     ///
-    /// See [`CreateDomainEntry`](crate::client::fluent_builders::CreateDomainEntry) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateDomainEntry::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::CreateDomainEntry::set_domain_name): <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
+    ///   - [`domain_entry(DomainEntry)`](crate::client::fluent_builders::CreateDomainEntry::domain_entry) / [`set_domain_entry(Option<DomainEntry>)`](crate::client::fluent_builders::CreateDomainEntry::set_domain_entry): <p>An array of key-value pairs containing information about the domain entry request.</p>
+    /// - On success, responds with [`CreateDomainEntryOutput`](crate::output::CreateDomainEntryOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::CreateDomainEntryOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateDomainEntryError>`](crate::error::CreateDomainEntryError)
     pub fn create_domain_entry(&self) -> fluent_builders::CreateDomainEntry<C, M, R> {
         fluent_builders::CreateDomainEntry::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateInstances` operation.
+    /// Constructs a fluent builder for the [`CreateInstances`](crate::client::fluent_builders::CreateInstances) operation.
     ///
-    /// See [`CreateInstances`](crate::client::fluent_builders::CreateInstances) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_names(Vec<String>)`](crate::client::fluent_builders::CreateInstances::instance_names) / [`set_instance_names(Option<Vec<String>>)`](crate::client::fluent_builders::CreateInstances::set_instance_names): <p>The names to use for your new Lightsail instances. Separate multiple values using quotation marks and commas, for example: <code>["MyFirstInstance","MySecondInstance"]</code> </p>
+    ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateInstances::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateInstances::set_availability_zone): <p>The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
+    ///   - [`custom_image_name(impl Into<String>)`](crate::client::fluent_builders::CreateInstances::custom_image_name) / [`set_custom_image_name(Option<String>)`](crate::client::fluent_builders::CreateInstances::set_custom_image_name): <p>(Deprecated) The name for your custom image.</p> <note>   <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>  </note>
+    ///   - [`blueprint_id(impl Into<String>)`](crate::client::fluent_builders::CreateInstances::blueprint_id) / [`set_blueprint_id(Option<String>)`](crate::client::fluent_builders::CreateInstances::set_blueprint_id): <p>The ID for a virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to return a list of available images (or <i>blueprints</i>).</p> <note>   <p>Use active blueprints when creating new instances. Inactive blueprints are listed to support customers with existing instances and are not necessarily available to create new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>  </note>
+    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::CreateInstances::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::CreateInstances::set_bundle_id): <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+    ///   - [`user_data(impl Into<String>)`](crate::client::fluent_builders::CreateInstances::user_data) / [`set_user_data(Option<String>)`](crate::client::fluent_builders::CreateInstances::set_user_data): <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>   <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>  </note>
+    ///   - [`key_pair_name(impl Into<String>)`](crate::client::fluent_builders::CreateInstances::key_pair_name) / [`set_key_pair_name(Option<String>)`](crate::client::fluent_builders::CreateInstances::set_key_pair_name): <p>The name of your key pair.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateInstances::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateInstances::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    ///   - [`add_ons(Vec<AddOnRequest>)`](crate::client::fluent_builders::CreateInstances::add_ons) / [`set_add_ons(Option<Vec<AddOnRequest>>)`](crate::client::fluent_builders::CreateInstances::set_add_ons): <p>An array of objects representing the add-ons to enable for the new instance.</p>
+    ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::CreateInstances::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::CreateInstances::set_ip_address_type): <p>The IP address type for the instance.</p>  <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>  <p>The default value is <code>dualstack</code>.</p>
+    /// - On success, responds with [`CreateInstancesOutput`](crate::output::CreateInstancesOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateInstancesOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateInstancesError>`](crate::error::CreateInstancesError)
     pub fn create_instances(&self) -> fluent_builders::CreateInstances<C, M, R> {
         fluent_builders::CreateInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateInstancesFromSnapshot` operation.
+    /// Constructs a fluent builder for the [`CreateInstancesFromSnapshot`](crate::client::fluent_builders::CreateInstancesFromSnapshot) operation.
     ///
-    /// See [`CreateInstancesFromSnapshot`](crate::client::fluent_builders::CreateInstancesFromSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_names(Vec<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::instance_names) / [`set_instance_names(Option<Vec<String>>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::set_instance_names): <p>The names for your new instances.</p>
+    ///   - [`attached_disk_mapping(HashMap<String, Vec<DiskMap>>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::attached_disk_mapping) / [`set_attached_disk_mapping(Option<HashMap<String, Vec<DiskMap>>>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::set_attached_disk_mapping): <p>An object containing information about one or more disk mappings.</p>
+    ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::set_availability_zone): <p>The Availability Zone where you want to create your instances. Use the following formatting: <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a> operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.</p>
+    ///   - [`instance_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::instance_snapshot_name) / [`set_instance_snapshot_name(Option<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::set_instance_snapshot_name): <p>The name of the instance snapshot on which you are basing your new instances. Use the get instance snapshots operation to return information about your existing snapshots.</p>  <p>Constraint:</p>  <ul>   <li> <p>This parameter cannot be defined together with the <code>source instance name</code> parameter. The <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually exclusive.</p> </li>  </ul>
+    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::set_bundle_id): <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+    ///   - [`user_data(impl Into<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::user_data) / [`set_user_data(Option<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::set_user_data): <p>You can create a launch script that configures a server with additional user data. For example, <code>apt-get -y update</code>.</p> <note>   <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>  </note>
+    ///   - [`key_pair_name(impl Into<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::key_pair_name) / [`set_key_pair_name(Option<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::set_key_pair_name): <p>The name for your key pair.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    ///   - [`add_ons(Vec<AddOnRequest>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::add_ons) / [`set_add_ons(Option<Vec<AddOnRequest>>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::set_add_ons): <p>An array of objects representing the add-ons to enable for the new instance.</p>
+    ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::set_ip_address_type): <p>The IP address type for the instance.</p>  <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>  <p>The default value is <code>dualstack</code>.</p>
+    ///   - [`source_instance_name(impl Into<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::source_instance_name) / [`set_source_instance_name(Option<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::set_source_instance_name): <p>The name of the source instance from which the source automatic snapshot was created.</p>  <p>Constraints:</p>  <ul>   <li> <p>This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.</p> </li>   <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>  </ul>
+    ///   - [`restore_date(impl Into<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::restore_date) / [`set_restore_date(Option<String>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::set_restore_date): <p>The date of the automatic snapshot to use for the new instance. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be specified in <code>YYYY-MM-DD</code> format.</p> </li>   <li> <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p> </li>   <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>  </ul>
+    ///   - [`use_latest_restorable_auto_snapshot(bool)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::use_latest_restorable_auto_snapshot) / [`set_use_latest_restorable_auto_snapshot(Option<bool>)`](crate::client::fluent_builders::CreateInstancesFromSnapshot::set_use_latest_restorable_auto_snapshot): <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>  <p>Constraints:</p>  <ul>   <li> <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p> </li>   <li> <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p> </li>  </ul>
+    /// - On success, responds with [`CreateInstancesFromSnapshotOutput`](crate::output::CreateInstancesFromSnapshotOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateInstancesFromSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateInstancesFromSnapshotError>`](crate::error::CreateInstancesFromSnapshotError)
     pub fn create_instances_from_snapshot(
         &self,
     ) -> fluent_builders::CreateInstancesFromSnapshot<C, M, R> {
         fluent_builders::CreateInstancesFromSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateInstanceSnapshot` operation.
+    /// Constructs a fluent builder for the [`CreateInstanceSnapshot`](crate::client::fluent_builders::CreateInstanceSnapshot) operation.
     ///
-    /// See [`CreateInstanceSnapshot`](crate::client::fluent_builders::CreateInstanceSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::CreateInstanceSnapshot::instance_snapshot_name) / [`set_instance_snapshot_name(Option<String>)`](crate::client::fluent_builders::CreateInstanceSnapshot::set_instance_snapshot_name): <p>The name for your new snapshot.</p>
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::CreateInstanceSnapshot::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::CreateInstanceSnapshot::set_instance_name): <p>The Lightsail instance on which to base your snapshot.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateInstanceSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateInstanceSnapshot::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    /// - On success, responds with [`CreateInstanceSnapshotOutput`](crate::output::CreateInstanceSnapshotOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateInstanceSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateInstanceSnapshotError>`](crate::error::CreateInstanceSnapshotError)
     pub fn create_instance_snapshot(&self) -> fluent_builders::CreateInstanceSnapshot<C, M, R> {
         fluent_builders::CreateInstanceSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateKeyPair` operation.
+    /// Constructs a fluent builder for the [`CreateKeyPair`](crate::client::fluent_builders::CreateKeyPair) operation.
     ///
-    /// See [`CreateKeyPair`](crate::client::fluent_builders::CreateKeyPair) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`key_pair_name(impl Into<String>)`](crate::client::fluent_builders::CreateKeyPair::key_pair_name) / [`set_key_pair_name(Option<String>)`](crate::client::fluent_builders::CreateKeyPair::set_key_pair_name): <p>The name for your new key pair.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateKeyPair::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateKeyPair::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    /// - On success, responds with [`CreateKeyPairOutput`](crate::output::CreateKeyPairOutput) with field(s):
+    ///   - [`key_pair(Option<KeyPair>)`](crate::output::CreateKeyPairOutput::key_pair): <p>An array of key-value pairs containing information about the new key pair you just created.</p>
+    ///   - [`public_key_base64(Option<String>)`](crate::output::CreateKeyPairOutput::public_key_base64): <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
+    ///   - [`private_key_base64(Option<String>)`](crate::output::CreateKeyPairOutput::private_key_base64): <p>A base64-encoded RSA private key.</p>
+    ///   - [`operation(Option<Operation>)`](crate::output::CreateKeyPairOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateKeyPairError>`](crate::error::CreateKeyPairError)
     pub fn create_key_pair(&self) -> fluent_builders::CreateKeyPair<C, M, R> {
         fluent_builders::CreateKeyPair::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`CreateLoadBalancer`](crate::client::fluent_builders::CreateLoadBalancer) operation.
     ///
-    /// See [`CreateLoadBalancer`](crate::client::fluent_builders::CreateLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`load_balancer_name(impl Into<String>)`](crate::client::fluent_builders::CreateLoadBalancer::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::client::fluent_builders::CreateLoadBalancer::set_load_balancer_name): <p>The name of your load balancer.</p>
+    ///   - [`instance_port(i32)`](crate::client::fluent_builders::CreateLoadBalancer::instance_port) / [`set_instance_port(i32)`](crate::client::fluent_builders::CreateLoadBalancer::set_instance_port): <p>The instance port where you're creating your load balancer.</p>
+    ///   - [`health_check_path(impl Into<String>)`](crate::client::fluent_builders::CreateLoadBalancer::health_check_path) / [`set_health_check_path(Option<String>)`](crate::client::fluent_builders::CreateLoadBalancer::set_health_check_path): <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>  <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
+    ///   - [`certificate_name(impl Into<String>)`](crate::client::fluent_builders::CreateLoadBalancer::certificate_name) / [`set_certificate_name(Option<String>)`](crate::client::fluent_builders::CreateLoadBalancer::set_certificate_name): <p>The name of the SSL/TLS certificate.</p>  <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is required (and vice-versa).</p>
+    ///   - [`certificate_domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateLoadBalancer::certificate_domain_name) / [`set_certificate_domain_name(Option<String>)`](crate::client::fluent_builders::CreateLoadBalancer::set_certificate_domain_name): <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>  <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
+    ///   - [`certificate_alternative_names(Vec<String>)`](crate::client::fluent_builders::CreateLoadBalancer::certificate_alternative_names) / [`set_certificate_alternative_names(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLoadBalancer::set_certificate_alternative_names): <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateLoadBalancer::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateLoadBalancer::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::CreateLoadBalancer::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::CreateLoadBalancer::set_ip_address_type): <p>The IP address type for the load balancer.</p>  <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>  <p>The default value is <code>dualstack</code>.</p>
+    /// - On success, responds with [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateLoadBalancerOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateLoadBalancerError>`](crate::error::CreateLoadBalancerError)
     pub fn create_load_balancer(&self) -> fluent_builders::CreateLoadBalancer<C, M, R> {
         fluent_builders::CreateLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLoadBalancerTlsCertificate` operation.
+    /// Constructs a fluent builder for the [`CreateLoadBalancerTlsCertificate`](crate::client::fluent_builders::CreateLoadBalancerTlsCertificate) operation.
     ///
-    /// See [`CreateLoadBalancerTlsCertificate`](crate::client::fluent_builders::CreateLoadBalancerTlsCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`load_balancer_name(impl Into<String>)`](crate::client::fluent_builders::CreateLoadBalancerTlsCertificate::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::client::fluent_builders::CreateLoadBalancerTlsCertificate::set_load_balancer_name): <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
+    ///   - [`certificate_name(impl Into<String>)`](crate::client::fluent_builders::CreateLoadBalancerTlsCertificate::certificate_name) / [`set_certificate_name(Option<String>)`](crate::client::fluent_builders::CreateLoadBalancerTlsCertificate::set_certificate_name): <p>The SSL/TLS certificate name.</p>  <p>You can have up to 10 certificates in your account at one time. Each Lightsail load balancer can have up to 2 certificates associated with it at one time. There is also an overall limit to the number of certificates that can be issue in a 365-day period. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+    ///   - [`certificate_domain_name(impl Into<String>)`](crate::client::fluent_builders::CreateLoadBalancerTlsCertificate::certificate_domain_name) / [`set_certificate_domain_name(Option<String>)`](crate::client::fluent_builders::CreateLoadBalancerTlsCertificate::set_certificate_domain_name): <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.</p>
+    ///   - [`certificate_alternative_names(Vec<String>)`](crate::client::fluent_builders::CreateLoadBalancerTlsCertificate::certificate_alternative_names) / [`set_certificate_alternative_names(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLoadBalancerTlsCertificate::set_certificate_alternative_names): <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateLoadBalancerTlsCertificate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateLoadBalancerTlsCertificate::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    /// - On success, responds with [`CreateLoadBalancerTlsCertificateOutput`](crate::output::CreateLoadBalancerTlsCertificateOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateLoadBalancerTlsCertificateOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateLoadBalancerTlsCertificateError>`](crate::error::CreateLoadBalancerTlsCertificateError)
     pub fn create_load_balancer_tls_certificate(
         &self,
     ) -> fluent_builders::CreateLoadBalancerTlsCertificate<C, M, R> {
         fluent_builders::CreateLoadBalancerTlsCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRelationalDatabase` operation.
+    /// Constructs a fluent builder for the [`CreateRelationalDatabase`](crate::client::fluent_builders::CreateRelationalDatabase) operation.
     ///
-    /// See [`CreateRelationalDatabase`](crate::client::fluent_builders::CreateRelationalDatabase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_relational_database_name): <p>The name to use for your new Lightsail database resource.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>   <li> <p>The first and last character must be a letter or number.</p> </li>  </ul>
+    ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_availability_zone): <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>  <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
+    ///   - [`relational_database_blueprint_id(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::relational_database_blueprint_id) / [`set_relational_database_blueprint_id(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_relational_database_blueprint_id): <p>The blueprint ID for your new database. A blueprint describes the major engine version of a database.</p>  <p>You can get a list of database blueprints IDs by using the <code>get relational database blueprints</code> operation.</p>
+    ///   - [`relational_database_bundle_id(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::relational_database_bundle_id) / [`set_relational_database_bundle_id(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_relational_database_bundle_id): <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>  <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
+    ///   - [`master_database_name(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::master_database_name) / [`set_master_database_name(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_master_database_name): <p>The meaning of this parameter differs according to the database engine you use.</p>  <p> <b>MySQL</b> </p>  <p>The name of the database to create when the Lightsail database resource is created. If this parameter isn't specified, no database is created in the database resource.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>   <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0- 9).</p> </li>   <li> <p>Can't be a word reserved by the specified database engine.</p> <p>For more information about reserved words in MySQL, see the Keywords and Reserved Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>, and <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.</p> </li>  </ul>  <p> <b>PostgreSQL</b> </p>  <p>The name of the database to create when the Lightsail database resource is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the database resource.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain 1 to 63 letters or numbers.</p> </li>   <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0- 9).</p> </li>   <li> <p>Can't be a word reserved by the specified database engine.</p> <p>For more information about reserved words in PostgreSQL, see the SQL Key Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>  </ul>
+    ///   - [`master_username(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::master_username) / [`set_master_username(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_master_username): <p>The name for the master user.</p>  <p> <b>MySQL</b> </p>  <p>Constraints:</p>  <ul>   <li> <p>Required for MySQL.</p> </li>   <li> <p>Must be 1 to 16 letters or numbers. Can contain underscores.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Can't be a reserved word for the chosen database engine.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a>, <a href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>, or <a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 8.0</a>.</p> </li>  </ul>  <p> <b>PostgreSQL</b> </p>  <p>Constraints:</p>  <ul>   <li> <p>Required for PostgreSQL.</p> </li>   <li> <p>Must be 1 to 63 letters or numbers. Can contain underscores.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Can't be a reserved word for the chosen database engine.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7, see the Keywords and Reserved Words articles for <a href="https://www.postgresql.org/docs/9.6/sql-keywords-appendix.html">PostgreSQL 9.6</a>, <a href="https://www.postgresql.org/docs/10/sql-keywords-appendix.html">PostgreSQL 10</a>, <a href="https://www.postgresql.org/docs/11/sql-keywords-appendix.html">PostgreSQL 11</a>, and <a href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL 12</a>.</p> </li>  </ul>
+    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_master_user_password): <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@". It cannot contain spaces.</p>  <p> <b>MySQL</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>PostgreSQL</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p>
+    ///   - [`preferred_backup_window(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::preferred_backup_window) / [`set_preferred_backup_window(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_preferred_backup_window): <p>The daily time range during which automated backups are created for your new database if automated backups are enabled.</p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more information about the preferred backup window time blocks for each region, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Must not conflict with the preferred maintenance window.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>  </ul>
+    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur on your new database.</p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>   <li> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>  </ul>
+    ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::CreateRelationalDatabase::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_publicly_accessible): <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRelationalDatabase::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRelationalDatabase::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    /// - On success, responds with [`CreateRelationalDatabaseOutput`](crate::output::CreateRelationalDatabaseOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateRelationalDatabaseOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateRelationalDatabaseError>`](crate::error::CreateRelationalDatabaseError)
     pub fn create_relational_database(&self) -> fluent_builders::CreateRelationalDatabase<C, M, R> {
         fluent_builders::CreateRelationalDatabase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRelationalDatabaseFromSnapshot` operation.
+    /// Constructs a fluent builder for the [`CreateRelationalDatabaseFromSnapshot`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot) operation.
     ///
-    /// See [`CreateRelationalDatabaseFromSnapshot`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::set_relational_database_name): <p>The name to use for your new Lightsail database resource.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>   <li> <p>The first and last character must be a letter or number.</p> </li>  </ul>
+    ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::set_availability_zone): <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>  <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
+    ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::set_publicly_accessible): <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
+    ///   - [`relational_database_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::relational_database_snapshot_name) / [`set_relational_database_snapshot_name(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::set_relational_database_snapshot_name): <p>The name of the database snapshot from which to create your new database.</p>
+    ///   - [`relational_database_bundle_id(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::relational_database_bundle_id) / [`set_relational_database_bundle_id(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::set_relational_database_bundle_id): <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>  <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>  <p>When creating a new database from a snapshot, you cannot choose a bundle that is smaller than the bundle of the source database.</p>
+    ///   - [`source_relational_database_name(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::source_relational_database_name) / [`set_source_relational_database_name(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::set_source_relational_database_name): <p>The name of the source database.</p>
+    ///   - [`restore_time(DateTime)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::restore_time) / [`set_restore_time(Option<DateTime>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::set_restore_time): <p>The date and time to restore your database from.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be before the latest restorable time for the database.</p> </li>   <li> <p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p> </li>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p> </li>  </ul>
+    ///   - [`use_latest_restorable_time(bool)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::use_latest_restorable_time) / [`set_use_latest_restorable_time(Option<bool>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::set_use_latest_restorable_time): <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time. </p>  <p>Default: <code>false</code> </p>  <p>Constraints: Cannot be specified if the <code>restore time</code> parameter is provided.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRelationalDatabaseFromSnapshot::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    /// - On success, responds with [`CreateRelationalDatabaseFromSnapshotOutput`](crate::output::CreateRelationalDatabaseFromSnapshotOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateRelationalDatabaseFromSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateRelationalDatabaseFromSnapshotError>`](crate::error::CreateRelationalDatabaseFromSnapshotError)
     pub fn create_relational_database_from_snapshot(
         &self,
     ) -> fluent_builders::CreateRelationalDatabaseFromSnapshot<C, M, R> {
         fluent_builders::CreateRelationalDatabaseFromSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRelationalDatabaseSnapshot` operation.
+    /// Constructs a fluent builder for the [`CreateRelationalDatabaseSnapshot`](crate::client::fluent_builders::CreateRelationalDatabaseSnapshot) operation.
     ///
-    /// See [`CreateRelationalDatabaseSnapshot`](crate::client::fluent_builders::CreateRelationalDatabaseSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabaseSnapshot::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabaseSnapshot::set_relational_database_name): <p>The name of the database on which to base your new snapshot.</p>
+    ///   - [`relational_database_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::CreateRelationalDatabaseSnapshot::relational_database_snapshot_name) / [`set_relational_database_snapshot_name(Option<String>)`](crate::client::fluent_builders::CreateRelationalDatabaseSnapshot::set_relational_database_snapshot_name): <p>The name for your new database snapshot.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>   <li> <p>The first and last character must be a letter or number.</p> </li>  </ul>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRelationalDatabaseSnapshot::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRelationalDatabaseSnapshot::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    /// - On success, responds with [`CreateRelationalDatabaseSnapshotOutput`](crate::output::CreateRelationalDatabaseSnapshotOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::CreateRelationalDatabaseSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateRelationalDatabaseSnapshotError>`](crate::error::CreateRelationalDatabaseSnapshotError)
     pub fn create_relational_database_snapshot(
         &self,
     ) -> fluent_builders::CreateRelationalDatabaseSnapshot<C, M, R> {
         fluent_builders::CreateRelationalDatabaseSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAlarm` operation.
+    /// Constructs a fluent builder for the [`DeleteAlarm`](crate::client::fluent_builders::DeleteAlarm) operation.
     ///
-    /// See [`DeleteAlarm`](crate::client::fluent_builders::DeleteAlarm) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`alarm_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAlarm::alarm_name) / [`set_alarm_name(Option<String>)`](crate::client::fluent_builders::DeleteAlarm::set_alarm_name): <p>The name of the alarm to delete.</p>
+    /// - On success, responds with [`DeleteAlarmOutput`](crate::output::DeleteAlarmOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteAlarmOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteAlarmError>`](crate::error::DeleteAlarmError)
     pub fn delete_alarm(&self) -> fluent_builders::DeleteAlarm<C, M, R> {
         fluent_builders::DeleteAlarm::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAutoSnapshot` operation.
+    /// Constructs a fluent builder for the [`DeleteAutoSnapshot`](crate::client::fluent_builders::DeleteAutoSnapshot) operation.
     ///
-    /// See [`DeleteAutoSnapshot`](crate::client::fluent_builders::DeleteAutoSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAutoSnapshot::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::DeleteAutoSnapshot::set_resource_name): <p>The name of the source instance or disk from which to delete the automatic snapshot.</p>
+    ///   - [`date(impl Into<String>)`](crate::client::fluent_builders::DeleteAutoSnapshot::date) / [`set_date(Option<String>)`](crate::client::fluent_builders::DeleteAutoSnapshot::set_date): <p>The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.</p>
+    /// - On success, responds with [`DeleteAutoSnapshotOutput`](crate::output::DeleteAutoSnapshotOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteAutoSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteAutoSnapshotError>`](crate::error::DeleteAutoSnapshotError)
     pub fn delete_auto_snapshot(&self) -> fluent_builders::DeleteAutoSnapshot<C, M, R> {
         fluent_builders::DeleteAutoSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBucket` operation.
+    /// Constructs a fluent builder for the [`DeleteBucket`](crate::client::fluent_builders::DeleteBucket) operation.
     ///
-    /// See [`DeleteBucket`](crate::client::fluent_builders::DeleteBucket) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBucket::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::DeleteBucket::set_bucket_name): <p>The name of the bucket to delete.</p>  <p>Use the <code>GetBuckets</code> action to get a list of bucket names that you can specify.</p>
+    ///   - [`force_delete(bool)`](crate::client::fluent_builders::DeleteBucket::force_delete) / [`set_force_delete(Option<bool>)`](crate::client::fluent_builders::DeleteBucket::set_force_delete): <p>A Boolean value that indicates whether to force delete the bucket.</p>  <p>You must force delete the bucket if it has one of the following conditions:</p>  <ul>   <li> <p>The bucket is the origin of a distribution.</p> </li>   <li> <p>The bucket has instances that were granted access to it using the <code>SetResourceAccessForBucket</code> action.</p> </li>   <li> <p>The bucket has objects.</p> </li>   <li> <p>The bucket has access keys.</p> </li>  </ul> <important>   <p>Force deleting a bucket might impact other resources that rely on the bucket, such as instances, distributions, or software that use the issued access keys.</p>  </important>
+    /// - On success, responds with [`DeleteBucketOutput`](crate::output::DeleteBucketOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteBucketOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteBucketError>`](crate::error::DeleteBucketError)
     pub fn delete_bucket(&self) -> fluent_builders::DeleteBucket<C, M, R> {
         fluent_builders::DeleteBucket::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBucketAccessKey` operation.
+    /// Constructs a fluent builder for the [`DeleteBucketAccessKey`](crate::client::fluent_builders::DeleteBucketAccessKey) operation.
     ///
-    /// See [`DeleteBucketAccessKey`](crate::client::fluent_builders::DeleteBucketAccessKey) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::DeleteBucketAccessKey::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::DeleteBucketAccessKey::set_bucket_name): <p>The name of the bucket that the access key belongs to.</p>
+    ///   - [`access_key_id(impl Into<String>)`](crate::client::fluent_builders::DeleteBucketAccessKey::access_key_id) / [`set_access_key_id(Option<String>)`](crate::client::fluent_builders::DeleteBucketAccessKey::set_access_key_id): <p>The ID of the access key to delete.</p>  <p>Use the <code>GetBucketAccessKeys</code> action to get a list of access key IDs that you can specify.</p>
+    /// - On success, responds with [`DeleteBucketAccessKeyOutput`](crate::output::DeleteBucketAccessKeyOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteBucketAccessKeyOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteBucketAccessKeyError>`](crate::error::DeleteBucketAccessKeyError)
     pub fn delete_bucket_access_key(&self) -> fluent_builders::DeleteBucketAccessKey<C, M, R> {
         fluent_builders::DeleteBucketAccessKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCertificate` operation.
+    /// Constructs a fluent builder for the [`DeleteCertificate`](crate::client::fluent_builders::DeleteCertificate) operation.
     ///
-    /// See [`DeleteCertificate`](crate::client::fluent_builders::DeleteCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_name(impl Into<String>)`](crate::client::fluent_builders::DeleteCertificate::certificate_name) / [`set_certificate_name(Option<String>)`](crate::client::fluent_builders::DeleteCertificate::set_certificate_name): <p>The name of the certificate to delete.</p>  <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p>
+    /// - On success, responds with [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteCertificateOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteCertificateError>`](crate::error::DeleteCertificateError)
     pub fn delete_certificate(&self) -> fluent_builders::DeleteCertificate<C, M, R> {
         fluent_builders::DeleteCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteContactMethod` operation.
+    /// Constructs a fluent builder for the [`DeleteContactMethod`](crate::client::fluent_builders::DeleteContactMethod) operation.
     ///
-    /// See [`DeleteContactMethod`](crate::client::fluent_builders::DeleteContactMethod) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`protocol(ContactProtocol)`](crate::client::fluent_builders::DeleteContactMethod::protocol) / [`set_protocol(Option<ContactProtocol>)`](crate::client::fluent_builders::DeleteContactMethod::set_protocol): <p>The protocol that will be deleted, such as <code>Email</code> or <code>SMS</code> (text messaging).</p> <note>   <p>To delete an <code>Email</code> and an <code>SMS</code> contact method if you added both, you must run separate <code>DeleteContactMethod</code> actions to delete each protocol.</p>  </note>
+    /// - On success, responds with [`DeleteContactMethodOutput`](crate::output::DeleteContactMethodOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteContactMethodOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteContactMethodError>`](crate::error::DeleteContactMethodError)
     pub fn delete_contact_method(&self) -> fluent_builders::DeleteContactMethod<C, M, R> {
         fluent_builders::DeleteContactMethod::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteContainerImage` operation.
+    /// Constructs a fluent builder for the [`DeleteContainerImage`](crate::client::fluent_builders::DeleteContainerImage) operation.
     ///
-    /// See [`DeleteContainerImage`](crate::client::fluent_builders::DeleteContainerImage) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::DeleteContainerImage::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::DeleteContainerImage::set_service_name): <p>The name of the container service for which to delete a registered container image.</p>
+    ///   - [`image(impl Into<String>)`](crate::client::fluent_builders::DeleteContainerImage::image) / [`set_image(Option<String>)`](crate::client::fluent_builders::DeleteContainerImage::set_image): <p>The name of the container image to delete from the container service.</p>  <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p> <note>   <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>  </note>
+    /// - On success, responds with [`DeleteContainerImageOutput`](crate::output::DeleteContainerImageOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteContainerImageError>`](crate::error::DeleteContainerImageError)
     pub fn delete_container_image(&self) -> fluent_builders::DeleteContainerImage<C, M, R> {
         fluent_builders::DeleteContainerImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteContainerService` operation.
+    /// Constructs a fluent builder for the [`DeleteContainerService`](crate::client::fluent_builders::DeleteContainerService) operation.
     ///
-    /// See [`DeleteContainerService`](crate::client::fluent_builders::DeleteContainerService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::DeleteContainerService::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::DeleteContainerService::set_service_name): <p>The name of the container service to delete.</p>
+    /// - On success, responds with [`DeleteContainerServiceOutput`](crate::output::DeleteContainerServiceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteContainerServiceError>`](crate::error::DeleteContainerServiceError)
     pub fn delete_container_service(&self) -> fluent_builders::DeleteContainerService<C, M, R> {
         fluent_builders::DeleteContainerService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDisk` operation.
+    /// Constructs a fluent builder for the [`DeleteDisk`](crate::client::fluent_builders::DeleteDisk) operation.
     ///
-    /// See [`DeleteDisk`](crate::client::fluent_builders::DeleteDisk) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`disk_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDisk::disk_name) / [`set_disk_name(Option<String>)`](crate::client::fluent_builders::DeleteDisk::set_disk_name): <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
+    ///   - [`force_delete_add_ons(bool)`](crate::client::fluent_builders::DeleteDisk::force_delete_add_ons) / [`set_force_delete_add_ons(Option<bool>)`](crate::client::fluent_builders::DeleteDisk::set_force_delete_add_ons): <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+    /// - On success, responds with [`DeleteDiskOutput`](crate::output::DeleteDiskOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteDiskOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteDiskError>`](crate::error::DeleteDiskError)
     pub fn delete_disk(&self) -> fluent_builders::DeleteDisk<C, M, R> {
         fluent_builders::DeleteDisk::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDiskSnapshot` operation.
+    /// Constructs a fluent builder for the [`DeleteDiskSnapshot`](crate::client::fluent_builders::DeleteDiskSnapshot) operation.
     ///
-    /// See [`DeleteDiskSnapshot`](crate::client::fluent_builders::DeleteDiskSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`disk_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDiskSnapshot::disk_snapshot_name) / [`set_disk_snapshot_name(Option<String>)`](crate::client::fluent_builders::DeleteDiskSnapshot::set_disk_snapshot_name): <p>The name of the disk snapshot you want to delete (e.g., <code>my-disk-snapshot</code>).</p>
+    /// - On success, responds with [`DeleteDiskSnapshotOutput`](crate::output::DeleteDiskSnapshotOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteDiskSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteDiskSnapshotError>`](crate::error::DeleteDiskSnapshotError)
     pub fn delete_disk_snapshot(&self) -> fluent_builders::DeleteDiskSnapshot<C, M, R> {
         fluent_builders::DeleteDiskSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDistribution` operation.
+    /// Constructs a fluent builder for the [`DeleteDistribution`](crate::client::fluent_builders::DeleteDistribution) operation.
     ///
-    /// See [`DeleteDistribution`](crate::client::fluent_builders::DeleteDistribution) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDistribution::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::DeleteDistribution::set_distribution_name): <p>The name of the distribution to delete.</p>  <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    /// - On success, responds with [`DeleteDistributionOutput`](crate::output::DeleteDistributionOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::DeleteDistributionOutput::operation): <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteDistributionError>`](crate::error::DeleteDistributionError)
     pub fn delete_distribution(&self) -> fluent_builders::DeleteDistribution<C, M, R> {
         fluent_builders::DeleteDistribution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDomain` operation.
+    /// Constructs a fluent builder for the [`DeleteDomain`](crate::client::fluent_builders::DeleteDomain) operation.
     ///
-    /// See [`DeleteDomain`](crate::client::fluent_builders::DeleteDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteDomain::set_domain_name): <p>The specific domain name to delete.</p>
+    /// - On success, responds with [`DeleteDomainOutput`](crate::output::DeleteDomainOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::DeleteDomainOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::error::DeleteDomainError)
     pub fn delete_domain(&self) -> fluent_builders::DeleteDomain<C, M, R> {
         fluent_builders::DeleteDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDomainEntry` operation.
+    /// Constructs a fluent builder for the [`DeleteDomainEntry`](crate::client::fluent_builders::DeleteDomainEntry) operation.
     ///
-    /// See [`DeleteDomainEntry`](crate::client::fluent_builders::DeleteDomainEntry) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDomainEntry::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DeleteDomainEntry::set_domain_name): <p>The name of the domain entry to delete.</p>
+    ///   - [`domain_entry(DomainEntry)`](crate::client::fluent_builders::DeleteDomainEntry::domain_entry) / [`set_domain_entry(Option<DomainEntry>)`](crate::client::fluent_builders::DeleteDomainEntry::set_domain_entry): <p>An array of key-value pairs containing information about your domain entries.</p>
+    /// - On success, responds with [`DeleteDomainEntryOutput`](crate::output::DeleteDomainEntryOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::DeleteDomainEntryOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteDomainEntryError>`](crate::error::DeleteDomainEntryError)
     pub fn delete_domain_entry(&self) -> fluent_builders::DeleteDomainEntry<C, M, R> {
         fluent_builders::DeleteDomainEntry::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInstance` operation.
+    /// Constructs a fluent builder for the [`DeleteInstance`](crate::client::fluent_builders::DeleteInstance) operation.
     ///
-    /// See [`DeleteInstance`](crate::client::fluent_builders::DeleteInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::DeleteInstance::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::DeleteInstance::set_instance_name): <p>The name of the instance to delete.</p>
+    ///   - [`force_delete_add_ons(bool)`](crate::client::fluent_builders::DeleteInstance::force_delete_add_ons) / [`set_force_delete_add_ons(Option<bool>)`](crate::client::fluent_builders::DeleteInstance::set_force_delete_add_ons): <p>A Boolean value to indicate whether to delete the enabled add-ons for the disk.</p>
+    /// - On success, responds with [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteInstanceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteInstanceError>`](crate::error::DeleteInstanceError)
     pub fn delete_instance(&self) -> fluent_builders::DeleteInstance<C, M, R> {
         fluent_builders::DeleteInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInstanceSnapshot` operation.
+    /// Constructs a fluent builder for the [`DeleteInstanceSnapshot`](crate::client::fluent_builders::DeleteInstanceSnapshot) operation.
     ///
-    /// See [`DeleteInstanceSnapshot`](crate::client::fluent_builders::DeleteInstanceSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::DeleteInstanceSnapshot::instance_snapshot_name) / [`set_instance_snapshot_name(Option<String>)`](crate::client::fluent_builders::DeleteInstanceSnapshot::set_instance_snapshot_name): <p>The name of the snapshot to delete.</p>
+    /// - On success, responds with [`DeleteInstanceSnapshotOutput`](crate::output::DeleteInstanceSnapshotOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteInstanceSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteInstanceSnapshotError>`](crate::error::DeleteInstanceSnapshotError)
     pub fn delete_instance_snapshot(&self) -> fluent_builders::DeleteInstanceSnapshot<C, M, R> {
         fluent_builders::DeleteInstanceSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteKeyPair` operation.
+    /// Constructs a fluent builder for the [`DeleteKeyPair`](crate::client::fluent_builders::DeleteKeyPair) operation.
     ///
-    /// See [`DeleteKeyPair`](crate::client::fluent_builders::DeleteKeyPair) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`key_pair_name(impl Into<String>)`](crate::client::fluent_builders::DeleteKeyPair::key_pair_name) / [`set_key_pair_name(Option<String>)`](crate::client::fluent_builders::DeleteKeyPair::set_key_pair_name): <p>The name of the key pair to delete.</p>
+    /// - On success, responds with [`DeleteKeyPairOutput`](crate::output::DeleteKeyPairOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::DeleteKeyPairOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteKeyPairError>`](crate::error::DeleteKeyPairError)
     pub fn delete_key_pair(&self) -> fluent_builders::DeleteKeyPair<C, M, R> {
         fluent_builders::DeleteKeyPair::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteKnownHostKeys` operation.
+    /// Constructs a fluent builder for the [`DeleteKnownHostKeys`](crate::client::fluent_builders::DeleteKnownHostKeys) operation.
     ///
-    /// See [`DeleteKnownHostKeys`](crate::client::fluent_builders::DeleteKnownHostKeys) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::DeleteKnownHostKeys::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::DeleteKnownHostKeys::set_instance_name): <p>The name of the instance for which you want to reset the host key or certificate.</p>
+    /// - On success, responds with [`DeleteKnownHostKeysOutput`](crate::output::DeleteKnownHostKeysOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteKnownHostKeysOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteKnownHostKeysError>`](crate::error::DeleteKnownHostKeysError)
     pub fn delete_known_host_keys(&self) -> fluent_builders::DeleteKnownHostKeys<C, M, R> {
         fluent_builders::DeleteKnownHostKeys::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`DeleteLoadBalancer`](crate::client::fluent_builders::DeleteLoadBalancer) operation.
     ///
-    /// See [`DeleteLoadBalancer`](crate::client::fluent_builders::DeleteLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`load_balancer_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLoadBalancer::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::client::fluent_builders::DeleteLoadBalancer::set_load_balancer_name): <p>The name of the load balancer you want to delete.</p>
+    /// - On success, responds with [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteLoadBalancerOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteLoadBalancerError>`](crate::error::DeleteLoadBalancerError)
     pub fn delete_load_balancer(&self) -> fluent_builders::DeleteLoadBalancer<C, M, R> {
         fluent_builders::DeleteLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLoadBalancerTlsCertificate` operation.
+    /// Constructs a fluent builder for the [`DeleteLoadBalancerTlsCertificate`](crate::client::fluent_builders::DeleteLoadBalancerTlsCertificate) operation.
     ///
-    /// See [`DeleteLoadBalancerTlsCertificate`](crate::client::fluent_builders::DeleteLoadBalancerTlsCertificate) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`load_balancer_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLoadBalancerTlsCertificate::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::client::fluent_builders::DeleteLoadBalancerTlsCertificate::set_load_balancer_name): <p>The load balancer name.</p>
+    ///   - [`certificate_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLoadBalancerTlsCertificate::certificate_name) / [`set_certificate_name(Option<String>)`](crate::client::fluent_builders::DeleteLoadBalancerTlsCertificate::set_certificate_name): <p>The SSL/TLS certificate name.</p>
+    ///   - [`force(bool)`](crate::client::fluent_builders::DeleteLoadBalancerTlsCertificate::force) / [`set_force(Option<bool>)`](crate::client::fluent_builders::DeleteLoadBalancerTlsCertificate::set_force): <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>  <p>There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The <code>force</code> parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load balancer.</p>
+    /// - On success, responds with [`DeleteLoadBalancerTlsCertificateOutput`](crate::output::DeleteLoadBalancerTlsCertificateOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteLoadBalancerTlsCertificateOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteLoadBalancerTlsCertificateError>`](crate::error::DeleteLoadBalancerTlsCertificateError)
     pub fn delete_load_balancer_tls_certificate(
         &self,
     ) -> fluent_builders::DeleteLoadBalancerTlsCertificate<C, M, R> {
         fluent_builders::DeleteLoadBalancerTlsCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRelationalDatabase` operation.
+    /// Constructs a fluent builder for the [`DeleteRelationalDatabase`](crate::client::fluent_builders::DeleteRelationalDatabase) operation.
     ///
-    /// See [`DeleteRelationalDatabase`](crate::client::fluent_builders::DeleteRelationalDatabase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRelationalDatabase::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::DeleteRelationalDatabase::set_relational_database_name): <p>The name of the database that you are deleting.</p>
+    ///   - [`skip_final_snapshot(bool)`](crate::client::fluent_builders::DeleteRelationalDatabase::skip_final_snapshot) / [`set_skip_final_snapshot(Option<bool>)`](crate::client::fluent_builders::DeleteRelationalDatabase::set_skip_final_snapshot): <p>Determines whether a final database snapshot is created before your database is deleted. If <code>true</code> is specified, no database snapshot is created. If <code>false</code> is specified, a database snapshot is created before your database is deleted.</p>  <p>You must specify the <code>final relational database snapshot name</code> parameter if the <code>skip final snapshot</code> parameter is <code>false</code>.</p>  <p>Default: <code>false</code> </p>
+    ///   - [`final_relational_database_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRelationalDatabase::final_relational_database_snapshot_name) / [`set_final_relational_database_snapshot_name(Option<String>)`](crate::client::fluent_builders::DeleteRelationalDatabase::set_final_relational_database_snapshot_name): <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p> <note>   <p>Specifying this parameter and also specifying the <code>skip final snapshot</code> parameter to <code>true</code> results in an error.</p>  </note>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>   <li> <p>The first and last character must be a letter or number.</p> </li>  </ul>
+    /// - On success, responds with [`DeleteRelationalDatabaseOutput`](crate::output::DeleteRelationalDatabaseOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteRelationalDatabaseOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteRelationalDatabaseError>`](crate::error::DeleteRelationalDatabaseError)
     pub fn delete_relational_database(&self) -> fluent_builders::DeleteRelationalDatabase<C, M, R> {
         fluent_builders::DeleteRelationalDatabase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRelationalDatabaseSnapshot` operation.
+    /// Constructs a fluent builder for the [`DeleteRelationalDatabaseSnapshot`](crate::client::fluent_builders::DeleteRelationalDatabaseSnapshot) operation.
     ///
-    /// See [`DeleteRelationalDatabaseSnapshot`](crate::client::fluent_builders::DeleteRelationalDatabaseSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRelationalDatabaseSnapshot::relational_database_snapshot_name) / [`set_relational_database_snapshot_name(Option<String>)`](crate::client::fluent_builders::DeleteRelationalDatabaseSnapshot::set_relational_database_snapshot_name): <p>The name of the database snapshot that you are deleting.</p>
+    /// - On success, responds with [`DeleteRelationalDatabaseSnapshotOutput`](crate::output::DeleteRelationalDatabaseSnapshotOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DeleteRelationalDatabaseSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteRelationalDatabaseSnapshotError>`](crate::error::DeleteRelationalDatabaseSnapshotError)
     pub fn delete_relational_database_snapshot(
         &self,
     ) -> fluent_builders::DeleteRelationalDatabaseSnapshot<C, M, R> {
         fluent_builders::DeleteRelationalDatabaseSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetachCertificateFromDistribution` operation.
+    /// Constructs a fluent builder for the [`DetachCertificateFromDistribution`](crate::client::fluent_builders::DetachCertificateFromDistribution) operation.
     ///
-    /// See [`DetachCertificateFromDistribution`](crate::client::fluent_builders::DetachCertificateFromDistribution) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::DetachCertificateFromDistribution::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::DetachCertificateFromDistribution::set_distribution_name): <p>The name of the distribution from which to detach the certificate.</p>  <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    /// - On success, responds with [`DetachCertificateFromDistributionOutput`](crate::output::DetachCertificateFromDistributionOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::DetachCertificateFromDistributionOutput::operation): <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DetachCertificateFromDistributionError>`](crate::error::DetachCertificateFromDistributionError)
     pub fn detach_certificate_from_distribution(
         &self,
     ) -> fluent_builders::DetachCertificateFromDistribution<C, M, R> {
         fluent_builders::DetachCertificateFromDistribution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetachDisk` operation.
+    /// Constructs a fluent builder for the [`DetachDisk`](crate::client::fluent_builders::DetachDisk) operation.
     ///
-    /// See [`DetachDisk`](crate::client::fluent_builders::DetachDisk) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`disk_name(impl Into<String>)`](crate::client::fluent_builders::DetachDisk::disk_name) / [`set_disk_name(Option<String>)`](crate::client::fluent_builders::DetachDisk::set_disk_name): <p>The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).</p>
+    /// - On success, responds with [`DetachDiskOutput`](crate::output::DetachDiskOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DetachDiskOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DetachDiskError>`](crate::error::DetachDiskError)
     pub fn detach_disk(&self) -> fluent_builders::DetachDisk<C, M, R> {
         fluent_builders::DetachDisk::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetachInstancesFromLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`DetachInstancesFromLoadBalancer`](crate::client::fluent_builders::DetachInstancesFromLoadBalancer) operation.
     ///
-    /// See [`DetachInstancesFromLoadBalancer`](crate::client::fluent_builders::DetachInstancesFromLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`load_balancer_name(impl Into<String>)`](crate::client::fluent_builders::DetachInstancesFromLoadBalancer::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::client::fluent_builders::DetachInstancesFromLoadBalancer::set_load_balancer_name): <p>The name of the Lightsail load balancer.</p>
+    ///   - [`instance_names(Vec<String>)`](crate::client::fluent_builders::DetachInstancesFromLoadBalancer::instance_names) / [`set_instance_names(Option<Vec<String>>)`](crate::client::fluent_builders::DetachInstancesFromLoadBalancer::set_instance_names): <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
+    /// - On success, responds with [`DetachInstancesFromLoadBalancerOutput`](crate::output::DetachInstancesFromLoadBalancerOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DetachInstancesFromLoadBalancerOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DetachInstancesFromLoadBalancerError>`](crate::error::DetachInstancesFromLoadBalancerError)
     pub fn detach_instances_from_load_balancer(
         &self,
     ) -> fluent_builders::DetachInstancesFromLoadBalancer<C, M, R> {
         fluent_builders::DetachInstancesFromLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetachStaticIp` operation.
+    /// Constructs a fluent builder for the [`DetachStaticIp`](crate::client::fluent_builders::DetachStaticIp) operation.
     ///
-    /// See [`DetachStaticIp`](crate::client::fluent_builders::DetachStaticIp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`static_ip_name(impl Into<String>)`](crate::client::fluent_builders::DetachStaticIp::static_ip_name) / [`set_static_ip_name(Option<String>)`](crate::client::fluent_builders::DetachStaticIp::set_static_ip_name): <p>The name of the static IP to detach from the instance.</p>
+    /// - On success, responds with [`DetachStaticIpOutput`](crate::output::DetachStaticIpOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DetachStaticIpOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DetachStaticIpError>`](crate::error::DetachStaticIpError)
     pub fn detach_static_ip(&self) -> fluent_builders::DetachStaticIp<C, M, R> {
         fluent_builders::DetachStaticIp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableAddOn` operation.
+    /// Constructs a fluent builder for the [`DisableAddOn`](crate::client::fluent_builders::DisableAddOn) operation.
     ///
-    /// See [`DisableAddOn`](crate::client::fluent_builders::DisableAddOn) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`add_on_type(AddOnType)`](crate::client::fluent_builders::DisableAddOn::add_on_type) / [`set_add_on_type(Option<AddOnType>)`](crate::client::fluent_builders::DisableAddOn::set_add_on_type): <p>The add-on type to disable.</p>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::DisableAddOn::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::DisableAddOn::set_resource_name): <p>The name of the source resource for which to disable the add-on.</p>
+    /// - On success, responds with [`DisableAddOnOutput`](crate::output::DisableAddOnOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::DisableAddOnOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<DisableAddOnError>`](crate::error::DisableAddOnError)
     pub fn disable_add_on(&self) -> fluent_builders::DisableAddOn<C, M, R> {
         fluent_builders::DisableAddOn::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DownloadDefaultKeyPair` operation.
+    /// Constructs a fluent builder for the [`DownloadDefaultKeyPair`](crate::client::fluent_builders::DownloadDefaultKeyPair) operation.
     ///
-    /// See [`DownloadDefaultKeyPair`](crate::client::fluent_builders::DownloadDefaultKeyPair) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DownloadDefaultKeyPair::send) it.
+
+    /// - On success, responds with [`DownloadDefaultKeyPairOutput`](crate::output::DownloadDefaultKeyPairOutput) with field(s):
+    ///   - [`public_key_base64(Option<String>)`](crate::output::DownloadDefaultKeyPairOutput::public_key_base64): <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
+    ///   - [`private_key_base64(Option<String>)`](crate::output::DownloadDefaultKeyPairOutput::private_key_base64): <p>A base64-encoded RSA private key.</p>
+    /// - On failure, responds with [`SdkError<DownloadDefaultKeyPairError>`](crate::error::DownloadDefaultKeyPairError)
     pub fn download_default_key_pair(&self) -> fluent_builders::DownloadDefaultKeyPair<C, M, R> {
         fluent_builders::DownloadDefaultKeyPair::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableAddOn` operation.
+    /// Constructs a fluent builder for the [`EnableAddOn`](crate::client::fluent_builders::EnableAddOn) operation.
     ///
-    /// See [`EnableAddOn`](crate::client::fluent_builders::EnableAddOn) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::EnableAddOn::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::EnableAddOn::set_resource_name): <p>The name of the source resource for which to enable or modify the add-on.</p>
+    ///   - [`add_on_request(AddOnRequest)`](crate::client::fluent_builders::EnableAddOn::add_on_request) / [`set_add_on_request(Option<AddOnRequest>)`](crate::client::fluent_builders::EnableAddOn::set_add_on_request): <p>An array of strings representing the add-on to enable or modify.</p>
+    /// - On success, responds with [`EnableAddOnOutput`](crate::output::EnableAddOnOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::EnableAddOnOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<EnableAddOnError>`](crate::error::EnableAddOnError)
     pub fn enable_add_on(&self) -> fluent_builders::EnableAddOn<C, M, R> {
         fluent_builders::EnableAddOn::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ExportSnapshot` operation.
+    /// Constructs a fluent builder for the [`ExportSnapshot`](crate::client::fluent_builders::ExportSnapshot) operation.
     ///
-    /// See [`ExportSnapshot`](crate::client::fluent_builders::ExportSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`source_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::ExportSnapshot::source_snapshot_name) / [`set_source_snapshot_name(Option<String>)`](crate::client::fluent_builders::ExportSnapshot::set_source_snapshot_name): <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
+    /// - On success, responds with [`ExportSnapshotOutput`](crate::output::ExportSnapshotOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::ExportSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<ExportSnapshotError>`](crate::error::ExportSnapshotError)
     pub fn export_snapshot(&self) -> fluent_builders::ExportSnapshot<C, M, R> {
         fluent_builders::ExportSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetActiveNames` operation.
+    /// Constructs a fluent builder for the [`GetActiveNames`](crate::client::fluent_builders::GetActiveNames) operation.
     ///
-    /// See [`GetActiveNames`](crate::client::fluent_builders::GetActiveNames) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetActiveNames::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetActiveNames::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetActiveNames</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetActiveNamesOutput`](crate::output::GetActiveNamesOutput) with field(s):
+    ///   - [`active_names(Option<Vec<String>>)`](crate::output::GetActiveNamesOutput::active_names): <p>The list of active names returned by the get active names request.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetActiveNamesOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetActiveNamesError>`](crate::error::GetActiveNamesError)
     pub fn get_active_names(&self) -> fluent_builders::GetActiveNames<C, M, R> {
         fluent_builders::GetActiveNames::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAlarms` operation.
+    /// Constructs a fluent builder for the [`GetAlarms`](crate::client::fluent_builders::GetAlarms) operation.
     ///
-    /// See [`GetAlarms`](crate::client::fluent_builders::GetAlarms) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`alarm_name(impl Into<String>)`](crate::client::fluent_builders::GetAlarms::alarm_name) / [`set_alarm_name(Option<String>)`](crate::client::fluent_builders::GetAlarms::set_alarm_name): <p>The name of the alarm.</p>  <p>Specify an alarm name to return information about a specific alarm.</p>
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetAlarms::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetAlarms::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetAlarms</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    ///   - [`monitored_resource_name(impl Into<String>)`](crate::client::fluent_builders::GetAlarms::monitored_resource_name) / [`set_monitored_resource_name(Option<String>)`](crate::client::fluent_builders::GetAlarms::set_monitored_resource_name): <p>The name of the Lightsail resource being monitored by the alarm.</p>  <p>Specify a monitored resource name to return information about all alarms for a specific resource.</p>
+    /// - On success, responds with [`GetAlarmsOutput`](crate::output::GetAlarmsOutput) with field(s):
+    ///   - [`alarms(Option<Vec<Alarm>>)`](crate::output::GetAlarmsOutput::alarms): <p>An array of objects that describe the alarms.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetAlarmsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetAlarms</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetAlarmsError>`](crate::error::GetAlarmsError)
     pub fn get_alarms(&self) -> fluent_builders::GetAlarms<C, M, R> {
         fluent_builders::GetAlarms::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAutoSnapshots` operation.
+    /// Constructs a fluent builder for the [`GetAutoSnapshots`](crate::client::fluent_builders::GetAutoSnapshots) operation.
     ///
-    /// See [`GetAutoSnapshots`](crate::client::fluent_builders::GetAutoSnapshots) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::GetAutoSnapshots::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::GetAutoSnapshots::set_resource_name): <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
+    /// - On success, responds with [`GetAutoSnapshotsOutput`](crate::output::GetAutoSnapshotsOutput) with field(s):
+    ///   - [`resource_name(Option<String>)`](crate::output::GetAutoSnapshotsOutput::resource_name): <p>The name of the source instance or disk for the automatic snapshots.</p>
+    ///   - [`resource_type(Option<ResourceType>)`](crate::output::GetAutoSnapshotsOutput::resource_type): <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
+    ///   - [`auto_snapshots(Option<Vec<AutoSnapshotDetails>>)`](crate::output::GetAutoSnapshotsOutput::auto_snapshots): <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
+    /// - On failure, responds with [`SdkError<GetAutoSnapshotsError>`](crate::error::GetAutoSnapshotsError)
     pub fn get_auto_snapshots(&self) -> fluent_builders::GetAutoSnapshots<C, M, R> {
         fluent_builders::GetAutoSnapshots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBlueprints` operation.
+    /// Constructs a fluent builder for the [`GetBlueprints`](crate::client::fluent_builders::GetBlueprints) operation.
     ///
-    /// See [`GetBlueprints`](crate::client::fluent_builders::GetBlueprints) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`include_inactive(bool)`](crate::client::fluent_builders::GetBlueprints::include_inactive) / [`set_include_inactive(Option<bool>)`](crate::client::fluent_builders::GetBlueprints::set_include_inactive): <p>A Boolean value indicating whether to include inactive results in your request.</p>
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetBlueprints::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetBlueprints::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetBlueprintsOutput`](crate::output::GetBlueprintsOutput) with field(s):
+    ///   - [`blueprints(Option<Vec<Blueprint>>)`](crate::output::GetBlueprintsOutput::blueprints): <p>An array of key-value pairs that contains information about the available blueprints.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetBlueprintsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetBlueprintsError>`](crate::error::GetBlueprintsError)
     pub fn get_blueprints(&self) -> fluent_builders::GetBlueprints<C, M, R> {
         fluent_builders::GetBlueprints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBucketAccessKeys` operation.
+    /// Constructs a fluent builder for the [`GetBucketAccessKeys`](crate::client::fluent_builders::GetBucketAccessKeys) operation.
     ///
-    /// See [`GetBucketAccessKeys`](crate::client::fluent_builders::GetBucketAccessKeys) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::GetBucketAccessKeys::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::GetBucketAccessKeys::set_bucket_name): <p>The name of the bucket for which to return access keys.</p>
+    /// - On success, responds with [`GetBucketAccessKeysOutput`](crate::output::GetBucketAccessKeysOutput) with field(s):
+    ///   - [`access_keys(Option<Vec<AccessKey>>)`](crate::output::GetBucketAccessKeysOutput::access_keys): <p>An object that describes the access keys for the specified bucket.</p>
+    /// - On failure, responds with [`SdkError<GetBucketAccessKeysError>`](crate::error::GetBucketAccessKeysError)
     pub fn get_bucket_access_keys(&self) -> fluent_builders::GetBucketAccessKeys<C, M, R> {
         fluent_builders::GetBucketAccessKeys::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBucketBundles` operation.
+    /// Constructs a fluent builder for the [`GetBucketBundles`](crate::client::fluent_builders::GetBucketBundles) operation.
     ///
-    /// See [`GetBucketBundles`](crate::client::fluent_builders::GetBucketBundles) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`include_inactive(bool)`](crate::client::fluent_builders::GetBucketBundles::include_inactive) / [`set_include_inactive(Option<bool>)`](crate::client::fluent_builders::GetBucketBundles::set_include_inactive): <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response.</p>
+    /// - On success, responds with [`GetBucketBundlesOutput`](crate::output::GetBucketBundlesOutput) with field(s):
+    ///   - [`bundles(Option<Vec<BucketBundle>>)`](crate::output::GetBucketBundlesOutput::bundles): <p>An object that describes bucket bundles.</p>
+    /// - On failure, responds with [`SdkError<GetBucketBundlesError>`](crate::error::GetBucketBundlesError)
     pub fn get_bucket_bundles(&self) -> fluent_builders::GetBucketBundles<C, M, R> {
         fluent_builders::GetBucketBundles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBucketMetricData` operation.
+    /// Constructs a fluent builder for the [`GetBucketMetricData`](crate::client::fluent_builders::GetBucketMetricData) operation.
     ///
-    /// See [`GetBucketMetricData`](crate::client::fluent_builders::GetBucketMetricData) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::GetBucketMetricData::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::GetBucketMetricData::set_bucket_name): <p>The name of the bucket for which to get metric data.</p>
+    ///   - [`metric_name(BucketMetricName)`](crate::client::fluent_builders::GetBucketMetricData::metric_name) / [`set_metric_name(Option<BucketMetricName>)`](crate::client::fluent_builders::GetBucketMetricData::set_metric_name): <p>The metric for which you want to return information.</p>  <p>Valid bucket metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p> <note>   <p>These bucket metrics are reported once per day.</p>  </note>  <ul>   <li> <p> <b> <code>BucketSizeBytes</code> </b> - The amount of data in bytes stored in a bucket. This value is calculated by summing the size of all objects in the bucket (including object versions), including the size of all parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Maximum</code>.</p> <p>Unit: The published unit is <code>Bytes</code>.</p> </li>   <li> <p> <b> <code>NumberOfObjects</code> </b> - The total number of objects stored in a bucket. This value is calculated by counting all objects in the bucket (including object versions) and the total number of parts for all incomplete multipart uploads to the bucket.</p> <p>Statistics: The most useful statistic is <code>Average</code>.</p> <p>Unit: The published unit is <code>Count</code>.</p> </li>  </ul>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetBucketMetricData::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetBucketMetricData::set_start_time): <p>The timestamp indicating the earliest data to be returned.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetBucketMetricData::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetBucketMetricData::set_end_time): <p>The timestamp indicating the latest data to be returned.</p>
+    ///   - [`period(i32)`](crate::client::fluent_builders::GetBucketMetricData::period) / [`set_period(i32)`](crate::client::fluent_builders::GetBucketMetricData::set_period): <p>The granularity, in seconds, of the returned data points.</p> <note>   <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>  </note>
+    ///   - [`statistics(Vec<MetricStatistic>)`](crate::client::fluent_builders::GetBucketMetricData::statistics) / [`set_statistics(Option<Vec<MetricStatistic>>)`](crate::client::fluent_builders::GetBucketMetricData::set_statistics): <p>The statistic for the metric.</p>  <p>The following statistics are available:</p>  <ul>   <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>   <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>   <li> <p> <code>Sum</code> - The sum of all values submitted for the matching metric. You can use this statistic to determine the total volume of a metric.</p> </li>   <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>   <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>  </ul>
+    ///   - [`unit(MetricUnit)`](crate::client::fluent_builders::GetBucketMetricData::unit) / [`set_unit(Option<MetricUnit>)`](crate::client::fluent_builders::GetBucketMetricData::set_unit): <p>The unit for the metric data request.</p>  <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
+    /// - On success, responds with [`GetBucketMetricDataOutput`](crate::output::GetBucketMetricDataOutput) with field(s):
+    ///   - [`metric_name(Option<BucketMetricName>)`](crate::output::GetBucketMetricDataOutput::metric_name): <p>The name of the metric returned.</p>
+    ///   - [`metric_data(Option<Vec<MetricDatapoint>>)`](crate::output::GetBucketMetricDataOutput::metric_data): <p>An array of objects that describe the metric data returned.</p>
+    /// - On failure, responds with [`SdkError<GetBucketMetricDataError>`](crate::error::GetBucketMetricDataError)
     pub fn get_bucket_metric_data(&self) -> fluent_builders::GetBucketMetricData<C, M, R> {
         fluent_builders::GetBucketMetricData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBuckets` operation.
+    /// Constructs a fluent builder for the [`GetBuckets`](crate::client::fluent_builders::GetBuckets) operation.
     ///
-    /// See [`GetBuckets`](crate::client::fluent_builders::GetBuckets) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::GetBuckets::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::GetBuckets::set_bucket_name): <p>The name of the bucket for which to return information.</p>  <p>When omitted, the response includes all of your buckets in the AWS Region where the request is made.</p>
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetBuckets::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetBuckets::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    ///   - [`include_connected_resources(bool)`](crate::client::fluent_builders::GetBuckets::include_connected_resources) / [`set_include_connected_resources(Option<bool>)`](crate::client::fluent_builders::GetBuckets::set_include_connected_resources): <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <code>SetResourceAccessForBucket</code> action.</p>
+    /// - On success, responds with [`GetBucketsOutput`](crate::output::GetBucketsOutput) with field(s):
+    ///   - [`buckets(Option<Vec<Bucket>>)`](crate::output::GetBucketsOutput::buckets): <p>An array of objects that describe buckets.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetBucketsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetBucketsError>`](crate::error::GetBucketsError)
     pub fn get_buckets(&self) -> fluent_builders::GetBuckets<C, M, R> {
         fluent_builders::GetBuckets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBundles` operation.
+    /// Constructs a fluent builder for the [`GetBundles`](crate::client::fluent_builders::GetBundles) operation.
     ///
-    /// See [`GetBundles`](crate::client::fluent_builders::GetBundles) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`include_inactive(bool)`](crate::client::fluent_builders::GetBundles::include_inactive) / [`set_include_inactive(Option<bool>)`](crate::client::fluent_builders::GetBundles::set_include_inactive): <p>A Boolean value that indicates whether to include inactive bundle results in your request.</p>
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetBundles::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetBundles::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetBundlesOutput`](crate::output::GetBundlesOutput) with field(s):
+    ///   - [`bundles(Option<Vec<Bundle>>)`](crate::output::GetBundlesOutput::bundles): <p>An array of key-value pairs that contains information about the available bundles.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetBundlesOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetBundlesError>`](crate::error::GetBundlesError)
     pub fn get_bundles(&self) -> fluent_builders::GetBundles<C, M, R> {
         fluent_builders::GetBundles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCertificates` operation.
+    /// Constructs a fluent builder for the [`GetCertificates`](crate::client::fluent_builders::GetCertificates) operation.
     ///
-    /// See [`GetCertificates`](crate::client::fluent_builders::GetCertificates) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`certificate_statuses(Vec<CertificateStatus>)`](crate::client::fluent_builders::GetCertificates::certificate_statuses) / [`set_certificate_statuses(Option<Vec<CertificateStatus>>)`](crate::client::fluent_builders::GetCertificates::set_certificate_statuses): <p>The status of the certificates for which to return information.</p>  <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>  <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made, regardless of their current status.</p>
+    ///   - [`include_certificate_details(bool)`](crate::client::fluent_builders::GetCertificates::include_certificate_details) / [`set_include_certificate_details(bool)`](crate::client::fluent_builders::GetCertificates::set_include_certificate_details): <p>Indicates whether to include detailed information about the certificates in the response.</p>  <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
+    ///   - [`certificate_name(impl Into<String>)`](crate::client::fluent_builders::GetCertificates::certificate_name) / [`set_certificate_name(Option<String>)`](crate::client::fluent_builders::GetCertificates::set_certificate_name): <p>The name for the certificate for which to return information.</p>  <p>When omitted, the response includes all of your certificates in the AWS Region where the request is made.</p>
+    /// - On success, responds with [`GetCertificatesOutput`](crate::output::GetCertificatesOutput) with field(s):
+    ///   - [`certificates(Option<Vec<CertificateSummary>>)`](crate::output::GetCertificatesOutput::certificates): <p>An object that describes certificates.</p>
+    /// - On failure, responds with [`SdkError<GetCertificatesError>`](crate::error::GetCertificatesError)
     pub fn get_certificates(&self) -> fluent_builders::GetCertificates<C, M, R> {
         fluent_builders::GetCertificates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCloudFormationStackRecords` operation.
+    /// Constructs a fluent builder for the [`GetCloudFormationStackRecords`](crate::client::fluent_builders::GetCloudFormationStackRecords) operation.
     ///
-    /// See [`GetCloudFormationStackRecords`](crate::client::fluent_builders::GetCloudFormationStackRecords) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetCloudFormationStackRecords::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetCloudFormationStackRecords::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetClouFormationStackRecords</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetCloudFormationStackRecordsOutput`](crate::output::GetCloudFormationStackRecordsOutput) with field(s):
+    ///   - [`cloud_formation_stack_records(Option<Vec<CloudFormationStackRecord>>)`](crate::output::GetCloudFormationStackRecordsOutput::cloud_formation_stack_records): <p>A list of objects describing the CloudFormation stack records.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetCloudFormationStackRecordsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetCloudFormationStackRecordsError>`](crate::error::GetCloudFormationStackRecordsError)
     pub fn get_cloud_formation_stack_records(
         &self,
     ) -> fluent_builders::GetCloudFormationStackRecords<C, M, R> {
         fluent_builders::GetCloudFormationStackRecords::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContactMethods` operation.
+    /// Constructs a fluent builder for the [`GetContactMethods`](crate::client::fluent_builders::GetContactMethods) operation.
     ///
-    /// See [`GetContactMethods`](crate::client::fluent_builders::GetContactMethods) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`protocols(Vec<ContactProtocol>)`](crate::client::fluent_builders::GetContactMethods::protocols) / [`set_protocols(Option<Vec<ContactProtocol>>)`](crate::client::fluent_builders::GetContactMethods::set_protocols): <p>The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code> (text messaging).</p>  <p>Specify a protocol in your request to return information about a specific contact method protocol.</p>
+    /// - On success, responds with [`GetContactMethodsOutput`](crate::output::GetContactMethodsOutput) with field(s):
+    ///   - [`contact_methods(Option<Vec<ContactMethod>>)`](crate::output::GetContactMethodsOutput::contact_methods): <p>An array of objects that describe the contact methods.</p>
+    /// - On failure, responds with [`SdkError<GetContactMethodsError>`](crate::error::GetContactMethodsError)
     pub fn get_contact_methods(&self) -> fluent_builders::GetContactMethods<C, M, R> {
         fluent_builders::GetContactMethods::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContainerAPIMetadata` operation.
+    /// Constructs a fluent builder for the [`GetContainerAPIMetadata`](crate::client::fluent_builders::GetContainerAPIMetadata) operation.
     ///
-    /// See [`GetContainerAPIMetadata`](crate::client::fluent_builders::GetContainerAPIMetadata) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetContainerAPIMetadata::send) it.
+
+    /// - On success, responds with [`GetContainerApiMetadataOutput`](crate::output::GetContainerApiMetadataOutput) with field(s):
+    ///   - [`metadata(Option<Vec<HashMap<String, String>>>)`](crate::output::GetContainerApiMetadataOutput::metadata): <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
+    /// - On failure, responds with [`SdkError<GetContainerAPIMetadataError>`](crate::error::GetContainerAPIMetadataError)
     pub fn get_container_api_metadata(&self) -> fluent_builders::GetContainerAPIMetadata<C, M, R> {
         fluent_builders::GetContainerAPIMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContainerImages` operation.
+    /// Constructs a fluent builder for the [`GetContainerImages`](crate::client::fluent_builders::GetContainerImages) operation.
     ///
-    /// See [`GetContainerImages`](crate::client::fluent_builders::GetContainerImages) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::GetContainerImages::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::GetContainerImages::set_service_name): <p>The name of the container service for which to return registered container images.</p>
+    /// - On success, responds with [`GetContainerImagesOutput`](crate::output::GetContainerImagesOutput) with field(s):
+    ///   - [`container_images(Option<Vec<ContainerImage>>)`](crate::output::GetContainerImagesOutput::container_images): <p>An array of objects that describe container images that are registered to the container service.</p>
+    /// - On failure, responds with [`SdkError<GetContainerImagesError>`](crate::error::GetContainerImagesError)
     pub fn get_container_images(&self) -> fluent_builders::GetContainerImages<C, M, R> {
         fluent_builders::GetContainerImages::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContainerLog` operation.
+    /// Constructs a fluent builder for the [`GetContainerLog`](crate::client::fluent_builders::GetContainerLog) operation.
     ///
-    /// See [`GetContainerLog`](crate::client::fluent_builders::GetContainerLog) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::GetContainerLog::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::GetContainerLog::set_service_name): <p>The name of the container service for which to get a container log.</p>
+    ///   - [`container_name(impl Into<String>)`](crate::client::fluent_builders::GetContainerLog::container_name) / [`set_container_name(Option<String>)`](crate::client::fluent_builders::GetContainerLog::set_container_name): <p>The name of the container that is either running or previously ran on the container service for which to return a log.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetContainerLog::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetContainerLog::set_start_time): <p>The start of the time interval for which to get log data.</p>  <p>Constraints:</p>  <ul>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>  </ul>  <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetContainerLog::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetContainerLog::set_end_time): <p>The end of the time interval for which to get log data.</p>  <p>Constraints:</p>  <ul>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>  </ul>  <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
+    ///   - [`filter_pattern(impl Into<String>)`](crate::client::fluent_builders::GetContainerLog::filter_pattern) / [`set_filter_pattern(Option<String>)`](crate::client::fluent_builders::GetContainerLog::set_filter_pattern): <p>The pattern to use to filter the returned log events to a specific term.</p>  <p>The following are a few examples of filter patterns that you can specify:</p>  <ul>   <li> <p>To return all log events, specify a filter pattern of <code>""</code>.</p> </li>   <li> <p>To exclude log events that contain the <code>ERROR</code> term, and return all other log events, specify a filter pattern of <code>"-ERROR"</code>.</p> </li>   <li> <p>To return log events that contain the <code>ERROR</code> term, specify a filter pattern of <code>"ERROR"</code>.</p> </li>   <li> <p>To return log events that contain both the <code>ERROR</code> and <code>Exception</code> terms, specify a filter pattern of <code>"ERROR Exception"</code>.</p> </li>   <li> <p>To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code> term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.</p> </li>  </ul>
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetContainerLog::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetContainerLog::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetContainerLog</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetContainerLogOutput`](crate::output::GetContainerLogOutput) with field(s):
+    ///   - [`log_events(Option<Vec<ContainerServiceLogEvent>>)`](crate::output::GetContainerLogOutput::log_events): <p>An array of objects that describe the log events of a container.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetContainerLogOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetContainerLog</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetContainerLogError>`](crate::error::GetContainerLogError)
     pub fn get_container_log(&self) -> fluent_builders::GetContainerLog<C, M, R> {
         fluent_builders::GetContainerLog::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContainerServiceDeployments` operation.
+    /// Constructs a fluent builder for the [`GetContainerServiceDeployments`](crate::client::fluent_builders::GetContainerServiceDeployments) operation.
     ///
-    /// See [`GetContainerServiceDeployments`](crate::client::fluent_builders::GetContainerServiceDeployments) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::GetContainerServiceDeployments::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::GetContainerServiceDeployments::set_service_name): <p>The name of the container service for which to return deployments.</p>
+    /// - On success, responds with [`GetContainerServiceDeploymentsOutput`](crate::output::GetContainerServiceDeploymentsOutput) with field(s):
+    ///   - [`deployments(Option<Vec<ContainerServiceDeployment>>)`](crate::output::GetContainerServiceDeploymentsOutput::deployments): <p>An array of objects that describe deployments for a container service.</p>
+    /// - On failure, responds with [`SdkError<GetContainerServiceDeploymentsError>`](crate::error::GetContainerServiceDeploymentsError)
     pub fn get_container_service_deployments(
         &self,
     ) -> fluent_builders::GetContainerServiceDeployments<C, M, R> {
         fluent_builders::GetContainerServiceDeployments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContainerServiceMetricData` operation.
+    /// Constructs a fluent builder for the [`GetContainerServiceMetricData`](crate::client::fluent_builders::GetContainerServiceMetricData) operation.
     ///
-    /// See [`GetContainerServiceMetricData`](crate::client::fluent_builders::GetContainerServiceMetricData) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::GetContainerServiceMetricData::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::GetContainerServiceMetricData::set_service_name): <p>The name of the container service for which to get metric data.</p>
+    ///   - [`metric_name(ContainerServiceMetricName)`](crate::client::fluent_builders::GetContainerServiceMetricData::metric_name) / [`set_metric_name(Option<ContainerServiceMetricName>)`](crate::client::fluent_builders::GetContainerServiceMetricData::set_metric_name): <p>The metric for which you want to return information.</p>  <p>Valid container service metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p>  <ul>   <li> <p> <code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>   <li> <p> <code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>  </ul>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetContainerServiceMetricData::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetContainerServiceMetricData::set_start_time): <p>The start time of the time period.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetContainerServiceMetricData::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetContainerServiceMetricData::set_end_time): <p>The end time of the time period.</p>
+    ///   - [`period(i32)`](crate::client::fluent_builders::GetContainerServiceMetricData::period) / [`set_period(i32)`](crate::client::fluent_builders::GetContainerServiceMetricData::set_period): <p>The granularity, in seconds, of the returned data points.</p>  <p>All container service metric data is available in 5-minute (300 seconds) granularity.</p>
+    ///   - [`statistics(Vec<MetricStatistic>)`](crate::client::fluent_builders::GetContainerServiceMetricData::statistics) / [`set_statistics(Option<Vec<MetricStatistic>>)`](crate::client::fluent_builders::GetContainerServiceMetricData::set_statistics): <p>The statistic for the metric.</p>  <p>The following statistics are available:</p>  <ul>   <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>   <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>   <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>   <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>   <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>  </ul>
+    /// - On success, responds with [`GetContainerServiceMetricDataOutput`](crate::output::GetContainerServiceMetricDataOutput) with field(s):
+    ///   - [`metric_name(Option<ContainerServiceMetricName>)`](crate::output::GetContainerServiceMetricDataOutput::metric_name): <p>The name of the metric returned. </p>
+    ///   - [`metric_data(Option<Vec<MetricDatapoint>>)`](crate::output::GetContainerServiceMetricDataOutput::metric_data): <p>An array of objects that describe the metric data returned.</p>
+    /// - On failure, responds with [`SdkError<GetContainerServiceMetricDataError>`](crate::error::GetContainerServiceMetricDataError)
     pub fn get_container_service_metric_data(
         &self,
     ) -> fluent_builders::GetContainerServiceMetricData<C, M, R> {
         fluent_builders::GetContainerServiceMetricData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContainerServicePowers` operation.
+    /// Constructs a fluent builder for the [`GetContainerServicePowers`](crate::client::fluent_builders::GetContainerServicePowers) operation.
     ///
-    /// See [`GetContainerServicePowers`](crate::client::fluent_builders::GetContainerServicePowers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetContainerServicePowers::send) it.
+
+    /// - On success, responds with [`GetContainerServicePowersOutput`](crate::output::GetContainerServicePowersOutput) with field(s):
+    ///   - [`powers(Option<Vec<ContainerServicePower>>)`](crate::output::GetContainerServicePowersOutput::powers): <p>An array of objects that describe the powers that can be specified for a container service.</p>
+    /// - On failure, responds with [`SdkError<GetContainerServicePowersError>`](crate::error::GetContainerServicePowersError)
     pub fn get_container_service_powers(
         &self,
     ) -> fluent_builders::GetContainerServicePowers<C, M, R> {
         fluent_builders::GetContainerServicePowers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContainerServices` operation.
+    /// Constructs a fluent builder for the [`GetContainerServices`](crate::client::fluent_builders::GetContainerServices) operation.
     ///
-    /// See [`GetContainerServices`](crate::client::fluent_builders::GetContainerServices) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::GetContainerServices::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::GetContainerServices::set_service_name): <p>The name of the container service for which to return information.</p>  <p>When omitted, the response includes all of your container services in the AWS Region where the request is made.</p>
+    /// - On success, responds with [`GetContainerServicesOutput`](crate::output::GetContainerServicesOutput) with field(s):
+    ///   - [`container_services(Option<Vec<ContainerService>>)`](crate::output::GetContainerServicesOutput::container_services): <p>An array of objects that describe one or more container services.</p>
+    /// - On failure, responds with [`SdkError<GetContainerServicesError>`](crate::error::GetContainerServicesError)
     pub fn get_container_services(&self) -> fluent_builders::GetContainerServices<C, M, R> {
         fluent_builders::GetContainerServices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDisk` operation.
+    /// Constructs a fluent builder for the [`GetDisk`](crate::client::fluent_builders::GetDisk) operation.
     ///
-    /// See [`GetDisk`](crate::client::fluent_builders::GetDisk) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`disk_name(impl Into<String>)`](crate::client::fluent_builders::GetDisk::disk_name) / [`set_disk_name(Option<String>)`](crate::client::fluent_builders::GetDisk::set_disk_name): <p>The name of the disk (e.g., <code>my-disk</code>).</p>
+    /// - On success, responds with [`GetDiskOutput`](crate::output::GetDiskOutput) with field(s):
+    ///   - [`disk(Option<Disk>)`](crate::output::GetDiskOutput::disk): <p>An object containing information about the disk.</p>
+    /// - On failure, responds with [`SdkError<GetDiskError>`](crate::error::GetDiskError)
     pub fn get_disk(&self) -> fluent_builders::GetDisk<C, M, R> {
         fluent_builders::GetDisk::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDisks` operation.
+    /// Constructs a fluent builder for the [`GetDisks`](crate::client::fluent_builders::GetDisks) operation.
     ///
-    /// See [`GetDisks`](crate::client::fluent_builders::GetDisks) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetDisks::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetDisks::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetDisks</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetDisksOutput`](crate::output::GetDisksOutput) with field(s):
+    ///   - [`disks(Option<Vec<Disk>>)`](crate::output::GetDisksOutput::disks): <p>An array of objects containing information about all block storage disks.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetDisksOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetDisks</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetDisksError>`](crate::error::GetDisksError)
     pub fn get_disks(&self) -> fluent_builders::GetDisks<C, M, R> {
         fluent_builders::GetDisks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDiskSnapshot` operation.
+    /// Constructs a fluent builder for the [`GetDiskSnapshot`](crate::client::fluent_builders::GetDiskSnapshot) operation.
     ///
-    /// See [`GetDiskSnapshot`](crate::client::fluent_builders::GetDiskSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`disk_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::GetDiskSnapshot::disk_snapshot_name) / [`set_disk_snapshot_name(Option<String>)`](crate::client::fluent_builders::GetDiskSnapshot::set_disk_snapshot_name): <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// - On success, responds with [`GetDiskSnapshotOutput`](crate::output::GetDiskSnapshotOutput) with field(s):
+    ///   - [`disk_snapshot(Option<DiskSnapshot>)`](crate::output::GetDiskSnapshotOutput::disk_snapshot): <p>An object containing information about the disk snapshot.</p>
+    /// - On failure, responds with [`SdkError<GetDiskSnapshotError>`](crate::error::GetDiskSnapshotError)
     pub fn get_disk_snapshot(&self) -> fluent_builders::GetDiskSnapshot<C, M, R> {
         fluent_builders::GetDiskSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDiskSnapshots` operation.
+    /// Constructs a fluent builder for the [`GetDiskSnapshots`](crate::client::fluent_builders::GetDiskSnapshots) operation.
     ///
-    /// See [`GetDiskSnapshots`](crate::client::fluent_builders::GetDiskSnapshots) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetDiskSnapshots::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetDiskSnapshots::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetDiskSnapshots</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetDiskSnapshotsOutput`](crate::output::GetDiskSnapshotsOutput) with field(s):
+    ///   - [`disk_snapshots(Option<Vec<DiskSnapshot>>)`](crate::output::GetDiskSnapshotsOutput::disk_snapshots): <p>An array of objects containing information about all block storage disk snapshots.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetDiskSnapshotsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetDiskSnapshotsError>`](crate::error::GetDiskSnapshotsError)
     pub fn get_disk_snapshots(&self) -> fluent_builders::GetDiskSnapshots<C, M, R> {
         fluent_builders::GetDiskSnapshots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDistributionBundles` operation.
+    /// Constructs a fluent builder for the [`GetDistributionBundles`](crate::client::fluent_builders::GetDistributionBundles) operation.
     ///
-    /// See [`GetDistributionBundles`](crate::client::fluent_builders::GetDistributionBundles) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetDistributionBundles::send) it.
+
+    /// - On success, responds with [`GetDistributionBundlesOutput`](crate::output::GetDistributionBundlesOutput) with field(s):
+    ///   - [`bundles(Option<Vec<DistributionBundle>>)`](crate::output::GetDistributionBundlesOutput::bundles): <p>An object that describes a distribution bundle.</p>
+    /// - On failure, responds with [`SdkError<GetDistributionBundlesError>`](crate::error::GetDistributionBundlesError)
     pub fn get_distribution_bundles(&self) -> fluent_builders::GetDistributionBundles<C, M, R> {
         fluent_builders::GetDistributionBundles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDistributionLatestCacheReset` operation.
+    /// Constructs a fluent builder for the [`GetDistributionLatestCacheReset`](crate::client::fluent_builders::GetDistributionLatestCacheReset) operation.
     ///
-    /// See [`GetDistributionLatestCacheReset`](crate::client::fluent_builders::GetDistributionLatestCacheReset) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::GetDistributionLatestCacheReset::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::GetDistributionLatestCacheReset::set_distribution_name): <p>The name of the distribution for which to return the timestamp of the last cache reset.</p>  <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>  <p>When omitted, the response includes the latest cache reset timestamp of all your distributions.</p>
+    /// - On success, responds with [`GetDistributionLatestCacheResetOutput`](crate::output::GetDistributionLatestCacheResetOutput) with field(s):
+    ///   - [`status(Option<String>)`](crate::output::GetDistributionLatestCacheResetOutput::status): <p>The status of the last cache reset.</p>
+    ///   - [`create_time(Option<DateTime>)`](crate::output::GetDistributionLatestCacheResetOutput::create_time): <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    /// - On failure, responds with [`SdkError<GetDistributionLatestCacheResetError>`](crate::error::GetDistributionLatestCacheResetError)
     pub fn get_distribution_latest_cache_reset(
         &self,
     ) -> fluent_builders::GetDistributionLatestCacheReset<C, M, R> {
         fluent_builders::GetDistributionLatestCacheReset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDistributionMetricData` operation.
+    /// Constructs a fluent builder for the [`GetDistributionMetricData`](crate::client::fluent_builders::GetDistributionMetricData) operation.
     ///
-    /// See [`GetDistributionMetricData`](crate::client::fluent_builders::GetDistributionMetricData) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::GetDistributionMetricData::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::GetDistributionMetricData::set_distribution_name): <p>The name of the distribution for which to get metric data.</p>  <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    ///   - [`metric_name(DistributionMetricName)`](crate::client::fluent_builders::GetDistributionMetricData::metric_name) / [`set_metric_name(Option<DistributionMetricName>)`](crate::client::fluent_builders::GetDistributionMetricData::set_metric_name): <p>The metric for which you want to return information.</p>  <p>Valid distribution metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value.</p>  <ul>   <li> <p> <b> <code>Requests</code> </b> - The total number of viewer requests received by your Lightsail distribution, for all HTTP methods, and for both HTTP and HTTPS requests.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>None</code>.</p> </li>   <li> <p> <b> <code>BytesDownloaded</code> </b> - The number of bytes downloaded by viewers for GET, HEAD, and OPTIONS requests.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>None</code>.</p> </li>   <li> <p> <b> <code>BytesUploaded </code> </b> - The number of bytes uploaded to your origin by your Lightsail distribution, using POST and PUT requests.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>None</code>.</p> </li>   <li> <p> <b> <code>TotalErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status code was 4xx or 5xx.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>   <li> <p> <b> <code>4xxErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status cod was 4xx. In these cases, the client or client viewer may have made an error. For example, a status code of 404 (Not Found) means that the client requested an object that could not be found.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>   <li> <p> <b> <code>5xxErrorRate</code> </b> - The percentage of all viewer requests for which the response's HTTP status code was 5xx. In these cases, the origin server did not satisfy the requests. For example, a status code of 503 (Service Unavailable) means that the origin server is currently unavailable.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>  </ul>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetDistributionMetricData::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetDistributionMetricData::set_start_time): <p>The start of the time interval for which to get metric data.</p>  <p>Constraints:</p>  <ul>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>  </ul>  <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetDistributionMetricData::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetDistributionMetricData::set_end_time): <p>The end of the time interval for which to get metric data.</p>  <p>Constraints:</p>  <ul>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>  </ul>  <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
+    ///   - [`period(i32)`](crate::client::fluent_builders::GetDistributionMetricData::period) / [`set_period(i32)`](crate::client::fluent_builders::GetDistributionMetricData::set_period): <p>The granularity, in seconds, for the metric data points that will be returned.</p>
+    ///   - [`unit(MetricUnit)`](crate::client::fluent_builders::GetDistributionMetricData::unit) / [`set_unit(Option<MetricUnit>)`](crate::client::fluent_builders::GetDistributionMetricData::set_unit): <p>The unit for the metric data request.</p>  <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
+    ///   - [`statistics(Vec<MetricStatistic>)`](crate::client::fluent_builders::GetDistributionMetricData::statistics) / [`set_statistics(Option<Vec<MetricStatistic>>)`](crate::client::fluent_builders::GetDistributionMetricData::set_statistics): <p>The statistic for the metric.</p>  <p>The following statistics are available:</p>  <ul>   <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>   <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>   <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>   <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>   <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>  </ul>
+    /// - On success, responds with [`GetDistributionMetricDataOutput`](crate::output::GetDistributionMetricDataOutput) with field(s):
+    ///   - [`metric_name(Option<DistributionMetricName>)`](crate::output::GetDistributionMetricDataOutput::metric_name): <p>The name of the metric returned.</p>
+    ///   - [`metric_data(Option<Vec<MetricDatapoint>>)`](crate::output::GetDistributionMetricDataOutput::metric_data): <p>An array of objects that describe the metric data returned.</p>
+    /// - On failure, responds with [`SdkError<GetDistributionMetricDataError>`](crate::error::GetDistributionMetricDataError)
     pub fn get_distribution_metric_data(
         &self,
     ) -> fluent_builders::GetDistributionMetricData<C, M, R> {
         fluent_builders::GetDistributionMetricData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDistributions` operation.
+    /// Constructs a fluent builder for the [`GetDistributions`](crate::client::fluent_builders::GetDistributions) operation.
     ///
-    /// See [`GetDistributions`](crate::client::fluent_builders::GetDistributions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::GetDistributions::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::GetDistributions::set_distribution_name): <p>The name of the distribution for which to return information.</p>  <p>When omitted, the response includes all of your distributions in the AWS Region where the request is made.</p>
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetDistributions::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetDistributions::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetDistributionsOutput`](crate::output::GetDistributionsOutput) with field(s):
+    ///   - [`distributions(Option<Vec<LightsailDistribution>>)`](crate::output::GetDistributionsOutput::distributions): <p>An array of objects that describe your distributions.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetDistributionsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetDistributions</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetDistributionsError>`](crate::error::GetDistributionsError)
     pub fn get_distributions(&self) -> fluent_builders::GetDistributions<C, M, R> {
         fluent_builders::GetDistributions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDomain` operation.
+    /// Constructs a fluent builder for the [`GetDomain`](crate::client::fluent_builders::GetDomain) operation.
     ///
-    /// See [`GetDomain`](crate::client::fluent_builders::GetDomain) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::GetDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::GetDomain::set_domain_name): <p>The domain name for which your want to return information about.</p>
+    /// - On success, responds with [`GetDomainOutput`](crate::output::GetDomainOutput) with field(s):
+    ///   - [`domain(Option<Domain>)`](crate::output::GetDomainOutput::domain): <p>An array of key-value pairs containing information about your get domain request.</p>
+    /// - On failure, responds with [`SdkError<GetDomainError>`](crate::error::GetDomainError)
     pub fn get_domain(&self) -> fluent_builders::GetDomain<C, M, R> {
         fluent_builders::GetDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDomains` operation.
+    /// Constructs a fluent builder for the [`GetDomains`](crate::client::fluent_builders::GetDomains) operation.
     ///
-    /// See [`GetDomains`](crate::client::fluent_builders::GetDomains) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetDomains::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetDomains::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetDomains</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetDomainsOutput`](crate::output::GetDomainsOutput) with field(s):
+    ///   - [`domains(Option<Vec<Domain>>)`](crate::output::GetDomainsOutput::domains): <p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetDomainsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetDomains</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetDomainsError>`](crate::error::GetDomainsError)
     pub fn get_domains(&self) -> fluent_builders::GetDomains<C, M, R> {
         fluent_builders::GetDomains::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetExportSnapshotRecords` operation.
+    /// Constructs a fluent builder for the [`GetExportSnapshotRecords`](crate::client::fluent_builders::GetExportSnapshotRecords) operation.
     ///
-    /// See [`GetExportSnapshotRecords`](crate::client::fluent_builders::GetExportSnapshotRecords) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetExportSnapshotRecords::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetExportSnapshotRecords::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetExportSnapshotRecords</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetExportSnapshotRecordsOutput`](crate::output::GetExportSnapshotRecordsOutput) with field(s):
+    ///   - [`export_snapshot_records(Option<Vec<ExportSnapshotRecord>>)`](crate::output::GetExportSnapshotRecordsOutput::export_snapshot_records): <p>A list of objects describing the export snapshot records.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetExportSnapshotRecordsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetExportSnapshotRecordsError>`](crate::error::GetExportSnapshotRecordsError)
     pub fn get_export_snapshot_records(
         &self,
     ) -> fluent_builders::GetExportSnapshotRecords<C, M, R> {
         fluent_builders::GetExportSnapshotRecords::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInstance` operation.
+    /// Constructs a fluent builder for the [`GetInstance`](crate::client::fluent_builders::GetInstance) operation.
     ///
-    /// See [`GetInstance`](crate::client::fluent_builders::GetInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::GetInstance::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::GetInstance::set_instance_name): <p>The name of the instance.</p>
+    /// - On success, responds with [`GetInstanceOutput`](crate::output::GetInstanceOutput) with field(s):
+    ///   - [`instance(Option<Instance>)`](crate::output::GetInstanceOutput::instance): <p>An array of key-value pairs containing information about the specified instance.</p>
+    /// - On failure, responds with [`SdkError<GetInstanceError>`](crate::error::GetInstanceError)
     pub fn get_instance(&self) -> fluent_builders::GetInstance<C, M, R> {
         fluent_builders::GetInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInstanceAccessDetails` operation.
+    /// Constructs a fluent builder for the [`GetInstanceAccessDetails`](crate::client::fluent_builders::GetInstanceAccessDetails) operation.
     ///
-    /// See [`GetInstanceAccessDetails`](crate::client::fluent_builders::GetInstanceAccessDetails) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::GetInstanceAccessDetails::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::GetInstanceAccessDetails::set_instance_name): <p>The name of the instance to access.</p>
+    ///   - [`protocol(InstanceAccessProtocol)`](crate::client::fluent_builders::GetInstanceAccessDetails::protocol) / [`set_protocol(Option<InstanceAccessProtocol>)`](crate::client::fluent_builders::GetInstanceAccessDetails::set_protocol): <p>The protocol to use to connect to your instance. Defaults to <code>ssh</code>.</p>
+    /// - On success, responds with [`GetInstanceAccessDetailsOutput`](crate::output::GetInstanceAccessDetailsOutput) with field(s):
+    ///   - [`access_details(Option<InstanceAccessDetails>)`](crate::output::GetInstanceAccessDetailsOutput::access_details): <p>An array of key-value pairs containing information about a get instance access request.</p>
+    /// - On failure, responds with [`SdkError<GetInstanceAccessDetailsError>`](crate::error::GetInstanceAccessDetailsError)
     pub fn get_instance_access_details(
         &self,
     ) -> fluent_builders::GetInstanceAccessDetails<C, M, R> {
         fluent_builders::GetInstanceAccessDetails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInstanceMetricData` operation.
+    /// Constructs a fluent builder for the [`GetInstanceMetricData`](crate::client::fluent_builders::GetInstanceMetricData) operation.
     ///
-    /// See [`GetInstanceMetricData`](crate::client::fluent_builders::GetInstanceMetricData) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::GetInstanceMetricData::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::GetInstanceMetricData::set_instance_name): <p>The name of the instance for which you want to get metrics data.</p>
+    ///   - [`metric_name(InstanceMetricName)`](crate::client::fluent_builders::GetInstanceMetricData::metric_name) / [`set_metric_name(Option<InstanceMetricName>)`](crate::client::fluent_builders::GetInstanceMetricData::set_metric_name): <p>The metric for which you want to return information.</p>  <p>Valid instance metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value.</p>  <ul>   <li> <p> <b> <code>BurstCapacityPercentage</code> </b> - The percentage of CPU performance available for your instance to burst above its baseline. Your instance continuously accrues and consumes burst capacity. Burst capacity stops accruing when your instance's <code>BurstCapacityPercentage</code> reaches 100%. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>   <li> <p> <b> <code>BurstCapacityTime</code> </b> - The available amount of time for your instance to burst at 100% CPU utilization. Your instance continuously accrues and consumes burst capacity. Burst capacity time stops accruing when your instance's <code>BurstCapacityPercentage</code> metric reaches 100%.</p> <p>Burst capacity time is consumed at the full rate only when your instance operates at 100% CPU utilization. For example, if your instance operates at 50% CPU utilization in the burstable zone for a 5-minute period, then it consumes CPU burst capacity minutes at a 50% rate in that period. Your instance consumed 2 minutes and 30 seconds of CPU burst capacity minutes in the 5-minute period. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-burst-capacity">Viewing instance burst capacity in Amazon Lightsail</a>.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Seconds</code>.</p> </li>   <li> <p> <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use on the instance. This metric identifies the processing power to run the applications on the instance. Tools in your operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor core.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>   <li> <p> <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance. This metric identifies the volume of incoming network traffic to the instance. The number reported is the number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported number by 300 to find Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li>   <li> <p> <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance. This metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number by 300 to find Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li>   <li> <p> <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>  </ul>
+    ///   - [`period(i32)`](crate::client::fluent_builders::GetInstanceMetricData::period) / [`set_period(i32)`](crate::client::fluent_builders::GetInstanceMetricData::set_period): <p>The granularity, in seconds, of the returned data points.</p>  <p>The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds) granularity. All other instance metric data is available in 5-minute (300 seconds) granularity.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetInstanceMetricData::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetInstanceMetricData::set_start_time): <p>The start time of the time period.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetInstanceMetricData::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetInstanceMetricData::set_end_time): <p>The end time of the time period.</p>
+    ///   - [`unit(MetricUnit)`](crate::client::fluent_builders::GetInstanceMetricData::unit) / [`set_unit(Option<MetricUnit>)`](crate::client::fluent_builders::GetInstanceMetricData::set_unit): <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units to specify with each available metric, see the <code>metricName</code> parameter.</p>
+    ///   - [`statistics(Vec<MetricStatistic>)`](crate::client::fluent_builders::GetInstanceMetricData::statistics) / [`set_statistics(Option<Vec<MetricStatistic>>)`](crate::client::fluent_builders::GetInstanceMetricData::set_statistics): <p>The statistic for the metric.</p>  <p>The following statistics are available:</p>  <ul>   <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>   <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>   <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>   <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>   <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>  </ul>
+    /// - On success, responds with [`GetInstanceMetricDataOutput`](crate::output::GetInstanceMetricDataOutput) with field(s):
+    ///   - [`metric_name(Option<InstanceMetricName>)`](crate::output::GetInstanceMetricDataOutput::metric_name): <p>The name of the metric returned.</p>
+    ///   - [`metric_data(Option<Vec<MetricDatapoint>>)`](crate::output::GetInstanceMetricDataOutput::metric_data): <p>An array of objects that describe the metric data returned.</p>
+    /// - On failure, responds with [`SdkError<GetInstanceMetricDataError>`](crate::error::GetInstanceMetricDataError)
     pub fn get_instance_metric_data(&self) -> fluent_builders::GetInstanceMetricData<C, M, R> {
         fluent_builders::GetInstanceMetricData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInstancePortStates` operation.
+    /// Constructs a fluent builder for the [`GetInstancePortStates`](crate::client::fluent_builders::GetInstancePortStates) operation.
     ///
-    /// See [`GetInstancePortStates`](crate::client::fluent_builders::GetInstancePortStates) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::GetInstancePortStates::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::GetInstancePortStates::set_instance_name): <p>The name of the instance for which to return firewall port states.</p>
+    /// - On success, responds with [`GetInstancePortStatesOutput`](crate::output::GetInstancePortStatesOutput) with field(s):
+    ///   - [`port_states(Option<Vec<InstancePortState>>)`](crate::output::GetInstancePortStatesOutput::port_states): <p>An array of objects that describe the firewall port states for the specified instance.</p>
+    /// - On failure, responds with [`SdkError<GetInstancePortStatesError>`](crate::error::GetInstancePortStatesError)
     pub fn get_instance_port_states(&self) -> fluent_builders::GetInstancePortStates<C, M, R> {
         fluent_builders::GetInstancePortStates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInstances` operation.
+    /// Constructs a fluent builder for the [`GetInstances`](crate::client::fluent_builders::GetInstances) operation.
     ///
-    /// See [`GetInstances`](crate::client::fluent_builders::GetInstances) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetInstances::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetInstances::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetInstances</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetInstancesOutput`](crate::output::GetInstancesOutput) with field(s):
+    ///   - [`instances(Option<Vec<Instance>>)`](crate::output::GetInstancesOutput::instances): <p>An array of key-value pairs containing information about your instances.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetInstancesOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetInstances</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetInstancesError>`](crate::error::GetInstancesError)
     pub fn get_instances(&self) -> fluent_builders::GetInstances<C, M, R> {
         fluent_builders::GetInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInstanceSnapshot` operation.
+    /// Constructs a fluent builder for the [`GetInstanceSnapshot`](crate::client::fluent_builders::GetInstanceSnapshot) operation.
     ///
-    /// See [`GetInstanceSnapshot`](crate::client::fluent_builders::GetInstanceSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::GetInstanceSnapshot::instance_snapshot_name) / [`set_instance_snapshot_name(Option<String>)`](crate::client::fluent_builders::GetInstanceSnapshot::set_instance_snapshot_name): <p>The name of the snapshot for which you are requesting information.</p>
+    /// - On success, responds with [`GetInstanceSnapshotOutput`](crate::output::GetInstanceSnapshotOutput) with field(s):
+    ///   - [`instance_snapshot(Option<InstanceSnapshot>)`](crate::output::GetInstanceSnapshotOutput::instance_snapshot): <p>An array of key-value pairs containing information about the results of your get instance snapshot request.</p>
+    /// - On failure, responds with [`SdkError<GetInstanceSnapshotError>`](crate::error::GetInstanceSnapshotError)
     pub fn get_instance_snapshot(&self) -> fluent_builders::GetInstanceSnapshot<C, M, R> {
         fluent_builders::GetInstanceSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInstanceSnapshots` operation.
+    /// Constructs a fluent builder for the [`GetInstanceSnapshots`](crate::client::fluent_builders::GetInstanceSnapshots) operation.
     ///
-    /// See [`GetInstanceSnapshots`](crate::client::fluent_builders::GetInstanceSnapshots) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetInstanceSnapshots::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetInstanceSnapshots::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetInstanceSnapshots</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetInstanceSnapshotsOutput`](crate::output::GetInstanceSnapshotsOutput) with field(s):
+    ///   - [`instance_snapshots(Option<Vec<InstanceSnapshot>>)`](crate::output::GetInstanceSnapshotsOutput::instance_snapshots): <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetInstanceSnapshotsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetInstanceSnapshotsError>`](crate::error::GetInstanceSnapshotsError)
     pub fn get_instance_snapshots(&self) -> fluent_builders::GetInstanceSnapshots<C, M, R> {
         fluent_builders::GetInstanceSnapshots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInstanceState` operation.
+    /// Constructs a fluent builder for the [`GetInstanceState`](crate::client::fluent_builders::GetInstanceState) operation.
     ///
-    /// See [`GetInstanceState`](crate::client::fluent_builders::GetInstanceState) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::GetInstanceState::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::GetInstanceState::set_instance_name): <p>The name of the instance to get state information about.</p>
+    /// - On success, responds with [`GetInstanceStateOutput`](crate::output::GetInstanceStateOutput) with field(s):
+    ///   - [`state(Option<InstanceState>)`](crate::output::GetInstanceStateOutput::state): <p>The state of the instance.</p>
+    /// - On failure, responds with [`SdkError<GetInstanceStateError>`](crate::error::GetInstanceStateError)
     pub fn get_instance_state(&self) -> fluent_builders::GetInstanceState<C, M, R> {
         fluent_builders::GetInstanceState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetKeyPair` operation.
+    /// Constructs a fluent builder for the [`GetKeyPair`](crate::client::fluent_builders::GetKeyPair) operation.
     ///
-    /// See [`GetKeyPair`](crate::client::fluent_builders::GetKeyPair) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`key_pair_name(impl Into<String>)`](crate::client::fluent_builders::GetKeyPair::key_pair_name) / [`set_key_pair_name(Option<String>)`](crate::client::fluent_builders::GetKeyPair::set_key_pair_name): <p>The name of the key pair for which you are requesting information.</p>
+    /// - On success, responds with [`GetKeyPairOutput`](crate::output::GetKeyPairOutput) with field(s):
+    ///   - [`key_pair(Option<KeyPair>)`](crate::output::GetKeyPairOutput::key_pair): <p>An array of key-value pairs containing information about the key pair.</p>
+    /// - On failure, responds with [`SdkError<GetKeyPairError>`](crate::error::GetKeyPairError)
     pub fn get_key_pair(&self) -> fluent_builders::GetKeyPair<C, M, R> {
         fluent_builders::GetKeyPair::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetKeyPairs` operation.
+    /// Constructs a fluent builder for the [`GetKeyPairs`](crate::client::fluent_builders::GetKeyPairs) operation.
     ///
-    /// See [`GetKeyPairs`](crate::client::fluent_builders::GetKeyPairs) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetKeyPairs::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetKeyPairs::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetKeyPairs</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetKeyPairsOutput`](crate::output::GetKeyPairsOutput) with field(s):
+    ///   - [`key_pairs(Option<Vec<KeyPair>>)`](crate::output::GetKeyPairsOutput::key_pairs): <p>An array of key-value pairs containing information about the key pairs.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetKeyPairsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetKeyPairs</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetKeyPairsError>`](crate::error::GetKeyPairsError)
     pub fn get_key_pairs(&self) -> fluent_builders::GetKeyPairs<C, M, R> {
         fluent_builders::GetKeyPairs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`GetLoadBalancer`](crate::client::fluent_builders::GetLoadBalancer) operation.
     ///
-    /// See [`GetLoadBalancer`](crate::client::fluent_builders::GetLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`load_balancer_name(impl Into<String>)`](crate::client::fluent_builders::GetLoadBalancer::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::client::fluent_builders::GetLoadBalancer::set_load_balancer_name): <p>The name of the load balancer.</p>
+    /// - On success, responds with [`GetLoadBalancerOutput`](crate::output::GetLoadBalancerOutput) with field(s):
+    ///   - [`load_balancer(Option<LoadBalancer>)`](crate::output::GetLoadBalancerOutput::load_balancer): <p>An object containing information about your load balancer.</p>
+    /// - On failure, responds with [`SdkError<GetLoadBalancerError>`](crate::error::GetLoadBalancerError)
     pub fn get_load_balancer(&self) -> fluent_builders::GetLoadBalancer<C, M, R> {
         fluent_builders::GetLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLoadBalancerMetricData` operation.
+    /// Constructs a fluent builder for the [`GetLoadBalancerMetricData`](crate::client::fluent_builders::GetLoadBalancerMetricData) operation.
     ///
-    /// See [`GetLoadBalancerMetricData`](crate::client::fluent_builders::GetLoadBalancerMetricData) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`load_balancer_name(impl Into<String>)`](crate::client::fluent_builders::GetLoadBalancerMetricData::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::client::fluent_builders::GetLoadBalancerMetricData::set_load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`metric_name(LoadBalancerMetricName)`](crate::client::fluent_builders::GetLoadBalancerMetricData::metric_name) / [`set_metric_name(Option<LoadBalancerMetricName>)`](crate::client::fluent_builders::GetLoadBalancerMetricData::set_metric_name): <p>The metric for which you want to return information.</p>  <p>Valid load balancer metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value.</p>  <ul>   <li> <p> <b> <code>ClientTLSNegotiationErrorCount</code> </b> - The number of TLS connections initiated by the client that did not establish a session with the load balancer due to a TLS error generated by the load balancer. Possible causes include a mismatch of ciphers or protocols.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>HealthyHostCount</code> </b> - The number of target instances that are considered healthy.</p> <p> <code>Statistics</code>: The most useful statistic are <code>Average</code>, <code>Minimum</code>, and <code>Maximum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>HTTPCode_Instance_2XX_Count</code> </b> - The number of HTTP 2XX response codes generated by the target instances. This does not include any response codes generated by the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>HTTPCode_Instance_3XX_Count</code> </b> - The number of HTTP 3XX response codes generated by the target instances. This does not include any response codes generated by the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>HTTPCode_Instance_4XX_Count</code> </b> - The number of HTTP 4XX response codes generated by the target instances. This does not include any response codes generated by the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>HTTPCode_Instance_5XX_Count</code> </b> - The number of HTTP 5XX response codes generated by the target instances. This does not include any response codes generated by the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>HTTPCode_LB_4XX_Count</code> </b> - The number of HTTP 4XX client error codes that originated from the load balancer. Client errors are generated when requests are malformed or incomplete. These requests were not received by the target instance. This count does not include response codes generated by the target instances.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>HTTPCode_LB_5XX_Count</code> </b> - The number of HTTP 5XX server error codes that originated from the load balancer. This does not include any response codes generated by the target instance. This metric is reported if there are no healthy instances attached to the load balancer, or if the request rate exceeds the capacity of the instances (spillover) or the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>InstanceResponseTime</code> </b> - The time elapsed, in seconds, after the request leaves the load balancer until a response from the target instance is received.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Seconds</code>.</p> </li>   <li> <p> <b> <code>RejectedConnectionCount</code> </b> - The number of connections that were rejected because the load balancer had reached its maximum number of connections.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>RequestCount</code> </b> - The number of requests processed over IPv4. This count includes only the requests with a response generated by a target instance of the load balancer.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>. Note that <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code> all return <code>1</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>UnhealthyHostCount</code> </b> - The number of target instances that are considered unhealthy.</p> <p> <code>Statistics</code>: The most useful statistic are <code>Average</code>, <code>Minimum</code>, and <code>Maximum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>  </ul>
+    ///   - [`period(i32)`](crate::client::fluent_builders::GetLoadBalancerMetricData::period) / [`set_period(i32)`](crate::client::fluent_builders::GetLoadBalancerMetricData::set_period): <p>The granularity, in seconds, of the returned data points.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetLoadBalancerMetricData::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetLoadBalancerMetricData::set_start_time): <p>The start time of the period.</p>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetLoadBalancerMetricData::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetLoadBalancerMetricData::set_end_time): <p>The end time of the period.</p>
+    ///   - [`unit(MetricUnit)`](crate::client::fluent_builders::GetLoadBalancerMetricData::unit) / [`set_unit(Option<MetricUnit>)`](crate::client::fluent_builders::GetLoadBalancerMetricData::set_unit): <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
+    ///   - [`statistics(Vec<MetricStatistic>)`](crate::client::fluent_builders::GetLoadBalancerMetricData::statistics) / [`set_statistics(Option<Vec<MetricStatistic>>)`](crate::client::fluent_builders::GetLoadBalancerMetricData::set_statistics): <p>The statistic for the metric.</p>  <p>The following statistics are available:</p>  <ul>   <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>   <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>   <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>   <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>   <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>  </ul>
+    /// - On success, responds with [`GetLoadBalancerMetricDataOutput`](crate::output::GetLoadBalancerMetricDataOutput) with field(s):
+    ///   - [`metric_name(Option<LoadBalancerMetricName>)`](crate::output::GetLoadBalancerMetricDataOutput::metric_name): <p>The name of the metric returned.</p>
+    ///   - [`metric_data(Option<Vec<MetricDatapoint>>)`](crate::output::GetLoadBalancerMetricDataOutput::metric_data): <p>An array of objects that describe the metric data returned.</p>
+    /// - On failure, responds with [`SdkError<GetLoadBalancerMetricDataError>`](crate::error::GetLoadBalancerMetricDataError)
     pub fn get_load_balancer_metric_data(
         &self,
     ) -> fluent_builders::GetLoadBalancerMetricData<C, M, R> {
         fluent_builders::GetLoadBalancerMetricData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLoadBalancers` operation.
+    /// Constructs a fluent builder for the [`GetLoadBalancers`](crate::client::fluent_builders::GetLoadBalancers) operation.
     ///
-    /// See [`GetLoadBalancers`](crate::client::fluent_builders::GetLoadBalancers) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetLoadBalancers::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetLoadBalancers::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetLoadBalancers</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetLoadBalancersOutput`](crate::output::GetLoadBalancersOutput) with field(s):
+    ///   - [`load_balancers(Option<Vec<LoadBalancer>>)`](crate::output::GetLoadBalancersOutput::load_balancers): <p>An array of LoadBalancer objects describing your load balancers.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetLoadBalancersOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetLoadBalancers</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetLoadBalancersError>`](crate::error::GetLoadBalancersError)
     pub fn get_load_balancers(&self) -> fluent_builders::GetLoadBalancers<C, M, R> {
         fluent_builders::GetLoadBalancers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLoadBalancerTlsCertificates` operation.
+    /// Constructs a fluent builder for the [`GetLoadBalancerTlsCertificates`](crate::client::fluent_builders::GetLoadBalancerTlsCertificates) operation.
     ///
-    /// See [`GetLoadBalancerTlsCertificates`](crate::client::fluent_builders::GetLoadBalancerTlsCertificates) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`load_balancer_name(impl Into<String>)`](crate::client::fluent_builders::GetLoadBalancerTlsCertificates::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::client::fluent_builders::GetLoadBalancerTlsCertificates::set_load_balancer_name): <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
+    /// - On success, responds with [`GetLoadBalancerTlsCertificatesOutput`](crate::output::GetLoadBalancerTlsCertificatesOutput) with field(s):
+    ///   - [`tls_certificates(Option<Vec<LoadBalancerTlsCertificate>>)`](crate::output::GetLoadBalancerTlsCertificatesOutput::tls_certificates): <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
+    /// - On failure, responds with [`SdkError<GetLoadBalancerTlsCertificatesError>`](crate::error::GetLoadBalancerTlsCertificatesError)
     pub fn get_load_balancer_tls_certificates(
         &self,
     ) -> fluent_builders::GetLoadBalancerTlsCertificates<C, M, R> {
         fluent_builders::GetLoadBalancerTlsCertificates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOperation` operation.
+    /// Constructs a fluent builder for the [`GetOperation`](crate::client::fluent_builders::GetOperation) operation.
     ///
-    /// See [`GetOperation`](crate::client::fluent_builders::GetOperation) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`operation_id(impl Into<String>)`](crate::client::fluent_builders::GetOperation::operation_id) / [`set_operation_id(Option<String>)`](crate::client::fluent_builders::GetOperation::set_operation_id): <p>A GUID used to identify the operation.</p>
+    /// - On success, responds with [`GetOperationOutput`](crate::output::GetOperationOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::GetOperationOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<GetOperationError>`](crate::error::GetOperationError)
     pub fn get_operation(&self) -> fluent_builders::GetOperation<C, M, R> {
         fluent_builders::GetOperation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOperations` operation.
+    /// Constructs a fluent builder for the [`GetOperations`](crate::client::fluent_builders::GetOperations) operation.
     ///
-    /// See [`GetOperations`](crate::client::fluent_builders::GetOperations) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetOperations::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetOperations::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetOperations</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetOperationsOutput`](crate::output::GetOperationsOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::GetOperationsOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetOperationsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetOperations</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetOperationsError>`](crate::error::GetOperationsError)
     pub fn get_operations(&self) -> fluent_builders::GetOperations<C, M, R> {
         fluent_builders::GetOperations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOperationsForResource` operation.
+    /// Constructs a fluent builder for the [`GetOperationsForResource`](crate::client::fluent_builders::GetOperationsForResource) operation.
     ///
-    /// See [`GetOperationsForResource`](crate::client::fluent_builders::GetOperationsForResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::GetOperationsForResource::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::GetOperationsForResource::set_resource_name): <p>The name of the resource for which you are requesting information.</p>
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetOperationsForResource::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetOperationsForResource::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetOperationsForResource</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetOperationsForResourceOutput`](crate::output::GetOperationsForResourceOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::GetOperationsForResourceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    ///   - [`next_page_count(Option<String>)`](crate::output::GetOperationsForResourceOutput::next_page_count): <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>   <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>  </note>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetOperationsForResourceOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetOperationsForResourceError>`](crate::error::GetOperationsForResourceError)
     pub fn get_operations_for_resource(
         &self,
     ) -> fluent_builders::GetOperationsForResource<C, M, R> {
         fluent_builders::GetOperationsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRegions` operation.
+    /// Constructs a fluent builder for the [`GetRegions`](crate::client::fluent_builders::GetRegions) operation.
     ///
-    /// See [`GetRegions`](crate::client::fluent_builders::GetRegions) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`include_availability_zones(bool)`](crate::client::fluent_builders::GetRegions::include_availability_zones) / [`set_include_availability_zones(Option<bool>)`](crate::client::fluent_builders::GetRegions::set_include_availability_zones): <p>A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.</p>
+    ///   - [`include_relational_database_availability_zones(bool)`](crate::client::fluent_builders::GetRegions::include_relational_database_availability_zones) / [`set_include_relational_database_availability_zones(Option<bool>)`](crate::client::fluent_builders::GetRegions::set_include_relational_database_availability_zones): <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
+    /// - On success, responds with [`GetRegionsOutput`](crate::output::GetRegionsOutput) with field(s):
+    ///   - [`regions(Option<Vec<Region>>)`](crate::output::GetRegionsOutput::regions): <p>An array of key-value pairs containing information about your get regions request.</p>
+    /// - On failure, responds with [`SdkError<GetRegionsError>`](crate::error::GetRegionsError)
     pub fn get_regions(&self) -> fluent_builders::GetRegions<C, M, R> {
         fluent_builders::GetRegions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRelationalDatabase` operation.
+    /// Constructs a fluent builder for the [`GetRelationalDatabase`](crate::client::fluent_builders::GetRelationalDatabase) operation.
     ///
-    /// See [`GetRelationalDatabase`](crate::client::fluent_builders::GetRelationalDatabase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabase::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabase::set_relational_database_name): <p>The name of the database that you are looking up.</p>
+    /// - On success, responds with [`GetRelationalDatabaseOutput`](crate::output::GetRelationalDatabaseOutput) with field(s):
+    ///   - [`relational_database(Option<RelationalDatabase>)`](crate::output::GetRelationalDatabaseOutput::relational_database): <p>An object describing the specified database.</p>
+    /// - On failure, responds with [`SdkError<GetRelationalDatabaseError>`](crate::error::GetRelationalDatabaseError)
     pub fn get_relational_database(&self) -> fluent_builders::GetRelationalDatabase<C, M, R> {
         fluent_builders::GetRelationalDatabase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRelationalDatabaseBlueprints` operation.
+    /// Constructs a fluent builder for the [`GetRelationalDatabaseBlueprints`](crate::client::fluent_builders::GetRelationalDatabaseBlueprints) operation.
     ///
-    /// See [`GetRelationalDatabaseBlueprints`](crate::client::fluent_builders::GetRelationalDatabaseBlueprints) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseBlueprints::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseBlueprints::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetRelationalDatabaseBlueprints</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetRelationalDatabaseBlueprintsOutput`](crate::output::GetRelationalDatabaseBlueprintsOutput) with field(s):
+    ///   - [`blueprints(Option<Vec<RelationalDatabaseBlueprint>>)`](crate::output::GetRelationalDatabaseBlueprintsOutput::blueprints): <p>An object describing the result of your get relational database blueprints request.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetRelationalDatabaseBlueprintsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetRelationalDatabaseBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetRelationalDatabaseBlueprintsError>`](crate::error::GetRelationalDatabaseBlueprintsError)
     pub fn get_relational_database_blueprints(
         &self,
     ) -> fluent_builders::GetRelationalDatabaseBlueprints<C, M, R> {
         fluent_builders::GetRelationalDatabaseBlueprints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRelationalDatabaseBundles` operation.
+    /// Constructs a fluent builder for the [`GetRelationalDatabaseBundles`](crate::client::fluent_builders::GetRelationalDatabaseBundles) operation.
     ///
-    /// See [`GetRelationalDatabaseBundles`](crate::client::fluent_builders::GetRelationalDatabaseBundles) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseBundles::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseBundles::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetRelationalDatabaseBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetRelationalDatabaseBundlesOutput`](crate::output::GetRelationalDatabaseBundlesOutput) with field(s):
+    ///   - [`bundles(Option<Vec<RelationalDatabaseBundle>>)`](crate::output::GetRelationalDatabaseBundlesOutput::bundles): <p>An object describing the result of your get relational database bundles request.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetRelationalDatabaseBundlesOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetRelationalDatabaseBundles</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetRelationalDatabaseBundlesError>`](crate::error::GetRelationalDatabaseBundlesError)
     pub fn get_relational_database_bundles(
         &self,
     ) -> fluent_builders::GetRelationalDatabaseBundles<C, M, R> {
         fluent_builders::GetRelationalDatabaseBundles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRelationalDatabaseEvents` operation.
+    /// Constructs a fluent builder for the [`GetRelationalDatabaseEvents`](crate::client::fluent_builders::GetRelationalDatabaseEvents) operation.
     ///
-    /// See [`GetRelationalDatabaseEvents`](crate::client::fluent_builders::GetRelationalDatabaseEvents) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseEvents::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseEvents::set_relational_database_name): <p>The name of the database from which to get events.</p>
+    ///   - [`duration_in_minutes(i32)`](crate::client::fluent_builders::GetRelationalDatabaseEvents::duration_in_minutes) / [`set_duration_in_minutes(Option<i32>)`](crate::client::fluent_builders::GetRelationalDatabaseEvents::set_duration_in_minutes): <p>The number of minutes in the past from which to retrieve events. For example, to get all events from the past 2 hours, enter 120.</p>  <p>Default: <code>60</code> </p>  <p>The minimum is 1 and the maximum is 14 days (20160 minutes).</p>
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseEvents::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseEvents::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetRelationalDatabaseEventsOutput`](crate::output::GetRelationalDatabaseEventsOutput) with field(s):
+    ///   - [`relational_database_events(Option<Vec<RelationalDatabaseEvent>>)`](crate::output::GetRelationalDatabaseEventsOutput::relational_database_events): <p>An object describing the result of your get relational database events request.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetRelationalDatabaseEventsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetRelationalDatabaseEvents</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetRelationalDatabaseEventsError>`](crate::error::GetRelationalDatabaseEventsError)
     pub fn get_relational_database_events(
         &self,
     ) -> fluent_builders::GetRelationalDatabaseEvents<C, M, R> {
         fluent_builders::GetRelationalDatabaseEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRelationalDatabaseLogEvents` operation.
+    /// Constructs a fluent builder for the [`GetRelationalDatabaseLogEvents`](crate::client::fluent_builders::GetRelationalDatabaseLogEvents) operation.
     ///
-    /// See [`GetRelationalDatabaseLogEvents`](crate::client::fluent_builders::GetRelationalDatabaseLogEvents) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseLogEvents::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseLogEvents::set_relational_database_name): <p>The name of your database for which to get log events.</p>
+    ///   - [`log_stream_name(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseLogEvents::log_stream_name) / [`set_log_stream_name(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseLogEvents::set_log_stream_name): <p>The name of the log stream.</p>  <p>Use the <code>get relational database log streams</code> operation to get a list of available log streams.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetRelationalDatabaseLogEvents::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetRelationalDatabaseLogEvents::set_start_time): <p>The start of the time interval from which to get log events.</p>  <p>Constraints:</p>  <ul>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>  </ul>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetRelationalDatabaseLogEvents::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetRelationalDatabaseLogEvents::set_end_time): <p>The end of the time interval from which to get log events.</p>  <p>Constraints:</p>  <ul>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>  </ul>
+    ///   - [`start_from_head(bool)`](crate::client::fluent_builders::GetRelationalDatabaseLogEvents::start_from_head) / [`set_start_from_head(Option<bool>)`](crate::client::fluent_builders::GetRelationalDatabaseLogEvents::set_start_from_head): <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p> <note>   <p>For PostgreSQL, the default value of <code>false</code> is the only option available.</p>  </note>
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseLogEvents::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseLogEvents::set_page_token): <p>The token to advance to the next or previous page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code> request. If your results are paginated, the response will return a next forward token and/or next backward token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetRelationalDatabaseLogEventsOutput`](crate::output::GetRelationalDatabaseLogEventsOutput) with field(s):
+    ///   - [`resource_log_events(Option<Vec<LogEvent>>)`](crate::output::GetRelationalDatabaseLogEventsOutput::resource_log_events): <p>An object describing the result of your get relational database log events request.</p>
+    ///   - [`next_backward_token(Option<String>)`](crate::output::GetRelationalDatabaseLogEventsOutput::next_backward_token): <p>A token used for advancing to the previous page of results from your get relational database log events request.</p>
+    ///   - [`next_forward_token(Option<String>)`](crate::output::GetRelationalDatabaseLogEventsOutput::next_forward_token): <p>A token used for advancing to the next page of results from your get relational database log events request.</p>
+    /// - On failure, responds with [`SdkError<GetRelationalDatabaseLogEventsError>`](crate::error::GetRelationalDatabaseLogEventsError)
     pub fn get_relational_database_log_events(
         &self,
     ) -> fluent_builders::GetRelationalDatabaseLogEvents<C, M, R> {
         fluent_builders::GetRelationalDatabaseLogEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRelationalDatabaseLogStreams` operation.
+    /// Constructs a fluent builder for the [`GetRelationalDatabaseLogStreams`](crate::client::fluent_builders::GetRelationalDatabaseLogStreams) operation.
     ///
-    /// See [`GetRelationalDatabaseLogStreams`](crate::client::fluent_builders::GetRelationalDatabaseLogStreams) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseLogStreams::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseLogStreams::set_relational_database_name): <p>The name of your database for which to get log streams.</p>
+    /// - On success, responds with [`GetRelationalDatabaseLogStreamsOutput`](crate::output::GetRelationalDatabaseLogStreamsOutput) with field(s):
+    ///   - [`log_streams(Option<Vec<String>>)`](crate::output::GetRelationalDatabaseLogStreamsOutput::log_streams): <p>An object describing the result of your get relational database log streams request.</p>
+    /// - On failure, responds with [`SdkError<GetRelationalDatabaseLogStreamsError>`](crate::error::GetRelationalDatabaseLogStreamsError)
     pub fn get_relational_database_log_streams(
         &self,
     ) -> fluent_builders::GetRelationalDatabaseLogStreams<C, M, R> {
         fluent_builders::GetRelationalDatabaseLogStreams::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRelationalDatabaseMasterUserPassword` operation.
+    /// Constructs a fluent builder for the [`GetRelationalDatabaseMasterUserPassword`](crate::client::fluent_builders::GetRelationalDatabaseMasterUserPassword) operation.
     ///
-    /// See [`GetRelationalDatabaseMasterUserPassword`](crate::client::fluent_builders::GetRelationalDatabaseMasterUserPassword) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseMasterUserPassword::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseMasterUserPassword::set_relational_database_name): <p>The name of your database for which to get the master user password.</p>
+    ///   - [`password_version(RelationalDatabasePasswordVersion)`](crate::client::fluent_builders::GetRelationalDatabaseMasterUserPassword::password_version) / [`set_password_version(Option<RelationalDatabasePasswordVersion>)`](crate::client::fluent_builders::GetRelationalDatabaseMasterUserPassword::set_password_version): <p>The password version to return.</p>  <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>  <p>Default: <code>CURRENT</code> </p>
+    /// - On success, responds with [`GetRelationalDatabaseMasterUserPasswordOutput`](crate::output::GetRelationalDatabaseMasterUserPasswordOutput) with field(s):
+    ///   - [`master_user_password(Option<String>)`](crate::output::GetRelationalDatabaseMasterUserPasswordOutput::master_user_password): <p>The master user password for the <code>password version</code> specified.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetRelationalDatabaseMasterUserPasswordOutput::created_at): <p>The timestamp when the specified version of the master user password was created.</p>
+    /// - On failure, responds with [`SdkError<GetRelationalDatabaseMasterUserPasswordError>`](crate::error::GetRelationalDatabaseMasterUserPasswordError)
     pub fn get_relational_database_master_user_password(
         &self,
     ) -> fluent_builders::GetRelationalDatabaseMasterUserPassword<C, M, R> {
         fluent_builders::GetRelationalDatabaseMasterUserPassword::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRelationalDatabaseMetricData` operation.
+    /// Constructs a fluent builder for the [`GetRelationalDatabaseMetricData`](crate::client::fluent_builders::GetRelationalDatabaseMetricData) operation.
     ///
-    /// See [`GetRelationalDatabaseMetricData`](crate::client::fluent_builders::GetRelationalDatabaseMetricData) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseMetricData::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseMetricData::set_relational_database_name): <p>The name of your database from which to get metric data.</p>
+    ///   - [`metric_name(RelationalDatabaseMetricName)`](crate::client::fluent_builders::GetRelationalDatabaseMetricData::metric_name) / [`set_metric_name(Option<RelationalDatabaseMetricName>)`](crate::client::fluent_builders::GetRelationalDatabaseMetricData::set_metric_name): <p>The metric for which you want to return information.</p>  <p>Valid relational database metric names are listed below, along with the most useful <code>statistics</code> to include in your request, and the published <code>unit</code> value. All relational database metric data is available in 1-minute (60 seconds) granularity.</p>  <ul>   <li> <p> <b> <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently in use on the database.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Percent</code>.</p> </li>   <li> <p> <b> <code>DatabaseConnections</code> </b> - The number of database connections in use.</p> <p> <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write requests) that are waiting to access the disk.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Count</code>.</p> </li>   <li> <p> <b> <code>FreeStorageSpace</code> </b> - The amount of available storage space.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes</code>.</p> </li>   <li> <p> <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database, including both customer database traffic and AWS traffic used for monitoring and replication.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p> </li>   <li> <p> <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database, including both customer database traffic and AWS traffic used for monitoring and replication.</p> <p> <code>Statistics</code>: The most useful statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is <code>Bytes/Second</code>.</p> </li>  </ul>
+    ///   - [`period(i32)`](crate::client::fluent_builders::GetRelationalDatabaseMetricData::period) / [`set_period(i32)`](crate::client::fluent_builders::GetRelationalDatabaseMetricData::set_period): <p>The granularity, in seconds, of the returned data points.</p>  <p>All relational database metric data is available in 1-minute (60 seconds) granularity.</p>
+    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetRelationalDatabaseMetricData::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetRelationalDatabaseMetricData::set_start_time): <p>The start of the time interval from which to get metric data.</p>  <p>Constraints:</p>  <ul>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>  </ul>
+    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetRelationalDatabaseMetricData::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetRelationalDatabaseMetricData::set_end_time): <p>The end of the time interval from which to get metric data.</p>  <p>Constraints:</p>  <ul>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>  </ul>
+    ///   - [`unit(MetricUnit)`](crate::client::fluent_builders::GetRelationalDatabaseMetricData::unit) / [`set_unit(Option<MetricUnit>)`](crate::client::fluent_builders::GetRelationalDatabaseMetricData::set_unit): <p>The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
+    ///   - [`statistics(Vec<MetricStatistic>)`](crate::client::fluent_builders::GetRelationalDatabaseMetricData::statistics) / [`set_statistics(Option<Vec<MetricStatistic>>)`](crate::client::fluent_builders::GetRelationalDatabaseMetricData::set_statistics): <p>The statistic for the metric.</p>  <p>The following statistics are available:</p>  <ul>   <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>   <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>   <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>   <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>   <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>  </ul>
+    /// - On success, responds with [`GetRelationalDatabaseMetricDataOutput`](crate::output::GetRelationalDatabaseMetricDataOutput) with field(s):
+    ///   - [`metric_name(Option<RelationalDatabaseMetricName>)`](crate::output::GetRelationalDatabaseMetricDataOutput::metric_name): <p>The name of the metric returned.</p>
+    ///   - [`metric_data(Option<Vec<MetricDatapoint>>)`](crate::output::GetRelationalDatabaseMetricDataOutput::metric_data): <p>An array of objects that describe the metric data returned.</p>
+    /// - On failure, responds with [`SdkError<GetRelationalDatabaseMetricDataError>`](crate::error::GetRelationalDatabaseMetricDataError)
     pub fn get_relational_database_metric_data(
         &self,
     ) -> fluent_builders::GetRelationalDatabaseMetricData<C, M, R> {
         fluent_builders::GetRelationalDatabaseMetricData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRelationalDatabaseParameters` operation.
+    /// Constructs a fluent builder for the [`GetRelationalDatabaseParameters`](crate::client::fluent_builders::GetRelationalDatabaseParameters) operation.
     ///
-    /// See [`GetRelationalDatabaseParameters`](crate::client::fluent_builders::GetRelationalDatabaseParameters) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseParameters::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseParameters::set_relational_database_name): <p>The name of your database for which to get parameters.</p>
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseParameters::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseParameters::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetRelationalDatabaseParameters</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetRelationalDatabaseParametersOutput`](crate::output::GetRelationalDatabaseParametersOutput) with field(s):
+    ///   - [`parameters(Option<Vec<RelationalDatabaseParameter>>)`](crate::output::GetRelationalDatabaseParametersOutput::parameters): <p>An object describing the result of your get relational database parameters request.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetRelationalDatabaseParametersOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetRelationalDatabaseParametersError>`](crate::error::GetRelationalDatabaseParametersError)
     pub fn get_relational_database_parameters(
         &self,
     ) -> fluent_builders::GetRelationalDatabaseParameters<C, M, R> {
         fluent_builders::GetRelationalDatabaseParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRelationalDatabases` operation.
+    /// Constructs a fluent builder for the [`GetRelationalDatabases`](crate::client::fluent_builders::GetRelationalDatabases) operation.
     ///
-    /// See [`GetRelationalDatabases`](crate::client::fluent_builders::GetRelationalDatabases) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabases::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabases::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetRelationalDatabases</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetRelationalDatabasesOutput`](crate::output::GetRelationalDatabasesOutput) with field(s):
+    ///   - [`relational_databases(Option<Vec<RelationalDatabase>>)`](crate::output::GetRelationalDatabasesOutput::relational_databases): <p>An object describing the result of your get relational databases request.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetRelationalDatabasesOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetRelationalDatabases</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetRelationalDatabasesError>`](crate::error::GetRelationalDatabasesError)
     pub fn get_relational_databases(&self) -> fluent_builders::GetRelationalDatabases<C, M, R> {
         fluent_builders::GetRelationalDatabases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRelationalDatabaseSnapshot` operation.
+    /// Constructs a fluent builder for the [`GetRelationalDatabaseSnapshot`](crate::client::fluent_builders::GetRelationalDatabaseSnapshot) operation.
     ///
-    /// See [`GetRelationalDatabaseSnapshot`](crate::client::fluent_builders::GetRelationalDatabaseSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseSnapshot::relational_database_snapshot_name) / [`set_relational_database_snapshot_name(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseSnapshot::set_relational_database_snapshot_name): <p>The name of the database snapshot for which to get information.</p>
+    /// - On success, responds with [`GetRelationalDatabaseSnapshotOutput`](crate::output::GetRelationalDatabaseSnapshotOutput) with field(s):
+    ///   - [`relational_database_snapshot(Option<RelationalDatabaseSnapshot>)`](crate::output::GetRelationalDatabaseSnapshotOutput::relational_database_snapshot): <p>An object describing the specified database snapshot.</p>
+    /// - On failure, responds with [`SdkError<GetRelationalDatabaseSnapshotError>`](crate::error::GetRelationalDatabaseSnapshotError)
     pub fn get_relational_database_snapshot(
         &self,
     ) -> fluent_builders::GetRelationalDatabaseSnapshot<C, M, R> {
         fluent_builders::GetRelationalDatabaseSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRelationalDatabaseSnapshots` operation.
+    /// Constructs a fluent builder for the [`GetRelationalDatabaseSnapshots`](crate::client::fluent_builders::GetRelationalDatabaseSnapshots) operation.
     ///
-    /// See [`GetRelationalDatabaseSnapshots`](crate::client::fluent_builders::GetRelationalDatabaseSnapshots) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetRelationalDatabaseSnapshots::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetRelationalDatabaseSnapshots::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetRelationalDatabaseSnapshots</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetRelationalDatabaseSnapshotsOutput`](crate::output::GetRelationalDatabaseSnapshotsOutput) with field(s):
+    ///   - [`relational_database_snapshots(Option<Vec<RelationalDatabaseSnapshot>>)`](crate::output::GetRelationalDatabaseSnapshotsOutput::relational_database_snapshots): <p>An object describing the result of your get relational database snapshots request.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetRelationalDatabaseSnapshotsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetRelationalDatabaseSnapshotsError>`](crate::error::GetRelationalDatabaseSnapshotsError)
     pub fn get_relational_database_snapshots(
         &self,
     ) -> fluent_builders::GetRelationalDatabaseSnapshots<C, M, R> {
         fluent_builders::GetRelationalDatabaseSnapshots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetStaticIp` operation.
+    /// Constructs a fluent builder for the [`GetStaticIp`](crate::client::fluent_builders::GetStaticIp) operation.
     ///
-    /// See [`GetStaticIp`](crate::client::fluent_builders::GetStaticIp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`static_ip_name(impl Into<String>)`](crate::client::fluent_builders::GetStaticIp::static_ip_name) / [`set_static_ip_name(Option<String>)`](crate::client::fluent_builders::GetStaticIp::set_static_ip_name): <p>The name of the static IP in Lightsail.</p>
+    /// - On success, responds with [`GetStaticIpOutput`](crate::output::GetStaticIpOutput) with field(s):
+    ///   - [`static_ip(Option<StaticIp>)`](crate::output::GetStaticIpOutput::static_ip): <p>An array of key-value pairs containing information about the requested static IP.</p>
+    /// - On failure, responds with [`SdkError<GetStaticIpError>`](crate::error::GetStaticIpError)
     pub fn get_static_ip(&self) -> fluent_builders::GetStaticIp<C, M, R> {
         fluent_builders::GetStaticIp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetStaticIps` operation.
+    /// Constructs a fluent builder for the [`GetStaticIps`](crate::client::fluent_builders::GetStaticIps) operation.
     ///
-    /// See [`GetStaticIps`](crate::client::fluent_builders::GetStaticIps) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetStaticIps::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetStaticIps::set_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>To get a page token, perform an initial <code>GetStaticIps</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    /// - On success, responds with [`GetStaticIpsOutput`](crate::output::GetStaticIpsOutput) with field(s):
+    ///   - [`static_ips(Option<Vec<StaticIp>>)`](crate::output::GetStaticIpsOutput::static_ips): <p>An array of key-value pairs containing information about your get static IPs request.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetStaticIpsOutput::next_page_token): <p>The token to advance to the next page of results from your request.</p>  <p>A next page token is not returned if there are no more results to display.</p>  <p>To get the next page of results, perform another <code>GetStaticIps</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<GetStaticIpsError>`](crate::error::GetStaticIpsError)
     pub fn get_static_ips(&self) -> fluent_builders::GetStaticIps<C, M, R> {
         fluent_builders::GetStaticIps::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ImportKeyPair` operation.
+    /// Constructs a fluent builder for the [`ImportKeyPair`](crate::client::fluent_builders::ImportKeyPair) operation.
     ///
-    /// See [`ImportKeyPair`](crate::client::fluent_builders::ImportKeyPair) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`key_pair_name(impl Into<String>)`](crate::client::fluent_builders::ImportKeyPair::key_pair_name) / [`set_key_pair_name(Option<String>)`](crate::client::fluent_builders::ImportKeyPair::set_key_pair_name): <p>The name of the key pair for which you want to import the public key.</p>
+    ///   - [`public_key_base64(impl Into<String>)`](crate::client::fluent_builders::ImportKeyPair::public_key_base64) / [`set_public_key_base64(Option<String>)`](crate::client::fluent_builders::ImportKeyPair::set_public_key_base64): <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
+    /// - On success, responds with [`ImportKeyPairOutput`](crate::output::ImportKeyPairOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::ImportKeyPairOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<ImportKeyPairError>`](crate::error::ImportKeyPairError)
     pub fn import_key_pair(&self) -> fluent_builders::ImportKeyPair<C, M, R> {
         fluent_builders::ImportKeyPair::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `IsVpcPeered` operation.
+    /// Constructs a fluent builder for the [`IsVpcPeered`](crate::client::fluent_builders::IsVpcPeered) operation.
     ///
-    /// See [`IsVpcPeered`](crate::client::fluent_builders::IsVpcPeered) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::IsVpcPeered::send) it.
+
+    /// - On success, responds with [`IsVpcPeeredOutput`](crate::output::IsVpcPeeredOutput) with field(s):
+    ///   - [`is_peered(Option<bool>)`](crate::output::IsVpcPeeredOutput::is_peered): <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise, <code>false</code>.</p>
+    /// - On failure, responds with [`SdkError<IsVpcPeeredError>`](crate::error::IsVpcPeeredError)
     pub fn is_vpc_peered(&self) -> fluent_builders::IsVpcPeered<C, M, R> {
         fluent_builders::IsVpcPeered::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `OpenInstancePublicPorts` operation.
+    /// Constructs a fluent builder for the [`OpenInstancePublicPorts`](crate::client::fluent_builders::OpenInstancePublicPorts) operation.
     ///
-    /// See [`OpenInstancePublicPorts`](crate::client::fluent_builders::OpenInstancePublicPorts) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`port_info(PortInfo)`](crate::client::fluent_builders::OpenInstancePublicPorts::port_info) / [`set_port_info(Option<PortInfo>)`](crate::client::fluent_builders::OpenInstancePublicPorts::set_port_info): <p>An object to describe the ports to open for the specified instance.</p>
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::OpenInstancePublicPorts::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::OpenInstancePublicPorts::set_instance_name): <p>The name of the instance for which to open ports.</p>
+    /// - On success, responds with [`OpenInstancePublicPortsOutput`](crate::output::OpenInstancePublicPortsOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::OpenInstancePublicPortsOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<OpenInstancePublicPortsError>`](crate::error::OpenInstancePublicPortsError)
     pub fn open_instance_public_ports(&self) -> fluent_builders::OpenInstancePublicPorts<C, M, R> {
         fluent_builders::OpenInstancePublicPorts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PeerVpc` operation.
+    /// Constructs a fluent builder for the [`PeerVpc`](crate::client::fluent_builders::PeerVpc) operation.
     ///
-    /// See [`PeerVpc`](crate::client::fluent_builders::PeerVpc) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::PeerVpc::send) it.
+
+    /// - On success, responds with [`PeerVpcOutput`](crate::output::PeerVpcOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::PeerVpcOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<PeerVpcError>`](crate::error::PeerVpcError)
     pub fn peer_vpc(&self) -> fluent_builders::PeerVpc<C, M, R> {
         fluent_builders::PeerVpc::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutAlarm` operation.
+    /// Constructs a fluent builder for the [`PutAlarm`](crate::client::fluent_builders::PutAlarm) operation.
     ///
-    /// See [`PutAlarm`](crate::client::fluent_builders::PutAlarm) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`alarm_name(impl Into<String>)`](crate::client::fluent_builders::PutAlarm::alarm_name) / [`set_alarm_name(Option<String>)`](crate::client::fluent_builders::PutAlarm::set_alarm_name): <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.</p>
+    ///   - [`metric_name(MetricName)`](crate::client::fluent_builders::PutAlarm::metric_name) / [`set_metric_name(Option<MetricName>)`](crate::client::fluent_builders::PutAlarm::set_metric_name): <p>The name of the metric to associate with the alarm.</p>  <p>You can configure up to two alarms per metric.</p>  <p>The following metrics are available for each resource type:</p>  <ul>   <li> <p> <b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>, <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.</p> </li>   <li> <p> <b>Load balancers</b>: <code>ClientTLSNegotiationErrorCount</code>, <code>HealthyHostCount</code>, <code>UnhealthyHostCount</code>, <code>HTTPCode_LB_4XX_Count</code>, <code>HTTPCode_LB_5XX_Count</code>, <code>HTTPCode_Instance_2XX_Count</code>, <code>HTTPCode_Instance_3XX_Count</code>, <code>HTTPCode_Instance_4XX_Count</code>, <code>HTTPCode_Instance_5XX_Count</code>, <code>InstanceResponseTime</code>, <code>RejectedConnectionCount</code>, and <code>RequestCount</code>.</p> </li>   <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p> </li>  </ul>  <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
+    ///   - [`monitored_resource_name(impl Into<String>)`](crate::client::fluent_builders::PutAlarm::monitored_resource_name) / [`set_monitored_resource_name(Option<String>)`](crate::client::fluent_builders::PutAlarm::set_monitored_resource_name): <p>The name of the Lightsail resource that will be monitored.</p>  <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
+    ///   - [`comparison_operator(ComparisonOperator)`](crate::client::fluent_builders::PutAlarm::comparison_operator) / [`set_comparison_operator(Option<ComparisonOperator>)`](crate::client::fluent_builders::PutAlarm::set_comparison_operator): <p>The arithmetic operation to use when comparing the specified statistic to the threshold. The specified statistic value is used as the first operand.</p>
+    ///   - [`threshold(f64)`](crate::client::fluent_builders::PutAlarm::threshold) / [`set_threshold(Option<f64>)`](crate::client::fluent_builders::PutAlarm::set_threshold): <p>The value against which the specified statistic is compared.</p>
+    ///   - [`evaluation_periods(i32)`](crate::client::fluent_builders::PutAlarm::evaluation_periods) / [`set_evaluation_periods(Option<i32>)`](crate::client::fluent_builders::PutAlarm::set_evaluation_periods): <p>The number of most recent periods over which data is compared to the specified threshold. If you are setting an "M out of N" alarm, this value (<code>evaluationPeriods</code>) is the N.</p>  <p>If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies the rolling period of time in which data points are evaluated.</p>  <p>Each evaluation period is five minutes long. For example, specify an evaluation period of 24 to evaluate a metric over a rolling period of two hours.</p>  <p>You can specify a minimum valuation period of 1 (5 minutes), and a maximum evaluation period of 288 (24 hours).</p>
+    ///   - [`datapoints_to_alarm(i32)`](crate::client::fluent_builders::PutAlarm::datapoints_to_alarm) / [`set_datapoints_to_alarm(Option<i32>)`](crate::client::fluent_builders::PutAlarm::set_datapoints_to_alarm): <p>The number of data points that must be not within the specified threshold to trigger the alarm. If you are setting an "M out of N" alarm, this value (<code>datapointsToAlarm</code>) is the M.</p>
+    ///   - [`treat_missing_data(TreatMissingData)`](crate::client::fluent_builders::PutAlarm::treat_missing_data) / [`set_treat_missing_data(Option<TreatMissingData>)`](crate::client::fluent_builders::PutAlarm::set_treat_missing_data): <p>Sets how this alarm will handle missing data points.</p>  <p>An alarm can treat missing data in the following ways:</p>  <ul>   <li> <p> <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p> </li>   <li> <p> <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p> </li>   <li> <p> <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p> </li>   <li> <p> <code>missing</code> - Missing data is treated as missing.</p> </li>  </ul>  <p>If <code>treatMissingData</code> is not specified, the default behavior of <code>missing</code> is used.</p>
+    ///   - [`contact_protocols(Vec<ContactProtocol>)`](crate::client::fluent_builders::PutAlarm::contact_protocols) / [`set_contact_protocols(Option<Vec<ContactProtocol>>)`](crate::client::fluent_builders::PutAlarm::set_contact_protocols): <p>The contact protocols to use for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>  <p>A notification is sent via the specified contact protocol if notifications are enabled for the alarm, and when the alarm is triggered.</p>  <p>A notification is not sent if a contact protocol is not specified, if the specified contact protocol is not configured in the AWS Region, or if notifications are not enabled for the alarm using the <code>notificationEnabled</code> paramater.</p>  <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an AWS Region.</p>
+    ///   - [`notification_triggers(Vec<AlarmState>)`](crate::client::fluent_builders::PutAlarm::notification_triggers) / [`set_notification_triggers(Option<Vec<AlarmState>>)`](crate::client::fluent_builders::PutAlarm::set_notification_triggers): <p>The alarm states that trigger a notification.</p>  <p>An alarm has the following possible states:</p>  <ul>   <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>   <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>   <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>  </ul>  <p>When you specify a notification trigger, the <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code> and <code>OK</code> states can be specified in addition to the <code>ALARM</code> state.</p>  <ul>   <li> <p>If you specify <code>OK</code> as an alarm trigger, a notification is sent when the alarm switches from an <code>ALARM</code> or <code>INSUFFICIENT_DATA</code> alarm state to an <code>OK</code> state. This can be thought of as an <i>all clear</i> alarm notification.</p> </li>   <li> <p>If you specify <code>INSUFFICIENT_DATA</code> as the alarm trigger, a notification is sent when the alarm switches from an <code>OK</code> or <code>ALARM</code> alarm state to an <code>INSUFFICIENT_DATA</code> state.</p> </li>  </ul>  <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
+    ///   - [`notification_enabled(bool)`](crate::client::fluent_builders::PutAlarm::notification_enabled) / [`set_notification_enabled(Option<bool>)`](crate::client::fluent_builders::PutAlarm::set_notification_enabled): <p>Indicates whether the alarm is enabled.</p>  <p>Notifications are enabled by default if you don't specify this parameter.</p>
+    /// - On success, responds with [`PutAlarmOutput`](crate::output::PutAlarmOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::PutAlarmOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<PutAlarmError>`](crate::error::PutAlarmError)
     pub fn put_alarm(&self) -> fluent_builders::PutAlarm<C, M, R> {
         fluent_builders::PutAlarm::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutInstancePublicPorts` operation.
+    /// Constructs a fluent builder for the [`PutInstancePublicPorts`](crate::client::fluent_builders::PutInstancePublicPorts) operation.
     ///
-    /// See [`PutInstancePublicPorts`](crate::client::fluent_builders::PutInstancePublicPorts) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`port_infos(Vec<PortInfo>)`](crate::client::fluent_builders::PutInstancePublicPorts::port_infos) / [`set_port_infos(Option<Vec<PortInfo>>)`](crate::client::fluent_builders::PutInstancePublicPorts::set_port_infos): <p>An array of objects to describe the ports to open for the specified instance.</p>
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::PutInstancePublicPorts::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::PutInstancePublicPorts::set_instance_name): <p>The name of the instance for which to open ports.</p>
+    /// - On success, responds with [`PutInstancePublicPortsOutput`](crate::output::PutInstancePublicPortsOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::PutInstancePublicPortsOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<PutInstancePublicPortsError>`](crate::error::PutInstancePublicPortsError)
     pub fn put_instance_public_ports(&self) -> fluent_builders::PutInstancePublicPorts<C, M, R> {
         fluent_builders::PutInstancePublicPorts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RebootInstance` operation.
+    /// Constructs a fluent builder for the [`RebootInstance`](crate::client::fluent_builders::RebootInstance) operation.
     ///
-    /// See [`RebootInstance`](crate::client::fluent_builders::RebootInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::RebootInstance::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::RebootInstance::set_instance_name): <p>The name of the instance to reboot.</p>
+    /// - On success, responds with [`RebootInstanceOutput`](crate::output::RebootInstanceOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::RebootInstanceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<RebootInstanceError>`](crate::error::RebootInstanceError)
     pub fn reboot_instance(&self) -> fluent_builders::RebootInstance<C, M, R> {
         fluent_builders::RebootInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RebootRelationalDatabase` operation.
+    /// Constructs a fluent builder for the [`RebootRelationalDatabase`](crate::client::fluent_builders::RebootRelationalDatabase) operation.
     ///
-    /// See [`RebootRelationalDatabase`](crate::client::fluent_builders::RebootRelationalDatabase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::RebootRelationalDatabase::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::RebootRelationalDatabase::set_relational_database_name): <p>The name of your database to reboot.</p>
+    /// - On success, responds with [`RebootRelationalDatabaseOutput`](crate::output::RebootRelationalDatabaseOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::RebootRelationalDatabaseOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<RebootRelationalDatabaseError>`](crate::error::RebootRelationalDatabaseError)
     pub fn reboot_relational_database(&self) -> fluent_builders::RebootRelationalDatabase<C, M, R> {
         fluent_builders::RebootRelationalDatabase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterContainerImage` operation.
+    /// Constructs a fluent builder for the [`RegisterContainerImage`](crate::client::fluent_builders::RegisterContainerImage) operation.
     ///
-    /// See [`RegisterContainerImage`](crate::client::fluent_builders::RegisterContainerImage) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::RegisterContainerImage::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::RegisterContainerImage::set_service_name): <p>The name of the container service for which to register a container image.</p>
+    ///   - [`label(impl Into<String>)`](crate::client::fluent_builders::RegisterContainerImage::label) / [`set_label(Option<String>)`](crate::client::fluent_builders::RegisterContainerImage::set_label): <p>The label for the container image when it's registered to the container service.</p>  <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p>  <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code>   <imagelabel></imagelabel></code> portion of the following image name example:</p>  <ul>   <li> <p> <code>:container-service-1.     <imagelabel>      .1     </imagelabel></code> </p> </li>  </ul>  <p>If the name of your container service is <code>mycontainerservice</code>, and the label that you specify is <code>mystaticwebsite</code>, then the name of the registered container image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p>  <p>The number at the end of these image name examples represents the version of the registered container image. If you push and register another container image to the same Lightsail container service, with the same label, then the version number for the new registered container image will be <code>2</code>. If you push and register another container image, the version number will be <code>3</code>, and so on.</p>
+    ///   - [`digest(impl Into<String>)`](crate::client::fluent_builders::RegisterContainerImage::digest) / [`set_digest(Option<String>)`](crate::client::fluent_builders::RegisterContainerImage::set_digest): <p>The digest of the container image to be registered.</p>
+    /// - On success, responds with [`RegisterContainerImageOutput`](crate::output::RegisterContainerImageOutput) with field(s):
+    ///   - [`container_image(Option<ContainerImage>)`](crate::output::RegisterContainerImageOutput::container_image): <p>Describes a container image that is registered to an Amazon Lightsail container service.</p>
+    /// - On failure, responds with [`SdkError<RegisterContainerImageError>`](crate::error::RegisterContainerImageError)
     pub fn register_container_image(&self) -> fluent_builders::RegisterContainerImage<C, M, R> {
         fluent_builders::RegisterContainerImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ReleaseStaticIp` operation.
+    /// Constructs a fluent builder for the [`ReleaseStaticIp`](crate::client::fluent_builders::ReleaseStaticIp) operation.
     ///
-    /// See [`ReleaseStaticIp`](crate::client::fluent_builders::ReleaseStaticIp) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`static_ip_name(impl Into<String>)`](crate::client::fluent_builders::ReleaseStaticIp::static_ip_name) / [`set_static_ip_name(Option<String>)`](crate::client::fluent_builders::ReleaseStaticIp::set_static_ip_name): <p>The name of the static IP to delete.</p>
+    /// - On success, responds with [`ReleaseStaticIpOutput`](crate::output::ReleaseStaticIpOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::ReleaseStaticIpOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<ReleaseStaticIpError>`](crate::error::ReleaseStaticIpError)
     pub fn release_static_ip(&self) -> fluent_builders::ReleaseStaticIp<C, M, R> {
         fluent_builders::ReleaseStaticIp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResetDistributionCache` operation.
+    /// Constructs a fluent builder for the [`ResetDistributionCache`](crate::client::fluent_builders::ResetDistributionCache) operation.
     ///
-    /// See [`ResetDistributionCache`](crate::client::fluent_builders::ResetDistributionCache) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::ResetDistributionCache::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::ResetDistributionCache::set_distribution_name): <p>The name of the distribution for which to reset cache.</p>  <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    /// - On success, responds with [`ResetDistributionCacheOutput`](crate::output::ResetDistributionCacheOutput) with field(s):
+    ///   - [`status(Option<String>)`](crate::output::ResetDistributionCacheOutput::status): <p>The status of the reset cache request.</p>
+    ///   - [`create_time(Option<DateTime>)`](crate::output::ResetDistributionCacheOutput::create_time): <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    ///   - [`operation(Option<Operation>)`](crate::output::ResetDistributionCacheOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<ResetDistributionCacheError>`](crate::error::ResetDistributionCacheError)
     pub fn reset_distribution_cache(&self) -> fluent_builders::ResetDistributionCache<C, M, R> {
         fluent_builders::ResetDistributionCache::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendContactMethodVerification` operation.
+    /// Constructs a fluent builder for the [`SendContactMethodVerification`](crate::client::fluent_builders::SendContactMethodVerification) operation.
     ///
-    /// See [`SendContactMethodVerification`](crate::client::fluent_builders::SendContactMethodVerification) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`protocol(ContactMethodVerificationProtocol)`](crate::client::fluent_builders::SendContactMethodVerification::protocol) / [`set_protocol(Option<ContactMethodVerificationProtocol>)`](crate::client::fluent_builders::SendContactMethodVerification::set_protocol): <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
+    /// - On success, responds with [`SendContactMethodVerificationOutput`](crate::output::SendContactMethodVerificationOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::SendContactMethodVerificationOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<SendContactMethodVerificationError>`](crate::error::SendContactMethodVerificationError)
     pub fn send_contact_method_verification(
         &self,
     ) -> fluent_builders::SendContactMethodVerification<C, M, R> {
         fluent_builders::SendContactMethodVerification::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetIpAddressType` operation.
+    /// Constructs a fluent builder for the [`SetIpAddressType`](crate::client::fluent_builders::SetIpAddressType) operation.
     ///
-    /// See [`SetIpAddressType`](crate::client::fluent_builders::SetIpAddressType) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::SetIpAddressType::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::SetIpAddressType::set_resource_type): <p>The resource type.</p>  <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>   <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) AWS Region. Set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>  </note>
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::SetIpAddressType::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::SetIpAddressType::set_resource_name): <p>The name of the resource for which to set the IP address type.</p>
+    ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::SetIpAddressType::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::SetIpAddressType::set_ip_address_type): <p>The IP address type to set for the specified resource.</p>  <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// - On success, responds with [`SetIpAddressTypeOutput`](crate::output::SetIpAddressTypeOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::SetIpAddressTypeOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<SetIpAddressTypeError>`](crate::error::SetIpAddressTypeError)
     pub fn set_ip_address_type(&self) -> fluent_builders::SetIpAddressType<C, M, R> {
         fluent_builders::SetIpAddressType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetResourceAccessForBucket` operation.
+    /// Constructs a fluent builder for the [`SetResourceAccessForBucket`](crate::client::fluent_builders::SetResourceAccessForBucket) operation.
     ///
-    /// See [`SetResourceAccessForBucket`](crate::client::fluent_builders::SetResourceAccessForBucket) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::SetResourceAccessForBucket::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::SetResourceAccessForBucket::set_resource_name): <p>The name of the Lightsail instance for which to set bucket access. The instance must be in a running or stopped state.</p>
+    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::SetResourceAccessForBucket::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::SetResourceAccessForBucket::set_bucket_name): <p>The name of the bucket for which to set access to another Lightsail resource.</p>
+    ///   - [`access(ResourceBucketAccess)`](crate::client::fluent_builders::SetResourceAccessForBucket::access) / [`set_access(Option<ResourceBucketAccess>)`](crate::client::fluent_builders::SetResourceAccessForBucket::set_access): <p>The access setting.</p>  <p>The following access settings are available:</p>  <ul>   <li> <p> <code>allow</code> - Allows access to the bucket and its objects.</p> </li>   <li> <p> <code>deny</code> - Denies access to the bucket and its objects. Use this setting to remove access for a resource previously set to <code>allow</code>.</p> </li>  </ul>
+    /// - On success, responds with [`SetResourceAccessForBucketOutput`](crate::output::SetResourceAccessForBucketOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::SetResourceAccessForBucketOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<SetResourceAccessForBucketError>`](crate::error::SetResourceAccessForBucketError)
     pub fn set_resource_access_for_bucket(
         &self,
     ) -> fluent_builders::SetResourceAccessForBucket<C, M, R> {
         fluent_builders::SetResourceAccessForBucket::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartInstance` operation.
+    /// Constructs a fluent builder for the [`StartInstance`](crate::client::fluent_builders::StartInstance) operation.
     ///
-    /// See [`StartInstance`](crate::client::fluent_builders::StartInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::StartInstance::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::StartInstance::set_instance_name): <p>The name of the instance (a virtual private server) to start.</p>
+    /// - On success, responds with [`StartInstanceOutput`](crate::output::StartInstanceOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::StartInstanceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<StartInstanceError>`](crate::error::StartInstanceError)
     pub fn start_instance(&self) -> fluent_builders::StartInstance<C, M, R> {
         fluent_builders::StartInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartRelationalDatabase` operation.
+    /// Constructs a fluent builder for the [`StartRelationalDatabase`](crate::client::fluent_builders::StartRelationalDatabase) operation.
     ///
-    /// See [`StartRelationalDatabase`](crate::client::fluent_builders::StartRelationalDatabase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::StartRelationalDatabase::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::StartRelationalDatabase::set_relational_database_name): <p>The name of your database to start.</p>
+    /// - On success, responds with [`StartRelationalDatabaseOutput`](crate::output::StartRelationalDatabaseOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::StartRelationalDatabaseOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<StartRelationalDatabaseError>`](crate::error::StartRelationalDatabaseError)
     pub fn start_relational_database(&self) -> fluent_builders::StartRelationalDatabase<C, M, R> {
         fluent_builders::StartRelationalDatabase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopInstance` operation.
+    /// Constructs a fluent builder for the [`StopInstance`](crate::client::fluent_builders::StopInstance) operation.
     ///
-    /// See [`StopInstance`](crate::client::fluent_builders::StopInstance) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`instance_name(impl Into<String>)`](crate::client::fluent_builders::StopInstance::instance_name) / [`set_instance_name(Option<String>)`](crate::client::fluent_builders::StopInstance::set_instance_name): <p>The name of the instance (a virtual private server) to stop.</p>
+    ///   - [`force(bool)`](crate::client::fluent_builders::StopInstance::force) / [`set_force(Option<bool>)`](crate::client::fluent_builders::StopInstance::set_force): <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important>   <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p>  </important>
+    /// - On success, responds with [`StopInstanceOutput`](crate::output::StopInstanceOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::StopInstanceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<StopInstanceError>`](crate::error::StopInstanceError)
     pub fn stop_instance(&self) -> fluent_builders::StopInstance<C, M, R> {
         fluent_builders::StopInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopRelationalDatabase` operation.
+    /// Constructs a fluent builder for the [`StopRelationalDatabase`](crate::client::fluent_builders::StopRelationalDatabase) operation.
     ///
-    /// See [`StopRelationalDatabase`](crate::client::fluent_builders::StopRelationalDatabase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::StopRelationalDatabase::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::StopRelationalDatabase::set_relational_database_name): <p>The name of your database to stop.</p>
+    ///   - [`relational_database_snapshot_name(impl Into<String>)`](crate::client::fluent_builders::StopRelationalDatabase::relational_database_snapshot_name) / [`set_relational_database_snapshot_name(Option<String>)`](crate::client::fluent_builders::StopRelationalDatabase::set_relational_database_snapshot_name): <p>The name of your new database snapshot to be created before stopping your database.</p>
+    /// - On success, responds with [`StopRelationalDatabaseOutput`](crate::output::StopRelationalDatabaseOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::StopRelationalDatabaseOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<StopRelationalDatabaseError>`](crate::error::StopRelationalDatabaseError)
     pub fn stop_relational_database(&self) -> fluent_builders::StopRelationalDatabase<C, M, R> {
         fluent_builders::StopRelationalDatabase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_name): <p>The name of the resource to which you are adding tags.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to which you want to add a tag.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tag key and optional value.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::TagResourceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TestAlarm` operation.
+    /// Constructs a fluent builder for the [`TestAlarm`](crate::client::fluent_builders::TestAlarm) operation.
     ///
-    /// See [`TestAlarm`](crate::client::fluent_builders::TestAlarm) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`alarm_name(impl Into<String>)`](crate::client::fluent_builders::TestAlarm::alarm_name) / [`set_alarm_name(Option<String>)`](crate::client::fluent_builders::TestAlarm::set_alarm_name): <p>The name of the alarm to test.</p>
+    ///   - [`state(AlarmState)`](crate::client::fluent_builders::TestAlarm::state) / [`set_state(Option<AlarmState>)`](crate::client::fluent_builders::TestAlarm::set_state): <p>The alarm state to test.</p>  <p>An alarm has the following possible states that can be tested:</p>  <ul>   <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>   <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>   <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>  </ul>
+    /// - On success, responds with [`TestAlarmOutput`](crate::output::TestAlarmOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::TestAlarmOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<TestAlarmError>`](crate::error::TestAlarmError)
     pub fn test_alarm(&self) -> fluent_builders::TestAlarm<C, M, R> {
         fluent_builders::TestAlarm::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UnpeerVpc` operation.
+    /// Constructs a fluent builder for the [`UnpeerVpc`](crate::client::fluent_builders::UnpeerVpc) operation.
     ///
-    /// See [`UnpeerVpc`](crate::client::fluent_builders::UnpeerVpc) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::UnpeerVpc::send) it.
+
+    /// - On success, responds with [`UnpeerVpcOutput`](crate::output::UnpeerVpcOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::UnpeerVpcOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<UnpeerVpcError>`](crate::error::UnpeerVpcError)
     pub fn unpeer_vpc(&self) -> fluent_builders::UnpeerVpc<C, M, R> {
         fluent_builders::UnpeerVpc::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`resource_name(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_name) / [`set_resource_name(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_name): <p>The name of the resource from which you are removing a tag.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource from which you want to remove a tag.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys to delete from the specified resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::UntagResourceOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateBucket` operation.
+    /// Constructs a fluent builder for the [`UpdateBucket`](crate::client::fluent_builders::UpdateBucket) operation.
     ///
-    /// See [`UpdateBucket`](crate::client::fluent_builders::UpdateBucket) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBucket::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::UpdateBucket::set_bucket_name): <p>The name of the bucket to update.</p>
+    ///   - [`access_rules(AccessRules)`](crate::client::fluent_builders::UpdateBucket::access_rules) / [`set_access_rules(Option<AccessRules>)`](crate::client::fluent_builders::UpdateBucket::set_access_rules): <p>An object that sets the public accessibility of objects in the specified bucket.</p>
+    ///   - [`versioning(impl Into<String>)`](crate::client::fluent_builders::UpdateBucket::versioning) / [`set_versioning(Option<String>)`](crate::client::fluent_builders::UpdateBucket::set_versioning): <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>  <p>The following options can be specified:</p>  <ul>   <li> <p> <code>Enabled</code> - Enables versioning of objects in the specified bucket.</p> </li>   <li> <p> <code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p> </li>  </ul>
+    ///   - [`readonly_access_accounts(Vec<String>)`](crate::client::fluent_builders::UpdateBucket::readonly_access_accounts) / [`set_readonly_access_accounts(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateBucket::set_readonly_access_accounts): <p>An array of strings to specify the AWS account IDs that can access the bucket.</p>  <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+    ///   - [`access_log_config(BucketAccessLogConfig)`](crate::client::fluent_builders::UpdateBucket::access_log_config) / [`set_access_log_config(Option<BucketAccessLogConfig>)`](crate::client::fluent_builders::UpdateBucket::set_access_log_config): <p>An object that describes the access log configuration for the bucket.</p>
+    /// - On success, responds with [`UpdateBucketOutput`](crate::output::UpdateBucketOutput) with field(s):
+    ///   - [`bucket(Option<Bucket>)`](crate::output::UpdateBucketOutput::bucket): <p>An object that describes the bucket that is updated.</p>
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::UpdateBucketOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<UpdateBucketError>`](crate::error::UpdateBucketError)
     pub fn update_bucket(&self) -> fluent_builders::UpdateBucket<C, M, R> {
         fluent_builders::UpdateBucket::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateBucketBundle` operation.
+    /// Constructs a fluent builder for the [`UpdateBucketBundle`](crate::client::fluent_builders::UpdateBucketBundle) operation.
     ///
-    /// See [`UpdateBucketBundle`](crate::client::fluent_builders::UpdateBucketBundle) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::UpdateBucketBundle::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::UpdateBucketBundle::set_bucket_name): <p>The name of the bucket for which to update the bundle.</p>
+    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBucketBundle::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::UpdateBucketBundle::set_bundle_id): <p>The ID of the new bundle to apply to the bucket.</p>  <p>Use the <code>GetBucketBundles</code> action to get a list of bundle IDs that you can specify.</p>
+    /// - On success, responds with [`UpdateBucketBundleOutput`](crate::output::UpdateBucketBundleOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::UpdateBucketBundleOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<UpdateBucketBundleError>`](crate::error::UpdateBucketBundleError)
     pub fn update_bucket_bundle(&self) -> fluent_builders::UpdateBucketBundle<C, M, R> {
         fluent_builders::UpdateBucketBundle::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateContainerService` operation.
+    /// Constructs a fluent builder for the [`UpdateContainerService`](crate::client::fluent_builders::UpdateContainerService) operation.
     ///
-    /// See [`UpdateContainerService`](crate::client::fluent_builders::UpdateContainerService) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`service_name(impl Into<String>)`](crate::client::fluent_builders::UpdateContainerService::service_name) / [`set_service_name(Option<String>)`](crate::client::fluent_builders::UpdateContainerService::set_service_name): <p>The name of the container service to update.</p>
+    ///   - [`power(ContainerServicePowerName)`](crate::client::fluent_builders::UpdateContainerService::power) / [`set_power(Option<ContainerServicePowerName>)`](crate::client::fluent_builders::UpdateContainerService::set_power): <p>The power for the container service.</p>  <p>The power specifies the amount of memory, vCPUs, and base monthly cost of each node of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>  <p>Use the <code>GetContainerServicePowers</code> action to view the specifications of each power option.</p>
+    ///   - [`scale(i32)`](crate::client::fluent_builders::UpdateContainerService::scale) / [`set_scale(Option<i32>)`](crate::client::fluent_builders::UpdateContainerService::set_scale): <p>The scale for the container service.</p>  <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
+    ///   - [`is_disabled(bool)`](crate::client::fluent_builders::UpdateContainerService::is_disabled) / [`set_is_disabled(Option<bool>)`](crate::client::fluent_builders::UpdateContainerService::set_is_disabled): <p>A Boolean value to indicate whether the container service is disabled.</p>
+    ///   - [`public_domain_names(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::UpdateContainerService::public_domain_names) / [`set_public_domain_names(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::UpdateContainerService::set_public_domain_names): <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>  <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>  <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>   <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>  </important>  <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
+    /// - On success, responds with [`UpdateContainerServiceOutput`](crate::output::UpdateContainerServiceOutput) with field(s):
+    ///   - [`container_service(Option<ContainerService>)`](crate::output::UpdateContainerServiceOutput::container_service): <p>An object that describes a container service.</p>
+    /// - On failure, responds with [`SdkError<UpdateContainerServiceError>`](crate::error::UpdateContainerServiceError)
     pub fn update_container_service(&self) -> fluent_builders::UpdateContainerService<C, M, R> {
         fluent_builders::UpdateContainerService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDistribution` operation.
+    /// Constructs a fluent builder for the [`UpdateDistribution`](crate::client::fluent_builders::UpdateDistribution) operation.
     ///
-    /// See [`UpdateDistribution`](crate::client::fluent_builders::UpdateDistribution) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDistribution::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::UpdateDistribution::set_distribution_name): <p>The name of the distribution to update.</p>  <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    ///   - [`origin(InputOrigin)`](crate::client::fluent_builders::UpdateDistribution::origin) / [`set_origin(Option<InputOrigin>)`](crate::client::fluent_builders::UpdateDistribution::set_origin): <p>An object that describes the origin resource for the distribution, such as a Lightsail instance or load balancer.</p>  <p>The distribution pulls, caches, and serves content from the origin.</p>
+    ///   - [`default_cache_behavior(CacheBehavior)`](crate::client::fluent_builders::UpdateDistribution::default_cache_behavior) / [`set_default_cache_behavior(Option<CacheBehavior>)`](crate::client::fluent_builders::UpdateDistribution::set_default_cache_behavior): <p>An object that describes the default cache behavior for the distribution.</p>
+    ///   - [`cache_behavior_settings(CacheSettings)`](crate::client::fluent_builders::UpdateDistribution::cache_behavior_settings) / [`set_cache_behavior_settings(Option<CacheSettings>)`](crate::client::fluent_builders::UpdateDistribution::set_cache_behavior_settings): <p>An object that describes the cache behavior settings for the distribution.</p> <note>   <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>  </note>
+    ///   - [`cache_behaviors(Vec<CacheBehaviorPerPath>)`](crate::client::fluent_builders::UpdateDistribution::cache_behaviors) / [`set_cache_behaviors(Option<Vec<CacheBehaviorPerPath>>)`](crate::client::fluent_builders::UpdateDistribution::set_cache_behaviors): <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
+    ///   - [`is_enabled(bool)`](crate::client::fluent_builders::UpdateDistribution::is_enabled) / [`set_is_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateDistribution::set_is_enabled): <p>Indicates whether to enable the distribution.</p>
+    /// - On success, responds with [`UpdateDistributionOutput`](crate::output::UpdateDistributionOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::UpdateDistributionOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<UpdateDistributionError>`](crate::error::UpdateDistributionError)
     pub fn update_distribution(&self) -> fluent_builders::UpdateDistribution<C, M, R> {
         fluent_builders::UpdateDistribution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDistributionBundle` operation.
+    /// Constructs a fluent builder for the [`UpdateDistributionBundle`](crate::client::fluent_builders::UpdateDistributionBundle) operation.
     ///
-    /// See [`UpdateDistributionBundle`](crate::client::fluent_builders::UpdateDistributionBundle) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`distribution_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDistributionBundle::distribution_name) / [`set_distribution_name(Option<String>)`](crate::client::fluent_builders::UpdateDistributionBundle::set_distribution_name): <p>The name of the distribution for which to update the bundle.</p>  <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDistributionBundle::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::UpdateDistributionBundle::set_bundle_id): <p>The bundle ID of the new bundle to apply to your distribution.</p>  <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
+    /// - On success, responds with [`UpdateDistributionBundleOutput`](crate::output::UpdateDistributionBundleOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::UpdateDistributionBundleOutput::operation): <p>Describes the API operation.</p>
+    /// - On failure, responds with [`SdkError<UpdateDistributionBundleError>`](crate::error::UpdateDistributionBundleError)
     pub fn update_distribution_bundle(&self) -> fluent_builders::UpdateDistributionBundle<C, M, R> {
         fluent_builders::UpdateDistributionBundle::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDomainEntry` operation.
+    /// Constructs a fluent builder for the [`UpdateDomainEntry`](crate::client::fluent_builders::UpdateDomainEntry) operation.
     ///
-    /// See [`UpdateDomainEntry`](crate::client::fluent_builders::UpdateDomainEntry) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainEntry::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateDomainEntry::set_domain_name): <p>The name of the domain recordset to update.</p>
+    ///   - [`domain_entry(DomainEntry)`](crate::client::fluent_builders::UpdateDomainEntry::domain_entry) / [`set_domain_entry(Option<DomainEntry>)`](crate::client::fluent_builders::UpdateDomainEntry::set_domain_entry): <p>An array of key-value pairs containing information about the domain entry.</p>
+    /// - On success, responds with [`UpdateDomainEntryOutput`](crate::output::UpdateDomainEntryOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::UpdateDomainEntryOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<UpdateDomainEntryError>`](crate::error::UpdateDomainEntryError)
     pub fn update_domain_entry(&self) -> fluent_builders::UpdateDomainEntry<C, M, R> {
         fluent_builders::UpdateDomainEntry::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateLoadBalancerAttribute` operation.
+    /// Constructs a fluent builder for the [`UpdateLoadBalancerAttribute`](crate::client::fluent_builders::UpdateLoadBalancerAttribute) operation.
     ///
-    /// See [`UpdateLoadBalancerAttribute`](crate::client::fluent_builders::UpdateLoadBalancerAttribute) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`load_balancer_name(impl Into<String>)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::set_load_balancer_name): <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
+    ///   - [`attribute_name(LoadBalancerAttributeName)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::attribute_name) / [`set_attribute_name(Option<LoadBalancerAttributeName>)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::set_attribute_name): <p>The name of the attribute you want to update. Valid values are below.</p>
+    ///   - [`attribute_value(impl Into<String>)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::attribute_value) / [`set_attribute_value(Option<String>)`](crate::client::fluent_builders::UpdateLoadBalancerAttribute::set_attribute_value): <p>The value that you want to specify for the attribute name.</p>
+    /// - On success, responds with [`UpdateLoadBalancerAttributeOutput`](crate::output::UpdateLoadBalancerAttributeOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::UpdateLoadBalancerAttributeOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<UpdateLoadBalancerAttributeError>`](crate::error::UpdateLoadBalancerAttributeError)
     pub fn update_load_balancer_attribute(
         &self,
     ) -> fluent_builders::UpdateLoadBalancerAttribute<C, M, R> {
         fluent_builders::UpdateLoadBalancerAttribute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRelationalDatabase` operation.
+    /// Constructs a fluent builder for the [`UpdateRelationalDatabase`](crate::client::fluent_builders::UpdateRelationalDatabase) operation.
     ///
-    /// See [`UpdateRelationalDatabase`](crate::client::fluent_builders::UpdateRelationalDatabase) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_relational_database_name): <p>The name of your Lightsail database resource to update.</p>
+    ///   - [`master_user_password(impl Into<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::master_user_password) / [`set_master_user_password(Option<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_master_user_password): <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>  <p>My<b>SQL</b> </p>  <p>Constraints: Must contain from 8 to 41 characters.</p>  <p> <b>PostgreSQL</b> </p>  <p>Constraints: Must contain from 8 to 128 characters.</p>
+    ///   - [`rotate_master_user_password(bool)`](crate::client::fluent_builders::UpdateRelationalDatabase::rotate_master_user_password) / [`set_rotate_master_user_password(Option<bool>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_rotate_master_user_password): <p>When <code>true</code>, the master user password is changed to a new strong password generated by Lightsail.</p>  <p>Use the <code>get relational database master user password</code> operation to get the new password.</p>
+    ///   - [`preferred_backup_window(impl Into<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::preferred_backup_window) / [`set_preferred_backup_window(Option<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_preferred_backup_window): <p>The daily time range during which automated backups are created for your database if automated backups are enabled.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code> </p> </li>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Must not conflict with the preferred maintenance window.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>  </ul>
+    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur on your database.</p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring on a random day of the week.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li>   <li> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>   <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>   <li> <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li>  </ul>
+    ///   - [`enable_backup_retention(bool)`](crate::client::fluent_builders::UpdateRelationalDatabase::enable_backup_retention) / [`set_enable_backup_retention(Option<bool>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_enable_backup_retention): <p>When <code>true</code>, enables automated backup retention for your database.</p>  <p>Updates are applied during the next maintenance window because this can result in an outage.</p>
+    ///   - [`disable_backup_retention(bool)`](crate::client::fluent_builders::UpdateRelationalDatabase::disable_backup_retention) / [`set_disable_backup_retention(Option<bool>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_disable_backup_retention): <p>When <code>true</code>, disables automated backup retention for your database.</p>  <p>Disabling backup retention deletes all automated database backups. Before disabling this, you may want to create a snapshot of your database using the <code>create relational database snapshot</code> operation.</p>  <p>Updates are applied during the next maintenance window because this can result in an outage.</p>
+    ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::UpdateRelationalDatabase::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_publicly_accessible): <p>Specifies the accessibility options for your database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
+    ///   - [`apply_immediately(bool)`](crate::client::fluent_builders::UpdateRelationalDatabase::apply_immediately) / [`set_apply_immediately(Option<bool>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_apply_immediately): <p>When <code>true</code>, applies changes immediately. When <code>false</code>, applies changes during the preferred maintenance window. Some changes may cause an outage.</p>  <p>Default: <code>false</code> </p>
+    ///   - [`ca_certificate_identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::ca_certificate_identifier) / [`set_ca_certificate_identifier(Option<String>)`](crate::client::fluent_builders::UpdateRelationalDatabase::set_ca_certificate_identifier): <p>Indicates the certificate that needs to be associated with the database.</p>
+    /// - On success, responds with [`UpdateRelationalDatabaseOutput`](crate::output::UpdateRelationalDatabaseOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::UpdateRelationalDatabaseOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<UpdateRelationalDatabaseError>`](crate::error::UpdateRelationalDatabaseError)
     pub fn update_relational_database(&self) -> fluent_builders::UpdateRelationalDatabase<C, M, R> {
         fluent_builders::UpdateRelationalDatabase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRelationalDatabaseParameters` operation.
+    /// Constructs a fluent builder for the [`UpdateRelationalDatabaseParameters`](crate::client::fluent_builders::UpdateRelationalDatabaseParameters) operation.
     ///
-    /// See [`UpdateRelationalDatabaseParameters`](crate::client::fluent_builders::UpdateRelationalDatabaseParameters) for more information about the
-    /// operation and its arguments.
+    /// - The fluent builder is configurable:
+    ///   - [`relational_database_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRelationalDatabaseParameters::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::client::fluent_builders::UpdateRelationalDatabaseParameters::set_relational_database_name): <p>The name of your database for which to update parameters.</p>
+    ///   - [`parameters(Vec<RelationalDatabaseParameter>)`](crate::client::fluent_builders::UpdateRelationalDatabaseParameters::parameters) / [`set_parameters(Option<Vec<RelationalDatabaseParameter>>)`](crate::client::fluent_builders::UpdateRelationalDatabaseParameters::set_parameters): <p>The database parameters to update.</p>
+    /// - On success, responds with [`UpdateRelationalDatabaseParametersOutput`](crate::output::UpdateRelationalDatabaseParametersOutput) with field(s):
+    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::UpdateRelationalDatabaseParametersOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    /// - On failure, responds with [`SdkError<UpdateRelationalDatabaseParametersError>`](crate::error::UpdateRelationalDatabaseParametersError)
     pub fn update_relational_database_parameters(
         &self,
     ) -> fluent_builders::UpdateRelationalDatabaseParameters<C, M, R> {
