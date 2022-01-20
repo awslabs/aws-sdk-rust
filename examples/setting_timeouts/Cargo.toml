@@ -6,7 +6,7 @@ authors = ["Zelda Hessler zhessler@amazon.com>"]
 edition = "2018"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.aws-sdk-s3]
 package = "aws-sdk-s3"
@@ -16,7 +16,7 @@ version = "0.5.0"
 [dependencies.aws-smithy-client]
 path = "../../sdk/aws-smithy-client"
 features = ["rustls"]
-version = "0.35.0"
+version = "0.35.1"
 
 [dependencies.tokio]
 version = "1"
