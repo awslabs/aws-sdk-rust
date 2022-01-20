@@ -11,7 +11,7 @@ version = "0.5.1"
 [dependencies.aws-sdk-sns]
 package = "aws-sdk-sns"
 path = "../../sdk/sns"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
