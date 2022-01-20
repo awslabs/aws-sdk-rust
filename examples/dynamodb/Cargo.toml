@@ -12,11 +12,11 @@ tokio-stream = "0.1.8"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.aws-http]
 path = "../../sdk/aws-http"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.aws-sdk-dynamodb]
 path = "../../sdk/dynamodb"
@@ -24,19 +24,19 @@ version = "0.5.0"
 
 [dependencies.aws-smithy-http]
 path = "../../sdk/aws-smithy-http"
-version = "0.35.0"
+version = "0.35.1"
 
 [dependencies.aws-smithy-client]
 path = "../../sdk/aws-smithy-client"
-version = "0.35.0"
+version = "0.35.1"
 
 [dependencies.aws-smithy-types]
 path = "../../sdk/aws-smithy-types"
-version = "0.35.0"
+version = "0.35.1"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.structopt]
 version = "0.3"

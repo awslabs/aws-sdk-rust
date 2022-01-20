@@ -11,11 +11,11 @@ rustls = "0.20.2"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.aws-smithy-client]
 path = "../../sdk/aws-smithy-client"
-version = "0.35.0"
+version = "0.35.1"
 
 [dependencies.aws-sdk-s3]
 package = "aws-sdk-s3"

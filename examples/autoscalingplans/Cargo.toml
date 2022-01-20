@@ -6,7 +6,7 @@ authors = ["John DiSanti <jdisanti@amazon.com>"]
 edition = "2018"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.aws-sdk-autoscalingplans]
 path = "../../sdk/autoscalingplans"
@@ -14,7 +14,7 @@ version = "0.5.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.tokio]
 version = "1"
