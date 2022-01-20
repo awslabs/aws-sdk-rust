@@ -6,15 +6,15 @@ edition = "2018"
 version = "0.1.0"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.1"
+version = "0.5.2"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.5.1"
+version = "0.5.2"
 
 [dependencies.aws-sdk-rds]
 path = "../../sdk/rds"
-version = "0.5.1"
+version = "0.5.2"
 
 [dependencies.structopt]
 version = "0.3"
