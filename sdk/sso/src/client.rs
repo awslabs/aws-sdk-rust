@@ -13,31 +13,6 @@ pub(crate) struct Handle<
 ///
 /// Client for invoking operations on AWS Single Sign-On. Each operation on AWS Single Sign-On is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
-///
-/// # Examples
-/// **Constructing a client and invoking an operation**
-/// ```rust,no_run
-/// # async fn docs() {
-///     // create a shared configuration. This can be used & shared between multiple service clients.
-///     let shared_config = aws_config::load_from_env().await;
-///     let client = aws_sdk_sso::Client::new(&shared_config);
-///     // invoke an operation
-///     /* let rsp = client
-///         .<operation_name>().
-///         .<param>("some value")
-///         .send().await; */
-/// # }
-/// ```
-/// **Constructing a client with custom configuration**
-/// ```rust,no_run
-/// use aws_config::RetryConfig;
-/// # async fn docs() {
-///     let shared_config = aws_config::load_from_env().await;
-///     let config = aws_sdk_sso::config::Builder::from(&shared_config)
-///         .retry_config(RetryConfig::disabled())
-///         .build();
-///     let client = aws_sdk_sso::Client::from_conf(config);
-/// # }
 #[derive(std::fmt::Debug)]
 pub struct Client<
     C = aws_smithy_client::erase::DynConnector,
