@@ -21,7 +21,7 @@ version = "0.35.1"
 package = "aws-sdk-s3"
 path = "../../sdk/s3"
 default-features = false
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.tokio]
 version = "1"

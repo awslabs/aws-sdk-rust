@@ -10,11 +10,11 @@ version = "0.5.1"
 
 [dependencies.aws-sdk-qldb]
 path = "../../sdk/qldb"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.aws-sdk-qldbsession]
 path = "../../sdk/qldbsession"
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"

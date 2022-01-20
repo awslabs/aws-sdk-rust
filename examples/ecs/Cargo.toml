@@ -14,4 +14,4 @@ features = ["full"]
 
 [dependencies.aws-sdk-ecs]
 path = "../../sdk/ecs"
-version = "0.5.0"
+version = "0.5.1"

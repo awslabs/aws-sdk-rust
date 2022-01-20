@@ -15,14 +15,14 @@ package = "aws-sdk-s3"
 path = "../../sdk/s3"
 default-features = false
 features = ["native-tls"]
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.aws-sdk-sts]
 package = "aws-sdk-sts"
 path = "../../sdk/sts"
 default-features = false
 features = ["native-tls"]
-version = "0.5.0"
+version = "0.5.1"
 
 [dependencies.tokio]
 version = "1"
