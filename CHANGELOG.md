@@ -1,4 +1,16 @@
 <!-- Do not manually edit this file, use `update-changelogs` -->
+0.5.2 (January 20th, 2022)
+==========================
+
+**New this release:**
+- 🐛 ([smithy-rs#1100](https://github.com/awslabs/smithy-rs/issues/1100)) _Internal:_ Update sync script to run gradle clean. This fixes an issue where codegen was not triggered when only properties changed.
+
+v0.5.1 (January 19th, 2022)
+===========================
+
+**New this release:**
+- 🐛 ([smithy-rs#1089](https://github.com/awslabs/smithy-rs/issues/1089)) Fix dev-dependency cycle between aws-sdk-sso and aws-config
+
 0.5.0 (January 19, 2022)
 ========================
 **New this release:**
