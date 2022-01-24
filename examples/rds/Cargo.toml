@@ -4,6 +4,7 @@ name = "rds-code-examples"
 authors = ["LMJW <heysuperming@gmail.com>", "Doug Schwartz <dougsch@amazon.com>"]
 edition = "2018"
 version = "0.1.0"
+publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
 version = "0.5.2"

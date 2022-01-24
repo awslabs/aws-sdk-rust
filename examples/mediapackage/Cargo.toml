@@ -4,6 +4,7 @@ name = "mediapackage-code-examples"
 version = "0.1.0"
 authors = ["Alistair McLean <mclean@amazon.com>", "Doug Schwartz <dougsch@amazon.com>"]
 edition = "2018"
+publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
 version = "0.5.2"
