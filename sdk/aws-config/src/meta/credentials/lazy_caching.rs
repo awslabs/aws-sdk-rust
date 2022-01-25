@@ -77,6 +77,7 @@ impl ProvideCredentials for LazyCachingCredentialsProvider {
         future::ProvideCredentials::new(async move {
             // Attempt to get cached credentials, or clear the cache if they're expired
             if let Some(credentials) = cache.yield_or_clear_if_expired(now).await {
+                tracing::debug!("loaded credentials from cache");
                 Ok(credentials)
             } else {
                 // If we didn't get credentials from the cache, then we need to try and load.
