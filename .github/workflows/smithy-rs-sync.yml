@@ -51,4 +51,4 @@ jobs:
       run: |
         git config --global user.name "AWS SDK Rust Bot"
         git config --global user.email "aws-sdk-rust-primary@amazon.com"
-        git push
+        git push --force
