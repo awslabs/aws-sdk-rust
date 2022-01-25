@@ -1,16 +1,16 @@
 <!-- Do not manually edit this file, use `update-changelogs` -->
 0.5.2 (January 20th, 2022)
 ==========================
+
 **New this release:**
 - 🐛 ([smithy-rs#1100](https://github.com/awslabs/smithy-rs/issues/1100)) _Internal:_ Update sync script to run gradle clean. This fixes an issue where codegen was not triggered when only properties changed.
 
 
-
 v0.5.1 (January 19th, 2022)
 ===========================
+
 **New this release:**
 - 🐛 ([smithy-rs#1089](https://github.com/awslabs/smithy-rs/issues/1089)) Fix dev-dependency cycle between aws-sdk-sso and aws-config
-
 
 
 0.5.0 (January 19, 2022)
@@ -77,11 +77,11 @@ v0.3.0 (December 15th, 2021)
 
     **Upgrade guide**
 
-    | before                          | after |
-    |---------------------------------|-------|
-    | `aws-smithy-async = "VERSION"`  | `aws-smithy-async = { version = "VERSION", features = ["rt-tokio"] }` |
+    | before                          | after                                                                                            |
+    | ------------------------------- | ------------------------------------------------------------------------------------------------ |
+    | `aws-smithy-async = "VERSION"`  | `aws-smithy-async = { version = "VERSION", features = ["rt-tokio"] }`                            |
     | `aws-smithy-client = "VERSION"` | `aws-smithy-client = { version = "VERSION", features = ["client-hyper", "rustls", "rt-tokio"] }` |
-    | `aws-smithy-http = "VERSION"`   | `aws-smithy-http = { version = "VERSION", features = ["rt-tokio"] }` |
+    | `aws-smithy-http = "VERSION"`   | `aws-smithy-http = { version = "VERSION", features = ["rt-tokio"] }`                             |
 - ⚠ (smithy-rs#940) `aws_hyper::Client` which was just a re-export of `aws_smithy_types::Client` with generics set has been removed. If you used
     `aws_hyper::Client` or `aws_hyper::Client::https()` you can update your code to use `aws_smithy_client::Builder::https()`.
 - ⚠ (smithy-rs#947) The features `aws-hyper/rustls` and `aws-hyper/native-tls` have been removed. If you were using these, use the identical features on `aws-smithy-client`.
@@ -99,8 +99,6 @@ v0.3.0 (December 15th, 2021)
 - (smithy-rs#920) Fix typos in module documentation for generated crates
 - 🐛 (aws-sdk-rust#301, smithy-rs#892) Avoid serializing repetitive `xmlns` attributes when serializing XML. This reduces the length of serialized requests and should improve compatibility with localstack.
 - 🐛 (smithy-rs#953, aws-sdk-rust#331) Fixed a bug where certain characters caused a panic during URI encoding.
-- 🐛 (smithy-rs#957) Include non-service-specific examples in the root Cargo workspace so that they can build
-- 🐛 (smithy-rs#979) Make `aws-smithy-client` a required dependency in generated services.
 
 **Contributors**
 Thank you for your contributions! ❤
@@ -114,6 +112,7 @@ v0.2.0 (December 2nd, 2021)
 
 v0.1.0 (December 2nd, 2021)
 ===========================
+
 **New this release**
 - Add docs.rs metadata section to all crates to document all features
 - [Added a new example showing how to set all currently supported timeouts](./examples/setting_timeouts/src/main.rs)
@@ -122,13 +121,6 @@ v0.1.0 (December 2nd, 2021)
 
 v0.0.26-alpha (November 23rd, 2021)
 ===================================
-
-**New this release**
-- :tada: Timeouts for requests are now configurable. You can set a timeout for each individual request attempt or for all attempts made for a request. (smithy-rs#831)
-  - `SdkError` now includes a variant `TimeoutError` for when a request times out  (smithy-rs#885)
-- Improve docs on `aws-smithy-client` (smithy-rs#855)
-- Fix http-body dependency version (smithy-rs#883, aws-sdk-rust#305)
-
 
 **Breaking Changes**
 - `RetryConfigBuilder::merge_with` has been renamed to `RetryConfigBuilder::take_unset_from`
