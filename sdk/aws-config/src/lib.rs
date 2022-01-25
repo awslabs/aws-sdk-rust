@@ -232,7 +232,7 @@ mod loader {
         /// Set configuration for all sub-loaders (credentials, region etc.)
         ///
         /// Update the `ProviderConfig` used for all nested loaders. This can be used to override
-        /// the HTTPs` connector used or to stub in an in memory `Env` or `Fs` for testing.
+        /// the HTTPs connector used or to stub in an in memory `Env` or `Fs` for testing.
         ///
         /// # Examples
         /// ```no_run
