@@ -23,6 +23,14 @@ jobs:
         token: ${{ secrets.AWS_SDK_RUST_CI_PAT }}
         ref: ${{ env.sync_to_branch }}
         path: aws-sdk-rust
+        # We need to fetch the full history since we need to
+        # rebase `next` onto `main` as part of the sync job.
+        fetch-depth: 0
+    - name: set identity
+      working-directory: aws-sdk-rust
+      run: |
+        git config --global user.name "AWS SDK Rust Bot"
+        git config --global user.email "aws-sdk-rust-primary@amazon.com"
     - name: checkout smithy-rs
       uses: actions/checkout@v2
       with:
@@ -48,7 +56,4 @@ jobs:
           --max-commits-to-sync 5
     - name: push commits
       working-directory: aws-sdk-rust
-      run: |
-        git config --global user.name "AWS SDK Rust Bot"
-        git config --global user.email "aws-sdk-rust-primary@amazon.com"
-        git push --force
+      run: git push --force
