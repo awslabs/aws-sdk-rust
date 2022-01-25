@@ -161,7 +161,7 @@ impl WebIdentityTokenCredentialsProvider {
             &conf.role_arn,
             &conf.session_name,
         )
-        .instrument(tracing::info_span!(
+        .instrument(tracing::debug_span!(
             "load_credentials",
             provider = "WebIdentityToken"
         ))
