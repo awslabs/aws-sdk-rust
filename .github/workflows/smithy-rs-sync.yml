@@ -38,6 +38,11 @@ jobs:
         ref: ${{ env.sync_from_branch }}
         path: smithy-rs
         fetch-depth: 0
+    - name: checkout aws-doc-sdk-examples
+      uses: actions/checkout@v2
+      with:
+         repository: awsdocs/aws-doc-sdk-examples
+         path: aws-doc-sdk-examples
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: ${{ env.rust_version }}
@@ -52,6 +57,7 @@ jobs:
         cargo run -- \
           --smithy-rs /home/runner/work/aws-sdk-rust/aws-sdk-rust/smithy-rs \
           --aws-sdk /home/runner/work/aws-sdk-rust/aws-sdk-rust/aws-sdk-rust \
+          --sdk-examples /home/runner/work/aws-sdk-rust/aws-sdk-rust/aws-doc-sdk-examples \
           --branch ${{ env.sync_to_branch }} \
           --max-commits-to-sync 5
     - name: push commits
