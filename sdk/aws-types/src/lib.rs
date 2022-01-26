@@ -42,3 +42,9 @@ impl SigningService {
         SigningService(Cow::Borrowed(service))
     }
 }
+
+impl From<String> for SigningService {
+    fn from(service: String) -> Self {
+        SigningService(Cow::Owned(service))
+    }
+}
