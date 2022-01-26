@@ -313,6 +313,143 @@ impl std::error::Error for AssociateBotError {
     }
 }
 
+/// Error type for the `AssociateDefaultVocabulary` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AssociateDefaultVocabularyError {
+    /// Kind of error that occurred.
+    pub kind: AssociateDefaultVocabularyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `AssociateDefaultVocabulary` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssociateDefaultVocabularyErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AssociateDefaultVocabularyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssociateDefaultVocabularyErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            AssociateDefaultVocabularyErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            AssociateDefaultVocabularyErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            AssociateDefaultVocabularyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            AssociateDefaultVocabularyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            AssociateDefaultVocabularyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for AssociateDefaultVocabularyError {
+    fn code(&self) -> Option<&str> {
+        AssociateDefaultVocabularyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssociateDefaultVocabularyError {
+    /// Creates a new `AssociateDefaultVocabularyError`.
+    pub fn new(kind: AssociateDefaultVocabularyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `AssociateDefaultVocabularyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssociateDefaultVocabularyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `AssociateDefaultVocabularyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssociateDefaultVocabularyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `AssociateDefaultVocabularyErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateDefaultVocabularyErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateDefaultVocabularyErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateDefaultVocabularyErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateDefaultVocabularyErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateDefaultVocabularyErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateDefaultVocabularyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateDefaultVocabularyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `AssociateDefaultVocabularyErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateDefaultVocabularyErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for AssociateDefaultVocabularyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssociateDefaultVocabularyErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            AssociateDefaultVocabularyErrorKind::InternalServiceException(_inner) => Some(_inner),
+            AssociateDefaultVocabularyErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            AssociateDefaultVocabularyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            AssociateDefaultVocabularyErrorKind::ThrottlingException(_inner) => Some(_inner),
+            AssociateDefaultVocabularyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `AssociateInstanceStorageConfig` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3298,6 +3435,165 @@ impl std::error::Error for CreateUserHierarchyGroupError {
     }
 }
 
+/// Error type for the `CreateVocabulary` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateVocabularyError {
+    /// Kind of error that occurred.
+    pub kind: CreateVocabularyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateVocabulary` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateVocabularyErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>A resource already has that name.</p>
+    ResourceConflictException(crate::error::ResourceConflictException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The service quota has been exceeded.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateVocabularyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateVocabularyErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateVocabularyErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            CreateVocabularyErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateVocabularyErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
+            CreateVocabularyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateVocabularyErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            CreateVocabularyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateVocabularyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateVocabularyError {
+    fn code(&self) -> Option<&str> {
+        CreateVocabularyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateVocabularyError {
+    /// Creates a new `CreateVocabularyError`.
+    pub fn new(kind: CreateVocabularyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateVocabularyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateVocabularyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateVocabularyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateVocabularyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateVocabularyErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVocabularyErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateVocabularyErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVocabularyErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateVocabularyErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVocabularyErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateVocabularyErrorKind::ResourceConflictException`.
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVocabularyErrorKind::ResourceConflictException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateVocabularyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVocabularyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateVocabularyErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVocabularyErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateVocabularyErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVocabularyErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for CreateVocabularyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateVocabularyErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateVocabularyErrorKind::InternalServiceException(_inner) => Some(_inner),
+            CreateVocabularyErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateVocabularyErrorKind::ResourceConflictException(_inner) => Some(_inner),
+            CreateVocabularyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateVocabularyErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            CreateVocabularyErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateVocabularyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DeleteContactFlow` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4669,6 +4965,154 @@ impl std::error::Error for DeleteUserHierarchyGroupError {
             DeleteUserHierarchyGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteUserHierarchyGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteUserHierarchyGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteVocabulary` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteVocabularyError {
+    /// Kind of error that occurred.
+    pub kind: DeleteVocabularyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteVocabulary` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteVocabularyErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>That resource is already in use. Please try another.</p>
+    ResourceInUseException(crate::error::ResourceInUseException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteVocabularyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteVocabularyErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeleteVocabularyErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DeleteVocabularyErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteVocabularyErrorKind::ResourceInUseException(_inner) => _inner.fmt(f),
+            DeleteVocabularyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteVocabularyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteVocabularyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteVocabularyError {
+    fn code(&self) -> Option<&str> {
+        DeleteVocabularyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteVocabularyError {
+    /// Creates a new `DeleteVocabularyError`.
+    pub fn new(kind: DeleteVocabularyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteVocabularyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteVocabularyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteVocabularyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteVocabularyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteVocabularyErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVocabularyErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteVocabularyErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVocabularyErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteVocabularyErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVocabularyErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteVocabularyErrorKind::ResourceInUseException`.
+    pub fn is_resource_in_use_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVocabularyErrorKind::ResourceInUseException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteVocabularyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVocabularyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteVocabularyErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVocabularyErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteVocabularyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteVocabularyErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeleteVocabularyErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DeleteVocabularyErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteVocabularyErrorKind::ResourceInUseException(_inner) => Some(_inner),
+            DeleteVocabularyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteVocabularyErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteVocabularyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6751,6 +7195,143 @@ impl std::error::Error for DescribeUserHierarchyStructureError {
             }
             DescribeUserHierarchyStructureErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeUserHierarchyStructureErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeVocabulary` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeVocabularyError {
+    /// Kind of error that occurred.
+    pub kind: DescribeVocabularyErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeVocabulary` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeVocabularyErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The specified resource was not found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeVocabularyError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeVocabularyErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribeVocabularyErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DescribeVocabularyErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeVocabularyErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeVocabularyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeVocabularyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeVocabularyError {
+    fn code(&self) -> Option<&str> {
+        DescribeVocabularyError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeVocabularyError {
+    /// Creates a new `DescribeVocabularyError`.
+    pub fn new(kind: DescribeVocabularyErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeVocabularyError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeVocabularyErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeVocabularyError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeVocabularyErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeVocabularyErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVocabularyErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeVocabularyErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVocabularyErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeVocabularyErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVocabularyErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeVocabularyErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVocabularyErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeVocabularyErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVocabularyErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeVocabularyError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeVocabularyErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribeVocabularyErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DescribeVocabularyErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeVocabularyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeVocabularyErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeVocabularyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -9236,6 +9817,132 @@ impl std::error::Error for ListContactReferencesError {
             ListContactReferencesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListContactReferencesErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListContactReferencesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListDefaultVocabularies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListDefaultVocabulariesError {
+    /// Kind of error that occurred.
+    pub kind: ListDefaultVocabulariesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListDefaultVocabularies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListDefaultVocabulariesErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListDefaultVocabulariesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListDefaultVocabulariesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListDefaultVocabulariesErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListDefaultVocabulariesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListDefaultVocabulariesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListDefaultVocabulariesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListDefaultVocabulariesError {
+    fn code(&self) -> Option<&str> {
+        ListDefaultVocabulariesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListDefaultVocabulariesError {
+    /// Creates a new `ListDefaultVocabulariesError`.
+    pub fn new(kind: ListDefaultVocabulariesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListDefaultVocabulariesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListDefaultVocabulariesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListDefaultVocabulariesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListDefaultVocabulariesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListDefaultVocabulariesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDefaultVocabulariesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDefaultVocabulariesErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDefaultVocabulariesErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDefaultVocabulariesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDefaultVocabulariesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDefaultVocabulariesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDefaultVocabulariesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ListDefaultVocabulariesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListDefaultVocabulariesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListDefaultVocabulariesErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListDefaultVocabulariesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListDefaultVocabulariesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListDefaultVocabulariesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -12155,6 +12862,132 @@ impl std::error::Error for ResumeContactRecordingError {
             ResumeContactRecordingErrorKind::InvalidRequestException(_inner) => Some(_inner),
             ResumeContactRecordingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ResumeContactRecordingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `SearchVocabularies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct SearchVocabulariesError {
+    /// Kind of error that occurred.
+    pub kind: SearchVocabulariesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `SearchVocabularies` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum SearchVocabulariesErrorKind {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Request processing failed because of an error or failure with the service.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The request is not valid.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The throttling limit has been exceeded.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for SearchVocabulariesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            SearchVocabulariesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            SearchVocabulariesErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            SearchVocabulariesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            SearchVocabulariesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            SearchVocabulariesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for SearchVocabulariesError {
+    fn code(&self) -> Option<&str> {
+        SearchVocabulariesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl SearchVocabulariesError {
+    /// Creates a new `SearchVocabulariesError`.
+    pub fn new(kind: SearchVocabulariesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `SearchVocabulariesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: SearchVocabulariesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `SearchVocabulariesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: SearchVocabulariesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `SearchVocabulariesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchVocabulariesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchVocabulariesErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchVocabulariesErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchVocabulariesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchVocabulariesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `SearchVocabulariesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SearchVocabulariesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for SearchVocabulariesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            SearchVocabulariesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            SearchVocabulariesErrorKind::InternalServiceException(_inner) => Some(_inner),
+            SearchVocabulariesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            SearchVocabulariesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            SearchVocabulariesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -19342,70 +20175,6 @@ impl ContactFlowNotPublishedException {
     }
 }
 
-/// <p>An entity with the same name already exists.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct IdempotencyException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IdempotencyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdempotencyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl IdempotencyException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for IdempotencyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "IdempotencyException")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for IdempotencyException {}
-/// See [`IdempotencyException`](crate::error::IdempotencyException)
-pub mod idempotency_exception {
-    /// A builder for [`IdempotencyException`](crate::error::IdempotencyException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`IdempotencyException`](crate::error::IdempotencyException)
-        pub fn build(self) -> crate::error::IdempotencyException {
-            crate::error::IdempotencyException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl IdempotencyException {
-    /// Creates a new builder-style object to manufacture [`IdempotencyException`](crate::error::IdempotencyException)
-    pub fn builder() -> crate::error::idempotency_exception::Builder {
-        crate::error::idempotency_exception::Builder::default()
-    }
-}
-
 /// <p>A resource already has that name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -19429,8 +20198,8 @@ impl ResourceConflictException {
 impl std::fmt::Display for ResourceConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceConflictException")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -19467,5 +20236,69 @@ impl ResourceConflictException {
     /// Creates a new builder-style object to manufacture [`ResourceConflictException`](crate::error::ResourceConflictException)
     pub fn builder() -> crate::error::resource_conflict_exception::Builder {
         crate::error::resource_conflict_exception::Builder::default()
+    }
+}
+
+/// <p>An entity with the same name already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IdempotencyException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for IdempotencyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IdempotencyException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl IdempotencyException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for IdempotencyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "IdempotencyException")?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for IdempotencyException {}
+/// See [`IdempotencyException`](crate::error::IdempotencyException)
+pub mod idempotency_exception {
+    /// A builder for [`IdempotencyException`](crate::error::IdempotencyException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IdempotencyException`](crate::error::IdempotencyException)
+        pub fn build(self) -> crate::error::IdempotencyException {
+            crate::error::IdempotencyException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl IdempotencyException {
+    /// Creates a new builder-style object to manufacture [`IdempotencyException`](crate::error::IdempotencyException)
+    pub fn builder() -> crate::error::idempotency_exception::Builder {
+        crate::error::idempotency_exception::Builder::default()
     }
 }

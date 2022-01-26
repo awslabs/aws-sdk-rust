@@ -146,6 +146,79 @@ impl AsRef<str> for Type {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SegmentDeliveryConfiguration {
+    #[allow(missing_docs)] // documentation missing in model
+    pub base_url: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub name: std::option::Option<std::string::String>,
+}
+impl SegmentDeliveryConfiguration {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn base_url(&self) -> std::option::Option<&str> {
+        self.base_url.as_deref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+}
+impl std::fmt::Debug for SegmentDeliveryConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SegmentDeliveryConfiguration");
+        formatter.field("base_url", &self.base_url);
+        formatter.field("name", &self.name);
+        formatter.finish()
+    }
+}
+/// See [`SegmentDeliveryConfiguration`](crate::model::SegmentDeliveryConfiguration)
+pub mod segment_delivery_configuration {
+    /// A builder for [`SegmentDeliveryConfiguration`](crate::model::SegmentDeliveryConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) base_url: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn base_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_url = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_base_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.base_url = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SegmentDeliveryConfiguration`](crate::model::SegmentDeliveryConfiguration)
+        pub fn build(self) -> crate::model::SegmentDeliveryConfiguration {
+            crate::model::SegmentDeliveryConfiguration {
+                base_url: self.base_url,
+                name: self.name,
+            }
+        }
+    }
+}
+impl SegmentDeliveryConfiguration {
+    /// Creates a new builder-style object to manufacture [`SegmentDeliveryConfiguration`](crate::model::SegmentDeliveryConfiguration)
+    pub fn builder() -> crate::model::segment_delivery_configuration::Builder {
+        crate::model::segment_delivery_configuration::Builder::default()
+    }
+}
+
 /// <p>The HTTP configuration for the source location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2140,6 +2213,9 @@ pub struct SourceLocation {
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub segment_delivery_configurations:
+        std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the source location.</p>
@@ -2173,6 +2249,12 @@ impl SourceLocation {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn segment_delivery_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
+        self.segment_delivery_configurations.as_deref()
+    }
     /// <p>The name of the source location.</p>
     pub fn source_location_name(&self) -> std::option::Option<&str> {
         self.source_location_name.as_deref()
@@ -2197,6 +2279,10 @@ impl std::fmt::Debug for SourceLocation {
         );
         formatter.field("http_configuration", &self.http_configuration);
         formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field(
+            "segment_delivery_configurations",
+            &self.segment_delivery_configurations,
+        );
         formatter.field("source_location_name", &self.source_location_name);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -2215,6 +2301,8 @@ pub mod source_location {
             std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
         pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) segment_delivery_configurations:
+            std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2299,6 +2387,27 @@ pub mod source_location {
             self.last_modified_time = input;
             self
         }
+        /// Appends an item to `segment_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
+        ///
+        pub fn segment_delivery_configurations(
+            mut self,
+            input: crate::model::SegmentDeliveryConfiguration,
+        ) -> Self {
+            let mut v = self.segment_delivery_configurations.unwrap_or_default();
+            v.push(input);
+            self.segment_delivery_configurations = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_segment_delivery_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+        ) -> Self {
+            self.segment_delivery_configurations = input;
+            self
+        }
         /// <p>The name of the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
@@ -2346,6 +2455,7 @@ pub mod source_location {
                 default_segment_delivery_configuration: self.default_segment_delivery_configuration,
                 http_configuration: self.http_configuration,
                 last_modified_time: self.last_modified_time,
+                segment_delivery_configurations: self.segment_delivery_configurations,
                 source_location_name: self.source_location_name,
                 tags: self.tags,
             }

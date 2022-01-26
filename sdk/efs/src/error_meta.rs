@@ -45,6 +45,8 @@ pub enum Error {
     NoFreeAddressesInSubnet(crate::error::NoFreeAddressesInSubnet),
     /// <p>Returned if the default file system policy is in effect for the EFS file system specified.</p>
     PolicyNotFound(crate::error::PolicyNotFound),
+    /// <p>Returned if the specified file system did not have a replication configuration.</p>
+    ReplicationNotFound(crate::error::ReplicationNotFound),
     /// <p>Returned if the size of <code>SecurityGroups</code> specified in the request is greater than five.</p>
     SecurityGroupLimitExceeded(crate::error::SecurityGroupLimitExceeded),
     /// <p>Returned if one of the specified security groups doesn't exist in the subnet's VPC.</p>
@@ -86,6 +88,7 @@ impl std::fmt::Display for Error {
             Error::NetworkInterfaceLimitExceeded(inner) => inner.fmt(f),
             Error::NoFreeAddressesInSubnet(inner) => inner.fmt(f),
             Error::PolicyNotFound(inner) => inner.fmt(f),
+            Error::ReplicationNotFound(inner) => inner.fmt(f),
             Error::SecurityGroupLimitExceeded(inner) => inner.fmt(f),
             Error::SecurityGroupNotFound(inner) => inner.fmt(f),
             Error::SubnetNotFound(inner) => inner.fmt(f),
@@ -226,6 +229,36 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::CreateReplicationConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::CreateReplicationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateReplicationConfigurationErrorKind::BadRequest(inner) => Error::BadRequest(inner),
+                crate::error::CreateReplicationConfigurationErrorKind::FileSystemLimitExceeded(inner) => Error::FileSystemLimitExceeded(inner),
+                crate::error::CreateReplicationConfigurationErrorKind::FileSystemNotFound(inner) => Error::FileSystemNotFound(inner),
+                crate::error::CreateReplicationConfigurationErrorKind::IncorrectFileSystemLifeCycleState(inner) => Error::IncorrectFileSystemLifeCycleState(inner),
+                crate::error::CreateReplicationConfigurationErrorKind::InsufficientThroughputCapacity(inner) => Error::InsufficientThroughputCapacity(inner),
+                crate::error::CreateReplicationConfigurationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
+                crate::error::CreateReplicationConfigurationErrorKind::ReplicationNotFound(inner) => Error::ReplicationNotFound(inner),
+                crate::error::CreateReplicationConfigurationErrorKind::ThroughputLimitExceeded(inner) => Error::ThroughputLimitExceeded(inner),
+                crate::error::CreateReplicationConfigurationErrorKind::UnsupportedAvailabilityZone(inner) => Error::UnsupportedAvailabilityZone(inner),
+                crate::error::CreateReplicationConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::CreateReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateTagsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -311,6 +344,7 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DeleteFileSystemPolicyErrorKind::BadRequest(inner) => Error::BadRequest(inner),
                 crate::error::DeleteFileSystemPolicyErrorKind::FileSystemNotFound(inner) => Error::FileSystemNotFound(inner),
                 crate::error::DeleteFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState(inner) => Error::IncorrectFileSystemLifeCycleState(inner),
                 crate::error::DeleteFileSystemPolicyErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
@@ -342,6 +376,40 @@ where
                     Error::MountTargetNotFound(inner)
                 }
                 crate::error::DeleteMountTargetErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DeleteReplicationConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DeleteReplicationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteReplicationConfigurationErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::DeleteReplicationConfigurationErrorKind::FileSystemNotFound(
+                    inner,
+                ) => Error::FileSystemNotFound(inner),
+                crate::error::DeleteReplicationConfigurationErrorKind::InternalServerError(
+                    inner,
+                ) => Error::InternalServerError(inner),
+                crate::error::DeleteReplicationConfigurationErrorKind::ReplicationNotFound(
+                    inner,
+                ) => Error::ReplicationNotFound(inner),
+                crate::error::DeleteReplicationConfigurationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -463,6 +531,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeFileSystemPolicyErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
                 crate::error::DescribeFileSystemPolicyErrorKind::FileSystemNotFound(inner) => {
                     Error::FileSystemNotFound(inner)
                 }
@@ -590,6 +661,43 @@ where
                 crate::error::DescribeMountTargetSecurityGroupsErrorKind::MountTargetNotFound(inner) => Error::MountTargetNotFound(inner),
                 crate::error::DescribeMountTargetSecurityGroupsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::DescribeReplicationConfigurationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::DescribeReplicationConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeReplicationConfigurationsErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
+                crate::error::DescribeReplicationConfigurationsErrorKind::FileSystemNotFound(
+                    inner,
+                ) => Error::FileSystemNotFound(inner),
+                crate::error::DescribeReplicationConfigurationsErrorKind::InternalServerError(
+                    inner,
+                ) => Error::InternalServerError(inner),
+                crate::error::DescribeReplicationConfigurationsErrorKind::ReplicationNotFound(
+                    inner,
+                ) => Error::ReplicationNotFound(inner),
+                crate::error::DescribeReplicationConfigurationsErrorKind::ValidationException(
+                    inner,
+                ) => Error::ValidationException(inner),
+                crate::error::DescribeReplicationConfigurationsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -730,6 +838,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PutFileSystemPolicyErrorKind::BadRequest(inner) => {
+                    Error::BadRequest(inner)
+                }
                 crate::error::PutFileSystemPolicyErrorKind::FileSystemNotFound(inner) => {
                     Error::FileSystemNotFound(inner)
                 }

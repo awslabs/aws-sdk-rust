@@ -4336,6 +4336,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "dolbyVisionMetadataXml" => {
+                                builder = builder.set_dolby_vision_metadata_xml(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             "fileInput" => {
                                 builder = builder.set_file_input(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -4746,6 +4755,15 @@ where
                                             crate::model::InputDenoiseFilter::from(u.as_ref())
                                         })
                                     })
+                                    .transpose()?,
+                                );
+                            }
+                            "dolbyVisionMetadataXml" => {
+                                builder = builder.set_dolby_vision_metadata_xml(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                                 );
                             }
@@ -5184,6 +5202,19 @@ where
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
                                             crate::model::CmfcScte35Source::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "timedMetadata" => {
+                                builder = builder.set_timed_metadata(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::CmfcTimedMetadata::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -6144,6 +6175,19 @@ where
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
                                             crate::model::MpdScte35Source::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "timedMetadata" => {
+                                builder = builder.set_timed_metadata(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::MpdTimedMetadata::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -8009,6 +8053,18 @@ where
                                         s.to_unescaped().map(|u| {
                                             crate::model::Av1AdaptiveQuantization::from(u.as_ref())
                                         })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "bitDepth" => {
+                                builder = builder.set_bit_depth(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::Av1BitDepth::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -14629,6 +14685,19 @@ where
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
+                            "accessibility" => {
+                                builder = builder.set_accessibility(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::ImscAccessibilitySubs::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "stylePassthrough" => {
                                 builder = builder.set_style_passthrough(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
@@ -14880,6 +14949,19 @@ where
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
+                            "accessibility" => {
+                                builder = builder.set_accessibility(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::WebvttAccessibilitySubs::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             "stylePassthrough" => {
                                 builder = builder.set_style_passthrough(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(

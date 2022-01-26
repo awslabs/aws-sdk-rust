@@ -28,8 +28,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.5.2"
-aws-sdk-auditmanager = "0.5.2"
+aws-config = "0.6.0"
+aws-sdk-auditmanager = "0.6.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

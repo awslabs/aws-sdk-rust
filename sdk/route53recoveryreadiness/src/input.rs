@@ -13,12 +13,12 @@ pub mod create_cell_input {
         >,
     }
     impl Builder {
-        /// The name of the Cell to create
+        /// <p>The name of the cell to create.</p>
         pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.cell_name = Some(input.into());
             self
         }
-        /// The name of the Cell to create
+        /// <p>The name of the cell to create.</p>
         pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cell_name = input;
             self
@@ -27,14 +27,14 @@ pub mod create_cell_input {
         ///
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
-        /// A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
+        /// <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>
         pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cells.unwrap_or_default();
             v.push(input.into());
             self.cells = Some(v);
             self
         }
-        /// A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
+        /// <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>
         pub fn set_cells(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -46,7 +46,7 @@ pub mod create_cell_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// A collection of tags associated with a resource
+        /// <p>A collection of tags associated with a resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -57,7 +57,7 @@ pub mod create_cell_input {
             self.tags = Some(hash_map);
             self
         }
-        /// A collection of tags associated with a resource
+        /// <p>A collection of tags associated with a resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -207,7 +207,7 @@ pub mod create_cross_account_authorization_input {
         pub(crate) cross_account_authorization: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The cross account authorization
+        /// <p>The cross-account authorization.</p>
         pub fn cross_account_authorization(
             mut self,
             input: impl Into<std::string::String>,
@@ -215,7 +215,7 @@ pub mod create_cross_account_authorization_input {
             self.cross_account_authorization = Some(input.into());
             self
         }
-        /// The cross account authorization
+        /// <p>The cross-account authorization.</p>
         pub fn set_cross_account_authorization(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -369,12 +369,12 @@ pub mod create_readiness_check_input {
         >,
     }
     impl Builder {
-        /// The name of the ReadinessCheck to create
+        /// <p>The name of the readiness check to create.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.readiness_check_name = Some(input.into());
             self
         }
-        /// The name of the ReadinessCheck to create
+        /// <p>The name of the readiness check to create.</p>
         pub fn set_readiness_check_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -382,12 +382,12 @@ pub mod create_readiness_check_input {
             self.readiness_check_name = input;
             self
         }
-        /// The name of the ResourceSet to check
+        /// <p>The name of the resource set to check.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_set_name = Some(input.into());
             self
         }
-        /// The name of the ResourceSet to check
+        /// <p>The name of the resource set to check.</p>
         pub fn set_resource_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -399,7 +399,7 @@ pub mod create_readiness_check_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// A collection of tags associated with a resource
+        /// <p>A collection of tags associated with a resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -410,7 +410,7 @@ pub mod create_readiness_check_input {
             self.tags = Some(hash_map);
             self
         }
-        /// A collection of tags associated with a resource
+        /// <p>A collection of tags associated with a resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -571,14 +571,14 @@ pub mod create_recovery_group_input {
         ///
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
-        /// A list of Cell arns
+        /// <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
         pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cells.unwrap_or_default();
             v.push(input.into());
             self.cells = Some(v);
             self
         }
-        /// A list of Cell arns
+        /// <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
         pub fn set_cells(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -586,12 +586,12 @@ pub mod create_recovery_group_input {
             self.cells = input;
             self
         }
-        /// The name of the RecoveryGroup to create
+        /// <p>The name of the recovery group to create.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.recovery_group_name = Some(input.into());
             self
         }
-        /// The name of the RecoveryGroup to create
+        /// <p>The name of the recovery group to create.</p>
         pub fn set_recovery_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -603,7 +603,7 @@ pub mod create_recovery_group_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// A collection of tags associated with a resource
+        /// <p>A collection of tags associated with a resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -614,7 +614,7 @@ pub mod create_recovery_group_input {
             self.tags = Some(hash_map);
             self
         }
-        /// A collection of tags associated with a resource
+        /// <p>A collection of tags associated with a resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -770,12 +770,12 @@ pub mod create_resource_set_input {
         >,
     }
     impl Builder {
-        /// The name of the ResourceSet to create
+        /// <p>The name of the resource set to create.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_set_name = Some(input.into());
             self
         }
-        /// The name of the ResourceSet to create
+        /// <p>The name of the resource set to create.</p>
         pub fn set_resource_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -783,12 +783,14 @@ pub mod create_resource_set_input {
             self.resource_set_name = input;
             self
         }
-        /// AWS Resource type of the resources in the ResourceSet
+        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+        /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
         pub fn resource_set_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_set_type = Some(input.into());
             self
         }
-        /// AWS Resource type of the resources in the ResourceSet
+        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+        /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
         pub fn set_resource_set_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -800,14 +802,14 @@ pub mod create_resource_set_input {
         ///
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
-        /// A list of Resource objects
+        /// <p>A list of resource objects in the resource set.</p>
         pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
             v.push(input);
             self.resources = Some(v);
             self
         }
-        /// A list of Resource objects
+        /// <p>A list of resource objects in the resource set.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -819,7 +821,7 @@ pub mod create_resource_set_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// A collection of tags associated with a resource
+        /// <p>A tag to associate with the parameters for a resource set.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -830,7 +832,7 @@ pub mod create_resource_set_input {
             self.tags = Some(hash_map);
             self
         }
-        /// A collection of tags associated with a resource
+        /// <p>A tag to associate with the parameters for a resource set.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -982,12 +984,12 @@ pub mod delete_cell_input {
         pub(crate) cell_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The Cell to delete
+        /// <p>The name of the cell.</p>
         pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.cell_name = Some(input.into());
             self
         }
-        /// The Cell to delete
+        /// <p>The name of the cell.</p>
         pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cell_name = input;
             self
@@ -1133,7 +1135,7 @@ pub mod delete_cross_account_authorization_input {
         pub(crate) cross_account_authorization: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The cross account authorization
+        /// <p>The cross-account authorization.</p>
         pub fn cross_account_authorization(
             mut self,
             input: impl Into<std::string::String>,
@@ -1141,7 +1143,7 @@ pub mod delete_cross_account_authorization_input {
             self.cross_account_authorization = Some(input.into());
             self
         }
-        /// The cross account authorization
+        /// <p>The cross-account authorization.</p>
         pub fn set_cross_account_authorization(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1296,12 +1298,12 @@ pub mod delete_readiness_check_input {
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The ReadinessCheck to delete
+        /// <p>Name of a readiness check.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.readiness_check_name = Some(input.into());
             self
         }
-        /// The ReadinessCheck to delete
+        /// <p>Name of a readiness check.</p>
         pub fn set_readiness_check_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1454,12 +1456,12 @@ pub mod delete_recovery_group_input {
         pub(crate) recovery_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The RecoveryGroup to delete
+        /// <p>The name of a recovery group.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.recovery_group_name = Some(input.into());
             self
         }
-        /// The RecoveryGroup to delete
+        /// <p>The name of a recovery group.</p>
         pub fn set_recovery_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1612,12 +1614,12 @@ pub mod delete_resource_set_input {
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The ResourceSet to delete
+        /// <p>Name of a resource set.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_set_name = Some(input.into());
             self
         }
-        /// The ResourceSet to delete
+        /// <p>Name of a resource set.</p>
         pub fn set_resource_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1772,32 +1774,32 @@ pub mod get_architecture_recommendations_input {
         pub(crate) recovery_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// A token that can be used to resume pagination from the end of the collection.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// A token that can be used to resume pagination from the end of the collection.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// Name of RecoveryGroup (top level resource) to be analyzed.
+        /// <p>The name of a recovery group.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.recovery_group_name = Some(input.into());
             self
         }
-        /// Name of RecoveryGroup (top level resource) to be analyzed.
+        /// <p>The name of a recovery group.</p>
         pub fn set_recovery_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1971,12 +1973,12 @@ pub mod get_cell_input {
         pub(crate) cell_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The Cell to get
+        /// <p>The name of the cell.</p>
         pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.cell_name = Some(input.into());
             self
         }
-        /// The Cell to get
+        /// <p>The name of the cell.</p>
         pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cell_name = input;
             self
@@ -2120,32 +2122,32 @@ pub mod get_cell_readiness_summary_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The name of the Cell
+        /// <p>The name of the cell.</p>
         pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.cell_name = Some(input.into());
             self
         }
-        /// The name of the Cell
+        /// <p>The name of the cell.</p>
         pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cell_name = input;
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2311,12 +2313,12 @@ pub mod get_readiness_check_input {
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The ReadinessCheck to get
+        /// <p>Name of a readiness check.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.readiness_check_name = Some(input.into());
             self
         }
-        /// The ReadinessCheck to get
+        /// <p>Name of a readiness check.</p>
         pub fn set_readiness_check_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2472,32 +2474,32 @@ pub mod get_readiness_check_resource_status_input {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// The ReadinessCheck to get
+        /// <p>Name of a readiness check.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.readiness_check_name = Some(input.into());
             self
         }
-        /// The ReadinessCheck to get
+        /// <p>Name of a readiness check.</p>
         pub fn set_readiness_check_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2505,12 +2507,12 @@ pub mod get_readiness_check_resource_status_input {
             self.readiness_check_name = input;
             self
         }
-        /// The resource ARN or component Id to get
+        /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_identifier = Some(input.into());
             self
         }
-        /// The resource ARN or component Id to get
+        /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2703,32 +2705,32 @@ pub mod get_readiness_check_status_input {
         pub(crate) readiness_check_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// The ReadinessCheck to get
+        /// <p>Name of a readiness check.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.readiness_check_name = Some(input.into());
             self
         }
-        /// The ReadinessCheck to get
+        /// <p>Name of a readiness check.</p>
         pub fn set_readiness_check_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2901,12 +2903,12 @@ pub mod get_recovery_group_input {
         pub(crate) recovery_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The RecoveryGroup to get
+        /// <p>The name of a recovery group.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.recovery_group_name = Some(input.into());
             self
         }
-        /// The RecoveryGroup to get
+        /// <p>The name of a recovery group.</p>
         pub fn set_recovery_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3061,32 +3063,32 @@ pub mod get_recovery_group_readiness_summary_input {
         pub(crate) recovery_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// The name of the RecoveryGroup
+        /// <p>The name of a recovery group.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.recovery_group_name = Some(input.into());
             self
         }
-        /// The name of the RecoveryGroup
+        /// <p>The name of a recovery group.</p>
         pub fn set_recovery_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3260,12 +3262,12 @@ pub mod get_resource_set_input {
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The ResourceSet to get
+        /// <p>Name of a resource set.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_set_name = Some(input.into());
             self
         }
-        /// The ResourceSet to get
+        /// <p>Name of a resource set.</p>
         pub fn set_resource_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3419,22 +3421,22 @@ pub mod list_cells_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3579,22 +3581,22 @@ pub mod list_cross_account_authorizations_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3745,22 +3747,22 @@ pub mod list_readiness_checks_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3909,22 +3911,22 @@ pub mod list_recovery_groups_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4073,22 +4075,22 @@ pub mod list_resource_sets_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4238,32 +4240,32 @@ pub mod list_rules_input {
         pub(crate) resource_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// Filter parameter which specifies the rules to return given a resource type.
+        /// <p>The resource type that a readiness rule applies to.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// Filter parameter which specifies the rules to return given a resource type.
+        /// <p>The resource type that a readiness rule applies to.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4417,12 +4419,12 @@ pub mod list_tags_for_resources_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+        /// <p>The Amazon Resource Name (ARN) for a resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+        /// <p>The Amazon Resource Name (ARN) for a resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4571,12 +4573,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+        /// <p>The Amazon Resource Name (ARN) for a resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+        /// <p>The Amazon Resource Name (ARN) for a resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4585,7 +4587,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// A collection of tags associated with a resource
+        /// <p></p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4596,7 +4598,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// A collection of tags associated with a resource
+        /// <p></p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4762,12 +4764,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+        /// <p>The Amazon Resource Name (ARN) for a resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+        /// <p>The Amazon Resource Name (ARN) for a resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4776,14 +4778,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// A comma-separated list of the tag keys to remove from the resource.
+        /// <p>The keys for tags you add to resources.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// A comma-separated list of the tag keys to remove from the resource.
+        /// <p>The keys for tags you add to resources.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4947,12 +4949,12 @@ pub mod update_cell_input {
         pub(crate) cells: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// The Cell to update
+        /// <p>The name of the cell.</p>
         pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.cell_name = Some(input.into());
             self
         }
-        /// The Cell to update
+        /// <p>The name of the cell.</p>
         pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cell_name = input;
             self
@@ -4961,14 +4963,14 @@ pub mod update_cell_input {
         ///
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
-        /// A list of Cell arns, completely replaces previous list
+        /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
         pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cells.unwrap_or_default();
             v.push(input.into());
             self.cells = Some(v);
             self
         }
-        /// A list of Cell arns, completely replaces previous list
+        /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
         pub fn set_cells(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5132,12 +5134,12 @@ pub mod update_readiness_check_input {
         pub(crate) resource_set_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The ReadinessCheck to update
+        /// <p>Name of a readiness check.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.readiness_check_name = Some(input.into());
             self
         }
-        /// The ReadinessCheck to update
+        /// <p>Name of a readiness check.</p>
         pub fn set_readiness_check_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5145,12 +5147,12 @@ pub mod update_readiness_check_input {
             self.readiness_check_name = input;
             self
         }
-        /// The name of the ResourceSet to check
+        /// <p>The name of the resource set to be checked.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_set_name = Some(input.into());
             self
         }
-        /// The name of the ResourceSet to check
+        /// <p>The name of the resource set to be checked.</p>
         pub fn set_resource_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5325,14 +5327,14 @@ pub mod update_recovery_group_input {
         ///
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
-        /// A list of Cell arns, completely replaces previous list
+        /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
         pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cells.unwrap_or_default();
             v.push(input.into());
             self.cells = Some(v);
             self
         }
-        /// A list of Cell arns, completely replaces previous list
+        /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
         pub fn set_cells(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5340,12 +5342,12 @@ pub mod update_recovery_group_input {
             self.cells = input;
             self
         }
-        /// The RecoveryGroup to update
+        /// <p>The name of a recovery group.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.recovery_group_name = Some(input.into());
             self
         }
-        /// The RecoveryGroup to update
+        /// <p>The name of a recovery group.</p>
         pub fn set_recovery_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5515,12 +5517,12 @@ pub mod update_resource_set_input {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     }
     impl Builder {
-        /// The ResourceSet to update
+        /// <p>Name of a resource set.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_set_name = Some(input.into());
             self
         }
-        /// The ResourceSet to update
+        /// <p>Name of a resource set.</p>
         pub fn set_resource_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5528,12 +5530,14 @@ pub mod update_resource_set_input {
             self.resource_set_name = input;
             self
         }
-        /// AWS Resource Type of the resources in the ResourceSet
+        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+        /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
         pub fn resource_set_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_set_type = Some(input.into());
             self
         }
-        /// AWS Resource Type of the resources in the ResourceSet
+        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+        /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
         pub fn set_resource_set_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5545,14 +5549,14 @@ pub mod update_resource_set_input {
         ///
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
-        /// A list of Resource objects
+        /// <p>A list of resource objects.</p>
         pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
             v.push(input);
             self.resources = Some(v);
             self
         }
-        /// A list of Resource objects
+        /// <p>A list of resource objects.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -5712,27 +5716,29 @@ impl UpdateResourceSetInput {
     }
 }
 
-/// configuration for the desired
+/// <p>Name of a resource set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceSetInput {
-    /// The ResourceSet to update
+    /// <p>Name of a resource set.</p>
     pub resource_set_name: std::option::Option<std::string::String>,
-    /// AWS Resource Type of the resources in the ResourceSet
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+    /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
     pub resource_set_type: std::option::Option<std::string::String>,
-    /// A list of Resource objects
+    /// <p>A list of resource objects.</p>
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
 }
 impl UpdateResourceSetInput {
-    /// The ResourceSet to update
+    /// <p>Name of a resource set.</p>
     pub fn resource_set_name(&self) -> std::option::Option<&str> {
         self.resource_set_name.as_deref()
     }
-    /// AWS Resource Type of the resources in the ResourceSet
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+    /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
     pub fn resource_set_type(&self) -> std::option::Option<&str> {
         self.resource_set_type.as_deref()
     }
-    /// A list of Resource objects
+    /// <p>A list of resource objects.</p>
     pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
         self.resources.as_deref()
     }
@@ -5747,21 +5753,21 @@ impl std::fmt::Debug for UpdateResourceSetInput {
     }
 }
 
-/// Parameters to update for the RecoveryGroup
+/// <p>Name of a recovery group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecoveryGroupInput {
-    /// A list of Cell arns, completely replaces previous list
+    /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// The RecoveryGroup to update
+    /// <p>The name of a recovery group.</p>
     pub recovery_group_name: std::option::Option<std::string::String>,
 }
 impl UpdateRecoveryGroupInput {
-    /// A list of Cell arns, completely replaces previous list
+    /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
     pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
         self.cells.as_deref()
     }
-    /// The RecoveryGroup to update
+    /// <p>The name of a recovery group.</p>
     pub fn recovery_group_name(&self) -> std::option::Option<&str> {
         self.recovery_group_name.as_deref()
     }
@@ -5775,21 +5781,21 @@ impl std::fmt::Debug for UpdateRecoveryGroupInput {
     }
 }
 
-/// The new Readiness Check values
+/// <p>Name of a readiness check to describe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReadinessCheckInput {
-    /// The ReadinessCheck to update
+    /// <p>Name of a readiness check.</p>
     pub readiness_check_name: std::option::Option<std::string::String>,
-    /// The name of the ResourceSet to check
+    /// <p>The name of the resource set to be checked.</p>
     pub resource_set_name: std::option::Option<std::string::String>,
 }
 impl UpdateReadinessCheckInput {
-    /// The ReadinessCheck to update
+    /// <p>Name of a readiness check.</p>
     pub fn readiness_check_name(&self) -> std::option::Option<&str> {
         self.readiness_check_name.as_deref()
     }
-    /// The name of the ResourceSet to check
+    /// <p>The name of the resource set to be checked.</p>
     pub fn resource_set_name(&self) -> std::option::Option<&str> {
         self.resource_set_name.as_deref()
     }
@@ -5803,21 +5809,21 @@ impl std::fmt::Debug for UpdateReadinessCheckInput {
     }
 }
 
-/// Parameters to update for the Cell
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCellInput {
-    /// The Cell to update
+    /// <p>The name of the cell.</p>
     pub cell_name: std::option::Option<std::string::String>,
-    /// A list of Cell arns, completely replaces previous list
+    /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateCellInput {
-    /// The Cell to update
+    /// <p>The name of the cell.</p>
     pub fn cell_name(&self) -> std::option::Option<&str> {
         self.cell_name.as_deref()
     }
-    /// A list of Cell arns, completely replaces previous list
+    /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
     pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
         self.cells.as_deref()
     }
@@ -5835,17 +5841,17 @@ impl std::fmt::Debug for UpdateCellInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    /// <p>The Amazon Resource Name (ARN) for a resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// A comma-separated list of the tag keys to remove from the resource.
+    /// <p>The keys for tags you add to resources.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    /// <p>The Amazon Resource Name (ARN) for a resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// A comma-separated list of the tag keys to remove from the resource.
+    /// <p>The keys for tags you add to resources.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -5863,18 +5869,18 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    /// <p>The Amazon Resource Name (ARN) for a resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// A collection of tags associated with a resource
+    /// <p></p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    /// <p>The Amazon Resource Name (ARN) for a resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// A collection of tags associated with a resource
+    /// <p></p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5895,11 +5901,11 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourcesInput {
-    /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    /// <p>The Amazon Resource Name (ARN) for a resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourcesInput {
-    /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    /// <p>The Amazon Resource Name (ARN) for a resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -5916,23 +5922,23 @@ impl std::fmt::Debug for ListTagsForResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: i32,
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// Filter parameter which specifies the rules to return given a resource type.
+    /// <p>The resource type that a readiness rule applies to.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ListRulesInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// Filter parameter which specifies the rules to return given a resource type.
+    /// <p>The resource type that a readiness rule applies to.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -5951,17 +5957,17 @@ impl std::fmt::Debug for ListRulesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceSetsInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: i32,
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourceSetsInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5979,17 +5985,17 @@ impl std::fmt::Debug for ListResourceSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecoveryGroupsInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: i32,
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecoveryGroupsInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6007,17 +6013,17 @@ impl std::fmt::Debug for ListRecoveryGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReadinessChecksInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: i32,
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReadinessChecksInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6035,17 +6041,17 @@ impl std::fmt::Debug for ListReadinessChecksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCrossAccountAuthorizationsInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: i32,
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCrossAccountAuthorizationsInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6063,17 +6069,17 @@ impl std::fmt::Debug for ListCrossAccountAuthorizationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCellsInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: i32,
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCellsInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6091,11 +6097,11 @@ impl std::fmt::Debug for ListCellsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceSetInput {
-    /// The ResourceSet to get
+    /// <p>Name of a resource set.</p>
     pub resource_set_name: std::option::Option<std::string::String>,
 }
 impl GetResourceSetInput {
-    /// The ResourceSet to get
+    /// <p>Name of a resource set.</p>
     pub fn resource_set_name(&self) -> std::option::Option<&str> {
         self.resource_set_name.as_deref()
     }
@@ -6112,23 +6118,23 @@ impl std::fmt::Debug for GetResourceSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecoveryGroupReadinessSummaryInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: i32,
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// The name of the RecoveryGroup
+    /// <p>The name of a recovery group.</p>
     pub recovery_group_name: std::option::Option<std::string::String>,
 }
 impl GetRecoveryGroupReadinessSummaryInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// The name of the RecoveryGroup
+    /// <p>The name of a recovery group.</p>
     pub fn recovery_group_name(&self) -> std::option::Option<&str> {
         self.recovery_group_name.as_deref()
     }
@@ -6147,11 +6153,11 @@ impl std::fmt::Debug for GetRecoveryGroupReadinessSummaryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecoveryGroupInput {
-    /// The RecoveryGroup to get
+    /// <p>The name of a recovery group.</p>
     pub recovery_group_name: std::option::Option<std::string::String>,
 }
 impl GetRecoveryGroupInput {
-    /// The RecoveryGroup to get
+    /// <p>The name of a recovery group.</p>
     pub fn recovery_group_name(&self) -> std::option::Option<&str> {
         self.recovery_group_name.as_deref()
     }
@@ -6168,23 +6174,23 @@ impl std::fmt::Debug for GetRecoveryGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReadinessCheckStatusInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: i32,
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// The ReadinessCheck to get
+    /// <p>Name of a readiness check.</p>
     pub readiness_check_name: std::option::Option<std::string::String>,
 }
 impl GetReadinessCheckStatusInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// The ReadinessCheck to get
+    /// <p>Name of a readiness check.</p>
     pub fn readiness_check_name(&self) -> std::option::Option<&str> {
         self.readiness_check_name.as_deref()
     }
@@ -6203,29 +6209,29 @@ impl std::fmt::Debug for GetReadinessCheckStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReadinessCheckResourceStatusInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: i32,
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// The ReadinessCheck to get
+    /// <p>Name of a readiness check.</p>
     pub readiness_check_name: std::option::Option<std::string::String>,
-    /// The resource ARN or component Id to get
+    /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
     pub resource_identifier: std::option::Option<std::string::String>,
 }
 impl GetReadinessCheckResourceStatusInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// The ReadinessCheck to get
+    /// <p>Name of a readiness check.</p>
     pub fn readiness_check_name(&self) -> std::option::Option<&str> {
         self.readiness_check_name.as_deref()
     }
-    /// The resource ARN or component Id to get
+    /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
     pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
@@ -6245,11 +6251,11 @@ impl std::fmt::Debug for GetReadinessCheckResourceStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReadinessCheckInput {
-    /// The ReadinessCheck to get
+    /// <p>Name of a readiness check.</p>
     pub readiness_check_name: std::option::Option<std::string::String>,
 }
 impl GetReadinessCheckInput {
-    /// The ReadinessCheck to get
+    /// <p>Name of a readiness check.</p>
     pub fn readiness_check_name(&self) -> std::option::Option<&str> {
         self.readiness_check_name.as_deref()
     }
@@ -6266,23 +6272,23 @@ impl std::fmt::Debug for GetReadinessCheckInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCellReadinessSummaryInput {
-    /// The name of the Cell
+    /// <p>The name of the cell.</p>
     pub cell_name: std::option::Option<std::string::String>,
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: i32,
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCellReadinessSummaryInput {
-    /// The name of the Cell
+    /// <p>The name of the cell.</p>
     pub fn cell_name(&self) -> std::option::Option<&str> {
         self.cell_name.as_deref()
     }
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// A token used to resume pagination from the end of a previous request.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6301,11 +6307,11 @@ impl std::fmt::Debug for GetCellReadinessSummaryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCellInput {
-    /// The Cell to get
+    /// <p>The name of the cell.</p>
     pub cell_name: std::option::Option<std::string::String>,
 }
 impl GetCellInput {
-    /// The Cell to get
+    /// <p>The name of the cell.</p>
     pub fn cell_name(&self) -> std::option::Option<&str> {
         self.cell_name.as_deref()
     }
@@ -6322,23 +6328,23 @@ impl std::fmt::Debug for GetCellInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetArchitectureRecommendationsInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: i32,
-    /// A token that can be used to resume pagination from the end of the collection.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// Name of RecoveryGroup (top level resource) to be analyzed.
+    /// <p>The name of a recovery group.</p>
     pub recovery_group_name: std::option::Option<std::string::String>,
 }
 impl GetArchitectureRecommendationsInput {
-    /// Upper bound on number of records to return.
+    /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// A token that can be used to resume pagination from the end of the collection.
+    /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// Name of RecoveryGroup (top level resource) to be analyzed.
+    /// <p>The name of a recovery group.</p>
     pub fn recovery_group_name(&self) -> std::option::Option<&str> {
         self.recovery_group_name.as_deref()
     }
@@ -6357,11 +6363,11 @@ impl std::fmt::Debug for GetArchitectureRecommendationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceSetInput {
-    /// The ResourceSet to delete
+    /// <p>Name of a resource set.</p>
     pub resource_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteResourceSetInput {
-    /// The ResourceSet to delete
+    /// <p>Name of a resource set.</p>
     pub fn resource_set_name(&self) -> std::option::Option<&str> {
         self.resource_set_name.as_deref()
     }
@@ -6378,11 +6384,11 @@ impl std::fmt::Debug for DeleteResourceSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRecoveryGroupInput {
-    /// The RecoveryGroup to delete
+    /// <p>The name of a recovery group.</p>
     pub recovery_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteRecoveryGroupInput {
-    /// The RecoveryGroup to delete
+    /// <p>The name of a recovery group.</p>
     pub fn recovery_group_name(&self) -> std::option::Option<&str> {
         self.recovery_group_name.as_deref()
     }
@@ -6399,11 +6405,11 @@ impl std::fmt::Debug for DeleteRecoveryGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReadinessCheckInput {
-    /// The ReadinessCheck to delete
+    /// <p>Name of a readiness check.</p>
     pub readiness_check_name: std::option::Option<std::string::String>,
 }
 impl DeleteReadinessCheckInput {
-    /// The ReadinessCheck to delete
+    /// <p>Name of a readiness check.</p>
     pub fn readiness_check_name(&self) -> std::option::Option<&str> {
         self.readiness_check_name.as_deref()
     }
@@ -6420,11 +6426,11 @@ impl std::fmt::Debug for DeleteReadinessCheckInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCrossAccountAuthorizationInput {
-    /// The cross account authorization
+    /// <p>The cross-account authorization.</p>
     pub cross_account_authorization: std::option::Option<std::string::String>,
 }
 impl DeleteCrossAccountAuthorizationInput {
-    /// The cross account authorization
+    /// <p>The cross-account authorization.</p>
     pub fn cross_account_authorization(&self) -> std::option::Option<&str> {
         self.cross_account_authorization.as_deref()
     }
@@ -6444,11 +6450,11 @@ impl std::fmt::Debug for DeleteCrossAccountAuthorizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCellInput {
-    /// The Cell to delete
+    /// <p>The name of the cell.</p>
     pub cell_name: std::option::Option<std::string::String>,
 }
 impl DeleteCellInput {
-    /// The Cell to delete
+    /// <p>The name of the cell.</p>
     pub fn cell_name(&self) -> std::option::Option<&str> {
         self.cell_name.as_deref()
     }
@@ -6461,34 +6467,36 @@ impl std::fmt::Debug for DeleteCellInput {
     }
 }
 
-/// The ResourceSet to create
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceSetInput {
-    /// The name of the ResourceSet to create
+    /// <p>The name of the resource set to create.</p>
     pub resource_set_name: std::option::Option<std::string::String>,
-    /// AWS Resource type of the resources in the ResourceSet
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+    /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
     pub resource_set_type: std::option::Option<std::string::String>,
-    /// A list of Resource objects
+    /// <p>A list of resource objects in the resource set.</p>
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-    /// A collection of tags associated with a resource
+    /// <p>A tag to associate with the parameters for a resource set.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateResourceSetInput {
-    /// The name of the ResourceSet to create
+    /// <p>The name of the resource set to create.</p>
     pub fn resource_set_name(&self) -> std::option::Option<&str> {
         self.resource_set_name.as_deref()
     }
-    /// AWS Resource type of the resources in the ResourceSet
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+    /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
     pub fn resource_set_type(&self) -> std::option::Option<&str> {
         self.resource_set_type.as_deref()
     }
-    /// A list of Resource objects
+    /// <p>A list of resource objects in the resource set.</p>
     pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
         self.resources.as_deref()
     }
-    /// A collection of tags associated with a resource
+    /// <p>A tag to associate with the parameters for a resource set.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -6507,28 +6515,28 @@ impl std::fmt::Debug for CreateResourceSetInput {
     }
 }
 
-/// The RecoveryGroup to create
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRecoveryGroupInput {
-    /// A list of Cell arns
+    /// <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// The name of the RecoveryGroup to create
+    /// <p>The name of the recovery group to create.</p>
     pub recovery_group_name: std::option::Option<std::string::String>,
-    /// A collection of tags associated with a resource
+    /// <p>A collection of tags associated with a resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateRecoveryGroupInput {
-    /// A list of Cell arns
+    /// <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
     pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
         self.cells.as_deref()
     }
-    /// The name of the RecoveryGroup to create
+    /// <p>The name of the recovery group to create.</p>
     pub fn recovery_group_name(&self) -> std::option::Option<&str> {
         self.recovery_group_name.as_deref()
     }
-    /// A collection of tags associated with a resource
+    /// <p>A collection of tags associated with a resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -6546,28 +6554,28 @@ impl std::fmt::Debug for CreateRecoveryGroupInput {
     }
 }
 
-/// The ReadinessCheck to create
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReadinessCheckInput {
-    /// The name of the ReadinessCheck to create
+    /// <p>The name of the readiness check to create.</p>
     pub readiness_check_name: std::option::Option<std::string::String>,
-    /// The name of the ResourceSet to check
+    /// <p>The name of the resource set to check.</p>
     pub resource_set_name: std::option::Option<std::string::String>,
-    /// A collection of tags associated with a resource
+    /// <p>A collection of tags associated with a resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateReadinessCheckInput {
-    /// The name of the ReadinessCheck to create
+    /// <p>The name of the readiness check to create.</p>
     pub fn readiness_check_name(&self) -> std::option::Option<&str> {
         self.readiness_check_name.as_deref()
     }
-    /// The name of the ResourceSet to check
+    /// <p>The name of the resource set to check.</p>
     pub fn resource_set_name(&self) -> std::option::Option<&str> {
         self.resource_set_name.as_deref()
     }
-    /// A collection of tags associated with a resource
+    /// <p>A collection of tags associated with a resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -6585,15 +6593,15 @@ impl std::fmt::Debug for CreateReadinessCheckInput {
     }
 }
 
-/// The cross account authorization
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCrossAccountAuthorizationInput {
-    /// The cross account authorization
+    /// <p>The cross-account authorization.</p>
     pub cross_account_authorization: std::option::Option<std::string::String>,
 }
 impl CreateCrossAccountAuthorizationInput {
-    /// The cross account authorization
+    /// <p>The cross-account authorization.</p>
     pub fn cross_account_authorization(&self) -> std::option::Option<&str> {
         self.cross_account_authorization.as_deref()
     }
@@ -6609,28 +6617,28 @@ impl std::fmt::Debug for CreateCrossAccountAuthorizationInput {
     }
 }
 
-/// The Cell to create
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCellInput {
-    /// The name of the Cell to create
+    /// <p>The name of the cell to create.</p>
     pub cell_name: std::option::Option<std::string::String>,
-    /// A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
+    /// <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// A collection of tags associated with a resource
+    /// <p>A collection of tags associated with a resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateCellInput {
-    /// The name of the Cell to create
+    /// <p>The name of the cell to create.</p>
     pub fn cell_name(&self) -> std::option::Option<&str> {
         self.cell_name.as_deref()
     }
-    /// A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
+    /// <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>
     pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
         self.cells.as_deref()
     }
-    /// A collection of tags associated with a resource
+    /// <p>A collection of tags associated with a resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

@@ -106,6 +106,20 @@ where
     pub fn associate_bot(&self) -> fluent_builders::AssociateBot<C, M, R> {
         fluent_builders::AssociateBot::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`AssociateDefaultVocabulary`](crate::client::fluent_builders::AssociateDefaultVocabulary) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssociateDefaultVocabulary::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssociateDefaultVocabulary::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`language_code(VocabularyLanguageCode)`](crate::client::fluent_builders::AssociateDefaultVocabulary::language_code) / [`set_language_code(Option<VocabularyLanguageCode>)`](crate::client::fluent_builders::AssociateDefaultVocabulary::set_language_code): <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    ///   - [`vocabulary_id(impl Into<String>)`](crate::client::fluent_builders::AssociateDefaultVocabulary::vocabulary_id) / [`set_vocabulary_id(Option<String>)`](crate::client::fluent_builders::AssociateDefaultVocabulary::set_vocabulary_id): <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
+    /// - On success, responds with [`AssociateDefaultVocabularyOutput`](crate::output::AssociateDefaultVocabularyOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateDefaultVocabularyError>`](crate::error::AssociateDefaultVocabularyError)
+    pub fn associate_default_vocabulary(
+        &self,
+    ) -> fluent_builders::AssociateDefaultVocabulary<C, M, R> {
+        fluent_builders::AssociateDefaultVocabulary::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`AssociateInstanceStorageConfig`](crate::client::fluent_builders::AssociateInstanceStorageConfig) operation.
     ///
     /// - The fluent builder is configurable:
@@ -385,6 +399,7 @@ where
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::set_name): <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
     ///   - [`parent_group_id(impl Into<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::parent_group_id) / [`set_parent_group_id(Option<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::set_parent_group_id): <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateUserHierarchyGroup::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
     /// - On success, responds with [`CreateUserHierarchyGroupOutput`](crate::output::CreateUserHierarchyGroupOutput) with field(s):
     ///   - [`hierarchy_group_id(Option<String>)`](crate::output::CreateUserHierarchyGroupOutput::hierarchy_group_id): <p>The identifier of the hierarchy group.</p>
     ///   - [`hierarchy_group_arn(Option<String>)`](crate::output::CreateUserHierarchyGroupOutput::hierarchy_group_arn): <p>The Amazon Resource Name (ARN) of the hierarchy group. </p>
@@ -393,6 +408,23 @@ where
         &self,
     ) -> fluent_builders::CreateUserHierarchyGroup<C, M, R> {
         fluent_builders::CreateUserHierarchyGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateVocabulary`](crate::client::fluent_builders::CreateVocabulary) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a create request is received more than once with same client token, subsequent requests return the previous response without creating a vocabulary again.</p>
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`vocabulary_name(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_vocabulary_name): <p>A unique name of the custom vocabulary.</p>
+    ///   - [`language_code(VocabularyLanguageCode)`](crate::client::fluent_builders::CreateVocabulary::language_code) / [`set_language_code(Option<VocabularyLanguageCode>)`](crate::client::fluent_builders::CreateVocabulary::set_language_code): <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::CreateVocabulary::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::CreateVocabulary::set_content): <p>The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. The size limit is 50KB. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateVocabulary::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateVocabulary::set_tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On success, responds with [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput) with field(s):
+    ///   - [`vocabulary_arn(Option<String>)`](crate::output::CreateVocabularyOutput::vocabulary_arn): <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    ///   - [`vocabulary_id(Option<String>)`](crate::output::CreateVocabularyOutput::vocabulary_id): <p>The identifier of the custom vocabulary.</p>
+    ///   - [`state(Option<VocabularyState>)`](crate::output::CreateVocabularyOutput::state): <p>The current state of the custom vocabulary.</p>
+    /// - On failure, responds with [`SdkError<CreateVocabularyError>`](crate::error::CreateVocabularyError)
+    pub fn create_vocabulary(&self) -> fluent_builders::CreateVocabulary<C, M, R> {
+        fluent_builders::CreateVocabulary::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteContactFlow`](crate::client::fluent_builders::DeleteContactFlow) operation.
     ///
@@ -507,6 +539,19 @@ where
         &self,
     ) -> fluent_builders::DeleteUserHierarchyGroup<C, M, R> {
         fluent_builders::DeleteUserHierarchyGroup::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteVocabulary`](crate::client::fluent_builders::DeleteVocabulary) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVocabulary::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteVocabulary::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`vocabulary_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVocabulary::vocabulary_id) / [`set_vocabulary_id(Option<String>)`](crate::client::fluent_builders::DeleteVocabulary::set_vocabulary_id): <p>The identifier of the custom vocabulary.</p>
+    /// - On success, responds with [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput) with field(s):
+    ///   - [`vocabulary_arn(Option<String>)`](crate::output::DeleteVocabularyOutput::vocabulary_arn): <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    ///   - [`vocabulary_id(Option<String>)`](crate::output::DeleteVocabularyOutput::vocabulary_id): <p>The identifier of the custom vocabulary.</p>
+    ///   - [`state(Option<VocabularyState>)`](crate::output::DeleteVocabularyOutput::state): <p>The current state of the custom vocabulary.</p>
+    /// - On failure, responds with [`SdkError<DeleteVocabularyError>`](crate::error::DeleteVocabularyError)
+    pub fn delete_vocabulary(&self) -> fluent_builders::DeleteVocabulary<C, M, R> {
+        fluent_builders::DeleteVocabulary::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeAgentStatus`](crate::client::fluent_builders::DescribeAgentStatus) operation.
     ///
@@ -683,6 +728,17 @@ where
         &self,
     ) -> fluent_builders::DescribeUserHierarchyStructure<C, M, R> {
         fluent_builders::DescribeUserHierarchyStructure::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeVocabulary`](crate::client::fluent_builders::DescribeVocabulary) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DescribeVocabulary::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DescribeVocabulary::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`vocabulary_id(impl Into<String>)`](crate::client::fluent_builders::DescribeVocabulary::vocabulary_id) / [`set_vocabulary_id(Option<String>)`](crate::client::fluent_builders::DescribeVocabulary::set_vocabulary_id): <p>The identifier of the custom vocabulary.</p>
+    /// - On success, responds with [`DescribeVocabularyOutput`](crate::output::DescribeVocabularyOutput) with field(s):
+    ///   - [`vocabulary(Option<Vocabulary>)`](crate::output::DescribeVocabularyOutput::vocabulary): <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
+    /// - On failure, responds with [`SdkError<DescribeVocabularyError>`](crate::error::DescribeVocabularyError)
+    pub fn describe_vocabulary(&self) -> fluent_builders::DescribeVocabulary<C, M, R> {
+        fluent_builders::DescribeVocabulary::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DisassociateApprovedOrigin`](crate::client::fluent_builders::DisassociateApprovedOrigin) operation.
     ///
@@ -933,6 +989,21 @@ where
     /// - On failure, responds with [`SdkError<ListContactReferencesError>`](crate::error::ListContactReferencesError)
     pub fn list_contact_references(&self) -> fluent_builders::ListContactReferences<C, M, R> {
         fluent_builders::ListContactReferences::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListDefaultVocabularies`](crate::client::fluent_builders::ListDefaultVocabularies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDefaultVocabularies::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListDefaultVocabularies::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListDefaultVocabularies::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`language_code(VocabularyLanguageCode)`](crate::client::fluent_builders::ListDefaultVocabularies::language_code) / [`set_language_code(Option<VocabularyLanguageCode>)`](crate::client::fluent_builders::ListDefaultVocabularies::set_language_code): <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDefaultVocabularies::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDefaultVocabularies::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDefaultVocabularies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDefaultVocabularies::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// - On success, responds with [`ListDefaultVocabulariesOutput`](crate::output::ListDefaultVocabulariesOutput) with field(s):
+    ///   - [`default_vocabulary_list(Option<Vec<DefaultVocabulary>>)`](crate::output::ListDefaultVocabulariesOutput::default_vocabulary_list): <p>A list of default vocabularies.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDefaultVocabulariesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListDefaultVocabulariesError>`](crate::error::ListDefaultVocabulariesError)
+    pub fn list_default_vocabularies(&self) -> fluent_builders::ListDefaultVocabularies<C, M, R> {
+        fluent_builders::ListDefaultVocabularies::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListHoursOfOperations`](crate::client::fluent_builders::ListHoursOfOperations) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListHoursOfOperations::into_paginator).
@@ -1253,6 +1324,23 @@ where
     pub fn resume_contact_recording(&self) -> fluent_builders::ResumeContactRecording<C, M, R> {
         fluent_builders::ResumeContactRecording::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`SearchVocabularies`](crate::client::fluent_builders::SearchVocabularies) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchVocabularies::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::SearchVocabularies::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::SearchVocabularies::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchVocabularies::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::SearchVocabularies::set_max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchVocabularies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchVocabularies::set_next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`state(VocabularyState)`](crate::client::fluent_builders::SearchVocabularies::state) / [`set_state(Option<VocabularyState>)`](crate::client::fluent_builders::SearchVocabularies::set_state): <p>The current state of the custom vocabulary.</p>
+    ///   - [`name_starts_with(impl Into<String>)`](crate::client::fluent_builders::SearchVocabularies::name_starts_with) / [`set_name_starts_with(Option<String>)`](crate::client::fluent_builders::SearchVocabularies::set_name_starts_with): <p>The starting pattern of the name of the vocabulary.</p>
+    ///   - [`language_code(VocabularyLanguageCode)`](crate::client::fluent_builders::SearchVocabularies::language_code) / [`set_language_code(Option<VocabularyLanguageCode>)`](crate::client::fluent_builders::SearchVocabularies::set_language_code): <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    /// - On success, responds with [`SearchVocabulariesOutput`](crate::output::SearchVocabulariesOutput) with field(s):
+    ///   - [`vocabulary_summary_list(Option<Vec<VocabularySummary>>)`](crate::output::SearchVocabulariesOutput::vocabulary_summary_list): <p>The list of the available custom vocabularies.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchVocabulariesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<SearchVocabulariesError>`](crate::error::SearchVocabulariesError)
+    pub fn search_vocabularies(&self) -> fluent_builders::SearchVocabularies<C, M, R> {
+        fluent_builders::SearchVocabularies::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`StartChatContact`](crate::client::fluent_builders::StartChatContact) operation.
     ///
     /// - The fluent builder is configurable:
@@ -1465,7 +1553,7 @@ where
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     ///   - [`contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::contact_flow_id) / [`set_contact_flow_id(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_contact_flow_id): <p>The identifier of the contact flow.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_name): <p>TThe name of the contact flow.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_name): <p>The name of the contact flow.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_description): <p>The description of the contact flow.</p>
     ///   - [`contact_flow_state(ContactFlowState)`](crate::client::fluent_builders::UpdateContactFlowMetadata::contact_flow_state) / [`set_contact_flow_state(Option<ContactFlowState>)`](crate::client::fluent_builders::UpdateContactFlowMetadata::set_contact_flow_state): <p>The state of contact flow.</p>
     /// - On success, responds with [`UpdateContactFlowMetadataOutput`](crate::output::UpdateContactFlowMetadataOutput)
@@ -1550,7 +1638,7 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::UpdateInstanceAttribute::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::UpdateInstanceAttribute::set_instance_id): <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    ///   - [`attribute_type(InstanceAttributeType)`](crate::client::fluent_builders::UpdateInstanceAttribute::attribute_type) / [`set_attribute_type(Option<InstanceAttributeType>)`](crate::client::fluent_builders::UpdateInstanceAttribute::set_attribute_type): <p>The type of attribute.</p> <note>   <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact AWS Support for allowlisting.</p>  </note>
+    ///   - [`attribute_type(InstanceAttributeType)`](crate::client::fluent_builders::UpdateInstanceAttribute::attribute_type) / [`set_attribute_type(Option<InstanceAttributeType>)`](crate::client::fluent_builders::UpdateInstanceAttribute::set_attribute_type): <p>The type of attribute.</p> <note>   <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>  </note>
     ///   - [`value(impl Into<String>)`](crate::client::fluent_builders::UpdateInstanceAttribute::value) / [`set_value(Option<String>)`](crate::client::fluent_builders::UpdateInstanceAttribute::set_value): <p>The value for the attribute. Maximum character limit is 100. </p>
     /// - On success, responds with [`UpdateInstanceAttributeOutput`](crate::output::UpdateInstanceAttributeOutput)
 
@@ -2007,6 +2095,102 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::LexV2Bot>,
         ) -> Self {
             self.inner = self.inner.set_lex_v2_bot(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `AssociateDefaultVocabulary`.
+    ///
+    /// <p>Associates an existing vocabulary as the default. Contact Lens for Amazon Connect uses the vocabulary in post-call and real-time analysis sessions for the given language.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AssociateDefaultVocabulary<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::associate_default_vocabulary_input::Builder,
+    }
+    impl<C, M, R> AssociateDefaultVocabulary<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `AssociateDefaultVocabulary`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateDefaultVocabularyOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssociateDefaultVocabularyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::AssociateDefaultVocabularyInputOperationOutputAlias,
+                crate::output::AssociateDefaultVocabularyOutput,
+                crate::error::AssociateDefaultVocabularyError,
+                crate::input::AssociateDefaultVocabularyInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+        pub fn language_code(mut self, input: crate::model::VocabularyLanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
+            self
+        }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::VocabularyLanguageCode>,
+        ) -> Self {
+            self.inner = self.inner.set_language_code(input);
+            self
+        }
+        /// <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
+        pub fn vocabulary_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_id(input.into());
+            self
+        }
+        /// <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
+        pub fn set_vocabulary_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vocabulary_id(input);
             self
         }
     }
@@ -3227,7 +3411,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateIntegrationAssociation`.
     ///
-    /// <p>Creates an AWS resource association with an Amazon Connect instance.</p>
+    /// <p>Creates an Amazon Web Services resource association with an Amazon Connect instance.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIntegrationAssociation<
         C = aws_smithy_client::erase::DynConnector,
@@ -4379,6 +4563,168 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateVocabulary`.
+    ///
+    /// <p>Creates a custom vocabulary associated with your Amazon Connect instance. You can set a custom vocabulary to be your default vocabulary for a given language. Contact Lens for Amazon Connect uses the default vocabulary in post-call and real-time contact analysis sessions for that language.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateVocabulary<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_vocabulary_input::Builder,
+    }
+    impl<C, M, R> CreateVocabulary<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateVocabulary`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateVocabularyOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateVocabularyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateVocabularyInputOperationOutputAlias,
+                crate::output::CreateVocabularyOutput,
+                crate::error::CreateVocabularyError,
+                crate::input::CreateVocabularyInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a create request is received more than once with same client token, subsequent requests return the previous response without creating a vocabulary again.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a create request is received more than once with same client token, subsequent requests return the previous response without creating a vocabulary again.</p>
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>A unique name of the custom vocabulary.</p>
+        pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_name(input.into());
+            self
+        }
+        /// <p>A unique name of the custom vocabulary.</p>
+        pub fn set_vocabulary_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vocabulary_name(input);
+            self
+        }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+        pub fn language_code(mut self, input: crate::model::VocabularyLanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
+            self
+        }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::VocabularyLanguageCode>,
+        ) -> Self {
+            self.inner = self.inner.set_language_code(input);
+            self
+        }
+        /// <p>The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. The size limit is 50KB. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
+            self
+        }
+        /// <p>The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. The size limit is 50KB. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.</p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_content(input);
+            self
+        }
+        /// Adds a key-value pair to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k.into(), v.into());
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `DeleteContactFlow`.
     ///
@@ -4704,7 +5050,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteIntegrationAssociation`.
     ///
-    /// <p>Deletes an AWS resource association from an Amazon Connect instance. The association must not have any use cases associated with it.</p>
+    /// <p>Deletes an Amazon Web Services resource association from an Amazon Connect instance. The association must not have any use cases associated with it.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIntegrationAssociation<
         C = aws_smithy_client::erase::DynConnector,
@@ -5206,6 +5552,89 @@ pub mod fluent_builders {
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteVocabulary`.
+    ///
+    /// <p>Deletes the vocabulary that has the given identifier.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteVocabulary<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_vocabulary_input::Builder,
+    }
+    impl<C, M, R> DeleteVocabulary<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteVocabulary`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteVocabularyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteVocabularyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteVocabularyInputOperationOutputAlias,
+                crate::output::DeleteVocabularyOutput,
+                crate::error::DeleteVocabularyError,
+                crate::input::DeleteVocabularyInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the custom vocabulary.</p>
+        pub fn vocabulary_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_id(input.into());
+            self
+        }
+        /// <p>The identifier of the custom vocabulary.</p>
+        pub fn set_vocabulary_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vocabulary_id(input);
             self
         }
     }
@@ -6441,6 +6870,89 @@ pub mod fluent_builders {
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeVocabulary`.
+    ///
+    /// <p>Describes the specified vocabulary.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeVocabulary<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_vocabulary_input::Builder,
+    }
+    impl<C, M, R> DescribeVocabulary<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeVocabulary`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeVocabularyOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeVocabularyError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeVocabularyInputOperationOutputAlias,
+                crate::output::DescribeVocabularyOutput,
+                crate::error::DescribeVocabularyError,
+                crate::input::DescribeVocabularyInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the custom vocabulary.</p>
+        pub fn vocabulary_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_id(input.into());
+            self
+        }
+        /// <p>The identifier of the custom vocabulary.</p>
+        pub fn set_vocabulary_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_vocabulary_id(input);
             self
         }
     }
@@ -8873,6 +9385,115 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListDefaultVocabularies`.
+    ///
+    /// <p>Lists the default vocabularies for the specified Amazon Connect instance.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListDefaultVocabularies<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_default_vocabularies_input::Builder,
+    }
+    impl<C, M, R> ListDefaultVocabularies<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListDefaultVocabularies`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDefaultVocabulariesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListDefaultVocabulariesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListDefaultVocabulariesInputOperationOutputAlias,
+                crate::output::ListDefaultVocabulariesOutput,
+                crate::error::ListDefaultVocabulariesError,
+                crate::input::ListDefaultVocabulariesInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDefaultVocabulariesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDefaultVocabulariesPaginator<C, M, R> {
+            crate::paginator::ListDefaultVocabulariesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+        pub fn language_code(mut self, input: crate::model::VocabularyLanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
+            self
+        }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::VocabularyLanguageCode>,
+        ) -> Self {
+            self.inner = self.inner.set_language_code(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListHoursOfOperations`.
     ///
     /// <p>Provides information about the hours of operation for the specified Amazon Connect instance.</p>
@@ -9268,7 +9889,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListIntegrationAssociations`.
     ///
-    /// <p>Provides summary information about the AWS resource associations for the specified Amazon Connect instance.</p>
+    /// <p>Provides summary information about the Amazon Web Services resource associations for the specified Amazon Connect instance.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIntegrationAssociations<
         C = aws_smithy_client::erase::DynConnector,
@@ -11114,6 +11735,141 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_initial_contact_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `SearchVocabularies`.
+    ///
+    /// <p>Searches for vocabularies within a specific Amazon Connect instance using <code>State</code>, <code>NameStartsWith</code>, and <code>LanguageCode</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct SearchVocabularies<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::search_vocabularies_input::Builder,
+    }
+    impl<C, M, R> SearchVocabularies<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `SearchVocabularies`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SearchVocabulariesOutput,
+            aws_smithy_http::result::SdkError<crate::error::SearchVocabulariesError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::SearchVocabulariesInputOperationOutputAlias,
+                crate::output::SearchVocabulariesOutput,
+                crate::error::SearchVocabulariesError,
+                crate::input::SearchVocabulariesInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchVocabulariesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchVocabulariesPaginator<C, M, R> {
+            crate::paginator::SearchVocabulariesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The current state of the custom vocabulary.</p>
+        pub fn state(mut self, input: crate::model::VocabularyState) -> Self {
+            self.inner = self.inner.state(input);
+            self
+        }
+        /// <p>The current state of the custom vocabulary.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::VocabularyState>,
+        ) -> Self {
+            self.inner = self.inner.set_state(input);
+            self
+        }
+        /// <p>The starting pattern of the name of the vocabulary.</p>
+        pub fn name_starts_with(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_starts_with(input.into());
+            self
+        }
+        /// <p>The starting pattern of the name of the vocabulary.</p>
+        pub fn set_name_starts_with(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_name_starts_with(input);
+            self
+        }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+        pub fn language_code(mut self, input: crate::model::VocabularyLanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
+            self
+        }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::VocabularyLanguageCode>,
+        ) -> Self {
+            self.inner = self.inner.set_language_code(input);
             self
         }
     }
@@ -12969,12 +13725,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_contact_flow_id(input);
             self
         }
-        /// <p>TThe name of the contact flow.</p>
+        /// <p>The name of the contact flow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>TThe name of the contact flow.</p>
+        /// <p>The name of the contact flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -13611,14 +14367,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of attribute.</p> <note>
-        /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact AWS Support for allowlisting.</p>
+        /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
         /// </note>
         pub fn attribute_type(mut self, input: crate::model::InstanceAttributeType) -> Self {
             self.inner = self.inner.attribute_type(input);
             self
         }
         /// <p>The type of attribute.</p> <note>
-        /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact AWS Support for allowlisting.</p>
+        /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
         /// </note>
         pub fn set_attribute_type(
             mut self,

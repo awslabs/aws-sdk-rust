@@ -7,6 +7,8 @@ pub enum Error {
     AuthException(crate::error::AuthException),
     /// <p>The specified instance was not found.</p>
     Ec2InstanceNotFoundException(crate::error::Ec2InstanceNotFoundException),
+    /// <p>Unable to connect because the instance is not in a valid state. Connecting to a stopped or terminated instance is not supported. If the instance is stopped, start your instance, and try to connect again.</p>
+    Ec2InstanceStateInvalidException(crate::error::Ec2InstanceStateInvalidException),
     /// <p>The instance type is not supported for connecting via the serial console. Only Nitro instance types are currently supported.</p>
     Ec2InstanceTypeInvalidException(crate::error::Ec2InstanceTypeInvalidException),
     /// <p>One of the parameters is not valid.</p>
@@ -33,6 +35,7 @@ impl std::fmt::Display for Error {
         match self {
             Error::AuthException(inner) => inner.fmt(f),
             Error::Ec2InstanceNotFoundException(inner) => inner.fmt(f),
+            Error::Ec2InstanceStateInvalidException(inner) => inner.fmt(f),
             Error::Ec2InstanceTypeInvalidException(inner) => inner.fmt(f),
             Error::InvalidArgsException(inner) => inner.fmt(f),
             Error::SerialConsoleAccessDisabledException(inner) => inner.fmt(f),
@@ -56,6 +59,7 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::AuthException(inner) => Error::AuthException(inner),
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(inner) => Error::Ec2InstanceNotFoundException(inner),
+                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(inner) => Error::Ec2InstanceStateInvalidException(inner),
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException(inner) => Error::Ec2InstanceTypeInvalidException(inner),
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException(inner) => Error::InvalidArgsException(inner),
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleAccessDisabledException(inner) => Error::SerialConsoleAccessDisabledException(inner),
@@ -84,6 +88,9 @@ where
                 crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(inner) => {
                     Error::Ec2InstanceNotFoundException(inner)
                 }
+                crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(
+                    inner,
+                ) => Error::Ec2InstanceStateInvalidException(inner),
                 crate::error::SendSSHPublicKeyErrorKind::InvalidArgsException(inner) => {
                     Error::InvalidArgsException(inner)
                 }

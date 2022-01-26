@@ -733,6 +733,11 @@ pub mod create_filter_input {
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
         /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li>
+        /// <li> <p>resource.s3BucketDetails.name</p> </li>
+        /// <li> <p>resource.s3BucketDetails.tags.key</p> </li>
+        /// <li> <p>resource.s3BucketDetails.tags.value</p> </li>
+        /// <li> <p>resource.s3BucketDetails.type</p> </li>
         /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
         /// <li> <p>service.resourceRole</p> </li>
         /// <li> <p>severity</p> </li>
@@ -792,6 +797,11 @@ pub mod create_filter_input {
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
         /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li>
+        /// <li> <p>resource.s3BucketDetails.name</p> </li>
+        /// <li> <p>resource.s3BucketDetails.tags.key</p> </li>
+        /// <li> <p>resource.s3BucketDetails.tags.value</p> </li>
+        /// <li> <p>resource.s3BucketDetails.type</p> </li>
         /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
         /// <li> <p>service.resourceRole</p> </li>
         /// <li> <p>severity</p> </li>
@@ -1048,12 +1058,12 @@ pub mod create_ip_set_input {
             self.format = input;
             self
         }
-        /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the IPSet. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the IPSet. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -1911,12 +1921,12 @@ pub mod create_threat_intel_set_input {
             self.format = input;
             self
         }
-        /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the ThreatIntelSet. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the ThreatIntelSet. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -2140,14 +2150,14 @@ pub mod decline_invitations_input {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
+        /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to decline invitations from.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
+        /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to decline invitations from.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2632,14 +2642,14 @@ pub mod delete_invitations_input {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
+        /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to delete invitations from.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
+        /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to delete invitations from.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3876,12 +3886,12 @@ pub mod disable_organization_admin_account_input {
         pub(crate) admin_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
+        /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_account_id = Some(input.into());
             self
         }
-        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
+        /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4378,12 +4388,12 @@ pub mod enable_organization_admin_account_input {
         pub(crate) admin_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
+        /// <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_account_id = Some(input.into());
             self
         }
-        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
+        /// <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7159,7 +7169,6 @@ pub mod list_findings_input {
         /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
         /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
         /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
-        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
@@ -7215,7 +7224,6 @@ pub mod list_findings_input {
         /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
         /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
         /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
-        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
@@ -10380,12 +10388,12 @@ pub mod update_ip_set_input {
             self.name = input;
             self
         }
-        /// <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The updated URI of the file that contains the IPSet. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The updated URI of the file that contains the IPSet. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -11605,7 +11613,7 @@ pub struct UpdateIpSetInput {
     pub ip_set_id: std::option::Option<std::string::String>,
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The updated URI of the file that contains the IPSet. </p>
     pub location: std::option::Option<std::string::String>,
     /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
     pub activate: bool,
@@ -11623,7 +11631,7 @@ impl UpdateIpSetInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The updated URI of the file that contains the IPSet. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -12202,7 +12210,6 @@ pub struct ListFindingsInput {
     /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
     /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
     /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
-    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
     /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
     /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
     /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
@@ -12267,7 +12274,6 @@ impl ListFindingsInput {
     /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
     /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
     /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
-    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
     /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
     /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
     /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
@@ -12742,11 +12748,11 @@ impl std::fmt::Debug for GetDetectorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableOrganizationAdminAccountInput {
-    /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
+    /// <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
     pub admin_account_id: std::option::Option<std::string::String>,
 }
 impl EnableOrganizationAdminAccountInput {
-    /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
+    /// <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
     pub fn admin_account_id(&self) -> std::option::Option<&str> {
         self.admin_account_id.as_deref()
     }
@@ -12812,11 +12818,11 @@ impl std::fmt::Debug for DisassociateFromMasterAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableOrganizationAdminAccountInput {
-    /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
+    /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
     pub admin_account_id: std::option::Option<std::string::String>,
 }
 impl DisableOrganizationAdminAccountInput {
-    /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
+    /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
     pub fn admin_account_id(&self) -> std::option::Option<&str> {
         self.admin_account_id.as_deref()
     }
@@ -12994,11 +13000,11 @@ impl std::fmt::Debug for DeleteIpSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInvitationsInput {
-    /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
+    /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to delete invitations from.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteInvitationsInput {
-    /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
+    /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to delete invitations from.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -13064,11 +13070,11 @@ impl std::fmt::Debug for DeleteDetectorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineInvitationsInput {
-    /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
+    /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to decline invitations from.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeclineInvitationsInput {
-    /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
+    /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to decline invitations from.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -13091,7 +13097,7 @@ pub struct CreateThreatIntelSetInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The format of the file that contains the ThreatIntelSet.</p>
     pub format: std::option::Option<crate::model::ThreatIntelSetFormat>,
-    /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
     pub location: std::option::Option<std::string::String>,
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
     pub activate: bool,
@@ -13114,7 +13120,7 @@ impl CreateThreatIntelSetInput {
     pub fn format(&self) -> std::option::Option<&crate::model::ThreatIntelSetFormat> {
         self.format.as_ref()
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -13259,7 +13265,7 @@ pub struct CreateIpSetInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The format of the file that contains the IPSet.</p>
     pub format: std::option::Option<crate::model::IpSetFormat>,
-    /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the IPSet. </p>
     pub location: std::option::Option<std::string::String>,
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
     pub activate: bool,
@@ -13283,7 +13289,7 @@ impl CreateIpSetInput {
     pub fn format(&self) -> std::option::Option<&crate::model::IpSetFormat> {
         self.format.as_ref()
     }
-    /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the IPSet. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -13380,6 +13386,11 @@ pub struct CreateFilterInput {
     /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
     /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
     /// <li> <p>service.additionalInfo.threatListName</p> </li>
+    /// <li> <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li>
+    /// <li> <p>resource.s3BucketDetails.name</p> </li>
+    /// <li> <p>resource.s3BucketDetails.tags.key</p> </li>
+    /// <li> <p>resource.s3BucketDetails.tags.value</p> </li>
+    /// <li> <p>resource.s3BucketDetails.type</p> </li>
     /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
     /// <li> <p>service.resourceRole</p> </li>
     /// <li> <p>severity</p> </li>
@@ -13463,6 +13474,11 @@ impl CreateFilterInput {
     /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
     /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
     /// <li> <p>service.additionalInfo.threatListName</p> </li>
+    /// <li> <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li>
+    /// <li> <p>resource.s3BucketDetails.name</p> </li>
+    /// <li> <p>resource.s3BucketDetails.tags.key</p> </li>
+    /// <li> <p>resource.s3BucketDetails.tags.value</p> </li>
+    /// <li> <p>resource.s3BucketDetails.type</p> </li>
     /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
     /// <li> <p>service.resourceRole</p> </li>
     /// <li> <p>severity</p> </li>

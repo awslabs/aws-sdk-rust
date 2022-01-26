@@ -999,7 +999,7 @@ impl UpdateExperimentTemplateActionInputItem {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentTemplateTargetInput {
-    /// <p>The AWS resource type. The resource type must be supported for the specified action.</p>
+    /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1013,7 +1013,7 @@ pub struct UpdateExperimentTemplateTargetInput {
     pub selection_mode: std::option::Option<std::string::String>,
 }
 impl UpdateExperimentTemplateTargetInput {
-    /// <p>The AWS resource type. The resource type must be supported for the specified action.</p>
+    /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -1066,12 +1066,12 @@ pub mod update_experiment_template_target_input {
         pub(crate) selection_mode: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS resource type. The resource type must be supported for the specified action.</p>
+        /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The AWS resource type. The resource type must be supported for the specified action.</p>
+        /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1176,7 +1176,8 @@ impl UpdateExperimentTemplateTargetInput {
     }
 }
 
-/// <p>Describes a filter used for the target resource input in an experiment template.</p>
+/// <p>Specifies a filter used for the target resource input in an experiment template.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html#target-filters">Resource filters</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentTemplateTargetInputFilter {
@@ -1339,7 +1340,7 @@ pub struct Experiment {
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the experiment template.</p>
     pub experiment_template_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The state of the experiment.</p>
     pub state: std::option::Option<crate::model::ExperimentState>,
@@ -1353,9 +1354,9 @@ pub struct Experiment {
     >,
     /// <p>The stop conditions for the experiment.</p>
     pub stop_conditions: std::option::Option<std::vec::Vec<crate::model::ExperimentStopCondition>>,
-    /// <p>The time the experiment was created.</p>
+    /// <p>The time that the experiment was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time that the experiment was started.</p>
+    /// <p>The time that the experiment started.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the experiment ended.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1372,7 +1373,7 @@ impl Experiment {
     pub fn experiment_template_id(&self) -> std::option::Option<&str> {
         self.experiment_template_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -1400,11 +1401,11 @@ impl Experiment {
     pub fn stop_conditions(&self) -> std::option::Option<&[crate::model::ExperimentStopCondition]> {
         self.stop_conditions.as_deref()
     }
-    /// <p>The time the experiment was created.</p>
+    /// <p>The time that the experiment was created.</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The time that the experiment was started.</p>
+    /// <p>The time that the experiment started.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -1486,12 +1487,12 @@ pub mod experiment {
             self.experiment_template_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1578,12 +1579,12 @@ pub mod experiment {
             self.stop_conditions = input;
             self
         }
-        /// <p>The time the experiment was created.</p>
+        /// <p>The time that the experiment was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
-        /// <p>The time the experiment was created.</p>
+        /// <p>The time that the experiment was created.</p>
         pub fn set_creation_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1591,12 +1592,12 @@ pub mod experiment {
             self.creation_time = input;
             self
         }
-        /// <p>The time that the experiment was started.</p>
+        /// <p>The time that the experiment started.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The time that the experiment was started.</p>
+        /// <p>The time that the experiment started.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1758,6 +1759,10 @@ pub struct ExperimentAction {
     pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The state of the action.</p>
     pub state: std::option::Option<crate::model::ExperimentActionState>,
+    /// <p>The time that the action started.</p>
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The time that the action ended.</p>
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ExperimentAction {
     /// <p>The ID of the action.</p>
@@ -1790,6 +1795,14 @@ impl ExperimentAction {
     pub fn state(&self) -> std::option::Option<&crate::model::ExperimentActionState> {
         self.state.as_ref()
     }
+    /// <p>The time that the action started.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>The time that the action ended.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
 }
 impl std::fmt::Debug for ExperimentAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1800,6 +1813,8 @@ impl std::fmt::Debug for ExperimentAction {
         formatter.field("targets", &self.targets);
         formatter.field("start_after", &self.start_after);
         formatter.field("state", &self.state);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
         formatter.finish()
     }
 }
@@ -1819,6 +1834,8 @@ pub mod experiment_action {
         >,
         pub(crate) start_after: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) state: std::option::Option<crate::model::ExperimentActionState>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
         /// <p>The ID of the action.</p>
@@ -1923,6 +1940,32 @@ pub mod experiment_action {
             self.state = input;
             self
         }
+        /// <p>The time that the action started.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p>The time that the action started.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>The time that the action ended.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        /// <p>The time that the action ended.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ExperimentAction`](crate::model::ExperimentAction)
         pub fn build(self) -> crate::model::ExperimentAction {
             crate::model::ExperimentAction {
@@ -1932,6 +1975,8 @@ pub mod experiment_action {
                 targets: self.targets,
                 start_after: self.start_after,
                 state: self.state,
+                start_time: self.start_time,
+                end_time: self.end_time,
             }
         }
     }
@@ -3053,7 +3098,7 @@ impl ActionTarget {
     }
 }
 
-/// <p>Describes an action. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html">AWS FIS actions</a> in the <i>AWS Fault Injection Simulator User Guide</i>.</p>
+/// <p>Describes an action. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html">FIS actions</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
@@ -3324,10 +3369,11 @@ impl ActionParameter {
 }
 
 /// <p>Specifies an action for an experiment template.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/actions.html">Actions</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentTemplateActionInput {
-    /// <p>The ID of the action.</p>
+    /// <p>The ID of the action. The format of the action ID is: aws:<i>service-name</i>:<i>action-type</i>.</p>
     pub action_id: std::option::Option<std::string::String>,
     /// <p>A description for the action.</p>
     pub description: std::option::Option<std::string::String>,
@@ -3341,7 +3387,7 @@ pub struct CreateExperimentTemplateActionInput {
     pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateExperimentTemplateActionInput {
-    /// <p>The ID of the action.</p>
+    /// <p>The ID of the action. The format of the action ID is: aws:<i>service-name</i>:<i>action-type</i>.</p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
@@ -3396,12 +3442,12 @@ pub mod create_experiment_template_action_input {
         pub(crate) start_after: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ID of the action.</p>
+        /// <p>The ID of the action. The format of the action ID is: aws:<i>service-name</i>:<i>action-type</i>.</p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_id = Some(input.into());
             self
         }
-        /// <p>The ID of the action.</p>
+        /// <p>The ID of the action. The format of the action ID is: aws:<i>service-name</i>:<i>action-type</i>.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -3505,10 +3551,11 @@ impl CreateExperimentTemplateActionInput {
 }
 
 /// <p>Specifies a target for an experiment. You must specify at least one Amazon Resource Name (ARN) or at least one resource tag. You cannot specify both ARNs and tags.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html">Targets</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentTemplateTargetInput {
-    /// <p>The AWS resource type. The resource type must be supported for the specified action.</p>
+    /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3527,7 +3574,7 @@ pub struct CreateExperimentTemplateTargetInput {
     pub selection_mode: std::option::Option<std::string::String>,
 }
 impl CreateExperimentTemplateTargetInput {
-    /// <p>The AWS resource type. The resource type must be supported for the specified action.</p>
+    /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -3585,12 +3632,12 @@ pub mod create_experiment_template_target_input {
         pub(crate) selection_mode: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS resource type. The resource type must be supported for the specified action.</p>
+        /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The AWS resource type. The resource type must be supported for the specified action.</p>
+        /// <p>The Amazon Web Services resource type. The resource type must be supported for the specified action.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
