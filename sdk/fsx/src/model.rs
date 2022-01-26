@@ -1189,10 +1189,9 @@ pub struct AdministrativeAction {
     /// <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li>
     /// <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p>
     /// <ul>
-    /// <li> <p>For Windows, storage optimization is the process of migrating the file system data to the new, larger disks.</p> </li>
+    /// <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li>
     /// <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li>
-    /// <li> <p>For OpenZFS, storage optimization consists of migrating data from the older smaller disks to the newer larger disks.</p> </li>
-    /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for OpenZFS User Guide</i>. </p> </li>
+    /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li>
     /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li>
     /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li>
     /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li>
@@ -1228,10 +1227,9 @@ impl AdministrativeAction {
     /// <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li>
     /// <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p>
     /// <ul>
-    /// <li> <p>For Windows, storage optimization is the process of migrating the file system data to the new, larger disks.</p> </li>
+    /// <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li>
     /// <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li>
-    /// <li> <p>For OpenZFS, storage optimization consists of migrating data from the older smaller disks to the newer larger disks.</p> </li>
-    /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for OpenZFS User Guide</i>. </p> </li>
+    /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li>
     /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li>
     /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li>
     /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li>
@@ -1321,10 +1319,9 @@ pub mod administrative_action {
         /// <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li>
         /// <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p>
         /// <ul>
-        /// <li> <p>For Windows, storage optimization is the process of migrating the file system data to the new, larger disks.</p> </li>
+        /// <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li>
         /// <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li>
-        /// <li> <p>For OpenZFS, storage optimization consists of migrating data from the older smaller disks to the newer larger disks.</p> </li>
-        /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for OpenZFS User Guide</i>. </p> </li>
+        /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li>
         /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li>
         /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li>
         /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li>
@@ -1343,10 +1340,9 @@ pub mod administrative_action {
         /// <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li>
         /// <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p>
         /// <ul>
-        /// <li> <p>For Windows, storage optimization is the process of migrating the file system data to the new, larger disks.</p> </li>
+        /// <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li>
         /// <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li>
-        /// <li> <p>For OpenZFS, storage optimization consists of migrating data from the older smaller disks to the newer larger disks.</p> </li>
-        /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for OpenZFS User Guide</i>. </p> </li>
+        /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li>
         /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li>
         /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li>
         /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li>
@@ -1966,7 +1962,7 @@ pub struct FileSystem {
         std::option::Option<std::vec::Vec<crate::model::AdministrativeAction>>,
     /// <p>The configuration for this FSx for ONTAP file system.</p>
     pub ontap_configuration: std::option::Option<crate::model::OntapFileSystemConfiguration>,
-    /// <p>The Lustre version of the Amazon FSx for Lustrefile system, either <code>2.10</code> or <code>2.12</code>.</p>
+    /// <p>The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.</p>
     pub file_system_type_version: std::option::Option<std::string::String>,
     /// <p>The configuration for this Amazon FSx for OpenZFS file system.</p>
     pub open_zfs_configuration: std::option::Option<crate::model::OpenZfsFileSystemConfiguration>,
@@ -2066,7 +2062,7 @@ impl FileSystem {
     ) -> std::option::Option<&crate::model::OntapFileSystemConfiguration> {
         self.ontap_configuration.as_ref()
     }
-    /// <p>The Lustre version of the Amazon FSx for Lustrefile system, either <code>2.10</code> or <code>2.12</code>.</p>
+    /// <p>The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.</p>
     pub fn file_system_type_version(&self) -> std::option::Option<&str> {
         self.file_system_type_version.as_deref()
     }
@@ -2420,12 +2416,12 @@ pub mod file_system {
             self.ontap_configuration = input;
             self
         }
-        /// <p>The Lustre version of the Amazon FSx for Lustrefile system, either <code>2.10</code> or <code>2.12</code>.</p>
+        /// <p>The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.</p>
         pub fn file_system_type_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_system_type_version = Some(input.into());
             self
         }
-        /// <p>The Lustre version of the Amazon FSx for Lustrefile system, either <code>2.10</code> or <code>2.12</code>.</p>
+        /// <p>The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.</p>
         pub fn set_file_system_type_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6038,16 +6034,12 @@ impl AsRef<str> for Status {
 /// successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p>
 /// <ul>
 /// <li>
-/// <p>For Windows, storage optimization is the process of migrating the file system data
-/// to the new, larger disks.</p>
+/// <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data
+/// to newer larger disks.</p>
 /// </li>
 /// <li>
 /// <p>For Lustre, storage optimization consists of rebalancing the data across the existing and
 /// newly added file servers.</p>
-/// </li>
-/// <li>
-/// <p>For OpenZFS, storage optimization consists of migrating data from the
-/// older smaller disks to the newer larger disks.</p>
 /// </li>
 /// </ul>
 /// <p>You can track the storage-optimization progress using the
@@ -6058,8 +6050,9 @@ impl AsRef<str> for Status {
 /// storage capacity</a> in the <i>Amazon FSx for Windows
 /// File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
 /// and throughput capacity</a> in the <i>Amazon FSx for
-/// Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the
-/// <i>Amazon FSx for OpenZFS User Guide</i>. </p>
+/// Lustre User Guide</i>, and
+/// <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User
+/// Guide</i>.</p>
 /// </li>
 /// <li>
 /// <p>
@@ -6651,6 +6644,19 @@ impl AsRef<str> for OntapVolumeType {
 }
 
 /// <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns.</p>
+/// <p>Valid tiering policies are the following:</p>
+/// <ul>
+/// <li> <p> <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p> </li>
+/// </ul>
+/// <ul>
+/// <li> <p> <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p> </li>
+/// </ul>
+/// <ul>
+/// <li> <p> <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p> </li>
+/// </ul>
+/// <ul>
+/// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TieringPolicy {
@@ -8528,7 +8534,7 @@ pub struct UpdateFileSystemOpenZfsConfiguration {
     pub copy_tags_to_volumes: std::option::Option<bool>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub daily_automatic_backup_start_time: std::option::Option<std::string::String>,
-    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). </p>
+    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^12 (4096). </p>
     pub throughput_capacity: std::option::Option<i32>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
@@ -8555,7 +8561,7 @@ impl UpdateFileSystemOpenZfsConfiguration {
     pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
-    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). </p>
+    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^12 (4096). </p>
     pub fn throughput_capacity(&self) -> std::option::Option<i32> {
         self.throughput_capacity
     }
@@ -8660,12 +8666,12 @@ pub mod update_file_system_open_zfs_configuration {
             self.daily_automatic_backup_start_time = input;
             self
         }
-        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). </p>
+        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^12 (4096). </p>
         pub fn throughput_capacity(mut self, input: i32) -> Self {
             self.throughput_capacity = Some(input);
             self
         }
-        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^11 (2048). </p>
+        /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps), in 2 to the nth increments, between 2^3 (8) and 2^12 (4096). </p>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
             self
@@ -8744,6 +8750,8 @@ pub struct UpdateFileSystemOntapConfiguration {
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub weekly_maintenance_start_time: std::option::Option<std::string::String>,
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.</p>
+    pub disk_iops_configuration: std::option::Option<crate::model::DiskIopsConfiguration>,
 }
 impl UpdateFileSystemOntapConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
@@ -8765,6 +8773,12 @@ impl UpdateFileSystemOntapConfiguration {
     pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
     }
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.</p>
+    pub fn disk_iops_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::DiskIopsConfiguration> {
+        self.disk_iops_configuration.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateFileSystemOntapConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8782,6 +8796,7 @@ impl std::fmt::Debug for UpdateFileSystemOntapConfiguration {
             "weekly_maintenance_start_time",
             &self.weekly_maintenance_start_time,
         );
+        formatter.field("disk_iops_configuration", &self.disk_iops_configuration);
         formatter.finish()
     }
 }
@@ -8795,6 +8810,8 @@ pub mod update_file_system_ontap_configuration {
         pub(crate) daily_automatic_backup_start_time: std::option::Option<std::string::String>,
         pub(crate) fsx_admin_password: std::option::Option<std::string::String>,
         pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
+        pub(crate) disk_iops_configuration:
+            std::option::Option<crate::model::DiskIopsConfiguration>,
     }
     impl Builder {
         /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
@@ -8861,6 +8878,22 @@ pub mod update_file_system_ontap_configuration {
             self.weekly_maintenance_start_time = input;
             self
         }
+        /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.</p>
+        pub fn disk_iops_configuration(
+            mut self,
+            input: crate::model::DiskIopsConfiguration,
+        ) -> Self {
+            self.disk_iops_configuration = Some(input);
+            self
+        }
+        /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.</p>
+        pub fn set_disk_iops_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DiskIopsConfiguration>,
+        ) -> Self {
+            self.disk_iops_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration)
         pub fn build(self) -> crate::model::UpdateFileSystemOntapConfiguration {
             crate::model::UpdateFileSystemOntapConfiguration {
@@ -8868,6 +8901,7 @@ pub mod update_file_system_ontap_configuration {
                 daily_automatic_backup_start_time: self.daily_automatic_backup_start_time,
                 fsx_admin_password: self.fsx_admin_password,
                 weekly_maintenance_start_time: self.weekly_maintenance_start_time,
+                disk_iops_configuration: self.disk_iops_configuration,
             }
         }
     }
@@ -12908,11 +12942,11 @@ impl DeleteVolumeOntapResponse {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVolumeOpenZfsConfiguration {
-    /// <p>To delete the volume's children and snapshots, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
+    /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
     pub options: std::option::Option<std::vec::Vec<crate::model::DeleteOpenZfsVolumeOption>>,
 }
 impl DeleteVolumeOpenZfsConfiguration {
-    /// <p>To delete the volume's children and snapshots, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
+    /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
     pub fn options(&self) -> std::option::Option<&[crate::model::DeleteOpenZfsVolumeOption]> {
         self.options.as_deref()
     }
@@ -12938,14 +12972,14 @@ pub mod delete_volume_open_zfs_configuration {
         ///
         /// To override the contents of this collection use [`set_options`](Self::set_options).
         ///
-        /// <p>To delete the volume's children and snapshots, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
+        /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
         pub fn options(mut self, input: crate::model::DeleteOpenZfsVolumeOption) -> Self {
             let mut v = self.options.unwrap_or_default();
             v.push(input);
             self.options = Some(v);
             self
         }
-        /// <p>To delete the volume's children and snapshots, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
+        /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
         pub fn set_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeleteOpenZfsVolumeOption>>,
@@ -13634,6 +13668,19 @@ pub struct CreateOntapVolumeConfiguration {
     /// <p>Specifies the ONTAP SVM in which to create the volume.</p>
     pub storage_virtual_machine_id: std::option::Option<std::string::String>,
     /// <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns.</p>
+    /// <p>Valid tiering policies are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p> <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
+    /// </ul>
     pub tiering_policy: std::option::Option<crate::model::TieringPolicy>,
 }
 impl CreateOntapVolumeConfiguration {
@@ -13663,6 +13710,19 @@ impl CreateOntapVolumeConfiguration {
         self.storage_virtual_machine_id.as_deref()
     }
     /// <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns.</p>
+    /// <p>Valid tiering policies are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p> <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
+    /// </ul>
     pub fn tiering_policy(&self) -> std::option::Option<&crate::model::TieringPolicy> {
         self.tiering_policy.as_ref()
     }
@@ -13769,11 +13829,37 @@ pub mod create_ontap_volume_configuration {
             self
         }
         /// <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns.</p>
+        /// <p>Valid tiering policies are the following:</p>
+        /// <ul>
+        /// <li> <p> <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p> </li>
+        /// </ul>
+        /// <ul>
+        /// <li> <p> <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p> </li>
+        /// </ul>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p> </li>
+        /// </ul>
+        /// <ul>
+        /// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
+        /// </ul>
         pub fn tiering_policy(mut self, input: crate::model::TieringPolicy) -> Self {
             self.tiering_policy = Some(input);
             self
         }
         /// <p>Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns.</p>
+        /// <p>Valid tiering policies are the following:</p>
+        /// <ul>
+        /// <li> <p> <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier.</p> </li>
+        /// </ul>
+        /// <ul>
+        /// <li> <p> <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p> </li>
+        /// </ul>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p> </li>
+        /// </ul>
+        /// <ul>
+        /// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
+        /// </ul>
         pub fn set_tiering_policy(
             mut self,
             input: std::option::Option<crate::model::TieringPolicy>,
@@ -14989,7 +15075,7 @@ pub struct CreateFileSystemLustreConfiguration {
     /// <p>This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
     pub imported_file_chunk_size: std::option::Option<i32>,
     /// <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-    /// <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused workloads that aren’t latency-sensitive. a. <code>PERSISTENT_1</code> supports encryption of data in transit, and is available in all Amazon Web Services Regions in which FSx for Lustre is available.</p>
+    /// <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused workloads that aren’t latency-sensitive. <code>PERSISTENT_1</code> supports encryption of data in transit, and is available in all Amazon Web Services Regions in which FSx for Lustre is available.</p>
     /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p> <note>
     /// <p>If you choose <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
@@ -15061,7 +15147,7 @@ impl CreateFileSystemLustreConfiguration {
         self.imported_file_chunk_size
     }
     /// <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-    /// <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused workloads that aren’t latency-sensitive. a. <code>PERSISTENT_1</code> supports encryption of data in transit, and is available in all Amazon Web Services Regions in which FSx for Lustre is available.</p>
+    /// <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused workloads that aren’t latency-sensitive. <code>PERSISTENT_1</code> supports encryption of data in transit, and is available in all Amazon Web Services Regions in which FSx for Lustre is available.</p>
     /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p> <note>
     /// <p>If you choose <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
     /// </note>
@@ -15242,7 +15328,7 @@ pub mod create_file_system_lustre_configuration {
             self
         }
         /// <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-        /// <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused workloads that aren’t latency-sensitive. a. <code>PERSISTENT_1</code> supports encryption of data in transit, and is available in all Amazon Web Services Regions in which FSx for Lustre is available.</p>
+        /// <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused workloads that aren’t latency-sensitive. <code>PERSISTENT_1</code> supports encryption of data in transit, and is available in all Amazon Web Services Regions in which FSx for Lustre is available.</p>
         /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p> <note>
         /// <p>If you choose <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
         /// </note>
@@ -15253,7 +15339,7 @@ pub mod create_file_system_lustre_configuration {
             self
         }
         /// <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
-        /// <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused workloads that aren’t latency-sensitive. a. <code>PERSISTENT_1</code> supports encryption of data in transit, and is available in all Amazon Web Services Regions in which FSx for Lustre is available.</p>
+        /// <p>Choose <code>PERSISTENT_1</code> for longer-term storage and for throughput-focused workloads that aren’t latency-sensitive. <code>PERSISTENT_1</code> supports encryption of data in transit, and is available in all Amazon Web Services Regions in which FSx for Lustre is available.</p>
         /// <p>Choose <code>PERSISTENT_2</code> for longer-term storage and for latency-sensitive workloads that require the highest levels of IOPS/throughput. <code>PERSISTENT_2</code> supports SSD storage, and offers higher <code>PerUnitStorageThroughput</code> (up to 1000 MB/s/TiB). <code>PERSISTENT_2</code> is available in a limited number of Amazon Web Services Regions. For more information, and an up-to-date list of Amazon Web Services Regions in which <code>PERSISTENT_2</code> is available, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-fsx-lustre.html#lustre-deployment-types">File system deployment options for FSx for Lustre</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p> <note>
         /// <p>If you choose <code>PERSISTENT_2</code>, and you set <code>FileSystemTypeVersion</code> to <code>2.10</code>, the <code>CreateFileSystem</code> operation fails.</p>
         /// </note>
@@ -15833,7 +15919,7 @@ pub struct CreateFileSystemOntapConfiguration {
     pub preferred_subnet_id: std::option::Option<std::string::String>,
     /// <p>Specifies the virtual private cloud (VPC) route tables in which your file system's endpoints will be created. You should specify all VPC route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
     pub route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 512, 1024, and 2048 MBps.</p>
+    /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, and 2048 MBps.</p>
     pub throughput_capacity: std::option::Option<i32>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
@@ -15876,7 +15962,7 @@ impl CreateFileSystemOntapConfiguration {
     pub fn route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.route_table_ids.as_deref()
     }
-    /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 512, 1024, and 2048 MBps.</p>
+    /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, and 2048 MBps.</p>
     pub fn throughput_capacity(&self) -> std::option::Option<i32> {
         self.throughput_capacity
     }
@@ -16048,12 +16134,12 @@ pub mod create_file_system_ontap_configuration {
             self.route_table_ids = input;
             self
         }
-        /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 512, 1024, and 2048 MBps.</p>
+        /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, and 2048 MBps.</p>
         pub fn throughput_capacity(mut self, input: i32) -> Self {
             self.throughput_capacity = Some(input);
             self
         }
-        /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 512, 1024, and 2048 MBps.</p>
+        /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, and 2048 MBps.</p>
         pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput_capacity = input;
             self

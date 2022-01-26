@@ -1,4 +1,12 @@
 <!-- Do not manually edit this file, use `update-changelogs` -->
+0.6.0 (January 26, 2022)
+========================
+**New this release:**
+- ([aws-sdk-rust#423](https://github.com/awslabs/aws-sdk-rust/issues/423)) Added `impl Into<http::request::Builder> for PresignedRequest` and a conversion method for turning `PresignedRequest`s into `http::Request`s.
+- ([smithy-rs#1087](https://github.com/awslabs/smithy-rs/issues/1087)) Convert several `info` spans to `debug` in aws-config
+- ([smithy-rs#1118](https://github.com/awslabs/smithy-rs/issues/1118)) SDK examples now come from [`awsdocs/aws-doc-sdk-examples`](https://github.com/awsdocs/aws-doc-sdk-examples) rather than from `smithy-rs`
+
+
 0.5.2 (January 20th, 2022)
 ==========================
 

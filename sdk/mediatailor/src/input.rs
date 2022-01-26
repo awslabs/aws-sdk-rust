@@ -943,6 +943,8 @@ pub mod create_source_location_input {
         pub(crate) default_segment_delivery_configuration:
             std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
         pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
+        pub(crate) segment_delivery_configurations:
+            std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -989,6 +991,27 @@ pub mod create_source_location_input {
             input: std::option::Option<crate::model::HttpConfiguration>,
         ) -> Self {
             self.http_configuration = input;
+            self
+        }
+        /// Appends an item to `segment_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
+        ///
+        pub fn segment_delivery_configurations(
+            mut self,
+            input: crate::model::SegmentDeliveryConfiguration,
+        ) -> Self {
+            let mut v = self.segment_delivery_configurations.unwrap_or_default();
+            v.push(input);
+            self.segment_delivery_configurations = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_segment_delivery_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+        ) -> Self {
+            self.segment_delivery_configurations = input;
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -1040,6 +1063,7 @@ pub mod create_source_location_input {
                 access_configuration: self.access_configuration,
                 default_segment_delivery_configuration: self.default_segment_delivery_configuration,
                 http_configuration: self.http_configuration,
+                segment_delivery_configurations: self.segment_delivery_configurations,
                 source_location_name: self.source_location_name,
                 tags: self.tags,
             })
@@ -6717,6 +6741,8 @@ pub mod update_source_location_input {
         pub(crate) default_segment_delivery_configuration:
             std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
         pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
+        pub(crate) segment_delivery_configurations:
+            std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6762,6 +6788,27 @@ pub mod update_source_location_input {
             self.http_configuration = input;
             self
         }
+        /// Appends an item to `segment_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
+        ///
+        pub fn segment_delivery_configurations(
+            mut self,
+            input: crate::model::SegmentDeliveryConfiguration,
+        ) -> Self {
+            let mut v = self.segment_delivery_configurations.unwrap_or_default();
+            v.push(input);
+            self.segment_delivery_configurations = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_segment_delivery_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+        ) -> Self {
+            self.segment_delivery_configurations = input;
+            self
+        }
         /// <p>The identifier for the source location you are working on.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
@@ -6786,6 +6833,7 @@ pub mod update_source_location_input {
                 access_configuration: self.access_configuration,
                 default_segment_delivery_configuration: self.default_segment_delivery_configuration,
                 http_configuration: self.http_configuration,
+                segment_delivery_configurations: self.segment_delivery_configurations,
                 source_location_name: self.source_location_name,
             })
         }
@@ -7210,6 +7258,9 @@ pub struct UpdateSourceLocationInput {
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The HTTP configuration for the source location.</p>
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub segment_delivery_configurations:
+        std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The identifier for the source location you are working on.</p>
     pub source_location_name: std::option::Option<std::string::String>,
 }
@@ -7228,6 +7279,12 @@ impl UpdateSourceLocationInput {
     pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
         self.http_configuration.as_ref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn segment_delivery_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
+        self.segment_delivery_configurations.as_deref()
+    }
     /// <p>The identifier for the source location you are working on.</p>
     pub fn source_location_name(&self) -> std::option::Option<&str> {
         self.source_location_name.as_deref()
@@ -7242,6 +7299,10 @@ impl std::fmt::Debug for UpdateSourceLocationInput {
             &self.default_segment_delivery_configuration,
         );
         formatter.field("http_configuration", &self.http_configuration);
+        formatter.field(
+            "segment_delivery_configurations",
+            &self.segment_delivery_configurations,
+        );
         formatter.field("source_location_name", &self.source_location_name);
         formatter.finish()
     }
@@ -8225,6 +8286,9 @@ pub struct CreateSourceLocationInput {
         std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
     /// <p>The source's HTTP package configurations.</p>
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub segment_delivery_configurations:
+        std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The identifier for the source location you are working on.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags to assign to the source location.</p>
@@ -8245,6 +8309,12 @@ impl CreateSourceLocationInput {
     /// <p>The source's HTTP package configurations.</p>
     pub fn http_configuration(&self) -> std::option::Option<&crate::model::HttpConfiguration> {
         self.http_configuration.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn segment_delivery_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
+        self.segment_delivery_configurations.as_deref()
     }
     /// <p>The identifier for the source location you are working on.</p>
     pub fn source_location_name(&self) -> std::option::Option<&str> {
@@ -8267,6 +8337,10 @@ impl std::fmt::Debug for CreateSourceLocationInput {
             &self.default_segment_delivery_configuration,
         );
         formatter.field("http_configuration", &self.http_configuration);
+        formatter.field(
+            "segment_delivery_configurations",
+            &self.segment_delivery_configurations,
+        );
         formatter.field("source_location_name", &self.source_location_name);
         formatter.field("tags", &self.tags);
         formatter.finish()

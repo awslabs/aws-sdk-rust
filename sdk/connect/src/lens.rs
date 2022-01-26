@@ -79,6 +79,16 @@ pub(crate) fn reflens_structure_crate_output_list_contact_references_output_next
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_default_vocabularies_output_next_token(
+    input: &crate::output::ListDefaultVocabulariesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_hours_of_operations_output_next_token(
     input: &crate::output::ListHoursOfOperationsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -279,6 +289,16 @@ pub(crate) fn reflens_structure_crate_output_list_users_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_search_vocabularies_output_next_token(
+    input: &crate::output::SearchVocabulariesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_agent_statuses_output_agent_status_summary_list(
     input: crate::output::ListAgentStatusesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::AgentStatusSummary>> {
@@ -333,6 +353,16 @@ pub(crate) fn lens_structure_crate_output_list_contact_references_output_referen
     input: crate::output::ListContactReferencesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::ReferenceSummary>> {
     let input = match input.reference_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_default_vocabularies_output_default_vocabulary_list(
+    input: crate::output::ListDefaultVocabulariesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::DefaultVocabulary>> {
+    let input = match input.default_vocabulary_list {
         None => return None,
         Some(t) => t,
     };
@@ -533,6 +563,16 @@ pub(crate) fn lens_structure_crate_output_list_users_output_user_summary_list(
     input: crate::output::ListUsersOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::UserSummary>> {
     let input = match input.user_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_search_vocabularies_output_vocabulary_summary_list(
+    input: crate::output::SearchVocabulariesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::VocabularySummary>> {
+    let input = match input.vocabulary_summary_list {
         None => return None,
         Some(t) => t,
     };

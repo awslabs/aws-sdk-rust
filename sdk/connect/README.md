@@ -9,7 +9,7 @@ Amazon Connect provides metrics and real-time reporting that enable you to optim
 
 There are limits to the number of Amazon Connect resources that you can create. There are also limits to the number of requests that you can make per second. For more information, see [Amazon Connect Service Quotas](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html) in the _Amazon Connect Administrator Guide_.
 
-You can connect programmatically to an AWS service by using an endpoint. For a list of Amazon Connect endpoints, see [Amazon Connect Endpoints](https://docs.aws.amazon.com/general/latest/gr/connect_region.html).
+You can connect programmatically to an Amazon Web Services service by using an endpoint. For a list of Amazon Connect endpoints, see [Amazon Connect Endpoints](https://docs.aws.amazon.com/general/latest/gr/connect_region.html).
 
 ## Getting Started
 
@@ -22,8 +22,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.5.2"
-aws-sdk-connect = "0.5.2"
+aws-config = "0.6.0"
+aws-sdk-connect = "0.6.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -65,6 +65,40 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateBot {
     }
 }
 
+/// Operation shape for `AssociateDefaultVocabulary`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`associate_default_vocabulary`](crate::client::Client::associate_default_vocabulary).
+///
+/// See [`crate::client::fluent_builders::AssociateDefaultVocabulary`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AssociateDefaultVocabulary {
+    _private: (),
+}
+impl AssociateDefaultVocabulary {
+    /// Creates a new builder-style object to manufacture [`AssociateDefaultVocabularyInput`](crate::input::AssociateDefaultVocabularyInput)
+    pub fn builder() -> crate::input::associate_default_vocabulary_input::Builder {
+        crate::input::associate_default_vocabulary_input::Builder::default()
+    }
+    /// Creates a new `AssociateDefaultVocabulary` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for AssociateDefaultVocabulary {
+    type Output = std::result::Result<
+        crate::output::AssociateDefaultVocabularyOutput,
+        crate::error::AssociateDefaultVocabularyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_associate_default_vocabulary_error(response)
+        } else {
+            crate::operation_deser::parse_associate_default_vocabulary_response(response)
+        }
+    }
+}
+
 /// Operation shape for `AssociateInstanceStorageConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -703,6 +737,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUserHierarchyGroup
     }
 }
 
+/// Operation shape for `CreateVocabulary`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_vocabulary`](crate::client::Client::create_vocabulary).
+///
+/// See [`crate::client::fluent_builders::CreateVocabulary`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateVocabulary {
+    _private: (),
+}
+impl CreateVocabulary {
+    /// Creates a new builder-style object to manufacture [`CreateVocabularyInput`](crate::input::CreateVocabularyInput)
+    pub fn builder() -> crate::input::create_vocabulary_input::Builder {
+        crate::input::create_vocabulary_input::Builder::default()
+    }
+    /// Creates a new `CreateVocabulary` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateVocabulary {
+    type Output = std::result::Result<
+        crate::output::CreateVocabularyOutput,
+        crate::error::CreateVocabularyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_vocabulary_error(response)
+        } else {
+            crate::operation_deser::parse_create_vocabulary_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DeleteContactFlow`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1033,6 +1101,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUserHierarchyGroup
             crate::operation_deser::parse_delete_user_hierarchy_group_error(response)
         } else {
             crate::operation_deser::parse_delete_user_hierarchy_group_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteVocabulary`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_vocabulary`](crate::client::Client::delete_vocabulary).
+///
+/// See [`crate::client::fluent_builders::DeleteVocabulary`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteVocabulary {
+    _private: (),
+}
+impl DeleteVocabulary {
+    /// Creates a new builder-style object to manufacture [`DeleteVocabularyInput`](crate::input::DeleteVocabularyInput)
+    pub fn builder() -> crate::input::delete_vocabulary_input::Builder {
+        crate::input::delete_vocabulary_input::Builder::default()
+    }
+    /// Creates a new `DeleteVocabulary` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteVocabulary {
+    type Output = std::result::Result<
+        crate::output::DeleteVocabularyOutput,
+        crate::error::DeleteVocabularyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_vocabulary_error(response)
+        } else {
+            crate::operation_deser::parse_delete_vocabulary_response(response)
         }
     }
 }
@@ -1539,6 +1641,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUserHierarchyStr
             crate::operation_deser::parse_describe_user_hierarchy_structure_error(response)
         } else {
             crate::operation_deser::parse_describe_user_hierarchy_structure_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeVocabulary`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_vocabulary`](crate::client::Client::describe_vocabulary).
+///
+/// See [`crate::client::fluent_builders::DescribeVocabulary`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeVocabulary {
+    _private: (),
+}
+impl DescribeVocabulary {
+    /// Creates a new builder-style object to manufacture [`DescribeVocabularyInput`](crate::input::DescribeVocabularyInput)
+    pub fn builder() -> crate::input::describe_vocabulary_input::Builder {
+        crate::input::describe_vocabulary_input::Builder::default()
+    }
+    /// Creates a new `DescribeVocabulary` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeVocabulary {
+    type Output = std::result::Result<
+        crate::output::DescribeVocabularyOutput,
+        crate::error::DescribeVocabularyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_vocabulary_error(response)
+        } else {
+            crate::operation_deser::parse_describe_vocabulary_response(response)
         }
     }
 }
@@ -2146,6 +2282,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContactReferences {
             crate::operation_deser::parse_list_contact_references_error(response)
         } else {
             crate::operation_deser::parse_list_contact_references_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListDefaultVocabularies`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_default_vocabularies`](crate::client::Client::list_default_vocabularies).
+///
+/// See [`crate::client::fluent_builders::ListDefaultVocabularies`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListDefaultVocabularies {
+    _private: (),
+}
+impl ListDefaultVocabularies {
+    /// Creates a new builder-style object to manufacture [`ListDefaultVocabulariesInput`](crate::input::ListDefaultVocabulariesInput)
+    pub fn builder() -> crate::input::list_default_vocabularies_input::Builder {
+        crate::input::list_default_vocabularies_input::Builder::default()
+    }
+    /// Creates a new `ListDefaultVocabularies` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListDefaultVocabularies {
+    type Output = std::result::Result<
+        crate::output::ListDefaultVocabulariesOutput,
+        crate::error::ListDefaultVocabulariesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_default_vocabularies_error(response)
+        } else {
+            crate::operation_deser::parse_list_default_vocabularies_response(response)
         }
     }
 }
@@ -2881,6 +3051,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ResumeContactRecording {
             crate::operation_deser::parse_resume_contact_recording_error(response)
         } else {
             crate::operation_deser::parse_resume_contact_recording_response(response)
+        }
+    }
+}
+
+/// Operation shape for `SearchVocabularies`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`search_vocabularies`](crate::client::Client::search_vocabularies).
+///
+/// See [`crate::client::fluent_builders::SearchVocabularies`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SearchVocabularies {
+    _private: (),
+}
+impl SearchVocabularies {
+    /// Creates a new builder-style object to manufacture [`SearchVocabulariesInput`](crate::input::SearchVocabulariesInput)
+    pub fn builder() -> crate::input::search_vocabularies_input::Builder {
+        crate::input::search_vocabularies_input::Builder::default()
+    }
+    /// Creates a new `SearchVocabularies` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for SearchVocabularies {
+    type Output = std::result::Result<
+        crate::output::SearchVocabulariesOutput,
+        crate::error::SearchVocabulariesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_search_vocabularies_error(response)
+        } else {
+            crate::operation_deser::parse_search_vocabularies_response(response)
         }
     }
 }

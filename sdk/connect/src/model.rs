@@ -3311,6 +3311,389 @@ impl ParticipantDetails {
     }
 }
 
+/// <p>Contains summary information about the custom vocabulary.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VocabularySummary {
+    /// <p>A unique name of the custom vocabulary.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The identifier of the custom vocabulary.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    pub language_code: std::option::Option<crate::model::VocabularyLanguageCode>,
+    /// <p>The current state of the custom vocabulary.</p>
+    pub state: std::option::Option<crate::model::VocabularyState>,
+    /// <p>The timestamp when the custom vocabulary was last modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The reason why the custom vocabulary was not created.</p>
+    pub failure_reason: std::option::Option<std::string::String>,
+}
+impl VocabularySummary {
+    /// <p>A unique name of the custom vocabulary.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The identifier of the custom vocabulary.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::VocabularyLanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The current state of the custom vocabulary.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::VocabularyState> {
+        self.state.as_ref()
+    }
+    /// <p>The timestamp when the custom vocabulary was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The reason why the custom vocabulary was not created.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+}
+impl std::fmt::Debug for VocabularySummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VocabularySummary");
+        formatter.field("name", &self.name);
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("language_code", &self.language_code);
+        formatter.field("state", &self.state);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.finish()
+    }
+}
+/// See [`VocabularySummary`](crate::model::VocabularySummary)
+pub mod vocabulary_summary {
+    /// A builder for [`VocabularySummary`](crate::model::VocabularySummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) language_code: std::option::Option<crate::model::VocabularyLanguageCode>,
+        pub(crate) state: std::option::Option<crate::model::VocabularyState>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique name of the custom vocabulary.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A unique name of the custom vocabulary.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The identifier of the custom vocabulary.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the custom vocabulary.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+        pub fn language_code(mut self, input: crate::model::VocabularyLanguageCode) -> Self {
+            self.language_code = Some(input);
+            self
+        }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::VocabularyLanguageCode>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// <p>The current state of the custom vocabulary.</p>
+        pub fn state(mut self, input: crate::model::VocabularyState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The current state of the custom vocabulary.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::VocabularyState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The timestamp when the custom vocabulary was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp when the custom vocabulary was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The reason why the custom vocabulary was not created.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>The reason why the custom vocabulary was not created.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VocabularySummary`](crate::model::VocabularySummary)
+        pub fn build(self) -> crate::model::VocabularySummary {
+            crate::model::VocabularySummary {
+                name: self.name,
+                id: self.id,
+                arn: self.arn,
+                language_code: self.language_code,
+                state: self.state,
+                last_modified_time: self.last_modified_time,
+                failure_reason: self.failure_reason,
+            }
+        }
+    }
+}
+impl VocabularySummary {
+    /// Creates a new builder-style object to manufacture [`VocabularySummary`](crate::model::VocabularySummary)
+    pub fn builder() -> crate::model::vocabulary_summary::Builder {
+        crate::model::vocabulary_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VocabularyState {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    CreationFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    CreationInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteInProgress,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for VocabularyState {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => VocabularyState::Active,
+            "CREATION_FAILED" => VocabularyState::CreationFailed,
+            "CREATION_IN_PROGRESS" => VocabularyState::CreationInProgress,
+            "DELETE_IN_PROGRESS" => VocabularyState::DeleteInProgress,
+            other => VocabularyState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for VocabularyState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VocabularyState::from(s))
+    }
+}
+impl VocabularyState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VocabularyState::Active => "ACTIVE",
+            VocabularyState::CreationFailed => "CREATION_FAILED",
+            VocabularyState::CreationInProgress => "CREATION_IN_PROGRESS",
+            VocabularyState::DeleteInProgress => "DELETE_IN_PROGRESS",
+            VocabularyState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATION_FAILED",
+            "CREATION_IN_PROGRESS",
+            "DELETE_IN_PROGRESS",
+        ]
+    }
+}
+impl AsRef<str> for VocabularyState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VocabularyLanguageCode {
+    #[allow(missing_docs)] // documentation missing in model
+    ArAe,
+    #[allow(missing_docs)] // documentation missing in model
+    DeCh,
+    #[allow(missing_docs)] // documentation missing in model
+    DeDe,
+    #[allow(missing_docs)] // documentation missing in model
+    EnAb,
+    #[allow(missing_docs)] // documentation missing in model
+    EnAu,
+    #[allow(missing_docs)] // documentation missing in model
+    EnGb,
+    #[allow(missing_docs)] // documentation missing in model
+    EnIe,
+    #[allow(missing_docs)] // documentation missing in model
+    EnIn,
+    #[allow(missing_docs)] // documentation missing in model
+    EnUs,
+    #[allow(missing_docs)] // documentation missing in model
+    EnWl,
+    #[allow(missing_docs)] // documentation missing in model
+    EsEs,
+    #[allow(missing_docs)] // documentation missing in model
+    EsUs,
+    #[allow(missing_docs)] // documentation missing in model
+    FrCa,
+    #[allow(missing_docs)] // documentation missing in model
+    FrFr,
+    #[allow(missing_docs)] // documentation missing in model
+    HiIn,
+    #[allow(missing_docs)] // documentation missing in model
+    ItIt,
+    #[allow(missing_docs)] // documentation missing in model
+    JaJp,
+    #[allow(missing_docs)] // documentation missing in model
+    KoKr,
+    #[allow(missing_docs)] // documentation missing in model
+    PtBr,
+    #[allow(missing_docs)] // documentation missing in model
+    PtPt,
+    #[allow(missing_docs)] // documentation missing in model
+    ZhCn,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for VocabularyLanguageCode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ar-AE" => VocabularyLanguageCode::ArAe,
+            "de-CH" => VocabularyLanguageCode::DeCh,
+            "de-DE" => VocabularyLanguageCode::DeDe,
+            "en-AB" => VocabularyLanguageCode::EnAb,
+            "en-AU" => VocabularyLanguageCode::EnAu,
+            "en-GB" => VocabularyLanguageCode::EnGb,
+            "en-IE" => VocabularyLanguageCode::EnIe,
+            "en-IN" => VocabularyLanguageCode::EnIn,
+            "en-US" => VocabularyLanguageCode::EnUs,
+            "en-WL" => VocabularyLanguageCode::EnWl,
+            "es-ES" => VocabularyLanguageCode::EsEs,
+            "es-US" => VocabularyLanguageCode::EsUs,
+            "fr-CA" => VocabularyLanguageCode::FrCa,
+            "fr-FR" => VocabularyLanguageCode::FrFr,
+            "hi-IN" => VocabularyLanguageCode::HiIn,
+            "it-IT" => VocabularyLanguageCode::ItIt,
+            "ja-JP" => VocabularyLanguageCode::JaJp,
+            "ko-KR" => VocabularyLanguageCode::KoKr,
+            "pt-BR" => VocabularyLanguageCode::PtBr,
+            "pt-PT" => VocabularyLanguageCode::PtPt,
+            "zh-CN" => VocabularyLanguageCode::ZhCn,
+            other => VocabularyLanguageCode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for VocabularyLanguageCode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VocabularyLanguageCode::from(s))
+    }
+}
+impl VocabularyLanguageCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VocabularyLanguageCode::ArAe => "ar-AE",
+            VocabularyLanguageCode::DeCh => "de-CH",
+            VocabularyLanguageCode::DeDe => "de-DE",
+            VocabularyLanguageCode::EnAb => "en-AB",
+            VocabularyLanguageCode::EnAu => "en-AU",
+            VocabularyLanguageCode::EnGb => "en-GB",
+            VocabularyLanguageCode::EnIe => "en-IE",
+            VocabularyLanguageCode::EnIn => "en-IN",
+            VocabularyLanguageCode::EnUs => "en-US",
+            VocabularyLanguageCode::EnWl => "en-WL",
+            VocabularyLanguageCode::EsEs => "es-ES",
+            VocabularyLanguageCode::EsUs => "es-US",
+            VocabularyLanguageCode::FrCa => "fr-CA",
+            VocabularyLanguageCode::FrFr => "fr-FR",
+            VocabularyLanguageCode::HiIn => "hi-IN",
+            VocabularyLanguageCode::ItIt => "it-IT",
+            VocabularyLanguageCode::JaJp => "ja-JP",
+            VocabularyLanguageCode::KoKr => "ko-KR",
+            VocabularyLanguageCode::PtBr => "pt-BR",
+            VocabularyLanguageCode::PtPt => "pt-PT",
+            VocabularyLanguageCode::ZhCn => "zh-CN",
+            VocabularyLanguageCode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ar-AE", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-US",
+            "en-WL", "es-ES", "es-US", "fr-CA", "fr-FR", "hi-IN", "it-IT", "ja-JP", "ko-KR",
+            "pt-BR", "pt-PT", "zh-CN",
+        ]
+    }
+}
+impl AsRef<str> for VocabularyLanguageCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Contains summary information about a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6583,6 +6966,126 @@ impl HoursOfOperationSummary {
     }
 }
 
+/// <p>Contains information about a default vocabulary.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DefaultVocabulary {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub instance_id: std::option::Option<std::string::String>,
+    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    pub language_code: std::option::Option<crate::model::VocabularyLanguageCode>,
+    /// <p>The identifier of the custom vocabulary.</p>
+    pub vocabulary_id: std::option::Option<std::string::String>,
+    /// <p>A unique name of the custom vocabulary.</p>
+    pub vocabulary_name: std::option::Option<std::string::String>,
+}
+impl DefaultVocabulary {
+    /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+    pub fn instance_id(&self) -> std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::VocabularyLanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The identifier of the custom vocabulary.</p>
+    pub fn vocabulary_id(&self) -> std::option::Option<&str> {
+        self.vocabulary_id.as_deref()
+    }
+    /// <p>A unique name of the custom vocabulary.</p>
+    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+        self.vocabulary_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DefaultVocabulary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DefaultVocabulary");
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("language_code", &self.language_code);
+        formatter.field("vocabulary_id", &self.vocabulary_id);
+        formatter.field("vocabulary_name", &self.vocabulary_name);
+        formatter.finish()
+    }
+}
+/// See [`DefaultVocabulary`](crate::model::DefaultVocabulary)
+pub mod default_vocabulary {
+    /// A builder for [`DefaultVocabulary`](crate::model::DefaultVocabulary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_id: std::option::Option<std::string::String>,
+        pub(crate) language_code: std::option::Option<crate::model::VocabularyLanguageCode>,
+        pub(crate) vocabulary_id: std::option::Option<std::string::String>,
+        pub(crate) vocabulary_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
+            self
+        }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+        pub fn language_code(mut self, input: crate::model::VocabularyLanguageCode) -> Self {
+            self.language_code = Some(input);
+            self
+        }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::VocabularyLanguageCode>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// <p>The identifier of the custom vocabulary.</p>
+        pub fn vocabulary_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the custom vocabulary.</p>
+        pub fn set_vocabulary_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_id = input;
+            self
+        }
+        /// <p>A unique name of the custom vocabulary.</p>
+        pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_name = Some(input.into());
+            self
+        }
+        /// <p>A unique name of the custom vocabulary.</p>
+        pub fn set_vocabulary_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DefaultVocabulary`](crate::model::DefaultVocabulary)
+        pub fn build(self) -> crate::model::DefaultVocabulary {
+            crate::model::DefaultVocabulary {
+                instance_id: self.instance_id,
+                language_code: self.language_code,
+                vocabulary_id: self.vocabulary_id,
+                vocabulary_name: self.vocabulary_name,
+            }
+        }
+    }
+}
+impl DefaultVocabulary {
+    /// Creates a new builder-style object to manufacture [`DefaultVocabulary`](crate::model::DefaultVocabulary)
+    pub fn builder() -> crate::model::default_vocabulary::Builder {
+        crate::model::default_vocabulary::Builder::default()
+    }
+}
+
 /// <p>Contains summary information about a reference. <code>ReferenceSummary</code> contains only one non null field between the URL and attachment based on the reference type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -8475,13 +8978,13 @@ impl AsRef<str> for Grouping {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filters {
-    /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per request.</p>
+    /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The channel to use to filter the metrics.</p>
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
 }
 impl Filters {
-    /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per request.</p>
+    /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
     pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
         self.queues.as_deref()
     }
@@ -8512,14 +9015,14 @@ pub mod filters {
         ///
         /// To override the contents of this collection use [`set_queues`](Self::set_queues).
         ///
-        /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per request.</p>
+        /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
         pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queues.unwrap_or_default();
             v.push(input.into());
             self.queues = Some(v);
             self
         }
-        /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per request.</p>
+        /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
         pub fn set_queues(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9032,6 +9535,245 @@ impl AsRef<str> for CurrentMetricName {
     }
 }
 
+/// <p>Contains information about a custom vocabulary.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Vocabulary {
+    /// <p>A unique name of the custom vocabulary.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The identifier of the custom vocabulary.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    pub language_code: std::option::Option<crate::model::VocabularyLanguageCode>,
+    /// <p>The current state of the custom vocabulary.</p>
+    pub state: std::option::Option<crate::model::VocabularyState>,
+    /// <p>The timestamp when the custom vocabulary was last modified.</p>
+    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The reason why the custom vocabulary was not created.</p>
+    pub failure_reason: std::option::Option<std::string::String>,
+    /// <p>The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.</p>
+    pub content: std::option::Option<std::string::String>,
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl Vocabulary {
+    /// <p>A unique name of the custom vocabulary.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The identifier of the custom vocabulary.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+    pub fn language_code(&self) -> std::option::Option<&crate::model::VocabularyLanguageCode> {
+        self.language_code.as_ref()
+    }
+    /// <p>The current state of the custom vocabulary.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::VocabularyState> {
+        self.state.as_ref()
+    }
+    /// <p>The timestamp when the custom vocabulary was last modified.</p>
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The reason why the custom vocabulary was not created.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.</p>
+    pub fn content(&self) -> std::option::Option<&str> {
+        self.content.as_deref()
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for Vocabulary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Vocabulary");
+        formatter.field("name", &self.name);
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("language_code", &self.language_code);
+        formatter.field("state", &self.state);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.field("content", &self.content);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`Vocabulary`](crate::model::Vocabulary)
+pub mod vocabulary {
+    /// A builder for [`Vocabulary`](crate::model::Vocabulary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) language_code: std::option::Option<crate::model::VocabularyLanguageCode>,
+        pub(crate) state: std::option::Option<crate::model::VocabularyState>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+        pub(crate) content: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>A unique name of the custom vocabulary.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>A unique name of the custom vocabulary.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The identifier of the custom vocabulary.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the custom vocabulary.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+        pub fn language_code(mut self, input: crate::model::VocabularyLanguageCode) -> Self {
+            self.language_code = Some(input);
+            self
+        }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::VocabularyLanguageCode>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// <p>The current state of the custom vocabulary.</p>
+        pub fn state(mut self, input: crate::model::VocabularyState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The current state of the custom vocabulary.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::VocabularyState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The timestamp when the custom vocabulary was last modified.</p>
+        pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified_time = Some(input);
+            self
+        }
+        /// <p>The timestamp when the custom vocabulary was last modified.</p>
+        pub fn set_last_modified_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified_time = input;
+            self
+        }
+        /// <p>The reason why the custom vocabulary was not created.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>The reason why the custom vocabulary was not created.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// <p>The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.</p>
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content = Some(input.into());
+            self
+        }
+        /// <p>The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.</p>
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content = input;
+            self
+        }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Vocabulary`](crate::model::Vocabulary)
+        pub fn build(self) -> crate::model::Vocabulary {
+            crate::model::Vocabulary {
+                name: self.name,
+                id: self.id,
+                arn: self.arn,
+                language_code: self.language_code,
+                state: self.state,
+                last_modified_time: self.last_modified_time,
+                failure_reason: self.failure_reason,
+                content: self.content,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl Vocabulary {
+    /// Creates a new builder-style object to manufacture [`Vocabulary`](crate::model::Vocabulary)
+    pub fn builder() -> crate::model::vocabulary::Builder {
+        crate::model::vocabulary::Builder::default()
+    }
+}
+
 /// <p>Contains information about a hierarchy structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9283,6 +10025,9 @@ pub struct HierarchyGroup {
     pub level_id: std::option::Option<std::string::String>,
     /// <p>Information about the levels in the hierarchy group.</p>
     pub hierarchy_path: std::option::Option<crate::model::HierarchyPath>,
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl HierarchyGroup {
     /// <p>The identifier of the hierarchy group.</p>
@@ -9305,6 +10050,13 @@ impl HierarchyGroup {
     pub fn hierarchy_path(&self) -> std::option::Option<&crate::model::HierarchyPath> {
         self.hierarchy_path.as_ref()
     }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
 }
 impl std::fmt::Debug for HierarchyGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9314,6 +10066,7 @@ impl std::fmt::Debug for HierarchyGroup {
         formatter.field("name", &self.name);
         formatter.field("level_id", &self.level_id);
         formatter.field("hierarchy_path", &self.hierarchy_path);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -9328,6 +10081,9 @@ pub mod hierarchy_group {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) level_id: std::option::Option<std::string::String>,
         pub(crate) hierarchy_path: std::option::Option<crate::model::HierarchyPath>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The identifier of the hierarchy group.</p>
@@ -9383,6 +10139,31 @@ pub mod hierarchy_group {
             self.hierarchy_path = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`HierarchyGroup`](crate::model::HierarchyGroup)
         pub fn build(self) -> crate::model::HierarchyGroup {
             crate::model::HierarchyGroup {
@@ -9391,6 +10172,7 @@ pub mod hierarchy_group {
                 name: self.name,
                 level_id: self.level_id,
                 hierarchy_path: self.hierarchy_path,
+                tags: self.tags,
             }
         }
     }

@@ -1403,6 +1403,92 @@ impl StartChatContactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SearchVocabulariesOutput {
+    /// <p>The list of the available custom vocabularies.</p>
+    pub vocabulary_summary_list:
+        std::option::Option<std::vec::Vec<crate::model::VocabularySummary>>,
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl SearchVocabulariesOutput {
+    /// <p>The list of the available custom vocabularies.</p>
+    pub fn vocabulary_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::VocabularySummary]> {
+        self.vocabulary_summary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for SearchVocabulariesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SearchVocabulariesOutput");
+        formatter.field("vocabulary_summary_list", &self.vocabulary_summary_list);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`SearchVocabulariesOutput`](crate::output::SearchVocabulariesOutput)
+pub mod search_vocabularies_output {
+    /// A builder for [`SearchVocabulariesOutput`](crate::output::SearchVocabulariesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vocabulary_summary_list:
+            std::option::Option<std::vec::Vec<crate::model::VocabularySummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `vocabulary_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_vocabulary_summary_list`](Self::set_vocabulary_summary_list).
+        ///
+        /// <p>The list of the available custom vocabularies.</p>
+        pub fn vocabulary_summary_list(mut self, input: crate::model::VocabularySummary) -> Self {
+            let mut v = self.vocabulary_summary_list.unwrap_or_default();
+            v.push(input);
+            self.vocabulary_summary_list = Some(v);
+            self
+        }
+        /// <p>The list of the available custom vocabularies.</p>
+        pub fn set_vocabulary_summary_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VocabularySummary>>,
+        ) -> Self {
+            self.vocabulary_summary_list = input;
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SearchVocabulariesOutput`](crate::output::SearchVocabulariesOutput)
+        pub fn build(self) -> crate::output::SearchVocabulariesOutput {
+            crate::output::SearchVocabulariesOutput {
+                vocabulary_summary_list: self.vocabulary_summary_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl SearchVocabulariesOutput {
+    /// Creates a new builder-style object to manufacture [`SearchVocabulariesOutput`](crate::output::SearchVocabulariesOutput)
+    pub fn builder() -> crate::output::search_vocabularies_output::Builder {
+        crate::output::search_vocabularies_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeContactRecordingOutput {}
 impl std::fmt::Debug for ResumeContactRecordingOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3244,6 +3330,92 @@ impl ListHoursOfOperationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDefaultVocabulariesOutput {
+    /// <p>A list of default vocabularies.</p>
+    pub default_vocabulary_list:
+        std::option::Option<std::vec::Vec<crate::model::DefaultVocabulary>>,
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDefaultVocabulariesOutput {
+    /// <p>A list of default vocabularies.</p>
+    pub fn default_vocabulary_list(
+        &self,
+    ) -> std::option::Option<&[crate::model::DefaultVocabulary]> {
+        self.default_vocabulary_list.as_deref()
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListDefaultVocabulariesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListDefaultVocabulariesOutput");
+        formatter.field("default_vocabulary_list", &self.default_vocabulary_list);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListDefaultVocabulariesOutput`](crate::output::ListDefaultVocabulariesOutput)
+pub mod list_default_vocabularies_output {
+    /// A builder for [`ListDefaultVocabulariesOutput`](crate::output::ListDefaultVocabulariesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) default_vocabulary_list:
+            std::option::Option<std::vec::Vec<crate::model::DefaultVocabulary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `default_vocabulary_list`.
+        ///
+        /// To override the contents of this collection use [`set_default_vocabulary_list`](Self::set_default_vocabulary_list).
+        ///
+        /// <p>A list of default vocabularies.</p>
+        pub fn default_vocabulary_list(mut self, input: crate::model::DefaultVocabulary) -> Self {
+            let mut v = self.default_vocabulary_list.unwrap_or_default();
+            v.push(input);
+            self.default_vocabulary_list = Some(v);
+            self
+        }
+        /// <p>A list of default vocabularies.</p>
+        pub fn set_default_vocabulary_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DefaultVocabulary>>,
+        ) -> Self {
+            self.default_vocabulary_list = input;
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDefaultVocabulariesOutput`](crate::output::ListDefaultVocabulariesOutput)
+        pub fn build(self) -> crate::output::ListDefaultVocabulariesOutput {
+            crate::output::ListDefaultVocabulariesOutput {
+                default_vocabulary_list: self.default_vocabulary_list,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListDefaultVocabulariesOutput {
+    /// Creates a new builder-style object to manufacture [`ListDefaultVocabulariesOutput`](crate::output::ListDefaultVocabulariesOutput)
+    pub fn builder() -> crate::output::list_default_vocabularies_output::Builder {
+        crate::output::list_default_vocabularies_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContactReferencesOutput {
     /// <p>Information about the contact flows.</p>
     pub reference_summary_list: std::option::Option<std::vec::Vec<crate::model::ReferenceSummary>>,
@@ -4341,6 +4513,63 @@ impl DisassociateApprovedOriginOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeVocabularyOutput {
+    /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
+    pub vocabulary: std::option::Option<crate::model::Vocabulary>,
+}
+impl DescribeVocabularyOutput {
+    /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
+    pub fn vocabulary(&self) -> std::option::Option<&crate::model::Vocabulary> {
+        self.vocabulary.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeVocabularyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeVocabularyOutput");
+        formatter.field("vocabulary", &self.vocabulary);
+        formatter.finish()
+    }
+}
+/// See [`DescribeVocabularyOutput`](crate::output::DescribeVocabularyOutput)
+pub mod describe_vocabulary_output {
+    /// A builder for [`DescribeVocabularyOutput`](crate::output::DescribeVocabularyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vocabulary: std::option::Option<crate::model::Vocabulary>,
+    }
+    impl Builder {
+        /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
+        pub fn vocabulary(mut self, input: crate::model::Vocabulary) -> Self {
+            self.vocabulary = Some(input);
+            self
+        }
+        /// <p>A list of specific words that you want Contact Lens for Amazon Connect to recognize in your audio input. They are generally domain-specific words and phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
+        pub fn set_vocabulary(
+            mut self,
+            input: std::option::Option<crate::model::Vocabulary>,
+        ) -> Self {
+            self.vocabulary = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeVocabularyOutput`](crate::output::DescribeVocabularyOutput)
+        pub fn build(self) -> crate::output::DescribeVocabularyOutput {
+            crate::output::DescribeVocabularyOutput {
+                vocabulary: self.vocabulary,
+            }
+        }
+    }
+}
+impl DescribeVocabularyOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVocabularyOutput`](crate::output::DescribeVocabularyOutput)
+    pub fn builder() -> crate::output::describe_vocabulary_output::Builder {
+        crate::output::describe_vocabulary_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserHierarchyStructureOutput {
     /// <p>Information about the hierarchy structure.</p>
     pub hierarchy_structure: std::option::Option<crate::model::HierarchyStructure>,
@@ -5180,6 +5409,107 @@ impl DescribeAgentStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteVocabularyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    pub vocabulary_arn: std::option::Option<std::string::String>,
+    /// <p>The identifier of the custom vocabulary.</p>
+    pub vocabulary_id: std::option::Option<std::string::String>,
+    /// <p>The current state of the custom vocabulary.</p>
+    pub state: std::option::Option<crate::model::VocabularyState>,
+}
+impl DeleteVocabularyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    pub fn vocabulary_arn(&self) -> std::option::Option<&str> {
+        self.vocabulary_arn.as_deref()
+    }
+    /// <p>The identifier of the custom vocabulary.</p>
+    pub fn vocabulary_id(&self) -> std::option::Option<&str> {
+        self.vocabulary_id.as_deref()
+    }
+    /// <p>The current state of the custom vocabulary.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::VocabularyState> {
+        self.state.as_ref()
+    }
+}
+impl std::fmt::Debug for DeleteVocabularyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteVocabularyOutput");
+        formatter.field("vocabulary_arn", &self.vocabulary_arn);
+        formatter.field("vocabulary_id", &self.vocabulary_id);
+        formatter.field("state", &self.state);
+        formatter.finish()
+    }
+}
+/// See [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput)
+pub mod delete_vocabulary_output {
+    /// A builder for [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vocabulary_arn: std::option::Option<std::string::String>,
+        pub(crate) vocabulary_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::VocabularyState>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+        pub fn vocabulary_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+        pub fn set_vocabulary_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_arn = input;
+            self
+        }
+        /// <p>The identifier of the custom vocabulary.</p>
+        pub fn vocabulary_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the custom vocabulary.</p>
+        pub fn set_vocabulary_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_id = input;
+            self
+        }
+        /// <p>The current state of the custom vocabulary.</p>
+        pub fn state(mut self, input: crate::model::VocabularyState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The current state of the custom vocabulary.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::VocabularyState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput)
+        pub fn build(self) -> crate::output::DeleteVocabularyOutput {
+            crate::output::DeleteVocabularyOutput {
+                vocabulary_arn: self.vocabulary_arn,
+                vocabulary_id: self.vocabulary_id,
+                state: self.state,
+            }
+        }
+    }
+}
+impl DeleteVocabularyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput)
+    pub fn builder() -> crate::output::delete_vocabulary_output::Builder {
+        crate::output::delete_vocabulary_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserHierarchyGroupOutput {}
 impl std::fmt::Debug for DeleteUserHierarchyGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5474,6 +5804,107 @@ impl DeleteContactFlowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContactFlowOutput`](crate::output::DeleteContactFlowOutput)
     pub fn builder() -> crate::output::delete_contact_flow_output::Builder {
         crate::output::delete_contact_flow_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateVocabularyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    pub vocabulary_arn: std::option::Option<std::string::String>,
+    /// <p>The identifier of the custom vocabulary.</p>
+    pub vocabulary_id: std::option::Option<std::string::String>,
+    /// <p>The current state of the custom vocabulary.</p>
+    pub state: std::option::Option<crate::model::VocabularyState>,
+}
+impl CreateVocabularyOutput {
+    /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+    pub fn vocabulary_arn(&self) -> std::option::Option<&str> {
+        self.vocabulary_arn.as_deref()
+    }
+    /// <p>The identifier of the custom vocabulary.</p>
+    pub fn vocabulary_id(&self) -> std::option::Option<&str> {
+        self.vocabulary_id.as_deref()
+    }
+    /// <p>The current state of the custom vocabulary.</p>
+    pub fn state(&self) -> std::option::Option<&crate::model::VocabularyState> {
+        self.state.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateVocabularyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateVocabularyOutput");
+        formatter.field("vocabulary_arn", &self.vocabulary_arn);
+        formatter.field("vocabulary_id", &self.vocabulary_id);
+        formatter.field("state", &self.state);
+        formatter.finish()
+    }
+}
+/// See [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput)
+pub mod create_vocabulary_output {
+    /// A builder for [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vocabulary_arn: std::option::Option<std::string::String>,
+        pub(crate) vocabulary_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::VocabularyState>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+        pub fn vocabulary_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+        pub fn set_vocabulary_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_arn = input;
+            self
+        }
+        /// <p>The identifier of the custom vocabulary.</p>
+        pub fn vocabulary_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the custom vocabulary.</p>
+        pub fn set_vocabulary_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_id = input;
+            self
+        }
+        /// <p>The current state of the custom vocabulary.</p>
+        pub fn state(mut self, input: crate::model::VocabularyState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        /// <p>The current state of the custom vocabulary.</p>
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::VocabularyState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput)
+        pub fn build(self) -> crate::output::CreateVocabularyOutput {
+            crate::output::CreateVocabularyOutput {
+                vocabulary_arn: self.vocabulary_arn,
+                vocabulary_id: self.vocabulary_id,
+                state: self.state,
+            }
+        }
+    }
+}
+impl CreateVocabularyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput)
+    pub fn builder() -> crate::output::create_vocabulary_output::Builder {
+        crate::output::create_vocabulary_output::Builder::default()
     }
 }
 
@@ -6714,6 +7145,36 @@ impl AssociateInstanceStorageConfigOutput {
     /// Creates a new builder-style object to manufacture [`AssociateInstanceStorageConfigOutput`](crate::output::AssociateInstanceStorageConfigOutput)
     pub fn builder() -> crate::output::associate_instance_storage_config_output::Builder {
         crate::output::associate_instance_storage_config_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateDefaultVocabularyOutput {}
+impl std::fmt::Debug for AssociateDefaultVocabularyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateDefaultVocabularyOutput");
+        formatter.finish()
+    }
+}
+/// See [`AssociateDefaultVocabularyOutput`](crate::output::AssociateDefaultVocabularyOutput)
+pub mod associate_default_vocabulary_output {
+    /// A builder for [`AssociateDefaultVocabularyOutput`](crate::output::AssociateDefaultVocabularyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`AssociateDefaultVocabularyOutput`](crate::output::AssociateDefaultVocabularyOutput)
+        pub fn build(self) -> crate::output::AssociateDefaultVocabularyOutput {
+            crate::output::AssociateDefaultVocabularyOutput {}
+        }
+    }
+}
+impl AssociateDefaultVocabularyOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateDefaultVocabularyOutput`](crate::output::AssociateDefaultVocabularyOutput)
+    pub fn builder() -> crate::output::associate_default_vocabulary_output::Builder {
+        crate::output::associate_default_vocabulary_output::Builder::default()
     }
 }
 

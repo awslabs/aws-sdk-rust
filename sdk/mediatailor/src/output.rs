@@ -236,6 +236,9 @@ pub struct UpdateSourceLocationOutput {
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub segment_delivery_configurations:
+        std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the source location.</p>
@@ -269,6 +272,12 @@ impl UpdateSourceLocationOutput {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn segment_delivery_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
+        self.segment_delivery_configurations.as_deref()
+    }
     /// <p>The name of the source location.</p>
     pub fn source_location_name(&self) -> std::option::Option<&str> {
         self.source_location_name.as_deref()
@@ -293,6 +302,10 @@ impl std::fmt::Debug for UpdateSourceLocationOutput {
         );
         formatter.field("http_configuration", &self.http_configuration);
         formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field(
+            "segment_delivery_configurations",
+            &self.segment_delivery_configurations,
+        );
         formatter.field("source_location_name", &self.source_location_name);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -311,6 +324,8 @@ pub mod update_source_location_output {
             std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
         pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) segment_delivery_configurations:
+            std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -395,6 +410,27 @@ pub mod update_source_location_output {
             self.last_modified_time = input;
             self
         }
+        /// Appends an item to `segment_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
+        ///
+        pub fn segment_delivery_configurations(
+            mut self,
+            input: crate::model::SegmentDeliveryConfiguration,
+        ) -> Self {
+            let mut v = self.segment_delivery_configurations.unwrap_or_default();
+            v.push(input);
+            self.segment_delivery_configurations = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_segment_delivery_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+        ) -> Self {
+            self.segment_delivery_configurations = input;
+            self
+        }
         /// <p>The name of the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
@@ -442,6 +478,7 @@ pub mod update_source_location_output {
                 default_segment_delivery_configuration: self.default_segment_delivery_configuration,
                 http_configuration: self.http_configuration,
                 last_modified_time: self.last_modified_time,
+                segment_delivery_configurations: self.segment_delivery_configurations,
                 source_location_name: self.source_location_name,
                 tags: self.tags,
             }
@@ -3004,6 +3041,9 @@ pub struct DescribeSourceLocationOutput {
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub segment_delivery_configurations:
+        std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the source location.</p>
@@ -3037,6 +3077,12 @@ impl DescribeSourceLocationOutput {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn segment_delivery_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
+        self.segment_delivery_configurations.as_deref()
+    }
     /// <p>The name of the source location.</p>
     pub fn source_location_name(&self) -> std::option::Option<&str> {
         self.source_location_name.as_deref()
@@ -3061,6 +3107,10 @@ impl std::fmt::Debug for DescribeSourceLocationOutput {
         );
         formatter.field("http_configuration", &self.http_configuration);
         formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field(
+            "segment_delivery_configurations",
+            &self.segment_delivery_configurations,
+        );
         formatter.field("source_location_name", &self.source_location_name);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -3079,6 +3129,8 @@ pub mod describe_source_location_output {
             std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
         pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) segment_delivery_configurations:
+            std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -3163,6 +3215,27 @@ pub mod describe_source_location_output {
             self.last_modified_time = input;
             self
         }
+        /// Appends an item to `segment_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
+        ///
+        pub fn segment_delivery_configurations(
+            mut self,
+            input: crate::model::SegmentDeliveryConfiguration,
+        ) -> Self {
+            let mut v = self.segment_delivery_configurations.unwrap_or_default();
+            v.push(input);
+            self.segment_delivery_configurations = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_segment_delivery_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+        ) -> Self {
+            self.segment_delivery_configurations = input;
+            self
+        }
         /// <p>The name of the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
@@ -3210,6 +3283,7 @@ pub mod describe_source_location_output {
                 default_segment_delivery_configuration: self.default_segment_delivery_configuration,
                 http_configuration: self.http_configuration,
                 last_modified_time: self.last_modified_time,
+                segment_delivery_configurations: self.segment_delivery_configurations,
                 source_location_name: self.source_location_name,
                 tags: self.tags,
             }
@@ -4129,6 +4203,9 @@ pub struct CreateSourceLocationOutput {
     pub http_configuration: std::option::Option<crate::model::HttpConfiguration>,
     /// <p>The timestamp that indicates when the source location was last modified.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub segment_delivery_configurations:
+        std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
     /// <p>The name of the source location.</p>
     pub source_location_name: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the source location.</p>
@@ -4162,6 +4239,12 @@ impl CreateSourceLocationOutput {
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn segment_delivery_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::model::SegmentDeliveryConfiguration]> {
+        self.segment_delivery_configurations.as_deref()
+    }
     /// <p>The name of the source location.</p>
     pub fn source_location_name(&self) -> std::option::Option<&str> {
         self.source_location_name.as_deref()
@@ -4186,6 +4269,10 @@ impl std::fmt::Debug for CreateSourceLocationOutput {
         );
         formatter.field("http_configuration", &self.http_configuration);
         formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field(
+            "segment_delivery_configurations",
+            &self.segment_delivery_configurations,
+        );
         formatter.field("source_location_name", &self.source_location_name);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -4204,6 +4291,8 @@ pub mod create_source_location_output {
             std::option::Option<crate::model::DefaultSegmentDeliveryConfiguration>,
         pub(crate) http_configuration: std::option::Option<crate::model::HttpConfiguration>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) segment_delivery_configurations:
+            std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -4288,6 +4377,27 @@ pub mod create_source_location_output {
             self.last_modified_time = input;
             self
         }
+        /// Appends an item to `segment_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
+        ///
+        pub fn segment_delivery_configurations(
+            mut self,
+            input: crate::model::SegmentDeliveryConfiguration,
+        ) -> Self {
+            let mut v = self.segment_delivery_configurations.unwrap_or_default();
+            v.push(input);
+            self.segment_delivery_configurations = Some(v);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_segment_delivery_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+        ) -> Self {
+            self.segment_delivery_configurations = input;
+            self
+        }
         /// <p>The name of the source location.</p>
         pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location_name = Some(input.into());
@@ -4335,6 +4445,7 @@ pub mod create_source_location_output {
                 default_segment_delivery_configuration: self.default_segment_delivery_configuration,
                 http_configuration: self.http_configuration,
                 last_modified_time: self.last_modified_time,
+                segment_delivery_configurations: self.segment_delivery_configurations,
                 source_location_name: self.source_location_name,
                 tags: self.tags,
             }

@@ -516,6 +516,221 @@ impl std::error::Error for CreateMountTargetError {
     }
 }
 
+/// Error type for the `CreateReplicationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateReplicationConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: CreateReplicationConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateReplicationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateReplicationConfigurationErrorKind {
+    /// <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
+    BadRequest(crate::error::BadRequest),
+    /// <p>Returned if the Amazon Web Services account has already created the maximum number of file systems allowed per account.</p>
+    FileSystemLimitExceeded(crate::error::FileSystemLimitExceeded),
+    /// <p>Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's Amazon Web Services account.</p>
+    FileSystemNotFound(crate::error::FileSystemNotFound),
+    /// <p>Returned if the file system's lifecycle state is not "available".</p>
+    IncorrectFileSystemLifeCycleState(crate::error::IncorrectFileSystemLifeCycleState),
+    /// <p>Returned if there's not enough capacity to provision additional throughput. This value might be returned when you try to create a file system in provisioned throughput mode, when you attempt to increase the provisioned throughput of an existing file system, or when you attempt to change an existing file system from bursting to provisioned throughput mode. Try again later.</p>
+    InsufficientThroughputCapacity(crate::error::InsufficientThroughputCapacity),
+    /// <p>Returned if an error occurred on the server side.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>Returned if the specified file system did not have a replication configuration.</p>
+    ReplicationNotFound(crate::error::ReplicationNotFound),
+    /// <p>Returned if the throughput mode or amount of provisioned throughput can't be changed because the throughput limit of 1024 MiB/s has been reached.</p>
+    ThroughputLimitExceeded(crate::error::ThroughputLimitExceeded),
+    /// <p>Returned if the requested Amazon EFS functionality is not available in the specified Availability Zone.</p>
+    UnsupportedAvailabilityZone(crate::error::UnsupportedAvailabilityZone),
+    /// <p>Returned if the Backup service is not available in the Amazon Web Services Region in which the request was made.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateReplicationConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateReplicationConfigurationErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            CreateReplicationConfigurationErrorKind::FileSystemLimitExceeded(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateReplicationConfigurationErrorKind::FileSystemNotFound(_inner) => _inner.fmt(f),
+            CreateReplicationConfigurationErrorKind::IncorrectFileSystemLifeCycleState(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateReplicationConfigurationErrorKind::InsufficientThroughputCapacity(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateReplicationConfigurationErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            CreateReplicationConfigurationErrorKind::ReplicationNotFound(_inner) => _inner.fmt(f),
+            CreateReplicationConfigurationErrorKind::ThroughputLimitExceeded(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateReplicationConfigurationErrorKind::UnsupportedAvailabilityZone(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateReplicationConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            CreateReplicationConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateReplicationConfigurationError {
+    fn code(&self) -> Option<&str> {
+        CreateReplicationConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateReplicationConfigurationError {
+    /// Creates a new `CreateReplicationConfigurationError`.
+    pub fn new(
+        kind: CreateReplicationConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateReplicationConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateReplicationConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateReplicationConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateReplicationConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateReplicationConfigurationErrorKind::BadRequest`.
+    pub fn is_bad_request(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReplicationConfigurationErrorKind::BadRequest(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateReplicationConfigurationErrorKind::FileSystemLimitExceeded`.
+    pub fn is_file_system_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReplicationConfigurationErrorKind::FileSystemLimitExceeded(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateReplicationConfigurationErrorKind::FileSystemNotFound`.
+    pub fn is_file_system_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReplicationConfigurationErrorKind::FileSystemNotFound(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateReplicationConfigurationErrorKind::IncorrectFileSystemLifeCycleState`.
+    pub fn is_incorrect_file_system_life_cycle_state(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReplicationConfigurationErrorKind::IncorrectFileSystemLifeCycleState(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateReplicationConfigurationErrorKind::InsufficientThroughputCapacity`.
+    pub fn is_insufficient_throughput_capacity(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReplicationConfigurationErrorKind::InsufficientThroughputCapacity(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateReplicationConfigurationErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReplicationConfigurationErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateReplicationConfigurationErrorKind::ReplicationNotFound`.
+    pub fn is_replication_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReplicationConfigurationErrorKind::ReplicationNotFound(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateReplicationConfigurationErrorKind::ThroughputLimitExceeded`.
+    pub fn is_throughput_limit_exceeded(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReplicationConfigurationErrorKind::ThroughputLimitExceeded(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateReplicationConfigurationErrorKind::UnsupportedAvailabilityZone`.
+    pub fn is_unsupported_availability_zone(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReplicationConfigurationErrorKind::UnsupportedAvailabilityZone(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateReplicationConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateReplicationConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for CreateReplicationConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateReplicationConfigurationErrorKind::BadRequest(_inner) => Some(_inner),
+            CreateReplicationConfigurationErrorKind::FileSystemLimitExceeded(_inner) => {
+                Some(_inner)
+            }
+            CreateReplicationConfigurationErrorKind::FileSystemNotFound(_inner) => Some(_inner),
+            CreateReplicationConfigurationErrorKind::IncorrectFileSystemLifeCycleState(_inner) => {
+                Some(_inner)
+            }
+            CreateReplicationConfigurationErrorKind::InsufficientThroughputCapacity(_inner) => {
+                Some(_inner)
+            }
+            CreateReplicationConfigurationErrorKind::InternalServerError(_inner) => Some(_inner),
+            CreateReplicationConfigurationErrorKind::ReplicationNotFound(_inner) => Some(_inner),
+            CreateReplicationConfigurationErrorKind::ThroughputLimitExceeded(_inner) => {
+                Some(_inner)
+            }
+            CreateReplicationConfigurationErrorKind::UnsupportedAvailabilityZone(_inner) => {
+                Some(_inner)
+            }
+            CreateReplicationConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            CreateReplicationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateTags` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -864,6 +1079,8 @@ pub struct DeleteFileSystemPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFileSystemPolicyErrorKind {
+    /// <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
+    BadRequest(crate::error::BadRequest),
     /// <p>Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's Amazon Web Services account.</p>
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if the file system's lifecycle state is not "available".</p>
@@ -876,6 +1093,7 @@ pub enum DeleteFileSystemPolicyErrorKind {
 impl std::fmt::Display for DeleteFileSystemPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteFileSystemPolicyErrorKind::BadRequest(_inner) => _inner.fmt(f),
             DeleteFileSystemPolicyErrorKind::FileSystemNotFound(_inner) => _inner.fmt(f),
             DeleteFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState(_inner) => {
                 _inner.fmt(f)
@@ -935,6 +1153,10 @@ impl DeleteFileSystemPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeleteFileSystemPolicyErrorKind::BadRequest`.
+    pub fn is_bad_request(&self) -> bool {
+        matches!(&self.kind, DeleteFileSystemPolicyErrorKind::BadRequest(_))
+    }
     /// Returns `true` if the error kind is `DeleteFileSystemPolicyErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
@@ -960,6 +1182,7 @@ impl DeleteFileSystemPolicyError {
 impl std::error::Error for DeleteFileSystemPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteFileSystemPolicyErrorKind::BadRequest(_inner) => Some(_inner),
             DeleteFileSystemPolicyErrorKind::FileSystemNotFound(_inner) => Some(_inner),
             DeleteFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState(_inner) => {
                 Some(_inner)
@@ -1086,6 +1309,135 @@ impl std::error::Error for DeleteMountTargetError {
             DeleteMountTargetErrorKind::InternalServerError(_inner) => Some(_inner),
             DeleteMountTargetErrorKind::MountTargetNotFound(_inner) => Some(_inner),
             DeleteMountTargetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteReplicationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteReplicationConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: DeleteReplicationConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteReplicationConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteReplicationConfigurationErrorKind {
+    /// <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
+    BadRequest(crate::error::BadRequest),
+    /// <p>Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's Amazon Web Services account.</p>
+    FileSystemNotFound(crate::error::FileSystemNotFound),
+    /// <p>Returned if an error occurred on the server side.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>Returned if the specified file system did not have a replication configuration.</p>
+    ReplicationNotFound(crate::error::ReplicationNotFound),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteReplicationConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteReplicationConfigurationErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            DeleteReplicationConfigurationErrorKind::FileSystemNotFound(_inner) => _inner.fmt(f),
+            DeleteReplicationConfigurationErrorKind::InternalServerError(_inner) => _inner.fmt(f),
+            DeleteReplicationConfigurationErrorKind::ReplicationNotFound(_inner) => _inner.fmt(f),
+            DeleteReplicationConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteReplicationConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DeleteReplicationConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteReplicationConfigurationError {
+    /// Creates a new `DeleteReplicationConfigurationError`.
+    pub fn new(
+        kind: DeleteReplicationConfigurationErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteReplicationConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteReplicationConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteReplicationConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteReplicationConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteReplicationConfigurationErrorKind::BadRequest`.
+    pub fn is_bad_request(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReplicationConfigurationErrorKind::BadRequest(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteReplicationConfigurationErrorKind::FileSystemNotFound`.
+    pub fn is_file_system_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReplicationConfigurationErrorKind::FileSystemNotFound(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteReplicationConfigurationErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReplicationConfigurationErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteReplicationConfigurationErrorKind::ReplicationNotFound`.
+    pub fn is_replication_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReplicationConfigurationErrorKind::ReplicationNotFound(_)
+        )
+    }
+}
+impl std::error::Error for DeleteReplicationConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteReplicationConfigurationErrorKind::BadRequest(_inner) => Some(_inner),
+            DeleteReplicationConfigurationErrorKind::FileSystemNotFound(_inner) => Some(_inner),
+            DeleteReplicationConfigurationErrorKind::InternalServerError(_inner) => Some(_inner),
+            DeleteReplicationConfigurationErrorKind::ReplicationNotFound(_inner) => Some(_inner),
+            DeleteReplicationConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1556,6 +1908,8 @@ pub struct DescribeFileSystemPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFileSystemPolicyErrorKind {
+    /// <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
+    BadRequest(crate::error::BadRequest),
     /// <p>Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's Amazon Web Services account.</p>
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if an error occurred on the server side.</p>
@@ -1568,6 +1922,7 @@ pub enum DescribeFileSystemPolicyErrorKind {
 impl std::fmt::Display for DescribeFileSystemPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DescribeFileSystemPolicyErrorKind::BadRequest(_inner) => _inner.fmt(f),
             DescribeFileSystemPolicyErrorKind::FileSystemNotFound(_inner) => _inner.fmt(f),
             DescribeFileSystemPolicyErrorKind::InternalServerError(_inner) => _inner.fmt(f),
             DescribeFileSystemPolicyErrorKind::PolicyNotFound(_inner) => _inner.fmt(f),
@@ -1625,6 +1980,10 @@ impl DescribeFileSystemPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DescribeFileSystemPolicyErrorKind::BadRequest`.
+    pub fn is_bad_request(&self) -> bool {
+        matches!(&self.kind, DescribeFileSystemPolicyErrorKind::BadRequest(_))
+    }
     /// Returns `true` if the error kind is `DescribeFileSystemPolicyErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
@@ -1650,6 +2009,7 @@ impl DescribeFileSystemPolicyError {
 impl std::error::Error for DescribeFileSystemPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DescribeFileSystemPolicyErrorKind::BadRequest(_inner) => Some(_inner),
             DescribeFileSystemPolicyErrorKind::FileSystemNotFound(_inner) => Some(_inner),
             DescribeFileSystemPolicyErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeFileSystemPolicyErrorKind::PolicyNotFound(_inner) => Some(_inner),
@@ -2155,6 +2515,152 @@ impl std::error::Error for DescribeMountTargetSecurityGroupsError {
             DescribeMountTargetSecurityGroupsErrorKind::InternalServerError(_inner) => Some(_inner),
             DescribeMountTargetSecurityGroupsErrorKind::MountTargetNotFound(_inner) => Some(_inner),
             DescribeMountTargetSecurityGroupsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeReplicationConfigurations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeReplicationConfigurationsError {
+    /// Kind of error that occurred.
+    pub kind: DescribeReplicationConfigurationsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeReplicationConfigurations` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeReplicationConfigurationsErrorKind {
+    /// <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
+    BadRequest(crate::error::BadRequest),
+    /// <p>Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's Amazon Web Services account.</p>
+    FileSystemNotFound(crate::error::FileSystemNotFound),
+    /// <p>Returned if an error occurred on the server side.</p>
+    InternalServerError(crate::error::InternalServerError),
+    /// <p>Returned if the specified file system did not have a replication configuration.</p>
+    ReplicationNotFound(crate::error::ReplicationNotFound),
+    /// <p>Returned if the Backup service is not available in the Amazon Web Services Region in which the request was made.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeReplicationConfigurationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeReplicationConfigurationsErrorKind::BadRequest(_inner) => _inner.fmt(f),
+            DescribeReplicationConfigurationsErrorKind::FileSystemNotFound(_inner) => _inner.fmt(f),
+            DescribeReplicationConfigurationsErrorKind::InternalServerError(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeReplicationConfigurationsErrorKind::ReplicationNotFound(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeReplicationConfigurationsErrorKind::ValidationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeReplicationConfigurationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeReplicationConfigurationsError {
+    fn code(&self) -> Option<&str> {
+        DescribeReplicationConfigurationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeReplicationConfigurationsError {
+    /// Creates a new `DescribeReplicationConfigurationsError`.
+    pub fn new(
+        kind: DescribeReplicationConfigurationsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeReplicationConfigurationsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeReplicationConfigurationsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeReplicationConfigurationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeReplicationConfigurationsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeReplicationConfigurationsErrorKind::BadRequest`.
+    pub fn is_bad_request(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReplicationConfigurationsErrorKind::BadRequest(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeReplicationConfigurationsErrorKind::FileSystemNotFound`.
+    pub fn is_file_system_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReplicationConfigurationsErrorKind::FileSystemNotFound(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeReplicationConfigurationsErrorKind::InternalServerError`.
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReplicationConfigurationsErrorKind::InternalServerError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeReplicationConfigurationsErrorKind::ReplicationNotFound`.
+    pub fn is_replication_not_found(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReplicationConfigurationsErrorKind::ReplicationNotFound(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeReplicationConfigurationsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReplicationConfigurationsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeReplicationConfigurationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeReplicationConfigurationsErrorKind::BadRequest(_inner) => Some(_inner),
+            DescribeReplicationConfigurationsErrorKind::FileSystemNotFound(_inner) => Some(_inner),
+            DescribeReplicationConfigurationsErrorKind::InternalServerError(_inner) => Some(_inner),
+            DescribeReplicationConfigurationsErrorKind::ReplicationNotFound(_inner) => Some(_inner),
+            DescribeReplicationConfigurationsErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribeReplicationConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2788,6 +3294,8 @@ pub struct PutFileSystemPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutFileSystemPolicyErrorKind {
+    /// <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
+    BadRequest(crate::error::BadRequest),
     /// <p>Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's Amazon Web Services account.</p>
     FileSystemNotFound(crate::error::FileSystemNotFound),
     /// <p>Returned if the file system's lifecycle state is not "available".</p>
@@ -2802,6 +3310,7 @@ pub enum PutFileSystemPolicyErrorKind {
 impl std::fmt::Display for PutFileSystemPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            PutFileSystemPolicyErrorKind::BadRequest(_inner) => _inner.fmt(f),
             PutFileSystemPolicyErrorKind::FileSystemNotFound(_inner) => _inner.fmt(f),
             PutFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState(_inner) => {
                 _inner.fmt(f)
@@ -2862,6 +3371,10 @@ impl PutFileSystemPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `PutFileSystemPolicyErrorKind::BadRequest`.
+    pub fn is_bad_request(&self) -> bool {
+        matches!(&self.kind, PutFileSystemPolicyErrorKind::BadRequest(_))
+    }
     /// Returns `true` if the error kind is `PutFileSystemPolicyErrorKind::FileSystemNotFound`.
     pub fn is_file_system_not_found(&self) -> bool {
         matches!(
@@ -2894,6 +3407,7 @@ impl PutFileSystemPolicyError {
 impl std::error::Error for PutFileSystemPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            PutFileSystemPolicyErrorKind::BadRequest(_inner) => Some(_inner),
             PutFileSystemPolicyErrorKind::FileSystemNotFound(_inner) => Some(_inner),
             PutFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState(_inner) => Some(_inner),
             PutFileSystemPolicyErrorKind::InternalServerError(_inner) => Some(_inner),
@@ -3415,13 +3929,13 @@ impl std::error::Error for UpdateFileSystemError {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequests {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyRequests {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -3460,22 +3974,22 @@ pub mod too_many_requests {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3500,13 +4014,13 @@ impl TooManyRequests {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThroughputLimitExceeded {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl ThroughputLimitExceeded {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -3545,22 +4059,22 @@ pub mod throughput_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3585,13 +4099,13 @@ impl ThroughputLimitExceeded {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerError {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -3630,22 +4144,22 @@ pub mod internal_server_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3670,13 +4184,13 @@ impl InternalServerError {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientThroughputCapacity {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl InsufficientThroughputCapacity {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -3715,22 +4229,22 @@ pub mod insufficient_throughput_capacity {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3755,13 +4269,13 @@ impl InsufficientThroughputCapacity {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectFileSystemLifeCycleState {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl IncorrectFileSystemLifeCycleState {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -3800,22 +4314,22 @@ pub mod incorrect_file_system_life_cycle_state {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3840,13 +4354,13 @@ impl IncorrectFileSystemLifeCycleState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileSystemNotFound {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl FileSystemNotFound {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -3885,22 +4399,22 @@ pub mod file_system_not_found {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3925,13 +4439,13 @@ impl FileSystemNotFound {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequest {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl BadRequest {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -3970,22 +4484,22 @@ pub mod bad_request {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4010,13 +4524,13 @@ impl BadRequest {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPointNotFound {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessPointNotFound {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -4055,22 +4569,22 @@ pub mod access_point_not_found {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4095,13 +4609,13 @@ impl AccessPointNotFound {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPolicyException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidPolicyException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -4140,22 +4654,22 @@ pub mod invalid_policy_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4180,13 +4694,13 @@ impl InvalidPolicyException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -4225,22 +4739,22 @@ pub mod validation_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4265,13 +4779,13 @@ impl ValidationException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityGroupNotFound {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl SecurityGroupNotFound {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -4310,22 +4824,22 @@ pub mod security_group_not_found {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4350,13 +4864,13 @@ impl SecurityGroupNotFound {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityGroupLimitExceeded {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl SecurityGroupLimitExceeded {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -4395,22 +4909,22 @@ pub mod security_group_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4435,13 +4949,13 @@ impl SecurityGroupLimitExceeded {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MountTargetNotFound {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl MountTargetNotFound {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -4480,22 +4994,22 @@ pub mod mount_target_not_found {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4520,13 +5034,13 @@ impl MountTargetNotFound {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncorrectMountTargetState {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl IncorrectMountTargetState {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -4565,22 +5079,22 @@ pub mod incorrect_mount_target_state {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4601,17 +5115,102 @@ impl IncorrectMountTargetState {
     }
 }
 
+/// <p>Returned if the specified file system did not have a replication configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReplicationNotFound {
+    /// <p>ReplicationNotFound</p>
+    pub error_code: std::option::Option<std::string::String>,
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl ReplicationNotFound {
+    /// <p>ReplicationNotFound</p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
+impl std::fmt::Debug for ReplicationNotFound {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReplicationNotFound");
+        formatter.field("error_code", &self.error_code);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ReplicationNotFound {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ReplicationNotFound {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ReplicationNotFound")?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ReplicationNotFound {}
+/// See [`ReplicationNotFound`](crate::error::ReplicationNotFound)
+pub mod replication_not_found {
+    /// A builder for [`ReplicationNotFound`](crate::error::ReplicationNotFound)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>ReplicationNotFound</p>
+        pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_code = Some(input.into());
+            self
+        }
+        /// <p>ReplicationNotFound</p>
+        pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReplicationNotFound`](crate::error::ReplicationNotFound)
+        pub fn build(self) -> crate::error::ReplicationNotFound {
+            crate::error::ReplicationNotFound {
+                error_code: self.error_code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl ReplicationNotFound {
+    /// Creates a new builder-style object to manufacture [`ReplicationNotFound`](crate::error::ReplicationNotFound)
+    pub fn builder() -> crate::error::replication_not_found::Builder {
+        crate::error::replication_not_found::Builder::default()
+    }
+}
+
 /// <p>Returned if the default file system policy is in effect for the EFS file system specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyNotFound {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl PolicyNotFound {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -4633,8 +5232,8 @@ impl PolicyNotFound {
 impl std::fmt::Display for PolicyNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PolicyNotFound")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -4650,22 +5249,22 @@ pub mod policy_not_found {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4690,13 +5289,13 @@ impl PolicyNotFound {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DependencyTimeout {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl DependencyTimeout {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -4718,8 +5317,8 @@ impl DependencyTimeout {
 impl std::fmt::Display for DependencyTimeout {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DependencyTimeout")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -4735,22 +5334,22 @@ pub mod dependency_timeout {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4775,13 +5374,13 @@ impl DependencyTimeout {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileSystemInUse {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl FileSystemInUse {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -4803,8 +5402,8 @@ impl FileSystemInUse {
 impl std::fmt::Display for FileSystemInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileSystemInUse")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -4820,22 +5419,22 @@ pub mod file_system_in_use {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4860,13 +5459,13 @@ impl FileSystemInUse {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedAvailabilityZone {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedAvailabilityZone {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -4888,8 +5487,8 @@ impl UnsupportedAvailabilityZone {
 impl std::fmt::Display for UnsupportedAvailabilityZone {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedAvailabilityZone")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -4905,22 +5504,22 @@ pub mod unsupported_availability_zone {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4941,17 +5540,102 @@ impl UnsupportedAvailabilityZone {
     }
 }
 
+/// <p>Returned if the Amazon Web Services account has already created the maximum number of file systems allowed per account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FileSystemLimitExceeded {
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+    pub error_code: std::option::Option<std::string::String>,
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl FileSystemLimitExceeded {
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+    pub fn error_code(&self) -> std::option::Option<&str> {
+        self.error_code.as_deref()
+    }
+}
+impl std::fmt::Debug for FileSystemLimitExceeded {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FileSystemLimitExceeded");
+        formatter.field("error_code", &self.error_code);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl FileSystemLimitExceeded {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for FileSystemLimitExceeded {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "FileSystemLimitExceeded")?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for FileSystemLimitExceeded {}
+/// See [`FileSystemLimitExceeded`](crate::error::FileSystemLimitExceeded)
+pub mod file_system_limit_exceeded {
+    /// A builder for [`FileSystemLimitExceeded`](crate::error::FileSystemLimitExceeded)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error_code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+        pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_code = Some(input.into());
+            self
+        }
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+        pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FileSystemLimitExceeded`](crate::error::FileSystemLimitExceeded)
+        pub fn build(self) -> crate::error::FileSystemLimitExceeded {
+            crate::error::FileSystemLimitExceeded {
+                error_code: self.error_code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl FileSystemLimitExceeded {
+    /// Creates a new builder-style object to manufacture [`FileSystemLimitExceeded`](crate::error::FileSystemLimitExceeded)
+    pub fn builder() -> crate::error::file_system_limit_exceeded::Builder {
+        crate::error::file_system_limit_exceeded::Builder::default()
+    }
+}
+
 /// <p>Returned if there is no subnet with ID <code>SubnetId</code> provided in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetNotFound {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl SubnetNotFound {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -4973,8 +5657,8 @@ impl SubnetNotFound {
 impl std::fmt::Display for SubnetNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetNotFound")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -4990,22 +5674,22 @@ pub mod subnet_not_found {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5030,13 +5714,13 @@ impl SubnetNotFound {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoFreeAddressesInSubnet {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl NoFreeAddressesInSubnet {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -5058,8 +5742,8 @@ impl NoFreeAddressesInSubnet {
 impl std::fmt::Display for NoFreeAddressesInSubnet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoFreeAddressesInSubnet")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
@@ -5075,22 +5759,22 @@ pub mod no_free_addresses_in_subnet {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5115,13 +5799,13 @@ impl NoFreeAddressesInSubnet {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkInterfaceLimitExceeded {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl NetworkInterfaceLimitExceeded {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -5143,8 +5827,8 @@ impl NetworkInterfaceLimitExceeded {
 impl std::fmt::Display for NetworkInterfaceLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NetworkInterfaceLimitExceeded")?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
@@ -5160,22 +5844,22 @@ pub mod network_interface_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5200,13 +5884,13 @@ impl NetworkInterfaceLimitExceeded {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MountTargetConflict {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl MountTargetConflict {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -5228,8 +5912,8 @@ impl MountTargetConflict {
 impl std::fmt::Display for MountTargetConflict {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MountTargetConflict")?;
-        if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
@@ -5245,22 +5929,22 @@ pub mod mount_target_conflict {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5285,13 +5969,13 @@ impl MountTargetConflict {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpAddressInUse {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl IpAddressInUse {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -5313,8 +5997,8 @@ impl IpAddressInUse {
 impl std::fmt::Display for IpAddressInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IpAddressInUse")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
@@ -5330,22 +6014,22 @@ pub mod ip_address_in_use {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5370,13 +6054,13 @@ impl IpAddressInUse {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AvailabilityZonesMismatch {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl AvailabilityZonesMismatch {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -5398,8 +6082,8 @@ impl AvailabilityZonesMismatch {
 impl std::fmt::Display for AvailabilityZonesMismatch {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AvailabilityZonesMismatch")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
@@ -5415,22 +6099,22 @@ pub mod availability_zones_mismatch {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5451,104 +6135,19 @@ impl AvailabilityZonesMismatch {
     }
 }
 
-/// <p>Returned if the Amazon Web Services account has already created the maximum number of file systems allowed per account.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct FileSystemLimitExceeded {
-    #[allow(missing_docs)] // documentation missing in model
-    pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl FileSystemLimitExceeded {
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn error_code(&self) -> std::option::Option<&str> {
-        self.error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for FileSystemLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileSystemLimitExceeded");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl FileSystemLimitExceeded {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for FileSystemLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "FileSystemLimitExceeded")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for FileSystemLimitExceeded {}
-/// See [`FileSystemLimitExceeded`](crate::error::FileSystemLimitExceeded)
-pub mod file_system_limit_exceeded {
-    /// A builder for [`FileSystemLimitExceeded`](crate::error::FileSystemLimitExceeded)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) error_code: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.error_code = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`FileSystemLimitExceeded`](crate::error::FileSystemLimitExceeded)
-        pub fn build(self) -> crate::error::FileSystemLimitExceeded {
-            crate::error::FileSystemLimitExceeded {
-                error_code: self.error_code,
-                message: self.message,
-            }
-        }
-    }
-}
-impl FileSystemLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`FileSystemLimitExceeded`](crate::error::FileSystemLimitExceeded)
-    pub fn builder() -> crate::error::file_system_limit_exceeded::Builder {
-        crate::error::file_system_limit_exceeded::Builder::default()
-    }
-}
-
 /// <p>Returned if the file system you are trying to create already exists, with the creation token you provided.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileSystemAlreadyExists {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl FileSystemAlreadyExists {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -5575,8 +6174,8 @@ impl FileSystemAlreadyExists {
 impl std::fmt::Display for FileSystemAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FileSystemAlreadyExists")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -5593,22 +6192,22 @@ pub mod file_system_already_exists {
         pub(crate) file_system_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5647,13 +6246,13 @@ impl FileSystemAlreadyExists {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPointLimitExceeded {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessPointLimitExceeded {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -5675,8 +6274,8 @@ impl AccessPointLimitExceeded {
 impl std::fmt::Display for AccessPointLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessPointLimitExceeded")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
@@ -5692,22 +6291,22 @@ pub mod access_point_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5732,15 +6331,15 @@ impl AccessPointLimitExceeded {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPointAlreadyExists {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub error_code: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub access_point_id: std::option::Option<std::string::String>,
 }
 impl AccessPointAlreadyExists {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -5767,8 +6366,8 @@ impl AccessPointAlreadyExists {
 impl std::fmt::Display for AccessPointAlreadyExists {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessPointAlreadyExists")?;
-        if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
@@ -5785,22 +6384,22 @@ pub mod access_point_already_exists {
         pub(crate) access_point_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

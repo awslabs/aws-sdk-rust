@@ -39,12 +39,12 @@ pub mod create_experiment_template_input {
             self.client_token = input;
             self
         }
-        /// <p>A description for the experiment template. Can contain up to 64 letters (A-Z and a-z).</p>
+        /// <p>A description for the experiment template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description for the experiment template. Can contain up to 64 letters (A-Z and a-z).</p>
+        /// <p>A description for the experiment template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -129,12 +129,12 @@ pub mod create_experiment_template_input {
             self.actions = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2389,12 +2389,12 @@ pub mod update_experiment_template_input {
             self.actions = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2579,7 +2579,7 @@ pub struct UpdateExperimentTemplateInput {
             crate::model::UpdateExperimentTemplateActionInputItem,
         >,
     >,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateExperimentTemplateInput {
@@ -2619,7 +2619,7 @@ impl UpdateExperimentTemplateInput {
     > {
         self.actions.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -2952,7 +2952,7 @@ impl std::fmt::Debug for DeleteExperimentTemplateInput {
 pub struct CreateExperimentTemplateInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>A description for the experiment template. Can contain up to 64 letters (A-Z and a-z).</p>
+    /// <p>A description for the experiment template.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The stop conditions.</p>
     pub stop_conditions: std::option::Option<
@@ -2972,7 +2972,7 @@ pub struct CreateExperimentTemplateInput {
             crate::model::CreateExperimentTemplateActionInput,
         >,
     >,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The tags to apply to the experiment template.</p>
     pub tags:
@@ -2983,7 +2983,7 @@ impl CreateExperimentTemplateInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>A description for the experiment template. Can contain up to 64 letters (A-Z and a-z).</p>
+    /// <p>A description for the experiment template.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -3015,7 +3015,7 @@ impl CreateExperimentTemplateInput {
     > {
         self.actions.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }

@@ -16,6 +16,8 @@ pub enum SendSerialConsoleSSHPublicKeyErrorKind {
     AuthException(crate::error::AuthException),
     /// <p>The specified instance was not found.</p>
     Ec2InstanceNotFoundException(crate::error::Ec2InstanceNotFoundException),
+    /// <p>Unable to connect because the instance is not in a valid state. Connecting to a stopped or terminated instance is not supported. If the instance is stopped, start your instance, and try to connect again.</p>
+    Ec2InstanceStateInvalidException(crate::error::Ec2InstanceStateInvalidException),
     /// <p>The instance type is not supported for connecting via the serial console. Only Nitro instance types are currently supported.</p>
     Ec2InstanceTypeInvalidException(crate::error::Ec2InstanceTypeInvalidException),
     /// <p>One of the parameters is not valid.</p>
@@ -42,6 +44,9 @@ impl std::fmt::Display for SendSerialConsoleSSHPublicKeyError {
         match &self.kind {
             SendSerialConsoleSSHPublicKeyErrorKind::AuthException(_inner) => _inner.fmt(f),
             SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_inner) => {
                 _inner.fmt(f)
             }
             SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException(_inner) => {
@@ -130,6 +135,13 @@ impl SendSerialConsoleSSHPublicKeyError {
             SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException`.
+    pub fn is_ec2_instance_state_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_)
+        )
+    }
     /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException`.
     pub fn is_ec2_instance_type_invalid_exception(&self) -> bool {
         matches!(
@@ -187,6 +199,9 @@ impl std::error::Error for SendSerialConsoleSSHPublicKeyError {
             SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_inner) => {
                 Some(_inner)
             }
+            SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_inner) => {
+                Some(_inner)
+            }
             SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException(_inner) => {
                 Some(_inner)
             }
@@ -224,6 +239,8 @@ pub enum SendSSHPublicKeyErrorKind {
     AuthException(crate::error::AuthException),
     /// <p>The specified instance was not found.</p>
     Ec2InstanceNotFoundException(crate::error::Ec2InstanceNotFoundException),
+    /// <p>Unable to connect because the instance is not in a valid state. Connecting to a stopped or terminated instance is not supported. If the instance is stopped, start your instance, and try to connect again.</p>
+    Ec2InstanceStateInvalidException(crate::error::Ec2InstanceStateInvalidException),
     /// <p>One of the parameters is not valid.</p>
     InvalidArgsException(crate::error::InvalidArgsException),
     /// <p>The service encountered an error. Follow the instructions in the error message and try again.</p>
@@ -238,6 +255,7 @@ impl std::fmt::Display for SendSSHPublicKeyError {
         match &self.kind {
             SendSSHPublicKeyErrorKind::AuthException(_inner) => _inner.fmt(f),
             SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_inner) => _inner.fmt(f),
+            SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_inner) => _inner.fmt(f),
             SendSSHPublicKeyErrorKind::InvalidArgsException(_inner) => _inner.fmt(f),
             SendSSHPublicKeyErrorKind::ServiceException(_inner) => _inner.fmt(f),
             SendSSHPublicKeyErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
@@ -306,6 +324,13 @@ impl SendSSHPublicKeyError {
             SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException`.
+    pub fn is_ec2_instance_state_invalid_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_)
+        )
+    }
     /// Returns `true` if the error kind is `SendSSHPublicKeyErrorKind::InvalidArgsException`.
     pub fn is_invalid_args_exception(&self) -> bool {
         matches!(
@@ -330,6 +355,7 @@ impl std::error::Error for SendSSHPublicKeyError {
         match &self.kind {
             SendSSHPublicKeyErrorKind::AuthException(_inner) => Some(_inner),
             SendSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(_inner) => Some(_inner),
+            SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(_inner) => Some(_inner),
             SendSSHPublicKeyErrorKind::InvalidArgsException(_inner) => Some(_inner),
             SendSSHPublicKeyErrorKind::ServiceException(_inner) => Some(_inner),
             SendSSHPublicKeyErrorKind::ThrottlingException(_inner) => Some(_inner),
@@ -530,6 +556,73 @@ impl InvalidArgsException {
     }
 }
 
+/// <p>Unable to connect because the instance is not in a valid state. Connecting to a stopped or terminated instance is not supported. If the instance is stopped, start your instance, and try to connect again.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Ec2InstanceStateInvalidException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Ec2InstanceStateInvalidException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Ec2InstanceStateInvalidException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl Ec2InstanceStateInvalidException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for Ec2InstanceStateInvalidException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "Ec2InstanceStateInvalidException [EC2InstanceStateInvalidException]"
+        )?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for Ec2InstanceStateInvalidException {}
+/// See [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException)
+pub mod ec2_instance_state_invalid_exception {
+    /// A builder for [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException)
+        pub fn build(self) -> crate::error::Ec2InstanceStateInvalidException {
+            crate::error::Ec2InstanceStateInvalidException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl Ec2InstanceStateInvalidException {
+    /// Creates a new builder-style object to manufacture [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException)
+    pub fn builder() -> crate::error::ec2_instance_state_invalid_exception::Builder {
+        crate::error::ec2_instance_state_invalid_exception::Builder::default()
+    }
+}
+
 /// <p>The specified instance was not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -556,8 +649,8 @@ impl std::fmt::Display for Ec2InstanceNotFoundException {
             f,
             "Ec2InstanceNotFoundException [EC2InstanceNotFoundException]"
         )?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -620,8 +713,8 @@ impl AuthException {
 impl std::fmt::Display for AuthException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -684,8 +777,8 @@ impl SerialConsoleSessionUnavailableException {
 impl std::fmt::Display for SerialConsoleSessionUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SerialConsoleSessionUnavailableException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -748,8 +841,8 @@ impl SerialConsoleSessionLimitExceededException {
 impl std::fmt::Display for SerialConsoleSessionLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SerialConsoleSessionLimitExceededException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
@@ -812,8 +905,8 @@ impl SerialConsoleAccessDisabledException {
 impl std::fmt::Display for SerialConsoleAccessDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SerialConsoleAccessDisabledException")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
@@ -879,8 +972,8 @@ impl std::fmt::Display for Ec2InstanceTypeInvalidException {
             f,
             "Ec2InstanceTypeInvalidException [EC2InstanceTypeInvalidException]"
         )?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }

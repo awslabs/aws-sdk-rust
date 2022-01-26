@@ -101,6 +101,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMountTarget {
     }
 }
 
+/// Operation shape for `CreateReplicationConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_replication_configuration`](crate::client::Client::create_replication_configuration).
+///
+/// See [`crate::client::fluent_builders::CreateReplicationConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateReplicationConfiguration {
+    _private: (),
+}
+impl CreateReplicationConfiguration {
+    /// Creates a new builder-style object to manufacture [`CreateReplicationConfigurationInput`](crate::input::CreateReplicationConfigurationInput)
+    pub fn builder() -> crate::input::create_replication_configuration_input::Builder {
+        crate::input::create_replication_configuration_input::Builder::default()
+    }
+    /// Creates a new `CreateReplicationConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateReplicationConfiguration {
+    type Output = std::result::Result<
+        crate::output::CreateReplicationConfigurationOutput,
+        crate::error::CreateReplicationConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_replication_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_create_replication_configuration_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -265,6 +299,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMountTarget {
             crate::operation_deser::parse_delete_mount_target_error(response)
         } else {
             crate::operation_deser::parse_delete_mount_target_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DeleteReplicationConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`delete_replication_configuration`](crate::client::Client::delete_replication_configuration).
+///
+/// See [`crate::client::fluent_builders::DeleteReplicationConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteReplicationConfiguration {
+    _private: (),
+}
+impl DeleteReplicationConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeleteReplicationConfigurationInput`](crate::input::DeleteReplicationConfigurationInput)
+    pub fn builder() -> crate::input::delete_replication_configuration_input::Builder {
+        crate::input::delete_replication_configuration_input::Builder::default()
+    }
+    /// Creates a new `DeleteReplicationConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DeleteReplicationConfiguration {
+    type Output = std::result::Result<
+        crate::output::DeleteReplicationConfigurationOutput,
+        crate::error::DeleteReplicationConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_replication_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_delete_replication_configuration_response(response)
         }
     }
 }
@@ -569,6 +637,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMountTargetSecur
             crate::operation_deser::parse_describe_mount_target_security_groups_error(response)
         } else {
             crate::operation_deser::parse_describe_mount_target_security_groups_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeReplicationConfigurations`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_replication_configurations`](crate::client::Client::describe_replication_configurations).
+///
+/// See [`crate::client::fluent_builders::DescribeReplicationConfigurations`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeReplicationConfigurations {
+    _private: (),
+}
+impl DescribeReplicationConfigurations {
+    /// Creates a new builder-style object to manufacture [`DescribeReplicationConfigurationsInput`](crate::input::DescribeReplicationConfigurationsInput)
+    pub fn builder() -> crate::input::describe_replication_configurations_input::Builder {
+        crate::input::describe_replication_configurations_input::Builder::default()
+    }
+    /// Creates a new `DescribeReplicationConfigurations` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeReplicationConfigurations {
+    type Output = std::result::Result<
+        crate::output::DescribeReplicationConfigurationsOutput,
+        crate::error::DescribeReplicationConfigurationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_replication_configurations_error(response)
+        } else {
+            crate::operation_deser::parse_describe_replication_configurations_response(response)
         }
     }
 }

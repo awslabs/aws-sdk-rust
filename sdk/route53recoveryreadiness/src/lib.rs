@@ -7,7 +7,7 @@
 #![allow(clippy::vec_init_then_push)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! AWS Route53 Recovery Readiness
+//! <p>Recovery readiness</p>
 //!
 //! # Crate Organization
 //!

@@ -111,12 +111,12 @@ where
     /// - The fluent builder is configurable:
     ///   - [`creation_token(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystem::creation_token) / [`set_creation_token(Option<String>)`](crate::client::fluent_builders::CreateFileSystem::set_creation_token): <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
     ///   - [`performance_mode(PerformanceMode)`](crate::client::fluent_builders::CreateFileSystem::performance_mode) / [`set_performance_mode(Option<PerformanceMode>)`](crate::client::fluent_builders::CreateFileSystem::set_performance_mode): <p>The performance mode of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed after the file system has been created.</p> <note>   <p>The <code>maxIO</code> mode is not supported on file systems using One Zone storage classes.</p>  </note>
-    ///   - [`encrypted(bool)`](crate::client::fluent_builders::CreateFileSystem::encrypted) / [`set_encrypted(Option<bool>)`](crate::client::fluent_builders::CreateFileSystem::set_encrypted): <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying <code>CreateFileSystemRequest$KmsKeyId</code> for an existing Key Management Service (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystem::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateFileSystem::set_kms_key_id): <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>  <ul>   <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>   <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>   <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>   <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>  </ul>  <p>If <code>KmsKeyId</code> is specified, the <code>CreateFileSystemRequest$Encrypted</code> parameter must be set to true.</p> <important>   <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.</p>  </important>
+    ///   - [`encrypted(bool)`](crate::client::fluent_builders::CreateFileSystem::encrypted) / [`set_encrypted(Option<bool>)`](crate::client::fluent_builders::CreateFileSystem::set_encrypted): <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying an existing Key Management Service key (KMS key). If you don't specify a KMS key, then the default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
+    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystem::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateFileSystem::set_kms_key_id): <p>The ID of the KMS key that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS key ID using the following formats:</p>  <ul>   <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>   <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>   <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>   <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>  </ul>  <p>If you use <code>KmsKeyId</code>, you must set the <code>CreateFileSystemRequest$Encrypted</code> parameter to true.</p> <important>   <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with Amazon EFS file systems.</p>  </important>
     ///   - [`throughput_mode(ThroughputMode)`](crate::client::fluent_builders::CreateFileSystem::throughput_mode) / [`set_throughput_mode(Option<ThroughputMode>)`](crate::client::fluent_builders::CreateFileSystem::set_throughput_mode): <p>Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>  <p>Default is <code>bursting</code>.</p>
     ///   - [`provisioned_throughput_in_mibps(f64)`](crate::client::fluent_builders::CreateFileSystem::provisioned_throughput_in_mibps) / [`set_provisioned_throughput_in_mibps(Option<f64>)`](crate::client::fluent_builders::CreateFileSystem::set_provisioned_throughput_in_mibps): <p>The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
     ///   - [`availability_zone_name(impl Into<String>)`](crate::client::fluent_builders::CreateFileSystem::availability_zone_name) / [`set_availability_zone_name(Option<String>)`](crate::client::fluent_builders::CreateFileSystem::set_availability_zone_name): <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services Availability Zone in which to create the file system. Use the format <code>us-east-1a</code> to specify the Availability Zone. For more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> <note>   <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where Amazon EFS is available.</p>  </note>
-    ///   - [`backup(bool)`](crate::client::fluent_builders::CreateFileSystem::backup) / [`set_backup(Option<bool>)`](crate::client::fluent_builders::CreateFileSystem::set_backup): <p>Specifies whether automatic backups are enabled on the file system that you are creating. Set the value to <code>true</code> to enable automatic backups. If you are creating a file system that uses One Zone storage classes, automatic backups are enabled by default. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>   <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.</p>  </note>
+    ///   - [`backup(bool)`](crate::client::fluent_builders::CreateFileSystem::backup) / [`set_backup(Option<bool>)`](crate::client::fluent_builders::CreateFileSystem::set_backup): <p>Specifies whether automatic backups are enabled on the file system that you are creating. Set the value to <code>true</code> to enable automatic backups. If you are creating a file system that uses One Zone storage classes, automatic backups are enabled by default. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>   <p>Backup is not available in all Amazon Web Services Regions where Amazon EFS is available.</p>  </note>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFileSystem::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFileSystem::set_tags): <p>Use to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     /// - On success, responds with [`CreateFileSystemOutput`](crate::output::CreateFileSystemOutput) with field(s):
     ///   - [`owner_id(Option<String>)`](crate::output::CreateFileSystemOutput::owner_id): <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>
@@ -130,7 +130,7 @@ where
     ///   - [`size_in_bytes(Option<FileSystemSize>)`](crate::output::CreateFileSystemOutput::size_in_bytes): <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
     ///   - [`performance_mode(Option<PerformanceMode>)`](crate::output::CreateFileSystemOutput::performance_mode): <p>The performance mode of the file system.</p>
     ///   - [`encrypted(Option<bool>)`](crate::output::CreateFileSystemOutput::encrypted): <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
-    ///   - [`kms_key_id(Option<String>)`](crate::output::CreateFileSystemOutput::kms_key_id): <p>The ID of an Key Management Service customer master key (CMK) that was used to protect the encrypted file system.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::CreateFileSystemOutput::kms_key_id): <p>The ID of an KMS key used to protect the encrypted file system.</p>
     ///   - [`throughput_mode(Option<ThroughputMode>)`](crate::output::CreateFileSystemOutput::throughput_mode): <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
     ///   - [`provisioned_throughput_in_mibps(Option<f64>)`](crate::output::CreateFileSystemOutput::provisioned_throughput_in_mibps): <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
     ///   - [`availability_zone_name(Option<String>)`](crate::output::CreateFileSystemOutput::availability_zone_name): <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
@@ -161,6 +161,24 @@ where
     /// - On failure, responds with [`SdkError<CreateMountTargetError>`](crate::error::CreateMountTargetError)
     pub fn create_mount_target(&self) -> fluent_builders::CreateMountTarget<C, M, R> {
         fluent_builders::CreateMountTarget::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`CreateReplicationConfiguration`](crate::client::fluent_builders::CreateReplicationConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`source_file_system_id(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationConfiguration::source_file_system_id) / [`set_source_file_system_id(Option<String>)`](crate::client::fluent_builders::CreateReplicationConfiguration::set_source_file_system_id): <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
+    ///   - [`destinations(Vec<DestinationToCreate>)`](crate::client::fluent_builders::CreateReplicationConfiguration::destinations) / [`set_destinations(Option<Vec<DestinationToCreate>>)`](crate::client::fluent_builders::CreateReplicationConfiguration::set_destinations): <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
+    /// - On success, responds with [`CreateReplicationConfigurationOutput`](crate::output::CreateReplicationConfigurationOutput) with field(s):
+    ///   - [`source_file_system_id(Option<String>)`](crate::output::CreateReplicationConfigurationOutput::source_file_system_id): <p>The ID of the source Amazon EFS file system that is being replicated.</p>
+    ///   - [`source_file_system_region(Option<String>)`](crate::output::CreateReplicationConfigurationOutput::source_file_system_region): <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
+    ///   - [`source_file_system_arn(Option<String>)`](crate::output::CreateReplicationConfigurationOutput::source_file_system_arn): <p>The ARN of the current source file system in the replication configuration.</p>
+    ///   - [`original_source_file_system_arn(Option<String>)`](crate::output::CreateReplicationConfigurationOutput::original_source_file_system_arn): <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateReplicationConfigurationOutput::creation_time): <p>Describes when the replication configuration was created.</p>
+    ///   - [`destinations(Option<Vec<Destination>>)`](crate::output::CreateReplicationConfigurationOutput::destinations): <p>Array of destination objects. Only one destination object is supported.</p>
+    /// - On failure, responds with [`SdkError<CreateReplicationConfigurationError>`](crate::error::CreateReplicationConfigurationError)
+    pub fn create_replication_configuration(
+        &self,
+    ) -> fluent_builders::CreateReplicationConfiguration<C, M, R> {
+        fluent_builders::CreateReplicationConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateTags`](crate::client::fluent_builders::CreateTags) operation.
     ///
@@ -212,6 +230,18 @@ where
     /// - On failure, responds with [`SdkError<DeleteMountTargetError>`](crate::error::DeleteMountTargetError)
     pub fn delete_mount_target(&self) -> fluent_builders::DeleteMountTarget<C, M, R> {
         fluent_builders::DeleteMountTarget::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DeleteReplicationConfiguration`](crate::client::fluent_builders::DeleteReplicationConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`source_file_system_id(impl Into<String>)`](crate::client::fluent_builders::DeleteReplicationConfiguration::source_file_system_id) / [`set_source_file_system_id(Option<String>)`](crate::client::fluent_builders::DeleteReplicationConfiguration::set_source_file_system_id): <p>The ID of the source file system in the replication configuration.</p>
+    /// - On success, responds with [`DeleteReplicationConfigurationOutput`](crate::output::DeleteReplicationConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteReplicationConfigurationError>`](crate::error::DeleteReplicationConfigurationError)
+    pub fn delete_replication_configuration(
+        &self,
+    ) -> fluent_builders::DeleteReplicationConfiguration<C, M, R> {
+        fluent_builders::DeleteReplicationConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteTags`](crate::client::fluent_builders::DeleteTags) operation.
     ///
@@ -331,6 +361,21 @@ where
         &self,
     ) -> fluent_builders::DescribeMountTargetSecurityGroups<C, M, R> {
         fluent_builders::DescribeMountTargetSecurityGroups::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeReplicationConfigurations`](crate::client::fluent_builders::DescribeReplicationConfigurations) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`file_system_id(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::file_system_id) / [`set_file_system_id(Option<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::set_file_system_id): <p>You can retrieve replication configurations for a specific file system by providing a file system ID.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::set_next_token): <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in a subsequent request to fetch the next page of output.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeReplicationConfigurations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeReplicationConfigurations::set_max_results): <p>(Optional) You can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+    /// - On success, responds with [`DescribeReplicationConfigurationsOutput`](crate::output::DescribeReplicationConfigurationsOutput) with field(s):
+    ///   - [`replications(Option<Vec<ReplicationConfigurationDescription>>)`](crate::output::DescribeReplicationConfigurationsOutput::replications): <p>The collection of replication configurations returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeReplicationConfigurationsOutput::next_token): <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
+    /// - On failure, responds with [`SdkError<DescribeReplicationConfigurationsError>`](crate::error::DescribeReplicationConfigurationsError)
+    pub fn describe_replication_configurations(
+        &self,
+    ) -> fluent_builders::DescribeReplicationConfigurations<C, M, R> {
+        fluent_builders::DescribeReplicationConfigurations::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeTags`](crate::client::fluent_builders::DescribeTags) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeTags::into_paginator).
@@ -461,7 +506,7 @@ where
     ///   - [`size_in_bytes(Option<FileSystemSize>)`](crate::output::UpdateFileSystemOutput::size_in_bytes): <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time. </p>
     ///   - [`performance_mode(Option<PerformanceMode>)`](crate::output::UpdateFileSystemOutput::performance_mode): <p>The performance mode of the file system.</p>
     ///   - [`encrypted(Option<bool>)`](crate::output::UpdateFileSystemOutput::encrypted): <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
-    ///   - [`kms_key_id(Option<String>)`](crate::output::UpdateFileSystemOutput::kms_key_id): <p>The ID of an Key Management Service customer master key (CMK) that was used to protect the encrypted file system.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::output::UpdateFileSystemOutput::kms_key_id): <p>The ID of an KMS key used to protect the encrypted file system.</p>
     ///   - [`throughput_mode(Option<ThroughputMode>)`](crate::output::UpdateFileSystemOutput::throughput_mode): <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
     ///   - [`provisioned_throughput_in_mibps(Option<f64>)`](crate::output::UpdateFileSystemOutput::provisioned_throughput_in_mibps): <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
     ///   - [`availability_zone_name(Option<String>)`](crate::output::UpdateFileSystemOutput::availability_zone_name): <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
@@ -713,39 +758,39 @@ pub mod fluent_builders {
             self.inner = self.inner.set_performance_mode(input);
             self
         }
-        /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying <code>CreateFileSystemRequest$KmsKeyId</code> for an existing Key Management Service (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
+        /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying an existing Key Management Service key (KMS key). If you don't specify a KMS key, then the default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.inner = self.inner.encrypted(input);
             self
         }
-        /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying <code>CreateFileSystemRequest$KmsKeyId</code> for an existing Key Management Service (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
+        /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying an existing Key Management Service key (KMS key). If you don't specify a KMS key, then the default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_encrypted(input);
             self
         }
-        /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>
+        /// <p>The ID of the KMS key that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS key ID using the following formats:</p>
         /// <ul>
         /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
         /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
         /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
         /// <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
         /// </ul>
-        /// <p>If <code>KmsKeyId</code> is specified, the <code>CreateFileSystemRequest$Encrypted</code> parameter must be set to true.</p> <important>
-        /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.</p>
+        /// <p>If you use <code>KmsKeyId</code>, you must set the <code>CreateFileSystemRequest$Encrypted</code> parameter to true.</p> <important>
+        /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with Amazon EFS file systems.</p>
         /// </important>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>
+        /// <p>The ID of the KMS key that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS key ID using the following formats:</p>
         /// <ul>
         /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
         /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
         /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
         /// <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
         /// </ul>
-        /// <p>If <code>KmsKeyId</code> is specified, the <code>CreateFileSystemRequest$Encrypted</code> parameter must be set to true.</p> <important>
-        /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.</p>
+        /// <p>If you use <code>KmsKeyId</code>, you must set the <code>CreateFileSystemRequest$Encrypted</code> parameter to true.</p> <important>
+        /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with Amazon EFS file systems.</p>
         /// </important>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
@@ -798,7 +843,7 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether automatic backups are enabled on the file system that you are creating. Set the value to <code>true</code> to enable automatic backups. If you are creating a file system that uses One Zone storage classes, automatic backups are enabled by default. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the <i>Amazon EFS User Guide</i>.</p>
         /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>
-        /// <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.</p>
+        /// <p>Backup is not available in all Amazon Web Services Regions where Amazon EFS is available.</p>
         /// </note>
         pub fn backup(mut self, input: bool) -> Self {
             self.inner = self.inner.backup(input);
@@ -806,7 +851,7 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether automatic backups are enabled on the file system that you are creating. Set the value to <code>true</code> to enable automatic backups. If you are creating a file system that uses One Zone storage classes, automatic backups are enabled by default. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the <i>Amazon EFS User Guide</i>.</p>
         /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>
-        /// <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.</p>
+        /// <p>Backup is not available in all Amazon Web Services Regions where Amazon EFS is available.</p>
         /// </note>
         pub fn set_backup(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_backup(input);
@@ -981,6 +1026,116 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_security_groups(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateReplicationConfiguration`.
+    ///
+    /// <p>Creates a replication configuration that replicates an existing EFS file system to a new, read-only file system. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS replication</a>. The replication configuration specifies the following:</p>
+    /// <ul>
+    /// <li> <p> <b>Source file system</b> - an existing EFS file system that you want replicated. The source file system cannot be a destination file system in an existing replication configuration.</p> </li>
+    /// <li> <p> <b>Destination file system configuration</b> - the configuration of the destination file system to which the source file system will be replicated. There can only be one destination file system in a replication configuration.</p>
+    /// <ul>
+    /// <li> <p> <b>Amazon Web Services Region</b> - The Amazon Web Services Region in which the destination file system is created. EFS Replication is available in all Amazon Web Services Region that Amazon EFS is available in, except the following regions: Asia Pacific (Hong Kong) Europe (Milan), Middle East (Bahrain), Africa (Cape Town), and Asia Pacific (Jakarta).</p> </li>
+    /// <li> <p> <b>Availability zone</b> - If you want the destination file system to use One Zone availability and durability, you must specify the Availability Zone to create the file system in. For more information about EFS storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html"> Amazon EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> </li>
+    /// <li> <p> <b>Encryption</b> - All destination file systems are created with encryption at rest enabled. You can specify the KMS key that is used to encrypt the destination file system. Your service-managed KMS key for Amazon EFS is used if you don't specify a KMS key. You cannot change this after the file system is created.</p> </li>
+    /// </ul> </li>
+    /// </ul>
+    /// <p>The following properties are set by default:</p>
+    /// <ul>
+    /// <li> <p> <b>Performance mode</b> - The destination file system's performance mode will match that of the source file system, unless the destination file system uses One Zone storage. In that case, the <i>General Purpose</i> performance mode is used. The Performance mode cannot be changed.</p> </li>
+    /// <li> <p> <b>Throughput mode</b> - The destination file system use the Bursting throughput mode by default. You can modify the throughput mode once the file system is created.</p> </li>
+    /// </ul>
+    /// <p>The following properties are turned off by default:</p>
+    /// <ul>
+    /// <li> <p> <b>Lifecycle management</b> - EFS lifecycle management and intelligent tiering are not enabled on the destination file system. You can enable EFS lifecycle management and intelligent tiering after the destination file system is created.</p> </li>
+    /// <li> <p> <b>Automatic backups</b> - Automatic daily backups not enabled on the destination file system. You can change this setting after the file system is created.</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS replication</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateReplicationConfiguration<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_replication_configuration_input::Builder,
+    }
+    impl<C, M, R> CreateReplicationConfiguration<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateReplicationConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateReplicationConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateReplicationConfigurationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateReplicationConfigurationInputOperationOutputAlias,
+                crate::output::CreateReplicationConfigurationOutput,
+                crate::error::CreateReplicationConfigurationError,
+                crate::input::CreateReplicationConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
+        pub fn source_file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_file_system_id(input.into());
+            self
+        }
+        /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
+        pub fn set_source_file_system_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_file_system_id(input);
+            self
+        }
+        /// Appends an item to `Destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
+        pub fn destinations(mut self, input: crate::model::DestinationToCreate) -> Self {
+            self.inner = self.inner.destinations(input);
+            self
+        }
+        /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
+        pub fn set_destinations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DestinationToCreate>>,
+        ) -> Self {
+            self.inner = self.inner.set_destinations(input);
             self
         }
     }
@@ -1384,6 +1539,79 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_mount_target_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DeleteReplicationConfiguration`.
+    ///
+    /// <p>Deletes an existing replication configuration. To delete a replication configuration, you must make the request from the Amazon Web Services Region in which the destination file system is located. Deleting a replication configuration ends the replication process. You can write to the destination file system once it's status becomes <code>Writeable</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteReplicationConfiguration<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_replication_configuration_input::Builder,
+    }
+    impl<C, M, R> DeleteReplicationConfiguration<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteReplicationConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteReplicationConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteReplicationConfigurationError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteReplicationConfigurationInputOperationOutputAlias,
+                crate::output::DeleteReplicationConfigurationOutput,
+                crate::error::DeleteReplicationConfigurationError,
+                crate::input::DeleteReplicationConfigurationInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the source file system in the replication configuration.</p>
+        pub fn source_file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_file_system_id(input.into());
+            self
+        }
+        /// <p>The ID of the source file system in the replication configuration.</p>
+        pub fn set_source_file_system_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_file_system_id(input);
             self
         }
     }
@@ -2207,6 +2435,99 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_mount_target_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeReplicationConfigurations`.
+    ///
+    /// <p>Retrieves the replication configurations for either a specific file system, or all configurations for the Amazon Web Services account in an Amazon Web Services Region if a file system is not specified.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeReplicationConfigurations<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_replication_configurations_input::Builder,
+    }
+    impl<C, M, R> DescribeReplicationConfigurations<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeReplicationConfigurations`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeReplicationConfigurationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeReplicationConfigurationsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeReplicationConfigurationsInputOperationOutputAlias,
+                crate::output::DescribeReplicationConfigurationsOutput,
+                crate::error::DescribeReplicationConfigurationsError,
+                crate::input::DescribeReplicationConfigurationsInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>You can retrieve replication configurations for a specific file system by providing a file system ID.</p>
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(input.into());
+            self
+        }
+        /// <p>You can retrieve replication configurations for a specific file system by providing a file system ID.</p>
+        pub fn set_file_system_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_file_system_id(input);
+            self
+        }
+        /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in a subsequent request to fetch the next page of output.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in a subsequent request to fetch the next page of output.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>(Optional) You can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>(Optional) You can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
