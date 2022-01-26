@@ -152,6 +152,11 @@ pub mod request {
     use std::fmt::{Debug, Formatter};
 
     /// Represents a presigned request. This only includes the HTTP request method, URI, and headers.
+    ///
+    /// **This struct has conversion convenience functions:**
+    ///
+    /// - [`PresignedRequest::to_http_request<B>`][Self::to_http_request] returns an [`http::Request<B>`](https://docs.rs/http/0.2.6/http/request/struct.Request.html)
+    /// - [`PresignedRequest::into`](#impl-From<PresignedRequest>) returns an [`http::request::Builder`](https://docs.rs/http/0.2.6/http/request/struct.Builder.html)
     #[non_exhaustive]
     pub struct PresignedRequest(http::Request<()>);
 
@@ -176,6 +181,13 @@ pub mod request {
         pub fn headers(&self) -> &http::HeaderMap<http::HeaderValue> {
             self.0.headers()
         }
+
+        /// Given a body, convert this `PresignedRequest` into an `http::Request`
+        pub fn to_http_request<B>(self, body: B) -> Result<http::Request<B>, http::Error> {
+            let builder: http::request::Builder = self.into();
+
+            builder.body(body)
+        }
     }
 
     impl Debug for PresignedRequest {
@@ -185,6 +197,20 @@ pub mod request {
                 .field("uri", self.uri())
                 .field("headers", self.headers())
                 .finish()
+        }
+    }
+
+    impl From<PresignedRequest> for http::request::Builder {
+        fn from(req: PresignedRequest) -> Self {
+            let mut builder = http::request::Builder::new()
+                .uri(req.uri())
+                .method(req.method());
+
+            if let Some(headers) = builder.headers_mut() {
+                *headers = req.headers().clone();
+            }
+
+            builder
         }
     }
 }
