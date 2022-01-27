@@ -115,7 +115,7 @@ impl CreateApplicationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -176,7 +176,7 @@ impl CreateApplicationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -419,7 +419,7 @@ impl CreateConfigurationProfileInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -482,7 +482,7 @@ impl CreateConfigurationProfileInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -693,7 +693,7 @@ impl CreateDeploymentStrategyInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -756,7 +756,7 @@ impl CreateDeploymentStrategyInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -941,7 +941,7 @@ impl CreateEnvironmentInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1002,7 +1002,7 @@ impl CreateEnvironmentInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1171,62 +1171,6 @@ impl CreateHostedConfigurationVersionInput {
             write!(output, "/applications/{ApplicationId}/configurationprofiles/{ConfigurationProfileId}/hostedconfigurationversions", ApplicationId = application_id, ConfigurationProfileId = configuration_profile_id).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateHostedConfigurationVersionInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_5) = &_input.description {
-                let formatted_6 = AsRef::<str>::as_ref(inner_5);
-                if !formatted_6.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_6;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "description",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Description", header_value);
-                }
-            }
-            if let Some(inner_7) = &_input.content_type {
-                let formatted_8 = AsRef::<str>::as_ref(inner_7);
-                if !formatted_8.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_8;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_type",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Type", header_value);
-                }
-            }
-            if let Some(inner_9) = &_input.latest_version_number {
-                let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_9);
-                let formatted_10 = encoder.encode();
-                if !formatted_10.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_10;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "latest_version_number",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Latest-Version-Number", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateHostedConfigurationVersionInput,
@@ -1235,7 +1179,8 @@ impl CreateHostedConfigurationVersionInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_create_hosted_configuration_version(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1245,7 +1190,7 @@ impl CreateHostedConfigurationVersionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
@@ -1307,7 +1252,7 @@ impl CreateHostedConfigurationVersionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1378,15 +1323,15 @@ impl DeleteApplicationInput {
             _input: &crate::input::DeleteApplicationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_11 = &_input.application_id;
-            let input_11 =
-                input_11
+            let input_5 = &_input.application_id;
+            let input_5 =
+                input_5
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_11, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_5, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -1552,30 +1497,30 @@ impl DeleteConfigurationProfileInput {
             _input: &crate::input::DeleteConfigurationProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_12 = &_input.application_id;
-            let input_12 =
-                input_12
+            let input_6 = &_input.application_id;
+            let input_6 =
+                input_6
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_12, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_6, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_13 = &_input.configuration_profile_id;
-            let input_13 =
-                input_13
+            let input_7 = &_input.configuration_profile_id;
+            let input_7 =
+                input_7
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_13, false);
+            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_7, false);
             if configuration_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_profile_id",
@@ -1727,15 +1672,15 @@ impl DeleteDeploymentStrategyInput {
             _input: &crate::input::DeleteDeploymentStrategyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_14 = &_input.deployment_strategy_id;
-            let input_14 =
-                input_14
+            let input_8 = &_input.deployment_strategy_id;
+            let input_8 =
+                input_8
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "deployment_strategy_id",
                         details: "cannot be empty or unset",
                     })?;
-            let deployment_strategy_id = aws_smithy_http::label::fmt_string(input_14, false);
+            let deployment_strategy_id = aws_smithy_http::label::fmt_string(input_8, false);
             if deployment_strategy_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "deployment_strategy_id",
@@ -1900,30 +1845,30 @@ impl DeleteEnvironmentInput {
             _input: &crate::input::DeleteEnvironmentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_15 = &_input.application_id;
-            let input_15 =
-                input_15
+            let input_9 = &_input.application_id;
+            let input_9 =
+                input_9
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_15, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_9, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_16 = &_input.environment_id;
-            let input_16 =
-                input_16
+            let input_10 = &_input.environment_id;
+            let input_10 =
+                input_10
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let environment_id = aws_smithy_http::label::fmt_string(input_16, false);
+            let environment_id = aws_smithy_http::label::fmt_string(input_10, false);
             if environment_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "environment_id",
@@ -2103,38 +2048,38 @@ impl DeleteHostedConfigurationVersionInput {
             _input: &crate::input::DeleteHostedConfigurationVersionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_17 = &_input.application_id;
-            let input_17 =
-                input_17
+            let input_11 = &_input.application_id;
+            let input_11 =
+                input_11
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_17, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_11, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_18 = &_input.configuration_profile_id;
-            let input_18 =
-                input_18
+            let input_12 = &_input.configuration_profile_id;
+            let input_12 =
+                input_12
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_18, false);
+            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_12, false);
             if configuration_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_profile_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_19 = &_input.version_number;
-            let mut version_number_encoder = aws_smithy_types::primitive::Encoder::from(*input_19);
+            let input_13 = &_input.version_number;
+            let mut version_number_encoder = aws_smithy_types::primitive::Encoder::from(*input_13);
             let version_number = version_number_encoder.encode();
             if version_number.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -2280,15 +2225,15 @@ impl GetApplicationInput {
             _input: &crate::input::GetApplicationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_20 = &_input.application_id;
-            let input_20 =
-                input_20
+            let input_14 = &_input.application_id;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_20, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_14, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -2500,45 +2445,45 @@ impl GetConfigurationInput {
             _input: &crate::input::GetConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_21 = &_input.application;
-            let input_21 =
-                input_21
+            let input_15 = &_input.application;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application",
                         details: "cannot be empty or unset",
                     })?;
-            let application = aws_smithy_http::label::fmt_string(input_21, false);
+            let application = aws_smithy_http::label::fmt_string(input_15, false);
             if application.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_22 = &_input.environment;
-            let input_22 =
-                input_22
+            let input_16 = &_input.environment;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment",
                         details: "cannot be empty or unset",
                     })?;
-            let environment = aws_smithy_http::label::fmt_string(input_22, false);
+            let environment = aws_smithy_http::label::fmt_string(input_16, false);
             if environment.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "environment",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_23 = &_input.configuration;
-            let input_23 =
-                input_23
+            let input_17 = &_input.configuration;
+            let input_17 =
+                input_17
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration = aws_smithy_http::label::fmt_string(input_23, false);
+            let configuration = aws_smithy_http::label::fmt_string(input_17, false);
             if configuration.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration",
@@ -2553,13 +2498,13 @@ impl GetConfigurationInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_24) = &_input.client_id {
-                query.push_kv("client_id", &aws_smithy_http::query::fmt_string(&inner_24));
+            if let Some(inner_18) = &_input.client_id {
+                query.push_kv("client_id", &aws_smithy_http::query::fmt_string(&inner_18));
             }
-            if let Some(inner_25) = &_input.client_configuration_version {
+            if let Some(inner_19) = &_input.client_configuration_version {
                 query.push_kv(
                     "client_configuration_version",
-                    &aws_smithy_http::query::fmt_string(&inner_25),
+                    &aws_smithy_http::query::fmt_string(&inner_19),
                 );
             }
             Ok(())
@@ -2716,30 +2661,30 @@ impl GetConfigurationProfileInput {
             _input: &crate::input::GetConfigurationProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_26 = &_input.application_id;
-            let input_26 =
-                input_26
+            let input_20 = &_input.application_id;
+            let input_20 =
+                input_20
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_26, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_20, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_27 = &_input.configuration_profile_id;
-            let input_27 =
-                input_27
+            let input_21 = &_input.configuration_profile_id;
+            let input_21 =
+                input_21
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_27, false);
+            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_21, false);
             if configuration_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_profile_id",
@@ -2917,46 +2862,46 @@ impl GetDeploymentInput {
             _input: &crate::input::GetDeploymentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_28 = &_input.application_id;
-            let input_28 =
-                input_28
+            let input_22 = &_input.application_id;
+            let input_22 =
+                input_22
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_28, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_22, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_29 = &_input.environment_id;
-            let input_29 =
-                input_29
+            let input_23 = &_input.environment_id;
+            let input_23 =
+                input_23
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let environment_id = aws_smithy_http::label::fmt_string(input_29, false);
+            let environment_id = aws_smithy_http::label::fmt_string(input_23, false);
             if environment_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "environment_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_30 = &_input.deployment_number;
-            let input_30 =
-                input_30
+            let input_24 = &_input.deployment_number;
+            let input_24 =
+                input_24
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "deployment_number",
                         details: "cannot be empty or unset",
                     })?;
             let mut deployment_number_encoder =
-                aws_smithy_types::primitive::Encoder::from(*input_30);
+                aws_smithy_types::primitive::Encoder::from(*input_24);
             let deployment_number = deployment_number_encoder.encode();
             if deployment_number.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -3102,15 +3047,15 @@ impl GetDeploymentStrategyInput {
             _input: &crate::input::GetDeploymentStrategyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_31 = &_input.deployment_strategy_id;
-            let input_31 =
-                input_31
+            let input_25 = &_input.deployment_strategy_id;
+            let input_25 =
+                input_25
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "deployment_strategy_id",
                         details: "cannot be empty or unset",
                     })?;
-            let deployment_strategy_id = aws_smithy_http::label::fmt_string(input_31, false);
+            let deployment_strategy_id = aws_smithy_http::label::fmt_string(input_25, false);
             if deployment_strategy_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "deployment_strategy_id",
@@ -3275,30 +3220,30 @@ impl GetEnvironmentInput {
             _input: &crate::input::GetEnvironmentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_32 = &_input.application_id;
-            let input_32 =
-                input_32
+            let input_26 = &_input.application_id;
+            let input_26 =
+                input_26
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_32, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_26, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_33 = &_input.environment_id;
-            let input_33 =
-                input_33
+            let input_27 = &_input.environment_id;
+            let input_27 =
+                input_27
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let environment_id = aws_smithy_http::label::fmt_string(input_33, false);
+            let environment_id = aws_smithy_http::label::fmt_string(input_27, false);
             if environment_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "environment_id",
@@ -3478,38 +3423,38 @@ impl GetHostedConfigurationVersionInput {
             _input: &crate::input::GetHostedConfigurationVersionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_34 = &_input.application_id;
-            let input_34 =
-                input_34
+            let input_28 = &_input.application_id;
+            let input_28 =
+                input_28
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_34, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_28, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_35 = &_input.configuration_profile_id;
-            let input_35 =
-                input_35
+            let input_29 = &_input.configuration_profile_id;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_35, false);
+            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_29, false);
             if configuration_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_profile_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_36 = &_input.version_number;
-            let mut version_number_encoder = aws_smithy_types::primitive::Encoder::from(*input_36);
+            let input_30 = &_input.version_number;
+            let mut version_number_encoder = aws_smithy_types::primitive::Encoder::from(*input_30);
             let version_number = version_number_encoder.encode();
             if version_number.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -3672,14 +3617,14 @@ impl ListApplicationsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_37) = &_input.max_results {
+            if let Some(inner_31) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_37).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
                 );
             }
-            if let Some(inner_38) = &_input.next_token {
-                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_38));
+            if let Some(inner_32) = &_input.next_token {
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_32));
             }
             Ok(())
         }
@@ -3856,15 +3801,15 @@ impl ListConfigurationProfilesInput {
             _input: &crate::input::ListConfigurationProfilesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_39 = &_input.application_id;
-            let input_39 =
-                input_39
+            let input_33 = &_input.application_id;
+            let input_33 =
+                input_33
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_39, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_33, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -3884,17 +3829,17 @@ impl ListConfigurationProfilesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_40) = &_input.max_results {
+            if let Some(inner_34) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_40).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
                 );
             }
-            if let Some(inner_41) = &_input.next_token {
-                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_41));
+            if let Some(inner_35) = &_input.next_token {
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_35));
             }
-            if let Some(inner_42) = &_input.r#type {
-                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_42));
+            if let Some(inner_36) = &_input.r#type {
+                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_36));
             }
             Ok(())
         }
@@ -4073,30 +4018,30 @@ impl ListDeploymentsInput {
             _input: &crate::input::ListDeploymentsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_43 = &_input.application_id;
-            let input_43 =
-                input_43
+            let input_37 = &_input.application_id;
+            let input_37 =
+                input_37
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_43, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_37, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_44 = &_input.environment_id;
-            let input_44 =
-                input_44
+            let input_38 = &_input.environment_id;
+            let input_38 =
+                input_38
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let environment_id = aws_smithy_http::label::fmt_string(input_44, false);
+            let environment_id = aws_smithy_http::label::fmt_string(input_38, false);
             if environment_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "environment_id",
@@ -4117,14 +4062,14 @@ impl ListDeploymentsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_45) = &_input.max_results {
+            if let Some(inner_39) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_45).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_39).encode(),
                 );
             }
-            if let Some(inner_46) = &_input.next_token {
-                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_46));
+            if let Some(inner_40) = &_input.next_token {
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_40));
             }
             Ok(())
         }
@@ -4282,14 +4227,14 @@ impl ListDeploymentStrategiesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_47) = &_input.max_results {
+            if let Some(inner_41) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_47).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
                 );
             }
-            if let Some(inner_48) = &_input.next_token {
-                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_48));
+            if let Some(inner_42) = &_input.next_token {
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_42));
             }
             Ok(())
         }
@@ -4453,15 +4398,15 @@ impl ListEnvironmentsInput {
             _input: &crate::input::ListEnvironmentsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_49 = &_input.application_id;
-            let input_49 =
-                input_49
+            let input_43 = &_input.application_id;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_49, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_43, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -4481,14 +4426,14 @@ impl ListEnvironmentsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_50) = &_input.max_results {
+            if let Some(inner_44) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_50).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_44).encode(),
                 );
             }
-            if let Some(inner_51) = &_input.next_token {
-                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_51));
+            if let Some(inner_45) = &_input.next_token {
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_45));
             }
             Ok(())
         }
@@ -4669,30 +4614,30 @@ impl ListHostedConfigurationVersionsInput {
             _input: &crate::input::ListHostedConfigurationVersionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_52 = &_input.application_id;
-            let input_52 =
-                input_52
+            let input_46 = &_input.application_id;
+            let input_46 =
+                input_46
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_52, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_46, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_53 = &_input.configuration_profile_id;
-            let input_53 =
-                input_53
+            let input_47 = &_input.configuration_profile_id;
+            let input_47 =
+                input_47
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_53, false);
+            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_47, false);
             if configuration_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_profile_id",
@@ -4707,14 +4652,14 @@ impl ListHostedConfigurationVersionsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_54) = &_input.max_results {
+            if let Some(inner_48) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_54).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
                 );
             }
-            if let Some(inner_55) = &_input.next_token {
-                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_55));
+            if let Some(inner_49) = &_input.next_token {
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_49));
             }
             Ok(())
         }
@@ -4851,15 +4796,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_56 = &_input.resource_arn;
-            let input_56 =
-                input_56
+            let input_50 = &_input.resource_arn;
+            let input_50 =
+                input_50
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_56, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_50, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -5106,30 +5051,30 @@ impl StartDeploymentInput {
             _input: &crate::input::StartDeploymentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_57 = &_input.application_id;
-            let input_57 =
-                input_57
+            let input_51 = &_input.application_id;
+            let input_51 =
+                input_51
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_57, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_51, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_58 = &_input.environment_id;
-            let input_58 =
-                input_58
+            let input_52 = &_input.environment_id;
+            let input_52 =
+                input_52
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let environment_id = aws_smithy_http::label::fmt_string(input_58, false);
+            let environment_id = aws_smithy_http::label::fmt_string(input_52, false);
             if environment_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "environment_id",
@@ -5162,7 +5107,7 @@ impl StartDeploymentInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -5223,7 +5168,7 @@ impl StartDeploymentInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5321,46 +5266,46 @@ impl StopDeploymentInput {
             _input: &crate::input::StopDeploymentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_59 = &_input.application_id;
-            let input_59 =
-                input_59
+            let input_53 = &_input.application_id;
+            let input_53 =
+                input_53
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_59, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_53, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_60 = &_input.environment_id;
-            let input_60 =
-                input_60
+            let input_54 = &_input.environment_id;
+            let input_54 =
+                input_54
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let environment_id = aws_smithy_http::label::fmt_string(input_60, false);
+            let environment_id = aws_smithy_http::label::fmt_string(input_54, false);
             if environment_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "environment_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_61 = &_input.deployment_number;
-            let input_61 =
-                input_61
+            let input_55 = &_input.deployment_number;
+            let input_55 =
+                input_55
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "deployment_number",
                         details: "cannot be empty or unset",
                     })?;
             let mut deployment_number_encoder =
-                aws_smithy_types::primitive::Encoder::from(*input_61);
+                aws_smithy_types::primitive::Encoder::from(*input_55);
             let deployment_number = deployment_number_encoder.encode();
             if deployment_number.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -5532,15 +5477,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_62 = &_input.resource_arn;
-            let input_62 =
-                input_62
+            let input_56 = &_input.resource_arn;
+            let input_56 =
+                input_56
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_62, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_56, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -5568,7 +5513,7 @@ impl TagResourceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -5628,7 +5573,7 @@ impl TagResourceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5717,15 +5662,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_63 = &_input.resource_arn;
-            let input_63 =
-                input_63
+            let input_57 = &_input.resource_arn;
+            let input_57 =
+                input_57
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_63, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_57, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -5741,9 +5686,9 @@ impl UntagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_64) = &_input.tag_keys {
-                for inner_65 in inner_64 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_65));
+            if let Some(inner_58) = &_input.tag_keys {
+                for inner_59 in inner_58 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_59));
                 }
             }
             Ok(())
@@ -5908,15 +5853,15 @@ impl UpdateApplicationInput {
             _input: &crate::input::UpdateApplicationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_66 = &_input.application_id;
-            let input_66 =
-                input_66
+            let input_60 = &_input.application_id;
+            let input_60 =
+                input_60
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_66, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_60, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
@@ -5948,7 +5893,7 @@ impl UpdateApplicationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -6009,7 +5954,7 @@ impl UpdateApplicationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6156,30 +6101,30 @@ impl UpdateConfigurationProfileInput {
             _input: &crate::input::UpdateConfigurationProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_67 = &_input.application_id;
-            let input_67 =
-                input_67
+            let input_61 = &_input.application_id;
+            let input_61 =
+                input_61
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_67, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_61, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_68 = &_input.configuration_profile_id;
-            let input_68 =
-                input_68
+            let input_62 = &_input.configuration_profile_id;
+            let input_62 =
+                input_62
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_68, false);
+            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_62, false);
             if configuration_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_profile_id",
@@ -6212,7 +6157,7 @@ impl UpdateConfigurationProfileInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -6275,7 +6220,7 @@ impl UpdateConfigurationProfileInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6425,15 +6370,15 @@ impl UpdateDeploymentStrategyInput {
             _input: &crate::input::UpdateDeploymentStrategyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_69 = &_input.deployment_strategy_id;
-            let input_69 =
-                input_69
+            let input_63 = &_input.deployment_strategy_id;
+            let input_63 =
+                input_63
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "deployment_strategy_id",
                         details: "cannot be empty or unset",
                     })?;
-            let deployment_strategy_id = aws_smithy_http::label::fmt_string(input_69, false);
+            let deployment_strategy_id = aws_smithy_http::label::fmt_string(input_63, false);
             if deployment_strategy_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "deployment_strategy_id",
@@ -6465,7 +6410,7 @@ impl UpdateDeploymentStrategyInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -6528,7 +6473,7 @@ impl UpdateDeploymentStrategyInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6659,30 +6604,30 @@ impl UpdateEnvironmentInput {
             _input: &crate::input::UpdateEnvironmentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_70 = &_input.application_id;
-            let input_70 =
-                input_70
+            let input_64 = &_input.application_id;
+            let input_64 =
+                input_64
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_70, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_64, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_71 = &_input.environment_id;
-            let input_71 =
-                input_71
+            let input_65 = &_input.environment_id;
+            let input_65 =
+                input_65
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "environment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let environment_id = aws_smithy_http::label::fmt_string(input_71, false);
+            let environment_id = aws_smithy_http::label::fmt_string(input_65, false);
             if environment_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "environment_id",
@@ -6715,7 +6660,7 @@ impl UpdateEnvironmentInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -6776,7 +6721,7 @@ impl UpdateEnvironmentInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6877,30 +6822,30 @@ impl ValidateConfigurationInput {
             _input: &crate::input::ValidateConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_72 = &_input.application_id;
-            let input_72 =
-                input_72
+            let input_66 = &_input.application_id;
+            let input_66 =
+                input_66
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let application_id = aws_smithy_http::label::fmt_string(input_72, false);
+            let application_id = aws_smithy_http::label::fmt_string(input_66, false);
             if application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_73 = &_input.configuration_profile_id;
-            let input_73 =
-                input_73
+            let input_67 = &_input.configuration_profile_id;
+            let input_67 =
+                input_67
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "configuration_profile_id",
                         details: "cannot be empty or unset",
                     })?;
-            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_73, false);
+            let configuration_profile_id = aws_smithy_http::label::fmt_string(input_67, false);
             if configuration_profile_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "configuration_profile_id",
@@ -6915,10 +6860,10 @@ impl ValidateConfigurationInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_74) = &_input.configuration_version {
+            if let Some(inner_68) = &_input.configuration_version {
                 query.push_kv(
                     "configuration_version",
-                    &aws_smithy_http::query::fmt_string(&inner_74),
+                    &aws_smithy_http::query::fmt_string(&inner_68),
                 );
             }
             Ok(())

@@ -72,6 +72,7 @@ pub mod config;
 /// Errors that can occur when calling the service.
 pub mod error;
 mod error_meta;
+mod http_serde;
 mod idempotency_token;
 /// Input structures for operations.
 pub mod input;

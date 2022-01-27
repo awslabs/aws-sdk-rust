@@ -276,7 +276,7 @@ impl CreateDataSetInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -337,7 +337,7 @@ impl CreateDataSetInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -437,7 +437,7 @@ impl CreateEventActionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -498,7 +498,7 @@ impl CreateEventActionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -599,7 +599,7 @@ impl CreateJobInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -657,7 +657,7 @@ impl CreateJobInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -806,7 +806,7 @@ impl CreateRevisionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -867,7 +867,7 @@ impl CreateRevisionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3729,116 +3729,6 @@ impl SendApiAssetInput {
             write!(output, "/v1").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::SendApiAssetInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_31) = &_input.asset_id {
-                let formatted_32 = AsRef::<str>::as_ref(inner_31);
-                if !formatted_32.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_32;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "asset_id",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amzn-dataexchange-asset-id", header_value);
-                }
-            }
-            if let Some(inner_33) = &_input.data_set_id {
-                let formatted_34 = AsRef::<str>::as_ref(inner_33);
-                if !formatted_34.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_34;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "data_set_id",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amzn-dataexchange-data-set-id", header_value);
-                }
-            }
-            if let Some(inner_35) = &_input.method {
-                let formatted_36 = AsRef::<str>::as_ref(inner_35);
-                if !formatted_36.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_36;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "method",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amzn-dataexchange-http-method", header_value);
-                }
-            }
-            if let Some(inner_37) = &_input.path {
-                let formatted_38 = AsRef::<str>::as_ref(inner_37);
-                if !formatted_38.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_38;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "path",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amzn-dataexchange-path", header_value);
-                }
-            }
-            if let Some(inner_39) = &_input.revision_id {
-                let formatted_40 = AsRef::<str>::as_ref(inner_39);
-                if !formatted_40.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_40;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "revision_id",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amzn-dataexchange-revision-id", header_value);
-                }
-            }
-            if let Some(inner_41) = &_input.request_headers {
-                for (k, v) in inner_41 {
-                    use std::str::FromStr;
-                    let header_name = http::header::HeaderName::from_str(&format!(
-                        "{}{}",
-                        "x-amzn-dataexchange-header-", &k
-                    ))
-                    .map_err(|err| {
-                        aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_headers",
-                            details: format!("`{}` cannot be used as a header name: {}", k, err),
-                        }
-                    })?;
-                    use std::convert::TryFrom;
-                    let header_value = AsRef::<str>::as_ref(v);
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_headers",
-                            details: format!("`{}` cannot be used as a header value: {}", v, err),
-                        })?;
-                    builder = builder.header(header_name, header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::SendApiAssetInput,
@@ -3847,7 +3737,7 @@ impl SendApiAssetInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_send_api_asset(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3857,7 +3747,7 @@ impl SendApiAssetInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "text/plain",
@@ -3919,7 +3809,7 @@ impl SendApiAssetInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3985,15 +3875,15 @@ impl StartJobInput {
             _input: &crate::input::StartJobInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_42 = &_input.job_id;
-            let input_42 =
-                input_42
+            let input_31 = &_input.job_id;
+            let input_31 =
+                input_31
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let job_id = aws_smithy_http::label::fmt_string(input_42, false);
+            let job_id = aws_smithy_http::label::fmt_string(input_31, false);
             if job_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
@@ -4162,15 +4052,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_43 = &_input.resource_arn;
-            let input_43 =
-                input_43
+            let input_32 = &_input.resource_arn;
+            let input_32 =
+                input_32
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_43, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_32, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -4198,7 +4088,7 @@ impl TagResourceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -4258,7 +4148,7 @@ impl TagResourceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4347,15 +4237,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_44 = &_input.resource_arn;
-            let input_44 =
-                input_44
+            let input_33 = &_input.resource_arn;
+            let input_33 =
+                input_33
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_44, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_33, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -4371,9 +4261,9 @@ impl UntagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_45) = &_input.tag_keys {
-                for inner_46 in inner_45 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_46));
+            if let Some(inner_34) = &_input.tag_keys {
+                for inner_35 in inner_34 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_35));
                 }
             }
             Ok(())
@@ -4547,45 +4437,45 @@ impl UpdateAssetInput {
             _input: &crate::input::UpdateAssetInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_47 = &_input.data_set_id;
-            let input_47 =
-                input_47
+            let input_36 = &_input.data_set_id;
+            let input_36 =
+                input_36
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "data_set_id",
                         details: "cannot be empty or unset",
                     })?;
-            let data_set_id = aws_smithy_http::label::fmt_string(input_47, false);
+            let data_set_id = aws_smithy_http::label::fmt_string(input_36, false);
             if data_set_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_48 = &_input.revision_id;
-            let input_48 =
-                input_48
+            let input_37 = &_input.revision_id;
+            let input_37 =
+                input_37
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "revision_id",
                         details: "cannot be empty or unset",
                     })?;
-            let revision_id = aws_smithy_http::label::fmt_string(input_48, false);
+            let revision_id = aws_smithy_http::label::fmt_string(input_37, false);
             if revision_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "revision_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_49 = &_input.asset_id;
-            let input_49 =
-                input_49
+            let input_38 = &_input.asset_id;
+            let input_38 =
+                input_38
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "asset_id",
                         details: "cannot be empty or unset",
                     })?;
-            let asset_id = aws_smithy_http::label::fmt_string(input_49, false);
+            let asset_id = aws_smithy_http::label::fmt_string(input_38, false);
             if asset_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
@@ -4619,7 +4509,7 @@ impl UpdateAssetInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -4679,7 +4569,7 @@ impl UpdateAssetInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4771,15 +4661,15 @@ impl UpdateDataSetInput {
             _input: &crate::input::UpdateDataSetInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_50 = &_input.data_set_id;
-            let input_50 =
-                input_50
+            let input_39 = &_input.data_set_id;
+            let input_39 =
+                input_39
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "data_set_id",
                         details: "cannot be empty or unset",
                     })?;
-            let data_set_id = aws_smithy_http::label::fmt_string(input_50, false);
+            let data_set_id = aws_smithy_http::label::fmt_string(input_39, false);
             if data_set_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
@@ -4807,7 +4697,7 @@ impl UpdateDataSetInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -4868,7 +4758,7 @@ impl UpdateDataSetInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4951,15 +4841,15 @@ impl UpdateEventActionInput {
             _input: &crate::input::UpdateEventActionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_51 = &_input.event_action_id;
-            let input_51 =
-                input_51
+            let input_40 = &_input.event_action_id;
+            let input_40 =
+                input_40
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "event_action_id",
                         details: "cannot be empty or unset",
                     })?;
-            let event_action_id = aws_smithy_http::label::fmt_string(input_51, false);
+            let event_action_id = aws_smithy_http::label::fmt_string(input_40, false);
             if event_action_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "event_action_id",
@@ -4991,7 +4881,7 @@ impl UpdateEventActionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -5052,7 +4942,7 @@ impl UpdateEventActionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5156,30 +5046,30 @@ impl UpdateRevisionInput {
             _input: &crate::input::UpdateRevisionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_52 = &_input.data_set_id;
-            let input_52 =
-                input_52
+            let input_41 = &_input.data_set_id;
+            let input_41 =
+                input_41
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "data_set_id",
                         details: "cannot be empty or unset",
                     })?;
-            let data_set_id = aws_smithy_http::label::fmt_string(input_52, false);
+            let data_set_id = aws_smithy_http::label::fmt_string(input_41, false);
             if data_set_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "data_set_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_53 = &_input.revision_id;
-            let input_53 =
-                input_53
+            let input_42 = &_input.revision_id;
+            let input_42 =
+                input_42
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "revision_id",
                         details: "cannot be empty or unset",
                     })?;
-            let revision_id = aws_smithy_http::label::fmt_string(input_53, false);
+            let revision_id = aws_smithy_http::label::fmt_string(input_42, false);
             if revision_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "revision_id",
@@ -5212,7 +5102,7 @@ impl UpdateRevisionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -5273,7 +5163,7 @@ impl UpdateRevisionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

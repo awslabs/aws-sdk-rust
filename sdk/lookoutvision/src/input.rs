@@ -124,29 +124,6 @@ impl CreateDatasetInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateDatasetInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_2) = &_input.client_token {
-                let formatted_3 = AsRef::<str>::as_ref(inner_2);
-                if !formatted_3.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_3;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "client_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amzn-Client-Token", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateDatasetInput,
@@ -155,7 +132,7 @@ impl CreateDatasetInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_create_dataset(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -165,7 +142,7 @@ impl CreateDatasetInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -228,7 +205,7 @@ impl CreateDatasetInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -372,15 +349,15 @@ impl CreateModelInput {
             _input: &crate::input::CreateModelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_4 = &_input.project_name;
-            let input_4 =
-                input_4
+            let input_2 = &_input.project_name;
+            let input_2 =
+                input_2
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_4, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_2, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
@@ -395,29 +372,6 @@ impl CreateModelInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateModelInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_5) = &_input.client_token {
-                let formatted_6 = AsRef::<str>::as_ref(inner_5);
-                if !formatted_6.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_6;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "client_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amzn-Client-Token", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateModelInput,
@@ -426,7 +380,7 @@ impl CreateModelInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_create_model(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -436,7 +390,7 @@ impl CreateModelInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -499,7 +453,7 @@ impl CreateModelInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -586,29 +540,6 @@ impl CreateProjectInput {
             write!(output, "/2020-11-20/projects").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateProjectInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_7) = &_input.client_token {
-                let formatted_8 = AsRef::<str>::as_ref(inner_7);
-                if !formatted_8.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_8;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "client_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amzn-Client-Token", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateProjectInput,
@@ -617,7 +548,7 @@ impl CreateProjectInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_create_project(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -627,7 +558,7 @@ impl CreateProjectInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -690,7 +621,7 @@ impl CreateProjectInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -786,30 +717,30 @@ impl DeleteDatasetInput {
             _input: &crate::input::DeleteDatasetInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_9 = &_input.project_name;
-            let input_9 =
-                input_9
+            let input_3 = &_input.project_name;
+            let input_3 =
+                input_3
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_9, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_3, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_10 = &_input.dataset_type;
-            let input_10 =
-                input_10
+            let input_4 = &_input.dataset_type;
+            let input_4 =
+                input_4
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_type",
                         details: "cannot be empty or unset",
                     })?;
-            let dataset_type = aws_smithy_http::label::fmt_string(input_10, false);
+            let dataset_type = aws_smithy_http::label::fmt_string(input_4, false);
             if dataset_type.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "dataset_type",
@@ -825,29 +756,6 @@ impl DeleteDatasetInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteDatasetInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_11) = &_input.client_token {
-                let formatted_12 = AsRef::<str>::as_ref(inner_11);
-                if !formatted_12.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_12;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "client_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amzn-Client-Token", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteDatasetInput,
@@ -856,7 +764,7 @@ impl DeleteDatasetInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_dataset(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1015,30 +923,30 @@ impl DeleteModelInput {
             _input: &crate::input::DeleteModelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_13 = &_input.project_name;
-            let input_13 =
-                input_13
+            let input_5 = &_input.project_name;
+            let input_5 =
+                input_5
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_13, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_5, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_14 = &_input.model_version;
-            let input_14 =
-                input_14
+            let input_6 = &_input.model_version;
+            let input_6 =
+                input_6
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "model_version",
                         details: "cannot be empty or unset",
                     })?;
-            let model_version = aws_smithy_http::label::fmt_string(input_14, false);
+            let model_version = aws_smithy_http::label::fmt_string(input_6, false);
             if model_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "model_version",
@@ -1054,29 +962,6 @@ impl DeleteModelInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteModelInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_15) = &_input.client_token {
-                let formatted_16 = AsRef::<str>::as_ref(inner_15);
-                if !formatted_16.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_16;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "client_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amzn-Client-Token", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteModelInput,
@@ -1085,7 +970,7 @@ impl DeleteModelInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_model(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1229,15 +1114,15 @@ impl DeleteProjectInput {
             _input: &crate::input::DeleteProjectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_17 = &_input.project_name;
-            let input_17 =
-                input_17
+            let input_7 = &_input.project_name;
+            let input_7 =
+                input_7
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_17, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_7, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
@@ -1252,29 +1137,6 @@ impl DeleteProjectInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteProjectInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_18) = &_input.client_token {
-                let formatted_19 = AsRef::<str>::as_ref(inner_18);
-                if !formatted_19.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_19;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "client_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amzn-Client-Token", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteProjectInput,
@@ -1283,7 +1145,7 @@ impl DeleteProjectInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_project(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1423,30 +1285,30 @@ impl DescribeDatasetInput {
             _input: &crate::input::DescribeDatasetInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_20 = &_input.project_name;
-            let input_20 =
-                input_20
+            let input_8 = &_input.project_name;
+            let input_8 =
+                input_8
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_20, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_8, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_21 = &_input.dataset_type;
-            let input_21 =
-                input_21
+            let input_9 = &_input.dataset_type;
+            let input_9 =
+                input_9
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_type",
                         details: "cannot be empty or unset",
                     })?;
-            let dataset_type = aws_smithy_http::label::fmt_string(input_21, false);
+            let dataset_type = aws_smithy_http::label::fmt_string(input_9, false);
             if dataset_type.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "dataset_type",
@@ -1609,30 +1471,30 @@ impl DescribeModelInput {
             _input: &crate::input::DescribeModelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_22 = &_input.project_name;
-            let input_22 =
-                input_22
+            let input_10 = &_input.project_name;
+            let input_10 =
+                input_10
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_22, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_10, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_23 = &_input.model_version;
-            let input_23 =
-                input_23
+            let input_11 = &_input.model_version;
+            let input_11 =
+                input_11
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "model_version",
                         details: "cannot be empty or unset",
                     })?;
-            let model_version = aws_smithy_http::label::fmt_string(input_23, false);
+            let model_version = aws_smithy_http::label::fmt_string(input_11, false);
             if model_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "model_version",
@@ -1793,30 +1655,30 @@ impl DescribeModelPackagingJobInput {
             _input: &crate::input::DescribeModelPackagingJobInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_24 = &_input.project_name;
-            let input_24 =
-                input_24
+            let input_12 = &_input.project_name;
+            let input_12 =
+                input_12
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_24, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_12, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_25 = &_input.job_name;
-            let input_25 =
-                input_25
+            let input_13 = &_input.job_name;
+            let input_13 =
+                input_13
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_name",
                         details: "cannot be empty or unset",
                     })?;
-            let job_name = aws_smithy_http::label::fmt_string(input_25, false);
+            let job_name = aws_smithy_http::label::fmt_string(input_13, false);
             if job_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "job_name",
@@ -1964,15 +1826,15 @@ impl DescribeProjectInput {
             _input: &crate::input::DescribeProjectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_26 = &_input.project_name;
-            let input_26 =
-                input_26
+            let input_14 = &_input.project_name;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_26, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_14, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
@@ -2161,30 +2023,30 @@ impl DetectAnomaliesInput {
             _input: &crate::input::DetectAnomaliesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_27 = &_input.project_name;
-            let input_27 =
-                input_27
+            let input_15 = &_input.project_name;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_27, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_15, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_28 = &_input.model_version;
-            let input_28 =
-                input_28
+            let input_16 = &_input.model_version;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "model_version",
                         details: "cannot be empty or unset",
                     })?;
-            let model_version = aws_smithy_http::label::fmt_string(input_28, false);
+            let model_version = aws_smithy_http::label::fmt_string(input_16, false);
             if model_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "model_version",
@@ -2200,29 +2062,6 @@ impl DetectAnomaliesInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DetectAnomaliesInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_29) = &_input.content_type {
-                let formatted_30 = AsRef::<str>::as_ref(inner_29);
-                if !formatted_30.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_30;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_type",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Type", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DetectAnomaliesInput,
@@ -2231,7 +2070,7 @@ impl DetectAnomaliesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_detect_anomalies(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2241,7 +2080,7 @@ impl DetectAnomaliesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
@@ -2301,7 +2140,7 @@ impl DetectAnomaliesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2477,30 +2316,30 @@ impl ListDatasetEntriesInput {
             _input: &crate::input::ListDatasetEntriesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_31 = &_input.project_name;
-            let input_31 =
-                input_31
+            let input_17 = &_input.project_name;
+            let input_17 =
+                input_17
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_31, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_17, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_32 = &_input.dataset_type;
-            let input_32 =
-                input_32
+            let input_18 = &_input.dataset_type;
+            let input_18 =
+                input_18
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_type",
                         details: "cannot be empty or unset",
                     })?;
-            let dataset_type = aws_smithy_http::label::fmt_string(input_32, false);
+            let dataset_type = aws_smithy_http::label::fmt_string(input_18, false);
             if dataset_type.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "dataset_type",
@@ -2521,49 +2360,49 @@ impl ListDatasetEntriesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_33) = &_input.labeled {
+            if let Some(inner_19) = &_input.labeled {
                 query.push_kv(
                     "labeled",
-                    aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_19).encode(),
                 );
             }
-            if let Some(inner_34) = &_input.anomaly_class {
+            if let Some(inner_20) = &_input.anomaly_class {
                 query.push_kv(
                     "anomalyClass",
-                    &aws_smithy_http::query::fmt_string(&inner_34),
+                    &aws_smithy_http::query::fmt_string(&inner_20),
                 );
             }
-            if let Some(inner_35) = &_input.before_creation_date {
+            if let Some(inner_21) = &_input.before_creation_date {
                 query.push_kv(
                     "createdBefore",
                     &aws_smithy_http::query::fmt_timestamp(
-                        inner_35,
+                        inner_21,
                         aws_smithy_types::date_time::Format::DateTime,
                     )?,
                 );
             }
-            if let Some(inner_36) = &_input.after_creation_date {
+            if let Some(inner_22) = &_input.after_creation_date {
                 query.push_kv(
                     "createdAfter",
                     &aws_smithy_http::query::fmt_timestamp(
-                        inner_36,
+                        inner_22,
                         aws_smithy_types::date_time::Format::DateTime,
                     )?,
                 );
             }
-            if let Some(inner_37) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+            if let Some(inner_23) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_23));
             }
-            if let Some(inner_38) = &_input.max_results {
+            if let Some(inner_24) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_38).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_24).encode(),
                 );
             }
-            if let Some(inner_39) = &_input.source_ref_contains {
+            if let Some(inner_25) = &_input.source_ref_contains {
                 query.push_kv(
                     "sourceRefContains",
-                    &aws_smithy_http::query::fmt_string(&inner_39),
+                    &aws_smithy_http::query::fmt_string(&inner_25),
                 );
             }
             Ok(())
@@ -2725,15 +2564,15 @@ impl ListModelPackagingJobsInput {
             _input: &crate::input::ListModelPackagingJobsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_40 = &_input.project_name;
-            let input_40 =
-                input_40
+            let input_26 = &_input.project_name;
+            let input_26 =
+                input_26
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_40, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_26, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
@@ -2753,13 +2592,13 @@ impl ListModelPackagingJobsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_41) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_41));
+            if let Some(inner_27) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_27));
             }
-            if let Some(inner_42) = &_input.max_results {
+            if let Some(inner_28) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
                 );
             }
             Ok(())
@@ -2921,15 +2760,15 @@ impl ListModelsInput {
             _input: &crate::input::ListModelsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_43 = &_input.project_name;
-            let input_43 =
-                input_43
+            let input_29 = &_input.project_name;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_43, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_29, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
@@ -2949,13 +2788,13 @@ impl ListModelsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_44) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
+            if let Some(inner_30) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
             }
-            if let Some(inner_45) = &_input.max_results {
+            if let Some(inner_31) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_45).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
                 );
             }
             Ok(())
@@ -3113,13 +2952,13 @@ impl ListProjectsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_46) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_46));
+            if let Some(inner_32) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
             }
-            if let Some(inner_47) = &_input.max_results {
+            if let Some(inner_33) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_47).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
                 );
             }
             Ok(())
@@ -3257,15 +3096,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_48 = &_input.resource_arn;
-            let input_48 =
-                input_48
+            let input_34 = &_input.resource_arn;
+            let input_34 =
+                input_34
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_48, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_34, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -3455,30 +3294,30 @@ impl StartModelInput {
             _input: &crate::input::StartModelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_49 = &_input.project_name;
-            let input_49 =
-                input_49
+            let input_35 = &_input.project_name;
+            let input_35 =
+                input_35
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_49, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_35, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_50 = &_input.model_version;
-            let input_50 =
-                input_50
+            let input_36 = &_input.model_version;
+            let input_36 =
+                input_36
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "model_version",
                         details: "cannot be empty or unset",
                     })?;
-            let model_version = aws_smithy_http::label::fmt_string(input_50, false);
+            let model_version = aws_smithy_http::label::fmt_string(input_36, false);
             if model_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "model_version",
@@ -3494,29 +3333,6 @@ impl StartModelInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::StartModelInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_51) = &_input.client_token {
-                let formatted_52 = AsRef::<str>::as_ref(inner_51);
-                if !formatted_52.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_52;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "client_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amzn-Client-Token", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::StartModelInput,
@@ -3525,7 +3341,7 @@ impl StartModelInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_start_model(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3535,7 +3351,7 @@ impl StartModelInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -3598,7 +3414,7 @@ impl StartModelInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3736,15 +3552,15 @@ impl StartModelPackagingJobInput {
             _input: &crate::input::StartModelPackagingJobInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_53 = &_input.project_name;
-            let input_53 =
-                input_53
+            let input_37 = &_input.project_name;
+            let input_37 =
+                input_37
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_53, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_37, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
@@ -3759,29 +3575,6 @@ impl StartModelPackagingJobInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::StartModelPackagingJobInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_54) = &_input.client_token {
-                let formatted_55 = AsRef::<str>::as_ref(inner_54);
-                if !formatted_55.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_55;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "client_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amzn-Client-Token", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::StartModelPackagingJobInput,
@@ -3790,7 +3583,7 @@ impl StartModelPackagingJobInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_start_model_packaging_job(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3800,7 +3593,7 @@ impl StartModelPackagingJobInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -3866,7 +3659,7 @@ impl StartModelPackagingJobInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3963,30 +3756,30 @@ impl StopModelInput {
             _input: &crate::input::StopModelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_56 = &_input.project_name;
-            let input_56 =
-                input_56
+            let input_38 = &_input.project_name;
+            let input_38 =
+                input_38
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_56, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_38, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_57 = &_input.model_version;
-            let input_57 =
-                input_57
+            let input_39 = &_input.model_version;
+            let input_39 =
+                input_39
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "model_version",
                         details: "cannot be empty or unset",
                     })?;
-            let model_version = aws_smithy_http::label::fmt_string(input_57, false);
+            let model_version = aws_smithy_http::label::fmt_string(input_39, false);
             if model_version.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "model_version",
@@ -4002,29 +3795,6 @@ impl StopModelInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::StopModelInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_58) = &_input.client_token {
-                let formatted_59 = AsRef::<str>::as_ref(inner_58);
-                if !formatted_59.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_59;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "client_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amzn-Client-Token", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::StopModelInput,
@@ -4033,7 +3803,7 @@ impl StopModelInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_stop_model(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4180,15 +3950,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_60 = &_input.resource_arn;
-            let input_60 =
-                input_60
+            let input_40 = &_input.resource_arn;
+            let input_40 =
+                input_40
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_60, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -4220,7 +3990,7 @@ impl TagResourceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -4280,7 +4050,7 @@ impl TagResourceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4369,15 +4139,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_61 = &_input.resource_arn;
-            let input_61 =
-                input_61
+            let input_41 = &_input.resource_arn;
+            let input_41 =
+                input_41
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_61, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_41, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -4397,9 +4167,9 @@ impl UntagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_62) = &_input.tag_keys {
-                for inner_63 in inner_62 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_63));
+            if let Some(inner_42) = &_input.tag_keys {
+                for inner_43 in inner_42 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_43));
                 }
             }
             Ok(())
@@ -4577,30 +4347,30 @@ impl UpdateDatasetEntriesInput {
             _input: &crate::input::UpdateDatasetEntriesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_64 = &_input.project_name;
-            let input_64 =
-                input_64
+            let input_44 = &_input.project_name;
+            let input_44 =
+                input_44
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "project_name",
                         details: "cannot be empty or unset",
                     })?;
-            let project_name = aws_smithy_http::label::fmt_string(input_64, false);
+            let project_name = aws_smithy_http::label::fmt_string(input_44, false);
             if project_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "project_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_65 = &_input.dataset_type;
-            let input_65 =
-                input_65
+            let input_45 = &_input.dataset_type;
+            let input_45 =
+                input_45
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "dataset_type",
                         details: "cannot be empty or unset",
                     })?;
-            let dataset_type = aws_smithy_http::label::fmt_string(input_65, false);
+            let dataset_type = aws_smithy_http::label::fmt_string(input_45, false);
             if dataset_type.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "dataset_type",
@@ -4616,29 +4386,6 @@ impl UpdateDatasetEntriesInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::UpdateDatasetEntriesInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_66) = &_input.client_token {
-                let formatted_67 = AsRef::<str>::as_ref(inner_66);
-                if !formatted_67.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_67;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "client_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amzn-Client-Token", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateDatasetEntriesInput,
@@ -4647,7 +4394,7 @@ impl UpdateDatasetEntriesInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_update_dataset_entries(input, builder)?;
             Ok(builder.method("PATCH").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4657,7 +4404,7 @@ impl UpdateDatasetEntriesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -4723,7 +4470,7 @@ impl UpdateDatasetEntriesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

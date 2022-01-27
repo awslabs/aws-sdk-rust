@@ -146,53 +146,14 @@ impl AbortMultipartUploadInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::AbortMultipartUploadInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_3) = &_input.request_payer {
-                let formatted_4 = AsRef::<str>::as_ref(inner_3);
-                if !formatted_4.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_4;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_5) = &_input.expected_bucket_owner {
-                let formatted_6 = AsRef::<str>::as_ref(inner_5);
-                if !formatted_6.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_6;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::AbortMultipartUploadInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_kv("x-id", "AbortMultipartUpload");
-            if let Some(inner_7) = &_input.upload_id {
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_7));
+            if let Some(inner_3) = &_input.upload_id {
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_3));
             }
             Ok(())
         }
@@ -205,7 +166,7 @@ impl AbortMultipartUploadInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_abort_multipart_upload(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -406,30 +367,30 @@ impl CompleteMultipartUploadInput {
             _input: &crate::input::CompleteMultipartUploadInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_8 = &_input.bucket;
-            let input_8 =
-                input_8
+            let input_4 = &_input.bucket;
+            let input_4 =
+                input_4
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_8, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_4, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_9 = &_input.key;
-            let input_9 =
-                input_9
+            let input_5 = &_input.key;
+            let input_5 =
+                input_5
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_9, true);
+            let key = aws_smithy_http::label::fmt_string(input_5, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -440,53 +401,14 @@ impl CompleteMultipartUploadInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CompleteMultipartUploadInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_10) = &_input.request_payer {
-                let formatted_11 = AsRef::<str>::as_ref(inner_10);
-                if !formatted_11.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_11;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_12) = &_input.expected_bucket_owner {
-                let formatted_13 = AsRef::<str>::as_ref(inner_12);
-                if !formatted_13.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_13;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::CompleteMultipartUploadInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_kv("x-id", "CompleteMultipartUpload");
-            if let Some(inner_14) = &_input.upload_id {
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_14));
+            if let Some(inner_6) = &_input.upload_id {
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_6));
             }
             Ok(())
         }
@@ -499,7 +421,7 @@ impl CompleteMultipartUploadInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_complete_multipart_upload(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -509,7 +431,7 @@ impl CompleteMultipartUploadInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -573,7 +495,7 @@ impl CompleteMultipartUploadInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1313,30 +1235,30 @@ impl CopyObjectInput {
             _input: &crate::input::CopyObjectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_15 = &_input.bucket;
-            let input_15 =
-                input_15
+            let input_7 = &_input.bucket;
+            let input_7 =
+                input_7
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_15, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_7, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_16 = &_input.key;
-            let input_16 =
-                input_16
+            let input_8 = &_input.key;
+            let input_8 =
+                input_8
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_16, true);
+            let key = aws_smithy_http::label::fmt_string(input_8, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -1346,651 +1268,6 @@ impl CopyObjectInput {
             write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                 .expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::CopyObjectInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_17) = &_input.acl {
-                let formatted_18 = AsRef::<str>::as_ref(inner_17);
-                if !formatted_18.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_18;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "acl",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-acl", header_value);
-                }
-            }
-            if let Some(inner_19) = &_input.cache_control {
-                let formatted_20 = AsRef::<str>::as_ref(inner_19);
-                if !formatted_20.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_20;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "cache_control",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Cache-Control", header_value);
-                }
-            }
-            if let Some(inner_21) = &_input.content_disposition {
-                let formatted_22 = AsRef::<str>::as_ref(inner_21);
-                if !formatted_22.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_22;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_disposition",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Disposition", header_value);
-                }
-            }
-            if let Some(inner_23) = &_input.content_encoding {
-                let formatted_24 = AsRef::<str>::as_ref(inner_23);
-                if !formatted_24.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_24;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_encoding",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Encoding", header_value);
-                }
-            }
-            if let Some(inner_25) = &_input.content_language {
-                let formatted_26 = AsRef::<str>::as_ref(inner_25);
-                if !formatted_26.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_26;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_language",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Language", header_value);
-                }
-            }
-            if let Some(inner_27) = &_input.content_type {
-                let formatted_28 = AsRef::<str>::as_ref(inner_27);
-                if !formatted_28.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_28;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_type",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Type", header_value);
-                }
-            }
-            if let Some(inner_29) = &_input.copy_source {
-                let formatted_30 = AsRef::<str>::as_ref(inner_29);
-                if !formatted_30.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_30;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-copy-source", header_value);
-                }
-            }
-            if let Some(inner_31) = &_input.copy_source_if_match {
-                let formatted_32 = AsRef::<str>::as_ref(inner_31);
-                if !formatted_32.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_32;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_if_match",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-copy-source-if-match", header_value);
-                }
-            }
-            if let Some(inner_33) = &_input.copy_source_if_modified_since {
-                let formatted_34 = inner_33.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
-                if !formatted_34.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_34;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_if_modified_since",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-copy-source-if-modified-since", header_value);
-                }
-            }
-            if let Some(inner_35) = &_input.copy_source_if_none_match {
-                let formatted_36 = AsRef::<str>::as_ref(inner_35);
-                if !formatted_36.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_36;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_if_none_match",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-copy-source-if-none-match", header_value);
-                }
-            }
-            if let Some(inner_37) = &_input.copy_source_if_unmodified_since {
-                let formatted_38 = inner_37.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
-                if !formatted_38.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_38;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_if_unmodified_since",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-copy-source-if-unmodified-since", header_value);
-                }
-            }
-            if let Some(inner_39) = &_input.expires {
-                let formatted_40 = inner_39.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
-                if !formatted_40.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_40;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expires",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Expires", header_value);
-                }
-            }
-            if let Some(inner_41) = &_input.grant_full_control {
-                let formatted_42 = AsRef::<str>::as_ref(inner_41);
-                if !formatted_42.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_42;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_full_control",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-full-control", header_value);
-                }
-            }
-            if let Some(inner_43) = &_input.grant_read {
-                let formatted_44 = AsRef::<str>::as_ref(inner_43);
-                if !formatted_44.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_44;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_read",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-read", header_value);
-                }
-            }
-            if let Some(inner_45) = &_input.grant_read_acp {
-                let formatted_46 = AsRef::<str>::as_ref(inner_45);
-                if !formatted_46.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_46;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_read_acp",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-read-acp", header_value);
-                }
-            }
-            if let Some(inner_47) = &_input.grant_write_acp {
-                let formatted_48 = AsRef::<str>::as_ref(inner_47);
-                if !formatted_48.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_48;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_write_acp",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-write-acp", header_value);
-                }
-            }
-            if let Some(inner_49) = &_input.metadata_directive {
-                let formatted_50 = AsRef::<str>::as_ref(inner_49);
-                if !formatted_50.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_50;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "metadata_directive",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-metadata-directive", header_value);
-                }
-            }
-            if let Some(inner_51) = &_input.tagging_directive {
-                let formatted_52 = AsRef::<str>::as_ref(inner_51);
-                if !formatted_52.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_52;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "tagging_directive",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-tagging-directive", header_value);
-                }
-            }
-            if let Some(inner_53) = &_input.server_side_encryption {
-                let formatted_54 = AsRef::<str>::as_ref(inner_53);
-                if !formatted_54.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_54;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "server_side_encryption",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-server-side-encryption", header_value);
-                }
-            }
-            if let Some(inner_55) = &_input.storage_class {
-                let formatted_56 = AsRef::<str>::as_ref(inner_55);
-                if !formatted_56.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_56;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "storage_class",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-storage-class", header_value);
-                }
-            }
-            if let Some(inner_57) = &_input.website_redirect_location {
-                let formatted_58 = AsRef::<str>::as_ref(inner_57);
-                if !formatted_58.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_58;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "website_redirect_location",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-website-redirect-location", header_value);
-                }
-            }
-            if let Some(inner_59) = &_input.sse_customer_algorithm {
-                let formatted_60 = AsRef::<str>::as_ref(inner_59);
-                if !formatted_60.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_60;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_algorithm",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-algorithm",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_61) = &_input.sse_customer_key {
-                let formatted_62 = AsRef::<str>::as_ref(inner_61);
-                if !formatted_62.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_62;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-server-side-encryption-customer-key", header_value);
-                }
-            }
-            if let Some(inner_63) = &_input.sse_customer_key_md5 {
-                let formatted_64 = AsRef::<str>::as_ref(inner_63);
-                if !formatted_64.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_64;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-key-MD5",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_65) = &_input.ssekms_key_id {
-                let formatted_66 = AsRef::<str>::as_ref(inner_65);
-                if !formatted_66.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_66;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "ssekms_key_id",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-server-side-encryption-aws-kms-key-id", header_value);
-                }
-            }
-            if let Some(inner_67) = &_input.ssekms_encryption_context {
-                let formatted_68 = AsRef::<str>::as_ref(inner_67);
-                if !formatted_68.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_68;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "ssekms_encryption_context",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-server-side-encryption-context", header_value);
-                }
-            }
-            if _input.bucket_key_enabled {
-                let mut encoder =
-                    aws_smithy_types::primitive::Encoder::from(_input.bucket_key_enabled);
-                let formatted_69 = encoder.encode();
-                if !formatted_69.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_69;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "bucket_key_enabled",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-bucket-key-enabled",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_70) = &_input.copy_source_sse_customer_algorithm {
-                let formatted_71 = AsRef::<str>::as_ref(inner_70);
-                if !formatted_71.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_71;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_sse_customer_algorithm",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-copy-source-server-side-encryption-customer-algorithm",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_72) = &_input.copy_source_sse_customer_key {
-                let formatted_73 = AsRef::<str>::as_ref(inner_72);
-                if !formatted_73.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_73;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_sse_customer_key",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-copy-source-server-side-encryption-customer-key",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_74) = &_input.copy_source_sse_customer_key_md5 {
-                let formatted_75 = AsRef::<str>::as_ref(inner_74);
-                if !formatted_75.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_75;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_sse_customer_key_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-copy-source-server-side-encryption-customer-key-MD5",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_76) = &_input.request_payer {
-                let formatted_77 = AsRef::<str>::as_ref(inner_76);
-                if !formatted_77.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_77;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_78) = &_input.tagging {
-                let formatted_79 = AsRef::<str>::as_ref(inner_78);
-                if !formatted_79.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_79;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "tagging",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-tagging", header_value);
-                }
-            }
-            if let Some(inner_80) = &_input.object_lock_mode {
-                let formatted_81 = AsRef::<str>::as_ref(inner_80);
-                if !formatted_81.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_81;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "object_lock_mode",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-object-lock-mode", header_value);
-                }
-            }
-            if let Some(inner_82) = &_input.object_lock_retain_until_date {
-                let formatted_83 = inner_82.fmt(aws_smithy_types::date_time::Format::DateTime)?;
-                if !formatted_83.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_83;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "object_lock_retain_until_date",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-object-lock-retain-until-date", header_value);
-                }
-            }
-            if let Some(inner_84) = &_input.object_lock_legal_hold_status {
-                let formatted_85 = AsRef::<str>::as_ref(inner_84);
-                if !formatted_85.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_85;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "object_lock_legal_hold_status",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-object-lock-legal-hold", header_value);
-                }
-            }
-            if let Some(inner_86) = &_input.expected_bucket_owner {
-                let formatted_87 = AsRef::<str>::as_ref(inner_86);
-                if !formatted_87.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_87;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            if let Some(inner_88) = &_input.expected_source_bucket_owner {
-                let formatted_89 = AsRef::<str>::as_ref(inner_88);
-                if !formatted_89.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_89;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_source_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-source-expected-bucket-owner", header_value);
-                }
-            }
-            if let Some(inner_90) = &_input.metadata {
-                for (k, v) in inner_90 {
-                    use std::str::FromStr;
-                    let header_name =
-                        http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))
-                            .map_err(|err| {
-                                aws_smithy_http::operation::BuildError::InvalidField {
-                                    field: "metadata",
-                                    details: format!(
-                                        "`{}` cannot be used as a header name: {}",
-                                        k, err
-                                    ),
-                                }
-                            })?;
-                    use std::convert::TryFrom;
-                    let header_value = AsRef::<str>::as_ref(v);
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "metadata",
-                            details: format!("`{}` cannot be used as a header value: {}", v, err),
-                        })?;
-                    builder = builder.header(header_name, header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::CopyObjectInput,
@@ -2009,7 +1286,7 @@ impl CopyObjectInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_copy_object(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2279,15 +1556,15 @@ impl CreateBucketInput {
             _input: &crate::input::CreateBucketInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_91 = &_input.bucket;
-            let input_91 =
-                input_91
+            let input_9 = &_input.bucket;
+            let input_9 =
+                input_9
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_91, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_9, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -2297,144 +1574,6 @@ impl CreateBucketInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateBucketInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_92) = &_input.acl {
-                let formatted_93 = AsRef::<str>::as_ref(inner_92);
-                if !formatted_93.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_93;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "acl",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-acl", header_value);
-                }
-            }
-            if let Some(inner_94) = &_input.grant_full_control {
-                let formatted_95 = AsRef::<str>::as_ref(inner_94);
-                if !formatted_95.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_95;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_full_control",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-full-control", header_value);
-                }
-            }
-            if let Some(inner_96) = &_input.grant_read {
-                let formatted_97 = AsRef::<str>::as_ref(inner_96);
-                if !formatted_97.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_97;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_read",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-read", header_value);
-                }
-            }
-            if let Some(inner_98) = &_input.grant_read_acp {
-                let formatted_99 = AsRef::<str>::as_ref(inner_98);
-                if !formatted_99.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_99;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_read_acp",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-read-acp", header_value);
-                }
-            }
-            if let Some(inner_100) = &_input.grant_write {
-                let formatted_101 = AsRef::<str>::as_ref(inner_100);
-                if !formatted_101.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_101;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_write",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-write", header_value);
-                }
-            }
-            if let Some(inner_102) = &_input.grant_write_acp {
-                let formatted_103 = AsRef::<str>::as_ref(inner_102);
-                if !formatted_103.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_103;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_write_acp",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-write-acp", header_value);
-                }
-            }
-            if _input.object_lock_enabled_for_bucket {
-                let mut encoder = aws_smithy_types::primitive::Encoder::from(
-                    _input.object_lock_enabled_for_bucket,
-                );
-                let formatted_104 = encoder.encode();
-                if !formatted_104.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_104;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "object_lock_enabled_for_bucket",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-bucket-object-lock-enabled", header_value);
-                }
-            }
-            if let Some(inner_105) = &_input.object_ownership {
-                let formatted_106 = AsRef::<str>::as_ref(inner_105);
-                if !formatted_106.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_106;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "object_ownership",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-object-ownership", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateBucketInput,
@@ -2443,7 +1582,7 @@ impl CreateBucketInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_create_bucket(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2453,7 +1592,7 @@ impl CreateBucketInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -2517,7 +1656,7 @@ impl CreateBucketInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3024,30 +2163,30 @@ impl CreateMultipartUploadInput {
             _input: &crate::input::CreateMultipartUploadInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_107 = &_input.bucket;
-            let input_107 =
-                input_107
+            let input_10 = &_input.bucket;
+            let input_10 =
+                input_10
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_107, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_10, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_108 = &_input.key;
-            let input_108 =
-                input_108
+            let input_11 = &_input.key;
+            let input_11 =
+                input_11
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_108, true);
+            let key = aws_smithy_http::label::fmt_string(input_11, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -3057,466 +2196,6 @@ impl CreateMultipartUploadInput {
             write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                 .expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::CreateMultipartUploadInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_109) = &_input.acl {
-                let formatted_110 = AsRef::<str>::as_ref(inner_109);
-                if !formatted_110.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_110;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "acl",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-acl", header_value);
-                }
-            }
-            if let Some(inner_111) = &_input.cache_control {
-                let formatted_112 = AsRef::<str>::as_ref(inner_111);
-                if !formatted_112.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_112;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "cache_control",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Cache-Control", header_value);
-                }
-            }
-            if let Some(inner_113) = &_input.content_disposition {
-                let formatted_114 = AsRef::<str>::as_ref(inner_113);
-                if !formatted_114.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_114;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_disposition",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Disposition", header_value);
-                }
-            }
-            if let Some(inner_115) = &_input.content_encoding {
-                let formatted_116 = AsRef::<str>::as_ref(inner_115);
-                if !formatted_116.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_116;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_encoding",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Encoding", header_value);
-                }
-            }
-            if let Some(inner_117) = &_input.content_language {
-                let formatted_118 = AsRef::<str>::as_ref(inner_117);
-                if !formatted_118.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_118;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_language",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Language", header_value);
-                }
-            }
-            if let Some(inner_119) = &_input.content_type {
-                let formatted_120 = AsRef::<str>::as_ref(inner_119);
-                if !formatted_120.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_120;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_type",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Type", header_value);
-                }
-            }
-            if let Some(inner_121) = &_input.expires {
-                let formatted_122 = inner_121.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
-                if !formatted_122.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_122;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expires",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Expires", header_value);
-                }
-            }
-            if let Some(inner_123) = &_input.grant_full_control {
-                let formatted_124 = AsRef::<str>::as_ref(inner_123);
-                if !formatted_124.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_124;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_full_control",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-full-control", header_value);
-                }
-            }
-            if let Some(inner_125) = &_input.grant_read {
-                let formatted_126 = AsRef::<str>::as_ref(inner_125);
-                if !formatted_126.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_126;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_read",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-read", header_value);
-                }
-            }
-            if let Some(inner_127) = &_input.grant_read_acp {
-                let formatted_128 = AsRef::<str>::as_ref(inner_127);
-                if !formatted_128.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_128;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_read_acp",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-read-acp", header_value);
-                }
-            }
-            if let Some(inner_129) = &_input.grant_write_acp {
-                let formatted_130 = AsRef::<str>::as_ref(inner_129);
-                if !formatted_130.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_130;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_write_acp",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-write-acp", header_value);
-                }
-            }
-            if let Some(inner_131) = &_input.server_side_encryption {
-                let formatted_132 = AsRef::<str>::as_ref(inner_131);
-                if !formatted_132.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_132;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "server_side_encryption",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-server-side-encryption", header_value);
-                }
-            }
-            if let Some(inner_133) = &_input.storage_class {
-                let formatted_134 = AsRef::<str>::as_ref(inner_133);
-                if !formatted_134.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_134;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "storage_class",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-storage-class", header_value);
-                }
-            }
-            if let Some(inner_135) = &_input.website_redirect_location {
-                let formatted_136 = AsRef::<str>::as_ref(inner_135);
-                if !formatted_136.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_136;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "website_redirect_location",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-website-redirect-location", header_value);
-                }
-            }
-            if let Some(inner_137) = &_input.sse_customer_algorithm {
-                let formatted_138 = AsRef::<str>::as_ref(inner_137);
-                if !formatted_138.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_138;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_algorithm",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-algorithm",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_139) = &_input.sse_customer_key {
-                let formatted_140 = AsRef::<str>::as_ref(inner_139);
-                if !formatted_140.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_140;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-server-side-encryption-customer-key", header_value);
-                }
-            }
-            if let Some(inner_141) = &_input.sse_customer_key_md5 {
-                let formatted_142 = AsRef::<str>::as_ref(inner_141);
-                if !formatted_142.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_142;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-key-MD5",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_143) = &_input.ssekms_key_id {
-                let formatted_144 = AsRef::<str>::as_ref(inner_143);
-                if !formatted_144.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_144;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "ssekms_key_id",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-server-side-encryption-aws-kms-key-id", header_value);
-                }
-            }
-            if let Some(inner_145) = &_input.ssekms_encryption_context {
-                let formatted_146 = AsRef::<str>::as_ref(inner_145);
-                if !formatted_146.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_146;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "ssekms_encryption_context",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-server-side-encryption-context", header_value);
-                }
-            }
-            if _input.bucket_key_enabled {
-                let mut encoder =
-                    aws_smithy_types::primitive::Encoder::from(_input.bucket_key_enabled);
-                let formatted_147 = encoder.encode();
-                if !formatted_147.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_147;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "bucket_key_enabled",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-bucket-key-enabled",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_148) = &_input.request_payer {
-                let formatted_149 = AsRef::<str>::as_ref(inner_148);
-                if !formatted_149.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_149;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_150) = &_input.tagging {
-                let formatted_151 = AsRef::<str>::as_ref(inner_150);
-                if !formatted_151.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_151;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "tagging",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-tagging", header_value);
-                }
-            }
-            if let Some(inner_152) = &_input.object_lock_mode {
-                let formatted_153 = AsRef::<str>::as_ref(inner_152);
-                if !formatted_153.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_153;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "object_lock_mode",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-object-lock-mode", header_value);
-                }
-            }
-            if let Some(inner_154) = &_input.object_lock_retain_until_date {
-                let formatted_155 = inner_154.fmt(aws_smithy_types::date_time::Format::DateTime)?;
-                if !formatted_155.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_155;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "object_lock_retain_until_date",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-object-lock-retain-until-date", header_value);
-                }
-            }
-            if let Some(inner_156) = &_input.object_lock_legal_hold_status {
-                let formatted_157 = AsRef::<str>::as_ref(inner_156);
-                if !formatted_157.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_157;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "object_lock_legal_hold_status",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-object-lock-legal-hold", header_value);
-                }
-            }
-            if let Some(inner_158) = &_input.expected_bucket_owner {
-                let formatted_159 = AsRef::<str>::as_ref(inner_158);
-                if !formatted_159.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_159;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            if let Some(inner_160) = &_input.metadata {
-                for (k, v) in inner_160 {
-                    use std::str::FromStr;
-                    let header_name =
-                        http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))
-                            .map_err(|err| {
-                                aws_smithy_http::operation::BuildError::InvalidField {
-                                    field: "metadata",
-                                    details: format!(
-                                        "`{}` cannot be used as a header name: {}",
-                                        k, err
-                                    ),
-                                }
-                            })?;
-                    use std::convert::TryFrom;
-                    let header_value = AsRef::<str>::as_ref(v);
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "metadata",
-                            details: format!("`{}` cannot be used as a header value: {}", v, err),
-                        })?;
-                    builder = builder.header(header_name, header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::CreateMultipartUploadInput,
@@ -3536,7 +2215,7 @@ impl CreateMultipartUploadInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_create_multipart_upload(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3678,15 +2357,15 @@ impl DeleteBucketInput {
             _input: &crate::input::DeleteBucketInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_161 = &_input.bucket;
-            let input_161 =
-                input_161
+            let input_12 = &_input.bucket;
+            let input_12 =
+                input_12
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_161, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_12, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -3696,29 +2375,6 @@ impl DeleteBucketInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteBucketInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_162) = &_input.expected_bucket_owner {
-                let formatted_163 = AsRef::<str>::as_ref(inner_162);
-                if !formatted_163.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_163;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteBucketInput,
@@ -3727,7 +2383,7 @@ impl DeleteBucketInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_bucket(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3883,15 +2539,15 @@ impl DeleteBucketAnalyticsConfigurationInput {
             _input: &crate::input::DeleteBucketAnalyticsConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_164 = &_input.bucket;
-            let input_164 =
-                input_164
+            let input_13 = &_input.bucket;
+            let input_13 =
+                input_13
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_164, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_13, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -3901,37 +2557,14 @@ impl DeleteBucketAnalyticsConfigurationInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteBucketAnalyticsConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_165) = &_input.expected_bucket_owner {
-                let formatted_166 = AsRef::<str>::as_ref(inner_165);
-                if !formatted_166.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_166;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DeleteBucketAnalyticsConfigurationInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("analytics");
-            if let Some(inner_167) = &_input.id {
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_167));
+            if let Some(inner_14) = &_input.id {
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_14));
             }
             Ok(())
         }
@@ -3944,7 +2577,9 @@ impl DeleteBucketAnalyticsConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_bucket_analytics_configuration(
+                input, builder,
+            )?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4086,15 +2721,15 @@ impl DeleteBucketCorsInput {
             _input: &crate::input::DeleteBucketCorsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_168 = &_input.bucket;
-            let input_168 =
-                input_168
+            let input_15 = &_input.bucket;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_168, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_15, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -4103,29 +2738,6 @@ impl DeleteBucketCorsInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::DeleteBucketCorsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_169) = &_input.expected_bucket_owner {
-                let formatted_170 = AsRef::<str>::as_ref(inner_169);
-                if !formatted_170.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_170;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::DeleteBucketCorsInput,
@@ -4144,7 +2756,7 @@ impl DeleteBucketCorsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_bucket_cors(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4286,15 +2898,15 @@ impl DeleteBucketEncryptionInput {
             _input: &crate::input::DeleteBucketEncryptionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_171 = &_input.bucket;
-            let input_171 =
-                input_171
+            let input_16 = &_input.bucket;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_171, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_16, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -4303,29 +2915,6 @@ impl DeleteBucketEncryptionInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::DeleteBucketEncryptionInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_172) = &_input.expected_bucket_owner {
-                let formatted_173 = AsRef::<str>::as_ref(inner_172);
-                if !formatted_173.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_173;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::DeleteBucketEncryptionInput,
@@ -4344,7 +2933,7 @@ impl DeleteBucketEncryptionInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_bucket_encryption(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4487,15 +3076,15 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
             _input: &crate::input::DeleteBucketIntelligentTieringConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_174 = &_input.bucket;
-            let input_174 =
-                input_174
+            let input_17 = &_input.bucket;
+            let input_17 =
+                input_17
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_174, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_17, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -4511,8 +3100,8 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("intelligent-tiering");
-            if let Some(inner_175) = &_input.id {
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_175));
+            if let Some(inner_18) = &_input.id {
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_18));
             }
             Ok(())
         }
@@ -4681,15 +3270,15 @@ impl DeleteBucketInventoryConfigurationInput {
             _input: &crate::input::DeleteBucketInventoryConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_176 = &_input.bucket;
-            let input_176 =
-                input_176
+            let input_19 = &_input.bucket;
+            let input_19 =
+                input_19
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_176, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_19, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -4699,37 +3288,14 @@ impl DeleteBucketInventoryConfigurationInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteBucketInventoryConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_177) = &_input.expected_bucket_owner {
-                let formatted_178 = AsRef::<str>::as_ref(inner_177);
-                if !formatted_178.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_178;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DeleteBucketInventoryConfigurationInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("inventory");
-            if let Some(inner_179) = &_input.id {
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_179));
+            if let Some(inner_20) = &_input.id {
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_20));
             }
             Ok(())
         }
@@ -4742,7 +3308,9 @@ impl DeleteBucketInventoryConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_bucket_inventory_configuration(
+                input, builder,
+            )?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4884,15 +3452,15 @@ impl DeleteBucketLifecycleInput {
             _input: &crate::input::DeleteBucketLifecycleInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_180 = &_input.bucket;
-            let input_180 =
-                input_180
+            let input_21 = &_input.bucket;
+            let input_21 =
+                input_21
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_180, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_21, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -4901,29 +3469,6 @@ impl DeleteBucketLifecycleInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::DeleteBucketLifecycleInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_181) = &_input.expected_bucket_owner {
-                let formatted_182 = AsRef::<str>::as_ref(inner_181);
-                if !formatted_182.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_182;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::DeleteBucketLifecycleInput,
@@ -4942,7 +3487,7 @@ impl DeleteBucketLifecycleInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_bucket_lifecycle(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5098,15 +3643,15 @@ impl DeleteBucketMetricsConfigurationInput {
             _input: &crate::input::DeleteBucketMetricsConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_183 = &_input.bucket;
-            let input_183 =
-                input_183
+            let input_22 = &_input.bucket;
+            let input_22 =
+                input_22
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_183, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_22, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -5116,37 +3661,14 @@ impl DeleteBucketMetricsConfigurationInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteBucketMetricsConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_184) = &_input.expected_bucket_owner {
-                let formatted_185 = AsRef::<str>::as_ref(inner_184);
-                if !formatted_185.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_185;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DeleteBucketMetricsConfigurationInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("metrics");
-            if let Some(inner_186) = &_input.id {
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_186));
+            if let Some(inner_23) = &_input.id {
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_23));
             }
             Ok(())
         }
@@ -5159,7 +3681,8 @@ impl DeleteBucketMetricsConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_delete_bucket_metrics_configuration(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5303,15 +3826,15 @@ impl DeleteBucketOwnershipControlsInput {
             _input: &crate::input::DeleteBucketOwnershipControlsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_187 = &_input.bucket;
-            let input_187 =
-                input_187
+            let input_24 = &_input.bucket;
+            let input_24 =
+                input_24
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_187, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_24, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -5320,29 +3843,6 @@ impl DeleteBucketOwnershipControlsInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::DeleteBucketOwnershipControlsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_188) = &_input.expected_bucket_owner {
-                let formatted_189 = AsRef::<str>::as_ref(inner_188);
-                if !formatted_189.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_189;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::DeleteBucketOwnershipControlsInput,
@@ -5361,7 +3861,8 @@ impl DeleteBucketOwnershipControlsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_delete_bucket_ownership_controls(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5503,15 +4004,15 @@ impl DeleteBucketPolicyInput {
             _input: &crate::input::DeleteBucketPolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_190 = &_input.bucket;
-            let input_190 =
-                input_190
+            let input_25 = &_input.bucket;
+            let input_25 =
+                input_25
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_190, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_25, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -5520,29 +4021,6 @@ impl DeleteBucketPolicyInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::DeleteBucketPolicyInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_191) = &_input.expected_bucket_owner {
-                let formatted_192 = AsRef::<str>::as_ref(inner_191);
-                if !formatted_192.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_192;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::DeleteBucketPolicyInput,
@@ -5561,7 +4039,7 @@ impl DeleteBucketPolicyInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_bucket_policy(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5704,15 +4182,15 @@ impl DeleteBucketReplicationInput {
             _input: &crate::input::DeleteBucketReplicationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_193 = &_input.bucket;
-            let input_193 =
-                input_193
+            let input_26 = &_input.bucket;
+            let input_26 =
+                input_26
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_193, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_26, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -5721,29 +4199,6 @@ impl DeleteBucketReplicationInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::DeleteBucketReplicationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_194) = &_input.expected_bucket_owner {
-                let formatted_195 = AsRef::<str>::as_ref(inner_194);
-                if !formatted_195.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_195;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::DeleteBucketReplicationInput,
@@ -5762,7 +4217,7 @@ impl DeleteBucketReplicationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_bucket_replication(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5904,15 +4359,15 @@ impl DeleteBucketTaggingInput {
             _input: &crate::input::DeleteBucketTaggingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_196 = &_input.bucket;
-            let input_196 =
-                input_196
+            let input_27 = &_input.bucket;
+            let input_27 =
+                input_27
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_196, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_27, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -5921,29 +4376,6 @@ impl DeleteBucketTaggingInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::DeleteBucketTaggingInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_197) = &_input.expected_bucket_owner {
-                let formatted_198 = AsRef::<str>::as_ref(inner_197);
-                if !formatted_198.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_198;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::DeleteBucketTaggingInput,
@@ -5962,7 +4394,7 @@ impl DeleteBucketTaggingInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_bucket_tagging(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6104,15 +4536,15 @@ impl DeleteBucketWebsiteInput {
             _input: &crate::input::DeleteBucketWebsiteInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_199 = &_input.bucket;
-            let input_199 =
-                input_199
+            let input_28 = &_input.bucket;
+            let input_28 =
+                input_28
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_199, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_28, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -6121,29 +4553,6 @@ impl DeleteBucketWebsiteInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::DeleteBucketWebsiteInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_200) = &_input.expected_bucket_owner {
-                let formatted_201 = AsRef::<str>::as_ref(inner_200);
-                if !formatted_201.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_201;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::DeleteBucketWebsiteInput,
@@ -6162,7 +4571,7 @@ impl DeleteBucketWebsiteInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_bucket_website(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6371,30 +4780,30 @@ impl DeleteObjectInput {
             _input: &crate::input::DeleteObjectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_202 = &_input.bucket;
-            let input_202 =
-                input_202
+            let input_29 = &_input.bucket;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_202, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_29, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_203 = &_input.key;
-            let input_203 =
-                input_203
+            let input_30 = &_input.key;
+            let input_30 =
+                input_30
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_203, true);
+            let key = aws_smithy_http::label::fmt_string(input_30, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -6405,87 +4814,14 @@ impl DeleteObjectInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteObjectInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_204) = &_input.mfa {
-                let formatted_205 = AsRef::<str>::as_ref(inner_204);
-                if !formatted_205.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_205;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "mfa",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-mfa", header_value);
-                }
-            }
-            if let Some(inner_206) = &_input.request_payer {
-                let formatted_207 = AsRef::<str>::as_ref(inner_206);
-                if !formatted_207.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_207;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if _input.bypass_governance_retention {
-                let mut encoder =
-                    aws_smithy_types::primitive::Encoder::from(_input.bypass_governance_retention);
-                let formatted_208 = encoder.encode();
-                if !formatted_208.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_208;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "bypass_governance_retention",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-bypass-governance-retention", header_value);
-                }
-            }
-            if let Some(inner_209) = &_input.expected_bucket_owner {
-                let formatted_210 = AsRef::<str>::as_ref(inner_209);
-                if !formatted_210.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_210;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DeleteObjectInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_kv("x-id", "DeleteObject");
-            if let Some(inner_211) = &_input.version_id {
-                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_211));
+            if let Some(inner_31) = &_input.version_id {
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_31));
             }
             Ok(())
         }
@@ -6498,7 +4834,7 @@ impl DeleteObjectInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_object(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6695,15 +5031,15 @@ impl DeleteObjectsInput {
             _input: &crate::input::DeleteObjectsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_212 = &_input.bucket;
-            let input_212 =
-                input_212
+            let input_32 = &_input.bucket;
+            let input_32 =
+                input_32
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_212, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_32, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -6712,79 +5048,6 @@ impl DeleteObjectsInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::DeleteObjectsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_213) = &_input.mfa {
-                let formatted_214 = AsRef::<str>::as_ref(inner_213);
-                if !formatted_214.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_214;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "mfa",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-mfa", header_value);
-                }
-            }
-            if let Some(inner_215) = &_input.request_payer {
-                let formatted_216 = AsRef::<str>::as_ref(inner_215);
-                if !formatted_216.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_216;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if _input.bypass_governance_retention {
-                let mut encoder =
-                    aws_smithy_types::primitive::Encoder::from(_input.bypass_governance_retention);
-                let formatted_217 = encoder.encode();
-                if !formatted_217.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_217;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "bypass_governance_retention",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-bypass-governance-retention", header_value);
-                }
-            }
-            if let Some(inner_218) = &_input.expected_bucket_owner {
-                let formatted_219 = AsRef::<str>::as_ref(inner_218);
-                if !formatted_219.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_219;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::DeleteObjectsInput,
@@ -6804,7 +5067,7 @@ impl DeleteObjectsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_objects(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6814,7 +5077,7 @@ impl DeleteObjectsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -6890,7 +5153,7 @@ impl DeleteObjectsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7001,30 +5264,30 @@ impl DeleteObjectTaggingInput {
             _input: &crate::input::DeleteObjectTaggingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_220 = &_input.bucket;
-            let input_220 =
-                input_220
+            let input_33 = &_input.bucket;
+            let input_33 =
+                input_33
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_220, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_33, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_221 = &_input.key;
-            let input_221 =
-                input_221
+            let input_34 = &_input.key;
+            let input_34 =
+                input_34
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_221, true);
+            let key = aws_smithy_http::label::fmt_string(input_34, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -7035,37 +5298,14 @@ impl DeleteObjectTaggingInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteObjectTaggingInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_222) = &_input.expected_bucket_owner {
-                let formatted_223 = AsRef::<str>::as_ref(inner_222);
-                if !formatted_223.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_223;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DeleteObjectTaggingInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("tagging");
-            if let Some(inner_224) = &_input.version_id {
-                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_224));
+            if let Some(inner_35) = &_input.version_id {
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_35));
             }
             Ok(())
         }
@@ -7078,7 +5318,7 @@ impl DeleteObjectTaggingInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_object_tagging(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7221,15 +5461,15 @@ impl DeletePublicAccessBlockInput {
             _input: &crate::input::DeletePublicAccessBlockInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_225 = &_input.bucket;
-            let input_225 =
-                input_225
+            let input_36 = &_input.bucket;
+            let input_36 =
+                input_36
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_225, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_36, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -7238,29 +5478,6 @@ impl DeletePublicAccessBlockInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::DeletePublicAccessBlockInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_226) = &_input.expected_bucket_owner {
-                let formatted_227 = AsRef::<str>::as_ref(inner_226);
-                if !formatted_227.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_227;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::DeletePublicAccessBlockInput,
@@ -7279,7 +5496,8 @@ impl DeletePublicAccessBlockInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_delete_public_access_block(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7423,15 +5641,15 @@ impl GetBucketAccelerateConfigurationInput {
             _input: &crate::input::GetBucketAccelerateConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_228 = &_input.bucket;
-            let input_228 =
-                input_228
+            let input_37 = &_input.bucket;
+            let input_37 =
+                input_37
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_228, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_37, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -7440,29 +5658,6 @@ impl GetBucketAccelerateConfigurationInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketAccelerateConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_229) = &_input.expected_bucket_owner {
-                let formatted_230 = AsRef::<str>::as_ref(inner_229);
-                if !formatted_230.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_230;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketAccelerateConfigurationInput,
@@ -7481,7 +5676,8 @@ impl GetBucketAccelerateConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_get_bucket_accelerate_configuration(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7623,15 +5819,15 @@ impl GetBucketAclInput {
             _input: &crate::input::GetBucketAclInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_231 = &_input.bucket;
-            let input_231 =
-                input_231
+            let input_38 = &_input.bucket;
+            let input_38 =
+                input_38
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_231, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_38, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -7640,29 +5836,6 @@ impl GetBucketAclInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketAclInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_232) = &_input.expected_bucket_owner {
-                let formatted_233 = AsRef::<str>::as_ref(inner_232);
-                if !formatted_233.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_233;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketAclInput,
@@ -7681,7 +5854,7 @@ impl GetBucketAclInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_bucket_acl(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7837,15 +6010,15 @@ impl GetBucketAnalyticsConfigurationInput {
             _input: &crate::input::GetBucketAnalyticsConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_234 = &_input.bucket;
-            let input_234 =
-                input_234
+            let input_39 = &_input.bucket;
+            let input_39 =
+                input_39
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_234, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_39, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -7855,29 +6028,6 @@ impl GetBucketAnalyticsConfigurationInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetBucketAnalyticsConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_235) = &_input.expected_bucket_owner {
-                let formatted_236 = AsRef::<str>::as_ref(inner_235);
-                if !formatted_236.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_236;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::GetBucketAnalyticsConfigurationInput,
             mut output: &mut String,
@@ -7885,8 +6035,8 @@ impl GetBucketAnalyticsConfigurationInput {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("analytics");
             query.push_kv("x-id", "GetBucketAnalyticsConfiguration");
-            if let Some(inner_237) = &_input.id {
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_237));
+            if let Some(inner_40) = &_input.id {
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_40));
             }
             Ok(())
         }
@@ -7899,7 +6049,8 @@ impl GetBucketAnalyticsConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_get_bucket_analytics_configuration(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8041,15 +6192,15 @@ impl GetBucketCorsInput {
             _input: &crate::input::GetBucketCorsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_238 = &_input.bucket;
-            let input_238 =
-                input_238
+            let input_41 = &_input.bucket;
+            let input_41 =
+                input_41
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_238, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_41, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -8058,29 +6209,6 @@ impl GetBucketCorsInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketCorsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_239) = &_input.expected_bucket_owner {
-                let formatted_240 = AsRef::<str>::as_ref(inner_239);
-                if !formatted_240.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_240;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketCorsInput,
@@ -8099,7 +6227,7 @@ impl GetBucketCorsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_bucket_cors(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8241,15 +6369,15 @@ impl GetBucketEncryptionInput {
             _input: &crate::input::GetBucketEncryptionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_241 = &_input.bucket;
-            let input_241 =
-                input_241
+            let input_42 = &_input.bucket;
+            let input_42 =
+                input_42
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_241, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_42, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -8258,29 +6386,6 @@ impl GetBucketEncryptionInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketEncryptionInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_242) = &_input.expected_bucket_owner {
-                let formatted_243 = AsRef::<str>::as_ref(inner_242);
-                if !formatted_243.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_243;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketEncryptionInput,
@@ -8299,7 +6404,7 @@ impl GetBucketEncryptionInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_bucket_encryption(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8442,15 +6547,15 @@ impl GetBucketIntelligentTieringConfigurationInput {
             _input: &crate::input::GetBucketIntelligentTieringConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_244 = &_input.bucket;
-            let input_244 =
-                input_244
+            let input_43 = &_input.bucket;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_244, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_43, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -8467,8 +6572,8 @@ impl GetBucketIntelligentTieringConfigurationInput {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("intelligent-tiering");
             query.push_kv("x-id", "GetBucketIntelligentTieringConfiguration");
-            if let Some(inner_245) = &_input.id {
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_245));
+            if let Some(inner_44) = &_input.id {
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_44));
             }
             Ok(())
         }
@@ -8636,15 +6741,15 @@ impl GetBucketInventoryConfigurationInput {
             _input: &crate::input::GetBucketInventoryConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_246 = &_input.bucket;
-            let input_246 =
-                input_246
+            let input_45 = &_input.bucket;
+            let input_45 =
+                input_45
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_246, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_45, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -8654,29 +6759,6 @@ impl GetBucketInventoryConfigurationInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetBucketInventoryConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_247) = &_input.expected_bucket_owner {
-                let formatted_248 = AsRef::<str>::as_ref(inner_247);
-                if !formatted_248.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_248;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::GetBucketInventoryConfigurationInput,
             mut output: &mut String,
@@ -8684,8 +6766,8 @@ impl GetBucketInventoryConfigurationInput {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("inventory");
             query.push_kv("x-id", "GetBucketInventoryConfiguration");
-            if let Some(inner_249) = &_input.id {
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_249));
+            if let Some(inner_46) = &_input.id {
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_46));
             }
             Ok(())
         }
@@ -8698,7 +6780,8 @@ impl GetBucketInventoryConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_get_bucket_inventory_configuration(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8842,15 +6925,15 @@ impl GetBucketLifecycleConfigurationInput {
             _input: &crate::input::GetBucketLifecycleConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_250 = &_input.bucket;
-            let input_250 =
-                input_250
+            let input_47 = &_input.bucket;
+            let input_47 =
+                input_47
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_250, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_47, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -8859,29 +6942,6 @@ impl GetBucketLifecycleConfigurationInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketLifecycleConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_251) = &_input.expected_bucket_owner {
-                let formatted_252 = AsRef::<str>::as_ref(inner_251);
-                if !formatted_252.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_252;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketLifecycleConfigurationInput,
@@ -8900,7 +6960,8 @@ impl GetBucketLifecycleConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_get_bucket_lifecycle_configuration(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9042,15 +7103,15 @@ impl GetBucketLocationInput {
             _input: &crate::input::GetBucketLocationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_253 = &_input.bucket;
-            let input_253 =
-                input_253
+            let input_48 = &_input.bucket;
+            let input_48 =
+                input_48
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_253, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_48, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -9059,29 +7120,6 @@ impl GetBucketLocationInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketLocationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_254) = &_input.expected_bucket_owner {
-                let formatted_255 = AsRef::<str>::as_ref(inner_254);
-                if !formatted_255.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_255;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketLocationInput,
@@ -9100,7 +7138,7 @@ impl GetBucketLocationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_bucket_location(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9242,15 +7280,15 @@ impl GetBucketLoggingInput {
             _input: &crate::input::GetBucketLoggingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_256 = &_input.bucket;
-            let input_256 =
-                input_256
+            let input_49 = &_input.bucket;
+            let input_49 =
+                input_49
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_256, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_49, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -9259,29 +7297,6 @@ impl GetBucketLoggingInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketLoggingInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_257) = &_input.expected_bucket_owner {
-                let formatted_258 = AsRef::<str>::as_ref(inner_257);
-                if !formatted_258.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_258;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketLoggingInput,
@@ -9300,7 +7315,7 @@ impl GetBucketLoggingInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_bucket_logging(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9456,15 +7471,15 @@ impl GetBucketMetricsConfigurationInput {
             _input: &crate::input::GetBucketMetricsConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_259 = &_input.bucket;
-            let input_259 =
-                input_259
+            let input_50 = &_input.bucket;
+            let input_50 =
+                input_50
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_259, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_50, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -9474,29 +7489,6 @@ impl GetBucketMetricsConfigurationInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetBucketMetricsConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_260) = &_input.expected_bucket_owner {
-                let formatted_261 = AsRef::<str>::as_ref(inner_260);
-                if !formatted_261.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_261;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::GetBucketMetricsConfigurationInput,
             mut output: &mut String,
@@ -9504,8 +7496,8 @@ impl GetBucketMetricsConfigurationInput {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("metrics");
             query.push_kv("x-id", "GetBucketMetricsConfiguration");
-            if let Some(inner_262) = &_input.id {
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_262));
+            if let Some(inner_51) = &_input.id {
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_51));
             }
             Ok(())
         }
@@ -9518,7 +7510,8 @@ impl GetBucketMetricsConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_get_bucket_metrics_configuration(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9662,15 +7655,15 @@ impl GetBucketNotificationConfigurationInput {
             _input: &crate::input::GetBucketNotificationConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_263 = &_input.bucket;
-            let input_263 =
-                input_263
+            let input_52 = &_input.bucket;
+            let input_52 =
+                input_52
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_263, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_52, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -9679,29 +7672,6 @@ impl GetBucketNotificationConfigurationInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketNotificationConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_264) = &_input.expected_bucket_owner {
-                let formatted_265 = AsRef::<str>::as_ref(inner_264);
-                if !formatted_265.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_265;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketNotificationConfigurationInput,
@@ -9720,7 +7690,9 @@ impl GetBucketNotificationConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_bucket_notification_configuration(
+                input, builder,
+            )?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9863,15 +7835,15 @@ impl GetBucketOwnershipControlsInput {
             _input: &crate::input::GetBucketOwnershipControlsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_266 = &_input.bucket;
-            let input_266 =
-                input_266
+            let input_53 = &_input.bucket;
+            let input_53 =
+                input_53
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_266, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_53, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -9880,29 +7852,6 @@ impl GetBucketOwnershipControlsInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketOwnershipControlsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_267) = &_input.expected_bucket_owner {
-                let formatted_268 = AsRef::<str>::as_ref(inner_267);
-                if !formatted_268.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_268;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketOwnershipControlsInput,
@@ -9921,7 +7870,8 @@ impl GetBucketOwnershipControlsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_get_bucket_ownership_controls(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -10063,15 +8013,15 @@ impl GetBucketPolicyInput {
             _input: &crate::input::GetBucketPolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_269 = &_input.bucket;
-            let input_269 =
-                input_269
+            let input_54 = &_input.bucket;
+            let input_54 =
+                input_54
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_269, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_54, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -10080,29 +8030,6 @@ impl GetBucketPolicyInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketPolicyInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_270) = &_input.expected_bucket_owner {
-                let formatted_271 = AsRef::<str>::as_ref(inner_270);
-                if !formatted_271.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_271;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketPolicyInput,
@@ -10121,7 +8048,7 @@ impl GetBucketPolicyInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_bucket_policy(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -10263,15 +8190,15 @@ impl GetBucketPolicyStatusInput {
             _input: &crate::input::GetBucketPolicyStatusInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_272 = &_input.bucket;
-            let input_272 =
-                input_272
+            let input_55 = &_input.bucket;
+            let input_55 =
+                input_55
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_272, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_55, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -10280,29 +8207,6 @@ impl GetBucketPolicyStatusInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketPolicyStatusInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_273) = &_input.expected_bucket_owner {
-                let formatted_274 = AsRef::<str>::as_ref(inner_273);
-                if !formatted_274.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_274;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketPolicyStatusInput,
@@ -10321,7 +8225,7 @@ impl GetBucketPolicyStatusInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_bucket_policy_status(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -10463,15 +8367,15 @@ impl GetBucketReplicationInput {
             _input: &crate::input::GetBucketReplicationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_275 = &_input.bucket;
-            let input_275 =
-                input_275
+            let input_56 = &_input.bucket;
+            let input_56 =
+                input_56
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_275, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_56, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -10480,29 +8384,6 @@ impl GetBucketReplicationInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketReplicationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_276) = &_input.expected_bucket_owner {
-                let formatted_277 = AsRef::<str>::as_ref(inner_276);
-                if !formatted_277.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_277;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketReplicationInput,
@@ -10521,7 +8402,7 @@ impl GetBucketReplicationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_bucket_replication(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -10664,15 +8545,15 @@ impl GetBucketRequestPaymentInput {
             _input: &crate::input::GetBucketRequestPaymentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_278 = &_input.bucket;
-            let input_278 =
-                input_278
+            let input_57 = &_input.bucket;
+            let input_57 =
+                input_57
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_278, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_57, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -10681,29 +8562,6 @@ impl GetBucketRequestPaymentInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketRequestPaymentInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_279) = &_input.expected_bucket_owner {
-                let formatted_280 = AsRef::<str>::as_ref(inner_279);
-                if !formatted_280.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_280;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketRequestPaymentInput,
@@ -10722,7 +8580,8 @@ impl GetBucketRequestPaymentInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_get_bucket_request_payment(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -10864,15 +8723,15 @@ impl GetBucketTaggingInput {
             _input: &crate::input::GetBucketTaggingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_281 = &_input.bucket;
-            let input_281 =
-                input_281
+            let input_58 = &_input.bucket;
+            let input_58 =
+                input_58
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_281, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_58, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -10881,29 +8740,6 @@ impl GetBucketTaggingInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketTaggingInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_282) = &_input.expected_bucket_owner {
-                let formatted_283 = AsRef::<str>::as_ref(inner_282);
-                if !formatted_283.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_283;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketTaggingInput,
@@ -10922,7 +8758,7 @@ impl GetBucketTaggingInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_bucket_tagging(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -11064,15 +8900,15 @@ impl GetBucketVersioningInput {
             _input: &crate::input::GetBucketVersioningInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_284 = &_input.bucket;
-            let input_284 =
-                input_284
+            let input_59 = &_input.bucket;
+            let input_59 =
+                input_59
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_284, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_59, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -11081,29 +8917,6 @@ impl GetBucketVersioningInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketVersioningInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_285) = &_input.expected_bucket_owner {
-                let formatted_286 = AsRef::<str>::as_ref(inner_285);
-                if !formatted_286.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_286;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketVersioningInput,
@@ -11122,7 +8935,7 @@ impl GetBucketVersioningInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_bucket_versioning(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -11264,15 +9077,15 @@ impl GetBucketWebsiteInput {
             _input: &crate::input::GetBucketWebsiteInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_287 = &_input.bucket;
-            let input_287 =
-                input_287
+            let input_60 = &_input.bucket;
+            let input_60 =
+                input_60
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_287, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_60, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -11281,29 +9094,6 @@ impl GetBucketWebsiteInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetBucketWebsiteInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_288) = &_input.expected_bucket_owner {
-                let formatted_289 = AsRef::<str>::as_ref(inner_288);
-                if !formatted_289.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_289;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetBucketWebsiteInput,
@@ -11322,7 +9112,7 @@ impl GetBucketWebsiteInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_bucket_website(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -11772,30 +9562,30 @@ impl GetObjectInput {
             _input: &crate::input::GetObjectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_290 = &_input.bucket;
-            let input_290 =
-                input_290
+            let input_61 = &_input.bucket;
+            let input_61 =
+                input_61
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_290, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_61, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_291 = &_input.key;
-            let input_291 =
-                input_291
+            let input_62 = &_input.key;
+            let input_62 =
+                input_62
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_291, true);
+            let key = aws_smithy_http::label::fmt_string(input_62, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -11806,227 +9596,53 @@ impl GetObjectInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetObjectInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_292) = &_input.if_match {
-                let formatted_293 = AsRef::<str>::as_ref(inner_292);
-                if !formatted_293.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_293;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "if_match",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("If-Match", header_value);
-                }
-            }
-            if let Some(inner_294) = &_input.if_modified_since {
-                let formatted_295 = inner_294.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
-                if !formatted_295.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_295;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "if_modified_since",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("If-Modified-Since", header_value);
-                }
-            }
-            if let Some(inner_296) = &_input.if_none_match {
-                let formatted_297 = AsRef::<str>::as_ref(inner_296);
-                if !formatted_297.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_297;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "if_none_match",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("If-None-Match", header_value);
-                }
-            }
-            if let Some(inner_298) = &_input.if_unmodified_since {
-                let formatted_299 = inner_298.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
-                if !formatted_299.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_299;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "if_unmodified_since",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("If-Unmodified-Since", header_value);
-                }
-            }
-            if let Some(inner_300) = &_input.range {
-                let formatted_301 = AsRef::<str>::as_ref(inner_300);
-                if !formatted_301.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_301;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "range",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Range", header_value);
-                }
-            }
-            if let Some(inner_302) = &_input.sse_customer_algorithm {
-                let formatted_303 = AsRef::<str>::as_ref(inner_302);
-                if !formatted_303.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_303;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_algorithm",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-algorithm",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_304) = &_input.sse_customer_key {
-                let formatted_305 = AsRef::<str>::as_ref(inner_304);
-                if !formatted_305.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_305;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-server-side-encryption-customer-key", header_value);
-                }
-            }
-            if let Some(inner_306) = &_input.sse_customer_key_md5 {
-                let formatted_307 = AsRef::<str>::as_ref(inner_306);
-                if !formatted_307.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_307;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-key-MD5",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_308) = &_input.request_payer {
-                let formatted_309 = AsRef::<str>::as_ref(inner_308);
-                if !formatted_309.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_309;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_310) = &_input.expected_bucket_owner {
-                let formatted_311 = AsRef::<str>::as_ref(inner_310);
-                if !formatted_311.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_311;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::GetObjectInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_kv("x-id", "GetObject");
-            if let Some(inner_312) = &_input.response_cache_control {
+            if let Some(inner_63) = &_input.response_cache_control {
                 query.push_kv(
                     "response-cache-control",
-                    &aws_smithy_http::query::fmt_string(&inner_312),
+                    &aws_smithy_http::query::fmt_string(&inner_63),
                 );
             }
-            if let Some(inner_313) = &_input.response_content_disposition {
+            if let Some(inner_64) = &_input.response_content_disposition {
                 query.push_kv(
                     "response-content-disposition",
-                    &aws_smithy_http::query::fmt_string(&inner_313),
+                    &aws_smithy_http::query::fmt_string(&inner_64),
                 );
             }
-            if let Some(inner_314) = &_input.response_content_encoding {
+            if let Some(inner_65) = &_input.response_content_encoding {
                 query.push_kv(
                     "response-content-encoding",
-                    &aws_smithy_http::query::fmt_string(&inner_314),
+                    &aws_smithy_http::query::fmt_string(&inner_65),
                 );
             }
-            if let Some(inner_315) = &_input.response_content_language {
+            if let Some(inner_66) = &_input.response_content_language {
                 query.push_kv(
                     "response-content-language",
-                    &aws_smithy_http::query::fmt_string(&inner_315),
+                    &aws_smithy_http::query::fmt_string(&inner_66),
                 );
             }
-            if let Some(inner_316) = &_input.response_content_type {
+            if let Some(inner_67) = &_input.response_content_type {
                 query.push_kv(
                     "response-content-type",
-                    &aws_smithy_http::query::fmt_string(&inner_316),
+                    &aws_smithy_http::query::fmt_string(&inner_67),
                 );
             }
-            if let Some(inner_317) = &_input.response_expires {
+            if let Some(inner_68) = &_input.response_expires {
                 query.push_kv(
                     "response-expires",
                     &aws_smithy_http::query::fmt_timestamp(
-                        inner_317,
+                        inner_68,
                         aws_smithy_types::date_time::Format::HttpDate,
                     )?,
                 );
             }
-            if let Some(inner_318) = &_input.version_id {
-                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_318));
+            if let Some(inner_69) = &_input.version_id {
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_69));
             }
             if _input.part_number != 0 {
                 query.push_kv(
@@ -12045,7 +9661,7 @@ impl GetObjectInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_object(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -12223,30 +9839,30 @@ impl GetObjectAclInput {
             _input: &crate::input::GetObjectAclInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_319 = &_input.bucket;
-            let input_319 =
-                input_319
+            let input_70 = &_input.bucket;
+            let input_70 =
+                input_70
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_319, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_70, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_320 = &_input.key;
-            let input_320 =
-                input_320
+            let input_71 = &_input.key;
+            let input_71 =
+                input_71
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_320, true);
+            let key = aws_smithy_http::label::fmt_string(input_71, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -12257,53 +9873,14 @@ impl GetObjectAclInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetObjectAclInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_321) = &_input.request_payer {
-                let formatted_322 = AsRef::<str>::as_ref(inner_321);
-                if !formatted_322.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_322;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_323) = &_input.expected_bucket_owner {
-                let formatted_324 = AsRef::<str>::as_ref(inner_323);
-                if !formatted_324.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_324;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::GetObjectAclInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("acl");
-            if let Some(inner_325) = &_input.version_id {
-                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_325));
+            if let Some(inner_72) = &_input.version_id {
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_72));
             }
             Ok(())
         }
@@ -12316,7 +9893,7 @@ impl GetObjectAclInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_object_acl(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -12499,30 +10076,30 @@ impl GetObjectLegalHoldInput {
             _input: &crate::input::GetObjectLegalHoldInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_326 = &_input.bucket;
-            let input_326 =
-                input_326
+            let input_73 = &_input.bucket;
+            let input_73 =
+                input_73
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_326, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_73, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_327 = &_input.key;
-            let input_327 =
-                input_327
+            let input_74 = &_input.key;
+            let input_74 =
+                input_74
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_327, true);
+            let key = aws_smithy_http::label::fmt_string(input_74, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -12533,53 +10110,14 @@ impl GetObjectLegalHoldInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetObjectLegalHoldInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_328) = &_input.request_payer {
-                let formatted_329 = AsRef::<str>::as_ref(inner_328);
-                if !formatted_329.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_329;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_330) = &_input.expected_bucket_owner {
-                let formatted_331 = AsRef::<str>::as_ref(inner_330);
-                if !formatted_331.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_331;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::GetObjectLegalHoldInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("legal-hold");
-            if let Some(inner_332) = &_input.version_id {
-                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_332));
+            if let Some(inner_75) = &_input.version_id {
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_75));
             }
             Ok(())
         }
@@ -12592,7 +10130,7 @@ impl GetObjectLegalHoldInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_object_legal_hold(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -12737,15 +10275,15 @@ impl GetObjectLockConfigurationInput {
             _input: &crate::input::GetObjectLockConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_333 = &_input.bucket;
-            let input_333 =
-                input_333
+            let input_76 = &_input.bucket;
+            let input_76 =
+                input_76
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_333, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_76, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -12754,29 +10292,6 @@ impl GetObjectLockConfigurationInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetObjectLockConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_334) = &_input.expected_bucket_owner {
-                let formatted_335 = AsRef::<str>::as_ref(inner_334);
-                if !formatted_335.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_335;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetObjectLockConfigurationInput,
@@ -12795,7 +10310,8 @@ impl GetObjectLockConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_get_object_lock_configuration(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -12978,30 +10494,30 @@ impl GetObjectRetentionInput {
             _input: &crate::input::GetObjectRetentionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_336 = &_input.bucket;
-            let input_336 =
-                input_336
+            let input_77 = &_input.bucket;
+            let input_77 =
+                input_77
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_336, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_77, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_337 = &_input.key;
-            let input_337 =
-                input_337
+            let input_78 = &_input.key;
+            let input_78 =
+                input_78
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_337, true);
+            let key = aws_smithy_http::label::fmt_string(input_78, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -13012,53 +10528,14 @@ impl GetObjectRetentionInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetObjectRetentionInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_338) = &_input.request_payer {
-                let formatted_339 = AsRef::<str>::as_ref(inner_338);
-                if !formatted_339.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_339;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_340) = &_input.expected_bucket_owner {
-                let formatted_341 = AsRef::<str>::as_ref(inner_340);
-                if !formatted_341.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_341;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::GetObjectRetentionInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("retention");
-            if let Some(inner_342) = &_input.version_id {
-                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_342));
+            if let Some(inner_79) = &_input.version_id {
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_79));
             }
             Ok(())
         }
@@ -13071,7 +10548,7 @@ impl GetObjectRetentionInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_object_retention(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -13256,30 +10733,30 @@ impl GetObjectTaggingInput {
             _input: &crate::input::GetObjectTaggingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_343 = &_input.bucket;
-            let input_343 =
-                input_343
+            let input_80 = &_input.bucket;
+            let input_80 =
+                input_80
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_343, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_80, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_344 = &_input.key;
-            let input_344 =
-                input_344
+            let input_81 = &_input.key;
+            let input_81 =
+                input_81
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_344, true);
+            let key = aws_smithy_http::label::fmt_string(input_81, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -13290,53 +10767,14 @@ impl GetObjectTaggingInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetObjectTaggingInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_345) = &_input.expected_bucket_owner {
-                let formatted_346 = AsRef::<str>::as_ref(inner_345);
-                if !formatted_346.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_346;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            if let Some(inner_347) = &_input.request_payer {
-                let formatted_348 = AsRef::<str>::as_ref(inner_347);
-                if !formatted_348.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_348;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::GetObjectTaggingInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("tagging");
-            if let Some(inner_349) = &_input.version_id {
-                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_349));
+            if let Some(inner_82) = &_input.version_id {
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_82));
             }
             Ok(())
         }
@@ -13349,7 +10787,7 @@ impl GetObjectTaggingInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_object_tagging(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -13518,30 +10956,30 @@ impl GetObjectTorrentInput {
             _input: &crate::input::GetObjectTorrentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_350 = &_input.bucket;
-            let input_350 =
-                input_350
+            let input_83 = &_input.bucket;
+            let input_83 =
+                input_83
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_350, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_83, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_351 = &_input.key;
-            let input_351 =
-                input_351
+            let input_84 = &_input.key;
+            let input_84 =
+                input_84
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_351, true);
+            let key = aws_smithy_http::label::fmt_string(input_84, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -13551,45 +10989,6 @@ impl GetObjectTorrentInput {
             write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                 .expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetObjectTorrentInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_352) = &_input.request_payer {
-                let formatted_353 = AsRef::<str>::as_ref(inner_352);
-                if !formatted_353.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_353;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_354) = &_input.expected_bucket_owner {
-                let formatted_355 = AsRef::<str>::as_ref(inner_354);
-                if !formatted_355.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_355;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetObjectTorrentInput,
@@ -13608,7 +11007,7 @@ impl GetObjectTorrentInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_object_torrent(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -13750,15 +11149,15 @@ impl GetPublicAccessBlockInput {
             _input: &crate::input::GetPublicAccessBlockInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_356 = &_input.bucket;
-            let input_356 =
-                input_356
+            let input_85 = &_input.bucket;
+            let input_85 =
+                input_85
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_356, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_85, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -13767,29 +11166,6 @@ impl GetPublicAccessBlockInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetPublicAccessBlockInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_357) = &_input.expected_bucket_owner {
-                let formatted_358 = AsRef::<str>::as_ref(inner_357);
-                if !formatted_358.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_358;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetPublicAccessBlockInput,
@@ -13808,7 +11184,7 @@ impl GetPublicAccessBlockInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_public_access_block(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -13954,15 +11330,15 @@ impl HeadBucketInput {
             _input: &crate::input::HeadBucketInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_359 = &_input.bucket;
-            let input_359 =
-                input_359
+            let input_86 = &_input.bucket;
+            let input_86 =
+                input_86
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_359, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_86, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -13972,29 +11348,6 @@ impl HeadBucketInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::HeadBucketInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_360) = &_input.expected_bucket_owner {
-                let formatted_361 = AsRef::<str>::as_ref(inner_360);
-                if !formatted_361.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_361;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::HeadBucketInput,
@@ -14003,7 +11356,7 @@ impl HeadBucketInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_head_bucket(input, builder)?;
             Ok(builder.method("HEAD").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -14314,30 +11667,30 @@ impl HeadObjectInput {
             _input: &crate::input::HeadObjectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_362 = &_input.bucket;
-            let input_362 =
-                input_362
+            let input_87 = &_input.bucket;
+            let input_87 =
+                input_87
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_362, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_87, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_363 = &_input.key;
-            let input_363 =
-                input_363
+            let input_88 = &_input.key;
+            let input_88 =
+                input_88
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_363, true);
+            let key = aws_smithy_http::label::fmt_string(input_88, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -14348,187 +11701,13 @@ impl HeadObjectInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::HeadObjectInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_364) = &_input.if_match {
-                let formatted_365 = AsRef::<str>::as_ref(inner_364);
-                if !formatted_365.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_365;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "if_match",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("If-Match", header_value);
-                }
-            }
-            if let Some(inner_366) = &_input.if_modified_since {
-                let formatted_367 = inner_366.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
-                if !formatted_367.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_367;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "if_modified_since",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("If-Modified-Since", header_value);
-                }
-            }
-            if let Some(inner_368) = &_input.if_none_match {
-                let formatted_369 = AsRef::<str>::as_ref(inner_368);
-                if !formatted_369.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_369;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "if_none_match",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("If-None-Match", header_value);
-                }
-            }
-            if let Some(inner_370) = &_input.if_unmodified_since {
-                let formatted_371 = inner_370.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
-                if !formatted_371.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_371;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "if_unmodified_since",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("If-Unmodified-Since", header_value);
-                }
-            }
-            if let Some(inner_372) = &_input.range {
-                let formatted_373 = AsRef::<str>::as_ref(inner_372);
-                if !formatted_373.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_373;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "range",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Range", header_value);
-                }
-            }
-            if let Some(inner_374) = &_input.sse_customer_algorithm {
-                let formatted_375 = AsRef::<str>::as_ref(inner_374);
-                if !formatted_375.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_375;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_algorithm",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-algorithm",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_376) = &_input.sse_customer_key {
-                let formatted_377 = AsRef::<str>::as_ref(inner_376);
-                if !formatted_377.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_377;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-server-side-encryption-customer-key", header_value);
-                }
-            }
-            if let Some(inner_378) = &_input.sse_customer_key_md5 {
-                let formatted_379 = AsRef::<str>::as_ref(inner_378);
-                if !formatted_379.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_379;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-key-MD5",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_380) = &_input.request_payer {
-                let formatted_381 = AsRef::<str>::as_ref(inner_380);
-                if !formatted_381.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_381;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_382) = &_input.expected_bucket_owner {
-                let formatted_383 = AsRef::<str>::as_ref(inner_382);
-                if !formatted_383.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_383;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::HeadObjectInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_384) = &_input.version_id {
-                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_384));
+            if let Some(inner_89) = &_input.version_id {
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_89));
             }
             if _input.part_number != 0 {
                 query.push_kv(
@@ -14547,7 +11726,7 @@ impl HeadObjectInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_head_object(input, builder)?;
             Ok(builder.method("HEAD").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -14706,15 +11885,15 @@ impl ListBucketAnalyticsConfigurationsInput {
             _input: &crate::input::ListBucketAnalyticsConfigurationsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_385 = &_input.bucket;
-            let input_385 =
-                input_385
+            let input_90 = &_input.bucket;
+            let input_90 =
+                input_90
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_385, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_90, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -14724,29 +11903,6 @@ impl ListBucketAnalyticsConfigurationsInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListBucketAnalyticsConfigurationsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_386) = &_input.expected_bucket_owner {
-                let formatted_387 = AsRef::<str>::as_ref(inner_386);
-                if !formatted_387.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_387;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListBucketAnalyticsConfigurationsInput,
             mut output: &mut String,
@@ -14754,10 +11910,10 @@ impl ListBucketAnalyticsConfigurationsInput {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("analytics");
             query.push_kv("x-id", "ListBucketAnalyticsConfigurations");
-            if let Some(inner_388) = &_input.continuation_token {
+            if let Some(inner_91) = &_input.continuation_token {
                 query.push_kv(
                     "continuation-token",
-                    &aws_smithy_http::query::fmt_string(&inner_388),
+                    &aws_smithy_http::query::fmt_string(&inner_91),
                 );
             }
             Ok(())
@@ -14771,7 +11927,9 @@ impl ListBucketAnalyticsConfigurationsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_list_bucket_analytics_configurations(
+                input, builder,
+            )?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -14917,15 +12075,15 @@ impl ListBucketIntelligentTieringConfigurationsInput {
             _input: &crate::input::ListBucketIntelligentTieringConfigurationsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_389 = &_input.bucket;
-            let input_389 =
-                input_389
+            let input_92 = &_input.bucket;
+            let input_92 =
+                input_92
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_389, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_92, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -14942,10 +12100,10 @@ impl ListBucketIntelligentTieringConfigurationsInput {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("intelligent-tiering");
             query.push_kv("x-id", "ListBucketIntelligentTieringConfigurations");
-            if let Some(inner_390) = &_input.continuation_token {
+            if let Some(inner_93) = &_input.continuation_token {
                 query.push_kv(
                     "continuation-token",
-                    &aws_smithy_http::query::fmt_string(&inner_390),
+                    &aws_smithy_http::query::fmt_string(&inner_93),
                 );
             }
             Ok(())
@@ -15118,15 +12276,15 @@ impl ListBucketInventoryConfigurationsInput {
             _input: &crate::input::ListBucketInventoryConfigurationsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_391 = &_input.bucket;
-            let input_391 =
-                input_391
+            let input_94 = &_input.bucket;
+            let input_94 =
+                input_94
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_391, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_94, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -15136,29 +12294,6 @@ impl ListBucketInventoryConfigurationsInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListBucketInventoryConfigurationsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_392) = &_input.expected_bucket_owner {
-                let formatted_393 = AsRef::<str>::as_ref(inner_392);
-                if !formatted_393.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_393;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListBucketInventoryConfigurationsInput,
             mut output: &mut String,
@@ -15166,10 +12301,10 @@ impl ListBucketInventoryConfigurationsInput {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("inventory");
             query.push_kv("x-id", "ListBucketInventoryConfigurations");
-            if let Some(inner_394) = &_input.continuation_token {
+            if let Some(inner_95) = &_input.continuation_token {
                 query.push_kv(
                     "continuation-token",
-                    &aws_smithy_http::query::fmt_string(&inner_394),
+                    &aws_smithy_http::query::fmt_string(&inner_95),
                 );
             }
             Ok(())
@@ -15183,7 +12318,9 @@ impl ListBucketInventoryConfigurationsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_list_bucket_inventory_configurations(
+                input, builder,
+            )?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -15342,15 +12479,15 @@ impl ListBucketMetricsConfigurationsInput {
             _input: &crate::input::ListBucketMetricsConfigurationsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_395 = &_input.bucket;
-            let input_395 =
-                input_395
+            let input_96 = &_input.bucket;
+            let input_96 =
+                input_96
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_395, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_96, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -15360,29 +12497,6 @@ impl ListBucketMetricsConfigurationsInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListBucketMetricsConfigurationsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_396) = &_input.expected_bucket_owner {
-                let formatted_397 = AsRef::<str>::as_ref(inner_396);
-                if !formatted_397.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_397;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListBucketMetricsConfigurationsInput,
             mut output: &mut String,
@@ -15390,10 +12504,10 @@ impl ListBucketMetricsConfigurationsInput {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("metrics");
             query.push_kv("x-id", "ListBucketMetricsConfigurations");
-            if let Some(inner_398) = &_input.continuation_token {
+            if let Some(inner_97) = &_input.continuation_token {
                 query.push_kv(
                     "continuation-token",
-                    &aws_smithy_http::query::fmt_string(&inner_398),
+                    &aws_smithy_http::query::fmt_string(&inner_97),
                 );
             }
             Ok(())
@@ -15407,7 +12521,8 @@ impl ListBucketMetricsConfigurationsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_list_bucket_metrics_configurations(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -15760,15 +12875,15 @@ impl ListMultipartUploadsInput {
             _input: &crate::input::ListMultipartUploadsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_399 = &_input.bucket;
-            let input_399 =
-                input_399
+            let input_98 = &_input.bucket;
+            let input_98 =
+                input_98
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_399, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_98, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -15778,48 +12893,25 @@ impl ListMultipartUploadsInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListMultipartUploadsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_400) = &_input.expected_bucket_owner {
-                let formatted_401 = AsRef::<str>::as_ref(inner_400);
-                if !formatted_401.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_401;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListMultipartUploadsInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("uploads");
-            if let Some(inner_402) = &_input.delimiter {
-                query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_402));
+            if let Some(inner_99) = &_input.delimiter {
+                query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_99));
             }
-            if let Some(inner_403) = &_input.encoding_type {
+            if let Some(inner_100) = &_input.encoding_type {
                 query.push_kv(
                     "encoding-type",
-                    &aws_smithy_http::query::fmt_string(&inner_403),
+                    &aws_smithy_http::query::fmt_string(&inner_100),
                 );
             }
-            if let Some(inner_404) = &_input.key_marker {
+            if let Some(inner_101) = &_input.key_marker {
                 query.push_kv(
                     "key-marker",
-                    &aws_smithy_http::query::fmt_string(&inner_404),
+                    &aws_smithy_http::query::fmt_string(&inner_101),
                 );
             }
             if _input.max_uploads != 0 {
@@ -15828,13 +12920,13 @@ impl ListMultipartUploadsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_uploads).encode(),
                 );
             }
-            if let Some(inner_405) = &_input.prefix {
-                query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_405));
+            if let Some(inner_102) = &_input.prefix {
+                query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_102));
             }
-            if let Some(inner_406) = &_input.upload_id_marker {
+            if let Some(inner_103) = &_input.upload_id_marker {
                 query.push_kv(
                     "upload-id-marker",
-                    &aws_smithy_http::query::fmt_string(&inner_406),
+                    &aws_smithy_http::query::fmt_string(&inner_103),
                 );
             }
             Ok(())
@@ -15848,7 +12940,7 @@ impl ListMultipartUploadsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_list_multipart_uploads(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -16072,15 +13164,15 @@ impl ListObjectsInput {
             _input: &crate::input::ListObjectsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_407 = &_input.bucket;
-            let input_407 =
-                input_407
+            let input_104 = &_input.bucket;
+            let input_104 =
+                input_104
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_407, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_104, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -16090,61 +13182,22 @@ impl ListObjectsInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListObjectsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_408) = &_input.request_payer {
-                let formatted_409 = AsRef::<str>::as_ref(inner_408);
-                if !formatted_409.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_409;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_410) = &_input.expected_bucket_owner {
-                let formatted_411 = AsRef::<str>::as_ref(inner_410);
-                if !formatted_411.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_411;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListObjectsInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_412) = &_input.delimiter {
-                query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_412));
+            if let Some(inner_105) = &_input.delimiter {
+                query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_105));
             }
-            if let Some(inner_413) = &_input.encoding_type {
+            if let Some(inner_106) = &_input.encoding_type {
                 query.push_kv(
                     "encoding-type",
-                    &aws_smithy_http::query::fmt_string(&inner_413),
+                    &aws_smithy_http::query::fmt_string(&inner_106),
                 );
             }
-            if let Some(inner_414) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_414));
+            if let Some(inner_107) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_107));
             }
             if _input.max_keys != 0 {
                 query.push_kv(
@@ -16152,8 +13205,8 @@ impl ListObjectsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode(),
                 );
             }
-            if let Some(inner_415) = &_input.prefix {
-                query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_415));
+            if let Some(inner_108) = &_input.prefix {
+                query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_108));
             }
             Ok(())
         }
@@ -16166,7 +13219,7 @@ impl ListObjectsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_list_objects(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -16417,15 +13470,15 @@ impl ListObjectsV2Input {
             _input: &crate::input::ListObjectsV2Input,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_416 = &_input.bucket;
-            let input_416 =
-                input_416
+            let input_109 = &_input.bucket;
+            let input_109 =
+                input_109
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_416, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_109, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -16435,58 +13488,19 @@ impl ListObjectsV2Input {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListObjectsV2Input,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_417) = &_input.request_payer {
-                let formatted_418 = AsRef::<str>::as_ref(inner_417);
-                if !formatted_418.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_418;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_419) = &_input.expected_bucket_owner {
-                let formatted_420 = AsRef::<str>::as_ref(inner_419);
-                if !formatted_420.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_420;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListObjectsV2Input,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_kv("list-type", "2");
-            if let Some(inner_421) = &_input.delimiter {
-                query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_421));
+            if let Some(inner_110) = &_input.delimiter {
+                query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_110));
             }
-            if let Some(inner_422) = &_input.encoding_type {
+            if let Some(inner_111) = &_input.encoding_type {
                 query.push_kv(
                     "encoding-type",
-                    &aws_smithy_http::query::fmt_string(&inner_422),
+                    &aws_smithy_http::query::fmt_string(&inner_111),
                 );
             }
             if _input.max_keys != 0 {
@@ -16495,13 +13509,13 @@ impl ListObjectsV2Input {
                     aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode(),
                 );
             }
-            if let Some(inner_423) = &_input.prefix {
-                query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_423));
+            if let Some(inner_112) = &_input.prefix {
+                query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_112));
             }
-            if let Some(inner_424) = &_input.continuation_token {
+            if let Some(inner_113) = &_input.continuation_token {
                 query.push_kv(
                     "continuation-token",
-                    &aws_smithy_http::query::fmt_string(&inner_424),
+                    &aws_smithy_http::query::fmt_string(&inner_113),
                 );
             }
             if _input.fetch_owner {
@@ -16510,10 +13524,10 @@ impl ListObjectsV2Input {
                     aws_smithy_types::primitive::Encoder::from(_input.fetch_owner).encode(),
                 );
             }
-            if let Some(inner_425) = &_input.start_after {
+            if let Some(inner_114) = &_input.start_after {
                 query.push_kv(
                     "start-after",
-                    &aws_smithy_http::query::fmt_string(&inner_425),
+                    &aws_smithy_http::query::fmt_string(&inner_114),
                 );
             }
             Ok(())
@@ -16527,7 +13541,7 @@ impl ListObjectsV2Input {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_list_objects_v2(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -16751,15 +13765,15 @@ impl ListObjectVersionsInput {
             _input: &crate::input::ListObjectVersionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_426 = &_input.bucket;
-            let input_426 =
-                input_426
+            let input_115 = &_input.bucket;
+            let input_115 =
+                input_115
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_426, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_115, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -16769,48 +13783,25 @@ impl ListObjectVersionsInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListObjectVersionsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_427) = &_input.expected_bucket_owner {
-                let formatted_428 = AsRef::<str>::as_ref(inner_427);
-                if !formatted_428.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_428;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListObjectVersionsInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("versions");
-            if let Some(inner_429) = &_input.delimiter {
-                query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_429));
+            if let Some(inner_116) = &_input.delimiter {
+                query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_116));
             }
-            if let Some(inner_430) = &_input.encoding_type {
+            if let Some(inner_117) = &_input.encoding_type {
                 query.push_kv(
                     "encoding-type",
-                    &aws_smithy_http::query::fmt_string(&inner_430),
+                    &aws_smithy_http::query::fmt_string(&inner_117),
                 );
             }
-            if let Some(inner_431) = &_input.key_marker {
+            if let Some(inner_118) = &_input.key_marker {
                 query.push_kv(
                     "key-marker",
-                    &aws_smithy_http::query::fmt_string(&inner_431),
+                    &aws_smithy_http::query::fmt_string(&inner_118),
                 );
             }
             if _input.max_keys != 0 {
@@ -16819,13 +13810,13 @@ impl ListObjectVersionsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode(),
                 );
             }
-            if let Some(inner_432) = &_input.prefix {
-                query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_432));
+            if let Some(inner_119) = &_input.prefix {
+                query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_119));
             }
-            if let Some(inner_433) = &_input.version_id_marker {
+            if let Some(inner_120) = &_input.version_id_marker {
                 query.push_kv(
                     "version-id-marker",
-                    &aws_smithy_http::query::fmt_string(&inner_433),
+                    &aws_smithy_http::query::fmt_string(&inner_120),
                 );
             }
             Ok(())
@@ -16839,7 +13830,7 @@ impl ListObjectVersionsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_list_object_versions(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -17049,30 +14040,30 @@ impl ListPartsInput {
             _input: &crate::input::ListPartsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_434 = &_input.bucket;
-            let input_434 =
-                input_434
+            let input_121 = &_input.bucket;
+            let input_121 =
+                input_121
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_434, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_121, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_435 = &_input.key;
-            let input_435 =
-                input_435
+            let input_122 = &_input.key;
+            let input_122 =
+                input_122
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_435, true);
+            let key = aws_smithy_http::label::fmt_string(input_122, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -17082,45 +14073,6 @@ impl ListPartsInput {
             write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                 .expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::ListPartsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_436) = &_input.request_payer {
-                let formatted_437 = AsRef::<str>::as_ref(inner_436);
-                if !formatted_437.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_437;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_438) = &_input.expected_bucket_owner {
-                let formatted_439 = AsRef::<str>::as_ref(inner_438);
-                if !formatted_439.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_439;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::ListPartsInput,
@@ -17134,14 +14086,14 @@ impl ListPartsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_parts).encode(),
                 );
             }
-            if let Some(inner_440) = &_input.part_number_marker {
+            if let Some(inner_123) = &_input.part_number_marker {
                 query.push_kv(
                     "part-number-marker",
-                    &aws_smithy_http::query::fmt_string(&inner_440),
+                    &aws_smithy_http::query::fmt_string(&inner_123),
                 );
             }
-            if let Some(inner_441) = &_input.upload_id {
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_441));
+            if let Some(inner_124) = &_input.upload_id {
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_124));
             }
             Ok(())
         }
@@ -17154,7 +14106,7 @@ impl ListPartsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_list_parts(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -17312,15 +14264,15 @@ impl PutBucketAccelerateConfigurationInput {
             _input: &crate::input::PutBucketAccelerateConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_442 = &_input.bucket;
-            let input_442 =
-                input_442
+            let input_125 = &_input.bucket;
+            let input_125 =
+                input_125
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_442, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_125, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -17329,29 +14281,6 @@ impl PutBucketAccelerateConfigurationInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutBucketAccelerateConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_443) = &_input.expected_bucket_owner {
-                let formatted_444 = AsRef::<str>::as_ref(inner_443);
-                if !formatted_444.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_444;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutBucketAccelerateConfigurationInput,
@@ -17370,7 +14299,8 @@ impl PutBucketAccelerateConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_put_bucket_accelerate_configuration(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -17380,7 +14310,7 @@ impl PutBucketAccelerateConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -17444,7 +14374,7 @@ impl PutBucketAccelerateConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -17642,15 +14572,15 @@ impl PutBucketAclInput {
             _input: &crate::input::PutBucketAclInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_445 = &_input.bucket;
-            let input_445 =
-                input_445
+            let input_126 = &_input.bucket;
+            let input_126 =
+                input_126
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_445, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_126, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -17659,141 +14589,6 @@ impl PutBucketAclInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutBucketAclInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_446) = &_input.acl {
-                let formatted_447 = AsRef::<str>::as_ref(inner_446);
-                if !formatted_447.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_447;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "acl",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-acl", header_value);
-                }
-            }
-            if let Some(inner_448) = &_input.content_md5 {
-                let formatted_449 = AsRef::<str>::as_ref(inner_448);
-                if !formatted_449.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_449;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_450) = &_input.grant_full_control {
-                let formatted_451 = AsRef::<str>::as_ref(inner_450);
-                if !formatted_451.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_451;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_full_control",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-full-control", header_value);
-                }
-            }
-            if let Some(inner_452) = &_input.grant_read {
-                let formatted_453 = AsRef::<str>::as_ref(inner_452);
-                if !formatted_453.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_453;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_read",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-read", header_value);
-                }
-            }
-            if let Some(inner_454) = &_input.grant_read_acp {
-                let formatted_455 = AsRef::<str>::as_ref(inner_454);
-                if !formatted_455.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_455;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_read_acp",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-read-acp", header_value);
-                }
-            }
-            if let Some(inner_456) = &_input.grant_write {
-                let formatted_457 = AsRef::<str>::as_ref(inner_456);
-                if !formatted_457.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_457;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_write",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-write", header_value);
-                }
-            }
-            if let Some(inner_458) = &_input.grant_write_acp {
-                let formatted_459 = AsRef::<str>::as_ref(inner_458);
-                if !formatted_459.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_459;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_write_acp",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-write-acp", header_value);
-                }
-            }
-            if let Some(inner_460) = &_input.expected_bucket_owner {
-                let formatted_461 = AsRef::<str>::as_ref(inner_460);
-                if !formatted_461.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_461;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutBucketAclInput,
@@ -17812,7 +14607,7 @@ impl PutBucketAclInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_bucket_acl(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -17822,7 +14617,7 @@ impl PutBucketAclInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -17899,7 +14694,7 @@ impl PutBucketAclInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -18015,15 +14810,15 @@ impl PutBucketAnalyticsConfigurationInput {
             _input: &crate::input::PutBucketAnalyticsConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_462 = &_input.bucket;
-            let input_462 =
-                input_462
+            let input_127 = &_input.bucket;
+            let input_127 =
+                input_127
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_462, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_127, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -18033,37 +14828,14 @@ impl PutBucketAnalyticsConfigurationInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::PutBucketAnalyticsConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_463) = &_input.expected_bucket_owner {
-                let formatted_464 = AsRef::<str>::as_ref(inner_463);
-                if !formatted_464.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_464;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::PutBucketAnalyticsConfigurationInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("analytics");
-            if let Some(inner_465) = &_input.id {
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_465));
+            if let Some(inner_128) = &_input.id {
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_128));
             }
             Ok(())
         }
@@ -18076,7 +14848,8 @@ impl PutBucketAnalyticsConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_put_bucket_analytics_configuration(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -18086,7 +14859,7 @@ impl PutBucketAnalyticsConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -18150,7 +14923,7 @@ impl PutBucketAnalyticsConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -18262,15 +15035,15 @@ impl PutBucketCorsInput {
             _input: &crate::input::PutBucketCorsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_466 = &_input.bucket;
-            let input_466 =
-                input_466
+            let input_129 = &_input.bucket;
+            let input_129 =
+                input_129
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_466, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_129, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -18279,45 +15052,6 @@ impl PutBucketCorsInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutBucketCorsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_467) = &_input.content_md5 {
-                let formatted_468 = AsRef::<str>::as_ref(inner_467);
-                if !formatted_468.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_468;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_469) = &_input.expected_bucket_owner {
-                let formatted_470 = AsRef::<str>::as_ref(inner_469);
-                if !formatted_470.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_470;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutBucketCorsInput,
@@ -18336,7 +15070,7 @@ impl PutBucketCorsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_bucket_cors(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -18346,7 +15080,7 @@ impl PutBucketCorsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -18423,7 +15157,7 @@ impl PutBucketCorsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -18539,15 +15273,15 @@ impl PutBucketEncryptionInput {
             _input: &crate::input::PutBucketEncryptionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_471 = &_input.bucket;
-            let input_471 =
-                input_471
+            let input_130 = &_input.bucket;
+            let input_130 =
+                input_130
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_471, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_130, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -18556,45 +15290,6 @@ impl PutBucketEncryptionInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutBucketEncryptionInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_472) = &_input.content_md5 {
-                let formatted_473 = AsRef::<str>::as_ref(inner_472);
-                if !formatted_473.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_473;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_474) = &_input.expected_bucket_owner {
-                let formatted_475 = AsRef::<str>::as_ref(inner_474);
-                if !formatted_475.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_475;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutBucketEncryptionInput,
@@ -18613,7 +15308,7 @@ impl PutBucketEncryptionInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_bucket_encryption(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -18623,7 +15318,7 @@ impl PutBucketEncryptionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -18701,7 +15396,7 @@ impl PutBucketEncryptionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -18804,15 +15499,15 @@ impl PutBucketIntelligentTieringConfigurationInput {
             _input: &crate::input::PutBucketIntelligentTieringConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_476 = &_input.bucket;
-            let input_476 =
-                input_476
+            let input_131 = &_input.bucket;
+            let input_131 =
+                input_131
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_476, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_131, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -18828,8 +15523,8 @@ impl PutBucketIntelligentTieringConfigurationInput {
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("intelligent-tiering");
-            if let Some(inner_477) = &_input.id {
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_477));
+            if let Some(inner_132) = &_input.id {
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_132));
             }
             Ok(())
         }
@@ -18851,7 +15546,7 @@ impl PutBucketIntelligentTieringConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -18916,7 +15611,7 @@ impl PutBucketIntelligentTieringConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -19032,15 +15727,15 @@ impl PutBucketInventoryConfigurationInput {
             _input: &crate::input::PutBucketInventoryConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_478 = &_input.bucket;
-            let input_478 =
-                input_478
+            let input_133 = &_input.bucket;
+            let input_133 =
+                input_133
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_478, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_133, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -19050,37 +15745,14 @@ impl PutBucketInventoryConfigurationInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::PutBucketInventoryConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_479) = &_input.expected_bucket_owner {
-                let formatted_480 = AsRef::<str>::as_ref(inner_479);
-                if !formatted_480.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_480;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::PutBucketInventoryConfigurationInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("inventory");
-            if let Some(inner_481) = &_input.id {
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_481));
+            if let Some(inner_134) = &_input.id {
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_134));
             }
             Ok(())
         }
@@ -19093,7 +15765,8 @@ impl PutBucketInventoryConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_put_bucket_inventory_configuration(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -19103,7 +15776,7 @@ impl PutBucketInventoryConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -19167,7 +15840,7 @@ impl PutBucketInventoryConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -19271,15 +15944,15 @@ impl PutBucketLifecycleConfigurationInput {
             _input: &crate::input::PutBucketLifecycleConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_482 = &_input.bucket;
-            let input_482 =
-                input_482
+            let input_135 = &_input.bucket;
+            let input_135 =
+                input_135
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_482, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_135, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -19288,29 +15961,6 @@ impl PutBucketLifecycleConfigurationInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutBucketLifecycleConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_483) = &_input.expected_bucket_owner {
-                let formatted_484 = AsRef::<str>::as_ref(inner_483);
-                if !formatted_484.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_484;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutBucketLifecycleConfigurationInput,
@@ -19329,7 +15979,8 @@ impl PutBucketLifecycleConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_put_bucket_lifecycle_configuration(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -19339,7 +15990,7 @@ impl PutBucketLifecycleConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -19417,7 +16068,7 @@ impl PutBucketLifecycleConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -19529,15 +16180,15 @@ impl PutBucketLoggingInput {
             _input: &crate::input::PutBucketLoggingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_485 = &_input.bucket;
-            let input_485 =
-                input_485
+            let input_136 = &_input.bucket;
+            let input_136 =
+                input_136
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_485, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_136, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -19546,45 +16197,6 @@ impl PutBucketLoggingInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutBucketLoggingInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_486) = &_input.content_md5 {
-                let formatted_487 = AsRef::<str>::as_ref(inner_486);
-                if !formatted_487.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_487;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_488) = &_input.expected_bucket_owner {
-                let formatted_489 = AsRef::<str>::as_ref(inner_488);
-                if !formatted_489.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_489;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutBucketLoggingInput,
@@ -19603,7 +16215,7 @@ impl PutBucketLoggingInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_bucket_logging(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -19613,7 +16225,7 @@ impl PutBucketLoggingInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -19691,7 +16303,7 @@ impl PutBucketLoggingInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -19803,15 +16415,15 @@ impl PutBucketMetricsConfigurationInput {
             _input: &crate::input::PutBucketMetricsConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_490 = &_input.bucket;
-            let input_490 =
-                input_490
+            let input_137 = &_input.bucket;
+            let input_137 =
+                input_137
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_490, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_137, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -19821,37 +16433,14 @@ impl PutBucketMetricsConfigurationInput {
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::PutBucketMetricsConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_491) = &_input.expected_bucket_owner {
-                let formatted_492 = AsRef::<str>::as_ref(inner_491);
-                if !formatted_492.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_492;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::PutBucketMetricsConfigurationInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("metrics");
-            if let Some(inner_493) = &_input.id {
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_493));
+            if let Some(inner_138) = &_input.id {
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_138));
             }
             Ok(())
         }
@@ -19864,7 +16453,8 @@ impl PutBucketMetricsConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_put_bucket_metrics_configuration(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -19874,7 +16464,7 @@ impl PutBucketMetricsConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -19938,7 +16528,7 @@ impl PutBucketMetricsConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -20054,15 +16644,15 @@ impl PutBucketNotificationConfigurationInput {
             _input: &crate::input::PutBucketNotificationConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_494 = &_input.bucket;
-            let input_494 =
-                input_494
+            let input_139 = &_input.bucket;
+            let input_139 =
+                input_139
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_494, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_139, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -20071,47 +16661,6 @@ impl PutBucketNotificationConfigurationInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutBucketNotificationConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_495) = &_input.expected_bucket_owner {
-                let formatted_496 = AsRef::<str>::as_ref(inner_495);
-                if !formatted_496.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_496;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            if _input.skip_destination_validation {
-                let mut encoder =
-                    aws_smithy_types::primitive::Encoder::from(_input.skip_destination_validation);
-                let formatted_497 = encoder.encode();
-                if !formatted_497.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_497;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "skip_destination_validation",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-skip-destination-validation", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutBucketNotificationConfigurationInput,
@@ -20130,7 +16679,9 @@ impl PutBucketNotificationConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_bucket_notification_configuration(
+                input, builder,
+            )?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -20140,7 +16691,7 @@ impl PutBucketNotificationConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -20204,7 +16755,7 @@ impl PutBucketNotificationConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -20317,15 +16868,15 @@ impl PutBucketOwnershipControlsInput {
             _input: &crate::input::PutBucketOwnershipControlsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_498 = &_input.bucket;
-            let input_498 =
-                input_498
+            let input_140 = &_input.bucket;
+            let input_140 =
+                input_140
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_498, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_140, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -20334,45 +16885,6 @@ impl PutBucketOwnershipControlsInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutBucketOwnershipControlsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_499) = &_input.content_md5 {
-                let formatted_500 = AsRef::<str>::as_ref(inner_499);
-                if !formatted_500.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_500;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_501) = &_input.expected_bucket_owner {
-                let formatted_502 = AsRef::<str>::as_ref(inner_501);
-                if !formatted_502.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_502;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutBucketOwnershipControlsInput,
@@ -20391,7 +16903,8 @@ impl PutBucketOwnershipControlsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_put_bucket_ownership_controls(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -20401,7 +16914,7 @@ impl PutBucketOwnershipControlsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -20479,7 +16992,7 @@ impl PutBucketOwnershipControlsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -20605,15 +17118,15 @@ impl PutBucketPolicyInput {
             _input: &crate::input::PutBucketPolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_503 = &_input.bucket;
-            let input_503 =
-                input_503
+            let input_141 = &_input.bucket;
+            let input_141 =
+                input_141
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_503, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_141, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -20622,65 +17135,6 @@ impl PutBucketPolicyInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutBucketPolicyInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_504) = &_input.content_md5 {
-                let formatted_505 = AsRef::<str>::as_ref(inner_504);
-                if !formatted_505.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_505;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if _input.confirm_remove_self_bucket_access {
-                let mut encoder = aws_smithy_types::primitive::Encoder::from(
-                    _input.confirm_remove_self_bucket_access,
-                );
-                let formatted_506 = encoder.encode();
-                if !formatted_506.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_506;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "confirm_remove_self_bucket_access",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-confirm-remove-self-bucket-access", header_value);
-                }
-            }
-            if let Some(inner_507) = &_input.expected_bucket_owner {
-                let formatted_508 = AsRef::<str>::as_ref(inner_507);
-                if !formatted_508.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_508;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutBucketPolicyInput,
@@ -20699,7 +17153,7 @@ impl PutBucketPolicyInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_bucket_policy(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -20709,7 +17163,7 @@ impl PutBucketPolicyInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "text/plain",
@@ -20785,7 +17239,7 @@ impl PutBucketPolicyInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -20913,15 +17367,15 @@ impl PutBucketReplicationInput {
             _input: &crate::input::PutBucketReplicationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_509 = &_input.bucket;
-            let input_509 =
-                input_509
+            let input_142 = &_input.bucket;
+            let input_142 =
+                input_142
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_509, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_142, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -20930,61 +17384,6 @@ impl PutBucketReplicationInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutBucketReplicationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_510) = &_input.content_md5 {
-                let formatted_511 = AsRef::<str>::as_ref(inner_510);
-                if !formatted_511.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_511;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_512) = &_input.token {
-                let formatted_513 = AsRef::<str>::as_ref(inner_512);
-                if !formatted_513.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_513;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-bucket-object-lock-token", header_value);
-                }
-            }
-            if let Some(inner_514) = &_input.expected_bucket_owner {
-                let formatted_515 = AsRef::<str>::as_ref(inner_514);
-                if !formatted_515.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_515;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutBucketReplicationInput,
@@ -21003,7 +17402,7 @@ impl PutBucketReplicationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_bucket_replication(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -21013,7 +17412,7 @@ impl PutBucketReplicationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -21091,7 +17490,7 @@ impl PutBucketReplicationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -21208,15 +17607,15 @@ impl PutBucketRequestPaymentInput {
             _input: &crate::input::PutBucketRequestPaymentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_516 = &_input.bucket;
-            let input_516 =
-                input_516
+            let input_143 = &_input.bucket;
+            let input_143 =
+                input_143
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_516, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_143, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -21225,45 +17624,6 @@ impl PutBucketRequestPaymentInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutBucketRequestPaymentInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_517) = &_input.content_md5 {
-                let formatted_518 = AsRef::<str>::as_ref(inner_517);
-                if !formatted_518.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_518;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_519) = &_input.expected_bucket_owner {
-                let formatted_520 = AsRef::<str>::as_ref(inner_519);
-                if !formatted_520.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_520;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutBucketRequestPaymentInput,
@@ -21282,7 +17642,8 @@ impl PutBucketRequestPaymentInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_put_bucket_request_payment(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -21292,7 +17653,7 @@ impl PutBucketRequestPaymentInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -21370,7 +17731,7 @@ impl PutBucketRequestPaymentInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -21479,15 +17840,15 @@ impl PutBucketTaggingInput {
             _input: &crate::input::PutBucketTaggingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_521 = &_input.bucket;
-            let input_521 =
-                input_521
+            let input_144 = &_input.bucket;
+            let input_144 =
+                input_144
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_521, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_144, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -21496,45 +17857,6 @@ impl PutBucketTaggingInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutBucketTaggingInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_522) = &_input.content_md5 {
-                let formatted_523 = AsRef::<str>::as_ref(inner_522);
-                if !formatted_523.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_523;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_524) = &_input.expected_bucket_owner {
-                let formatted_525 = AsRef::<str>::as_ref(inner_524);
-                if !formatted_525.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_525;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutBucketTaggingInput,
@@ -21553,7 +17875,7 @@ impl PutBucketTaggingInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_bucket_tagging(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -21563,7 +17885,7 @@ impl PutBucketTaggingInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -21639,7 +17961,7 @@ impl PutBucketTaggingInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -21767,15 +18089,15 @@ impl PutBucketVersioningInput {
             _input: &crate::input::PutBucketVersioningInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_526 = &_input.bucket;
-            let input_526 =
-                input_526
+            let input_145 = &_input.bucket;
+            let input_145 =
+                input_145
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_526, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_145, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -21784,61 +18106,6 @@ impl PutBucketVersioningInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutBucketVersioningInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_527) = &_input.content_md5 {
-                let formatted_528 = AsRef::<str>::as_ref(inner_527);
-                if !formatted_528.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_528;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_529) = &_input.mfa {
-                let formatted_530 = AsRef::<str>::as_ref(inner_529);
-                if !formatted_530.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_530;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "mfa",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-mfa", header_value);
-                }
-            }
-            if let Some(inner_531) = &_input.expected_bucket_owner {
-                let formatted_532 = AsRef::<str>::as_ref(inner_531);
-                if !formatted_532.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_532;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutBucketVersioningInput,
@@ -21857,7 +18124,7 @@ impl PutBucketVersioningInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_bucket_versioning(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -21867,7 +18134,7 @@ impl PutBucketVersioningInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -21945,7 +18212,7 @@ impl PutBucketVersioningInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -22057,15 +18324,15 @@ impl PutBucketWebsiteInput {
             _input: &crate::input::PutBucketWebsiteInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_533 = &_input.bucket;
-            let input_533 =
-                input_533
+            let input_146 = &_input.bucket;
+            let input_146 =
+                input_146
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_533, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_146, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -22074,45 +18341,6 @@ impl PutBucketWebsiteInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutBucketWebsiteInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_534) = &_input.content_md5 {
-                let formatted_535 = AsRef::<str>::as_ref(inner_534);
-                if !formatted_535.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_535;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_536) = &_input.expected_bucket_owner {
-                let formatted_537 = AsRef::<str>::as_ref(inner_536);
-                if !formatted_537.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_537;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutBucketWebsiteInput,
@@ -22131,7 +18359,7 @@ impl PutBucketWebsiteInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_bucket_website(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -22141,7 +18369,7 @@ impl PutBucketWebsiteInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -22219,7 +18447,7 @@ impl PutBucketWebsiteInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -22815,30 +19043,30 @@ impl PutObjectInput {
             _input: &crate::input::PutObjectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_538 = &_input.bucket;
-            let input_538 =
-                input_538
+            let input_147 = &_input.bucket;
+            let input_147 =
+                input_147
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_538, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_147, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_539 = &_input.key;
-            let input_539 =
-                input_539
+            let input_148 = &_input.key;
+            let input_148 =
+                input_148
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_539, true);
+            let key = aws_smithy_http::label::fmt_string(input_148, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -22848,499 +19076,6 @@ impl PutObjectInput {
             write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                 .expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutObjectInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_540) = &_input.acl {
-                let formatted_541 = AsRef::<str>::as_ref(inner_540);
-                if !formatted_541.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_541;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "acl",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-acl", header_value);
-                }
-            }
-            if let Some(inner_542) = &_input.cache_control {
-                let formatted_543 = AsRef::<str>::as_ref(inner_542);
-                if !formatted_543.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_543;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "cache_control",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Cache-Control", header_value);
-                }
-            }
-            if let Some(inner_544) = &_input.content_disposition {
-                let formatted_545 = AsRef::<str>::as_ref(inner_544);
-                if !formatted_545.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_545;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_disposition",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Disposition", header_value);
-                }
-            }
-            if let Some(inner_546) = &_input.content_encoding {
-                let formatted_547 = AsRef::<str>::as_ref(inner_546);
-                if !formatted_547.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_547;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_encoding",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Encoding", header_value);
-                }
-            }
-            if let Some(inner_548) = &_input.content_language {
-                let formatted_549 = AsRef::<str>::as_ref(inner_548);
-                if !formatted_549.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_549;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_language",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Language", header_value);
-                }
-            }
-            if _input.content_length != 0 {
-                let mut encoder = aws_smithy_types::primitive::Encoder::from(_input.content_length);
-                let formatted_550 = encoder.encode();
-                if !formatted_550.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_550;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_length",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Length", header_value);
-                }
-            }
-            if let Some(inner_551) = &_input.content_md5 {
-                let formatted_552 = AsRef::<str>::as_ref(inner_551);
-                if !formatted_552.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_552;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_553) = &_input.content_type {
-                let formatted_554 = AsRef::<str>::as_ref(inner_553);
-                if !formatted_554.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_554;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_type",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Type", header_value);
-                }
-            }
-            if let Some(inner_555) = &_input.expires {
-                let formatted_556 = inner_555.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
-                if !formatted_556.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_556;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expires",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Expires", header_value);
-                }
-            }
-            if let Some(inner_557) = &_input.grant_full_control {
-                let formatted_558 = AsRef::<str>::as_ref(inner_557);
-                if !formatted_558.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_558;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_full_control",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-full-control", header_value);
-                }
-            }
-            if let Some(inner_559) = &_input.grant_read {
-                let formatted_560 = AsRef::<str>::as_ref(inner_559);
-                if !formatted_560.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_560;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_read",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-read", header_value);
-                }
-            }
-            if let Some(inner_561) = &_input.grant_read_acp {
-                let formatted_562 = AsRef::<str>::as_ref(inner_561);
-                if !formatted_562.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_562;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_read_acp",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-read-acp", header_value);
-                }
-            }
-            if let Some(inner_563) = &_input.grant_write_acp {
-                let formatted_564 = AsRef::<str>::as_ref(inner_563);
-                if !formatted_564.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_564;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_write_acp",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-write-acp", header_value);
-                }
-            }
-            if let Some(inner_565) = &_input.server_side_encryption {
-                let formatted_566 = AsRef::<str>::as_ref(inner_565);
-                if !formatted_566.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_566;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "server_side_encryption",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-server-side-encryption", header_value);
-                }
-            }
-            if let Some(inner_567) = &_input.storage_class {
-                let formatted_568 = AsRef::<str>::as_ref(inner_567);
-                if !formatted_568.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_568;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "storage_class",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-storage-class", header_value);
-                }
-            }
-            if let Some(inner_569) = &_input.website_redirect_location {
-                let formatted_570 = AsRef::<str>::as_ref(inner_569);
-                if !formatted_570.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_570;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "website_redirect_location",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-website-redirect-location", header_value);
-                }
-            }
-            if let Some(inner_571) = &_input.sse_customer_algorithm {
-                let formatted_572 = AsRef::<str>::as_ref(inner_571);
-                if !formatted_572.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_572;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_algorithm",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-algorithm",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_573) = &_input.sse_customer_key {
-                let formatted_574 = AsRef::<str>::as_ref(inner_573);
-                if !formatted_574.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_574;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-server-side-encryption-customer-key", header_value);
-                }
-            }
-            if let Some(inner_575) = &_input.sse_customer_key_md5 {
-                let formatted_576 = AsRef::<str>::as_ref(inner_575);
-                if !formatted_576.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_576;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-key-MD5",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_577) = &_input.ssekms_key_id {
-                let formatted_578 = AsRef::<str>::as_ref(inner_577);
-                if !formatted_578.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_578;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "ssekms_key_id",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-server-side-encryption-aws-kms-key-id", header_value);
-                }
-            }
-            if let Some(inner_579) = &_input.ssekms_encryption_context {
-                let formatted_580 = AsRef::<str>::as_ref(inner_579);
-                if !formatted_580.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_580;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "ssekms_encryption_context",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-server-side-encryption-context", header_value);
-                }
-            }
-            if _input.bucket_key_enabled {
-                let mut encoder =
-                    aws_smithy_types::primitive::Encoder::from(_input.bucket_key_enabled);
-                let formatted_581 = encoder.encode();
-                if !formatted_581.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_581;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "bucket_key_enabled",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-bucket-key-enabled",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_582) = &_input.request_payer {
-                let formatted_583 = AsRef::<str>::as_ref(inner_582);
-                if !formatted_583.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_583;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_584) = &_input.tagging {
-                let formatted_585 = AsRef::<str>::as_ref(inner_584);
-                if !formatted_585.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_585;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "tagging",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-tagging", header_value);
-                }
-            }
-            if let Some(inner_586) = &_input.object_lock_mode {
-                let formatted_587 = AsRef::<str>::as_ref(inner_586);
-                if !formatted_587.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_587;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "object_lock_mode",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-object-lock-mode", header_value);
-                }
-            }
-            if let Some(inner_588) = &_input.object_lock_retain_until_date {
-                let formatted_589 = inner_588.fmt(aws_smithy_types::date_time::Format::DateTime)?;
-                if !formatted_589.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_589;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "object_lock_retain_until_date",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-object-lock-retain-until-date", header_value);
-                }
-            }
-            if let Some(inner_590) = &_input.object_lock_legal_hold_status {
-                let formatted_591 = AsRef::<str>::as_ref(inner_590);
-                if !formatted_591.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_591;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "object_lock_legal_hold_status",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-object-lock-legal-hold", header_value);
-                }
-            }
-            if let Some(inner_592) = &_input.expected_bucket_owner {
-                let formatted_593 = AsRef::<str>::as_ref(inner_592);
-                if !formatted_593.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_593;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            if let Some(inner_594) = &_input.metadata {
-                for (k, v) in inner_594 {
-                    use std::str::FromStr;
-                    let header_name =
-                        http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))
-                            .map_err(|err| {
-                                aws_smithy_http::operation::BuildError::InvalidField {
-                                    field: "metadata",
-                                    details: format!(
-                                        "`{}` cannot be used as a header name: {}",
-                                        k, err
-                                    ),
-                                }
-                            })?;
-                    use std::convert::TryFrom;
-                    let header_value = AsRef::<str>::as_ref(v);
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "metadata",
-                            details: format!("`{}` cannot be used as a header value: {}", v, err),
-                        })?;
-                    builder = builder.header(header_name, header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutObjectInput,
@@ -23359,7 +19094,7 @@ impl PutObjectInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_object(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -23369,7 +19104,7 @@ impl PutObjectInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
@@ -23426,7 +19161,7 @@ impl PutObjectInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -23677,30 +19412,30 @@ impl PutObjectAclInput {
             _input: &crate::input::PutObjectAclInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_595 = &_input.bucket;
-            let input_595 =
-                input_595
+            let input_149 = &_input.bucket;
+            let input_149 =
+                input_149
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_595, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_149, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_596 = &_input.key;
-            let input_596 =
-                input_596
+            let input_150 = &_input.key;
+            let input_150 =
+                input_150
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_596, true);
+            let key = aws_smithy_http::label::fmt_string(input_150, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -23711,165 +19446,14 @@ impl PutObjectAclInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::PutObjectAclInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_597) = &_input.acl {
-                let formatted_598 = AsRef::<str>::as_ref(inner_597);
-                if !formatted_598.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_598;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "acl",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-acl", header_value);
-                }
-            }
-            if let Some(inner_599) = &_input.content_md5 {
-                let formatted_600 = AsRef::<str>::as_ref(inner_599);
-                if !formatted_600.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_600;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_601) = &_input.grant_full_control {
-                let formatted_602 = AsRef::<str>::as_ref(inner_601);
-                if !formatted_602.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_602;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_full_control",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-full-control", header_value);
-                }
-            }
-            if let Some(inner_603) = &_input.grant_read {
-                let formatted_604 = AsRef::<str>::as_ref(inner_603);
-                if !formatted_604.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_604;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_read",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-read", header_value);
-                }
-            }
-            if let Some(inner_605) = &_input.grant_read_acp {
-                let formatted_606 = AsRef::<str>::as_ref(inner_605);
-                if !formatted_606.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_606;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_read_acp",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-read-acp", header_value);
-                }
-            }
-            if let Some(inner_607) = &_input.grant_write {
-                let formatted_608 = AsRef::<str>::as_ref(inner_607);
-                if !formatted_608.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_608;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_write",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-write", header_value);
-                }
-            }
-            if let Some(inner_609) = &_input.grant_write_acp {
-                let formatted_610 = AsRef::<str>::as_ref(inner_609);
-                if !formatted_610.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_610;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "grant_write_acp",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-grant-write-acp", header_value);
-                }
-            }
-            if let Some(inner_611) = &_input.request_payer {
-                let formatted_612 = AsRef::<str>::as_ref(inner_611);
-                if !formatted_612.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_612;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_613) = &_input.expected_bucket_owner {
-                let formatted_614 = AsRef::<str>::as_ref(inner_613);
-                if !formatted_614.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_614;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::PutObjectAclInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("acl");
-            if let Some(inner_615) = &_input.version_id {
-                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_615));
+            if let Some(inner_151) = &_input.version_id {
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_151));
             }
             Ok(())
         }
@@ -23882,7 +19466,7 @@ impl PutObjectAclInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_object_acl(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -23892,7 +19476,7 @@ impl PutObjectAclInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -23969,7 +19553,7 @@ impl PutObjectAclInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -24122,30 +19706,30 @@ impl PutObjectLegalHoldInput {
             _input: &crate::input::PutObjectLegalHoldInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_616 = &_input.bucket;
-            let input_616 =
-                input_616
+            let input_152 = &_input.bucket;
+            let input_152 =
+                input_152
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_616, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_152, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_617 = &_input.key;
-            let input_617 =
-                input_617
+            let input_153 = &_input.key;
+            let input_153 =
+                input_153
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_617, true);
+            let key = aws_smithy_http::label::fmt_string(input_153, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -24156,69 +19740,14 @@ impl PutObjectLegalHoldInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::PutObjectLegalHoldInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_618) = &_input.request_payer {
-                let formatted_619 = AsRef::<str>::as_ref(inner_618);
-                if !formatted_619.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_619;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_620) = &_input.content_md5 {
-                let formatted_621 = AsRef::<str>::as_ref(inner_620);
-                if !formatted_621.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_621;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_622) = &_input.expected_bucket_owner {
-                let formatted_623 = AsRef::<str>::as_ref(inner_622);
-                if !formatted_623.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_623;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::PutObjectLegalHoldInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("legal-hold");
-            if let Some(inner_624) = &_input.version_id {
-                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_624));
+            if let Some(inner_154) = &_input.version_id {
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_154));
             }
             Ok(())
         }
@@ -24231,7 +19760,7 @@ impl PutObjectLegalHoldInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_object_legal_hold(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -24241,7 +19770,7 @@ impl PutObjectLegalHoldInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -24317,7 +19846,7 @@ impl PutObjectLegalHoldInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -24461,15 +19990,15 @@ impl PutObjectLockConfigurationInput {
             _input: &crate::input::PutObjectLockConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_625 = &_input.bucket;
-            let input_625 =
-                input_625
+            let input_155 = &_input.bucket;
+            let input_155 =
+                input_155
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_625, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_155, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -24478,77 +20007,6 @@ impl PutObjectLockConfigurationInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutObjectLockConfigurationInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_626) = &_input.request_payer {
-                let formatted_627 = AsRef::<str>::as_ref(inner_626);
-                if !formatted_627.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_627;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_628) = &_input.token {
-                let formatted_629 = AsRef::<str>::as_ref(inner_628);
-                if !formatted_629.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_629;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-bucket-object-lock-token", header_value);
-                }
-            }
-            if let Some(inner_630) = &_input.content_md5 {
-                let formatted_631 = AsRef::<str>::as_ref(inner_630);
-                if !formatted_631.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_631;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_632) = &_input.expected_bucket_owner {
-                let formatted_633 = AsRef::<str>::as_ref(inner_632);
-                if !formatted_633.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_633;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutObjectLockConfigurationInput,
@@ -24567,7 +20025,8 @@ impl PutObjectLockConfigurationInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_put_object_lock_configuration(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -24577,7 +20036,7 @@ impl PutObjectLockConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -24655,7 +20114,7 @@ impl PutObjectLockConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -24820,30 +20279,30 @@ impl PutObjectRetentionInput {
             _input: &crate::input::PutObjectRetentionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_634 = &_input.bucket;
-            let input_634 =
-                input_634
+            let input_156 = &_input.bucket;
+            let input_156 =
+                input_156
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_634, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_156, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_635 = &_input.key;
-            let input_635 =
-                input_635
+            let input_157 = &_input.key;
+            let input_157 =
+                input_157
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_635, true);
+            let key = aws_smithy_http::label::fmt_string(input_157, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -24854,87 +20313,14 @@ impl PutObjectRetentionInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::PutObjectRetentionInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_636) = &_input.request_payer {
-                let formatted_637 = AsRef::<str>::as_ref(inner_636);
-                if !formatted_637.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_637;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if _input.bypass_governance_retention {
-                let mut encoder =
-                    aws_smithy_types::primitive::Encoder::from(_input.bypass_governance_retention);
-                let formatted_638 = encoder.encode();
-                if !formatted_638.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_638;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "bypass_governance_retention",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-bypass-governance-retention", header_value);
-                }
-            }
-            if let Some(inner_639) = &_input.content_md5 {
-                let formatted_640 = AsRef::<str>::as_ref(inner_639);
-                if !formatted_640.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_640;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_641) = &_input.expected_bucket_owner {
-                let formatted_642 = AsRef::<str>::as_ref(inner_641);
-                if !formatted_642.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_642;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::PutObjectRetentionInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("retention");
-            if let Some(inner_643) = &_input.version_id {
-                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_643));
+            if let Some(inner_158) = &_input.version_id {
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_158));
             }
             Ok(())
         }
@@ -24947,7 +20333,7 @@ impl PutObjectRetentionInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_object_retention(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -24957,7 +20343,7 @@ impl PutObjectRetentionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -25033,7 +20419,7 @@ impl PutObjectRetentionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -25185,30 +20571,30 @@ impl PutObjectTaggingInput {
             _input: &crate::input::PutObjectTaggingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_644 = &_input.bucket;
-            let input_644 =
-                input_644
+            let input_159 = &_input.bucket;
+            let input_159 =
+                input_159
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_644, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_159, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_645 = &_input.key;
-            let input_645 =
-                input_645
+            let input_160 = &_input.key;
+            let input_160 =
+                input_160
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_645, true);
+            let key = aws_smithy_http::label::fmt_string(input_160, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -25219,69 +20605,14 @@ impl PutObjectTaggingInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::PutObjectTaggingInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_646) = &_input.content_md5 {
-                let formatted_647 = AsRef::<str>::as_ref(inner_646);
-                if !formatted_647.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_647;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_648) = &_input.expected_bucket_owner {
-                let formatted_649 = AsRef::<str>::as_ref(inner_648);
-                if !formatted_649.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_649;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            if let Some(inner_650) = &_input.request_payer {
-                let formatted_651 = AsRef::<str>::as_ref(inner_650);
-                if !formatted_651.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_651;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::PutObjectTaggingInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("tagging");
-            if let Some(inner_652) = &_input.version_id {
-                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_652));
+            if let Some(inner_161) = &_input.version_id {
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_161));
             }
             Ok(())
         }
@@ -25294,7 +20625,7 @@ impl PutObjectTaggingInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_object_tagging(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -25304,7 +20635,7 @@ impl PutObjectTaggingInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -25380,7 +20711,7 @@ impl PutObjectTaggingInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -25496,15 +20827,15 @@ impl PutPublicAccessBlockInput {
             _input: &crate::input::PutPublicAccessBlockInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_653 = &_input.bucket;
-            let input_653 =
-                input_653
+            let input_162 = &_input.bucket;
+            let input_162 =
+                input_162
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_653, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_162, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
@@ -25513,45 +20844,6 @@ impl PutPublicAccessBlockInput {
             }
             write!(output, "/{Bucket}", Bucket = bucket).expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::PutPublicAccessBlockInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_654) = &_input.content_md5 {
-                let formatted_655 = AsRef::<str>::as_ref(inner_654);
-                if !formatted_655.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_655;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_656) = &_input.expected_bucket_owner {
-                let formatted_657 = AsRef::<str>::as_ref(inner_656);
-                if !formatted_657.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_657;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::PutPublicAccessBlockInput,
@@ -25570,7 +20862,7 @@ impl PutPublicAccessBlockInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_public_access_block(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -25580,7 +20872,7 @@ impl PutPublicAccessBlockInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -25658,7 +20950,7 @@ impl PutPublicAccessBlockInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -25799,30 +21091,30 @@ impl RestoreObjectInput {
             _input: &crate::input::RestoreObjectInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_658 = &_input.bucket;
-            let input_658 =
-                input_658
+            let input_163 = &_input.bucket;
+            let input_163 =
+                input_163
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_658, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_163, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_659 = &_input.key;
-            let input_659 =
-                input_659
+            let input_164 = &_input.key;
+            let input_164 =
+                input_164
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_659, true);
+            let key = aws_smithy_http::label::fmt_string(input_164, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -25833,45 +21125,6 @@ impl RestoreObjectInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::RestoreObjectInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_660) = &_input.request_payer {
-                let formatted_661 = AsRef::<str>::as_ref(inner_660);
-                if !formatted_661.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_661;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_662) = &_input.expected_bucket_owner {
-                let formatted_663 = AsRef::<str>::as_ref(inner_662);
-                if !formatted_663.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_663;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::RestoreObjectInput,
             mut output: &mut String,
@@ -25879,8 +21132,8 @@ impl RestoreObjectInput {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_v("restore");
             query.push_kv("x-id", "RestoreObject");
-            if let Some(inner_664) = &_input.version_id {
-                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_664));
+            if let Some(inner_165) = &_input.version_id {
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_165));
             }
             Ok(())
         }
@@ -25893,7 +21146,7 @@ impl RestoreObjectInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_restore_object(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -25903,7 +21156,7 @@ impl RestoreObjectInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -25965,7 +21218,7 @@ impl RestoreObjectInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -26240,30 +21493,30 @@ impl SelectObjectContentInput {
             _input: &crate::input::SelectObjectContentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_665 = &_input.bucket;
-            let input_665 =
-                input_665
+            let input_166 = &_input.bucket;
+            let input_166 =
+                input_166
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_665, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_166, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_666 = &_input.key;
-            let input_666 =
-                input_666
+            let input_167 = &_input.key;
+            let input_167 =
+                input_167
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_666, true);
+            let key = aws_smithy_http::label::fmt_string(input_167, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -26273,84 +21526,6 @@ impl SelectObjectContentInput {
             write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                 .expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::SelectObjectContentInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_667) = &_input.sse_customer_algorithm {
-                let formatted_668 = AsRef::<str>::as_ref(inner_667);
-                if !formatted_668.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_668;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_algorithm",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-algorithm",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_669) = &_input.sse_customer_key {
-                let formatted_670 = AsRef::<str>::as_ref(inner_669);
-                if !formatted_670.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_670;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-server-side-encryption-customer-key", header_value);
-                }
-            }
-            if let Some(inner_671) = &_input.sse_customer_key_md5 {
-                let formatted_672 = AsRef::<str>::as_ref(inner_671);
-                if !formatted_672.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_672;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-key-MD5",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_673) = &_input.expected_bucket_owner {
-                let formatted_674 = AsRef::<str>::as_ref(inner_673);
-                if !formatted_674.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_674;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::SelectObjectContentInput,
@@ -26371,7 +21546,7 @@ impl SelectObjectContentInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_select_object_content(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -26381,7 +21556,7 @@ impl SelectObjectContentInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/xml",
@@ -26444,7 +21619,7 @@ impl SelectObjectContentInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -26666,30 +21841,30 @@ impl UploadPartInput {
             _input: &crate::input::UploadPartInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_675 = &_input.bucket;
-            let input_675 =
-                input_675
+            let input_168 = &_input.bucket;
+            let input_168 =
+                input_168
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_675, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_168, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_676 = &_input.key;
-            let input_676 =
-                input_676
+            let input_169 = &_input.key;
+            let input_169 =
+                input_169
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_676, true);
+            let key = aws_smithy_http::label::fmt_string(input_169, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -26699,133 +21874,6 @@ impl UploadPartInput {
             write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                 .expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::UploadPartInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if _input.content_length != 0 {
-                let mut encoder = aws_smithy_types::primitive::Encoder::from(_input.content_length);
-                let formatted_677 = encoder.encode();
-                if !formatted_677.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_677;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_length",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Length", header_value);
-                }
-            }
-            if let Some(inner_678) = &_input.content_md5 {
-                let formatted_679 = AsRef::<str>::as_ref(inner_678);
-                if !formatted_679.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_679;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-MD5", header_value);
-                }
-            }
-            if let Some(inner_680) = &_input.sse_customer_algorithm {
-                let formatted_681 = AsRef::<str>::as_ref(inner_680);
-                if !formatted_681.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_681;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_algorithm",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-algorithm",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_682) = &_input.sse_customer_key {
-                let formatted_683 = AsRef::<str>::as_ref(inner_682);
-                if !formatted_683.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_683;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-server-side-encryption-customer-key", header_value);
-                }
-            }
-            if let Some(inner_684) = &_input.sse_customer_key_md5 {
-                let formatted_685 = AsRef::<str>::as_ref(inner_684);
-                if !formatted_685.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_685;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-key-MD5",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_686) = &_input.request_payer {
-                let formatted_687 = AsRef::<str>::as_ref(inner_686);
-                if !formatted_687.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_687;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_688) = &_input.expected_bucket_owner {
-                let formatted_689 = AsRef::<str>::as_ref(inner_688);
-                if !formatted_689.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_689;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::UploadPartInput,
@@ -26839,8 +21887,8 @@ impl UploadPartInput {
                     aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
                 );
             }
-            if let Some(inner_690) = &_input.upload_id {
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_690));
+            if let Some(inner_170) = &_input.upload_id {
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_170));
             }
             Ok(())
         }
@@ -26853,7 +21901,7 @@ impl UploadPartInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_upload_part(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -26863,7 +21911,7 @@ impl UploadPartInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
@@ -26925,7 +21973,7 @@ impl UploadPartInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -27326,30 +22374,30 @@ impl UploadPartCopyInput {
             _input: &crate::input::UploadPartCopyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_691 = &_input.bucket;
-            let input_691 =
-                input_691
+            let input_171 = &_input.bucket;
+            let input_171 =
+                input_171
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     })?;
-            let bucket = aws_smithy_http::label::fmt_string(input_691, false);
+            let bucket = aws_smithy_http::label::fmt_string(input_171, false);
             if bucket.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bucket",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_692 = &_input.key;
-            let input_692 =
-                input_692
+            let input_172 = &_input.key;
+            let input_172 =
+                input_172
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     })?;
-            let key = aws_smithy_http::label::fmt_string(input_692, true);
+            let key = aws_smithy_http::label::fmt_string(input_172, true);
             if key.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "key",
@@ -27359,269 +22407,6 @@ impl UploadPartCopyInput {
             write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
                 .expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::UploadPartCopyInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_693) = &_input.copy_source {
-                let formatted_694 = AsRef::<str>::as_ref(inner_693);
-                if !formatted_694.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_694;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-copy-source", header_value);
-                }
-            }
-            if let Some(inner_695) = &_input.copy_source_if_match {
-                let formatted_696 = AsRef::<str>::as_ref(inner_695);
-                if !formatted_696.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_696;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_if_match",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-copy-source-if-match", header_value);
-                }
-            }
-            if let Some(inner_697) = &_input.copy_source_if_modified_since {
-                let formatted_698 = inner_697.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
-                if !formatted_698.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_698;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_if_modified_since",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-copy-source-if-modified-since", header_value);
-                }
-            }
-            if let Some(inner_699) = &_input.copy_source_if_none_match {
-                let formatted_700 = AsRef::<str>::as_ref(inner_699);
-                if !formatted_700.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_700;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_if_none_match",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-copy-source-if-none-match", header_value);
-                }
-            }
-            if let Some(inner_701) = &_input.copy_source_if_unmodified_since {
-                let formatted_702 = inner_701.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
-                if !formatted_702.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_702;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_if_unmodified_since",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-copy-source-if-unmodified-since", header_value);
-                }
-            }
-            if let Some(inner_703) = &_input.copy_source_range {
-                let formatted_704 = AsRef::<str>::as_ref(inner_703);
-                if !formatted_704.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_704;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_range",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-copy-source-range", header_value);
-                }
-            }
-            if let Some(inner_705) = &_input.sse_customer_algorithm {
-                let formatted_706 = AsRef::<str>::as_ref(inner_705);
-                if !formatted_706.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_706;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_algorithm",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-algorithm",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_707) = &_input.sse_customer_key {
-                let formatted_708 = AsRef::<str>::as_ref(inner_707);
-                if !formatted_708.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_708;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-server-side-encryption-customer-key", header_value);
-                }
-            }
-            if let Some(inner_709) = &_input.sse_customer_key_md5 {
-                let formatted_710 = AsRef::<str>::as_ref(inner_709);
-                if !formatted_710.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_710;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-server-side-encryption-customer-key-MD5",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_711) = &_input.copy_source_sse_customer_algorithm {
-                let formatted_712 = AsRef::<str>::as_ref(inner_711);
-                if !formatted_712.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_712;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_sse_customer_algorithm",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-copy-source-server-side-encryption-customer-algorithm",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_713) = &_input.copy_source_sse_customer_key {
-                let formatted_714 = AsRef::<str>::as_ref(inner_713);
-                if !formatted_714.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_714;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_sse_customer_key",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-copy-source-server-side-encryption-customer-key",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_715) = &_input.copy_source_sse_customer_key_md5 {
-                let formatted_716 = AsRef::<str>::as_ref(inner_715);
-                if !formatted_716.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_716;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "copy_source_sse_customer_key_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-copy-source-server-side-encryption-customer-key-MD5",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_717) = &_input.request_payer {
-                let formatted_718 = AsRef::<str>::as_ref(inner_717);
-                if !formatted_718.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_718;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_payer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-payer", header_value);
-                }
-            }
-            if let Some(inner_719) = &_input.expected_bucket_owner {
-                let formatted_720 = AsRef::<str>::as_ref(inner_719);
-                if !formatted_720.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_720;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-expected-bucket-owner", header_value);
-                }
-            }
-            if let Some(inner_721) = &_input.expected_source_bucket_owner {
-                let formatted_722 = AsRef::<str>::as_ref(inner_721);
-                if !formatted_722.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_722;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expected_source_bucket_owner",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-source-expected-bucket-owner", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::UploadPartCopyInput,
@@ -27635,8 +22420,8 @@ impl UploadPartCopyInput {
                     aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
                 );
             }
-            if let Some(inner_723) = &_input.upload_id {
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_723));
+            if let Some(inner_173) = &_input.upload_id {
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_173));
             }
             Ok(())
         }
@@ -27649,7 +22434,7 @@ impl UploadPartCopyInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_upload_part_copy(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -28328,613 +23113,6 @@ impl WriteGetObjectResponseInput {
             write!(output, "/WriteGetObjectResponse").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::WriteGetObjectResponseInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_724) = &_input.request_route {
-                let formatted_725 = AsRef::<str>::as_ref(inner_724);
-                if !formatted_725.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_725;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_route",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-route", header_value);
-                }
-            }
-            if let Some(inner_726) = &_input.request_token {
-                let formatted_727 = AsRef::<str>::as_ref(inner_726);
-                if !formatted_727.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_727;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-request-token", header_value);
-                }
-            }
-            if _input.status_code != 0 {
-                let mut encoder = aws_smithy_types::primitive::Encoder::from(_input.status_code);
-                let formatted_728 = encoder.encode();
-                if !formatted_728.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_728;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "status_code",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-status", header_value);
-                }
-            }
-            if let Some(inner_729) = &_input.error_code {
-                let formatted_730 = AsRef::<str>::as_ref(inner_729);
-                if !formatted_730.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_730;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "error_code",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-error-code", header_value);
-                }
-            }
-            if let Some(inner_731) = &_input.error_message {
-                let formatted_732 = AsRef::<str>::as_ref(inner_731);
-                if !formatted_732.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_732;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "error_message",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-error-message", header_value);
-                }
-            }
-            if let Some(inner_733) = &_input.accept_ranges {
-                let formatted_734 = AsRef::<str>::as_ref(inner_733);
-                if !formatted_734.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_734;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "accept_ranges",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-accept-ranges", header_value);
-                }
-            }
-            if let Some(inner_735) = &_input.cache_control {
-                let formatted_736 = AsRef::<str>::as_ref(inner_735);
-                if !formatted_736.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_736;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "cache_control",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-Cache-Control", header_value);
-                }
-            }
-            if let Some(inner_737) = &_input.content_disposition {
-                let formatted_738 = AsRef::<str>::as_ref(inner_737);
-                if !formatted_738.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_738;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_disposition",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-Content-Disposition", header_value);
-                }
-            }
-            if let Some(inner_739) = &_input.content_encoding {
-                let formatted_740 = AsRef::<str>::as_ref(inner_739);
-                if !formatted_740.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_740;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_encoding",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-Content-Encoding", header_value);
-                }
-            }
-            if let Some(inner_741) = &_input.content_language {
-                let formatted_742 = AsRef::<str>::as_ref(inner_741);
-                if !formatted_742.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_742;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_language",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-Content-Language", header_value);
-                }
-            }
-            if _input.content_length != 0 {
-                let mut encoder = aws_smithy_types::primitive::Encoder::from(_input.content_length);
-                let formatted_743 = encoder.encode();
-                if !formatted_743.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_743;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_length",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Length", header_value);
-                }
-            }
-            if let Some(inner_744) = &_input.content_range {
-                let formatted_745 = AsRef::<str>::as_ref(inner_744);
-                if !formatted_745.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_745;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_range",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-Content-Range", header_value);
-                }
-            }
-            if let Some(inner_746) = &_input.content_type {
-                let formatted_747 = AsRef::<str>::as_ref(inner_746);
-                if !formatted_747.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_747;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_type",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-Content-Type", header_value);
-                }
-            }
-            if _input.delete_marker {
-                let mut encoder = aws_smithy_types::primitive::Encoder::from(_input.delete_marker);
-                let formatted_748 = encoder.encode();
-                if !formatted_748.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_748;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "delete_marker",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-x-amz-delete-marker", header_value);
-                }
-            }
-            if let Some(inner_749) = &_input.e_tag {
-                let formatted_750 = AsRef::<str>::as_ref(inner_749);
-                if !formatted_750.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_750;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "e_tag",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-ETag", header_value);
-                }
-            }
-            if let Some(inner_751) = &_input.expires {
-                let formatted_752 = inner_751.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
-                if !formatted_752.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_752;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expires",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-Expires", header_value);
-                }
-            }
-            if let Some(inner_753) = &_input.expiration {
-                let formatted_754 = AsRef::<str>::as_ref(inner_753);
-                if !formatted_754.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_754;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "expiration",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-x-amz-expiration", header_value);
-                }
-            }
-            if let Some(inner_755) = &_input.last_modified {
-                let formatted_756 = inner_755.fmt(aws_smithy_types::date_time::Format::HttpDate)?;
-                if !formatted_756.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_756;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "last_modified",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-Last-Modified", header_value);
-                }
-            }
-            if _input.missing_meta != 0 {
-                let mut encoder = aws_smithy_types::primitive::Encoder::from(_input.missing_meta);
-                let formatted_757 = encoder.encode();
-                if !formatted_757.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_757;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "missing_meta",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-x-amz-missing-meta", header_value);
-                }
-            }
-            if let Some(inner_758) = &_input.object_lock_mode {
-                let formatted_759 = AsRef::<str>::as_ref(inner_758);
-                if !formatted_759.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_759;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "object_lock_mode",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-fwd-header-x-amz-object-lock-mode", header_value);
-                }
-            }
-            if let Some(inner_760) = &_input.object_lock_legal_hold_status {
-                let formatted_761 = AsRef::<str>::as_ref(inner_760);
-                if !formatted_761.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_761;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "object_lock_legal_hold_status",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-fwd-header-x-amz-object-lock-legal-hold",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_762) = &_input.object_lock_retain_until_date {
-                let formatted_763 = inner_762.fmt(aws_smithy_types::date_time::Format::DateTime)?;
-                if !formatted_763.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_763;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "object_lock_retain_until_date",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-fwd-header-x-amz-object-lock-retain-until-date",
-                        header_value,
-                    );
-                }
-            }
-            if _input.parts_count != 0 {
-                let mut encoder = aws_smithy_types::primitive::Encoder::from(_input.parts_count);
-                let formatted_764 = encoder.encode();
-                if !formatted_764.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_764;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "parts_count",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-x-amz-mp-parts-count", header_value);
-                }
-            }
-            if let Some(inner_765) = &_input.replication_status {
-                let formatted_766 = AsRef::<str>::as_ref(inner_765);
-                if !formatted_766.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_766;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "replication_status",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-fwd-header-x-amz-replication-status", header_value);
-                }
-            }
-            if let Some(inner_767) = &_input.request_charged {
-                let formatted_768 = AsRef::<str>::as_ref(inner_767);
-                if !formatted_768.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_768;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_charged",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder =
-                        builder.header("x-amz-fwd-header-x-amz-request-charged", header_value);
-                }
-            }
-            if let Some(inner_769) = &_input.restore {
-                let formatted_770 = AsRef::<str>::as_ref(inner_769);
-                if !formatted_770.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_770;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "restore",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-x-amz-restore", header_value);
-                }
-            }
-            if let Some(inner_771) = &_input.server_side_encryption {
-                let formatted_772 = AsRef::<str>::as_ref(inner_771);
-                if !formatted_772.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_772;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "server_side_encryption",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-fwd-header-x-amz-server-side-encryption",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_773) = &_input.sse_customer_algorithm {
-                let formatted_774 = AsRef::<str>::as_ref(inner_773);
-                if !formatted_774.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_774;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_algorithm",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-fwd-header-x-amz-server-side-encryption-customer-algorithm",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_775) = &_input.ssekms_key_id {
-                let formatted_776 = AsRef::<str>::as_ref(inner_775);
-                if !formatted_776.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_776;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "ssekms_key_id",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-fwd-header-x-amz-server-side-encryption-aws-kms-key-id",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_777) = &_input.sse_customer_key_md5 {
-                let formatted_778 = AsRef::<str>::as_ref(inner_777);
-                if !formatted_778.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_778;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "sse_customer_key_md5",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-fwd-header-x-amz-server-side-encryption-customer-key-MD5",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_779) = &_input.storage_class {
-                let formatted_780 = AsRef::<str>::as_ref(inner_779);
-                if !formatted_780.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_780;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "storage_class",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-x-amz-storage-class", header_value);
-                }
-            }
-            if _input.tag_count != 0 {
-                let mut encoder = aws_smithy_types::primitive::Encoder::from(_input.tag_count);
-                let formatted_781 = encoder.encode();
-                if !formatted_781.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_781;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "tag_count",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-x-amz-tagging-count", header_value);
-                }
-            }
-            if let Some(inner_782) = &_input.version_id {
-                let formatted_783 = AsRef::<str>::as_ref(inner_782);
-                if !formatted_783.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_783;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "version_id",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-fwd-header-x-amz-version-id", header_value);
-                }
-            }
-            if _input.bucket_key_enabled {
-                let mut encoder =
-                    aws_smithy_types::primitive::Encoder::from(_input.bucket_key_enabled);
-                let formatted_784 = encoder.encode();
-                if !formatted_784.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_784;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "bucket_key_enabled",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header(
-                        "x-amz-fwd-header-x-amz-server-side-encryption-bucket-key-enabled",
-                        header_value,
-                    );
-                }
-            }
-            if let Some(inner_785) = &_input.metadata {
-                for (k, v) in inner_785 {
-                    use std::str::FromStr;
-                    let header_name =
-                        http::header::HeaderName::from_str(&format!("{}{}", "x-amz-meta-", &k))
-                            .map_err(|err| {
-                                aws_smithy_http::operation::BuildError::InvalidField {
-                                    field: "metadata",
-                                    details: format!(
-                                        "`{}` cannot be used as a header name: {}",
-                                        k, err
-                                    ),
-                                }
-                            })?;
-                    use std::convert::TryFrom;
-                    let header_value = AsRef::<str>::as_ref(v);
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "metadata",
-                            details: format!("`{}` cannot be used as a header value: {}", v, err),
-                        })?;
-                    builder = builder.header(header_name, header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::WriteGetObjectResponseInput,
             mut output: &mut String,
@@ -28952,7 +23130,7 @@ impl WriteGetObjectResponseInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_write_get_object_response(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -28962,7 +23140,7 @@ impl WriteGetObjectResponseInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
@@ -29039,7 +23217,7 @@ impl WriteGetObjectResponseInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
