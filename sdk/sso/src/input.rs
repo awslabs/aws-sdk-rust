@@ -81,39 +81,16 @@ impl GetRoleCredentialsInput {
             write!(output, "/federation/credentials").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetRoleCredentialsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_1) = &_input.access_token {
-                let formatted_2 = AsRef::<str>::as_ref(inner_1);
-                if !formatted_2.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_2;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "access_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-sso_bearer_token", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::GetRoleCredentialsInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_3) = &_input.role_name {
-                query.push_kv("role_name", &aws_smithy_http::query::fmt_string(&inner_3));
+            if let Some(inner_1) = &_input.role_name {
+                query.push_kv("role_name", &aws_smithy_http::query::fmt_string(&inner_1));
             }
-            if let Some(inner_4) = &_input.account_id {
-                query.push_kv("account_id", &aws_smithy_http::query::fmt_string(&inner_4));
+            if let Some(inner_2) = &_input.account_id {
+                query.push_kv("account_id", &aws_smithy_http::query::fmt_string(&inner_2));
             }
             Ok(())
         }
@@ -126,7 +103,7 @@ impl GetRoleCredentialsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_role_credentials(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -291,45 +268,22 @@ impl ListAccountRolesInput {
             write!(output, "/assignment/roles").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListAccountRolesInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_5) = &_input.access_token {
-                let formatted_6 = AsRef::<str>::as_ref(inner_5);
-                if !formatted_6.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_6;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "access_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-sso_bearer_token", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListAccountRolesInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_7) = &_input.next_token {
-                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_7));
+            if let Some(inner_3) = &_input.next_token {
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_3));
             }
-            if let Some(inner_8) = &_input.max_results {
+            if let Some(inner_4) = &_input.max_results {
                 query.push_kv(
                     "max_result",
-                    aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
                 );
             }
-            if let Some(inner_9) = &_input.account_id {
-                query.push_kv("account_id", &aws_smithy_http::query::fmt_string(&inner_9));
+            if let Some(inner_5) = &_input.account_id {
+                query.push_kv("account_id", &aws_smithy_http::query::fmt_string(&inner_5));
             }
             Ok(())
         }
@@ -342,7 +296,7 @@ impl ListAccountRolesInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_list_account_roles(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -495,41 +449,18 @@ impl ListAccountsInput {
             write!(output, "/assignment/accounts").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListAccountsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_10) = &_input.access_token {
-                let formatted_11 = AsRef::<str>::as_ref(inner_10);
-                if !formatted_11.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_11;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "access_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-sso_bearer_token", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListAccountsInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_12) = &_input.next_token {
-                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_12));
+            if let Some(inner_6) = &_input.next_token {
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_6));
             }
-            if let Some(inner_13) = &_input.max_results {
+            if let Some(inner_7) = &_input.max_results {
                 query.push_kv(
                     "max_result",
-                    aws_smithy_types::primitive::Encoder::from(*inner_13).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_7).encode(),
                 );
             }
             Ok(())
@@ -543,7 +474,7 @@ impl ListAccountsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_list_accounts(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -670,29 +601,6 @@ impl LogoutInput {
             write!(output, "/logout").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::LogoutInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_14) = &_input.access_token {
-                let formatted_15 = AsRef::<str>::as_ref(inner_14);
-                if !formatted_15.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_15;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "access_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-sso_bearer_token", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::LogoutInput,
@@ -701,7 +609,7 @@ impl LogoutInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_logout(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]

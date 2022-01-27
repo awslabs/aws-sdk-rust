@@ -141,7 +141,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -203,7 +203,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -360,7 +360,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -422,7 +422,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -585,7 +585,7 @@ impl AssociatePhoneNumberWithUserInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -647,7 +647,7 @@ impl AssociatePhoneNumberWithUserInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -786,7 +786,7 @@ impl AssociateSigninDelegateGroupsWithAccountInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -848,7 +848,7 @@ impl AssociateSigninDelegateGroupsWithAccountInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -987,7 +987,7 @@ impl BatchCreateAttendeeInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1048,7 +1048,7 @@ impl BatchCreateAttendeeInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1189,29 +1189,6 @@ impl BatchCreateChannelMembershipInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::BatchCreateChannelMembershipInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_8) = &_input.chime_bearer {
-                let formatted_9 = AsRef::<str>::as_ref(inner_8);
-                if !formatted_9.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_9;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::BatchCreateChannelMembershipInput,
             mut output: &mut String,
@@ -1229,7 +1206,8 @@ impl BatchCreateChannelMembershipInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_batch_create_channel_membership(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1239,7 +1217,7 @@ impl BatchCreateChannelMembershipInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1303,7 +1281,7 @@ impl BatchCreateChannelMembershipInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1406,30 +1384,30 @@ impl BatchCreateRoomMembershipInput {
             _input: &crate::input::BatchCreateRoomMembershipInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_10 = &_input.account_id;
-            let input_10 =
-                input_10
+            let input_8 = &_input.account_id;
+            let input_8 =
+                input_8
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_10, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_8, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_11 = &_input.room_id;
-            let input_11 =
-                input_11
+            let input_9 = &_input.room_id;
+            let input_9 =
+                input_9
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "room_id",
                         details: "cannot be empty or unset",
                     })?;
-            let room_id = aws_smithy_http::label::fmt_string(input_11, false);
+            let room_id = aws_smithy_http::label::fmt_string(input_9, false);
             if room_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
@@ -1471,7 +1449,7 @@ impl BatchCreateRoomMembershipInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1534,7 +1512,7 @@ impl BatchCreateRoomMembershipInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1640,7 +1618,7 @@ impl BatchDeletePhoneNumberInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1703,7 +1681,7 @@ impl BatchDeletePhoneNumberInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1792,15 +1770,15 @@ impl BatchSuspendUserInput {
             _input: &crate::input::BatchSuspendUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_12 = &_input.account_id;
-            let input_12 =
-                input_12
+            let input_10 = &_input.account_id;
+            let input_10 =
+                input_10
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_12, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_10, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -1841,7 +1819,7 @@ impl BatchSuspendUserInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1902,7 +1880,7 @@ impl BatchSuspendUserInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1991,15 +1969,15 @@ impl BatchUnsuspendUserInput {
             _input: &crate::input::BatchUnsuspendUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_13 = &_input.account_id;
-            let input_13 =
-                input_13
+            let input_11 = &_input.account_id;
+            let input_11 =
+                input_11
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_13, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_11, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -2040,7 +2018,7 @@ impl BatchUnsuspendUserInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2101,7 +2079,7 @@ impl BatchUnsuspendUserInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2211,7 +2189,7 @@ impl BatchUpdatePhoneNumberInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2274,7 +2252,7 @@ impl BatchUpdatePhoneNumberInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2367,15 +2345,15 @@ impl BatchUpdateUserInput {
             _input: &crate::input::BatchUpdateUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_14 = &_input.account_id;
-            let input_14 =
-                input_14
+            let input_12 = &_input.account_id;
+            let input_12 =
+                input_12
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_14, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_12, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -2407,7 +2385,7 @@ impl BatchUpdateUserInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2468,7 +2446,7 @@ impl BatchUpdateUserInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2554,7 +2532,7 @@ impl CreateAccountInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2614,7 +2592,7 @@ impl CreateAccountInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2750,7 +2728,7 @@ impl CreateAppInstanceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2816,7 +2794,7 @@ impl CreateAppInstanceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2902,15 +2880,15 @@ impl CreateAppInstanceAdminInput {
             _input: &crate::input::CreateAppInstanceAdminInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_15 = &_input.app_instance_arn;
-            let input_15 =
-                input_15
+            let input_13 = &_input.app_instance_arn;
+            let input_13 =
+                input_13
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_15, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_13, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -2942,7 +2920,7 @@ impl CreateAppInstanceAdminInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -3007,7 +2985,7 @@ impl CreateAppInstanceAdminInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3173,7 +3151,7 @@ impl CreateAppInstanceUserInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -3241,7 +3219,7 @@ impl CreateAppInstanceUserInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3345,15 +3323,15 @@ impl CreateAttendeeInput {
             _input: &crate::input::CreateAttendeeInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_16 = &_input.meeting_id;
-            let input_16 =
-                input_16
+            let input_14 = &_input.meeting_id;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_16, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_14, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
@@ -3385,7 +3363,7 @@ impl CreateAttendeeInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -3446,7 +3424,7 @@ impl CreateAttendeeInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3536,15 +3514,15 @@ impl CreateBotInput {
             _input: &crate::input::CreateBotInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_17 = &_input.account_id;
-            let input_17 =
-                input_17
+            let input_15 = &_input.account_id;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_17, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_15, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -3572,7 +3550,7 @@ impl CreateBotInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -3630,7 +3608,7 @@ impl CreateBotInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3803,29 +3781,6 @@ impl CreateChannelInput {
             write!(output, "/channels").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateChannelInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_18) = &_input.chime_bearer {
-                let formatted_19 = AsRef::<str>::as_ref(inner_18);
-                if !formatted_19.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_19;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateChannelInput,
@@ -3834,7 +3789,7 @@ impl CreateChannelInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_create_channel(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3844,7 +3799,7 @@ impl CreateChannelInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -3909,7 +3864,7 @@ impl CreateChannelInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4001,15 +3956,15 @@ impl CreateChannelBanInput {
             _input: &crate::input::CreateChannelBanInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_20 = &_input.channel_arn;
-            let input_20 =
-                input_20
+            let input_16 = &_input.channel_arn;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_20, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_16, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
@@ -4024,29 +3979,6 @@ impl CreateChannelBanInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateChannelBanInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_21) = &_input.chime_bearer {
-                let formatted_22 = AsRef::<str>::as_ref(inner_21);
-                if !formatted_22.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_22;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateChannelBanInput,
@@ -4055,7 +3987,7 @@ impl CreateChannelBanInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_create_channel_ban(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4065,7 +3997,7 @@ impl CreateChannelBanInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -4128,7 +4060,7 @@ impl CreateChannelBanInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4236,15 +4168,15 @@ impl CreateChannelMembershipInput {
             _input: &crate::input::CreateChannelMembershipInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_23 = &_input.channel_arn;
-            let input_23 =
-                input_23
+            let input_17 = &_input.channel_arn;
+            let input_17 =
+                input_17
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_23, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_17, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
@@ -4259,29 +4191,6 @@ impl CreateChannelMembershipInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateChannelMembershipInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_24) = &_input.chime_bearer {
-                let formatted_25 = AsRef::<str>::as_ref(inner_24);
-                if !formatted_25.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_25;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateChannelMembershipInput,
@@ -4290,7 +4199,7 @@ impl CreateChannelMembershipInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_create_channel_membership(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4300,7 +4209,7 @@ impl CreateChannelMembershipInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -4365,7 +4274,7 @@ impl CreateChannelMembershipInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4460,15 +4369,15 @@ impl CreateChannelModeratorInput {
             _input: &crate::input::CreateChannelModeratorInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_26 = &_input.channel_arn;
-            let input_26 =
-                input_26
+            let input_18 = &_input.channel_arn;
+            let input_18 =
+                input_18
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_26, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_18, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
@@ -4483,29 +4392,6 @@ impl CreateChannelModeratorInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateChannelModeratorInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_27) = &_input.chime_bearer {
-                let formatted_28 = AsRef::<str>::as_ref(inner_27);
-                if !formatted_28.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_28;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateChannelModeratorInput,
@@ -4514,7 +4400,7 @@ impl CreateChannelModeratorInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_create_channel_moderator(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4524,7 +4410,7 @@ impl CreateChannelModeratorInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -4589,7 +4475,7 @@ impl CreateChannelModeratorInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4754,7 +4640,7 @@ impl CreateMediaCapturePipelineInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -4819,7 +4705,7 @@ impl CreateMediaCapturePipelineInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4994,7 +4880,7 @@ impl CreateMeetingInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -5057,7 +4943,7 @@ impl CreateMeetingInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5167,15 +5053,15 @@ impl CreateMeetingDialOutInput {
             _input: &crate::input::CreateMeetingDialOutInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_29 = &_input.meeting_id;
-            let input_29 =
-                input_29
+            let input_19 = &_input.meeting_id;
+            let input_19 =
+                input_19
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_29, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_19, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
@@ -5207,7 +5093,7 @@ impl CreateMeetingDialOutInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -5270,7 +5156,7 @@ impl CreateMeetingDialOutInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5477,7 +5363,7 @@ impl CreateMeetingWithAttendeesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -5542,7 +5428,7 @@ impl CreateMeetingWithAttendeesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5654,7 +5540,7 @@ impl CreatePhoneNumberOrderInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -5717,7 +5603,7 @@ impl CreatePhoneNumberOrderInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5904,15 +5790,15 @@ impl CreateProxySessionInput {
             _input: &crate::input::CreateProxySessionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_30 = &_input.voice_connector_id;
-            let input_30 =
-                input_30
+            let input_20 = &_input.voice_connector_id;
+            let input_20 =
+                input_20
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_30, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_20, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -5944,7 +5830,7 @@ impl CreateProxySessionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -6005,7 +5891,7 @@ impl CreateProxySessionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6100,15 +5986,15 @@ impl CreateRoomInput {
             _input: &crate::input::CreateRoomInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_31 = &_input.account_id;
-            let input_31 =
-                input_31
+            let input_21 = &_input.account_id;
+            let input_21 =
+                input_21
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_31, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_21, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -6140,7 +6026,7 @@ impl CreateRoomInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -6203,7 +6089,7 @@ impl CreateRoomInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6310,30 +6196,30 @@ impl CreateRoomMembershipInput {
             _input: &crate::input::CreateRoomMembershipInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_32 = &_input.account_id;
-            let input_32 =
-                input_32
+            let input_22 = &_input.account_id;
+            let input_22 =
+                input_22
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_32, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_22, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_33 = &_input.room_id;
-            let input_33 =
-                input_33
+            let input_23 = &_input.room_id;
+            let input_23 =
+                input_23
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "room_id",
                         details: "cannot be empty or unset",
                     })?;
-            let room_id = aws_smithy_http::label::fmt_string(input_33, false);
+            let room_id = aws_smithy_http::label::fmt_string(input_23, false);
             if room_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
@@ -6366,7 +6252,7 @@ impl CreateRoomMembershipInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -6429,7 +6315,7 @@ impl CreateRoomMembershipInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6552,7 +6438,7 @@ impl CreateSipMediaApplicationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -6615,7 +6501,7 @@ impl CreateSipMediaApplicationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6747,15 +6633,15 @@ impl CreateSipMediaApplicationCallInput {
             _input: &crate::input::CreateSipMediaApplicationCallInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_34 = &_input.sip_media_application_id;
-            let input_34 =
-                input_34
+            let input_24 = &_input.sip_media_application_id;
+            let input_24 =
+                input_24
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "sip_media_application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let sip_media_application_id = aws_smithy_http::label::fmt_string(input_34, false);
+            let sip_media_application_id = aws_smithy_http::label::fmt_string(input_24, false);
             if sip_media_application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "sip_media_application_id",
@@ -6787,7 +6673,7 @@ impl CreateSipMediaApplicationCallInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -6849,7 +6735,7 @@ impl CreateSipMediaApplicationCallInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7004,7 +6890,7 @@ impl CreateSipRuleInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -7065,7 +6951,7 @@ impl CreateSipRuleInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7169,15 +7055,15 @@ impl CreateUserInput {
             _input: &crate::input::CreateUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_35 = &_input.account_id;
-            let input_35 =
-                input_35
+            let input_25 = &_input.account_id;
+            let input_25 =
+                input_25
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_35, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_25, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -7218,7 +7104,7 @@ impl CreateUserInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -7278,7 +7164,7 @@ impl CreateUserInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7393,7 +7279,7 @@ impl CreateVoiceConnectorInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -7456,7 +7342,7 @@ impl CreateVoiceConnectorInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7567,7 +7453,7 @@ impl CreateVoiceConnectorGroupInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -7630,7 +7516,7 @@ impl CreateVoiceConnectorGroupInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7698,15 +7584,15 @@ impl DeleteAccountInput {
             _input: &crate::input::DeleteAccountInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_36 = &_input.account_id;
-            let input_36 =
-                input_36
+            let input_26 = &_input.account_id;
+            let input_26 =
+                input_26
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_36, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_26, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -7852,15 +7738,15 @@ impl DeleteAppInstanceInput {
             _input: &crate::input::DeleteAppInstanceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_37 = &_input.app_instance_arn;
-            let input_37 =
-                input_37
+            let input_27 = &_input.app_instance_arn;
+            let input_27 =
+                input_27
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_37, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_27, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -8027,30 +7913,30 @@ impl DeleteAppInstanceAdminInput {
             _input: &crate::input::DeleteAppInstanceAdminInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_38 = &_input.app_instance_arn;
-            let input_38 =
-                input_38
+            let input_28 = &_input.app_instance_arn;
+            let input_28 =
+                input_28
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_38, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_28, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_39 = &_input.app_instance_admin_arn;
-            let input_39 =
-                input_39
+            let input_29 = &_input.app_instance_admin_arn;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_admin_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_admin_arn = aws_smithy_http::label::fmt_string(input_39, false);
+            let app_instance_admin_arn = aws_smithy_http::label::fmt_string(input_29, false);
             if app_instance_admin_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_admin_arn",
@@ -8207,15 +8093,15 @@ impl DeleteAppInstanceStreamingConfigurationsInput {
             _input: &crate::input::DeleteAppInstanceStreamingConfigurationsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_40 = &_input.app_instance_arn;
-            let input_40 =
-                input_40
+            let input_30 = &_input.app_instance_arn;
+            let input_30 =
+                input_30
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_40, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_30, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -8365,15 +8251,15 @@ impl DeleteAppInstanceUserInput {
             _input: &crate::input::DeleteAppInstanceUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_41 = &_input.app_instance_user_arn;
-            let input_41 =
-                input_41
+            let input_31 = &_input.app_instance_user_arn;
+            let input_31 =
+                input_31
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_user_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_41, false);
+            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_31, false);
             if app_instance_user_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_user_arn",
@@ -8534,30 +8420,30 @@ impl DeleteAttendeeInput {
             _input: &crate::input::DeleteAttendeeInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_42 = &_input.meeting_id;
-            let input_42 =
-                input_42
+            let input_32 = &_input.meeting_id;
+            let input_32 =
+                input_32
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_42, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_32, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_43 = &_input.attendee_id;
-            let input_43 =
-                input_43
+            let input_33 = &_input.attendee_id;
+            let input_33 =
+                input_33
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attendee_id",
                         details: "cannot be empty or unset",
                     })?;
-            let attendee_id = aws_smithy_http::label::fmt_string(input_43, false);
+            let attendee_id = aws_smithy_http::label::fmt_string(input_33, false);
             if attendee_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "attendee_id",
@@ -8717,15 +8603,15 @@ impl DeleteChannelInput {
             _input: &crate::input::DeleteChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_44 = &_input.channel_arn;
-            let input_44 =
-                input_44
+            let input_34 = &_input.channel_arn;
+            let input_34 =
+                input_34
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_44, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_34, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
@@ -8736,29 +8622,6 @@ impl DeleteChannelInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteChannelInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_45) = &_input.chime_bearer {
-                let formatted_46 = AsRef::<str>::as_ref(inner_45);
-                if !formatted_46.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_46;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteChannelInput,
@@ -8767,7 +8630,7 @@ impl DeleteChannelInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_channel(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8918,30 +8781,30 @@ impl DeleteChannelBanInput {
             _input: &crate::input::DeleteChannelBanInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_47 = &_input.channel_arn;
-            let input_47 =
-                input_47
+            let input_35 = &_input.channel_arn;
+            let input_35 =
+                input_35
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_47, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_35, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_48 = &_input.member_arn;
-            let input_48 =
-                input_48
+            let input_36 = &_input.member_arn;
+            let input_36 =
+                input_36
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "member_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let member_arn = aws_smithy_http::label::fmt_string(input_48, false);
+            let member_arn = aws_smithy_http::label::fmt_string(input_36, false);
             if member_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "member_arn",
@@ -8957,29 +8820,6 @@ impl DeleteChannelBanInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteChannelBanInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_49) = &_input.chime_bearer {
-                let formatted_50 = AsRef::<str>::as_ref(inner_49);
-                if !formatted_50.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_50;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteChannelBanInput,
@@ -8988,7 +8828,7 @@ impl DeleteChannelBanInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_channel_ban(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9140,30 +8980,30 @@ impl DeleteChannelMembershipInput {
             _input: &crate::input::DeleteChannelMembershipInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_51 = &_input.channel_arn;
-            let input_51 =
-                input_51
+            let input_37 = &_input.channel_arn;
+            let input_37 =
+                input_37
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_51, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_37, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_52 = &_input.member_arn;
-            let input_52 =
-                input_52
+            let input_38 = &_input.member_arn;
+            let input_38 =
+                input_38
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "member_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let member_arn = aws_smithy_http::label::fmt_string(input_52, false);
+            let member_arn = aws_smithy_http::label::fmt_string(input_38, false);
             if member_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "member_arn",
@@ -9179,29 +9019,6 @@ impl DeleteChannelMembershipInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteChannelMembershipInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_53) = &_input.chime_bearer {
-                let formatted_54 = AsRef::<str>::as_ref(inner_53);
-                if !formatted_54.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_54;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteChannelMembershipInput,
@@ -9210,7 +9027,7 @@ impl DeleteChannelMembershipInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_channel_membership(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9361,30 +9178,30 @@ impl DeleteChannelMessageInput {
             _input: &crate::input::DeleteChannelMessageInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_55 = &_input.channel_arn;
-            let input_55 =
-                input_55
+            let input_39 = &_input.channel_arn;
+            let input_39 =
+                input_39
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_55, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_39, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_56 = &_input.message_id;
-            let input_56 =
-                input_56
+            let input_40 = &_input.message_id;
+            let input_40 =
+                input_40
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "message_id",
                         details: "cannot be empty or unset",
                     })?;
-            let message_id = aws_smithy_http::label::fmt_string(input_56, false);
+            let message_id = aws_smithy_http::label::fmt_string(input_40, false);
             if message_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
@@ -9400,29 +9217,6 @@ impl DeleteChannelMessageInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteChannelMessageInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_57) = &_input.chime_bearer {
-                let formatted_58 = AsRef::<str>::as_ref(inner_57);
-                if !formatted_58.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_58;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteChannelMessageInput,
@@ -9431,7 +9225,7 @@ impl DeleteChannelMessageInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_channel_message(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9585,30 +9379,30 @@ impl DeleteChannelModeratorInput {
             _input: &crate::input::DeleteChannelModeratorInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_59 = &_input.channel_arn;
-            let input_59 =
-                input_59
+            let input_41 = &_input.channel_arn;
+            let input_41 =
+                input_41
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_59, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_41, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_60 = &_input.channel_moderator_arn;
-            let input_60 =
-                input_60
+            let input_42 = &_input.channel_moderator_arn;
+            let input_42 =
+                input_42
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_moderator_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_moderator_arn = aws_smithy_http::label::fmt_string(input_60, false);
+            let channel_moderator_arn = aws_smithy_http::label::fmt_string(input_42, false);
             if channel_moderator_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_moderator_arn",
@@ -9624,29 +9418,6 @@ impl DeleteChannelModeratorInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteChannelModeratorInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_61) = &_input.chime_bearer {
-                let formatted_62 = AsRef::<str>::as_ref(inner_61);
-                if !formatted_62.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_62;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteChannelModeratorInput,
@@ -9655,7 +9426,7 @@ impl DeleteChannelModeratorInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_channel_moderator(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9795,30 +9566,30 @@ impl DeleteEventsConfigurationInput {
             _input: &crate::input::DeleteEventsConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_63 = &_input.account_id;
-            let input_63 =
-                input_63
+            let input_43 = &_input.account_id;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_63, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_43, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_64 = &_input.bot_id;
-            let input_64 =
-                input_64
+            let input_44 = &_input.bot_id;
+            let input_44 =
+                input_44
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_64, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_44, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
@@ -9970,15 +9741,15 @@ impl DeleteMediaCapturePipelineInput {
             _input: &crate::input::DeleteMediaCapturePipelineInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_65 = &_input.media_pipeline_id;
-            let input_65 =
-                input_65
+            let input_45 = &_input.media_pipeline_id;
+            let input_45 =
+                input_45
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "media_pipeline_id",
                         details: "cannot be empty or unset",
                     })?;
-            let media_pipeline_id = aws_smithy_http::label::fmt_string(input_65, false);
+            let media_pipeline_id = aws_smithy_http::label::fmt_string(input_45, false);
             if media_pipeline_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "media_pipeline_id",
@@ -10125,15 +9896,15 @@ impl DeleteMeetingInput {
             _input: &crate::input::DeleteMeetingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_66 = &_input.meeting_id;
-            let input_66 =
-                input_66
+            let input_46 = &_input.meeting_id;
+            let input_46 =
+                input_46
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_66, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_46, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
@@ -10279,15 +10050,15 @@ impl DeletePhoneNumberInput {
             _input: &crate::input::DeletePhoneNumberInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_67 = &_input.phone_number_id;
-            let input_67 =
-                input_67
+            let input_47 = &_input.phone_number_id;
+            let input_47 =
+                input_47
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "phone_number_id",
                         details: "cannot be empty or unset",
                     })?;
-            let phone_number_id = aws_smithy_http::label::fmt_string(input_67, false);
+            let phone_number_id = aws_smithy_http::label::fmt_string(input_47, false);
             if phone_number_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "phone_number_id",
@@ -10452,30 +10223,30 @@ impl DeleteProxySessionInput {
             _input: &crate::input::DeleteProxySessionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_68 = &_input.voice_connector_id;
-            let input_68 =
-                input_68
+            let input_48 = &_input.voice_connector_id;
+            let input_48 =
+                input_48
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_68, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_48, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_69 = &_input.proxy_session_id;
-            let input_69 =
-                input_69
+            let input_49 = &_input.proxy_session_id;
+            let input_49 =
+                input_49
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "proxy_session_id",
                         details: "cannot be empty or unset",
                     })?;
-            let proxy_session_id = aws_smithy_http::label::fmt_string(input_69, false);
+            let proxy_session_id = aws_smithy_http::label::fmt_string(input_49, false);
             if proxy_session_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "proxy_session_id",
@@ -10635,30 +10406,30 @@ impl DeleteRoomInput {
             _input: &crate::input::DeleteRoomInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_70 = &_input.account_id;
-            let input_70 =
-                input_70
+            let input_50 = &_input.account_id;
+            let input_50 =
+                input_50
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_70, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_50, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_71 = &_input.room_id;
-            let input_71 =
-                input_71
+            let input_51 = &_input.room_id;
+            let input_51 =
+                input_51
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "room_id",
                         details: "cannot be empty or unset",
                     })?;
-            let room_id = aws_smithy_http::label::fmt_string(input_71, false);
+            let room_id = aws_smithy_http::label::fmt_string(input_51, false);
             if room_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
@@ -10830,45 +10601,45 @@ impl DeleteRoomMembershipInput {
             _input: &crate::input::DeleteRoomMembershipInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_72 = &_input.account_id;
-            let input_72 =
-                input_72
+            let input_52 = &_input.account_id;
+            let input_52 =
+                input_52
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_72, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_52, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_73 = &_input.room_id;
-            let input_73 =
-                input_73
+            let input_53 = &_input.room_id;
+            let input_53 =
+                input_53
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "room_id",
                         details: "cannot be empty or unset",
                     })?;
-            let room_id = aws_smithy_http::label::fmt_string(input_73, false);
+            let room_id = aws_smithy_http::label::fmt_string(input_53, false);
             if room_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_74 = &_input.member_id;
-            let input_74 =
-                input_74
+            let input_54 = &_input.member_id;
+            let input_54 =
+                input_54
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "member_id",
                         details: "cannot be empty or unset",
                     })?;
-            let member_id = aws_smithy_http::label::fmt_string(input_74, false);
+            let member_id = aws_smithy_http::label::fmt_string(input_54, false);
             if member_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "member_id",
@@ -11021,15 +10792,15 @@ impl DeleteSipMediaApplicationInput {
             _input: &crate::input::DeleteSipMediaApplicationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_75 = &_input.sip_media_application_id;
-            let input_75 =
-                input_75
+            let input_55 = &_input.sip_media_application_id;
+            let input_55 =
+                input_55
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "sip_media_application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let sip_media_application_id = aws_smithy_http::label::fmt_string(input_75, false);
+            let sip_media_application_id = aws_smithy_http::label::fmt_string(input_55, false);
             if sip_media_application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "sip_media_application_id",
@@ -11176,15 +10947,15 @@ impl DeleteSipRuleInput {
             _input: &crate::input::DeleteSipRuleInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_76 = &_input.sip_rule_id;
-            let input_76 =
-                input_76
+            let input_56 = &_input.sip_rule_id;
+            let input_56 =
+                input_56
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "sip_rule_id",
                         details: "cannot be empty or unset",
                     })?;
-            let sip_rule_id = aws_smithy_http::label::fmt_string(input_76, false);
+            let sip_rule_id = aws_smithy_http::label::fmt_string(input_56, false);
             if sip_rule_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "sip_rule_id",
@@ -11330,15 +11101,15 @@ impl DeleteVoiceConnectorInput {
             _input: &crate::input::DeleteVoiceConnectorInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_77 = &_input.voice_connector_id;
-            let input_77 =
-                input_77
+            let input_57 = &_input.voice_connector_id;
+            let input_57 =
+                input_57
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_77, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_57, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -11492,15 +11263,15 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationInput {
             _input: &crate::input::DeleteVoiceConnectorEmergencyCallingConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_78 = &_input.voice_connector_id;
-            let input_78 =
-                input_78
+            let input_58 = &_input.voice_connector_id;
+            let input_58 =
+                input_58
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_78, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_58, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -11653,15 +11424,15 @@ impl DeleteVoiceConnectorGroupInput {
             _input: &crate::input::DeleteVoiceConnectorGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_79 = &_input.voice_connector_group_id;
-            let input_79 =
-                input_79
+            let input_59 = &_input.voice_connector_group_id;
+            let input_59 =
+                input_59
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_group_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_group_id = aws_smithy_http::label::fmt_string(input_79, false);
+            let voice_connector_group_id = aws_smithy_http::label::fmt_string(input_59, false);
             if voice_connector_group_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_group_id",
@@ -11813,15 +11584,15 @@ impl DeleteVoiceConnectorOriginationInput {
             _input: &crate::input::DeleteVoiceConnectorOriginationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_80 = &_input.voice_connector_id;
-            let input_80 =
-                input_80
+            let input_60 = &_input.voice_connector_id;
+            let input_60 =
+                input_60
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_80, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_60, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -11972,15 +11743,15 @@ impl DeleteVoiceConnectorProxyInput {
             _input: &crate::input::DeleteVoiceConnectorProxyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_81 = &_input.voice_connector_id;
-            let input_81 =
-                input_81
+            let input_61 = &_input.voice_connector_id;
+            let input_61 =
+                input_61
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_81, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_61, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -12134,15 +11905,15 @@ impl DeleteVoiceConnectorStreamingConfigurationInput {
             _input: &crate::input::DeleteVoiceConnectorStreamingConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_82 = &_input.voice_connector_id;
-            let input_82 =
-                input_82
+            let input_62 = &_input.voice_connector_id;
+            let input_62 =
+                input_62
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_82, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_62, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -12295,15 +12066,15 @@ impl DeleteVoiceConnectorTerminationInput {
             _input: &crate::input::DeleteVoiceConnectorTerminationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_83 = &_input.voice_connector_id;
-            let input_83 =
-                input_83
+            let input_63 = &_input.voice_connector_id;
+            let input_63 =
+                input_63
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_83, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_63, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -12478,15 +12249,15 @@ impl DeleteVoiceConnectorTerminationCredentialsInput {
             _input: &crate::input::DeleteVoiceConnectorTerminationCredentialsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_84 = &_input.voice_connector_id;
-            let input_84 =
-                input_84
+            let input_64 = &_input.voice_connector_id;
+            let input_64 =
+                input_64
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_84, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_64, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -12527,7 +12298,7 @@ impl DeleteVoiceConnectorTerminationCredentialsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -12589,7 +12360,7 @@ impl DeleteVoiceConnectorTerminationCredentialsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12661,15 +12432,15 @@ impl DescribeAppInstanceInput {
             _input: &crate::input::DescribeAppInstanceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_85 = &_input.app_instance_arn;
-            let input_85 =
-                input_85
+            let input_65 = &_input.app_instance_arn;
+            let input_65 =
+                input_65
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_85, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_65, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -12837,30 +12608,30 @@ impl DescribeAppInstanceAdminInput {
             _input: &crate::input::DescribeAppInstanceAdminInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_86 = &_input.app_instance_arn;
-            let input_86 =
-                input_86
+            let input_66 = &_input.app_instance_arn;
+            let input_66 =
+                input_66
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_86, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_66, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_87 = &_input.app_instance_admin_arn;
-            let input_87 =
-                input_87
+            let input_67 = &_input.app_instance_admin_arn;
+            let input_67 =
+                input_67
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_admin_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_admin_arn = aws_smithy_http::label::fmt_string(input_87, false);
+            let app_instance_admin_arn = aws_smithy_http::label::fmt_string(input_67, false);
             if app_instance_admin_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_admin_arn",
@@ -13014,15 +12785,15 @@ impl DescribeAppInstanceUserInput {
             _input: &crate::input::DescribeAppInstanceUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_88 = &_input.app_instance_user_arn;
-            let input_88 =
-                input_88
+            let input_68 = &_input.app_instance_user_arn;
+            let input_68 =
+                input_68
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_user_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_88, false);
+            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_68, false);
             if app_instance_user_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_user_arn",
@@ -13183,15 +12954,15 @@ impl DescribeChannelInput {
             _input: &crate::input::DescribeChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_89 = &_input.channel_arn;
-            let input_89 =
-                input_89
+            let input_69 = &_input.channel_arn;
+            let input_69 =
+                input_69
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_89, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_69, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
@@ -13202,29 +12973,6 @@ impl DescribeChannelInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeChannelInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_90) = &_input.chime_bearer {
-                let formatted_91 = AsRef::<str>::as_ref(inner_90);
-                if !formatted_91.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_91;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeChannelInput,
@@ -13233,7 +12981,7 @@ impl DescribeChannelInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_describe_channel(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -13384,30 +13132,30 @@ impl DescribeChannelBanInput {
             _input: &crate::input::DescribeChannelBanInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_92 = &_input.channel_arn;
-            let input_92 =
-                input_92
+            let input_70 = &_input.channel_arn;
+            let input_70 =
+                input_70
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_92, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_70, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_93 = &_input.member_arn;
-            let input_93 =
-                input_93
+            let input_71 = &_input.member_arn;
+            let input_71 =
+                input_71
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "member_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let member_arn = aws_smithy_http::label::fmt_string(input_93, false);
+            let member_arn = aws_smithy_http::label::fmt_string(input_71, false);
             if member_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "member_arn",
@@ -13423,29 +13171,6 @@ impl DescribeChannelBanInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeChannelBanInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_94) = &_input.chime_bearer {
-                let formatted_95 = AsRef::<str>::as_ref(inner_94);
-                if !formatted_95.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_95;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeChannelBanInput,
@@ -13454,7 +13179,7 @@ impl DescribeChannelBanInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_describe_channel_ban(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -13606,30 +13331,30 @@ impl DescribeChannelMembershipInput {
             _input: &crate::input::DescribeChannelMembershipInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_96 = &_input.channel_arn;
-            let input_96 =
-                input_96
+            let input_72 = &_input.channel_arn;
+            let input_72 =
+                input_72
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_96, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_72, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_97 = &_input.member_arn;
-            let input_97 =
-                input_97
+            let input_73 = &_input.member_arn;
+            let input_73 =
+                input_73
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "member_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let member_arn = aws_smithy_http::label::fmt_string(input_97, false);
+            let member_arn = aws_smithy_http::label::fmt_string(input_73, false);
             if member_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "member_arn",
@@ -13645,29 +13370,6 @@ impl DescribeChannelMembershipInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeChannelMembershipInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_98) = &_input.chime_bearer {
-                let formatted_99 = AsRef::<str>::as_ref(inner_98);
-                if !formatted_99.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_99;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeChannelMembershipInput,
@@ -13676,7 +13378,8 @@ impl DescribeChannelMembershipInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_describe_channel_membership(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -13834,15 +13537,15 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
             _input: &crate::input::DescribeChannelMembershipForAppInstanceUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_100 = &_input.channel_arn;
-            let input_100 =
-                input_100
+            let input_74 = &_input.channel_arn;
+            let input_74 =
+                input_74
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_100, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_74, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
@@ -13853,39 +13556,16 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeChannelMembershipForAppInstanceUserInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_101) = &_input.chime_bearer {
-                let formatted_102 = AsRef::<str>::as_ref(inner_101);
-                if !formatted_102.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_102;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DescribeChannelMembershipForAppInstanceUserInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_kv("scope", "app-instance-user-membership");
-            if let Some(inner_103) = &_input.app_instance_user_arn {
+            if let Some(inner_75) = &_input.app_instance_user_arn {
                 query.push_kv(
                     "app-instance-user-arn",
-                    &aws_smithy_http::query::fmt_string(&inner_103),
+                    &aws_smithy_http::query::fmt_string(&inner_75),
                 );
             }
             Ok(())
@@ -13899,7 +13579,10 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_describe_channel_membership_for_app_instance_user(
+                    input, builder,
+                )?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -14058,15 +13741,15 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
             _input: &crate::input::DescribeChannelModeratedByAppInstanceUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_104 = &_input.channel_arn;
-            let input_104 =
-                input_104
+            let input_76 = &_input.channel_arn;
+            let input_76 =
+                input_76
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_104, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_76, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
@@ -14077,39 +13760,16 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeChannelModeratedByAppInstanceUserInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_105) = &_input.chime_bearer {
-                let formatted_106 = AsRef::<str>::as_ref(inner_105);
-                if !formatted_106.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_106;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DescribeChannelModeratedByAppInstanceUserInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_kv("scope", "app-instance-user-moderated-channel");
-            if let Some(inner_107) = &_input.app_instance_user_arn {
+            if let Some(inner_77) = &_input.app_instance_user_arn {
                 query.push_kv(
                     "app-instance-user-arn",
-                    &aws_smithy_http::query::fmt_string(&inner_107),
+                    &aws_smithy_http::query::fmt_string(&inner_77),
                 );
             }
             Ok(())
@@ -14123,7 +13783,10 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_describe_channel_moderated_by_app_instance_user(
+                    input, builder,
+                )?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -14279,30 +13942,30 @@ impl DescribeChannelModeratorInput {
             _input: &crate::input::DescribeChannelModeratorInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_108 = &_input.channel_arn;
-            let input_108 =
-                input_108
+            let input_78 = &_input.channel_arn;
+            let input_78 =
+                input_78
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_108, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_78, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_109 = &_input.channel_moderator_arn;
-            let input_109 =
-                input_109
+            let input_79 = &_input.channel_moderator_arn;
+            let input_79 =
+                input_79
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_moderator_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_moderator_arn = aws_smithy_http::label::fmt_string(input_109, false);
+            let channel_moderator_arn = aws_smithy_http::label::fmt_string(input_79, false);
             if channel_moderator_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_moderator_arn",
@@ -14318,29 +13981,6 @@ impl DescribeChannelModeratorInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeChannelModeratorInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_110) = &_input.chime_bearer {
-                let formatted_111 = AsRef::<str>::as_ref(inner_110);
-                if !formatted_111.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_111;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeChannelModeratorInput,
@@ -14349,7 +13989,8 @@ impl DescribeChannelModeratorInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_describe_channel_moderator(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -14490,30 +14131,30 @@ impl DisassociatePhoneNumberFromUserInput {
             _input: &crate::input::DisassociatePhoneNumberFromUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_112 = &_input.account_id;
-            let input_112 =
-                input_112
+            let input_80 = &_input.account_id;
+            let input_80 =
+                input_80
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_112, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_80, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_113 = &_input.user_id;
-            let input_113 =
-                input_113
+            let input_81 = &_input.user_id;
+            let input_81 =
+                input_81
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_113, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_81, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -14698,15 +14339,15 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInput {
             _input: &crate::input::DisassociatePhoneNumbersFromVoiceConnectorInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_114 = &_input.voice_connector_id;
-            let input_114 =
-                input_114
+            let input_82 = &_input.voice_connector_id;
+            let input_82 =
+                input_82
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_114, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_82, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -14747,7 +14388,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -14809,7 +14450,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14906,15 +14547,15 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
             _input: &crate::input::DisassociatePhoneNumbersFromVoiceConnectorGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_115 = &_input.voice_connector_group_id;
-            let input_115 =
-                input_115
+            let input_83 = &_input.voice_connector_group_id;
+            let input_83 =
+                input_83
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_group_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_group_id = aws_smithy_http::label::fmt_string(input_115, false);
+            let voice_connector_group_id = aws_smithy_http::label::fmt_string(input_83, false);
             if voice_connector_group_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_group_id",
@@ -14955,7 +14596,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -15017,7 +14658,7 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15112,15 +14753,15 @@ impl DisassociateSigninDelegateGroupsFromAccountInput {
             _input: &crate::input::DisassociateSigninDelegateGroupsFromAccountInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_116 = &_input.account_id;
-            let input_116 =
-                input_116
+            let input_84 = &_input.account_id;
+            let input_84 =
+                input_84
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_116, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_84, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -15157,7 +14798,7 @@ impl DisassociateSigninDelegateGroupsFromAccountInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -15219,7 +14860,7 @@ impl DisassociateSigninDelegateGroupsFromAccountInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15288,15 +14929,15 @@ impl GetAccountInput {
             _input: &crate::input::GetAccountInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_117 = &_input.account_id;
-            let input_117 =
-                input_117
+            let input_85 = &_input.account_id;
+            let input_85 =
+                input_85
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_117, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_85, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -15439,15 +15080,15 @@ impl GetAccountSettingsInput {
             _input: &crate::input::GetAccountSettingsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_118 = &_input.account_id;
-            let input_118 =
-                input_118
+            let input_86 = &_input.account_id;
+            let input_86 =
+                input_86
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_118, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_86, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -15599,15 +15240,15 @@ impl GetAppInstanceRetentionSettingsInput {
             _input: &crate::input::GetAppInstanceRetentionSettingsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_119 = &_input.app_instance_arn;
-            let input_119 =
-                input_119
+            let input_87 = &_input.app_instance_arn;
+            let input_87 =
+                input_87
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_119, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_87, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -15761,15 +15402,15 @@ impl GetAppInstanceStreamingConfigurationsInput {
             _input: &crate::input::GetAppInstanceStreamingConfigurationsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_120 = &_input.app_instance_arn;
-            let input_120 =
-                input_120
+            let input_88 = &_input.app_instance_arn;
+            let input_88 =
+                input_88
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_120, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_88, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -15928,30 +15569,30 @@ impl GetAttendeeInput {
             _input: &crate::input::GetAttendeeInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_121 = &_input.meeting_id;
-            let input_121 =
-                input_121
+            let input_89 = &_input.meeting_id;
+            let input_89 =
+                input_89
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_121, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_89, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_122 = &_input.attendee_id;
-            let input_122 =
-                input_122
+            let input_90 = &_input.attendee_id;
+            let input_90 =
+                input_90
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attendee_id",
                         details: "cannot be empty or unset",
                     })?;
-            let attendee_id = aws_smithy_http::label::fmt_string(input_122, false);
+            let attendee_id = aws_smithy_http::label::fmt_string(input_90, false);
             if attendee_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "attendee_id",
@@ -16109,30 +15750,30 @@ impl GetBotInput {
             _input: &crate::input::GetBotInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_123 = &_input.account_id;
-            let input_123 =
-                input_123
+            let input_91 = &_input.account_id;
+            let input_91 =
+                input_91
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_123, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_91, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_124 = &_input.bot_id;
-            let input_124 =
-                input_124
+            let input_92 = &_input.bot_id;
+            let input_92 =
+                input_92
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_124, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_92, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
@@ -16299,30 +15940,30 @@ impl GetChannelMessageInput {
             _input: &crate::input::GetChannelMessageInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_125 = &_input.channel_arn;
-            let input_125 =
-                input_125
+            let input_93 = &_input.channel_arn;
+            let input_93 =
+                input_93
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_125, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_93, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_126 = &_input.message_id;
-            let input_126 =
-                input_126
+            let input_94 = &_input.message_id;
+            let input_94 =
+                input_94
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "message_id",
                         details: "cannot be empty or unset",
                     })?;
-            let message_id = aws_smithy_http::label::fmt_string(input_126, false);
+            let message_id = aws_smithy_http::label::fmt_string(input_94, false);
             if message_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
@@ -16338,29 +15979,6 @@ impl GetChannelMessageInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetChannelMessageInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_127) = &_input.chime_bearer {
-                let formatted_128 = AsRef::<str>::as_ref(inner_127);
-                if !formatted_128.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_128;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetChannelMessageInput,
@@ -16369,7 +15987,7 @@ impl GetChannelMessageInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_channel_message(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -16508,30 +16126,30 @@ impl GetEventsConfigurationInput {
             _input: &crate::input::GetEventsConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_129 = &_input.account_id;
-            let input_129 =
-                input_129
+            let input_95 = &_input.account_id;
+            let input_95 =
+                input_95
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_129, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_95, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_130 = &_input.bot_id;
-            let input_130 =
-                input_130
+            let input_96 = &_input.bot_id;
+            let input_96 =
+                input_96
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_130, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_96, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
@@ -16804,15 +16422,15 @@ impl GetMediaCapturePipelineInput {
             _input: &crate::input::GetMediaCapturePipelineInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_131 = &_input.media_pipeline_id;
-            let input_131 =
-                input_131
+            let input_97 = &_input.media_pipeline_id;
+            let input_97 =
+                input_97
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "media_pipeline_id",
                         details: "cannot be empty or unset",
                     })?;
-            let media_pipeline_id = aws_smithy_http::label::fmt_string(input_131, false);
+            let media_pipeline_id = aws_smithy_http::label::fmt_string(input_97, false);
             if media_pipeline_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "media_pipeline_id",
@@ -16959,15 +16577,15 @@ impl GetMeetingInput {
             _input: &crate::input::GetMeetingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_132 = &_input.meeting_id;
-            let input_132 =
-                input_132
+            let input_98 = &_input.meeting_id;
+            let input_98 =
+                input_98
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_132, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_98, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
@@ -17237,15 +16855,15 @@ impl GetPhoneNumberInput {
             _input: &crate::input::GetPhoneNumberInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_133 = &_input.phone_number_id;
-            let input_133 =
-                input_133
+            let input_99 = &_input.phone_number_id;
+            let input_99 =
+                input_99
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "phone_number_id",
                         details: "cannot be empty or unset",
                     })?;
-            let phone_number_id = aws_smithy_http::label::fmt_string(input_133, false);
+            let phone_number_id = aws_smithy_http::label::fmt_string(input_99, false);
             if phone_number_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "phone_number_id",
@@ -17395,15 +17013,15 @@ impl GetPhoneNumberOrderInput {
             _input: &crate::input::GetPhoneNumberOrderInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_134 = &_input.phone_number_order_id;
-            let input_134 =
-                input_134
+            let input_100 = &_input.phone_number_order_id;
+            let input_100 =
+                input_100
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "phone_number_order_id",
                         details: "cannot be empty or unset",
                     })?;
-            let phone_number_order_id = aws_smithy_http::label::fmt_string(input_134, false);
+            let phone_number_order_id = aws_smithy_http::label::fmt_string(input_100, false);
             if phone_number_order_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "phone_number_order_id",
@@ -17689,30 +17307,30 @@ impl GetProxySessionInput {
             _input: &crate::input::GetProxySessionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_135 = &_input.voice_connector_id;
-            let input_135 =
-                input_135
+            let input_101 = &_input.voice_connector_id;
+            let input_101 =
+                input_101
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_135, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_101, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_136 = &_input.proxy_session_id;
-            let input_136 =
-                input_136
+            let input_102 = &_input.proxy_session_id;
+            let input_102 =
+                input_102
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "proxy_session_id",
                         details: "cannot be empty or unset",
                     })?;
-            let proxy_session_id = aws_smithy_http::label::fmt_string(input_136, false);
+            let proxy_session_id = aws_smithy_http::label::fmt_string(input_102, false);
             if proxy_session_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "proxy_session_id",
@@ -17860,15 +17478,15 @@ impl GetRetentionSettingsInput {
             _input: &crate::input::GetRetentionSettingsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_137 = &_input.account_id;
-            let input_137 =
-                input_137
+            let input_103 = &_input.account_id;
+            let input_103 =
+                input_103
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_137, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_103, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -18025,30 +17643,30 @@ impl GetRoomInput {
             _input: &crate::input::GetRoomInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_138 = &_input.account_id;
-            let input_138 =
-                input_138
+            let input_104 = &_input.account_id;
+            let input_104 =
+                input_104
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_138, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_104, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_139 = &_input.room_id;
-            let input_139 =
-                input_139
+            let input_105 = &_input.room_id;
+            let input_105 =
+                input_105
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "room_id",
                         details: "cannot be empty or unset",
                     })?;
-            let room_id = aws_smithy_http::label::fmt_string(input_139, false);
+            let room_id = aws_smithy_http::label::fmt_string(input_105, false);
             if room_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
@@ -18196,15 +17814,15 @@ impl GetSipMediaApplicationInput {
             _input: &crate::input::GetSipMediaApplicationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_140 = &_input.sip_media_application_id;
-            let input_140 =
-                input_140
+            let input_106 = &_input.sip_media_application_id;
+            let input_106 =
+                input_106
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "sip_media_application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let sip_media_application_id = aws_smithy_http::label::fmt_string(input_140, false);
+            let sip_media_application_id = aws_smithy_http::label::fmt_string(input_106, false);
             if sip_media_application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "sip_media_application_id",
@@ -18358,15 +17976,15 @@ impl GetSipMediaApplicationLoggingConfigurationInput {
             _input: &crate::input::GetSipMediaApplicationLoggingConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_141 = &_input.sip_media_application_id;
-            let input_141 =
-                input_141
+            let input_107 = &_input.sip_media_application_id;
+            let input_107 =
+                input_107
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "sip_media_application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let sip_media_application_id = aws_smithy_http::label::fmt_string(input_141, false);
+            let sip_media_application_id = aws_smithy_http::label::fmt_string(input_107, false);
             if sip_media_application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "sip_media_application_id",
@@ -18514,15 +18132,15 @@ impl GetSipRuleInput {
             _input: &crate::input::GetSipRuleInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_142 = &_input.sip_rule_id;
-            let input_142 =
-                input_142
+            let input_108 = &_input.sip_rule_id;
+            let input_108 =
+                input_108
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "sip_rule_id",
                         details: "cannot be empty or unset",
                     })?;
-            let sip_rule_id = aws_smithy_http::label::fmt_string(input_142, false);
+            let sip_rule_id = aws_smithy_http::label::fmt_string(input_108, false);
             if sip_rule_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "sip_rule_id",
@@ -18675,30 +18293,30 @@ impl GetUserInput {
             _input: &crate::input::GetUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_143 = &_input.account_id;
-            let input_143 =
-                input_143
+            let input_109 = &_input.account_id;
+            let input_109 =
+                input_109
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_143, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_109, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_144 = &_input.user_id;
-            let input_144 =
-                input_144
+            let input_110 = &_input.user_id;
+            let input_110 =
+                input_110
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_144, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_110, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -18855,30 +18473,30 @@ impl GetUserSettingsInput {
             _input: &crate::input::GetUserSettingsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_145 = &_input.account_id;
-            let input_145 =
-                input_145
+            let input_111 = &_input.account_id;
+            let input_111 =
+                input_111
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_145, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_111, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_146 = &_input.user_id;
-            let input_146 =
-                input_146
+            let input_112 = &_input.user_id;
+            let input_112 =
+                input_112
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_146, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_112, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -19029,15 +18647,15 @@ impl GetVoiceConnectorInput {
             _input: &crate::input::GetVoiceConnectorInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_147 = &_input.voice_connector_id;
-            let input_147 =
-                input_147
+            let input_113 = &_input.voice_connector_id;
+            let input_113 =
+                input_113
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_147, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_113, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -19191,15 +18809,15 @@ impl GetVoiceConnectorEmergencyCallingConfigurationInput {
             _input: &crate::input::GetVoiceConnectorEmergencyCallingConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_148 = &_input.voice_connector_id;
-            let input_148 =
-                input_148
+            let input_114 = &_input.voice_connector_id;
+            let input_114 =
+                input_114
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_148, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_114, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -19350,15 +18968,15 @@ impl GetVoiceConnectorGroupInput {
             _input: &crate::input::GetVoiceConnectorGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_149 = &_input.voice_connector_group_id;
-            let input_149 =
-                input_149
+            let input_115 = &_input.voice_connector_group_id;
+            let input_115 =
+                input_115
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_group_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_group_id = aws_smithy_http::label::fmt_string(input_149, false);
+            let voice_connector_group_id = aws_smithy_http::label::fmt_string(input_115, false);
             if voice_connector_group_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_group_id",
@@ -19510,15 +19128,15 @@ impl GetVoiceConnectorLoggingConfigurationInput {
             _input: &crate::input::GetVoiceConnectorLoggingConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_150 = &_input.voice_connector_id;
-            let input_150 =
-                input_150
+            let input_116 = &_input.voice_connector_id;
+            let input_116 =
+                input_116
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_150, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_116, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -19670,15 +19288,15 @@ impl GetVoiceConnectorOriginationInput {
             _input: &crate::input::GetVoiceConnectorOriginationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_151 = &_input.voice_connector_id;
-            let input_151 =
-                input_151
+            let input_117 = &_input.voice_connector_id;
+            let input_117 =
+                input_117
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_151, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_117, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -19828,15 +19446,15 @@ impl GetVoiceConnectorProxyInput {
             _input: &crate::input::GetVoiceConnectorProxyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_152 = &_input.voice_connector_id;
-            let input_152 =
-                input_152
+            let input_118 = &_input.voice_connector_id;
+            let input_118 =
+                input_118
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_152, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_118, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -19988,15 +19606,15 @@ impl GetVoiceConnectorStreamingConfigurationInput {
             _input: &crate::input::GetVoiceConnectorStreamingConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_153 = &_input.voice_connector_id;
-            let input_153 =
-                input_153
+            let input_119 = &_input.voice_connector_id;
+            let input_119 =
+                input_119
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_153, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_119, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -20148,15 +19766,15 @@ impl GetVoiceConnectorTerminationInput {
             _input: &crate::input::GetVoiceConnectorTerminationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_154 = &_input.voice_connector_id;
-            let input_154 =
-                input_154
+            let input_120 = &_input.voice_connector_id;
+            let input_120 =
+                input_120
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_154, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_120, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -20308,15 +19926,15 @@ impl GetVoiceConnectorTerminationHealthInput {
             _input: &crate::input::GetVoiceConnectorTerminationHealthInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_155 = &_input.voice_connector_id;
-            let input_155 =
-                input_155
+            let input_121 = &_input.voice_connector_id;
+            let input_121 =
+                input_121
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_155, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_121, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -20496,15 +20114,15 @@ impl InviteUsersInput {
             _input: &crate::input::InviteUsersInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_156 = &_input.account_id;
-            let input_156 =
-                input_156
+            let input_122 = &_input.account_id;
+            let input_122 =
+                input_122
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_156, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_122, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -20545,7 +20163,7 @@ impl InviteUsersInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -20605,7 +20223,7 @@ impl InviteUsersInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -20717,25 +20335,25 @@ impl ListAccountsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_157) = &_input.name {
-                query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_157));
+            if let Some(inner_123) = &_input.name {
+                query.push_kv("name", &aws_smithy_http::query::fmt_string(&inner_123));
             }
-            if let Some(inner_158) = &_input.user_email {
+            if let Some(inner_124) = &_input.user_email {
                 query.push_kv(
                     "user-email",
-                    &aws_smithy_http::query::fmt_string(&inner_158),
+                    &aws_smithy_http::query::fmt_string(&inner_124),
                 );
             }
-            if let Some(inner_159) = &_input.next_token {
+            if let Some(inner_125) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_159),
+                    &aws_smithy_http::query::fmt_string(&inner_125),
                 );
             }
-            if let Some(inner_160) = &_input.max_results {
+            if let Some(inner_126) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_160).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_126).encode(),
                 );
             }
             Ok(())
@@ -20900,15 +20518,15 @@ impl ListAppInstanceAdminsInput {
             _input: &crate::input::ListAppInstanceAdminsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_161 = &_input.app_instance_arn;
-            let input_161 =
-                input_161
+            let input_127 = &_input.app_instance_arn;
+            let input_127 =
+                input_127
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_161, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_127, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -20928,16 +20546,16 @@ impl ListAppInstanceAdminsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_162) = &_input.max_results {
+            if let Some(inner_128) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_162).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_128).encode(),
                 );
             }
-            if let Some(inner_163) = &_input.next_token {
+            if let Some(inner_129) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_163),
+                    &aws_smithy_http::query::fmt_string(&inner_129),
                 );
             }
             Ok(())
@@ -21097,16 +20715,16 @@ impl ListAppInstancesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_164) = &_input.max_results {
+            if let Some(inner_130) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_164).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_130).encode(),
                 );
             }
-            if let Some(inner_165) = &_input.next_token {
+            if let Some(inner_131) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_165),
+                    &aws_smithy_http::query::fmt_string(&inner_131),
                 );
             }
             Ok(())
@@ -21281,22 +20899,22 @@ impl ListAppInstanceUsersInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_166) = &_input.app_instance_arn {
+            if let Some(inner_132) = &_input.app_instance_arn {
                 query.push_kv(
                     "app-instance-arn",
-                    &aws_smithy_http::query::fmt_string(&inner_166),
+                    &aws_smithy_http::query::fmt_string(&inner_132),
                 );
             }
-            if let Some(inner_167) = &_input.max_results {
+            if let Some(inner_133) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_167).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_133).encode(),
                 );
             }
-            if let Some(inner_168) = &_input.next_token {
+            if let Some(inner_134) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_168),
+                    &aws_smithy_http::query::fmt_string(&inner_134),
                 );
             }
             Ok(())
@@ -21460,15 +21078,15 @@ impl ListAttendeesInput {
             _input: &crate::input::ListAttendeesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_169 = &_input.meeting_id;
-            let input_169 =
-                input_169
+            let input_135 = &_input.meeting_id;
+            let input_135 =
+                input_135
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_169, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_135, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
@@ -21488,16 +21106,16 @@ impl ListAttendeesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_170) = &_input.next_token {
+            if let Some(inner_136) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_170),
+                    &aws_smithy_http::query::fmt_string(&inner_136),
                 );
             }
-            if let Some(inner_171) = &_input.max_results {
+            if let Some(inner_137) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_171).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_137).encode(),
                 );
             }
             Ok(())
@@ -21647,30 +21265,30 @@ impl ListAttendeeTagsInput {
             _input: &crate::input::ListAttendeeTagsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_172 = &_input.meeting_id;
-            let input_172 =
-                input_172
+            let input_138 = &_input.meeting_id;
+            let input_138 =
+                input_138
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_172, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_138, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_173 = &_input.attendee_id;
-            let input_173 =
-                input_173
+            let input_139 = &_input.attendee_id;
+            let input_139 =
+                input_139
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attendee_id",
                         details: "cannot be empty or unset",
                     })?;
-            let attendee_id = aws_smithy_http::label::fmt_string(input_173, false);
+            let attendee_id = aws_smithy_http::label::fmt_string(input_139, false);
             if attendee_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "attendee_id",
@@ -21840,15 +21458,15 @@ impl ListBotsInput {
             _input: &crate::input::ListBotsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_174 = &_input.account_id;
-            let input_174 =
-                input_174
+            let input_140 = &_input.account_id;
+            let input_140 =
+                input_140
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_174, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_140, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -21864,16 +21482,16 @@ impl ListBotsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_175) = &_input.max_results {
+            if let Some(inner_141) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_175).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_141).encode(),
                 );
             }
-            if let Some(inner_176) = &_input.next_token {
+            if let Some(inner_142) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_176),
+                    &aws_smithy_http::query::fmt_string(&inner_142),
                 );
             }
             Ok(())
@@ -22044,15 +21662,15 @@ impl ListChannelBansInput {
             _input: &crate::input::ListChannelBansInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_177 = &_input.channel_arn;
-            let input_177 =
-                input_177
+            let input_143 = &_input.channel_arn;
+            let input_143 =
+                input_143
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_177, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_143, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
@@ -22067,44 +21685,21 @@ impl ListChannelBansInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListChannelBansInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_178) = &_input.chime_bearer {
-                let formatted_179 = AsRef::<str>::as_ref(inner_178);
-                if !formatted_179.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_179;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListChannelBansInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_180) = &_input.max_results {
+            if let Some(inner_144) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_180).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_144).encode(),
                 );
             }
-            if let Some(inner_181) = &_input.next_token {
+            if let Some(inner_145) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_181),
+                    &aws_smithy_http::query::fmt_string(&inner_145),
                 );
             }
             Ok(())
@@ -22118,7 +21713,7 @@ impl ListChannelBansInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_list_channel_bans(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -22296,15 +21891,15 @@ impl ListChannelMembershipsInput {
             _input: &crate::input::ListChannelMembershipsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_182 = &_input.channel_arn;
-            let input_182 =
-                input_182
+            let input_146 = &_input.channel_arn;
+            let input_146 =
+                input_146
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_182, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_146, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
@@ -22319,47 +21914,24 @@ impl ListChannelMembershipsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListChannelMembershipsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_183) = &_input.chime_bearer {
-                let formatted_184 = AsRef::<str>::as_ref(inner_183);
-                if !formatted_184.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_184;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListChannelMembershipsInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_185) = &_input.r#type {
-                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_185));
+            if let Some(inner_147) = &_input.r#type {
+                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_147));
             }
-            if let Some(inner_186) = &_input.max_results {
+            if let Some(inner_148) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_186).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_148).encode(),
                 );
             }
-            if let Some(inner_187) = &_input.next_token {
+            if let Some(inner_149) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_187),
+                    &aws_smithy_http::query::fmt_string(&inner_149),
                 );
             }
             Ok(())
@@ -22373,7 +21945,7 @@ impl ListChannelMembershipsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_list_channel_memberships(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -22546,51 +22118,28 @@ impl ListChannelMembershipsForAppInstanceUserInput {
             write!(output, "/channels").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListChannelMembershipsForAppInstanceUserInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_188) = &_input.chime_bearer {
-                let formatted_189 = AsRef::<str>::as_ref(inner_188);
-                if !formatted_189.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_189;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListChannelMembershipsForAppInstanceUserInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_kv("scope", "app-instance-user-memberships");
-            if let Some(inner_190) = &_input.app_instance_user_arn {
+            if let Some(inner_150) = &_input.app_instance_user_arn {
                 query.push_kv(
                     "app-instance-user-arn",
-                    &aws_smithy_http::query::fmt_string(&inner_190),
+                    &aws_smithy_http::query::fmt_string(&inner_150),
                 );
             }
-            if let Some(inner_191) = &_input.max_results {
+            if let Some(inner_151) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_191).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_151).encode(),
                 );
             }
-            if let Some(inner_192) = &_input.next_token {
+            if let Some(inner_152) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_192),
+                    &aws_smithy_http::query::fmt_string(&inner_152),
                 );
             }
             Ok(())
@@ -22604,7 +22153,10 @@ impl ListChannelMembershipsForAppInstanceUserInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_list_channel_memberships_for_app_instance_user(
+                    input, builder,
+                )?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -22813,15 +22365,15 @@ impl ListChannelMessagesInput {
             _input: &crate::input::ListChannelMessagesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_193 = &_input.channel_arn;
-            let input_193 =
-                input_193
+            let input_153 = &_input.channel_arn;
+            let input_153 =
+                input_153
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_193, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_153, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
@@ -22836,68 +22388,45 @@ impl ListChannelMessagesInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListChannelMessagesInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_194) = &_input.chime_bearer {
-                let formatted_195 = AsRef::<str>::as_ref(inner_194);
-                if !formatted_195.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_195;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListChannelMessagesInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_196) = &_input.sort_order {
+            if let Some(inner_154) = &_input.sort_order {
                 query.push_kv(
                     "sort-order",
-                    &aws_smithy_http::query::fmt_string(&inner_196),
+                    &aws_smithy_http::query::fmt_string(&inner_154),
                 );
             }
-            if let Some(inner_197) = &_input.not_before {
+            if let Some(inner_155) = &_input.not_before {
                 query.push_kv(
                     "not-before",
                     &aws_smithy_http::query::fmt_timestamp(
-                        inner_197,
+                        inner_155,
                         aws_smithy_types::date_time::Format::DateTime,
                     )?,
                 );
             }
-            if let Some(inner_198) = &_input.not_after {
+            if let Some(inner_156) = &_input.not_after {
                 query.push_kv(
                     "not-after",
                     &aws_smithy_http::query::fmt_timestamp(
-                        inner_198,
+                        inner_156,
                         aws_smithy_types::date_time::Format::DateTime,
                     )?,
                 );
             }
-            if let Some(inner_199) = &_input.max_results {
+            if let Some(inner_157) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_199).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_157).encode(),
                 );
             }
-            if let Some(inner_200) = &_input.next_token {
+            if let Some(inner_158) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_200),
+                    &aws_smithy_http::query::fmt_string(&inner_158),
                 );
             }
             Ok(())
@@ -22911,7 +22440,7 @@ impl ListChannelMessagesInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_list_channel_messages(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -23074,15 +22603,15 @@ impl ListChannelModeratorsInput {
             _input: &crate::input::ListChannelModeratorsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_201 = &_input.channel_arn;
-            let input_201 =
-                input_201
+            let input_159 = &_input.channel_arn;
+            let input_159 =
+                input_159
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_201, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_159, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
@@ -23097,44 +22626,21 @@ impl ListChannelModeratorsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListChannelModeratorsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_202) = &_input.chime_bearer {
-                let formatted_203 = AsRef::<str>::as_ref(inner_202);
-                if !formatted_203.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_203;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListChannelModeratorsInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_204) = &_input.max_results {
+            if let Some(inner_160) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_204).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_160).encode(),
                 );
             }
-            if let Some(inner_205) = &_input.next_token {
+            if let Some(inner_161) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_205),
+                    &aws_smithy_http::query::fmt_string(&inner_161),
                 );
             }
             Ok(())
@@ -23148,7 +22654,7 @@ impl ListChannelModeratorsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_list_channel_moderators(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -23332,53 +22838,30 @@ impl ListChannelsInput {
             write!(output, "/channels").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListChannelsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_206) = &_input.chime_bearer {
-                let formatted_207 = AsRef::<str>::as_ref(inner_206);
-                if !formatted_207.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_207;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListChannelsInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_208) = &_input.app_instance_arn {
+            if let Some(inner_162) = &_input.app_instance_arn {
                 query.push_kv(
                     "app-instance-arn",
-                    &aws_smithy_http::query::fmt_string(&inner_208),
+                    &aws_smithy_http::query::fmt_string(&inner_162),
                 );
             }
-            if let Some(inner_209) = &_input.privacy {
-                query.push_kv("privacy", &aws_smithy_http::query::fmt_string(&inner_209));
+            if let Some(inner_163) = &_input.privacy {
+                query.push_kv("privacy", &aws_smithy_http::query::fmt_string(&inner_163));
             }
-            if let Some(inner_210) = &_input.max_results {
+            if let Some(inner_164) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_210).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_164).encode(),
                 );
             }
-            if let Some(inner_211) = &_input.next_token {
+            if let Some(inner_165) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_211),
+                    &aws_smithy_http::query::fmt_string(&inner_165),
                 );
             }
             Ok(())
@@ -23392,7 +22875,7 @@ impl ListChannelsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_list_channels(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -23563,51 +23046,28 @@ impl ListChannelsModeratedByAppInstanceUserInput {
             write!(output, "/channels").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ListChannelsModeratedByAppInstanceUserInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_212) = &_input.chime_bearer {
-                let formatted_213 = AsRef::<str>::as_ref(inner_212);
-                if !formatted_213.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_213;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::ListChannelsModeratedByAppInstanceUserInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_kv("scope", "app-instance-user-moderated-channels");
-            if let Some(inner_214) = &_input.app_instance_user_arn {
+            if let Some(inner_166) = &_input.app_instance_user_arn {
                 query.push_kv(
                     "app-instance-user-arn",
-                    &aws_smithy_http::query::fmt_string(&inner_214),
+                    &aws_smithy_http::query::fmt_string(&inner_166),
                 );
             }
-            if let Some(inner_215) = &_input.max_results {
+            if let Some(inner_167) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_215).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_167).encode(),
                 );
             }
-            if let Some(inner_216) = &_input.next_token {
+            if let Some(inner_168) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_216),
+                    &aws_smithy_http::query::fmt_string(&inner_168),
                 );
             }
             Ok(())
@@ -23621,7 +23081,10 @@ impl ListChannelsModeratedByAppInstanceUserInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_list_channels_moderated_by_app_instance_user(
+                    input, builder,
+                )?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -23769,16 +23232,16 @@ impl ListMediaCapturePipelinesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_217) = &_input.next_token {
+            if let Some(inner_169) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_217),
+                    &aws_smithy_http::query::fmt_string(&inner_169),
                 );
             }
-            if let Some(inner_218) = &_input.max_results {
+            if let Some(inner_170) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_218).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_170).encode(),
                 );
             }
             Ok(())
@@ -23936,16 +23399,16 @@ impl ListMeetingsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_219) = &_input.next_token {
+            if let Some(inner_171) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_219),
+                    &aws_smithy_http::query::fmt_string(&inner_171),
                 );
             }
-            if let Some(inner_220) = &_input.max_results {
+            if let Some(inner_172) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_220).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_172).encode(),
                 );
             }
             Ok(())
@@ -24083,15 +23546,15 @@ impl ListMeetingTagsInput {
             _input: &crate::input::ListMeetingTagsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_221 = &_input.meeting_id;
-            let input_221 =
-                input_221
+            let input_173 = &_input.meeting_id;
+            let input_173 =
+                input_173
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_221, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_173, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
@@ -24254,16 +23717,16 @@ impl ListPhoneNumberOrdersInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_222) = &_input.next_token {
+            if let Some(inner_174) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_222),
+                    &aws_smithy_http::query::fmt_string(&inner_174),
                 );
             }
-            if let Some(inner_223) = &_input.max_results {
+            if let Some(inner_175) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_223).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_175).encode(),
                 );
             }
             Ok(())
@@ -24478,37 +23941,37 @@ impl ListPhoneNumbersInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_224) = &_input.status {
-                query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_224));
+            if let Some(inner_176) = &_input.status {
+                query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_176));
             }
-            if let Some(inner_225) = &_input.product_type {
+            if let Some(inner_177) = &_input.product_type {
                 query.push_kv(
                     "product-type",
-                    &aws_smithy_http::query::fmt_string(&inner_225),
+                    &aws_smithy_http::query::fmt_string(&inner_177),
                 );
             }
-            if let Some(inner_226) = &_input.filter_name {
+            if let Some(inner_178) = &_input.filter_name {
                 query.push_kv(
                     "filter-name",
-                    &aws_smithy_http::query::fmt_string(&inner_226),
+                    &aws_smithy_http::query::fmt_string(&inner_178),
                 );
             }
-            if let Some(inner_227) = &_input.filter_value {
+            if let Some(inner_179) = &_input.filter_value {
                 query.push_kv(
                     "filter-value",
-                    &aws_smithy_http::query::fmt_string(&inner_227),
+                    &aws_smithy_http::query::fmt_string(&inner_179),
                 );
             }
-            if let Some(inner_228) = &_input.max_results {
+            if let Some(inner_180) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_228).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_180).encode(),
                 );
             }
-            if let Some(inner_229) = &_input.next_token {
+            if let Some(inner_181) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_229),
+                    &aws_smithy_http::query::fmt_string(&inner_181),
                 );
             }
             Ok(())
@@ -24688,15 +24151,15 @@ impl ListProxySessionsInput {
             _input: &crate::input::ListProxySessionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_230 = &_input.voice_connector_id;
-            let input_230 =
-                input_230
+            let input_182 = &_input.voice_connector_id;
+            let input_182 =
+                input_182
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_230, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_182, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -24716,19 +24179,19 @@ impl ListProxySessionsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_231) = &_input.status {
-                query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_231));
+            if let Some(inner_183) = &_input.status {
+                query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_183));
             }
-            if let Some(inner_232) = &_input.next_token {
+            if let Some(inner_184) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_232),
+                    &aws_smithy_http::query::fmt_string(&inner_184),
                 );
             }
-            if let Some(inner_233) = &_input.max_results {
+            if let Some(inner_185) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_233).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_185).encode(),
                 );
             }
             Ok(())
@@ -24902,30 +24365,30 @@ impl ListRoomMembershipsInput {
             _input: &crate::input::ListRoomMembershipsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_234 = &_input.account_id;
-            let input_234 =
-                input_234
+            let input_186 = &_input.account_id;
+            let input_186 =
+                input_186
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_234, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_186, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_235 = &_input.room_id;
-            let input_235 =
-                input_235
+            let input_187 = &_input.room_id;
+            let input_187 =
+                input_187
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "room_id",
                         details: "cannot be empty or unset",
                     })?;
-            let room_id = aws_smithy_http::label::fmt_string(input_235, false);
+            let room_id = aws_smithy_http::label::fmt_string(input_187, false);
             if room_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
@@ -24946,16 +24409,16 @@ impl ListRoomMembershipsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_236) = &_input.max_results {
+            if let Some(inner_188) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_236).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_188).encode(),
                 );
             }
-            if let Some(inner_237) = &_input.next_token {
+            if let Some(inner_189) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_237),
+                    &aws_smithy_http::query::fmt_string(&inner_189),
                 );
             }
             Ok(())
@@ -25127,15 +24590,15 @@ impl ListRoomsInput {
             _input: &crate::input::ListRoomsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_238 = &_input.account_id;
-            let input_238 =
-                input_238
+            let input_190 = &_input.account_id;
+            let input_190 =
+                input_190
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_238, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_190, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -25155,19 +24618,19 @@ impl ListRoomsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_239) = &_input.member_id {
-                query.push_kv("member-id", &aws_smithy_http::query::fmt_string(&inner_239));
+            if let Some(inner_191) = &_input.member_id {
+                query.push_kv("member-id", &aws_smithy_http::query::fmt_string(&inner_191));
             }
-            if let Some(inner_240) = &_input.max_results {
+            if let Some(inner_192) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_240).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_192).encode(),
                 );
             }
-            if let Some(inner_241) = &_input.next_token {
+            if let Some(inner_193) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_241),
+                    &aws_smithy_http::query::fmt_string(&inner_193),
                 );
             }
             Ok(())
@@ -25324,16 +24787,16 @@ impl ListSipMediaApplicationsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_242) = &_input.max_results {
+            if let Some(inner_194) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_242).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_194).encode(),
                 );
             }
-            if let Some(inner_243) = &_input.next_token {
+            if let Some(inner_195) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_243),
+                    &aws_smithy_http::query::fmt_string(&inner_195),
                 );
             }
             Ok(())
@@ -25506,22 +24969,22 @@ impl ListSipRulesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_244) = &_input.sip_media_application_id {
+            if let Some(inner_196) = &_input.sip_media_application_id {
                 query.push_kv(
                     "sip-media-application",
-                    &aws_smithy_http::query::fmt_string(&inner_244),
+                    &aws_smithy_http::query::fmt_string(&inner_196),
                 );
             }
-            if let Some(inner_245) = &_input.max_results {
+            if let Some(inner_197) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_245).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_197).encode(),
                 );
             }
-            if let Some(inner_246) = &_input.next_token {
+            if let Some(inner_198) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_246),
+                    &aws_smithy_http::query::fmt_string(&inner_198),
                 );
             }
             Ok(())
@@ -25672,10 +25135,10 @@ impl ListSupportedPhoneNumberCountriesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_247) = &_input.product_type {
+            if let Some(inner_199) = &_input.product_type {
                 query.push_kv(
                     "product-type",
-                    &aws_smithy_http::query::fmt_string(&inner_247),
+                    &aws_smithy_http::query::fmt_string(&inner_199),
                 );
             }
             Ok(())
@@ -25821,8 +25284,8 @@ impl ListTagsForResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_248) = &_input.resource_arn {
-                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_248));
+            if let Some(inner_200) = &_input.resource_arn {
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_200));
             }
             Ok(())
         }
@@ -26005,15 +25468,15 @@ impl ListUsersInput {
             _input: &crate::input::ListUsersInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_249 = &_input.account_id;
-            let input_249 =
-                input_249
+            let input_201 = &_input.account_id;
+            let input_201 =
+                input_201
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_249, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_201, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -26033,25 +25496,25 @@ impl ListUsersInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_250) = &_input.user_email {
+            if let Some(inner_202) = &_input.user_email {
                 query.push_kv(
                     "user-email",
-                    &aws_smithy_http::query::fmt_string(&inner_250),
+                    &aws_smithy_http::query::fmt_string(&inner_202),
                 );
             }
-            if let Some(inner_251) = &_input.user_type {
-                query.push_kv("user-type", &aws_smithy_http::query::fmt_string(&inner_251));
+            if let Some(inner_203) = &_input.user_type {
+                query.push_kv("user-type", &aws_smithy_http::query::fmt_string(&inner_203));
             }
-            if let Some(inner_252) = &_input.max_results {
+            if let Some(inner_204) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_252).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_204).encode(),
                 );
             }
-            if let Some(inner_253) = &_input.next_token {
+            if let Some(inner_205) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_253),
+                    &aws_smithy_http::query::fmt_string(&inner_205),
                 );
             }
             Ok(())
@@ -26208,16 +25671,16 @@ impl ListVoiceConnectorGroupsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_254) = &_input.next_token {
+            if let Some(inner_206) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_254),
+                    &aws_smithy_http::query::fmt_string(&inner_206),
                 );
             }
-            if let Some(inner_255) = &_input.max_results {
+            if let Some(inner_207) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_255).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_207).encode(),
                 );
             }
             Ok(())
@@ -26375,16 +25838,16 @@ impl ListVoiceConnectorsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_256) = &_input.next_token {
+            if let Some(inner_208) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_256),
+                    &aws_smithy_http::query::fmt_string(&inner_208),
                 );
             }
-            if let Some(inner_257) = &_input.max_results {
+            if let Some(inner_209) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_257).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_209).encode(),
                 );
             }
             Ok(())
@@ -26529,15 +25992,15 @@ impl ListVoiceConnectorTerminationCredentialsInput {
             _input: &crate::input::ListVoiceConnectorTerminationCredentialsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_258 = &_input.voice_connector_id;
-            let input_258 =
-                input_258
+            let input_210 = &_input.voice_connector_id;
+            let input_210 =
+                input_210
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_258, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_210, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -26696,30 +26159,30 @@ impl LogoutUserInput {
             _input: &crate::input::LogoutUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_259 = &_input.account_id;
-            let input_259 =
-                input_259
+            let input_211 = &_input.account_id;
+            let input_211 =
+                input_211
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_259, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_211, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_260 = &_input.user_id;
-            let input_260 =
-                input_260
+            let input_212 = &_input.user_id;
+            let input_212 =
+                input_212
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_260, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_212, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -26900,15 +26363,15 @@ impl PutAppInstanceRetentionSettingsInput {
             _input: &crate::input::PutAppInstanceRetentionSettingsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_261 = &_input.app_instance_arn;
-            let input_261 =
-                input_261
+            let input_213 = &_input.app_instance_arn;
+            let input_213 =
+                input_213
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_261, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_213, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -26940,7 +26403,7 @@ impl PutAppInstanceRetentionSettingsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -27004,7 +26467,7 @@ impl PutAppInstanceRetentionSettingsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -27106,15 +26569,15 @@ impl PutAppInstanceStreamingConfigurationsInput {
             _input: &crate::input::PutAppInstanceStreamingConfigurationsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_262 = &_input.app_instance_arn;
-            let input_262 =
-                input_262
+            let input_214 = &_input.app_instance_arn;
+            let input_214 =
+                input_214
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_262, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_214, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -27146,7 +26609,7 @@ impl PutAppInstanceStreamingConfigurationsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -27208,7 +26671,7 @@ impl PutAppInstanceStreamingConfigurationsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -27321,30 +26784,30 @@ impl PutEventsConfigurationInput {
             _input: &crate::input::PutEventsConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_263 = &_input.account_id;
-            let input_263 =
-                input_263
+            let input_215 = &_input.account_id;
+            let input_215 =
+                input_215
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_263, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_215, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_264 = &_input.bot_id;
-            let input_264 =
-                input_264
+            let input_216 = &_input.bot_id;
+            let input_216 =
+                input_216
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_264, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_216, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
@@ -27377,7 +26840,7 @@ impl PutEventsConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -27440,7 +26903,7 @@ impl PutEventsConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -27523,15 +26986,15 @@ impl PutRetentionSettingsInput {
             _input: &crate::input::PutRetentionSettingsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_265 = &_input.account_id;
-            let input_265 =
-                input_265
+            let input_217 = &_input.account_id;
+            let input_217 =
+                input_217
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_265, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_217, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -27563,7 +27026,7 @@ impl PutRetentionSettingsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -27626,7 +27089,7 @@ impl PutRetentionSettingsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -27721,15 +27184,15 @@ impl PutSipMediaApplicationLoggingConfigurationInput {
             _input: &crate::input::PutSipMediaApplicationLoggingConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_266 = &_input.sip_media_application_id;
-            let input_266 =
-                input_266
+            let input_218 = &_input.sip_media_application_id;
+            let input_218 =
+                input_218
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "sip_media_application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let sip_media_application_id = aws_smithy_http::label::fmt_string(input_266, false);
+            let sip_media_application_id = aws_smithy_http::label::fmt_string(input_218, false);
             if sip_media_application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "sip_media_application_id",
@@ -27761,7 +27224,7 @@ impl PutSipMediaApplicationLoggingConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -27823,7 +27286,7 @@ impl PutSipMediaApplicationLoggingConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -27918,15 +27381,15 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInput {
             _input: &crate::input::PutVoiceConnectorEmergencyCallingConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_267 = &_input.voice_connector_id;
-            let input_267 =
-                input_267
+            let input_219 = &_input.voice_connector_id;
+            let input_219 =
+                input_219
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_267, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_219, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -27958,7 +27421,7 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -28020,7 +27483,7 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -28109,15 +27572,15 @@ impl PutVoiceConnectorLoggingConfigurationInput {
             _input: &crate::input::PutVoiceConnectorLoggingConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_268 = &_input.voice_connector_id;
-            let input_268 =
-                input_268
+            let input_220 = &_input.voice_connector_id;
+            let input_220 =
+                input_220
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_268, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_220, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -28149,7 +27612,7 @@ impl PutVoiceConnectorLoggingConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -28211,7 +27674,7 @@ impl PutVoiceConnectorLoggingConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -28299,15 +27762,15 @@ impl PutVoiceConnectorOriginationInput {
             _input: &crate::input::PutVoiceConnectorOriginationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_269 = &_input.voice_connector_id;
-            let input_269 =
-                input_269
+            let input_221 = &_input.voice_connector_id;
+            let input_221 =
+                input_221
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_269, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_221, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -28339,7 +27802,7 @@ impl PutVoiceConnectorOriginationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -28401,7 +27864,7 @@ impl PutVoiceConnectorOriginationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -28539,15 +28002,15 @@ impl PutVoiceConnectorProxyInput {
             _input: &crate::input::PutVoiceConnectorProxyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_270 = &_input.voice_connector_id;
-            let input_270 =
-                input_270
+            let input_222 = &_input.voice_connector_id;
+            let input_222 =
+                input_222
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_270, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_222, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -28579,7 +28042,7 @@ impl PutVoiceConnectorProxyInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -28642,7 +28105,7 @@ impl PutVoiceConnectorProxyInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -28734,15 +28197,15 @@ impl PutVoiceConnectorStreamingConfigurationInput {
             _input: &crate::input::PutVoiceConnectorStreamingConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_271 = &_input.voice_connector_id;
-            let input_271 =
-                input_271
+            let input_223 = &_input.voice_connector_id;
+            let input_223 =
+                input_223
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_271, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_223, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -28774,7 +28237,7 @@ impl PutVoiceConnectorStreamingConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -28836,7 +28299,7 @@ impl PutVoiceConnectorStreamingConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -28924,15 +28387,15 @@ impl PutVoiceConnectorTerminationInput {
             _input: &crate::input::PutVoiceConnectorTerminationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_272 = &_input.voice_connector_id;
-            let input_272 =
-                input_272
+            let input_224 = &_input.voice_connector_id;
+            let input_224 =
+                input_224
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_272, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_224, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -28964,7 +28427,7 @@ impl PutVoiceConnectorTerminationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -29026,7 +28489,7 @@ impl PutVoiceConnectorTerminationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -29120,15 +28583,15 @@ impl PutVoiceConnectorTerminationCredentialsInput {
             _input: &crate::input::PutVoiceConnectorTerminationCredentialsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_273 = &_input.voice_connector_id;
-            let input_273 =
-                input_273
+            let input_225 = &_input.voice_connector_id;
+            let input_225 =
+                input_225
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_273, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_225, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -29169,7 +28632,7 @@ impl PutVoiceConnectorTerminationCredentialsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -29231,7 +28694,7 @@ impl PutVoiceConnectorTerminationCredentialsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -29323,30 +28786,30 @@ impl RedactChannelMessageInput {
             _input: &crate::input::RedactChannelMessageInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_274 = &_input.channel_arn;
-            let input_274 =
-                input_274
+            let input_226 = &_input.channel_arn;
+            let input_226 =
+                input_226
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_274, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_226, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_275 = &_input.message_id;
-            let input_275 =
-                input_275
+            let input_227 = &_input.message_id;
+            let input_227 =
+                input_227
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "message_id",
                         details: "cannot be empty or unset",
                     })?;
-            let message_id = aws_smithy_http::label::fmt_string(input_275, false);
+            let message_id = aws_smithy_http::label::fmt_string(input_227, false);
             if message_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
@@ -29361,29 +28824,6 @@ impl RedactChannelMessageInput {
             )
             .expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::RedactChannelMessageInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_276) = &_input.chime_bearer {
-                let formatted_277 = AsRef::<str>::as_ref(inner_276);
-                if !formatted_277.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_277;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::RedactChannelMessageInput,
@@ -29402,7 +28842,7 @@ impl RedactChannelMessageInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_redact_channel_message(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -29557,45 +28997,45 @@ impl RedactConversationMessageInput {
             _input: &crate::input::RedactConversationMessageInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_278 = &_input.account_id;
-            let input_278 =
-                input_278
+            let input_228 = &_input.account_id;
+            let input_228 =
+                input_228
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_278, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_228, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_279 = &_input.conversation_id;
-            let input_279 =
-                input_279
+            let input_229 = &_input.conversation_id;
+            let input_229 =
+                input_229
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "conversation_id",
                         details: "cannot be empty or unset",
                     })?;
-            let conversation_id = aws_smithy_http::label::fmt_string(input_279, false);
+            let conversation_id = aws_smithy_http::label::fmt_string(input_229, false);
             if conversation_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "conversation_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_280 = &_input.message_id;
-            let input_280 =
-                input_280
+            let input_230 = &_input.message_id;
+            let input_230 =
+                input_230
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "message_id",
                         details: "cannot be empty or unset",
                     })?;
-            let message_id = aws_smithy_http::label::fmt_string(input_280, false);
+            let message_id = aws_smithy_http::label::fmt_string(input_230, false);
             if message_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
@@ -29777,45 +29217,45 @@ impl RedactRoomMessageInput {
             _input: &crate::input::RedactRoomMessageInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_281 = &_input.account_id;
-            let input_281 =
-                input_281
+            let input_231 = &_input.account_id;
+            let input_231 =
+                input_231
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_281, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_231, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_282 = &_input.room_id;
-            let input_282 =
-                input_282
+            let input_232 = &_input.room_id;
+            let input_232 =
+                input_232
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "room_id",
                         details: "cannot be empty or unset",
                     })?;
-            let room_id = aws_smithy_http::label::fmt_string(input_282, false);
+            let room_id = aws_smithy_http::label::fmt_string(input_232, false);
             if room_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_283 = &_input.message_id;
-            let input_283 =
-                input_283
+            let input_233 = &_input.message_id;
+            let input_233 =
+                input_233
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "message_id",
                         details: "cannot be empty or unset",
                     })?;
-            let message_id = aws_smithy_http::label::fmt_string(input_283, false);
+            let message_id = aws_smithy_http::label::fmt_string(input_233, false);
             if message_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
@@ -29986,30 +29426,30 @@ impl RegenerateSecurityTokenInput {
             _input: &crate::input::RegenerateSecurityTokenInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_284 = &_input.account_id;
-            let input_284 =
-                input_284
+            let input_234 = &_input.account_id;
+            let input_234 =
+                input_234
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_284, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_234, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_285 = &_input.bot_id;
-            let input_285 =
-                input_285
+            let input_235 = &_input.bot_id;
+            let input_235 =
+                input_235
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_285, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_235, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
@@ -30178,30 +29618,30 @@ impl ResetPersonalPinInput {
             _input: &crate::input::ResetPersonalPinInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_286 = &_input.account_id;
-            let input_286 =
-                input_286
+            let input_236 = &_input.account_id;
+            let input_236 =
+                input_236
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_286, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_236, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_287 = &_input.user_id;
-            let input_287 =
-                input_287
+            let input_237 = &_input.user_id;
+            let input_237 =
+                input_237
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_287, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_237, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -30361,15 +29801,15 @@ impl RestorePhoneNumberInput {
             _input: &crate::input::RestorePhoneNumberInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_288 = &_input.phone_number_id;
-            let input_288 =
-                input_288
+            let input_238 = &_input.phone_number_id;
+            let input_238 =
+                input_238
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "phone_number_id",
                         details: "cannot be empty or unset",
                     })?;
-            let phone_number_id = aws_smithy_http::label::fmt_string(input_288, false);
+            let phone_number_id = aws_smithy_http::label::fmt_string(input_238, false);
             if phone_number_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "phone_number_id",
@@ -30625,40 +30065,40 @@ impl SearchAvailablePhoneNumbersInput {
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
             query.push_kv("type", "phone-numbers");
-            if let Some(inner_289) = &_input.area_code {
-                query.push_kv("area-code", &aws_smithy_http::query::fmt_string(&inner_289));
+            if let Some(inner_239) = &_input.area_code {
+                query.push_kv("area-code", &aws_smithy_http::query::fmt_string(&inner_239));
             }
-            if let Some(inner_290) = &_input.city {
-                query.push_kv("city", &aws_smithy_http::query::fmt_string(&inner_290));
+            if let Some(inner_240) = &_input.city {
+                query.push_kv("city", &aws_smithy_http::query::fmt_string(&inner_240));
             }
-            if let Some(inner_291) = &_input.country {
-                query.push_kv("country", &aws_smithy_http::query::fmt_string(&inner_291));
+            if let Some(inner_241) = &_input.country {
+                query.push_kv("country", &aws_smithy_http::query::fmt_string(&inner_241));
             }
-            if let Some(inner_292) = &_input.state {
-                query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_292));
+            if let Some(inner_242) = &_input.state {
+                query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_242));
             }
-            if let Some(inner_293) = &_input.toll_free_prefix {
+            if let Some(inner_243) = &_input.toll_free_prefix {
                 query.push_kv(
                     "toll-free-prefix",
-                    &aws_smithy_http::query::fmt_string(&inner_293),
+                    &aws_smithy_http::query::fmt_string(&inner_243),
                 );
             }
-            if let Some(inner_294) = &_input.phone_number_type {
+            if let Some(inner_244) = &_input.phone_number_type {
                 query.push_kv(
                     "phone-number-type",
-                    &aws_smithy_http::query::fmt_string(&inner_294),
+                    &aws_smithy_http::query::fmt_string(&inner_244),
                 );
             }
-            if let Some(inner_295) = &_input.max_results {
+            if let Some(inner_245) = &_input.max_results {
                 query.push_kv(
                     "max-results",
-                    aws_smithy_types::primitive::Encoder::from(*inner_295).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_245).encode(),
                 );
             }
-            if let Some(inner_296) = &_input.next_token {
+            if let Some(inner_246) = &_input.next_token {
                 query.push_kv(
                     "next-token",
-                    &aws_smithy_http::query::fmt_string(&inner_296),
+                    &aws_smithy_http::query::fmt_string(&inner_246),
                 );
             }
             Ok(())
@@ -30877,15 +30317,15 @@ impl SendChannelMessageInput {
             _input: &crate::input::SendChannelMessageInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_297 = &_input.channel_arn;
-            let input_297 =
-                input_297
+            let input_247 = &_input.channel_arn;
+            let input_247 =
+                input_247
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_297, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_247, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
@@ -30900,29 +30340,6 @@ impl SendChannelMessageInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::SendChannelMessageInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_298) = &_input.chime_bearer {
-                let formatted_299 = AsRef::<str>::as_ref(inner_298);
-                if !formatted_299.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_299;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::SendChannelMessageInput,
@@ -30931,7 +30348,7 @@ impl SendChannelMessageInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_send_channel_message(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -30941,7 +30358,7 @@ impl SendChannelMessageInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -31007,7 +30424,7 @@ impl SendChannelMessageInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -31095,15 +30512,15 @@ impl StartMeetingTranscriptionInput {
             _input: &crate::input::StartMeetingTranscriptionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_300 = &_input.meeting_id;
-            let input_300 =
-                input_300
+            let input_248 = &_input.meeting_id;
+            let input_248 =
+                input_248
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_300, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_248, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
@@ -31144,7 +30561,7 @@ impl StartMeetingTranscriptionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -31207,7 +30624,7 @@ impl StartMeetingTranscriptionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -31276,15 +30693,15 @@ impl StopMeetingTranscriptionInput {
             _input: &crate::input::StopMeetingTranscriptionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_301 = &_input.meeting_id;
-            let input_301 =
-                input_301
+            let input_249 = &_input.meeting_id;
+            let input_249 =
+                input_249
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_301, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_249, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
@@ -31473,30 +30890,30 @@ impl TagAttendeeInput {
             _input: &crate::input::TagAttendeeInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_302 = &_input.meeting_id;
-            let input_302 =
-                input_302
+            let input_250 = &_input.meeting_id;
+            let input_250 =
+                input_250
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_302, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_250, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_303 = &_input.attendee_id;
-            let input_303 =
-                input_303
+            let input_251 = &_input.attendee_id;
+            let input_251 =
+                input_251
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attendee_id",
                         details: "cannot be empty or unset",
                     })?;
-            let attendee_id = aws_smithy_http::label::fmt_string(input_303, false);
+            let attendee_id = aws_smithy_http::label::fmt_string(input_251, false);
             if attendee_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "attendee_id",
@@ -31538,7 +30955,7 @@ impl TagAttendeeInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -31598,7 +31015,7 @@ impl TagAttendeeInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -31687,15 +31104,15 @@ impl TagMeetingInput {
             _input: &crate::input::TagMeetingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_304 = &_input.meeting_id;
-            let input_304 =
-                input_304
+            let input_252 = &_input.meeting_id;
+            let input_252 =
+                input_252
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_304, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_252, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
@@ -31732,7 +31149,7 @@ impl TagMeetingInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -31792,7 +31209,7 @@ impl TagMeetingInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -31910,7 +31327,7 @@ impl TagResourceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -31970,7 +31387,7 @@ impl TagResourceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -32071,30 +31488,30 @@ impl UntagAttendeeInput {
             _input: &crate::input::UntagAttendeeInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_305 = &_input.meeting_id;
-            let input_305 =
-                input_305
+            let input_253 = &_input.meeting_id;
+            let input_253 =
+                input_253
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_305, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_253, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_306 = &_input.attendee_id;
-            let input_306 =
-                input_306
+            let input_254 = &_input.attendee_id;
+            let input_254 =
+                input_254
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attendee_id",
                         details: "cannot be empty or unset",
                     })?;
-            let attendee_id = aws_smithy_http::label::fmt_string(input_306, false);
+            let attendee_id = aws_smithy_http::label::fmt_string(input_254, false);
             if attendee_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "attendee_id",
@@ -32136,7 +31553,7 @@ impl UntagAttendeeInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -32196,7 +31613,7 @@ impl UntagAttendeeInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -32285,15 +31702,15 @@ impl UntagMeetingInput {
             _input: &crate::input::UntagMeetingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_307 = &_input.meeting_id;
-            let input_307 =
-                input_307
+            let input_255 = &_input.meeting_id;
+            let input_255 =
+                input_255
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     })?;
-            let meeting_id = aws_smithy_http::label::fmt_string(input_307, false);
+            let meeting_id = aws_smithy_http::label::fmt_string(input_255, false);
             if meeting_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "meeting_id",
@@ -32330,7 +31747,7 @@ impl UntagMeetingInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -32390,7 +31807,7 @@ impl UntagMeetingInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -32508,7 +31925,7 @@ impl UntagResourceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -32568,7 +31985,7 @@ impl UntagResourceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -32663,15 +32080,15 @@ impl UpdateAccountInput {
             _input: &crate::input::UpdateAccountInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_308 = &_input.account_id;
-            let input_308 =
-                input_308
+            let input_256 = &_input.account_id;
+            let input_256 =
+                input_256
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_308, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_256, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -32699,7 +32116,7 @@ impl UpdateAccountInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -32759,7 +32176,7 @@ impl UpdateAccountInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -32842,15 +32259,15 @@ impl UpdateAccountSettingsInput {
             _input: &crate::input::UpdateAccountSettingsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_309 = &_input.account_id;
-            let input_309 =
-                input_309
+            let input_257 = &_input.account_id;
+            let input_257 =
+                input_257
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_309, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_257, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
@@ -32882,7 +32299,7 @@ impl UpdateAccountSettingsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -32945,7 +32362,7 @@ impl UpdateAccountSettingsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -33040,15 +32457,15 @@ impl UpdateAppInstanceInput {
             _input: &crate::input::UpdateAppInstanceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_310 = &_input.app_instance_arn;
-            let input_310 =
-                input_310
+            let input_258 = &_input.app_instance_arn;
+            let input_258 =
+                input_258
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_arn = aws_smithy_http::label::fmt_string(input_310, false);
+            let app_instance_arn = aws_smithy_http::label::fmt_string(input_258, false);
             if app_instance_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_arn",
@@ -33080,7 +32497,7 @@ impl UpdateAppInstanceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -33143,7 +32560,7 @@ impl UpdateAppInstanceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -33238,15 +32655,15 @@ impl UpdateAppInstanceUserInput {
             _input: &crate::input::UpdateAppInstanceUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_311 = &_input.app_instance_user_arn;
-            let input_311 =
-                input_311
+            let input_259 = &_input.app_instance_user_arn;
+            let input_259 =
+                input_259
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "app_instance_user_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_311, false);
+            let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_259, false);
             if app_instance_user_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "app_instance_user_arn",
@@ -33278,7 +32695,7 @@ impl UpdateAppInstanceUserInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -33343,7 +32760,7 @@ impl UpdateAppInstanceUserInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -33433,30 +32850,30 @@ impl UpdateBotInput {
             _input: &crate::input::UpdateBotInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_312 = &_input.account_id;
-            let input_312 =
-                input_312
+            let input_260 = &_input.account_id;
+            let input_260 =
+                input_260
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_312, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_260, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_313 = &_input.bot_id;
-            let input_313 =
-                input_313
+            let input_261 = &_input.bot_id;
+            let input_261 =
+                input_261
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_313, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_261, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
@@ -33489,7 +32906,7 @@ impl UpdateBotInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -33547,7 +32964,7 @@ impl UpdateBotInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -33663,15 +33080,15 @@ impl UpdateChannelInput {
             _input: &crate::input::UpdateChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_314 = &_input.channel_arn;
-            let input_314 =
-                input_314
+            let input_262 = &_input.channel_arn;
+            let input_262 =
+                input_262
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_314, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_262, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
@@ -33682,29 +33099,6 @@ impl UpdateChannelInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::UpdateChannelInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_315) = &_input.chime_bearer {
-                let formatted_316 = AsRef::<str>::as_ref(inner_315);
-                if !formatted_316.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_316;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateChannelInput,
@@ -33713,7 +33107,7 @@ impl UpdateChannelInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_update_channel(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -33723,7 +33117,7 @@ impl UpdateChannelInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -33785,7 +33179,7 @@ impl UpdateChannelInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -33901,30 +33295,30 @@ impl UpdateChannelMessageInput {
             _input: &crate::input::UpdateChannelMessageInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_317 = &_input.channel_arn;
-            let input_317 =
-                input_317
+            let input_263 = &_input.channel_arn;
+            let input_263 =
+                input_263
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_317, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_263, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_318 = &_input.message_id;
-            let input_318 =
-                input_318
+            let input_264 = &_input.message_id;
+            let input_264 =
+                input_264
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "message_id",
                         details: "cannot be empty or unset",
                     })?;
-            let message_id = aws_smithy_http::label::fmt_string(input_318, false);
+            let message_id = aws_smithy_http::label::fmt_string(input_264, false);
             if message_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "message_id",
@@ -33940,29 +33334,6 @@ impl UpdateChannelMessageInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::UpdateChannelMessageInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_319) = &_input.chime_bearer {
-                let formatted_320 = AsRef::<str>::as_ref(inner_319);
-                if !formatted_320.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_320;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateChannelMessageInput,
@@ -33971,7 +33342,7 @@ impl UpdateChannelMessageInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_update_channel_message(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -33981,7 +33352,7 @@ impl UpdateChannelMessageInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -34046,7 +33417,7 @@ impl UpdateChannelMessageInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -34127,15 +33498,15 @@ impl UpdateChannelReadMarkerInput {
             _input: &crate::input::UpdateChannelReadMarkerInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_321 = &_input.channel_arn;
-            let input_321 =
-                input_321
+            let input_265 = &_input.channel_arn;
+            let input_265 =
+                input_265
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_arn = aws_smithy_http::label::fmt_string(input_321, false);
+            let channel_arn = aws_smithy_http::label::fmt_string(input_265, false);
             if channel_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_arn",
@@ -34150,29 +33521,6 @@ impl UpdateChannelReadMarkerInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::UpdateChannelReadMarkerInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_322) = &_input.chime_bearer {
-                let formatted_323 = AsRef::<str>::as_ref(inner_322);
-                if !formatted_323.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_323;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "chime_bearer",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-chime-bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateChannelReadMarkerInput,
@@ -34181,7 +33529,8 @@ impl UpdateChannelReadMarkerInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_update_channel_read_marker(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -34346,7 +33695,7 @@ impl UpdateGlobalSettingsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -34409,7 +33758,7 @@ impl UpdateGlobalSettingsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -34507,15 +33856,15 @@ impl UpdatePhoneNumberInput {
             _input: &crate::input::UpdatePhoneNumberInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_324 = &_input.phone_number_id;
-            let input_324 =
-                input_324
+            let input_266 = &_input.phone_number_id;
+            let input_266 =
+                input_266
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "phone_number_id",
                         details: "cannot be empty or unset",
                     })?;
-            let phone_number_id = aws_smithy_http::label::fmt_string(input_324, false);
+            let phone_number_id = aws_smithy_http::label::fmt_string(input_266, false);
             if phone_number_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "phone_number_id",
@@ -34547,7 +33896,7 @@ impl UpdatePhoneNumberInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -34608,7 +33957,7 @@ impl UpdatePhoneNumberInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -34697,7 +34046,7 @@ impl UpdatePhoneNumberSettingsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -34760,7 +34109,7 @@ impl UpdatePhoneNumberSettingsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -34879,30 +34228,30 @@ impl UpdateProxySessionInput {
             _input: &crate::input::UpdateProxySessionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_325 = &_input.voice_connector_id;
-            let input_325 =
-                input_325
+            let input_267 = &_input.voice_connector_id;
+            let input_267 =
+                input_267
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_325, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_267, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_326 = &_input.proxy_session_id;
-            let input_326 =
-                input_326
+            let input_268 = &_input.proxy_session_id;
+            let input_268 =
+                input_268
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "proxy_session_id",
                         details: "cannot be empty or unset",
                     })?;
-            let proxy_session_id = aws_smithy_http::label::fmt_string(input_326, false);
+            let proxy_session_id = aws_smithy_http::label::fmt_string(input_268, false);
             if proxy_session_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "proxy_session_id",
@@ -34935,7 +34284,7 @@ impl UpdateProxySessionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -34996,7 +34345,7 @@ impl UpdateProxySessionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -35088,30 +34437,30 @@ impl UpdateRoomInput {
             _input: &crate::input::UpdateRoomInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_327 = &_input.account_id;
-            let input_327 =
-                input_327
+            let input_269 = &_input.account_id;
+            let input_269 =
+                input_269
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_327, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_269, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_328 = &_input.room_id;
-            let input_328 =
-                input_328
+            let input_270 = &_input.room_id;
+            let input_270 =
+                input_270
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "room_id",
                         details: "cannot be empty or unset",
                     })?;
-            let room_id = aws_smithy_http::label::fmt_string(input_328, false);
+            let room_id = aws_smithy_http::label::fmt_string(input_270, false);
             if room_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
@@ -35144,7 +34493,7 @@ impl UpdateRoomInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -35204,7 +34553,7 @@ impl UpdateRoomInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -35311,45 +34660,45 @@ impl UpdateRoomMembershipInput {
             _input: &crate::input::UpdateRoomMembershipInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_329 = &_input.account_id;
-            let input_329 =
-                input_329
+            let input_271 = &_input.account_id;
+            let input_271 =
+                input_271
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_329, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_271, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_330 = &_input.room_id;
-            let input_330 =
-                input_330
+            let input_272 = &_input.room_id;
+            let input_272 =
+                input_272
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "room_id",
                         details: "cannot be empty or unset",
                     })?;
-            let room_id = aws_smithy_http::label::fmt_string(input_330, false);
+            let room_id = aws_smithy_http::label::fmt_string(input_272, false);
             if room_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "room_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_331 = &_input.member_id;
-            let input_331 =
-                input_331
+            let input_273 = &_input.member_id;
+            let input_273 =
+                input_273
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "member_id",
                         details: "cannot be empty or unset",
                     })?;
-            let member_id = aws_smithy_http::label::fmt_string(input_331, false);
+            let member_id = aws_smithy_http::label::fmt_string(input_273, false);
             if member_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "member_id",
@@ -35383,7 +34732,7 @@ impl UpdateRoomMembershipInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -35446,7 +34795,7 @@ impl UpdateRoomMembershipInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -35552,15 +34901,15 @@ impl UpdateSipMediaApplicationInput {
             _input: &crate::input::UpdateSipMediaApplicationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_332 = &_input.sip_media_application_id;
-            let input_332 =
-                input_332
+            let input_274 = &_input.sip_media_application_id;
+            let input_274 =
+                input_274
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "sip_media_application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let sip_media_application_id = aws_smithy_http::label::fmt_string(input_332, false);
+            let sip_media_application_id = aws_smithy_http::label::fmt_string(input_274, false);
             if sip_media_application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "sip_media_application_id",
@@ -35592,7 +34941,7 @@ impl UpdateSipMediaApplicationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -35655,7 +35004,7 @@ impl UpdateSipMediaApplicationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -35772,30 +35121,30 @@ impl UpdateSipMediaApplicationCallInput {
             _input: &crate::input::UpdateSipMediaApplicationCallInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_333 = &_input.sip_media_application_id;
-            let input_333 =
-                input_333
+            let input_275 = &_input.sip_media_application_id;
+            let input_275 =
+                input_275
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "sip_media_application_id",
                         details: "cannot be empty or unset",
                     })?;
-            let sip_media_application_id = aws_smithy_http::label::fmt_string(input_333, false);
+            let sip_media_application_id = aws_smithy_http::label::fmt_string(input_275, false);
             if sip_media_application_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "sip_media_application_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_334 = &_input.transaction_id;
-            let input_334 =
-                input_334
+            let input_276 = &_input.transaction_id;
+            let input_276 =
+                input_276
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "transaction_id",
                         details: "cannot be empty or unset",
                     })?;
-            let transaction_id = aws_smithy_http::label::fmt_string(input_334, false);
+            let transaction_id = aws_smithy_http::label::fmt_string(input_276, false);
             if transaction_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "transaction_id",
@@ -35828,7 +35177,7 @@ impl UpdateSipMediaApplicationCallInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -35890,7 +35239,7 @@ impl UpdateSipMediaApplicationCallInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -36007,15 +35356,15 @@ impl UpdateSipRuleInput {
             _input: &crate::input::UpdateSipRuleInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_335 = &_input.sip_rule_id;
-            let input_335 =
-                input_335
+            let input_277 = &_input.sip_rule_id;
+            let input_277 =
+                input_277
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "sip_rule_id",
                         details: "cannot be empty or unset",
                     })?;
-            let sip_rule_id = aws_smithy_http::label::fmt_string(input_335, false);
+            let sip_rule_id = aws_smithy_http::label::fmt_string(input_277, false);
             if sip_rule_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "sip_rule_id",
@@ -36043,7 +35392,7 @@ impl UpdateSipRuleInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -36104,7 +35453,7 @@ impl UpdateSipRuleInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -36230,30 +35579,30 @@ impl UpdateUserInput {
             _input: &crate::input::UpdateUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_336 = &_input.account_id;
-            let input_336 =
-                input_336
+            let input_278 = &_input.account_id;
+            let input_278 =
+                input_278
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_336, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_278, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_337 = &_input.user_id;
-            let input_337 =
-                input_337
+            let input_279 = &_input.user_id;
+            let input_279 =
+                input_279
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_337, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_279, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -36286,7 +35635,7 @@ impl UpdateUserInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -36346,7 +35695,7 @@ impl UpdateUserInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -36441,30 +35790,30 @@ impl UpdateUserSettingsInput {
             _input: &crate::input::UpdateUserSettingsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_338 = &_input.account_id;
-            let input_338 =
-                input_338
+            let input_280 = &_input.account_id;
+            let input_280 =
+                input_280
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "account_id",
                         details: "cannot be empty or unset",
                     })?;
-            let account_id = aws_smithy_http::label::fmt_string(input_338, false);
+            let account_id = aws_smithy_http::label::fmt_string(input_280, false);
             if account_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "account_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_339 = &_input.user_id;
-            let input_339 =
-                input_339
+            let input_281 = &_input.user_id;
+            let input_281 =
+                input_281
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_339, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_281, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -36497,7 +35846,7 @@ impl UpdateUserSettingsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -36558,7 +35907,7 @@ impl UpdateUserSettingsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -36653,15 +36002,15 @@ impl UpdateVoiceConnectorInput {
             _input: &crate::input::UpdateVoiceConnectorInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_340 = &_input.voice_connector_id;
-            let input_340 =
-                input_340
+            let input_282 = &_input.voice_connector_id;
+            let input_282 =
+                input_282
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_id = aws_smithy_http::label::fmt_string(input_340, false);
+            let voice_connector_id = aws_smithy_http::label::fmt_string(input_282, false);
             if voice_connector_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_id",
@@ -36693,7 +36042,7 @@ impl UpdateVoiceConnectorInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -36756,7 +36105,7 @@ impl UpdateVoiceConnectorInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -36862,15 +36211,15 @@ impl UpdateVoiceConnectorGroupInput {
             _input: &crate::input::UpdateVoiceConnectorGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_341 = &_input.voice_connector_group_id;
-            let input_341 =
-                input_341
+            let input_283 = &_input.voice_connector_group_id;
+            let input_283 =
+                input_283
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "voice_connector_group_id",
                         details: "cannot be empty or unset",
                     })?;
-            let voice_connector_group_id = aws_smithy_http::label::fmt_string(input_341, false);
+            let voice_connector_group_id = aws_smithy_http::label::fmt_string(input_283, false);
             if voice_connector_group_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "voice_connector_group_id",
@@ -36902,7 +36251,7 @@ impl UpdateVoiceConnectorGroupInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -36965,7 +36314,7 @@ impl UpdateVoiceConnectorGroupInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

@@ -727,29 +727,6 @@ impl PutSessionInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::PutSessionInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_13) = &_input.response_content_type {
-                let formatted_14 = AsRef::<str>::as_ref(inner_13);
-                if !formatted_14.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_14;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "response_content_type",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("ResponseContentType", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::PutSessionInput,
@@ -758,7 +735,7 @@ impl PutSessionInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_session(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -768,7 +745,7 @@ impl PutSessionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -828,7 +805,7 @@ impl PutSessionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -990,60 +967,60 @@ impl RecognizeTextInput {
             _input: &crate::input::RecognizeTextInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_15 = &_input.bot_id;
-            let input_15 =
-                input_15
+            let input_13 = &_input.bot_id;
+            let input_13 =
+                input_13
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_15, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_13, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_16 = &_input.bot_alias_id;
-            let input_16 =
-                input_16
+            let input_14 = &_input.bot_alias_id;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_alias_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_alias_id = aws_smithy_http::label::fmt_string(input_16, false);
+            let bot_alias_id = aws_smithy_http::label::fmt_string(input_14, false);
             if bot_alias_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_17 = &_input.locale_id;
-            let input_17 =
-                input_17
+            let input_15 = &_input.locale_id;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = aws_smithy_http::label::fmt_string(input_17, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_15, false);
             if locale_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_18 = &_input.session_id;
-            let input_18 =
-                input_18
+            let input_16 = &_input.session_id;
+            let input_16 =
+                input_16
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "session_id",
                         details: "cannot be empty or unset",
                     })?;
-            let session_id = aws_smithy_http::label::fmt_string(input_18, false);
+            let session_id = aws_smithy_http::label::fmt_string(input_16, false);
             if session_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "session_id",
@@ -1070,7 +1047,7 @@ impl RecognizeTextInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1130,7 +1107,7 @@ impl RecognizeTextInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1373,60 +1350,60 @@ impl RecognizeUtteranceInput {
             _input: &crate::input::RecognizeUtteranceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_19 = &_input.bot_id;
-            let input_19 =
-                input_19
+            let input_17 = &_input.bot_id;
+            let input_17 =
+                input_17
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = aws_smithy_http::label::fmt_string(input_19, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_17, false);
             if bot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_20 = &_input.bot_alias_id;
-            let input_20 =
-                input_20
+            let input_18 = &_input.bot_alias_id;
+            let input_18 =
+                input_18
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_alias_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_alias_id = aws_smithy_http::label::fmt_string(input_20, false);
+            let bot_alias_id = aws_smithy_http::label::fmt_string(input_18, false);
             if bot_alias_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_21 = &_input.locale_id;
-            let input_21 =
-                input_21
+            let input_19 = &_input.locale_id;
+            let input_19 =
+                input_19
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = aws_smithy_http::label::fmt_string(input_21, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_19, false);
             if locale_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_22 = &_input.session_id;
-            let input_22 =
-                input_22
+            let input_20 = &_input.session_id;
+            let input_20 =
+                input_20
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "session_id",
                         details: "cannot be empty or unset",
                     })?;
-            let session_id = aws_smithy_http::label::fmt_string(input_22, false);
+            let session_id = aws_smithy_http::label::fmt_string(input_20, false);
             if session_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "session_id",
@@ -1436,77 +1413,6 @@ impl RecognizeUtteranceInput {
             write!(output, "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/utterance", botId = bot_id, botAliasId = bot_alias_id, localeId = locale_id, sessionId = session_id).expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::RecognizeUtteranceInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_23) = &_input.session_state {
-                let formatted_24 = AsRef::<str>::as_ref(inner_23);
-                if !formatted_24.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_24;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "session_state",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-lex-session-state", header_value);
-                }
-            }
-            if let Some(inner_25) = &_input.request_attributes {
-                let formatted_26 = AsRef::<str>::as_ref(inner_25);
-                if !formatted_26.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_26;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_attributes",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-lex-request-attributes", header_value);
-                }
-            }
-            if let Some(inner_27) = &_input.request_content_type {
-                let formatted_28 = AsRef::<str>::as_ref(inner_27);
-                if !formatted_28.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_28;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "request_content_type",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Type", header_value);
-                }
-            }
-            if let Some(inner_29) = &_input.response_content_type {
-                let formatted_30 = AsRef::<str>::as_ref(inner_29);
-                if !formatted_30.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_30;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "response_content_type",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Response-Content-Type", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::RecognizeUtteranceInput,
@@ -1515,7 +1421,7 @@ impl RecognizeUtteranceInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_recognize_utterance(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1525,7 +1431,7 @@ impl RecognizeUtteranceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
@@ -1589,7 +1495,7 @@ impl RecognizeUtteranceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
