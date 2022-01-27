@@ -129,7 +129,7 @@ impl AssociateAssetsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -195,7 +195,7 @@ impl AssociateAssetsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -338,7 +338,7 @@ impl AssociateTimeSeriesToAssetPropertyInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -405,7 +405,7 @@ impl AssociateTimeSeriesToAssetPropertyInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -547,7 +547,7 @@ impl BatchAssociateProjectAssetsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -614,7 +614,7 @@ impl BatchAssociateProjectAssetsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -757,7 +757,7 @@ impl BatchDisassociateProjectAssetsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -824,7 +824,7 @@ impl BatchDisassociateProjectAssetsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -923,7 +923,7 @@ impl BatchPutAssetPropertyValueInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -987,7 +987,7 @@ impl BatchPutAssetPropertyValueInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1149,7 +1149,7 @@ impl CreateAccessPolicyInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1215,7 +1215,7 @@ impl CreateAccessPolicyInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1359,7 +1359,7 @@ impl CreateAssetInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1424,7 +1424,7 @@ impl CreateAssetInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1652,7 +1652,7 @@ impl CreateAssetModelInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1718,7 +1718,7 @@ impl CreateAssetModelInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1892,7 +1892,7 @@ impl CreateDashboardInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1958,7 +1958,7 @@ impl CreateDashboardInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2090,7 +2090,7 @@ impl CreateGatewayInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2152,7 +2152,7 @@ impl CreateGatewayInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2396,7 +2396,7 @@ impl CreatePortalInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2461,7 +2461,7 @@ impl CreatePortalInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2617,7 +2617,7 @@ impl CreateProjectInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2682,7 +2682,7 @@ impl CreateProjectInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4087,7 +4087,7 @@ impl DeleteTimeSeriesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -4153,7 +4153,7 @@ impl DeleteTimeSeriesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6315,7 +6315,7 @@ impl DisassociateAssetsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -6381,7 +6381,7 @@ impl DisassociateAssetsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6524,7 +6524,7 @@ impl DisassociateTimeSeriesFromAssetPropertyInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -6591,7 +6591,7 @@ impl DisassociateTimeSeriesFromAssetPropertyInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10331,7 +10331,7 @@ impl PutDefaultEncryptionConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -10395,7 +10395,7 @@ impl PutDefaultEncryptionConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10486,7 +10486,7 @@ impl PutLoggingOptionsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -10549,7 +10549,7 @@ impl PutLoggingOptionsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10712,7 +10712,7 @@ impl PutStorageConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -10777,7 +10777,7 @@ impl PutStorageConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10908,7 +10908,7 @@ impl TagResourceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -10970,7 +10970,7 @@ impl TagResourceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11315,7 +11315,7 @@ impl UpdateAccessPolicyInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -11381,7 +11381,7 @@ impl UpdateAccessPolicyInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11509,7 +11509,7 @@ impl UpdateAssetInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -11574,7 +11574,7 @@ impl UpdateAssetInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11800,7 +11800,7 @@ impl UpdateAssetModelInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -11866,7 +11866,7 @@ impl UpdateAssetModelInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12052,7 +12052,7 @@ impl UpdateAssetPropertyInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -12118,7 +12118,7 @@ impl UpdateAssetPropertyInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12283,7 +12283,7 @@ impl UpdateDashboardInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -12349,7 +12349,7 @@ impl UpdateDashboardInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12469,7 +12469,7 @@ impl UpdateGatewayInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -12531,7 +12531,7 @@ impl UpdateGatewayInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12671,7 +12671,7 @@ impl UpdateGatewayCapabilityConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -12735,7 +12735,7 @@ impl UpdateGatewayCapabilityConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12955,7 +12955,7 @@ impl UpdatePortalInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -13020,7 +13020,7 @@ impl UpdatePortalInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13163,7 +13163,7 @@ impl UpdateProjectInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -13228,7 +13228,7 @@ impl UpdateProjectInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

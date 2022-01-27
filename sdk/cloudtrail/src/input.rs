@@ -95,12 +95,12 @@ impl AddTagsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.AddTags",
@@ -158,7 +158,7 @@ impl AddTagsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -261,12 +261,12 @@ impl CancelQueryInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.CancelQuery",
@@ -326,7 +326,7 @@ impl CancelQueryInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -511,12 +511,12 @@ impl CreateEventDataStoreInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.CreateEventDataStore",
@@ -579,7 +579,7 @@ impl CreateEventDataStoreInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -863,12 +863,12 @@ impl CreateTrailInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.CreateTrail",
@@ -928,7 +928,7 @@ impl CreateTrailInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1019,12 +1019,12 @@ impl DeleteEventDataStoreInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.DeleteEventDataStore",
@@ -1087,7 +1087,7 @@ impl DeleteEventDataStoreInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1173,12 +1173,12 @@ impl DeleteTrailInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.DeleteTrail",
@@ -1238,7 +1238,7 @@ impl DeleteTrailInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1341,12 +1341,12 @@ impl DescribeQueryInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.DescribeQuery",
@@ -1406,7 +1406,7 @@ impl DescribeQueryInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1531,12 +1531,12 @@ impl DescribeTrailsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.DescribeTrails",
@@ -1597,7 +1597,7 @@ impl DescribeTrailsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1688,12 +1688,12 @@ impl GetEventDataStoreInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.GetEventDataStore",
@@ -1754,7 +1754,7 @@ impl GetEventDataStoreInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1860,12 +1860,12 @@ impl GetEventSelectorsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.GetEventSelectors",
@@ -1926,7 +1926,7 @@ impl GetEventSelectorsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2032,12 +2032,12 @@ impl GetInsightSelectorsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.GetInsightSelectors",
@@ -2098,7 +2098,7 @@ impl GetInsightSelectorsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2225,12 +2225,12 @@ impl GetQueryResultsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.GetQueryResults",
@@ -2291,7 +2291,7 @@ impl GetQueryResultsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2375,12 +2375,12 @@ impl GetTrailInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.GetTrail",
@@ -2438,7 +2438,7 @@ impl GetTrailInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2526,12 +2526,12 @@ impl GetTrailStatusInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.GetTrailStatus",
@@ -2592,7 +2592,7 @@ impl GetTrailStatusInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2692,12 +2692,12 @@ impl ListEventDataStoresInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.ListEventDataStores",
@@ -2760,7 +2760,7 @@ impl ListEventDataStoresInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2878,12 +2878,12 @@ impl ListPublicKeysInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.ListPublicKeys",
@@ -2944,7 +2944,7 @@ impl ListPublicKeysInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3104,12 +3104,12 @@ impl ListQueriesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.ListQueries",
@@ -3169,7 +3169,7 @@ impl ListQueriesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3278,12 +3278,12 @@ impl ListTagsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.ListTags",
@@ -3341,7 +3341,7 @@ impl ListTagsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3429,12 +3429,12 @@ impl ListTrailsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.ListTrails",
@@ -3494,7 +3494,7 @@ impl ListTrailsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3661,12 +3661,12 @@ impl LookupEventsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.LookupEvents",
@@ -3726,7 +3726,7 @@ impl LookupEventsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3878,12 +3878,12 @@ impl PutEventSelectorsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.PutEventSelectors",
@@ -3944,7 +3944,7 @@ impl PutEventSelectorsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4054,12 +4054,12 @@ impl PutInsightSelectorsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.PutInsightSelectors",
@@ -4120,7 +4120,7 @@ impl PutInsightSelectorsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4231,12 +4231,12 @@ impl RemoveTagsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.RemoveTags",
@@ -4296,7 +4296,7 @@ impl RemoveTagsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4387,12 +4387,12 @@ impl RestoreEventDataStoreInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.RestoreEventDataStore",
@@ -4455,7 +4455,7 @@ impl RestoreEventDataStoreInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4543,12 +4543,12 @@ impl StartLoggingInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.StartLogging",
@@ -4608,7 +4608,7 @@ impl StartLoggingInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4699,12 +4699,12 @@ impl StartQueryInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.StartQuery",
@@ -4764,7 +4764,7 @@ impl StartQueryInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4852,12 +4852,12 @@ impl StopLoggingInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.StopLogging",
@@ -4917,7 +4917,7 @@ impl StopLoggingInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5096,12 +5096,12 @@ impl UpdateEventDataStoreInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.UpdateEventDataStore",
@@ -5164,7 +5164,7 @@ impl UpdateEventDataStoreInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5431,12 +5431,12 @@ impl UpdateTrailInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CloudTrail_20131101.UpdateTrail",
@@ -5496,7 +5496,7 @@ impl UpdateTrailInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

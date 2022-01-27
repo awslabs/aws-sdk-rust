@@ -119,12 +119,12 @@ impl CompareFacesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.CompareFaces",
@@ -184,7 +184,7 @@ impl CompareFacesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -304,12 +304,12 @@ impl CreateCollectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.CreateCollection",
@@ -370,7 +370,7 @@ impl CreateCollectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -488,12 +488,12 @@ impl CreateDatasetInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.CreateDataset",
@@ -553,7 +553,7 @@ impl CreateDatasetInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -641,12 +641,12 @@ impl CreateProjectInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.CreateProject",
@@ -706,7 +706,7 @@ impl CreateProjectInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -908,12 +908,12 @@ impl CreateProjectVersionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.CreateProjectVersion",
@@ -976,7 +976,7 @@ impl CreateProjectVersionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1150,12 +1150,12 @@ impl CreateStreamProcessorInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.CreateStreamProcessor",
@@ -1218,7 +1218,7 @@ impl CreateStreamProcessorInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1309,12 +1309,12 @@ impl DeleteCollectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DeleteCollection",
@@ -1375,7 +1375,7 @@ impl DeleteCollectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1463,12 +1463,12 @@ impl DeleteDatasetInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DeleteDataset",
@@ -1528,7 +1528,7 @@ impl DeleteDatasetInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1640,12 +1640,12 @@ impl DeleteFacesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DeleteFaces",
@@ -1705,7 +1705,7 @@ impl DeleteFacesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1793,12 +1793,12 @@ impl DeleteProjectInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DeleteProject",
@@ -1858,7 +1858,7 @@ impl DeleteProjectInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1949,12 +1949,12 @@ impl DeleteProjectVersionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DeleteProjectVersion",
@@ -2017,7 +2017,7 @@ impl DeleteProjectVersionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2103,12 +2103,12 @@ impl DeleteStreamProcessorInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DeleteStreamProcessor",
@@ -2171,7 +2171,7 @@ impl DeleteStreamProcessorInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2262,12 +2262,12 @@ impl DescribeCollectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DescribeCollection",
@@ -2328,7 +2328,7 @@ impl DescribeCollectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2416,12 +2416,12 @@ impl DescribeDatasetInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DescribeDataset",
@@ -2482,7 +2482,7 @@ impl DescribeDatasetInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2603,12 +2603,12 @@ impl DescribeProjectsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DescribeProjects",
@@ -2669,7 +2669,7 @@ impl DescribeProjectsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2803,12 +2803,12 @@ impl DescribeProjectVersionsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DescribeProjectVersions",
@@ -2871,7 +2871,7 @@ impl DescribeProjectVersionsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2958,12 +2958,12 @@ impl DescribeStreamProcessorInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DescribeStreamProcessor",
@@ -3026,7 +3026,7 @@ impl DescribeStreamProcessorInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3165,12 +3165,12 @@ impl DetectCustomLabelsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DetectCustomLabels",
@@ -3231,7 +3231,7 @@ impl DetectCustomLabelsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3344,12 +3344,12 @@ impl DetectFacesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DetectFaces",
@@ -3409,7 +3409,7 @@ impl DetectFacesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3525,12 +3525,12 @@ impl DetectLabelsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DetectLabels",
@@ -3590,7 +3590,7 @@ impl DetectLabelsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3709,12 +3709,12 @@ impl DetectModerationLabelsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DetectModerationLabels",
@@ -3777,7 +3777,7 @@ impl DetectModerationLabelsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3885,12 +3885,12 @@ impl DetectProtectiveEquipmentInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DetectProtectiveEquipment",
@@ -3953,7 +3953,7 @@ impl DetectProtectiveEquipmentInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4058,12 +4058,12 @@ impl DetectTextInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DetectText",
@@ -4123,7 +4123,7 @@ impl DetectTextInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4221,12 +4221,12 @@ impl DistributeDatasetEntriesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.DistributeDatasetEntries",
@@ -4289,7 +4289,7 @@ impl DistributeDatasetEntriesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4375,12 +4375,12 @@ impl GetCelebrityInfoInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetCelebrityInfo",
@@ -4441,7 +4441,7 @@ impl GetCelebrityInfoInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4569,12 +4569,12 @@ impl GetCelebrityRecognitionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetCelebrityRecognition",
@@ -4637,7 +4637,7 @@ impl GetCelebrityRecognitionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4764,12 +4764,12 @@ impl GetContentModerationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetContentModeration",
@@ -4832,7 +4832,7 @@ impl GetContentModerationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4944,12 +4944,12 @@ impl GetFaceDetectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetFaceDetection",
@@ -5010,7 +5010,7 @@ impl GetFaceDetectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5137,12 +5137,12 @@ impl GetFaceSearchInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetFaceSearch",
@@ -5203,7 +5203,7 @@ impl GetFaceSearchInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5330,12 +5330,12 @@ impl GetLabelDetectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetLabelDetection",
@@ -5396,7 +5396,7 @@ impl GetLabelDetectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5523,12 +5523,12 @@ impl GetPersonTrackingInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetPersonTracking",
@@ -5589,7 +5589,7 @@ impl GetPersonTrackingInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5701,12 +5701,12 @@ impl GetSegmentDetectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetSegmentDetection",
@@ -5767,7 +5767,7 @@ impl GetSegmentDetectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5879,12 +5879,12 @@ impl GetTextDetectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.GetTextDetection",
@@ -5945,7 +5945,7 @@ impl GetTextDetectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6124,12 +6124,12 @@ impl IndexFacesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.IndexFaces",
@@ -6189,7 +6189,7 @@ impl IndexFacesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6289,12 +6289,12 @@ impl ListCollectionsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.ListCollections",
@@ -6355,7 +6355,7 @@ impl ListCollectionsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6527,12 +6527,12 @@ impl ListDatasetEntriesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.ListDatasetEntries",
@@ -6593,7 +6593,7 @@ impl ListDatasetEntriesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6705,12 +6705,12 @@ impl ListDatasetLabelsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.ListDatasetLabels",
@@ -6771,7 +6771,7 @@ impl ListDatasetLabelsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6884,12 +6884,12 @@ impl ListFacesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.ListFaces",
@@ -6947,7 +6947,7 @@ impl ListFacesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7047,12 +7047,12 @@ impl ListStreamProcessorsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.ListStreamProcessors",
@@ -7115,7 +7115,7 @@ impl ListStreamProcessorsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7203,12 +7203,12 @@ impl ListTagsForResourceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.ListTagsForResource",
@@ -7271,7 +7271,7 @@ impl ListTagsForResourceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7359,12 +7359,12 @@ impl RecognizeCelebritiesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.RecognizeCelebrities",
@@ -7425,7 +7425,7 @@ impl RecognizeCelebritiesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7552,12 +7552,12 @@ impl SearchFacesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.SearchFaces",
@@ -7617,7 +7617,7 @@ impl SearchFacesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7763,12 +7763,12 @@ impl SearchFacesByImageInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.SearchFacesByImage",
@@ -7829,7 +7829,7 @@ impl SearchFacesByImageInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7960,12 +7960,12 @@ impl StartCelebrityRecognitionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartCelebrityRecognition",
@@ -8028,7 +8028,7 @@ impl StartCelebrityRecognitionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8170,12 +8170,12 @@ impl StartContentModerationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartContentModeration",
@@ -8238,7 +8238,7 @@ impl StartContentModerationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8387,12 +8387,12 @@ impl StartFaceDetectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartFaceDetection",
@@ -8453,7 +8453,7 @@ impl StartFaceDetectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8610,12 +8610,12 @@ impl StartFaceSearchInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartFaceSearch",
@@ -8676,7 +8676,7 @@ impl StartFaceSearchInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8820,12 +8820,12 @@ impl StartLabelDetectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartLabelDetection",
@@ -8886,7 +8886,7 @@ impl StartLabelDetectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9016,12 +9016,12 @@ impl StartPersonTrackingInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartPersonTracking",
@@ -9082,7 +9082,7 @@ impl StartPersonTrackingInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9185,12 +9185,12 @@ impl StartProjectVersionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartProjectVersion",
@@ -9251,7 +9251,7 @@ impl StartProjectVersionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9417,12 +9417,12 @@ impl StartSegmentDetectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartSegmentDetection",
@@ -9485,7 +9485,7 @@ impl StartSegmentDetectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9571,12 +9571,12 @@ impl StartStreamProcessorInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartStreamProcessor",
@@ -9639,7 +9639,7 @@ impl StartStreamProcessorInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9784,12 +9784,12 @@ impl StartTextDetectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StartTextDetection",
@@ -9850,7 +9850,7 @@ impl StartTextDetectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9943,12 +9943,12 @@ impl StopProjectVersionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StopProjectVersion",
@@ -10009,7 +10009,7 @@ impl StopProjectVersionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10095,12 +10095,12 @@ impl StopStreamProcessorInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.StopStreamProcessor",
@@ -10161,7 +10161,7 @@ impl StopStreamProcessorInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10278,12 +10278,12 @@ impl TagResourceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.TagResource",
@@ -10343,7 +10343,7 @@ impl TagResourceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10452,12 +10452,12 @@ impl UntagResourceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.UntagResource",
@@ -10517,7 +10517,7 @@ impl UntagResourceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10620,12 +10620,12 @@ impl UpdateDatasetEntriesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "RekognitionService.UpdateDatasetEntries",
@@ -10688,7 +10688,7 @@ impl UpdateDatasetEntriesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

@@ -24,7 +24,7 @@ async fn set_correct_headers() {
         .await;
     let req = handler.expect_request();
     assert_ok(validate_headers(
-        &req,
+        &req.headers(),
         [
             (
                 "x-amz-sha256-tree-hash",

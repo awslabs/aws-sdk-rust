@@ -110,12 +110,12 @@ impl CopyBackupToRegionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.CopyBackupToRegion",
@@ -176,7 +176,7 @@ impl CopyBackupToRegionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -348,12 +348,12 @@ impl CreateClusterInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.CreateCluster",
@@ -413,7 +413,7 @@ impl CreateClusterInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -526,12 +526,12 @@ impl CreateHsmInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.CreateHsm",
@@ -589,7 +589,7 @@ impl CreateHsmInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -677,12 +677,12 @@ impl DeleteBackupInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.DeleteBackup",
@@ -742,7 +742,7 @@ impl DeleteBackupInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -830,12 +830,12 @@ impl DeleteClusterInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.DeleteCluster",
@@ -895,7 +895,7 @@ impl DeleteClusterInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1017,12 +1017,12 @@ impl DeleteHsmInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.DeleteHsm",
@@ -1080,7 +1080,7 @@ impl DeleteHsmInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1231,12 +1231,12 @@ impl DescribeBackupsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.DescribeBackups",
@@ -1297,7 +1297,7 @@ impl DescribeBackupsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1432,12 +1432,12 @@ impl DescribeClustersInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.DescribeClusters",
@@ -1498,7 +1498,7 @@ impl DescribeClustersInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1610,12 +1610,12 @@ impl InitializeClusterInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.InitializeCluster",
@@ -1676,7 +1676,7 @@ impl InitializeClusterInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1786,12 +1786,12 @@ impl ListTagsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.ListTags",
@@ -1849,7 +1849,7 @@ impl ListTagsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1949,12 +1949,12 @@ impl ModifyBackupAttributesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.ModifyBackupAttributes",
@@ -2017,7 +2017,7 @@ impl ModifyBackupAttributesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2124,12 +2124,12 @@ impl ModifyClusterInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.ModifyCluster",
@@ -2189,7 +2189,7 @@ impl ModifyClusterInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2277,12 +2277,12 @@ impl RestoreBackupInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.RestoreBackup",
@@ -2342,7 +2342,7 @@ impl RestoreBackupInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2451,12 +2451,12 @@ impl TagResourceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.TagResource",
@@ -2516,7 +2516,7 @@ impl TagResourceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2625,12 +2625,12 @@ impl UntagResourceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "BaldrApiService.UntagResource",
@@ -2690,7 +2690,7 @@ impl UntagResourceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

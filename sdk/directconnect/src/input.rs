@@ -141,12 +141,12 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.AcceptDirectConnectGatewayAssociationProposal",
@@ -208,7 +208,7 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -356,12 +356,12 @@ impl AllocateConnectionOnInterconnectInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.AllocateConnectionOnInterconnect",
@@ -423,7 +423,7 @@ impl AllocateConnectionOnInterconnectInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -590,12 +590,12 @@ impl AllocateHostedConnectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.AllocateHostedConnection",
@@ -658,7 +658,7 @@ impl AllocateHostedConnectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -786,12 +786,12 @@ impl AllocatePrivateVirtualInterfaceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.AllocatePrivateVirtualInterface",
@@ -853,7 +853,7 @@ impl AllocatePrivateVirtualInterfaceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -981,12 +981,12 @@ impl AllocatePublicVirtualInterfaceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.AllocatePublicVirtualInterface",
@@ -1048,7 +1048,7 @@ impl AllocatePublicVirtualInterfaceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1176,12 +1176,12 @@ impl AllocateTransitVirtualInterfaceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.AllocateTransitVirtualInterface",
@@ -1243,7 +1243,7 @@ impl AllocateTransitVirtualInterfaceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1347,12 +1347,12 @@ impl AssociateConnectionWithLagInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.AssociateConnectionWithLag",
@@ -1414,7 +1414,7 @@ impl AssociateConnectionWithLagInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1521,12 +1521,12 @@ impl AssociateHostedConnectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.AssociateHostedConnection",
@@ -1589,7 +1589,7 @@ impl AssociateHostedConnectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1734,12 +1734,12 @@ impl AssociateMacSecKeyInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.AssociateMacSecKey",
@@ -1800,7 +1800,7 @@ impl AssociateMacSecKeyInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1907,12 +1907,12 @@ impl AssociateVirtualInterfaceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.AssociateVirtualInterface",
@@ -1975,7 +1975,7 @@ impl AssociateVirtualInterfaceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2066,12 +2066,12 @@ impl ConfirmConnectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.ConfirmConnection",
@@ -2132,7 +2132,7 @@ impl ConfirmConnectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2224,12 +2224,12 @@ impl ConfirmCustomerAgreementInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.ConfirmCustomerAgreement",
@@ -2292,7 +2292,7 @@ impl ConfirmCustomerAgreementInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2415,12 +2415,12 @@ impl ConfirmPrivateVirtualInterfaceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.ConfirmPrivateVirtualInterface",
@@ -2482,7 +2482,7 @@ impl ConfirmPrivateVirtualInterfaceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2575,12 +2575,12 @@ impl ConfirmPublicVirtualInterfaceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.ConfirmPublicVirtualInterface",
@@ -2642,7 +2642,7 @@ impl ConfirmPublicVirtualInterfaceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2750,12 +2750,12 @@ impl ConfirmTransitVirtualInterfaceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.ConfirmTransitVirtualInterface",
@@ -2817,7 +2817,7 @@ impl ConfirmTransitVirtualInterfaceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2923,12 +2923,12 @@ impl CreateBgpPeerInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.CreateBGPPeer",
@@ -2989,7 +2989,7 @@ impl CreateBgpPeerInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3166,12 +3166,12 @@ impl CreateConnectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.CreateConnection",
@@ -3232,7 +3232,7 @@ impl CreateConnectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3339,12 +3339,12 @@ impl CreateDirectConnectGatewayInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.CreateDirectConnectGateway",
@@ -3406,7 +3406,7 @@ impl CreateDirectConnectGatewayInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3558,12 +3558,12 @@ impl CreateDirectConnectGatewayAssociationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.CreateDirectConnectGatewayAssociation",
@@ -3625,7 +3625,7 @@ impl CreateDirectConnectGatewayAssociationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3806,12 +3806,12 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.CreateDirectConnectGatewayAssociationProposal",
@@ -3873,7 +3873,7 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4037,12 +4037,12 @@ impl CreateInterconnectInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.CreateInterconnect",
@@ -4103,7 +4103,7 @@ impl CreateInterconnectInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4316,12 +4316,12 @@ impl CreateLagInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.CreateLag",
@@ -4379,7 +4379,7 @@ impl CreateLagInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4491,12 +4491,12 @@ impl CreatePrivateVirtualInterfaceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.CreatePrivateVirtualInterface",
@@ -4558,7 +4558,7 @@ impl CreatePrivateVirtualInterfaceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4670,12 +4670,12 @@ impl CreatePublicVirtualInterfaceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.CreatePublicVirtualInterface",
@@ -4737,7 +4737,7 @@ impl CreatePublicVirtualInterfaceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4849,12 +4849,12 @@ impl CreateTransitVirtualInterfaceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.CreateTransitVirtualInterface",
@@ -4916,7 +4916,7 @@ impl CreateTransitVirtualInterfaceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5046,12 +5046,12 @@ impl DeleteBgpPeerInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DeleteBGPPeer",
@@ -5112,7 +5112,7 @@ impl DeleteBgpPeerInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5203,12 +5203,12 @@ impl DeleteConnectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DeleteConnection",
@@ -5269,7 +5269,7 @@ impl DeleteConnectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5361,12 +5361,12 @@ impl DeleteDirectConnectGatewayInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DeleteDirectConnectGateway",
@@ -5428,7 +5428,7 @@ impl DeleteDirectConnectGatewayInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5551,12 +5551,12 @@ impl DeleteDirectConnectGatewayAssociationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DeleteDirectConnectGatewayAssociation",
@@ -5618,7 +5618,7 @@ impl DeleteDirectConnectGatewayAssociationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5710,12 +5710,12 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DeleteDirectConnectGatewayAssociationProposal",
@@ -5777,7 +5777,7 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5869,12 +5869,12 @@ impl DeleteInterconnectInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DeleteInterconnect",
@@ -5935,7 +5935,7 @@ impl DeleteInterconnectInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6021,12 +6021,12 @@ impl DeleteLagInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DeleteLag",
@@ -6084,7 +6084,7 @@ impl DeleteLagInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6175,12 +6175,12 @@ impl DeleteVirtualInterfaceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DeleteVirtualInterface",
@@ -6243,7 +6243,7 @@ impl DeleteVirtualInterfaceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6364,12 +6364,12 @@ impl DescribeConnectionLoaInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeConnectionLoa",
@@ -6432,7 +6432,7 @@ impl DescribeConnectionLoaInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6523,12 +6523,12 @@ impl DescribeConnectionsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeConnections",
@@ -6589,7 +6589,7 @@ impl DescribeConnectionsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6682,12 +6682,12 @@ impl DescribeConnectionsOnInterconnectInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeConnectionsOnInterconnect",
@@ -6749,7 +6749,7 @@ impl DescribeConnectionsOnInterconnectInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6824,12 +6824,12 @@ impl DescribeCustomerMetadataInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeCustomerMetadata",
@@ -7032,12 +7032,12 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeDirectConnectGatewayAssociationProposals",
@@ -7099,7 +7099,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7267,12 +7267,12 @@ impl DescribeDirectConnectGatewayAssociationsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeDirectConnectGatewayAssociations",
@@ -7334,7 +7334,7 @@ impl DescribeDirectConnectGatewayAssociationsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7468,12 +7468,12 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeDirectConnectGatewayAttachments",
@@ -7535,7 +7535,7 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7654,12 +7654,12 @@ impl DescribeDirectConnectGatewaysInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeDirectConnectGateways",
@@ -7721,7 +7721,7 @@ impl DescribeDirectConnectGatewaysInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7813,12 +7813,12 @@ impl DescribeHostedConnectionsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeHostedConnections",
@@ -7881,7 +7881,7 @@ impl DescribeHostedConnectionsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8003,12 +8003,12 @@ impl DescribeInterconnectLoaInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeInterconnectLoa",
@@ -8071,7 +8071,7 @@ impl DescribeInterconnectLoaInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8162,12 +8162,12 @@ impl DescribeInterconnectsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeInterconnects",
@@ -8230,7 +8230,7 @@ impl DescribeInterconnectsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8318,12 +8318,12 @@ impl DescribeLagsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeLags",
@@ -8383,7 +8383,7 @@ impl DescribeLagsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8504,12 +8504,12 @@ impl DescribeLoaInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeLoa",
@@ -8569,7 +8569,7 @@ impl DescribeLoaInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8643,12 +8643,12 @@ impl DescribeLocationsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeLocations",
@@ -8808,12 +8808,12 @@ impl DescribeRouterConfigurationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeRouterConfiguration",
@@ -8875,7 +8875,7 @@ impl DescribeRouterConfigurationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8972,12 +8972,12 @@ impl DescribeTagsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeTags",
@@ -9037,7 +9037,7 @@ impl DescribeTagsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9112,12 +9112,12 @@ impl DescribeVirtualGatewaysInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeVirtualGateways",
@@ -9279,12 +9279,12 @@ impl DescribeVirtualInterfacesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DescribeVirtualInterfaces",
@@ -9347,7 +9347,7 @@ impl DescribeVirtualInterfacesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9452,12 +9452,12 @@ impl DisassociateConnectionFromLagInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DisassociateConnectionFromLag",
@@ -9519,7 +9519,7 @@ impl DisassociateConnectionFromLagInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9626,12 +9626,12 @@ impl DisassociateMacSecKeyInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.DisassociateMacSecKey",
@@ -9694,7 +9694,7 @@ impl DisassociateMacSecKeyInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9858,12 +9858,12 @@ impl ListVirtualInterfaceTestHistoryInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.ListVirtualInterfaceTestHistory",
@@ -9925,7 +9925,7 @@ impl ListVirtualInterfaceTestHistoryInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10053,12 +10053,12 @@ impl StartBgpFailoverTestInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.StartBgpFailoverTest",
@@ -10121,7 +10121,7 @@ impl StartBgpFailoverTestInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10212,12 +10212,12 @@ impl StopBgpFailoverTestInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.StopBgpFailoverTest",
@@ -10280,7 +10280,7 @@ impl StopBgpFailoverTestInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10389,12 +10389,12 @@ impl TagResourceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.TagResource",
@@ -10454,7 +10454,7 @@ impl TagResourceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10563,12 +10563,12 @@ impl UntagResourceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.UntagResource",
@@ -10628,7 +10628,7 @@ impl UntagResourceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10753,12 +10753,12 @@ impl UpdateConnectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.UpdateConnection",
@@ -10819,7 +10819,7 @@ impl UpdateConnectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10929,12 +10929,12 @@ impl UpdateDirectConnectGatewayInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.UpdateDirectConnectGateway",
@@ -10996,7 +10996,7 @@ impl UpdateDirectConnectGatewayInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11145,12 +11145,12 @@ impl UpdateDirectConnectGatewayAssociationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.UpdateDirectConnectGatewayAssociation",
@@ -11212,7 +11212,7 @@ impl UpdateDirectConnectGatewayAssociationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11339,12 +11339,12 @@ impl UpdateLagInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.UpdateLag",
@@ -11402,7 +11402,7 @@ impl UpdateLagInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11534,12 +11534,12 @@ impl UpdateVirtualInterfaceAttributesInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "OvertureService.UpdateVirtualInterfaceAttributes",
@@ -11601,7 +11601,7 @@ impl UpdateVirtualInterfaceAttributesInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

@@ -8,7 +8,7 @@ mod xml;
 
 use crate::xml::try_xml_equivalent;
 use assert_json_diff::assert_json_eq_no_panic;
-use http::{Request, Uri};
+use http::{header::HeaderMap, Request, Uri};
 use pretty_assertions::Comparison;
 use std::collections::HashSet;
 use std::fmt::{self, Debug};
@@ -197,14 +197,14 @@ pub fn require_query_params<B>(
     Ok(())
 }
 
-pub fn validate_headers<'a, B>(
-    request: &Request<B>,
+pub fn validate_headers<'a>(
+    actual_headers: &HeaderMap,
     expected_headers: impl IntoIterator<Item = (impl AsRef<str> + 'a, impl AsRef<str> + 'a)>,
 ) -> Result<(), ProtocolTestFailure> {
     for (key, expected_value) in expected_headers {
         let key = key.as_ref();
         let expected_value = expected_value.as_ref();
-        match normalized_header(request, key) {
+        match normalized_header(actual_headers, key) {
             None => {
                 return Err(ProtocolTestFailure::MissingHeader {
                     expected: key.to_string(),
@@ -223,13 +223,12 @@ pub fn validate_headers<'a, B>(
     Ok(())
 }
 
-fn normalized_header<B>(request: &Request<B>, key: &str) -> Option<String> {
-    if !request.headers().contains_key(key) {
+fn normalized_header(headers: &HeaderMap, key: &str) -> Option<String> {
+    if !headers.contains_key(key) {
         None
     } else {
         Some(
-            request
-                .headers()
+            headers
                 .get_all(key)
                 .iter()
                 .map(|hv| hv.to_str().unwrap())
@@ -239,13 +238,13 @@ fn normalized_header<B>(request: &Request<B>, key: &str) -> Option<String> {
     }
 }
 
-pub fn forbid_headers<B>(
-    request: &Request<B>,
+pub fn forbid_headers(
+    headers: &HeaderMap,
     forbidden_headers: &[&str],
 ) -> Result<(), ProtocolTestFailure> {
     for key in forbidden_headers {
         // Protocol tests store header lists as comma-delimited
-        if let Some(value) = normalized_header(request, *key) {
+        if let Some(value) = normalized_header(headers, *key) {
             return Err(ProtocolTestFailure::ForbiddenHeader {
                 forbidden: key.to_string(),
                 found: format!("{}: {}", key, value),
@@ -255,13 +254,13 @@ pub fn forbid_headers<B>(
     Ok(())
 }
 
-pub fn require_headers<B>(
-    request: &Request<B>,
+pub fn require_headers(
+    headers: &HeaderMap,
     required_headers: &[&str],
 ) -> Result<(), ProtocolTestFailure> {
     for key in required_headers {
         // Protocol tests store header lists as comma-delimited
-        if normalized_header(request, *key).is_none() {
+        if normalized_header(headers, *key).is_none() {
             return Err(ProtocolTestFailure::MissingHeader {
                 expected: key.to_string(),
             });
@@ -381,7 +380,7 @@ mod tests {
         forbid_headers, forbid_query_params, require_headers, require_query_params, validate_body,
         validate_headers, validate_query_string, FloatEquals, MediaType, ProtocolTestFailure,
     };
-    use http::Request;
+    use http::{header::HeaderMap, Request};
 
     #[test]
     fn test_validate_empty_query_string() {
@@ -438,24 +437,21 @@ mod tests {
 
     #[test]
     fn test_validate_headers() {
-        let request = Request::builder()
-            .uri("/")
-            .header("X-Foo", "foo")
-            .header("X-Foo-List", "foo")
-            .header("X-Foo-List", "bar")
-            .header("X-Inline", "inline, other")
-            .body(())
-            .unwrap();
+        let mut headers = HeaderMap::new();
+        headers.append("X-Foo", "foo".parse().unwrap());
+        headers.append("X-Foo-List", "foo".parse().unwrap());
+        headers.append("X-Foo-List", "bar".parse().unwrap());
+        headers.append("X-Inline", "inline, other".parse().unwrap());
 
-        validate_headers(&request, [("X-Foo", "foo")]).expect("header present");
-        validate_headers(&request, [("X-Foo", "Foo")]).expect_err("case sensitive");
-        validate_headers(&request, [("x-foo-list", "foo, bar")]).expect("list concat");
-        validate_headers(&request, [("X-Foo-List", "foo")])
+        validate_headers(&headers, [("X-Foo", "foo")]).expect("header present");
+        validate_headers(&headers, [("X-Foo", "Foo")]).expect_err("case sensitive");
+        validate_headers(&headers, [("x-foo-list", "foo, bar")]).expect("list concat");
+        validate_headers(&headers, [("X-Foo-List", "foo")])
             .expect_err("all list members must be specified");
-        validate_headers(&request, [("X-Inline", "inline, other")])
+        validate_headers(&headers, [("X-Inline", "inline, other")])
             .expect("inline header lists also work");
         assert_eq!(
-            validate_headers(&request, [("missing", "value")]),
+            validate_headers(&headers, [("missing", "value")]),
             Err(ProtocolTestFailure::MissingHeader {
                 expected: "missing".to_owned()
             })
@@ -470,13 +466,13 @@ mod tests {
             .body(())
             .unwrap();
         assert_eq!(
-            forbid_headers(&request, &["X-Foo"]).expect_err("should be error"),
+            forbid_headers(request.headers(), &["X-Foo"]).expect_err("should be error"),
             ProtocolTestFailure::ForbiddenHeader {
                 forbidden: "X-Foo".to_string(),
                 found: "X-Foo: foo".to_string()
             }
         );
-        forbid_headers(&request, &["X-Bar"]).expect("header not present");
+        forbid_headers(request.headers(), &["X-Bar"]).expect("header not present");
     }
 
     #[test]
@@ -486,8 +482,8 @@ mod tests {
             .header("X-Foo", "foo")
             .body(())
             .unwrap();
-        require_headers(&request, &["X-Foo"]).expect("header present");
-        require_headers(&request, &["X-Bar"]).expect_err("header not present");
+        require_headers(request.headers(), &["X-Foo"]).expect("header present");
+        require_headers(request.headers(), &["X-Bar"]).expect_err("header not present");
     }
 
     #[test]

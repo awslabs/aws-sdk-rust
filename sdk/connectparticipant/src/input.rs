@@ -95,29 +95,6 @@ impl CompleteAttachmentUploadInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CompleteAttachmentUploadInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_1) = &_input.connection_token {
-                let formatted_2 = AsRef::<str>::as_ref(inner_1);
-                if !formatted_2.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_2;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "connection_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amz-Bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CompleteAttachmentUploadInput,
@@ -126,7 +103,8 @@ impl CompleteAttachmentUploadInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_complete_attachment_upload(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -136,7 +114,7 @@ impl CompleteAttachmentUploadInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -202,7 +180,7 @@ impl CompleteAttachmentUploadInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -312,29 +290,6 @@ impl CreateParticipantConnectionInput {
             write!(output, "/participant/connection").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateParticipantConnectionInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_3) = &_input.participant_token {
-                let formatted_4 = AsRef::<str>::as_ref(inner_3);
-                if !formatted_4.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_4;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "participant_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amz-Bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateParticipantConnectionInput,
@@ -343,7 +298,8 @@ impl CreateParticipantConnectionInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_create_participant_connection(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -353,7 +309,7 @@ impl CreateParticipantConnectionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -415,7 +371,7 @@ impl CreateParticipantConnectionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -501,29 +457,6 @@ impl DisconnectParticipantInput {
             write!(output, "/participant/disconnect").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DisconnectParticipantInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_5) = &_input.connection_token {
-                let formatted_6 = AsRef::<str>::as_ref(inner_5);
-                if !formatted_6.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_6;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "connection_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amz-Bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DisconnectParticipantInput,
@@ -532,7 +465,7 @@ impl DisconnectParticipantInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_disconnect_participant(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -542,7 +475,7 @@ impl DisconnectParticipantInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -608,7 +541,7 @@ impl DisconnectParticipantInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -697,29 +630,6 @@ impl GetAttachmentInput {
             write!(output, "/participant/attachment").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetAttachmentInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_7) = &_input.connection_token {
-                let formatted_8 = AsRef::<str>::as_ref(inner_7);
-                if !formatted_8.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_8;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "connection_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amz-Bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetAttachmentInput,
@@ -728,7 +638,7 @@ impl GetAttachmentInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_attachment(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -738,7 +648,7 @@ impl GetAttachmentInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -798,7 +708,7 @@ impl GetAttachmentInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -950,29 +860,6 @@ impl GetTranscriptInput {
             write!(output, "/participant/transcript").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetTranscriptInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_9) = &_input.connection_token {
-                let formatted_10 = AsRef::<str>::as_ref(inner_9);
-                if !formatted_10.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_10;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "connection_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amz-Bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetTranscriptInput,
@@ -981,7 +868,7 @@ impl GetTranscriptInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_transcript(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -991,7 +878,7 @@ impl GetTranscriptInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1051,7 +938,7 @@ impl GetTranscriptInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1167,29 +1054,6 @@ impl SendEventInput {
             write!(output, "/participant/event").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::SendEventInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_11) = &_input.connection_token {
-                let formatted_12 = AsRef::<str>::as_ref(inner_11);
-                if !formatted_12.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_12;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "connection_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amz-Bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::SendEventInput,
@@ -1198,7 +1062,7 @@ impl SendEventInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_send_event(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1208,7 +1072,7 @@ impl SendEventInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1269,7 +1133,7 @@ impl SendEventInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1379,29 +1243,6 @@ impl SendMessageInput {
             write!(output, "/participant/message").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::SendMessageInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_13) = &_input.connection_token {
-                let formatted_14 = AsRef::<str>::as_ref(inner_13);
-                if !formatted_14.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_14;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "connection_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amz-Bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::SendMessageInput,
@@ -1410,7 +1251,7 @@ impl SendMessageInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_send_message(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1420,7 +1261,7 @@ impl SendMessageInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1483,7 +1324,7 @@ impl SendMessageInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1609,29 +1450,6 @@ impl StartAttachmentUploadInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::StartAttachmentUploadInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_15) = &_input.connection_token {
-                let formatted_16 = AsRef::<str>::as_ref(inner_15);
-                if !formatted_16.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_16;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "connection_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("X-Amz-Bearer", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::StartAttachmentUploadInput,
@@ -1640,7 +1458,7 @@ impl StartAttachmentUploadInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_start_attachment_upload(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1650,7 +1468,7 @@ impl StartAttachmentUploadInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1716,7 +1534,7 @@ impl StartAttachmentUploadInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

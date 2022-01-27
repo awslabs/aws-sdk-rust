@@ -306,7 +306,7 @@ impl BatchDeleteInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -366,7 +366,7 @@ impl BatchDeleteInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -484,7 +484,7 @@ impl BatchStartInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -544,7 +544,7 @@ impl BatchStartInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -660,7 +660,7 @@ impl BatchStopInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -718,7 +718,7 @@ impl BatchStopInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -856,7 +856,7 @@ impl BatchUpdateScheduleInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -917,7 +917,7 @@ impl BatchUpdateScheduleInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1162,7 +1162,7 @@ impl ClaimDeviceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1222,7 +1222,7 @@ impl ClaimDeviceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1510,7 +1510,7 @@ impl CreateChannelInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1573,7 +1573,7 @@ impl CreateChannelInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1849,7 +1849,7 @@ impl CreateInputInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1912,7 +1912,7 @@ impl CreateInputInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2040,7 +2040,7 @@ impl CreateInputSecurityGroupInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2103,7 +2103,7 @@ impl CreateInputSecurityGroupInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2268,7 +2268,7 @@ impl CreateMultiplexInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2332,7 +2332,7 @@ impl CreateMultiplexInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2483,7 +2483,7 @@ impl CreateMultiplexProgramInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2549,7 +2549,7 @@ impl CreateMultiplexProgramInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2698,7 +2698,7 @@ impl CreatePartnerInputInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2762,7 +2762,7 @@ impl CreatePartnerInputInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2899,7 +2899,7 @@ impl CreateTagsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2959,7 +2959,7 @@ impl CreateTagsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4831,29 +4831,6 @@ impl DescribeInputDeviceThumbnailInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeInputDeviceThumbnailInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_22) = &_input.accept {
-                let formatted_23 = AsRef::<str>::as_ref(inner_22);
-                if !formatted_23.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_23;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "accept",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("accept", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeInputDeviceThumbnailInput,
@@ -4862,7 +4839,8 @@ impl DescribeInputDeviceThumbnailInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_describe_input_device_thumbnail(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4991,15 +4969,15 @@ impl DescribeInputSecurityGroupInput {
             _input: &crate::input::DescribeInputSecurityGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_24 = &_input.input_security_group_id;
-            let input_24 =
-                input_24
+            let input_22 = &_input.input_security_group_id;
+            let input_22 =
+                input_22
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_security_group_id",
                         details: "cannot be empty or unset",
                     })?;
-            let input_security_group_id = aws_smithy_http::label::fmt_string(input_24, false);
+            let input_security_group_id = aws_smithy_http::label::fmt_string(input_22, false);
             if input_security_group_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "input_security_group_id",
@@ -5146,15 +5124,15 @@ impl DescribeMultiplexInput {
             _input: &crate::input::DescribeMultiplexInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_25 = &_input.multiplex_id;
-            let input_25 =
-                input_25
+            let input_23 = &_input.multiplex_id;
+            let input_23 =
+                input_23
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
                         details: "cannot be empty or unset",
                     })?;
-            let multiplex_id = aws_smithy_http::label::fmt_string(input_25, false);
+            let multiplex_id = aws_smithy_http::label::fmt_string(input_23, false);
             if multiplex_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "multiplex_id",
@@ -5314,30 +5292,30 @@ impl DescribeMultiplexProgramInput {
             _input: &crate::input::DescribeMultiplexProgramInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_26 = &_input.multiplex_id;
-            let input_26 =
-                input_26
+            let input_24 = &_input.multiplex_id;
+            let input_24 =
+                input_24
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
                         details: "cannot be empty or unset",
                     })?;
-            let multiplex_id = aws_smithy_http::label::fmt_string(input_26, false);
+            let multiplex_id = aws_smithy_http::label::fmt_string(input_24, false);
             if multiplex_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "multiplex_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_27 = &_input.program_name;
-            let input_27 =
-                input_27
+            let input_25 = &_input.program_name;
+            let input_25 =
+                input_25
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "program_name",
                         details: "cannot be empty or unset",
                     })?;
-            let program_name = aws_smithy_http::label::fmt_string(input_27, false);
+            let program_name = aws_smithy_http::label::fmt_string(input_25, false);
             if program_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "program_name",
@@ -5485,15 +5463,15 @@ impl DescribeOfferingInput {
             _input: &crate::input::DescribeOfferingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_28 = &_input.offering_id;
-            let input_28 =
-                input_28
+            let input_26 = &_input.offering_id;
+            let input_26 =
+                input_26
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "offering_id",
                         details: "cannot be empty or unset",
                     })?;
-            let offering_id = aws_smithy_http::label::fmt_string(input_28, false);
+            let offering_id = aws_smithy_http::label::fmt_string(input_26, false);
             if offering_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "offering_id",
@@ -5643,15 +5621,15 @@ impl DescribeReservationInput {
             _input: &crate::input::DescribeReservationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_29 = &_input.reservation_id;
-            let input_29 =
-                input_29
+            let input_27 = &_input.reservation_id;
+            let input_27 =
+                input_27
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "reservation_id",
                         details: "cannot be empty or unset",
                     })?;
-            let reservation_id = aws_smithy_http::label::fmt_string(input_29, false);
+            let reservation_id = aws_smithy_http::label::fmt_string(input_27, false);
             if reservation_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "reservation_id",
@@ -5822,15 +5800,15 @@ impl DescribeScheduleInput {
             _input: &crate::input::DescribeScheduleInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_30 = &_input.channel_id;
-            let input_30 =
-                input_30
+            let input_28 = &_input.channel_id;
+            let input_28 =
+                input_28
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_id",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_id = aws_smithy_http::label::fmt_string(input_30, false);
+            let channel_id = aws_smithy_http::label::fmt_string(input_28, false);
             if channel_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_id",
@@ -5856,8 +5834,8 @@ impl DescribeScheduleInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_31) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
+            if let Some(inner_29) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_29));
             }
             Ok(())
         }
@@ -6020,8 +5998,8 @@ impl ListChannelsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_32) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
+            if let Some(inner_30) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
             }
             Ok(())
         }
@@ -6184,8 +6162,8 @@ impl ListInputDevicesInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_33) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_33));
+            if let Some(inner_31) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
             }
             Ok(())
         }
@@ -6364,13 +6342,13 @@ impl ListInputDeviceTransfersInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_34) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
+            if let Some(inner_32) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
             }
-            if let Some(inner_35) = &_input.transfer_type {
+            if let Some(inner_33) = &_input.transfer_type {
                 query.push_kv(
                     "transferType",
-                    &aws_smithy_http::query::fmt_string(&inner_35),
+                    &aws_smithy_http::query::fmt_string(&inner_33),
                 );
             }
             Ok(())
@@ -6534,8 +6512,8 @@ impl ListInputsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_36) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
+            if let Some(inner_34) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
             }
             Ok(())
         }
@@ -6699,8 +6677,8 @@ impl ListInputSecurityGroupsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_37) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_37));
+            if let Some(inner_35) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
             }
             Ok(())
         }
@@ -6863,8 +6841,8 @@ impl ListMultiplexesInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_38) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
+            if let Some(inner_36) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
             }
             Ok(())
         }
@@ -7025,15 +7003,15 @@ impl ListMultiplexProgramsInput {
             _input: &crate::input::ListMultiplexProgramsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_39 = &_input.multiplex_id;
-            let input_39 =
-                input_39
+            let input_37 = &_input.multiplex_id;
+            let input_37 =
+                input_37
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
                         details: "cannot be empty or unset",
                     })?;
-            let multiplex_id = aws_smithy_http::label::fmt_string(input_39, false);
+            let multiplex_id = aws_smithy_http::label::fmt_string(input_37, false);
             if multiplex_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "multiplex_id",
@@ -7059,8 +7037,8 @@ impl ListMultiplexProgramsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_40) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
+            if let Some(inner_38) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
             }
             Ok(())
         }
@@ -7358,23 +7336,23 @@ impl ListOfferingsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_41) = &_input.channel_class {
+            if let Some(inner_39) = &_input.channel_class {
                 query.push_kv(
                     "channelClass",
-                    &aws_smithy_http::query::fmt_string(&inner_41),
+                    &aws_smithy_http::query::fmt_string(&inner_39),
                 );
             }
-            if let Some(inner_42) = &_input.channel_configuration {
+            if let Some(inner_40) = &_input.channel_configuration {
                 query.push_kv(
                     "channelConfiguration",
-                    &aws_smithy_http::query::fmt_string(&inner_42),
+                    &aws_smithy_http::query::fmt_string(&inner_40),
                 );
             }
-            if let Some(inner_43) = &_input.codec {
-                query.push_kv("codec", &aws_smithy_http::query::fmt_string(&inner_43));
+            if let Some(inner_41) = &_input.codec {
+                query.push_kv("codec", &aws_smithy_http::query::fmt_string(&inner_41));
             }
-            if let Some(inner_44) = &_input.duration {
-                query.push_kv("duration", &aws_smithy_http::query::fmt_string(&inner_44));
+            if let Some(inner_42) = &_input.duration {
+                query.push_kv("duration", &aws_smithy_http::query::fmt_string(&inner_42));
             }
             if _input.max_results != 0 {
                 query.push_kv(
@@ -7382,40 +7360,40 @@ impl ListOfferingsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_45) = &_input.maximum_bitrate {
+            if let Some(inner_43) = &_input.maximum_bitrate {
                 query.push_kv(
                     "maximumBitrate",
-                    &aws_smithy_http::query::fmt_string(&inner_45),
+                    &aws_smithy_http::query::fmt_string(&inner_43),
                 );
             }
-            if let Some(inner_46) = &_input.maximum_framerate {
+            if let Some(inner_44) = &_input.maximum_framerate {
                 query.push_kv(
                     "maximumFramerate",
-                    &aws_smithy_http::query::fmt_string(&inner_46),
+                    &aws_smithy_http::query::fmt_string(&inner_44),
                 );
             }
-            if let Some(inner_47) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_47));
+            if let Some(inner_45) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_45));
             }
-            if let Some(inner_48) = &_input.resolution {
-                query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_48));
+            if let Some(inner_46) = &_input.resolution {
+                query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_46));
             }
-            if let Some(inner_49) = &_input.resource_type {
+            if let Some(inner_47) = &_input.resource_type {
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_49),
+                    &aws_smithy_http::query::fmt_string(&inner_47),
                 );
             }
-            if let Some(inner_50) = &_input.special_feature {
+            if let Some(inner_48) = &_input.special_feature {
                 query.push_kv(
                     "specialFeature",
-                    &aws_smithy_http::query::fmt_string(&inner_50),
+                    &aws_smithy_http::query::fmt_string(&inner_48),
                 );
             }
-            if let Some(inner_51) = &_input.video_quality {
+            if let Some(inner_49) = &_input.video_quality {
                 query.push_kv(
                     "videoQuality",
-                    &aws_smithy_http::query::fmt_string(&inner_51),
+                    &aws_smithy_http::query::fmt_string(&inner_49),
                 );
             }
             Ok(())
@@ -7687,14 +7665,14 @@ impl ListReservationsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_52) = &_input.channel_class {
+            if let Some(inner_50) = &_input.channel_class {
                 query.push_kv(
                     "channelClass",
-                    &aws_smithy_http::query::fmt_string(&inner_52),
+                    &aws_smithy_http::query::fmt_string(&inner_50),
                 );
             }
-            if let Some(inner_53) = &_input.codec {
-                query.push_kv("codec", &aws_smithy_http::query::fmt_string(&inner_53));
+            if let Some(inner_51) = &_input.codec {
+                query.push_kv("codec", &aws_smithy_http::query::fmt_string(&inner_51));
             }
             if _input.max_results != 0 {
                 query.push_kv(
@@ -7702,40 +7680,40 @@ impl ListReservationsInput {
                     aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
-            if let Some(inner_54) = &_input.maximum_bitrate {
+            if let Some(inner_52) = &_input.maximum_bitrate {
                 query.push_kv(
                     "maximumBitrate",
-                    &aws_smithy_http::query::fmt_string(&inner_54),
+                    &aws_smithy_http::query::fmt_string(&inner_52),
                 );
             }
-            if let Some(inner_55) = &_input.maximum_framerate {
+            if let Some(inner_53) = &_input.maximum_framerate {
                 query.push_kv(
                     "maximumFramerate",
-                    &aws_smithy_http::query::fmt_string(&inner_55),
+                    &aws_smithy_http::query::fmt_string(&inner_53),
                 );
             }
-            if let Some(inner_56) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_56));
+            if let Some(inner_54) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
             }
-            if let Some(inner_57) = &_input.resolution {
-                query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_57));
+            if let Some(inner_55) = &_input.resolution {
+                query.push_kv("resolution", &aws_smithy_http::query::fmt_string(&inner_55));
             }
-            if let Some(inner_58) = &_input.resource_type {
+            if let Some(inner_56) = &_input.resource_type {
                 query.push_kv(
                     "resourceType",
-                    &aws_smithy_http::query::fmt_string(&inner_58),
+                    &aws_smithy_http::query::fmt_string(&inner_56),
                 );
             }
-            if let Some(inner_59) = &_input.special_feature {
+            if let Some(inner_57) = &_input.special_feature {
                 query.push_kv(
                     "specialFeature",
-                    &aws_smithy_http::query::fmt_string(&inner_59),
+                    &aws_smithy_http::query::fmt_string(&inner_57),
                 );
             }
-            if let Some(inner_60) = &_input.video_quality {
+            if let Some(inner_58) = &_input.video_quality {
                 query.push_kv(
                     "videoQuality",
-                    &aws_smithy_http::query::fmt_string(&inner_60),
+                    &aws_smithy_http::query::fmt_string(&inner_58),
                 );
             }
             Ok(())
@@ -7873,15 +7851,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_61 = &_input.resource_arn;
-            let input_61 =
-                input_61
+            let input_59 = &_input.resource_arn;
+            let input_59 =
+                input_59
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = aws_smithy_http::label::fmt_string(input_61, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_59, false);
             if resource_arn.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
@@ -8105,15 +8083,15 @@ impl PurchaseOfferingInput {
             _input: &crate::input::PurchaseOfferingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_62 = &_input.offering_id;
-            let input_62 =
-                input_62
+            let input_60 = &_input.offering_id;
+            let input_60 =
+                input_60
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "offering_id",
                         details: "cannot be empty or unset",
                     })?;
-            let offering_id = aws_smithy_http::label::fmt_string(input_62, false);
+            let offering_id = aws_smithy_http::label::fmt_string(input_60, false);
             if offering_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "offering_id",
@@ -8145,7 +8123,7 @@ impl PurchaseOfferingInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -8209,7 +8187,7 @@ impl PurchaseOfferingInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8281,15 +8259,15 @@ impl RejectInputDeviceTransferInput {
             _input: &crate::input::RejectInputDeviceTransferInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_63 = &_input.input_device_id;
-            let input_63 =
-                input_63
+            let input_61 = &_input.input_device_id;
+            let input_61 =
+                input_61
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_device_id",
                         details: "cannot be empty or unset",
                     })?;
-            let input_device_id = aws_smithy_http::label::fmt_string(input_63, false);
+            let input_device_id = aws_smithy_http::label::fmt_string(input_61, false);
             if input_device_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "input_device_id",
@@ -8436,15 +8414,15 @@ impl StartChannelInput {
             _input: &crate::input::StartChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_64 = &_input.channel_id;
-            let input_64 =
-                input_64
+            let input_62 = &_input.channel_id;
+            let input_62 =
+                input_62
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_id",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_id = aws_smithy_http::label::fmt_string(input_64, false);
+            let channel_id = aws_smithy_http::label::fmt_string(input_62, false);
             if channel_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_id",
@@ -8591,15 +8569,15 @@ impl StartMultiplexInput {
             _input: &crate::input::StartMultiplexInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_65 = &_input.multiplex_id;
-            let input_65 =
-                input_65
+            let input_63 = &_input.multiplex_id;
+            let input_63 =
+                input_63
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
                         details: "cannot be empty or unset",
                     })?;
-            let multiplex_id = aws_smithy_http::label::fmt_string(input_65, false);
+            let multiplex_id = aws_smithy_http::label::fmt_string(input_63, false);
             if multiplex_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "multiplex_id",
@@ -8746,15 +8724,15 @@ impl StopChannelInput {
             _input: &crate::input::StopChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_66 = &_input.channel_id;
-            let input_66 =
-                input_66
+            let input_64 = &_input.channel_id;
+            let input_64 =
+                input_64
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_id",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_id = aws_smithy_http::label::fmt_string(input_66, false);
+            let channel_id = aws_smithy_http::label::fmt_string(input_64, false);
             if channel_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_id",
@@ -8901,15 +8879,15 @@ impl StopMultiplexInput {
             _input: &crate::input::StopMultiplexInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_67 = &_input.multiplex_id;
-            let input_67 =
-                input_67
+            let input_65 = &_input.multiplex_id;
+            let input_65 =
+                input_65
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
                         details: "cannot be empty or unset",
                     })?;
-            let multiplex_id = aws_smithy_http::label::fmt_string(input_67, false);
+            let multiplex_id = aws_smithy_http::label::fmt_string(input_65, false);
             if multiplex_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "multiplex_id",
@@ -9104,15 +9082,15 @@ impl TransferInputDeviceInput {
             _input: &crate::input::TransferInputDeviceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_68 = &_input.input_device_id;
-            let input_68 =
-                input_68
+            let input_66 = &_input.input_device_id;
+            let input_66 =
+                input_66
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_device_id",
                         details: "cannot be empty or unset",
                     })?;
-            let input_device_id = aws_smithy_http::label::fmt_string(input_68, false);
+            let input_device_id = aws_smithy_http::label::fmt_string(input_66, false);
             if input_device_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "input_device_id",
@@ -9144,7 +9122,7 @@ impl TransferInputDeviceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -9205,7 +9183,7 @@ impl TransferInputDeviceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9402,15 +9380,15 @@ impl UpdateChannelInput {
             _input: &crate::input::UpdateChannelInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_69 = &_input.channel_id;
-            let input_69 =
-                input_69
+            let input_67 = &_input.channel_id;
+            let input_67 =
+                input_67
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_id",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_id = aws_smithy_http::label::fmt_string(input_69, false);
+            let channel_id = aws_smithy_http::label::fmt_string(input_67, false);
             if channel_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_id",
@@ -9438,7 +9416,7 @@ impl UpdateChannelInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -9498,7 +9476,7 @@ impl UpdateChannelInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9603,15 +9581,15 @@ impl UpdateChannelClassInput {
             _input: &crate::input::UpdateChannelClassInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_70 = &_input.channel_id;
-            let input_70 =
-                input_70
+            let input_68 = &_input.channel_id;
+            let input_68 =
+                input_68
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_id",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_id = aws_smithy_http::label::fmt_string(input_70, false);
+            let channel_id = aws_smithy_http::label::fmt_string(input_68, false);
             if channel_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_id",
@@ -9643,7 +9621,7 @@ impl UpdateChannelClassInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -9704,7 +9682,7 @@ impl UpdateChannelClassInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9904,15 +9882,15 @@ impl UpdateInputInput {
             _input: &crate::input::UpdateInputInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_71 = &_input.input_id;
-            let input_71 =
-                input_71
+            let input_69 = &_input.input_id;
+            let input_69 =
+                input_69
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_id",
                         details: "cannot be empty or unset",
                     })?;
-            let input_id = aws_smithy_http::label::fmt_string(input_71, false);
+            let input_id = aws_smithy_http::label::fmt_string(input_69, false);
             if input_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "input_id",
@@ -9940,7 +9918,7 @@ impl UpdateInputInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -10000,7 +9978,7 @@ impl UpdateInputInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10121,15 +10099,15 @@ impl UpdateInputDeviceInput {
             _input: &crate::input::UpdateInputDeviceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_72 = &_input.input_device_id;
-            let input_72 =
-                input_72
+            let input_70 = &_input.input_device_id;
+            let input_70 =
+                input_70
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_device_id",
                         details: "cannot be empty or unset",
                     })?;
-            let input_device_id = aws_smithy_http::label::fmt_string(input_72, false);
+            let input_device_id = aws_smithy_http::label::fmt_string(input_70, false);
             if input_device_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "input_device_id",
@@ -10161,7 +10139,7 @@ impl UpdateInputDeviceInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -10222,7 +10200,7 @@ impl UpdateInputDeviceInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10345,15 +10323,15 @@ impl UpdateInputSecurityGroupInput {
             _input: &crate::input::UpdateInputSecurityGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_73 = &_input.input_security_group_id;
-            let input_73 =
-                input_73
+            let input_71 = &_input.input_security_group_id;
+            let input_71 =
+                input_71
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_security_group_id",
                         details: "cannot be empty or unset",
                     })?;
-            let input_security_group_id = aws_smithy_http::label::fmt_string(input_73, false);
+            let input_security_group_id = aws_smithy_http::label::fmt_string(input_71, false);
             if input_security_group_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "input_security_group_id",
@@ -10385,7 +10363,7 @@ impl UpdateInputSecurityGroupInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -10448,7 +10426,7 @@ impl UpdateInputSecurityGroupInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10543,15 +10521,15 @@ impl UpdateMultiplexInput {
             _input: &crate::input::UpdateMultiplexInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_74 = &_input.multiplex_id;
-            let input_74 =
-                input_74
+            let input_72 = &_input.multiplex_id;
+            let input_72 =
+                input_72
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
                         details: "cannot be empty or unset",
                     })?;
-            let multiplex_id = aws_smithy_http::label::fmt_string(input_74, false);
+            let multiplex_id = aws_smithy_http::label::fmt_string(input_72, false);
             if multiplex_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "multiplex_id",
@@ -10583,7 +10561,7 @@ impl UpdateMultiplexInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -10644,7 +10622,7 @@ impl UpdateMultiplexInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10743,30 +10721,30 @@ impl UpdateMultiplexProgramInput {
             _input: &crate::input::UpdateMultiplexProgramInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_75 = &_input.multiplex_id;
-            let input_75 =
-                input_75
+            let input_73 = &_input.multiplex_id;
+            let input_73 =
+                input_73
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
                         details: "cannot be empty or unset",
                     })?;
-            let multiplex_id = aws_smithy_http::label::fmt_string(input_75, false);
+            let multiplex_id = aws_smithy_http::label::fmt_string(input_73, false);
             if multiplex_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "multiplex_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_76 = &_input.program_name;
-            let input_76 =
-                input_76
+            let input_74 = &_input.program_name;
+            let input_74 =
+                input_74
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "program_name",
                         details: "cannot be empty or unset",
                     })?;
-            let program_name = aws_smithy_http::label::fmt_string(input_76, false);
+            let program_name = aws_smithy_http::label::fmt_string(input_74, false);
             if program_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "program_name",
@@ -10799,7 +10777,7 @@ impl UpdateMultiplexProgramInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -10862,7 +10840,7 @@ impl UpdateMultiplexProgramInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10945,15 +10923,15 @@ impl UpdateReservationInput {
             _input: &crate::input::UpdateReservationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_77 = &_input.reservation_id;
-            let input_77 =
-                input_77
+            let input_75 = &_input.reservation_id;
+            let input_75 =
+                input_75
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "reservation_id",
                         details: "cannot be empty or unset",
                     })?;
-            let reservation_id = aws_smithy_http::label::fmt_string(input_77, false);
+            let reservation_id = aws_smithy_http::label::fmt_string(input_75, false);
             if reservation_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "reservation_id",
@@ -10985,7 +10963,7 @@ impl UpdateReservationInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -11046,7 +11024,7 @@ impl UpdateReservationInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

@@ -121,29 +121,6 @@ impl AbortDocumentVersionUploadInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::AbortDocumentVersionUploadInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_3) = &_input.authentication_token {
-                let formatted_4 = AsRef::<str>::as_ref(inner_3);
-                if !formatted_4.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_4;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::AbortDocumentVersionUploadInput,
@@ -152,7 +129,8 @@ impl AbortDocumentVersionUploadInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_abort_document_version_upload(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -292,15 +270,15 @@ impl ActivateUserInput {
             _input: &crate::input::ActivateUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_5 = &_input.user_id;
-            let input_5 =
-                input_5
+            let input_3 = &_input.user_id;
+            let input_3 =
+                input_3
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_5, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_3, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -315,29 +293,6 @@ impl ActivateUserInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::ActivateUserInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_6) = &_input.authentication_token {
-                let formatted_7 = AsRef::<str>::as_ref(inner_6);
-                if !formatted_7.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_7;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ActivateUserInput,
@@ -346,7 +301,7 @@ impl ActivateUserInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_activate_user(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -522,15 +477,15 @@ impl AddResourcePermissionsInput {
             _input: &crate::input::AddResourcePermissionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_8 = &_input.resource_id;
-            let input_8 =
-                input_8
+            let input_4 = &_input.resource_id;
+            let input_4 =
+                input_4
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_id = aws_smithy_http::label::fmt_string(input_8, false);
+            let resource_id = aws_smithy_http::label::fmt_string(input_4, false);
             if resource_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_id",
@@ -545,29 +500,6 @@ impl AddResourcePermissionsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::AddResourcePermissionsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_9) = &_input.authentication_token {
-                let formatted_10 = AsRef::<str>::as_ref(inner_9);
-                if !formatted_10.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_10;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::AddResourcePermissionsInput,
@@ -576,7 +508,7 @@ impl AddResourcePermissionsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_add_resource_permissions(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -586,7 +518,7 @@ impl AddResourcePermissionsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -649,7 +581,7 @@ impl AddResourcePermissionsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -807,30 +739,30 @@ impl CreateCommentInput {
             _input: &crate::input::CreateCommentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_11 = &_input.document_id;
-            let input_11 =
-                input_11
+            let input_5 = &_input.document_id;
+            let input_5 =
+                input_5
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "document_id",
                         details: "cannot be empty or unset",
                     })?;
-            let document_id = aws_smithy_http::label::fmt_string(input_11, false);
+            let document_id = aws_smithy_http::label::fmt_string(input_5, false);
             if document_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "document_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_12 = &_input.version_id;
-            let input_12 =
-                input_12
+            let input_6 = &_input.version_id;
+            let input_6 =
+                input_6
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "version_id",
                         details: "cannot be empty or unset",
                     })?;
-            let version_id = aws_smithy_http::label::fmt_string(input_12, false);
+            let version_id = aws_smithy_http::label::fmt_string(input_6, false);
             if version_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "version_id",
@@ -846,29 +778,6 @@ impl CreateCommentInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateCommentInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_13) = &_input.authentication_token {
-                let formatted_14 = AsRef::<str>::as_ref(inner_13);
-                if !formatted_14.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_14;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateCommentInput,
@@ -877,7 +786,7 @@ impl CreateCommentInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_create_comment(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -887,7 +796,7 @@ impl CreateCommentInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -947,7 +856,7 @@ impl CreateCommentInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1071,15 +980,15 @@ impl CreateCustomMetadataInput {
             _input: &crate::input::CreateCustomMetadataInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_15 = &_input.resource_id;
-            let input_15 =
-                input_15
+            let input_7 = &_input.resource_id;
+            let input_7 =
+                input_7
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_id = aws_smithy_http::label::fmt_string(input_15, false);
+            let resource_id = aws_smithy_http::label::fmt_string(input_7, false);
             if resource_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_id",
@@ -1094,36 +1003,13 @@ impl CreateCustomMetadataInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateCustomMetadataInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_16) = &_input.authentication_token {
-                let formatted_17 = AsRef::<str>::as_ref(inner_16);
-                if !formatted_17.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_17;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::CreateCustomMetadataInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_18) = &_input.version_id {
-                query.push_kv("versionid", &aws_smithy_http::query::fmt_string(&inner_18));
+            if let Some(inner_8) = &_input.version_id {
+                query.push_kv("versionid", &aws_smithy_http::query::fmt_string(&inner_8));
             }
             Ok(())
         }
@@ -1136,7 +1022,7 @@ impl CreateCustomMetadataInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_create_custom_metadata(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1146,7 +1032,7 @@ impl CreateCustomMetadataInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1209,7 +1095,7 @@ impl CreateCustomMetadataInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1310,29 +1196,6 @@ impl CreateFolderInput {
             write!(output, "/api/v1/folders").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateFolderInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_19) = &_input.authentication_token {
-                let formatted_20 = AsRef::<str>::as_ref(inner_19);
-                if !formatted_20.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_20;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateFolderInput,
@@ -1341,7 +1204,7 @@ impl CreateFolderInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_create_folder(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1351,7 +1214,7 @@ impl CreateFolderInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1411,7 +1274,7 @@ impl CreateFolderInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1515,15 +1378,15 @@ impl CreateLabelsInput {
             _input: &crate::input::CreateLabelsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_21 = &_input.resource_id;
-            let input_21 =
-                input_21
+            let input_9 = &_input.resource_id;
+            let input_9 =
+                input_9
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_id = aws_smithy_http::label::fmt_string(input_21, false);
+            let resource_id = aws_smithy_http::label::fmt_string(input_9, false);
             if resource_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_id",
@@ -1538,29 +1401,6 @@ impl CreateLabelsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateLabelsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_22) = &_input.authentication_token {
-                let formatted_23 = AsRef::<str>::as_ref(inner_22);
-                if !formatted_23.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_23;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateLabelsInput,
@@ -1569,7 +1409,7 @@ impl CreateLabelsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_create_labels(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1579,7 +1419,7 @@ impl CreateLabelsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1639,7 +1479,7 @@ impl CreateLabelsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1754,15 +1594,15 @@ impl CreateNotificationSubscriptionInput {
             _input: &crate::input::CreateNotificationSubscriptionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_24 = &_input.organization_id;
-            let input_24 =
-                input_24
+            let input_10 = &_input.organization_id;
+            let input_10 =
+                input_10
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "organization_id",
                         details: "cannot be empty or unset",
                     })?;
-            let organization_id = aws_smithy_http::label::fmt_string(input_24, false);
+            let organization_id = aws_smithy_http::label::fmt_string(input_10, false);
             if organization_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "organization_id",
@@ -1794,7 +1634,7 @@ impl CreateNotificationSubscriptionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1856,7 +1696,7 @@ impl CreateNotificationSubscriptionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2035,29 +1875,6 @@ impl CreateUserInput {
             write!(output, "/api/v1/users").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CreateUserInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_25) = &_input.authentication_token {
-                let formatted_26 = AsRef::<str>::as_ref(inner_25);
-                if !formatted_26.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_26;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateUserInput,
@@ -2066,7 +1883,7 @@ impl CreateUserInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_create_user(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2076,7 +1893,7 @@ impl CreateUserInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -2136,7 +1953,7 @@ impl CreateUserInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2219,15 +2036,15 @@ impl DeactivateUserInput {
             _input: &crate::input::DeactivateUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_27 = &_input.user_id;
-            let input_27 =
-                input_27
+            let input_11 = &_input.user_id;
+            let input_11 =
+                input_11
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_27, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_11, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -2242,29 +2059,6 @@ impl DeactivateUserInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeactivateUserInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_28) = &_input.authentication_token {
-                let formatted_29 = AsRef::<str>::as_ref(inner_28);
-                if !formatted_29.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_29;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeactivateUserInput,
@@ -2273,7 +2067,7 @@ impl DeactivateUserInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_deactivate_user(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2437,45 +2231,45 @@ impl DeleteCommentInput {
             _input: &crate::input::DeleteCommentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_30 = &_input.document_id;
-            let input_30 =
-                input_30
+            let input_12 = &_input.document_id;
+            let input_12 =
+                input_12
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "document_id",
                         details: "cannot be empty or unset",
                     })?;
-            let document_id = aws_smithy_http::label::fmt_string(input_30, false);
+            let document_id = aws_smithy_http::label::fmt_string(input_12, false);
             if document_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "document_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_31 = &_input.version_id;
-            let input_31 =
-                input_31
+            let input_13 = &_input.version_id;
+            let input_13 =
+                input_13
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "version_id",
                         details: "cannot be empty or unset",
                     })?;
-            let version_id = aws_smithy_http::label::fmt_string(input_31, false);
+            let version_id = aws_smithy_http::label::fmt_string(input_13, false);
             if version_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "version_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_32 = &_input.comment_id;
-            let input_32 =
-                input_32
+            let input_14 = &_input.comment_id;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "comment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let comment_id = aws_smithy_http::label::fmt_string(input_32, false);
+            let comment_id = aws_smithy_http::label::fmt_string(input_14, false);
             if comment_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "comment_id",
@@ -2492,29 +2286,6 @@ impl DeleteCommentInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteCommentInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_33) = &_input.authentication_token {
-                let formatted_34 = AsRef::<str>::as_ref(inner_33);
-                if !formatted_34.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_34;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteCommentInput,
@@ -2523,7 +2294,7 @@ impl DeleteCommentInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_comment(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2708,15 +2479,15 @@ impl DeleteCustomMetadataInput {
             _input: &crate::input::DeleteCustomMetadataInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_35 = &_input.resource_id;
-            let input_35 =
-                input_35
+            let input_15 = &_input.resource_id;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_id = aws_smithy_http::label::fmt_string(input_35, false);
+            let resource_id = aws_smithy_http::label::fmt_string(input_15, false);
             if resource_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_id",
@@ -2731,40 +2502,17 @@ impl DeleteCustomMetadataInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteCustomMetadataInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_36) = &_input.authentication_token {
-                let formatted_37 = AsRef::<str>::as_ref(inner_36);
-                if !formatted_37.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_37;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DeleteCustomMetadataInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_38) = &_input.version_id {
-                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_38));
+            if let Some(inner_16) = &_input.version_id {
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_16));
             }
-            if let Some(inner_39) = &_input.keys {
-                for inner_40 in inner_39 {
-                    query.push_kv("keys", &aws_smithy_http::query::fmt_string(&inner_40));
+            if let Some(inner_17) = &_input.keys {
+                for inner_18 in inner_17 {
+                    query.push_kv("keys", &aws_smithy_http::query::fmt_string(&inner_18));
                 }
             }
             if _input.delete_all {
@@ -2784,7 +2532,7 @@ impl DeleteCustomMetadataInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_custom_metadata(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -2924,15 +2672,15 @@ impl DeleteDocumentInput {
             _input: &crate::input::DeleteDocumentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_41 = &_input.document_id;
-            let input_41 =
-                input_41
+            let input_19 = &_input.document_id;
+            let input_19 =
+                input_19
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "document_id",
                         details: "cannot be empty or unset",
                     })?;
-            let document_id = aws_smithy_http::label::fmt_string(input_41, false);
+            let document_id = aws_smithy_http::label::fmt_string(input_19, false);
             if document_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "document_id",
@@ -2947,29 +2695,6 @@ impl DeleteDocumentInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteDocumentInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_42) = &_input.authentication_token {
-                let formatted_43 = AsRef::<str>::as_ref(inner_42);
-                if !formatted_43.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_43;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteDocumentInput,
@@ -2978,7 +2703,7 @@ impl DeleteDocumentInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_document(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3118,15 +2843,15 @@ impl DeleteFolderInput {
             _input: &crate::input::DeleteFolderInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_44 = &_input.folder_id;
-            let input_44 =
-                input_44
+            let input_20 = &_input.folder_id;
+            let input_20 =
+                input_20
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "folder_id",
                         details: "cannot be empty or unset",
                     })?;
-            let folder_id = aws_smithy_http::label::fmt_string(input_44, false);
+            let folder_id = aws_smithy_http::label::fmt_string(input_20, false);
             if folder_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
@@ -3137,29 +2862,6 @@ impl DeleteFolderInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteFolderInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_45) = &_input.authentication_token {
-                let formatted_46 = AsRef::<str>::as_ref(inner_45);
-                if !formatted_46.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_46;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteFolderInput,
@@ -3168,7 +2870,7 @@ impl DeleteFolderInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_folder(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3308,15 +3010,15 @@ impl DeleteFolderContentsInput {
             _input: &crate::input::DeleteFolderContentsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_47 = &_input.folder_id;
-            let input_47 =
-                input_47
+            let input_21 = &_input.folder_id;
+            let input_21 =
+                input_21
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "folder_id",
                         details: "cannot be empty or unset",
                     })?;
-            let folder_id = aws_smithy_http::label::fmt_string(input_47, false);
+            let folder_id = aws_smithy_http::label::fmt_string(input_21, false);
             if folder_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
@@ -3331,29 +3033,6 @@ impl DeleteFolderContentsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteFolderContentsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_48) = &_input.authentication_token {
-                let formatted_49 = AsRef::<str>::as_ref(inner_48);
-                if !formatted_49.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_49;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteFolderContentsInput,
@@ -3362,7 +3041,7 @@ impl DeleteFolderContentsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_folder_contents(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3535,15 +3214,15 @@ impl DeleteLabelsInput {
             _input: &crate::input::DeleteLabelsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_50 = &_input.resource_id;
-            let input_50 =
-                input_50
+            let input_22 = &_input.resource_id;
+            let input_22 =
+                input_22
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_id = aws_smithy_http::label::fmt_string(input_50, false);
+            let resource_id = aws_smithy_http::label::fmt_string(input_22, false);
             if resource_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_id",
@@ -3558,37 +3237,14 @@ impl DeleteLabelsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteLabelsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_51) = &_input.authentication_token {
-                let formatted_52 = AsRef::<str>::as_ref(inner_51);
-                if !formatted_52.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_52;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DeleteLabelsInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_53) = &_input.labels {
-                for inner_54 in inner_53 {
-                    query.push_kv("labels", &aws_smithy_http::query::fmt_string(&inner_54));
+            if let Some(inner_23) = &_input.labels {
+                for inner_24 in inner_23 {
+                    query.push_kv("labels", &aws_smithy_http::query::fmt_string(&inner_24));
                 }
             }
             if _input.delete_all {
@@ -3608,7 +3264,7 @@ impl DeleteLabelsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_labels(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -3753,30 +3409,30 @@ impl DeleteNotificationSubscriptionInput {
             _input: &crate::input::DeleteNotificationSubscriptionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_55 = &_input.organization_id;
-            let input_55 =
-                input_55
+            let input_25 = &_input.organization_id;
+            let input_25 =
+                input_25
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "organization_id",
                         details: "cannot be empty or unset",
                     })?;
-            let organization_id = aws_smithy_http::label::fmt_string(input_55, false);
+            let organization_id = aws_smithy_http::label::fmt_string(input_25, false);
             if organization_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "organization_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_56 = &_input.subscription_id;
-            let input_56 =
-                input_56
+            let input_26 = &_input.subscription_id;
+            let input_26 =
+                input_26
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "subscription_id",
                         details: "cannot be empty or unset",
                     })?;
-            let subscription_id = aws_smithy_http::label::fmt_string(input_56, false);
+            let subscription_id = aws_smithy_http::label::fmt_string(input_26, false);
             if subscription_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "subscription_id",
@@ -3939,15 +3595,15 @@ impl DeleteUserInput {
             _input: &crate::input::DeleteUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_57 = &_input.user_id;
-            let input_57 =
-                input_57
+            let input_27 = &_input.user_id;
+            let input_27 =
+                input_27
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_57, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_27, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -3958,29 +3614,6 @@ impl DeleteUserInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DeleteUserInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_58) = &_input.authentication_token {
-                let formatted_59 = AsRef::<str>::as_ref(inner_58);
-                if !formatted_59.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_59;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteUserInput,
@@ -3989,7 +3622,7 @@ impl DeleteUserInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_delete_user(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4240,69 +3873,46 @@ impl DescribeActivitiesInput {
             write!(output, "/api/v1/activities").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeActivitiesInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_60) = &_input.authentication_token {
-                let formatted_61 = AsRef::<str>::as_ref(inner_60);
-                if !formatted_61.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_61;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DescribeActivitiesInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_62) = &_input.start_time {
+            if let Some(inner_28) = &_input.start_time {
                 query.push_kv(
                     "startTime",
                     &aws_smithy_http::query::fmt_timestamp(
-                        inner_62,
+                        inner_28,
                         aws_smithy_types::date_time::Format::DateTime,
                     )?,
                 );
             }
-            if let Some(inner_63) = &_input.end_time {
+            if let Some(inner_29) = &_input.end_time {
                 query.push_kv(
                     "endTime",
                     &aws_smithy_http::query::fmt_timestamp(
-                        inner_63,
+                        inner_29,
                         aws_smithy_types::date_time::Format::DateTime,
                     )?,
                 );
             }
-            if let Some(inner_64) = &_input.organization_id {
+            if let Some(inner_30) = &_input.organization_id {
                 query.push_kv(
                     "organizationId",
-                    &aws_smithy_http::query::fmt_string(&inner_64),
+                    &aws_smithy_http::query::fmt_string(&inner_30),
                 );
             }
-            if let Some(inner_65) = &_input.activity_types {
+            if let Some(inner_31) = &_input.activity_types {
                 query.push_kv(
                     "activityTypes",
-                    &aws_smithy_http::query::fmt_string(&inner_65),
+                    &aws_smithy_http::query::fmt_string(&inner_31),
                 );
             }
-            if let Some(inner_66) = &_input.resource_id {
-                query.push_kv("resourceId", &aws_smithy_http::query::fmt_string(&inner_66));
+            if let Some(inner_32) = &_input.resource_id {
+                query.push_kv("resourceId", &aws_smithy_http::query::fmt_string(&inner_32));
             }
-            if let Some(inner_67) = &_input.user_id {
-                query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_67));
+            if let Some(inner_33) = &_input.user_id {
+                query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_33));
             }
             if _input.include_indirect_activities {
                 query.push_kv(
@@ -4311,14 +3921,14 @@ impl DescribeActivitiesInput {
                         .encode(),
                 );
             }
-            if let Some(inner_68) = &_input.limit {
+            if let Some(inner_34) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    aws_smithy_types::primitive::Encoder::from(*inner_68).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_34).encode(),
                 );
             }
-            if let Some(inner_69) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_69));
+            if let Some(inner_35) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_35));
             }
             Ok(())
         }
@@ -4331,7 +3941,7 @@ impl DescribeActivitiesInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_describe_activities(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4507,30 +4117,30 @@ impl DescribeCommentsInput {
             _input: &crate::input::DescribeCommentsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_70 = &_input.document_id;
-            let input_70 =
-                input_70
+            let input_36 = &_input.document_id;
+            let input_36 =
+                input_36
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "document_id",
                         details: "cannot be empty or unset",
                     })?;
-            let document_id = aws_smithy_http::label::fmt_string(input_70, false);
+            let document_id = aws_smithy_http::label::fmt_string(input_36, false);
             if document_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "document_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_71 = &_input.version_id;
-            let input_71 =
-                input_71
+            let input_37 = &_input.version_id;
+            let input_37 =
+                input_37
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "version_id",
                         details: "cannot be empty or unset",
                     })?;
-            let version_id = aws_smithy_http::label::fmt_string(input_71, false);
+            let version_id = aws_smithy_http::label::fmt_string(input_37, false);
             if version_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "version_id",
@@ -4546,42 +4156,19 @@ impl DescribeCommentsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeCommentsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_72) = &_input.authentication_token {
-                let formatted_73 = AsRef::<str>::as_ref(inner_72);
-                if !formatted_73.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_73;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DescribeCommentsInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_74) = &_input.limit {
+            if let Some(inner_38) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    aws_smithy_types::primitive::Encoder::from(*inner_74).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_38).encode(),
                 );
             }
-            if let Some(inner_75) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_75));
+            if let Some(inner_39) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_39));
             }
             Ok(())
         }
@@ -4594,7 +4181,7 @@ impl DescribeCommentsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_describe_comments(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -4783,15 +4370,15 @@ impl DescribeDocumentVersionsInput {
             _input: &crate::input::DescribeDocumentVersionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_76 = &_input.document_id;
-            let input_76 =
-                input_76
+            let input_40 = &_input.document_id;
+            let input_40 =
+                input_40
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "document_id",
                         details: "cannot be empty or unset",
                     })?;
-            let document_id = aws_smithy_http::label::fmt_string(input_76, false);
+            let document_id = aws_smithy_http::label::fmt_string(input_40, false);
             if document_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "document_id",
@@ -4806,48 +4393,25 @@ impl DescribeDocumentVersionsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeDocumentVersionsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_77) = &_input.authentication_token {
-                let formatted_78 = AsRef::<str>::as_ref(inner_77);
-                if !formatted_78.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_78;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DescribeDocumentVersionsInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_79) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_79));
+            if let Some(inner_41) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_41));
             }
-            if let Some(inner_80) = &_input.limit {
+            if let Some(inner_42) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    aws_smithy_types::primitive::Encoder::from(*inner_80).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
                 );
             }
-            if let Some(inner_81) = &_input.include {
-                query.push_kv("include", &aws_smithy_http::query::fmt_string(&inner_81));
+            if let Some(inner_43) = &_input.include {
+                query.push_kv("include", &aws_smithy_http::query::fmt_string(&inner_43));
             }
-            if let Some(inner_82) = &_input.fields {
-                query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_82));
+            if let Some(inner_44) = &_input.fields {
+                query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_44));
             }
             Ok(())
         }
@@ -4860,7 +4424,8 @@ impl DescribeDocumentVersionsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_describe_document_versions(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5078,15 +4643,15 @@ impl DescribeFolderContentsInput {
             _input: &crate::input::DescribeFolderContentsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_83 = &_input.folder_id;
-            let input_83 =
-                input_83
+            let input_45 = &_input.folder_id;
+            let input_45 =
+                input_45
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "folder_id",
                         details: "cannot be empty or unset",
                     })?;
-            let folder_id = aws_smithy_http::label::fmt_string(input_83, false);
+            let folder_id = aws_smithy_http::label::fmt_string(input_45, false);
             if folder_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
@@ -5101,54 +4666,31 @@ impl DescribeFolderContentsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeFolderContentsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_84) = &_input.authentication_token {
-                let formatted_85 = AsRef::<str>::as_ref(inner_84);
-                if !formatted_85.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_85;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DescribeFolderContentsInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_86) = &_input.sort {
-                query.push_kv("sort", &aws_smithy_http::query::fmt_string(&inner_86));
+            if let Some(inner_46) = &_input.sort {
+                query.push_kv("sort", &aws_smithy_http::query::fmt_string(&inner_46));
             }
-            if let Some(inner_87) = &_input.order {
-                query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_87));
+            if let Some(inner_47) = &_input.order {
+                query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_47));
             }
-            if let Some(inner_88) = &_input.limit {
+            if let Some(inner_48) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    aws_smithy_types::primitive::Encoder::from(*inner_88).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_48).encode(),
                 );
             }
-            if let Some(inner_89) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_89));
+            if let Some(inner_49) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_49));
             }
-            if let Some(inner_90) = &_input.r#type {
-                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_90));
+            if let Some(inner_50) = &_input.r#type {
+                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_50));
             }
-            if let Some(inner_91) = &_input.include {
-                query.push_kv("include", &aws_smithy_http::query::fmt_string(&inner_91));
+            if let Some(inner_51) = &_input.include {
+                query.push_kv("include", &aws_smithy_http::query::fmt_string(&inner_51));
             }
             Ok(())
         }
@@ -5161,7 +4703,7 @@ impl DescribeFolderContentsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_describe_folder_contents(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5343,53 +4885,30 @@ impl DescribeGroupsInput {
             write!(output, "/api/v1/groups").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeGroupsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_92) = &_input.authentication_token {
-                let formatted_93 = AsRef::<str>::as_ref(inner_92);
-                if !formatted_93.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_93;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DescribeGroupsInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_94) = &_input.search_query {
+            if let Some(inner_52) = &_input.search_query {
                 query.push_kv(
                     "searchQuery",
-                    &aws_smithy_http::query::fmt_string(&inner_94),
+                    &aws_smithy_http::query::fmt_string(&inner_52),
                 );
             }
-            if let Some(inner_95) = &_input.organization_id {
+            if let Some(inner_53) = &_input.organization_id {
                 query.push_kv(
                     "organizationId",
-                    &aws_smithy_http::query::fmt_string(&inner_95),
+                    &aws_smithy_http::query::fmt_string(&inner_53),
                 );
             }
-            if let Some(inner_96) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_96));
+            if let Some(inner_54) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_54));
             }
-            if let Some(inner_97) = &_input.limit {
+            if let Some(inner_55) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    aws_smithy_types::primitive::Encoder::from(*inner_97).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_55).encode(),
                 );
             }
             Ok(())
@@ -5403,7 +4922,7 @@ impl DescribeGroupsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_describe_groups(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -5557,15 +5076,15 @@ impl DescribeNotificationSubscriptionsInput {
             _input: &crate::input::DescribeNotificationSubscriptionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_98 = &_input.organization_id;
-            let input_98 =
-                input_98
+            let input_56 = &_input.organization_id;
+            let input_56 =
+                input_56
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "organization_id",
                         details: "cannot be empty or unset",
                     })?;
-            let organization_id = aws_smithy_http::label::fmt_string(input_98, false);
+            let organization_id = aws_smithy_http::label::fmt_string(input_56, false);
             if organization_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "organization_id",
@@ -5585,13 +5104,13 @@ impl DescribeNotificationSubscriptionsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_99) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_99));
+            if let Some(inner_57) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_57));
             }
-            if let Some(inner_100) = &_input.limit {
+            if let Some(inner_58) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    aws_smithy_types::primitive::Encoder::from(*inner_100).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_58).encode(),
                 );
             }
             Ok(())
@@ -5781,15 +5300,15 @@ impl DescribeResourcePermissionsInput {
             _input: &crate::input::DescribeResourcePermissionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_101 = &_input.resource_id;
-            let input_101 =
-                input_101
+            let input_59 = &_input.resource_id;
+            let input_59 =
+                input_59
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_id = aws_smithy_http::label::fmt_string(input_101, false);
+            let resource_id = aws_smithy_http::label::fmt_string(input_59, false);
             if resource_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_id",
@@ -5804,48 +5323,25 @@ impl DescribeResourcePermissionsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeResourcePermissionsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_102) = &_input.authentication_token {
-                let formatted_103 = AsRef::<str>::as_ref(inner_102);
-                if !formatted_103.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_103;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DescribeResourcePermissionsInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_104) = &_input.principal_id {
+            if let Some(inner_60) = &_input.principal_id {
                 query.push_kv(
                     "principalId",
-                    &aws_smithy_http::query::fmt_string(&inner_104),
+                    &aws_smithy_http::query::fmt_string(&inner_60),
                 );
             }
-            if let Some(inner_105) = &_input.limit {
+            if let Some(inner_61) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    aws_smithy_types::primitive::Encoder::from(*inner_105).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
                 );
             }
-            if let Some(inner_106) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_106));
+            if let Some(inner_62) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_62));
             }
             Ok(())
         }
@@ -5858,7 +5354,8 @@ impl DescribeResourcePermissionsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_describe_resource_permissions(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6013,42 +5510,19 @@ impl DescribeRootFoldersInput {
             write!(output, "/api/v1/me/root").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeRootFoldersInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_107) = &_input.authentication_token {
-                let formatted_108 = AsRef::<str>::as_ref(inner_107);
-                if !formatted_108.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_108;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DescribeRootFoldersInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_109) = &_input.limit {
+            if let Some(inner_63) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    aws_smithy_types::primitive::Encoder::from(*inner_109).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_63).encode(),
                 );
             }
-            if let Some(inner_110) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_110));
+            if let Some(inner_64) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_64));
             }
             Ok(())
         }
@@ -6061,7 +5535,7 @@ impl DescribeRootFoldersInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_describe_root_folders(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6306,66 +5780,43 @@ impl DescribeUsersInput {
             write!(output, "/api/v1/users").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::DescribeUsersInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_111) = &_input.authentication_token {
-                let formatted_112 = AsRef::<str>::as_ref(inner_111);
-                if !formatted_112.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_112;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::DescribeUsersInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_113) = &_input.organization_id {
+            if let Some(inner_65) = &_input.organization_id {
                 query.push_kv(
                     "organizationId",
-                    &aws_smithy_http::query::fmt_string(&inner_113),
+                    &aws_smithy_http::query::fmt_string(&inner_65),
                 );
             }
-            if let Some(inner_114) = &_input.user_ids {
-                query.push_kv("userIds", &aws_smithy_http::query::fmt_string(&inner_114));
+            if let Some(inner_66) = &_input.user_ids {
+                query.push_kv("userIds", &aws_smithy_http::query::fmt_string(&inner_66));
             }
-            if let Some(inner_115) = &_input.query {
-                query.push_kv("query", &aws_smithy_http::query::fmt_string(&inner_115));
+            if let Some(inner_67) = &_input.query {
+                query.push_kv("query", &aws_smithy_http::query::fmt_string(&inner_67));
             }
-            if let Some(inner_116) = &_input.include {
-                query.push_kv("include", &aws_smithy_http::query::fmt_string(&inner_116));
+            if let Some(inner_68) = &_input.include {
+                query.push_kv("include", &aws_smithy_http::query::fmt_string(&inner_68));
             }
-            if let Some(inner_117) = &_input.order {
-                query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_117));
+            if let Some(inner_69) = &_input.order {
+                query.push_kv("order", &aws_smithy_http::query::fmt_string(&inner_69));
             }
-            if let Some(inner_118) = &_input.sort {
-                query.push_kv("sort", &aws_smithy_http::query::fmt_string(&inner_118));
+            if let Some(inner_70) = &_input.sort {
+                query.push_kv("sort", &aws_smithy_http::query::fmt_string(&inner_70));
             }
-            if let Some(inner_119) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_119));
+            if let Some(inner_71) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_71));
             }
-            if let Some(inner_120) = &_input.limit {
+            if let Some(inner_72) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    aws_smithy_types::primitive::Encoder::from(*inner_120).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
                 );
             }
-            if let Some(inner_121) = &_input.fields {
-                query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_121));
+            if let Some(inner_73) = &_input.fields {
+                query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_73));
             }
             Ok(())
         }
@@ -6378,7 +5829,7 @@ impl DescribeUsersInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_describe_users(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6509,29 +5960,6 @@ impl GetCurrentUserInput {
             write!(output, "/api/v1/me").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetCurrentUserInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_122) = &_input.authentication_token {
-                let formatted_123 = AsRef::<str>::as_ref(inner_122);
-                if !formatted_123.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_123;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetCurrentUserInput,
@@ -6540,7 +5968,7 @@ impl GetCurrentUserInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_current_user(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6692,15 +6120,15 @@ impl GetDocumentInput {
             _input: &crate::input::GetDocumentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_124 = &_input.document_id;
-            let input_124 =
-                input_124
+            let input_74 = &_input.document_id;
+            let input_74 =
+                input_74
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "document_id",
                         details: "cannot be empty or unset",
                     })?;
-            let document_id = aws_smithy_http::label::fmt_string(input_124, false);
+            let document_id = aws_smithy_http::label::fmt_string(input_74, false);
             if document_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "document_id",
@@ -6714,29 +6142,6 @@ impl GetDocumentInput {
             )
             .expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetDocumentInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_125) = &_input.authentication_token {
-                let formatted_126 = AsRef::<str>::as_ref(inner_125);
-                if !formatted_126.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_126;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetDocumentInput,
@@ -6761,7 +6166,7 @@ impl GetDocumentInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_document(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -6937,15 +6342,15 @@ impl GetDocumentPathInput {
             _input: &crate::input::GetDocumentPathInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_127 = &_input.document_id;
-            let input_127 =
-                input_127
+            let input_75 = &_input.document_id;
+            let input_75 =
+                input_75
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "document_id",
                         details: "cannot be empty or unset",
                     })?;
-            let document_id = aws_smithy_http::label::fmt_string(input_127, false);
+            let document_id = aws_smithy_http::label::fmt_string(input_75, false);
             if document_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "document_id",
@@ -6960,45 +6365,22 @@ impl GetDocumentPathInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetDocumentPathInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_128) = &_input.authentication_token {
-                let formatted_129 = AsRef::<str>::as_ref(inner_128);
-                if !formatted_129.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_129;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::GetDocumentPathInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_130) = &_input.limit {
+            if let Some(inner_76) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    aws_smithy_types::primitive::Encoder::from(*inner_130).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_76).encode(),
                 );
             }
-            if let Some(inner_131) = &_input.fields {
-                query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_131));
+            if let Some(inner_77) = &_input.fields {
+                query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_77));
             }
-            if let Some(inner_132) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_132));
+            if let Some(inner_78) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_78));
             }
             Ok(())
         }
@@ -7011,7 +6393,7 @@ impl GetDocumentPathInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_document_path(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7187,30 +6569,30 @@ impl GetDocumentVersionInput {
             _input: &crate::input::GetDocumentVersionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_133 = &_input.document_id;
-            let input_133 =
-                input_133
+            let input_79 = &_input.document_id;
+            let input_79 =
+                input_79
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "document_id",
                         details: "cannot be empty or unset",
                     })?;
-            let document_id = aws_smithy_http::label::fmt_string(input_133, false);
+            let document_id = aws_smithy_http::label::fmt_string(input_79, false);
             if document_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "document_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_134 = &_input.version_id;
-            let input_134 =
-                input_134
+            let input_80 = &_input.version_id;
+            let input_80 =
+                input_80
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "version_id",
                         details: "cannot be empty or unset",
                     })?;
-            let version_id = aws_smithy_http::label::fmt_string(input_134, false);
+            let version_id = aws_smithy_http::label::fmt_string(input_80, false);
             if version_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "version_id",
@@ -7226,36 +6608,13 @@ impl GetDocumentVersionInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetDocumentVersionInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_135) = &_input.authentication_token {
-                let formatted_136 = AsRef::<str>::as_ref(inner_135);
-                if !formatted_136.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_136;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::GetDocumentVersionInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_137) = &_input.fields {
-                query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_137));
+            if let Some(inner_81) = &_input.fields {
+                query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_81));
             }
             if _input.include_custom_metadata {
                 query.push_kv(
@@ -7275,7 +6634,7 @@ impl GetDocumentVersionInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_document_version(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7425,15 +6784,15 @@ impl GetFolderInput {
             _input: &crate::input::GetFolderInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_138 = &_input.folder_id;
-            let input_138 =
-                input_138
+            let input_82 = &_input.folder_id;
+            let input_82 =
+                input_82
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "folder_id",
                         details: "cannot be empty or unset",
                     })?;
-            let folder_id = aws_smithy_http::label::fmt_string(input_138, false);
+            let folder_id = aws_smithy_http::label::fmt_string(input_82, false);
             if folder_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
@@ -7443,29 +6802,6 @@ impl GetFolderInput {
             write!(output, "/api/v1/folders/{FolderId}", FolderId = folder_id)
                 .expect("formatting should succeed");
             Ok(())
-        }
-        fn add_headers(
-            _input: &crate::input::GetFolderInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_139) = &_input.authentication_token {
-                let formatted_140 = AsRef::<str>::as_ref(inner_139);
-                if !formatted_140.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_140;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
         }
         fn uri_query(
             _input: &crate::input::GetFolderInput,
@@ -7490,7 +6826,7 @@ impl GetFolderInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_folder(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7664,15 +7000,15 @@ impl GetFolderPathInput {
             _input: &crate::input::GetFolderPathInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_141 = &_input.folder_id;
-            let input_141 =
-                input_141
+            let input_83 = &_input.folder_id;
+            let input_83 =
+                input_83
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "folder_id",
                         details: "cannot be empty or unset",
                     })?;
-            let folder_id = aws_smithy_http::label::fmt_string(input_141, false);
+            let folder_id = aws_smithy_http::label::fmt_string(input_83, false);
             if folder_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
@@ -7687,45 +7023,22 @@ impl GetFolderPathInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetFolderPathInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_142) = &_input.authentication_token {
-                let formatted_143 = AsRef::<str>::as_ref(inner_142);
-                if !formatted_143.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_143;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::GetFolderPathInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_144) = &_input.limit {
+            if let Some(inner_84) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    aws_smithy_types::primitive::Encoder::from(*inner_144).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_84).encode(),
                 );
             }
-            if let Some(inner_145) = &_input.fields {
-                query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_145));
+            if let Some(inner_85) = &_input.fields {
+                query.push_kv("fields", &aws_smithy_http::query::fmt_string(&inner_85));
             }
-            if let Some(inner_146) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_146));
+            if let Some(inner_86) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_86));
             }
             Ok(())
         }
@@ -7738,7 +7051,7 @@ impl GetFolderPathInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_folder_path(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -7920,51 +7233,28 @@ impl GetResourcesInput {
             write!(output, "/api/v1/resources").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::GetResourcesInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_147) = &_input.authentication_token {
-                let formatted_148 = AsRef::<str>::as_ref(inner_147);
-                if !formatted_148.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_148;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::GetResourcesInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_149) = &_input.user_id {
-                query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_149));
+            if let Some(inner_87) = &_input.user_id {
+                query.push_kv("userId", &aws_smithy_http::query::fmt_string(&inner_87));
             }
-            if let Some(inner_150) = &_input.collection_type {
+            if let Some(inner_88) = &_input.collection_type {
                 query.push_kv(
                     "collectionType",
-                    &aws_smithy_http::query::fmt_string(&inner_150),
+                    &aws_smithy_http::query::fmt_string(&inner_88),
                 );
             }
-            if let Some(inner_151) = &_input.limit {
+            if let Some(inner_89) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    aws_smithy_types::primitive::Encoder::from(*inner_151).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_89).encode(),
                 );
             }
-            if let Some(inner_152) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_152));
+            if let Some(inner_90) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_90));
             }
             Ok(())
         }
@@ -7977,7 +7267,7 @@ impl GetResourcesInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_get_resources(input, builder)?;
             Ok(builder.method("GET").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8203,29 +7493,6 @@ impl InitiateDocumentVersionUploadInput {
             write!(output, "/api/v1/documents").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::InitiateDocumentVersionUploadInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_153) = &_input.authentication_token {
-                let formatted_154 = AsRef::<str>::as_ref(inner_153);
-                if !formatted_154.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_154;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::InitiateDocumentVersionUploadInput,
@@ -8234,7 +7501,8 @@ impl InitiateDocumentVersionUploadInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_initiate_document_version_upload(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8244,7 +7512,7 @@ impl InitiateDocumentVersionUploadInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -8306,7 +7574,7 @@ impl InitiateDocumentVersionUploadInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8391,15 +7659,15 @@ impl RemoveAllResourcePermissionsInput {
             _input: &crate::input::RemoveAllResourcePermissionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_155 = &_input.resource_id;
-            let input_155 =
-                input_155
+            let input_91 = &_input.resource_id;
+            let input_91 =
+                input_91
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_id = aws_smithy_http::label::fmt_string(input_155, false);
+            let resource_id = aws_smithy_http::label::fmt_string(input_91, false);
             if resource_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_id",
@@ -8414,29 +7682,6 @@ impl RemoveAllResourcePermissionsInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::RemoveAllResourcePermissionsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_156) = &_input.authentication_token {
-                let formatted_157 = AsRef::<str>::as_ref(inner_156);
-                if !formatted_157.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_157;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::RemoveAllResourcePermissionsInput,
@@ -8445,7 +7690,8 @@ impl RemoveAllResourcePermissionsInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_remove_all_resource_permissions(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8613,30 +7859,30 @@ impl RemoveResourcePermissionInput {
             _input: &crate::input::RemoveResourcePermissionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_158 = &_input.resource_id;
-            let input_158 =
-                input_158
+            let input_92 = &_input.resource_id;
+            let input_92 =
+                input_92
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_id = aws_smithy_http::label::fmt_string(input_158, false);
+            let resource_id = aws_smithy_http::label::fmt_string(input_92, false);
             if resource_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_159 = &_input.principal_id;
-            let input_159 =
-                input_159
+            let input_93 = &_input.principal_id;
+            let input_93 =
+                input_93
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "principal_id",
                         details: "cannot be empty or unset",
                     })?;
-            let principal_id = aws_smithy_http::label::fmt_string(input_159, false);
+            let principal_id = aws_smithy_http::label::fmt_string(input_93, false);
             if principal_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "principal_id",
@@ -8652,36 +7898,13 @@ impl RemoveResourcePermissionInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::RemoveResourcePermissionInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_160) = &_input.authentication_token {
-                let formatted_161 = AsRef::<str>::as_ref(inner_160);
-                if !formatted_161.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_161;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::RemoveResourcePermissionInput,
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_162) = &_input.principal_type {
-                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_162));
+            if let Some(inner_94) = &_input.principal_type {
+                query.push_kv("type", &aws_smithy_http::query::fmt_string(&inner_94));
             }
             Ok(())
         }
@@ -8694,7 +7917,8 @@ impl RemoveResourcePermissionInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder =
+                crate::http_serde::add_headers_remove_resource_permission(input, builder)?;
             Ok(builder.method("DELETE").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8876,15 +8100,15 @@ impl UpdateDocumentInput {
             _input: &crate::input::UpdateDocumentInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_163 = &_input.document_id;
-            let input_163 =
-                input_163
+            let input_95 = &_input.document_id;
+            let input_95 =
+                input_95
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "document_id",
                         details: "cannot be empty or unset",
                     })?;
-            let document_id = aws_smithy_http::label::fmt_string(input_163, false);
+            let document_id = aws_smithy_http::label::fmt_string(input_95, false);
             if document_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "document_id",
@@ -8899,29 +8123,6 @@ impl UpdateDocumentInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::UpdateDocumentInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_164) = &_input.authentication_token {
-                let formatted_165 = AsRef::<str>::as_ref(inner_164);
-                if !formatted_165.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_165;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateDocumentInput,
@@ -8930,7 +8131,7 @@ impl UpdateDocumentInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_update_document(input, builder)?;
             Ok(builder.method("PATCH").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -8940,7 +8141,7 @@ impl UpdateDocumentInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -9001,7 +8202,7 @@ impl UpdateDocumentInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9111,30 +8312,30 @@ impl UpdateDocumentVersionInput {
             _input: &crate::input::UpdateDocumentVersionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_166 = &_input.document_id;
-            let input_166 =
-                input_166
+            let input_96 = &_input.document_id;
+            let input_96 =
+                input_96
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "document_id",
                         details: "cannot be empty or unset",
                     })?;
-            let document_id = aws_smithy_http::label::fmt_string(input_166, false);
+            let document_id = aws_smithy_http::label::fmt_string(input_96, false);
             if document_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "document_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_167 = &_input.version_id;
-            let input_167 =
-                input_167
+            let input_97 = &_input.version_id;
+            let input_97 =
+                input_97
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "version_id",
                         details: "cannot be empty or unset",
                     })?;
-            let version_id = aws_smithy_http::label::fmt_string(input_167, false);
+            let version_id = aws_smithy_http::label::fmt_string(input_97, false);
             if version_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "version_id",
@@ -9150,29 +8351,6 @@ impl UpdateDocumentVersionInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::UpdateDocumentVersionInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_168) = &_input.authentication_token {
-                let formatted_169 = AsRef::<str>::as_ref(inner_168);
-                if !formatted_169.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_169;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateDocumentVersionInput,
@@ -9181,7 +8359,7 @@ impl UpdateDocumentVersionInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_update_document_version(input, builder)?;
             Ok(builder.method("PATCH").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9191,7 +8369,7 @@ impl UpdateDocumentVersionInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -9254,7 +8432,7 @@ impl UpdateDocumentVersionInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9379,15 +8557,15 @@ impl UpdateFolderInput {
             _input: &crate::input::UpdateFolderInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_170 = &_input.folder_id;
-            let input_170 =
-                input_170
+            let input_98 = &_input.folder_id;
+            let input_98 =
+                input_98
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "folder_id",
                         details: "cannot be empty or unset",
                     })?;
-            let folder_id = aws_smithy_http::label::fmt_string(input_170, false);
+            let folder_id = aws_smithy_http::label::fmt_string(input_98, false);
             if folder_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "folder_id",
@@ -9398,29 +8576,6 @@ impl UpdateFolderInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::UpdateFolderInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_171) = &_input.authentication_token {
-                let formatted_172 = AsRef::<str>::as_ref(inner_171);
-                if !formatted_172.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_172;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateFolderInput,
@@ -9429,7 +8584,7 @@ impl UpdateFolderInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_update_folder(input, builder)?;
             Ok(builder.method("PATCH").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9439,7 +8594,7 @@ impl UpdateFolderInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -9499,7 +8654,7 @@ impl UpdateFolderInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9672,15 +8827,15 @@ impl UpdateUserInput {
             _input: &crate::input::UpdateUserInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_173 = &_input.user_id;
-            let input_173 =
-                input_173
+            let input_99 = &_input.user_id;
+            let input_99 =
+                input_99
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "user_id",
                         details: "cannot be empty or unset",
                     })?;
-            let user_id = aws_smithy_http::label::fmt_string(input_173, false);
+            let user_id = aws_smithy_http::label::fmt_string(input_99, false);
             if user_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "user_id",
@@ -9691,29 +8846,6 @@ impl UpdateUserInput {
                 .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::UpdateUserInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_174) = &_input.authentication_token {
-                let formatted_175 = AsRef::<str>::as_ref(inner_174);
-                if !formatted_175.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_175;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "authentication_token",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &"*** Sensitive Data Redacted ***", err
-                            ),
-                        })?;
-                    builder = builder.header("Authentication", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateUserInput,
@@ -9722,7 +8854,7 @@ impl UpdateUserInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_update_user(input, builder)?;
             Ok(builder.method("PATCH").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -9732,7 +8864,7 @@ impl UpdateUserInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -9792,7 +8924,7 @@ impl UpdateUserInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

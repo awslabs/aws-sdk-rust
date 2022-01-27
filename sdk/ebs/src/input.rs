@@ -137,78 +137,6 @@ impl CompleteSnapshotInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::CompleteSnapshotInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_2) = &_input.changed_blocks_count {
-                let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_2);
-                let formatted_3 = encoder.encode();
-                if !formatted_3.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_3;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "changed_blocks_count",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-ChangedBlocksCount", header_value);
-                }
-            }
-            if let Some(inner_4) = &_input.checksum {
-                let formatted_5 = AsRef::<str>::as_ref(inner_4);
-                if !formatted_5.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_5;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "checksum",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-Checksum", header_value);
-                }
-            }
-            if let Some(inner_6) = &_input.checksum_algorithm {
-                let formatted_7 = AsRef::<str>::as_ref(inner_6);
-                if !formatted_7.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_7;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "checksum_algorithm",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-Checksum-Algorithm", header_value);
-                }
-            }
-            if let Some(inner_8) = &_input.checksum_aggregation_method {
-                let formatted_9 = AsRef::<str>::as_ref(inner_8);
-                if !formatted_9.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_9;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "checksum_aggregation_method",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-Checksum-Aggregation-Method", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CompleteSnapshotInput,
@@ -217,7 +145,7 @@ impl CompleteSnapshotInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_complete_snapshot(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -370,30 +298,30 @@ impl GetSnapshotBlockInput {
             _input: &crate::input::GetSnapshotBlockInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_10 = &_input.snapshot_id;
-            let input_10 =
-                input_10
+            let input_2 = &_input.snapshot_id;
+            let input_2 =
+                input_2
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "snapshot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let snapshot_id = aws_smithy_http::label::fmt_string(input_10, false);
+            let snapshot_id = aws_smithy_http::label::fmt_string(input_2, false);
             if snapshot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "snapshot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_11 = &_input.block_index;
-            let input_11 =
-                input_11
+            let input_3 = &_input.block_index;
+            let input_3 =
+                input_3
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "block_index",
                         details: "cannot be empty or unset",
                     })?;
-            let mut block_index_encoder = aws_smithy_types::primitive::Encoder::from(*input_11);
+            let mut block_index_encoder = aws_smithy_types::primitive::Encoder::from(*input_3);
             let block_index = block_index_encoder.encode();
             if block_index.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -415,8 +343,8 @@ impl GetSnapshotBlockInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_12) = &_input.block_token {
-                query.push_kv("blockToken", &aws_smithy_http::query::fmt_string(&inner_12));
+            if let Some(inner_4) = &_input.block_token {
+                query.push_kv("blockToken", &aws_smithy_http::query::fmt_string(&inner_4));
             }
             Ok(())
         }
@@ -617,15 +545,15 @@ impl ListChangedBlocksInput {
             _input: &crate::input::ListChangedBlocksInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_13 = &_input.second_snapshot_id;
-            let input_13 =
-                input_13
+            let input_5 = &_input.second_snapshot_id;
+            let input_5 =
+                input_5
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "second_snapshot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let second_snapshot_id = aws_smithy_http::label::fmt_string(input_13, false);
+            let second_snapshot_id = aws_smithy_http::label::fmt_string(input_5, false);
             if second_snapshot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "second_snapshot_id",
@@ -645,25 +573,25 @@ impl ListChangedBlocksInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_14) = &_input.first_snapshot_id {
+            if let Some(inner_6) = &_input.first_snapshot_id {
                 query.push_kv(
                     "firstSnapshotId",
-                    &aws_smithy_http::query::fmt_string(&inner_14),
+                    &aws_smithy_http::query::fmt_string(&inner_6),
                 );
             }
-            if let Some(inner_15) = &_input.next_token {
-                query.push_kv("pageToken", &aws_smithy_http::query::fmt_string(&inner_15));
+            if let Some(inner_7) = &_input.next_token {
+                query.push_kv("pageToken", &aws_smithy_http::query::fmt_string(&inner_7));
             }
-            if let Some(inner_16) = &_input.max_results {
+            if let Some(inner_8) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_16).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
                 );
             }
-            if let Some(inner_17) = &_input.starting_block_index {
+            if let Some(inner_9) = &_input.starting_block_index {
                 query.push_kv(
                     "startingBlockIndex",
-                    aws_smithy_types::primitive::Encoder::from(*inner_17).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_9).encode(),
                 );
             }
             Ok(())
@@ -837,15 +765,15 @@ impl ListSnapshotBlocksInput {
             _input: &crate::input::ListSnapshotBlocksInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_18 = &_input.snapshot_id;
-            let input_18 =
-                input_18
+            let input_10 = &_input.snapshot_id;
+            let input_10 =
+                input_10
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "snapshot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let snapshot_id = aws_smithy_http::label::fmt_string(input_18, false);
+            let snapshot_id = aws_smithy_http::label::fmt_string(input_10, false);
             if snapshot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "snapshot_id",
@@ -865,19 +793,19 @@ impl ListSnapshotBlocksInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_19) = &_input.next_token {
-                query.push_kv("pageToken", &aws_smithy_http::query::fmt_string(&inner_19));
+            if let Some(inner_11) = &_input.next_token {
+                query.push_kv("pageToken", &aws_smithy_http::query::fmt_string(&inner_11));
             }
-            if let Some(inner_20) = &_input.max_results {
+            if let Some(inner_12) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
                 );
             }
-            if let Some(inner_21) = &_input.starting_block_index {
+            if let Some(inner_13) = &_input.starting_block_index {
                 query.push_kv(
                     "startingBlockIndex",
-                    aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_13).encode(),
                 );
             }
             Ok(())
@@ -1097,30 +1025,30 @@ impl PutSnapshotBlockInput {
             _input: &crate::input::PutSnapshotBlockInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_22 = &_input.snapshot_id;
-            let input_22 =
-                input_22
+            let input_14 = &_input.snapshot_id;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "snapshot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let snapshot_id = aws_smithy_http::label::fmt_string(input_22, false);
+            let snapshot_id = aws_smithy_http::label::fmt_string(input_14, false);
             if snapshot_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "snapshot_id",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_23 = &_input.block_index;
-            let input_23 =
-                input_23
+            let input_15 = &_input.block_index;
+            let input_15 =
+                input_15
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "block_index",
                         details: "cannot be empty or unset",
                     })?;
-            let mut block_index_encoder = aws_smithy_types::primitive::Encoder::from(*input_23);
+            let mut block_index_encoder = aws_smithy_types::primitive::Encoder::from(*input_15);
             let block_index = block_index_encoder.encode();
             if block_index.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
@@ -1137,79 +1065,6 @@ impl PutSnapshotBlockInput {
             .expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::PutSnapshotBlockInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_24) = &_input.data_length {
-                let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_24);
-                let formatted_25 = encoder.encode();
-                if !formatted_25.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_25;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "data_length",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-Data-Length", header_value);
-                }
-            }
-            if let Some(inner_26) = &_input.progress {
-                let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_26);
-                let formatted_27 = encoder.encode();
-                if !formatted_27.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_27;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "progress",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-Progress", header_value);
-                }
-            }
-            if let Some(inner_28) = &_input.checksum {
-                let formatted_29 = AsRef::<str>::as_ref(inner_28);
-                if !formatted_29.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_29;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "checksum",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-Checksum", header_value);
-                }
-            }
-            if let Some(inner_30) = &_input.checksum_algorithm {
-                let formatted_31 = AsRef::<str>::as_ref(inner_30);
-                if !formatted_31.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_31;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "checksum_algorithm",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("x-amz-Checksum-Algorithm", header_value);
-                }
-            }
-            Ok(builder)
-        }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::PutSnapshotBlockInput,
@@ -1218,7 +1073,7 @@ impl PutSnapshotBlockInput {
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_put_snapshot_block(input, builder)?;
             Ok(builder.method("PUT").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -1228,7 +1083,7 @@ impl PutSnapshotBlockInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
@@ -1292,7 +1147,7 @@ impl PutSnapshotBlockInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1504,7 +1359,7 @@ impl StartSnapshotInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1567,7 +1422,7 @@ impl StartSnapshotInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

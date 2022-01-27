@@ -160,7 +160,7 @@ mod test {
             )
         }
         assert_ok(validate_headers(
-            &augmented_req.http(),
+            &augmented_req.http().headers(),
             test_case.request_headers_after(),
         ))
     }

@@ -144,7 +144,7 @@ pub fn one_or_none<T: FromStr>(
     }
 }
 
-pub fn set_header_if_absent<V>(
+pub fn set_request_header_if_absent<V>(
     request: http::request::Builder,
     key: HeaderName,
     value: V,
@@ -161,6 +161,26 @@ where
         request.header(key, value)
     } else {
         request
+    }
+}
+
+pub fn set_response_header_if_absent<V>(
+    response: http::response::Builder,
+    key: HeaderName,
+    value: V,
+) -> http::response::Builder
+where
+    HeaderValue: TryFrom<V>,
+    <HeaderValue as TryFrom<V>>::Error: Into<http::Error>,
+{
+    if !response
+        .headers_ref()
+        .map(|map| map.contains_key(&key))
+        .unwrap_or(false)
+    {
+        response.header(key, value)
+    } else {
+        response
     }
 }
 
@@ -284,16 +304,17 @@ mod test {
 
     use crate::header::{
         headers_for_prefix, many_dates, read_many_from_str, read_many_primitive,
-        set_header_if_absent, ParseError,
+        set_request_header_if_absent, set_response_header_if_absent, ParseError,
     };
 
     use super::quote_header_value;
 
     #[test]
-    fn put_if_absent() {
+    fn put_on_request_if_absent() {
         let builder = http::Request::builder().header("foo", "bar");
-        let builder = set_header_if_absent(builder, HeaderName::from_static("foo"), "baz");
-        let builder = set_header_if_absent(builder, HeaderName::from_static("other"), "value");
+        let builder = set_request_header_if_absent(builder, HeaderName::from_static("foo"), "baz");
+        let builder =
+            set_request_header_if_absent(builder, HeaderName::from_static("other"), "value");
         let req = builder.body(()).expect("valid request");
         assert_eq!(
             req.headers().get_all("foo").iter().collect::<Vec<_>>(),
@@ -301,6 +322,27 @@ mod test {
         );
         assert_eq!(
             req.headers().get_all("other").iter().collect::<Vec<_>>(),
+            vec!["value"]
+        );
+    }
+
+    #[test]
+    fn put_on_response_if_absent() {
+        let builder = http::Response::builder().header("foo", "bar");
+        let builder = set_response_header_if_absent(builder, HeaderName::from_static("foo"), "baz");
+        let builder =
+            set_response_header_if_absent(builder, HeaderName::from_static("other"), "value");
+        let response = builder.body(()).expect("valid response");
+        assert_eq!(
+            response.headers().get_all("foo").iter().collect::<Vec<_>>(),
+            vec!["bar"]
+        );
+        assert_eq!(
+            response
+                .headers()
+                .get_all("other")
+                .iter()
+                .collect::<Vec<_>>(),
             vec!["value"]
         );
     }

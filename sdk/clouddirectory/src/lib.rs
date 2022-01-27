@@ -39,6 +39,7 @@ pub mod config;
 /// Errors that can occur when calling the service.
 pub mod error;
 mod error_meta;
+mod http_serde;
 /// Input structures for operations.
 pub mod input;
 mod json_deser;

@@ -714,29 +714,6 @@ impl UploadDocumentsInput {
             write!(output, "/2013-01-01/documents/batch").expect("formatting should succeed");
             Ok(())
         }
-        fn add_headers(
-            _input: &crate::input::UploadDocumentsInput,
-            mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
-        {
-            if let Some(inner_14) = &_input.content_type {
-                let formatted_15 = AsRef::<str>::as_ref(inner_14);
-                if !formatted_15.is_empty() {
-                    use std::convert::TryFrom;
-                    let header_value = formatted_15;
-                    let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
-                            field: "content_type",
-                            details: format!(
-                                "`{}` cannot be used as a header value: {}",
-                                &header_value, err
-                            ),
-                        })?;
-                    builder = builder.header("Content-Type", header_value);
-                }
-            }
-            Ok(builder)
-        }
         fn uri_query(
             _input: &crate::input::UploadDocumentsInput,
             mut output: &mut String,
@@ -754,7 +731,7 @@ impl UploadDocumentsInput {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
             uri_query(input, &mut uri)?;
-            let builder = add_headers(input, builder)?;
+            let builder = crate::http_serde::add_headers_upload_documents(input, builder)?;
             Ok(builder.method("POST").uri(uri))
         }
         #[allow(clippy::unnecessary_wraps)]
@@ -764,7 +741,7 @@ impl UploadDocumentsInput {
         {
             #[allow(unused_mut)]
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
@@ -824,7 +801,7 @@ impl UploadDocumentsInput {
     ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         let mut builder = builder;
         if let Some(content_length) = body.content_length() {
-            builder = aws_smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_request_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
