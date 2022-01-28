@@ -5,7 +5,9 @@
 
 use aws_http::user_agent::AwsUserAgent;
 use aws_sdk_s3::middleware::DefaultMiddleware;
-use aws_sdk_s3::{operation::PutObject, Credentials, Region};
+use aws_sdk_s3::operation::PutObject;
+use aws_sdk_s3::types::ByteStream;
+use aws_sdk_s3::{Credentials, Region};
 use aws_smithy_client::test_connection::capture_request;
 use aws_smithy_client::Client as CoreClient;
 use http::HeaderValue;
@@ -68,7 +70,7 @@ async fn test_s3_signer_with_naughty_string_metadata() -> Result<(), aws_sdk_s3:
     let mut builder = PutObject::builder()
         .bucket("test-bucket")
         .key("text.txt")
-        .body(aws_sdk_s3::ByteStream::from_static(b"some test text"));
+        .body(ByteStream::from_static(b"some test text"));
 
     for (idx, line) in NAUGHTY_STRINGS.split('\n').enumerate() {
         // add lines to metadata unless they're a comment or empty
