@@ -15,7 +15,7 @@ use bytes::Bytes;
 use kms::error::CreateAliasError;
 use kms::operation::{CreateAlias, GenerateRandom};
 use kms::output::GenerateRandomOutput;
-use kms::Blob;
+use kms::types::Blob;
 
 #[test]
 fn validate_sensitive_trait() {
@@ -35,7 +35,7 @@ fn assert_debug<T: std::fmt::Debug>() {}
 #[tokio::test]
 async fn types_are_send_sync() {
     assert_send_sync::<kms::Error>();
-    assert_send_sync::<kms::SdkError<CreateAliasError>>();
+    assert_send_sync::<kms::types::SdkError<CreateAliasError>>();
     assert_send_sync::<kms::error::CreateAliasError>();
     assert_send_sync::<kms::output::CreateAliasOutput>();
     assert_send_sync::<kms::Client>();
