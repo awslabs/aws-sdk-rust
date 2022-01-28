@@ -11,7 +11,7 @@ on:
 name: CI
 
 env:
-  BATCH_COUNT: 6
+  BATCH_COUNT: 12
 
 jobs:
   generate-test-matrix:
@@ -24,7 +24,7 @@ jobs:
         # Run the `crate-range.py` script to calculate a test matrix for the `test` job.
         # This script outputs JSON that GitHub Actions can consume as a matrix definition.
         # Rust versions to test against are arguments to this script.
-        run: echo "::set-output name=matrix::$(./tools/ci/crate-range.py generate-matrix -b ${BATCH_COUNT} 1.54.0 1.56.1)"
+        run: echo "::set-output name=matrix::$(./tools/ci/crate-range.py generate-matrix -b ${BATCH_COUNT} 1.56.1)"
     outputs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
 
