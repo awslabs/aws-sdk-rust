@@ -7,7 +7,7 @@ on:
 name: Sync with smithy-rs commits
 
 env:
-  rust_version: 1.54.0
+  rust_version: 1.56.1
   rust_toolchain_components: clippy,rustfmt
   java_version: 11
   sync_to_branch: next

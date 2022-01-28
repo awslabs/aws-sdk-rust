@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   pull_request:
 env:
-  rust_version: 1.54.0
+  rust_version: 1.56.1
 
 jobs:
   audit:
