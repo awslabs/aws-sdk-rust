@@ -3,8 +3,9 @@ description: Suggest an idea for this project
 title: "[request]: Describe request here"
 labels: [feature-request, needs-triage]
 body:
-  - type: markdown
+  - type: textarea
     attributes:
+      label: A note for the community
       value: |
         <!-- Please keep this note for the community -->
         ### Community Note
