@@ -11863,7 +11863,7 @@ impl AsRef<str> for Mpeg2AdaptiveQuantization {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct H265Settings {
-    /// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization (temporalAdaptiveQuantization).
+    /// When you set Adaptive Quantization (H265AdaptiveQuantization) to Auto (AUTO), or leave blank, MediaConvert automatically applies quantization to improve the video quality of your output. Set Adaptive Quantization to Low (LOW), Medium (MEDIUM), High (HIGH), Higher (HIGHER), or Max (MAX) to manually control the strength of the quantization filter. When you do, you can specify a value for Spatial Adaptive Quantization (H265SpatialAdaptiveQuantization), Temporal Adaptive Quantization (H265TemporalAdaptiveQuantization), and Flicker Adaptive Quantization (H265FlickerAdaptiveQuantization), to further control the quantization filter. Set Adaptive Quantization to Off (OFF) to apply no quantization to your output.
     pub adaptive_quantization: std::option::Option<crate::model::H265AdaptiveQuantization>,
     /// Enables Alternate Transfer Function SEI message for outputs using Hybrid Log Gamma (HLG) Electro-Optical Transfer Function (EOTF).
     pub alternate_transfer_function_sei:
@@ -11951,7 +11951,7 @@ pub struct H265Settings {
     pub write_mp4_packaging_type: std::option::Option<crate::model::H265WriteMp4PackagingType>,
 }
 impl H265Settings {
-    /// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization (temporalAdaptiveQuantization).
+    /// When you set Adaptive Quantization (H265AdaptiveQuantization) to Auto (AUTO), or leave blank, MediaConvert automatically applies quantization to improve the video quality of your output. Set Adaptive Quantization to Low (LOW), Medium (MEDIUM), High (HIGH), Higher (HIGHER), or Max (MAX) to manually control the strength of the quantization filter. When you do, you can specify a value for Spatial Adaptive Quantization (H265SpatialAdaptiveQuantization), Temporal Adaptive Quantization (H265TemporalAdaptiveQuantization), and Flicker Adaptive Quantization (H265FlickerAdaptiveQuantization), to further control the quantization filter. Set Adaptive Quantization to Off (OFF) to apply no quantization to your output.
     pub fn adaptive_quantization(
         &self,
     ) -> std::option::Option<&crate::model::H265AdaptiveQuantization> {
@@ -12262,7 +12262,7 @@ pub mod h265_settings {
             std::option::Option<crate::model::H265WriteMp4PackagingType>,
     }
     impl Builder {
-        /// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization (temporalAdaptiveQuantization).
+        /// When you set Adaptive Quantization (H265AdaptiveQuantization) to Auto (AUTO), or leave blank, MediaConvert automatically applies quantization to improve the video quality of your output. Set Adaptive Quantization to Low (LOW), Medium (MEDIUM), High (HIGH), Higher (HIGHER), or Max (MAX) to manually control the strength of the quantization filter. When you do, you can specify a value for Spatial Adaptive Quantization (H265SpatialAdaptiveQuantization), Temporal Adaptive Quantization (H265TemporalAdaptiveQuantization), and Flicker Adaptive Quantization (H265FlickerAdaptiveQuantization), to further control the quantization filter. Set Adaptive Quantization to Off (OFF) to apply no quantization to your output.
         pub fn adaptive_quantization(
             mut self,
             input: crate::model::H265AdaptiveQuantization,
@@ -12270,7 +12270,7 @@ pub mod h265_settings {
             self.adaptive_quantization = Some(input);
             self
         }
-        /// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization (temporalAdaptiveQuantization).
+        /// When you set Adaptive Quantization (H265AdaptiveQuantization) to Auto (AUTO), or leave blank, MediaConvert automatically applies quantization to improve the video quality of your output. Set Adaptive Quantization to Low (LOW), Medium (MEDIUM), High (HIGH), Higher (HIGHER), or Max (MAX) to manually control the strength of the quantization filter. When you do, you can specify a value for Spatial Adaptive Quantization (H265SpatialAdaptiveQuantization), Temporal Adaptive Quantization (H265TemporalAdaptiveQuantization), and Flicker Adaptive Quantization (H265FlickerAdaptiveQuantization), to further control the quantization filter. Set Adaptive Quantization to Off (OFF) to apply no quantization to your output.
         pub fn set_adaptive_quantization(
             mut self,
             input: std::option::Option<crate::model::H265AdaptiveQuantization>,
@@ -14388,7 +14388,7 @@ impl AsRef<str> for H265AlternateTransferFunctionSei {
     }
 }
 
-/// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization (temporalAdaptiveQuantization).
+/// When you set Adaptive Quantization (H265AdaptiveQuantization) to Auto (AUTO), or leave blank, MediaConvert automatically applies quantization to improve the video quality of your output. Set Adaptive Quantization to Low (LOW), Medium (MEDIUM), High (HIGH), Higher (HIGHER), or Max (MAX) to manually control the strength of the quantization filter. When you do, you can specify a value for Spatial Adaptive Quantization (H265SpatialAdaptiveQuantization), Temporal Adaptive Quantization (H265TemporalAdaptiveQuantization), and Flicker Adaptive Quantization (H265FlickerAdaptiveQuantization), to further control the quantization filter. Set Adaptive Quantization to Off (OFF) to apply no quantization to your output.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -14400,6 +14400,8 @@ impl AsRef<str> for H265AlternateTransferFunctionSei {
     std::hash::Hash,
 )]
 pub enum H265AdaptiveQuantization {
+    #[allow(missing_docs)] // documentation missing in model
+    Auto,
     #[allow(missing_docs)] // documentation missing in model
     High,
     #[allow(missing_docs)] // documentation missing in model
@@ -14418,6 +14420,7 @@ pub enum H265AdaptiveQuantization {
 impl std::convert::From<&str> for H265AdaptiveQuantization {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => H265AdaptiveQuantization::Auto,
             "HIGH" => H265AdaptiveQuantization::High,
             "HIGHER" => H265AdaptiveQuantization::Higher,
             "LOW" => H265AdaptiveQuantization::Low,
@@ -14439,6 +14442,7 @@ impl H265AdaptiveQuantization {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            H265AdaptiveQuantization::Auto => "AUTO",
             H265AdaptiveQuantization::High => "HIGH",
             H265AdaptiveQuantization::Higher => "HIGHER",
             H265AdaptiveQuantization::Low => "LOW",
@@ -14450,7 +14454,7 @@ impl H265AdaptiveQuantization {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
+        &["AUTO", "HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
     }
 }
 impl AsRef<str> for H265AdaptiveQuantization {
@@ -18007,6 +18011,8 @@ impl AsRef<str> for AvcIntraClass {
 pub struct Av1Settings {
     /// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to Spatial adaptive quantization (spatialAdaptiveQuantization).
     pub adaptive_quantization: std::option::Option<crate::model::Av1AdaptiveQuantization>,
+    /// Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
+    pub bit_depth: std::option::Option<crate::model::Av1BitDepth>,
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     pub framerate_control: std::option::Option<crate::model::Av1FramerateControl>,
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
@@ -18038,6 +18044,10 @@ impl Av1Settings {
         &self,
     ) -> std::option::Option<&crate::model::Av1AdaptiveQuantization> {
         self.adaptive_quantization.as_ref()
+    }
+    /// Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
+    pub fn bit_depth(&self) -> std::option::Option<&crate::model::Av1BitDepth> {
+        self.bit_depth.as_ref()
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     pub fn framerate_control(&self) -> std::option::Option<&crate::model::Av1FramerateControl> {
@@ -18092,6 +18102,7 @@ impl std::fmt::Debug for Av1Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Av1Settings");
         formatter.field("adaptive_quantization", &self.adaptive_quantization);
+        formatter.field("bit_depth", &self.bit_depth);
         formatter.field("framerate_control", &self.framerate_control);
         formatter.field(
             "framerate_conversion_algorithm",
@@ -18123,6 +18134,7 @@ pub mod av1_settings {
     pub struct Builder {
         pub(crate) adaptive_quantization:
             std::option::Option<crate::model::Av1AdaptiveQuantization>,
+        pub(crate) bit_depth: std::option::Option<crate::model::Av1BitDepth>,
         pub(crate) framerate_control: std::option::Option<crate::model::Av1FramerateControl>,
         pub(crate) framerate_conversion_algorithm:
             std::option::Option<crate::model::Av1FramerateConversionAlgorithm>,
@@ -18152,6 +18164,19 @@ pub mod av1_settings {
             input: std::option::Option<crate::model::Av1AdaptiveQuantization>,
         ) -> Self {
             self.adaptive_quantization = input;
+            self
+        }
+        /// Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
+        pub fn bit_depth(mut self, input: crate::model::Av1BitDepth) -> Self {
+            self.bit_depth = Some(input);
+            self
+        }
+        /// Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
+        pub fn set_bit_depth(
+            mut self,
+            input: std::option::Option<crate::model::Av1BitDepth>,
+        ) -> Self {
+            self.bit_depth = input;
             self
         }
         /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
@@ -18292,6 +18317,7 @@ pub mod av1_settings {
         pub fn build(self) -> crate::model::Av1Settings {
             crate::model::Av1Settings {
                 adaptive_quantization: self.adaptive_quantization,
+                bit_depth: self.bit_depth,
                 framerate_control: self.framerate_control,
                 framerate_conversion_algorithm: self.framerate_conversion_algorithm,
                 framerate_denominator: self.framerate_denominator.unwrap_or_default(),
@@ -18607,6 +18633,61 @@ impl Av1FramerateControl {
     }
 }
 impl AsRef<str> for Av1FramerateControl {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Av1BitDepth {
+    #[allow(missing_docs)] // documentation missing in model
+    Bit10,
+    #[allow(missing_docs)] // documentation missing in model
+    Bit8,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Av1BitDepth {
+    fn from(s: &str) -> Self {
+        match s {
+            "BIT_10" => Av1BitDepth::Bit10,
+            "BIT_8" => Av1BitDepth::Bit8,
+            other => Av1BitDepth::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Av1BitDepth {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Av1BitDepth::from(s))
+    }
+}
+impl Av1BitDepth {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Av1BitDepth::Bit10 => "BIT_10",
+            Av1BitDepth::Bit8 => "BIT_8",
+            Av1BitDepth::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["BIT_10", "BIT_8"]
+    }
+}
+impl AsRef<str> for Av1BitDepth {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -19400,6 +19481,8 @@ pub struct MpdSettings {
     pub scte35_esam: std::option::Option<crate::model::MpdScte35Esam>,
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
     pub scte35_source: std::option::Option<crate::model::MpdScte35Source>,
+    /// Applies to DASH outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+    pub timed_metadata: std::option::Option<crate::model::MpdTimedMetadata>,
 }
 impl MpdSettings {
     /// Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <accessibility>
@@ -19429,6 +19512,10 @@ impl MpdSettings {
     pub fn scte35_source(&self) -> std::option::Option<&crate::model::MpdScte35Source> {
         self.scte35_source.as_ref()
     }
+    /// Applies to DASH outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+    pub fn timed_metadata(&self) -> std::option::Option<&crate::model::MpdTimedMetadata> {
+        self.timed_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for MpdSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19441,6 +19528,7 @@ impl std::fmt::Debug for MpdSettings {
         formatter.field("caption_container_type", &self.caption_container_type);
         formatter.field("scte35_esam", &self.scte35_esam);
         formatter.field("scte35_source", &self.scte35_source);
+        formatter.field("timed_metadata", &self.timed_metadata);
         formatter.finish()
     }
 }
@@ -19457,6 +19545,7 @@ pub mod mpd_settings {
             std::option::Option<crate::model::MpdCaptionContainerType>,
         pub(crate) scte35_esam: std::option::Option<crate::model::MpdScte35Esam>,
         pub(crate) scte35_source: std::option::Option<crate::model::MpdScte35Source>,
+        pub(crate) timed_metadata: std::option::Option<crate::model::MpdTimedMetadata>,
     }
     impl Builder {
         /// Optional. Choose Include (INCLUDE) to have MediaConvert mark up your DASH manifest with <accessibility>
@@ -19536,6 +19625,19 @@ pub mod mpd_settings {
             self.scte35_source = input;
             self
         }
+        /// Applies to DASH outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+        pub fn timed_metadata(mut self, input: crate::model::MpdTimedMetadata) -> Self {
+            self.timed_metadata = Some(input);
+            self
+        }
+        /// Applies to DASH outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+        pub fn set_timed_metadata(
+            mut self,
+            input: std::option::Option<crate::model::MpdTimedMetadata>,
+        ) -> Self {
+            self.timed_metadata = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MpdSettings`](crate::model::MpdSettings)
         pub fn build(self) -> crate::model::MpdSettings {
             crate::model::MpdSettings {
@@ -19544,6 +19646,7 @@ pub mod mpd_settings {
                 caption_container_type: self.caption_container_type,
                 scte35_esam: self.scte35_esam,
                 scte35_source: self.scte35_source,
+                timed_metadata: self.timed_metadata,
             }
         }
     }
@@ -19552,6 +19655,61 @@ impl MpdSettings {
     /// Creates a new builder-style object to manufacture [`MpdSettings`](crate::model::MpdSettings)
     pub fn builder() -> crate::model::mpd_settings::Builder {
         crate::model::mpd_settings::Builder::default()
+    }
+}
+
+/// Applies to DASH outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MpdTimedMetadata {
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MpdTimedMetadata {
+    fn from(s: &str) -> Self {
+        match s {
+            "NONE" => MpdTimedMetadata::None,
+            "PASSTHROUGH" => MpdTimedMetadata::Passthrough,
+            other => MpdTimedMetadata::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MpdTimedMetadata {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MpdTimedMetadata::from(s))
+    }
+}
+impl MpdTimedMetadata {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MpdTimedMetadata::None => "NONE",
+            MpdTimedMetadata::Passthrough => "PASSTHROUGH",
+            MpdTimedMetadata::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "PASSTHROUGH"]
+    }
+}
+impl AsRef<str> for MpdTimedMetadata {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -20670,7 +20828,7 @@ pub struct M3u8Settings {
     pub scte35_pid: i32,
     /// For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
     pub scte35_source: std::option::Option<crate::model::M3u8Scte35Source>,
-    /// Applies only to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+    /// Applies to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
     pub timed_metadata: std::option::Option<crate::model::TimedMetadata>,
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream.
     pub timed_metadata_pid: i32,
@@ -20740,7 +20898,7 @@ impl M3u8Settings {
     pub fn scte35_source(&self) -> std::option::Option<&crate::model::M3u8Scte35Source> {
         self.scte35_source.as_ref()
     }
-    /// Applies only to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+    /// Applies to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
     pub fn timed_metadata(&self) -> std::option::Option<&crate::model::TimedMetadata> {
         self.timed_metadata.as_ref()
     }
@@ -20980,12 +21138,12 @@ pub mod m3u8_settings {
             self.scte35_source = input;
             self
         }
-        /// Applies only to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+        /// Applies to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
         pub fn timed_metadata(mut self, input: crate::model::TimedMetadata) -> Self {
             self.timed_metadata = Some(input);
             self
         }
-        /// Applies only to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+        /// Applies to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
         pub fn set_timed_metadata(
             mut self,
             input: std::option::Option<crate::model::TimedMetadata>,
@@ -21056,7 +21214,7 @@ impl M3u8Settings {
     }
 }
 
-/// Applies only to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+/// Applies to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -23624,6 +23782,8 @@ pub struct CmfcSettings {
     pub scte35_esam: std::option::Option<crate::model::CmfcScte35Esam>,
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output.
     pub scte35_source: std::option::Option<crate::model::CmfcScte35Source>,
+    /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+    pub timed_metadata: std::option::Option<crate::model::CmfcTimedMetadata>,
 }
 impl CmfcSettings {
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
@@ -23662,6 +23822,10 @@ impl CmfcSettings {
     pub fn scte35_source(&self) -> std::option::Option<&crate::model::CmfcScte35Source> {
         self.scte35_source.as_ref()
     }
+    /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+    pub fn timed_metadata(&self) -> std::option::Option<&crate::model::CmfcTimedMetadata> {
+        self.timed_metadata.as_ref()
+    }
 }
 impl std::fmt::Debug for CmfcSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23677,6 +23841,7 @@ impl std::fmt::Debug for CmfcSettings {
         formatter.field("i_frame_only_manifest", &self.i_frame_only_manifest);
         formatter.field("scte35_esam", &self.scte35_esam);
         formatter.field("scte35_source", &self.scte35_source);
+        formatter.field("timed_metadata", &self.timed_metadata);
         formatter.finish()
     }
 }
@@ -23695,6 +23860,7 @@ pub mod cmfc_settings {
         pub(crate) i_frame_only_manifest: std::option::Option<crate::model::CmfcIFrameOnlyManifest>,
         pub(crate) scte35_esam: std::option::Option<crate::model::CmfcScte35Esam>,
         pub(crate) scte35_source: std::option::Option<crate::model::CmfcScte35Source>,
+        pub(crate) timed_metadata: std::option::Option<crate::model::CmfcTimedMetadata>,
     }
     impl Builder {
         /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
@@ -23807,6 +23973,19 @@ pub mod cmfc_settings {
             self.scte35_source = input;
             self
         }
+        /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+        pub fn timed_metadata(mut self, input: crate::model::CmfcTimedMetadata) -> Self {
+            self.timed_metadata = Some(input);
+            self
+        }
+        /// Applies to CMAF outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+        pub fn set_timed_metadata(
+            mut self,
+            input: std::option::Option<crate::model::CmfcTimedMetadata>,
+        ) -> Self {
+            self.timed_metadata = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CmfcSettings`](crate::model::CmfcSettings)
         pub fn build(self) -> crate::model::CmfcSettings {
             crate::model::CmfcSettings {
@@ -23818,6 +23997,7 @@ pub mod cmfc_settings {
                 i_frame_only_manifest: self.i_frame_only_manifest,
                 scte35_esam: self.scte35_esam,
                 scte35_source: self.scte35_source,
+                timed_metadata: self.timed_metadata,
             }
         }
     }
@@ -23826,6 +24006,61 @@ impl CmfcSettings {
     /// Creates a new builder-style object to manufacture [`CmfcSettings`](crate::model::CmfcSettings)
     pub fn builder() -> crate::model::cmfc_settings::Builder {
         crate::model::cmfc_settings::Builder::default()
+    }
+}
+
+/// Applies to CMAF outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CmfcTimedMetadata {
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Passthrough,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CmfcTimedMetadata {
+    fn from(s: &str) -> Self {
+        match s {
+            "NONE" => CmfcTimedMetadata::None,
+            "PASSTHROUGH" => CmfcTimedMetadata::Passthrough,
+            other => CmfcTimedMetadata::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CmfcTimedMetadata {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CmfcTimedMetadata::from(s))
+    }
+}
+impl CmfcTimedMetadata {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CmfcTimedMetadata::None => "NONE",
+            CmfcTimedMetadata::Passthrough => "PASSTHROUGH",
+            CmfcTimedMetadata::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "PASSTHROUGH"]
+    }
+}
+impl AsRef<str> for CmfcTimedMetadata {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -24572,6 +24807,8 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     Srd,
     #[allow(missing_docs)] // documentation missing in model
+    Srp,
+    #[allow(missing_docs)] // documentation missing in model
     Ssw,
     #[allow(missing_docs)] // documentation missing in model
     Sun,
@@ -24802,6 +25039,7 @@ impl std::convert::From<&str> for LanguageCode {
             "SQI" => LanguageCode::Sqi,
             "SRB" => LanguageCode::Srb,
             "SRD" => LanguageCode::Srd,
+            "SRP" => LanguageCode::Srp,
             "SSW" => LanguageCode::Ssw,
             "SUN" => LanguageCode::Sun,
             "SWA" => LanguageCode::Swa,
@@ -25008,6 +25246,7 @@ impl LanguageCode {
             LanguageCode::Sqi => "SQI",
             LanguageCode::Srb => "SRB",
             LanguageCode::Srd => "SRD",
+            LanguageCode::Srp => "SRP",
             LanguageCode::Ssw => "SSW",
             LanguageCode::Sun => "SUN",
             LanguageCode::Swa => "SWA",
@@ -25061,9 +25300,9 @@ impl LanguageCode {
             "NNO", "NOB", "NOR", "NYA", "OCI", "OJI", "ORI", "ORJ", "ORM", "OSS", "PAN", "PLI",
             "POL", "POR", "PUS", "QAA", "QPC", "QUE", "ROH", "RON", "RUN", "RUS", "SAG", "SAN",
             "SIN", "SLK", "SLV", "SME", "SMO", "SNA", "SND", "SOM", "SOT", "SPA", "SQI", "SRB",
-            "SRD", "SSW", "SUN", "SWA", "SWE", "TAH", "TAM", "TAT", "TEL", "TGK", "TGL", "THA",
-            "TIR", "TNG", "TON", "TSN", "TSO", "TUK", "TUR", "TWI", "UIG", "UKR", "URD", "UZB",
-            "VEN", "VIE", "VOL", "WLN", "WOL", "XHO", "YID", "YOR", "ZHA", "ZHO", "ZUL",
+            "SRD", "SRP", "SSW", "SUN", "SWA", "SWE", "TAH", "TAM", "TAT", "TEL", "TGK", "TGL",
+            "THA", "TIR", "TNG", "TON", "TSN", "TSO", "TUK", "TUR", "TWI", "UIG", "UKR", "URD",
+            "UZB", "VEN", "VIE", "VOL", "WLN", "WOL", "XHO", "YID", "YOR", "ZHA", "ZHO", "ZUL",
         ]
     }
 }
@@ -25403,10 +25642,16 @@ impl CaptionDestinationSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebvttDestinationSettings {
+    /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+    pub accessibility: std::option::Option<crate::model::WebvttAccessibilitySubs>,
     /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
     pub style_passthrough: std::option::Option<crate::model::WebvttStylePassthrough>,
 }
 impl WebvttDestinationSettings {
+    /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+    pub fn accessibility(&self) -> std::option::Option<&crate::model::WebvttAccessibilitySubs> {
+        self.accessibility.as_ref()
+    }
     /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
     pub fn style_passthrough(&self) -> std::option::Option<&crate::model::WebvttStylePassthrough> {
         self.style_passthrough.as_ref()
@@ -25415,6 +25660,7 @@ impl WebvttDestinationSettings {
 impl std::fmt::Debug for WebvttDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WebvttDestinationSettings");
+        formatter.field("accessibility", &self.accessibility);
         formatter.field("style_passthrough", &self.style_passthrough);
         formatter.finish()
     }
@@ -25425,9 +25671,23 @@ pub mod webvtt_destination_settings {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) accessibility: std::option::Option<crate::model::WebvttAccessibilitySubs>,
         pub(crate) style_passthrough: std::option::Option<crate::model::WebvttStylePassthrough>,
     }
     impl Builder {
+        /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+        pub fn accessibility(mut self, input: crate::model::WebvttAccessibilitySubs) -> Self {
+            self.accessibility = Some(input);
+            self
+        }
+        /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+        pub fn set_accessibility(
+            mut self,
+            input: std::option::Option<crate::model::WebvttAccessibilitySubs>,
+        ) -> Self {
+            self.accessibility = input;
+            self
+        }
         /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
         pub fn style_passthrough(mut self, input: crate::model::WebvttStylePassthrough) -> Self {
             self.style_passthrough = Some(input);
@@ -25444,6 +25704,7 @@ pub mod webvtt_destination_settings {
         /// Consumes the builder and constructs a [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings)
         pub fn build(self) -> crate::model::WebvttDestinationSettings {
             crate::model::WebvttDestinationSettings {
+                accessibility: self.accessibility,
                 style_passthrough: self.style_passthrough,
             }
         }
@@ -25506,6 +25767,61 @@ impl WebvttStylePassthrough {
     }
 }
 impl AsRef<str> for WebvttStylePassthrough {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum WebvttAccessibilitySubs {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for WebvttAccessibilitySubs {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => WebvttAccessibilitySubs::Disabled,
+            "ENABLED" => WebvttAccessibilitySubs::Enabled,
+            other => WebvttAccessibilitySubs::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for WebvttAccessibilitySubs {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WebvttAccessibilitySubs::from(s))
+    }
+}
+impl WebvttAccessibilitySubs {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            WebvttAccessibilitySubs::Disabled => "DISABLED",
+            WebvttAccessibilitySubs::Enabled => "ENABLED",
+            WebvttAccessibilitySubs::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for WebvttAccessibilitySubs {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -26028,10 +26344,16 @@ impl AsRef<str> for SccDestinationFramerate {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImscDestinationSettings {
+    /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+    pub accessibility: std::option::Option<crate::model::ImscAccessibilitySubs>,
     /// Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
     pub style_passthrough: std::option::Option<crate::model::ImscStylePassthrough>,
 }
 impl ImscDestinationSettings {
+    /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+    pub fn accessibility(&self) -> std::option::Option<&crate::model::ImscAccessibilitySubs> {
+        self.accessibility.as_ref()
+    }
     /// Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
     pub fn style_passthrough(&self) -> std::option::Option<&crate::model::ImscStylePassthrough> {
         self.style_passthrough.as_ref()
@@ -26040,6 +26362,7 @@ impl ImscDestinationSettings {
 impl std::fmt::Debug for ImscDestinationSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImscDestinationSettings");
+        formatter.field("accessibility", &self.accessibility);
         formatter.field("style_passthrough", &self.style_passthrough);
         formatter.finish()
     }
@@ -26050,9 +26373,23 @@ pub mod imsc_destination_settings {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) accessibility: std::option::Option<crate::model::ImscAccessibilitySubs>,
         pub(crate) style_passthrough: std::option::Option<crate::model::ImscStylePassthrough>,
     }
     impl Builder {
+        /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+        pub fn accessibility(mut self, input: crate::model::ImscAccessibilitySubs) -> Self {
+            self.accessibility = Some(input);
+            self
+        }
+        /// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+        pub fn set_accessibility(
+            mut self,
+            input: std::option::Option<crate::model::ImscAccessibilitySubs>,
+        ) -> Self {
+            self.accessibility = input;
+            self
+        }
         /// Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
         pub fn style_passthrough(mut self, input: crate::model::ImscStylePassthrough) -> Self {
             self.style_passthrough = Some(input);
@@ -26069,6 +26406,7 @@ pub mod imsc_destination_settings {
         /// Consumes the builder and constructs a [`ImscDestinationSettings`](crate::model::ImscDestinationSettings)
         pub fn build(self) -> crate::model::ImscDestinationSettings {
             crate::model::ImscDestinationSettings {
+                accessibility: self.accessibility,
                 style_passthrough: self.style_passthrough,
             }
         }
@@ -26131,6 +26469,61 @@ impl ImscStylePassthrough {
     }
 }
 impl AsRef<str> for ImscStylePassthrough {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Specify whether to flag this caption track as accessibility in your HLS/CMAF parent manifest. When you choose ENABLED, MediaConvert includes the parameters CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES" in the EXT-X-MEDIA entry for this track. When you keep the default choice, DISABLED, MediaConvert leaves this parameter out.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ImscAccessibilitySubs {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ImscAccessibilitySubs {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => ImscAccessibilitySubs::Disabled,
+            "ENABLED" => ImscAccessibilitySubs::Enabled,
+            other => ImscAccessibilitySubs::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ImscAccessibilitySubs {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ImscAccessibilitySubs::from(s))
+    }
+}
+impl ImscAccessibilitySubs {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ImscAccessibilitySubs::Disabled => "DISABLED",
+            ImscAccessibilitySubs::Enabled => "ENABLED",
+            ImscAccessibilitySubs::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for ImscAccessibilitySubs {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -46004,6 +46397,8 @@ pub struct InputTemplate {
     pub deblock_filter: std::option::Option<crate::model::InputDeblockFilter>,
     /// Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
     pub denoise_filter: std::option::Option<crate::model::InputDenoiseFilter>,
+    /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+    pub dolby_vision_metadata_xml: std::option::Option<std::string::String>,
     /// Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
     pub filter_enable: std::option::Option<crate::model::InputFilterEnable>,
     /// Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The range is -5 to 5. Default is 0.
@@ -46064,6 +46459,10 @@ impl InputTemplate {
     pub fn denoise_filter(&self) -> std::option::Option<&crate::model::InputDenoiseFilter> {
         self.denoise_filter.as_ref()
     }
+    /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+    pub fn dolby_vision_metadata_xml(&self) -> std::option::Option<&str> {
+        self.dolby_vision_metadata_xml.as_deref()
+    }
     /// Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
     pub fn filter_enable(&self) -> std::option::Option<&crate::model::InputFilterEnable> {
         self.filter_enable.as_ref()
@@ -46118,6 +46517,7 @@ impl std::fmt::Debug for InputTemplate {
         formatter.field("crop", &self.crop);
         formatter.field("deblock_filter", &self.deblock_filter);
         formatter.field("denoise_filter", &self.denoise_filter);
+        formatter.field("dolby_vision_metadata_xml", &self.dolby_vision_metadata_xml);
         formatter.field("filter_enable", &self.filter_enable);
         formatter.field("filter_strength", &self.filter_strength);
         formatter.field("image_inserter", &self.image_inserter);
@@ -46150,6 +46550,7 @@ pub mod input_template {
         pub(crate) crop: std::option::Option<crate::model::Rectangle>,
         pub(crate) deblock_filter: std::option::Option<crate::model::InputDeblockFilter>,
         pub(crate) denoise_filter: std::option::Option<crate::model::InputDenoiseFilter>,
+        pub(crate) dolby_vision_metadata_xml: std::option::Option<std::string::String>,
         pub(crate) filter_enable: std::option::Option<crate::model::InputFilterEnable>,
         pub(crate) filter_strength: std::option::Option<i32>,
         pub(crate) image_inserter: std::option::Option<crate::model::ImageInserter>,
@@ -46272,6 +46673,19 @@ pub mod input_template {
             input: std::option::Option<crate::model::InputDenoiseFilter>,
         ) -> Self {
             self.denoise_filter = input;
+            self
+        }
+        /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+        pub fn dolby_vision_metadata_xml(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dolby_vision_metadata_xml = Some(input.into());
+            self
+        }
+        /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+        pub fn set_dolby_vision_metadata_xml(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dolby_vision_metadata_xml = input;
             self
         }
         /// Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
@@ -46423,6 +46837,7 @@ pub mod input_template {
                 crop: self.crop,
                 deblock_filter: self.deblock_filter,
                 denoise_filter: self.denoise_filter,
+                dolby_vision_metadata_xml: self.dolby_vision_metadata_xml,
                 filter_enable: self.filter_enable,
                 filter_strength: self.filter_strength.unwrap_or_default(),
                 image_inserter: self.image_inserter,
@@ -51773,6 +52188,8 @@ pub struct Input {
     pub decryption_settings: std::option::Option<crate::model::InputDecryptionSettings>,
     /// Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
     pub denoise_filter: std::option::Option<crate::model::InputDenoiseFilter>,
+    /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+    pub dolby_vision_metadata_xml: std::option::Option<std::string::String>,
     /// Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* (SupplementalImps) to specify any supplemental IMPs that contain assets referenced by the CPL.
     pub file_input: std::option::Option<std::string::String>,
     /// Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
@@ -51843,6 +52260,10 @@ impl Input {
     pub fn denoise_filter(&self) -> std::option::Option<&crate::model::InputDenoiseFilter> {
         self.denoise_filter.as_ref()
     }
+    /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+    pub fn dolby_vision_metadata_xml(&self) -> std::option::Option<&str> {
+        self.dolby_vision_metadata_xml.as_deref()
+    }
     /// Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* (SupplementalImps) to specify any supplemental IMPs that contain assets referenced by the CPL.
     pub fn file_input(&self) -> std::option::Option<&str> {
         self.file_input.as_deref()
@@ -51906,6 +52327,7 @@ impl std::fmt::Debug for Input {
         formatter.field("deblock_filter", &self.deblock_filter);
         formatter.field("decryption_settings", &self.decryption_settings);
         formatter.field("denoise_filter", &self.denoise_filter);
+        formatter.field("dolby_vision_metadata_xml", &self.dolby_vision_metadata_xml);
         formatter.field("file_input", &self.file_input);
         formatter.field("filter_enable", &self.filter_enable);
         formatter.field("filter_strength", &self.filter_strength);
@@ -51941,6 +52363,7 @@ pub mod input {
         pub(crate) deblock_filter: std::option::Option<crate::model::InputDeblockFilter>,
         pub(crate) decryption_settings: std::option::Option<crate::model::InputDecryptionSettings>,
         pub(crate) denoise_filter: std::option::Option<crate::model::InputDenoiseFilter>,
+        pub(crate) dolby_vision_metadata_xml: std::option::Option<std::string::String>,
         pub(crate) file_input: std::option::Option<std::string::String>,
         pub(crate) filter_enable: std::option::Option<crate::model::InputFilterEnable>,
         pub(crate) filter_strength: std::option::Option<i32>,
@@ -52078,6 +52501,19 @@ pub mod input {
             input: std::option::Option<crate::model::InputDenoiseFilter>,
         ) -> Self {
             self.denoise_filter = input;
+            self
+        }
+        /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+        pub fn dolby_vision_metadata_xml(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dolby_vision_metadata_xml = Some(input.into());
+            self
+        }
+        /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+        pub fn set_dolby_vision_metadata_xml(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dolby_vision_metadata_xml = input;
             self
         }
         /// Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* (SupplementalImps) to specify any supplemental IMPs that contain assets referenced by the CPL.
@@ -52259,6 +52695,7 @@ pub mod input {
                 deblock_filter: self.deblock_filter,
                 decryption_settings: self.decryption_settings,
                 denoise_filter: self.denoise_filter,
+                dolby_vision_metadata_xml: self.dolby_vision_metadata_xml,
                 file_input: self.file_input,
                 filter_enable: self.filter_enable,
                 filter_strength: self.filter_strength.unwrap_or_default(),

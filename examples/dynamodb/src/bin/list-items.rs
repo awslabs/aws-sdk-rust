@@ -5,8 +5,6 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_dynamodb::{Client, Error, Region, PKG_VERSION};
-use tokio_stream::StreamExt;
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -23,6 +21,21 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Lists the items in a table.
+// snippet-start:[dynamodb.rust.list-items]
+async fn list_items(client: &Client, table: &str) -> Result<(), Error> {
+    let resp = client.scan().table_name(table).send().await?;
+
+    println!("Items in table:");
+
+    if let Some(item) = resp.items {
+        println!("   {:?}", item);
+    }
+
+    Ok(())
+}
+// snippet-end:[dynamodb.rust.list-items]
 
 /// Lists the items in a DynamoDB table.
 /// # Arguments
@@ -45,33 +58,21 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
+    println!();
 
     if verbose {
         println!("DynamoDB client version: {}", PKG_VERSION);
         println!(
             "Region:                  {}",
-            shared_config.region().unwrap()
+            region_provider.region().await.unwrap().as_ref()
         );
         println!("Table:                   {}", &table);
 
         println!();
     }
 
-    let items: Result<Vec<_>, _> = client
-        .scan()
-        .table_name(table)
-        .into_paginator()
-        .items()
-        .send()
-        .collect()
-        .await;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    println!("Items in table:");
-    for item in items? {
-        println!("   {:?}", item);
-    }
-
-    Ok(())
+    list_items(&client, &table).await
 }

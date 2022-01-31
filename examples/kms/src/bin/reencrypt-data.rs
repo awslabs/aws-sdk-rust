@@ -12,7 +12,7 @@ use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The default AWS Region.
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
@@ -24,11 +24,11 @@ struct Opt {
     #[structopt(short, long)]
     new_key: String,
 
-    /// The name of the input file containing the text to reencrypt.
+    /// The name of the input file containing the text to re-encrypt.
     #[structopt(short, long)]
     input_file: String,
 
-    /// The name of the output file containing the reencrypted text.
+    /// The name of the output file containing the re-encrypted text.
     #[structopt(short, long)]
     output_file: String,
 
@@ -37,48 +37,16 @@ struct Opt {
     verbose: bool,
 }
 
-/// Re-encrypts a string with an AWS KMS key.
-/// # Arguments
-///
-/// * `[-f FIRST-KEY]` - The first key used to originally encrypt the string.
-/// * `[-n NEW-KEY]` - The new key used to re-encrypt the string.
-/// * `[-i INPUT-FILE]` - The file containing the encrypted string.
-/// * `[-o OUTPUT-FILE]` - The file containing the re-encrypted string.
-/// * `[-d DEFAULT-REGION]` - The region in which the client is created.
-///    If not supplied, uses the value of the **AWS_DEFAULT_REGION** environment variable.
-///    If the environment variable is not set, defaults to **us-west-2**.
-/// * `[-v]` - Whether to display additional information.
-#[tokio::main]
-async fn main() -> Result<(), Error> {
-    tracing_subscriber::fmt::init();
-
-    let Opt {
-        first_key,
-        new_key,
-        input_file,
-        output_file,
-        region,
-        verbose,
-    } = Opt::from_args();
-
-    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
-        .or_default_provider()
-        .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
-
-    println!();
-
-    if verbose {
-        println!("KMS version:     {}", PKG_VERSION);
-        println!("Region:          {:?}", shared_config.region().unwrap());
-        println!("Input key:       {}", &first_key);
-        println!("Output key:      {}", &new_key);
-        println!("Input filename:  {}", &input_file);
-        println!("Output filename: {}", &output_file);
-        println!();
-    }
-
+// Re-encrypts a string.
+// snippet-start:[kms.rust.reencrypt-data]
+async fn reencrypt_string(
+    verbose: bool,
+    client: &Client,
+    input_file: &str,
+    output_file: &str,
+    first_key: &str,
+    new_key: &str,
+) -> Result<(), Error> {
     // Get blob from input file
     // Open input text file and get contents as a string
     // input is a base-64 encoded string, so decode it:
@@ -103,7 +71,6 @@ async fn main() -> Result<(), Error> {
 
     let mut ofile = File::create(o).expect("unable to create file");
     ofile.write_all(s.as_bytes()).expect("unable to write");
-    ofile.flush().expect("failed to flush");
 
     if verbose {
         println!("Wrote the following to {}:", output_file);
@@ -113,4 +80,61 @@ async fn main() -> Result<(), Error> {
     }
 
     Ok(())
+}
+// snippet-end:[kms.rust.reencrypt-data]
+
+/// Re-encrypts a string with an AWS KMS key.
+/// # Arguments
+///
+/// * `[-f FIRST-KEY]` - The first key used to originally encrypt the string.
+/// * `[-n NEW-KEY]` - The new key used to re-encrypt the string.
+/// * `[-i INPUT-FILE]` - The file containing the encrypted string.
+/// * `[-o OUTPUT-FILE]` - The file containing the re-encrypted string.
+/// * `[-r REGION]` - The region in which the client is created.
+///    If not supplied, uses the value of the **AWS_DEFAULT_REGION** environment variable.
+///    If the environment variable is not set, defaults to **us-west-2**.
+/// * `[-v]` - Whether to display additional information.
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    tracing_subscriber::fmt::init();
+
+    let Opt {
+        first_key,
+        new_key,
+        input_file,
+        output_file,
+        region,
+        verbose,
+    } = Opt::from_args();
+
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+    println!();
+
+    if verbose {
+        println!("KMS client version:     {}", PKG_VERSION);
+        println!(
+            "Region:             {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
+        println!("Input key:              {}", &first_key);
+        println!("Output key:             {}", &new_key);
+        println!("Input filename:         {}", &input_file);
+        println!("Output filename:        {}", &output_file);
+        println!();
+    }
+
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
+
+    reencrypt_string(
+        verbose,
+        &client,
+        &input_file,
+        &output_file,
+        &first_key,
+        &new_key,
+    )
+    .await
 }

@@ -4,23 +4,19 @@ name = "cognitosync-code-examples"
 version = "0.1.0"
 authors = ["John DiSanti <jdisanti@amazon.com>", "Doug Schwartz <dougsch@amazon.com>"]
 edition = "2018"
+publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.1"
-
-[dependencies.aws-smithy-types-convert]
-path = "../../sdk/aws-smithy-types-convert"
-features = ["convert-chrono"]
-version = "0.35.1"
+version = "0.6.0"
 
 [dependencies.aws-sdk-cognitosync]
-package = "aws-sdk-cognitosync"
 path = "../../sdk/cognitosync"
-version = "0.5.0"
+version = "0.6.0"
 
-[dependencies.aws-types]
-path = "../../sdk/aws-types"
-version = "0.5.1"
+[dependencies.aws-smithy-types-convert]
+features = ["convert-chrono"]
+path = "../../sdk/aws-smithy-types-convert"
+version = "0.36.0"
 
 [dependencies.tokio]
 version = "1"

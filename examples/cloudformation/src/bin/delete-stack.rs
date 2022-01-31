@@ -5,7 +5,6 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_cloudformation::{Client, Error, Region, PKG_VERSION};
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -22,6 +21,18 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Deletes a stack.
+// snippet-start:[cloudformation.rust.delete-stack]
+async fn delete_stack(client: &Client, name: &str) -> Result<(), Error> {
+    client.delete_stack().stack_name(name).send().await?;
+
+    println!("Stack deleted");
+    println!();
+
+    Ok(())
+}
+// snippet-end:[cloudformation.rust.delete-stack]
 
 /// Deletes a CloudFormation stack.
 /// # Arguments
@@ -44,23 +55,20 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
+    println!();
 
     if verbose {
         println!("CloudFormation client version: {}", PKG_VERSION);
         println!(
             "Region:                        {}",
-            shared_config.region().unwrap()
+            region_provider.region().await.unwrap().as_ref()
         );
         println!("Stack:                         {}", &stack_name);
         println!();
     }
 
-    client.delete_stack().stack_name(stack_name).send().await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    println!("Stack deleted");
-    println!();
-
-    Ok(())
+    delete_stack(&client, &stack_name).await
 }

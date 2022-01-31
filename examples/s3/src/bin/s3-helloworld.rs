@@ -5,7 +5,6 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_s3::{ByteStream, Client, Error, Region, PKG_VERSION};
-
 use std::path::Path;
 use std::process;
 use structopt::StructOpt;
@@ -20,6 +19,10 @@ struct Opt {
     #[structopt(short, long)]
     bucket: String,
 
+    /// The name of the file to upload.
+    #[structopt(short, long)]
+    filename: String,
+
     /// The name of the object in the bucket.
     #[structopt(short, long)]
     key: String,
@@ -28,6 +31,51 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Upload a file to a bucket.
+// snippet-start:[s3.rust.s3-helloworld]
+async fn upload_object(
+    client: &Client,
+    bucket: &str,
+    filename: &str,
+    key: &str,
+) -> Result<(), Error> {
+    let resp = client.list_buckets().send().await?;
+
+    for bucket in resp.buckets().unwrap_or_default() {
+        println!("bucket: {:?}", bucket.name().unwrap_or_default())
+    }
+
+    println!();
+
+    let body = ByteStream::from_path(Path::new(filename)).await;
+
+    match body {
+        Ok(b) => {
+            let resp = client
+                .put_object()
+                .bucket(bucket)
+                .key(key)
+                .body(b)
+                .send()
+                .await?;
+
+            println!("Upload success. Version: {:?}", resp.version_id);
+
+            let resp = client.get_object().bucket(bucket).key(key).send().await?;
+            let data = resp.body.collect().await;
+            println!("data: {:?}", data.unwrap().into_bytes());
+        }
+        Err(e) => {
+            println!("Got an error uploading object:");
+            println!("{}", e);
+            process::exit(1);
+        }
+    }
+
+    Ok(())
+}
+// snippet-end:[s3.rust.s3-helloworld]
 
 /// Lists your buckets and uploads a file to a bucket.
 /// # Arguments
@@ -44,57 +92,32 @@ async fn main() -> Result<(), Error> {
 
     let Opt {
         bucket,
-        region,
+        filename,
         key,
+        region,
         verbose,
     } = Opt::from_args();
 
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
 
     println!();
 
     if verbose {
         println!("S3 client version: {}", PKG_VERSION);
-        println!("Region:            {}", shared_config.region().unwrap());
+        println!(
+            "Region:            {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
         println!("Bucket:            {}", &bucket);
+        println!("Filename:          {}", &filename);
         println!("Key:               {}", &key);
         println!();
     }
 
-    let resp = client.list_buckets().send().await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    for bucket in resp.buckets.unwrap_or_default() {
-        println!("bucket: {:?}", bucket.name.as_deref().unwrap_or_default())
-    }
-
-    let body = ByteStream::from_path(Path::new("Cargo.toml")).await;
-
-    match body {
-        Ok(b) => {
-            let resp = client
-                .put_object()
-                .bucket(&bucket)
-                .key(&key)
-                .body(b)
-                .send()
-                .await?;
-
-            println!("Upload success. Version: {:?}", resp.version_id);
-
-            let resp = client.get_object().bucket(bucket).key(key).send().await?;
-            let data = resp.body.collect().await;
-            println!("data: {:?}", data.unwrap().into_bytes());
-        }
-        Err(e) => {
-            println!("Got an error DOING SOMETHING:");
-            println!("{}", e);
-            process::exit(1);
-        }
-    }
-
-    Ok(())
+    upload_object(&client, &bucket, &filename, &key).await
 }

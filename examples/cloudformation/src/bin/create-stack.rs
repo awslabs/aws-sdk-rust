@@ -5,7 +5,6 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_cloudformation::{Client, Error, Region, PKG_VERSION};
-
 use std::fs;
 use structopt::StructOpt;
 
@@ -27,6 +26,25 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Creates a stack.
+// snippet-start:[cloudformation.rust.create-stack]
+async fn create_stack(client: &Client, name: &str, body: &str) -> Result<(), Error> {
+    client
+        .create_stack()
+        .stack_name(name)
+        .template_body(body)
+        .send()
+        .await?;
+
+    println!("Stack created.");
+    println!("Use describe-stacks with your stack name to see the status of your stack.");
+    println!("You cannot use/deploy the stack until the status is 'CreateComplete'.");
+    println!();
+
+    Ok(())
+}
+// snippet-end:[cloudformation.rust.create-stack]
 
 /// Creates a CloudFormation stack in the region.
 /// # Arguments
@@ -51,14 +69,13 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
+    println!();
 
     if verbose {
         println!("CloudFormation client version: {}", PKG_VERSION);
         println!(
             "Region:                        {}",
-            shared_config.region().unwrap()
+            region_provider.region().await.unwrap().as_ref()
         );
         println!("Stack:                         {}", &stack_name);
         println!("Template:                      {}", &template_file);
@@ -69,17 +86,8 @@ async fn main() -> Result<(), Error> {
     let contents =
         fs::read_to_string(template_file).expect("Something went wrong reading the file");
 
-    client
-        .create_stack()
-        .stack_name(stack_name)
-        .template_body(contents)
-        .send()
-        .await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    println!("Stack created.");
-    println!("Use describe-stacks with your stack name to see the status of your stack.");
-    println!("You cannot use/deploy the stack until the status is 'CreateComplete'.");
-    println!();
-
-    Ok(())
+    create_stack(&client, &stack_name, &contents).await
 }

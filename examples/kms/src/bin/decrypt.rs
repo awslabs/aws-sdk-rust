@@ -10,7 +10,7 @@ use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The default AWS Region.
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
@@ -27,45 +27,12 @@ struct Opt {
     verbose: bool,
 }
 
-/// Decrypts a string encrypted by AWS KMS.
-/// # Arguments
-///
-/// * `-k KEY` - The encryption key.
-/// * `-i INPUT-FILE` - The name of the file containing the encrypted string.
-/// * `[-d DEFAULT-REGION]` - The Region in which the client is created.
-///    If not supplied, uses the value of the **AWS_REGION** environment variable.
-///    If the environment variable is not set, defaults to **us-west-2**.
-/// * `[-v]` - Whether to display additional information.
-#[tokio::main]
-async fn main() -> Result<(), Error> {
-    tracing_subscriber::fmt::init();
-
-    let Opt {
-        key,
-        input_file,
-        region,
-        verbose,
-    } = Opt::from_args();
-
-    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
-        .or_default_provider()
-        .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
-
-    println!();
-
-    if verbose {
-        println!("KMS version: {}", PKG_VERSION);
-        println!("Region:      {:?}", shared_config.region().unwrap());
-        println!("Key:         {}", &key);
-        println!("Input:       {}", &input_file);
-        println!();
-    }
-
+// Decrypt a string.
+// snippet-start:[kms.rust.decrypt]
+async fn decrypt_key(client: &Client, key: &str, filename: &str) -> Result<(), Error> {
     // Open input text file and get contents as a string
     // input is a base-64 encoded string, so decode it:
-    let data = fs::read_to_string(input_file)
+    let data = fs::read_to_string(filename)
         .map(|input| {
             base64::decode(input).expect("Input file does not contain valid base 64 characters.")
         })
@@ -88,4 +55,47 @@ async fn main() -> Result<(), Error> {
     println!("{}", s);
 
     Ok(())
+}
+// snippet-end:[kms.rust.decrypt]
+
+/// Decrypts a string encrypted by AWS KMS.
+/// # Arguments
+///
+/// * `-k KEY` - The encryption key.
+/// * `-i INPUT-FILE` - The name of the file containing the encrypted string.
+/// * `[-r REGION]` - The Region in which the client is created.
+///    If not supplied, uses the value of the **AWS_REGION** environment variable.
+///    If the environment variable is not set, defaults to **us-west-2**.
+/// * `[-v]` - Whether to display additional information.
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    tracing_subscriber::fmt::init();
+
+    let Opt {
+        key,
+        input_file,
+        region,
+        verbose,
+    } = Opt::from_args();
+
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+    println!();
+
+    if verbose {
+        println!("KMS client version: {}", PKG_VERSION);
+        println!(
+            "Region:             {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
+        println!("Key:                {}", &key);
+        println!("Input:              {}", &input_file);
+        println!();
+    }
+
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
+
+    decrypt_key(&client, &key, &input_file).await
 }

@@ -3,10 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 use aws_config::meta::region::RegionProviderChain;
-use aws_sdk_polly::input::SynthesizeSpeechInput;
 use aws_sdk_polly::model::{OutputFormat, VoiceId};
 use aws_sdk_polly::presigning::config::PresigningConfig;
-use aws_sdk_polly::{Client, Config, Region, PKG_VERSION};
+use aws_sdk_polly::{Client, Region, PKG_VERSION};
 use std::error::Error;
 use std::fs;
 use std::time::Duration;
@@ -31,6 +30,28 @@ struct Opt {
     verbose: bool,
 }
 
+// Create pre-signed request
+// snippet-start:[polly.rust.synthesize-speech-presigned]
+async fn make_request(
+    client: &Client,
+    content: &str,
+    expires_in: u64,
+) -> Result<(), Box<dyn Error>> {
+    let expires_in = Duration::from_secs(expires_in);
+    let presigned_request = client
+        .synthesize_speech()
+        .output_format(OutputFormat::Mp3)
+        .text(content)
+        .voice_id(VoiceId::Joanna)
+        .presigned(PresigningConfig::expires_in(expires_in)?)
+        .await?;
+
+    println!("From client: {:?}", presigned_request);
+
+    Ok(())
+}
+// snippet-end:[polly.rust.synthesize-speech-presigned]
+
 /// Generates a presigned request to synthesize UTF-8 input, plain text or SSML, to a stream of bytes in a file.
 /// # Arguments
 ///
@@ -39,8 +60,8 @@ struct Opt {
 /// * `[-r REGION]` - The Region in which the client is created.
 ///    If not supplied, uses the value of the **AWS_REGION** environment variable.
 ///    If the environment variable is not set, defaults to **us-west-2**.
-/// * `[-e EXPIRES_IN]` - The amount of time the presigned request should be valid for.
-///    If not given, this defaults to 15 minutes.
+/// * `[-e EXPIRES_IN]` - The number of seconds the presigned request is valid.
+///    If not supplied, this defaults to 900 (15 minutes).
 /// * `[-v]` - Whether to display additional information.
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
@@ -52,7 +73,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
         expires_in,
         verbose,
     } = Opt::from_args();
-    let expires_in = Duration::from_secs(expires_in.unwrap_or(900));
 
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
@@ -71,28 +91,5 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     let content = fs::read_to_string(&filename).unwrap();
 
-    // Presigned requests can be made with the client directly
-    let presigned_request = client
-        .synthesize_speech()
-        .output_format(OutputFormat::Mp3)
-        .text(content.clone())
-        .voice_id(VoiceId::Joanna)
-        .presigned(PresigningConfig::expires_in(expires_in)?)
-        .await?;
-    println!("From client: {:?}", presigned_request);
-
-    // Or, they can be made directly from an operation input
-    let presigned_request = SynthesizeSpeechInput::builder()
-        .output_format(OutputFormat::Mp3)
-        .text(content)
-        .voice_id(VoiceId::Joanna)
-        .build()?
-        .presigned(
-            &Config::from(&shared_config),
-            PresigningConfig::expires_in(expires_in)?,
-        )
-        .await?;
-    println!("From operation input: {:?}", presigned_request);
-
-    Ok(())
+    make_request(&client, &content, expires_in.unwrap_or(900)).await
 }

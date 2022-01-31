@@ -9,7 +9,7 @@ use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The default AWS Region.
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
@@ -17,6 +17,30 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Lists the available voices.
+// snippet-start:[polly.rust.describe-voices]
+async fn list_voices(client: &Client) -> Result<(), Error> {
+    let resp = client.describe_voices().send().await?;
+
+    println!("Voices:");
+
+    let voices = resp.voices().unwrap_or_default();
+    for voice in voices {
+        println!("  Name:     {}", voice.name().unwrap_or("No name!"));
+        println!(
+            "  Language: {}",
+            voice.language_name().unwrap_or("No language!")
+        );
+
+        println!();
+    }
+
+    println!("Found {} voices", voices.len());
+
+    Ok(())
+}
+// snippet-end:[polly.rust.describe-voices]
 
 /// Displays a list of the voices in the Region.
 /// # Arguments
@@ -34,36 +58,19 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
-
     println!();
 
     if verbose {
-        println!("Polly version: {}", PKG_VERSION);
-        println!("Region: {:?}", shared_config.region().unwrap());
+        println!("Polly client version: {}", PKG_VERSION);
+        println!(
+            "Region:               {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
         println!();
     }
 
-    let resp = client.describe_voices().send().await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    println!("Voices:");
-
-    let voices = resp.voices.unwrap_or_default();
-    for voice in &voices {
-        println!(
-            "  Name:     {}",
-            voice.name.as_deref().unwrap_or("No name!")
-        );
-        println!(
-            "  Language: {}",
-            voice.language_name.as_deref().unwrap_or("No language!")
-        );
-    }
-
-    println!();
-    println!("Found {} voices", voices.len());
-    println!();
-
-    Ok(())
+    list_voices(&client).await
 }

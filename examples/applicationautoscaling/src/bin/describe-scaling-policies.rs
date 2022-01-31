@@ -20,22 +20,24 @@ struct Opt {
 }
 
 // Lists the Application Auto Scaling policies.
+// snippet-start:[applicationautoscaling.rust.describe-scaling-policies]
 async fn show_policies(client: &Client) -> Result<(), Error> {
     let response = client
         .describe_scaling_policies()
         .service_namespace(ServiceNamespace::Ec2)
         .send()
         .await?;
-    if let Some(policies) = response.scaling_policies {
+    if let Some(policies) = response.scaling_policies() {
         println!("Auto Scaling Policies:");
         for policy in policies {
             println!("{:?}\n", policy);
         }
     }
-    println!("Next token: {:?}", response.next_token);
+    println!("Next token: {:?}", response.next_token());
 
     Ok(())
 }
+// snippet-end:[applicationautoscaling.rust.describe-scaling-policies]
 
 /// Lists your Application Auto Scaling policies in the Region.
 /// # Arguments

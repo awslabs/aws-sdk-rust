@@ -5,7 +5,6 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_cloudformation::{Client, Error, Region, PKG_VERSION};
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -22,6 +21,29 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Lists the status of a stack.
+// snippet-start:[cloudformation.rust.describe-stack]
+async fn describe_stack(client: &Client, name: &str) -> Result<(), Error> {
+    // Return an error if stack_name does not exist
+    let resp = client.describe_stacks().stack_name(name).send().await?;
+
+    // Otherwise we get an array of stacks that match the stack_name.
+    // The array should only have one item, so just access it via first().
+    let status = resp
+        .stacks()
+        .unwrap_or_default()
+        .first()
+        .unwrap()
+        .stack_status();
+
+    println!("Stack status: {}", status.unwrap().as_ref());
+
+    println!();
+
+    Ok(())
+}
+// snippet-end:[cloudformation.rust.describe-stack]
 
 /// Retrieves the status of a CloudFormation stack in the Region.
 /// # Arguments
@@ -44,35 +66,20 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
-
     println!();
 
     if verbose {
         println!("CloudFormation version: {}", PKG_VERSION);
         println!(
             "Region:                 {}",
-            shared_config.region().unwrap()
+            region_provider.region().await.unwrap().as_ref()
         );
         println!("Stack:                  {}", &stack_name);
         println!();
     }
 
-    // Return an error if stack_name does not exist
-    let resp = client
-        .describe_stacks()
-        .stack_name(stack_name)
-        .send()
-        .await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    // Otherwise we get a list of stacks that match the stack_name.
-    // The list should only have one item, so just access is via pop().
-    let status = resp.stacks.unwrap_or_default().pop().unwrap().stack_status;
-
-    println!("Stack status: {:?}", status);
-
-    println!();
-
-    Ok(())
+    describe_stack(&client, &stack_name).await
 }

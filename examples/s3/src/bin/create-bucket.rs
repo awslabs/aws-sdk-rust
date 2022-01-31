@@ -6,7 +6,6 @@
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_s3::model::{BucketLocationConstraint, CreateBucketConfiguration};
 use aws_sdk_s3::{Client, Error, Region, PKG_VERSION};
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -23,6 +22,26 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Creates a bucket.
+// snippet-start:[s3.rust.create-bucket]
+async fn make_bucket(client: &Client, bucket: &str, region: &str) -> Result<(), Error> {
+    let constraint = BucketLocationConstraint::from(region);
+    let cfg = CreateBucketConfiguration::builder()
+        .location_constraint(constraint)
+        .build();
+
+    client
+        .create_bucket()
+        .create_bucket_configuration(cfg)
+        .bucket(bucket)
+        .send()
+        .await?;
+    println!("Created bucket.");
+
+    Ok(())
+}
+// snippet-end:[s3.rust.create-bucket]
 
 /// Creates an Amazon S3 bucket in the Region.
 /// # Arguments
@@ -45,30 +64,24 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
 
     println!();
 
+    let r_rgr = region_provider.region().await.unwrap();
+    let r_str = r_rgr.as_ref();
+
     if verbose {
         println!("S3 client version: {}", PKG_VERSION);
-        println!("Region:            {}", shared_config.region().unwrap());
+        println!(
+            "Region:            {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
         println!("Bucket:            {}", &bucket);
         println!();
     }
 
-    let constraint = BucketLocationConstraint::from(shared_config.region().unwrap().as_ref());
-    let cfg = CreateBucketConfiguration::builder()
-        .location_constraint(constraint)
-        .build();
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    client
-        .create_bucket()
-        .create_bucket_configuration(cfg)
-        .bucket(bucket)
-        .send()
-        .await?;
-    println!("Created bucket.");
-
-    Ok(())
+    make_bucket(&client, &bucket, r_str).await
 }

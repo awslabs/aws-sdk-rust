@@ -51,8 +51,9 @@ pub enum InvalidEndpoint {
 impl Endpoint {
     /// Create a new endpoint from a URI
     ///
-    /// Certain protocols will attempt to prefix additional information onto an endpoint. If you
-    /// wish to ignore these prefixes (for example, when communicating with localhost), set `immutable` to `true`.
+    /// Certain services will augment the endpoint with additional metadata. For example,
+    /// S3 can prefix the host with the bucket name. If your endpoint does not support this,
+    /// (for example, when communicating with localhost), use [`Endpoint::immutable`].
     pub fn mutable(uri: Uri) -> Self {
         Endpoint {
             uri,
@@ -67,6 +68,11 @@ impl Endpoint {
     /// use http::Uri;
     /// let endpoint = Endpoint::immutable(Uri::from_static("http://localhost:8000"));
     /// ```
+    ///
+    /// Certain services will augment the endpoint with additional metadata. For example,
+    /// S3 can prefix the host with the bucket name. This constructor creates an endpoint which will
+    /// ignore those mutations. If you want an endpoint which will obey mutation requests, use
+    /// [`Endpoint::mutable`] instead.
     pub fn immutable(uri: Uri) -> Self {
         Endpoint {
             uri,

@@ -76,7 +76,7 @@ impl CredentialsProviderChain {
 
     async fn credentials(&self) -> credentials::Result {
         for (name, provider) in &self.providers {
-            let span = tracing::info_span!("load_credentials", provider = %name);
+            let span = tracing::debug_span!("load_credentials", provider = %name);
             match provider.provide_credentials().instrument(span).await {
                 Ok(credentials) => {
                     tracing::info!(provider = %name, "loaded credentials");

@@ -1103,15 +1103,8 @@ pub fn serialize_structure_crate_model_content_redaction(
     if let Some(var_230) = &input.redaction_output {
         object.key("RedactionOutput").string(var_230.as_str());
     }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_model_subtitles(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::Subtitles,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_231) = &input.formats {
-        let mut array_232 = object.key("Formats").start_array();
+    if let Some(var_231) = &input.pii_entity_types {
+        let mut array_232 = object.key("PiiEntityTypes").start_array();
         for item_233 in var_231 {
             {
                 array_232.value().string(item_233.as_str());
@@ -1122,18 +1115,34 @@ pub fn serialize_structure_crate_model_subtitles(
     Ok(())
 }
 
+pub fn serialize_structure_crate_model_subtitles(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::Subtitles,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_234) = &input.formats {
+        let mut array_235 = object.key("Formats").start_array();
+        for item_236 in var_234 {
+            {
+                array_235.value().string(item_236.as_str());
+            }
+        }
+        array_235.finish();
+    }
+    Ok(())
+}
+
 pub fn serialize_structure_crate_model_language_id_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LanguageIdSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_234) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_234);
+    if let Some(var_237) = &input.vocabulary_name {
+        object.key("VocabularyName").string(var_237);
     }
-    if let Some(var_235) = &input.vocabulary_filter_name {
-        object.key("VocabularyFilterName").string(var_235);
+    if let Some(var_238) = &input.vocabulary_filter_name {
+        object.key("VocabularyFilterName").string(var_238);
     }
-    if let Some(var_236) = &input.language_model_name {
-        object.key("LanguageModelName").string(var_236);
+    if let Some(var_239) = &input.language_model_name {
+        object.key("LanguageModelName").string(var_239);
     }
     Ok(())
 }
@@ -1142,30 +1151,30 @@ pub fn serialize_structure_crate_model_non_talk_time_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::NonTalkTimeFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_237) = &input.threshold {
+    if let Some(var_240) = &input.threshold {
         object.key("Threshold").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_237).into()),
+            aws_smithy_types::Number::NegInt((*var_240).into()),
         );
     }
-    if let Some(var_238) = &input.absolute_time_range {
-        let mut object_239 = object.key("AbsoluteTimeRange").start_object();
+    if let Some(var_241) = &input.absolute_time_range {
+        let mut object_242 = object.key("AbsoluteTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_absolute_time_range(
-            &mut object_239,
-            var_238,
+            &mut object_242,
+            var_241,
         )?;
-        object_239.finish();
+        object_242.finish();
     }
-    if let Some(var_240) = &input.relative_time_range {
-        let mut object_241 = object.key("RelativeTimeRange").start_object();
+    if let Some(var_243) = &input.relative_time_range {
+        let mut object_244 = object.key("RelativeTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_relative_time_range(
-            &mut object_241,
-            var_240,
+            &mut object_244,
+            var_243,
         )?;
-        object_241.finish();
+        object_244.finish();
     }
-    if let Some(var_242) = &input.negate {
-        object.key("Negate").boolean(*var_242);
+    if let Some(var_245) = &input.negate {
+        object.key("Negate").boolean(*var_245);
     }
     Ok(())
 }
@@ -1174,33 +1183,33 @@ pub fn serialize_structure_crate_model_interruption_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::InterruptionFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_243) = &input.threshold {
+    if let Some(var_246) = &input.threshold {
         object.key("Threshold").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_243).into()),
+            aws_smithy_types::Number::NegInt((*var_246).into()),
         );
     }
-    if let Some(var_244) = &input.participant_role {
-        object.key("ParticipantRole").string(var_244.as_str());
+    if let Some(var_247) = &input.participant_role {
+        object.key("ParticipantRole").string(var_247.as_str());
     }
-    if let Some(var_245) = &input.absolute_time_range {
-        let mut object_246 = object.key("AbsoluteTimeRange").start_object();
+    if let Some(var_248) = &input.absolute_time_range {
+        let mut object_249 = object.key("AbsoluteTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_absolute_time_range(
-            &mut object_246,
-            var_245,
+            &mut object_249,
+            var_248,
         )?;
-        object_246.finish();
+        object_249.finish();
     }
-    if let Some(var_247) = &input.relative_time_range {
-        let mut object_248 = object.key("RelativeTimeRange").start_object();
+    if let Some(var_250) = &input.relative_time_range {
+        let mut object_251 = object.key("RelativeTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_relative_time_range(
-            &mut object_248,
-            var_247,
+            &mut object_251,
+            var_250,
         )?;
-        object_248.finish();
+        object_251.finish();
     }
-    if let Some(var_249) = &input.negate {
-        object.key("Negate").boolean(*var_249);
+    if let Some(var_252) = &input.negate {
+        object.key("Negate").boolean(*var_252);
     }
     Ok(())
 }
@@ -1209,39 +1218,39 @@ pub fn serialize_structure_crate_model_transcript_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TranscriptFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_250) = &input.transcript_filter_type {
-        object.key("TranscriptFilterType").string(var_250.as_str());
+    if let Some(var_253) = &input.transcript_filter_type {
+        object.key("TranscriptFilterType").string(var_253.as_str());
     }
-    if let Some(var_251) = &input.absolute_time_range {
-        let mut object_252 = object.key("AbsoluteTimeRange").start_object();
+    if let Some(var_254) = &input.absolute_time_range {
+        let mut object_255 = object.key("AbsoluteTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_absolute_time_range(
-            &mut object_252,
-            var_251,
+            &mut object_255,
+            var_254,
         )?;
-        object_252.finish();
+        object_255.finish();
     }
-    if let Some(var_253) = &input.relative_time_range {
-        let mut object_254 = object.key("RelativeTimeRange").start_object();
+    if let Some(var_256) = &input.relative_time_range {
+        let mut object_257 = object.key("RelativeTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_relative_time_range(
-            &mut object_254,
-            var_253,
+            &mut object_257,
+            var_256,
         )?;
-        object_254.finish();
+        object_257.finish();
     }
-    if let Some(var_255) = &input.participant_role {
-        object.key("ParticipantRole").string(var_255.as_str());
+    if let Some(var_258) = &input.participant_role {
+        object.key("ParticipantRole").string(var_258.as_str());
     }
-    if let Some(var_256) = &input.negate {
-        object.key("Negate").boolean(*var_256);
+    if let Some(var_259) = &input.negate {
+        object.key("Negate").boolean(*var_259);
     }
-    if let Some(var_257) = &input.targets {
-        let mut array_258 = object.key("Targets").start_array();
-        for item_259 in var_257 {
+    if let Some(var_260) = &input.targets {
+        let mut array_261 = object.key("Targets").start_array();
+        for item_262 in var_260 {
             {
-                array_258.value().string(item_259);
+                array_261.value().string(item_262);
             }
         }
-        array_258.finish();
+        array_261.finish();
     }
     Ok(())
 }
@@ -1250,36 +1259,36 @@ pub fn serialize_structure_crate_model_sentiment_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SentimentFilter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_260) = &input.sentiments {
-        let mut array_261 = object.key("Sentiments").start_array();
-        for item_262 in var_260 {
+    if let Some(var_263) = &input.sentiments {
+        let mut array_264 = object.key("Sentiments").start_array();
+        for item_265 in var_263 {
             {
-                array_261.value().string(item_262.as_str());
+                array_264.value().string(item_265.as_str());
             }
         }
-        array_261.finish();
+        array_264.finish();
     }
-    if let Some(var_263) = &input.absolute_time_range {
-        let mut object_264 = object.key("AbsoluteTimeRange").start_object();
+    if let Some(var_266) = &input.absolute_time_range {
+        let mut object_267 = object.key("AbsoluteTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_absolute_time_range(
-            &mut object_264,
-            var_263,
+            &mut object_267,
+            var_266,
         )?;
-        object_264.finish();
+        object_267.finish();
     }
-    if let Some(var_265) = &input.relative_time_range {
-        let mut object_266 = object.key("RelativeTimeRange").start_object();
+    if let Some(var_268) = &input.relative_time_range {
+        let mut object_269 = object.key("RelativeTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_relative_time_range(
-            &mut object_266,
-            var_265,
+            &mut object_269,
+            var_268,
         )?;
-        object_266.finish();
+        object_269.finish();
     }
-    if let Some(var_267) = &input.participant_role {
-        object.key("ParticipantRole").string(var_267.as_str());
+    if let Some(var_270) = &input.participant_role {
+        object.key("ParticipantRole").string(var_270.as_str());
     }
-    if let Some(var_268) = &input.negate {
-        object.key("Negate").boolean(*var_268);
+    if let Some(var_271) = &input.negate {
+        object.key("Negate").boolean(*var_271);
     }
     Ok(())
 }
@@ -1288,28 +1297,28 @@ pub fn serialize_structure_crate_model_absolute_time_range(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AbsoluteTimeRange,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_269) = &input.start_time {
+    if let Some(var_272) = &input.start_time {
         object.key("StartTime").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_269).into()),
+            aws_smithy_types::Number::NegInt((*var_272).into()),
         );
     }
-    if let Some(var_270) = &input.end_time {
+    if let Some(var_273) = &input.end_time {
         object.key("EndTime").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_270).into()),
+            aws_smithy_types::Number::NegInt((*var_273).into()),
         );
     }
-    if let Some(var_271) = &input.first {
+    if let Some(var_274) = &input.first {
         object.key("First").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_271).into()),
+            aws_smithy_types::Number::NegInt((*var_274).into()),
         );
     }
-    if let Some(var_272) = &input.last {
+    if let Some(var_275) = &input.last {
         object.key("Last").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_272).into()),
+            aws_smithy_types::Number::NegInt((*var_275).into()),
         );
     }
     Ok(())
@@ -1319,28 +1328,28 @@ pub fn serialize_structure_crate_model_relative_time_range(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RelativeTimeRange,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_273) = &input.start_percentage {
+    if let Some(var_276) = &input.start_percentage {
         object.key("StartPercentage").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_273).into()),
+            aws_smithy_types::Number::NegInt((*var_276).into()),
         );
     }
-    if let Some(var_274) = &input.end_percentage {
+    if let Some(var_277) = &input.end_percentage {
         object.key("EndPercentage").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_274).into()),
+            aws_smithy_types::Number::NegInt((*var_277).into()),
         );
     }
-    if let Some(var_275) = &input.first {
+    if let Some(var_278) = &input.first {
         object.key("First").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_275).into()),
+            aws_smithy_types::Number::NegInt((*var_278).into()),
         );
     }
-    if let Some(var_276) = &input.last {
+    if let Some(var_279) = &input.last {
         object.key("Last").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_276).into()),
+            aws_smithy_types::Number::NegInt((*var_279).into()),
         );
     }
     Ok(())

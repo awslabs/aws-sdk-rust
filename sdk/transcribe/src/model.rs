@@ -2427,6 +2427,8 @@ pub struct ContentRedaction {
     /// <p>When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.</p>
     /// <p>When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and unredacted transcripts.</p>
     pub redaction_output: std::option::Option<crate::model::RedactionOutput>,
+    /// <p>The types of personally identifiable information (PII) you want to redact in your transcript.</p>
+    pub pii_entity_types: std::option::Option<std::vec::Vec<crate::model::PiiEntityType>>,
 }
 impl ContentRedaction {
     /// <p>Request parameter that defines the entities to be redacted. The only accepted value is <code>PII</code>.</p>
@@ -2439,12 +2441,17 @@ impl ContentRedaction {
     pub fn redaction_output(&self) -> std::option::Option<&crate::model::RedactionOutput> {
         self.redaction_output.as_ref()
     }
+    /// <p>The types of personally identifiable information (PII) you want to redact in your transcript.</p>
+    pub fn pii_entity_types(&self) -> std::option::Option<&[crate::model::PiiEntityType]> {
+        self.pii_entity_types.as_deref()
+    }
 }
 impl std::fmt::Debug for ContentRedaction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContentRedaction");
         formatter.field("redaction_type", &self.redaction_type);
         formatter.field("redaction_output", &self.redaction_output);
+        formatter.field("pii_entity_types", &self.pii_entity_types);
         formatter.finish()
     }
 }
@@ -2456,6 +2463,8 @@ pub mod content_redaction {
     pub struct Builder {
         pub(crate) redaction_type: std::option::Option<crate::model::RedactionType>,
         pub(crate) redaction_output: std::option::Option<crate::model::RedactionOutput>,
+        pub(crate) pii_entity_types:
+            std::option::Option<std::vec::Vec<crate::model::PiiEntityType>>,
     }
     impl Builder {
         /// <p>Request parameter that defines the entities to be redacted. The only accepted value is <code>PII</code>.</p>
@@ -2488,11 +2497,31 @@ pub mod content_redaction {
             self.redaction_output = input;
             self
         }
+        /// Appends an item to `pii_entity_types`.
+        ///
+        /// To override the contents of this collection use [`set_pii_entity_types`](Self::set_pii_entity_types).
+        ///
+        /// <p>The types of personally identifiable information (PII) you want to redact in your transcript.</p>
+        pub fn pii_entity_types(mut self, input: crate::model::PiiEntityType) -> Self {
+            let mut v = self.pii_entity_types.unwrap_or_default();
+            v.push(input);
+            self.pii_entity_types = Some(v);
+            self
+        }
+        /// <p>The types of personally identifiable information (PII) you want to redact in your transcript.</p>
+        pub fn set_pii_entity_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PiiEntityType>>,
+        ) -> Self {
+            self.pii_entity_types = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ContentRedaction`](crate::model::ContentRedaction)
         pub fn build(self) -> crate::model::ContentRedaction {
             crate::model::ContentRedaction {
                 redaction_type: self.redaction_type,
                 redaction_output: self.redaction_output,
+                pii_entity_types: self.pii_entity_types,
             }
         }
     }
@@ -2501,6 +2530,114 @@ impl ContentRedaction {
     /// Creates a new builder-style object to manufacture [`ContentRedaction`](crate::model::ContentRedaction)
     pub fn builder() -> crate::model::content_redaction::Builder {
         crate::model::content_redaction::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PiiEntityType {
+    #[allow(missing_docs)] // documentation missing in model
+    Address,
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    BankAccountNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    BankRouting,
+    #[allow(missing_docs)] // documentation missing in model
+    CreditDebitCvv,
+    #[allow(missing_docs)] // documentation missing in model
+    CreditDebitExpiry,
+    #[allow(missing_docs)] // documentation missing in model
+    CreditDebitNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    Email,
+    #[allow(missing_docs)] // documentation missing in model
+    Name,
+    #[allow(missing_docs)] // documentation missing in model
+    Phone,
+    #[allow(missing_docs)] // documentation missing in model
+    Pin,
+    #[allow(missing_docs)] // documentation missing in model
+    Ssn,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PiiEntityType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ADDRESS" => PiiEntityType::Address,
+            "ALL" => PiiEntityType::All,
+            "BANK_ACCOUNT_NUMBER" => PiiEntityType::BankAccountNumber,
+            "BANK_ROUTING" => PiiEntityType::BankRouting,
+            "CREDIT_DEBIT_CVV" => PiiEntityType::CreditDebitCvv,
+            "CREDIT_DEBIT_EXPIRY" => PiiEntityType::CreditDebitExpiry,
+            "CREDIT_DEBIT_NUMBER" => PiiEntityType::CreditDebitNumber,
+            "EMAIL" => PiiEntityType::Email,
+            "NAME" => PiiEntityType::Name,
+            "PHONE" => PiiEntityType::Phone,
+            "PIN" => PiiEntityType::Pin,
+            "SSN" => PiiEntityType::Ssn,
+            other => PiiEntityType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PiiEntityType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PiiEntityType::from(s))
+    }
+}
+impl PiiEntityType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PiiEntityType::Address => "ADDRESS",
+            PiiEntityType::All => "ALL",
+            PiiEntityType::BankAccountNumber => "BANK_ACCOUNT_NUMBER",
+            PiiEntityType::BankRouting => "BANK_ROUTING",
+            PiiEntityType::CreditDebitCvv => "CREDIT_DEBIT_CVV",
+            PiiEntityType::CreditDebitExpiry => "CREDIT_DEBIT_EXPIRY",
+            PiiEntityType::CreditDebitNumber => "CREDIT_DEBIT_NUMBER",
+            PiiEntityType::Email => "EMAIL",
+            PiiEntityType::Name => "NAME",
+            PiiEntityType::Phone => "PHONE",
+            PiiEntityType::Pin => "PIN",
+            PiiEntityType::Ssn => "SSN",
+            PiiEntityType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ADDRESS",
+            "ALL",
+            "BANK_ACCOUNT_NUMBER",
+            "BANK_ROUTING",
+            "CREDIT_DEBIT_CVV",
+            "CREDIT_DEBIT_EXPIRY",
+            "CREDIT_DEBIT_NUMBER",
+            "EMAIL",
+            "NAME",
+            "PHONE",
+            "PIN",
+            "SSN",
+        ]
+    }
+}
+impl AsRef<str> for PiiEntityType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

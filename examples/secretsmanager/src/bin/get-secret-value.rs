@@ -4,38 +4,46 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use aws_sdk_secretsmanager::{Client, Region};
-use std::process;
+use aws_sdk_secretsmanager::{Client, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
-use tracing_subscriber::fmt::format::FmtSpan;
-use tracing_subscriber::fmt::SubscriberBuilder;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The region
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
-    /// The name of the secret
+    /// The name of the secret.
     #[structopt(short, long)]
     name: String,
 
-    /// Whether to display additional runtime information
+    /// Whether to display additional information.
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Displays the value of a secret.
+// snippet-start:[secretsmanager.rust.get-secret-value]
+async fn show_secret(client: &Client, name: &str) -> Result<(), Error> {
+    let resp = client.get_secret_value().secret_id(name).send().await?;
+
+    println!("Value: {}", resp.secret_string().unwrap_or("No value!"));
+
+    Ok(())
+}
+// snippet-end:[secretsmanager.rust.get-secret-value]
 
 /// Retrieves the value of a secret.
 /// # Arguments
 ///
 /// * `-n NAME` - The name of the secret.
-/// * `-s SECRET_VALUE` - The secret value.
-/// * `[-d DEFAULT-REGION]` - The region in which the client is created.
-///    If not supplied, uses the value of the **AWS_DEFAULT_REGION** environment variable.
+/// * `[-r REGION]` - The Region in which the client is created.
+///    If not supplied, uses the value of the **AWS_REGION** environment variable.
 ///    If the environment variable is not set, defaults to **us-west-2**.
 /// * `[-v]` - Whether to display additional information.
 #[tokio::main]
-async fn main() {
+async fn main() -> Result<(), Error> {
+    tracing_subscriber::fmt::init();
     let Opt {
         name,
         region,
@@ -45,34 +53,21 @@ async fn main() {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
+
+    println!();
 
     if verbose {
+        println!("SecretsMManager client version: {}", PKG_VERSION);
         println!(
-            "SecretsManager client version: {}\n",
-            aws_sdk_secretsmanager::PKG_VERSION
+            "Region:                         {}",
+            region_provider.region().await.unwrap().as_ref()
         );
-        println!("Region:      {:?}", shared_config.region());
-        println!("Secret name: {}", name);
-
-        SubscriberBuilder::default()
-            .with_env_filter("info")
-            .with_span_events(FmtSpan::CLOSE)
-            .init();
+        println!("Secret name:                    {}", name);
+        println!();
     }
 
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
     let client = Client::new(&shared_config);
 
-    match client.get_secret_value().secret_id(name).send().await {
-        Ok(resp) => {
-            println!(
-                "Value: {}",
-                resp.secret_string.as_deref().unwrap_or("No value!")
-            );
-        }
-        Err(e) => {
-            println!("Got an error while getting a secret value: {}", e);
-            process::exit(1);
-        }
-    };
+    show_secret(&client, &name).await
 }

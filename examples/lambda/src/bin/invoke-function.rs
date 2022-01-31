@@ -2,9 +2,9 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_lambda::{Client, Error, Region, PKG_VERSION};
-use std::str;
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -13,7 +13,7 @@ struct Opt {
     #[structopt(short, long)]
     region: Option<String>,
 
-    /// The Lambda function's ARN.
+    /// The AWS Lambda function's Amazon Resource Name (ARN).
     #[structopt(short, long)]
     arn: String,
 
@@ -21,6 +21,17 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Runs a Lambda function.
+// snippet-start:[lambda.rust.invoke-function]
+async fn run_function(client: &Client, arn: &str) -> Result<(), Error> {
+    client.invoke().function_name(arn).send().await?;
+
+    println!("Invoked function.");
+
+    Ok(())
+}
+// snippet-end:[lambda.rust.invoke-function]
 
 /// Invokes a Lambda function by its ARN.
 /// # Arguments
@@ -32,7 +43,6 @@ struct Opt {
 /// * `[-v]` - Whether to display additional information.
 #[tokio::main]
 async fn main() -> Result<(), Error> {
-    tracing_subscriber::fmt::init();
     let Opt {
         arn,
         region,
@@ -42,22 +52,20 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    println!();
 
     if verbose {
-        println!("Lambda version: {}", PKG_VERSION);
-        println!("Region:         {}", shared_config.region().unwrap());
-        println!("Function ARN:   {}", arn);
+        println!("Lambda client version: {}", PKG_VERSION);
+        println!(
+            "Region:                {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
+        println!("Lambda function ARN:   {}", arn);
         println!();
     }
 
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
     let client = Client::new(&shared_config);
 
-    let resp = client.invoke().function_name(arn).send().await?;
-    if let Some(blob) = resp.payload {
-        let s = str::from_utf8(blob.as_ref()).expect("invalid utf-8");
-        println!("Response: {:?}", s);
-    }
-
-    Ok(())
+    run_function(&client, &arn).await
 }

@@ -5,21 +5,23 @@ version = "0.1.0"
 authors = ["Russell Cohen <rcoh@amazon.com>", "Doug Schwartz <dougsch@amazon.com"]
 edition = "2018"
 description = "Example usage of the KMS service"
+publish = false
 
 [dependencies]
 base64 = "0.13.0"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.1"
+version = "0.6.0"
 
 [dependencies.aws-sdk-kms]
 path = "../../sdk/kms"
-version = "0.5.0"
+version = "0.6.0"
 
-[dependencies.aws-types]
-path = "../../sdk/aws-types"
-version = "0.5.1"
+[dependencies.aws-smithy-client]
+features = ["client-hyper", "rustls", "rt-tokio"]
+path = "../../sdk/aws-smithy-client"
+version = "0.36.0"
 
 [dependencies.tokio]
 version = "1"

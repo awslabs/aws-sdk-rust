@@ -9,7 +9,7 @@ use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The default AWS Region.
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
@@ -18,7 +18,27 @@ struct Opt {
     verbose: bool,
 }
 
-/// Lists your AWS Elemental MediaPackage channel ARNs and descriptions.
+// Displays channel ARNs and descriptions.
+// snippet-start:[mediapackage.rust.mediapackage-helloworld]
+async fn show_channels(client: &Client) -> Result<(), Error> {
+    let list_channels = client.list_channels().send().await?;
+
+    println!("Channels:");
+
+    for c in list_channels.channels().unwrap_or_default() {
+        let description = c.description().unwrap_or_default();
+        let arn = c.arn().unwrap_or_default();
+
+        println!("  Description : {}", description);
+        println!("  ARN :         {}", arn);
+        println!();
+    }
+
+    Ok(())
+}
+// snippet-end:[mediapackage.rust.mediapackage-helloworld]
+
+/// Lists your AWS Elemental MediaPackage channel ARNs and descriptions in the Region.
 /// # Arguments
 ///
 /// * `[-r REGION]` - The Region in which the client is created.
@@ -34,31 +54,19 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
-
     println!();
 
     if verbose {
-        println!("MediaPackage version: {}", PKG_VERSION);
+        println!("MediaPackage client version: {}", PKG_VERSION);
         println!(
-            "Region:               {:?}",
-            shared_config.region().unwrap()
+            "Region:                      {}",
+            region_provider.region().await.unwrap().as_ref()
         );
         println!();
     }
 
-    let list_channels = client.list_channels().send().await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    for c in list_channels.channels.unwrap_or_default() {
-        let description = c.description.as_deref().unwrap_or_default();
-        let arn = c.arn.as_deref().unwrap_or_default();
-
-        println!(
-            "Channel Description : {}, Channel ARN : {}",
-            description, arn
-        );
-    }
-
-    Ok(())
+    show_channels(&client).await
 }

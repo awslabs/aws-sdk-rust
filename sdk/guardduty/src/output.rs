@@ -1472,7 +1472,7 @@ pub struct GetThreatIntelSetOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The format of the threatIntelSet.</p>
     pub format: std::option::Option<crate::model::ThreatIntelSetFormat>,
-    /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
     pub location: std::option::Option<std::string::String>,
     /// <p>The status of threatIntelSet file uploaded.</p>
     pub status: std::option::Option<crate::model::ThreatIntelSetStatus>,
@@ -1489,7 +1489,7 @@ impl GetThreatIntelSetOutput {
     pub fn format(&self) -> std::option::Option<&crate::model::ThreatIntelSetFormat> {
         self.format.as_ref()
     }
-    /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the ThreatIntelSet. </p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -1554,12 +1554,12 @@ pub mod get_threat_intel_set_output {
             self.format = input;
             self
         }
-        /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the ThreatIntelSet. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the ThreatIntelSet. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -1877,7 +1877,7 @@ pub struct GetIpSetOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The format of the file that contains the IPSet.</p>
     pub format: std::option::Option<crate::model::IpSetFormat>,
-    /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the IPSet.</p>
     pub location: std::option::Option<std::string::String>,
     /// <p>The status of IPSet file that was uploaded.</p>
     pub status: std::option::Option<crate::model::IpSetStatus>,
@@ -1894,7 +1894,7 @@ impl GetIpSetOutput {
     pub fn format(&self) -> std::option::Option<&crate::model::IpSetFormat> {
         self.format.as_ref()
     }
-    /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    /// <p>The URI of the file that contains the IPSet.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -1956,12 +1956,12 @@ pub mod get_ip_set_output {
             self.format = input;
             self
         }
-        /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the IPSet.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the IPSet.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self

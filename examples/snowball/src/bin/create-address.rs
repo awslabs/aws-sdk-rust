@@ -56,6 +56,18 @@ struct Opt {
     verbose: bool,
 }
 
+// Create an address.
+// snippet-start:[snowball.rust.create-address]
+async fn add_address(client: &Client, address: Address) -> Result<(), Error> {
+    let result = client.create_address().address(address).send().await?;
+
+    println!();
+    println!("Address: {:?}", result.address_id().unwrap());
+
+    Ok(())
+}
+// snippet-end:[snowball.rust.create-address]
+
 /// Creates an AWS Snowball address.
 /// # Arguments
 ///
@@ -99,7 +111,6 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
 
     println!();
 
@@ -107,7 +118,7 @@ async fn main() -> Result<(), Error> {
         println!("Snowball version:       {}", PKG_VERSION);
         println!(
             "Region:                 {}",
-            shared_config.region().unwrap()
+            region_provider.region().await.unwrap().as_ref()
         );
         println!("City:                   {}", &city);
         println!("Company:                {:?}", &company);
@@ -140,12 +151,8 @@ async fn main() -> Result<(), Error> {
         .set_is_restricted(Some(false))
         .build();
 
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
     let client = Client::new(&shared_config);
 
-    let result = client.create_address().address(new_address).send().await?;
-
-    println!();
-    println!("Address: {:?}", result.address_id.unwrap());
-
-    Ok(())
+    add_address(&client, new_address).await
 }

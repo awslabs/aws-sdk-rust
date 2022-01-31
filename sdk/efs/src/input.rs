@@ -267,39 +267,39 @@ pub mod create_file_system_input {
             self.performance_mode = input;
             self
         }
-        /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying <code>CreateFileSystemRequest$KmsKeyId</code> for an existing Key Management Service (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
+        /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying an existing Key Management Service key (KMS key). If you don't specify a KMS key, then the default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.encrypted = Some(input);
             self
         }
-        /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying <code>CreateFileSystemRequest$KmsKeyId</code> for an existing Key Management Service (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
+        /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying an existing Key Management Service key (KMS key). If you don't specify a KMS key, then the default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
         }
-        /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>
+        /// <p>The ID of the KMS key that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS key ID using the following formats:</p>
         /// <ul>
         /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
         /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
         /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
         /// <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
         /// </ul>
-        /// <p>If <code>KmsKeyId</code> is specified, the <code>CreateFileSystemRequest$Encrypted</code> parameter must be set to true.</p> <important>
-        /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.</p>
+        /// <p>If you use <code>KmsKeyId</code>, you must set the <code>CreateFileSystemRequest$Encrypted</code> parameter to true.</p> <important>
+        /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with Amazon EFS file systems.</p>
         /// </important>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>
+        /// <p>The ID of the KMS key that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS key ID using the following formats:</p>
         /// <ul>
         /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
         /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
         /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
         /// <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
         /// </ul>
-        /// <p>If <code>KmsKeyId</code> is specified, the <code>CreateFileSystemRequest$Encrypted</code> parameter must be set to true.</p> <important>
-        /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.</p>
+        /// <p>If you use <code>KmsKeyId</code>, you must set the <code>CreateFileSystemRequest$Encrypted</code> parameter to true.</p> <important>
+        /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with Amazon EFS file systems.</p>
         /// </important>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
@@ -352,7 +352,7 @@ pub mod create_file_system_input {
         }
         /// <p>Specifies whether automatic backups are enabled on the file system that you are creating. Set the value to <code>true</code> to enable automatic backups. If you are creating a file system that uses One Zone storage classes, automatic backups are enabled by default. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the <i>Amazon EFS User Guide</i>.</p>
         /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>
-        /// <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.</p>
+        /// <p>Backup is not available in all Amazon Web Services Regions where Amazon EFS is available.</p>
         /// </note>
         pub fn backup(mut self, input: bool) -> Self {
             self.backup = Some(input);
@@ -360,7 +360,7 @@ pub mod create_file_system_input {
         }
         /// <p>Specifies whether automatic backups are enabled on the file system that you are creating. Set the value to <code>true</code> to enable automatic backups. If you are creating a file system that uses One Zone storage classes, automatic backups are enabled by default. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the <i>Amazon EFS User Guide</i>.</p>
         /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>
-        /// <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.</p>
+        /// <p>Backup is not available in all Amazon Web Services Regions where Amazon EFS is available.</p>
         /// </note>
         pub fn set_backup(mut self, input: std::option::Option<bool>) -> Self {
             self.backup = input;
@@ -723,6 +723,203 @@ impl CreateMountTargetInput {
     }
 }
 
+/// See [`CreateReplicationConfigurationInput`](crate::input::CreateReplicationConfigurationInput)
+pub mod create_replication_configuration_input {
+    /// A builder for [`CreateReplicationConfigurationInput`](crate::input::CreateReplicationConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_file_system_id: std::option::Option<std::string::String>,
+        pub(crate) destinations:
+            std::option::Option<std::vec::Vec<crate::model::DestinationToCreate>>,
+    }
+    impl Builder {
+        /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
+        pub fn source_file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_file_system_id = Some(input.into());
+            self
+        }
+        /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
+        pub fn set_source_file_system_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_file_system_id = input;
+            self
+        }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
+        pub fn destinations(mut self, input: crate::model::DestinationToCreate) -> Self {
+            let mut v = self.destinations.unwrap_or_default();
+            v.push(input);
+            self.destinations = Some(v);
+            self
+        }
+        /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
+        pub fn set_destinations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DestinationToCreate>>,
+        ) -> Self {
+            self.destinations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateReplicationConfigurationInput`](crate::input::CreateReplicationConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateReplicationConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateReplicationConfigurationInput {
+                source_file_system_id: self.source_file_system_id,
+                destinations: self.destinations,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateReplicationConfigurationInputOperationOutputAlias =
+    crate::operation::CreateReplicationConfiguration;
+#[doc(hidden)]
+pub type CreateReplicationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl CreateReplicationConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`CreateReplicationConfiguration`](crate::operation::CreateReplicationConfiguration)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateReplicationConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateReplicationConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_1 = &_input.source_file_system_id;
+            let input_1 =
+                input_1
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_file_system_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let source_file_system_id = aws_smithy_http::label::fmt_string(input_1, false);
+            if source_file_system_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "source_file_system_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/2015-02-01/file-systems/{SourceFileSystemId}/replication-configuration",
+                SourceFileSystemId = source_file_system_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateReplicationConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateReplicationConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_replication_configuration(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateReplicationConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateReplicationConfiguration",
+            "efs",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateReplicationConfigurationInput`](crate::input::CreateReplicationConfigurationInput)
+    pub fn builder() -> crate::input::create_replication_configuration_input::Builder {
+        crate::input::create_replication_configuration_input::Builder::default()
+    }
+}
+
 /// See [`CreateTagsInput`](crate::input::CreateTagsInput)
 pub mod create_tags_input {
     /// A builder for [`CreateTagsInput`](crate::input::CreateTagsInput)
@@ -801,15 +998,15 @@ impl CreateTagsInput {
             _input: &crate::input::CreateTagsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_1 = &_input.file_system_id;
-            let input_1 =
-                input_1
+            let input_2 = &_input.file_system_id;
+            let input_2 =
+                input_2
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "file_system_id",
                         details: "cannot be empty or unset",
                     })?;
-            let file_system_id = aws_smithy_http::label::fmt_string(input_1, false);
+            let file_system_id = aws_smithy_http::label::fmt_string(input_2, false);
             if file_system_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
@@ -972,15 +1169,15 @@ impl DeleteAccessPointInput {
             _input: &crate::input::DeleteAccessPointInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_2 = &_input.access_point_id;
-            let input_2 =
-                input_2
+            let input_3 = &_input.access_point_id;
+            let input_3 =
+                input_3
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "access_point_id",
                         details: "cannot be empty or unset",
                     })?;
-            let access_point_id = aws_smithy_http::label::fmt_string(input_2, false);
+            let access_point_id = aws_smithy_http::label::fmt_string(input_3, false);
             if access_point_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "access_point_id",
@@ -1130,15 +1327,15 @@ impl DeleteFileSystemInput {
             _input: &crate::input::DeleteFileSystemInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_3 = &_input.file_system_id;
-            let input_3 =
-                input_3
+            let input_4 = &_input.file_system_id;
+            let input_4 =
+                input_4
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "file_system_id",
                         details: "cannot be empty or unset",
                     })?;
-            let file_system_id = aws_smithy_http::label::fmt_string(input_3, false);
+            let file_system_id = aws_smithy_http::label::fmt_string(input_4, false);
             if file_system_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
@@ -1288,15 +1485,15 @@ impl DeleteFileSystemPolicyInput {
             _input: &crate::input::DeleteFileSystemPolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_4 = &_input.file_system_id;
-            let input_4 =
-                input_4
+            let input_5 = &_input.file_system_id;
+            let input_5 =
+                input_5
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "file_system_id",
                         details: "cannot be empty or unset",
                     })?;
-            let file_system_id = aws_smithy_http::label::fmt_string(input_4, false);
+            let file_system_id = aws_smithy_http::label::fmt_string(input_5, false);
             if file_system_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
@@ -1446,15 +1643,15 @@ impl DeleteMountTargetInput {
             _input: &crate::input::DeleteMountTargetInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_5 = &_input.mount_target_id;
-            let input_5 =
-                input_5
+            let input_6 = &_input.mount_target_id;
+            let input_6 =
+                input_6
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mount_target_id",
                         details: "cannot be empty or unset",
                     })?;
-            let mount_target_id = aws_smithy_http::label::fmt_string(input_5, false);
+            let mount_target_id = aws_smithy_http::label::fmt_string(input_6, false);
             if mount_target_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mount_target_id",
@@ -1547,6 +1744,166 @@ impl DeleteMountTargetInput {
     }
 }
 
+/// See [`DeleteReplicationConfigurationInput`](crate::input::DeleteReplicationConfigurationInput)
+pub mod delete_replication_configuration_input {
+    /// A builder for [`DeleteReplicationConfigurationInput`](crate::input::DeleteReplicationConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_file_system_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the source file system in the replication configuration.</p>
+        pub fn source_file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_file_system_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the source file system in the replication configuration.</p>
+        pub fn set_source_file_system_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_file_system_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteReplicationConfigurationInput`](crate::input::DeleteReplicationConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteReplicationConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteReplicationConfigurationInput {
+                source_file_system_id: self.source_file_system_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteReplicationConfigurationInputOperationOutputAlias =
+    crate::operation::DeleteReplicationConfiguration;
+#[doc(hidden)]
+pub type DeleteReplicationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteReplicationConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteReplicationConfiguration`](crate::operation::DeleteReplicationConfiguration)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteReplicationConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteReplicationConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_7 = &_input.source_file_system_id;
+            let input_7 =
+                input_7
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "source_file_system_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let source_file_system_id = aws_smithy_http::label::fmt_string(input_7, false);
+            if source_file_system_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "source_file_system_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(
+                output,
+                "/2015-02-01/file-systems/{SourceFileSystemId}/replication-configuration",
+                SourceFileSystemId = source_file_system_id
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteReplicationConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("DELETE").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteReplicationConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteReplicationConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteReplicationConfiguration",
+            "efs",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteReplicationConfigurationInput`](crate::input::DeleteReplicationConfigurationInput)
+    pub fn builder() -> crate::input::delete_replication_configuration_input::Builder {
+        crate::input::delete_replication_configuration_input::Builder::default()
+    }
+}
+
 /// See [`DeleteTagsInput`](crate::input::DeleteTagsInput)
 pub mod delete_tags_input {
     /// A builder for [`DeleteTagsInput`](crate::input::DeleteTagsInput)
@@ -1625,15 +1982,15 @@ impl DeleteTagsInput {
             _input: &crate::input::DeleteTagsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_6 = &_input.file_system_id;
-            let input_6 =
-                input_6
+            let input_8 = &_input.file_system_id;
+            let input_8 =
+                input_8
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "file_system_id",
                         details: "cannot be empty or unset",
                     })?;
-            let file_system_id = aws_smithy_http::label::fmt_string(input_6, false);
+            let file_system_id = aws_smithy_http::label::fmt_string(input_8, false);
             if file_system_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
@@ -1843,25 +2200,25 @@ impl DescribeAccessPointsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_7) = &_input.max_results {
+            if let Some(inner_9) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_7).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_9).encode(),
                 );
             }
-            if let Some(inner_8) = &_input.next_token {
-                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_8));
+            if let Some(inner_10) = &_input.next_token {
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_10));
             }
-            if let Some(inner_9) = &_input.access_point_id {
+            if let Some(inner_11) = &_input.access_point_id {
                 query.push_kv(
                     "AccessPointId",
-                    &aws_smithy_http::query::fmt_string(&inner_9),
+                    &aws_smithy_http::query::fmt_string(&inner_11),
                 );
             }
-            if let Some(inner_10) = &_input.file_system_id {
+            if let Some(inner_12) = &_input.file_system_id {
                 query.push_kv(
                     "FileSystemId",
-                    &aws_smithy_http::query::fmt_string(&inner_10),
+                    &aws_smithy_http::query::fmt_string(&inner_12),
                 );
             }
             Ok(())
@@ -2166,15 +2523,15 @@ impl DescribeBackupPolicyInput {
             _input: &crate::input::DescribeBackupPolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_11 = &_input.file_system_id;
-            let input_11 =
-                input_11
+            let input_13 = &_input.file_system_id;
+            let input_13 =
+                input_13
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "file_system_id",
                         details: "cannot be empty or unset",
                     })?;
-            let file_system_id = aws_smithy_http::label::fmt_string(input_11, false);
+            let file_system_id = aws_smithy_http::label::fmt_string(input_13, false);
             if file_system_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
@@ -2325,15 +2682,15 @@ impl DescribeFileSystemPolicyInput {
             _input: &crate::input::DescribeFileSystemPolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_12 = &_input.file_system_id;
-            let input_12 =
-                input_12
+            let input_14 = &_input.file_system_id;
+            let input_14 =
+                input_14
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "file_system_id",
                         details: "cannot be empty or unset",
                     })?;
-            let file_system_id = aws_smithy_http::label::fmt_string(input_12, false);
+            let file_system_id = aws_smithy_http::label::fmt_string(input_14, false);
             if file_system_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
@@ -2530,25 +2887,25 @@ impl DescribeFileSystemsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_13) = &_input.max_items {
+            if let Some(inner_15) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    aws_smithy_types::primitive::Encoder::from(*inner_13).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_15).encode(),
                 );
             }
-            if let Some(inner_14) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_14));
+            if let Some(inner_16) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_16));
             }
-            if let Some(inner_15) = &_input.creation_token {
+            if let Some(inner_17) = &_input.creation_token {
                 query.push_kv(
                     "CreationToken",
-                    &aws_smithy_http::query::fmt_string(&inner_15),
+                    &aws_smithy_http::query::fmt_string(&inner_17),
                 );
             }
-            if let Some(inner_16) = &_input.file_system_id {
+            if let Some(inner_18) = &_input.file_system_id {
                 query.push_kv(
                     "FileSystemId",
-                    &aws_smithy_http::query::fmt_string(&inner_16),
+                    &aws_smithy_http::query::fmt_string(&inner_18),
                 );
             }
             Ok(())
@@ -2691,15 +3048,15 @@ impl DescribeLifecycleConfigurationInput {
             _input: &crate::input::DescribeLifecycleConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_17 = &_input.file_system_id;
-            let input_17 =
-                input_17
+            let input_19 = &_input.file_system_id;
+            let input_19 =
+                input_19
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "file_system_id",
                         details: "cannot be empty or unset",
                     })?;
-            let file_system_id = aws_smithy_http::label::fmt_string(input_17, false);
+            let file_system_id = aws_smithy_http::label::fmt_string(input_19, false);
             if file_system_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
@@ -2911,31 +3268,31 @@ impl DescribeMountTargetsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_18) = &_input.max_items {
+            if let Some(inner_20) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
                 );
             }
-            if let Some(inner_19) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_19));
+            if let Some(inner_21) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_21));
             }
-            if let Some(inner_20) = &_input.file_system_id {
+            if let Some(inner_22) = &_input.file_system_id {
                 query.push_kv(
                     "FileSystemId",
-                    &aws_smithy_http::query::fmt_string(&inner_20),
+                    &aws_smithy_http::query::fmt_string(&inner_22),
                 );
             }
-            if let Some(inner_21) = &_input.mount_target_id {
+            if let Some(inner_23) = &_input.mount_target_id {
                 query.push_kv(
                     "MountTargetId",
-                    &aws_smithy_http::query::fmt_string(&inner_21),
+                    &aws_smithy_http::query::fmt_string(&inner_23),
                 );
             }
-            if let Some(inner_22) = &_input.access_point_id {
+            if let Some(inner_24) = &_input.access_point_id {
                 query.push_kv(
                     "AccessPointId",
-                    &aws_smithy_http::query::fmt_string(&inner_22),
+                    &aws_smithy_http::query::fmt_string(&inner_24),
                 );
             }
             Ok(())
@@ -3078,15 +3435,15 @@ impl DescribeMountTargetSecurityGroupsInput {
             _input: &crate::input::DescribeMountTargetSecurityGroupsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_23 = &_input.mount_target_id;
-            let input_23 =
-                input_23
+            let input_25 = &_input.mount_target_id;
+            let input_25 =
+                input_25
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mount_target_id",
                         details: "cannot be empty or unset",
                     })?;
-            let mount_target_id = aws_smithy_http::label::fmt_string(input_23, false);
+            let mount_target_id = aws_smithy_http::label::fmt_string(input_25, false);
             if mount_target_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mount_target_id",
@@ -3179,6 +3536,197 @@ impl DescribeMountTargetSecurityGroupsInput {
     }
 }
 
+/// See [`DescribeReplicationConfigurationsInput`](crate::input::DescribeReplicationConfigurationsInput)
+pub mod describe_replication_configurations_input {
+    /// A builder for [`DescribeReplicationConfigurationsInput`](crate::input::DescribeReplicationConfigurationsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_system_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>You can retrieve replication configurations for a specific file system by providing a file system ID.</p>
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_system_id = Some(input.into());
+            self
+        }
+        /// <p>You can retrieve replication configurations for a specific file system by providing a file system ID.</p>
+        pub fn set_file_system_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.file_system_id = input;
+            self
+        }
+        /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in a subsequent request to fetch the next page of output.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in a subsequent request to fetch the next page of output.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>(Optional) You can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>(Optional) You can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeReplicationConfigurationsInput`](crate::input::DescribeReplicationConfigurationsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeReplicationConfigurationsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeReplicationConfigurationsInput {
+                file_system_id: self.file_system_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeReplicationConfigurationsInputOperationOutputAlias =
+    crate::operation::DescribeReplicationConfigurations;
+#[doc(hidden)]
+pub type DescribeReplicationConfigurationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeReplicationConfigurationsInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeReplicationConfigurations`](crate::operation::DescribeReplicationConfigurations)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeReplicationConfigurations,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeReplicationConfigurationsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(
+                output,
+                "/2015-02-01/file-systems/replication-configurations"
+            )
+            .expect("formatting should succeed");
+            Ok(())
+        }
+        fn uri_query(
+            _input: &crate::input::DescribeReplicationConfigurationsInput,
+            mut output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
+            if let Some(inner_26) = &_input.file_system_id {
+                query.push_kv(
+                    "FileSystemId",
+                    &aws_smithy_http::query::fmt_string(&inner_26),
+                );
+            }
+            if let Some(inner_27) = &_input.next_token {
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_27));
+            }
+            if let Some(inner_28) = &_input.max_results {
+                query.push_kv(
+                    "MaxResults",
+                    aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
+                );
+            }
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeReplicationConfigurationsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            uri_query(input, &mut uri)?;
+            Ok(builder.method("GET").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeReplicationConfigurationsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeReplicationConfigurations::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeReplicationConfigurations",
+            "efs",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeReplicationConfigurationsInput`](crate::input::DescribeReplicationConfigurationsInput)
+    pub fn builder() -> crate::input::describe_replication_configurations_input::Builder {
+        crate::input::describe_replication_configurations_input::Builder::default()
+    }
+}
+
 /// See [`DescribeTagsInput`](crate::input::DescribeTagsInput)
 pub mod describe_tags_input {
     /// A builder for [`DescribeTagsInput`](crate::input::DescribeTagsInput)
@@ -3260,15 +3808,15 @@ impl DescribeTagsInput {
             _input: &crate::input::DescribeTagsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_24 = &_input.file_system_id;
-            let input_24 =
-                input_24
+            let input_29 = &_input.file_system_id;
+            let input_29 =
+                input_29
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "file_system_id",
                         details: "cannot be empty or unset",
                     })?;
-            let file_system_id = aws_smithy_http::label::fmt_string(input_24, false);
+            let file_system_id = aws_smithy_http::label::fmt_string(input_29, false);
             if file_system_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
@@ -3288,14 +3836,14 @@ impl DescribeTagsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_25) = &_input.max_items {
+            if let Some(inner_30) = &_input.max_items {
                 query.push_kv(
                     "MaxItems",
-                    aws_smithy_types::primitive::Encoder::from(*inner_25).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_30).encode(),
                 );
             }
-            if let Some(inner_26) = &_input.marker {
-                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_26));
+            if let Some(inner_31) = &_input.marker {
+                query.push_kv("Marker", &aws_smithy_http::query::fmt_string(&inner_31));
             }
             Ok(())
         }
@@ -3456,15 +4004,15 @@ impl ListTagsForResourceInput {
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_27 = &_input.resource_id;
-            let input_27 =
-                input_27
+            let input_32 = &_input.resource_id;
+            let input_32 =
+                input_32
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_id = aws_smithy_http::label::fmt_string(input_27, false);
+            let resource_id = aws_smithy_http::label::fmt_string(input_32, false);
             if resource_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_id",
@@ -3484,14 +4032,14 @@ impl ListTagsForResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_28) = &_input.max_results {
+            if let Some(inner_33) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_33).encode(),
                 );
             }
-            if let Some(inner_29) = &_input.next_token {
-                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_29));
+            if let Some(inner_34) = &_input.next_token {
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_34));
             }
             Ok(())
         }
@@ -3654,15 +4202,15 @@ impl ModifyMountTargetSecurityGroupsInput {
             _input: &crate::input::ModifyMountTargetSecurityGroupsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_30 = &_input.mount_target_id;
-            let input_30 =
-                input_30
+            let input_35 = &_input.mount_target_id;
+            let input_35 =
+                input_35
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mount_target_id",
                         details: "cannot be empty or unset",
                     })?;
-            let mount_target_id = aws_smithy_http::label::fmt_string(input_30, false);
+            let mount_target_id = aws_smithy_http::label::fmt_string(input_35, false);
             if mount_target_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mount_target_id",
@@ -4000,15 +4548,15 @@ impl PutBackupPolicyInput {
             _input: &crate::input::PutBackupPolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_31 = &_input.file_system_id;
-            let input_31 =
-                input_31
+            let input_36 = &_input.file_system_id;
+            let input_36 =
+                input_36
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "file_system_id",
                         details: "cannot be empty or unset",
                     })?;
-            let file_system_id = aws_smithy_http::label::fmt_string(input_31, false);
+            let file_system_id = aws_smithy_http::label::fmt_string(input_36, false);
             if file_system_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
@@ -4201,15 +4749,15 @@ impl PutFileSystemPolicyInput {
             _input: &crate::input::PutFileSystemPolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_32 = &_input.file_system_id;
-            let input_32 =
-                input_32
+            let input_37 = &_input.file_system_id;
+            let input_37 =
+                input_37
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "file_system_id",
                         details: "cannot be empty or unset",
                     })?;
-            let file_system_id = aws_smithy_http::label::fmt_string(input_32, false);
+            let file_system_id = aws_smithy_http::label::fmt_string(input_37, false);
             if file_system_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
@@ -4410,15 +4958,15 @@ impl PutLifecycleConfigurationInput {
             _input: &crate::input::PutLifecycleConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_33 = &_input.file_system_id;
-            let input_33 =
-                input_33
+            let input_38 = &_input.file_system_id;
+            let input_38 =
+                input_38
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "file_system_id",
                         details: "cannot be empty or unset",
                     })?;
-            let file_system_id = aws_smithy_http::label::fmt_string(input_33, false);
+            let file_system_id = aws_smithy_http::label::fmt_string(input_38, false);
             if file_system_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
@@ -4602,15 +5150,15 @@ impl TagResourceInput {
             _input: &crate::input::TagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_34 = &_input.resource_id;
-            let input_34 =
-                input_34
+            let input_39 = &_input.resource_id;
+            let input_39 =
+                input_39
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_id = aws_smithy_http::label::fmt_string(input_34, false);
+            let resource_id = aws_smithy_http::label::fmt_string(input_39, false);
             if resource_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_id",
@@ -4791,15 +5339,15 @@ impl UntagResourceInput {
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_35 = &_input.resource_id;
-            let input_35 =
-                input_35
+            let input_40 = &_input.resource_id;
+            let input_40 =
+                input_40
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_id",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_id = aws_smithy_http::label::fmt_string(input_35, false);
+            let resource_id = aws_smithy_http::label::fmt_string(input_40, false);
             if resource_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_id",
@@ -4819,9 +5367,9 @@ impl UntagResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_36) = &_input.tag_keys {
-                for inner_37 in inner_36 {
-                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_37));
+            if let Some(inner_41) = &_input.tag_keys {
+                for inner_42 in inner_41 {
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_42));
                 }
             }
             Ok(())
@@ -4992,15 +5540,15 @@ impl UpdateFileSystemInput {
             _input: &crate::input::UpdateFileSystemInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_38 = &_input.file_system_id;
-            let input_38 =
-                input_38
+            let input_43 = &_input.file_system_id;
+            let input_43 =
+                input_43
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "file_system_id",
                         details: "cannot be empty or unset",
                     })?;
-            let file_system_id = aws_smithy_http::label::fmt_string(input_38, false);
+            let file_system_id = aws_smithy_http::label::fmt_string(input_43, false);
             if file_system_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "file_system_id",
@@ -5430,6 +5978,41 @@ impl std::fmt::Debug for DescribeTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeReplicationConfigurationsInput {
+    /// <p>You can retrieve replication configurations for a specific file system by providing a file system ID.</p>
+    pub file_system_id: std::option::Option<std::string::String>,
+    /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in a subsequent request to fetch the next page of output.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>(Optional) You can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+    pub max_results: std::option::Option<i32>,
+}
+impl DescribeReplicationConfigurationsInput {
+    /// <p>You can retrieve replication configurations for a specific file system by providing a file system ID.</p>
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
+        self.file_system_id.as_deref()
+    }
+    /// <p> <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code> in a subsequent request to fetch the next page of output.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>(Optional) You can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for DescribeReplicationConfigurationsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeReplicationConfigurationsInput");
+        formatter.field("file_system_id", &self.file_system_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5703,6 +6286,27 @@ impl std::fmt::Debug for DeleteTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteReplicationConfigurationInput {
+    /// <p>The ID of the source file system in the replication configuration.</p>
+    pub source_file_system_id: std::option::Option<std::string::String>,
+}
+impl DeleteReplicationConfigurationInput {
+    /// <p>The ID of the source file system in the replication configuration.</p>
+    pub fn source_file_system_id(&self) -> std::option::Option<&str> {
+        self.source_file_system_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteReplicationConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteReplicationConfigurationInput");
+        formatter.field("source_file_system_id", &self.source_file_system_id);
+        formatter.finish()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5815,6 +6419,34 @@ impl std::fmt::Debug for CreateTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateReplicationConfigurationInput {
+    /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
+    pub source_file_system_id: std::option::Option<std::string::String>,
+    /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
+    pub destinations: std::option::Option<std::vec::Vec<crate::model::DestinationToCreate>>,
+}
+impl CreateReplicationConfigurationInput {
+    /// <p>Specifies the Amazon EFS file system that you want to replicate. This file system cannot already be a source or destination file system in another replication configuration.</p>
+    pub fn source_file_system_id(&self) -> std::option::Option<&str> {
+        self.source_file_system_id.as_deref()
+    }
+    /// <p>An array of destination configuration objects. Only one destination configuration object is supported.</p>
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::DestinationToCreate]> {
+        self.destinations.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateReplicationConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateReplicationConfigurationInput");
+        formatter.field("source_file_system_id", &self.source_file_system_id);
+        formatter.field("destinations", &self.destinations);
+        formatter.finish()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5867,17 +6499,17 @@ pub struct CreateFileSystemInput {
     /// <p>The <code>maxIO</code> mode is not supported on file systems using One Zone storage classes.</p>
     /// </note>
     pub performance_mode: std::option::Option<crate::model::PerformanceMode>,
-    /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying <code>CreateFileSystemRequest$KmsKeyId</code> for an existing Key Management Service (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
+    /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying an existing Key Management Service key (KMS key). If you don't specify a KMS key, then the default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>
+    /// <p>The ID of the KMS key that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS key ID using the following formats:</p>
     /// <ul>
     /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
     /// <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
     /// </ul>
-    /// <p>If <code>KmsKeyId</code> is specified, the <code>CreateFileSystemRequest$Encrypted</code> parameter must be set to true.</p> <important>
-    /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.</p>
+    /// <p>If you use <code>KmsKeyId</code>, you must set the <code>CreateFileSystemRequest$Encrypted</code> parameter to true.</p> <important>
+    /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with Amazon EFS file systems.</p>
     /// </important>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
@@ -5891,7 +6523,7 @@ pub struct CreateFileSystemInput {
     pub availability_zone_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether automatic backups are enabled on the file system that you are creating. Set the value to <code>true</code> to enable automatic backups. If you are creating a file system that uses One Zone storage classes, automatic backups are enabled by default. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the <i>Amazon EFS User Guide</i>.</p>
     /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>
-    /// <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.</p>
+    /// <p>Backup is not available in all Amazon Web Services Regions where Amazon EFS is available.</p>
     /// </note>
     pub backup: std::option::Option<bool>,
     /// <p>Use to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
@@ -5908,19 +6540,19 @@ impl CreateFileSystemInput {
     pub fn performance_mode(&self) -> std::option::Option<&crate::model::PerformanceMode> {
         self.performance_mode.as_ref()
     }
-    /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying <code>CreateFileSystemRequest$KmsKeyId</code> for an existing Key Management Service (KMS customer master key (CMK). If you don't specify a CMK, then the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
+    /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying an existing Key Management Service key (KMS key). If you don't specify a KMS key, then the default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of the KMS CMK that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>
+    /// <p>The ID of the KMS key that you want to use to protect the encrypted file system. This parameter is only required if you want to use a non-default KMS key. If this parameter is not specified, the default KMS key for Amazon EFS is used. You can specify a KMS key ID using the following formats:</p>
     /// <ul>
     /// <li> <p>Key ID - A unique identifier of the key, for example <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>ARN - An Amazon Resource Name (ARN) for the key, for example <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Key alias - A previously created display name for a key, for example <code>alias/projectKey1</code>.</p> </li>
     /// <li> <p>Key alias ARN - An ARN for a key alias, for example <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
     /// </ul>
-    /// <p>If <code>KmsKeyId</code> is specified, the <code>CreateFileSystemRequest$Encrypted</code> parameter must be set to true.</p> <important>
-    /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.</p>
+    /// <p>If you use <code>KmsKeyId</code>, you must set the <code>CreateFileSystemRequest$Encrypted</code> parameter to true.</p> <important>
+    /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with Amazon EFS file systems.</p>
     /// </important>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -5942,7 +6574,7 @@ impl CreateFileSystemInput {
     }
     /// <p>Specifies whether automatic backups are enabled on the file system that you are creating. Set the value to <code>true</code> to enable automatic backups. If you are creating a file system that uses One Zone storage classes, automatic backups are enabled by default. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a> in the <i>Amazon EFS User Guide</i>.</p>
     /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>
-    /// <p>Backup is not available in all Amazon Web Services Regionswhere Amazon EFS is available.</p>
+    /// <p>Backup is not available in all Amazon Web Services Regions where Amazon EFS is available.</p>
     /// </note>
     pub fn backup(&self) -> std::option::Option<bool> {
         self.backup

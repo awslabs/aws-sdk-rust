@@ -20,10 +20,8 @@ struct Opt {
 }
 
 // Lists your resources.
-async fn show_resources(
-    verbose: bool,
-    client: &aws_sdk_config::Client,
-) -> Result<(), aws_sdk_config::Error> {
+// snippet-start:[config.rust.list-resources]
+async fn show_resources(verbose: bool, client: &Client) -> Result<(), Error> {
     for value in ResourceType::values() {
         let parsed = ResourceType::from(*value);
 
@@ -33,7 +31,7 @@ async fn show_resources(
             .send()
             .await?;
 
-        let resources = resp.resource_identifiers.unwrap_or_default();
+        let resources = resp.resource_identifiers().unwrap_or_default();
 
         if !resources.is_empty() || verbose {
             println!();
@@ -43,7 +41,7 @@ async fn show_resources(
         for resource in resources {
             println!(
                 "  Resource ID: {}",
-                resource.resource_id.as_deref().unwrap_or_default()
+                resource.resource_id().as_deref().unwrap_or_default()
             );
         }
     }
@@ -52,6 +50,7 @@ async fn show_resources(
 
     Ok(())
 }
+// snippet-end:[config.rust.list-resources]
 
 /// Lists your AWS Config resources, by resource type, in the Region.
 ///

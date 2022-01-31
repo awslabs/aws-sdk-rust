@@ -13,8 +13,8 @@ use structopt::StructOpt;
 /// Usage:
 /// 1. Setup a Websocket API Gateway endpoint with a route configured.
 /// 2. Connect to the route with `wscat`: `wscat -c wss://<api-id>.execute-api.<region>.amazonaws.com/<stage>/`
-/// 2. Determine the connection id (eg. by configuring your route to echo the connection id into the websocket)
-/// 3. Invoke this example. The `data` sent should appear in `wscat`
+/// 3. Determine the connection ID (eg. by configuring your route to echo the connection ID into the websocket)
+/// 4. Invoke this example. The `data` sent should appear in `wscat`
 struct Opt {
     /// The AWS Region.
     #[structopt(short, long)]
@@ -24,29 +24,48 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 
-    /// API ID for your API
+    /// API ID for your API.
     #[structopt(short, long)]
     api_id: String,
 
-    /// Deployment stage for your API
+    /// Deployment stage for your API.
     #[structopt(short, long)]
     stage: String,
 
-    /// Connection Id to send data to
+    /// Connection ID to send data to.
     #[structopt(short, long)]
     connection_id: String,
 
-    /// Data to send to the connection
+    /// Data to send to the connection.
     #[structopt(short, long)]
     data: String,
 }
 
-/// Displays information about the Amazon API Gateway REST APIs in the Region.
+// snippet-start:[apigatewaymanagement.rust.post_to_connection]
+async fn send_data(
+    client: &aws_sdk_apigatewaymanagement::Client,
+    con_id: &str,
+    data: &str,
+) -> Result<(), aws_sdk_apigatewaymanagement::Error> {
+    client
+        .post_to_connection()
+        .connection_id(con_id)
+        .data(Blob::new(data))
+        .send()
+        .await?;
+
+    Ok(())
+}
+// snippet-end:[apigatewaymanagement.rust.post_to_connection]
+
+/// Sends the provided data to the specified connection.
 ///
 /// # Arguments
 ///
-/// * `--api-id` - API ID for your API
-/// * `--stage` - Stage for your API
+/// * `-a API-ID` - The ID for your API.
+/// * `-s STAGE` - The stage for your API.
+/// * `-c CONNECTION-ID` - The ID of the connection.
+/// * `-d DATA` - The data sent to the connection.
 /// * `[-r REGION]` - The Region in which the client is created.
 ///   If not supplied, uses the value of the **AWS_REGION** environment variable.
 ///   If the environment variable is not set, defaults to **us-west-2**.
@@ -71,11 +90,17 @@ async fn main() -> Result<(), Error> {
     let region = region_provider.region().await.expect("region must be set");
     if verbose {
         println!("APIGatewayManagement client version: {}", PKG_VERSION);
-        println!("Region:                    {}", region.as_ref());
+        println!("Region:                              {}", region.as_ref());
+        println!("API ID:                              {}", api_id);
+        println!("API stage:                           {}", stage);
+        println!("Connection ID:                       {}", connection_id);
+        println!("Data:");
+        println!("  {}", data);
 
         println!();
     }
 
+    // snippet-start:[apigatewaymanagement.rust.post_to_connection_client]
     let uri = format!(
         "https://{api_id}.execute-api.{region}.amazonaws.com/{stage}",
         api_id = api_id,
@@ -91,12 +116,7 @@ async fn main() -> Result<(), Error> {
         .endpoint_resolver(endpoint)
         .build();
     let client = Client::from_conf(api_management_config);
+    // snippet-end:[apigatewaymanagement.rust.post_to_connection_client]
 
-    client
-        .post_to_connection()
-        .connection_id(connection_id)
-        .data(Blob::new(data))
-        .send()
-        .await?;
-    Ok(())
+    send_data(&client, &connection_id, &data).await
 }

@@ -46,9 +46,9 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
     where
         Self: 'a,
     {
-        future::ProvideCredentials::new(self.load_credentials().instrument(tracing::info_span!(
+        future::ProvideCredentials::new(self.load_credentials().instrument(tracing::debug_span!(
             "load_credentials",
-            provider = "Profile"
+            provider = %"Profile"
         )))
     }
 }
@@ -185,7 +185,7 @@ impl ProfileFileCredentialsProvider {
         let mut creds = match inner_provider
             .base()
             .provide_credentials()
-            .instrument(tracing::info_span!("load_base_credentials"))
+            .instrument(tracing::debug_span!("load_base_credentials"))
             .await
         {
             Ok(creds) => {
@@ -200,7 +200,7 @@ impl ProfileFileCredentialsProvider {
         for provider in inner_provider.chain().iter() {
             let next_creds = provider
                 .credentials(creds, &self.client_config)
-                .instrument(tracing::info_span!("load_assume_role", provider = ?provider))
+                .instrument(tracing::debug_span!("load_assume_role", provider = ?provider))
                 .await;
             match next_creds {
                 Ok(next_creds) => {
@@ -403,7 +403,7 @@ impl Builder {
 
     /// Builds a [`ProfileFileCredentialsProvider`]
     pub fn build(self) -> ProfileFileCredentialsProvider {
-        let build_span = tracing::info_span!("build_profile_provider");
+        let build_span = tracing::debug_span!("build_profile_provider");
         let _enter = build_span.enter();
         let conf = self.provider_config.unwrap_or_default();
         let mut named_providers = self.custom_providers.clone();

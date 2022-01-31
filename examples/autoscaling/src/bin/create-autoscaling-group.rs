@@ -27,6 +27,7 @@ struct Opt {
 }
 
 // Creates a group.
+// snippet-start:[autoscaling.rust.create-autoscaling-group]
 async fn create_group(client: &Client, name: &str, id: &str) -> Result<(), Error> {
     client
         .create_auto_scaling_group()
@@ -41,6 +42,7 @@ async fn create_group(client: &Client, name: &str, id: &str) -> Result<(), Error
 
     Ok(())
 }
+// snippet-end:[autoscaling.rust.create-autoscaling-group]
 
 /// Creates an Auto Scaling group in the Region.
 /// # Arguments

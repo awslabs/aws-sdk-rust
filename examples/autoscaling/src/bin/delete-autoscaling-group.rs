@@ -27,6 +27,7 @@ struct Opt {
 }
 
 // Deletes a group.
+// snippet-start:[autoscaling.rust.delete-autoscaling-group]
 async fn delete_group(client: &Client, name: &str, force: bool) -> Result<(), Error> {
     client
         .delete_auto_scaling_group()
@@ -39,8 +40,9 @@ async fn delete_group(client: &Client, name: &str, force: bool) -> Result<(), Er
 
     Ok(())
 }
+// snippet-end:[autoscaling.rust.delete-autoscaling-group]
 
-/// Updates an Auto Scaling group in the Region to the specified maximum size.
+/// Deletes an Auto Scaling group in the Region.
 /// # Arguments
 ///
 /// * `-a AUTOSCALING-NAME` - The name of the Auto Scaling group.

@@ -2,9 +2,9 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_sns::{Client, Error, Region, PKG_VERSION};
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -25,6 +25,38 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Subscribes an email address and publishes a message to a topic.
+// snippet-start:[sns.rust.sns-hello-world]
+async fn subscribe_and_publish(
+    client: &Client,
+    topic_arn: &str,
+    email_address: &str,
+) -> Result<(), Error> {
+    println!("Receiving on topic with ARN: `{}`", topic_arn);
+
+    let rsp = client
+        .subscribe()
+        .topic_arn(topic_arn)
+        .protocol("email")
+        .endpoint(email_address)
+        .send()
+        .await?;
+
+    println!("Added a subscription: {:?}", rsp);
+
+    let rsp = client
+        .publish()
+        .topic_arn(topic_arn)
+        .message("hello sns!")
+        .send()
+        .await?;
+
+    println!("Published message: {:?}", rsp);
+
+    Ok(())
+}
+// snippet-end:[sns.rust.sns-hello-world]
 
 /// Subscribes an email address and publishes a message to a topic.
 /// If the email address has not been confirmed for the topic,
@@ -51,39 +83,22 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
 
     println!();
 
     if verbose {
         println!("SNS client version:   {}", PKG_VERSION);
-        println!("Region:               {}", shared_config.region().unwrap());
+        println!(
+            "Region:               {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
         println!("Email address:        {}", &email_address);
         println!("Topic ARN:            {}", &topic_arn);
         println!();
     }
 
-    println!("Receiving on topic with ARN: `{}`", topic_arn);
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    let rsp = client
-        .subscribe()
-        .topic_arn(&topic_arn)
-        .protocol("email")
-        .endpoint(email_address)
-        .send()
-        .await?;
-
-    println!("Added a subscription: {:?}", rsp);
-
-    let rsp = client
-        .publish()
-        .topic_arn(&topic_arn)
-        .message("hello sns!")
-        .send()
-        .await?;
-
-    println!("Published message: {:?}", rsp);
-
-    Ok(())
+    subscribe_and_publish(&client, &topic_arn, &email_address).await
 }

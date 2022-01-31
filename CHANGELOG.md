@@ -1,4 +1,26 @@
 <!-- Do not manually edit this file, use `update-changelogs` -->
+0.6.0 (January 26, 2022)
+========================
+**New this release:**
+- ([aws-sdk-rust#423](https://github.com/awslabs/aws-sdk-rust/issues/423)) Added `impl Into<http::request::Builder> for PresignedRequest` and a conversion method for turning `PresignedRequest`s into `http::Request`s.
+- ([smithy-rs#1087](https://github.com/awslabs/smithy-rs/issues/1087)) Convert several `info` spans to `debug` in aws-config
+- ([smithy-rs#1118](https://github.com/awslabs/smithy-rs/issues/1118)) SDK examples now come from [`awsdocs/aws-doc-sdk-examples`](https://github.com/awsdocs/aws-doc-sdk-examples) rather than from `smithy-rs`
+
+
+0.5.2 (January 20th, 2022)
+==========================
+
+**New this release:**
+- 🐛 ([smithy-rs#1100](https://github.com/awslabs/smithy-rs/issues/1100)) _Internal:_ Update sync script to run gradle clean. This fixes an issue where codegen was not triggered when only properties changed.
+
+
+v0.5.1 (January 19th, 2022)
+===========================
+
+**New this release:**
+- 🐛 ([smithy-rs#1089](https://github.com/awslabs/smithy-rs/issues/1089)) Fix dev-dependency cycle between aws-sdk-sso and aws-config
+
+
 0.5.0 (January 19, 2022)
 ========================
 **New this release:**
@@ -54,6 +76,7 @@ Thank you for your contributions! ❤
 - @jacco (aws-sdk-rust#254, smithy-rs#670)
 - @kiiadi (smithy-rs#1021)
 
+
 v0.3.0 (December 15th, 2021)
 ============================
 **Breaking Changes:**
@@ -88,6 +111,7 @@ v0.3.0 (December 15th, 2021)
 **Contributors**
 Thank you for your contributions! ❤
 - @a-xp (smithy-rs#949)
+
 
 v0.2.0 (December 2nd, 2021)
 ===========================

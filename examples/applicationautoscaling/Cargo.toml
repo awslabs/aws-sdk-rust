@@ -4,17 +4,14 @@ name = "applicationautoscaling-code-examples"
 version = "0.1.0"
 authors = ["John DiSanti <jdisanti@amazon.com>, Doug Schwartz <dougsch@amazon.com>"]
 edition = "2018"
+publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.1"
+version = "0.6.0"
 
 [dependencies.aws-sdk-applicationautoscaling]
 path = "../../sdk/applicationautoscaling"
-version = "0.5.0"
-
-[dependencies.aws-types]
-path = "../../sdk/aws-types"
-version = "0.5.1"
+version = "0.6.0"
 
 [dependencies.tokio]
 version = "1"

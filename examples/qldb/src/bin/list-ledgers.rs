@@ -9,7 +9,7 @@ use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The default AWS Region.
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
@@ -18,7 +18,26 @@ struct Opt {
     verbose: bool,
 }
 
-/// Lists your Amazon QLDB ledgers.
+// List ledgers.
+// snippet-start:[qldb.rust.list-ledgers]
+async fn show_ledgers(client: &Client) -> Result<(), Error> {
+    let result = client.list_ledgers().send().await?;
+
+    if let Some(ledgers) = result.ledgers() {
+        for ledger in ledgers {
+            println!("* {:?}", ledger);
+        }
+
+        if result.next_token().is_some() {
+            todo!("pagination is not yet demonstrated")
+        }
+    }
+
+    Ok(())
+}
+// snippet-end:[qldb.rust.list-ledgers]
+
+/// Lists your Amazon Quantum Ledger Database (Amazon QLDB) ledgers.
 /// # Arguments
 ///
 /// * `[-r REGION]` - The Region in which the client is created.
@@ -34,26 +53,20 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
+
+    println!();
 
     if verbose {
-        println!("OLDB version: {}", PKG_VERSION);
-        println!("Region:       {:?}", shared_config.region().unwrap());
+        println!("OLDB client version: {}", PKG_VERSION);
+        println!(
+            "Region:              {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
         println!();
     }
 
-    let result = client.list_ledgers().send().await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    if let Some(ledgers) = result.ledgers {
-        for ledger in ledgers {
-            println!("* {:?}", ledger);
-        }
-
-        if result.next_token.is_some() {
-            todo!("pagination is not yet demonstrated")
-        }
-    }
-
-    Ok(())
+    show_ledgers(&client).await
 }

@@ -10,7 +10,7 @@ use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The default AWS Region.
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
@@ -23,39 +23,9 @@ struct Opt {
     verbose: bool,
 }
 
-/// Creates an AWS KMS data key.
-/// # Arguments
-///
-/// * `[-k KEY]` - The name of the key.
-/// * `[-d DEFAULT-REGION]` - The Region in which the client is created.
-///    If not supplied, uses the value of the **AWS_REGION** environment variable.
-///    If the environment variable is not set, defaults to **us-west-2**.
-/// * `[-v]` - Whether to display additional information.
-#[tokio::main]
-async fn main() -> Result<(), Error> {
-    tracing_subscriber::fmt::init();
-
-    let Opt {
-        key,
-        region,
-        verbose,
-    } = Opt::from_args();
-
-    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
-        .or_default_provider()
-        .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
-
-    println!();
-
-    if verbose {
-        println!("KMS version: {}", PKG_VERSION);
-        println!("Region:      {:?}", shared_config.region().unwrap());
-        println!("Key:         {}", &key);
-        println!();
-    }
-
+// Create a data key.
+// snippet-start:[kms.rust.generate-data-key]
+async fn make_key(client: &Client, key: &str) -> Result<(), Error> {
     let resp = client
         .generate_data_key()
         .key_id(key)
@@ -74,4 +44,44 @@ async fn main() -> Result<(), Error> {
     println!("{}", s);
 
     Ok(())
+}
+// snippet-end:[kms.rust.generate-data-key]
+
+/// Creates an AWS KMS data key.
+/// # Arguments
+///
+/// * `[-k KEY]` - The name of the key.
+/// * `[-r REGION]` - The Region in which the client is created.
+///    If not supplied, uses the value of the **AWS_REGION** environment variable.
+///    If the environment variable is not set, defaults to **us-west-2**.
+/// * `[-v]` - Whether to display additional information.
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    tracing_subscriber::fmt::init();
+
+    let Opt {
+        key,
+        region,
+        verbose,
+    } = Opt::from_args();
+
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+    println!();
+
+    if verbose {
+        println!("KMS client version: {}", PKG_VERSION);
+        println!(
+            "Region:             {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
+        println!("Key:                {}", &key);
+        println!();
+    }
+
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
+
+    make_key(&client, &key).await
 }

@@ -18,7 +18,7 @@ struct Opt {
     #[structopt(long)]
     resource_id: String,
 
-    /// The resource type, e.g. "AWS::EC2::SecurityGroup"
+    /// The resource type, eg. "AWS::EC2::SecurityGroup"
     #[structopt(long)]
     resource_type: String,
 
@@ -28,11 +28,8 @@ struct Opt {
 }
 
 // Retrieves the configuration history for a resource.
-async fn get_history(
-    client: &aws_sdk_config::Client,
-    id: &str,
-    res: ResourceType,
-) -> Result<(), aws_sdk_config::Error> {
+// snippet-start:[config.rust.config-helloworld]
+async fn get_history(client: &Client, id: &str, res: ResourceType) -> Result<(), Error> {
     let rsp = client
         .get_resource_config_history()
         .resource_id(id)
@@ -42,12 +39,13 @@ async fn get_history(
 
     println!("configuration history for {}:", id);
 
-    for item in rsp.configuration_items.unwrap_or_default() {
+    for item in rsp.configuration_items().unwrap_or_default() {
         println!("item: {:?}", item);
     }
 
     Ok(())
 }
+// snippet-end:[config.rust.config-helloworld]
 
 /// Lists the configuration history for a resource in the Region.
 ///

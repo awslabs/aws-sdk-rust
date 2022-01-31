@@ -23,6 +23,43 @@ struct Opt {
     verbose: bool,
 }
 
+// List identities in an identity pool.
+// snippet-start:[cognitoidentity.rust.list-pool-identities]
+async fn list_identities(client: &Client, pool_id: &str) -> Result<(), Error> {
+    let response = client
+        .list_identities()
+        .identity_pool_id(pool_id)
+        .max_results(10)
+        .send()
+        .await?;
+
+    if let Some(ids) = response.identities() {
+        println!("Identitities:");
+        for id in ids {
+            let creation_timestamp = (*id.creation_date().unwrap()).to_chrono_utc();
+            let idid = id.identity_id().unwrap_or_default();
+            let mod_timestamp = (*id.last_modified_date().unwrap()).to_chrono_utc();
+            println!("  Creation date:      {}", creation_timestamp);
+            println!("  ID:                 {}", idid);
+            println!("  Last modified date: {}", mod_timestamp);
+
+            println!("  Logins:");
+            for login in id.logins().unwrap_or_default() {
+                println!("    {}", login);
+            }
+
+            println!();
+        }
+    }
+
+    println!("Next token: {:?}", response.next_token());
+
+    println!();
+
+    Ok(())
+}
+// snippet-end:[cognitoidentity.rust.list-pool-identities]
+
 /// Lists the identities in an Amazon Cognito identity pool.
 /// # Arguments
 ///
@@ -44,51 +81,20 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-
     println!();
 
     if verbose {
         println!("Cognito client version: {}", PKG_VERSION);
         println!(
             "Region:                 {}",
-            shared_config.region().unwrap()
+            region_provider.region().await.unwrap().as_ref()
         );
         println!("Identity pool ID:       {}", identity_pool_id);
         println!();
     }
 
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
     let client = Client::new(&shared_config);
 
-    let response = client
-        .list_identities()
-        .identity_pool_id(identity_pool_id)
-        .max_results(10)
-        .send()
-        .await?;
-
-    if let Some(ids) = response.identities() {
-        println!("Identitities:");
-        for id in ids {
-            let creation_timestamp = id.creation_date().unwrap().to_chrono_utc();
-            let idid = id.identity_id().unwrap_or_default();
-            let mod_timestamp = id.last_modified_date().unwrap().to_chrono_utc();
-            println!("  Creation date:      {}", creation_timestamp);
-            println!("  ID:                 {}", idid);
-            println!("  Last modified date: {}", mod_timestamp);
-
-            println!("  Logins:");
-            for login in id.logins().unwrap_or_default() {
-                println!("    {}", login);
-            }
-
-            println!();
-        }
-    }
-
-    println!("Next token: {:?}", response.next_token());
-
-    println!();
-
-    Ok(())
+    list_identities(&client, &identity_pool_id).await
 }

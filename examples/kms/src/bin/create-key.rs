@@ -9,7 +9,7 @@ use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The default AWS Region.
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
@@ -17,10 +17,28 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
-/// Creates an AWS KMS key.
+
+// Create key.
+// snippet-start:[kms.rust.create-key]
+async fn make_key(client: &Client) -> Result<(), Error> {
+    let resp = client.create_key().send().await?;
+
+    let id = resp
+        .key_metadata
+        .unwrap()
+        .key_id
+        .unwrap_or_else(|| String::from("No ID!"));
+
+    println!("Key: {}", id);
+
+    Ok(())
+}
+// snippet-end:[kms.rust.create-key]
+
+/// Creates an AWS KMS key in the Region.
 /// # Arguments
 ///
-/// * `[-d DEFAULT-REGION]` - The Region in which the client is created.
+/// * `[-r REGION]` - The Region in which the client is created.
 ///    If not supplied, uses the value of the **AWS_REGION** environment variable.
 ///    If the environment variable is not set, defaults to **us-west-2**.
 /// * `[-v]` - Whether to display additional information.
@@ -33,26 +51,19 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
-
     println!();
 
     if verbose {
-        println!("KMS version: {}", PKG_VERSION);
-        println!("Region:      {:?}", shared_config.region().unwrap());
+        println!("KMS client version: {}", PKG_VERSION);
+        println!(
+            "Region:             {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
         println!();
     }
 
-    let resp = client.create_key().send().await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    let id = resp
-        .key_metadata
-        .unwrap()
-        .key_id
-        .unwrap_or_else(|| String::from("No ID!"));
-
-    println!("Key: {}", id);
-
-    Ok(())
+    make_key(&client).await
 }

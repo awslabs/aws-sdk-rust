@@ -18,6 +18,18 @@ struct Opt {
     verbose: bool,
 }
 
+// Lists your addresses.
+// snippet-start:[snowball.rust.describe-addresses]
+async fn show_addresses(client: &Client) -> Result<(), Error> {
+    let addresses = client.describe_addresses().send().await?;
+    for address in addresses.addresses().unwrap() {
+        println!("Address: {:?}", address);
+    }
+
+    Ok(())
+}
+// snippet-end:[snowball.rust.describe-addresses]
+
 /// Lists your AWS Snowball addresses.
 /// # Arguments
 ///
@@ -34,21 +46,20 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
 
     println!();
 
     if verbose {
         println!("Snowball version: {}", PKG_VERSION);
-        println!("Region:           {}", shared_config.region().unwrap());
+        println!(
+            "Region:               {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
+        println!();
     }
 
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
     let client = Client::new(&shared_config);
 
-    let addresses = client.describe_addresses().send().await?;
-    for address in addresses.addresses.unwrap() {
-        println!("Address: {:?}", address);
-    }
-
-    Ok(())
+    show_addresses(&client).await
 }

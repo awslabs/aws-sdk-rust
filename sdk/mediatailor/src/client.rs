@@ -166,6 +166,7 @@ where
     ///   - [`access_configuration(AccessConfiguration)`](crate::client::fluent_builders::CreateSourceLocation::access_configuration) / [`set_access_configuration(Option<AccessConfiguration>)`](crate::client::fluent_builders::CreateSourceLocation::set_access_configuration): <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
     ///   - [`default_segment_delivery_configuration(DefaultSegmentDeliveryConfiguration)`](crate::client::fluent_builders::CreateSourceLocation::default_segment_delivery_configuration) / [`set_default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::client::fluent_builders::CreateSourceLocation::set_default_segment_delivery_configuration): <p>The optional configuration for the server that serves segments.</p>
     ///   - [`http_configuration(HttpConfiguration)`](crate::client::fluent_builders::CreateSourceLocation::http_configuration) / [`set_http_configuration(Option<HttpConfiguration>)`](crate::client::fluent_builders::CreateSourceLocation::set_http_configuration): <p>The source's HTTP package configurations.</p>
+    ///   - [`segment_delivery_configurations(Vec<SegmentDeliveryConfiguration>)`](crate::client::fluent_builders::CreateSourceLocation::segment_delivery_configurations) / [`set_segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::client::fluent_builders::CreateSourceLocation::set_segment_delivery_configurations): (undocumented)
     ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::CreateSourceLocation::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::CreateSourceLocation::set_source_location_name): <p>The identifier for the source location you are working on.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSourceLocation::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSourceLocation::set_tags): <p>The tags to assign to the source location.</p>
     /// - On success, responds with [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput) with field(s):
@@ -175,6 +176,7 @@ where
     ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::output::CreateSourceLocationOutput::default_segment_delivery_configuration): <p>The default segment delivery configuration settings.</p>
     ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::output::CreateSourceLocationOutput::http_configuration): <p>The HTTP package configuration settings for the source location.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateSourceLocationOutput::last_modified_time): <p>The timestamp that indicates when the source location was last modified.</p>
+    ///   - [`segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::output::CreateSourceLocationOutput::segment_delivery_configurations): (undocumented)
     ///   - [`source_location_name(Option<String>)`](crate::output::CreateSourceLocationOutput::source_location_name): <p>The name of the source location.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateSourceLocationOutput::tags): <p>The tags assigned to the source location.</p>
     /// - On failure, responds with [`SdkError<CreateSourceLocationError>`](crate::error::CreateSourceLocationError)
@@ -322,6 +324,7 @@ where
     ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::output::DescribeSourceLocationOutput::default_segment_delivery_configuration): <p>The default segment delivery configuration settings.</p>
     ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::output::DescribeSourceLocationOutput::http_configuration): <p>The HTTP package configuration settings for the source location.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeSourceLocationOutput::last_modified_time): <p>The timestamp that indicates when the source location was last modified.</p>
+    ///   - [`segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::output::DescribeSourceLocationOutput::segment_delivery_configurations): (undocumented)
     ///   - [`source_location_name(Option<String>)`](crate::output::DescribeSourceLocationOutput::source_location_name): <p>The name of the source location.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeSourceLocationOutput::tags): <p>The tags assigned to the source location.</p>
     /// - On failure, responds with [`SdkError<DescribeSourceLocationError>`](crate::error::DescribeSourceLocationError)
@@ -628,6 +631,7 @@ where
     ///   - [`access_configuration(AccessConfiguration)`](crate::client::fluent_builders::UpdateSourceLocation::access_configuration) / [`set_access_configuration(Option<AccessConfiguration>)`](crate::client::fluent_builders::UpdateSourceLocation::set_access_configuration): <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
     ///   - [`default_segment_delivery_configuration(DefaultSegmentDeliveryConfiguration)`](crate::client::fluent_builders::UpdateSourceLocation::default_segment_delivery_configuration) / [`set_default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::client::fluent_builders::UpdateSourceLocation::set_default_segment_delivery_configuration): <p>The optional configuration for the host server that serves segments.</p>
     ///   - [`http_configuration(HttpConfiguration)`](crate::client::fluent_builders::UpdateSourceLocation::http_configuration) / [`set_http_configuration(Option<HttpConfiguration>)`](crate::client::fluent_builders::UpdateSourceLocation::set_http_configuration): <p>The HTTP configuration for the source location.</p>
+    ///   - [`segment_delivery_configurations(Vec<SegmentDeliveryConfiguration>)`](crate::client::fluent_builders::UpdateSourceLocation::segment_delivery_configurations) / [`set_segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::client::fluent_builders::UpdateSourceLocation::set_segment_delivery_configurations): (undocumented)
     ///   - [`source_location_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSourceLocation::source_location_name) / [`set_source_location_name(Option<String>)`](crate::client::fluent_builders::UpdateSourceLocation::set_source_location_name): <p>The identifier for the source location you are working on.</p>
     /// - On success, responds with [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput) with field(s):
     ///   - [`access_configuration(Option<AccessConfiguration>)`](crate::output::UpdateSourceLocationOutput::access_configuration): <p>The access configuration for the source location.</p>
@@ -636,6 +640,7 @@ where
     ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::output::UpdateSourceLocationOutput::default_segment_delivery_configuration): <p>The default segment delivery configuration settings.</p>
     ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::output::UpdateSourceLocationOutput::http_configuration): <p>The HTTP package configuration settings for the source location.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateSourceLocationOutput::last_modified_time): <p>The timestamp that indicates when the source location was last modified.</p>
+    ///   - [`segment_delivery_configurations(Option<Vec<SegmentDeliveryConfiguration>>)`](crate::output::UpdateSourceLocationOutput::segment_delivery_configurations): (undocumented)
     ///   - [`source_location_name(Option<String>)`](crate::output::UpdateSourceLocationOutput::source_location_name): <p>The name of the source location.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateSourceLocationOutput::tags): <p>The tags assigned to the source location.</p>
     /// - On failure, responds with [`SdkError<UpdateSourceLocationError>`](crate::error::UpdateSourceLocationError)
@@ -1259,6 +1264,26 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::HttpConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_http_configuration(input);
+            self
+        }
+        /// Appends an item to `SegmentDeliveryConfigurations`.
+        ///
+        /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
+        ///
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn segment_delivery_configurations(
+            mut self,
+            input: crate::model::SegmentDeliveryConfiguration,
+        ) -> Self {
+            self.inner = self.inner.segment_delivery_configurations(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_segment_delivery_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+        ) -> Self {
+            self.inner = self.inner.set_segment_delivery_configurations(input);
             self
         }
         /// <p>The identifier for the source location you are working on.</p>
@@ -4110,6 +4135,26 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::HttpConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_http_configuration(input);
+            self
+        }
+        /// Appends an item to `SegmentDeliveryConfigurations`.
+        ///
+        /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
+        ///
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn segment_delivery_configurations(
+            mut self,
+            input: crate::model::SegmentDeliveryConfiguration,
+        ) -> Self {
+            self.inner = self.inner.segment_delivery_configurations(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_segment_delivery_configurations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SegmentDeliveryConfiguration>>,
+        ) -> Self {
+            self.inner = self.inner.set_segment_delivery_configurations(input);
             self
         }
         /// <p>The identifier for the source location you are working on.</p>

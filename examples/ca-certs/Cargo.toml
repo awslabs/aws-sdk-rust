@@ -5,23 +5,23 @@ version = "0.1.0"
 authors = ["rcoh@amazon.com>"]
 edition = "2018"
 description = "An example demonstrating setting a custom root certificate with rustls"
+publish = false
 
 [dependencies]
 rustls = "0.20.2"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.1"
+version = "0.6.0"
 
 [dependencies.aws-smithy-client]
 path = "../../sdk/aws-smithy-client"
-version = "0.35.1"
+version = "0.36.0"
 
 [dependencies.aws-sdk-s3]
-package = "aws-sdk-s3"
-path = "../../sdk/s3"
 default-features = false
-version = "0.5.0"
+path = "../../sdk/s3"
+version = "0.6.0"
 
 [dependencies.tokio]
 version = "1"

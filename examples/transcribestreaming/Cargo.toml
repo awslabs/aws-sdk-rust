@@ -4,6 +4,7 @@ name = "transcribestreaming_code_example"
 version = "0.1.0"
 authors = ["John DiSanti <jdisanti@amazon.com>", "Doug Schwartz <dougsch@amazon.com>"]
 edition = "2018"
+publish = false
 
 [dependencies]
 async-stream = "0.3"
@@ -12,12 +13,11 @@ hound = "3.4"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.1"
+version = "0.6.0"
 
 [dependencies.aws-sdk-transcribestreaming]
-package = "aws-sdk-transcribestreaming"
 path = "../../sdk/transcribestreaming"
-version = "0.5.0"
+version = "0.6.0"
 
 [dependencies.structopt]
 version = "0.3"

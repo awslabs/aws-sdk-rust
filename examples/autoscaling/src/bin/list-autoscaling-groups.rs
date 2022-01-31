@@ -19,24 +19,22 @@ struct Opt {
 }
 
 // Lists your groups.
+// snippet-start:[autoscaling.rust.list-autoscaling-groups]
 async fn list_groups(client: &Client) -> Result<(), Error> {
     let resp = client.describe_auto_scaling_groups().send().await?;
 
     println!("Groups:");
 
-    let groups = resp.auto_scaling_groups.unwrap_or_default();
+    let groups = resp.auto_scaling_groups().unwrap_or_default();
 
-    for group in &groups {
-        println!(
-            "  {}",
-            group.auto_scaling_group_name.as_deref().unwrap_or_default()
-        );
+    for group in groups {
+        println!("  {}", group.auto_scaling_group_name().unwrap_or_default());
         println!(
             "  ARN:          {}",
-            group.auto_scaling_group_arn.as_deref().unwrap_or_default()
+            group.auto_scaling_group_arn().unwrap_or_default()
         );
-        println!("  Minimum size: {}", group.min_size.unwrap_or_default());
-        println!("  Maximum size: {}", group.max_size.unwrap_or_default());
+        println!("  Minimum size: {}", group.min_size().unwrap_or_default());
+        println!("  Maximum size: {}", group.max_size().unwrap_or_default());
         println!();
     }
 
@@ -44,6 +42,7 @@ async fn list_groups(client: &Client) -> Result<(), Error> {
 
     Ok(())
 }
+// snippet-end:[autoscaling.rust.list-autoscaling-groups]
 
 /// Lists your Amazon EC2 Auto Scaling groups in the Region.
 /// # Arguments

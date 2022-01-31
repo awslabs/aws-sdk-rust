@@ -5,7 +5,6 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_sns::{Client, Error, Region, PKG_VERSION};
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -22,6 +21,20 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Creates a topic.
+// snippet-start:[sns.rust.create-topic]
+async fn make_topic(client: &Client, topic_name: &str) -> Result<(), Error> {
+    let resp = client.create_topic().name(topic_name).send().await?;
+
+    println!(
+        "Created topic with ARN: {}",
+        resp.topic_arn().unwrap_or_default()
+    );
+
+    Ok(())
+}
+// snippet-end:[sns.rust.create-topic]
 
 /// Creates an Amazon SNS topic.
 /// # Arguments
@@ -44,24 +57,21 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
 
     println!();
 
     if verbose {
         println!("SNS client version:   {}", PKG_VERSION);
-        println!("Region:               {}", shared_config.region().unwrap());
+        println!(
+            "Region:               {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
         println!("Topic:                {}", &topic);
         println!();
     }
 
-    let resp = client.create_topic().name(topic).send().await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    println!(
-        "Created topic with ARN: {}",
-        resp.topic_arn.as_deref().unwrap_or_default()
-    );
-
-    Ok(())
+    make_topic(&client, &topic).await
 }

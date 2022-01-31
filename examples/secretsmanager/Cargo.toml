@@ -5,17 +5,14 @@ version = "0.1.0"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Doug Schwartz <dougsch@amazon.com>"]
 edition = "2018"
 description = "Example usage of the SecretManager service"
+publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.1"
+version = "0.6.0"
 
 [dependencies.aws-sdk-secretsmanager]
 path = "../../sdk/secretsmanager"
-version = "0.5.0"
-
-[dependencies.aws-types]
-path = "../../sdk/aws-types"
-version = "0.5.1"
+version = "0.6.0"
 
 [dependencies.tokio]
 version = "1"

@@ -5,7 +5,6 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_s3::{Client, Error, Region, PKG_VERSION};
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -22,6 +21,21 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Lists the versions of the objects in a bucket.
+// snippet-start:[s3.rust.list-object-versions]
+async fn show_versions(client: &Client, bucket: &str) -> Result<(), Error> {
+    let resp = client.list_object_versions().bucket(bucket).send().await?;
+
+    for version in resp.versions().unwrap_or_default() {
+        println!("{}", version.key().unwrap_or_default());
+        println!("  version ID: {}", version.version_id().unwrap_or_default());
+        println!();
+    }
+
+    Ok(())
+}
+// snippet-end:[s3.rust.list-object-versions]
 
 /// Lists the versions of the objects in an Amazon S3 bucket.
 /// # Arguments
@@ -44,24 +58,21 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
 
     println!();
 
     if verbose {
         println!("S3 client version: {}", PKG_VERSION);
-        println!("Region:            {}", shared_config.region().unwrap());
+        println!(
+            "Region:            {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
         println!("Bucket:            {}", &bucket);
         println!();
     }
 
-    let resp = client.list_object_versions().bucket(&bucket).send().await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    for version in resp.versions().unwrap_or_default() {
-        println!(" {}", version.key().unwrap_or_default());
-        println!("  version ID: {}", version.version_id().unwrap_or_default());
-    }
-
-    Ok(())
+    show_versions(&client, &bucket).await
 }

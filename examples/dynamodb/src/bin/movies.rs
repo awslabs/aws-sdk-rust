@@ -81,17 +81,11 @@ async fn main() -> Result<(), Error> {
 
     let raw_client = aws_smithy_client::Client::<DynConnector, DefaultMiddleware>::dyn_https();
 
-    let table_exists = client
-        .list_tables()
-        .send()
-        .await
-        .expect("should succeed")
-        .table_names
-        .as_ref()
-        .unwrap()
-        .contains(&table.to_string());
+    let table_exists = does_table_exist(&client, &table).await?;
 
     if !table_exists {
+        println!("Creating table.");
+
         create_table(&client, &table.to_string())
             .send()
             .await
@@ -109,33 +103,37 @@ async fn main() -> Result<(), Error> {
         Value::Array(inner) => inner,
         data => panic!("data must be an array, got: {:?}", data),
     };
+
+    println!("Adding items to table.");
+
     for value in data {
-        client
-            .put_item()
-            .table_name(&table)
-            .set_item(Some(parse_item(value)))
-            .send()
-            .await
-            .expect("failed to insert item");
+        add_item(&client, &table, value).await?;
     }
+
+    println!("Making sure table has items.");
+
     let films_2222 = movies_in_year(&client, &table.to_string(), 2222)
         .send()
         .await
         .expect("query should succeed");
+
     // this isn't back to the future, there are no movies from 2022
-    assert_eq!(films_2222.count, 0);
+    assert_eq!(films_2222.count(), 0);
 
     let films_2013 = movies_in_year(&client, &table.to_string(), 2013)
         .send()
         .await
         .expect("query should succeed");
-    assert_eq!(films_2013.count, 2);
+
+    assert_eq!(films_2013.count(), 2);
+
     let titles: Vec<AttributeValue> = films_2013
         .items
         .unwrap()
-        .into_iter()
-        .map(|mut row| row.remove("title").expect("row should have title"))
+        .iter_mut()
+        .map(|row| row.remove("title").expect("row should have title"))
         .collect();
+
     assert_eq!(
         titles,
         vec![
@@ -144,9 +142,29 @@ async fn main() -> Result<(), Error> {
         ]
     );
 
-    Ok(())
+    println!("Deleting table.");
+
+    delete_table(&client, &table).await
 }
 
+// Does table exist?
+// snippet-start:[dynamodb.rust.movies-does_table_exist]
+async fn does_table_exist(client: &Client, table: &str) -> Result<bool, Error> {
+    let table_exists = client
+        .list_tables()
+        .send()
+        .await
+        .expect("should succeed")
+        .table_names()
+        .as_ref()
+        .unwrap()
+        .contains(&table.into());
+
+    Ok(table_exists)
+}
+// snippet-end:[dynamodb.rust.movies-does_table_exist]
+
+// snippet-start:[dynamodb.rust.movies-create_table]
 fn create_table(
     client: &Client,
     table_name: &str,
@@ -185,6 +203,7 @@ fn create_table(
                 .build(),
         )
 }
+// snippet-end:[dynamodb.rust.movies-create_table]
 
 fn parse_item(value: Value) -> HashMap<String, AttributeValue> {
     match value_to_item(value) {
@@ -206,6 +225,21 @@ fn value_to_item(value: Value) -> AttributeValue {
     }
 }
 
+// Add an item to the table.
+// snippet-start:[dynamodb.rust.movies-add_item]
+async fn add_item(client: &Client, table: &str, value: serde_json::Value) -> Result<(), Error> {
+    client
+        .put_item()
+        .table_name(table)
+        .set_item(Some(parse_item(value)))
+        .send()
+        .await?;
+
+    Ok(())
+}
+// snippet-end:[dynamodb.rust.movies-add_item]
+
+// snippet-start:[dynamodb.rust.movies-movies_in_year]
 fn movies_in_year(client: &Client, table_name: &str, year: u16) -> Query {
     client
         .query()
@@ -214,6 +248,16 @@ fn movies_in_year(client: &Client, table_name: &str, year: u16) -> Query {
         .expression_attribute_names("#yr", "year")
         .expression_attribute_values(":yyyy", AttributeValue::N(year.to_string()))
 }
+// snippet-end:[dynamodb.rust.movies-movies_in_year]
+
+// Deletes a table.
+// snippet-start:[dynamodb.rust.movies-delete_table]
+async fn delete_table(client: &Client, table: &str) -> Result<(), Error> {
+    client.delete_table().table_name(table).send().await?;
+
+    Ok(())
+}
+// snippet-end:[dynamodb.rust.movies-delete_table]
 
 /// Hand-written waiter to retry every second until the table is out of `Creating` state
 #[derive(Clone)]

@@ -28,11 +28,8 @@ struct Opt {
 }
 
 // Shows the history for a resource.
-async fn show_history(
-    client: &aws_sdk_config::Client,
-    id: &str,
-    res: ResourceType,
-) -> Result<(), aws_sdk_config::Error> {
+// snippet-start:[config.rust.show-resource-history]
+async fn show_history(client: &Client, id: &str, res: ResourceType) -> Result<(), Error> {
     let rsp = client
         .get_resource_config_history()
         .resource_id(id)
@@ -40,12 +37,13 @@ async fn show_history(
         .send()
         .await?;
     println!("configuration history for {}:", id);
-    for item in rsp.configuration_items.unwrap_or_default() {
+    for item in rsp.configuration_items().unwrap_or_default() {
         println!("item: {:?}", item);
     }
 
     Ok(())
 }
+// snippet-end:[config.rust.show-resource-history]
 
 /// Displays the configuration history for a resource in the Region.
 ///

@@ -128,7 +128,7 @@ where
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_description): <p>The description of the filter.</p>
     ///   - [`action(FilterAction)`](crate::client::fluent_builders::CreateFilter::action) / [`set_action(Option<FilterAction>)`](crate::client::fluent_builders::CreateFilter::set_action): <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     ///   - [`rank(i32)`](crate::client::fluent_builders::CreateFilter::rank) / [`set_rank(i32)`](crate::client::fluent_builders::CreateFilter::set_rank): <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
-    ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::CreateFilter::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::CreateFilter::set_finding_criteria): <p>Represents the criteria to be used in the filter for querying findings.</p>  <p>You can only use the following attributes to query findings:</p>  <ul>   <li> <p>accountId</p> </li>   <li> <p>region</p> </li>   <li> <p>confidence</p> </li>   <li> <p>id</p> </li>   <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>   <li> <p>resource.accessKeyDetails.principalId</p> </li>   <li> <p>resource.accessKeyDetails.userName</p> </li>   <li> <p>resource.accessKeyDetails.userType</p> </li>   <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>   <li> <p>resource.instanceDetails.imageId</p> </li>   <li> <p>resource.instanceDetails.instanceId</p> </li>   <li> <p>resource.instanceDetails.outpostArn</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>   <li> <p>resource.instanceDetails.tags.key</p> </li>   <li> <p>resource.instanceDetails.tags.value</p> </li>   <li> <p>resource.resourceType</p> </li>   <li> <p>service.action.actionType</p> </li>   <li> <p>service.action.awsApiCallAction.api</p> </li>   <li> <p>service.action.awsApiCallAction.callerType</p> </li>   <li> <p>service.action.awsApiCallAction.errorCode</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>   <li> <p>service.action.awsApiCallAction.serviceName</p> </li>   <li> <p>service.action.dnsRequestAction.domain</p> </li>   <li> <p>service.action.networkConnectionAction.blocked</p> </li>   <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>   <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>   <li> <p>service.action.networkConnectionAction.protocol</p> </li>   <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>   <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>   <li> <p>service.additionalInfo.threatListName</p> </li>   <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>   <li> <p>service.resourceRole</p> </li>   <li> <p>severity</p> </li>   <li> <p>type</p> </li>   <li> <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p> </li>  </ul>
+    ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::CreateFilter::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::CreateFilter::set_finding_criteria): <p>Represents the criteria to be used in the filter for querying findings.</p>  <p>You can only use the following attributes to query findings:</p>  <ul>   <li> <p>accountId</p> </li>   <li> <p>region</p> </li>   <li> <p>confidence</p> </li>   <li> <p>id</p> </li>   <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>   <li> <p>resource.accessKeyDetails.principalId</p> </li>   <li> <p>resource.accessKeyDetails.userName</p> </li>   <li> <p>resource.accessKeyDetails.userType</p> </li>   <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>   <li> <p>resource.instanceDetails.imageId</p> </li>   <li> <p>resource.instanceDetails.instanceId</p> </li>   <li> <p>resource.instanceDetails.outpostArn</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>   <li> <p>resource.instanceDetails.tags.key</p> </li>   <li> <p>resource.instanceDetails.tags.value</p> </li>   <li> <p>resource.resourceType</p> </li>   <li> <p>service.action.actionType</p> </li>   <li> <p>service.action.awsApiCallAction.api</p> </li>   <li> <p>service.action.awsApiCallAction.callerType</p> </li>   <li> <p>service.action.awsApiCallAction.errorCode</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>   <li> <p>service.action.awsApiCallAction.serviceName</p> </li>   <li> <p>service.action.dnsRequestAction.domain</p> </li>   <li> <p>service.action.networkConnectionAction.blocked</p> </li>   <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>   <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>   <li> <p>service.action.networkConnectionAction.protocol</p> </li>   <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>   <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>   <li> <p>service.additionalInfo.threatListName</p> </li>   <li> <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li>   <li> <p>resource.s3BucketDetails.name</p> </li>   <li> <p>resource.s3BucketDetails.tags.key</p> </li>   <li> <p>resource.s3BucketDetails.tags.value</p> </li>   <li> <p>resource.s3BucketDetails.type</p> </li>   <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>   <li> <p>service.resourceRole</p> </li>   <li> <p>severity</p> </li>   <li> <p>type</p> </li>   <li> <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p> </li>  </ul>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateFilter::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateFilter::set_client_token): <p>The idempotency token for the create request.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateFilter::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateFilter::set_tags): <p>The tags to be added to a new filter resource.</p>
     /// - On success, responds with [`CreateFilterOutput`](crate::output::CreateFilterOutput) with field(s):
@@ -143,7 +143,7 @@ where
     ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_detector_id): <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_name): <p>The user-friendly name to identify the IPSet.</p>  <p> Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).</p>
     ///   - [`format(IpSetFormat)`](crate::client::fluent_builders::CreateIPSet::format) / [`set_format(Option<IpSetFormat>)`](crate::client::fluent_builders::CreateIPSet::set_format): <p>The format of the file that contains the IPSet.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_location): <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_location): <p>The URI of the file that contains the IPSet. </p>
     ///   - [`activate(bool)`](crate::client::fluent_builders::CreateIPSet::activate) / [`set_activate(bool)`](crate::client::fluent_builders::CreateIPSet::set_activate): <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_client_token): <p>The idempotency token for the create request.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateIPSet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIPSet::set_tags): <p>The tags to be added to a new IP set resource.</p>
@@ -196,7 +196,7 @@ where
     ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::set_detector_id): <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::set_name): <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
     ///   - [`format(ThreatIntelSetFormat)`](crate::client::fluent_builders::CreateThreatIntelSet::format) / [`set_format(Option<ThreatIntelSetFormat>)`](crate::client::fluent_builders::CreateThreatIntelSet::set_format): <p>The format of the file that contains the ThreatIntelSet.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::set_location): <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::set_location): <p>The URI of the file that contains the ThreatIntelSet. </p>
     ///   - [`activate(bool)`](crate::client::fluent_builders::CreateThreatIntelSet::activate) / [`set_activate(bool)`](crate::client::fluent_builders::CreateThreatIntelSet::set_activate): <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateThreatIntelSet::set_client_token): <p>The idempotency token for the create request.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateThreatIntelSet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateThreatIntelSet::set_tags): <p>The tags to be added to a new threat list resource.</p>
@@ -209,7 +209,7 @@ where
     /// Constructs a fluent builder for the [`DeclineInvitations`](crate::client::fluent_builders::DeclineInvitations) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DeclineInvitations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeclineInvitations::set_account_ids): <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DeclineInvitations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeclineInvitations::set_account_ids): <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to decline invitations from.</p>
     /// - On success, responds with [`DeclineInvitationsOutput`](crate::output::DeclineInvitationsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::DeclineInvitationsOutput::unprocessed_accounts): <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     /// - On failure, responds with [`SdkError<DeclineInvitationsError>`](crate::error::DeclineInvitationsError)
@@ -240,7 +240,7 @@ where
     /// Constructs a fluent builder for the [`DeleteInvitations`](crate::client::fluent_builders::DeleteInvitations) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DeleteInvitations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteInvitations::set_account_ids): <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::DeleteInvitations::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteInvitations::set_account_ids): <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to delete invitations from.</p>
     /// - On success, responds with [`DeleteInvitationsOutput`](crate::output::DeleteInvitationsOutput) with field(s):
     ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::DeleteInvitationsOutput::unprocessed_accounts): <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     /// - On failure, responds with [`SdkError<DeleteInvitationsError>`](crate::error::DeleteInvitationsError)
@@ -327,7 +327,7 @@ where
     /// Constructs a fluent builder for the [`DisableOrganizationAdminAccount`](crate::client::fluent_builders::DisableOrganizationAdminAccount) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`admin_account_id(impl Into<String>)`](crate::client::fluent_builders::DisableOrganizationAdminAccount::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::client::fluent_builders::DisableOrganizationAdminAccount::set_admin_account_id): <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
+    ///   - [`admin_account_id(impl Into<String>)`](crate::client::fluent_builders::DisableOrganizationAdminAccount::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::client::fluent_builders::DisableOrganizationAdminAccount::set_admin_account_id): <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
     /// - On success, responds with [`DisableOrganizationAdminAccountOutput`](crate::output::DisableOrganizationAdminAccountOutput)
 
     /// - On failure, responds with [`SdkError<DisableOrganizationAdminAccountError>`](crate::error::DisableOrganizationAdminAccountError)
@@ -362,7 +362,7 @@ where
     /// Constructs a fluent builder for the [`EnableOrganizationAdminAccount`](crate::client::fluent_builders::EnableOrganizationAdminAccount) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`admin_account_id(impl Into<String>)`](crate::client::fluent_builders::EnableOrganizationAdminAccount::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::client::fluent_builders::EnableOrganizationAdminAccount::set_admin_account_id): <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
+    ///   - [`admin_account_id(impl Into<String>)`](crate::client::fluent_builders::EnableOrganizationAdminAccount::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::client::fluent_builders::EnableOrganizationAdminAccount::set_admin_account_id): <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
     /// - On success, responds with [`EnableOrganizationAdminAccountOutput`](crate::output::EnableOrganizationAdminAccountOutput)
 
     /// - On failure, responds with [`SdkError<EnableOrganizationAdminAccountError>`](crate::error::EnableOrganizationAdminAccountError)
@@ -445,7 +445,7 @@ where
     /// - On success, responds with [`GetIpSetOutput`](crate::output::GetIpSetOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::GetIpSetOutput::name): <p>The user-friendly name for the IPSet.</p>
     ///   - [`format(Option<IpSetFormat>)`](crate::output::GetIpSetOutput::format): <p>The format of the file that contains the IPSet.</p>
-    ///   - [`location(Option<String>)`](crate::output::GetIpSetOutput::location): <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    ///   - [`location(Option<String>)`](crate::output::GetIpSetOutput::location): <p>The URI of the file that contains the IPSet.</p>
     ///   - [`status(Option<IpSetStatus>)`](crate::output::GetIpSetOutput::status): <p>The status of IPSet file that was uploaded.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetIpSetOutput::tags): <p>The tags of the IPSet resource.</p>
     /// - On failure, responds with [`SdkError<GetIPSetError>`](crate::error::GetIPSetError)
@@ -494,7 +494,7 @@ where
     /// - On success, responds with [`GetThreatIntelSetOutput`](crate::output::GetThreatIntelSetOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::GetThreatIntelSetOutput::name): <p>A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.</p>
     ///   - [`format(Option<ThreatIntelSetFormat>)`](crate::output::GetThreatIntelSetOutput::format): <p>The format of the threatIntelSet.</p>
-    ///   - [`location(Option<String>)`](crate::output::GetThreatIntelSetOutput::location): <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    ///   - [`location(Option<String>)`](crate::output::GetThreatIntelSetOutput::location): <p>The URI of the file that contains the ThreatIntelSet. </p>
     ///   - [`status(Option<ThreatIntelSetStatus>)`](crate::output::GetThreatIntelSetOutput::status): <p>The status of threatIntelSet file uploaded.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetThreatIntelSetOutput::tags): <p>The tags of the threat list resource.</p>
     /// - On failure, responds with [`SdkError<GetThreatIntelSetError>`](crate::error::GetThreatIntelSetError)
@@ -563,7 +563,7 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::ListFindings::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::ListFindings::set_detector_id): <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
-    ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::ListFindings::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::ListFindings::set_finding_criteria): <p>Represents the criteria used for querying findings. Valid values include:</p>  <ul>   <li> <p>JSON field name</p> </li>   <li> <p>accountId</p> </li>   <li> <p>region</p> </li>   <li> <p>confidence</p> </li>   <li> <p>id</p> </li>   <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>   <li> <p>resource.accessKeyDetails.principalId</p> </li>   <li> <p>resource.accessKeyDetails.userName</p> </li>   <li> <p>resource.accessKeyDetails.userType</p> </li>   <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>   <li> <p>resource.instanceDetails.imageId</p> </li>   <li> <p>resource.instanceDetails.instanceId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>   <li> <p>resource.instanceDetails.tags.key</p> </li>   <li> <p>resource.instanceDetails.tags.value</p> </li>   <li> <p>resource.resourceType</p> </li>   <li> <p>service.action.actionType</p> </li>   <li> <p>service.action.awsApiCallAction.api</p> </li>   <li> <p>service.action.awsApiCallAction.callerType</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>   <li> <p>service.action.awsApiCallAction.serviceName</p> </li>   <li> <p>service.action.dnsRequestAction.domain</p> </li>   <li> <p>service.action.networkConnectionAction.blocked</p> </li>   <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>   <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>   <li> <p>service.action.networkConnectionAction.protocol</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>   <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>   <li> <p>service.additionalInfo.threatListName</p> </li>   <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>   <li> <p>service.resourceRole</p> </li>   <li> <p>severity</p> </li>   <li> <p>type</p> </li>   <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>  </ul>
+    ///   - [`finding_criteria(FindingCriteria)`](crate::client::fluent_builders::ListFindings::finding_criteria) / [`set_finding_criteria(Option<FindingCriteria>)`](crate::client::fluent_builders::ListFindings::set_finding_criteria): <p>Represents the criteria used for querying findings. Valid values include:</p>  <ul>   <li> <p>JSON field name</p> </li>   <li> <p>accountId</p> </li>   <li> <p>region</p> </li>   <li> <p>confidence</p> </li>   <li> <p>id</p> </li>   <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>   <li> <p>resource.accessKeyDetails.principalId</p> </li>   <li> <p>resource.accessKeyDetails.userName</p> </li>   <li> <p>resource.accessKeyDetails.userType</p> </li>   <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>   <li> <p>resource.instanceDetails.imageId</p> </li>   <li> <p>resource.instanceDetails.instanceId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>   <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>   <li> <p>resource.instanceDetails.tags.key</p> </li>   <li> <p>resource.instanceDetails.tags.value</p> </li>   <li> <p>resource.resourceType</p> </li>   <li> <p>service.action.actionType</p> </li>   <li> <p>service.action.awsApiCallAction.api</p> </li>   <li> <p>service.action.awsApiCallAction.callerType</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>   <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>   <li> <p>service.action.awsApiCallAction.serviceName</p> </li>   <li> <p>service.action.dnsRequestAction.domain</p> </li>   <li> <p>service.action.networkConnectionAction.blocked</p> </li>   <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>   <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>   <li> <p>service.action.networkConnectionAction.protocol</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>   <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>   <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>   <li> <p>service.additionalInfo.threatListName</p> </li>   <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>   <li> <p>service.resourceRole</p> </li>   <li> <p>severity</p> </li>   <li> <p>type</p> </li>   <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>  </ul>
     ///   - [`sort_criteria(SortCriteria)`](crate::client::fluent_builders::ListFindings::sort_criteria) / [`set_sort_criteria(Option<SortCriteria>)`](crate::client::fluent_builders::ListFindings::set_sort_criteria): <p>Represents the criteria used for sorting findings.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFindings::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListFindings::set_max_results): <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFindings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFindings::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
@@ -773,7 +773,7 @@ where
     ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_detector_id): <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
     ///   - [`ip_set_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::ip_set_id) / [`set_ip_set_id(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_ip_set_id): <p>The unique ID that specifies the IPSet that you want to update.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_name): <p>The unique ID that specifies the IPSet that you want to update.</p>
-    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_location): <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+    ///   - [`location(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::location) / [`set_location(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_location): <p>The updated URI of the file that contains the IPSet. </p>
     ///   - [`activate(bool)`](crate::client::fluent_builders::UpdateIPSet::activate) / [`set_activate(bool)`](crate::client::fluent_builders::UpdateIPSet::set_activate): <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
     /// - On success, responds with [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput)
 
@@ -1319,6 +1319,11 @@ pub mod fluent_builders {
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
         /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li>
+        /// <li> <p>resource.s3BucketDetails.name</p> </li>
+        /// <li> <p>resource.s3BucketDetails.tags.key</p> </li>
+        /// <li> <p>resource.s3BucketDetails.tags.value</p> </li>
+        /// <li> <p>resource.s3BucketDetails.type</p> </li>
         /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
         /// <li> <p>service.resourceRole</p> </li>
         /// <li> <p>severity</p> </li>
@@ -1378,6 +1383,11 @@ pub mod fluent_builders {
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
         /// <li> <p>service.additionalInfo.threatListName</p> </li>
+        /// <li> <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li>
+        /// <li> <p>resource.s3BucketDetails.name</p> </li>
+        /// <li> <p>resource.s3BucketDetails.tags.key</p> </li>
+        /// <li> <p>resource.s3BucketDetails.tags.value</p> </li>
+        /// <li> <p>resource.s3BucketDetails.type</p> </li>
         /// <li> <p>service.archived</p> <p>When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
         /// <li> <p>service.resourceRole</p> </li>
         /// <li> <p>severity</p> </li>
@@ -1427,7 +1437,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateIPSet`.
     ///
-    /// <p>Creates a new IPSet, which is called a trusted IP list in the console user interface. An IPSet is a list of IP addresses that are trusted for secure communication with AWS infrastructure and applications. GuardDuty doesn't generate findings for IP addresses that are included in IPSets. Only users from the administrator account can use this operation.</p>
+    /// <p>Creates a new IPSet, which is called a trusted IP list in the console user interface. An IPSet is a list of IP addresses that are trusted for secure communication with Amazon Web Services infrastructure and applications. GuardDuty doesn't generate findings for IP addresses that are included in IPSets. Only users from the administrator account can use this operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIPSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -1516,12 +1526,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the IPSet. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the IPSet. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -1572,7 +1582,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMembers`.
     ///
-    /// <p>Creates member accounts of the current AWS account by specifying a list of AWS account IDs. This step is a prerequisite for managing the associated member accounts either by invitation or through an organization.</p>
+    /// <p>Creates member accounts of the current Amazon Web Services account by specifying a list of Amazon Web Services account IDs. This step is a prerequisite for managing the associated member accounts either by invitation or through an organization.</p>
     /// <p>When using <code>Create Members</code> as an organizations delegated administrator this action will enable GuardDuty in the added member accounts, with the exception of the organization delegated administrator account, which must enable GuardDuty prior to being added as a member.</p>
     /// <p>If you are adding accounts by invitation use this action after GuardDuty has been enabled in potential member accounts and before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html"> <code>Invite Members</code> </a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1947,12 +1957,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the ThreatIntelSet. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The URI of the file that contains the ThreatIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The URI of the file that contains the ThreatIntelSet. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self
@@ -2003,7 +2013,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeclineInvitations`.
     ///
-    /// <p>Declines invitations sent to the current member account by AWS accounts specified by their account IDs.</p>
+    /// <p>Declines invitations sent to the current member account by Amazon Web Services accounts specified by their account IDs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeclineInvitations<
         C = aws_smithy_client::erase::DynConnector,
@@ -2064,12 +2074,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
+        /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to decline invitations from.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from.</p>
+        /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to decline invitations from.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2230,7 +2240,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteInvitations`.
     ///
-    /// <p>Deletes invitations sent to the current member account by AWS accounts specified by their account IDs.</p>
+    /// <p>Deletes invitations sent to the current member account by Amazon Web Services accounts specified by their account IDs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInvitations<
         C = aws_smithy_client::erase::DynConnector,
@@ -2291,12 +2301,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
+        /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to delete invitations from.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(input.into());
             self
         }
-        /// <p>A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from.</p>
+        /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to delete invitations from.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2793,7 +2803,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableOrganizationAdminAccount`.
     ///
-    /// <p>Disables an AWS account within the Organization as the GuardDuty delegated administrator.</p>
+    /// <p>Disables an Amazon Web Services account within the Organization as the GuardDuty delegated administrator.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -2850,12 +2860,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
+        /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.admin_account_id(input.into());
             self
         }
-        /// <p>The AWS Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
+        /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3023,7 +3033,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableOrganizationAdminAccount`.
     ///
-    /// <p>Enables an AWS account within the organization as the GuardDuty delegated administrator.</p>
+    /// <p>Enables an Amazon Web Services account within the organization as the GuardDuty delegated administrator.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -3080,12 +3090,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
+        /// <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.admin_account_id(input.into());
             self
         }
-        /// <p>The AWS Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
+        /// <p>The Amazon Web Services Account ID for the organization account to be enabled as a GuardDuty delegated administrator.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4048,7 +4058,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `InviteMembers`.
     ///
-    /// <p>Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to enable GuardDuty, and allow the current AWS account to view and manage these accounts' findings on their behalf as the GuardDuty administrator account.</p>
+    /// <p>Invites other Amazon Web Services accounts (created as members of the current Amazon Web Services account by CreateMembers) to enable GuardDuty, and allow the current Amazon Web Services account to view and manage these accounts' findings on their behalf as the GuardDuty administrator account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InviteMembers<
         C = aws_smithy_client::erase::DynConnector,
@@ -4449,7 +4459,6 @@ pub mod fluent_builders {
         /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
         /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
         /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
-        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
@@ -4505,7 +4514,6 @@ pub mod fluent_builders {
         /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
         /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
         /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
-        /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
         /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
@@ -4561,7 +4569,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInvitations`.
     ///
-    /// <p>Lists all GuardDuty membership invitations that were sent to the current AWS account.</p>
+    /// <p>Lists all GuardDuty membership invitations that were sent to the current Amazon Web Services account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInvitations<
         C = aws_smithy_client::erase::DynConnector,
@@ -4940,7 +4948,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPublishingDestinations`.
     ///
-    /// <p>Returns a list of publishing destinations associated with the specified <code>dectectorId</code>.</p>
+    /// <p>Returns a list of publishing destinations associated with the specified <code>detectorId</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPublishingDestinations<
         C = aws_smithy_client::erase::DynConnector,
@@ -6074,12 +6082,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The updated URI of the file that contains the IPSet. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location(input.into());
             self
         }
-        /// <p>The updated URI of the file that contains the IPSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
+        /// <p>The updated URI of the file that contains the IPSet. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location(input);
             self

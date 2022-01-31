@@ -62,7 +62,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Ground Station | [aws-sdk-groundstation](https://crates.io/crates/aws-sdk-groundstation) ([docs](https://docs.rs/aws-sdk-groundstation)) |
 | AWS Health APIs and Notifications | [aws-sdk-health](https://crates.io/crates/aws-sdk-health) ([docs](https://docs.rs/aws-sdk-health)) |
 | AWS Identity and Access Management | [aws-sdk-iam](https://crates.io/crates/aws-sdk-iam) ([docs](https://docs.rs/aws-sdk-iam)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/iam)) |
-| AWS IoT | [aws-sdk-iot](https://crates.io/crates/aws-sdk-iot) ([docs](https://docs.rs/aws-sdk-iot)) |
+| AWS IoT | [aws-sdk-iot](https://crates.io/crates/aws-sdk-iot) ([docs](https://docs.rs/aws-sdk-iot)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/iot)) |
 | AWS IoT 1-Click Devices Service | [aws-sdk-iot1clickdevices](https://crates.io/crates/aws-sdk-iot1clickdevices) ([docs](https://docs.rs/aws-sdk-iot1clickdevices)) |
 | AWS IoT 1-Click Projects Service | [aws-sdk-iot1clickprojects](https://crates.io/crates/aws-sdk-iot1clickprojects) ([docs](https://docs.rs/aws-sdk-iot1clickprojects)) |
 | AWS IoT Analytics | [aws-sdk-iotanalytics](https://crates.io/crates/aws-sdk-iotanalytics) ([docs](https://docs.rs/aws-sdk-iotanalytics)) |

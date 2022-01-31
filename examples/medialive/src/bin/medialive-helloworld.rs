@@ -9,7 +9,7 @@ use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The default AWS Region.
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
@@ -18,10 +18,28 @@ struct Opt {
     verbose: bool,
 }
 
+// List input names and ARNs.
+// snippet-start:[medialive.rust.medialive-helloworld]
+async fn show_inputs(client: &Client) -> Result<(), Error> {
+    let input_list = client.list_inputs().send().await?;
+
+    for i in input_list.inputs().unwrap_or_default() {
+        let input_arn = i.arn().unwrap_or_default();
+        let input_name = i.name().unwrap_or_default();
+
+        println!("Input Name : {}", input_name);
+        println!("Input ARN : {}", input_arn);
+        println!();
+    }
+
+    Ok(())
+}
+// snippet-end:[medialive.rust.medialive-helloworld]
+
 /// Lists your AWS Elemental MediaLive input names and ARNs in the Region.
 /// # Arguments
 ///
-/// * `[-d DEFAULT-REGION]` - The Region in which the client is created.
+/// * `[-r REGION]` - The Region in which the client is created.
 ///    If not supplied, uses the value of the **AWS_REGION** environment variable.
 ///    If the environment variable is not set, defaults to **us-west-2**.
 /// * `[-v]` - Whether to display additional information.
@@ -34,25 +52,19 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
-
     println!();
 
     if verbose {
-        println!("MediaLive version: {}", PKG_VERSION);
-        println!("Region:            {:?}", shared_config.region().unwrap());
+        println!("MediaLive client version: {}", PKG_VERSION);
+        println!(
+            "Region:                   {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
         println!();
     }
 
-    let input_list = client.list_inputs().send().await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    for i in input_list.inputs.unwrap_or_default() {
-        let input_arn = i.arn.as_deref().unwrap_or_default();
-        let input_name = i.name.as_deref().unwrap_or_default();
-
-        println!("Input Name : {}, Input ARN : {}", input_name, input_arn);
-    }
-
-    Ok(())
+    show_inputs(&client).await
 }

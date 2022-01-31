@@ -5,7 +5,6 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_dynamodb::{Client, Error, Region, PKG_VERSION};
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -22,6 +21,17 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Delete a table.
+// snippet-start:[dynamodb.rust.delete-table]
+async fn delete_table(client: &Client, table: &str) -> Result<(), Error> {
+    client.delete_table().table_name(table).send().await?;
+
+    println!("Deleted table");
+
+    Ok(())
+}
+// snippet-end:[dynamodb.rust.delete-table]
 
 /// Deletes a DynamoDB table.
 /// # Arguments
@@ -42,25 +52,20 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-
     println!();
 
     if verbose {
         println!("DynamoDB client version: {}", PKG_VERSION);
         println!(
             "Region:                  {}",
-            shared_config.region().unwrap()
+            region_provider.region().await.unwrap().as_ref()
         );
         println!("Table:                   {}", &table);
         println!();
     }
 
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
     let client = Client::new(&shared_config);
 
-    client.delete_table().table_name(table).send().await?;
-
-    println!("Deleted table");
-
-    Ok(())
+    delete_table(&client, &table).await
 }

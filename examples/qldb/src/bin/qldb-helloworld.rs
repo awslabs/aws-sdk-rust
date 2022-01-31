@@ -6,12 +6,11 @@
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_qldbsession::model::StartSessionRequest;
 use aws_sdk_qldbsession::{Client, Error, Region, PKG_VERSION};
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The default AWS Region.
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
@@ -24,7 +23,25 @@ struct Opt {
     verbose: bool,
 }
 
-/// Creates a low-level Amazon QLDB session.
+// Starts a session.
+// snippet-start:[qldb.rust.qldb-helloworld]
+async fn start(client: &Client, ledger: &str) -> Result<(), Error> {
+    let result = client
+        .send_command()
+        .start_session(StartSessionRequest::builder().ledger_name(ledger).build())
+        .send()
+        .await?;
+
+    println!(
+        "Session id: {:?}",
+        result.start_session().unwrap().session_token()
+    );
+
+    Ok(())
+}
+// snippet-end:[qldb.rust.qldb-helloworld]
+
+/// Creates a low-level Amazon Quantum Ledger Database (Amazon QLDB) session in the Region.
 /// # Arguments
 ///
 /// * `-l LEDGER` - The name of the ledger to start a new session against.
@@ -45,26 +62,21 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
+
+    println!();
 
     if verbose {
-        println!("OLDB version: {}", PKG_VERSION);
-        println!("Region:       {:?}", shared_config.region().unwrap());
-        println!("Ledger:       {}", ledger);
+        println!("OLDB client version: {}", PKG_VERSION);
+        println!(
+            "Region:              {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
+        println!("Ledger:              {}", ledger);
         println!();
     }
 
-    let result = client
-        .send_command()
-        .start_session(StartSessionRequest::builder().ledger_name(ledger).build())
-        .send()
-        .await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    println!(
-        "Session id: {:?}",
-        result.start_session.unwrap().session_token
-    );
-
-    Ok(())
+    start(&client, &ledger).await
 }

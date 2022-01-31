@@ -23,10 +23,8 @@ struct Opt {
 }
 
 // Deletes a configuration recorder.
-async fn delete_recorder(
-    client: &aws_sdk_config::Client,
-    name: &str,
-) -> Result<(), aws_sdk_config::Error> {
+// snippet-start:[config.rust.delete-configuration-recorder]
+async fn delete_recorder(client: &Client, name: &str) -> Result<(), Error> {
     client
         .delete_configuration_recorder()
         .configuration_recorder_name(name)
@@ -39,6 +37,7 @@ async fn delete_recorder(
 
     Ok(())
 }
+// snippet-end:[config.rust.delete-configuration-recorder]
 
 /// Deletes an AWS Config configuration recorder.
 ///

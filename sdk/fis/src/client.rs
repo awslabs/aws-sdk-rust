@@ -87,11 +87,11 @@ where
     ///
     /// - The fluent builder is configurable:
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_description): <p>A description for the experiment template. Can contain up to 64 letters (A-Z and a-z).</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_description): <p>A description for the experiment template.</p>
     ///   - [`stop_conditions(Vec<CreateExperimentTemplateStopConditionInput>)`](crate::client::fluent_builders::CreateExperimentTemplate::stop_conditions) / [`set_stop_conditions(Option<Vec<CreateExperimentTemplateStopConditionInput>>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_stop_conditions): <p>The stop conditions.</p>
     ///   - [`targets(HashMap<String, CreateExperimentTemplateTargetInput>)`](crate::client::fluent_builders::CreateExperimentTemplate::targets) / [`set_targets(Option<HashMap<String, CreateExperimentTemplateTargetInput>>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_targets): <p>The targets for the experiment.</p>
     ///   - [`actions(HashMap<String, CreateExperimentTemplateActionInput>)`](crate::client::fluent_builders::CreateExperimentTemplate::actions) / [`set_actions(Option<HashMap<String, CreateExperimentTemplateActionInput>>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_actions): <p>The actions for the experiment.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateExperimentTemplate::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateExperimentTemplate::set_tags): <p>The tags to apply to the experiment template.</p>
     /// - On success, responds with [`CreateExperimentTemplateOutput`](crate::output::CreateExperimentTemplateOutput) with field(s):
     ///   - [`experiment_template(Option<ExperimentTemplate>)`](crate::output::CreateExperimentTemplateOutput::experiment_template): <p>Information about the experiment template.</p>
@@ -240,7 +240,7 @@ where
     ///   - [`stop_conditions(Vec<UpdateExperimentTemplateStopConditionInput>)`](crate::client::fluent_builders::UpdateExperimentTemplate::stop_conditions) / [`set_stop_conditions(Option<Vec<UpdateExperimentTemplateStopConditionInput>>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_stop_conditions): <p>The stop conditions for the experiment.</p>
     ///   - [`targets(HashMap<String, UpdateExperimentTemplateTargetInput>)`](crate::client::fluent_builders::UpdateExperimentTemplate::targets) / [`set_targets(Option<HashMap<String, UpdateExperimentTemplateTargetInput>>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_targets): <p>The targets for the experiment.</p>
     ///   - [`actions(HashMap<String, UpdateExperimentTemplateActionInputItem>)`](crate::client::fluent_builders::UpdateExperimentTemplate::actions) / [`set_actions(Option<HashMap<String, UpdateExperimentTemplateActionInputItem>>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_actions): <p>The actions for the experiment.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateExperimentTemplate::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateExperimentTemplate::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateExperimentTemplate::set_role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     /// - On success, responds with [`UpdateExperimentTemplateOutput`](crate::output::UpdateExperimentTemplateOutput) with field(s):
     ///   - [`experiment_template(Option<ExperimentTemplate>)`](crate::output::UpdateExperimentTemplateOutput::experiment_template): <p>Information about the experiment template.</p>
     /// - On failure, responds with [`SdkError<UpdateExperimentTemplateError>`](crate::error::UpdateExperimentTemplateError)
@@ -259,13 +259,13 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateExperimentTemplate`.
     ///
     /// <p>Creates an experiment template. </p>
-    /// <p>To create a template, specify the following information: </p>
+    /// <p>An experiment template includes the following components:</p>
     /// <ul>
-    /// <li> <p> <b>Targets</b>: A target can be a specific resource in your AWS environment, or one or more resources that match criteria that you specify, for example, resources that have specific tags.</p> </li>
+    /// <li> <p> <b>Targets</b>: A target can be a specific resource in your Amazon Web Services environment, or one or more resources that match criteria that you specify, for example, resources that have specific tags.</p> </li>
     /// <li> <p> <b>Actions</b>: The actions to carry out on the target. You can specify multiple actions, the duration of each action, and when to start each action during an experiment.</p> </li>
     /// <li> <p> <b>Stop conditions</b>: If a stop condition is triggered while an experiment is running, the experiment is automatically stopped. You can define a stop condition as a CloudWatch alarm.</p> </li>
     /// </ul>
-    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/fis/latest/userguide/">AWS Fault Injection Simulator User Guide</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment templates</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExperimentTemplate<
         C = aws_smithy_client::erase::DynConnector,
@@ -332,12 +332,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>A description for the experiment template. Can contain up to 64 letters (A-Z and a-z).</p>
+        /// <p>A description for the experiment template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A description for the experiment template. Can contain up to 64 letters (A-Z and a-z).</p>
+        /// <p>A description for the experiment template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -416,12 +416,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_actions(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -522,7 +522,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAction`.
     ///
-    /// <p>Gets information about the specified AWS FIS action.</p>
+    /// <p>Gets information about the specified FIS action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAction<
         C = aws_smithy_client::erase::DynConnector,
@@ -732,7 +732,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListActions`.
     ///
-    /// <p>Lists the available AWS FIS actions.</p>
+    /// <p>Lists the available FIS actions.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListActions<
         C = aws_smithy_client::erase::DynConnector,
@@ -1567,12 +1567,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_actions(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the AWS FIS service permission to perform service actions on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self

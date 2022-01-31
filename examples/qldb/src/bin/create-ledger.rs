@@ -10,7 +10,7 @@ use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The default AWS Region.
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
@@ -23,7 +23,23 @@ struct Opt {
     verbose: bool,
 }
 
-/// Creates an Amazon QLDB ledger.
+// Create a ledger.
+// snippet-start:[qldb.rust.create-ledger]
+async fn make_ledger(client: &Client, ledger: &str) -> Result<(), Error> {
+    let result = client
+        .create_ledger()
+        .name(ledger)
+        .permissions_mode(PermissionsMode::AllowAll)
+        .send()
+        .await?;
+
+    println!("ARN: {}", result.arn().unwrap());
+
+    Ok(())
+}
+// snippet-end:[qldb.rust.create-ledger]
+
+/// Creates an Amazon Quantum Ledger Database (Amazon QLDB) ledger in the Region.
 /// # Arguments
 ///
 /// * `-l LEDGER` - The name of the ledger.
@@ -36,31 +52,29 @@ async fn main() -> Result<(), Error> {
     tracing_subscriber::fmt::init();
 
     let Opt {
-        region,
         ledger,
+        region,
         verbose,
     } = Opt::from_args();
 
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
+
+    println!();
 
     if verbose {
-        println!("QLDB version: {}", PKG_VERSION);
-        println!("Region:       {:?}", shared_config.region().unwrap());
+        println!("QLDB client version: {}", PKG_VERSION);
+        println!(
+            "Region:              {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
+        println!("Ledger:              {}", &ledger);
         println!();
     }
 
-    let result = client
-        .create_ledger()
-        .name(ledger)
-        .permissions_mode(PermissionsMode::AllowAll)
-        .send()
-        .await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    println!("ARN: {}", result.arn.unwrap());
-
-    Ok(())
+    make_ledger(&client, &ledger).await
 }

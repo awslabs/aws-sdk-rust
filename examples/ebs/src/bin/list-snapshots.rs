@@ -5,7 +5,6 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_ec2::{Client, Error, Region, PKG_VERSION};
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -18,6 +17,37 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Lists your snapshots.
+// snippet-start:[ebs.rust.list-snapshots]
+async fn show_snapshots(client: &Client) -> Result<(), Error> {
+    // "self" represents your account ID.
+    // You can list the snapshots for any account by replacing
+    // "self" with that account ID.
+    let resp = client.describe_snapshots().owner_ids("self").send().await?;
+    let snapshots = resp.snapshots().unwrap();
+    let length = snapshots.len();
+
+    for snapshot in snapshots {
+        println!(
+            "ID:          {}",
+            snapshot.snapshot_id().as_deref().unwrap_or_default()
+        );
+        println!(
+            "Description: {}",
+            snapshot.description().as_deref().unwrap_or_default()
+        );
+        println!("State:       {}", snapshot.state().unwrap().as_ref());
+        println!();
+    }
+
+    println!();
+    println!("Found {} snapshot(s)", length);
+    println!();
+
+    Ok(())
+}
+// snippet-end:[ebs.rust.list-snapshots]
 
 /// Displays some information about the Amazon Elastic Block Store snapshots you own in the Region.
 /// # Arguments
@@ -35,41 +65,20 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
-
     println!();
 
     if verbose {
-        println!("EC2 version: {}", PKG_VERSION);
-        println!("Region:      {}", shared_config.region().unwrap());
+        println!("EC2 client version: {}", PKG_VERSION);
+        println!(
+            "Region:             {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
 
         println!();
     }
 
-    // "self" represents your account ID.
-    // You can list the snapshots for any account by replacing
-    // "self" with that account ID.
-    let resp = client.describe_snapshots().owner_ids("self").send().await?;
-    let snapshots = resp.snapshots.unwrap();
-    let length = snapshots.len();
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    for snapshot in snapshots {
-        println!(
-            "ID:          {}",
-            snapshot.snapshot_id.as_deref().unwrap_or_default()
-        );
-        println!(
-            "Description: {}",
-            snapshot.description.as_deref().unwrap_or_default()
-        );
-        println!("State:       {}", snapshot.state.unwrap().as_ref());
-        println!();
-    }
-
-    println!();
-    println!("Found {} snapshot(s)", length);
-    println!();
-
-    Ok(())
+    show_snapshots(&client).await
 }

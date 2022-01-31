@@ -18,10 +18,8 @@
 /_config.yml
 /.gitignore
 /.handwritten
-/CHANGELOG.md
 /CODE_OF_CONDUCT.md
 /CODEOWNERS
 /CONTRIBUTING.md
 /LICENSE
 /NOTICE
-/README.md

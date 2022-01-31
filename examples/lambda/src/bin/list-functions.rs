@@ -13,12 +13,33 @@ struct Opt {
     #[structopt(short, long)]
     region: Option<String>,
 
-    /// Whether to display additional information.
+    /// Whether to display additional runtime information.
     #[structopt(short, long)]
     verbose: bool,
 }
 
-/// Lists the ARNs of your Lambda functions in the Region.
+// Lists the ARNs of your Lambda functions.
+// snippet-start:[lambda.rust.list-functions]
+async fn show_arns(client: &Client) -> Result<(), Error> {
+    let resp = client.list_functions().send().await?;
+
+    println!("Function ARNs:");
+
+    let functions = resp.functions().unwrap_or_default();
+    let num_funcs = functions.len();
+
+    for function in functions {
+        println!("{}", function.function_arn().unwrap_or_default());
+    }
+
+    println!();
+    println!("Found {} functions in the region", num_funcs);
+
+    Ok(())
+}
+// snippet-end:[lambda.rust.list-functions]
+
+/// Lists the Amazon Resource Names (ARNs) of your AWS Lambda functions in the Region.
 /// # Arguments
 ///
 /// * `[-r REGION]` - The Region in which the client is created.
@@ -34,31 +55,19 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-
     println!();
 
     if verbose {
-        println!("Lambda version: {}", PKG_VERSION);
-        println!("Region:         {}", shared_config.region().unwrap());
+        println!("Lambda client version: {}", PKG_VERSION);
+        println!(
+            "Region:                {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
         println!();
     }
 
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
     let client = Client::new(&shared_config);
 
-    let resp = client.list_functions().send().await?;
-
-    println!("Function ARNs:");
-
-    let functions = resp.functions.unwrap_or_default();
-    let len = functions.len();
-
-    for function in functions {
-        println!("  {}", function.function_arn.unwrap_or_default());
-    }
-
-    println!();
-    println!("Found {} functions", len);
-
-    Ok(())
+    show_arns(&client).await
 }

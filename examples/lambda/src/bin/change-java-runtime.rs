@@ -23,40 +23,9 @@ struct Opt {
     verbose: bool,
 }
 
-/// Sets a Lambda function's Java runtime to Corretto.
-/// # Arguments
-///
-/// * `-a ARN` - The ARN of the Lambda function.
-/// * `[-r -REGION]` - The Region in which the client is created.
-///    If not supplied, uses the value of the **AWS_REGION** environment variable.
-///    If the environment variable is not set, defaults to **us-west-2**.
-/// * `[-v]` - Whether to display additional information.
-#[tokio::main]
-async fn main() -> Result<(), Error> {
-    tracing_subscriber::fmt::init();
-
-    let Opt {
-        arn,
-        region,
-        verbose,
-    } = Opt::from_args();
-
-    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
-        .or_default_provider()
-        .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-
-    println!();
-
-    if verbose {
-        println!("Lambda version:      {}", PKG_VERSION);
-        println!("Region:              {}", shared_config.region().unwrap());
-        println!("Lambda function ARN: {}", &arn);
-        println!();
-    }
-
-    let client = Client::new(&shared_config);
-
+// Change Java runtime in Lambda function.
+// snippet-start:[lambda.rust.change-java-runtime]
+async fn set_runtimes(client: &Client, arn: &str) -> Result<(), Error> {
     // Get function's runtime
     let resp = client.list_functions().send().await?;
 
@@ -82,4 +51,44 @@ async fn main() -> Result<(), Error> {
     }
 
     Ok(())
+}
+// snippet-end:[lambda.rust.change-java-runtime]
+
+/// Sets a Lambda function's Java runtime to Corretto.
+/// # Arguments
+///
+/// * `-a ARN` - The ARN of the Lambda function.
+/// * `[-r -REGION]` - The Region in which the client is created.
+///    If not supplied, uses the value of the **AWS_REGION** environment variable.
+///    If the environment variable is not set, defaults to **us-west-2**.
+/// * `[-v]` - Whether to display additional information.
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    tracing_subscriber::fmt::init();
+
+    let Opt {
+        arn,
+        region,
+        verbose,
+    } = Opt::from_args();
+
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+    println!();
+
+    if verbose {
+        println!("Lambda client version: {}", PKG_VERSION);
+        println!(
+            "Region:                {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
+        println!("Lambda function ARN:  {}", &arn);
+        println!();
+    }
+
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
+
+    set_runtimes(&client, &arn).await
 }

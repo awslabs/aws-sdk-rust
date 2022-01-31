@@ -22,6 +22,17 @@ struct Opt {
     verbose: bool,
 }
 
+// Deletes a stream.
+// snippet-start:[kinesis.rust.delete-stream]
+async fn remove_stream(client: &Client, stream: &str) -> Result<(), Error> {
+    client.delete_stream().stream_name(stream).send().await?;
+
+    println!("Deleted stream.");
+
+    Ok(())
+}
+// snippet-end:[kinesis.rust.delete-stream]
+
 /// Deletes an Amazon Kinesis data stream.
 /// # Arguments
 ///
@@ -42,25 +53,20 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
-
     println!();
 
     if verbose {
-        println!("Kinesis version: {}", PKG_VERSION);
-        println!("Region:          {:?}", shared_config.region().unwrap());
-        println!("Stream name:     {}", &stream_name);
+        println!("Kinesis client version: {}", PKG_VERSION);
+        println!(
+            "Region:                 {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
+        println!("Stream name:            {}", &stream_name);
         println!();
     }
 
-    client
-        .delete_stream()
-        .stream_name(stream_name)
-        .send()
-        .await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    println!("Deleted stream.");
-
-    Ok(())
+    remove_stream(&client, &stream_name).await
 }

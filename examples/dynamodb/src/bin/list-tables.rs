@@ -5,8 +5,6 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_dynamodb::{Client, Error, Region, PKG_VERSION};
-use tokio_stream::StreamExt;
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -19,6 +17,26 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// List your tables.
+// snippet-start:[dynamodb.rust.list-tables]
+async fn list_tables(client: &Client) -> Result<(), Error> {
+    let resp = client.list_tables().send().await?;
+
+    println!("Tables:");
+
+    let names = resp.table_names().unwrap_or_default();
+    let len = names.len();
+
+    for name in names {
+        println!("  {}", name);
+    }
+
+    println!("Found {} tables", len);
+
+    Ok(())
+}
+// snippet-end:[dynamodb.rust.list-tables]
 
 /// Lists your DynamoDB tables.
 /// # Arguments
@@ -36,30 +54,19 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-
     println!();
 
     if verbose {
         println!("DynamoDB client version: {}", PKG_VERSION);
         println!(
             "Region:                  {}",
-            shared_config.region().unwrap()
+            region_provider.region().await.unwrap().as_ref()
         );
         println!();
     }
 
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
     let client = Client::new(&shared_config);
 
-    let paginator = client.list_tables().into_paginator().items().send();
-    let table_names = paginator.collect::<Result<Vec<_>, _>>().await?;
-
-    println!("Tables:");
-
-    for name in &table_names {
-        println!("  {}", name);
-    }
-
-    println!("Found {} tables", table_names.len());
-    Ok(())
+    list_tables(&client).await
 }

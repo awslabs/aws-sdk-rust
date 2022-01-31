@@ -20,6 +20,7 @@ struct Opt {
 }
 
 // Displays the Amazon API Gateway REST APIs in the Region.
+// snippet-start:[apigateway.rust.get_rest_apis]
 async fn show_apis(client: &Client) -> Result<(), Error> {
     let resp = client.get_rest_apis().send().await?;
 
@@ -37,6 +38,7 @@ async fn show_apis(client: &Client) -> Result<(), Error> {
 
     Ok(())
 }
+// snippet-end:[apigateway.rust.get_rest_apis]
 
 /// Displays information about the Amazon API Gateway REST APIs in the Region.
 ///
@@ -68,6 +70,5 @@ async fn main() -> Result<(), Error> {
 
     let shared_config = aws_config::from_env().region(region_provider).load().await;
     let client = Client::new(&shared_config);
-
     show_apis(&client).await
 }

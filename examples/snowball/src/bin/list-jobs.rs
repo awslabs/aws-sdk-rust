@@ -18,6 +18,18 @@ struct Opt {
     verbose: bool,
 }
 
+// Lists your jobs.
+// snippet-start:[snowball.rust.list-jobs]
+async fn show_jobs(client: &Client) -> Result<(), Error> {
+    let jobs = client.list_jobs().send().await?;
+    for job in jobs.job_list_entries().unwrap() {
+        println!("  JobId: {:?}", job.job_id());
+    }
+
+    Ok(())
+}
+// snippet-end:[snowball.rust.list-jobs]
+
 /// Lists your AWS Snowball jobs.
 /// # Arguments
 ///
@@ -34,24 +46,22 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
 
     println!();
 
     if verbose {
-        println!("Snowball version: {}", PKG_VERSION);
-        println!("Region:           {}", shared_config.region().unwrap());
+        println!("Snowball client version: {}", PKG_VERSION);
+        println!(
+            "Region:                  {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
         println!();
     }
 
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
     let client = Client::new(&shared_config);
 
     println!("Jobs:");
 
-    let jobs = client.list_jobs().send().await?;
-    for job in jobs.job_list_entries.unwrap() {
-        println!("  JobId: {:?}", job.job_id);
-    }
-
-    Ok(())
+    show_jobs(&client).await
 }

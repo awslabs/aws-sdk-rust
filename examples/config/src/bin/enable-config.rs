@@ -52,28 +52,30 @@ struct Opt {
 }
 
 // Enables config.
+// snippet-start:[config.rust.enable-config]
 async fn enable_config(
-    client: &aws_sdk_config::Client,
+    client: &Client,
     name: &str,
     kms_arn: &str,
     bucket: &str,
     sns_arn: &str,
     iam_arn: &str,
     prefix: &str,
-) -> Result<(), aws_sdk_config::Error> {
+) -> Result<(), Error> {
     // If we already have a configuration recorder in the Region, we cannot create another.
     let resp = client.describe_configuration_recorders().send().await?;
 
-    let recorders = resp.configuration_recorders.unwrap_or_default();
+    let recorders = resp.configuration_recorders().unwrap_or_default();
 
-    //let num_recorders = recorders.len();
-
-    if recorders.is_empty() {
+    if !recorders.is_empty() {
         println!("You already have a configuration recorder in this region");
         println!("Use delete-configuration-recorder to delete it before you call this again.");
 
         for recorder in recorders {
-            println!("Recorder: {}", recorder.name.as_deref().unwrap_or_default());
+            println!(
+                "Recorder: {}",
+                recorder.name().as_deref().unwrap_or_default()
+            );
         }
 
         process::exit(1);
@@ -82,7 +84,7 @@ async fn enable_config(
     // If we already have a delivery channel in the Region, we cannot create another.
     let resp = client.describe_delivery_channels().send().await?;
 
-    let channels = resp.delivery_channels.unwrap_or_default();
+    let channels = resp.delivery_channels().unwrap_or_default();
 
     let num_channels = channels.len();
 
@@ -91,7 +93,10 @@ async fn enable_config(
         println!("Use delete-delivery-channel to delete it before you call this again.");
 
         for channel in channels {
-            println!("  Channel: {}", channel.name.as_deref().unwrap_or_default());
+            println!(
+                "  Channel: {}",
+                channel.name().as_deref().unwrap_or_default()
+            );
         }
 
         process::exit(1);
@@ -141,6 +146,7 @@ async fn enable_config(
 
     Ok(())
 }
+// snippet-end:[config.rust.enable-config]
 
 /// Enables AWS Config for a resource type, in the Region.
 ///

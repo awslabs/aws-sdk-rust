@@ -86,15 +86,15 @@ where
     /// Constructs a fluent builder for the [`CreateCell`](crate::client::fluent_builders::CreateCell) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::CreateCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::CreateCell::set_cell_name): The name of the Cell to create
-    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::CreateCell::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCell::set_cells): A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateCell::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCell::set_tags): A collection of tags associated with a resource
+    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::CreateCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::CreateCell::set_cell_name): <p>The name of the cell to create.</p>
+    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::CreateCell::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCell::set_cells): <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateCell::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCell::set_tags): <p>A collection of tags associated with a resource.</p>
     /// - On success, responds with [`CreateCellOutput`](crate::output::CreateCellOutput) with field(s):
-    ///   - [`cell_arn(Option<String>)`](crate::output::CreateCellOutput::cell_arn): The arn for the Cell
-    ///   - [`cell_name(Option<String>)`](crate::output::CreateCellOutput::cell_name): The name of the Cell
-    ///   - [`cells(Option<Vec<String>>)`](crate::output::CreateCellOutput::cells): A list of Cell arns
-    ///   - [`parent_readiness_scopes(Option<Vec<String>>)`](crate::output::CreateCellOutput::parent_readiness_scopes): A list of Cell ARNs and/or RecoveryGroup ARNs
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateCellOutput::tags): A collection of tags associated with a resource
+    ///   - [`cell_arn(Option<String>)`](crate::output::CreateCellOutput::cell_arn): <p>The Amazon Resource Name (ARN) for the cell.</p>
+    ///   - [`cell_name(Option<String>)`](crate::output::CreateCellOutput::cell_name): <p>The name of the cell.</p>
+    ///   - [`cells(Option<Vec<String>>)`](crate::output::CreateCellOutput::cells): <p>A list of cell ARNs.</p>
+    ///   - [`parent_readiness_scopes(Option<Vec<String>>)`](crate::output::CreateCellOutput::parent_readiness_scopes): <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateCellOutput::tags): <p>Tags on the resources.</p>
     /// - On failure, responds with [`SdkError<CreateCellError>`](crate::error::CreateCellError)
     pub fn create_cell(&self) -> fluent_builders::CreateCell<C, M, R> {
         fluent_builders::CreateCell::new(self.handle.clone())
@@ -102,9 +102,9 @@ where
     /// Constructs a fluent builder for the [`CreateCrossAccountAuthorization`](crate::client::fluent_builders::CreateCrossAccountAuthorization) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cross_account_authorization(impl Into<String>)`](crate::client::fluent_builders::CreateCrossAccountAuthorization::cross_account_authorization) / [`set_cross_account_authorization(Option<String>)`](crate::client::fluent_builders::CreateCrossAccountAuthorization::set_cross_account_authorization): The cross account authorization
+    ///   - [`cross_account_authorization(impl Into<String>)`](crate::client::fluent_builders::CreateCrossAccountAuthorization::cross_account_authorization) / [`set_cross_account_authorization(Option<String>)`](crate::client::fluent_builders::CreateCrossAccountAuthorization::set_cross_account_authorization): <p>The cross-account authorization.</p>
     /// - On success, responds with [`CreateCrossAccountAuthorizationOutput`](crate::output::CreateCrossAccountAuthorizationOutput) with field(s):
-    ///   - [`cross_account_authorization(Option<String>)`](crate::output::CreateCrossAccountAuthorizationOutput::cross_account_authorization): The cross account authorization
+    ///   - [`cross_account_authorization(Option<String>)`](crate::output::CreateCrossAccountAuthorizationOutput::cross_account_authorization): <p>The cross-account authorization.</p>
     /// - On failure, responds with [`SdkError<CreateCrossAccountAuthorizationError>`](crate::error::CreateCrossAccountAuthorizationError)
     pub fn create_cross_account_authorization(
         &self,
@@ -114,14 +114,14 @@ where
     /// Constructs a fluent builder for the [`CreateReadinessCheck`](crate::client::fluent_builders::CreateReadinessCheck) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::CreateReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::CreateReadinessCheck::set_readiness_check_name): The name of the ReadinessCheck to create
-    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateReadinessCheck::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::CreateReadinessCheck::set_resource_set_name): The name of the ResourceSet to check
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateReadinessCheck::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateReadinessCheck::set_tags): A collection of tags associated with a resource
+    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::CreateReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::CreateReadinessCheck::set_readiness_check_name): <p>The name of the readiness check to create.</p>
+    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateReadinessCheck::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::CreateReadinessCheck::set_resource_set_name): <p>The name of the resource set to check.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateReadinessCheck::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateReadinessCheck::set_tags): <p>A collection of tags associated with a resource.</p>
     /// - On success, responds with [`CreateReadinessCheckOutput`](crate::output::CreateReadinessCheckOutput) with field(s):
-    ///   - [`readiness_check_arn(Option<String>)`](crate::output::CreateReadinessCheckOutput::readiness_check_arn): Arn associated with ReadinessCheck
-    ///   - [`readiness_check_name(Option<String>)`](crate::output::CreateReadinessCheckOutput::readiness_check_name): Name for a ReadinessCheck
-    ///   - [`resource_set(Option<String>)`](crate::output::CreateReadinessCheckOutput::resource_set): Name of the ResourceSet to be checked
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateReadinessCheckOutput::tags): A collection of tags associated with a resource
+    ///   - [`readiness_check_arn(Option<String>)`](crate::output::CreateReadinessCheckOutput::readiness_check_arn): <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
+    ///   - [`readiness_check_name(Option<String>)`](crate::output::CreateReadinessCheckOutput::readiness_check_name): <p>Name of a readiness check.</p>
+    ///   - [`resource_set(Option<String>)`](crate::output::CreateReadinessCheckOutput::resource_set): <p>Name of the resource set to be checked.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateReadinessCheckOutput::tags): <p>A collection of tags associated with a resource.</p>
     /// - On failure, responds with [`SdkError<CreateReadinessCheckError>`](crate::error::CreateReadinessCheckError)
     pub fn create_readiness_check(&self) -> fluent_builders::CreateReadinessCheck<C, M, R> {
         fluent_builders::CreateReadinessCheck::new(self.handle.clone())
@@ -129,14 +129,14 @@ where
     /// Constructs a fluent builder for the [`CreateRecoveryGroup`](crate::client::fluent_builders::CreateRecoveryGroup) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::CreateRecoveryGroup::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::CreateRecoveryGroup::set_cells): A list of Cell arns
-    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::CreateRecoveryGroup::set_recovery_group_name): The name of the RecoveryGroup to create
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRecoveryGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRecoveryGroup::set_tags): A collection of tags associated with a resource
+    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::CreateRecoveryGroup::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::CreateRecoveryGroup::set_cells): <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
+    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::CreateRecoveryGroup::set_recovery_group_name): <p>The name of the recovery group to create.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRecoveryGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRecoveryGroup::set_tags): <p>A collection of tags associated with a resource.</p>
     /// - On success, responds with [`CreateRecoveryGroupOutput`](crate::output::CreateRecoveryGroupOutput) with field(s):
-    ///   - [`cells(Option<Vec<String>>)`](crate::output::CreateRecoveryGroupOutput::cells): A list of Cell arns
-    ///   - [`recovery_group_arn(Option<String>)`](crate::output::CreateRecoveryGroupOutput::recovery_group_arn): The arn for the RecoveryGroup
-    ///   - [`recovery_group_name(Option<String>)`](crate::output::CreateRecoveryGroupOutput::recovery_group_name): The name of the RecoveryGroup
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRecoveryGroupOutput::tags): A collection of tags associated with a resource
+    ///   - [`cells(Option<Vec<String>>)`](crate::output::CreateRecoveryGroupOutput::cells): <p>A list of a cell's Amazon Resource Names (ARNs).</p>
+    ///   - [`recovery_group_arn(Option<String>)`](crate::output::CreateRecoveryGroupOutput::recovery_group_arn): <p>The Amazon Resource Name (ARN) for the recovery group.</p>
+    ///   - [`recovery_group_name(Option<String>)`](crate::output::CreateRecoveryGroupOutput::recovery_group_name): <p>The name of the recovery group.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRecoveryGroupOutput::tags): <p>The tags associated with the recovery group.</p>
     /// - On failure, responds with [`SdkError<CreateRecoveryGroupError>`](crate::error::CreateRecoveryGroupError)
     pub fn create_recovery_group(&self) -> fluent_builders::CreateRecoveryGroup<C, M, R> {
         fluent_builders::CreateRecoveryGroup::new(self.handle.clone())
@@ -144,16 +144,16 @@ where
     /// Constructs a fluent builder for the [`CreateResourceSet`](crate::client::fluent_builders::CreateResourceSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::CreateResourceSet::set_resource_set_name): The name of the ResourceSet to create
-    ///   - [`resource_set_type(impl Into<String>)`](crate::client::fluent_builders::CreateResourceSet::resource_set_type) / [`set_resource_set_type(Option<String>)`](crate::client::fluent_builders::CreateResourceSet::set_resource_set_type): AWS Resource type of the resources in the ResourceSet
-    ///   - [`resources(Vec<Resource>)`](crate::client::fluent_builders::CreateResourceSet::resources) / [`set_resources(Option<Vec<Resource>>)`](crate::client::fluent_builders::CreateResourceSet::set_resources): A list of Resource objects
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateResourceSet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateResourceSet::set_tags): A collection of tags associated with a resource
+    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::CreateResourceSet::set_resource_set_name): <p>The name of the resource set to create.</p>
+    ///   - [`resource_set_type(impl Into<String>)`](crate::client::fluent_builders::CreateResourceSet::resource_set_type) / [`set_resource_set_type(Option<String>)`](crate::client::fluent_builders::CreateResourceSet::set_resource_set_type): <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>  <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
+    ///   - [`resources(Vec<Resource>)`](crate::client::fluent_builders::CreateResourceSet::resources) / [`set_resources(Option<Vec<Resource>>)`](crate::client::fluent_builders::CreateResourceSet::set_resources): <p>A list of resource objects in the resource set.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateResourceSet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateResourceSet::set_tags): <p>A tag to associate with the parameters for a resource set.</p>
     /// - On success, responds with [`CreateResourceSetOutput`](crate::output::CreateResourceSetOutput) with field(s):
-    ///   - [`resource_set_arn(Option<String>)`](crate::output::CreateResourceSetOutput::resource_set_arn): The arn for the ResourceSet
-    ///   - [`resource_set_name(Option<String>)`](crate::output::CreateResourceSetOutput::resource_set_name): The name of the ResourceSet
-    ///   - [`resource_set_type(Option<String>)`](crate::output::CreateResourceSetOutput::resource_set_type): AWS Resource Type of the resources in the ResourceSet
-    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::CreateResourceSetOutput::resources): A list of Resource objects
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateResourceSetOutput::tags): A collection of tags associated with a resource
+    ///   - [`resource_set_arn(Option<String>)`](crate::output::CreateResourceSetOutput::resource_set_arn): <p>The Amazon Resource Name (ARN) for the resource set.</p>
+    ///   - [`resource_set_name(Option<String>)`](crate::output::CreateResourceSetOutput::resource_set_name): <p>The name of the resource set.</p>
+    ///   - [`resource_set_type(Option<String>)`](crate::output::CreateResourceSetOutput::resource_set_type): <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>  <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
+    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::CreateResourceSetOutput::resources): <p>A list of resource objects.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateResourceSetOutput::tags): <p>A collection of tags associated with a resource.</p>
     /// - On failure, responds with [`SdkError<CreateResourceSetError>`](crate::error::CreateResourceSetError)
     pub fn create_resource_set(&self) -> fluent_builders::CreateResourceSet<C, M, R> {
         fluent_builders::CreateResourceSet::new(self.handle.clone())
@@ -161,7 +161,7 @@ where
     /// Constructs a fluent builder for the [`DeleteCell`](crate::client::fluent_builders::DeleteCell) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::DeleteCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::DeleteCell::set_cell_name): The Cell to delete
+    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::DeleteCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::DeleteCell::set_cell_name): <p>The name of the cell.</p>
     /// - On success, responds with [`DeleteCellOutput`](crate::output::DeleteCellOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCellError>`](crate::error::DeleteCellError)
@@ -171,7 +171,7 @@ where
     /// Constructs a fluent builder for the [`DeleteCrossAccountAuthorization`](crate::client::fluent_builders::DeleteCrossAccountAuthorization) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cross_account_authorization(impl Into<String>)`](crate::client::fluent_builders::DeleteCrossAccountAuthorization::cross_account_authorization) / [`set_cross_account_authorization(Option<String>)`](crate::client::fluent_builders::DeleteCrossAccountAuthorization::set_cross_account_authorization): The cross account authorization
+    ///   - [`cross_account_authorization(impl Into<String>)`](crate::client::fluent_builders::DeleteCrossAccountAuthorization::cross_account_authorization) / [`set_cross_account_authorization(Option<String>)`](crate::client::fluent_builders::DeleteCrossAccountAuthorization::set_cross_account_authorization): <p>The cross-account authorization.</p>
     /// - On success, responds with [`DeleteCrossAccountAuthorizationOutput`](crate::output::DeleteCrossAccountAuthorizationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteCrossAccountAuthorizationError>`](crate::error::DeleteCrossAccountAuthorizationError)
@@ -183,7 +183,7 @@ where
     /// Constructs a fluent builder for the [`DeleteReadinessCheck`](crate::client::fluent_builders::DeleteReadinessCheck) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::DeleteReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::DeleteReadinessCheck::set_readiness_check_name): The ReadinessCheck to delete
+    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::DeleteReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::DeleteReadinessCheck::set_readiness_check_name): <p>Name of a readiness check.</p>
     /// - On success, responds with [`DeleteReadinessCheckOutput`](crate::output::DeleteReadinessCheckOutput)
 
     /// - On failure, responds with [`SdkError<DeleteReadinessCheckError>`](crate::error::DeleteReadinessCheckError)
@@ -193,7 +193,7 @@ where
     /// Constructs a fluent builder for the [`DeleteRecoveryGroup`](crate::client::fluent_builders::DeleteRecoveryGroup) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::DeleteRecoveryGroup::set_recovery_group_name): The RecoveryGroup to delete
+    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::DeleteRecoveryGroup::set_recovery_group_name): <p>The name of a recovery group.</p>
     /// - On success, responds with [`DeleteRecoveryGroupOutput`](crate::output::DeleteRecoveryGroupOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRecoveryGroupError>`](crate::error::DeleteRecoveryGroupError)
@@ -203,7 +203,7 @@ where
     /// Constructs a fluent builder for the [`DeleteResourceSet`](crate::client::fluent_builders::DeleteResourceSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::DeleteResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::DeleteResourceSet::set_resource_set_name): The ResourceSet to delete
+    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::DeleteResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::DeleteResourceSet::set_resource_set_name): <p>Name of a resource set.</p>
     /// - On success, responds with [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteResourceSetError>`](crate::error::DeleteResourceSetError)
@@ -213,13 +213,13 @@ where
     /// Constructs a fluent builder for the [`GetArchitectureRecommendations`](crate::client::fluent_builders::GetArchitectureRecommendations) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetArchitectureRecommendations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetArchitectureRecommendations::set_max_results): Upper bound on number of records to return.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::set_next_token): A token that can be used to resume pagination from the end of the collection.
-    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::set_recovery_group_name): Name of RecoveryGroup (top level resource) to be analyzed.
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetArchitectureRecommendations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetArchitectureRecommendations::set_max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::set_recovery_group_name): <p>The name of a recovery group.</p>
     /// - On success, responds with [`GetArchitectureRecommendationsOutput`](crate::output::GetArchitectureRecommendationsOutput) with field(s):
-    ///   - [`last_audit_timestamp(Option<DateTime>)`](crate::output::GetArchitectureRecommendationsOutput::last_audit_timestamp): The time a Recovery Group was last assessed for recommendations in UTC ISO-8601 format.
-    ///   - [`next_token(Option<String>)`](crate::output::GetArchitectureRecommendationsOutput::next_token): A token that can be used to resume pagination from the end of the collection
-    ///   - [`recommendations(Option<Vec<Recommendation>>)`](crate::output::GetArchitectureRecommendationsOutput::recommendations): A list of recommendations for the customer's application
+    ///   - [`last_audit_timestamp(Option<DateTime>)`](crate::output::GetArchitectureRecommendationsOutput::last_audit_timestamp): <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetArchitectureRecommendationsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`recommendations(Option<Vec<Recommendation>>)`](crate::output::GetArchitectureRecommendationsOutput::recommendations): <p>A list of the recommendations for the customer's application.</p>
     /// - On failure, responds with [`SdkError<GetArchitectureRecommendationsError>`](crate::error::GetArchitectureRecommendationsError)
     pub fn get_architecture_recommendations(
         &self,
@@ -229,13 +229,13 @@ where
     /// Constructs a fluent builder for the [`GetCell`](crate::client::fluent_builders::GetCell) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::GetCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::GetCell::set_cell_name): The Cell to get
+    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::GetCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::GetCell::set_cell_name): <p>The name of the cell.</p>
     /// - On success, responds with [`GetCellOutput`](crate::output::GetCellOutput) with field(s):
-    ///   - [`cell_arn(Option<String>)`](crate::output::GetCellOutput::cell_arn): The arn for the Cell
-    ///   - [`cell_name(Option<String>)`](crate::output::GetCellOutput::cell_name): The name of the Cell
-    ///   - [`cells(Option<Vec<String>>)`](crate::output::GetCellOutput::cells): A list of Cell arns
-    ///   - [`parent_readiness_scopes(Option<Vec<String>>)`](crate::output::GetCellOutput::parent_readiness_scopes): A list of Cell ARNs and/or RecoveryGroup ARNs
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetCellOutput::tags): A collection of tags associated with a resource
+    ///   - [`cell_arn(Option<String>)`](crate::output::GetCellOutput::cell_arn): <p>The Amazon Resource Name (ARN) for the cell.</p>
+    ///   - [`cell_name(Option<String>)`](crate::output::GetCellOutput::cell_name): <p>The name of the cell.</p>
+    ///   - [`cells(Option<Vec<String>>)`](crate::output::GetCellOutput::cells): <p>A list of cell ARNs.</p>
+    ///   - [`parent_readiness_scopes(Option<Vec<String>>)`](crate::output::GetCellOutput::parent_readiness_scopes): <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetCellOutput::tags): <p>Tags on the resources.</p>
     /// - On failure, responds with [`SdkError<GetCellError>`](crate::error::GetCellError)
     pub fn get_cell(&self) -> fluent_builders::GetCell<C, M, R> {
         fluent_builders::GetCell::new(self.handle.clone())
@@ -244,13 +244,13 @@ where
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetCellReadinessSummary::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::set_cell_name): The name of the Cell
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetCellReadinessSummary::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetCellReadinessSummary::set_max_results): Upper bound on number of records to return.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::set_next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::set_cell_name): <p>The name of the cell.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetCellReadinessSummary::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetCellReadinessSummary::set_max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
     /// - On success, responds with [`GetCellReadinessSummaryOutput`](crate::output::GetCellReadinessSummaryOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::GetCellReadinessSummaryOutput::next_token): A token that can be used to resume pagination from the end of the collection.
-    ///   - [`readiness(Option<Readiness>)`](crate::output::GetCellReadinessSummaryOutput::readiness): The readiness at Cell level.
-    ///   - [`readiness_checks(Option<Vec<ReadinessCheckSummary>>)`](crate::output::GetCellReadinessSummaryOutput::readiness_checks): Summaries for the ReadinessChecks making up the Cell
+    ///   - [`next_token(Option<String>)`](crate::output::GetCellReadinessSummaryOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`readiness(Option<Readiness>)`](crate::output::GetCellReadinessSummaryOutput::readiness): <p>The readiness at a cell level.</p>
+    ///   - [`readiness_checks(Option<Vec<ReadinessCheckSummary>>)`](crate::output::GetCellReadinessSummaryOutput::readiness_checks): <p>Summaries for the readiness checks that make up the cell.</p>
     /// - On failure, responds with [`SdkError<GetCellReadinessSummaryError>`](crate::error::GetCellReadinessSummaryError)
     pub fn get_cell_readiness_summary(&self) -> fluent_builders::GetCellReadinessSummary<C, M, R> {
         fluent_builders::GetCellReadinessSummary::new(self.handle.clone())
@@ -258,12 +258,12 @@ where
     /// Constructs a fluent builder for the [`GetReadinessCheck`](crate::client::fluent_builders::GetReadinessCheck) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::GetReadinessCheck::set_readiness_check_name): The ReadinessCheck to get
+    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::GetReadinessCheck::set_readiness_check_name): <p>Name of a readiness check.</p>
     /// - On success, responds with [`GetReadinessCheckOutput`](crate::output::GetReadinessCheckOutput) with field(s):
-    ///   - [`readiness_check_arn(Option<String>)`](crate::output::GetReadinessCheckOutput::readiness_check_arn): Arn associated with ReadinessCheck
-    ///   - [`readiness_check_name(Option<String>)`](crate::output::GetReadinessCheckOutput::readiness_check_name): Name for a ReadinessCheck
-    ///   - [`resource_set(Option<String>)`](crate::output::GetReadinessCheckOutput::resource_set): Name of the ResourceSet to be checked
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetReadinessCheckOutput::tags): A collection of tags associated with a resource
+    ///   - [`readiness_check_arn(Option<String>)`](crate::output::GetReadinessCheckOutput::readiness_check_arn): <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
+    ///   - [`readiness_check_name(Option<String>)`](crate::output::GetReadinessCheckOutput::readiness_check_name): <p>Name of a readiness check.</p>
+    ///   - [`resource_set(Option<String>)`](crate::output::GetReadinessCheckOutput::resource_set): <p>Name of the resource set to be checked.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetReadinessCheckOutput::tags): <p>A collection of tags associated with a resource.</p>
     /// - On failure, responds with [`SdkError<GetReadinessCheckError>`](crate::error::GetReadinessCheckError)
     pub fn get_readiness_check(&self) -> fluent_builders::GetReadinessCheck<C, M, R> {
         fluent_builders::GetReadinessCheck::new(self.handle.clone())
@@ -272,14 +272,14 @@ where
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_max_results): Upper bound on number of records to return.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_next_token): A token used to resume pagination from the end of a previous request.
-    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_readiness_check_name): The ReadinessCheck to get
-    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_resource_identifier): The resource ARN or component Id to get
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_readiness_check_name): <p>Name of a readiness check.</p>
+    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_resource_identifier): <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
     /// - On success, responds with [`GetReadinessCheckResourceStatusOutput`](crate::output::GetReadinessCheckResourceStatusOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::GetReadinessCheckResourceStatusOutput::next_token): A token that can be used to resume pagination from the end of the collection.
-    ///   - [`readiness(Option<Readiness>)`](crate::output::GetReadinessCheckResourceStatusOutput::readiness): The readiness at rule level.
-    ///   - [`rules(Option<Vec<RuleResult>>)`](crate::output::GetReadinessCheckResourceStatusOutput::rules): Details of the rules's results
+    ///   - [`next_token(Option<String>)`](crate::output::GetReadinessCheckResourceStatusOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`readiness(Option<Readiness>)`](crate::output::GetReadinessCheckResourceStatusOutput::readiness): <p>The readiness at a rule level.</p>
+    ///   - [`rules(Option<Vec<RuleResult>>)`](crate::output::GetReadinessCheckResourceStatusOutput::rules): <p>Details of the rule's results.</p>
     /// - On failure, responds with [`SdkError<GetReadinessCheckResourceStatusError>`](crate::error::GetReadinessCheckResourceStatusError)
     pub fn get_readiness_check_resource_status(
         &self,
@@ -290,14 +290,14 @@ where
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetReadinessCheckStatus::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckStatus::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckStatus::set_max_results): Upper bound on number of records to return.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::set_next_token): A token used to resume pagination from the end of a previous request.
-    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::set_readiness_check_name): The ReadinessCheck to get
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckStatus::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckStatus::set_max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::set_readiness_check_name): <p>Name of a readiness check.</p>
     /// - On success, responds with [`GetReadinessCheckStatusOutput`](crate::output::GetReadinessCheckStatusOutput) with field(s):
-    ///   - [`messages(Option<Vec<Message>>)`](crate::output::GetReadinessCheckStatusOutput::messages): Top level messages for readiness check status
-    ///   - [`next_token(Option<String>)`](crate::output::GetReadinessCheckStatusOutput::next_token): A token that can be used to resume pagination from the end of the collection.
-    ///   - [`readiness(Option<Readiness>)`](crate::output::GetReadinessCheckStatusOutput::readiness): The readiness at rule level.
-    ///   - [`resources(Option<Vec<ResourceResult>>)`](crate::output::GetReadinessCheckStatusOutput::resources): Summary of resources's readiness
+    ///   - [`messages(Option<Vec<Message>>)`](crate::output::GetReadinessCheckStatusOutput::messages): <p>Top level messages for readiness check status</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetReadinessCheckStatusOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`readiness(Option<Readiness>)`](crate::output::GetReadinessCheckStatusOutput::readiness): <p>The readiness at rule level.</p>
+    ///   - [`resources(Option<Vec<ResourceResult>>)`](crate::output::GetReadinessCheckStatusOutput::resources): <p>Summary of the readiness of resources.</p>
     /// - On failure, responds with [`SdkError<GetReadinessCheckStatusError>`](crate::error::GetReadinessCheckStatusError)
     pub fn get_readiness_check_status(&self) -> fluent_builders::GetReadinessCheckStatus<C, M, R> {
         fluent_builders::GetReadinessCheckStatus::new(self.handle.clone())
@@ -305,12 +305,12 @@ where
     /// Constructs a fluent builder for the [`GetRecoveryGroup`](crate::client::fluent_builders::GetRecoveryGroup) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::GetRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::GetRecoveryGroup::set_recovery_group_name): The RecoveryGroup to get
+    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::GetRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::GetRecoveryGroup::set_recovery_group_name): <p>The name of a recovery group.</p>
     /// - On success, responds with [`GetRecoveryGroupOutput`](crate::output::GetRecoveryGroupOutput) with field(s):
-    ///   - [`cells(Option<Vec<String>>)`](crate::output::GetRecoveryGroupOutput::cells): A list of Cell arns
-    ///   - [`recovery_group_arn(Option<String>)`](crate::output::GetRecoveryGroupOutput::recovery_group_arn): The arn for the RecoveryGroup
-    ///   - [`recovery_group_name(Option<String>)`](crate::output::GetRecoveryGroupOutput::recovery_group_name): The name of the RecoveryGroup
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetRecoveryGroupOutput::tags): A collection of tags associated with a resource
+    ///   - [`cells(Option<Vec<String>>)`](crate::output::GetRecoveryGroupOutput::cells): <p>A list of a cell's Amazon Resource Names (ARNs).</p>
+    ///   - [`recovery_group_arn(Option<String>)`](crate::output::GetRecoveryGroupOutput::recovery_group_arn): <p>The Amazon Resource Name (ARN) for the recovery group.</p>
+    ///   - [`recovery_group_name(Option<String>)`](crate::output::GetRecoveryGroupOutput::recovery_group_name): <p>The name of the recovery group.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetRecoveryGroupOutput::tags): <p>The tags associated with the recovery group.</p>
     /// - On failure, responds with [`SdkError<GetRecoveryGroupError>`](crate::error::GetRecoveryGroupError)
     pub fn get_recovery_group(&self) -> fluent_builders::GetRecoveryGroup<C, M, R> {
         fluent_builders::GetRecoveryGroup::new(self.handle.clone())
@@ -319,13 +319,13 @@ where
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::set_max_results): Upper bound on number of records to return.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::set_next_token): A token used to resume pagination from the end of a previous request.
-    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::set_recovery_group_name): The name of the RecoveryGroup
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::set_max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::set_recovery_group_name): <p>The name of a recovery group.</p>
     /// - On success, responds with [`GetRecoveryGroupReadinessSummaryOutput`](crate::output::GetRecoveryGroupReadinessSummaryOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::GetRecoveryGroupReadinessSummaryOutput::next_token): A token that can be used to resume pagination from the end of the collection.
-    ///   - [`readiness(Option<Readiness>)`](crate::output::GetRecoveryGroupReadinessSummaryOutput::readiness): The readiness at RecoveryGroup level.
-    ///   - [`readiness_checks(Option<Vec<ReadinessCheckSummary>>)`](crate::output::GetRecoveryGroupReadinessSummaryOutput::readiness_checks): Summaries for the ReadinessChecks making up the RecoveryGroup
+    ///   - [`next_token(Option<String>)`](crate::output::GetRecoveryGroupReadinessSummaryOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`readiness(Option<Readiness>)`](crate::output::GetRecoveryGroupReadinessSummaryOutput::readiness): <p>The readiness status at a recovery group level.</p>
+    ///   - [`readiness_checks(Option<Vec<ReadinessCheckSummary>>)`](crate::output::GetRecoveryGroupReadinessSummaryOutput::readiness_checks): <p>Summaries of the readiness checks for the recovery group.</p>
     /// - On failure, responds with [`SdkError<GetRecoveryGroupReadinessSummaryError>`](crate::error::GetRecoveryGroupReadinessSummaryError)
     pub fn get_recovery_group_readiness_summary(
         &self,
@@ -335,13 +335,13 @@ where
     /// Constructs a fluent builder for the [`GetResourceSet`](crate::client::fluent_builders::GetResourceSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::GetResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::GetResourceSet::set_resource_set_name): The ResourceSet to get
+    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::GetResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::GetResourceSet::set_resource_set_name): <p>Name of a resource set.</p>
     /// - On success, responds with [`GetResourceSetOutput`](crate::output::GetResourceSetOutput) with field(s):
-    ///   - [`resource_set_arn(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_arn): The arn for the ResourceSet
-    ///   - [`resource_set_name(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_name): The name of the ResourceSet
-    ///   - [`resource_set_type(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_type): AWS Resource Type of the resources in the ResourceSet
-    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::GetResourceSetOutput::resources): A list of Resource objects
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetResourceSetOutput::tags): A collection of tags associated with a resource
+    ///   - [`resource_set_arn(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_arn): <p>The Amazon Resource Name (ARN) for the resource set.</p>
+    ///   - [`resource_set_name(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_name): <p>The name of the resource set.</p>
+    ///   - [`resource_set_type(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_type): <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>  <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
+    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::GetResourceSetOutput::resources): <p>A list of resource objects.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetResourceSetOutput::tags): <p>A collection of tags associated with a resource.</p>
     /// - On failure, responds with [`SdkError<GetResourceSetError>`](crate::error::GetResourceSetError)
     pub fn get_resource_set(&self) -> fluent_builders::GetResourceSet<C, M, R> {
         fluent_builders::GetResourceSet::new(self.handle.clone())
@@ -350,11 +350,11 @@ where
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCells::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCells::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListCells::set_max_results): Upper bound on number of records to return.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCells::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCells::set_next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCells::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListCells::set_max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCells::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCells::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
     /// - On success, responds with [`ListCellsOutput`](crate::output::ListCellsOutput) with field(s):
-    ///   - [`cells(Option<Vec<CellOutput>>)`](crate::output::ListCellsOutput::cells): A list of Cells
-    ///   - [`next_token(Option<String>)`](crate::output::ListCellsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    ///   - [`cells(Option<Vec<CellOutput>>)`](crate::output::ListCellsOutput::cells): <p>A list of cells.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCellsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     /// - On failure, responds with [`SdkError<ListCellsError>`](crate::error::ListCellsError)
     pub fn list_cells(&self) -> fluent_builders::ListCells<C, M, R> {
         fluent_builders::ListCells::new(self.handle.clone())
@@ -363,11 +363,11 @@ where
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCrossAccountAuthorizations::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::set_max_results): Upper bound on number of records to return.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::set_next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::set_max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
     /// - On success, responds with [`ListCrossAccountAuthorizationsOutput`](crate::output::ListCrossAccountAuthorizationsOutput) with field(s):
-    ///   - [`cross_account_authorizations(Option<Vec<String>>)`](crate::output::ListCrossAccountAuthorizationsOutput::cross_account_authorizations): A list of CrossAccountAuthorizations
-    ///   - [`next_token(Option<String>)`](crate::output::ListCrossAccountAuthorizationsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    ///   - [`cross_account_authorizations(Option<Vec<String>>)`](crate::output::ListCrossAccountAuthorizationsOutput::cross_account_authorizations): <p>A list of cross-account authorizations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCrossAccountAuthorizationsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     /// - On failure, responds with [`SdkError<ListCrossAccountAuthorizationsError>`](crate::error::ListCrossAccountAuthorizationsError)
     pub fn list_cross_account_authorizations(
         &self,
@@ -378,11 +378,11 @@ where
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListReadinessChecks::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReadinessChecks::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListReadinessChecks::set_max_results): Upper bound on number of records to return.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReadinessChecks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReadinessChecks::set_next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReadinessChecks::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListReadinessChecks::set_max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReadinessChecks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReadinessChecks::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
     /// - On success, responds with [`ListReadinessChecksOutput`](crate::output::ListReadinessChecksOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListReadinessChecksOutput::next_token): A token that can be used to resume pagination from the end of the collection.
-    ///   - [`readiness_checks(Option<Vec<ReadinessCheckOutput>>)`](crate::output::ListReadinessChecksOutput::readiness_checks): A list of ReadinessCheck associated with the account
+    ///   - [`next_token(Option<String>)`](crate::output::ListReadinessChecksOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`readiness_checks(Option<Vec<ReadinessCheckOutput>>)`](crate::output::ListReadinessChecksOutput::readiness_checks): <p>A list of readiness checks associated with the account.</p>
     /// - On failure, responds with [`SdkError<ListReadinessChecksError>`](crate::error::ListReadinessChecksError)
     pub fn list_readiness_checks(&self) -> fluent_builders::ListReadinessChecks<C, M, R> {
         fluent_builders::ListReadinessChecks::new(self.handle.clone())
@@ -391,11 +391,11 @@ where
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecoveryGroups::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecoveryGroups::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRecoveryGroups::set_max_results): Upper bound on number of records to return.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecoveryGroups::set_next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecoveryGroups::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRecoveryGroups::set_max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecoveryGroups::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
     /// - On success, responds with [`ListRecoveryGroupsOutput`](crate::output::ListRecoveryGroupsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListRecoveryGroupsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
-    ///   - [`recovery_groups(Option<Vec<RecoveryGroupOutput>>)`](crate::output::ListRecoveryGroupsOutput::recovery_groups): A list of RecoveryGroups
+    ///   - [`next_token(Option<String>)`](crate::output::ListRecoveryGroupsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`recovery_groups(Option<Vec<RecoveryGroupOutput>>)`](crate::output::ListRecoveryGroupsOutput::recovery_groups): <p>A list of recovery groups.</p>
     /// - On failure, responds with [`SdkError<ListRecoveryGroupsError>`](crate::error::ListRecoveryGroupsError)
     pub fn list_recovery_groups(&self) -> fluent_builders::ListRecoveryGroups<C, M, R> {
         fluent_builders::ListRecoveryGroups::new(self.handle.clone())
@@ -404,11 +404,11 @@ where
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListResourceSets::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResourceSets::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListResourceSets::set_max_results): Upper bound on number of records to return.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourceSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourceSets::set_next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResourceSets::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListResourceSets::set_max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourceSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourceSets::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
     /// - On success, responds with [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListResourceSetsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
-    ///   - [`resource_sets(Option<Vec<ResourceSetOutput>>)`](crate::output::ListResourceSetsOutput::resource_sets): A list of ResourceSets associated with the account
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceSetsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`resource_sets(Option<Vec<ResourceSetOutput>>)`](crate::output::ListResourceSetsOutput::resource_sets): <p>A list of resource sets associated with the account.</p>
     /// - On failure, responds with [`SdkError<ListResourceSetsError>`](crate::error::ListResourceSetsError)
     pub fn list_resource_sets(&self) -> fluent_builders::ListResourceSets<C, M, R> {
         fluent_builders::ListResourceSets::new(self.handle.clone())
@@ -417,12 +417,12 @@ where
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRules::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRules::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRules::set_max_results): Upper bound on number of records to return.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRules::set_next_token): A token used to resume pagination from the end of a previous request.
-    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::ListRules::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::ListRules::set_resource_type): Filter parameter which specifies the rules to return given a resource type.
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRules::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRules::set_max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRules::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::ListRules::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::ListRules::set_resource_type): <p>The resource type that a readiness rule applies to.</p>
     /// - On success, responds with [`ListRulesOutput`](crate::output::ListRulesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListRulesOutput::next_token): A token that can be used to resume pagination from the end of the collection.
-    ///   - [`rules(Option<Vec<ListRulesOutput>>)`](crate::output::ListRulesOutput::rules): A list of rules
+    ///   - [`next_token(Option<String>)`](crate::output::ListRulesOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`rules(Option<Vec<ListRulesOutput>>)`](crate::output::ListRulesOutput::rules): <p>A list of readiness rules for a specific resource type.</p>
     /// - On failure, responds with [`SdkError<ListRulesError>`](crate::error::ListRulesError)
     pub fn list_rules(&self) -> fluent_builders::ListRules<C, M, R> {
         fluent_builders::ListRules::new(self.handle.clone())
@@ -430,9 +430,9 @@ where
     /// Constructs a fluent builder for the [`ListTagsForResources`](crate::client::fluent_builders::ListTagsForResources) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResources::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResources::set_resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResources::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResources::set_resource_arn): <p>The Amazon Resource Name (ARN) for a resource.</p>
     /// - On success, responds with [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourcesOutput::tags): A collection of tags associated with a resource
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourcesOutput::tags): <p></p>
     /// - On failure, responds with [`SdkError<ListTagsForResourcesError>`](crate::error::ListTagsForResourcesError)
     pub fn list_tags_for_resources(&self) -> fluent_builders::ListTagsForResources<C, M, R> {
         fluent_builders::ListTagsForResources::new(self.handle.clone())
@@ -440,8 +440,8 @@ where
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): A collection of tags associated with a resource
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for a resource.</p>
+    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p></p>
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
@@ -451,8 +451,8 @@ where
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): A comma-separated list of the tag keys to remove from the resource.
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for a resource.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys for tags you add to resources.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
@@ -462,14 +462,14 @@ where
     /// Constructs a fluent builder for the [`UpdateCell`](crate::client::fluent_builders::UpdateCell) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::UpdateCell::set_cell_name): The Cell to update
-    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::UpdateCell::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateCell::set_cells): A list of Cell arns, completely replaces previous list
+    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::UpdateCell::set_cell_name): <p>The name of the cell.</p>
+    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::UpdateCell::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateCell::set_cells): <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
     /// - On success, responds with [`UpdateCellOutput`](crate::output::UpdateCellOutput) with field(s):
-    ///   - [`cell_arn(Option<String>)`](crate::output::UpdateCellOutput::cell_arn): The arn for the Cell
-    ///   - [`cell_name(Option<String>)`](crate::output::UpdateCellOutput::cell_name): The name of the Cell
-    ///   - [`cells(Option<Vec<String>>)`](crate::output::UpdateCellOutput::cells): A list of Cell arns
-    ///   - [`parent_readiness_scopes(Option<Vec<String>>)`](crate::output::UpdateCellOutput::parent_readiness_scopes): A list of Cell ARNs and/or RecoveryGroup ARNs
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateCellOutput::tags): A collection of tags associated with a resource
+    ///   - [`cell_arn(Option<String>)`](crate::output::UpdateCellOutput::cell_arn): <p>The Amazon Resource Name (ARN) for the cell.</p>
+    ///   - [`cell_name(Option<String>)`](crate::output::UpdateCellOutput::cell_name): <p>The name of the cell.</p>
+    ///   - [`cells(Option<Vec<String>>)`](crate::output::UpdateCellOutput::cells): <p>A list of cell ARNs.</p>
+    ///   - [`parent_readiness_scopes(Option<Vec<String>>)`](crate::output::UpdateCellOutput::parent_readiness_scopes): <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateCellOutput::tags): <p>Tags on the resources.</p>
     /// - On failure, responds with [`SdkError<UpdateCellError>`](crate::error::UpdateCellError)
     pub fn update_cell(&self) -> fluent_builders::UpdateCell<C, M, R> {
         fluent_builders::UpdateCell::new(self.handle.clone())
@@ -477,13 +477,13 @@ where
     /// Constructs a fluent builder for the [`UpdateReadinessCheck`](crate::client::fluent_builders::UpdateReadinessCheck) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::set_readiness_check_name): The ReadinessCheck to update
-    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::set_resource_set_name): The name of the ResourceSet to check
+    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::set_readiness_check_name): <p>Name of a readiness check.</p>
+    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::set_resource_set_name): <p>The name of the resource set to be checked.</p>
     /// - On success, responds with [`UpdateReadinessCheckOutput`](crate::output::UpdateReadinessCheckOutput) with field(s):
-    ///   - [`readiness_check_arn(Option<String>)`](crate::output::UpdateReadinessCheckOutput::readiness_check_arn): Arn associated with ReadinessCheck
-    ///   - [`readiness_check_name(Option<String>)`](crate::output::UpdateReadinessCheckOutput::readiness_check_name): Name for a ReadinessCheck
-    ///   - [`resource_set(Option<String>)`](crate::output::UpdateReadinessCheckOutput::resource_set): Name of the ResourceSet to be checked
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateReadinessCheckOutput::tags): A collection of tags associated with a resource
+    ///   - [`readiness_check_arn(Option<String>)`](crate::output::UpdateReadinessCheckOutput::readiness_check_arn): <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
+    ///   - [`readiness_check_name(Option<String>)`](crate::output::UpdateReadinessCheckOutput::readiness_check_name): <p>Name of a readiness check.</p>
+    ///   - [`resource_set(Option<String>)`](crate::output::UpdateReadinessCheckOutput::resource_set): <p>Name of the resource set to be checked.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateReadinessCheckOutput::tags): <p>A collection of tags associated with a resource.</p>
     /// - On failure, responds with [`SdkError<UpdateReadinessCheckError>`](crate::error::UpdateReadinessCheckError)
     pub fn update_readiness_check(&self) -> fluent_builders::UpdateReadinessCheck<C, M, R> {
         fluent_builders::UpdateReadinessCheck::new(self.handle.clone())
@@ -491,13 +491,13 @@ where
     /// Constructs a fluent builder for the [`UpdateRecoveryGroup`](crate::client::fluent_builders::UpdateRecoveryGroup) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::UpdateRecoveryGroup::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateRecoveryGroup::set_cells): A list of Cell arns, completely replaces previous list
-    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::UpdateRecoveryGroup::set_recovery_group_name): The RecoveryGroup to update
+    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::UpdateRecoveryGroup::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateRecoveryGroup::set_cells): <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
+    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::UpdateRecoveryGroup::set_recovery_group_name): <p>The name of a recovery group.</p>
     /// - On success, responds with [`UpdateRecoveryGroupOutput`](crate::output::UpdateRecoveryGroupOutput) with field(s):
-    ///   - [`cells(Option<Vec<String>>)`](crate::output::UpdateRecoveryGroupOutput::cells): A list of Cell arns
-    ///   - [`recovery_group_arn(Option<String>)`](crate::output::UpdateRecoveryGroupOutput::recovery_group_arn): The arn for the RecoveryGroup
-    ///   - [`recovery_group_name(Option<String>)`](crate::output::UpdateRecoveryGroupOutput::recovery_group_name): The name of the RecoveryGroup
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateRecoveryGroupOutput::tags): A collection of tags associated with a resource
+    ///   - [`cells(Option<Vec<String>>)`](crate::output::UpdateRecoveryGroupOutput::cells): <p>A list of a cell's Amazon Resource Names (ARNs).</p>
+    ///   - [`recovery_group_arn(Option<String>)`](crate::output::UpdateRecoveryGroupOutput::recovery_group_arn): <p>The Amazon Resource Name (ARN) for the recovery group.</p>
+    ///   - [`recovery_group_name(Option<String>)`](crate::output::UpdateRecoveryGroupOutput::recovery_group_name): <p>The name of the recovery group.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateRecoveryGroupOutput::tags): <p>The tags associated with the recovery group.</p>
     /// - On failure, responds with [`SdkError<UpdateRecoveryGroupError>`](crate::error::UpdateRecoveryGroupError)
     pub fn update_recovery_group(&self) -> fluent_builders::UpdateRecoveryGroup<C, M, R> {
         fluent_builders::UpdateRecoveryGroup::new(self.handle.clone())
@@ -505,15 +505,15 @@ where
     /// Constructs a fluent builder for the [`UpdateResourceSet`](crate::client::fluent_builders::UpdateResourceSet) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::UpdateResourceSet::set_resource_set_name): The ResourceSet to update
-    ///   - [`resource_set_type(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceSet::resource_set_type) / [`set_resource_set_type(Option<String>)`](crate::client::fluent_builders::UpdateResourceSet::set_resource_set_type): AWS Resource Type of the resources in the ResourceSet
-    ///   - [`resources(Vec<Resource>)`](crate::client::fluent_builders::UpdateResourceSet::resources) / [`set_resources(Option<Vec<Resource>>)`](crate::client::fluent_builders::UpdateResourceSet::set_resources): A list of Resource objects
+    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::UpdateResourceSet::set_resource_set_name): <p>Name of a resource set.</p>
+    ///   - [`resource_set_type(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceSet::resource_set_type) / [`set_resource_set_type(Option<String>)`](crate::client::fluent_builders::UpdateResourceSet::set_resource_set_type): <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>  <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
+    ///   - [`resources(Vec<Resource>)`](crate::client::fluent_builders::UpdateResourceSet::resources) / [`set_resources(Option<Vec<Resource>>)`](crate::client::fluent_builders::UpdateResourceSet::set_resources): <p>A list of resource objects.</p>
     /// - On success, responds with [`UpdateResourceSetOutput`](crate::output::UpdateResourceSetOutput) with field(s):
-    ///   - [`resource_set_arn(Option<String>)`](crate::output::UpdateResourceSetOutput::resource_set_arn): The arn for the ResourceSet
-    ///   - [`resource_set_name(Option<String>)`](crate::output::UpdateResourceSetOutput::resource_set_name): The name of the ResourceSet
-    ///   - [`resource_set_type(Option<String>)`](crate::output::UpdateResourceSetOutput::resource_set_type): AWS Resource Type of the resources in the ResourceSet
-    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::UpdateResourceSetOutput::resources): A list of Resource objects
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateResourceSetOutput::tags): A collection of tags associated with a resource
+    ///   - [`resource_set_arn(Option<String>)`](crate::output::UpdateResourceSetOutput::resource_set_arn): <p>The Amazon Resource Name (ARN) for the resource set.</p>
+    ///   - [`resource_set_name(Option<String>)`](crate::output::UpdateResourceSetOutput::resource_set_name): <p>The name of the resource set.</p>
+    ///   - [`resource_set_type(Option<String>)`](crate::output::UpdateResourceSetOutput::resource_set_type): <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>  <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
+    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::UpdateResourceSetOutput::resources): <p>A list of resource objects.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateResourceSetOutput::tags): <p>A collection of tags associated with a resource.</p>
     /// - On failure, responds with [`SdkError<UpdateResourceSetError>`](crate::error::UpdateResourceSetError)
     pub fn update_resource_set(&self) -> fluent_builders::UpdateResourceSet<C, M, R> {
         fluent_builders::UpdateResourceSet::new(self.handle.clone())
@@ -529,7 +529,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateCell`.
     ///
-    /// Creates a new Cell.
+    /// <p>Creates a cell in an account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCell<
         C = aws_smithy_client::erase::DynConnector,
@@ -586,12 +586,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The name of the Cell to create
+        /// <p>The name of the cell to create.</p>
         pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cell_name(input.into());
             self
         }
-        /// The name of the Cell to create
+        /// <p>The name of the cell to create.</p>
         pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cell_name(input);
             self
@@ -600,12 +600,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
-        /// A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
+        /// <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>
         pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cells(input.into());
             self
         }
-        /// A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
+        /// <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>
         pub fn set_cells(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -617,7 +617,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// A collection of tags associated with a resource
+        /// <p>A collection of tags associated with a resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -626,7 +626,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// A collection of tags associated with a resource
+        /// <p>A collection of tags associated with a resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -639,7 +639,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCrossAccountAuthorization`.
     ///
-    /// Create a new cross account readiness authorization.
+    /// <p>Creates a cross-account readiness authorization. This lets you authorize another account to work with Route 53 Application Recovery Controller, for example, to check the readiness status of resources in a separate account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCrossAccountAuthorization<
         C = aws_smithy_client::erase::DynConnector,
@@ -696,7 +696,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The cross account authorization
+        /// <p>The cross-account authorization.</p>
         pub fn cross_account_authorization(
             mut self,
             input: impl Into<std::string::String>,
@@ -704,7 +704,7 @@ pub mod fluent_builders {
             self.inner = self.inner.cross_account_authorization(input.into());
             self
         }
-        /// The cross account authorization
+        /// <p>The cross-account authorization.</p>
         pub fn set_cross_account_authorization(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -715,7 +715,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateReadinessCheck`.
     ///
-    /// Creates a new Readiness Check.
+    /// <p>Creates a readiness check in an account. A readiness check monitors a resource set in your application, such as a set of Amazon Aurora instances, that Application Recovery Controller is auditing recovery readiness for. The audits run once every minute on every resource that's associated with a readiness check.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReadinessCheck<
         C = aws_smithy_client::erase::DynConnector,
@@ -772,12 +772,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The name of the ReadinessCheck to create
+        /// <p>The name of the readiness check to create.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.readiness_check_name(input.into());
             self
         }
-        /// The name of the ReadinessCheck to create
+        /// <p>The name of the readiness check to create.</p>
         pub fn set_readiness_check_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -785,12 +785,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_readiness_check_name(input);
             self
         }
-        /// The name of the ResourceSet to check
+        /// <p>The name of the resource set to check.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_set_name(input.into());
             self
         }
-        /// The name of the ResourceSet to check
+        /// <p>The name of the resource set to check.</p>
         pub fn set_resource_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -802,7 +802,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// A collection of tags associated with a resource
+        /// <p>A collection of tags associated with a resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -811,7 +811,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// A collection of tags associated with a resource
+        /// <p>A collection of tags associated with a resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -824,7 +824,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRecoveryGroup`.
     ///
-    /// Creates a new Recovery Group.
+    /// <p>Creates a recovery group in an account. A recovery group corresponds to an application and includes a list of the cells that make up the application.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecoveryGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -885,12 +885,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
-        /// A list of Cell arns
+        /// <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
         pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cells(input.into());
             self
         }
-        /// A list of Cell arns
+        /// <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
         pub fn set_cells(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -898,12 +898,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cells(input);
             self
         }
-        /// The name of the RecoveryGroup to create
+        /// <p>The name of the recovery group to create.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recovery_group_name(input.into());
             self
         }
-        /// The name of the RecoveryGroup to create
+        /// <p>The name of the recovery group to create.</p>
         pub fn set_recovery_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -915,7 +915,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// A collection of tags associated with a resource
+        /// <p>A collection of tags associated with a resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -924,7 +924,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// A collection of tags associated with a resource
+        /// <p>A collection of tags associated with a resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -937,7 +937,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateResourceSet`.
     ///
-    /// Creates a new Resource Set.
+    /// <p>Creates a resource set. A resource set is a set of resources of one type that span multiple cells. You can associate a resource set with a readiness check to monitor the resources for failover readiness.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -994,12 +994,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The name of the ResourceSet to create
+        /// <p>The name of the resource set to create.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_set_name(input.into());
             self
         }
-        /// The name of the ResourceSet to create
+        /// <p>The name of the resource set to create.</p>
         pub fn set_resource_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1007,12 +1007,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_set_name(input);
             self
         }
-        /// AWS Resource type of the resources in the ResourceSet
+        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+        /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
         pub fn resource_set_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_set_type(input.into());
             self
         }
-        /// AWS Resource type of the resources in the ResourceSet
+        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+        /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
         pub fn set_resource_set_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1024,12 +1026,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
-        /// A list of Resource objects
+        /// <p>A list of resource objects in the resource set.</p>
         pub fn resources(mut self, input: crate::model::Resource) -> Self {
             self.inner = self.inner.resources(input);
             self
         }
-        /// A list of Resource objects
+        /// <p>A list of resource objects in the resource set.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -1041,7 +1043,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// A collection of tags associated with a resource
+        /// <p>A tag to associate with the parameters for a resource set.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1050,7 +1052,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// A collection of tags associated with a resource
+        /// <p>A tag to associate with the parameters for a resource set.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1063,7 +1065,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCell`.
     ///
-    /// Deletes an existing Cell.
+    /// <p>Delete a cell. When successful, the response code is 204, with no response body.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCell<
         C = aws_smithy_client::erase::DynConnector,
@@ -1120,12 +1122,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The Cell to delete
+        /// <p>The name of the cell.</p>
         pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cell_name(input.into());
             self
         }
-        /// The Cell to delete
+        /// <p>The name of the cell.</p>
         pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cell_name(input);
             self
@@ -1133,7 +1135,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCrossAccountAuthorization`.
     ///
-    /// Delete cross account readiness authorization
+    /// <p>Deletes cross account readiness authorization.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCrossAccountAuthorization<
         C = aws_smithy_client::erase::DynConnector,
@@ -1190,7 +1192,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The cross account authorization
+        /// <p>The cross-account authorization.</p>
         pub fn cross_account_authorization(
             mut self,
             input: impl Into<std::string::String>,
@@ -1198,7 +1200,7 @@ pub mod fluent_builders {
             self.inner = self.inner.cross_account_authorization(input.into());
             self
         }
-        /// The cross account authorization
+        /// <p>The cross-account authorization.</p>
         pub fn set_cross_account_authorization(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1209,7 +1211,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteReadinessCheck`.
     ///
-    /// Deletes an existing Readiness Check.
+    /// <p>Deletes a readiness check.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReadinessCheck<
         C = aws_smithy_client::erase::DynConnector,
@@ -1266,12 +1268,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The ReadinessCheck to delete
+        /// <p>Name of a readiness check.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.readiness_check_name(input.into());
             self
         }
-        /// The ReadinessCheck to delete
+        /// <p>Name of a readiness check.</p>
         pub fn set_readiness_check_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1282,7 +1284,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRecoveryGroup`.
     ///
-    /// Deletes an existing Recovery Group.
+    /// <p>Deletes a recovery group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecoveryGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -1339,12 +1341,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The RecoveryGroup to delete
+        /// <p>The name of a recovery group.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recovery_group_name(input.into());
             self
         }
-        /// The RecoveryGroup to delete
+        /// <p>The name of a recovery group.</p>
         pub fn set_recovery_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1355,7 +1357,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResourceSet`.
     ///
-    /// Deletes an existing Resource Set.
+    /// <p>Deletes a resource set.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourceSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -1412,12 +1414,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The ResourceSet to delete
+        /// <p>Name of a resource set.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_set_name(input.into());
             self
         }
-        /// The ResourceSet to delete
+        /// <p>Name of a resource set.</p>
         pub fn set_resource_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1428,7 +1430,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetArchitectureRecommendations`.
     ///
-    /// Returns a collection of recommendations to improve resilliance and readiness check quality for a Recovery Group.
+    /// <p>Gets recommendations about architecture designs for improving resiliency for an application, based on a recovery group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetArchitectureRecommendations<
         C = aws_smithy_client::erase::DynConnector,
@@ -1485,32 +1487,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// A token that can be used to resume pagination from the end of the collection.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// A token that can be used to resume pagination from the end of the collection.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// Name of RecoveryGroup (top level resource) to be analyzed.
+        /// <p>The name of a recovery group.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recovery_group_name(input.into());
             self
         }
-        /// Name of RecoveryGroup (top level resource) to be analyzed.
+        /// <p>The name of a recovery group.</p>
         pub fn set_recovery_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1521,7 +1523,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCell`.
     ///
-    /// Returns information about a Cell.
+    /// <p>Gets information about a cell including cell name, cell Amazon Resource Name (ARN), ARNs of nested cells for this cell, and a list of those cell ARNs with their associated recovery group ARNs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCell<
         C = aws_smithy_client::erase::DynConnector,
@@ -1578,12 +1580,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The Cell to get
+        /// <p>The name of the cell.</p>
         pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cell_name(input.into());
             self
         }
-        /// The Cell to get
+        /// <p>The name of the cell.</p>
         pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cell_name(input);
             self
@@ -1591,7 +1593,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCellReadinessSummary`.
     ///
-    /// Returns information about readiness of a Cell.
+    /// <p>Gets readiness for a cell. Aggregates the readiness of all the resources that are associated with the cell into a single value.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCellReadinessSummary<
         C = aws_smithy_client::erase::DynConnector,
@@ -1654,32 +1656,32 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::GetCellReadinessSummaryPaginator<C, M, R> {
             crate::paginator::GetCellReadinessSummaryPaginator::new(self.handle, self.inner)
         }
-        /// The name of the Cell
+        /// <p>The name of the cell.</p>
         pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cell_name(input.into());
             self
         }
-        /// The name of the Cell
+        /// <p>The name of the cell.</p>
         pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cell_name(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1687,7 +1689,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetReadinessCheck`.
     ///
-    /// Returns information about a ReadinessCheck.
+    /// <p>Gets details about a readiness check.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReadinessCheck<
         C = aws_smithy_client::erase::DynConnector,
@@ -1744,12 +1746,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The ReadinessCheck to get
+        /// <p>Name of a readiness check.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.readiness_check_name(input.into());
             self
         }
-        /// The ReadinessCheck to get
+        /// <p>Name of a readiness check.</p>
         pub fn set_readiness_check_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1760,7 +1762,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetReadinessCheckResourceStatus`.
     ///
-    /// Returns detailed information about the status of an individual resource within a Readiness Check's Resource Set.
+    /// <p>Gets individual readiness status for a readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in the recovery group, use GetRecoveryGroupReadinessSummary.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReadinessCheckResourceStatus<
         C = aws_smithy_client::erase::DynConnector,
@@ -1825,32 +1827,32 @@ pub mod fluent_builders {
         ) -> crate::paginator::GetReadinessCheckResourceStatusPaginator<C, M, R> {
             crate::paginator::GetReadinessCheckResourceStatusPaginator::new(self.handle, self.inner)
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// The ReadinessCheck to get
+        /// <p>Name of a readiness check.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.readiness_check_name(input.into());
             self
         }
-        /// The ReadinessCheck to get
+        /// <p>Name of a readiness check.</p>
         pub fn set_readiness_check_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1858,12 +1860,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_readiness_check_name(input);
             self
         }
-        /// The resource ARN or component Id to get
+        /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_identifier(input.into());
             self
         }
-        /// The resource ARN or component Id to get
+        /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1874,7 +1876,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetReadinessCheckStatus`.
     ///
-    /// Returns information about the status of a Readiness Check.
+    /// <p>Gets the readiness status for an individual readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in a recovery group, use GetRecoveryGroupReadinessSummary.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReadinessCheckStatus<
         C = aws_smithy_client::erase::DynConnector,
@@ -1937,32 +1939,32 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::GetReadinessCheckStatusPaginator<C, M, R> {
             crate::paginator::GetReadinessCheckStatusPaginator::new(self.handle, self.inner)
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// The ReadinessCheck to get
+        /// <p>Name of a readiness check.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.readiness_check_name(input.into());
             self
         }
-        /// The ReadinessCheck to get
+        /// <p>Name of a readiness check.</p>
         pub fn set_readiness_check_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1973,7 +1975,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRecoveryGroup`.
     ///
-    /// Returns information about a Recovery Group.
+    /// <p>Gets details about a recovery group, including a list of the cells that are included in it.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecoveryGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -2030,12 +2032,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The RecoveryGroup to get
+        /// <p>The name of a recovery group.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recovery_group_name(input.into());
             self
         }
-        /// The RecoveryGroup to get
+        /// <p>The name of a recovery group.</p>
         pub fn set_recovery_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2046,7 +2048,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRecoveryGroupReadinessSummary`.
     ///
-    /// Returns information about a Recovery Group.
+    /// <p>Displays a summary of information about a recovery group's readiness status. Includes the readiness checks for resources in the recovery group and the readiness status of each one.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecoveryGroupReadinessSummary<
         C = aws_smithy_client::erase::DynConnector,
@@ -2114,32 +2116,32 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// The name of the RecoveryGroup
+        /// <p>The name of a recovery group.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recovery_group_name(input.into());
             self
         }
-        /// The name of the RecoveryGroup
+        /// <p>The name of a recovery group.</p>
         pub fn set_recovery_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2150,7 +2152,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResourceSet`.
     ///
-    /// Returns information about a Resource Set.
+    /// <p>Displays the details about a resource set, including a list of the resources in the set.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -2207,12 +2209,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The ResourceSet to get
+        /// <p>Name of a resource set.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_set_name(input.into());
             self
         }
-        /// The ResourceSet to get
+        /// <p>Name of a resource set.</p>
         pub fn set_resource_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2223,7 +2225,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCells`.
     ///
-    /// Returns a collection of Cells.
+    /// <p>Lists the cells for an account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCells<
         C = aws_smithy_client::erase::DynConnector,
@@ -2286,22 +2288,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListCellsPaginator<C, M, R> {
             crate::paginator::ListCellsPaginator::new(self.handle, self.inner)
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2309,7 +2311,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCrossAccountAuthorizations`.
     ///
-    /// Returns a collection of cross account readiness authorizations.
+    /// <p>Lists the cross-account readiness authorizations that are in place for an account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCrossAccountAuthorizations<
         C = aws_smithy_client::erase::DynConnector,
@@ -2374,22 +2376,22 @@ pub mod fluent_builders {
         ) -> crate::paginator::ListCrossAccountAuthorizationsPaginator<C, M, R> {
             crate::paginator::ListCrossAccountAuthorizationsPaginator::new(self.handle, self.inner)
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2397,7 +2399,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListReadinessChecks`.
     ///
-    /// Returns a collection of Readiness Checks.
+    /// <p>Lists the readiness checks for an account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReadinessChecks<
         C = aws_smithy_client::erase::DynConnector,
@@ -2460,22 +2462,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListReadinessChecksPaginator<C, M, R> {
             crate::paginator::ListReadinessChecksPaginator::new(self.handle, self.inner)
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2483,7 +2485,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRecoveryGroups`.
     ///
-    /// Returns a collection of Recovery Groups.
+    /// <p>Lists the recovery groups in an account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecoveryGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -2546,22 +2548,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListRecoveryGroupsPaginator<C, M, R> {
             crate::paginator::ListRecoveryGroupsPaginator::new(self.handle, self.inner)
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2569,7 +2571,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListResourceSets`.
     ///
-    /// Returns a collection of Resource Sets.
+    /// <p>Lists the resource sets in an account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceSets<
         C = aws_smithy_client::erase::DynConnector,
@@ -2632,22 +2634,22 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListResourceSetsPaginator<C, M, R> {
             crate::paginator::ListResourceSetsPaginator::new(self.handle, self.inner)
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2655,7 +2657,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRules`.
     ///
-    /// Returns a collection of rules that are applied as part of Readiness Checks.
+    /// <p>Lists all readiness rules, or lists the readiness rules for a specific resource type.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRules<
         C = aws_smithy_client::erase::DynConnector,
@@ -2718,32 +2720,32 @@ pub mod fluent_builders {
         pub fn into_paginator(self) -> crate::paginator::ListRulesPaginator<C, M, R> {
             crate::paginator::ListRulesPaginator::new(self.handle, self.inner)
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// Upper bound on number of records to return.
+        /// <p>The number of objects that you want to return with this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// A token used to resume pagination from the end of a previous request.
+        /// <p>The token that identifies which batch of results you want to see.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// Filter parameter which specifies the rules to return given a resource type.
+        /// <p>The resource type that a readiness rule applies to.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input.into());
             self
         }
-        /// Filter parameter which specifies the rules to return given a resource type.
+        /// <p>The resource type that a readiness rule applies to.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2754,7 +2756,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResources`.
     ///
-    /// Returns a list of the tags assigned to the specified resource.
+    /// <p>Lists the tags for a resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResources<
         C = aws_smithy_client::erase::DynConnector,
@@ -2811,12 +2813,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+        /// <p>The Amazon Resource Name (ARN) for a resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+        /// <p>The Amazon Resource Name (ARN) for a resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2824,7 +2826,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// Adds tags to the specified resource. You can specify one or more tags to add.
+    /// <p>Adds a tag to a resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2881,12 +2883,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+        /// <p>The Amazon Resource Name (ARN) for a resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+        /// <p>The Amazon Resource Name (ARN) for a resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2895,7 +2897,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// A collection of tags associated with a resource
+        /// <p></p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2904,7 +2906,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// A collection of tags associated with a resource
+        /// <p></p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2917,7 +2919,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// Removes tags from the specified resource. You can specify one or more tags to remove.
+    /// <p>Removes a tag from a resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2974,12 +2976,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+        /// <p>The Amazon Resource Name (ARN) for a resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+        /// <p>The Amazon Resource Name (ARN) for a resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2988,12 +2990,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// A comma-separated list of the tag keys to remove from the resource.
+        /// <p>The keys for tags you add to resources.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// A comma-separated list of the tag keys to remove from the resource.
+        /// <p>The keys for tags you add to resources.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3004,7 +3006,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateCell`.
     ///
-    /// Updates an existing Cell.
+    /// <p>Updates a cell to replace the list of nested cells with a new list of nested cells.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCell<
         C = aws_smithy_client::erase::DynConnector,
@@ -3061,12 +3063,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The Cell to update
+        /// <p>The name of the cell.</p>
         pub fn cell_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cell_name(input.into());
             self
         }
-        /// The Cell to update
+        /// <p>The name of the cell.</p>
         pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cell_name(input);
             self
@@ -3075,12 +3077,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
-        /// A list of Cell arns, completely replaces previous list
+        /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
         pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cells(input.into());
             self
         }
-        /// A list of Cell arns, completely replaces previous list
+        /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
         pub fn set_cells(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3091,7 +3093,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateReadinessCheck`.
     ///
-    /// Updates an exisiting Readiness Check.
+    /// <p>Updates a readiness check.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReadinessCheck<
         C = aws_smithy_client::erase::DynConnector,
@@ -3148,12 +3150,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The ReadinessCheck to update
+        /// <p>Name of a readiness check.</p>
         pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.readiness_check_name(input.into());
             self
         }
-        /// The ReadinessCheck to update
+        /// <p>Name of a readiness check.</p>
         pub fn set_readiness_check_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3161,12 +3163,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_readiness_check_name(input);
             self
         }
-        /// The name of the ResourceSet to check
+        /// <p>The name of the resource set to be checked.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_set_name(input.into());
             self
         }
-        /// The name of the ResourceSet to check
+        /// <p>The name of the resource set to be checked.</p>
         pub fn set_resource_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3177,7 +3179,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRecoveryGroup`.
     ///
-    /// Updates an existing Recovery Group.
+    /// <p>Updates a recovery group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRecoveryGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -3238,12 +3240,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
-        /// A list of Cell arns, completely replaces previous list
+        /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
         pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cells(input.into());
             self
         }
-        /// A list of Cell arns, completely replaces previous list
+        /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
         pub fn set_cells(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3251,12 +3253,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cells(input);
             self
         }
-        /// The RecoveryGroup to update
+        /// <p>The name of a recovery group.</p>
         pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recovery_group_name(input.into());
             self
         }
-        /// The RecoveryGroup to update
+        /// <p>The name of a recovery group.</p>
         pub fn set_recovery_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3267,7 +3269,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateResourceSet`.
     ///
-    /// Updates an existing Resource Set.
+    /// <p>Updates a resource set.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourceSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -3324,12 +3326,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// The ResourceSet to update
+        /// <p>Name of a resource set.</p>
         pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_set_name(input.into());
             self
         }
-        /// The ResourceSet to update
+        /// <p>Name of a resource set.</p>
         pub fn set_resource_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3337,12 +3339,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_set_name(input);
             self
         }
-        /// AWS Resource Type of the resources in the ResourceSet
+        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+        /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
         pub fn resource_set_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_set_type(input.into());
             self
         }
-        /// AWS Resource Type of the resources in the ResourceSet
+        /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
+        /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
         pub fn set_resource_set_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3354,12 +3358,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
-        /// A list of Resource objects
+        /// <p>A list of resource objects.</p>
         pub fn resources(mut self, input: crate::model::Resource) -> Self {
             self.inner = self.inner.resources(input);
             self
         }
-        /// A list of Resource objects
+        /// <p>A list of resource objects.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,

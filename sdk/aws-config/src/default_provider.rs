@@ -420,9 +420,11 @@ pub mod timeout_config {
 /// Typically, this module is used via [`load_from_env`](crate::load_from_env) or [`from_env`](crate::from_env). It should only be used directly
 /// if you need to set custom configuration options like [`region`](credentials::Builder::region) or [`profile_name`](credentials::Builder::profile_name).
 pub mod credentials {
+    use aws_types::credentials;
     use std::borrow::Cow;
 
     use aws_types::credentials::{future, ProvideCredentials};
+    use tracing::Instrument;
 
     use crate::environment::credentials::EnvironmentVariableCredentialsProvider;
     use crate::meta::credentials::{CredentialsProviderChain, LazyCachingCredentialsProvider};
@@ -481,6 +483,13 @@ pub mod credentials {
         pub fn builder() -> Builder {
             Builder::default()
         }
+
+        async fn credentials(&self) -> credentials::Result {
+            self.0
+                .provide_credentials()
+                .instrument(tracing::info_span!("provide_credentials", provider = %"default_chain"))
+                .await
+        }
     }
 
     impl ProvideCredentials for DefaultCredentialsChain {
@@ -488,7 +497,7 @@ pub mod credentials {
         where
             Self: 'a,
         {
-            self.0.provide_credentials()
+            future::ProvideCredentials::new(self.credentials())
         }
     }
 

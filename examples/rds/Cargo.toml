@@ -4,25 +4,22 @@ name = "rds-code-examples"
 authors = ["LMJW <heysuperming@gmail.com>", "Doug Schwartz <dougsch@amazon.com>"]
 edition = "2018"
 version = "0.1.0"
+publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.5.1"
-
-[dependencies.aws-types]
-path = "../../sdk/aws-types"
-version = "0.5.1"
+version = "0.6.0"
 
 [dependencies.aws-sdk-rds]
 path = "../../sdk/rds"
-version = "0.5.0"
-
-[dependencies.structopt]
-version = "0.3"
-default-features = false
+version = "0.6.0"
 
 [dependencies.tokio]
 version = "1"
 features = ["full"]
+
+[dependencies.structopt]
+version = "0.3"
+default-features = false
 
 [dependencies.tracing-subscriber]
 version = "0.3.5"

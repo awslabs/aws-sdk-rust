@@ -4,25 +4,24 @@ name = "using_native_tls_instead_of_rustls"
 version = "0.1.0"
 authors = ["Zelda Hessler zhessler@amazon.com>"]
 edition = "2018"
+publish = false
 [dependencies.aws-config]
-path = "../../sdk/aws-config"
-default-features = false
 features = ["native-tls", "rt-tokio"]
-version = "0.5.1"
+default-features = false
+path = "../../sdk/aws-config"
+version = "0.6.0"
 
 [dependencies.aws-sdk-s3]
-package = "aws-sdk-s3"
-path = "../../sdk/s3"
-default-features = false
 features = ["native-tls"]
-version = "0.5.0"
+default-features = false
+path = "../../sdk/s3"
+version = "0.6.0"
 
 [dependencies.aws-sdk-sts]
-package = "aws-sdk-sts"
-path = "../../sdk/sts"
-default-features = false
 features = ["native-tls"]
-version = "0.5.0"
+default-features = false
+path = "../../sdk/sts"
+version = "0.6.0"
 
 [dependencies.tokio]
 version = "1"

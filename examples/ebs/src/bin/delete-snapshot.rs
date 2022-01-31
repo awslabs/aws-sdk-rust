@@ -5,7 +5,6 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_ec2::{Client, Error, Region, PKG_VERSION};
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -22,6 +21,17 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Delete a snapshot.
+// snippet-start:[ebs.rust.delete-snapshot]
+async fn delete_snapshot(client: &Client, id: &str) -> Result<(), Error> {
+    client.delete_snapshot().snapshot_id(id).send().await?;
+
+    println!("Deleted");
+
+    Ok(())
+}
+// snippet-end:[ebs.rust.delete-snapshot]
 
 /// Deletes an Amazon Elastic Block Store snapshot.
 /// It must be `completed` before you can use the snapshot.
@@ -45,25 +55,20 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
-
     println!();
 
     if verbose {
-        println!("EC2 version: {}", PKG_VERSION);
-        println!("Region:      {}", shared_config.region().unwrap());
-        println!("Snapshot ID: {}", snapshot_id);
+        println!("EC2 client version: {}", PKG_VERSION);
+        println!(
+            "Region:             {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
+        println!("Snapshot ID:        {}", snapshot_id);
         println!();
     }
 
-    client
-        .delete_snapshot()
-        .snapshot_id(snapshot_id)
-        .send()
-        .await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    println!("Deleted");
-
-    Ok(())
+    delete_snapshot(&client, &snapshot_id).await
 }

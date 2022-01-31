@@ -5,7 +5,6 @@
 
 use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_cloudformation::{Client, Error, Region, PKG_VERSION};
-
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -18,6 +17,21 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Lists your stacks.
+// snippet-start:[cloudformation.rust.list-stacks]
+async fn list_stacks(client: &Client) -> Result<(), Error> {
+    let stacks = client.list_stacks().send().await?;
+
+    for stack in stacks.stack_summaries().unwrap_or_default() {
+        println!("{}", stack.stack_name().unwrap_or_default());
+        println!("  Status: {:?}", stack.stack_status().unwrap());
+        println!();
+    }
+
+    Ok(())
+}
+// snippet-end:[cloudformation.rust.list-stacks]
 
 /// Lists the name and status of your AWS CloudFormation stacks in the Region.
 /// # Arguments
@@ -35,8 +49,7 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
+    println!();
 
     println!();
 
@@ -44,18 +57,14 @@ async fn main() -> Result<(), Error> {
         println!("CloudFormation client version: {}", PKG_VERSION);
         println!(
             "Region:                        {}",
-            shared_config.region().unwrap()
+            region_provider.region().await.unwrap().as_ref()
         );
+
         println!();
     }
 
-    let stacks = client.list_stacks().send().await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    for s in stacks.stack_summaries.unwrap_or_default() {
-        println!("{}", s.stack_name.as_deref().unwrap_or_default());
-        println!("  Status: {:?}", s.stack_status.unwrap());
-        println!();
-    }
-
-    Ok(())
+    list_stacks(&client).await
 }

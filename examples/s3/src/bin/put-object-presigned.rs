@@ -4,9 +4,8 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use aws_sdk_s3::input::PutObjectInput;
 use aws_sdk_s3::presigning::config::PresigningConfig;
-use aws_sdk_s3::{Client, Config, Region, PKG_VERSION};
+use aws_sdk_s3::{Client, Region, PKG_VERSION};
 use std::error::Error;
 use std::time::Duration;
 use structopt::StructOpt;
@@ -34,11 +33,36 @@ struct Opt {
     verbose: bool,
 }
 
-/// Generates a presigned request for S3 PutObject.
+// Adds an object to a bucket and returns a public URI.
+// snippet-start:[s3.rust.put-object-presigned]
+async fn put_object(
+    client: &Client,
+    bucket: &str,
+    object: &str,
+    expires_in: u64,
+) -> Result<(), Box<dyn Error>> {
+    let expires_in = Duration::from_secs(expires_in);
+
+    let presigned_request = client
+        .put_object()
+        .bucket(bucket)
+        .key(object)
+        .presigned(PresigningConfig::expires_in(expires_in)?)
+        .await?;
+
+    println!("Object URI: {}", presigned_request.uri());
+
+    Ok(())
+}
+// snippet-end:[s3.rust.put-object-presigned]
+
+/// Adds an object to a bucket and returns a public URI.
 /// # Arguments
 ///
 /// * `[-r REGION]` - The Region in which the client is created.
 ///   If not supplied, uses the value of the **AWS_REGION** environment variable.
+/// * `-b BUCKET` - The bucket where the object is uploaded.
+/// * `-o OBJECT` - The name of the file to upload to the bucket.
 ///   If the environment variable is not set, defaults to **us-west-2**.
 /// * `[-e EXPIRES_IN]` - The amount of time the presigned request should be valid for.
 ///   If not given, this defaults to 15 minutes.
@@ -54,7 +78,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
         expires_in,
         verbose,
     } = Opt::from_args();
-    let expires_in = Duration::from_secs(expires_in.unwrap_or(900));
 
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
@@ -67,29 +90,11 @@ async fn main() -> Result<(), Box<dyn Error>> {
     if verbose {
         println!("S3 client version: {}", PKG_VERSION);
         println!("Region:            {}", shared_config.region().unwrap());
+        println!("Bucket:            {}", &bucket);
+        println!("Object:            {}", &object);
+        println!("Expires in:        {} seconds", expires_in.unwrap_or(900));
         println!();
     }
 
-    // Presigned requests can be made with the client directly
-    let presigned_request = client
-        .put_object()
-        .bucket(&bucket)
-        .key(&object)
-        .presigned(PresigningConfig::expires_in(expires_in)?)
-        .await?;
-    println!("From client: {:?}", presigned_request.uri());
-
-    // Or, they can be made directly from an operation input
-    let presigned_request = PutObjectInput::builder()
-        .bucket(bucket)
-        .key(object)
-        .build()?
-        .presigned(
-            &Config::from(&shared_config),
-            PresigningConfig::expires_in(expires_in)?,
-        )
-        .await?;
-    println!("From operation input: {:?}", presigned_request.uri());
-
-    Ok(())
+    put_object(&client, &bucket, &object, expires_in.unwrap_or(900)).await
 }

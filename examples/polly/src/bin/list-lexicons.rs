@@ -9,7 +9,7 @@ use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The default AWS Region.
+    /// The AWS Region.
     #[structopt(short, long)]
     region: Option<String>,
 
@@ -17,6 +17,38 @@ struct Opt {
     #[structopt(short, long)]
     verbose: bool,
 }
+
+// Lists the available lexicons.
+// snippet-start:[polly.rust.list-lexicons]
+async fn show_lexicons(client: &Client) -> Result<(), Error> {
+    let resp = client.list_lexicons().send().await?;
+
+    println!("Lexicons:");
+
+    let lexicons = resp.lexicons().unwrap_or_default();
+
+    for lexicon in lexicons {
+        println!("  Name:     {}", lexicon.name().unwrap_or_default());
+        println!(
+            "  Language: {:?}\n",
+            lexicon
+                .attributes()
+                .as_ref()
+                .map(|attrib| attrib
+                    .language_code
+                    .as_ref()
+                    .expect("languages must have language codes"))
+                .expect("languages must have attributes")
+        );
+    }
+
+    println!();
+    println!("Found {} lexicons.", lexicons.len());
+    println!();
+
+    Ok(())
+}
+// snippet-end:[polly.rust.list-lexicons]
 
 /// Displays a list of the lexicons in the Region.
 /// # Arguments
@@ -34,44 +66,20 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
 
     println!();
 
     if verbose {
-        println!("Polly version: {}", PKG_VERSION);
-        println!("Region:        {:?}", shared_config.region().unwrap());
+        println!("Polly client version: {}", PKG_VERSION);
+        println!(
+            "Region:               {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
         println!();
     }
 
-    let resp = client.list_lexicons().send().await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    println!("Lexicons:");
-
-    let lexicons = resp.lexicons.unwrap_or_default();
-
-    for lexicon in &lexicons {
-        println!(
-            "  Name:     {}",
-            lexicon.name.as_deref().unwrap_or_default()
-        );
-        println!(
-            "  Language: {:?}\n",
-            lexicon
-                .attributes
-                .as_ref()
-                .map(|attrib| attrib
-                    .language_code
-                    .as_ref()
-                    .expect("languages must have language codes"))
-                .expect("languages must have attributes")
-        );
-    }
-
-    println!();
-    println!("Found {} lexicons.", lexicons.len());
-    println!();
-
-    Ok(())
+    show_lexicons(&client).await
 }

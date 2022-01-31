@@ -25,7 +25,7 @@ pub struct UpdateFileSystemOutput {
     pub performance_mode: std::option::Option<crate::model::PerformanceMode>,
     /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of an Key Management Service customer master key (CMK) that was used to protect the encrypted file system.</p>
+    /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
     pub throughput_mode: std::option::Option<crate::model::ThroughputMode>,
@@ -83,7 +83,7 @@ impl UpdateFileSystemOutput {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of an Key Management Service customer master key (CMK) that was used to protect the encrypted file system.</p>
+    /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -290,12 +290,12 @@ pub mod update_file_system_output {
             self.encrypted = input;
             self
         }
-        /// <p>The ID of an Key Management Service customer master key (CMK) that was used to protect the encrypted file system.</p>
+        /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of an Key Management Service customer master key (CMK) that was used to protect the encrypted file system.</p>
+        /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -928,6 +928,97 @@ impl DescribeTagsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput)
     pub fn builder() -> crate::output::describe_tags_output::Builder {
         crate::output::describe_tags_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeReplicationConfigurationsOutput {
+    /// <p>The collection of replication configurations returned.</p>
+    pub replications:
+        std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationDescription>>,
+    /// <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeReplicationConfigurationsOutput {
+    /// <p>The collection of replication configurations returned.</p>
+    pub fn replications(
+        &self,
+    ) -> std::option::Option<&[crate::model::ReplicationConfigurationDescription]> {
+        self.replications.as_deref()
+    }
+    /// <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeReplicationConfigurationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeReplicationConfigurationsOutput");
+        formatter.field("replications", &self.replications);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeReplicationConfigurationsOutput`](crate::output::DescribeReplicationConfigurationsOutput)
+pub mod describe_replication_configurations_output {
+    /// A builder for [`DescribeReplicationConfigurationsOutput`](crate::output::DescribeReplicationConfigurationsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) replications:
+            std::option::Option<std::vec::Vec<crate::model::ReplicationConfigurationDescription>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `replications`.
+        ///
+        /// To override the contents of this collection use [`set_replications`](Self::set_replications).
+        ///
+        /// <p>The collection of replication configurations returned.</p>
+        pub fn replications(
+            mut self,
+            input: crate::model::ReplicationConfigurationDescription,
+        ) -> Self {
+            let mut v = self.replications.unwrap_or_default();
+            v.push(input);
+            self.replications = Some(v);
+            self
+        }
+        /// <p>The collection of replication configurations returned.</p>
+        pub fn set_replications(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ReplicationConfigurationDescription>,
+            >,
+        ) -> Self {
+            self.replications = input;
+            self
+        }
+        /// <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>You can use the <code>NextToken</code> from the previous response in a subsequent request to fetch the additional descriptions.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeReplicationConfigurationsOutput`](crate::output::DescribeReplicationConfigurationsOutput)
+        pub fn build(self) -> crate::output::DescribeReplicationConfigurationsOutput {
+            crate::output::DescribeReplicationConfigurationsOutput {
+                replications: self.replications,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeReplicationConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeReplicationConfigurationsOutput`](crate::output::DescribeReplicationConfigurationsOutput)
+    pub fn builder() -> crate::output::describe_replication_configurations_output::Builder {
+        crate::output::describe_replication_configurations_output::Builder::default()
     }
 }
 
@@ -1589,6 +1680,36 @@ impl DeleteTagsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteReplicationConfigurationOutput {}
+impl std::fmt::Debug for DeleteReplicationConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteReplicationConfigurationOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteReplicationConfigurationOutput`](crate::output::DeleteReplicationConfigurationOutput)
+pub mod delete_replication_configuration_output {
+    /// A builder for [`DeleteReplicationConfigurationOutput`](crate::output::DeleteReplicationConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteReplicationConfigurationOutput`](crate::output::DeleteReplicationConfigurationOutput)
+        pub fn build(self) -> crate::output::DeleteReplicationConfigurationOutput {
+            crate::output::DeleteReplicationConfigurationOutput {}
+        }
+    }
+}
+impl DeleteReplicationConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteReplicationConfigurationOutput`](crate::output::DeleteReplicationConfigurationOutput)
+    pub fn builder() -> crate::output::delete_replication_configuration_output::Builder {
+        crate::output::delete_replication_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMountTargetOutput {}
 impl std::fmt::Debug for DeleteMountTargetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1733,6 +1854,185 @@ impl CreateTagsOutput {
     /// Creates a new builder-style object to manufacture [`CreateTagsOutput`](crate::output::CreateTagsOutput)
     pub fn builder() -> crate::output::create_tags_output::Builder {
         crate::output::create_tags_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateReplicationConfigurationOutput {
+    /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
+    pub source_file_system_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
+    pub source_file_system_region: std::option::Option<std::string::String>,
+    /// <p>The ARN of the current source file system in the replication configuration.</p>
+    pub source_file_system_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
+    pub original_source_file_system_arn: std::option::Option<std::string::String>,
+    /// <p>Describes when the replication configuration was created.</p>
+    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Array of destination objects. Only one destination object is supported.</p>
+    pub destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
+}
+impl CreateReplicationConfigurationOutput {
+    /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
+    pub fn source_file_system_id(&self) -> std::option::Option<&str> {
+        self.source_file_system_id.as_deref()
+    }
+    /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
+    pub fn source_file_system_region(&self) -> std::option::Option<&str> {
+        self.source_file_system_region.as_deref()
+    }
+    /// <p>The ARN of the current source file system in the replication configuration.</p>
+    pub fn source_file_system_arn(&self) -> std::option::Option<&str> {
+        self.source_file_system_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
+    pub fn original_source_file_system_arn(&self) -> std::option::Option<&str> {
+        self.original_source_file_system_arn.as_deref()
+    }
+    /// <p>Describes when the replication configuration was created.</p>
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_time.as_ref()
+    }
+    /// <p>Array of destination objects. Only one destination object is supported.</p>
+    pub fn destinations(&self) -> std::option::Option<&[crate::model::Destination]> {
+        self.destinations.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateReplicationConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateReplicationConfigurationOutput");
+        formatter.field("source_file_system_id", &self.source_file_system_id);
+        formatter.field("source_file_system_region", &self.source_file_system_region);
+        formatter.field("source_file_system_arn", &self.source_file_system_arn);
+        formatter.field(
+            "original_source_file_system_arn",
+            &self.original_source_file_system_arn,
+        );
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("destinations", &self.destinations);
+        formatter.finish()
+    }
+}
+/// See [`CreateReplicationConfigurationOutput`](crate::output::CreateReplicationConfigurationOutput)
+pub mod create_replication_configuration_output {
+    /// A builder for [`CreateReplicationConfigurationOutput`](crate::output::CreateReplicationConfigurationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) source_file_system_id: std::option::Option<std::string::String>,
+        pub(crate) source_file_system_region: std::option::Option<std::string::String>,
+        pub(crate) source_file_system_arn: std::option::Option<std::string::String>,
+        pub(crate) original_source_file_system_arn: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
+    }
+    impl Builder {
+        /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
+        pub fn source_file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_file_system_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
+        pub fn set_source_file_system_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_file_system_id = input;
+            self
+        }
+        /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
+        pub fn source_file_system_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_file_system_region = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
+        pub fn set_source_file_system_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_file_system_region = input;
+            self
+        }
+        /// <p>The ARN of the current source file system in the replication configuration.</p>
+        pub fn source_file_system_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_file_system_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the current source file system in the replication configuration.</p>
+        pub fn set_source_file_system_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_file_system_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
+        pub fn original_source_file_system_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.original_source_file_system_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
+        pub fn set_original_source_file_system_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.original_source_file_system_arn = input;
+            self
+        }
+        /// <p>Describes when the replication configuration was created.</p>
+        pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        /// <p>Describes when the replication configuration was created.</p>
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p>Array of destination objects. Only one destination object is supported.</p>
+        pub fn destinations(mut self, input: crate::model::Destination) -> Self {
+            let mut v = self.destinations.unwrap_or_default();
+            v.push(input);
+            self.destinations = Some(v);
+            self
+        }
+        /// <p>Array of destination objects. Only one destination object is supported.</p>
+        pub fn set_destinations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Destination>>,
+        ) -> Self {
+            self.destinations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateReplicationConfigurationOutput`](crate::output::CreateReplicationConfigurationOutput)
+        pub fn build(self) -> crate::output::CreateReplicationConfigurationOutput {
+            crate::output::CreateReplicationConfigurationOutput {
+                source_file_system_id: self.source_file_system_id,
+                source_file_system_region: self.source_file_system_region,
+                source_file_system_arn: self.source_file_system_arn,
+                original_source_file_system_arn: self.original_source_file_system_arn,
+                creation_time: self.creation_time,
+                destinations: self.destinations,
+            }
+        }
+    }
+}
+impl CreateReplicationConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateReplicationConfigurationOutput`](crate::output::CreateReplicationConfigurationOutput)
+    pub fn builder() -> crate::output::create_replication_configuration_output::Builder {
+        crate::output::create_replication_configuration_output::Builder::default()
     }
 }
 
@@ -2005,7 +2305,7 @@ pub struct CreateFileSystemOutput {
     pub performance_mode: std::option::Option<crate::model::PerformanceMode>,
     /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of an Key Management Service customer master key (CMK) that was used to protect the encrypted file system.</p>
+    /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Displays the file system's throughput mode. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the <i>Amazon EFS User Guide</i>. </p>
     pub throughput_mode: std::option::Option<crate::model::ThroughputMode>,
@@ -2063,7 +2363,7 @@ impl CreateFileSystemOutput {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of an Key Management Service customer master key (CMK) that was used to protect the encrypted file system.</p>
+    /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -2270,12 +2570,12 @@ pub mod create_file_system_output {
             self.encrypted = input;
             self
         }
-        /// <p>The ID of an Key Management Service customer master key (CMK) that was used to protect the encrypted file system.</p>
+        /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of an Key Management Service customer master key (CMK) that was used to protect the encrypted file system.</p>
+        /// <p>The ID of an KMS key used to protect the encrypted file system.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self

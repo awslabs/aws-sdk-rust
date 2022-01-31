@@ -27,6 +27,7 @@ struct Opt {
 }
 
 // Updates the size of a group.
+// snippet-start:[autoscaling.rust.update-autoscaling-group]
 async fn update_group(client: &Client, name: &str, size: i32) -> Result<(), Error> {
     client
         .update_auto_scaling_group()
@@ -39,6 +40,7 @@ async fn update_group(client: &Client, name: &str, size: i32) -> Result<(), Erro
 
     Ok(())
 }
+// snippet-end:[autoscaling.rust.update-autoscaling-group]
 
 /// Updates an Auto Scaling group in the Region to a new maximum size.
 /// # Arguments

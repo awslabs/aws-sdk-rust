@@ -22,6 +22,22 @@ struct Opt {
     verbose: bool,
 }
 
+// Creates a stream.
+// snippet-start:[kinesis.rust.create-stream]
+async fn make_stream(client: &Client, stream: &str) -> Result<(), Error> {
+    client
+        .create_stream()
+        .stream_name(stream)
+        .shard_count(4)
+        .send()
+        .await?;
+
+    println!("Created stream");
+
+    Ok(())
+}
+// snippet-end:[kinesis.rust.create-stream]
+
 /// Creates an Amazon Kinesis data stream.
 /// # Arguments
 ///
@@ -42,29 +58,20 @@ async fn main() -> Result<(), Error> {
     let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
-
     println!();
 
     if verbose {
         println!("Kinesis client version: {}", PKG_VERSION);
         println!(
-            "Region:                 {:?}",
-            shared_config.region().unwrap()
+            "Region:                 {}",
+            region_provider.region().await.unwrap().as_ref()
         );
         println!("Stream name:            {}", &stream_name);
         println!();
     }
 
-    client
-        .create_stream()
-        .stream_name(stream_name)
-        .shard_count(4)
-        .send()
-        .await?;
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
-    println!("Created stream");
-
-    Ok(())
+    make_stream(&client, &stream_name).await
 }

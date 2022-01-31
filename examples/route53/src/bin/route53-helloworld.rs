@@ -4,80 +4,77 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use aws_sdk_route53::{Client, Region};
+use aws_sdk_route53::{Client, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
-use tracing_subscriber::fmt::format::FmtSpan;
-use tracing_subscriber::fmt::SubscriberBuilder;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
-    /// The region. Overrides environment variable AWS_DEFAULT_REGION.
+    /// The AWS Region.
     #[structopt(short, long)]
-    default_region: Option<String>,
+    region: Option<String>,
 
-    /// Whether to display additional runtime information
+    /// Whether to display additional runtime information.
     #[structopt(short, long)]
     verbose: bool,
 }
 
-/// Displays the IDs and names of the hosted zones in the region.
-/// # Arguments
-///
-/// * `[-d DEFAULT-REGION]` - The region in which the client is created.
-///    If not supplied, uses the value of the **AWS_DEFAULT_REGION** environment variable.
-///    If the environment variable is not set, defaults to **us-west-2**.
-/// * `[-v]` - Whether to display additional information.
-#[tokio::main]
-async fn main() -> Result<(), aws_sdk_route53::Error> {
-    let Opt {
-        default_region,
-        verbose,
-    } = Opt::from_args();
-
-    let region_provider = RegionProviderChain::first_try(default_region.map(Region::new))
-        .or_default_provider()
-        .or_else(Region::new("us-west-2"));
-    let shared_config = aws_config::from_env().region(region_provider).load().await;
-    let client = Client::new(&shared_config);
-
-    if verbose {
-        println!("Route53 client version: {}\n", aws_sdk_route53::PKG_VERSION);
-        println!(
-            "Region:                 {:?}",
-            shared_config.region().unwrap()
-        );
-
-        SubscriberBuilder::default()
-            .with_env_filter("info")
-            .with_span_events(FmtSpan::CLOSE)
-            .init();
-    }
-
+// Get hosted zone IDs and names.
+// snippet-start:[route53.rust.route53-helloworld]
+async fn show_host_info(client: &aws_sdk_route53::Client) -> Result<(), aws_sdk_route53::Error> {
     let hosted_zone_count = client.get_hosted_zone_count().send().await?;
 
     println!(
-        "\nNumber of hosted zones in region : {}",
-        hosted_zone_count.hosted_zone_count.unwrap_or_default(),
+        "Number of hosted zones in region : {}",
+        hosted_zone_count.hosted_zone_count().unwrap_or_default(),
     );
 
     let hosted_zones = client.list_hosted_zones().send().await?;
 
-    for hz in hosted_zones.hosted_zones.unwrap_or_default() {
-        let zone_name = hz.name.as_deref().unwrap_or_default();
-        let zone_id = hz.id.as_deref().unwrap_or_default();
+    println!("Zones:");
 
-        println!("Zone ID : {}, Zone Name : {}", zone_id, zone_name);
+    for hz in hosted_zones.hosted_zones().unwrap_or_default() {
+        let zone_name = hz.name().unwrap_or_default();
+        let zone_id = hz.id().unwrap_or_default();
 
-        let record_sets = client
-            .list_resource_record_sets()
-            .hosted_zone_id(zone_id)
-            .send()
-            .await?;
-        println!("  Record sets:");
-        for set in record_sets.resource_record_sets().unwrap_or_default() {
-            println!("    {:?}: {:?}", set.name, set.r#type)
-        }
+        println!("  ID :   {}", zone_id);
+        println!("  Name : {}", zone_name);
+        println!();
     }
 
     Ok(())
+}
+// snippet-end:[route53.rust.route53-helloworld]
+
+/// Displays the IDs and names of the hosted zones in the Region.
+/// # Arguments
+///
+/// * `[-r REGION]` - The Region in which the client is created.
+///    If not supplied, uses the value of the **AWS_REGION** environment variable.
+///    If the environment variable is not set, defaults to **us-west-2**.
+/// * `[-v]` - Whether to display additional information.
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    tracing_subscriber::fmt::init();
+
+    let Opt { region, verbose } = Opt::from_args();
+
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+
+    println!();
+
+    if verbose {
+        println!("Route53 client version: {}", PKG_VERSION);
+        println!(
+            "Region:                 {}",
+            region_provider.region().await.unwrap().as_ref()
+        );
+        println!();
+    }
+
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
+
+    show_host_info(&client).await
 }
