@@ -53,6 +53,8 @@ jobs:
         with:
           repository: awslabs/smithy-rs
           path: smithy-rs
+          # Fetch all history so that the runner can change to different commits
+          fetch-depth: 0
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: ${{ matrix.rust_version }}
@@ -61,7 +63,7 @@ jobs:
       - name: Install musl-gcc
         run: sudo apt-get install -y musl-dev musl-tools
       - name: Compile the canary runner
-        working-directory: tools/ci/canary-runner
+        working-directory: smithy-rs/tools/ci-cdk/canary-runner
         run: cargo build
       - uses: aws-actions/configure-aws-credentials@v1
         name: Acquire credentials for running the canary
@@ -70,7 +72,7 @@ jobs:
           role-session-name: GitHubActions
           aws-region: us-west-2
       - name: Run the canary
-        working-directory: tools/ci/canary-runner
+        working-directory: smithy-rs/tools/ci-cdk/canary-runner
         run: |
           cargo run -- \
             run --sdk-version ${SDK_VERSION} \
