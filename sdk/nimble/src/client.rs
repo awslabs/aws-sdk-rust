@@ -194,7 +194,7 @@ impl Client {
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_studio_id): <p>The studio ID. </p>
     ///   - [`subtype(StudioComponentSubtype)`](crate::client::fluent_builders::CreateStudioComponent::subtype) / [`set_subtype(Option<StudioComponentSubtype>)`](crate::client::fluent_builders::CreateStudioComponent::set_subtype): <p>The specific subtype of a studio component.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStudioComponent::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStudioComponent::set_tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
-    ///   - [`r#type(StudioComponentType)`](crate::client::fluent_builders::CreateStudioComponent::r#type) / [`set_type(Option<StudioComponentType>)`](crate::client::fluent_builders::CreateStudioComponent::set_type): <p>The type of the studio component.</p>
+    ///   - [`r#type(StudioComponentType)`](crate::client::fluent_builders::CreateStudioComponent::type) / [`set_type(Option<StudioComponentType>)`](crate::client::fluent_builders::CreateStudioComponent::set_type): <p>The type of the studio component.</p>
     /// - On success, responds with [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput) with field(s):
     ///   - [`studio_component(Option<StudioComponent>)`](crate::output::CreateStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
     /// - On failure, responds with [`SdkError<CreateStudioComponentError>`](crate::error::CreateStudioComponentError)
@@ -711,7 +711,7 @@ impl Client {
     ///   - [`studio_component_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::studio_component_id) / [`set_studio_component_id(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_studio_component_id): <p>The studio component ID.</p>
     ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_studio_id): <p>The studio ID. </p>
     ///   - [`subtype(StudioComponentSubtype)`](crate::client::fluent_builders::UpdateStudioComponent::subtype) / [`set_subtype(Option<StudioComponentSubtype>)`](crate::client::fluent_builders::UpdateStudioComponent::set_subtype): <p>The specific subtype of a studio component.</p>
-    ///   - [`r#type(StudioComponentType)`](crate::client::fluent_builders::UpdateStudioComponent::r#type) / [`set_type(Option<StudioComponentType>)`](crate::client::fluent_builders::UpdateStudioComponent::set_type): <p>The type of the studio component.</p>
+    ///   - [`r#type(StudioComponentType)`](crate::client::fluent_builders::UpdateStudioComponent::type) / [`set_type(Option<StudioComponentType>)`](crate::client::fluent_builders::UpdateStudioComponent::set_type): <p>The type of the studio component.</p>
     /// - On success, responds with [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput) with field(s):
     ///   - [`studio_component(Option<StudioComponent>)`](crate::output::UpdateStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
     /// - On failure, responds with [`SdkError<UpdateStudioComponentError>`](crate::error::UpdateStudioComponentError)

@@ -191,7 +191,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateReportGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateReportGroup::set_name): <p> The name of the report group. </p>
-    ///   - [`r#type(ReportType)`](crate::client::fluent_builders::CreateReportGroup::r#type) / [`set_type(Option<ReportType>)`](crate::client::fluent_builders::CreateReportGroup::set_type): <p> The type of report group. </p>
+    ///   - [`r#type(ReportType)`](crate::client::fluent_builders::CreateReportGroup::type) / [`set_type(Option<ReportType>)`](crate::client::fluent_builders::CreateReportGroup::set_type): <p> The type of report group. </p>
     ///   - [`export_config(ReportExportConfig)`](crate::client::fluent_builders::CreateReportGroup::export_config) / [`set_export_config(Option<ReportExportConfig>)`](crate::client::fluent_builders::CreateReportGroup::set_export_config): <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateReportGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateReportGroup::set_tags): <p> A list of tag key and value pairs associated with this report group. </p>  <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     /// - On success, responds with [`CreateReportGroupOutput`](crate::output::CreateReportGroupOutput) with field(s):

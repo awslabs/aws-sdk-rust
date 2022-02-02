@@ -194,7 +194,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::CreateResource::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::CreateResource::set_organization_id): <p>The identifier associated with the organization for which the resource is created.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateResource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateResource::set_name): <p>The name of the new resource.</p>
-    ///   - [`r#type(ResourceType)`](crate::client::fluent_builders::CreateResource::r#type) / [`set_type(Option<ResourceType>)`](crate::client::fluent_builders::CreateResource::set_type): <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
+    ///   - [`r#type(ResourceType)`](crate::client::fluent_builders::CreateResource::type) / [`set_type(Option<ResourceType>)`](crate::client::fluent_builders::CreateResource::set_type): <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
     /// - On success, responds with [`CreateResourceOutput`](crate::output::CreateResourceOutput) with field(s):
     ///   - [`resource_id(Option<String>)`](crate::output::CreateResourceOutput::resource_id): <p>The identifier of the new resource.</p>
     /// - On failure, responds with [`SdkError<CreateResourceError>`](crate::error::CreateResourceError)

@@ -144,7 +144,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`details(RequestDetails)`](crate::client::fluent_builders::CreateJob::details) / [`set_details(Option<RequestDetails>)`](crate::client::fluent_builders::CreateJob::set_details): <p>The details for the CreateJob request.</p>
-    ///   - [`r#type(Type)`](crate::client::fluent_builders::CreateJob::r#type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::CreateJob::set_type): <p>The type of job to be created.</p>
+    ///   - [`r#type(Type)`](crate::client::fluent_builders::CreateJob::type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::CreateJob::set_type): <p>The type of job to be created.</p>
     /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::output::CreateJobOutput::arn): <p>The ARN for the job.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::output::CreateJobOutput::created_at): <p>The date and time that the job was created, in ISO 8601 format.</p>
