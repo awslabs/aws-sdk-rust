@@ -129,7 +129,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`analyzer_name(impl Into<String>)`](crate::client::fluent_builders::CreateAnalyzer::analyzer_name) / [`set_analyzer_name(Option<String>)`](crate::client::fluent_builders::CreateAnalyzer::set_analyzer_name): <p>The name of the analyzer to create.</p>
-    ///   - [`r#type(Type)`](crate::client::fluent_builders::CreateAnalyzer::r#type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::CreateAnalyzer::set_type): <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    ///   - [`r#type(Type)`](crate::client::fluent_builders::CreateAnalyzer::type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::CreateAnalyzer::set_type): <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     ///   - [`archive_rules(Vec<InlineArchiveRule>)`](crate::client::fluent_builders::CreateAnalyzer::archive_rules) / [`set_archive_rules(Option<Vec<InlineArchiveRule>>)`](crate::client::fluent_builders::CreateAnalyzer::set_archive_rules): <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateAnalyzer::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateAnalyzer::set_tags): <p>The tags to apply to the analyzer.</p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAnalyzer::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAnalyzer::set_client_token): <p>A client token.</p>
@@ -293,7 +293,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAnalyzers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAnalyzers::set_next_token): <p>A token used for pagination of results returned.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAnalyzers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAnalyzers::set_max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`r#type(Type)`](crate::client::fluent_builders::ListAnalyzers::r#type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::ListAnalyzers::set_type): <p>The type of analyzer.</p>
+    ///   - [`r#type(Type)`](crate::client::fluent_builders::ListAnalyzers::type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::ListAnalyzers::set_type): <p>The type of analyzer.</p>
     /// - On success, responds with [`ListAnalyzersOutput`](crate::output::ListAnalyzersOutput) with field(s):
     ///   - [`analyzers(Option<Vec<AnalyzerSummary>>)`](crate::output::ListAnalyzersOutput::analyzers): <p>The analyzers retrieved.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAnalyzersOutput::next_token): <p>A token used for pagination of results returned.</p>

@@ -360,7 +360,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::set_directory_id): <p>The identifier of the directory for which to retrieve information.</p>
-    ///   - [`r#type(ClientAuthenticationType)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::r#type) / [`set_type(Option<ClientAuthenticationType>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::set_type): <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
+    ///   - [`r#type(ClientAuthenticationType)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::type) / [`set_type(Option<ClientAuthenticationType>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::set_type): <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::set_next_token): <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeClientAuthenticationSettings::set_limit): <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
     /// - On success, responds with [`DescribeClientAuthenticationSettingsOutput`](crate::output::DescribeClientAuthenticationSettingsOutput) with field(s):
@@ -428,7 +428,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DescribeLDAPSSettings::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DescribeLDAPSSettings::set_directory_id): <p>The identifier of the directory.</p>
-    ///   - [`r#type(LdapsType)`](crate::client::fluent_builders::DescribeLDAPSSettings::r#type) / [`set_type(Option<LdapsType>)`](crate::client::fluent_builders::DescribeLDAPSSettings::set_type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    ///   - [`r#type(LdapsType)`](crate::client::fluent_builders::DescribeLDAPSSettings::type) / [`set_type(Option<LdapsType>)`](crate::client::fluent_builders::DescribeLDAPSSettings::set_type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeLDAPSSettings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeLDAPSSettings::set_next_token): <p>The type of next token used for pagination.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::DescribeLDAPSSettings::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::DescribeLDAPSSettings::set_limit): <p>Specifies the number of items that should be displayed on one page.</p>
     /// - On success, responds with [`DescribeLdapsSettingsOutput`](crate::output::DescribeLdapsSettingsOutput) with field(s):
@@ -497,7 +497,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DisableClientAuthentication::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DisableClientAuthentication::set_directory_id): <p>The identifier of the directory </p>
-    ///   - [`r#type(ClientAuthenticationType)`](crate::client::fluent_builders::DisableClientAuthentication::r#type) / [`set_type(Option<ClientAuthenticationType>)`](crate::client::fluent_builders::DisableClientAuthentication::set_type): <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
+    ///   - [`r#type(ClientAuthenticationType)`](crate::client::fluent_builders::DisableClientAuthentication::type) / [`set_type(Option<ClientAuthenticationType>)`](crate::client::fluent_builders::DisableClientAuthentication::set_type): <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
     /// - On success, responds with [`DisableClientAuthenticationOutput`](crate::output::DisableClientAuthenticationOutput)
 
     /// - On failure, responds with [`SdkError<DisableClientAuthenticationError>`](crate::error::DisableClientAuthenticationError)
@@ -508,7 +508,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::DisableLDAPS::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::DisableLDAPS::set_directory_id): <p>The identifier of the directory.</p>
-    ///   - [`r#type(LdapsType)`](crate::client::fluent_builders::DisableLDAPS::r#type) / [`set_type(Option<LdapsType>)`](crate::client::fluent_builders::DisableLDAPS::set_type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    ///   - [`r#type(LdapsType)`](crate::client::fluent_builders::DisableLDAPS::type) / [`set_type(Option<LdapsType>)`](crate::client::fluent_builders::DisableLDAPS::set_type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     /// - On success, responds with [`DisableLdapsOutput`](crate::output::DisableLdapsOutput)
 
     /// - On failure, responds with [`SdkError<DisableLDAPSError>`](crate::error::DisableLDAPSError)
@@ -541,7 +541,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::EnableClientAuthentication::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::EnableClientAuthentication::set_directory_id): <p>The identifier of the specified directory. </p>
-    ///   - [`r#type(ClientAuthenticationType)`](crate::client::fluent_builders::EnableClientAuthentication::r#type) / [`set_type(Option<ClientAuthenticationType>)`](crate::client::fluent_builders::EnableClientAuthentication::set_type): <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
+    ///   - [`r#type(ClientAuthenticationType)`](crate::client::fluent_builders::EnableClientAuthentication::type) / [`set_type(Option<ClientAuthenticationType>)`](crate::client::fluent_builders::EnableClientAuthentication::set_type): <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
     /// - On success, responds with [`EnableClientAuthenticationOutput`](crate::output::EnableClientAuthenticationOutput)
 
     /// - On failure, responds with [`SdkError<EnableClientAuthenticationError>`](crate::error::EnableClientAuthenticationError)
@@ -552,7 +552,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::EnableLDAPS::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::EnableLDAPS::set_directory_id): <p>The identifier of the directory.</p>
-    ///   - [`r#type(LdapsType)`](crate::client::fluent_builders::EnableLDAPS::r#type) / [`set_type(Option<LdapsType>)`](crate::client::fluent_builders::EnableLDAPS::set_type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    ///   - [`r#type(LdapsType)`](crate::client::fluent_builders::EnableLDAPS::type) / [`set_type(Option<LdapsType>)`](crate::client::fluent_builders::EnableLDAPS::set_type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     /// - On success, responds with [`EnableLdapsOutput`](crate::output::EnableLdapsOutput)
 
     /// - On failure, responds with [`SdkError<EnableLDAPSError>`](crate::error::EnableLDAPSError)
@@ -672,7 +672,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::client::fluent_builders::RegisterCertificate::directory_id) / [`set_directory_id(Option<String>)`](crate::client::fluent_builders::RegisterCertificate::set_directory_id): <p>The identifier of the directory.</p>
     ///   - [`certificate_data(impl Into<String>)`](crate::client::fluent_builders::RegisterCertificate::certificate_data) / [`set_certificate_data(Option<String>)`](crate::client::fluent_builders::RegisterCertificate::set_certificate_data): <p>The certificate PEM string that needs to be registered.</p>
-    ///   - [`r#type(CertificateType)`](crate::client::fluent_builders::RegisterCertificate::r#type) / [`set_type(Option<CertificateType>)`](crate::client::fluent_builders::RegisterCertificate::set_type): <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
+    ///   - [`r#type(CertificateType)`](crate::client::fluent_builders::RegisterCertificate::type) / [`set_type(Option<CertificateType>)`](crate::client::fluent_builders::RegisterCertificate::set_type): <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
     ///   - [`client_cert_auth_settings(ClientCertAuthSettings)`](crate::client::fluent_builders::RegisterCertificate::client_cert_auth_settings) / [`set_client_cert_auth_settings(Option<ClientCertAuthSettings>)`](crate::client::fluent_builders::RegisterCertificate::set_client_cert_auth_settings): <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
     /// - On success, responds with [`RegisterCertificateOutput`](crate::output::RegisterCertificateOutput) with field(s):
     ///   - [`certificate_id(Option<String>)`](crate::output::RegisterCertificateOutput::certificate_id): <p>The identifier of the certificate.</p>

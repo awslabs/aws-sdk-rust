@@ -133,7 +133,7 @@ impl Client {
     ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::CreateSchema::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::CreateSchema::set_registry_name): <p>The name of the registry.</p>
     ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::CreateSchema::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::CreateSchema::set_schema_name): <p>The name of the schema.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSchema::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSchema::set_tags): <p>Tags associated with the schema.</p>
-    ///   - [`r#type(Type)`](crate::client::fluent_builders::CreateSchema::r#type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::CreateSchema::set_type): <p>The type of schema.</p>
+    ///   - [`r#type(Type)`](crate::client::fluent_builders::CreateSchema::type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::CreateSchema::set_type): <p>The type of schema.</p>
     /// - On success, responds with [`CreateSchemaOutput`](crate::output::CreateSchemaOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::output::CreateSchemaOutput::description): <p>The description of the schema.</p>
     ///   - [`last_modified(Option<DateTime>)`](crate::output::CreateSchemaOutput::last_modified): <p>The date and time that schema was modified.</p>
@@ -271,7 +271,7 @@ impl Client {
     ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::ExportSchema::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::ExportSchema::set_registry_name): <p>The name of the registry.</p>
     ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::ExportSchema::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::ExportSchema::set_schema_name): <p>The name of the schema.</p>
     ///   - [`schema_version(impl Into<String>)`](crate::client::fluent_builders::ExportSchema::schema_version) / [`set_schema_version(Option<String>)`](crate::client::fluent_builders::ExportSchema::set_schema_version): <p>Specifying this limits the results to only this schema version.</p>
-    ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::ExportSchema::r#type) / [`set_type(Option<String>)`](crate::client::fluent_builders::ExportSchema::set_type): (undocumented)
+    ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::ExportSchema::type) / [`set_type(Option<String>)`](crate::client::fluent_builders::ExportSchema::set_type): (undocumented)
     /// - On success, responds with [`ExportSchemaOutput`](crate::output::ExportSchemaOutput) with field(s):
     ///   - [`content(Option<String>)`](crate::output::ExportSchemaOutput::content): (undocumented)
     ///   - [`schema_arn(Option<String>)`](crate::output::ExportSchemaOutput::schema_arn): (undocumented)
@@ -299,7 +299,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`events(Vec<String>)`](crate::client::fluent_builders::GetDiscoveredSchema::events) / [`set_events(Option<Vec<String>>)`](crate::client::fluent_builders::GetDiscoveredSchema::set_events): <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
-    ///   - [`r#type(Type)`](crate::client::fluent_builders::GetDiscoveredSchema::r#type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::GetDiscoveredSchema::set_type): <p>The type of event.</p>
+    ///   - [`r#type(Type)`](crate::client::fluent_builders::GetDiscoveredSchema::type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::GetDiscoveredSchema::set_type): <p>The type of event.</p>
     /// - On success, responds with [`GetDiscoveredSchemaOutput`](crate::output::GetDiscoveredSchemaOutput) with field(s):
     ///   - [`content(Option<String>)`](crate::output::GetDiscoveredSchemaOutput::content): <p>The source of the schema definition.</p>
     /// - On failure, responds with [`SdkError<GetDiscoveredSchemaError>`](crate::error::GetDiscoveredSchemaError)
@@ -515,7 +515,7 @@ impl Client {
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSchema::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSchema::set_description): <p>The description of the schema.</p>
     ///   - [`registry_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSchema::registry_name) / [`set_registry_name(Option<String>)`](crate::client::fluent_builders::UpdateSchema::set_registry_name): <p>The name of the registry.</p>
     ///   - [`schema_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSchema::schema_name) / [`set_schema_name(Option<String>)`](crate::client::fluent_builders::UpdateSchema::set_schema_name): <p>The name of the schema.</p>
-    ///   - [`r#type(Type)`](crate::client::fluent_builders::UpdateSchema::r#type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::UpdateSchema::set_type): <p>The schema type for the events schema.</p>
+    ///   - [`r#type(Type)`](crate::client::fluent_builders::UpdateSchema::type) / [`set_type(Option<Type>)`](crate::client::fluent_builders::UpdateSchema::set_type): <p>The schema type for the events schema.</p>
     /// - On success, responds with [`UpdateSchemaOutput`](crate::output::UpdateSchemaOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::output::UpdateSchemaOutput::description): <p>The description of the schema.</p>
     ///   - [`last_modified(Option<DateTime>)`](crate::output::UpdateSchemaOutput::last_modified): <p>The date and time that schema was modified.</p>

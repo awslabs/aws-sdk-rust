@@ -274,7 +274,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateWirelessDevice`](crate::client::fluent_builders::CreateWirelessDevice) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`r#type(WirelessDeviceType)`](crate::client::fluent_builders::CreateWirelessDevice::r#type) / [`set_type(Option<WirelessDeviceType>)`](crate::client::fluent_builders::CreateWirelessDevice::set_type): <p>The wireless device type.</p>
+    ///   - [`r#type(WirelessDeviceType)`](crate::client::fluent_builders::CreateWirelessDevice::type) / [`set_type(Option<WirelessDeviceType>)`](crate::client::fluent_builders::CreateWirelessDevice::set_type): <p>The wireless device type.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessDevice::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWirelessDevice::set_name): <p>The name of the new resource.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessDevice::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateWirelessDevice::set_description): <p>The description of the new resource.</p>
     ///   - [`destination_name(impl Into<String>)`](crate::client::fluent_builders::CreateWirelessDevice::destination_name) / [`set_destination_name(Option<String>)`](crate::client::fluent_builders::CreateWirelessDevice::set_destination_name): <p>The name of the destination to assign to the new wireless device.</p>

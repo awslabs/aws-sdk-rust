@@ -106,7 +106,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateParticipantConnection`](crate::client::fluent_builders::CreateParticipantConnection) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`r#type(Vec<ConnectionType>)`](crate::client::fluent_builders::CreateParticipantConnection::r#type) / [`set_type(Option<Vec<ConnectionType>>)`](crate::client::fluent_builders::CreateParticipantConnection::set_type): <p>Type of connection information required.</p>
+    ///   - [`r#type(Vec<ConnectionType>)`](crate::client::fluent_builders::CreateParticipantConnection::type) / [`set_type(Option<Vec<ConnectionType>>)`](crate::client::fluent_builders::CreateParticipantConnection::set_type): <p>Type of connection information required.</p>
     ///   - [`participant_token(impl Into<String>)`](crate::client::fluent_builders::CreateParticipantConnection::participant_token) / [`set_participant_token(Option<String>)`](crate::client::fluent_builders::CreateParticipantConnection::set_participant_token): <p>This is a header parameter.</p>  <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
     ///   - [`connect_participant(bool)`](crate::client::fluent_builders::CreateParticipantConnection::connect_participant) / [`set_connect_participant(Option<bool>)`](crate::client::fluent_builders::CreateParticipantConnection::set_connect_participant): <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
     /// - On success, responds with [`CreateParticipantConnectionOutput`](crate::output::CreateParticipantConnectionOutput) with field(s):
