@@ -326,6 +326,14 @@ impl From<Vec<u8>> for ByteStream {
     }
 }
 
+impl From<hyper::Body> for ByteStream {
+    fn from(input: hyper::Body) -> Self {
+        ByteStream::new(SdkBody::from_dyn(
+            input.map_err(|e| e.into_cause().unwrap()).boxed(),
+        ))
+    }
+}
+
 #[derive(Debug)]
 pub struct Error(Box<dyn StdError + Send + Sync + 'static>);
 
