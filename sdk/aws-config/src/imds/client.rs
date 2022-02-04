@@ -15,7 +15,7 @@ use std::str::FromStr;
 use std::time::Duration;
 
 use aws_http::user_agent::{ApiMetadata, AwsUserAgent, UserAgentStage};
-use aws_smithy_client::{erase::DynConnector, timeout, SdkSuccess};
+use aws_smithy_client::{erase::DynConnector, SdkSuccess};
 use aws_smithy_client::{retry, SdkError};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::endpoint::Endpoint;
@@ -29,24 +29,26 @@ use aws_smithy_http_tower::map_request::{
 use aws_smithy_types::retry::{ErrorKind, RetryKind};
 use aws_smithy_types::timeout::TimeoutConfig;
 use aws_types::os_shim_internal::{Env, Fs};
+
 use bytes::Bytes;
 use http::uri::InvalidUri;
 use http::{Response, Uri};
+use tokio::sync::OnceCell;
 
 use crate::connector::expect_connector;
 use crate::imds::client::token::TokenMiddleware;
 use crate::profile::ProfileParseError;
-use crate::provider_config::{HttpSettings, ProviderConfig};
+use crate::provider_config::ProviderConfig;
 use crate::{profile, PKG_VERSION};
-use tokio::sync::OnceCell;
+use aws_smithy_client::http_connector::HttpSettings;
 
 mod token;
 
 // 6 hours
 const DEFAULT_TOKEN_TTL: Duration = Duration::from_secs(21_600);
 const DEFAULT_ATTEMPTS: u32 = 4;
-const DEFAULT_CONNECT_TIMEOUT: Duration = Duration::from_secs(1);
-const DEFAULT_READ_TIMEOUT: Duration = Duration::from_secs(1);
+const DEFAULT_CONNECT_TIMEOUT: Option<Duration> = Some(Duration::from_secs(1));
+const DEFAULT_READ_TIMEOUT: Option<Duration> = Some(Duration::from_secs(1));
 
 fn user_agent() -> AwsUserAgent {
     AwsUserAgent::new_from_environment(Env::real(), ApiMetadata::new("imds", PKG_VERSION))
@@ -533,12 +535,11 @@ impl Builder {
     /// Build an IMDSv2 Client
     pub async fn build(self) -> Result<Client, BuildError> {
         let config = self.config.unwrap_or_default();
-        let timeout_config = timeout::Settings::default()
-            .with_connect_timeout(self.connect_timeout.unwrap_or(DEFAULT_CONNECT_TIMEOUT))
-            .with_read_timeout(self.read_timeout.unwrap_or(DEFAULT_READ_TIMEOUT));
-        let connector = expect_connector(config.connector(&HttpSettings {
-            timeout_settings: timeout_config,
-        }));
+        let timeout_config = TimeoutConfig::new()
+            .with_connect_timeout(self.connect_timeout.or(DEFAULT_CONNECT_TIMEOUT))
+            .with_read_timeout(self.read_timeout.or(DEFAULT_READ_TIMEOUT));
+        let http_settings = HttpSettings::default().with_timeout_config(timeout_config);
+        let connector = expect_connector(config.connector(&http_settings));
         let endpoint_source = self
             .endpoint
             .unwrap_or_else(|| EndpointSource::Env(config.env(), config.fs()));

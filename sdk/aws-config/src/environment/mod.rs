@@ -6,6 +6,7 @@
 /// Load app name from the environment
 pub mod app_name;
 pub use app_name::EnvironmentVariableAppNameProvider;
+
 /// Load credentials from the environment
 pub mod credentials;
 pub use credentials::EnvironmentVariableCredentialsProvider;

@@ -59,7 +59,7 @@ use http::uri::{InvalidUri, Scheme};
 use http::{HeaderValue, Uri};
 use tower::{Service, ServiceExt};
 
-use crate::http_provider::HttpCredentialProvider;
+use crate::http_credential_provider::HttpCredentialProvider;
 use crate::provider_config::ProviderConfig;
 use aws_types::os_shim_internal::Env;
 use http::header::InvalidHeaderValue;

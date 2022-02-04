@@ -8,21 +8,22 @@
 //!
 //! Future work will stabilize this interface and enable it to be used directly.
 
+use aws_smithy_client::erase::DynConnector;
+use aws_smithy_client::http_connector::HttpSettings;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::operation::{Operation, Request};
 use aws_smithy_http::response::ParseStrictResponse;
 use aws_smithy_http::result::{SdkError, SdkSuccess};
 use aws_smithy_http::retry::ClassifyResponse;
 use aws_smithy_types::retry::{ErrorKind, RetryKind};
+use aws_smithy_types::timeout::TimeoutConfig;
 use aws_types::credentials::CredentialsError;
 use aws_types::{credentials, Credentials};
 
 use crate::connector::expect_connector;
 use crate::json_credentials::{parse_json_credentials, JsonCredentials};
-use crate::provider_config::{HttpSettings, ProviderConfig};
+use crate::provider_config::ProviderConfig;
 
-use aws_smithy_client::erase::DynConnector;
-use aws_smithy_client::timeout;
 use bytes::Bytes;
 use http::header::{ACCEPT, AUTHORIZATION};
 use http::{HeaderValue, Response, Uri};
@@ -78,8 +79,7 @@ impl HttpCredentialProvider {
 #[derive(Default)]
 pub(crate) struct Builder {
     provider_config: Option<ProviderConfig>,
-    connect_timeout: Option<Duration>,
-    read_timeout: Option<Duration>,
+    timeout_config: TimeoutConfig,
 }
 
 impl Builder {
@@ -90,25 +90,23 @@ impl Builder {
 
     // read_timeout and connect_timeout accept options to enable easy pass through from
     // other builders
-
     pub(crate) fn read_timeout(mut self, read_timeout: Option<Duration>) -> Self {
-        self.read_timeout = read_timeout;
+        self.timeout_config = self.timeout_config.with_read_timeout(read_timeout);
         self
     }
 
     pub(crate) fn connect_timeout(mut self, connect_timeout: Option<Duration>) -> Self {
-        self.connect_timeout = connect_timeout;
+        self.timeout_config = self.timeout_config.with_connect_timeout(connect_timeout);
         self
     }
 
     pub(crate) fn build(self, provider_name: &'static str, uri: Uri) -> HttpCredentialProvider {
         let provider_config = self.provider_config.unwrap_or_default();
-        let connect_timeout = self.connect_timeout.unwrap_or(DEFAULT_CONNECT_TIMEOUT);
-        let read_timeout = self.read_timeout.unwrap_or(DEFAULT_READ_TIMEOUT);
-        let timeout_settings = timeout::Settings::default()
-            .with_read_timeout(read_timeout)
-            .with_connect_timeout(connect_timeout);
-        let http_settings = HttpSettings { timeout_settings };
+        let default_timeout_config = TimeoutConfig::new()
+            .with_connect_timeout(Some(DEFAULT_CONNECT_TIMEOUT))
+            .with_read_timeout(Some(DEFAULT_READ_TIMEOUT));
+        let timeout_config = self.timeout_config.take_unset_from(default_timeout_config);
+        let http_settings = HttpSettings::default().with_timeout_config(timeout_config);
         let connector = expect_connector(provider_config.connector(&http_settings));
         let client = aws_smithy_client::Builder::new()
             .connector(connector)
@@ -201,7 +199,7 @@ impl ClassifyResponse<SdkSuccess<Credentials>, SdkError<CredentialsError>>
 
 #[cfg(test)]
 mod test {
-    use crate::http_provider::{CredentialsResponseParser, HttpCredentialRetryPolicy};
+    use crate::http_credential_provider::{CredentialsResponseParser, HttpCredentialRetryPolicy};
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::operation;
     use aws_smithy_http::response::ParseStrictResponse;

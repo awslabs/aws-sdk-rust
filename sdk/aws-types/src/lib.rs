@@ -21,6 +21,7 @@ pub mod credentials;
 pub mod os_shim_internal;
 pub mod region;
 
+pub use aws_smithy_client::http_connector;
 pub use credentials::Credentials;
 
 use std::borrow::Cow;

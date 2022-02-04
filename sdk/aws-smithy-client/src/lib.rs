@@ -35,6 +35,8 @@ pub mod dvr;
 #[cfg(feature = "test-util")]
 pub mod test_connection;
 
+pub mod http_connector;
+
 #[cfg(feature = "client-hyper")]
 pub mod hyper_ext;
 
@@ -162,13 +164,13 @@ impl<C, M> Client<C, M> {
 
 impl<C, M, R> Client<C, M, R> {
     /// Set the client's timeout configuration.
-    pub fn set_timeout_config(&mut self, config: TimeoutConfig) {
-        self.timeout_config = config;
+    pub fn set_timeout_config(&mut self, timeout_config: TimeoutConfig) {
+        self.timeout_config = timeout_config;
     }
 
     /// Set the client's timeout configuration.
-    pub fn with_timeout_config(mut self, config: TimeoutConfig) -> Self {
-        self.set_timeout_config(config);
+    pub fn with_timeout_config(mut self, timeout_config: TimeoutConfig) -> Self {
+        self.set_timeout_config(timeout_config);
         self
     }
 
