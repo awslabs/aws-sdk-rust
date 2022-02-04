@@ -15,7 +15,7 @@ pub fn serialize_structure_crate_input_create_suite_definition_input(
         let mut object_4 = object.key("tags").start_object();
         for (key_5, value_6) in var_3 {
             {
-                object_4.key(key_5).string(value_6);
+                object_4.key(key_5).string(value_6.as_str());
             }
         }
         object_4.finish();
@@ -28,7 +28,7 @@ pub fn serialize_structure_crate_input_start_suite_run_input(
     input: &crate::input::StartSuiteRunInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.suite_definition_version {
-        object.key("suiteDefinitionVersion").string(var_7);
+        object.key("suiteDefinitionVersion").string(var_7.as_str());
     }
     if let Some(var_8) = &input.suite_run_configuration {
         let mut object_9 = object.key("suiteRunConfiguration").start_object();
@@ -42,7 +42,7 @@ pub fn serialize_structure_crate_input_start_suite_run_input(
         let mut object_11 = object.key("tags").start_object();
         for (key_12, value_13) in var_10 {
             {
-                object_11.key(key_12).string(value_13);
+                object_11.key(key_12).string(value_13.as_str());
             }
         }
         object_11.finish();
@@ -58,7 +58,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_15 = object.key("tags").start_object();
         for (key_16, value_17) in var_14 {
             {
-                object_15.key(key_16).string(value_17);
+                object_15.key(key_16).string(value_17.as_str());
             }
         }
         object_15.finish();
@@ -86,7 +86,7 @@ pub fn serialize_structure_crate_model_suite_definition_configuration(
     input: &crate::model::SuiteDefinitionConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_20) = &input.suite_definition_name {
-        object.key("suiteDefinitionName").string(var_20);
+        object.key("suiteDefinitionName").string(var_20.as_str());
     }
     if let Some(var_21) = &input.devices {
         let mut array_22 = object.key("devices").start_array();
@@ -108,10 +108,12 @@ pub fn serialize_structure_crate_model_suite_definition_configuration(
             .boolean(input.intended_for_qualification);
     }
     if let Some(var_25) = &input.root_group {
-        object.key("rootGroup").string(var_25);
+        object.key("rootGroup").string(var_25.as_str());
     }
     if let Some(var_26) = &input.device_permission_role_arn {
-        object.key("devicePermissionRoleArn").string(var_26);
+        object
+            .key("devicePermissionRoleArn")
+            .string(var_26.as_str());
     }
     Ok(())
 }
@@ -129,7 +131,7 @@ pub fn serialize_structure_crate_model_suite_run_configuration(
         let mut array_30 = object.key("selectedTestList").start_array();
         for item_31 in var_29 {
             {
-                array_30.value().string(item_31);
+                array_30.value().string(item_31.as_str());
             }
         }
         array_30.finish();
@@ -145,10 +147,10 @@ pub fn serialize_structure_crate_model_device_under_test(
     input: &crate::model::DeviceUnderTest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.thing_arn {
-        object.key("thingArn").string(var_32);
+        object.key("thingArn").string(var_32.as_str());
     }
     if let Some(var_33) = &input.certificate_arn {
-        object.key("certificateArn").string(var_33);
+        object.key("certificateArn").string(var_33.as_str());
     }
     Ok(())
 }

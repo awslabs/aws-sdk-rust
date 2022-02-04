@@ -7,16 +7,16 @@ pub fn serialize_structure_crate_input_create_endpoint_input(
         object.key("AccessType").string(var_1.as_str());
     }
     if let Some(var_2) = &input.customer_owned_ipv4_pool {
-        object.key("CustomerOwnedIpv4Pool").string(var_2);
+        object.key("CustomerOwnedIpv4Pool").string(var_2.as_str());
     }
     if let Some(var_3) = &input.outpost_id {
-        object.key("OutpostId").string(var_3);
+        object.key("OutpostId").string(var_3.as_str());
     }
     if let Some(var_4) = &input.security_group_id {
-        object.key("SecurityGroupId").string(var_4);
+        object.key("SecurityGroupId").string(var_4.as_str());
     }
     if let Some(var_5) = &input.subnet_id {
-        object.key("SubnetId").string(var_5);
+        object.key("SubnetId").string(var_5.as_str());
     }
     Ok(())
 }

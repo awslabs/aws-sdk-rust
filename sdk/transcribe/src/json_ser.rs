@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_create_call_analytics_category_input(
     input: &crate::input::CreateCallAnalyticsCategoryInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.category_name {
-        object.key("CategoryName").string(var_1);
+        object.key("CategoryName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.rules {
         let mut array_3 = object.key("Rules").start_array();
@@ -31,7 +31,7 @@ pub fn serialize_structure_crate_input_create_language_model_input(
         object.key("BaseModelName").string(var_7.as_str());
     }
     if let Some(var_8) = &input.model_name {
-        object.key("ModelName").string(var_8);
+        object.key("ModelName").string(var_8.as_str());
     }
     if let Some(var_9) = &input.input_data_config {
         let mut object_10 = object.key("InputDataConfig").start_object();
@@ -57,13 +57,13 @@ pub fn serialize_structure_crate_input_create_medical_vocabulary_input(
     input: &crate::input::CreateMedicalVocabularyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_15);
+        object.key("VocabularyName").string(var_15.as_str());
     }
     if let Some(var_16) = &input.language_code {
         object.key("LanguageCode").string(var_16.as_str());
     }
     if let Some(var_17) = &input.vocabulary_file_uri {
-        object.key("VocabularyFileUri").string(var_17);
+        object.key("VocabularyFileUri").string(var_17.as_str());
     }
     if let Some(var_18) = &input.tags {
         let mut array_19 = object.key("Tags").start_array();
@@ -84,7 +84,7 @@ pub fn serialize_structure_crate_input_create_vocabulary_input(
     input: &crate::input::CreateVocabularyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_22) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_22);
+        object.key("VocabularyName").string(var_22.as_str());
     }
     if let Some(var_23) = &input.language_code {
         object.key("LanguageCode").string(var_23.as_str());
@@ -93,13 +93,13 @@ pub fn serialize_structure_crate_input_create_vocabulary_input(
         let mut array_25 = object.key("Phrases").start_array();
         for item_26 in var_24 {
             {
-                array_25.value().string(item_26);
+                array_25.value().string(item_26.as_str());
             }
         }
         array_25.finish();
     }
     if let Some(var_27) = &input.vocabulary_file_uri {
-        object.key("VocabularyFileUri").string(var_27);
+        object.key("VocabularyFileUri").string(var_27.as_str());
     }
     if let Some(var_28) = &input.tags {
         let mut array_29 = object.key("Tags").start_array();
@@ -120,7 +120,7 @@ pub fn serialize_structure_crate_input_create_vocabulary_filter_input(
     input: &crate::input::CreateVocabularyFilterInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.vocabulary_filter_name {
-        object.key("VocabularyFilterName").string(var_32);
+        object.key("VocabularyFilterName").string(var_32.as_str());
     }
     if let Some(var_33) = &input.language_code {
         object.key("LanguageCode").string(var_33.as_str());
@@ -129,13 +129,15 @@ pub fn serialize_structure_crate_input_create_vocabulary_filter_input(
         let mut array_35 = object.key("Words").start_array();
         for item_36 in var_34 {
             {
-                array_35.value().string(item_36);
+                array_35.value().string(item_36.as_str());
             }
         }
         array_35.finish();
     }
     if let Some(var_37) = &input.vocabulary_filter_file_uri {
-        object.key("VocabularyFilterFileUri").string(var_37);
+        object
+            .key("VocabularyFilterFileUri")
+            .string(var_37.as_str());
     }
     if let Some(var_38) = &input.tags {
         let mut array_39 = object.key("Tags").start_array();
@@ -156,7 +158,7 @@ pub fn serialize_structure_crate_input_delete_call_analytics_category_input(
     input: &crate::input::DeleteCallAnalyticsCategoryInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_42) = &input.category_name {
-        object.key("CategoryName").string(var_42);
+        object.key("CategoryName").string(var_42.as_str());
     }
     Ok(())
 }
@@ -166,7 +168,7 @@ pub fn serialize_structure_crate_input_delete_call_analytics_job_input(
     input: &crate::input::DeleteCallAnalyticsJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.call_analytics_job_name {
-        object.key("CallAnalyticsJobName").string(var_43);
+        object.key("CallAnalyticsJobName").string(var_43.as_str());
     }
     Ok(())
 }
@@ -176,7 +178,7 @@ pub fn serialize_structure_crate_input_delete_language_model_input(
     input: &crate::input::DeleteLanguageModelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.model_name {
-        object.key("ModelName").string(var_44);
+        object.key("ModelName").string(var_44.as_str());
     }
     Ok(())
 }
@@ -186,7 +188,9 @@ pub fn serialize_structure_crate_input_delete_medical_transcription_job_input(
     input: &crate::input::DeleteMedicalTranscriptionJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_45) = &input.medical_transcription_job_name {
-        object.key("MedicalTranscriptionJobName").string(var_45);
+        object
+            .key("MedicalTranscriptionJobName")
+            .string(var_45.as_str());
     }
     Ok(())
 }
@@ -196,7 +200,7 @@ pub fn serialize_structure_crate_input_delete_medical_vocabulary_input(
     input: &crate::input::DeleteMedicalVocabularyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_46) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_46);
+        object.key("VocabularyName").string(var_46.as_str());
     }
     Ok(())
 }
@@ -206,7 +210,7 @@ pub fn serialize_structure_crate_input_delete_transcription_job_input(
     input: &crate::input::DeleteTranscriptionJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_47) = &input.transcription_job_name {
-        object.key("TranscriptionJobName").string(var_47);
+        object.key("TranscriptionJobName").string(var_47.as_str());
     }
     Ok(())
 }
@@ -216,7 +220,7 @@ pub fn serialize_structure_crate_input_delete_vocabulary_input(
     input: &crate::input::DeleteVocabularyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_48) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_48);
+        object.key("VocabularyName").string(var_48.as_str());
     }
     Ok(())
 }
@@ -226,7 +230,7 @@ pub fn serialize_structure_crate_input_delete_vocabulary_filter_input(
     input: &crate::input::DeleteVocabularyFilterInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.vocabulary_filter_name {
-        object.key("VocabularyFilterName").string(var_49);
+        object.key("VocabularyFilterName").string(var_49.as_str());
     }
     Ok(())
 }
@@ -236,7 +240,7 @@ pub fn serialize_structure_crate_input_describe_language_model_input(
     input: &crate::input::DescribeLanguageModelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.model_name {
-        object.key("ModelName").string(var_50);
+        object.key("ModelName").string(var_50.as_str());
     }
     Ok(())
 }
@@ -246,7 +250,7 @@ pub fn serialize_structure_crate_input_get_call_analytics_category_input(
     input: &crate::input::GetCallAnalyticsCategoryInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_51) = &input.category_name {
-        object.key("CategoryName").string(var_51);
+        object.key("CategoryName").string(var_51.as_str());
     }
     Ok(())
 }
@@ -256,7 +260,7 @@ pub fn serialize_structure_crate_input_get_call_analytics_job_input(
     input: &crate::input::GetCallAnalyticsJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_52) = &input.call_analytics_job_name {
-        object.key("CallAnalyticsJobName").string(var_52);
+        object.key("CallAnalyticsJobName").string(var_52.as_str());
     }
     Ok(())
 }
@@ -266,7 +270,9 @@ pub fn serialize_structure_crate_input_get_medical_transcription_job_input(
     input: &crate::input::GetMedicalTranscriptionJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.medical_transcription_job_name {
-        object.key("MedicalTranscriptionJobName").string(var_53);
+        object
+            .key("MedicalTranscriptionJobName")
+            .string(var_53.as_str());
     }
     Ok(())
 }
@@ -276,7 +282,7 @@ pub fn serialize_structure_crate_input_get_medical_vocabulary_input(
     input: &crate::input::GetMedicalVocabularyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_54);
+        object.key("VocabularyName").string(var_54.as_str());
     }
     Ok(())
 }
@@ -286,7 +292,7 @@ pub fn serialize_structure_crate_input_get_transcription_job_input(
     input: &crate::input::GetTranscriptionJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_55) = &input.transcription_job_name {
-        object.key("TranscriptionJobName").string(var_55);
+        object.key("TranscriptionJobName").string(var_55.as_str());
     }
     Ok(())
 }
@@ -296,7 +302,7 @@ pub fn serialize_structure_crate_input_get_vocabulary_input(
     input: &crate::input::GetVocabularyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_56) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_56);
+        object.key("VocabularyName").string(var_56.as_str());
     }
     Ok(())
 }
@@ -306,7 +312,7 @@ pub fn serialize_structure_crate_input_get_vocabulary_filter_input(
     input: &crate::input::GetVocabularyFilterInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_57) = &input.vocabulary_filter_name {
-        object.key("VocabularyFilterName").string(var_57);
+        object.key("VocabularyFilterName").string(var_57.as_str());
     }
     Ok(())
 }
@@ -316,7 +322,7 @@ pub fn serialize_structure_crate_input_list_call_analytics_categories_input(
     input: &crate::input::ListCallAnalyticsCategoriesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_58) = &input.next_token {
-        object.key("NextToken").string(var_58);
+        object.key("NextToken").string(var_58.as_str());
     }
     if let Some(var_59) = &input.max_results {
         object.key("MaxResults").number(
@@ -335,10 +341,10 @@ pub fn serialize_structure_crate_input_list_call_analytics_jobs_input(
         object.key("Status").string(var_60.as_str());
     }
     if let Some(var_61) = &input.job_name_contains {
-        object.key("JobNameContains").string(var_61);
+        object.key("JobNameContains").string(var_61.as_str());
     }
     if let Some(var_62) = &input.next_token {
-        object.key("NextToken").string(var_62);
+        object.key("NextToken").string(var_62.as_str());
     }
     if let Some(var_63) = &input.max_results {
         object.key("MaxResults").number(
@@ -357,10 +363,10 @@ pub fn serialize_structure_crate_input_list_language_models_input(
         object.key("StatusEquals").string(var_64.as_str());
     }
     if let Some(var_65) = &input.name_contains {
-        object.key("NameContains").string(var_65);
+        object.key("NameContains").string(var_65.as_str());
     }
     if let Some(var_66) = &input.next_token {
-        object.key("NextToken").string(var_66);
+        object.key("NextToken").string(var_66.as_str());
     }
     if let Some(var_67) = &input.max_results {
         object.key("MaxResults").number(
@@ -379,10 +385,10 @@ pub fn serialize_structure_crate_input_list_medical_transcription_jobs_input(
         object.key("Status").string(var_68.as_str());
     }
     if let Some(var_69) = &input.job_name_contains {
-        object.key("JobNameContains").string(var_69);
+        object.key("JobNameContains").string(var_69.as_str());
     }
     if let Some(var_70) = &input.next_token {
-        object.key("NextToken").string(var_70);
+        object.key("NextToken").string(var_70.as_str());
     }
     if let Some(var_71) = &input.max_results {
         object.key("MaxResults").number(
@@ -398,7 +404,7 @@ pub fn serialize_structure_crate_input_list_medical_vocabularies_input(
     input: &crate::input::ListMedicalVocabulariesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_72) = &input.next_token {
-        object.key("NextToken").string(var_72);
+        object.key("NextToken").string(var_72.as_str());
     }
     if let Some(var_73) = &input.max_results {
         object.key("MaxResults").number(
@@ -410,7 +416,7 @@ pub fn serialize_structure_crate_input_list_medical_vocabularies_input(
         object.key("StateEquals").string(var_74.as_str());
     }
     if let Some(var_75) = &input.name_contains {
-        object.key("NameContains").string(var_75);
+        object.key("NameContains").string(var_75.as_str());
     }
     Ok(())
 }
@@ -420,7 +426,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_76) = &input.resource_arn {
-        object.key("ResourceArn").string(var_76);
+        object.key("ResourceArn").string(var_76.as_str());
     }
     Ok(())
 }
@@ -433,10 +439,10 @@ pub fn serialize_structure_crate_input_list_transcription_jobs_input(
         object.key("Status").string(var_77.as_str());
     }
     if let Some(var_78) = &input.job_name_contains {
-        object.key("JobNameContains").string(var_78);
+        object.key("JobNameContains").string(var_78.as_str());
     }
     if let Some(var_79) = &input.next_token {
-        object.key("NextToken").string(var_79);
+        object.key("NextToken").string(var_79.as_str());
     }
     if let Some(var_80) = &input.max_results {
         object.key("MaxResults").number(
@@ -452,7 +458,7 @@ pub fn serialize_structure_crate_input_list_vocabularies_input(
     input: &crate::input::ListVocabulariesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_81) = &input.next_token {
-        object.key("NextToken").string(var_81);
+        object.key("NextToken").string(var_81.as_str());
     }
     if let Some(var_82) = &input.max_results {
         object.key("MaxResults").number(
@@ -464,7 +470,7 @@ pub fn serialize_structure_crate_input_list_vocabularies_input(
         object.key("StateEquals").string(var_83.as_str());
     }
     if let Some(var_84) = &input.name_contains {
-        object.key("NameContains").string(var_84);
+        object.key("NameContains").string(var_84.as_str());
     }
     Ok(())
 }
@@ -474,7 +480,7 @@ pub fn serialize_structure_crate_input_list_vocabulary_filters_input(
     input: &crate::input::ListVocabularyFiltersInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_85) = &input.next_token {
-        object.key("NextToken").string(var_85);
+        object.key("NextToken").string(var_85.as_str());
     }
     if let Some(var_86) = &input.max_results {
         object.key("MaxResults").number(
@@ -483,7 +489,7 @@ pub fn serialize_structure_crate_input_list_vocabulary_filters_input(
         );
     }
     if let Some(var_87) = &input.name_contains {
-        object.key("NameContains").string(var_87);
+        object.key("NameContains").string(var_87.as_str());
     }
     Ok(())
 }
@@ -493,7 +499,7 @@ pub fn serialize_structure_crate_input_start_call_analytics_job_input(
     input: &crate::input::StartCallAnalyticsJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_88) = &input.call_analytics_job_name {
-        object.key("CallAnalyticsJobName").string(var_88);
+        object.key("CallAnalyticsJobName").string(var_88.as_str());
     }
     if let Some(var_89) = &input.media {
         let mut object_90 = object.key("Media").start_object();
@@ -501,13 +507,15 @@ pub fn serialize_structure_crate_input_start_call_analytics_job_input(
         object_90.finish();
     }
     if let Some(var_91) = &input.output_location {
-        object.key("OutputLocation").string(var_91);
+        object.key("OutputLocation").string(var_91.as_str());
     }
     if let Some(var_92) = &input.output_encryption_kms_key_id {
-        object.key("OutputEncryptionKMSKeyId").string(var_92);
+        object
+            .key("OutputEncryptionKMSKeyId")
+            .string(var_92.as_str());
     }
     if let Some(var_93) = &input.data_access_role_arn {
-        object.key("DataAccessRoleArn").string(var_93);
+        object.key("DataAccessRoleArn").string(var_93.as_str());
     }
     if let Some(var_94) = &input.settings {
         let mut object_95 = object.key("Settings").start_object();
@@ -539,7 +547,9 @@ pub fn serialize_structure_crate_input_start_medical_transcription_job_input(
     input: &crate::input::StartMedicalTranscriptionJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_100) = &input.medical_transcription_job_name {
-        object.key("MedicalTranscriptionJobName").string(var_100);
+        object
+            .key("MedicalTranscriptionJobName")
+            .string(var_100.as_str());
     }
     if let Some(var_101) = &input.language_code {
         object.key("LanguageCode").string(var_101.as_str());
@@ -559,19 +569,21 @@ pub fn serialize_structure_crate_input_start_medical_transcription_job_input(
         object_105.finish();
     }
     if let Some(var_106) = &input.output_bucket_name {
-        object.key("OutputBucketName").string(var_106);
+        object.key("OutputBucketName").string(var_106.as_str());
     }
     if let Some(var_107) = &input.output_key {
-        object.key("OutputKey").string(var_107);
+        object.key("OutputKey").string(var_107.as_str());
     }
     if let Some(var_108) = &input.output_encryption_kms_key_id {
-        object.key("OutputEncryptionKMSKeyId").string(var_108);
+        object
+            .key("OutputEncryptionKMSKeyId")
+            .string(var_108.as_str());
     }
     if let Some(var_109) = &input.kms_encryption_context {
         let mut object_110 = object.key("KMSEncryptionContext").start_object();
         for (key_111, value_112) in var_109 {
             {
-                object_110.key(key_111).string(value_112);
+                object_110.key(key_111).string(value_112.as_str());
             }
         }
         object_110.finish();
@@ -614,7 +626,7 @@ pub fn serialize_structure_crate_input_start_transcription_job_input(
     input: &crate::input::StartTranscriptionJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_122) = &input.transcription_job_name {
-        object.key("TranscriptionJobName").string(var_122);
+        object.key("TranscriptionJobName").string(var_122.as_str());
     }
     if let Some(var_123) = &input.language_code {
         object.key("LanguageCode").string(var_123.as_str());
@@ -634,19 +646,21 @@ pub fn serialize_structure_crate_input_start_transcription_job_input(
         object_127.finish();
     }
     if let Some(var_128) = &input.output_bucket_name {
-        object.key("OutputBucketName").string(var_128);
+        object.key("OutputBucketName").string(var_128.as_str());
     }
     if let Some(var_129) = &input.output_key {
-        object.key("OutputKey").string(var_129);
+        object.key("OutputKey").string(var_129.as_str());
     }
     if let Some(var_130) = &input.output_encryption_kms_key_id {
-        object.key("OutputEncryptionKMSKeyId").string(var_130);
+        object
+            .key("OutputEncryptionKMSKeyId")
+            .string(var_130.as_str());
     }
     if let Some(var_131) = &input.kms_encryption_context {
         let mut object_132 = object.key("KMSEncryptionContext").start_object();
         for (key_133, value_134) in var_131 {
             {
-                object_132.key(key_133).string(value_134);
+                object_132.key(key_133).string(value_134.as_str());
             }
         }
         object_132.finish();
@@ -727,7 +741,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_158) = &input.resource_arn {
-        object.key("ResourceArn").string(var_158);
+        object.key("ResourceArn").string(var_158.as_str());
     }
     if let Some(var_159) = &input.tags {
         let mut array_160 = object.key("Tags").start_array();
@@ -748,13 +762,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_163) = &input.resource_arn {
-        object.key("ResourceArn").string(var_163);
+        object.key("ResourceArn").string(var_163.as_str());
     }
     if let Some(var_164) = &input.tag_keys {
         let mut array_165 = object.key("TagKeys").start_array();
         for item_166 in var_164 {
             {
-                array_165.value().string(item_166);
+                array_165.value().string(item_166.as_str());
             }
         }
         array_165.finish();
@@ -767,7 +781,7 @@ pub fn serialize_structure_crate_input_update_call_analytics_category_input(
     input: &crate::input::UpdateCallAnalyticsCategoryInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_167) = &input.category_name {
-        object.key("CategoryName").string(var_167);
+        object.key("CategoryName").string(var_167.as_str());
     }
     if let Some(var_168) = &input.rules {
         let mut array_169 = object.key("Rules").start_array();
@@ -788,13 +802,13 @@ pub fn serialize_structure_crate_input_update_medical_vocabulary_input(
     input: &crate::input::UpdateMedicalVocabularyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_172) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_172);
+        object.key("VocabularyName").string(var_172.as_str());
     }
     if let Some(var_173) = &input.language_code {
         object.key("LanguageCode").string(var_173.as_str());
     }
     if let Some(var_174) = &input.vocabulary_file_uri {
-        object.key("VocabularyFileUri").string(var_174);
+        object.key("VocabularyFileUri").string(var_174.as_str());
     }
     Ok(())
 }
@@ -804,7 +818,7 @@ pub fn serialize_structure_crate_input_update_vocabulary_input(
     input: &crate::input::UpdateVocabularyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_175) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_175);
+        object.key("VocabularyName").string(var_175.as_str());
     }
     if let Some(var_176) = &input.language_code {
         object.key("LanguageCode").string(var_176.as_str());
@@ -813,13 +827,13 @@ pub fn serialize_structure_crate_input_update_vocabulary_input(
         let mut array_178 = object.key("Phrases").start_array();
         for item_179 in var_177 {
             {
-                array_178.value().string(item_179);
+                array_178.value().string(item_179.as_str());
             }
         }
         array_178.finish();
     }
     if let Some(var_180) = &input.vocabulary_file_uri {
-        object.key("VocabularyFileUri").string(var_180);
+        object.key("VocabularyFileUri").string(var_180.as_str());
     }
     Ok(())
 }
@@ -829,19 +843,21 @@ pub fn serialize_structure_crate_input_update_vocabulary_filter_input(
     input: &crate::input::UpdateVocabularyFilterInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_181) = &input.vocabulary_filter_name {
-        object.key("VocabularyFilterName").string(var_181);
+        object.key("VocabularyFilterName").string(var_181.as_str());
     }
     if let Some(var_182) = &input.words {
         let mut array_183 = object.key("Words").start_array();
         for item_184 in var_182 {
             {
-                array_183.value().string(item_184);
+                array_183.value().string(item_184.as_str());
             }
         }
         array_183.finish();
     }
     if let Some(var_185) = &input.vocabulary_filter_file_uri {
-        object.key("VocabularyFilterFileUri").string(var_185);
+        object
+            .key("VocabularyFilterFileUri")
+            .string(var_185.as_str());
     }
     Ok(())
 }
@@ -895,13 +911,13 @@ pub fn serialize_structure_crate_model_input_data_config(
     input: &crate::model::InputDataConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_190) = &input.s3_uri {
-        object.key("S3Uri").string(var_190);
+        object.key("S3Uri").string(var_190.as_str());
     }
     if let Some(var_191) = &input.tuning_data_s3_uri {
-        object.key("TuningDataS3Uri").string(var_191);
+        object.key("TuningDataS3Uri").string(var_191.as_str());
     }
     if let Some(var_192) = &input.data_access_role_arn {
-        object.key("DataAccessRoleArn").string(var_192);
+        object.key("DataAccessRoleArn").string(var_192.as_str());
     }
     Ok(())
 }
@@ -911,10 +927,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_193) = &input.key {
-        object.key("Key").string(var_193);
+        object.key("Key").string(var_193.as_str());
     }
     if let Some(var_194) = &input.value {
-        object.key("Value").string(var_194);
+        object.key("Value").string(var_194.as_str());
     }
     Ok(())
 }
@@ -924,10 +940,10 @@ pub fn serialize_structure_crate_model_media(
     input: &crate::model::Media,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_195) = &input.media_file_uri {
-        object.key("MediaFileUri").string(var_195);
+        object.key("MediaFileUri").string(var_195.as_str());
     }
     if let Some(var_196) = &input.redacted_media_file_uri {
-        object.key("RedactedMediaFileUri").string(var_196);
+        object.key("RedactedMediaFileUri").string(var_196.as_str());
     }
     Ok(())
 }
@@ -937,10 +953,10 @@ pub fn serialize_structure_crate_model_call_analytics_job_settings(
     input: &crate::model::CallAnalyticsJobSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_197) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_197);
+        object.key("VocabularyName").string(var_197.as_str());
     }
     if let Some(var_198) = &input.vocabulary_filter_name {
-        object.key("VocabularyFilterName").string(var_198);
+        object.key("VocabularyFilterName").string(var_198.as_str());
     }
     if let Some(var_199) = &input.vocabulary_filter_method {
         object
@@ -948,7 +964,7 @@ pub fn serialize_structure_crate_model_call_analytics_job_settings(
             .string(var_199.as_str());
     }
     if let Some(var_200) = &input.language_model_name {
-        object.key("LanguageModelName").string(var_200);
+        object.key("LanguageModelName").string(var_200.as_str());
     }
     if let Some(var_201) = &input.content_redaction {
         let mut object_202 = object.key("ContentRedaction").start_object();
@@ -1026,7 +1042,7 @@ pub fn serialize_structure_crate_model_medical_transcription_setting(
         );
     }
     if let Some(var_217) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_217);
+        object.key("VocabularyName").string(var_217.as_str());
     }
     Ok(())
 }
@@ -1036,7 +1052,7 @@ pub fn serialize_structure_crate_model_settings(
     input: &crate::model::Settings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_218) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_218);
+        object.key("VocabularyName").string(var_218.as_str());
     }
     if let Some(var_219) = &input.show_speaker_labels {
         object.key("ShowSpeakerLabels").boolean(*var_219);
@@ -1060,7 +1076,7 @@ pub fn serialize_structure_crate_model_settings(
         );
     }
     if let Some(var_224) = &input.vocabulary_filter_name {
-        object.key("VocabularyFilterName").string(var_224);
+        object.key("VocabularyFilterName").string(var_224.as_str());
     }
     if let Some(var_225) = &input.vocabulary_filter_method {
         object
@@ -1075,7 +1091,7 @@ pub fn serialize_structure_crate_model_model_settings(
     input: &crate::model::ModelSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_226) = &input.language_model_name {
-        object.key("LanguageModelName").string(var_226);
+        object.key("LanguageModelName").string(var_226.as_str());
     }
     Ok(())
 }
@@ -1088,7 +1104,7 @@ pub fn serialize_structure_crate_model_job_execution_settings(
         object.key("AllowDeferredExecution").boolean(*var_227);
     }
     if let Some(var_228) = &input.data_access_role_arn {
-        object.key("DataAccessRoleArn").string(var_228);
+        object.key("DataAccessRoleArn").string(var_228.as_str());
     }
     Ok(())
 }
@@ -1136,13 +1152,13 @@ pub fn serialize_structure_crate_model_language_id_settings(
     input: &crate::model::LanguageIdSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_237) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_237);
+        object.key("VocabularyName").string(var_237.as_str());
     }
     if let Some(var_238) = &input.vocabulary_filter_name {
-        object.key("VocabularyFilterName").string(var_238);
+        object.key("VocabularyFilterName").string(var_238.as_str());
     }
     if let Some(var_239) = &input.language_model_name {
-        object.key("LanguageModelName").string(var_239);
+        object.key("LanguageModelName").string(var_239.as_str());
     }
     Ok(())
 }
@@ -1247,7 +1263,7 @@ pub fn serialize_structure_crate_model_transcript_filter(
         let mut array_261 = object.key("Targets").start_array();
         for item_262 in var_260 {
             {
-                array_261.value().string(item_262);
+                array_261.value().string(item_262.as_str());
             }
         }
         array_261.finish();

@@ -4,13 +4,13 @@ pub fn serialize_structure_crate_input_add_tags_to_stream_input(
     input: &crate::input::AddTagsToStreamInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.stream_name {
-        object.key("StreamName").string(var_1);
+        object.key("StreamName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.tags {
         let mut object_3 = object.key("Tags").start_object();
         for (key_4, value_5) in var_2 {
             {
-                object_3.key(key_4).string(value_5);
+                object_3.key(key_4).string(value_5.as_str());
             }
         }
         object_3.finish();
@@ -23,7 +23,7 @@ pub fn serialize_structure_crate_input_create_stream_input(
     input: &crate::input::CreateStreamInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_6) = &input.stream_name {
-        object.key("StreamName").string(var_6);
+        object.key("StreamName").string(var_6.as_str());
     }
     if let Some(var_7) = &input.shard_count {
         object.key("ShardCount").number(
@@ -44,7 +44,7 @@ pub fn serialize_structure_crate_input_decrease_stream_retention_period_input(
     input: &crate::input::DecreaseStreamRetentionPeriodInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.stream_name {
-        object.key("StreamName").string(var_10);
+        object.key("StreamName").string(var_10.as_str());
     }
     if let Some(var_11) = &input.retention_period_hours {
         object.key("RetentionPeriodHours").number(
@@ -60,7 +60,7 @@ pub fn serialize_structure_crate_input_delete_stream_input(
     input: &crate::input::DeleteStreamInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.stream_name {
-        object.key("StreamName").string(var_12);
+        object.key("StreamName").string(var_12.as_str());
     }
     if let Some(var_13) = &input.enforce_consumer_deletion {
         object.key("EnforceConsumerDeletion").boolean(*var_13);
@@ -73,13 +73,13 @@ pub fn serialize_structure_crate_input_deregister_stream_consumer_input(
     input: &crate::input::DeregisterStreamConsumerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_14) = &input.stream_arn {
-        object.key("StreamARN").string(var_14);
+        object.key("StreamARN").string(var_14.as_str());
     }
     if let Some(var_15) = &input.consumer_name {
-        object.key("ConsumerName").string(var_15);
+        object.key("ConsumerName").string(var_15.as_str());
     }
     if let Some(var_16) = &input.consumer_arn {
-        object.key("ConsumerARN").string(var_16);
+        object.key("ConsumerARN").string(var_16.as_str());
     }
     Ok(())
 }
@@ -89,7 +89,7 @@ pub fn serialize_structure_crate_input_describe_stream_input(
     input: &crate::input::DescribeStreamInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.stream_name {
-        object.key("StreamName").string(var_17);
+        object.key("StreamName").string(var_17.as_str());
     }
     if let Some(var_18) = &input.limit {
         object.key("Limit").number(
@@ -98,7 +98,7 @@ pub fn serialize_structure_crate_input_describe_stream_input(
         );
     }
     if let Some(var_19) = &input.exclusive_start_shard_id {
-        object.key("ExclusiveStartShardId").string(var_19);
+        object.key("ExclusiveStartShardId").string(var_19.as_str());
     }
     Ok(())
 }
@@ -108,13 +108,13 @@ pub fn serialize_structure_crate_input_describe_stream_consumer_input(
     input: &crate::input::DescribeStreamConsumerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_20) = &input.stream_arn {
-        object.key("StreamARN").string(var_20);
+        object.key("StreamARN").string(var_20.as_str());
     }
     if let Some(var_21) = &input.consumer_name {
-        object.key("ConsumerName").string(var_21);
+        object.key("ConsumerName").string(var_21.as_str());
     }
     if let Some(var_22) = &input.consumer_arn {
-        object.key("ConsumerARN").string(var_22);
+        object.key("ConsumerARN").string(var_22.as_str());
     }
     Ok(())
 }
@@ -124,7 +124,7 @@ pub fn serialize_structure_crate_input_describe_stream_summary_input(
     input: &crate::input::DescribeStreamSummaryInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.stream_name {
-        object.key("StreamName").string(var_23);
+        object.key("StreamName").string(var_23.as_str());
     }
     Ok(())
 }
@@ -134,7 +134,7 @@ pub fn serialize_structure_crate_input_disable_enhanced_monitoring_input(
     input: &crate::input::DisableEnhancedMonitoringInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.stream_name {
-        object.key("StreamName").string(var_24);
+        object.key("StreamName").string(var_24.as_str());
     }
     if let Some(var_25) = &input.shard_level_metrics {
         let mut array_26 = object.key("ShardLevelMetrics").start_array();
@@ -153,7 +153,7 @@ pub fn serialize_structure_crate_input_enable_enhanced_monitoring_input(
     input: &crate::input::EnableEnhancedMonitoringInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.stream_name {
-        object.key("StreamName").string(var_28);
+        object.key("StreamName").string(var_28.as_str());
     }
     if let Some(var_29) = &input.shard_level_metrics {
         let mut array_30 = object.key("ShardLevelMetrics").start_array();
@@ -172,7 +172,7 @@ pub fn serialize_structure_crate_input_get_records_input(
     input: &crate::input::GetRecordsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.shard_iterator {
-        object.key("ShardIterator").string(var_32);
+        object.key("ShardIterator").string(var_32.as_str());
     }
     if let Some(var_33) = &input.limit {
         object.key("Limit").number(
@@ -188,16 +188,16 @@ pub fn serialize_structure_crate_input_get_shard_iterator_input(
     input: &crate::input::GetShardIteratorInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_34) = &input.stream_name {
-        object.key("StreamName").string(var_34);
+        object.key("StreamName").string(var_34.as_str());
     }
     if let Some(var_35) = &input.shard_id {
-        object.key("ShardId").string(var_35);
+        object.key("ShardId").string(var_35.as_str());
     }
     if let Some(var_36) = &input.shard_iterator_type {
         object.key("ShardIteratorType").string(var_36.as_str());
     }
     if let Some(var_37) = &input.starting_sequence_number {
-        object.key("StartingSequenceNumber").string(var_37);
+        object.key("StartingSequenceNumber").string(var_37.as_str());
     }
     if let Some(var_38) = &input.timestamp {
         object
@@ -212,7 +212,7 @@ pub fn serialize_structure_crate_input_increase_stream_retention_period_input(
     input: &crate::input::IncreaseStreamRetentionPeriodInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_39) = &input.stream_name {
-        object.key("StreamName").string(var_39);
+        object.key("StreamName").string(var_39.as_str());
     }
     if let Some(var_40) = &input.retention_period_hours {
         object.key("RetentionPeriodHours").number(
@@ -228,13 +228,13 @@ pub fn serialize_structure_crate_input_list_shards_input(
     input: &crate::input::ListShardsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.stream_name {
-        object.key("StreamName").string(var_41);
+        object.key("StreamName").string(var_41.as_str());
     }
     if let Some(var_42) = &input.next_token {
-        object.key("NextToken").string(var_42);
+        object.key("NextToken").string(var_42.as_str());
     }
     if let Some(var_43) = &input.exclusive_start_shard_id {
-        object.key("ExclusiveStartShardId").string(var_43);
+        object.key("ExclusiveStartShardId").string(var_43.as_str());
     }
     if let Some(var_44) = &input.max_results {
         object.key("MaxResults").number(
@@ -260,10 +260,10 @@ pub fn serialize_structure_crate_input_list_stream_consumers_input(
     input: &crate::input::ListStreamConsumersInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_48) = &input.stream_arn {
-        object.key("StreamARN").string(var_48);
+        object.key("StreamARN").string(var_48.as_str());
     }
     if let Some(var_49) = &input.next_token {
-        object.key("NextToken").string(var_49);
+        object.key("NextToken").string(var_49.as_str());
     }
     if let Some(var_50) = &input.max_results {
         object.key("MaxResults").number(
@@ -290,7 +290,9 @@ pub fn serialize_structure_crate_input_list_streams_input(
         );
     }
     if let Some(var_53) = &input.exclusive_start_stream_name {
-        object.key("ExclusiveStartStreamName").string(var_53);
+        object
+            .key("ExclusiveStartStreamName")
+            .string(var_53.as_str());
     }
     Ok(())
 }
@@ -300,10 +302,10 @@ pub fn serialize_structure_crate_input_list_tags_for_stream_input(
     input: &crate::input::ListTagsForStreamInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.stream_name {
-        object.key("StreamName").string(var_54);
+        object.key("StreamName").string(var_54.as_str());
     }
     if let Some(var_55) = &input.exclusive_start_tag_key {
-        object.key("ExclusiveStartTagKey").string(var_55);
+        object.key("ExclusiveStartTagKey").string(var_55.as_str());
     }
     if let Some(var_56) = &input.limit {
         object.key("Limit").number(
@@ -319,13 +321,13 @@ pub fn serialize_structure_crate_input_merge_shards_input(
     input: &crate::input::MergeShardsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_57) = &input.stream_name {
-        object.key("StreamName").string(var_57);
+        object.key("StreamName").string(var_57.as_str());
     }
     if let Some(var_58) = &input.shard_to_merge {
-        object.key("ShardToMerge").string(var_58);
+        object.key("ShardToMerge").string(var_58.as_str());
     }
     if let Some(var_59) = &input.adjacent_shard_to_merge {
-        object.key("AdjacentShardToMerge").string(var_59);
+        object.key("AdjacentShardToMerge").string(var_59.as_str());
     }
     Ok(())
 }
@@ -335,7 +337,7 @@ pub fn serialize_structure_crate_input_put_record_input(
     input: &crate::input::PutRecordInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_60) = &input.stream_name {
-        object.key("StreamName").string(var_60);
+        object.key("StreamName").string(var_60.as_str());
     }
     if let Some(var_61) = &input.data {
         object
@@ -343,13 +345,15 @@ pub fn serialize_structure_crate_input_put_record_input(
             .string_unchecked(&aws_smithy_types::base64::encode(var_61));
     }
     if let Some(var_62) = &input.partition_key {
-        object.key("PartitionKey").string(var_62);
+        object.key("PartitionKey").string(var_62.as_str());
     }
     if let Some(var_63) = &input.explicit_hash_key {
-        object.key("ExplicitHashKey").string(var_63);
+        object.key("ExplicitHashKey").string(var_63.as_str());
     }
     if let Some(var_64) = &input.sequence_number_for_ordering {
-        object.key("SequenceNumberForOrdering").string(var_64);
+        object
+            .key("SequenceNumberForOrdering")
+            .string(var_64.as_str());
     }
     Ok(())
 }
@@ -373,7 +377,7 @@ pub fn serialize_structure_crate_input_put_records_input(
         array_66.finish();
     }
     if let Some(var_69) = &input.stream_name {
-        object.key("StreamName").string(var_69);
+        object.key("StreamName").string(var_69.as_str());
     }
     Ok(())
 }
@@ -383,10 +387,10 @@ pub fn serialize_structure_crate_input_register_stream_consumer_input(
     input: &crate::input::RegisterStreamConsumerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.stream_arn {
-        object.key("StreamARN").string(var_70);
+        object.key("StreamARN").string(var_70.as_str());
     }
     if let Some(var_71) = &input.consumer_name {
-        object.key("ConsumerName").string(var_71);
+        object.key("ConsumerName").string(var_71.as_str());
     }
     Ok(())
 }
@@ -396,13 +400,13 @@ pub fn serialize_structure_crate_input_remove_tags_from_stream_input(
     input: &crate::input::RemoveTagsFromStreamInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_72) = &input.stream_name {
-        object.key("StreamName").string(var_72);
+        object.key("StreamName").string(var_72.as_str());
     }
     if let Some(var_73) = &input.tag_keys {
         let mut array_74 = object.key("TagKeys").start_array();
         for item_75 in var_73 {
             {
-                array_74.value().string(item_75);
+                array_74.value().string(item_75.as_str());
             }
         }
         array_74.finish();
@@ -415,13 +419,13 @@ pub fn serialize_structure_crate_input_split_shard_input(
     input: &crate::input::SplitShardInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_76) = &input.stream_name {
-        object.key("StreamName").string(var_76);
+        object.key("StreamName").string(var_76.as_str());
     }
     if let Some(var_77) = &input.shard_to_split {
-        object.key("ShardToSplit").string(var_77);
+        object.key("ShardToSplit").string(var_77.as_str());
     }
     if let Some(var_78) = &input.new_starting_hash_key {
-        object.key("NewStartingHashKey").string(var_78);
+        object.key("NewStartingHashKey").string(var_78.as_str());
     }
     Ok(())
 }
@@ -431,13 +435,13 @@ pub fn serialize_structure_crate_input_start_stream_encryption_input(
     input: &crate::input::StartStreamEncryptionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_79) = &input.stream_name {
-        object.key("StreamName").string(var_79);
+        object.key("StreamName").string(var_79.as_str());
     }
     if let Some(var_80) = &input.encryption_type {
         object.key("EncryptionType").string(var_80.as_str());
     }
     if let Some(var_81) = &input.key_id {
-        object.key("KeyId").string(var_81);
+        object.key("KeyId").string(var_81.as_str());
     }
     Ok(())
 }
@@ -447,13 +451,13 @@ pub fn serialize_structure_crate_input_stop_stream_encryption_input(
     input: &crate::input::StopStreamEncryptionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_82) = &input.stream_name {
-        object.key("StreamName").string(var_82);
+        object.key("StreamName").string(var_82.as_str());
     }
     if let Some(var_83) = &input.encryption_type {
         object.key("EncryptionType").string(var_83.as_str());
     }
     if let Some(var_84) = &input.key_id {
-        object.key("KeyId").string(var_84);
+        object.key("KeyId").string(var_84.as_str());
     }
     Ok(())
 }
@@ -463,7 +467,7 @@ pub fn serialize_structure_crate_input_update_shard_count_input(
     input: &crate::input::UpdateShardCountInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_85) = &input.stream_name {
-        object.key("StreamName").string(var_85);
+        object.key("StreamName").string(var_85.as_str());
     }
     if let Some(var_86) = &input.target_shard_count {
         object.key("TargetShardCount").number(
@@ -482,7 +486,7 @@ pub fn serialize_structure_crate_input_update_stream_mode_input(
     input: &crate::input::UpdateStreamModeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_88) = &input.stream_arn {
-        object.key("StreamARN").string(var_88);
+        object.key("StreamARN").string(var_88.as_str());
     }
     if let Some(var_89) = &input.stream_mode_details {
         let mut object_90 = object.key("StreamModeDetails").start_object();
@@ -513,7 +517,7 @@ pub fn serialize_structure_crate_model_shard_filter(
         object.key("Type").string(var_92.as_str());
     }
     if let Some(var_93) = &input.shard_id {
-        object.key("ShardId").string(var_93);
+        object.key("ShardId").string(var_93.as_str());
     }
     if let Some(var_94) = &input.timestamp {
         object
@@ -533,10 +537,10 @@ pub fn serialize_structure_crate_model_put_records_request_entry(
             .string_unchecked(&aws_smithy_types::base64::encode(var_95));
     }
     if let Some(var_96) = &input.explicit_hash_key {
-        object.key("ExplicitHashKey").string(var_96);
+        object.key("ExplicitHashKey").string(var_96.as_str());
     }
     if let Some(var_97) = &input.partition_key {
-        object.key("PartitionKey").string(var_97);
+        object.key("PartitionKey").string(var_97.as_str());
     }
     Ok(())
 }

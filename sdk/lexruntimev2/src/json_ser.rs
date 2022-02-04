@@ -18,7 +18,7 @@ pub fn serialize_structure_crate_input_put_session_input(
         let mut object_6 = object.key("requestAttributes").start_object();
         for (key_7, value_8) in var_5 {
             {
-                object_6.key(key_7).string(value_8);
+                object_6.key(key_7).string(value_8.as_str());
             }
         }
         object_6.finish();
@@ -39,7 +39,7 @@ pub fn serialize_structure_crate_input_recognize_text_input(
         let mut object_12 = object.key("requestAttributes").start_object();
         for (key_13, value_14) in var_11 {
             {
-                object_12.key(key_13).string(value_14);
+                object_12.key(key_13).string(value_14.as_str());
             }
         }
         object_12.finish();
@@ -50,7 +50,7 @@ pub fn serialize_structure_crate_input_recognize_text_input(
         object_16.finish();
     }
     if let Some(var_17) = &input.text {
-        object.key("text").string(var_17);
+        object.key("text").string(var_17.as_str());
     }
     Ok(())
 }
@@ -60,7 +60,7 @@ pub fn serialize_structure_crate_model_message(
     input: &crate::model::Message,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.content {
-        object.key("content").string(var_18);
+        object.key("content").string(var_18.as_str());
     }
     if let Some(var_19) = &input.content_type {
         object.key("contentType").string(var_19.as_str());
@@ -108,13 +108,13 @@ pub fn serialize_structure_crate_model_session_state(
         let mut object_31 = object.key("sessionAttributes").start_object();
         for (key_32, value_33) in var_30 {
             {
-                object_31.key(key_32).string(value_33);
+                object_31.key(key_32).string(value_33.as_str());
             }
         }
         object_31.finish();
     }
     if let Some(var_34) = &input.originating_request_id {
-        object.key("originatingRequestId").string(var_34);
+        object.key("originatingRequestId").string(var_34.as_str());
     }
     if let Some(var_35) = &input.runtime_hints {
         let mut object_36 = object.key("runtimeHints").start_object();
@@ -129,13 +129,13 @@ pub fn serialize_structure_crate_model_image_response_card(
     input: &crate::model::ImageResponseCard,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_37) = &input.title {
-        object.key("title").string(var_37);
+        object.key("title").string(var_37.as_str());
     }
     if let Some(var_38) = &input.subtitle {
-        object.key("subtitle").string(var_38);
+        object.key("subtitle").string(var_38.as_str());
     }
     if let Some(var_39) = &input.image_url {
-        object.key("imageUrl").string(var_39);
+        object.key("imageUrl").string(var_39.as_str());
     }
     if let Some(var_40) = &input.buttons {
         let mut array_41 = object.key("buttons").start_array();
@@ -159,7 +159,7 @@ pub fn serialize_structure_crate_model_dialog_action(
         object.key("type").string(var_44.as_str());
     }
     if let Some(var_45) = &input.slot_to_elicit {
-        object.key("slotToElicit").string(var_45);
+        object.key("slotToElicit").string(var_45.as_str());
     }
     if let Some(var_46) = &input.slot_elicitation_style {
         object.key("slotElicitationStyle").string(var_46.as_str());
@@ -172,7 +172,7 @@ pub fn serialize_structure_crate_model_intent(
     input: &crate::model::Intent,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_47) = &input.name {
-        object.key("name").string(var_47);
+        object.key("name").string(var_47.as_str());
     }
     if let Some(var_48) = &input.slots {
         let mut object_49 = object.key("slots").start_object();
@@ -199,7 +199,7 @@ pub fn serialize_structure_crate_model_active_context(
     input: &crate::model::ActiveContext,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_55) = &input.name {
-        object.key("name").string(var_55);
+        object.key("name").string(var_55.as_str());
     }
     if let Some(var_56) = &input.time_to_live {
         let mut object_57 = object.key("timeToLive").start_object();
@@ -213,7 +213,7 @@ pub fn serialize_structure_crate_model_active_context(
         let mut object_59 = object.key("contextAttributes").start_object();
         for (key_60, value_61) in var_58 {
             {
-                object_59.key(key_60).string(value_61);
+                object_59.key(key_60).string(value_61.as_str());
             }
         }
         object_59.finish();
@@ -253,10 +253,10 @@ pub fn serialize_structure_crate_model_button(
     input: &crate::model::Button,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.text {
-        object.key("text").string(var_70);
+        object.key("text").string(var_70.as_str());
     }
     if let Some(var_71) = &input.value {
-        object.key("value").string(var_71);
+        object.key("value").string(var_71.as_str());
     }
     Ok(())
 }
@@ -332,16 +332,16 @@ pub fn serialize_structure_crate_model_value(
     input: &crate::model::Value,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_85) = &input.original_value {
-        object.key("originalValue").string(var_85);
+        object.key("originalValue").string(var_85.as_str());
     }
     if let Some(var_86) = &input.interpreted_value {
-        object.key("interpretedValue").string(var_86);
+        object.key("interpretedValue").string(var_86.as_str());
     }
     if let Some(var_87) = &input.resolved_values {
         let mut array_88 = object.key("resolvedValues").start_array();
         for item_89 in var_87 {
             {
-                array_88.value().string(item_89);
+                array_88.value().string(item_89.as_str());
             }
         }
         array_88.finish();
@@ -354,7 +354,7 @@ pub fn serialize_structure_crate_model_runtime_hint_value(
     input: &crate::model::RuntimeHintValue,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_90) = &input.phrase {
-        object.key("phrase").string(var_90);
+        object.key("phrase").string(var_90.as_str());
     }
     Ok(())
 }

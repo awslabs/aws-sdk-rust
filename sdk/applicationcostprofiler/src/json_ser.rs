@@ -24,13 +24,13 @@ pub fn serialize_structure_crate_input_put_report_definition_input(
         object.key("format").string(var_5.as_str());
     }
     if let Some(var_6) = &input.report_description {
-        object.key("reportDescription").string(var_6);
+        object.key("reportDescription").string(var_6.as_str());
     }
     if let Some(var_7) = &input.report_frequency {
         object.key("reportFrequency").string(var_7.as_str());
     }
     if let Some(var_8) = &input.report_id {
-        object.key("reportId").string(var_8);
+        object.key("reportId").string(var_8.as_str());
     }
     Ok(())
 }
@@ -48,7 +48,7 @@ pub fn serialize_structure_crate_input_update_report_definition_input(
         object.key("format").string(var_11.as_str());
     }
     if let Some(var_12) = &input.report_description {
-        object.key("reportDescription").string(var_12);
+        object.key("reportDescription").string(var_12.as_str());
     }
     if let Some(var_13) = &input.report_frequency {
         object.key("reportFrequency").string(var_13.as_str());
@@ -61,10 +61,10 @@ pub fn serialize_structure_crate_model_source_s3_location(
     input: &crate::model::SourceS3Location,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_14) = &input.bucket {
-        object.key("bucket").string(var_14);
+        object.key("bucket").string(var_14.as_str());
     }
     if let Some(var_15) = &input.key {
-        object.key("key").string(var_15);
+        object.key("key").string(var_15.as_str());
     }
     if let Some(var_16) = &input.region {
         object.key("region").string(var_16.as_str());
@@ -77,10 +77,10 @@ pub fn serialize_structure_crate_model_s3_location(
     input: &crate::model::S3Location,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.bucket {
-        object.key("bucket").string(var_17);
+        object.key("bucket").string(var_17.as_str());
     }
     if let Some(var_18) = &input.prefix {
-        object.key("prefix").string(var_18);
+        object.key("prefix").string(var_18.as_str());
     }
     Ok(())
 }

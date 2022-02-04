@@ -18,13 +18,13 @@ pub fn serialize_structure_crate_input_post_text_input(
         array_2.finish();
     }
     if let Some(var_5) = &input.input_text {
-        object.key("inputText").string(var_5);
+        object.key("inputText").string(var_5.as_str());
     }
     if let Some(var_6) = &input.request_attributes {
         let mut object_7 = object.key("requestAttributes").start_object();
         for (key_8, value_9) in var_6 {
             {
-                object_7.key(key_8).string(value_9);
+                object_7.key(key_8).string(value_9.as_str());
             }
         }
         object_7.finish();
@@ -33,7 +33,7 @@ pub fn serialize_structure_crate_input_post_text_input(
         let mut object_11 = object.key("sessionAttributes").start_object();
         for (key_12, value_13) in var_10 {
             {
-                object_11.key(key_12).string(value_13);
+                object_11.key(key_12).string(value_13.as_str());
             }
         }
         object_11.finish();
@@ -82,7 +82,7 @@ pub fn serialize_structure_crate_input_put_session_input(
         let mut object_25 = object.key("sessionAttributes").start_object();
         for (key_26, value_27) in var_24 {
             {
-                object_25.key(key_26).string(value_27);
+                object_25.key(key_26).string(value_27.as_str());
             }
         }
         object_25.finish();
@@ -95,7 +95,7 @@ pub fn serialize_structure_crate_model_active_context(
     input: &crate::model::ActiveContext,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.name {
-        object.key("name").string(var_28);
+        object.key("name").string(var_28.as_str());
     }
     if let Some(var_29) = &input.time_to_live {
         let mut object_30 = object.key("timeToLive").start_object();
@@ -109,7 +109,7 @@ pub fn serialize_structure_crate_model_active_context(
         let mut object_32 = object.key("parameters").start_object();
         for (key_33, value_34) in var_31 {
             {
-                object_32.key(key_33).string(value_34);
+                object_32.key(key_33).string(value_34.as_str());
             }
         }
         object_32.finish();
@@ -125,25 +125,25 @@ pub fn serialize_structure_crate_model_dialog_action(
         object.key("type").string(var_35.as_str());
     }
     if let Some(var_36) = &input.intent_name {
-        object.key("intentName").string(var_36);
+        object.key("intentName").string(var_36.as_str());
     }
     if let Some(var_37) = &input.slots {
         let mut object_38 = object.key("slots").start_object();
         for (key_39, value_40) in var_37 {
             {
-                object_38.key(key_39).string(value_40);
+                object_38.key(key_39).string(value_40.as_str());
             }
         }
         object_38.finish();
     }
     if let Some(var_41) = &input.slot_to_elicit {
-        object.key("slotToElicit").string(var_41);
+        object.key("slotToElicit").string(var_41.as_str());
     }
     if let Some(var_42) = &input.fulfillment_state {
         object.key("fulfillmentState").string(var_42.as_str());
     }
     if let Some(var_43) = &input.message {
-        object.key("message").string(var_43);
+        object.key("message").string(var_43.as_str());
     }
     if let Some(var_44) = &input.message_format {
         object.key("messageFormat").string(var_44.as_str());
@@ -156,16 +156,16 @@ pub fn serialize_structure_crate_model_intent_summary(
     input: &crate::model::IntentSummary,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_45) = &input.intent_name {
-        object.key("intentName").string(var_45);
+        object.key("intentName").string(var_45.as_str());
     }
     if let Some(var_46) = &input.checkpoint_label {
-        object.key("checkpointLabel").string(var_46);
+        object.key("checkpointLabel").string(var_46.as_str());
     }
     if let Some(var_47) = &input.slots {
         let mut object_48 = object.key("slots").start_object();
         for (key_49, value_50) in var_47 {
             {
-                object_48.key(key_49).string(value_50);
+                object_48.key(key_49).string(value_50.as_str());
             }
         }
         object_48.finish();
@@ -180,7 +180,7 @@ pub fn serialize_structure_crate_model_intent_summary(
         object.key("fulfillmentState").string(var_53.as_str());
     }
     if let Some(var_54) = &input.slot_to_elicit {
-        object.key("slotToElicit").string(var_54);
+        object.key("slotToElicit").string(var_54.as_str());
     }
     Ok(())
 }

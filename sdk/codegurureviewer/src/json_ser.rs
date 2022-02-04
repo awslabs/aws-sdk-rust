@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_associate_repository_input(
     input: &crate::input::AssociateRepositoryInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_1);
+        object.key("ClientRequestToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.kms_key_details {
         let mut object_3 = object.key("KMSKeyDetails").start_object();
@@ -20,7 +20,7 @@ pub fn serialize_structure_crate_input_associate_repository_input(
         let mut object_7 = object.key("Tags").start_object();
         for (key_8, value_9) in var_6 {
             {
-                object_7.key(key_8).string(value_9);
+                object_7.key(key_8).string(value_9.as_str());
             }
         }
         object_7.finish();
@@ -33,13 +33,15 @@ pub fn serialize_structure_crate_input_create_code_review_input(
     input: &crate::input::CreateCodeReviewInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_10);
+        object.key("ClientRequestToken").string(var_10.as_str());
     }
     if let Some(var_11) = &input.name {
-        object.key("Name").string(var_11);
+        object.key("Name").string(var_11.as_str());
     }
     if let Some(var_12) = &input.repository_association_arn {
-        object.key("RepositoryAssociationArn").string(var_12);
+        object
+            .key("RepositoryAssociationArn")
+            .string(var_12.as_str());
     }
     if let Some(var_13) = &input.r#type {
         let mut object_14 = object.key("Type").start_object();
@@ -54,7 +56,7 @@ pub fn serialize_structure_crate_input_put_recommendation_feedback_input(
     input: &crate::input::PutRecommendationFeedbackInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.code_review_arn {
-        object.key("CodeReviewArn").string(var_15);
+        object.key("CodeReviewArn").string(var_15.as_str());
     }
     if let Some(var_16) = &input.reactions {
         let mut array_17 = object.key("Reactions").start_array();
@@ -66,7 +68,7 @@ pub fn serialize_structure_crate_input_put_recommendation_feedback_input(
         array_17.finish();
     }
     if let Some(var_19) = &input.recommendation_id {
-        object.key("RecommendationId").string(var_19);
+        object.key("RecommendationId").string(var_19.as_str());
     }
     Ok(())
 }
@@ -79,7 +81,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_21 = object.key("Tags").start_object();
         for (key_22, value_23) in var_20 {
             {
-                object_21.key(key_22).string(value_23);
+                object_21.key(key_22).string(value_23.as_str());
             }
         }
         object_21.finish();
@@ -92,7 +94,7 @@ pub fn serialize_structure_crate_model_kms_key_details(
     input: &crate::model::KmsKeyDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.kms_key_id {
-        object.key("KMSKeyId").string(var_24);
+        object.key("KMSKeyId").string(var_24.as_str());
     }
     if let Some(var_25) = &input.encryption_option {
         object.key("EncryptionOption").string(var_25.as_str());
@@ -165,7 +167,7 @@ pub fn serialize_structure_crate_model_code_commit_repository(
     input: &crate::model::CodeCommitRepository,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_39) = &input.name {
-        object.key("Name").string(var_39);
+        object.key("Name").string(var_39.as_str());
     }
     Ok(())
 }
@@ -175,13 +177,13 @@ pub fn serialize_structure_crate_model_third_party_source_repository(
     input: &crate::model::ThirdPartySourceRepository,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.name {
-        object.key("Name").string(var_40);
+        object.key("Name").string(var_40.as_str());
     }
     if let Some(var_41) = &input.connection_arn {
-        object.key("ConnectionArn").string(var_41);
+        object.key("ConnectionArn").string(var_41.as_str());
     }
     if let Some(var_42) = &input.owner {
-        object.key("Owner").string(var_42);
+        object.key("Owner").string(var_42.as_str());
     }
     Ok(())
 }
@@ -191,10 +193,10 @@ pub fn serialize_structure_crate_model_s3_repository(
     input: &crate::model::S3Repository,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.name {
-        object.key("Name").string(var_43);
+        object.key("Name").string(var_43.as_str());
     }
     if let Some(var_44) = &input.bucket_name {
-        object.key("BucketName").string(var_44);
+        object.key("BucketName").string(var_44.as_str());
     }
     Ok(())
 }
@@ -224,7 +226,7 @@ pub fn serialize_structure_crate_model_repository_head_source_code_type(
     input: &crate::model::RepositoryHeadSourceCodeType,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.branch_name {
-        object.key("BranchName").string(var_49);
+        object.key("BranchName").string(var_49.as_str());
     }
     Ok(())
 }
@@ -278,13 +280,13 @@ pub fn serialize_structure_crate_model_commit_diff_source_code_type(
     input: &crate::model::CommitDiffSourceCodeType,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_60) = &input.source_commit {
-        object.key("SourceCommit").string(var_60);
+        object.key("SourceCommit").string(var_60.as_str());
     }
     if let Some(var_61) = &input.destination_commit {
-        object.key("DestinationCommit").string(var_61);
+        object.key("DestinationCommit").string(var_61.as_str());
     }
     if let Some(var_62) = &input.merge_base_commit {
-        object.key("MergeBaseCommit").string(var_62);
+        object.key("MergeBaseCommit").string(var_62.as_str());
     }
     Ok(())
 }
@@ -294,10 +296,10 @@ pub fn serialize_structure_crate_model_branch_diff_source_code_type(
     input: &crate::model::BranchDiffSourceCodeType,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_63) = &input.source_branch_name {
-        object.key("SourceBranchName").string(var_63);
+        object.key("SourceBranchName").string(var_63.as_str());
     }
     if let Some(var_64) = &input.destination_branch_name {
-        object.key("DestinationBranchName").string(var_64);
+        object.key("DestinationBranchName").string(var_64.as_str());
     }
     Ok(())
 }
@@ -307,7 +309,7 @@ pub fn serialize_structure_crate_model_s3_bucket_repository(
     input: &crate::model::S3BucketRepository,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_65) = &input.name {
-        object.key("Name").string(var_65);
+        object.key("Name").string(var_65.as_str());
     }
     if let Some(var_66) = &input.details {
         let mut object_67 = object.key("Details").start_object();
@@ -325,10 +327,10 @@ pub fn serialize_structure_crate_model_request_metadata(
     input: &crate::model::RequestMetadata,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_68) = &input.request_id {
-        object.key("RequestId").string(var_68);
+        object.key("RequestId").string(var_68.as_str());
     }
     if let Some(var_69) = &input.requester {
-        object.key("Requester").string(var_69);
+        object.key("Requester").string(var_69.as_str());
     }
     if let Some(var_70) = &input.event_info {
         let mut object_71 = object.key("EventInfo").start_object();
@@ -346,7 +348,7 @@ pub fn serialize_structure_crate_model_s3_repository_details(
     input: &crate::model::S3RepositoryDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_73) = &input.bucket_name {
-        object.key("BucketName").string(var_73);
+        object.key("BucketName").string(var_73.as_str());
     }
     if let Some(var_74) = &input.code_artifacts {
         let mut object_75 = object.key("CodeArtifacts").start_object();
@@ -361,10 +363,10 @@ pub fn serialize_structure_crate_model_event_info(
     input: &crate::model::EventInfo,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_76) = &input.name {
-        object.key("Name").string(var_76);
+        object.key("Name").string(var_76.as_str());
     }
     if let Some(var_77) = &input.state {
-        object.key("State").string(var_77);
+        object.key("State").string(var_77.as_str());
     }
     Ok(())
 }
@@ -374,10 +376,14 @@ pub fn serialize_structure_crate_model_code_artifacts(
     input: &crate::model::CodeArtifacts,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_78) = &input.source_code_artifacts_object_key {
-        object.key("SourceCodeArtifactsObjectKey").string(var_78);
+        object
+            .key("SourceCodeArtifactsObjectKey")
+            .string(var_78.as_str());
     }
     if let Some(var_79) = &input.build_artifacts_object_key {
-        object.key("BuildArtifactsObjectKey").string(var_79);
+        object
+            .key("BuildArtifactsObjectKey")
+            .string(var_79.as_str());
     }
     Ok(())
 }

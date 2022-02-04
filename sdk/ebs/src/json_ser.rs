@@ -4,19 +4,19 @@ pub fn serialize_structure_crate_input_start_snapshot_input(
     input: &crate::input::StartSnapshotInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
-        object.key("ClientToken").string(var_1);
+        object.key("ClientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.description {
-        object.key("Description").string(var_2);
+        object.key("Description").string(var_2.as_str());
     }
     if let Some(var_3) = &input.encrypted {
         object.key("Encrypted").boolean(*var_3);
     }
     if let Some(var_4) = &input.kms_key_arn {
-        object.key("KmsKeyArn").string(var_4);
+        object.key("KmsKeyArn").string(var_4.as_str());
     }
     if let Some(var_5) = &input.parent_snapshot_id {
-        object.key("ParentSnapshotId").string(var_5);
+        object.key("ParentSnapshotId").string(var_5.as_str());
     }
     if let Some(var_6) = &input.tags {
         let mut array_7 = object.key("Tags").start_array();
@@ -49,10 +49,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.key {
-        object.key("Key").string(var_12);
+        object.key("Key").string(var_12.as_str());
     }
     if let Some(var_13) = &input.value {
-        object.key("Value").string(var_13);
+        object.key("Value").string(var_13.as_str());
     }
     Ok(())
 }

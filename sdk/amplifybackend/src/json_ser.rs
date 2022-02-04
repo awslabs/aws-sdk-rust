@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_clone_backend_input(
     input: &crate::input::CloneBackendInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.target_environment_name {
-        object.key("targetEnvironmentName").string(var_1);
+        object.key("targetEnvironmentName").string(var_1.as_str());
     }
     Ok(())
 }
@@ -14,13 +14,13 @@ pub fn serialize_structure_crate_input_create_backend_input(
     input: &crate::input::CreateBackendInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_2) = &input.app_id {
-        object.key("appId").string(var_2);
+        object.key("appId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.app_name {
-        object.key("appName").string(var_3);
+        object.key("appName").string(var_3.as_str());
     }
     if let Some(var_4) = &input.backend_environment_name {
-        object.key("backendEnvironmentName").string(var_4);
+        object.key("backendEnvironmentName").string(var_4.as_str());
     }
     if let Some(var_5) = &input.resource_config {
         let mut object_6 = object.key("resourceConfig").start_object();
@@ -28,7 +28,7 @@ pub fn serialize_structure_crate_input_create_backend_input(
         object_6.finish();
     }
     if let Some(var_7) = &input.resource_name {
-        object.key("resourceName").string(var_7);
+        object.key("resourceName").string(var_7.as_str());
     }
     Ok(())
 }
@@ -38,7 +38,7 @@ pub fn serialize_structure_crate_input_create_backend_api_input(
     input: &crate::input::CreateBackendApiInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.backend_environment_name {
-        object.key("backendEnvironmentName").string(var_8);
+        object.key("backendEnvironmentName").string(var_8.as_str());
     }
     if let Some(var_9) = &input.resource_config {
         let mut object_10 = object.key("resourceConfig").start_object();
@@ -49,7 +49,7 @@ pub fn serialize_structure_crate_input_create_backend_api_input(
         object_10.finish();
     }
     if let Some(var_11) = &input.resource_name {
-        object.key("resourceName").string(var_11);
+        object.key("resourceName").string(var_11.as_str());
     }
     Ok(())
 }
@@ -59,7 +59,7 @@ pub fn serialize_structure_crate_input_create_backend_auth_input(
     input: &crate::input::CreateBackendAuthInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.backend_environment_name {
-        object.key("backendEnvironmentName").string(var_12);
+        object.key("backendEnvironmentName").string(var_12.as_str());
     }
     if let Some(var_13) = &input.resource_config {
         let mut object_14 = object.key("resourceConfig").start_object();
@@ -70,7 +70,7 @@ pub fn serialize_structure_crate_input_create_backend_auth_input(
         object_14.finish();
     }
     if let Some(var_15) = &input.resource_name {
-        object.key("resourceName").string(var_15);
+        object.key("resourceName").string(var_15.as_str());
     }
     Ok(())
 }
@@ -80,7 +80,7 @@ pub fn serialize_structure_crate_input_create_backend_config_input(
     input: &crate::input::CreateBackendConfigInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.backend_manager_app_id {
-        object.key("backendManagerAppId").string(var_16);
+        object.key("backendManagerAppId").string(var_16.as_str());
     }
     Ok(())
 }
@@ -90,7 +90,7 @@ pub fn serialize_structure_crate_input_create_backend_storage_input(
     input: &crate::input::CreateBackendStorageInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.backend_environment_name {
-        object.key("backendEnvironmentName").string(var_17);
+        object.key("backendEnvironmentName").string(var_17.as_str());
     }
     if let Some(var_18) = &input.resource_config {
         let mut object_19 = object.key("resourceConfig").start_object();
@@ -101,7 +101,7 @@ pub fn serialize_structure_crate_input_create_backend_storage_input(
         object_19.finish();
     }
     if let Some(var_20) = &input.resource_name {
-        object.key("resourceName").string(var_20);
+        object.key("resourceName").string(var_20.as_str());
     }
     Ok(())
 }
@@ -119,7 +119,7 @@ pub fn serialize_structure_crate_input_delete_backend_api_input(
         object_22.finish();
     }
     if let Some(var_23) = &input.resource_name {
-        object.key("resourceName").string(var_23);
+        object.key("resourceName").string(var_23.as_str());
     }
     Ok(())
 }
@@ -129,7 +129,7 @@ pub fn serialize_structure_crate_input_delete_backend_auth_input(
     input: &crate::input::DeleteBackendAuthInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.resource_name {
-        object.key("resourceName").string(var_24);
+        object.key("resourceName").string(var_24.as_str());
     }
     Ok(())
 }
@@ -139,7 +139,7 @@ pub fn serialize_structure_crate_input_delete_backend_storage_input(
     input: &crate::input::DeleteBackendStorageInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.resource_name {
-        object.key("resourceName").string(var_25);
+        object.key("resourceName").string(var_25.as_str());
     }
     if let Some(var_26) = &input.service_name {
         object.key("serviceName").string(var_26.as_str());
@@ -152,7 +152,7 @@ pub fn serialize_structure_crate_input_generate_backend_api_models_input(
     input: &crate::input::GenerateBackendApiModelsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.resource_name {
-        object.key("resourceName").string(var_27);
+        object.key("resourceName").string(var_27.as_str());
     }
     Ok(())
 }
@@ -162,7 +162,7 @@ pub fn serialize_structure_crate_input_get_backend_input(
     input: &crate::input::GetBackendInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.backend_environment_name {
-        object.key("backendEnvironmentName").string(var_28);
+        object.key("backendEnvironmentName").string(var_28.as_str());
     }
     Ok(())
 }
@@ -180,7 +180,7 @@ pub fn serialize_structure_crate_input_get_backend_api_input(
         object_30.finish();
     }
     if let Some(var_31) = &input.resource_name {
-        object.key("resourceName").string(var_31);
+        object.key("resourceName").string(var_31.as_str());
     }
     Ok(())
 }
@@ -190,7 +190,7 @@ pub fn serialize_structure_crate_input_get_backend_api_models_input(
     input: &crate::input::GetBackendApiModelsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.resource_name {
-        object.key("resourceName").string(var_32);
+        object.key("resourceName").string(var_32.as_str());
     }
     Ok(())
 }
@@ -200,7 +200,7 @@ pub fn serialize_structure_crate_input_get_backend_auth_input(
     input: &crate::input::GetBackendAuthInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.resource_name {
-        object.key("resourceName").string(var_33);
+        object.key("resourceName").string(var_33.as_str());
     }
     Ok(())
 }
@@ -210,7 +210,7 @@ pub fn serialize_structure_crate_input_get_backend_storage_input(
     input: &crate::input::GetBackendStorageInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_34) = &input.resource_name {
-        object.key("resourceName").string(var_34);
+        object.key("resourceName").string(var_34.as_str());
     }
     Ok(())
 }
@@ -220,16 +220,16 @@ pub fn serialize_structure_crate_input_import_backend_auth_input(
     input: &crate::input::ImportBackendAuthInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.identity_pool_id {
-        object.key("identityPoolId").string(var_35);
+        object.key("identityPoolId").string(var_35.as_str());
     }
     if let Some(var_36) = &input.native_client_id {
-        object.key("nativeClientId").string(var_36);
+        object.key("nativeClientId").string(var_36.as_str());
     }
     if let Some(var_37) = &input.user_pool_id {
-        object.key("userPoolId").string(var_37);
+        object.key("userPoolId").string(var_37.as_str());
     }
     if let Some(var_38) = &input.web_client_id {
-        object.key("webClientId").string(var_38);
+        object.key("webClientId").string(var_38.as_str());
     }
     Ok(())
 }
@@ -239,7 +239,7 @@ pub fn serialize_structure_crate_input_import_backend_storage_input(
     input: &crate::input::ImportBackendStorageInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_39) = &input.bucket_name {
-        object.key("bucketName").string(var_39);
+        object.key("bucketName").string(var_39.as_str());
     }
     if let Some(var_40) = &input.service_name {
         object.key("serviceName").string(var_40.as_str());
@@ -252,7 +252,7 @@ pub fn serialize_structure_crate_input_list_backend_jobs_input(
     input: &crate::input::ListBackendJobsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.job_id {
-        object.key("jobId").string(var_41);
+        object.key("jobId").string(var_41.as_str());
     }
     if input.max_results != 0 {
         object.key("maxResults").number(
@@ -261,13 +261,13 @@ pub fn serialize_structure_crate_input_list_backend_jobs_input(
         );
     }
     if let Some(var_42) = &input.next_token {
-        object.key("nextToken").string(var_42);
+        object.key("nextToken").string(var_42.as_str());
     }
     if let Some(var_43) = &input.operation {
-        object.key("operation").string(var_43);
+        object.key("operation").string(var_43.as_str());
     }
     if let Some(var_44) = &input.status {
-        object.key("status").string(var_44);
+        object.key("status").string(var_44.as_str());
     }
     Ok(())
 }
@@ -277,7 +277,7 @@ pub fn serialize_structure_crate_input_list_s3_buckets_input(
     input: &crate::input::ListS3BucketsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_45) = &input.next_token {
-        object.key("nextToken").string(var_45);
+        object.key("nextToken").string(var_45.as_str());
     }
     Ok(())
 }
@@ -307,7 +307,7 @@ pub fn serialize_structure_crate_input_update_backend_api_input(
         object_47.finish();
     }
     if let Some(var_48) = &input.resource_name {
-        object.key("resourceName").string(var_48);
+        object.key("resourceName").string(var_48.as_str());
     }
     Ok(())
 }
@@ -325,7 +325,7 @@ pub fn serialize_structure_crate_input_update_backend_auth_input(
         object_50.finish();
     }
     if let Some(var_51) = &input.resource_name {
-        object.key("resourceName").string(var_51);
+        object.key("resourceName").string(var_51.as_str());
     }
     Ok(())
 }
@@ -350,10 +350,10 @@ pub fn serialize_structure_crate_input_update_backend_job_input(
     input: &crate::input::UpdateBackendJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.operation {
-        object.key("operation").string(var_54);
+        object.key("operation").string(var_54.as_str());
     }
     if let Some(var_55) = &input.status {
-        object.key("status").string(var_55);
+        object.key("status").string(var_55.as_str());
     }
     Ok(())
 }
@@ -371,7 +371,7 @@ pub fn serialize_structure_crate_input_update_backend_storage_input(
         object_57.finish();
     }
     if let Some(var_58) = &input.resource_name {
-        object.key("resourceName").string(var_58);
+        object.key("resourceName").string(var_58.as_str());
     }
     Ok(())
 }
@@ -403,7 +403,7 @@ pub fn serialize_structure_crate_model_backend_api_resource_config(
         array_60.finish();
     }
     if let Some(var_63) = &input.api_name {
-        object.key("apiName").string(var_63);
+        object.key("apiName").string(var_63.as_str());
     }
     if let Some(var_64) = &input.conflict_resolution {
         let mut object_65 = object.key("conflictResolution").start_object();
@@ -422,10 +422,10 @@ pub fn serialize_structure_crate_model_backend_api_resource_config(
         object_67.finish();
     }
     if let Some(var_68) = &input.service {
-        object.key("service").string(var_68);
+        object.key("service").string(var_68.as_str());
     }
     if let Some(var_69) = &input.transform_schema {
-        object.key("transformSchema").string(var_69);
+        object.key("transformSchema").string(var_69.as_str());
     }
     Ok(())
 }
@@ -464,7 +464,7 @@ pub fn serialize_structure_crate_model_create_backend_storage_resource_config(
     input: &crate::model::CreateBackendStorageResourceConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_76) = &input.bucket_name {
-        object.key("bucketName").string(var_76);
+        object.key("bucketName").string(var_76.as_str());
     }
     if let Some(var_77) = &input.permissions {
         let mut object_78 = object.key("permissions").start_object();
@@ -514,16 +514,20 @@ pub fn serialize_structure_crate_model_login_auth_config_req_obj(
     input: &crate::model::LoginAuthConfigReqObj,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_86) = &input.aws_cognito_identity_pool_id {
-        object.key("aws_cognito_identity_pool_id").string(var_86);
+        object
+            .key("aws_cognito_identity_pool_id")
+            .string(var_86.as_str());
     }
     if let Some(var_87) = &input.aws_cognito_region {
-        object.key("aws_cognito_region").string(var_87);
+        object.key("aws_cognito_region").string(var_87.as_str());
     }
     if let Some(var_88) = &input.aws_user_pools_id {
-        object.key("aws_user_pools_id").string(var_88);
+        object.key("aws_user_pools_id").string(var_88.as_str());
     }
     if let Some(var_89) = &input.aws_user_pools_web_client_id {
-        object.key("aws_user_pools_web_client_id").string(var_89);
+        object
+            .key("aws_user_pools_web_client_id")
+            .string(var_89.as_str());
     }
     Ok(())
 }
@@ -579,7 +583,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_identity_pool_config(
     input: &crate::model::CreateBackendAuthIdentityPoolConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_97) = &input.identity_pool_name {
-        object.key("identityPoolName").string(var_97);
+        object.key("identityPoolName").string(var_97.as_str());
     }
     {
         object
@@ -632,7 +636,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_user_pool_config(
         object.key("signInMethod").string(var_109.as_str());
     }
     if let Some(var_110) = &input.user_pool_name {
-        object.key("userPoolName").string(var_110);
+        object.key("userPoolName").string(var_110.as_str());
     }
     Ok(())
 }
@@ -712,10 +716,10 @@ pub fn serialize_structure_crate_model_backend_api_app_sync_auth_settings(
     input: &crate::model::BackendApiAppSyncAuthSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_125) = &input.cognito_user_pool_id {
-        object.key("cognitoUserPoolId").string(var_125);
+        object.key("cognitoUserPoolId").string(var_125.as_str());
     }
     if let Some(var_126) = &input.description {
-        object.key("description").string(var_126);
+        object.key("description").string(var_126.as_str());
     }
     if input.expiration_time != 0.0 {
         object.key("expirationTime").number(
@@ -724,19 +728,19 @@ pub fn serialize_structure_crate_model_backend_api_app_sync_auth_settings(
         );
     }
     if let Some(var_127) = &input.open_id_auth_ttl {
-        object.key("openIDAuthTTL").string(var_127);
+        object.key("openIDAuthTTL").string(var_127.as_str());
     }
     if let Some(var_128) = &input.open_id_client_id {
-        object.key("openIDClientId").string(var_128);
+        object.key("openIDClientId").string(var_128.as_str());
     }
     if let Some(var_129) = &input.open_id_iat_ttl {
-        object.key("openIDIatTTL").string(var_129);
+        object.key("openIDIatTTL").string(var_129.as_str());
     }
     if let Some(var_130) = &input.open_id_issue_url {
-        object.key("openIDIssueURL").string(var_130);
+        object.key("openIDIssueURL").string(var_130.as_str());
     }
     if let Some(var_131) = &input.open_id_provider_name {
-        object.key("openIDProviderName").string(var_131);
+        object.key("openIDProviderName").string(var_131.as_str());
     }
     Ok(())
 }
@@ -781,7 +785,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_o_auth_config(
     input: &crate::model::CreateBackendAuthOAuthConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_140) = &input.domain_prefix {
-        object.key("domainPrefix").string(var_140);
+        object.key("domainPrefix").string(var_140.as_str());
     }
     if let Some(var_141) = &input.o_auth_grant_type {
         object.key("oAuthGrantType").string(var_141.as_str());
@@ -799,7 +803,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_o_auth_config(
         let mut array_146 = object.key("redirectSignInURIs").start_array();
         for item_147 in var_145 {
             {
-                array_146.value().string(item_147);
+                array_146.value().string(item_147.as_str());
             }
         }
         array_146.finish();
@@ -808,7 +812,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_o_auth_config(
         let mut array_149 = object.key("redirectSignOutURIs").start_array();
         for item_150 in var_148 {
             {
-                array_149.value().string(item_150);
+                array_149.value().string(item_150.as_str());
             }
         }
         array_149.finish();
@@ -886,7 +890,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_o_auth_config(
     input: &crate::model::UpdateBackendAuthOAuthConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_164) = &input.domain_prefix {
-        object.key("domainPrefix").string(var_164);
+        object.key("domainPrefix").string(var_164.as_str());
     }
     if let Some(var_165) = &input.o_auth_grant_type {
         object.key("oAuthGrantType").string(var_165.as_str());
@@ -904,7 +908,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_o_auth_config(
         let mut array_170 = object.key("redirectSignInURIs").start_array();
         for item_171 in var_169 {
             {
-                array_170.value().string(item_171);
+                array_170.value().string(item_171.as_str());
             }
         }
         array_170.finish();
@@ -913,7 +917,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_o_auth_config(
         let mut array_173 = object.key("redirectSignOutURIs").start_array();
         for item_174 in var_172 {
             {
-                array_173.value().string(item_174);
+                array_173.value().string(item_174.as_str());
             }
         }
         array_173.finish();
@@ -956,10 +960,10 @@ pub fn serialize_structure_crate_model_email_settings(
     input: &crate::model::EmailSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_180) = &input.email_message {
-        object.key("emailMessage").string(var_180);
+        object.key("emailMessage").string(var_180.as_str());
     }
     if let Some(var_181) = &input.email_subject {
-        object.key("emailSubject").string(var_181);
+        object.key("emailSubject").string(var_181.as_str());
     }
     Ok(())
 }
@@ -969,7 +973,7 @@ pub fn serialize_structure_crate_model_sms_settings(
     input: &crate::model::SmsSettings,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_182) = &input.sms_message {
-        object.key("smsMessage").string(var_182);
+        object.key("smsMessage").string(var_182.as_str());
     }
     Ok(())
 }
@@ -988,7 +992,7 @@ pub fn serialize_structure_crate_model_settings(
         array_184.finish();
     }
     if let Some(var_186) = &input.sms_message {
-        object.key("smsMessage").string(var_186);
+        object.key("smsMessage").string(var_186.as_str());
     }
     Ok(())
 }
@@ -1037,10 +1041,10 @@ pub fn serialize_structure_crate_model_backend_auth_social_provider_config(
     input: &crate::model::BackendAuthSocialProviderConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_195) = &input.client_id {
-        object.key("client_id").string(var_195);
+        object.key("client_id").string(var_195.as_str());
     }
     if let Some(var_196) = &input.client_secret {
-        object.key("client_secret").string(var_196);
+        object.key("client_secret").string(var_196.as_str());
     }
     Ok(())
 }
@@ -1050,16 +1054,16 @@ pub fn serialize_structure_crate_model_backend_auth_apple_provider_config(
     input: &crate::model::BackendAuthAppleProviderConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_197) = &input.client_id {
-        object.key("client_id").string(var_197);
+        object.key("client_id").string(var_197.as_str());
     }
     if let Some(var_198) = &input.key_id {
-        object.key("key_id").string(var_198);
+        object.key("key_id").string(var_198.as_str());
     }
     if let Some(var_199) = &input.private_key {
-        object.key("private_key").string(var_199);
+        object.key("private_key").string(var_199.as_str());
     }
     if let Some(var_200) = &input.team_id {
-        object.key("team_id").string(var_200);
+        object.key("team_id").string(var_200.as_str());
     }
     Ok(())
 }

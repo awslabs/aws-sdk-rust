@@ -7,28 +7,28 @@ pub fn serialize_structure_crate_input_batch_execute_statement_input(
         let mut array_2 = object.key("Sqls").start_array();
         for item_3 in var_1 {
             {
-                array_2.value().string(item_3);
+                array_2.value().string(item_3.as_str());
             }
         }
         array_2.finish();
     }
     if let Some(var_4) = &input.cluster_identifier {
-        object.key("ClusterIdentifier").string(var_4);
+        object.key("ClusterIdentifier").string(var_4.as_str());
     }
     if let Some(var_5) = &input.secret_arn {
-        object.key("SecretArn").string(var_5);
+        object.key("SecretArn").string(var_5.as_str());
     }
     if let Some(var_6) = &input.db_user {
-        object.key("DbUser").string(var_6);
+        object.key("DbUser").string(var_6.as_str());
     }
     if let Some(var_7) = &input.database {
-        object.key("Database").string(var_7);
+        object.key("Database").string(var_7.as_str());
     }
     if let Some(var_8) = &input.with_event {
         object.key("WithEvent").boolean(*var_8);
     }
     if let Some(var_9) = &input.statement_name {
-        object.key("StatementName").string(var_9);
+        object.key("StatementName").string(var_9.as_str());
     }
     Ok(())
 }
@@ -38,7 +38,7 @@ pub fn serialize_structure_crate_input_cancel_statement_input(
     input: &crate::input::CancelStatementInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.id {
-        object.key("Id").string(var_10);
+        object.key("Id").string(var_10.as_str());
     }
     Ok(())
 }
@@ -48,7 +48,7 @@ pub fn serialize_structure_crate_input_describe_statement_input(
     input: &crate::input::DescribeStatementInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.id {
-        object.key("Id").string(var_11);
+        object.key("Id").string(var_11.as_str());
     }
     Ok(())
 }
@@ -58,28 +58,28 @@ pub fn serialize_structure_crate_input_describe_table_input(
     input: &crate::input::DescribeTableInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.cluster_identifier {
-        object.key("ClusterIdentifier").string(var_12);
+        object.key("ClusterIdentifier").string(var_12.as_str());
     }
     if let Some(var_13) = &input.secret_arn {
-        object.key("SecretArn").string(var_13);
+        object.key("SecretArn").string(var_13.as_str());
     }
     if let Some(var_14) = &input.db_user {
-        object.key("DbUser").string(var_14);
+        object.key("DbUser").string(var_14.as_str());
     }
     if let Some(var_15) = &input.database {
-        object.key("Database").string(var_15);
+        object.key("Database").string(var_15.as_str());
     }
     if let Some(var_16) = &input.connected_database {
-        object.key("ConnectedDatabase").string(var_16);
+        object.key("ConnectedDatabase").string(var_16.as_str());
     }
     if let Some(var_17) = &input.schema {
-        object.key("Schema").string(var_17);
+        object.key("Schema").string(var_17.as_str());
     }
     if let Some(var_18) = &input.table {
-        object.key("Table").string(var_18);
+        object.key("Table").string(var_18.as_str());
     }
     if let Some(var_19) = &input.next_token {
-        object.key("NextToken").string(var_19);
+        object.key("NextToken").string(var_19.as_str());
     }
     if input.max_results != 0 {
         object.key("MaxResults").number(
@@ -95,25 +95,25 @@ pub fn serialize_structure_crate_input_execute_statement_input(
     input: &crate::input::ExecuteStatementInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_20) = &input.sql {
-        object.key("Sql").string(var_20);
+        object.key("Sql").string(var_20.as_str());
     }
     if let Some(var_21) = &input.cluster_identifier {
-        object.key("ClusterIdentifier").string(var_21);
+        object.key("ClusterIdentifier").string(var_21.as_str());
     }
     if let Some(var_22) = &input.secret_arn {
-        object.key("SecretArn").string(var_22);
+        object.key("SecretArn").string(var_22.as_str());
     }
     if let Some(var_23) = &input.db_user {
-        object.key("DbUser").string(var_23);
+        object.key("DbUser").string(var_23.as_str());
     }
     if let Some(var_24) = &input.database {
-        object.key("Database").string(var_24);
+        object.key("Database").string(var_24.as_str());
     }
     if let Some(var_25) = &input.with_event {
         object.key("WithEvent").boolean(*var_25);
     }
     if let Some(var_26) = &input.statement_name {
-        object.key("StatementName").string(var_26);
+        object.key("StatementName").string(var_26.as_str());
     }
     if let Some(var_27) = &input.parameters {
         let mut array_28 = object.key("Parameters").start_array();
@@ -137,10 +137,10 @@ pub fn serialize_structure_crate_input_get_statement_result_input(
     input: &crate::input::GetStatementResultInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_31) = &input.id {
-        object.key("Id").string(var_31);
+        object.key("Id").string(var_31.as_str());
     }
     if let Some(var_32) = &input.next_token {
-        object.key("NextToken").string(var_32);
+        object.key("NextToken").string(var_32.as_str());
     }
     Ok(())
 }
@@ -150,19 +150,19 @@ pub fn serialize_structure_crate_input_list_databases_input(
     input: &crate::input::ListDatabasesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.cluster_identifier {
-        object.key("ClusterIdentifier").string(var_33);
+        object.key("ClusterIdentifier").string(var_33.as_str());
     }
     if let Some(var_34) = &input.database {
-        object.key("Database").string(var_34);
+        object.key("Database").string(var_34.as_str());
     }
     if let Some(var_35) = &input.secret_arn {
-        object.key("SecretArn").string(var_35);
+        object.key("SecretArn").string(var_35.as_str());
     }
     if let Some(var_36) = &input.db_user {
-        object.key("DbUser").string(var_36);
+        object.key("DbUser").string(var_36.as_str());
     }
     if let Some(var_37) = &input.next_token {
-        object.key("NextToken").string(var_37);
+        object.key("NextToken").string(var_37.as_str());
     }
     if input.max_results != 0 {
         object.key("MaxResults").number(
@@ -178,25 +178,25 @@ pub fn serialize_structure_crate_input_list_schemas_input(
     input: &crate::input::ListSchemasInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_38) = &input.cluster_identifier {
-        object.key("ClusterIdentifier").string(var_38);
+        object.key("ClusterIdentifier").string(var_38.as_str());
     }
     if let Some(var_39) = &input.secret_arn {
-        object.key("SecretArn").string(var_39);
+        object.key("SecretArn").string(var_39.as_str());
     }
     if let Some(var_40) = &input.db_user {
-        object.key("DbUser").string(var_40);
+        object.key("DbUser").string(var_40.as_str());
     }
     if let Some(var_41) = &input.database {
-        object.key("Database").string(var_41);
+        object.key("Database").string(var_41.as_str());
     }
     if let Some(var_42) = &input.connected_database {
-        object.key("ConnectedDatabase").string(var_42);
+        object.key("ConnectedDatabase").string(var_42.as_str());
     }
     if let Some(var_43) = &input.schema_pattern {
-        object.key("SchemaPattern").string(var_43);
+        object.key("SchemaPattern").string(var_43.as_str());
     }
     if let Some(var_44) = &input.next_token {
-        object.key("NextToken").string(var_44);
+        object.key("NextToken").string(var_44.as_str());
     }
     if input.max_results != 0 {
         object.key("MaxResults").number(
@@ -212,7 +212,7 @@ pub fn serialize_structure_crate_input_list_statements_input(
     input: &crate::input::ListStatementsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_45) = &input.next_token {
-        object.key("NextToken").string(var_45);
+        object.key("NextToken").string(var_45.as_str());
     }
     if input.max_results != 0 {
         object.key("MaxResults").number(
@@ -221,7 +221,7 @@ pub fn serialize_structure_crate_input_list_statements_input(
         );
     }
     if let Some(var_46) = &input.statement_name {
-        object.key("StatementName").string(var_46);
+        object.key("StatementName").string(var_46.as_str());
     }
     if let Some(var_47) = &input.status {
         object.key("Status").string(var_47.as_str());
@@ -237,28 +237,28 @@ pub fn serialize_structure_crate_input_list_tables_input(
     input: &crate::input::ListTablesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.cluster_identifier {
-        object.key("ClusterIdentifier").string(var_49);
+        object.key("ClusterIdentifier").string(var_49.as_str());
     }
     if let Some(var_50) = &input.secret_arn {
-        object.key("SecretArn").string(var_50);
+        object.key("SecretArn").string(var_50.as_str());
     }
     if let Some(var_51) = &input.db_user {
-        object.key("DbUser").string(var_51);
+        object.key("DbUser").string(var_51.as_str());
     }
     if let Some(var_52) = &input.database {
-        object.key("Database").string(var_52);
+        object.key("Database").string(var_52.as_str());
     }
     if let Some(var_53) = &input.connected_database {
-        object.key("ConnectedDatabase").string(var_53);
+        object.key("ConnectedDatabase").string(var_53.as_str());
     }
     if let Some(var_54) = &input.schema_pattern {
-        object.key("SchemaPattern").string(var_54);
+        object.key("SchemaPattern").string(var_54.as_str());
     }
     if let Some(var_55) = &input.table_pattern {
-        object.key("TablePattern").string(var_55);
+        object.key("TablePattern").string(var_55.as_str());
     }
     if let Some(var_56) = &input.next_token {
-        object.key("NextToken").string(var_56);
+        object.key("NextToken").string(var_56.as_str());
     }
     if input.max_results != 0 {
         object.key("MaxResults").number(
@@ -274,10 +274,10 @@ pub fn serialize_structure_crate_model_sql_parameter(
     input: &crate::model::SqlParameter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_57) = &input.name {
-        object.key("name").string(var_57);
+        object.key("name").string(var_57.as_str());
     }
     if let Some(var_58) = &input.value {
-        object.key("value").string(var_58);
+        object.key("value").string(var_58.as_str());
     }
     Ok(())
 }

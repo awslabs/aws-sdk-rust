@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_add_tags_input(
     input: &crate::input::AddTagsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.resource_id {
-        object.key("ResourceId").string(var_1);
+        object.key("ResourceId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.tags_list {
         let mut array_3 = object.key("TagsList").start_array();
@@ -25,10 +25,10 @@ pub fn serialize_structure_crate_input_cancel_query_input(
     input: &crate::input::CancelQueryInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_6) = &input.event_data_store {
-        object.key("EventDataStore").string(var_6);
+        object.key("EventDataStore").string(var_6.as_str());
     }
     if let Some(var_7) = &input.query_id {
-        object.key("QueryId").string(var_7);
+        object.key("QueryId").string(var_7.as_str());
     }
     Ok(())
 }
@@ -38,7 +38,7 @@ pub fn serialize_structure_crate_input_create_event_data_store_input(
     input: &crate::input::CreateEventDataStoreInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.name {
-        object.key("Name").string(var_8);
+        object.key("Name").string(var_8.as_str());
     }
     if let Some(var_9) = &input.advanced_event_selectors {
         let mut array_10 = object.key("AdvancedEventSelectors").start_array();
@@ -88,16 +88,16 @@ pub fn serialize_structure_crate_input_create_trail_input(
     input: &crate::input::CreateTrailInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_21) = &input.name {
-        object.key("Name").string(var_21);
+        object.key("Name").string(var_21.as_str());
     }
     if let Some(var_22) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_22);
+        object.key("S3BucketName").string(var_22.as_str());
     }
     if let Some(var_23) = &input.s3_key_prefix {
-        object.key("S3KeyPrefix").string(var_23);
+        object.key("S3KeyPrefix").string(var_23.as_str());
     }
     if let Some(var_24) = &input.sns_topic_name {
-        object.key("SnsTopicName").string(var_24);
+        object.key("SnsTopicName").string(var_24.as_str());
     }
     if let Some(var_25) = &input.include_global_service_events {
         object.key("IncludeGlobalServiceEvents").boolean(*var_25);
@@ -109,13 +109,15 @@ pub fn serialize_structure_crate_input_create_trail_input(
         object.key("EnableLogFileValidation").boolean(*var_27);
     }
     if let Some(var_28) = &input.cloud_watch_logs_log_group_arn {
-        object.key("CloudWatchLogsLogGroupArn").string(var_28);
+        object
+            .key("CloudWatchLogsLogGroupArn")
+            .string(var_28.as_str());
     }
     if let Some(var_29) = &input.cloud_watch_logs_role_arn {
-        object.key("CloudWatchLogsRoleArn").string(var_29);
+        object.key("CloudWatchLogsRoleArn").string(var_29.as_str());
     }
     if let Some(var_30) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_30);
+        object.key("KmsKeyId").string(var_30.as_str());
     }
     if let Some(var_31) = &input.is_organization_trail {
         object.key("IsOrganizationTrail").boolean(*var_31);
@@ -139,7 +141,7 @@ pub fn serialize_structure_crate_input_delete_event_data_store_input(
     input: &crate::input::DeleteEventDataStoreInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_36) = &input.event_data_store {
-        object.key("EventDataStore").string(var_36);
+        object.key("EventDataStore").string(var_36.as_str());
     }
     Ok(())
 }
@@ -149,7 +151,7 @@ pub fn serialize_structure_crate_input_delete_trail_input(
     input: &crate::input::DeleteTrailInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_37) = &input.name {
-        object.key("Name").string(var_37);
+        object.key("Name").string(var_37.as_str());
     }
     Ok(())
 }
@@ -159,10 +161,10 @@ pub fn serialize_structure_crate_input_describe_query_input(
     input: &crate::input::DescribeQueryInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_38) = &input.event_data_store {
-        object.key("EventDataStore").string(var_38);
+        object.key("EventDataStore").string(var_38.as_str());
     }
     if let Some(var_39) = &input.query_id {
-        object.key("QueryId").string(var_39);
+        object.key("QueryId").string(var_39.as_str());
     }
     Ok(())
 }
@@ -175,7 +177,7 @@ pub fn serialize_structure_crate_input_describe_trails_input(
         let mut array_41 = object.key("trailNameList").start_array();
         for item_42 in var_40 {
             {
-                array_41.value().string(item_42);
+                array_41.value().string(item_42.as_str());
             }
         }
         array_41.finish();
@@ -191,7 +193,7 @@ pub fn serialize_structure_crate_input_get_event_data_store_input(
     input: &crate::input::GetEventDataStoreInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.event_data_store {
-        object.key("EventDataStore").string(var_44);
+        object.key("EventDataStore").string(var_44.as_str());
     }
     Ok(())
 }
@@ -201,7 +203,7 @@ pub fn serialize_structure_crate_input_get_event_selectors_input(
     input: &crate::input::GetEventSelectorsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_45) = &input.trail_name {
-        object.key("TrailName").string(var_45);
+        object.key("TrailName").string(var_45.as_str());
     }
     Ok(())
 }
@@ -211,7 +213,7 @@ pub fn serialize_structure_crate_input_get_insight_selectors_input(
     input: &crate::input::GetInsightSelectorsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_46) = &input.trail_name {
-        object.key("TrailName").string(var_46);
+        object.key("TrailName").string(var_46.as_str());
     }
     Ok(())
 }
@@ -221,13 +223,13 @@ pub fn serialize_structure_crate_input_get_query_results_input(
     input: &crate::input::GetQueryResultsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_47) = &input.event_data_store {
-        object.key("EventDataStore").string(var_47);
+        object.key("EventDataStore").string(var_47.as_str());
     }
     if let Some(var_48) = &input.query_id {
-        object.key("QueryId").string(var_48);
+        object.key("QueryId").string(var_48.as_str());
     }
     if let Some(var_49) = &input.next_token {
-        object.key("NextToken").string(var_49);
+        object.key("NextToken").string(var_49.as_str());
     }
     if let Some(var_50) = &input.max_query_results {
         object.key("MaxQueryResults").number(
@@ -243,7 +245,7 @@ pub fn serialize_structure_crate_input_get_trail_input(
     input: &crate::input::GetTrailInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_51) = &input.name {
-        object.key("Name").string(var_51);
+        object.key("Name").string(var_51.as_str());
     }
     Ok(())
 }
@@ -253,7 +255,7 @@ pub fn serialize_structure_crate_input_get_trail_status_input(
     input: &crate::input::GetTrailStatusInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_52) = &input.name {
-        object.key("Name").string(var_52);
+        object.key("Name").string(var_52.as_str());
     }
     Ok(())
 }
@@ -263,7 +265,7 @@ pub fn serialize_structure_crate_input_list_event_data_stores_input(
     input: &crate::input::ListEventDataStoresInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.next_token {
-        object.key("NextToken").string(var_53);
+        object.key("NextToken").string(var_53.as_str());
     }
     if let Some(var_54) = &input.max_results {
         object.key("MaxResults").number(
@@ -289,7 +291,7 @@ pub fn serialize_structure_crate_input_list_public_keys_input(
             .date_time(var_56, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_57) = &input.next_token {
-        object.key("NextToken").string(var_57);
+        object.key("NextToken").string(var_57.as_str());
     }
     Ok(())
 }
@@ -299,10 +301,10 @@ pub fn serialize_structure_crate_input_list_queries_input(
     input: &crate::input::ListQueriesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_58) = &input.event_data_store {
-        object.key("EventDataStore").string(var_58);
+        object.key("EventDataStore").string(var_58.as_str());
     }
     if let Some(var_59) = &input.next_token {
-        object.key("NextToken").string(var_59);
+        object.key("NextToken").string(var_59.as_str());
     }
     if let Some(var_60) = &input.max_results {
         object.key("MaxResults").number(
@@ -334,13 +336,13 @@ pub fn serialize_structure_crate_input_list_tags_input(
         let mut array_65 = object.key("ResourceIdList").start_array();
         for item_66 in var_64 {
             {
-                array_65.value().string(item_66);
+                array_65.value().string(item_66.as_str());
             }
         }
         array_65.finish();
     }
     if let Some(var_67) = &input.next_token {
-        object.key("NextToken").string(var_67);
+        object.key("NextToken").string(var_67.as_str());
     }
     Ok(())
 }
@@ -350,7 +352,7 @@ pub fn serialize_structure_crate_input_list_trails_input(
     input: &crate::input::ListTrailsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_68) = &input.next_token {
-        object.key("NextToken").string(var_68);
+        object.key("NextToken").string(var_68.as_str());
     }
     Ok(())
 }
@@ -393,7 +395,7 @@ pub fn serialize_structure_crate_input_lookup_events_input(
         );
     }
     if let Some(var_77) = &input.next_token {
-        object.key("NextToken").string(var_77);
+        object.key("NextToken").string(var_77.as_str());
     }
     Ok(())
 }
@@ -403,7 +405,7 @@ pub fn serialize_structure_crate_input_put_event_selectors_input(
     input: &crate::input::PutEventSelectorsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_78) = &input.trail_name {
-        object.key("TrailName").string(var_78);
+        object.key("TrailName").string(var_78.as_str());
     }
     if let Some(var_79) = &input.event_selectors {
         let mut array_80 = object.key("EventSelectors").start_array();
@@ -441,7 +443,7 @@ pub fn serialize_structure_crate_input_put_insight_selectors_input(
     input: &crate::input::PutInsightSelectorsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_87) = &input.trail_name {
-        object.key("TrailName").string(var_87);
+        object.key("TrailName").string(var_87.as_str());
     }
     if let Some(var_88) = &input.insight_selectors {
         let mut array_89 = object.key("InsightSelectors").start_array();
@@ -465,7 +467,7 @@ pub fn serialize_structure_crate_input_remove_tags_input(
     input: &crate::input::RemoveTagsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_92) = &input.resource_id {
-        object.key("ResourceId").string(var_92);
+        object.key("ResourceId").string(var_92.as_str());
     }
     if let Some(var_93) = &input.tags_list {
         let mut array_94 = object.key("TagsList").start_array();
@@ -486,7 +488,7 @@ pub fn serialize_structure_crate_input_restore_event_data_store_input(
     input: &crate::input::RestoreEventDataStoreInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_97) = &input.event_data_store {
-        object.key("EventDataStore").string(var_97);
+        object.key("EventDataStore").string(var_97.as_str());
     }
     Ok(())
 }
@@ -496,7 +498,7 @@ pub fn serialize_structure_crate_input_start_logging_input(
     input: &crate::input::StartLoggingInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_98) = &input.name {
-        object.key("Name").string(var_98);
+        object.key("Name").string(var_98.as_str());
     }
     Ok(())
 }
@@ -506,7 +508,7 @@ pub fn serialize_structure_crate_input_start_query_input(
     input: &crate::input::StartQueryInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_99) = &input.query_statement {
-        object.key("QueryStatement").string(var_99);
+        object.key("QueryStatement").string(var_99.as_str());
     }
     Ok(())
 }
@@ -516,7 +518,7 @@ pub fn serialize_structure_crate_input_stop_logging_input(
     input: &crate::input::StopLoggingInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_100) = &input.name {
-        object.key("Name").string(var_100);
+        object.key("Name").string(var_100.as_str());
     }
     Ok(())
 }
@@ -526,10 +528,10 @@ pub fn serialize_structure_crate_input_update_event_data_store_input(
     input: &crate::input::UpdateEventDataStoreInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_101) = &input.event_data_store {
-        object.key("EventDataStore").string(var_101);
+        object.key("EventDataStore").string(var_101.as_str());
     }
     if let Some(var_102) = &input.name {
-        object.key("Name").string(var_102);
+        object.key("Name").string(var_102.as_str());
     }
     if let Some(var_103) = &input.advanced_event_selectors {
         let mut array_104 = object.key("AdvancedEventSelectors").start_array();
@@ -568,16 +570,16 @@ pub fn serialize_structure_crate_input_update_trail_input(
     input: &crate::input::UpdateTrailInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_111) = &input.name {
-        object.key("Name").string(var_111);
+        object.key("Name").string(var_111.as_str());
     }
     if let Some(var_112) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_112);
+        object.key("S3BucketName").string(var_112.as_str());
     }
     if let Some(var_113) = &input.s3_key_prefix {
-        object.key("S3KeyPrefix").string(var_113);
+        object.key("S3KeyPrefix").string(var_113.as_str());
     }
     if let Some(var_114) = &input.sns_topic_name {
-        object.key("SnsTopicName").string(var_114);
+        object.key("SnsTopicName").string(var_114.as_str());
     }
     if let Some(var_115) = &input.include_global_service_events {
         object.key("IncludeGlobalServiceEvents").boolean(*var_115);
@@ -589,13 +591,15 @@ pub fn serialize_structure_crate_input_update_trail_input(
         object.key("EnableLogFileValidation").boolean(*var_117);
     }
     if let Some(var_118) = &input.cloud_watch_logs_log_group_arn {
-        object.key("CloudWatchLogsLogGroupArn").string(var_118);
+        object
+            .key("CloudWatchLogsLogGroupArn")
+            .string(var_118.as_str());
     }
     if let Some(var_119) = &input.cloud_watch_logs_role_arn {
-        object.key("CloudWatchLogsRoleArn").string(var_119);
+        object.key("CloudWatchLogsRoleArn").string(var_119.as_str());
     }
     if let Some(var_120) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_120);
+        object.key("KmsKeyId").string(var_120.as_str());
     }
     if let Some(var_121) = &input.is_organization_trail {
         object.key("IsOrganizationTrail").boolean(*var_121);
@@ -608,10 +612,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_122) = &input.key {
-        object.key("Key").string(var_122);
+        object.key("Key").string(var_122.as_str());
     }
     if let Some(var_123) = &input.value {
-        object.key("Value").string(var_123);
+        object.key("Value").string(var_123.as_str());
     }
     Ok(())
 }
@@ -621,7 +625,7 @@ pub fn serialize_structure_crate_model_advanced_event_selector(
     input: &crate::model::AdvancedEventSelector,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_124) = &input.name {
-        object.key("Name").string(var_124);
+        object.key("Name").string(var_124.as_str());
     }
     if let Some(var_125) = &input.field_selectors {
         let mut array_126 = object.key("FieldSelectors").start_array();
@@ -648,7 +652,7 @@ pub fn serialize_structure_crate_model_lookup_attribute(
         object.key("AttributeKey").string(var_129.as_str());
     }
     if let Some(var_130) = &input.attribute_value {
-        object.key("AttributeValue").string(var_130);
+        object.key("AttributeValue").string(var_130.as_str());
     }
     Ok(())
 }
@@ -681,7 +685,7 @@ pub fn serialize_structure_crate_model_event_selector(
         let mut array_138 = object.key("ExcludeManagementEventSources").start_array();
         for item_139 in var_137 {
             {
-                array_138.value().string(item_139);
+                array_138.value().string(item_139.as_str());
             }
         }
         array_138.finish();
@@ -704,13 +708,13 @@ pub fn serialize_structure_crate_model_advanced_field_selector(
     input: &crate::model::AdvancedFieldSelector,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_141) = &input.field {
-        object.key("Field").string(var_141);
+        object.key("Field").string(var_141.as_str());
     }
     if let Some(var_142) = &input.equals {
         let mut array_143 = object.key("Equals").start_array();
         for item_144 in var_142 {
             {
-                array_143.value().string(item_144);
+                array_143.value().string(item_144.as_str());
             }
         }
         array_143.finish();
@@ -719,7 +723,7 @@ pub fn serialize_structure_crate_model_advanced_field_selector(
         let mut array_146 = object.key("StartsWith").start_array();
         for item_147 in var_145 {
             {
-                array_146.value().string(item_147);
+                array_146.value().string(item_147.as_str());
             }
         }
         array_146.finish();
@@ -728,7 +732,7 @@ pub fn serialize_structure_crate_model_advanced_field_selector(
         let mut array_149 = object.key("EndsWith").start_array();
         for item_150 in var_148 {
             {
-                array_149.value().string(item_150);
+                array_149.value().string(item_150.as_str());
             }
         }
         array_149.finish();
@@ -737,7 +741,7 @@ pub fn serialize_structure_crate_model_advanced_field_selector(
         let mut array_152 = object.key("NotEquals").start_array();
         for item_153 in var_151 {
             {
-                array_152.value().string(item_153);
+                array_152.value().string(item_153.as_str());
             }
         }
         array_152.finish();
@@ -746,7 +750,7 @@ pub fn serialize_structure_crate_model_advanced_field_selector(
         let mut array_155 = object.key("NotStartsWith").start_array();
         for item_156 in var_154 {
             {
-                array_155.value().string(item_156);
+                array_155.value().string(item_156.as_str());
             }
         }
         array_155.finish();
@@ -755,7 +759,7 @@ pub fn serialize_structure_crate_model_advanced_field_selector(
         let mut array_158 = object.key("NotEndsWith").start_array();
         for item_159 in var_157 {
             {
-                array_158.value().string(item_159);
+                array_158.value().string(item_159.as_str());
             }
         }
         array_158.finish();
@@ -768,13 +772,13 @@ pub fn serialize_structure_crate_model_data_resource(
     input: &crate::model::DataResource,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_160) = &input.r#type {
-        object.key("Type").string(var_160);
+        object.key("Type").string(var_160.as_str());
     }
     if let Some(var_161) = &input.values {
         let mut array_162 = object.key("Values").start_array();
         for item_163 in var_161 {
             {
-                array_162.value().string(item_163);
+                array_162.value().string(item_163.as_str());
             }
         }
         array_162.finish();

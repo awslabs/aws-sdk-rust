@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_create_container_input(
     input: &crate::input::CreateContainerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.container_name {
-        object.key("ContainerName").string(var_1);
+        object.key("ContainerName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.tags {
         let mut array_3 = object.key("Tags").start_array();
@@ -25,7 +25,7 @@ pub fn serialize_structure_crate_input_delete_container_input(
     input: &crate::input::DeleteContainerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_6) = &input.container_name {
-        object.key("ContainerName").string(var_6);
+        object.key("ContainerName").string(var_6.as_str());
     }
     Ok(())
 }
@@ -35,7 +35,7 @@ pub fn serialize_structure_crate_input_delete_container_policy_input(
     input: &crate::input::DeleteContainerPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.container_name {
-        object.key("ContainerName").string(var_7);
+        object.key("ContainerName").string(var_7.as_str());
     }
     Ok(())
 }
@@ -45,7 +45,7 @@ pub fn serialize_structure_crate_input_delete_cors_policy_input(
     input: &crate::input::DeleteCorsPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.container_name {
-        object.key("ContainerName").string(var_8);
+        object.key("ContainerName").string(var_8.as_str());
     }
     Ok(())
 }
@@ -55,7 +55,7 @@ pub fn serialize_structure_crate_input_delete_lifecycle_policy_input(
     input: &crate::input::DeleteLifecyclePolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.container_name {
-        object.key("ContainerName").string(var_9);
+        object.key("ContainerName").string(var_9.as_str());
     }
     Ok(())
 }
@@ -65,7 +65,7 @@ pub fn serialize_structure_crate_input_delete_metric_policy_input(
     input: &crate::input::DeleteMetricPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.container_name {
-        object.key("ContainerName").string(var_10);
+        object.key("ContainerName").string(var_10.as_str());
     }
     Ok(())
 }
@@ -75,7 +75,7 @@ pub fn serialize_structure_crate_input_describe_container_input(
     input: &crate::input::DescribeContainerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.container_name {
-        object.key("ContainerName").string(var_11);
+        object.key("ContainerName").string(var_11.as_str());
     }
     Ok(())
 }
@@ -85,7 +85,7 @@ pub fn serialize_structure_crate_input_get_container_policy_input(
     input: &crate::input::GetContainerPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.container_name {
-        object.key("ContainerName").string(var_12);
+        object.key("ContainerName").string(var_12.as_str());
     }
     Ok(())
 }
@@ -95,7 +95,7 @@ pub fn serialize_structure_crate_input_get_cors_policy_input(
     input: &crate::input::GetCorsPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_13) = &input.container_name {
-        object.key("ContainerName").string(var_13);
+        object.key("ContainerName").string(var_13.as_str());
     }
     Ok(())
 }
@@ -105,7 +105,7 @@ pub fn serialize_structure_crate_input_get_lifecycle_policy_input(
     input: &crate::input::GetLifecyclePolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_14) = &input.container_name {
-        object.key("ContainerName").string(var_14);
+        object.key("ContainerName").string(var_14.as_str());
     }
     Ok(())
 }
@@ -115,7 +115,7 @@ pub fn serialize_structure_crate_input_get_metric_policy_input(
     input: &crate::input::GetMetricPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.container_name {
-        object.key("ContainerName").string(var_15);
+        object.key("ContainerName").string(var_15.as_str());
     }
     Ok(())
 }
@@ -125,7 +125,7 @@ pub fn serialize_structure_crate_input_list_containers_input(
     input: &crate::input::ListContainersInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.next_token {
-        object.key("NextToken").string(var_16);
+        object.key("NextToken").string(var_16.as_str());
     }
     if let Some(var_17) = &input.max_results {
         object.key("MaxResults").number(
@@ -141,7 +141,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.resource {
-        object.key("Resource").string(var_18);
+        object.key("Resource").string(var_18.as_str());
     }
     Ok(())
 }
@@ -151,10 +151,10 @@ pub fn serialize_structure_crate_input_put_container_policy_input(
     input: &crate::input::PutContainerPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.container_name {
-        object.key("ContainerName").string(var_19);
+        object.key("ContainerName").string(var_19.as_str());
     }
     if let Some(var_20) = &input.policy {
-        object.key("Policy").string(var_20);
+        object.key("Policy").string(var_20.as_str());
     }
     Ok(())
 }
@@ -164,7 +164,7 @@ pub fn serialize_structure_crate_input_put_cors_policy_input(
     input: &crate::input::PutCorsPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_21) = &input.container_name {
-        object.key("ContainerName").string(var_21);
+        object.key("ContainerName").string(var_21.as_str());
     }
     if let Some(var_22) = &input.cors_policy {
         let mut array_23 = object.key("CorsPolicy").start_array();
@@ -188,10 +188,10 @@ pub fn serialize_structure_crate_input_put_lifecycle_policy_input(
     input: &crate::input::PutLifecyclePolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.container_name {
-        object.key("ContainerName").string(var_26);
+        object.key("ContainerName").string(var_26.as_str());
     }
     if let Some(var_27) = &input.lifecycle_policy {
-        object.key("LifecyclePolicy").string(var_27);
+        object.key("LifecyclePolicy").string(var_27.as_str());
     }
     Ok(())
 }
@@ -201,7 +201,7 @@ pub fn serialize_structure_crate_input_put_metric_policy_input(
     input: &crate::input::PutMetricPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.container_name {
-        object.key("ContainerName").string(var_28);
+        object.key("ContainerName").string(var_28.as_str());
     }
     if let Some(var_29) = &input.metric_policy {
         let mut object_30 = object.key("MetricPolicy").start_object();
@@ -216,7 +216,7 @@ pub fn serialize_structure_crate_input_start_access_logging_input(
     input: &crate::input::StartAccessLoggingInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_31) = &input.container_name {
-        object.key("ContainerName").string(var_31);
+        object.key("ContainerName").string(var_31.as_str());
     }
     Ok(())
 }
@@ -226,7 +226,7 @@ pub fn serialize_structure_crate_input_stop_access_logging_input(
     input: &crate::input::StopAccessLoggingInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.container_name {
-        object.key("ContainerName").string(var_32);
+        object.key("ContainerName").string(var_32.as_str());
     }
     Ok(())
 }
@@ -236,7 +236,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.resource {
-        object.key("Resource").string(var_33);
+        object.key("Resource").string(var_33.as_str());
     }
     if let Some(var_34) = &input.tags {
         let mut array_35 = object.key("Tags").start_array();
@@ -257,13 +257,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_38) = &input.resource {
-        object.key("Resource").string(var_38);
+        object.key("Resource").string(var_38.as_str());
     }
     if let Some(var_39) = &input.tag_keys {
         let mut array_40 = object.key("TagKeys").start_array();
         for item_41 in var_39 {
             {
-                array_40.value().string(item_41);
+                array_40.value().string(item_41.as_str());
             }
         }
         array_40.finish();
@@ -276,10 +276,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_42) = &input.key {
-        object.key("Key").string(var_42);
+        object.key("Key").string(var_42.as_str());
     }
     if let Some(var_43) = &input.value {
-        object.key("Value").string(var_43);
+        object.key("Value").string(var_43.as_str());
     }
     Ok(())
 }
@@ -292,7 +292,7 @@ pub fn serialize_structure_crate_model_cors_rule(
         let mut array_45 = object.key("AllowedOrigins").start_array();
         for item_46 in var_44 {
             {
-                array_45.value().string(item_46);
+                array_45.value().string(item_46.as_str());
             }
         }
         array_45.finish();
@@ -310,7 +310,7 @@ pub fn serialize_structure_crate_model_cors_rule(
         let mut array_51 = object.key("AllowedHeaders").start_array();
         for item_52 in var_50 {
             {
-                array_51.value().string(item_52);
+                array_51.value().string(item_52.as_str());
             }
         }
         array_51.finish();
@@ -325,7 +325,7 @@ pub fn serialize_structure_crate_model_cors_rule(
         let mut array_54 = object.key("ExposeHeaders").start_array();
         for item_55 in var_53 {
             {
-                array_54.value().string(item_55);
+                array_54.value().string(item_55.as_str());
             }
         }
         array_54.finish();
@@ -362,10 +362,10 @@ pub fn serialize_structure_crate_model_metric_policy_rule(
     input: &crate::model::MetricPolicyRule,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_61) = &input.object_group {
-        object.key("ObjectGroup").string(var_61);
+        object.key("ObjectGroup").string(var_61.as_str());
     }
     if let Some(var_62) = &input.object_group_name {
-        object.key("ObjectGroupName").string(var_62);
+        object.key("ObjectGroupName").string(var_62.as_str());
     }
     Ok(())
 }

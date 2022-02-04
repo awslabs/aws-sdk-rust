@@ -13,7 +13,7 @@ pub fn serialize_structure_crate_input_copy_package_versions_input(
         let mut object_4 = object.key("versionRevisions").start_object();
         for (key_5, value_6) in var_3 {
             {
-                object_4.key(key_5).string(value_6);
+                object_4.key(key_5).string(value_6.as_str());
             }
         }
         object_4.finish();
@@ -22,7 +22,7 @@ pub fn serialize_structure_crate_input_copy_package_versions_input(
         let mut array_8 = object.key("versions").start_array();
         for item_9 in var_7 {
             {
-                array_8.value().string(item_9);
+                array_8.value().string(item_9.as_str());
             }
         }
         array_8.finish();
@@ -35,7 +35,7 @@ pub fn serialize_structure_crate_input_create_domain_input(
     input: &crate::input::CreateDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.encryption_key {
-        object.key("encryptionKey").string(var_10);
+        object.key("encryptionKey").string(var_10.as_str());
     }
     if let Some(var_11) = &input.tags {
         let mut array_12 = object.key("tags").start_array();
@@ -56,7 +56,7 @@ pub fn serialize_structure_crate_input_create_repository_input(
     input: &crate::input::CreateRepositoryInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.description {
-        object.key("description").string(var_15);
+        object.key("description").string(var_15.as_str());
     }
     if let Some(var_16) = &input.tags {
         let mut array_17 = object.key("tags").start_array();
@@ -97,7 +97,7 @@ pub fn serialize_structure_crate_input_delete_package_versions_input(
         let mut array_26 = object.key("versions").start_array();
         for item_27 in var_25 {
             {
-                array_26.value().string(item_27);
+                array_26.value().string(item_27.as_str());
             }
         }
         array_26.finish();
@@ -116,7 +116,7 @@ pub fn serialize_structure_crate_input_dispose_package_versions_input(
         let mut object_30 = object.key("versionRevisions").start_object();
         for (key_31, value_32) in var_29 {
             {
-                object_30.key(key_31).string(value_32);
+                object_30.key(key_31).string(value_32.as_str());
             }
         }
         object_30.finish();
@@ -125,7 +125,7 @@ pub fn serialize_structure_crate_input_dispose_package_versions_input(
         let mut array_34 = object.key("versions").start_array();
         for item_35 in var_33 {
             {
-                array_34.value().string(item_35);
+                array_34.value().string(item_35.as_str());
             }
         }
         array_34.finish();
@@ -144,7 +144,7 @@ pub fn serialize_structure_crate_input_list_domains_input(
         );
     }
     if let Some(var_37) = &input.next_token {
-        object.key("nextToken").string(var_37);
+        object.key("nextToken").string(var_37.as_str());
     }
     Ok(())
 }
@@ -154,16 +154,16 @@ pub fn serialize_structure_crate_input_put_domain_permissions_policy_input(
     input: &crate::input::PutDomainPermissionsPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_38) = &input.domain {
-        object.key("domain").string(var_38);
+        object.key("domain").string(var_38.as_str());
     }
     if let Some(var_39) = &input.domain_owner {
-        object.key("domainOwner").string(var_39);
+        object.key("domainOwner").string(var_39.as_str());
     }
     if let Some(var_40) = &input.policy_document {
-        object.key("policyDocument").string(var_40);
+        object.key("policyDocument").string(var_40.as_str());
     }
     if let Some(var_41) = &input.policy_revision {
-        object.key("policyRevision").string(var_41);
+        object.key("policyRevision").string(var_41.as_str());
     }
     Ok(())
 }
@@ -173,10 +173,10 @@ pub fn serialize_structure_crate_input_put_repository_permissions_policy_input(
     input: &crate::input::PutRepositoryPermissionsPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_42) = &input.policy_document {
-        object.key("policyDocument").string(var_42);
+        object.key("policyDocument").string(var_42.as_str());
     }
     if let Some(var_43) = &input.policy_revision {
-        object.key("policyRevision").string(var_43);
+        object.key("policyRevision").string(var_43.as_str());
     }
     Ok(())
 }
@@ -207,7 +207,7 @@ pub fn serialize_structure_crate_input_untag_resource_input(
         let mut array_49 = object.key("tagKeys").start_array();
         for item_50 in var_48 {
             {
-                array_49.value().string(item_50);
+                array_49.value().string(item_50.as_str());
             }
         }
         array_49.finish();
@@ -229,7 +229,7 @@ pub fn serialize_structure_crate_input_update_package_versions_status_input(
         let mut object_54 = object.key("versionRevisions").start_object();
         for (key_55, value_56) in var_53 {
             {
-                object_54.key(key_55).string(value_56);
+                object_54.key(key_55).string(value_56.as_str());
             }
         }
         object_54.finish();
@@ -238,7 +238,7 @@ pub fn serialize_structure_crate_input_update_package_versions_status_input(
         let mut array_58 = object.key("versions").start_array();
         for item_59 in var_57 {
             {
-                array_58.value().string(item_59);
+                array_58.value().string(item_59.as_str());
             }
         }
         array_58.finish();
@@ -251,7 +251,7 @@ pub fn serialize_structure_crate_input_update_repository_input(
     input: &crate::input::UpdateRepositoryInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_60) = &input.description {
-        object.key("description").string(var_60);
+        object.key("description").string(var_60.as_str());
     }
     if let Some(var_61) = &input.upstreams {
         let mut array_62 = object.key("upstreams").start_array();
@@ -275,10 +275,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_65) = &input.key {
-        object.key("key").string(var_65);
+        object.key("key").string(var_65.as_str());
     }
     if let Some(var_66) = &input.value {
-        object.key("value").string(var_66);
+        object.key("value").string(var_66.as_str());
     }
     Ok(())
 }
@@ -288,7 +288,7 @@ pub fn serialize_structure_crate_model_upstream_repository(
     input: &crate::model::UpstreamRepository,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.repository_name {
-        object.key("repositoryName").string(var_67);
+        object.key("repositoryName").string(var_67.as_str());
     }
     Ok(())
 }

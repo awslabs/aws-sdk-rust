@@ -4,10 +4,10 @@ pub fn serialize_structure_crate_input_create_lifecycle_policy_input(
     input: &crate::input::CreateLifecyclePolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1);
+        object.key("Description").string(var_1.as_str());
     }
     if let Some(var_2) = &input.execution_role_arn {
-        object.key("ExecutionRoleArn").string(var_2);
+        object.key("ExecutionRoleArn").string(var_2.as_str());
     }
     if let Some(var_3) = &input.policy_details {
         let mut object_4 = object.key("PolicyDetails").start_object();
@@ -21,7 +21,7 @@ pub fn serialize_structure_crate_input_create_lifecycle_policy_input(
         let mut object_7 = object.key("Tags").start_object();
         for (key_8, value_9) in var_6 {
             {
-                object_7.key(key_8).string(value_9);
+                object_7.key(key_8).string(value_9.as_str());
             }
         }
         object_7.finish();
@@ -37,7 +37,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_11 = object.key("Tags").start_object();
         for (key_12, value_13) in var_10 {
             {
-                object_11.key(key_12).string(value_13);
+                object_11.key(key_12).string(value_13.as_str());
             }
         }
         object_11.finish();
@@ -50,10 +50,10 @@ pub fn serialize_structure_crate_input_update_lifecycle_policy_input(
     input: &crate::input::UpdateLifecyclePolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_14) = &input.description {
-        object.key("Description").string(var_14);
+        object.key("Description").string(var_14.as_str());
     }
     if let Some(var_15) = &input.execution_role_arn {
-        object.key("ExecutionRoleArn").string(var_15);
+        object.key("ExecutionRoleArn").string(var_15.as_str());
     }
     if let Some(var_16) = &input.policy_details {
         let mut object_17 = object.key("PolicyDetails").start_object();
@@ -142,10 +142,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_42) = &input.key {
-        object.key("Key").string(var_42);
+        object.key("Key").string(var_42.as_str());
     }
     if let Some(var_43) = &input.value {
-        object.key("Value").string(var_43);
+        object.key("Value").string(var_43.as_str());
     }
     Ok(())
 }
@@ -155,7 +155,7 @@ pub fn serialize_structure_crate_model_schedule(
     input: &crate::model::Schedule,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.name {
-        object.key("Name").string(var_44);
+        object.key("Name").string(var_44.as_str());
     }
     if input.copy_tags {
         object.key("CopyTags").boolean(input.copy_tags);
@@ -266,7 +266,7 @@ pub fn serialize_structure_crate_model_action(
     input: &crate::model::Action,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_74) = &input.name {
-        object.key("Name").string(var_74);
+        object.key("Name").string(var_74.as_str());
     }
     if let Some(var_75) = &input.cross_region_copy {
         let mut array_76 = object.key("CrossRegionCopy").start_array();
@@ -305,13 +305,13 @@ pub fn serialize_structure_crate_model_create_rule(
         let mut array_82 = object.key("Times").start_array();
         for item_83 in var_81 {
             {
-                array_82.value().string(item_83);
+                array_82.value().string(item_83.as_str());
             }
         }
         array_82.finish();
     }
     if let Some(var_84) = &input.cron_expression {
-        object.key("CronExpression").string(var_84);
+        object.key("CronExpression").string(var_84.as_str());
     }
     Ok(())
 }
@@ -361,7 +361,7 @@ pub fn serialize_structure_crate_model_fast_restore_rule(
         let mut array_88 = object.key("AvailabilityZones").start_array();
         for item_89 in var_87 {
             {
-                array_88.value().string(item_89);
+                array_88.value().string(item_89.as_str());
             }
         }
         array_88.finish();
@@ -374,16 +374,16 @@ pub fn serialize_structure_crate_model_cross_region_copy_rule(
     input: &crate::model::CrossRegionCopyRule,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_90) = &input.target_region {
-        object.key("TargetRegion").string(var_90);
+        object.key("TargetRegion").string(var_90.as_str());
     }
     if let Some(var_91) = &input.target {
-        object.key("Target").string(var_91);
+        object.key("Target").string(var_91.as_str());
     }
     if let Some(var_92) = &input.encrypted {
         object.key("Encrypted").boolean(*var_92);
     }
     if let Some(var_93) = &input.cmk_arn {
-        object.key("CmkArn").string(var_93);
+        object.key("CmkArn").string(var_93.as_str());
     }
     if let Some(var_94) = &input.copy_tags {
         object.key("CopyTags").boolean(*var_94);
@@ -415,7 +415,7 @@ pub fn serialize_structure_crate_model_share_rule(
         let mut array_100 = object.key("TargetAccounts").start_array();
         for item_101 in var_99 {
             {
-                array_100.value().string(item_101);
+                array_100.value().string(item_101.as_str());
             }
         }
         array_100.finish();
@@ -465,13 +465,13 @@ pub fn serialize_structure_crate_model_event_parameters(
         let mut array_106 = object.key("SnapshotOwner").start_array();
         for item_107 in var_105 {
             {
-                array_106.value().string(item_107);
+                array_106.value().string(item_107.as_str());
             }
         }
         array_106.finish();
     }
     if let Some(var_108) = &input.description_regex {
-        object.key("DescriptionRegex").string(var_108);
+        object.key("DescriptionRegex").string(var_108.as_str());
     }
     Ok(())
 }
@@ -481,7 +481,7 @@ pub fn serialize_structure_crate_model_cross_region_copy_action(
     input: &crate::model::CrossRegionCopyAction,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_109) = &input.target {
-        object.key("Target").string(var_109);
+        object.key("Target").string(var_109.as_str());
     }
     if let Some(var_110) = &input.encryption_configuration {
         let mut object_111 = object.key("EncryptionConfiguration").start_object();
@@ -542,7 +542,7 @@ pub fn serialize_structure_crate_model_encryption_configuration(
         object.key("Encrypted").boolean(*var_116);
     }
     if let Some(var_117) = &input.cmk_arn {
-        object.key("CmkArn").string(var_117);
+        object.key("CmkArn").string(var_117.as_str());
     }
     Ok(())
 }

@@ -16,16 +16,16 @@ pub fn serialize_structure_crate_input_create_workspace_input(
         array_3.finish();
     }
     if let Some(var_5) = &input.client_token {
-        object.key("clientToken").string(var_5);
+        object.key("clientToken").string(var_5.as_str());
     }
     if let Some(var_6) = &input.organization_role_name {
-        object.key("organizationRoleName").string(var_6);
+        object.key("organizationRoleName").string(var_6.as_str());
     }
     if let Some(var_7) = &input.permission_type {
         object.key("permissionType").string(var_7.as_str());
     }
     if let Some(var_8) = &input.stack_set_name {
-        object.key("stackSetName").string(var_8);
+        object.key("stackSetName").string(var_8.as_str());
     }
     if let Some(var_9) = &input.workspace_data_sources {
         let mut array_10 = object.key("workspaceDataSources").start_array();
@@ -37,10 +37,10 @@ pub fn serialize_structure_crate_input_create_workspace_input(
         array_10.finish();
     }
     if let Some(var_12) = &input.workspace_description {
-        object.key("workspaceDescription").string(var_12);
+        object.key("workspaceDescription").string(var_12.as_str());
     }
     if let Some(var_13) = &input.workspace_name {
-        object.key("workspaceName").string(var_13);
+        object.key("workspaceName").string(var_13.as_str());
     }
     if let Some(var_14) = &input.workspace_notification_destinations {
         let mut array_15 = object
@@ -57,13 +57,13 @@ pub fn serialize_structure_crate_input_create_workspace_input(
         let mut array_18 = object.key("workspaceOrganizationalUnits").start_array();
         for item_19 in var_17 {
             {
-                array_18.value().string(item_19);
+                array_18.value().string(item_19.as_str());
             }
         }
         array_18.finish();
     }
     if let Some(var_20) = &input.workspace_role_arn {
-        object.key("workspaceRoleArn").string(var_20);
+        object.key("workspaceRoleArn").string(var_20.as_str());
     }
     Ok(())
 }
@@ -97,13 +97,13 @@ pub fn serialize_structure_crate_input_update_workspace_input(
         object.key("accountAccessType").string(var_25.as_str());
     }
     if let Some(var_26) = &input.organization_role_name {
-        object.key("organizationRoleName").string(var_26);
+        object.key("organizationRoleName").string(var_26.as_str());
     }
     if let Some(var_27) = &input.permission_type {
         object.key("permissionType").string(var_27.as_str());
     }
     if let Some(var_28) = &input.stack_set_name {
-        object.key("stackSetName").string(var_28);
+        object.key("stackSetName").string(var_28.as_str());
     }
     if let Some(var_29) = &input.workspace_data_sources {
         let mut array_30 = object.key("workspaceDataSources").start_array();
@@ -115,10 +115,10 @@ pub fn serialize_structure_crate_input_update_workspace_input(
         array_30.finish();
     }
     if let Some(var_32) = &input.workspace_description {
-        object.key("workspaceDescription").string(var_32);
+        object.key("workspaceDescription").string(var_32.as_str());
     }
     if let Some(var_33) = &input.workspace_name {
-        object.key("workspaceName").string(var_33);
+        object.key("workspaceName").string(var_33.as_str());
     }
     if let Some(var_34) = &input.workspace_notification_destinations {
         let mut array_35 = object
@@ -135,13 +135,13 @@ pub fn serialize_structure_crate_input_update_workspace_input(
         let mut array_38 = object.key("workspaceOrganizationalUnits").start_array();
         for item_39 in var_37 {
             {
-                array_38.value().string(item_39);
+                array_38.value().string(item_39.as_str());
             }
         }
         array_38.finish();
     }
     if let Some(var_40) = &input.workspace_role_arn {
-        object.key("workspaceRoleArn").string(var_40);
+        object.key("workspaceRoleArn").string(var_40.as_str());
     }
     Ok(())
 }
@@ -220,7 +220,7 @@ pub fn serialize_structure_crate_model_saml_configuration(
         let mut array_59 = object.key("allowedOrganizations").start_array();
         for item_60 in var_58 {
             {
-                array_59.value().string(item_60);
+                array_59.value().string(item_60.as_str());
             }
         }
         array_59.finish();
@@ -239,7 +239,7 @@ pub fn serialize_structure_crate_model_user(
     input: &crate::model::User,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_61) = &input.id {
-        object.key("id").string(var_61);
+        object.key("id").string(var_61.as_str());
     }
     if let Some(var_62) = &input.r#type {
         object.key("type").string(var_62.as_str());
@@ -253,10 +253,10 @@ pub fn serialize_union_crate_model_idp_metadata(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     match input {
         crate::model::IdpMetadata::Url(inner) => {
-            object_53.key("url").string(inner);
+            object_53.key("url").string(inner.as_str());
         }
         crate::model::IdpMetadata::Xml(inner) => {
-            object_53.key("xml").string(inner);
+            object_53.key("xml").string(inner.as_str());
         }
         crate::model::IdpMetadata::Unknown => {
             return Err(
@@ -272,22 +272,22 @@ pub fn serialize_structure_crate_model_assertion_attributes(
     input: &crate::model::AssertionAttributes,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_63) = &input.name {
-        object.key("name").string(var_63);
+        object.key("name").string(var_63.as_str());
     }
     if let Some(var_64) = &input.login {
-        object.key("login").string(var_64);
+        object.key("login").string(var_64.as_str());
     }
     if let Some(var_65) = &input.email {
-        object.key("email").string(var_65);
+        object.key("email").string(var_65.as_str());
     }
     if let Some(var_66) = &input.groups {
-        object.key("groups").string(var_66);
+        object.key("groups").string(var_66.as_str());
     }
     if let Some(var_67) = &input.role {
-        object.key("role").string(var_67);
+        object.key("role").string(var_67.as_str());
     }
     if let Some(var_68) = &input.org {
-        object.key("org").string(var_68);
+        object.key("org").string(var_68.as_str());
     }
     Ok(())
 }
@@ -300,7 +300,7 @@ pub fn serialize_structure_crate_model_role_values(
         let mut array_70 = object.key("editor").start_array();
         for item_71 in var_69 {
             {
-                array_70.value().string(item_71);
+                array_70.value().string(item_71.as_str());
             }
         }
         array_70.finish();
@@ -309,7 +309,7 @@ pub fn serialize_structure_crate_model_role_values(
         let mut array_73 = object.key("admin").start_array();
         for item_74 in var_72 {
             {
-                array_73.value().string(item_74);
+                array_73.value().string(item_74.as_str());
             }
         }
         array_73.finish();

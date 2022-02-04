@@ -4,19 +4,19 @@ pub fn serialize_structure_crate_input_add_profile_permission_input(
     input: &crate::input::AddProfilePermissionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.action {
-        object.key("action").string(var_1);
+        object.key("action").string(var_1.as_str());
     }
     if let Some(var_2) = &input.principal {
-        object.key("principal").string(var_2);
+        object.key("principal").string(var_2.as_str());
     }
     if let Some(var_3) = &input.profile_version {
-        object.key("profileVersion").string(var_3);
+        object.key("profileVersion").string(var_3.as_str());
     }
     if let Some(var_4) = &input.revision_id {
-        object.key("revisionId").string(var_4);
+        object.key("revisionId").string(var_4.as_str());
     }
     if let Some(var_5) = &input.statement_id {
-        object.key("statementId").string(var_5);
+        object.key("statementId").string(var_5.as_str());
     }
     Ok(())
 }
@@ -34,7 +34,7 @@ pub fn serialize_structure_crate_input_put_signing_profile_input(
         object_7.finish();
     }
     if let Some(var_8) = &input.platform_id {
-        object.key("platformId").string(var_8);
+        object.key("platformId").string(var_8.as_str());
     }
     if let Some(var_9) = &input.signature_validity_period {
         let mut object_10 = object.key("signatureValidityPeriod").start_object();
@@ -53,7 +53,7 @@ pub fn serialize_structure_crate_input_put_signing_profile_input(
         let mut object_14 = object.key("signingParameters").start_object();
         for (key_15, value_16) in var_13 {
             {
-                object_14.key(key_15).string(value_16);
+                object_14.key(key_15).string(value_16.as_str());
             }
         }
         object_14.finish();
@@ -62,7 +62,7 @@ pub fn serialize_structure_crate_input_put_signing_profile_input(
         let mut object_18 = object.key("tags").start_object();
         for (key_19, value_20) in var_17 {
             {
-                object_18.key(key_19).string(value_20);
+                object_18.key(key_19).string(value_20.as_str());
             }
         }
         object_18.finish();
@@ -75,10 +75,10 @@ pub fn serialize_structure_crate_input_revoke_signature_input(
     input: &crate::input::RevokeSignatureInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_21) = &input.job_owner {
-        object.key("jobOwner").string(var_21);
+        object.key("jobOwner").string(var_21.as_str());
     }
     if let Some(var_22) = &input.reason {
-        object.key("reason").string(var_22);
+        object.key("reason").string(var_22.as_str());
     }
     Ok(())
 }
@@ -93,10 +93,10 @@ pub fn serialize_structure_crate_input_revoke_signing_profile_input(
             .date_time(var_23, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_24) = &input.profile_version {
-        object.key("profileVersion").string(var_24);
+        object.key("profileVersion").string(var_24.as_str());
     }
     if let Some(var_25) = &input.reason {
-        object.key("reason").string(var_25);
+        object.key("reason").string(var_25.as_str());
     }
     Ok(())
 }
@@ -106,7 +106,7 @@ pub fn serialize_structure_crate_input_start_signing_job_input(
     input: &crate::input::StartSigningJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.client_request_token {
-        object.key("clientRequestToken").string(var_26);
+        object.key("clientRequestToken").string(var_26.as_str());
     }
     if let Some(var_27) = &input.destination {
         let mut object_28 = object.key("destination").start_object();
@@ -114,10 +114,10 @@ pub fn serialize_structure_crate_input_start_signing_job_input(
         object_28.finish();
     }
     if let Some(var_29) = &input.profile_name {
-        object.key("profileName").string(var_29);
+        object.key("profileName").string(var_29.as_str());
     }
     if let Some(var_30) = &input.profile_owner {
-        object.key("profileOwner").string(var_30);
+        object.key("profileOwner").string(var_30.as_str());
     }
     if let Some(var_31) = &input.source {
         let mut object_32 = object.key("source").start_object();
@@ -135,7 +135,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_34 = object.key("tags").start_object();
         for (key_35, value_36) in var_33 {
             {
-                object_34.key(key_35).string(value_36);
+                object_34.key(key_35).string(value_36.as_str());
             }
         }
         object_34.finish();
@@ -182,7 +182,7 @@ pub fn serialize_structure_crate_model_signing_material(
     input: &crate::model::SigningMaterial,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.certificate_arn {
-        object.key("certificateArn").string(var_41);
+        object.key("certificateArn").string(var_41.as_str());
     }
     Ok(())
 }
@@ -229,10 +229,10 @@ pub fn serialize_structure_crate_model_s3_destination(
     input: &crate::model::S3Destination,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_48) = &input.bucket_name {
-        object.key("bucketName").string(var_48);
+        object.key("bucketName").string(var_48.as_str());
     }
     if let Some(var_49) = &input.prefix {
-        object.key("prefix").string(var_49);
+        object.key("prefix").string(var_49.as_str());
     }
     Ok(())
 }
@@ -242,13 +242,13 @@ pub fn serialize_structure_crate_model_s3_source(
     input: &crate::model::S3Source,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.bucket_name {
-        object.key("bucketName").string(var_50);
+        object.key("bucketName").string(var_50.as_str());
     }
     if let Some(var_51) = &input.key {
-        object.key("key").string(var_51);
+        object.key("key").string(var_51.as_str());
     }
     if let Some(var_52) = &input.version {
-        object.key("version").string(var_52);
+        object.key("version").string(var_52.as_str());
     }
     Ok(())
 }

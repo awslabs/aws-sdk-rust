@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_create_app_input(
     input: &crate::input::CreateAppInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.access_token {
-        object.key("accessToken").string(var_1);
+        object.key("accessToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.auto_branch_creation_config {
         let mut object_3 = object.key("autoBranchCreationConfig").start_object();
@@ -18,19 +18,19 @@ pub fn serialize_structure_crate_input_create_app_input(
         let mut array_5 = object.key("autoBranchCreationPatterns").start_array();
         for item_6 in var_4 {
             {
-                array_5.value().string(item_6);
+                array_5.value().string(item_6.as_str());
             }
         }
         array_5.finish();
     }
     if let Some(var_7) = &input.basic_auth_credentials {
-        object.key("basicAuthCredentials").string(var_7);
+        object.key("basicAuthCredentials").string(var_7.as_str());
     }
     if let Some(var_8) = &input.build_spec {
-        object.key("buildSpec").string(var_8);
+        object.key("buildSpec").string(var_8.as_str());
     }
     if let Some(var_9) = &input.custom_headers {
-        object.key("customHeaders").string(var_9);
+        object.key("customHeaders").string(var_9.as_str());
     }
     if let Some(var_10) = &input.custom_rules {
         let mut array_11 = object.key("customRules").start_array();
@@ -47,7 +47,7 @@ pub fn serialize_structure_crate_input_create_app_input(
         array_11.finish();
     }
     if let Some(var_14) = &input.description {
-        object.key("description").string(var_14);
+        object.key("description").string(var_14.as_str());
     }
     if let Some(var_15) = &input.enable_auto_branch_creation {
         object.key("enableAutoBranchCreation").boolean(*var_15);
@@ -65,31 +65,31 @@ pub fn serialize_structure_crate_input_create_app_input(
         let mut object_20 = object.key("environmentVariables").start_object();
         for (key_21, value_22) in var_19 {
             {
-                object_20.key(key_21).string(value_22);
+                object_20.key(key_21).string(value_22.as_str());
             }
         }
         object_20.finish();
     }
     if let Some(var_23) = &input.iam_service_role_arn {
-        object.key("iamServiceRoleArn").string(var_23);
+        object.key("iamServiceRoleArn").string(var_23.as_str());
     }
     if let Some(var_24) = &input.name {
-        object.key("name").string(var_24);
+        object.key("name").string(var_24.as_str());
     }
     if let Some(var_25) = &input.oauth_token {
-        object.key("oauthToken").string(var_25);
+        object.key("oauthToken").string(var_25.as_str());
     }
     if let Some(var_26) = &input.platform {
         object.key("platform").string(var_26.as_str());
     }
     if let Some(var_27) = &input.repository {
-        object.key("repository").string(var_27);
+        object.key("repository").string(var_27.as_str());
     }
     if let Some(var_28) = &input.tags {
         let mut object_29 = object.key("tags").start_object();
         for (key_30, value_31) in var_28 {
             {
-                object_29.key(key_30).string(value_31);
+                object_29.key(key_30).string(value_31.as_str());
             }
         }
         object_29.finish();
@@ -102,13 +102,13 @@ pub fn serialize_structure_crate_input_create_backend_environment_input(
     input: &crate::input::CreateBackendEnvironmentInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.deployment_artifacts {
-        object.key("deploymentArtifacts").string(var_32);
+        object.key("deploymentArtifacts").string(var_32.as_str());
     }
     if let Some(var_33) = &input.environment_name {
-        object.key("environmentName").string(var_33);
+        object.key("environmentName").string(var_33.as_str());
     }
     if let Some(var_34) = &input.stack_name {
-        object.key("stackName").string(var_34);
+        object.key("stackName").string(var_34.as_str());
     }
     Ok(())
 }
@@ -118,22 +118,22 @@ pub fn serialize_structure_crate_input_create_branch_input(
     input: &crate::input::CreateBranchInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.backend_environment_arn {
-        object.key("backendEnvironmentArn").string(var_35);
+        object.key("backendEnvironmentArn").string(var_35.as_str());
     }
     if let Some(var_36) = &input.basic_auth_credentials {
-        object.key("basicAuthCredentials").string(var_36);
+        object.key("basicAuthCredentials").string(var_36.as_str());
     }
     if let Some(var_37) = &input.branch_name {
-        object.key("branchName").string(var_37);
+        object.key("branchName").string(var_37.as_str());
     }
     if let Some(var_38) = &input.build_spec {
-        object.key("buildSpec").string(var_38);
+        object.key("buildSpec").string(var_38.as_str());
     }
     if let Some(var_39) = &input.description {
-        object.key("description").string(var_39);
+        object.key("description").string(var_39.as_str());
     }
     if let Some(var_40) = &input.display_name {
-        object.key("displayName").string(var_40);
+        object.key("displayName").string(var_40.as_str());
     }
     if let Some(var_41) = &input.enable_auto_build {
         object.key("enableAutoBuild").boolean(*var_41);
@@ -154,16 +154,18 @@ pub fn serialize_structure_crate_input_create_branch_input(
         let mut object_47 = object.key("environmentVariables").start_object();
         for (key_48, value_49) in var_46 {
             {
-                object_47.key(key_48).string(value_49);
+                object_47.key(key_48).string(value_49.as_str());
             }
         }
         object_47.finish();
     }
     if let Some(var_50) = &input.framework {
-        object.key("framework").string(var_50);
+        object.key("framework").string(var_50.as_str());
     }
     if let Some(var_51) = &input.pull_request_environment_name {
-        object.key("pullRequestEnvironmentName").string(var_51);
+        object
+            .key("pullRequestEnvironmentName")
+            .string(var_51.as_str());
     }
     if let Some(var_52) = &input.stage {
         object.key("stage").string(var_52.as_str());
@@ -172,13 +174,13 @@ pub fn serialize_structure_crate_input_create_branch_input(
         let mut object_54 = object.key("tags").start_object();
         for (key_55, value_56) in var_53 {
             {
-                object_54.key(key_55).string(value_56);
+                object_54.key(key_55).string(value_56.as_str());
             }
         }
         object_54.finish();
     }
     if let Some(var_57) = &input.ttl {
-        object.key("ttl").string(var_57);
+        object.key("ttl").string(var_57.as_str());
     }
     Ok(())
 }
@@ -191,7 +193,7 @@ pub fn serialize_structure_crate_input_create_deployment_input(
         let mut object_59 = object.key("fileMap").start_object();
         for (key_60, value_61) in var_58 {
             {
-                object_59.key(key_60).string(value_61);
+                object_59.key(key_60).string(value_61.as_str());
             }
         }
         object_59.finish();
@@ -207,16 +209,16 @@ pub fn serialize_structure_crate_input_create_domain_association_input(
         let mut array_63 = object.key("autoSubDomainCreationPatterns").start_array();
         for item_64 in var_62 {
             {
-                array_63.value().string(item_64);
+                array_63.value().string(item_64.as_str());
             }
         }
         array_63.finish();
     }
     if let Some(var_65) = &input.auto_sub_domain_iam_role {
-        object.key("autoSubDomainIAMRole").string(var_65);
+        object.key("autoSubDomainIAMRole").string(var_65.as_str());
     }
     if let Some(var_66) = &input.domain_name {
-        object.key("domainName").string(var_66);
+        object.key("domainName").string(var_66.as_str());
     }
     if let Some(var_67) = &input.enable_auto_sub_domain {
         object.key("enableAutoSubDomain").boolean(*var_67);
@@ -243,10 +245,10 @@ pub fn serialize_structure_crate_input_create_webhook_input(
     input: &crate::input::CreateWebhookInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_72) = &input.branch_name {
-        object.key("branchName").string(var_72);
+        object.key("branchName").string(var_72.as_str());
     }
     if let Some(var_73) = &input.description {
-        object.key("description").string(var_73);
+        object.key("description").string(var_73.as_str());
     }
     Ok(())
 }
@@ -256,7 +258,7 @@ pub fn serialize_structure_crate_input_generate_access_logs_input(
     input: &crate::input::GenerateAccessLogsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_74) = &input.domain_name {
-        object.key("domainName").string(var_74);
+        object.key("domainName").string(var_74.as_str());
     }
     if let Some(var_75) = &input.end_time {
         object
@@ -276,10 +278,10 @@ pub fn serialize_structure_crate_input_start_deployment_input(
     input: &crate::input::StartDeploymentInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_77) = &input.job_id {
-        object.key("jobId").string(var_77);
+        object.key("jobId").string(var_77.as_str());
     }
     if let Some(var_78) = &input.source_url {
-        object.key("sourceUrl").string(var_78);
+        object.key("sourceUrl").string(var_78.as_str());
     }
     Ok(())
 }
@@ -289,10 +291,10 @@ pub fn serialize_structure_crate_input_start_job_input(
     input: &crate::input::StartJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_79) = &input.commit_id {
-        object.key("commitId").string(var_79);
+        object.key("commitId").string(var_79.as_str());
     }
     if let Some(var_80) = &input.commit_message {
-        object.key("commitMessage").string(var_80);
+        object.key("commitMessage").string(var_80.as_str());
     }
     if let Some(var_81) = &input.commit_time {
         object
@@ -300,10 +302,10 @@ pub fn serialize_structure_crate_input_start_job_input(
             .date_time(var_81, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_82) = &input.job_id {
-        object.key("jobId").string(var_82);
+        object.key("jobId").string(var_82.as_str());
     }
     if let Some(var_83) = &input.job_reason {
-        object.key("jobReason").string(var_83);
+        object.key("jobReason").string(var_83.as_str());
     }
     if let Some(var_84) = &input.job_type {
         object.key("jobType").string(var_84.as_str());
@@ -319,7 +321,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_86 = object.key("tags").start_object();
         for (key_87, value_88) in var_85 {
             {
-                object_86.key(key_87).string(value_88);
+                object_86.key(key_87).string(value_88.as_str());
             }
         }
         object_86.finish();
@@ -332,7 +334,7 @@ pub fn serialize_structure_crate_input_update_app_input(
     input: &crate::input::UpdateAppInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_89) = &input.access_token {
-        object.key("accessToken").string(var_89);
+        object.key("accessToken").string(var_89.as_str());
     }
     if let Some(var_90) = &input.auto_branch_creation_config {
         let mut object_91 = object.key("autoBranchCreationConfig").start_object();
@@ -346,19 +348,19 @@ pub fn serialize_structure_crate_input_update_app_input(
         let mut array_93 = object.key("autoBranchCreationPatterns").start_array();
         for item_94 in var_92 {
             {
-                array_93.value().string(item_94);
+                array_93.value().string(item_94.as_str());
             }
         }
         array_93.finish();
     }
     if let Some(var_95) = &input.basic_auth_credentials {
-        object.key("basicAuthCredentials").string(var_95);
+        object.key("basicAuthCredentials").string(var_95.as_str());
     }
     if let Some(var_96) = &input.build_spec {
-        object.key("buildSpec").string(var_96);
+        object.key("buildSpec").string(var_96.as_str());
     }
     if let Some(var_97) = &input.custom_headers {
-        object.key("customHeaders").string(var_97);
+        object.key("customHeaders").string(var_97.as_str());
     }
     if let Some(var_98) = &input.custom_rules {
         let mut array_99 = object.key("customRules").start_array();
@@ -375,7 +377,7 @@ pub fn serialize_structure_crate_input_update_app_input(
         array_99.finish();
     }
     if let Some(var_102) = &input.description {
-        object.key("description").string(var_102);
+        object.key("description").string(var_102.as_str());
     }
     if let Some(var_103) = &input.enable_auto_branch_creation {
         object.key("enableAutoBranchCreation").boolean(*var_103);
@@ -393,25 +395,25 @@ pub fn serialize_structure_crate_input_update_app_input(
         let mut object_108 = object.key("environmentVariables").start_object();
         for (key_109, value_110) in var_107 {
             {
-                object_108.key(key_109).string(value_110);
+                object_108.key(key_109).string(value_110.as_str());
             }
         }
         object_108.finish();
     }
     if let Some(var_111) = &input.iam_service_role_arn {
-        object.key("iamServiceRoleArn").string(var_111);
+        object.key("iamServiceRoleArn").string(var_111.as_str());
     }
     if let Some(var_112) = &input.name {
-        object.key("name").string(var_112);
+        object.key("name").string(var_112.as_str());
     }
     if let Some(var_113) = &input.oauth_token {
-        object.key("oauthToken").string(var_113);
+        object.key("oauthToken").string(var_113.as_str());
     }
     if let Some(var_114) = &input.platform {
         object.key("platform").string(var_114.as_str());
     }
     if let Some(var_115) = &input.repository {
-        object.key("repository").string(var_115);
+        object.key("repository").string(var_115.as_str());
     }
     Ok(())
 }
@@ -421,19 +423,19 @@ pub fn serialize_structure_crate_input_update_branch_input(
     input: &crate::input::UpdateBranchInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_116) = &input.backend_environment_arn {
-        object.key("backendEnvironmentArn").string(var_116);
+        object.key("backendEnvironmentArn").string(var_116.as_str());
     }
     if let Some(var_117) = &input.basic_auth_credentials {
-        object.key("basicAuthCredentials").string(var_117);
+        object.key("basicAuthCredentials").string(var_117.as_str());
     }
     if let Some(var_118) = &input.build_spec {
-        object.key("buildSpec").string(var_118);
+        object.key("buildSpec").string(var_118.as_str());
     }
     if let Some(var_119) = &input.description {
-        object.key("description").string(var_119);
+        object.key("description").string(var_119.as_str());
     }
     if let Some(var_120) = &input.display_name {
-        object.key("displayName").string(var_120);
+        object.key("displayName").string(var_120.as_str());
     }
     if let Some(var_121) = &input.enable_auto_build {
         object.key("enableAutoBuild").boolean(*var_121);
@@ -454,22 +456,24 @@ pub fn serialize_structure_crate_input_update_branch_input(
         let mut object_127 = object.key("environmentVariables").start_object();
         for (key_128, value_129) in var_126 {
             {
-                object_127.key(key_128).string(value_129);
+                object_127.key(key_128).string(value_129.as_str());
             }
         }
         object_127.finish();
     }
     if let Some(var_130) = &input.framework {
-        object.key("framework").string(var_130);
+        object.key("framework").string(var_130.as_str());
     }
     if let Some(var_131) = &input.pull_request_environment_name {
-        object.key("pullRequestEnvironmentName").string(var_131);
+        object
+            .key("pullRequestEnvironmentName")
+            .string(var_131.as_str());
     }
     if let Some(var_132) = &input.stage {
         object.key("stage").string(var_132.as_str());
     }
     if let Some(var_133) = &input.ttl {
-        object.key("ttl").string(var_133);
+        object.key("ttl").string(var_133.as_str());
     }
     Ok(())
 }
@@ -482,13 +486,13 @@ pub fn serialize_structure_crate_input_update_domain_association_input(
         let mut array_135 = object.key("autoSubDomainCreationPatterns").start_array();
         for item_136 in var_134 {
             {
-                array_135.value().string(item_136);
+                array_135.value().string(item_136.as_str());
             }
         }
         array_135.finish();
     }
     if let Some(var_137) = &input.auto_sub_domain_iam_role {
-        object.key("autoSubDomainIAMRole").string(var_137);
+        object.key("autoSubDomainIAMRole").string(var_137.as_str());
     }
     if let Some(var_138) = &input.enable_auto_sub_domain {
         object.key("enableAutoSubDomain").boolean(*var_138);
@@ -515,10 +519,10 @@ pub fn serialize_structure_crate_input_update_webhook_input(
     input: &crate::input::UpdateWebhookInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_143) = &input.branch_name {
-        object.key("branchName").string(var_143);
+        object.key("branchName").string(var_143.as_str());
     }
     if let Some(var_144) = &input.description {
-        object.key("description").string(var_144);
+        object.key("description").string(var_144.as_str());
     }
     Ok(())
 }
@@ -531,7 +535,7 @@ pub fn serialize_structure_crate_model_auto_branch_creation_config(
         object.key("stage").string(var_145.as_str());
     }
     if let Some(var_146) = &input.framework {
-        object.key("framework").string(var_146);
+        object.key("framework").string(var_146.as_str());
     }
     if let Some(var_147) = &input.enable_auto_build {
         object.key("enableAutoBuild").boolean(*var_147);
@@ -540,13 +544,13 @@ pub fn serialize_structure_crate_model_auto_branch_creation_config(
         let mut object_149 = object.key("environmentVariables").start_object();
         for (key_150, value_151) in var_148 {
             {
-                object_149.key(key_150).string(value_151);
+                object_149.key(key_150).string(value_151.as_str());
             }
         }
         object_149.finish();
     }
     if let Some(var_152) = &input.basic_auth_credentials {
-        object.key("basicAuthCredentials").string(var_152);
+        object.key("basicAuthCredentials").string(var_152.as_str());
     }
     if let Some(var_153) = &input.enable_basic_auth {
         object.key("enableBasicAuth").boolean(*var_153);
@@ -555,13 +559,15 @@ pub fn serialize_structure_crate_model_auto_branch_creation_config(
         object.key("enablePerformanceMode").boolean(*var_154);
     }
     if let Some(var_155) = &input.build_spec {
-        object.key("buildSpec").string(var_155);
+        object.key("buildSpec").string(var_155.as_str());
     }
     if let Some(var_156) = &input.enable_pull_request_preview {
         object.key("enablePullRequestPreview").boolean(*var_156);
     }
     if let Some(var_157) = &input.pull_request_environment_name {
-        object.key("pullRequestEnvironmentName").string(var_157);
+        object
+            .key("pullRequestEnvironmentName")
+            .string(var_157.as_str());
     }
     Ok(())
 }
@@ -571,16 +577,16 @@ pub fn serialize_structure_crate_model_custom_rule(
     input: &crate::model::CustomRule,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_158) = &input.source {
-        object.key("source").string(var_158);
+        object.key("source").string(var_158.as_str());
     }
     if let Some(var_159) = &input.target {
-        object.key("target").string(var_159);
+        object.key("target").string(var_159.as_str());
     }
     if let Some(var_160) = &input.status {
-        object.key("status").string(var_160);
+        object.key("status").string(var_160.as_str());
     }
     if let Some(var_161) = &input.condition {
-        object.key("condition").string(var_161);
+        object.key("condition").string(var_161.as_str());
     }
     Ok(())
 }
@@ -590,10 +596,10 @@ pub fn serialize_structure_crate_model_sub_domain_setting(
     input: &crate::model::SubDomainSetting,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_162) = &input.prefix {
-        object.key("prefix").string(var_162);
+        object.key("prefix").string(var_162.as_str());
     }
     if let Some(var_163) = &input.branch_name {
-        object.key("branchName").string(var_163);
+        object.key("branchName").string(var_163.as_str());
     }
     Ok(())
 }

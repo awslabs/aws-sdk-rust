@@ -4,10 +4,10 @@ pub fn serialize_structure_crate_input_create_byte_match_set_input(
     input: &crate::input::CreateByteMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.name {
-        object.key("Name").string(var_1);
+        object.key("Name").string(var_1.as_str());
     }
     if let Some(var_2) = &input.change_token {
-        object.key("ChangeToken").string(var_2);
+        object.key("ChangeToken").string(var_2.as_str());
     }
     Ok(())
 }
@@ -17,10 +17,10 @@ pub fn serialize_structure_crate_input_create_geo_match_set_input(
     input: &crate::input::CreateGeoMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.name {
-        object.key("Name").string(var_3);
+        object.key("Name").string(var_3.as_str());
     }
     if let Some(var_4) = &input.change_token {
-        object.key("ChangeToken").string(var_4);
+        object.key("ChangeToken").string(var_4.as_str());
     }
     Ok(())
 }
@@ -30,10 +30,10 @@ pub fn serialize_structure_crate_input_create_ip_set_input(
     input: &crate::input::CreateIpSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.name {
-        object.key("Name").string(var_5);
+        object.key("Name").string(var_5.as_str());
     }
     if let Some(var_6) = &input.change_token {
-        object.key("ChangeToken").string(var_6);
+        object.key("ChangeToken").string(var_6.as_str());
     }
     Ok(())
 }
@@ -43,10 +43,10 @@ pub fn serialize_structure_crate_input_create_rate_based_rule_input(
     input: &crate::input::CreateRateBasedRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.name {
-        object.key("Name").string(var_7);
+        object.key("Name").string(var_7.as_str());
     }
     if let Some(var_8) = &input.metric_name {
-        object.key("MetricName").string(var_8);
+        object.key("MetricName").string(var_8.as_str());
     }
     if let Some(var_9) = &input.rate_key {
         object.key("RateKey").string(var_9.as_str());
@@ -58,7 +58,7 @@ pub fn serialize_structure_crate_input_create_rate_based_rule_input(
         );
     }
     if let Some(var_10) = &input.change_token {
-        object.key("ChangeToken").string(var_10);
+        object.key("ChangeToken").string(var_10.as_str());
     }
     if let Some(var_11) = &input.tags {
         let mut array_12 = object.key("Tags").start_array();
@@ -79,10 +79,10 @@ pub fn serialize_structure_crate_input_create_regex_match_set_input(
     input: &crate::input::CreateRegexMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.name {
-        object.key("Name").string(var_15);
+        object.key("Name").string(var_15.as_str());
     }
     if let Some(var_16) = &input.change_token {
-        object.key("ChangeToken").string(var_16);
+        object.key("ChangeToken").string(var_16.as_str());
     }
     Ok(())
 }
@@ -92,10 +92,10 @@ pub fn serialize_structure_crate_input_create_regex_pattern_set_input(
     input: &crate::input::CreateRegexPatternSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.name {
-        object.key("Name").string(var_17);
+        object.key("Name").string(var_17.as_str());
     }
     if let Some(var_18) = &input.change_token {
-        object.key("ChangeToken").string(var_18);
+        object.key("ChangeToken").string(var_18.as_str());
     }
     Ok(())
 }
@@ -105,13 +105,13 @@ pub fn serialize_structure_crate_input_create_rule_input(
     input: &crate::input::CreateRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.name {
-        object.key("Name").string(var_19);
+        object.key("Name").string(var_19.as_str());
     }
     if let Some(var_20) = &input.metric_name {
-        object.key("MetricName").string(var_20);
+        object.key("MetricName").string(var_20.as_str());
     }
     if let Some(var_21) = &input.change_token {
-        object.key("ChangeToken").string(var_21);
+        object.key("ChangeToken").string(var_21.as_str());
     }
     if let Some(var_22) = &input.tags {
         let mut array_23 = object.key("Tags").start_array();
@@ -132,13 +132,13 @@ pub fn serialize_structure_crate_input_create_rule_group_input(
     input: &crate::input::CreateRuleGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.name {
-        object.key("Name").string(var_26);
+        object.key("Name").string(var_26.as_str());
     }
     if let Some(var_27) = &input.metric_name {
-        object.key("MetricName").string(var_27);
+        object.key("MetricName").string(var_27.as_str());
     }
     if let Some(var_28) = &input.change_token {
-        object.key("ChangeToken").string(var_28);
+        object.key("ChangeToken").string(var_28.as_str());
     }
     if let Some(var_29) = &input.tags {
         let mut array_30 = object.key("Tags").start_array();
@@ -159,10 +159,10 @@ pub fn serialize_structure_crate_input_create_size_constraint_set_input(
     input: &crate::input::CreateSizeConstraintSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.name {
-        object.key("Name").string(var_33);
+        object.key("Name").string(var_33.as_str());
     }
     if let Some(var_34) = &input.change_token {
-        object.key("ChangeToken").string(var_34);
+        object.key("ChangeToken").string(var_34.as_str());
     }
     Ok(())
 }
@@ -172,10 +172,10 @@ pub fn serialize_structure_crate_input_create_sql_injection_match_set_input(
     input: &crate::input::CreateSqlInjectionMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.name {
-        object.key("Name").string(var_35);
+        object.key("Name").string(var_35.as_str());
     }
     if let Some(var_36) = &input.change_token {
-        object.key("ChangeToken").string(var_36);
+        object.key("ChangeToken").string(var_36.as_str());
     }
     Ok(())
 }
@@ -185,10 +185,10 @@ pub fn serialize_structure_crate_input_create_web_acl_input(
     input: &crate::input::CreateWebAclInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_37) = &input.name {
-        object.key("Name").string(var_37);
+        object.key("Name").string(var_37.as_str());
     }
     if let Some(var_38) = &input.metric_name {
-        object.key("MetricName").string(var_38);
+        object.key("MetricName").string(var_38.as_str());
     }
     if let Some(var_39) = &input.default_action {
         let mut object_40 = object.key("DefaultAction").start_object();
@@ -196,7 +196,7 @@ pub fn serialize_structure_crate_input_create_web_acl_input(
         object_40.finish();
     }
     if let Some(var_41) = &input.change_token {
-        object.key("ChangeToken").string(var_41);
+        object.key("ChangeToken").string(var_41.as_str());
     }
     if let Some(var_42) = &input.tags {
         let mut array_43 = object.key("Tags").start_array();
@@ -217,10 +217,10 @@ pub fn serialize_structure_crate_input_create_web_acl_migration_stack_input(
     input: &crate::input::CreateWebAclMigrationStackInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_46) = &input.web_acl_id {
-        object.key("WebACLId").string(var_46);
+        object.key("WebACLId").string(var_46.as_str());
     }
     if let Some(var_47) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_47);
+        object.key("S3BucketName").string(var_47.as_str());
     }
     if let Some(var_48) = &input.ignore_unsupported_type {
         object.key("IgnoreUnsupportedType").boolean(*var_48);
@@ -233,10 +233,10 @@ pub fn serialize_structure_crate_input_create_xss_match_set_input(
     input: &crate::input::CreateXssMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.name {
-        object.key("Name").string(var_49);
+        object.key("Name").string(var_49.as_str());
     }
     if let Some(var_50) = &input.change_token {
-        object.key("ChangeToken").string(var_50);
+        object.key("ChangeToken").string(var_50.as_str());
     }
     Ok(())
 }
@@ -246,10 +246,10 @@ pub fn serialize_structure_crate_input_delete_byte_match_set_input(
     input: &crate::input::DeleteByteMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_51) = &input.byte_match_set_id {
-        object.key("ByteMatchSetId").string(var_51);
+        object.key("ByteMatchSetId").string(var_51.as_str());
     }
     if let Some(var_52) = &input.change_token {
-        object.key("ChangeToken").string(var_52);
+        object.key("ChangeToken").string(var_52.as_str());
     }
     Ok(())
 }
@@ -259,10 +259,10 @@ pub fn serialize_structure_crate_input_delete_geo_match_set_input(
     input: &crate::input::DeleteGeoMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.geo_match_set_id {
-        object.key("GeoMatchSetId").string(var_53);
+        object.key("GeoMatchSetId").string(var_53.as_str());
     }
     if let Some(var_54) = &input.change_token {
-        object.key("ChangeToken").string(var_54);
+        object.key("ChangeToken").string(var_54.as_str());
     }
     Ok(())
 }
@@ -272,10 +272,10 @@ pub fn serialize_structure_crate_input_delete_ip_set_input(
     input: &crate::input::DeleteIpSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_55) = &input.ip_set_id {
-        object.key("IPSetId").string(var_55);
+        object.key("IPSetId").string(var_55.as_str());
     }
     if let Some(var_56) = &input.change_token {
-        object.key("ChangeToken").string(var_56);
+        object.key("ChangeToken").string(var_56.as_str());
     }
     Ok(())
 }
@@ -285,7 +285,7 @@ pub fn serialize_structure_crate_input_delete_logging_configuration_input(
     input: &crate::input::DeleteLoggingConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_57) = &input.resource_arn {
-        object.key("ResourceArn").string(var_57);
+        object.key("ResourceArn").string(var_57.as_str());
     }
     Ok(())
 }
@@ -295,7 +295,7 @@ pub fn serialize_structure_crate_input_delete_permission_policy_input(
     input: &crate::input::DeletePermissionPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_58) = &input.resource_arn {
-        object.key("ResourceArn").string(var_58);
+        object.key("ResourceArn").string(var_58.as_str());
     }
     Ok(())
 }
@@ -305,10 +305,10 @@ pub fn serialize_structure_crate_input_delete_rate_based_rule_input(
     input: &crate::input::DeleteRateBasedRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_59) = &input.rule_id {
-        object.key("RuleId").string(var_59);
+        object.key("RuleId").string(var_59.as_str());
     }
     if let Some(var_60) = &input.change_token {
-        object.key("ChangeToken").string(var_60);
+        object.key("ChangeToken").string(var_60.as_str());
     }
     Ok(())
 }
@@ -318,10 +318,10 @@ pub fn serialize_structure_crate_input_delete_regex_match_set_input(
     input: &crate::input::DeleteRegexMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_61) = &input.regex_match_set_id {
-        object.key("RegexMatchSetId").string(var_61);
+        object.key("RegexMatchSetId").string(var_61.as_str());
     }
     if let Some(var_62) = &input.change_token {
-        object.key("ChangeToken").string(var_62);
+        object.key("ChangeToken").string(var_62.as_str());
     }
     Ok(())
 }
@@ -331,10 +331,10 @@ pub fn serialize_structure_crate_input_delete_regex_pattern_set_input(
     input: &crate::input::DeleteRegexPatternSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_63) = &input.regex_pattern_set_id {
-        object.key("RegexPatternSetId").string(var_63);
+        object.key("RegexPatternSetId").string(var_63.as_str());
     }
     if let Some(var_64) = &input.change_token {
-        object.key("ChangeToken").string(var_64);
+        object.key("ChangeToken").string(var_64.as_str());
     }
     Ok(())
 }
@@ -344,10 +344,10 @@ pub fn serialize_structure_crate_input_delete_rule_input(
     input: &crate::input::DeleteRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_65) = &input.rule_id {
-        object.key("RuleId").string(var_65);
+        object.key("RuleId").string(var_65.as_str());
     }
     if let Some(var_66) = &input.change_token {
-        object.key("ChangeToken").string(var_66);
+        object.key("ChangeToken").string(var_66.as_str());
     }
     Ok(())
 }
@@ -357,10 +357,10 @@ pub fn serialize_structure_crate_input_delete_rule_group_input(
     input: &crate::input::DeleteRuleGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.rule_group_id {
-        object.key("RuleGroupId").string(var_67);
+        object.key("RuleGroupId").string(var_67.as_str());
     }
     if let Some(var_68) = &input.change_token {
-        object.key("ChangeToken").string(var_68);
+        object.key("ChangeToken").string(var_68.as_str());
     }
     Ok(())
 }
@@ -370,10 +370,10 @@ pub fn serialize_structure_crate_input_delete_size_constraint_set_input(
     input: &crate::input::DeleteSizeConstraintSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_69) = &input.size_constraint_set_id {
-        object.key("SizeConstraintSetId").string(var_69);
+        object.key("SizeConstraintSetId").string(var_69.as_str());
     }
     if let Some(var_70) = &input.change_token {
-        object.key("ChangeToken").string(var_70);
+        object.key("ChangeToken").string(var_70.as_str());
     }
     Ok(())
 }
@@ -383,10 +383,10 @@ pub fn serialize_structure_crate_input_delete_sql_injection_match_set_input(
     input: &crate::input::DeleteSqlInjectionMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_71) = &input.sql_injection_match_set_id {
-        object.key("SqlInjectionMatchSetId").string(var_71);
+        object.key("SqlInjectionMatchSetId").string(var_71.as_str());
     }
     if let Some(var_72) = &input.change_token {
-        object.key("ChangeToken").string(var_72);
+        object.key("ChangeToken").string(var_72.as_str());
     }
     Ok(())
 }
@@ -396,10 +396,10 @@ pub fn serialize_structure_crate_input_delete_web_acl_input(
     input: &crate::input::DeleteWebAclInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_73) = &input.web_acl_id {
-        object.key("WebACLId").string(var_73);
+        object.key("WebACLId").string(var_73.as_str());
     }
     if let Some(var_74) = &input.change_token {
-        object.key("ChangeToken").string(var_74);
+        object.key("ChangeToken").string(var_74.as_str());
     }
     Ok(())
 }
@@ -409,10 +409,10 @@ pub fn serialize_structure_crate_input_delete_xss_match_set_input(
     input: &crate::input::DeleteXssMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_75) = &input.xss_match_set_id {
-        object.key("XssMatchSetId").string(var_75);
+        object.key("XssMatchSetId").string(var_75.as_str());
     }
     if let Some(var_76) = &input.change_token {
-        object.key("ChangeToken").string(var_76);
+        object.key("ChangeToken").string(var_76.as_str());
     }
     Ok(())
 }
@@ -422,7 +422,7 @@ pub fn serialize_structure_crate_input_get_byte_match_set_input(
     input: &crate::input::GetByteMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_77) = &input.byte_match_set_id {
-        object.key("ByteMatchSetId").string(var_77);
+        object.key("ByteMatchSetId").string(var_77.as_str());
     }
     Ok(())
 }
@@ -432,7 +432,7 @@ pub fn serialize_structure_crate_input_get_change_token_status_input(
     input: &crate::input::GetChangeTokenStatusInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_78) = &input.change_token {
-        object.key("ChangeToken").string(var_78);
+        object.key("ChangeToken").string(var_78.as_str());
     }
     Ok(())
 }
@@ -442,7 +442,7 @@ pub fn serialize_structure_crate_input_get_geo_match_set_input(
     input: &crate::input::GetGeoMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_79) = &input.geo_match_set_id {
-        object.key("GeoMatchSetId").string(var_79);
+        object.key("GeoMatchSetId").string(var_79.as_str());
     }
     Ok(())
 }
@@ -452,7 +452,7 @@ pub fn serialize_structure_crate_input_get_ip_set_input(
     input: &crate::input::GetIpSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_80) = &input.ip_set_id {
-        object.key("IPSetId").string(var_80);
+        object.key("IPSetId").string(var_80.as_str());
     }
     Ok(())
 }
@@ -462,7 +462,7 @@ pub fn serialize_structure_crate_input_get_logging_configuration_input(
     input: &crate::input::GetLoggingConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_81) = &input.resource_arn {
-        object.key("ResourceArn").string(var_81);
+        object.key("ResourceArn").string(var_81.as_str());
     }
     Ok(())
 }
@@ -472,7 +472,7 @@ pub fn serialize_structure_crate_input_get_permission_policy_input(
     input: &crate::input::GetPermissionPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_82) = &input.resource_arn {
-        object.key("ResourceArn").string(var_82);
+        object.key("ResourceArn").string(var_82.as_str());
     }
     Ok(())
 }
@@ -482,7 +482,7 @@ pub fn serialize_structure_crate_input_get_rate_based_rule_input(
     input: &crate::input::GetRateBasedRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_83) = &input.rule_id {
-        object.key("RuleId").string(var_83);
+        object.key("RuleId").string(var_83.as_str());
     }
     Ok(())
 }
@@ -492,10 +492,10 @@ pub fn serialize_structure_crate_input_get_rate_based_rule_managed_keys_input(
     input: &crate::input::GetRateBasedRuleManagedKeysInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_84) = &input.rule_id {
-        object.key("RuleId").string(var_84);
+        object.key("RuleId").string(var_84.as_str());
     }
     if let Some(var_85) = &input.next_marker {
-        object.key("NextMarker").string(var_85);
+        object.key("NextMarker").string(var_85.as_str());
     }
     Ok(())
 }
@@ -505,7 +505,7 @@ pub fn serialize_structure_crate_input_get_regex_match_set_input(
     input: &crate::input::GetRegexMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_86) = &input.regex_match_set_id {
-        object.key("RegexMatchSetId").string(var_86);
+        object.key("RegexMatchSetId").string(var_86.as_str());
     }
     Ok(())
 }
@@ -515,7 +515,7 @@ pub fn serialize_structure_crate_input_get_regex_pattern_set_input(
     input: &crate::input::GetRegexPatternSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_87) = &input.regex_pattern_set_id {
-        object.key("RegexPatternSetId").string(var_87);
+        object.key("RegexPatternSetId").string(var_87.as_str());
     }
     Ok(())
 }
@@ -525,7 +525,7 @@ pub fn serialize_structure_crate_input_get_rule_input(
     input: &crate::input::GetRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_88) = &input.rule_id {
-        object.key("RuleId").string(var_88);
+        object.key("RuleId").string(var_88.as_str());
     }
     Ok(())
 }
@@ -535,7 +535,7 @@ pub fn serialize_structure_crate_input_get_rule_group_input(
     input: &crate::input::GetRuleGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_89) = &input.rule_group_id {
-        object.key("RuleGroupId").string(var_89);
+        object.key("RuleGroupId").string(var_89.as_str());
     }
     Ok(())
 }
@@ -545,10 +545,10 @@ pub fn serialize_structure_crate_input_get_sampled_requests_input(
     input: &crate::input::GetSampledRequestsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_90) = &input.web_acl_id {
-        object.key("WebAclId").string(var_90);
+        object.key("WebAclId").string(var_90.as_str());
     }
     if let Some(var_91) = &input.rule_id {
-        object.key("RuleId").string(var_91);
+        object.key("RuleId").string(var_91.as_str());
     }
     if let Some(var_92) = &input.time_window {
         let mut object_93 = object.key("TimeWindow").start_object();
@@ -569,7 +569,7 @@ pub fn serialize_structure_crate_input_get_size_constraint_set_input(
     input: &crate::input::GetSizeConstraintSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_94) = &input.size_constraint_set_id {
-        object.key("SizeConstraintSetId").string(var_94);
+        object.key("SizeConstraintSetId").string(var_94.as_str());
     }
     Ok(())
 }
@@ -579,7 +579,7 @@ pub fn serialize_structure_crate_input_get_sql_injection_match_set_input(
     input: &crate::input::GetSqlInjectionMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_95) = &input.sql_injection_match_set_id {
-        object.key("SqlInjectionMatchSetId").string(var_95);
+        object.key("SqlInjectionMatchSetId").string(var_95.as_str());
     }
     Ok(())
 }
@@ -589,7 +589,7 @@ pub fn serialize_structure_crate_input_get_web_acl_input(
     input: &crate::input::GetWebAclInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_96) = &input.web_acl_id {
-        object.key("WebACLId").string(var_96);
+        object.key("WebACLId").string(var_96.as_str());
     }
     Ok(())
 }
@@ -599,7 +599,7 @@ pub fn serialize_structure_crate_input_get_xss_match_set_input(
     input: &crate::input::GetXssMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_97) = &input.xss_match_set_id {
-        object.key("XssMatchSetId").string(var_97);
+        object.key("XssMatchSetId").string(var_97.as_str());
     }
     Ok(())
 }
@@ -609,10 +609,10 @@ pub fn serialize_structure_crate_input_list_activated_rules_in_rule_group_input(
     input: &crate::input::ListActivatedRulesInRuleGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_98) = &input.rule_group_id {
-        object.key("RuleGroupId").string(var_98);
+        object.key("RuleGroupId").string(var_98.as_str());
     }
     if let Some(var_99) = &input.next_marker {
-        object.key("NextMarker").string(var_99);
+        object.key("NextMarker").string(var_99.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -628,7 +628,7 @@ pub fn serialize_structure_crate_input_list_byte_match_sets_input(
     input: &crate::input::ListByteMatchSetsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_100) = &input.next_marker {
-        object.key("NextMarker").string(var_100);
+        object.key("NextMarker").string(var_100.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -644,7 +644,7 @@ pub fn serialize_structure_crate_input_list_geo_match_sets_input(
     input: &crate::input::ListGeoMatchSetsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_101) = &input.next_marker {
-        object.key("NextMarker").string(var_101);
+        object.key("NextMarker").string(var_101.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -660,7 +660,7 @@ pub fn serialize_structure_crate_input_list_ip_sets_input(
     input: &crate::input::ListIpSetsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_102) = &input.next_marker {
-        object.key("NextMarker").string(var_102);
+        object.key("NextMarker").string(var_102.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -676,7 +676,7 @@ pub fn serialize_structure_crate_input_list_logging_configurations_input(
     input: &crate::input::ListLoggingConfigurationsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_103) = &input.next_marker {
-        object.key("NextMarker").string(var_103);
+        object.key("NextMarker").string(var_103.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -692,7 +692,7 @@ pub fn serialize_structure_crate_input_list_rate_based_rules_input(
     input: &crate::input::ListRateBasedRulesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_104) = &input.next_marker {
-        object.key("NextMarker").string(var_104);
+        object.key("NextMarker").string(var_104.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -708,7 +708,7 @@ pub fn serialize_structure_crate_input_list_regex_match_sets_input(
     input: &crate::input::ListRegexMatchSetsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_105) = &input.next_marker {
-        object.key("NextMarker").string(var_105);
+        object.key("NextMarker").string(var_105.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -724,7 +724,7 @@ pub fn serialize_structure_crate_input_list_regex_pattern_sets_input(
     input: &crate::input::ListRegexPatternSetsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_106) = &input.next_marker {
-        object.key("NextMarker").string(var_106);
+        object.key("NextMarker").string(var_106.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -740,7 +740,7 @@ pub fn serialize_structure_crate_input_list_rule_groups_input(
     input: &crate::input::ListRuleGroupsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_107) = &input.next_marker {
-        object.key("NextMarker").string(var_107);
+        object.key("NextMarker").string(var_107.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -756,7 +756,7 @@ pub fn serialize_structure_crate_input_list_rules_input(
     input: &crate::input::ListRulesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_108) = &input.next_marker {
-        object.key("NextMarker").string(var_108);
+        object.key("NextMarker").string(var_108.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -772,7 +772,7 @@ pub fn serialize_structure_crate_input_list_size_constraint_sets_input(
     input: &crate::input::ListSizeConstraintSetsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_109) = &input.next_marker {
-        object.key("NextMarker").string(var_109);
+        object.key("NextMarker").string(var_109.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -788,7 +788,7 @@ pub fn serialize_structure_crate_input_list_sql_injection_match_sets_input(
     input: &crate::input::ListSqlInjectionMatchSetsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_110) = &input.next_marker {
-        object.key("NextMarker").string(var_110);
+        object.key("NextMarker").string(var_110.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -804,7 +804,7 @@ pub fn serialize_structure_crate_input_list_subscribed_rule_groups_input(
     input: &crate::input::ListSubscribedRuleGroupsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_111) = &input.next_marker {
-        object.key("NextMarker").string(var_111);
+        object.key("NextMarker").string(var_111.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -820,7 +820,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_112) = &input.next_marker {
-        object.key("NextMarker").string(var_112);
+        object.key("NextMarker").string(var_112.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -829,7 +829,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
         );
     }
     if let Some(var_113) = &input.resource_arn {
-        object.key("ResourceARN").string(var_113);
+        object.key("ResourceARN").string(var_113.as_str());
     }
     Ok(())
 }
@@ -839,7 +839,7 @@ pub fn serialize_structure_crate_input_list_web_ac_ls_input(
     input: &crate::input::ListWebAcLsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_114) = &input.next_marker {
-        object.key("NextMarker").string(var_114);
+        object.key("NextMarker").string(var_114.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -855,7 +855,7 @@ pub fn serialize_structure_crate_input_list_xss_match_sets_input(
     input: &crate::input::ListXssMatchSetsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_115) = &input.next_marker {
-        object.key("NextMarker").string(var_115);
+        object.key("NextMarker").string(var_115.as_str());
     }
     if input.limit != 0 {
         object.key("Limit").number(
@@ -886,10 +886,10 @@ pub fn serialize_structure_crate_input_put_permission_policy_input(
     input: &crate::input::PutPermissionPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_118) = &input.resource_arn {
-        object.key("ResourceArn").string(var_118);
+        object.key("ResourceArn").string(var_118.as_str());
     }
     if let Some(var_119) = &input.policy {
-        object.key("Policy").string(var_119);
+        object.key("Policy").string(var_119.as_str());
     }
     Ok(())
 }
@@ -899,7 +899,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_120) = &input.resource_arn {
-        object.key("ResourceARN").string(var_120);
+        object.key("ResourceARN").string(var_120.as_str());
     }
     if let Some(var_121) = &input.tags {
         let mut array_122 = object.key("Tags").start_array();
@@ -920,13 +920,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_125) = &input.resource_arn {
-        object.key("ResourceARN").string(var_125);
+        object.key("ResourceARN").string(var_125.as_str());
     }
     if let Some(var_126) = &input.tag_keys {
         let mut array_127 = object.key("TagKeys").start_array();
         for item_128 in var_126 {
             {
-                array_127.value().string(item_128);
+                array_127.value().string(item_128.as_str());
             }
         }
         array_127.finish();
@@ -939,10 +939,10 @@ pub fn serialize_structure_crate_input_update_byte_match_set_input(
     input: &crate::input::UpdateByteMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_129) = &input.byte_match_set_id {
-        object.key("ByteMatchSetId").string(var_129);
+        object.key("ByteMatchSetId").string(var_129.as_str());
     }
     if let Some(var_130) = &input.change_token {
-        object.key("ChangeToken").string(var_130);
+        object.key("ChangeToken").string(var_130.as_str());
     }
     if let Some(var_131) = &input.updates {
         let mut array_132 = object.key("Updates").start_array();
@@ -966,10 +966,10 @@ pub fn serialize_structure_crate_input_update_geo_match_set_input(
     input: &crate::input::UpdateGeoMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_135) = &input.geo_match_set_id {
-        object.key("GeoMatchSetId").string(var_135);
+        object.key("GeoMatchSetId").string(var_135.as_str());
     }
     if let Some(var_136) = &input.change_token {
-        object.key("ChangeToken").string(var_136);
+        object.key("ChangeToken").string(var_136.as_str());
     }
     if let Some(var_137) = &input.updates {
         let mut array_138 = object.key("Updates").start_array();
@@ -993,10 +993,10 @@ pub fn serialize_structure_crate_input_update_ip_set_input(
     input: &crate::input::UpdateIpSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_141) = &input.ip_set_id {
-        object.key("IPSetId").string(var_141);
+        object.key("IPSetId").string(var_141.as_str());
     }
     if let Some(var_142) = &input.change_token {
-        object.key("ChangeToken").string(var_142);
+        object.key("ChangeToken").string(var_142.as_str());
     }
     if let Some(var_143) = &input.updates {
         let mut array_144 = object.key("Updates").start_array();
@@ -1020,10 +1020,10 @@ pub fn serialize_structure_crate_input_update_rate_based_rule_input(
     input: &crate::input::UpdateRateBasedRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_147) = &input.rule_id {
-        object.key("RuleId").string(var_147);
+        object.key("RuleId").string(var_147.as_str());
     }
     if let Some(var_148) = &input.change_token {
-        object.key("ChangeToken").string(var_148);
+        object.key("ChangeToken").string(var_148.as_str());
     }
     if let Some(var_149) = &input.updates {
         let mut array_150 = object.key("Updates").start_array();
@@ -1053,7 +1053,7 @@ pub fn serialize_structure_crate_input_update_regex_match_set_input(
     input: &crate::input::UpdateRegexMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_153) = &input.regex_match_set_id {
-        object.key("RegexMatchSetId").string(var_153);
+        object.key("RegexMatchSetId").string(var_153.as_str());
     }
     if let Some(var_154) = &input.updates {
         let mut array_155 = object.key("Updates").start_array();
@@ -1070,7 +1070,7 @@ pub fn serialize_structure_crate_input_update_regex_match_set_input(
         array_155.finish();
     }
     if let Some(var_158) = &input.change_token {
-        object.key("ChangeToken").string(var_158);
+        object.key("ChangeToken").string(var_158.as_str());
     }
     Ok(())
 }
@@ -1080,7 +1080,7 @@ pub fn serialize_structure_crate_input_update_regex_pattern_set_input(
     input: &crate::input::UpdateRegexPatternSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_159) = &input.regex_pattern_set_id {
-        object.key("RegexPatternSetId").string(var_159);
+        object.key("RegexPatternSetId").string(var_159.as_str());
     }
     if let Some(var_160) = &input.updates {
         let mut array_161 = object.key("Updates").start_array();
@@ -1097,7 +1097,7 @@ pub fn serialize_structure_crate_input_update_regex_pattern_set_input(
         array_161.finish();
     }
     if let Some(var_164) = &input.change_token {
-        object.key("ChangeToken").string(var_164);
+        object.key("ChangeToken").string(var_164.as_str());
     }
     Ok(())
 }
@@ -1107,10 +1107,10 @@ pub fn serialize_structure_crate_input_update_rule_input(
     input: &crate::input::UpdateRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_165) = &input.rule_id {
-        object.key("RuleId").string(var_165);
+        object.key("RuleId").string(var_165.as_str());
     }
     if let Some(var_166) = &input.change_token {
-        object.key("ChangeToken").string(var_166);
+        object.key("ChangeToken").string(var_166.as_str());
     }
     if let Some(var_167) = &input.updates {
         let mut array_168 = object.key("Updates").start_array();
@@ -1134,7 +1134,7 @@ pub fn serialize_structure_crate_input_update_rule_group_input(
     input: &crate::input::UpdateRuleGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_171) = &input.rule_group_id {
-        object.key("RuleGroupId").string(var_171);
+        object.key("RuleGroupId").string(var_171.as_str());
     }
     if let Some(var_172) = &input.updates {
         let mut array_173 = object.key("Updates").start_array();
@@ -1151,7 +1151,7 @@ pub fn serialize_structure_crate_input_update_rule_group_input(
         array_173.finish();
     }
     if let Some(var_176) = &input.change_token {
-        object.key("ChangeToken").string(var_176);
+        object.key("ChangeToken").string(var_176.as_str());
     }
     Ok(())
 }
@@ -1161,10 +1161,10 @@ pub fn serialize_structure_crate_input_update_size_constraint_set_input(
     input: &crate::input::UpdateSizeConstraintSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_177) = &input.size_constraint_set_id {
-        object.key("SizeConstraintSetId").string(var_177);
+        object.key("SizeConstraintSetId").string(var_177.as_str());
     }
     if let Some(var_178) = &input.change_token {
-        object.key("ChangeToken").string(var_178);
+        object.key("ChangeToken").string(var_178.as_str());
     }
     if let Some(var_179) = &input.updates {
         let mut array_180 = object.key("Updates").start_array();
@@ -1188,10 +1188,12 @@ pub fn serialize_structure_crate_input_update_sql_injection_match_set_input(
     input: &crate::input::UpdateSqlInjectionMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_183) = &input.sql_injection_match_set_id {
-        object.key("SqlInjectionMatchSetId").string(var_183);
+        object
+            .key("SqlInjectionMatchSetId")
+            .string(var_183.as_str());
     }
     if let Some(var_184) = &input.change_token {
-        object.key("ChangeToken").string(var_184);
+        object.key("ChangeToken").string(var_184.as_str());
     }
     if let Some(var_185) = &input.updates {
         let mut array_186 = object.key("Updates").start_array();
@@ -1215,10 +1217,10 @@ pub fn serialize_structure_crate_input_update_web_acl_input(
     input: &crate::input::UpdateWebAclInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_189) = &input.web_acl_id {
-        object.key("WebACLId").string(var_189);
+        object.key("WebACLId").string(var_189.as_str());
     }
     if let Some(var_190) = &input.change_token {
-        object.key("ChangeToken").string(var_190);
+        object.key("ChangeToken").string(var_190.as_str());
     }
     if let Some(var_191) = &input.updates {
         let mut array_192 = object.key("Updates").start_array();
@@ -1247,10 +1249,10 @@ pub fn serialize_structure_crate_input_update_xss_match_set_input(
     input: &crate::input::UpdateXssMatchSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_197) = &input.xss_match_set_id {
-        object.key("XssMatchSetId").string(var_197);
+        object.key("XssMatchSetId").string(var_197.as_str());
     }
     if let Some(var_198) = &input.change_token {
-        object.key("ChangeToken").string(var_198);
+        object.key("ChangeToken").string(var_198.as_str());
     }
     if let Some(var_199) = &input.updates {
         let mut array_200 = object.key("Updates").start_array();
@@ -1274,10 +1276,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_203) = &input.key {
-        object.key("Key").string(var_203);
+        object.key("Key").string(var_203.as_str());
     }
     if let Some(var_204) = &input.value {
-        object.key("Value").string(var_204);
+        object.key("Value").string(var_204.as_str());
     }
     Ok(())
 }
@@ -1314,13 +1316,13 @@ pub fn serialize_structure_crate_model_logging_configuration(
     input: &crate::model::LoggingConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_208) = &input.resource_arn {
-        object.key("ResourceArn").string(var_208);
+        object.key("ResourceArn").string(var_208.as_str());
     }
     if let Some(var_209) = &input.log_destination_configs {
         let mut array_210 = object.key("LogDestinationConfigs").start_array();
         for item_211 in var_209 {
             {
-                array_210.value().string(item_211);
+                array_210.value().string(item_211.as_str());
             }
         }
         array_210.finish();
@@ -1437,7 +1439,7 @@ pub fn serialize_structure_crate_model_regex_pattern_set_update(
         object.key("Action").string(var_231.as_str());
     }
     if let Some(var_232) = &input.regex_pattern_string {
-        object.key("RegexPatternString").string(var_232);
+        object.key("RegexPatternString").string(var_232.as_str());
     }
     Ok(())
 }
@@ -1528,7 +1530,7 @@ pub fn serialize_structure_crate_model_field_to_match(
         object.key("Type").string(var_248.as_str());
     }
     if let Some(var_249) = &input.data {
-        object.key("Data").string(var_249);
+        object.key("Data").string(var_249.as_str());
     }
     Ok(())
 }
@@ -1577,7 +1579,7 @@ pub fn serialize_structure_crate_model_ip_set_descriptor(
         object.key("Type").string(var_257.as_str());
     }
     if let Some(var_258) = &input.value {
-        object.key("Value").string(var_258);
+        object.key("Value").string(var_258.as_str());
     }
     Ok(())
 }
@@ -1593,7 +1595,7 @@ pub fn serialize_structure_crate_model_predicate(
         object.key("Type").string(var_260.as_str());
     }
     if let Some(var_261) = &input.data_id {
-        object.key("DataId").string(var_261);
+        object.key("DataId").string(var_261.as_str());
     }
     Ok(())
 }
@@ -1611,7 +1613,7 @@ pub fn serialize_structure_crate_model_regex_match_tuple(
         object.key("TextTransformation").string(var_264.as_str());
     }
     if let Some(var_265) = &input.regex_pattern_set_id {
-        object.key("RegexPatternSetId").string(var_265);
+        object.key("RegexPatternSetId").string(var_265.as_str());
     }
     Ok(())
 }
@@ -1627,7 +1629,7 @@ pub fn serialize_structure_crate_model_activated_rule(
         );
     }
     if let Some(var_267) = &input.rule_id {
-        object.key("RuleId").string(var_267);
+        object.key("RuleId").string(var_267.as_str());
     }
     if let Some(var_268) = &input.action {
         let mut object_269 = object.key("Action").start_object();
@@ -1731,7 +1733,7 @@ pub fn serialize_structure_crate_model_excluded_rule(
     input: &crate::model::ExcludedRule,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_288) = &input.rule_id {
-        object.key("RuleId").string(var_288);
+        object.key("RuleId").string(var_288.as_str());
     }
     Ok(())
 }

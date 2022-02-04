@@ -7,7 +7,7 @@ pub fn serialize_structure_crate_input_create_connection_input(
         object.key("ProviderType").string(var_1.as_str());
     }
     if let Some(var_2) = &input.connection_name {
-        object.key("ConnectionName").string(var_2);
+        object.key("ConnectionName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.tags {
         let mut array_4 = object.key("Tags").start_array();
@@ -21,7 +21,7 @@ pub fn serialize_structure_crate_input_create_connection_input(
         array_4.finish();
     }
     if let Some(var_7) = &input.host_arn {
-        object.key("HostArn").string(var_7);
+        object.key("HostArn").string(var_7.as_str());
     }
     Ok(())
 }
@@ -31,13 +31,13 @@ pub fn serialize_structure_crate_input_create_host_input(
     input: &crate::input::CreateHostInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.name {
-        object.key("Name").string(var_8);
+        object.key("Name").string(var_8.as_str());
     }
     if let Some(var_9) = &input.provider_type {
         object.key("ProviderType").string(var_9.as_str());
     }
     if let Some(var_10) = &input.provider_endpoint {
-        object.key("ProviderEndpoint").string(var_10);
+        object.key("ProviderEndpoint").string(var_10.as_str());
     }
     if let Some(var_11) = &input.vpc_configuration {
         let mut object_12 = object.key("VpcConfiguration").start_object();
@@ -63,7 +63,7 @@ pub fn serialize_structure_crate_input_delete_connection_input(
     input: &crate::input::DeleteConnectionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.connection_arn {
-        object.key("ConnectionArn").string(var_17);
+        object.key("ConnectionArn").string(var_17.as_str());
     }
     Ok(())
 }
@@ -73,7 +73,7 @@ pub fn serialize_structure_crate_input_delete_host_input(
     input: &crate::input::DeleteHostInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.host_arn {
-        object.key("HostArn").string(var_18);
+        object.key("HostArn").string(var_18.as_str());
     }
     Ok(())
 }
@@ -83,7 +83,7 @@ pub fn serialize_structure_crate_input_get_connection_input(
     input: &crate::input::GetConnectionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.connection_arn {
-        object.key("ConnectionArn").string(var_19);
+        object.key("ConnectionArn").string(var_19.as_str());
     }
     Ok(())
 }
@@ -93,7 +93,7 @@ pub fn serialize_structure_crate_input_get_host_input(
     input: &crate::input::GetHostInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_20) = &input.host_arn {
-        object.key("HostArn").string(var_20);
+        object.key("HostArn").string(var_20.as_str());
     }
     Ok(())
 }
@@ -106,7 +106,7 @@ pub fn serialize_structure_crate_input_list_connections_input(
         object.key("ProviderTypeFilter").string(var_21.as_str());
     }
     if let Some(var_22) = &input.host_arn_filter {
-        object.key("HostArnFilter").string(var_22);
+        object.key("HostArnFilter").string(var_22.as_str());
     }
     if input.max_results != 0 {
         object.key("MaxResults").number(
@@ -115,7 +115,7 @@ pub fn serialize_structure_crate_input_list_connections_input(
         );
     }
     if let Some(var_23) = &input.next_token {
-        object.key("NextToken").string(var_23);
+        object.key("NextToken").string(var_23.as_str());
     }
     Ok(())
 }
@@ -131,7 +131,7 @@ pub fn serialize_structure_crate_input_list_hosts_input(
         );
     }
     if let Some(var_24) = &input.next_token {
-        object.key("NextToken").string(var_24);
+        object.key("NextToken").string(var_24.as_str());
     }
     Ok(())
 }
@@ -141,7 +141,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.resource_arn {
-        object.key("ResourceArn").string(var_25);
+        object.key("ResourceArn").string(var_25.as_str());
     }
     Ok(())
 }
@@ -151,7 +151,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.resource_arn {
-        object.key("ResourceArn").string(var_26);
+        object.key("ResourceArn").string(var_26.as_str());
     }
     if let Some(var_27) = &input.tags {
         let mut array_28 = object.key("Tags").start_array();
@@ -172,13 +172,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_31) = &input.resource_arn {
-        object.key("ResourceArn").string(var_31);
+        object.key("ResourceArn").string(var_31.as_str());
     }
     if let Some(var_32) = &input.tag_keys {
         let mut array_33 = object.key("TagKeys").start_array();
         for item_34 in var_32 {
             {
-                array_33.value().string(item_34);
+                array_33.value().string(item_34.as_str());
             }
         }
         array_33.finish();
@@ -191,10 +191,10 @@ pub fn serialize_structure_crate_input_update_host_input(
     input: &crate::input::UpdateHostInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.host_arn {
-        object.key("HostArn").string(var_35);
+        object.key("HostArn").string(var_35.as_str());
     }
     if let Some(var_36) = &input.provider_endpoint {
-        object.key("ProviderEndpoint").string(var_36);
+        object.key("ProviderEndpoint").string(var_36.as_str());
     }
     if let Some(var_37) = &input.vpc_configuration {
         let mut object_38 = object.key("VpcConfiguration").start_object();
@@ -209,10 +209,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_39) = &input.key {
-        object.key("Key").string(var_39);
+        object.key("Key").string(var_39.as_str());
     }
     if let Some(var_40) = &input.value {
-        object.key("Value").string(var_40);
+        object.key("Value").string(var_40.as_str());
     }
     Ok(())
 }
@@ -222,13 +222,13 @@ pub fn serialize_structure_crate_model_vpc_configuration(
     input: &crate::model::VpcConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.vpc_id {
-        object.key("VpcId").string(var_41);
+        object.key("VpcId").string(var_41.as_str());
     }
     if let Some(var_42) = &input.subnet_ids {
         let mut array_43 = object.key("SubnetIds").start_array();
         for item_44 in var_42 {
             {
-                array_43.value().string(item_44);
+                array_43.value().string(item_44.as_str());
             }
         }
         array_43.finish();
@@ -237,13 +237,13 @@ pub fn serialize_structure_crate_model_vpc_configuration(
         let mut array_46 = object.key("SecurityGroupIds").start_array();
         for item_47 in var_45 {
             {
-                array_46.value().string(item_47);
+                array_46.value().string(item_47.as_str());
             }
         }
         array_46.finish();
     }
     if let Some(var_48) = &input.tls_certificate {
-        object.key("TlsCertificate").string(var_48);
+        object.key("TlsCertificate").string(var_48.as_str());
     }
     Ok(())
 }

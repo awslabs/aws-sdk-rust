@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_start_human_loop_input(
         object_2.finish();
     }
     if let Some(var_3) = &input.flow_definition_arn {
-        object.key("FlowDefinitionArn").string(var_3);
+        object.key("FlowDefinitionArn").string(var_3.as_str());
     }
     if let Some(var_4) = &input.human_loop_input {
         let mut object_5 = object.key("HumanLoopInput").start_object();
@@ -20,7 +20,7 @@ pub fn serialize_structure_crate_input_start_human_loop_input(
         object_5.finish();
     }
     if let Some(var_6) = &input.human_loop_name {
-        object.key("HumanLoopName").string(var_6);
+        object.key("HumanLoopName").string(var_6.as_str());
     }
     Ok(())
 }
@@ -30,7 +30,7 @@ pub fn serialize_structure_crate_input_stop_human_loop_input(
     input: &crate::input::StopHumanLoopInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.human_loop_name {
-        object.key("HumanLoopName").string(var_7);
+        object.key("HumanLoopName").string(var_7.as_str());
     }
     Ok(())
 }
@@ -56,7 +56,7 @@ pub fn serialize_structure_crate_model_human_loop_input(
     input: &crate::model::HumanLoopInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.input_content {
-        object.key("InputContent").string(var_11);
+        object.key("InputContent").string(var_11.as_str());
     }
     Ok(())
 }

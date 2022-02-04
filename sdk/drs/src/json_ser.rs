@@ -27,7 +27,7 @@ pub fn serialize_structure_crate_input_create_replication_configuration_template
         object.key("ebsEncryption").string(var_5.as_str());
     }
     if let Some(var_6) = &input.ebs_encryption_key_arn {
-        object.key("ebsEncryptionKeyArn").string(var_6);
+        object.key("ebsEncryptionKeyArn").string(var_6.as_str());
     }
     if let Some(var_7) = &input.pit_policy {
         let mut array_8 = object.key("pitPolicy").start_array();
@@ -44,7 +44,9 @@ pub fn serialize_structure_crate_input_create_replication_configuration_template
         array_8.finish();
     }
     if let Some(var_11) = &input.replication_server_instance_type {
-        object.key("replicationServerInstanceType").string(var_11);
+        object
+            .key("replicationServerInstanceType")
+            .string(var_11.as_str());
     }
     if let Some(var_12) = &input.replication_servers_security_groups_i_ds {
         let mut array_13 = object
@@ -52,19 +54,19 @@ pub fn serialize_structure_crate_input_create_replication_configuration_template
             .start_array();
         for item_14 in var_12 {
             {
-                array_13.value().string(item_14);
+                array_13.value().string(item_14.as_str());
             }
         }
         array_13.finish();
     }
     if let Some(var_15) = &input.staging_area_subnet_id {
-        object.key("stagingAreaSubnetId").string(var_15);
+        object.key("stagingAreaSubnetId").string(var_15.as_str());
     }
     if let Some(var_16) = &input.staging_area_tags {
         let mut object_17 = object.key("stagingAreaTags").start_object();
         for (key_18, value_19) in var_16 {
             {
-                object_17.key(key_18).string(value_19);
+                object_17.key(key_18).string(value_19.as_str());
             }
         }
         object_17.finish();
@@ -73,7 +75,7 @@ pub fn serialize_structure_crate_input_create_replication_configuration_template
         let mut object_21 = object.key("tags").start_object();
         for (key_22, value_23) in var_20 {
             {
-                object_21.key(key_22).string(value_23);
+                object_21.key(key_22).string(value_23.as_str());
             }
         }
         object_21.finish();
@@ -89,7 +91,7 @@ pub fn serialize_structure_crate_input_delete_job_input(
     input: &crate::input::DeleteJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.job_id {
-        object.key("jobID").string(var_25);
+        object.key("jobID").string(var_25.as_str());
     }
     Ok(())
 }
@@ -99,7 +101,7 @@ pub fn serialize_structure_crate_input_delete_recovery_instance_input(
     input: &crate::input::DeleteRecoveryInstanceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.recovery_instance_id {
-        object.key("recoveryInstanceID").string(var_26);
+        object.key("recoveryInstanceID").string(var_26.as_str());
     }
     Ok(())
 }
@@ -111,7 +113,7 @@ pub fn serialize_structure_crate_input_delete_replication_configuration_template
     if let Some(var_27) = &input.replication_configuration_template_id {
         object
             .key("replicationConfigurationTemplateID")
-            .string(var_27);
+            .string(var_27.as_str());
     }
     Ok(())
 }
@@ -121,7 +123,7 @@ pub fn serialize_structure_crate_input_delete_source_server_input(
     input: &crate::input::DeleteSourceServerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.source_server_id {
-        object.key("sourceServerID").string(var_28);
+        object.key("sourceServerID").string(var_28.as_str());
     }
     Ok(())
 }
@@ -131,7 +133,7 @@ pub fn serialize_structure_crate_input_describe_job_log_items_input(
     input: &crate::input::DescribeJobLogItemsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_29) = &input.job_id {
-        object.key("jobID").string(var_29);
+        object.key("jobID").string(var_29.as_str());
     }
     if input.max_results != 0 {
         object.key("maxResults").number(
@@ -140,7 +142,7 @@ pub fn serialize_structure_crate_input_describe_job_log_items_input(
         );
     }
     if let Some(var_30) = &input.next_token {
-        object.key("nextToken").string(var_30);
+        object.key("nextToken").string(var_30.as_str());
     }
     Ok(())
 }
@@ -164,7 +166,7 @@ pub fn serialize_structure_crate_input_describe_jobs_input(
         );
     }
     if let Some(var_33) = &input.next_token {
-        object.key("nextToken").string(var_33);
+        object.key("nextToken").string(var_33.as_str());
     }
     Ok(())
 }
@@ -185,7 +187,7 @@ pub fn serialize_structure_crate_input_describe_recovery_instances_input(
         );
     }
     if let Some(var_36) = &input.next_token {
-        object.key("nextToken").string(var_36);
+        object.key("nextToken").string(var_36.as_str());
     }
     Ok(())
 }
@@ -206,13 +208,13 @@ pub fn serialize_structure_crate_input_describe_recovery_snapshots_input(
         );
     }
     if let Some(var_39) = &input.next_token {
-        object.key("nextToken").string(var_39);
+        object.key("nextToken").string(var_39.as_str());
     }
     if let Some(var_40) = &input.order {
         object.key("order").string(var_40.as_str());
     }
     if let Some(var_41) = &input.source_server_id {
-        object.key("sourceServerID").string(var_41);
+        object.key("sourceServerID").string(var_41.as_str());
     }
     Ok(())
 }
@@ -228,7 +230,7 @@ pub fn serialize_structure_crate_input_describe_replication_configuration_templa
         );
     }
     if let Some(var_42) = &input.next_token {
-        object.key("nextToken").string(var_42);
+        object.key("nextToken").string(var_42.as_str());
     }
     if let Some(var_43) = &input.replication_configuration_template_i_ds {
         let mut array_44 = object
@@ -236,7 +238,7 @@ pub fn serialize_structure_crate_input_describe_replication_configuration_templa
             .start_array();
         for item_45 in var_43 {
             {
-                array_44.value().string(item_45);
+                array_44.value().string(item_45.as_str());
             }
         }
         array_44.finish();
@@ -263,7 +265,7 @@ pub fn serialize_structure_crate_input_describe_source_servers_input(
         );
     }
     if let Some(var_48) = &input.next_token {
-        object.key("nextToken").string(var_48);
+        object.key("nextToken").string(var_48.as_str());
     }
     Ok(())
 }
@@ -273,7 +275,7 @@ pub fn serialize_structure_crate_input_disconnect_recovery_instance_input(
     input: &crate::input::DisconnectRecoveryInstanceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.recovery_instance_id {
-        object.key("recoveryInstanceID").string(var_49);
+        object.key("recoveryInstanceID").string(var_49.as_str());
     }
     Ok(())
 }
@@ -283,7 +285,7 @@ pub fn serialize_structure_crate_input_disconnect_source_server_input(
     input: &crate::input::DisconnectSourceServerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.source_server_id {
-        object.key("sourceServerID").string(var_50);
+        object.key("sourceServerID").string(var_50.as_str());
     }
     Ok(())
 }
@@ -293,7 +295,7 @@ pub fn serialize_structure_crate_input_get_failback_replication_configuration_in
     input: &crate::input::GetFailbackReplicationConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_51) = &input.recovery_instance_id {
-        object.key("recoveryInstanceID").string(var_51);
+        object.key("recoveryInstanceID").string(var_51.as_str());
     }
     Ok(())
 }
@@ -303,7 +305,7 @@ pub fn serialize_structure_crate_input_get_launch_configuration_input(
     input: &crate::input::GetLaunchConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_52) = &input.source_server_id {
-        object.key("sourceServerID").string(var_52);
+        object.key("sourceServerID").string(var_52.as_str());
     }
     Ok(())
 }
@@ -313,7 +315,7 @@ pub fn serialize_structure_crate_input_get_replication_configuration_input(
     input: &crate::input::GetReplicationConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.source_server_id {
-        object.key("sourceServerID").string(var_53);
+        object.key("sourceServerID").string(var_53.as_str());
     }
     Ok(())
 }
@@ -323,7 +325,7 @@ pub fn serialize_structure_crate_input_retry_data_replication_input(
     input: &crate::input::RetryDataReplicationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.source_server_id {
-        object.key("sourceServerID").string(var_54);
+        object.key("sourceServerID").string(var_54.as_str());
     }
     Ok(())
 }
@@ -336,7 +338,7 @@ pub fn serialize_structure_crate_input_start_failback_launch_input(
         let mut array_56 = object.key("recoveryInstanceIDs").start_array();
         for item_57 in var_55 {
             {
-                array_56.value().string(item_57);
+                array_56.value().string(item_57.as_str());
             }
         }
         array_56.finish();
@@ -345,7 +347,7 @@ pub fn serialize_structure_crate_input_start_failback_launch_input(
         let mut object_59 = object.key("tags").start_object();
         for (key_60, value_61) in var_58 {
             {
-                object_59.key(key_60).string(value_61);
+                object_59.key(key_60).string(value_61.as_str());
             }
         }
         object_59.finish();
@@ -375,7 +377,7 @@ pub fn serialize_structure_crate_input_start_recovery_input(
         let mut object_68 = object.key("tags").start_object();
         for (key_69, value_70) in var_67 {
             {
-                object_68.key(key_69).string(value_70);
+                object_68.key(key_69).string(value_70.as_str());
             }
         }
         object_68.finish();
@@ -388,7 +390,7 @@ pub fn serialize_structure_crate_input_stop_failback_input(
     input: &crate::input::StopFailbackInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_71) = &input.recovery_instance_id {
-        object.key("recoveryInstanceID").string(var_71);
+        object.key("recoveryInstanceID").string(var_71.as_str());
     }
     Ok(())
 }
@@ -401,7 +403,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_73 = object.key("tags").start_object();
         for (key_74, value_75) in var_72 {
             {
-                object_73.key(key_74).string(value_75);
+                object_73.key(key_74).string(value_75.as_str());
             }
         }
         object_73.finish();
@@ -417,7 +419,7 @@ pub fn serialize_structure_crate_input_terminate_recovery_instances_input(
         let mut array_77 = object.key("recoveryInstanceIDs").start_array();
         for item_78 in var_76 {
             {
-                array_77.value().string(item_78);
+                array_77.value().string(item_78.as_str());
             }
         }
         array_77.finish();
@@ -436,10 +438,10 @@ pub fn serialize_structure_crate_input_update_failback_replication_configuration
         );
     }
     if let Some(var_79) = &input.name {
-        object.key("name").string(var_79);
+        object.key("name").string(var_79.as_str());
     }
     if let Some(var_80) = &input.recovery_instance_id {
-        object.key("recoveryInstanceID").string(var_80);
+        object.key("recoveryInstanceID").string(var_80.as_str());
     }
     if let Some(var_81) = &input.use_private_ip {
         object.key("usePrivateIP").boolean(*var_81);
@@ -466,10 +468,10 @@ pub fn serialize_structure_crate_input_update_launch_configuration_input(
         object_86.finish();
     }
     if let Some(var_87) = &input.name {
-        object.key("name").string(var_87);
+        object.key("name").string(var_87.as_str());
     }
     if let Some(var_88) = &input.source_server_id {
-        object.key("sourceServerID").string(var_88);
+        object.key("sourceServerID").string(var_88.as_str());
     }
     if let Some(var_89) = &input.target_instance_type_right_sizing_method {
         object
@@ -507,10 +509,10 @@ pub fn serialize_structure_crate_input_update_replication_configuration_input(
         object.key("ebsEncryption").string(var_94.as_str());
     }
     if let Some(var_95) = &input.ebs_encryption_key_arn {
-        object.key("ebsEncryptionKeyArn").string(var_95);
+        object.key("ebsEncryptionKeyArn").string(var_95.as_str());
     }
     if let Some(var_96) = &input.name {
-        object.key("name").string(var_96);
+        object.key("name").string(var_96.as_str());
     }
     if let Some(var_97) = &input.pit_policy {
         let mut array_98 = object.key("pitPolicy").start_array();
@@ -538,7 +540,9 @@ pub fn serialize_structure_crate_input_update_replication_configuration_input(
         array_102.finish();
     }
     if let Some(var_105) = &input.replication_server_instance_type {
-        object.key("replicationServerInstanceType").string(var_105);
+        object
+            .key("replicationServerInstanceType")
+            .string(var_105.as_str());
     }
     if let Some(var_106) = &input.replication_servers_security_groups_i_ds {
         let mut array_107 = object
@@ -546,22 +550,22 @@ pub fn serialize_structure_crate_input_update_replication_configuration_input(
             .start_array();
         for item_108 in var_106 {
             {
-                array_107.value().string(item_108);
+                array_107.value().string(item_108.as_str());
             }
         }
         array_107.finish();
     }
     if let Some(var_109) = &input.source_server_id {
-        object.key("sourceServerID").string(var_109);
+        object.key("sourceServerID").string(var_109.as_str());
     }
     if let Some(var_110) = &input.staging_area_subnet_id {
-        object.key("stagingAreaSubnetId").string(var_110);
+        object.key("stagingAreaSubnetId").string(var_110.as_str());
     }
     if let Some(var_111) = &input.staging_area_tags {
         let mut object_112 = object.key("stagingAreaTags").start_object();
         for (key_113, value_114) in var_111 {
             {
-                object_112.key(key_113).string(value_114);
+                object_112.key(key_113).string(value_114.as_str());
             }
         }
         object_112.finish();
@@ -579,7 +583,7 @@ pub fn serialize_structure_crate_input_update_replication_configuration_template
     input: &crate::input::UpdateReplicationConfigurationTemplateInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_116) = &input.arn {
-        object.key("arn").string(var_116);
+        object.key("arn").string(var_116.as_str());
     }
     if let Some(var_117) = &input.associate_default_security_group {
         object
@@ -607,7 +611,7 @@ pub fn serialize_structure_crate_input_update_replication_configuration_template
         object.key("ebsEncryption").string(var_121.as_str());
     }
     if let Some(var_122) = &input.ebs_encryption_key_arn {
-        object.key("ebsEncryptionKeyArn").string(var_122);
+        object.key("ebsEncryptionKeyArn").string(var_122.as_str());
     }
     if let Some(var_123) = &input.pit_policy {
         let mut array_124 = object.key("pitPolicy").start_array();
@@ -626,10 +630,12 @@ pub fn serialize_structure_crate_input_update_replication_configuration_template
     if let Some(var_127) = &input.replication_configuration_template_id {
         object
             .key("replicationConfigurationTemplateID")
-            .string(var_127);
+            .string(var_127.as_str());
     }
     if let Some(var_128) = &input.replication_server_instance_type {
-        object.key("replicationServerInstanceType").string(var_128);
+        object
+            .key("replicationServerInstanceType")
+            .string(var_128.as_str());
     }
     if let Some(var_129) = &input.replication_servers_security_groups_i_ds {
         let mut array_130 = object
@@ -637,19 +643,19 @@ pub fn serialize_structure_crate_input_update_replication_configuration_template
             .start_array();
         for item_131 in var_129 {
             {
-                array_130.value().string(item_131);
+                array_130.value().string(item_131.as_str());
             }
         }
         array_130.finish();
     }
     if let Some(var_132) = &input.staging_area_subnet_id {
-        object.key("stagingAreaSubnetId").string(var_132);
+        object.key("stagingAreaSubnetId").string(var_132.as_str());
     }
     if let Some(var_133) = &input.staging_area_tags {
         let mut object_134 = object.key("stagingAreaTags").start_object();
         for (key_135, value_136) in var_133 {
             {
-                object_134.key(key_135).string(value_136);
+                object_134.key(key_135).string(value_136.as_str());
             }
         }
         object_134.finish();
@@ -701,16 +707,16 @@ pub fn serialize_structure_crate_model_describe_jobs_request_filters(
         let mut array_141 = object.key("jobIDs").start_array();
         for item_142 in var_140 {
             {
-                array_141.value().string(item_142);
+                array_141.value().string(item_142.as_str());
             }
         }
         array_141.finish();
     }
     if let Some(var_143) = &input.from_date {
-        object.key("fromDate").string(var_143);
+        object.key("fromDate").string(var_143.as_str());
     }
     if let Some(var_144) = &input.to_date {
-        object.key("toDate").string(var_144);
+        object.key("toDate").string(var_144.as_str());
     }
     Ok(())
 }
@@ -723,7 +729,7 @@ pub fn serialize_structure_crate_model_describe_recovery_instances_request_filte
         let mut array_146 = object.key("recoveryInstanceIDs").start_array();
         for item_147 in var_145 {
             {
-                array_146.value().string(item_147);
+                array_146.value().string(item_147.as_str());
             }
         }
         array_146.finish();
@@ -732,7 +738,7 @@ pub fn serialize_structure_crate_model_describe_recovery_instances_request_filte
         let mut array_149 = object.key("sourceServerIDs").start_array();
         for item_150 in var_148 {
             {
-                array_149.value().string(item_150);
+                array_149.value().string(item_150.as_str());
             }
         }
         array_149.finish();
@@ -745,10 +751,10 @@ pub fn serialize_structure_crate_model_describe_recovery_snapshots_request_filte
     input: &crate::model::DescribeRecoverySnapshotsRequestFilters,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_151) = &input.from_date_time {
-        object.key("fromDateTime").string(var_151);
+        object.key("fromDateTime").string(var_151.as_str());
     }
     if let Some(var_152) = &input.to_date_time {
-        object.key("toDateTime").string(var_152);
+        object.key("toDateTime").string(var_152.as_str());
     }
     Ok(())
 }
@@ -761,13 +767,13 @@ pub fn serialize_structure_crate_model_describe_source_servers_request_filters(
         let mut array_154 = object.key("sourceServerIDs").start_array();
         for item_155 in var_153 {
             {
-                array_154.value().string(item_155);
+                array_154.value().string(item_155.as_str());
             }
         }
         array_154.finish();
     }
     if let Some(var_156) = &input.hardware_id {
-        object.key("hardwareId").string(var_156);
+        object.key("hardwareId").string(var_156.as_str());
     }
     Ok(())
 }
@@ -777,10 +783,10 @@ pub fn serialize_structure_crate_model_start_recovery_request_source_server(
     input: &crate::model::StartRecoveryRequestSourceServer,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_157) = &input.source_server_id {
-        object.key("sourceServerID").string(var_157);
+        object.key("sourceServerID").string(var_157.as_str());
     }
     if let Some(var_158) = &input.recovery_snapshot_id {
-        object.key("recoverySnapshotID").string(var_158);
+        object.key("recoverySnapshotID").string(var_158.as_str());
     }
     Ok(())
 }
@@ -800,7 +806,7 @@ pub fn serialize_structure_crate_model_replication_configuration_replicated_disk
     input: &crate::model::ReplicationConfigurationReplicatedDisk,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_160) = &input.device_name {
-        object.key("deviceName").string(var_160);
+        object.key("deviceName").string(var_160.as_str());
     }
     if let Some(var_161) = &input.is_boot_disk {
         object.key("isBootDisk").boolean(*var_161);

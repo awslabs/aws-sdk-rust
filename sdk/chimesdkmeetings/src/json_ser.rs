@@ -25,7 +25,7 @@ pub fn serialize_structure_crate_input_create_attendee_input(
     input: &crate::input::CreateAttendeeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.external_user_id {
-        object.key("ExternalUserId").string(var_5);
+        object.key("ExternalUserId").string(var_5.as_str());
     }
     Ok(())
 }
@@ -35,13 +35,13 @@ pub fn serialize_structure_crate_input_create_meeting_input(
     input: &crate::input::CreateMeetingInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_6) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_6);
+        object.key("ClientRequestToken").string(var_6.as_str());
     }
     if let Some(var_7) = &input.external_meeting_id {
-        object.key("ExternalMeetingId").string(var_7);
+        object.key("ExternalMeetingId").string(var_7.as_str());
     }
     if let Some(var_8) = &input.media_region {
-        object.key("MediaRegion").string(var_8);
+        object.key("MediaRegion").string(var_8.as_str());
     }
     if let Some(var_9) = &input.meeting_features {
         let mut object_10 = object.key("MeetingFeatures").start_object();
@@ -52,7 +52,7 @@ pub fn serialize_structure_crate_input_create_meeting_input(
         object_10.finish();
     }
     if let Some(var_11) = &input.meeting_host_id {
-        object.key("MeetingHostId").string(var_11);
+        object.key("MeetingHostId").string(var_11.as_str());
     }
     if let Some(var_12) = &input.notifications_configuration {
         let mut object_13 = object.key("NotificationsConfiguration").start_object();
@@ -84,13 +84,13 @@ pub fn serialize_structure_crate_input_create_meeting_with_attendees_input(
         array_15.finish();
     }
     if let Some(var_18) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_18);
+        object.key("ClientRequestToken").string(var_18.as_str());
     }
     if let Some(var_19) = &input.external_meeting_id {
-        object.key("ExternalMeetingId").string(var_19);
+        object.key("ExternalMeetingId").string(var_19.as_str());
     }
     if let Some(var_20) = &input.media_region {
-        object.key("MediaRegion").string(var_20);
+        object.key("MediaRegion").string(var_20.as_str());
     }
     if let Some(var_21) = &input.meeting_features {
         let mut object_22 = object.key("MeetingFeatures").start_object();
@@ -101,7 +101,7 @@ pub fn serialize_structure_crate_input_create_meeting_with_attendees_input(
         object_22.finish();
     }
     if let Some(var_23) = &input.meeting_host_id {
-        object.key("MeetingHostId").string(var_23);
+        object.key("MeetingHostId").string(var_23.as_str());
     }
     if let Some(var_24) = &input.notifications_configuration {
         let mut object_25 = object.key("NotificationsConfiguration").start_object();
@@ -134,7 +134,7 @@ pub fn serialize_structure_crate_model_create_attendee_request_item(
     input: &crate::model::CreateAttendeeRequestItem,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.external_user_id {
-        object.key("ExternalUserId").string(var_28);
+        object.key("ExternalUserId").string(var_28.as_str());
     }
     Ok(())
 }
@@ -156,13 +156,13 @@ pub fn serialize_structure_crate_model_notifications_configuration(
     input: &crate::model::NotificationsConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_31) = &input.lambda_function_arn {
-        object.key("LambdaFunctionArn").string(var_31);
+        object.key("LambdaFunctionArn").string(var_31.as_str());
     }
     if let Some(var_32) = &input.sns_topic_arn {
-        object.key("SnsTopicArn").string(var_32);
+        object.key("SnsTopicArn").string(var_32.as_str());
     }
     if let Some(var_33) = &input.sqs_queue_arn {
-        object.key("SqsQueueArn").string(var_33);
+        object.key("SqsQueueArn").string(var_33.as_str());
     }
     Ok(())
 }
@@ -211,10 +211,10 @@ pub fn serialize_structure_crate_model_engine_transcribe_settings(
         object.key("VocabularyFilterMethod").string(var_40.as_str());
     }
     if let Some(var_41) = &input.vocabulary_filter_name {
-        object.key("VocabularyFilterName").string(var_41);
+        object.key("VocabularyFilterName").string(var_41.as_str());
     }
     if let Some(var_42) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_42);
+        object.key("VocabularyName").string(var_42.as_str());
     }
     if let Some(var_43) = &input.region {
         object.key("Region").string(var_43.as_str());
@@ -238,10 +238,10 @@ pub fn serialize_structure_crate_model_engine_transcribe_settings(
         object.key("ContentRedactionType").string(var_46.as_str());
     }
     if let Some(var_47) = &input.pii_entity_types {
-        object.key("PiiEntityTypes").string(var_47);
+        object.key("PiiEntityTypes").string(var_47.as_str());
     }
     if let Some(var_48) = &input.language_model_name {
-        object.key("LanguageModelName").string(var_48);
+        object.key("LanguageModelName").string(var_48.as_str());
     }
     Ok(())
 }
@@ -260,7 +260,7 @@ pub fn serialize_structure_crate_model_engine_transcribe_medical_settings(
         object.key("Type").string(var_51.as_str());
     }
     if let Some(var_52) = &input.vocabulary_name {
-        object.key("VocabularyName").string(var_52);
+        object.key("VocabularyName").string(var_52.as_str());
     }
     if let Some(var_53) = &input.region {
         object.key("Region").string(var_53.as_str());

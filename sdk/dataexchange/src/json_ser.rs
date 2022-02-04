@@ -7,16 +7,16 @@ pub fn serialize_structure_crate_input_create_data_set_input(
         object.key("AssetType").string(var_1.as_str());
     }
     if let Some(var_2) = &input.description {
-        object.key("Description").string(var_2);
+        object.key("Description").string(var_2.as_str());
     }
     if let Some(var_3) = &input.name {
-        object.key("Name").string(var_3);
+        object.key("Name").string(var_3.as_str());
     }
     if let Some(var_4) = &input.tags {
         let mut object_5 = object.key("Tags").start_object();
         for (key_6, value_7) in var_4 {
             {
-                object_5.key(key_6).string(value_7);
+                object_5.key(key_6).string(value_7.as_str());
             }
         }
         object_5.finish();
@@ -61,13 +61,13 @@ pub fn serialize_structure_crate_input_create_revision_input(
     input: &crate::input::CreateRevisionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.comment {
-        object.key("Comment").string(var_15);
+        object.key("Comment").string(var_15.as_str());
     }
     if let Some(var_16) = &input.tags {
         let mut object_17 = object.key("Tags").start_object();
         for (key_18, value_19) in var_16 {
             {
-                object_17.key(key_18).string(value_19);
+                object_17.key(key_18).string(value_19.as_str());
             }
         }
         object_17.finish();
@@ -83,7 +83,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_21 = object.key("tags").start_object();
         for (key_22, value_23) in var_20 {
             {
-                object_21.key(key_22).string(value_23);
+                object_21.key(key_22).string(value_23.as_str());
             }
         }
         object_21.finish();
@@ -96,7 +96,7 @@ pub fn serialize_structure_crate_input_update_asset_input(
     input: &crate::input::UpdateAssetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.name {
-        object.key("Name").string(var_24);
+        object.key("Name").string(var_24.as_str());
     }
     Ok(())
 }
@@ -106,10 +106,10 @@ pub fn serialize_structure_crate_input_update_data_set_input(
     input: &crate::input::UpdateDataSetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.description {
-        object.key("Description").string(var_25);
+        object.key("Description").string(var_25.as_str());
     }
     if let Some(var_26) = &input.name {
-        object.key("Name").string(var_26);
+        object.key("Name").string(var_26.as_str());
     }
     Ok(())
 }
@@ -131,7 +131,7 @@ pub fn serialize_structure_crate_input_update_revision_input(
     input: &crate::input::UpdateRevisionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_29) = &input.comment {
-        object.key("Comment").string(var_29);
+        object.key("Comment").string(var_29.as_str());
     }
     if input.finalized {
         object.key("Finalized").boolean(input.finalized);
@@ -247,7 +247,7 @@ pub fn serialize_structure_crate_model_revision_published(
     input: &crate::model::RevisionPublished,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_52) = &input.data_set_id {
-        object.key("DataSetId").string(var_52);
+        object.key("DataSetId").string(var_52.as_str());
     }
     Ok(())
 }
@@ -257,13 +257,13 @@ pub fn serialize_structure_crate_model_export_asset_to_signed_url_request_detail
     input: &crate::model::ExportAssetToSignedUrlRequestDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.asset_id {
-        object.key("AssetId").string(var_53);
+        object.key("AssetId").string(var_53.as_str());
     }
     if let Some(var_54) = &input.data_set_id {
-        object.key("DataSetId").string(var_54);
+        object.key("DataSetId").string(var_54.as_str());
     }
     if let Some(var_55) = &input.revision_id {
-        object.key("RevisionId").string(var_55);
+        object.key("RevisionId").string(var_55.as_str());
     }
     Ok(())
 }
@@ -287,7 +287,7 @@ pub fn serialize_structure_crate_model_export_assets_to_s3_request_details(
         array_57.finish();
     }
     if let Some(var_60) = &input.data_set_id {
-        object.key("DataSetId").string(var_60);
+        object.key("DataSetId").string(var_60.as_str());
     }
     if let Some(var_61) = &input.encryption {
         let mut object_62 = object.key("Encryption").start_object();
@@ -298,7 +298,7 @@ pub fn serialize_structure_crate_model_export_assets_to_s3_request_details(
         object_62.finish();
     }
     if let Some(var_63) = &input.revision_id {
-        object.key("RevisionId").string(var_63);
+        object.key("RevisionId").string(var_63.as_str());
     }
     Ok(())
 }
@@ -308,7 +308,7 @@ pub fn serialize_structure_crate_model_export_revisions_to_s3_request_details(
     input: &crate::model::ExportRevisionsToS3RequestDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_64) = &input.data_set_id {
-        object.key("DataSetId").string(var_64);
+        object.key("DataSetId").string(var_64.as_str());
     }
     if let Some(var_65) = &input.encryption {
         let mut object_66 = object.key("Encryption").start_object();
@@ -340,16 +340,16 @@ pub fn serialize_structure_crate_model_import_asset_from_signed_url_request_deta
     input: &crate::model::ImportAssetFromSignedUrlRequestDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_71) = &input.asset_name {
-        object.key("AssetName").string(var_71);
+        object.key("AssetName").string(var_71.as_str());
     }
     if let Some(var_72) = &input.data_set_id {
-        object.key("DataSetId").string(var_72);
+        object.key("DataSetId").string(var_72.as_str());
     }
     if let Some(var_73) = &input.md5_hash {
-        object.key("Md5Hash").string(var_73);
+        object.key("Md5Hash").string(var_73.as_str());
     }
     if let Some(var_74) = &input.revision_id {
-        object.key("RevisionId").string(var_74);
+        object.key("RevisionId").string(var_74.as_str());
     }
     Ok(())
 }
@@ -373,10 +373,10 @@ pub fn serialize_structure_crate_model_import_assets_from_s3_request_details(
         array_76.finish();
     }
     if let Some(var_79) = &input.data_set_id {
-        object.key("DataSetId").string(var_79);
+        object.key("DataSetId").string(var_79.as_str());
     }
     if let Some(var_80) = &input.revision_id {
-        object.key("RevisionId").string(var_80);
+        object.key("RevisionId").string(var_80.as_str());
     }
     Ok(())
 }
@@ -397,10 +397,10 @@ pub fn serialize_structure_crate_model_import_assets_from_redshift_data_shares_r
         array_82.finish();
     }
     if let Some(var_85) = &input.data_set_id {
-        object.key("DataSetId").string(var_85);
+        object.key("DataSetId").string(var_85.as_str());
     }
     if let Some(var_86) = &input.revision_id {
-        object.key("RevisionId").string(var_86);
+        object.key("RevisionId").string(var_86.as_str());
     }
     Ok(())
 }
@@ -410,31 +410,33 @@ pub fn serialize_structure_crate_model_import_asset_from_api_gateway_api_request
     input: &crate::model::ImportAssetFromApiGatewayApiRequestDetails,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_87) = &input.api_description {
-        object.key("ApiDescription").string(var_87);
+        object.key("ApiDescription").string(var_87.as_str());
     }
     if let Some(var_88) = &input.api_id {
-        object.key("ApiId").string(var_88);
+        object.key("ApiId").string(var_88.as_str());
     }
     if let Some(var_89) = &input.api_key {
-        object.key("ApiKey").string(var_89);
+        object.key("ApiKey").string(var_89.as_str());
     }
     if let Some(var_90) = &input.api_name {
-        object.key("ApiName").string(var_90);
+        object.key("ApiName").string(var_90.as_str());
     }
     if let Some(var_91) = &input.api_specification_md5_hash {
-        object.key("ApiSpecificationMd5Hash").string(var_91);
+        object
+            .key("ApiSpecificationMd5Hash")
+            .string(var_91.as_str());
     }
     if let Some(var_92) = &input.data_set_id {
-        object.key("DataSetId").string(var_92);
+        object.key("DataSetId").string(var_92.as_str());
     }
     if let Some(var_93) = &input.protocol_type {
         object.key("ProtocolType").string(var_93.as_str());
     }
     if let Some(var_94) = &input.revision_id {
-        object.key("RevisionId").string(var_94);
+        object.key("RevisionId").string(var_94.as_str());
     }
     if let Some(var_95) = &input.stage {
-        object.key("Stage").string(var_95);
+        object.key("Stage").string(var_95.as_str());
     }
     Ok(())
 }
@@ -444,7 +446,7 @@ pub fn serialize_structure_crate_model_export_server_side_encryption(
     input: &crate::model::ExportServerSideEncryption,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_96) = &input.kms_key_arn {
-        object.key("KmsKeyArn").string(var_96);
+        object.key("KmsKeyArn").string(var_96.as_str());
     }
     if let Some(var_97) = &input.r#type {
         object.key("Type").string(var_97.as_str());
@@ -457,10 +459,10 @@ pub fn serialize_structure_crate_model_auto_export_revision_destination_entry(
     input: &crate::model::AutoExportRevisionDestinationEntry,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_98) = &input.bucket {
-        object.key("Bucket").string(var_98);
+        object.key("Bucket").string(var_98.as_str());
     }
     if let Some(var_99) = &input.key_pattern {
-        object.key("KeyPattern").string(var_99);
+        object.key("KeyPattern").string(var_99.as_str());
     }
     Ok(())
 }
@@ -470,13 +472,13 @@ pub fn serialize_structure_crate_model_asset_destination_entry(
     input: &crate::model::AssetDestinationEntry,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_100) = &input.asset_id {
-        object.key("AssetId").string(var_100);
+        object.key("AssetId").string(var_100.as_str());
     }
     if let Some(var_101) = &input.bucket {
-        object.key("Bucket").string(var_101);
+        object.key("Bucket").string(var_101.as_str());
     }
     if let Some(var_102) = &input.key {
-        object.key("Key").string(var_102);
+        object.key("Key").string(var_102.as_str());
     }
     Ok(())
 }
@@ -486,13 +488,13 @@ pub fn serialize_structure_crate_model_revision_destination_entry(
     input: &crate::model::RevisionDestinationEntry,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_103) = &input.bucket {
-        object.key("Bucket").string(var_103);
+        object.key("Bucket").string(var_103.as_str());
     }
     if let Some(var_104) = &input.key_pattern {
-        object.key("KeyPattern").string(var_104);
+        object.key("KeyPattern").string(var_104.as_str());
     }
     if let Some(var_105) = &input.revision_id {
-        object.key("RevisionId").string(var_105);
+        object.key("RevisionId").string(var_105.as_str());
     }
     Ok(())
 }
@@ -502,10 +504,10 @@ pub fn serialize_structure_crate_model_asset_source_entry(
     input: &crate::model::AssetSourceEntry,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_106) = &input.bucket {
-        object.key("Bucket").string(var_106);
+        object.key("Bucket").string(var_106.as_str());
     }
     if let Some(var_107) = &input.key {
-        object.key("Key").string(var_107);
+        object.key("Key").string(var_107.as_str());
     }
     Ok(())
 }
@@ -515,7 +517,7 @@ pub fn serialize_structure_crate_model_redshift_data_share_asset_source_entry(
     input: &crate::model::RedshiftDataShareAssetSourceEntry,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_108) = &input.data_share_arn {
-        object.key("DataShareArn").string(var_108);
+        object.key("DataShareArn").string(var_108.as_str());
     }
     Ok(())
 }

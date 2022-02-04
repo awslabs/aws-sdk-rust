@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_create_home_region_control_input(
     input: &crate::input::CreateHomeRegionControlInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.home_region {
-        object.key("HomeRegion").string(var_1);
+        object.key("HomeRegion").string(var_1.as_str());
     }
     if let Some(var_2) = &input.target {
         let mut object_3 = object.key("Target").start_object();
@@ -22,10 +22,10 @@ pub fn serialize_structure_crate_input_describe_home_region_controls_input(
     input: &crate::input::DescribeHomeRegionControlsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_4) = &input.control_id {
-        object.key("ControlId").string(var_4);
+        object.key("ControlId").string(var_4.as_str());
     }
     if let Some(var_5) = &input.home_region {
-        object.key("HomeRegion").string(var_5);
+        object.key("HomeRegion").string(var_5.as_str());
     }
     if let Some(var_6) = &input.target {
         let mut object_7 = object.key("Target").start_object();
@@ -39,7 +39,7 @@ pub fn serialize_structure_crate_input_describe_home_region_controls_input(
         );
     }
     if let Some(var_9) = &input.next_token {
-        object.key("NextToken").string(var_9);
+        object.key("NextToken").string(var_9.as_str());
     }
     Ok(())
 }
@@ -52,7 +52,7 @@ pub fn serialize_structure_crate_model_target(
         object.key("Type").string(var_10.as_str());
     }
     if let Some(var_11) = &input.id {
-        object.key("Id").string(var_11);
+        object.key("Id").string(var_11.as_str());
     }
     Ok(())
 }

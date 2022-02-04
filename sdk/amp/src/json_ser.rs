@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_create_alert_manager_definition_input(
     input: &crate::input::CreateAlertManagerDefinitionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1);
+        object.key("clientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.data {
         object
@@ -19,7 +19,7 @@ pub fn serialize_structure_crate_input_create_rule_groups_namespace_input(
     input: &crate::input::CreateRuleGroupsNamespaceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.client_token {
-        object.key("clientToken").string(var_3);
+        object.key("clientToken").string(var_3.as_str());
     }
     if let Some(var_4) = &input.data {
         object
@@ -27,13 +27,13 @@ pub fn serialize_structure_crate_input_create_rule_groups_namespace_input(
             .string_unchecked(&aws_smithy_types::base64::encode(var_4));
     }
     if let Some(var_5) = &input.name {
-        object.key("name").string(var_5);
+        object.key("name").string(var_5.as_str());
     }
     if let Some(var_6) = &input.tags {
         let mut object_7 = object.key("tags").start_object();
         for (key_8, value_9) in var_6 {
             {
-                object_7.key(key_8).string(value_9);
+                object_7.key(key_8).string(value_9.as_str());
             }
         }
         object_7.finish();
@@ -46,16 +46,16 @@ pub fn serialize_structure_crate_input_create_workspace_input(
     input: &crate::input::CreateWorkspaceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.alias {
-        object.key("alias").string(var_10);
+        object.key("alias").string(var_10.as_str());
     }
     if let Some(var_11) = &input.client_token {
-        object.key("clientToken").string(var_11);
+        object.key("clientToken").string(var_11.as_str());
     }
     if let Some(var_12) = &input.tags {
         let mut object_13 = object.key("tags").start_object();
         for (key_14, value_15) in var_12 {
             {
-                object_13.key(key_14).string(value_15);
+                object_13.key(key_14).string(value_15.as_str());
             }
         }
         object_13.finish();
@@ -68,7 +68,7 @@ pub fn serialize_structure_crate_input_put_alert_manager_definition_input(
     input: &crate::input::PutAlertManagerDefinitionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.client_token {
-        object.key("clientToken").string(var_16);
+        object.key("clientToken").string(var_16.as_str());
     }
     if let Some(var_17) = &input.data {
         object
@@ -83,7 +83,7 @@ pub fn serialize_structure_crate_input_put_rule_groups_namespace_input(
     input: &crate::input::PutRuleGroupsNamespaceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.client_token {
-        object.key("clientToken").string(var_18);
+        object.key("clientToken").string(var_18.as_str());
     }
     if let Some(var_19) = &input.data {
         object
@@ -101,7 +101,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_21 = object.key("tags").start_object();
         for (key_22, value_23) in var_20 {
             {
-                object_21.key(key_22).string(value_23);
+                object_21.key(key_22).string(value_23.as_str());
             }
         }
         object_21.finish();
@@ -114,10 +114,10 @@ pub fn serialize_structure_crate_input_update_workspace_alias_input(
     input: &crate::input::UpdateWorkspaceAliasInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.alias {
-        object.key("alias").string(var_24);
+        object.key("alias").string(var_24.as_str());
     }
     if let Some(var_25) = &input.client_token {
-        object.key("clientToken").string(var_25);
+        object.key("clientToken").string(var_25.as_str());
     }
     Ok(())
 }

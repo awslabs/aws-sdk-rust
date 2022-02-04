@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_delete_alternate_contact_input(
     input: &crate::input::DeleteAlternateContactInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.account_id {
-        object.key("AccountId").string(var_1);
+        object.key("AccountId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.alternate_contact_type {
         object.key("AlternateContactType").string(var_2.as_str());
@@ -17,7 +17,7 @@ pub fn serialize_structure_crate_input_get_alternate_contact_input(
     input: &crate::input::GetAlternateContactInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.account_id {
-        object.key("AccountId").string(var_3);
+        object.key("AccountId").string(var_3.as_str());
     }
     if let Some(var_4) = &input.alternate_contact_type {
         object.key("AlternateContactType").string(var_4.as_str());
@@ -30,22 +30,22 @@ pub fn serialize_structure_crate_input_put_alternate_contact_input(
     input: &crate::input::PutAlternateContactInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_5) = &input.account_id {
-        object.key("AccountId").string(var_5);
+        object.key("AccountId").string(var_5.as_str());
     }
     if let Some(var_6) = &input.alternate_contact_type {
         object.key("AlternateContactType").string(var_6.as_str());
     }
     if let Some(var_7) = &input.email_address {
-        object.key("EmailAddress").string(var_7);
+        object.key("EmailAddress").string(var_7.as_str());
     }
     if let Some(var_8) = &input.name {
-        object.key("Name").string(var_8);
+        object.key("Name").string(var_8.as_str());
     }
     if let Some(var_9) = &input.phone_number {
-        object.key("PhoneNumber").string(var_9);
+        object.key("PhoneNumber").string(var_9.as_str());
     }
     if let Some(var_10) = &input.title {
-        object.key("Title").string(var_10);
+        object.key("Title").string(var_10.as_str());
     }
     Ok(())
 }

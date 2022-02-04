@@ -4,13 +4,13 @@ pub fn serialize_structure_crate_input_associate_connect_peer_input(
     input: &crate::input::AssociateConnectPeerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.connect_peer_id {
-        object.key("ConnectPeerId").string(var_1);
+        object.key("ConnectPeerId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.device_id {
-        object.key("DeviceId").string(var_2);
+        object.key("DeviceId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.link_id {
-        object.key("LinkId").string(var_3);
+        object.key("LinkId").string(var_3.as_str());
     }
     Ok(())
 }
@@ -20,13 +20,13 @@ pub fn serialize_structure_crate_input_associate_customer_gateway_input(
     input: &crate::input::AssociateCustomerGatewayInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_4) = &input.customer_gateway_arn {
-        object.key("CustomerGatewayArn").string(var_4);
+        object.key("CustomerGatewayArn").string(var_4.as_str());
     }
     if let Some(var_5) = &input.device_id {
-        object.key("DeviceId").string(var_5);
+        object.key("DeviceId").string(var_5.as_str());
     }
     if let Some(var_6) = &input.link_id {
-        object.key("LinkId").string(var_6);
+        object.key("LinkId").string(var_6.as_str());
     }
     Ok(())
 }
@@ -36,10 +36,10 @@ pub fn serialize_structure_crate_input_associate_link_input(
     input: &crate::input::AssociateLinkInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.device_id {
-        object.key("DeviceId").string(var_7);
+        object.key("DeviceId").string(var_7.as_str());
     }
     if let Some(var_8) = &input.link_id {
-        object.key("LinkId").string(var_8);
+        object.key("LinkId").string(var_8.as_str());
     }
     Ok(())
 }
@@ -49,13 +49,15 @@ pub fn serialize_structure_crate_input_associate_transit_gateway_connect_peer_in
     input: &crate::input::AssociateTransitGatewayConnectPeerInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.device_id {
-        object.key("DeviceId").string(var_9);
+        object.key("DeviceId").string(var_9.as_str());
     }
     if let Some(var_10) = &input.link_id {
-        object.key("LinkId").string(var_10);
+        object.key("LinkId").string(var_10.as_str());
     }
     if let Some(var_11) = &input.transit_gateway_connect_peer_arn {
-        object.key("TransitGatewayConnectPeerArn").string(var_11);
+        object
+            .key("TransitGatewayConnectPeerArn")
+            .string(var_11.as_str());
     }
     Ok(())
 }
@@ -65,13 +67,13 @@ pub fn serialize_structure_crate_input_create_connect_attachment_input(
     input: &crate::input::CreateConnectAttachmentInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.client_token {
-        object.key("ClientToken").string(var_12);
+        object.key("ClientToken").string(var_12.as_str());
     }
     if let Some(var_13) = &input.core_network_id {
-        object.key("CoreNetworkId").string(var_13);
+        object.key("CoreNetworkId").string(var_13.as_str());
     }
     if let Some(var_14) = &input.edge_location {
-        object.key("EdgeLocation").string(var_14);
+        object.key("EdgeLocation").string(var_14.as_str());
     }
     if let Some(var_15) = &input.options {
         let mut object_16 = object.key("Options").start_object();
@@ -93,7 +95,7 @@ pub fn serialize_structure_crate_input_create_connect_attachment_input(
         array_18.finish();
     }
     if let Some(var_21) = &input.transport_attachment_id {
-        object.key("TransportAttachmentId").string(var_21);
+        object.key("TransportAttachmentId").string(var_21.as_str());
     }
     Ok(())
 }
@@ -103,19 +105,19 @@ pub fn serialize_structure_crate_input_create_connection_input(
     input: &crate::input::CreateConnectionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_22) = &input.connected_device_id {
-        object.key("ConnectedDeviceId").string(var_22);
+        object.key("ConnectedDeviceId").string(var_22.as_str());
     }
     if let Some(var_23) = &input.connected_link_id {
-        object.key("ConnectedLinkId").string(var_23);
+        object.key("ConnectedLinkId").string(var_23.as_str());
     }
     if let Some(var_24) = &input.description {
-        object.key("Description").string(var_24);
+        object.key("Description").string(var_24.as_str());
     }
     if let Some(var_25) = &input.device_id {
-        object.key("DeviceId").string(var_25);
+        object.key("DeviceId").string(var_25.as_str());
     }
     if let Some(var_26) = &input.link_id {
-        object.key("LinkId").string(var_26);
+        object.key("LinkId").string(var_26.as_str());
     }
     if let Some(var_27) = &input.tags {
         let mut array_28 = object.key("Tags").start_array();
@@ -141,25 +143,25 @@ pub fn serialize_structure_crate_input_create_connect_peer_input(
         object_32.finish();
     }
     if let Some(var_33) = &input.client_token {
-        object.key("ClientToken").string(var_33);
+        object.key("ClientToken").string(var_33.as_str());
     }
     if let Some(var_34) = &input.connect_attachment_id {
-        object.key("ConnectAttachmentId").string(var_34);
+        object.key("ConnectAttachmentId").string(var_34.as_str());
     }
     if let Some(var_35) = &input.core_network_address {
-        object.key("CoreNetworkAddress").string(var_35);
+        object.key("CoreNetworkAddress").string(var_35.as_str());
     }
     if let Some(var_36) = &input.inside_cidr_blocks {
         let mut array_37 = object.key("InsideCidrBlocks").start_array();
         for item_38 in var_36 {
             {
-                array_37.value().string(item_38);
+                array_37.value().string(item_38.as_str());
             }
         }
         array_37.finish();
     }
     if let Some(var_39) = &input.peer_address {
-        object.key("PeerAddress").string(var_39);
+        object.key("PeerAddress").string(var_39.as_str());
     }
     if let Some(var_40) = &input.tags {
         let mut array_41 = object.key("Tags").start_array();
@@ -180,16 +182,16 @@ pub fn serialize_structure_crate_input_create_core_network_input(
     input: &crate::input::CreateCoreNetworkInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.client_token {
-        object.key("ClientToken").string(var_44);
+        object.key("ClientToken").string(var_44.as_str());
     }
     if let Some(var_45) = &input.description {
-        object.key("Description").string(var_45);
+        object.key("Description").string(var_45.as_str());
     }
     if let Some(var_46) = &input.global_network_id {
-        object.key("GlobalNetworkId").string(var_46);
+        object.key("GlobalNetworkId").string(var_46.as_str());
     }
     if let Some(var_47) = &input.policy_document {
-        object.key("PolicyDocument").string(var_47);
+        object.key("PolicyDocument").string(var_47.as_str());
     }
     if let Some(var_48) = &input.tags {
         let mut array_49 = object.key("Tags").start_array();
@@ -215,7 +217,7 @@ pub fn serialize_structure_crate_input_create_device_input(
         object_53.finish();
     }
     if let Some(var_54) = &input.description {
-        object.key("Description").string(var_54);
+        object.key("Description").string(var_54.as_str());
     }
     if let Some(var_55) = &input.location {
         let mut object_56 = object.key("Location").start_object();
@@ -223,13 +225,13 @@ pub fn serialize_structure_crate_input_create_device_input(
         object_56.finish();
     }
     if let Some(var_57) = &input.model {
-        object.key("Model").string(var_57);
+        object.key("Model").string(var_57.as_str());
     }
     if let Some(var_58) = &input.serial_number {
-        object.key("SerialNumber").string(var_58);
+        object.key("SerialNumber").string(var_58.as_str());
     }
     if let Some(var_59) = &input.site_id {
-        object.key("SiteId").string(var_59);
+        object.key("SiteId").string(var_59.as_str());
     }
     if let Some(var_60) = &input.tags {
         let mut array_61 = object.key("Tags").start_array();
@@ -243,10 +245,10 @@ pub fn serialize_structure_crate_input_create_device_input(
         array_61.finish();
     }
     if let Some(var_64) = &input.r#type {
-        object.key("Type").string(var_64);
+        object.key("Type").string(var_64.as_str());
     }
     if let Some(var_65) = &input.vendor {
-        object.key("Vendor").string(var_65);
+        object.key("Vendor").string(var_65.as_str());
     }
     Ok(())
 }
@@ -256,7 +258,7 @@ pub fn serialize_structure_crate_input_create_global_network_input(
     input: &crate::input::CreateGlobalNetworkInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_66) = &input.description {
-        object.key("Description").string(var_66);
+        object.key("Description").string(var_66.as_str());
     }
     if let Some(var_67) = &input.tags {
         let mut array_68 = object.key("Tags").start_array();
@@ -282,13 +284,13 @@ pub fn serialize_structure_crate_input_create_link_input(
         object_72.finish();
     }
     if let Some(var_73) = &input.description {
-        object.key("Description").string(var_73);
+        object.key("Description").string(var_73.as_str());
     }
     if let Some(var_74) = &input.provider {
-        object.key("Provider").string(var_74);
+        object.key("Provider").string(var_74.as_str());
     }
     if let Some(var_75) = &input.site_id {
-        object.key("SiteId").string(var_75);
+        object.key("SiteId").string(var_75.as_str());
     }
     if let Some(var_76) = &input.tags {
         let mut array_77 = object.key("Tags").start_array();
@@ -302,7 +304,7 @@ pub fn serialize_structure_crate_input_create_link_input(
         array_77.finish();
     }
     if let Some(var_80) = &input.r#type {
-        object.key("Type").string(var_80);
+        object.key("Type").string(var_80.as_str());
     }
     Ok(())
 }
@@ -312,7 +314,7 @@ pub fn serialize_structure_crate_input_create_site_input(
     input: &crate::input::CreateSiteInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_81) = &input.description {
-        object.key("Description").string(var_81);
+        object.key("Description").string(var_81.as_str());
     }
     if let Some(var_82) = &input.location {
         let mut object_83 = object.key("Location").start_object();
@@ -338,10 +340,10 @@ pub fn serialize_structure_crate_input_create_site_to_site_vpn_attachment_input(
     input: &crate::input::CreateSiteToSiteVpnAttachmentInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_88) = &input.client_token {
-        object.key("ClientToken").string(var_88);
+        object.key("ClientToken").string(var_88.as_str());
     }
     if let Some(var_89) = &input.core_network_id {
-        object.key("CoreNetworkId").string(var_89);
+        object.key("CoreNetworkId").string(var_89.as_str());
     }
     if let Some(var_90) = &input.tags {
         let mut array_91 = object.key("Tags").start_array();
@@ -355,7 +357,7 @@ pub fn serialize_structure_crate_input_create_site_to_site_vpn_attachment_input(
         array_91.finish();
     }
     if let Some(var_94) = &input.vpn_connection_arn {
-        object.key("VpnConnectionArn").string(var_94);
+        object.key("VpnConnectionArn").string(var_94.as_str());
     }
     Ok(())
 }
@@ -365,10 +367,10 @@ pub fn serialize_structure_crate_input_create_vpc_attachment_input(
     input: &crate::input::CreateVpcAttachmentInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_95) = &input.client_token {
-        object.key("ClientToken").string(var_95);
+        object.key("ClientToken").string(var_95.as_str());
     }
     if let Some(var_96) = &input.core_network_id {
-        object.key("CoreNetworkId").string(var_96);
+        object.key("CoreNetworkId").string(var_96.as_str());
     }
     if let Some(var_97) = &input.options {
         let mut object_98 = object.key("Options").start_object();
@@ -379,7 +381,7 @@ pub fn serialize_structure_crate_input_create_vpc_attachment_input(
         let mut array_100 = object.key("SubnetArns").start_array();
         for item_101 in var_99 {
             {
-                array_100.value().string(item_101);
+                array_100.value().string(item_101.as_str());
             }
         }
         array_100.finish();
@@ -396,7 +398,7 @@ pub fn serialize_structure_crate_input_create_vpc_attachment_input(
         array_103.finish();
     }
     if let Some(var_106) = &input.vpc_arn {
-        object.key("VpcArn").string(var_106);
+        object.key("VpcArn").string(var_106.as_str());
     }
     Ok(())
 }
@@ -412,7 +414,7 @@ pub fn serialize_structure_crate_input_get_network_routes_input(
                 let mut array_111 = object_108.key(key_109).start_array();
                 for item_112 in value_110 {
                     {
-                        array_111.value().string(item_112);
+                        array_111.value().string(item_112.as_str());
                     }
                 }
                 array_111.finish();
@@ -424,7 +426,7 @@ pub fn serialize_structure_crate_input_get_network_routes_input(
         let mut array_114 = object.key("ExactCidrMatches").start_array();
         for item_115 in var_113 {
             {
-                array_114.value().string(item_115);
+                array_114.value().string(item_115.as_str());
             }
         }
         array_114.finish();
@@ -433,7 +435,7 @@ pub fn serialize_structure_crate_input_get_network_routes_input(
         let mut array_117 = object.key("LongestPrefixMatches").start_array();
         for item_118 in var_116 {
             {
-                array_117.value().string(item_118);
+                array_117.value().string(item_118.as_str());
             }
         }
         array_117.finish();
@@ -442,7 +444,7 @@ pub fn serialize_structure_crate_input_get_network_routes_input(
         let mut array_120 = object.key("PrefixListIds").start_array();
         for item_121 in var_119 {
             {
-                array_120.value().string(item_121);
+                array_120.value().string(item_121.as_str());
             }
         }
         array_120.finish();
@@ -468,7 +470,7 @@ pub fn serialize_structure_crate_input_get_network_routes_input(
         let mut array_128 = object.key("SubnetOfMatches").start_array();
         for item_129 in var_127 {
             {
-                array_128.value().string(item_129);
+                array_128.value().string(item_129.as_str());
             }
         }
         array_128.finish();
@@ -477,7 +479,7 @@ pub fn serialize_structure_crate_input_get_network_routes_input(
         let mut array_131 = object.key("SupernetOfMatches").start_array();
         for item_132 in var_130 {
             {
-                array_131.value().string(item_132);
+                array_131.value().string(item_132.as_str());
             }
         }
         array_131.finish();
@@ -499,10 +501,10 @@ pub fn serialize_structure_crate_input_put_core_network_policy_input(
     input: &crate::input::PutCoreNetworkPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_136) = &input.client_token {
-        object.key("ClientToken").string(var_136);
+        object.key("ClientToken").string(var_136.as_str());
     }
     if let Some(var_137) = &input.description {
-        object.key("Description").string(var_137);
+        object.key("Description").string(var_137.as_str());
     }
     if let Some(var_138) = &input.latest_version_id {
         object.key("LatestVersionId").number(
@@ -511,7 +513,7 @@ pub fn serialize_structure_crate_input_put_core_network_policy_input(
         );
     }
     if let Some(var_139) = &input.policy_document {
-        object.key("PolicyDocument").string(var_139);
+        object.key("PolicyDocument").string(var_139.as_str());
     }
     Ok(())
 }
@@ -521,7 +523,7 @@ pub fn serialize_structure_crate_input_put_resource_policy_input(
     input: &crate::input::PutResourcePolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_140) = &input.policy_document {
-        object.key("PolicyDocument").string(var_140);
+        object.key("PolicyDocument").string(var_140.as_str());
     }
     Ok(())
 }
@@ -531,7 +533,7 @@ pub fn serialize_structure_crate_input_register_transit_gateway_input(
     input: &crate::input::RegisterTransitGatewayInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_141) = &input.transit_gateway_arn {
-        object.key("TransitGatewayArn").string(var_141);
+        object.key("TransitGatewayArn").string(var_141.as_str());
     }
     Ok(())
 }
@@ -584,13 +586,13 @@ pub fn serialize_structure_crate_input_update_connection_input(
     input: &crate::input::UpdateConnectionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_150) = &input.connected_link_id {
-        object.key("ConnectedLinkId").string(var_150);
+        object.key("ConnectedLinkId").string(var_150.as_str());
     }
     if let Some(var_151) = &input.description {
-        object.key("Description").string(var_151);
+        object.key("Description").string(var_151.as_str());
     }
     if let Some(var_152) = &input.link_id {
-        object.key("LinkId").string(var_152);
+        object.key("LinkId").string(var_152.as_str());
     }
     Ok(())
 }
@@ -600,7 +602,7 @@ pub fn serialize_structure_crate_input_update_core_network_input(
     input: &crate::input::UpdateCoreNetworkInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_153) = &input.description {
-        object.key("Description").string(var_153);
+        object.key("Description").string(var_153.as_str());
     }
     Ok(())
 }
@@ -615,7 +617,7 @@ pub fn serialize_structure_crate_input_update_device_input(
         object_155.finish();
     }
     if let Some(var_156) = &input.description {
-        object.key("Description").string(var_156);
+        object.key("Description").string(var_156.as_str());
     }
     if let Some(var_157) = &input.location {
         let mut object_158 = object.key("Location").start_object();
@@ -623,19 +625,19 @@ pub fn serialize_structure_crate_input_update_device_input(
         object_158.finish();
     }
     if let Some(var_159) = &input.model {
-        object.key("Model").string(var_159);
+        object.key("Model").string(var_159.as_str());
     }
     if let Some(var_160) = &input.serial_number {
-        object.key("SerialNumber").string(var_160);
+        object.key("SerialNumber").string(var_160.as_str());
     }
     if let Some(var_161) = &input.site_id {
-        object.key("SiteId").string(var_161);
+        object.key("SiteId").string(var_161.as_str());
     }
     if let Some(var_162) = &input.r#type {
-        object.key("Type").string(var_162);
+        object.key("Type").string(var_162.as_str());
     }
     if let Some(var_163) = &input.vendor {
-        object.key("Vendor").string(var_163);
+        object.key("Vendor").string(var_163.as_str());
     }
     Ok(())
 }
@@ -645,7 +647,7 @@ pub fn serialize_structure_crate_input_update_global_network_input(
     input: &crate::input::UpdateGlobalNetworkInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_164) = &input.description {
-        object.key("Description").string(var_164);
+        object.key("Description").string(var_164.as_str());
     }
     Ok(())
 }
@@ -660,13 +662,13 @@ pub fn serialize_structure_crate_input_update_link_input(
         object_166.finish();
     }
     if let Some(var_167) = &input.description {
-        object.key("Description").string(var_167);
+        object.key("Description").string(var_167.as_str());
     }
     if let Some(var_168) = &input.provider {
-        object.key("Provider").string(var_168);
+        object.key("Provider").string(var_168.as_str());
     }
     if let Some(var_169) = &input.r#type {
-        object.key("Type").string(var_169);
+        object.key("Type").string(var_169.as_str());
     }
     Ok(())
 }
@@ -679,7 +681,7 @@ pub fn serialize_structure_crate_input_update_network_resource_metadata_input(
         let mut object_171 = object.key("Metadata").start_object();
         for (key_172, value_173) in var_170 {
             {
-                object_171.key(key_172).string(value_173);
+                object_171.key(key_172).string(value_173.as_str());
             }
         }
         object_171.finish();
@@ -692,7 +694,7 @@ pub fn serialize_structure_crate_input_update_site_input(
     input: &crate::input::UpdateSiteInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_174) = &input.description {
-        object.key("Description").string(var_174);
+        object.key("Description").string(var_174.as_str());
     }
     if let Some(var_175) = &input.location {
         let mut object_176 = object.key("Location").start_object();
@@ -710,7 +712,7 @@ pub fn serialize_structure_crate_input_update_vpc_attachment_input(
         let mut array_178 = object.key("AddSubnetArns").start_array();
         for item_179 in var_177 {
             {
-                array_178.value().string(item_179);
+                array_178.value().string(item_179.as_str());
             }
         }
         array_178.finish();
@@ -724,7 +726,7 @@ pub fn serialize_structure_crate_input_update_vpc_attachment_input(
         let mut array_183 = object.key("RemoveSubnetArns").start_array();
         for item_184 in var_182 {
             {
-                array_183.value().string(item_184);
+                array_183.value().string(item_184.as_str());
             }
         }
         array_183.finish();
@@ -747,10 +749,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_186) = &input.key {
-        object.key("Key").string(var_186);
+        object.key("Key").string(var_186.as_str());
     }
     if let Some(var_187) = &input.value {
-        object.key("Value").string(var_187);
+        object.key("Value").string(var_187.as_str());
     }
     Ok(())
 }
@@ -773,10 +775,10 @@ pub fn serialize_structure_crate_model_aws_location(
     input: &crate::model::AwsLocation,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_189) = &input.zone {
-        object.key("Zone").string(var_189);
+        object.key("Zone").string(var_189.as_str());
     }
     if let Some(var_190) = &input.subnet_arn {
-        object.key("SubnetArn").string(var_190);
+        object.key("SubnetArn").string(var_190.as_str());
     }
     Ok(())
 }
@@ -786,13 +788,13 @@ pub fn serialize_structure_crate_model_location(
     input: &crate::model::Location,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_191) = &input.address {
-        object.key("Address").string(var_191);
+        object.key("Address").string(var_191.as_str());
     }
     if let Some(var_192) = &input.latitude {
-        object.key("Latitude").string(var_192);
+        object.key("Latitude").string(var_192.as_str());
     }
     if let Some(var_193) = &input.longitude {
-        object.key("Longitude").string(var_193);
+        object.key("Longitude").string(var_193.as_str());
     }
     Ok(())
 }
@@ -831,7 +833,9 @@ pub fn serialize_structure_crate_model_route_table_identifier(
     input: &crate::model::RouteTableIdentifier,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_196) = &input.transit_gateway_route_table_arn {
-        object.key("TransitGatewayRouteTableArn").string(var_196);
+        object
+            .key("TransitGatewayRouteTableArn")
+            .string(var_196.as_str());
     }
     if let Some(var_197) = &input.core_network_segment_edge {
         let mut object_198 = object.key("CoreNetworkSegmentEdge").start_object();
@@ -849,10 +853,12 @@ pub fn serialize_structure_crate_model_route_analysis_endpoint_options_specifica
     input: &crate::model::RouteAnalysisEndpointOptionsSpecification,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_199) = &input.transit_gateway_attachment_arn {
-        object.key("TransitGatewayAttachmentArn").string(var_199);
+        object
+            .key("TransitGatewayAttachmentArn")
+            .string(var_199.as_str());
     }
     if let Some(var_200) = &input.ip_address {
-        object.key("IpAddress").string(var_200);
+        object.key("IpAddress").string(var_200.as_str());
     }
     Ok(())
 }
@@ -862,13 +868,13 @@ pub fn serialize_structure_crate_model_core_network_segment_edge_identifier(
     input: &crate::model::CoreNetworkSegmentEdgeIdentifier,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_201) = &input.core_network_id {
-        object.key("CoreNetworkId").string(var_201);
+        object.key("CoreNetworkId").string(var_201.as_str());
     }
     if let Some(var_202) = &input.segment_name {
-        object.key("SegmentName").string(var_202);
+        object.key("SegmentName").string(var_202.as_str());
     }
     if let Some(var_203) = &input.edge_location {
-        object.key("EdgeLocation").string(var_203);
+        object.key("EdgeLocation").string(var_203.as_str());
     }
     Ok(())
 }

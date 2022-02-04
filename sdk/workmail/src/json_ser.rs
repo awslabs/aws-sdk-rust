@@ -4,13 +4,13 @@ pub fn serialize_structure_crate_input_associate_delegate_to_resource_input(
     input: &crate::input::AssociateDelegateToResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.organization_id {
-        object.key("OrganizationId").string(var_1);
+        object.key("OrganizationId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.resource_id {
-        object.key("ResourceId").string(var_2);
+        object.key("ResourceId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.entity_id {
-        object.key("EntityId").string(var_3);
+        object.key("EntityId").string(var_3.as_str());
     }
     Ok(())
 }
@@ -20,13 +20,13 @@ pub fn serialize_structure_crate_input_associate_member_to_group_input(
     input: &crate::input::AssociateMemberToGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_4) = &input.organization_id {
-        object.key("OrganizationId").string(var_4);
+        object.key("OrganizationId").string(var_4.as_str());
     }
     if let Some(var_5) = &input.group_id {
-        object.key("GroupId").string(var_5);
+        object.key("GroupId").string(var_5.as_str());
     }
     if let Some(var_6) = &input.member_id {
-        object.key("MemberId").string(var_6);
+        object.key("MemberId").string(var_6.as_str());
     }
     Ok(())
 }
@@ -36,13 +36,13 @@ pub fn serialize_structure_crate_input_cancel_mailbox_export_job_input(
     input: &crate::input::CancelMailboxExportJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.client_token {
-        object.key("ClientToken").string(var_7);
+        object.key("ClientToken").string(var_7.as_str());
     }
     if let Some(var_8) = &input.job_id {
-        object.key("JobId").string(var_8);
+        object.key("JobId").string(var_8.as_str());
     }
     if let Some(var_9) = &input.organization_id {
-        object.key("OrganizationId").string(var_9);
+        object.key("OrganizationId").string(var_9.as_str());
     }
     Ok(())
 }
@@ -52,13 +52,13 @@ pub fn serialize_structure_crate_input_create_alias_input(
     input: &crate::input::CreateAliasInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_10) = &input.organization_id {
-        object.key("OrganizationId").string(var_10);
+        object.key("OrganizationId").string(var_10.as_str());
     }
     if let Some(var_11) = &input.entity_id {
-        object.key("EntityId").string(var_11);
+        object.key("EntityId").string(var_11.as_str());
     }
     if let Some(var_12) = &input.alias {
-        object.key("Alias").string(var_12);
+        object.key("Alias").string(var_12.as_str());
     }
     Ok(())
 }
@@ -68,10 +68,10 @@ pub fn serialize_structure_crate_input_create_group_input(
     input: &crate::input::CreateGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_13) = &input.organization_id {
-        object.key("OrganizationId").string(var_13);
+        object.key("OrganizationId").string(var_13.as_str());
     }
     if let Some(var_14) = &input.name {
-        object.key("Name").string(var_14);
+        object.key("Name").string(var_14.as_str());
     }
     Ok(())
 }
@@ -81,16 +81,16 @@ pub fn serialize_structure_crate_input_create_mobile_device_access_rule_input(
     input: &crate::input::CreateMobileDeviceAccessRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.organization_id {
-        object.key("OrganizationId").string(var_15);
+        object.key("OrganizationId").string(var_15.as_str());
     }
     if let Some(var_16) = &input.client_token {
-        object.key("ClientToken").string(var_16);
+        object.key("ClientToken").string(var_16.as_str());
     }
     if let Some(var_17) = &input.name {
-        object.key("Name").string(var_17);
+        object.key("Name").string(var_17.as_str());
     }
     if let Some(var_18) = &input.description {
-        object.key("Description").string(var_18);
+        object.key("Description").string(var_18.as_str());
     }
     if let Some(var_19) = &input.effect {
         object.key("Effect").string(var_19.as_str());
@@ -99,7 +99,7 @@ pub fn serialize_structure_crate_input_create_mobile_device_access_rule_input(
         let mut array_21 = object.key("DeviceTypes").start_array();
         for item_22 in var_20 {
             {
-                array_21.value().string(item_22);
+                array_21.value().string(item_22.as_str());
             }
         }
         array_21.finish();
@@ -108,7 +108,7 @@ pub fn serialize_structure_crate_input_create_mobile_device_access_rule_input(
         let mut array_24 = object.key("NotDeviceTypes").start_array();
         for item_25 in var_23 {
             {
-                array_24.value().string(item_25);
+                array_24.value().string(item_25.as_str());
             }
         }
         array_24.finish();
@@ -117,7 +117,7 @@ pub fn serialize_structure_crate_input_create_mobile_device_access_rule_input(
         let mut array_27 = object.key("DeviceModels").start_array();
         for item_28 in var_26 {
             {
-                array_27.value().string(item_28);
+                array_27.value().string(item_28.as_str());
             }
         }
         array_27.finish();
@@ -126,7 +126,7 @@ pub fn serialize_structure_crate_input_create_mobile_device_access_rule_input(
         let mut array_30 = object.key("NotDeviceModels").start_array();
         for item_31 in var_29 {
             {
-                array_30.value().string(item_31);
+                array_30.value().string(item_31.as_str());
             }
         }
         array_30.finish();
@@ -135,7 +135,7 @@ pub fn serialize_structure_crate_input_create_mobile_device_access_rule_input(
         let mut array_33 = object.key("DeviceOperatingSystems").start_array();
         for item_34 in var_32 {
             {
-                array_33.value().string(item_34);
+                array_33.value().string(item_34.as_str());
             }
         }
         array_33.finish();
@@ -144,7 +144,7 @@ pub fn serialize_structure_crate_input_create_mobile_device_access_rule_input(
         let mut array_36 = object.key("NotDeviceOperatingSystems").start_array();
         for item_37 in var_35 {
             {
-                array_36.value().string(item_37);
+                array_36.value().string(item_37.as_str());
             }
         }
         array_36.finish();
@@ -153,7 +153,7 @@ pub fn serialize_structure_crate_input_create_mobile_device_access_rule_input(
         let mut array_39 = object.key("DeviceUserAgents").start_array();
         for item_40 in var_38 {
             {
-                array_39.value().string(item_40);
+                array_39.value().string(item_40.as_str());
             }
         }
         array_39.finish();
@@ -162,7 +162,7 @@ pub fn serialize_structure_crate_input_create_mobile_device_access_rule_input(
         let mut array_42 = object.key("NotDeviceUserAgents").start_array();
         for item_43 in var_41 {
             {
-                array_42.value().string(item_43);
+                array_42.value().string(item_43.as_str());
             }
         }
         array_42.finish();
@@ -175,13 +175,13 @@ pub fn serialize_structure_crate_input_create_organization_input(
     input: &crate::input::CreateOrganizationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.directory_id {
-        object.key("DirectoryId").string(var_44);
+        object.key("DirectoryId").string(var_44.as_str());
     }
     if let Some(var_45) = &input.alias {
-        object.key("Alias").string(var_45);
+        object.key("Alias").string(var_45.as_str());
     }
     if let Some(var_46) = &input.client_token {
-        object.key("ClientToken").string(var_46);
+        object.key("ClientToken").string(var_46.as_str());
     }
     if let Some(var_47) = &input.domains {
         let mut array_48 = object.key("Domains").start_array();
@@ -195,7 +195,7 @@ pub fn serialize_structure_crate_input_create_organization_input(
         array_48.finish();
     }
     if let Some(var_51) = &input.kms_key_arn {
-        object.key("KmsKeyArn").string(var_51);
+        object.key("KmsKeyArn").string(var_51.as_str());
     }
     if input.enable_interoperability {
         object
@@ -210,10 +210,10 @@ pub fn serialize_structure_crate_input_create_resource_input(
     input: &crate::input::CreateResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_52) = &input.organization_id {
-        object.key("OrganizationId").string(var_52);
+        object.key("OrganizationId").string(var_52.as_str());
     }
     if let Some(var_53) = &input.name {
-        object.key("Name").string(var_53);
+        object.key("Name").string(var_53.as_str());
     }
     if let Some(var_54) = &input.r#type {
         object.key("Type").string(var_54.as_str());
@@ -226,16 +226,16 @@ pub fn serialize_structure_crate_input_create_user_input(
     input: &crate::input::CreateUserInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_55) = &input.organization_id {
-        object.key("OrganizationId").string(var_55);
+        object.key("OrganizationId").string(var_55.as_str());
     }
     if let Some(var_56) = &input.name {
-        object.key("Name").string(var_56);
+        object.key("Name").string(var_56.as_str());
     }
     if let Some(var_57) = &input.display_name {
-        object.key("DisplayName").string(var_57);
+        object.key("DisplayName").string(var_57.as_str());
     }
     if let Some(var_58) = &input.password {
-        object.key("Password").string(var_58);
+        object.key("Password").string(var_58.as_str());
     }
     Ok(())
 }
@@ -245,10 +245,10 @@ pub fn serialize_structure_crate_input_delete_access_control_rule_input(
     input: &crate::input::DeleteAccessControlRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_59) = &input.organization_id {
-        object.key("OrganizationId").string(var_59);
+        object.key("OrganizationId").string(var_59.as_str());
     }
     if let Some(var_60) = &input.name {
-        object.key("Name").string(var_60);
+        object.key("Name").string(var_60.as_str());
     }
     Ok(())
 }
@@ -258,13 +258,13 @@ pub fn serialize_structure_crate_input_delete_alias_input(
     input: &crate::input::DeleteAliasInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_61) = &input.organization_id {
-        object.key("OrganizationId").string(var_61);
+        object.key("OrganizationId").string(var_61.as_str());
     }
     if let Some(var_62) = &input.entity_id {
-        object.key("EntityId").string(var_62);
+        object.key("EntityId").string(var_62.as_str());
     }
     if let Some(var_63) = &input.alias {
-        object.key("Alias").string(var_63);
+        object.key("Alias").string(var_63.as_str());
     }
     Ok(())
 }
@@ -274,7 +274,7 @@ pub fn serialize_structure_crate_input_delete_email_monitoring_configuration_inp
     input: &crate::input::DeleteEmailMonitoringConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_64) = &input.organization_id {
-        object.key("OrganizationId").string(var_64);
+        object.key("OrganizationId").string(var_64.as_str());
     }
     Ok(())
 }
@@ -284,10 +284,10 @@ pub fn serialize_structure_crate_input_delete_group_input(
     input: &crate::input::DeleteGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_65) = &input.organization_id {
-        object.key("OrganizationId").string(var_65);
+        object.key("OrganizationId").string(var_65.as_str());
     }
     if let Some(var_66) = &input.group_id {
-        object.key("GroupId").string(var_66);
+        object.key("GroupId").string(var_66.as_str());
     }
     Ok(())
 }
@@ -297,13 +297,13 @@ pub fn serialize_structure_crate_input_delete_mailbox_permissions_input(
     input: &crate::input::DeleteMailboxPermissionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.organization_id {
-        object.key("OrganizationId").string(var_67);
+        object.key("OrganizationId").string(var_67.as_str());
     }
     if let Some(var_68) = &input.entity_id {
-        object.key("EntityId").string(var_68);
+        object.key("EntityId").string(var_68.as_str());
     }
     if let Some(var_69) = &input.grantee_id {
-        object.key("GranteeId").string(var_69);
+        object.key("GranteeId").string(var_69.as_str());
     }
     Ok(())
 }
@@ -313,13 +313,13 @@ pub fn serialize_structure_crate_input_delete_mobile_device_access_override_inpu
     input: &crate::input::DeleteMobileDeviceAccessOverrideInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.organization_id {
-        object.key("OrganizationId").string(var_70);
+        object.key("OrganizationId").string(var_70.as_str());
     }
     if let Some(var_71) = &input.user_id {
-        object.key("UserId").string(var_71);
+        object.key("UserId").string(var_71.as_str());
     }
     if let Some(var_72) = &input.device_id {
-        object.key("DeviceId").string(var_72);
+        object.key("DeviceId").string(var_72.as_str());
     }
     Ok(())
 }
@@ -329,10 +329,12 @@ pub fn serialize_structure_crate_input_delete_mobile_device_access_rule_input(
     input: &crate::input::DeleteMobileDeviceAccessRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_73) = &input.organization_id {
-        object.key("OrganizationId").string(var_73);
+        object.key("OrganizationId").string(var_73.as_str());
     }
     if let Some(var_74) = &input.mobile_device_access_rule_id {
-        object.key("MobileDeviceAccessRuleId").string(var_74);
+        object
+            .key("MobileDeviceAccessRuleId")
+            .string(var_74.as_str());
     }
     Ok(())
 }
@@ -342,10 +344,10 @@ pub fn serialize_structure_crate_input_delete_organization_input(
     input: &crate::input::DeleteOrganizationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_75) = &input.client_token {
-        object.key("ClientToken").string(var_75);
+        object.key("ClientToken").string(var_75.as_str());
     }
     if let Some(var_76) = &input.organization_id {
-        object.key("OrganizationId").string(var_76);
+        object.key("OrganizationId").string(var_76.as_str());
     }
     {
         object
@@ -360,10 +362,10 @@ pub fn serialize_structure_crate_input_delete_resource_input(
     input: &crate::input::DeleteResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_77) = &input.organization_id {
-        object.key("OrganizationId").string(var_77);
+        object.key("OrganizationId").string(var_77.as_str());
     }
     if let Some(var_78) = &input.resource_id {
-        object.key("ResourceId").string(var_78);
+        object.key("ResourceId").string(var_78.as_str());
     }
     Ok(())
 }
@@ -373,10 +375,10 @@ pub fn serialize_structure_crate_input_delete_retention_policy_input(
     input: &crate::input::DeleteRetentionPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_79) = &input.organization_id {
-        object.key("OrganizationId").string(var_79);
+        object.key("OrganizationId").string(var_79.as_str());
     }
     if let Some(var_80) = &input.id {
-        object.key("Id").string(var_80);
+        object.key("Id").string(var_80.as_str());
     }
     Ok(())
 }
@@ -386,10 +388,10 @@ pub fn serialize_structure_crate_input_delete_user_input(
     input: &crate::input::DeleteUserInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_81) = &input.organization_id {
-        object.key("OrganizationId").string(var_81);
+        object.key("OrganizationId").string(var_81.as_str());
     }
     if let Some(var_82) = &input.user_id {
-        object.key("UserId").string(var_82);
+        object.key("UserId").string(var_82.as_str());
     }
     Ok(())
 }
@@ -399,10 +401,10 @@ pub fn serialize_structure_crate_input_deregister_from_work_mail_input(
     input: &crate::input::DeregisterFromWorkMailInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_83) = &input.organization_id {
-        object.key("OrganizationId").string(var_83);
+        object.key("OrganizationId").string(var_83.as_str());
     }
     if let Some(var_84) = &input.entity_id {
-        object.key("EntityId").string(var_84);
+        object.key("EntityId").string(var_84.as_str());
     }
     Ok(())
 }
@@ -412,10 +414,10 @@ pub fn serialize_structure_crate_input_deregister_mail_domain_input(
     input: &crate::input::DeregisterMailDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_85) = &input.organization_id {
-        object.key("OrganizationId").string(var_85);
+        object.key("OrganizationId").string(var_85.as_str());
     }
     if let Some(var_86) = &input.domain_name {
-        object.key("DomainName").string(var_86);
+        object.key("DomainName").string(var_86.as_str());
     }
     Ok(())
 }
@@ -425,7 +427,7 @@ pub fn serialize_structure_crate_input_describe_email_monitoring_configuration_i
     input: &crate::input::DescribeEmailMonitoringConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_87) = &input.organization_id {
-        object.key("OrganizationId").string(var_87);
+        object.key("OrganizationId").string(var_87.as_str());
     }
     Ok(())
 }
@@ -435,10 +437,10 @@ pub fn serialize_structure_crate_input_describe_group_input(
     input: &crate::input::DescribeGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_88) = &input.organization_id {
-        object.key("OrganizationId").string(var_88);
+        object.key("OrganizationId").string(var_88.as_str());
     }
     if let Some(var_89) = &input.group_id {
-        object.key("GroupId").string(var_89);
+        object.key("GroupId").string(var_89.as_str());
     }
     Ok(())
 }
@@ -448,7 +450,7 @@ pub fn serialize_structure_crate_input_describe_inbound_dmarc_settings_input(
     input: &crate::input::DescribeInboundDmarcSettingsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_90) = &input.organization_id {
-        object.key("OrganizationId").string(var_90);
+        object.key("OrganizationId").string(var_90.as_str());
     }
     Ok(())
 }
@@ -458,10 +460,10 @@ pub fn serialize_structure_crate_input_describe_mailbox_export_job_input(
     input: &crate::input::DescribeMailboxExportJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_91) = &input.job_id {
-        object.key("JobId").string(var_91);
+        object.key("JobId").string(var_91.as_str());
     }
     if let Some(var_92) = &input.organization_id {
-        object.key("OrganizationId").string(var_92);
+        object.key("OrganizationId").string(var_92.as_str());
     }
     Ok(())
 }
@@ -471,7 +473,7 @@ pub fn serialize_structure_crate_input_describe_organization_input(
     input: &crate::input::DescribeOrganizationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_93) = &input.organization_id {
-        object.key("OrganizationId").string(var_93);
+        object.key("OrganizationId").string(var_93.as_str());
     }
     Ok(())
 }
@@ -481,10 +483,10 @@ pub fn serialize_structure_crate_input_describe_resource_input(
     input: &crate::input::DescribeResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_94) = &input.organization_id {
-        object.key("OrganizationId").string(var_94);
+        object.key("OrganizationId").string(var_94.as_str());
     }
     if let Some(var_95) = &input.resource_id {
-        object.key("ResourceId").string(var_95);
+        object.key("ResourceId").string(var_95.as_str());
     }
     Ok(())
 }
@@ -494,10 +496,10 @@ pub fn serialize_structure_crate_input_describe_user_input(
     input: &crate::input::DescribeUserInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_96) = &input.organization_id {
-        object.key("OrganizationId").string(var_96);
+        object.key("OrganizationId").string(var_96.as_str());
     }
     if let Some(var_97) = &input.user_id {
-        object.key("UserId").string(var_97);
+        object.key("UserId").string(var_97.as_str());
     }
     Ok(())
 }
@@ -507,13 +509,13 @@ pub fn serialize_structure_crate_input_disassociate_delegate_from_resource_input
     input: &crate::input::DisassociateDelegateFromResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_98) = &input.organization_id {
-        object.key("OrganizationId").string(var_98);
+        object.key("OrganizationId").string(var_98.as_str());
     }
     if let Some(var_99) = &input.resource_id {
-        object.key("ResourceId").string(var_99);
+        object.key("ResourceId").string(var_99.as_str());
     }
     if let Some(var_100) = &input.entity_id {
-        object.key("EntityId").string(var_100);
+        object.key("EntityId").string(var_100.as_str());
     }
     Ok(())
 }
@@ -523,13 +525,13 @@ pub fn serialize_structure_crate_input_disassociate_member_from_group_input(
     input: &crate::input::DisassociateMemberFromGroupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_101) = &input.organization_id {
-        object.key("OrganizationId").string(var_101);
+        object.key("OrganizationId").string(var_101.as_str());
     }
     if let Some(var_102) = &input.group_id {
-        object.key("GroupId").string(var_102);
+        object.key("GroupId").string(var_102.as_str());
     }
     if let Some(var_103) = &input.member_id {
-        object.key("MemberId").string(var_103);
+        object.key("MemberId").string(var_103.as_str());
     }
     Ok(())
 }
@@ -539,16 +541,16 @@ pub fn serialize_structure_crate_input_get_access_control_effect_input(
     input: &crate::input::GetAccessControlEffectInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_104) = &input.organization_id {
-        object.key("OrganizationId").string(var_104);
+        object.key("OrganizationId").string(var_104.as_str());
     }
     if let Some(var_105) = &input.ip_address {
-        object.key("IpAddress").string(var_105);
+        object.key("IpAddress").string(var_105.as_str());
     }
     if let Some(var_106) = &input.action {
-        object.key("Action").string(var_106);
+        object.key("Action").string(var_106.as_str());
     }
     if let Some(var_107) = &input.user_id {
-        object.key("UserId").string(var_107);
+        object.key("UserId").string(var_107.as_str());
     }
     Ok(())
 }
@@ -558,7 +560,7 @@ pub fn serialize_structure_crate_input_get_default_retention_policy_input(
     input: &crate::input::GetDefaultRetentionPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_108) = &input.organization_id {
-        object.key("OrganizationId").string(var_108);
+        object.key("OrganizationId").string(var_108.as_str());
     }
     Ok(())
 }
@@ -568,10 +570,10 @@ pub fn serialize_structure_crate_input_get_mailbox_details_input(
     input: &crate::input::GetMailboxDetailsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_109) = &input.organization_id {
-        object.key("OrganizationId").string(var_109);
+        object.key("OrganizationId").string(var_109.as_str());
     }
     if let Some(var_110) = &input.user_id {
-        object.key("UserId").string(var_110);
+        object.key("UserId").string(var_110.as_str());
     }
     Ok(())
 }
@@ -581,10 +583,10 @@ pub fn serialize_structure_crate_input_get_mail_domain_input(
     input: &crate::input::GetMailDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_111) = &input.organization_id {
-        object.key("OrganizationId").string(var_111);
+        object.key("OrganizationId").string(var_111.as_str());
     }
     if let Some(var_112) = &input.domain_name {
-        object.key("DomainName").string(var_112);
+        object.key("DomainName").string(var_112.as_str());
     }
     Ok(())
 }
@@ -594,19 +596,19 @@ pub fn serialize_structure_crate_input_get_mobile_device_access_effect_input(
     input: &crate::input::GetMobileDeviceAccessEffectInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_113) = &input.organization_id {
-        object.key("OrganizationId").string(var_113);
+        object.key("OrganizationId").string(var_113.as_str());
     }
     if let Some(var_114) = &input.device_type {
-        object.key("DeviceType").string(var_114);
+        object.key("DeviceType").string(var_114.as_str());
     }
     if let Some(var_115) = &input.device_model {
-        object.key("DeviceModel").string(var_115);
+        object.key("DeviceModel").string(var_115.as_str());
     }
     if let Some(var_116) = &input.device_operating_system {
-        object.key("DeviceOperatingSystem").string(var_116);
+        object.key("DeviceOperatingSystem").string(var_116.as_str());
     }
     if let Some(var_117) = &input.device_user_agent {
-        object.key("DeviceUserAgent").string(var_117);
+        object.key("DeviceUserAgent").string(var_117.as_str());
     }
     Ok(())
 }
@@ -616,13 +618,13 @@ pub fn serialize_structure_crate_input_get_mobile_device_access_override_input(
     input: &crate::input::GetMobileDeviceAccessOverrideInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_118) = &input.organization_id {
-        object.key("OrganizationId").string(var_118);
+        object.key("OrganizationId").string(var_118.as_str());
     }
     if let Some(var_119) = &input.user_id {
-        object.key("UserId").string(var_119);
+        object.key("UserId").string(var_119.as_str());
     }
     if let Some(var_120) = &input.device_id {
-        object.key("DeviceId").string(var_120);
+        object.key("DeviceId").string(var_120.as_str());
     }
     Ok(())
 }
@@ -632,7 +634,7 @@ pub fn serialize_structure_crate_input_list_access_control_rules_input(
     input: &crate::input::ListAccessControlRulesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_121) = &input.organization_id {
-        object.key("OrganizationId").string(var_121);
+        object.key("OrganizationId").string(var_121.as_str());
     }
     Ok(())
 }
@@ -642,13 +644,13 @@ pub fn serialize_structure_crate_input_list_aliases_input(
     input: &crate::input::ListAliasesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_122) = &input.organization_id {
-        object.key("OrganizationId").string(var_122);
+        object.key("OrganizationId").string(var_122.as_str());
     }
     if let Some(var_123) = &input.entity_id {
-        object.key("EntityId").string(var_123);
+        object.key("EntityId").string(var_123.as_str());
     }
     if let Some(var_124) = &input.next_token {
-        object.key("NextToken").string(var_124);
+        object.key("NextToken").string(var_124.as_str());
     }
     if let Some(var_125) = &input.max_results {
         object.key("MaxResults").number(
@@ -664,13 +666,13 @@ pub fn serialize_structure_crate_input_list_group_members_input(
     input: &crate::input::ListGroupMembersInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_126) = &input.organization_id {
-        object.key("OrganizationId").string(var_126);
+        object.key("OrganizationId").string(var_126.as_str());
     }
     if let Some(var_127) = &input.group_id {
-        object.key("GroupId").string(var_127);
+        object.key("GroupId").string(var_127.as_str());
     }
     if let Some(var_128) = &input.next_token {
-        object.key("NextToken").string(var_128);
+        object.key("NextToken").string(var_128.as_str());
     }
     if let Some(var_129) = &input.max_results {
         object.key("MaxResults").number(
@@ -686,10 +688,10 @@ pub fn serialize_structure_crate_input_list_groups_input(
     input: &crate::input::ListGroupsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_130) = &input.organization_id {
-        object.key("OrganizationId").string(var_130);
+        object.key("OrganizationId").string(var_130.as_str());
     }
     if let Some(var_131) = &input.next_token {
-        object.key("NextToken").string(var_131);
+        object.key("NextToken").string(var_131.as_str());
     }
     if let Some(var_132) = &input.max_results {
         object.key("MaxResults").number(
@@ -705,10 +707,10 @@ pub fn serialize_structure_crate_input_list_mailbox_export_jobs_input(
     input: &crate::input::ListMailboxExportJobsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_133) = &input.organization_id {
-        object.key("OrganizationId").string(var_133);
+        object.key("OrganizationId").string(var_133.as_str());
     }
     if let Some(var_134) = &input.next_token {
-        object.key("NextToken").string(var_134);
+        object.key("NextToken").string(var_134.as_str());
     }
     if let Some(var_135) = &input.max_results {
         object.key("MaxResults").number(
@@ -724,13 +726,13 @@ pub fn serialize_structure_crate_input_list_mailbox_permissions_input(
     input: &crate::input::ListMailboxPermissionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_136) = &input.organization_id {
-        object.key("OrganizationId").string(var_136);
+        object.key("OrganizationId").string(var_136.as_str());
     }
     if let Some(var_137) = &input.entity_id {
-        object.key("EntityId").string(var_137);
+        object.key("EntityId").string(var_137.as_str());
     }
     if let Some(var_138) = &input.next_token {
-        object.key("NextToken").string(var_138);
+        object.key("NextToken").string(var_138.as_str());
     }
     if let Some(var_139) = &input.max_results {
         object.key("MaxResults").number(
@@ -746,7 +748,7 @@ pub fn serialize_structure_crate_input_list_mail_domains_input(
     input: &crate::input::ListMailDomainsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_140) = &input.organization_id {
-        object.key("OrganizationId").string(var_140);
+        object.key("OrganizationId").string(var_140.as_str());
     }
     if let Some(var_141) = &input.max_results {
         object.key("MaxResults").number(
@@ -755,7 +757,7 @@ pub fn serialize_structure_crate_input_list_mail_domains_input(
         );
     }
     if let Some(var_142) = &input.next_token {
-        object.key("NextToken").string(var_142);
+        object.key("NextToken").string(var_142.as_str());
     }
     Ok(())
 }
@@ -765,16 +767,16 @@ pub fn serialize_structure_crate_input_list_mobile_device_access_overrides_input
     input: &crate::input::ListMobileDeviceAccessOverridesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_143) = &input.organization_id {
-        object.key("OrganizationId").string(var_143);
+        object.key("OrganizationId").string(var_143.as_str());
     }
     if let Some(var_144) = &input.user_id {
-        object.key("UserId").string(var_144);
+        object.key("UserId").string(var_144.as_str());
     }
     if let Some(var_145) = &input.device_id {
-        object.key("DeviceId").string(var_145);
+        object.key("DeviceId").string(var_145.as_str());
     }
     if let Some(var_146) = &input.next_token {
-        object.key("NextToken").string(var_146);
+        object.key("NextToken").string(var_146.as_str());
     }
     if let Some(var_147) = &input.max_results {
         object.key("MaxResults").number(
@@ -790,7 +792,7 @@ pub fn serialize_structure_crate_input_list_mobile_device_access_rules_input(
     input: &crate::input::ListMobileDeviceAccessRulesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_148) = &input.organization_id {
-        object.key("OrganizationId").string(var_148);
+        object.key("OrganizationId").string(var_148.as_str());
     }
     Ok(())
 }
@@ -800,7 +802,7 @@ pub fn serialize_structure_crate_input_list_organizations_input(
     input: &crate::input::ListOrganizationsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_149) = &input.next_token {
-        object.key("NextToken").string(var_149);
+        object.key("NextToken").string(var_149.as_str());
     }
     if let Some(var_150) = &input.max_results {
         object.key("MaxResults").number(
@@ -816,13 +818,13 @@ pub fn serialize_structure_crate_input_list_resource_delegates_input(
     input: &crate::input::ListResourceDelegatesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_151) = &input.organization_id {
-        object.key("OrganizationId").string(var_151);
+        object.key("OrganizationId").string(var_151.as_str());
     }
     if let Some(var_152) = &input.resource_id {
-        object.key("ResourceId").string(var_152);
+        object.key("ResourceId").string(var_152.as_str());
     }
     if let Some(var_153) = &input.next_token {
-        object.key("NextToken").string(var_153);
+        object.key("NextToken").string(var_153.as_str());
     }
     if let Some(var_154) = &input.max_results {
         object.key("MaxResults").number(
@@ -838,10 +840,10 @@ pub fn serialize_structure_crate_input_list_resources_input(
     input: &crate::input::ListResourcesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_155) = &input.organization_id {
-        object.key("OrganizationId").string(var_155);
+        object.key("OrganizationId").string(var_155.as_str());
     }
     if let Some(var_156) = &input.next_token {
-        object.key("NextToken").string(var_156);
+        object.key("NextToken").string(var_156.as_str());
     }
     if let Some(var_157) = &input.max_results {
         object.key("MaxResults").number(
@@ -857,7 +859,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_158) = &input.resource_arn {
-        object.key("ResourceARN").string(var_158);
+        object.key("ResourceARN").string(var_158.as_str());
     }
     Ok(())
 }
@@ -867,10 +869,10 @@ pub fn serialize_structure_crate_input_list_users_input(
     input: &crate::input::ListUsersInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_159) = &input.organization_id {
-        object.key("OrganizationId").string(var_159);
+        object.key("OrganizationId").string(var_159.as_str());
     }
     if let Some(var_160) = &input.next_token {
-        object.key("NextToken").string(var_160);
+        object.key("NextToken").string(var_160.as_str());
     }
     if let Some(var_161) = &input.max_results {
         object.key("MaxResults").number(
@@ -886,19 +888,19 @@ pub fn serialize_structure_crate_input_put_access_control_rule_input(
     input: &crate::input::PutAccessControlRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_162) = &input.name {
-        object.key("Name").string(var_162);
+        object.key("Name").string(var_162.as_str());
     }
     if let Some(var_163) = &input.effect {
         object.key("Effect").string(var_163.as_str());
     }
     if let Some(var_164) = &input.description {
-        object.key("Description").string(var_164);
+        object.key("Description").string(var_164.as_str());
     }
     if let Some(var_165) = &input.ip_ranges {
         let mut array_166 = object.key("IpRanges").start_array();
         for item_167 in var_165 {
             {
-                array_166.value().string(item_167);
+                array_166.value().string(item_167.as_str());
             }
         }
         array_166.finish();
@@ -907,7 +909,7 @@ pub fn serialize_structure_crate_input_put_access_control_rule_input(
         let mut array_169 = object.key("NotIpRanges").start_array();
         for item_170 in var_168 {
             {
-                array_169.value().string(item_170);
+                array_169.value().string(item_170.as_str());
             }
         }
         array_169.finish();
@@ -916,7 +918,7 @@ pub fn serialize_structure_crate_input_put_access_control_rule_input(
         let mut array_172 = object.key("Actions").start_array();
         for item_173 in var_171 {
             {
-                array_172.value().string(item_173);
+                array_172.value().string(item_173.as_str());
             }
         }
         array_172.finish();
@@ -925,7 +927,7 @@ pub fn serialize_structure_crate_input_put_access_control_rule_input(
         let mut array_175 = object.key("NotActions").start_array();
         for item_176 in var_174 {
             {
-                array_175.value().string(item_176);
+                array_175.value().string(item_176.as_str());
             }
         }
         array_175.finish();
@@ -934,7 +936,7 @@ pub fn serialize_structure_crate_input_put_access_control_rule_input(
         let mut array_178 = object.key("UserIds").start_array();
         for item_179 in var_177 {
             {
-                array_178.value().string(item_179);
+                array_178.value().string(item_179.as_str());
             }
         }
         array_178.finish();
@@ -943,13 +945,13 @@ pub fn serialize_structure_crate_input_put_access_control_rule_input(
         let mut array_181 = object.key("NotUserIds").start_array();
         for item_182 in var_180 {
             {
-                array_181.value().string(item_182);
+                array_181.value().string(item_182.as_str());
             }
         }
         array_181.finish();
     }
     if let Some(var_183) = &input.organization_id {
-        object.key("OrganizationId").string(var_183);
+        object.key("OrganizationId").string(var_183.as_str());
     }
     Ok(())
 }
@@ -959,13 +961,13 @@ pub fn serialize_structure_crate_input_put_email_monitoring_configuration_input(
     input: &crate::input::PutEmailMonitoringConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_184) = &input.organization_id {
-        object.key("OrganizationId").string(var_184);
+        object.key("OrganizationId").string(var_184.as_str());
     }
     if let Some(var_185) = &input.role_arn {
-        object.key("RoleArn").string(var_185);
+        object.key("RoleArn").string(var_185.as_str());
     }
     if let Some(var_186) = &input.log_group_arn {
-        object.key("LogGroupArn").string(var_186);
+        object.key("LogGroupArn").string(var_186.as_str());
     }
     Ok(())
 }
@@ -975,7 +977,7 @@ pub fn serialize_structure_crate_input_put_inbound_dmarc_settings_input(
     input: &crate::input::PutInboundDmarcSettingsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_187) = &input.organization_id {
-        object.key("OrganizationId").string(var_187);
+        object.key("OrganizationId").string(var_187.as_str());
     }
     if let Some(var_188) = &input.enforced {
         object.key("Enforced").boolean(*var_188);
@@ -988,13 +990,13 @@ pub fn serialize_structure_crate_input_put_mailbox_permissions_input(
     input: &crate::input::PutMailboxPermissionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_189) = &input.organization_id {
-        object.key("OrganizationId").string(var_189);
+        object.key("OrganizationId").string(var_189.as_str());
     }
     if let Some(var_190) = &input.entity_id {
-        object.key("EntityId").string(var_190);
+        object.key("EntityId").string(var_190.as_str());
     }
     if let Some(var_191) = &input.grantee_id {
-        object.key("GranteeId").string(var_191);
+        object.key("GranteeId").string(var_191.as_str());
     }
     if let Some(var_192) = &input.permission_values {
         let mut array_193 = object.key("PermissionValues").start_array();
@@ -1013,19 +1015,19 @@ pub fn serialize_structure_crate_input_put_mobile_device_access_override_input(
     input: &crate::input::PutMobileDeviceAccessOverrideInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_195) = &input.organization_id {
-        object.key("OrganizationId").string(var_195);
+        object.key("OrganizationId").string(var_195.as_str());
     }
     if let Some(var_196) = &input.user_id {
-        object.key("UserId").string(var_196);
+        object.key("UserId").string(var_196.as_str());
     }
     if let Some(var_197) = &input.device_id {
-        object.key("DeviceId").string(var_197);
+        object.key("DeviceId").string(var_197.as_str());
     }
     if let Some(var_198) = &input.effect {
         object.key("Effect").string(var_198.as_str());
     }
     if let Some(var_199) = &input.description {
-        object.key("Description").string(var_199);
+        object.key("Description").string(var_199.as_str());
     }
     Ok(())
 }
@@ -1035,16 +1037,16 @@ pub fn serialize_structure_crate_input_put_retention_policy_input(
     input: &crate::input::PutRetentionPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_200) = &input.organization_id {
-        object.key("OrganizationId").string(var_200);
+        object.key("OrganizationId").string(var_200.as_str());
     }
     if let Some(var_201) = &input.id {
-        object.key("Id").string(var_201);
+        object.key("Id").string(var_201.as_str());
     }
     if let Some(var_202) = &input.name {
-        object.key("Name").string(var_202);
+        object.key("Name").string(var_202.as_str());
     }
     if let Some(var_203) = &input.description {
-        object.key("Description").string(var_203);
+        object.key("Description").string(var_203.as_str());
     }
     if let Some(var_204) = &input.folder_configurations {
         let mut array_205 = object.key("FolderConfigurations").start_array();
@@ -1068,13 +1070,13 @@ pub fn serialize_structure_crate_input_register_mail_domain_input(
     input: &crate::input::RegisterMailDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_208) = &input.client_token {
-        object.key("ClientToken").string(var_208);
+        object.key("ClientToken").string(var_208.as_str());
     }
     if let Some(var_209) = &input.organization_id {
-        object.key("OrganizationId").string(var_209);
+        object.key("OrganizationId").string(var_209.as_str());
     }
     if let Some(var_210) = &input.domain_name {
-        object.key("DomainName").string(var_210);
+        object.key("DomainName").string(var_210.as_str());
     }
     Ok(())
 }
@@ -1084,13 +1086,13 @@ pub fn serialize_structure_crate_input_register_to_work_mail_input(
     input: &crate::input::RegisterToWorkMailInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_211) = &input.organization_id {
-        object.key("OrganizationId").string(var_211);
+        object.key("OrganizationId").string(var_211.as_str());
     }
     if let Some(var_212) = &input.entity_id {
-        object.key("EntityId").string(var_212);
+        object.key("EntityId").string(var_212.as_str());
     }
     if let Some(var_213) = &input.email {
-        object.key("Email").string(var_213);
+        object.key("Email").string(var_213.as_str());
     }
     Ok(())
 }
@@ -1100,13 +1102,13 @@ pub fn serialize_structure_crate_input_reset_password_input(
     input: &crate::input::ResetPasswordInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_214) = &input.organization_id {
-        object.key("OrganizationId").string(var_214);
+        object.key("OrganizationId").string(var_214.as_str());
     }
     if let Some(var_215) = &input.user_id {
-        object.key("UserId").string(var_215);
+        object.key("UserId").string(var_215.as_str());
     }
     if let Some(var_216) = &input.password {
-        object.key("Password").string(var_216);
+        object.key("Password").string(var_216.as_str());
     }
     Ok(())
 }
@@ -1116,28 +1118,28 @@ pub fn serialize_structure_crate_input_start_mailbox_export_job_input(
     input: &crate::input::StartMailboxExportJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_217) = &input.client_token {
-        object.key("ClientToken").string(var_217);
+        object.key("ClientToken").string(var_217.as_str());
     }
     if let Some(var_218) = &input.organization_id {
-        object.key("OrganizationId").string(var_218);
+        object.key("OrganizationId").string(var_218.as_str());
     }
     if let Some(var_219) = &input.entity_id {
-        object.key("EntityId").string(var_219);
+        object.key("EntityId").string(var_219.as_str());
     }
     if let Some(var_220) = &input.description {
-        object.key("Description").string(var_220);
+        object.key("Description").string(var_220.as_str());
     }
     if let Some(var_221) = &input.role_arn {
-        object.key("RoleArn").string(var_221);
+        object.key("RoleArn").string(var_221.as_str());
     }
     if let Some(var_222) = &input.kms_key_arn {
-        object.key("KmsKeyArn").string(var_222);
+        object.key("KmsKeyArn").string(var_222.as_str());
     }
     if let Some(var_223) = &input.s3_bucket_name {
-        object.key("S3BucketName").string(var_223);
+        object.key("S3BucketName").string(var_223.as_str());
     }
     if let Some(var_224) = &input.s3_prefix {
-        object.key("S3Prefix").string(var_224);
+        object.key("S3Prefix").string(var_224.as_str());
     }
     Ok(())
 }
@@ -1147,7 +1149,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_225) = &input.resource_arn {
-        object.key("ResourceARN").string(var_225);
+        object.key("ResourceARN").string(var_225.as_str());
     }
     if let Some(var_226) = &input.tags {
         let mut array_227 = object.key("Tags").start_array();
@@ -1168,13 +1170,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_230) = &input.resource_arn {
-        object.key("ResourceARN").string(var_230);
+        object.key("ResourceARN").string(var_230.as_str());
     }
     if let Some(var_231) = &input.tag_keys {
         let mut array_232 = object.key("TagKeys").start_array();
         for item_233 in var_231 {
             {
-                array_232.value().string(item_233);
+                array_232.value().string(item_233.as_str());
             }
         }
         array_232.finish();
@@ -1187,10 +1189,10 @@ pub fn serialize_structure_crate_input_update_default_mail_domain_input(
     input: &crate::input::UpdateDefaultMailDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_234) = &input.organization_id {
-        object.key("OrganizationId").string(var_234);
+        object.key("OrganizationId").string(var_234.as_str());
     }
     if let Some(var_235) = &input.domain_name {
-        object.key("DomainName").string(var_235);
+        object.key("DomainName").string(var_235.as_str());
     }
     Ok(())
 }
@@ -1200,10 +1202,10 @@ pub fn serialize_structure_crate_input_update_mailbox_quota_input(
     input: &crate::input::UpdateMailboxQuotaInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_236) = &input.organization_id {
-        object.key("OrganizationId").string(var_236);
+        object.key("OrganizationId").string(var_236.as_str());
     }
     if let Some(var_237) = &input.user_id {
-        object.key("UserId").string(var_237);
+        object.key("UserId").string(var_237.as_str());
     }
     if let Some(var_238) = &input.mailbox_quota {
         object.key("MailboxQuota").number(
@@ -1219,16 +1221,18 @@ pub fn serialize_structure_crate_input_update_mobile_device_access_rule_input(
     input: &crate::input::UpdateMobileDeviceAccessRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_239) = &input.organization_id {
-        object.key("OrganizationId").string(var_239);
+        object.key("OrganizationId").string(var_239.as_str());
     }
     if let Some(var_240) = &input.mobile_device_access_rule_id {
-        object.key("MobileDeviceAccessRuleId").string(var_240);
+        object
+            .key("MobileDeviceAccessRuleId")
+            .string(var_240.as_str());
     }
     if let Some(var_241) = &input.name {
-        object.key("Name").string(var_241);
+        object.key("Name").string(var_241.as_str());
     }
     if let Some(var_242) = &input.description {
-        object.key("Description").string(var_242);
+        object.key("Description").string(var_242.as_str());
     }
     if let Some(var_243) = &input.effect {
         object.key("Effect").string(var_243.as_str());
@@ -1237,7 +1241,7 @@ pub fn serialize_structure_crate_input_update_mobile_device_access_rule_input(
         let mut array_245 = object.key("DeviceTypes").start_array();
         for item_246 in var_244 {
             {
-                array_245.value().string(item_246);
+                array_245.value().string(item_246.as_str());
             }
         }
         array_245.finish();
@@ -1246,7 +1250,7 @@ pub fn serialize_structure_crate_input_update_mobile_device_access_rule_input(
         let mut array_248 = object.key("NotDeviceTypes").start_array();
         for item_249 in var_247 {
             {
-                array_248.value().string(item_249);
+                array_248.value().string(item_249.as_str());
             }
         }
         array_248.finish();
@@ -1255,7 +1259,7 @@ pub fn serialize_structure_crate_input_update_mobile_device_access_rule_input(
         let mut array_251 = object.key("DeviceModels").start_array();
         for item_252 in var_250 {
             {
-                array_251.value().string(item_252);
+                array_251.value().string(item_252.as_str());
             }
         }
         array_251.finish();
@@ -1264,7 +1268,7 @@ pub fn serialize_structure_crate_input_update_mobile_device_access_rule_input(
         let mut array_254 = object.key("NotDeviceModels").start_array();
         for item_255 in var_253 {
             {
-                array_254.value().string(item_255);
+                array_254.value().string(item_255.as_str());
             }
         }
         array_254.finish();
@@ -1273,7 +1277,7 @@ pub fn serialize_structure_crate_input_update_mobile_device_access_rule_input(
         let mut array_257 = object.key("DeviceOperatingSystems").start_array();
         for item_258 in var_256 {
             {
-                array_257.value().string(item_258);
+                array_257.value().string(item_258.as_str());
             }
         }
         array_257.finish();
@@ -1282,7 +1286,7 @@ pub fn serialize_structure_crate_input_update_mobile_device_access_rule_input(
         let mut array_260 = object.key("NotDeviceOperatingSystems").start_array();
         for item_261 in var_259 {
             {
-                array_260.value().string(item_261);
+                array_260.value().string(item_261.as_str());
             }
         }
         array_260.finish();
@@ -1291,7 +1295,7 @@ pub fn serialize_structure_crate_input_update_mobile_device_access_rule_input(
         let mut array_263 = object.key("DeviceUserAgents").start_array();
         for item_264 in var_262 {
             {
-                array_263.value().string(item_264);
+                array_263.value().string(item_264.as_str());
             }
         }
         array_263.finish();
@@ -1300,7 +1304,7 @@ pub fn serialize_structure_crate_input_update_mobile_device_access_rule_input(
         let mut array_266 = object.key("NotDeviceUserAgents").start_array();
         for item_267 in var_265 {
             {
-                array_266.value().string(item_267);
+                array_266.value().string(item_267.as_str());
             }
         }
         array_266.finish();
@@ -1313,13 +1317,13 @@ pub fn serialize_structure_crate_input_update_primary_email_address_input(
     input: &crate::input::UpdatePrimaryEmailAddressInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_268) = &input.organization_id {
-        object.key("OrganizationId").string(var_268);
+        object.key("OrganizationId").string(var_268.as_str());
     }
     if let Some(var_269) = &input.entity_id {
-        object.key("EntityId").string(var_269);
+        object.key("EntityId").string(var_269.as_str());
     }
     if let Some(var_270) = &input.email {
-        object.key("Email").string(var_270);
+        object.key("Email").string(var_270.as_str());
     }
     Ok(())
 }
@@ -1329,13 +1333,13 @@ pub fn serialize_structure_crate_input_update_resource_input(
     input: &crate::input::UpdateResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_271) = &input.organization_id {
-        object.key("OrganizationId").string(var_271);
+        object.key("OrganizationId").string(var_271.as_str());
     }
     if let Some(var_272) = &input.resource_id {
-        object.key("ResourceId").string(var_272);
+        object.key("ResourceId").string(var_272.as_str());
     }
     if let Some(var_273) = &input.name {
-        object.key("Name").string(var_273);
+        object.key("Name").string(var_273.as_str());
     }
     if let Some(var_274) = &input.booking_options {
         let mut object_275 = object.key("BookingOptions").start_object();
@@ -1350,10 +1354,10 @@ pub fn serialize_structure_crate_model_domain(
     input: &crate::model::Domain,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_276) = &input.domain_name {
-        object.key("DomainName").string(var_276);
+        object.key("DomainName").string(var_276.as_str());
     }
     if let Some(var_277) = &input.hosted_zone_id {
-        object.key("HostedZoneId").string(var_277);
+        object.key("HostedZoneId").string(var_277.as_str());
     }
     Ok(())
 }
@@ -1382,10 +1386,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_281) = &input.key {
-        object.key("Key").string(var_281);
+        object.key("Key").string(var_281.as_str());
     }
     if let Some(var_282) = &input.value {
-        object.key("Value").string(var_282);
+        object.key("Value").string(var_282.as_str());
     }
     Ok(())
 }

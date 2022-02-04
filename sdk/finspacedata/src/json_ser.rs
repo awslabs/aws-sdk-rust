@@ -7,13 +7,13 @@ pub fn serialize_structure_crate_input_create_changeset_input(
         object.key("changeType").string(var_1.as_str());
     }
     if let Some(var_2) = &input.client_token {
-        object.key("clientToken").string(var_2);
+        object.key("clientToken").string(var_2.as_str());
     }
     if let Some(var_3) = &input.format_params {
         let mut object_4 = object.key("formatParams").start_object();
         for (key_5, value_6) in var_3 {
             {
-                object_4.key(key_5).string(value_6);
+                object_4.key(key_5).string(value_6.as_str());
             }
         }
         object_4.finish();
@@ -22,7 +22,7 @@ pub fn serialize_structure_crate_input_create_changeset_input(
         let mut object_8 = object.key("sourceParams").start_object();
         for (key_9, value_10) in var_7 {
             {
-                object_8.key(key_9).string(value_10);
+                object_8.key(key_9).string(value_10.as_str());
             }
         }
         object_8.finish();
@@ -35,16 +35,16 @@ pub fn serialize_structure_crate_input_create_dataset_input(
     input: &crate::input::CreateDatasetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.alias {
-        object.key("alias").string(var_11);
+        object.key("alias").string(var_11.as_str());
     }
     if let Some(var_12) = &input.client_token {
-        object.key("clientToken").string(var_12);
+        object.key("clientToken").string(var_12.as_str());
     }
     if let Some(var_13) = &input.dataset_description {
-        object.key("datasetDescription").string(var_13);
+        object.key("datasetDescription").string(var_13.as_str());
     }
     if let Some(var_14) = &input.dataset_title {
-        object.key("datasetTitle").string(var_14);
+        object.key("datasetTitle").string(var_14.as_str());
     }
     if let Some(var_15) = &input.kind {
         object.key("kind").string(var_15.as_str());
@@ -87,7 +87,7 @@ pub fn serialize_structure_crate_input_create_data_view_input(
         object.key("autoUpdate").boolean(input.auto_update);
     }
     if let Some(var_23) = &input.client_token {
-        object.key("clientToken").string(var_23);
+        object.key("clientToken").string(var_23.as_str());
     }
     if let Some(var_24) = &input.destination_type_params {
         let mut object_25 = object.key("destinationTypeParams").start_object();
@@ -101,7 +101,7 @@ pub fn serialize_structure_crate_input_create_data_view_input(
         let mut array_27 = object.key("partitionColumns").start_array();
         for item_28 in var_26 {
             {
-                array_27.value().string(item_28);
+                array_27.value().string(item_28.as_str());
             }
         }
         array_27.finish();
@@ -110,7 +110,7 @@ pub fn serialize_structure_crate_input_create_data_view_input(
         let mut array_30 = object.key("sortColumns").start_array();
         for item_31 in var_29 {
             {
-                array_30.value().string(item_31);
+                array_30.value().string(item_31.as_str());
             }
         }
         array_30.finish();
@@ -133,13 +133,13 @@ pub fn serialize_structure_crate_input_update_changeset_input(
     input: &crate::input::UpdateChangesetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.client_token {
-        object.key("clientToken").string(var_33);
+        object.key("clientToken").string(var_33.as_str());
     }
     if let Some(var_34) = &input.format_params {
         let mut object_35 = object.key("formatParams").start_object();
         for (key_36, value_37) in var_34 {
             {
-                object_35.key(key_36).string(value_37);
+                object_35.key(key_36).string(value_37.as_str());
             }
         }
         object_35.finish();
@@ -148,7 +148,7 @@ pub fn serialize_structure_crate_input_update_changeset_input(
         let mut object_39 = object.key("sourceParams").start_object();
         for (key_40, value_41) in var_38 {
             {
-                object_39.key(key_40).string(value_41);
+                object_39.key(key_40).string(value_41.as_str());
             }
         }
         object_39.finish();
@@ -161,16 +161,16 @@ pub fn serialize_structure_crate_input_update_dataset_input(
     input: &crate::input::UpdateDatasetInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_42) = &input.alias {
-        object.key("alias").string(var_42);
+        object.key("alias").string(var_42.as_str());
     }
     if let Some(var_43) = &input.client_token {
-        object.key("clientToken").string(var_43);
+        object.key("clientToken").string(var_43.as_str());
     }
     if let Some(var_44) = &input.dataset_description {
-        object.key("datasetDescription").string(var_44);
+        object.key("datasetDescription").string(var_44.as_str());
     }
     if let Some(var_45) = &input.dataset_title {
-        object.key("datasetTitle").string(var_45);
+        object.key("datasetTitle").string(var_45.as_str());
     }
     if let Some(var_46) = &input.kind {
         object.key("kind").string(var_46.as_str());
@@ -188,13 +188,13 @@ pub fn serialize_structure_crate_model_dataset_owner_info(
     input: &crate::model::DatasetOwnerInfo,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.name {
-        object.key("name").string(var_49);
+        object.key("name").string(var_49.as_str());
     }
     if let Some(var_50) = &input.phone_number {
-        object.key("phoneNumber").string(var_50);
+        object.key("phoneNumber").string(var_50.as_str());
     }
     if let Some(var_51) = &input.email {
-        object.key("email").string(var_51);
+        object.key("email").string(var_51.as_str());
     }
     Ok(())
 }
@@ -204,7 +204,7 @@ pub fn serialize_structure_crate_model_permission_group_params(
     input: &crate::model::PermissionGroupParams,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_52) = &input.permission_group_id {
-        object.key("permissionGroupId").string(var_52);
+        object.key("permissionGroupId").string(var_52.as_str());
     }
     if let Some(var_53) = &input.dataset_permissions {
         let mut array_54 = object.key("datasetPermissions").start_array();
@@ -240,7 +240,7 @@ pub fn serialize_structure_crate_model_data_view_destination_type_params(
     input: &crate::model::DataViewDestinationTypeParams,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_59) = &input.destination_type {
-        object.key("destinationType").string(var_59);
+        object.key("destinationType").string(var_59.as_str());
     }
     if let Some(var_60) = &input.s3_destination_export_file_format {
         object
@@ -253,7 +253,7 @@ pub fn serialize_structure_crate_model_data_view_destination_type_params(
             .start_object();
         for (key_63, value_64) in var_61 {
             {
-                object_62.key(key_63).string(value_64);
+                object_62.key(key_63).string(value_64.as_str());
             }
         }
         object_62.finish();
@@ -266,7 +266,7 @@ pub fn serialize_structure_crate_model_resource_permission(
     input: &crate::model::ResourcePermission,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_65) = &input.permission {
-        object.key("permission").string(var_65);
+        object.key("permission").string(var_65.as_str());
     }
     Ok(())
 }
@@ -293,7 +293,7 @@ pub fn serialize_structure_crate_model_schema_definition(
         let mut array_71 = object.key("primaryKeyColumns").start_array();
         for item_72 in var_70 {
             {
-                array_71.value().string(item_72);
+                array_71.value().string(item_72.as_str());
             }
         }
         array_71.finish();
@@ -309,10 +309,10 @@ pub fn serialize_structure_crate_model_column_definition(
         object.key("dataType").string(var_73.as_str());
     }
     if let Some(var_74) = &input.column_name {
-        object.key("columnName").string(var_74);
+        object.key("columnName").string(var_74.as_str());
     }
     if let Some(var_75) = &input.column_description {
-        object.key("columnDescription").string(var_75);
+        object.key("columnDescription").string(var_75.as_str());
     }
     Ok(())
 }

@@ -12,10 +12,10 @@ pub fn serialize_structure_crate_input_get_clip_input(
         object_2.finish();
     }
     if let Some(var_3) = &input.stream_arn {
-        object.key("StreamARN").string(var_3);
+        object.key("StreamARN").string(var_3.as_str());
     }
     if let Some(var_4) = &input.stream_name {
-        object.key("StreamName").string(var_4);
+        object.key("StreamName").string(var_4.as_str());
     }
     Ok(())
 }
@@ -56,10 +56,10 @@ pub fn serialize_structure_crate_input_get_dash_streaming_session_url_input(
         object.key("PlaybackMode").string(var_11.as_str());
     }
     if let Some(var_12) = &input.stream_arn {
-        object.key("StreamARN").string(var_12);
+        object.key("StreamARN").string(var_12.as_str());
     }
     if let Some(var_13) = &input.stream_name {
-        object.key("StreamName").string(var_13);
+        object.key("StreamName").string(var_13.as_str());
     }
     Ok(())
 }
@@ -103,10 +103,10 @@ pub fn serialize_structure_crate_input_get_hls_streaming_session_url_input(
         object.key("PlaybackMode").string(var_21.as_str());
     }
     if let Some(var_22) = &input.stream_arn {
-        object.key("StreamARN").string(var_22);
+        object.key("StreamARN").string(var_22.as_str());
     }
     if let Some(var_23) = &input.stream_name {
-        object.key("StreamName").string(var_23);
+        object.key("StreamName").string(var_23.as_str());
     }
     Ok(())
 }
@@ -119,16 +119,16 @@ pub fn serialize_structure_crate_input_get_media_for_fragment_list_input(
         let mut array_25 = object.key("Fragments").start_array();
         for item_26 in var_24 {
             {
-                array_25.value().string(item_26);
+                array_25.value().string(item_26.as_str());
             }
         }
         array_25.finish();
     }
     if let Some(var_27) = &input.stream_arn {
-        object.key("StreamARN").string(var_27);
+        object.key("StreamARN").string(var_27.as_str());
     }
     if let Some(var_28) = &input.stream_name {
-        object.key("StreamName").string(var_28);
+        object.key("StreamName").string(var_28.as_str());
     }
     Ok(())
 }
@@ -149,13 +149,13 @@ pub fn serialize_structure_crate_input_list_fragments_input(
         );
     }
     if let Some(var_32) = &input.next_token {
-        object.key("NextToken").string(var_32);
+        object.key("NextToken").string(var_32.as_str());
     }
     if let Some(var_33) = &input.stream_arn {
-        object.key("StreamARN").string(var_33);
+        object.key("StreamARN").string(var_33.as_str());
     }
     if let Some(var_34) = &input.stream_name {
-        object.key("StreamName").string(var_34);
+        object.key("StreamName").string(var_34.as_str());
     }
     Ok(())
 }

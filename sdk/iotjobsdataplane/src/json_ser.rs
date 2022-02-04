@@ -7,7 +7,7 @@ pub fn serialize_structure_crate_input_start_next_pending_job_execution_input(
         let mut object_2 = object.key("statusDetails").start_object();
         for (key_3, value_4) in var_1 {
             {
-                object_2.key(key_3).string(value_4);
+                object_2.key(key_3).string(value_4.as_str());
             }
         }
         object_2.finish();
@@ -50,7 +50,7 @@ pub fn serialize_structure_crate_input_update_job_execution_input(
         let mut object_12 = object.key("statusDetails").start_object();
         for (key_13, value_14) in var_11 {
             {
-                object_12.key(key_13).string(value_14);
+                object_12.key(key_13).string(value_14.as_str());
             }
         }
         object_12.finish();

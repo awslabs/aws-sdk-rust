@@ -4,19 +4,19 @@ pub fn serialize_structure_crate_input_accept_page_input(
     input: &crate::input::AcceptPageInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.page_id {
-        object.key("PageId").string(var_1);
+        object.key("PageId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.contact_channel_id {
-        object.key("ContactChannelId").string(var_2);
+        object.key("ContactChannelId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.accept_type {
         object.key("AcceptType").string(var_3.as_str());
     }
     if let Some(var_4) = &input.note {
-        object.key("Note").string(var_4);
+        object.key("Note").string(var_4.as_str());
     }
     if let Some(var_5) = &input.accept_code {
-        object.key("AcceptCode").string(var_5);
+        object.key("AcceptCode").string(var_5.as_str());
     }
     if let Some(var_6) = &input.accept_code_validation {
         object.key("AcceptCodeValidation").string(var_6.as_str());
@@ -29,10 +29,10 @@ pub fn serialize_structure_crate_input_activate_contact_channel_input(
     input: &crate::input::ActivateContactChannelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.contact_channel_id {
-        object.key("ContactChannelId").string(var_7);
+        object.key("ContactChannelId").string(var_7.as_str());
     }
     if let Some(var_8) = &input.activation_code {
-        object.key("ActivationCode").string(var_8);
+        object.key("ActivationCode").string(var_8.as_str());
     }
     Ok(())
 }
@@ -42,10 +42,10 @@ pub fn serialize_structure_crate_input_create_contact_input(
     input: &crate::input::CreateContactInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.alias {
-        object.key("Alias").string(var_9);
+        object.key("Alias").string(var_9.as_str());
     }
     if let Some(var_10) = &input.display_name {
-        object.key("DisplayName").string(var_10);
+        object.key("DisplayName").string(var_10.as_str());
     }
     if let Some(var_11) = &input.r#type {
         object.key("Type").string(var_11.as_str());
@@ -67,7 +67,7 @@ pub fn serialize_structure_crate_input_create_contact_input(
         array_15.finish();
     }
     if let Some(var_18) = &input.idempotency_token {
-        object.key("IdempotencyToken").string(var_18);
+        object.key("IdempotencyToken").string(var_18.as_str());
     }
     Ok(())
 }
@@ -77,10 +77,10 @@ pub fn serialize_structure_crate_input_create_contact_channel_input(
     input: &crate::input::CreateContactChannelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.contact_id {
-        object.key("ContactId").string(var_19);
+        object.key("ContactId").string(var_19.as_str());
     }
     if let Some(var_20) = &input.name {
-        object.key("Name").string(var_20);
+        object.key("Name").string(var_20.as_str());
     }
     if let Some(var_21) = &input.r#type {
         object.key("Type").string(var_21.as_str());
@@ -97,7 +97,7 @@ pub fn serialize_structure_crate_input_create_contact_channel_input(
         object.key("DeferActivation").boolean(*var_24);
     }
     if let Some(var_25) = &input.idempotency_token {
-        object.key("IdempotencyToken").string(var_25);
+        object.key("IdempotencyToken").string(var_25.as_str());
     }
     Ok(())
 }
@@ -107,7 +107,7 @@ pub fn serialize_structure_crate_input_deactivate_contact_channel_input(
     input: &crate::input::DeactivateContactChannelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.contact_channel_id {
-        object.key("ContactChannelId").string(var_26);
+        object.key("ContactChannelId").string(var_26.as_str());
     }
     Ok(())
 }
@@ -117,7 +117,7 @@ pub fn serialize_structure_crate_input_delete_contact_input(
     input: &crate::input::DeleteContactInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.contact_id {
-        object.key("ContactId").string(var_27);
+        object.key("ContactId").string(var_27.as_str());
     }
     Ok(())
 }
@@ -127,7 +127,7 @@ pub fn serialize_structure_crate_input_delete_contact_channel_input(
     input: &crate::input::DeleteContactChannelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_28) = &input.contact_channel_id {
-        object.key("ContactChannelId").string(var_28);
+        object.key("ContactChannelId").string(var_28.as_str());
     }
     Ok(())
 }
@@ -137,7 +137,7 @@ pub fn serialize_structure_crate_input_describe_engagement_input(
     input: &crate::input::DescribeEngagementInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_29) = &input.engagement_id {
-        object.key("EngagementId").string(var_29);
+        object.key("EngagementId").string(var_29.as_str());
     }
     Ok(())
 }
@@ -147,7 +147,7 @@ pub fn serialize_structure_crate_input_describe_page_input(
     input: &crate::input::DescribePageInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_30) = &input.page_id {
-        object.key("PageId").string(var_30);
+        object.key("PageId").string(var_30.as_str());
     }
     Ok(())
 }
@@ -157,7 +157,7 @@ pub fn serialize_structure_crate_input_get_contact_input(
     input: &crate::input::GetContactInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_31) = &input.contact_id {
-        object.key("ContactId").string(var_31);
+        object.key("ContactId").string(var_31.as_str());
     }
     Ok(())
 }
@@ -167,7 +167,7 @@ pub fn serialize_structure_crate_input_get_contact_channel_input(
     input: &crate::input::GetContactChannelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.contact_channel_id {
-        object.key("ContactChannelId").string(var_32);
+        object.key("ContactChannelId").string(var_32.as_str());
     }
     Ok(())
 }
@@ -177,7 +177,7 @@ pub fn serialize_structure_crate_input_get_contact_policy_input(
     input: &crate::input::GetContactPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.contact_arn {
-        object.key("ContactArn").string(var_33);
+        object.key("ContactArn").string(var_33.as_str());
     }
     Ok(())
 }
@@ -187,10 +187,10 @@ pub fn serialize_structure_crate_input_list_contact_channels_input(
     input: &crate::input::ListContactChannelsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_34) = &input.contact_id {
-        object.key("ContactId").string(var_34);
+        object.key("ContactId").string(var_34.as_str());
     }
     if let Some(var_35) = &input.next_token {
-        object.key("NextToken").string(var_35);
+        object.key("NextToken").string(var_35.as_str());
     }
     if let Some(var_36) = &input.max_results {
         object.key("MaxResults").number(
@@ -206,7 +206,7 @@ pub fn serialize_structure_crate_input_list_contacts_input(
     input: &crate::input::ListContactsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_37) = &input.next_token {
-        object.key("NextToken").string(var_37);
+        object.key("NextToken").string(var_37.as_str());
     }
     if let Some(var_38) = &input.max_results {
         object.key("MaxResults").number(
@@ -215,7 +215,7 @@ pub fn serialize_structure_crate_input_list_contacts_input(
         );
     }
     if let Some(var_39) = &input.alias_prefix {
-        object.key("AliasPrefix").string(var_39);
+        object.key("AliasPrefix").string(var_39.as_str());
     }
     if let Some(var_40) = &input.r#type {
         object.key("Type").string(var_40.as_str());
@@ -228,7 +228,7 @@ pub fn serialize_structure_crate_input_list_engagements_input(
     input: &crate::input::ListEngagementsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.next_token {
-        object.key("NextToken").string(var_41);
+        object.key("NextToken").string(var_41.as_str());
     }
     if let Some(var_42) = &input.max_results {
         object.key("MaxResults").number(
@@ -237,7 +237,7 @@ pub fn serialize_structure_crate_input_list_engagements_input(
         );
     }
     if let Some(var_43) = &input.incident_id {
-        object.key("IncidentId").string(var_43);
+        object.key("IncidentId").string(var_43.as_str());
     }
     if let Some(var_44) = &input.time_range_value {
         let mut object_45 = object.key("TimeRangeValue").start_object();
@@ -252,10 +252,10 @@ pub fn serialize_structure_crate_input_list_page_receipts_input(
     input: &crate::input::ListPageReceiptsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_46) = &input.page_id {
-        object.key("PageId").string(var_46);
+        object.key("PageId").string(var_46.as_str());
     }
     if let Some(var_47) = &input.next_token {
-        object.key("NextToken").string(var_47);
+        object.key("NextToken").string(var_47.as_str());
     }
     if let Some(var_48) = &input.max_results {
         object.key("MaxResults").number(
@@ -271,10 +271,10 @@ pub fn serialize_structure_crate_input_list_pages_by_contact_input(
     input: &crate::input::ListPagesByContactInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.contact_id {
-        object.key("ContactId").string(var_49);
+        object.key("ContactId").string(var_49.as_str());
     }
     if let Some(var_50) = &input.next_token {
-        object.key("NextToken").string(var_50);
+        object.key("NextToken").string(var_50.as_str());
     }
     if let Some(var_51) = &input.max_results {
         object.key("MaxResults").number(
@@ -290,10 +290,10 @@ pub fn serialize_structure_crate_input_list_pages_by_engagement_input(
     input: &crate::input::ListPagesByEngagementInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_52) = &input.engagement_id {
-        object.key("EngagementId").string(var_52);
+        object.key("EngagementId").string(var_52.as_str());
     }
     if let Some(var_53) = &input.next_token {
-        object.key("NextToken").string(var_53);
+        object.key("NextToken").string(var_53.as_str());
     }
     if let Some(var_54) = &input.max_results {
         object.key("MaxResults").number(
@@ -309,7 +309,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_55) = &input.resource_arn {
-        object.key("ResourceARN").string(var_55);
+        object.key("ResourceARN").string(var_55.as_str());
     }
     Ok(())
 }
@@ -319,10 +319,10 @@ pub fn serialize_structure_crate_input_put_contact_policy_input(
     input: &crate::input::PutContactPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_56) = &input.contact_arn {
-        object.key("ContactArn").string(var_56);
+        object.key("ContactArn").string(var_56.as_str());
     }
     if let Some(var_57) = &input.policy {
-        object.key("Policy").string(var_57);
+        object.key("Policy").string(var_57.as_str());
     }
     Ok(())
 }
@@ -332,7 +332,7 @@ pub fn serialize_structure_crate_input_send_activation_code_input(
     input: &crate::input::SendActivationCodeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_58) = &input.contact_channel_id {
-        object.key("ContactChannelId").string(var_58);
+        object.key("ContactChannelId").string(var_58.as_str());
     }
     Ok(())
 }
@@ -342,28 +342,28 @@ pub fn serialize_structure_crate_input_start_engagement_input(
     input: &crate::input::StartEngagementInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_59) = &input.contact_id {
-        object.key("ContactId").string(var_59);
+        object.key("ContactId").string(var_59.as_str());
     }
     if let Some(var_60) = &input.sender {
-        object.key("Sender").string(var_60);
+        object.key("Sender").string(var_60.as_str());
     }
     if let Some(var_61) = &input.subject {
-        object.key("Subject").string(var_61);
+        object.key("Subject").string(var_61.as_str());
     }
     if let Some(var_62) = &input.content {
-        object.key("Content").string(var_62);
+        object.key("Content").string(var_62.as_str());
     }
     if let Some(var_63) = &input.public_subject {
-        object.key("PublicSubject").string(var_63);
+        object.key("PublicSubject").string(var_63.as_str());
     }
     if let Some(var_64) = &input.public_content {
-        object.key("PublicContent").string(var_64);
+        object.key("PublicContent").string(var_64.as_str());
     }
     if let Some(var_65) = &input.incident_id {
-        object.key("IncidentId").string(var_65);
+        object.key("IncidentId").string(var_65.as_str());
     }
     if let Some(var_66) = &input.idempotency_token {
-        object.key("IdempotencyToken").string(var_66);
+        object.key("IdempotencyToken").string(var_66.as_str());
     }
     Ok(())
 }
@@ -373,10 +373,10 @@ pub fn serialize_structure_crate_input_stop_engagement_input(
     input: &crate::input::StopEngagementInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.engagement_id {
-        object.key("EngagementId").string(var_67);
+        object.key("EngagementId").string(var_67.as_str());
     }
     if let Some(var_68) = &input.reason {
-        object.key("Reason").string(var_68);
+        object.key("Reason").string(var_68.as_str());
     }
     Ok(())
 }
@@ -386,7 +386,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_69) = &input.resource_arn {
-        object.key("ResourceARN").string(var_69);
+        object.key("ResourceARN").string(var_69.as_str());
     }
     if let Some(var_70) = &input.tags {
         let mut array_71 = object.key("Tags").start_array();
@@ -407,13 +407,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_74) = &input.resource_arn {
-        object.key("ResourceARN").string(var_74);
+        object.key("ResourceARN").string(var_74.as_str());
     }
     if let Some(var_75) = &input.tag_keys {
         let mut array_76 = object.key("TagKeys").start_array();
         for item_77 in var_75 {
             {
-                array_76.value().string(item_77);
+                array_76.value().string(item_77.as_str());
             }
         }
         array_76.finish();
@@ -426,10 +426,10 @@ pub fn serialize_structure_crate_input_update_contact_input(
     input: &crate::input::UpdateContactInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_78) = &input.contact_id {
-        object.key("ContactId").string(var_78);
+        object.key("ContactId").string(var_78.as_str());
     }
     if let Some(var_79) = &input.display_name {
-        object.key("DisplayName").string(var_79);
+        object.key("DisplayName").string(var_79.as_str());
     }
     if let Some(var_80) = &input.plan {
         let mut object_81 = object.key("Plan").start_object();
@@ -444,10 +444,10 @@ pub fn serialize_structure_crate_input_update_contact_channel_input(
     input: &crate::input::UpdateContactChannelInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_82) = &input.contact_channel_id {
-        object.key("ContactChannelId").string(var_82);
+        object.key("ContactChannelId").string(var_82.as_str());
     }
     if let Some(var_83) = &input.name {
-        object.key("Name").string(var_83);
+        object.key("Name").string(var_83.as_str());
     }
     if let Some(var_84) = &input.delivery_address {
         let mut object_85 = object.key("DeliveryAddress").start_object();
@@ -483,10 +483,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_90) = &input.key {
-        object.key("Key").string(var_90);
+        object.key("Key").string(var_90.as_str());
     }
     if let Some(var_91) = &input.value {
-        object.key("Value").string(var_91);
+        object.key("Value").string(var_91.as_str());
     }
     Ok(())
 }
@@ -496,7 +496,7 @@ pub fn serialize_structure_crate_model_contact_channel_address(
     input: &crate::model::ContactChannelAddress,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_92) = &input.simple_address {
-        object.key("SimpleAddress").string(var_92);
+        object.key("SimpleAddress").string(var_92.as_str());
     }
     Ok(())
 }
@@ -570,7 +570,7 @@ pub fn serialize_structure_crate_model_channel_target_info(
     input: &crate::model::ChannelTargetInfo,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_104) = &input.contact_channel_id {
-        object.key("ContactChannelId").string(var_104);
+        object.key("ContactChannelId").string(var_104.as_str());
     }
     if let Some(var_105) = &input.retry_interval_in_minutes {
         object.key("RetryIntervalInMinutes").number(
@@ -586,7 +586,7 @@ pub fn serialize_structure_crate_model_contact_target_info(
     input: &crate::model::ContactTargetInfo,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_106) = &input.contact_id {
-        object.key("ContactId").string(var_106);
+        object.key("ContactId").string(var_106.as_str());
     }
     if let Some(var_107) = &input.is_essential {
         object.key("IsEssential").boolean(*var_107);

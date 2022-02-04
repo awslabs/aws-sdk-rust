@@ -4,13 +4,13 @@ pub fn serialize_structure_crate_input_delete_scaling_policy_input(
     input: &crate::input::DeleteScalingPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.policy_name {
-        object.key("PolicyName").string(var_1);
+        object.key("PolicyName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.service_namespace {
         object.key("ServiceNamespace").string(var_2.as_str());
     }
     if let Some(var_3) = &input.resource_id {
-        object.key("ResourceId").string(var_3);
+        object.key("ResourceId").string(var_3.as_str());
     }
     if let Some(var_4) = &input.scalable_dimension {
         object.key("ScalableDimension").string(var_4.as_str());
@@ -26,10 +26,10 @@ pub fn serialize_structure_crate_input_delete_scheduled_action_input(
         object.key("ServiceNamespace").string(var_5.as_str());
     }
     if let Some(var_6) = &input.scheduled_action_name {
-        object.key("ScheduledActionName").string(var_6);
+        object.key("ScheduledActionName").string(var_6.as_str());
     }
     if let Some(var_7) = &input.resource_id {
-        object.key("ResourceId").string(var_7);
+        object.key("ResourceId").string(var_7.as_str());
     }
     if let Some(var_8) = &input.scalable_dimension {
         object.key("ScalableDimension").string(var_8.as_str());
@@ -45,7 +45,7 @@ pub fn serialize_structure_crate_input_deregister_scalable_target_input(
         object.key("ServiceNamespace").string(var_9.as_str());
     }
     if let Some(var_10) = &input.resource_id {
-        object.key("ResourceId").string(var_10);
+        object.key("ResourceId").string(var_10.as_str());
     }
     if let Some(var_11) = &input.scalable_dimension {
         object.key("ScalableDimension").string(var_11.as_str());
@@ -64,7 +64,7 @@ pub fn serialize_structure_crate_input_describe_scalable_targets_input(
         let mut array_14 = object.key("ResourceIds").start_array();
         for item_15 in var_13 {
             {
-                array_14.value().string(item_15);
+                array_14.value().string(item_15.as_str());
             }
         }
         array_14.finish();
@@ -79,7 +79,7 @@ pub fn serialize_structure_crate_input_describe_scalable_targets_input(
         );
     }
     if let Some(var_18) = &input.next_token {
-        object.key("NextToken").string(var_18);
+        object.key("NextToken").string(var_18.as_str());
     }
     Ok(())
 }
@@ -92,7 +92,7 @@ pub fn serialize_structure_crate_input_describe_scaling_activities_input(
         object.key("ServiceNamespace").string(var_19.as_str());
     }
     if let Some(var_20) = &input.resource_id {
-        object.key("ResourceId").string(var_20);
+        object.key("ResourceId").string(var_20.as_str());
     }
     if let Some(var_21) = &input.scalable_dimension {
         object.key("ScalableDimension").string(var_21.as_str());
@@ -104,7 +104,7 @@ pub fn serialize_structure_crate_input_describe_scaling_activities_input(
         );
     }
     if let Some(var_23) = &input.next_token {
-        object.key("NextToken").string(var_23);
+        object.key("NextToken").string(var_23.as_str());
     }
     Ok(())
 }
@@ -117,7 +117,7 @@ pub fn serialize_structure_crate_input_describe_scaling_policies_input(
         let mut array_25 = object.key("PolicyNames").start_array();
         for item_26 in var_24 {
             {
-                array_25.value().string(item_26);
+                array_25.value().string(item_26.as_str());
             }
         }
         array_25.finish();
@@ -126,7 +126,7 @@ pub fn serialize_structure_crate_input_describe_scaling_policies_input(
         object.key("ServiceNamespace").string(var_27.as_str());
     }
     if let Some(var_28) = &input.resource_id {
-        object.key("ResourceId").string(var_28);
+        object.key("ResourceId").string(var_28.as_str());
     }
     if let Some(var_29) = &input.scalable_dimension {
         object.key("ScalableDimension").string(var_29.as_str());
@@ -138,7 +138,7 @@ pub fn serialize_structure_crate_input_describe_scaling_policies_input(
         );
     }
     if let Some(var_31) = &input.next_token {
-        object.key("NextToken").string(var_31);
+        object.key("NextToken").string(var_31.as_str());
     }
     Ok(())
 }
@@ -151,7 +151,7 @@ pub fn serialize_structure_crate_input_describe_scheduled_actions_input(
         let mut array_33 = object.key("ScheduledActionNames").start_array();
         for item_34 in var_32 {
             {
-                array_33.value().string(item_34);
+                array_33.value().string(item_34.as_str());
             }
         }
         array_33.finish();
@@ -160,7 +160,7 @@ pub fn serialize_structure_crate_input_describe_scheduled_actions_input(
         object.key("ServiceNamespace").string(var_35.as_str());
     }
     if let Some(var_36) = &input.resource_id {
-        object.key("ResourceId").string(var_36);
+        object.key("ResourceId").string(var_36.as_str());
     }
     if let Some(var_37) = &input.scalable_dimension {
         object.key("ScalableDimension").string(var_37.as_str());
@@ -172,7 +172,7 @@ pub fn serialize_structure_crate_input_describe_scheduled_actions_input(
         );
     }
     if let Some(var_39) = &input.next_token {
-        object.key("NextToken").string(var_39);
+        object.key("NextToken").string(var_39.as_str());
     }
     Ok(())
 }
@@ -182,13 +182,13 @@ pub fn serialize_structure_crate_input_put_scaling_policy_input(
     input: &crate::input::PutScalingPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_40) = &input.policy_name {
-        object.key("PolicyName").string(var_40);
+        object.key("PolicyName").string(var_40.as_str());
     }
     if let Some(var_41) = &input.service_namespace {
         object.key("ServiceNamespace").string(var_41.as_str());
     }
     if let Some(var_42) = &input.resource_id {
-        object.key("ResourceId").string(var_42);
+        object.key("ResourceId").string(var_42.as_str());
     }
     if let Some(var_43) = &input.scalable_dimension {
         object.key("ScalableDimension").string(var_43.as_str());
@@ -222,16 +222,16 @@ pub fn serialize_structure_crate_input_put_scheduled_action_input(
         object.key("ServiceNamespace").string(var_49.as_str());
     }
     if let Some(var_50) = &input.schedule {
-        object.key("Schedule").string(var_50);
+        object.key("Schedule").string(var_50.as_str());
     }
     if let Some(var_51) = &input.timezone {
-        object.key("Timezone").string(var_51);
+        object.key("Timezone").string(var_51.as_str());
     }
     if let Some(var_52) = &input.scheduled_action_name {
-        object.key("ScheduledActionName").string(var_52);
+        object.key("ScheduledActionName").string(var_52.as_str());
     }
     if let Some(var_53) = &input.resource_id {
-        object.key("ResourceId").string(var_53);
+        object.key("ResourceId").string(var_53.as_str());
     }
     if let Some(var_54) = &input.scalable_dimension {
         object.key("ScalableDimension").string(var_54.as_str());
@@ -265,7 +265,7 @@ pub fn serialize_structure_crate_input_register_scalable_target_input(
         object.key("ServiceNamespace").string(var_59.as_str());
     }
     if let Some(var_60) = &input.resource_id {
-        object.key("ResourceId").string(var_60);
+        object.key("ResourceId").string(var_60.as_str());
     }
     if let Some(var_61) = &input.scalable_dimension {
         object.key("ScalableDimension").string(var_61.as_str());
@@ -283,7 +283,7 @@ pub fn serialize_structure_crate_input_register_scalable_target_input(
         );
     }
     if let Some(var_64) = &input.role_arn {
-        object.key("RoleARN").string(var_64);
+        object.key("RoleARN").string(var_64.as_str());
     }
     if let Some(var_65) = &input.suspended_state {
         let mut object_66 = object.key("SuspendedState").start_object();
@@ -444,7 +444,7 @@ pub fn serialize_structure_crate_model_predefined_metric_specification(
         object.key("PredefinedMetricType").string(var_91.as_str());
     }
     if let Some(var_92) = &input.resource_label {
-        object.key("ResourceLabel").string(var_92);
+        object.key("ResourceLabel").string(var_92.as_str());
     }
     Ok(())
 }
@@ -454,10 +454,10 @@ pub fn serialize_structure_crate_model_customized_metric_specification(
     input: &crate::model::CustomizedMetricSpecification,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_93) = &input.metric_name {
-        object.key("MetricName").string(var_93);
+        object.key("MetricName").string(var_93.as_str());
     }
     if let Some(var_94) = &input.namespace {
-        object.key("Namespace").string(var_94);
+        object.key("Namespace").string(var_94.as_str());
     }
     if let Some(var_95) = &input.dimensions {
         let mut array_96 = object.key("Dimensions").start_array();
@@ -477,7 +477,7 @@ pub fn serialize_structure_crate_model_customized_metric_specification(
         object.key("Statistic").string(var_99.as_str());
     }
     if let Some(var_100) = &input.unit {
-        object.key("Unit").string(var_100);
+        object.key("Unit").string(var_100.as_str());
     }
     Ok(())
 }
@@ -487,10 +487,10 @@ pub fn serialize_structure_crate_model_metric_dimension(
     input: &crate::model::MetricDimension,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_101) = &input.name {
-        object.key("Name").string(var_101);
+        object.key("Name").string(var_101.as_str());
     }
     if let Some(var_102) = &input.value {
-        object.key("Value").string(var_102);
+        object.key("Value").string(var_102.as_str());
     }
     Ok(())
 }

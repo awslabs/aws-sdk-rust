@@ -4,10 +4,10 @@ pub fn serialize_structure_crate_input_copy_backup_to_region_input(
     input: &crate::input::CopyBackupToRegionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.destination_region {
-        object.key("DestinationRegion").string(var_1);
+        object.key("DestinationRegion").string(var_1.as_str());
     }
     if let Some(var_2) = &input.backup_id {
-        object.key("BackupId").string(var_2);
+        object.key("BackupId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.tag_list {
         let mut array_4 = object.key("TagList").start_array();
@@ -36,16 +36,16 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         object_8.finish();
     }
     if let Some(var_9) = &input.hsm_type {
-        object.key("HsmType").string(var_9);
+        object.key("HsmType").string(var_9.as_str());
     }
     if let Some(var_10) = &input.source_backup_id {
-        object.key("SourceBackupId").string(var_10);
+        object.key("SourceBackupId").string(var_10.as_str());
     }
     if let Some(var_11) = &input.subnet_ids {
         let mut array_12 = object.key("SubnetIds").start_array();
         for item_13 in var_11 {
             {
-                array_12.value().string(item_13);
+                array_12.value().string(item_13.as_str());
             }
         }
         array_12.finish();
@@ -69,13 +69,13 @@ pub fn serialize_structure_crate_input_create_hsm_input(
     input: &crate::input::CreateHsmInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.cluster_id {
-        object.key("ClusterId").string(var_18);
+        object.key("ClusterId").string(var_18.as_str());
     }
     if let Some(var_19) = &input.availability_zone {
-        object.key("AvailabilityZone").string(var_19);
+        object.key("AvailabilityZone").string(var_19.as_str());
     }
     if let Some(var_20) = &input.ip_address {
-        object.key("IpAddress").string(var_20);
+        object.key("IpAddress").string(var_20.as_str());
     }
     Ok(())
 }
@@ -85,7 +85,7 @@ pub fn serialize_structure_crate_input_delete_backup_input(
     input: &crate::input::DeleteBackupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_21) = &input.backup_id {
-        object.key("BackupId").string(var_21);
+        object.key("BackupId").string(var_21.as_str());
     }
     Ok(())
 }
@@ -95,7 +95,7 @@ pub fn serialize_structure_crate_input_delete_cluster_input(
     input: &crate::input::DeleteClusterInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_22) = &input.cluster_id {
-        object.key("ClusterId").string(var_22);
+        object.key("ClusterId").string(var_22.as_str());
     }
     Ok(())
 }
@@ -105,16 +105,16 @@ pub fn serialize_structure_crate_input_delete_hsm_input(
     input: &crate::input::DeleteHsmInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_23) = &input.cluster_id {
-        object.key("ClusterId").string(var_23);
+        object.key("ClusterId").string(var_23.as_str());
     }
     if let Some(var_24) = &input.hsm_id {
-        object.key("HsmId").string(var_24);
+        object.key("HsmId").string(var_24.as_str());
     }
     if let Some(var_25) = &input.eni_id {
-        object.key("EniId").string(var_25);
+        object.key("EniId").string(var_25.as_str());
     }
     if let Some(var_26) = &input.eni_ip {
-        object.key("EniIp").string(var_26);
+        object.key("EniIp").string(var_26.as_str());
     }
     Ok(())
 }
@@ -124,7 +124,7 @@ pub fn serialize_structure_crate_input_describe_backups_input(
     input: &crate::input::DescribeBackupsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.next_token {
-        object.key("NextToken").string(var_27);
+        object.key("NextToken").string(var_27.as_str());
     }
     if let Some(var_28) = &input.max_results {
         object.key("MaxResults").number(
@@ -139,7 +139,7 @@ pub fn serialize_structure_crate_input_describe_backups_input(
                 let mut array_33 = object_30.key(key_31).start_array();
                 for item_34 in value_32 {
                     {
-                        array_33.value().string(item_34);
+                        array_33.value().string(item_34.as_str());
                     }
                 }
                 array_33.finish();
@@ -164,7 +164,7 @@ pub fn serialize_structure_crate_input_describe_clusters_input(
                 let mut array_40 = object_37.key(key_38).start_array();
                 for item_41 in value_39 {
                     {
-                        array_40.value().string(item_41);
+                        array_40.value().string(item_41.as_str());
                     }
                 }
                 array_40.finish();
@@ -173,7 +173,7 @@ pub fn serialize_structure_crate_input_describe_clusters_input(
         object_37.finish();
     }
     if let Some(var_42) = &input.next_token {
-        object.key("NextToken").string(var_42);
+        object.key("NextToken").string(var_42.as_str());
     }
     if let Some(var_43) = &input.max_results {
         object.key("MaxResults").number(
@@ -189,13 +189,13 @@ pub fn serialize_structure_crate_input_initialize_cluster_input(
     input: &crate::input::InitializeClusterInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.cluster_id {
-        object.key("ClusterId").string(var_44);
+        object.key("ClusterId").string(var_44.as_str());
     }
     if let Some(var_45) = &input.signed_cert {
-        object.key("SignedCert").string(var_45);
+        object.key("SignedCert").string(var_45.as_str());
     }
     if let Some(var_46) = &input.trust_anchor {
-        object.key("TrustAnchor").string(var_46);
+        object.key("TrustAnchor").string(var_46.as_str());
     }
     Ok(())
 }
@@ -205,10 +205,10 @@ pub fn serialize_structure_crate_input_list_tags_input(
     input: &crate::input::ListTagsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_47) = &input.resource_id {
-        object.key("ResourceId").string(var_47);
+        object.key("ResourceId").string(var_47.as_str());
     }
     if let Some(var_48) = &input.next_token {
-        object.key("NextToken").string(var_48);
+        object.key("NextToken").string(var_48.as_str());
     }
     if let Some(var_49) = &input.max_results {
         object.key("MaxResults").number(
@@ -224,7 +224,7 @@ pub fn serialize_structure_crate_input_modify_backup_attributes_input(
     input: &crate::input::ModifyBackupAttributesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.backup_id {
-        object.key("BackupId").string(var_50);
+        object.key("BackupId").string(var_50.as_str());
     }
     if let Some(var_51) = &input.never_expires {
         object.key("NeverExpires").boolean(*var_51);
@@ -245,7 +245,7 @@ pub fn serialize_structure_crate_input_modify_cluster_input(
         object_53.finish();
     }
     if let Some(var_54) = &input.cluster_id {
-        object.key("ClusterId").string(var_54);
+        object.key("ClusterId").string(var_54.as_str());
     }
     Ok(())
 }
@@ -255,7 +255,7 @@ pub fn serialize_structure_crate_input_restore_backup_input(
     input: &crate::input::RestoreBackupInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_55) = &input.backup_id {
-        object.key("BackupId").string(var_55);
+        object.key("BackupId").string(var_55.as_str());
     }
     Ok(())
 }
@@ -265,7 +265,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_56) = &input.resource_id {
-        object.key("ResourceId").string(var_56);
+        object.key("ResourceId").string(var_56.as_str());
     }
     if let Some(var_57) = &input.tag_list {
         let mut array_58 = object.key("TagList").start_array();
@@ -286,13 +286,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_61) = &input.resource_id {
-        object.key("ResourceId").string(var_61);
+        object.key("ResourceId").string(var_61.as_str());
     }
     if let Some(var_62) = &input.tag_key_list {
         let mut array_63 = object.key("TagKeyList").start_array();
         for item_64 in var_62 {
             {
-                array_63.value().string(item_64);
+                array_63.value().string(item_64.as_str());
             }
         }
         array_63.finish();
@@ -305,10 +305,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_65) = &input.key {
-        object.key("Key").string(var_65);
+        object.key("Key").string(var_65.as_str());
     }
     if let Some(var_66) = &input.value {
-        object.key("Value").string(var_66);
+        object.key("Value").string(var_66.as_str());
     }
     Ok(())
 }
@@ -321,7 +321,7 @@ pub fn serialize_structure_crate_model_backup_retention_policy(
         object.key("Type").string(var_67.as_str());
     }
     if let Some(var_68) = &input.value {
-        object.key("Value").string(var_68);
+        object.key("Value").string(var_68.as_str());
     }
     Ok(())
 }

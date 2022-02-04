@@ -7,7 +7,7 @@ pub fn serialize_structure_crate_input_batch_associate_scram_secret_input(
         let mut array_2 = object.key("secretArnList").start_array();
         for item_3 in var_1 {
             {
-                array_2.value().string(item_3);
+                array_2.value().string(item_3.as_str());
             }
         }
         array_2.finish();
@@ -23,7 +23,7 @@ pub fn serialize_structure_crate_input_batch_disassociate_scram_secret_input(
         let mut array_5 = object.key("secretArnList").start_array();
         for item_6 in var_4 {
             {
-                array_5.value().string(item_6);
+                array_5.value().string(item_6.as_str());
             }
         }
         array_5.finish();
@@ -52,7 +52,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         object_10.finish();
     }
     if let Some(var_11) = &input.cluster_name {
-        object.key("clusterName").string(var_11);
+        object.key("clusterName").string(var_11.as_str());
     }
     if let Some(var_12) = &input.configuration_info {
         let mut object_13 = object.key("configurationInfo").start_object();
@@ -71,7 +71,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         object.key("enhancedMonitoring").string(var_16.as_str());
     }
     if let Some(var_17) = &input.kafka_version {
-        object.key("kafkaVersion").string(var_17);
+        object.key("kafkaVersion").string(var_17.as_str());
     }
     if let Some(var_18) = &input.logging_info {
         let mut object_19 = object.key("loggingInfo").start_object();
@@ -96,7 +96,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         let mut object_23 = object.key("tags").start_object();
         for (key_24, value_25) in var_22 {
             {
-                object_23.key(key_24).string(value_25);
+                object_23.key(key_24).string(value_25.as_str());
             }
         }
         object_23.finish();
@@ -109,7 +109,7 @@ pub fn serialize_structure_crate_input_create_cluster_v2_input(
     input: &crate::input::CreateClusterV2Input,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.cluster_name {
-        object.key("clusterName").string(var_26);
+        object.key("clusterName").string(var_26.as_str());
     }
     if let Some(var_27) = &input.provisioned {
         let mut object_28 = object.key("provisioned").start_object();
@@ -131,7 +131,7 @@ pub fn serialize_structure_crate_input_create_cluster_v2_input(
         let mut object_32 = object.key("tags").start_object();
         for (key_33, value_34) in var_31 {
             {
-                object_32.key(key_33).string(value_34);
+                object_32.key(key_33).string(value_34.as_str());
             }
         }
         object_32.finish();
@@ -144,19 +144,19 @@ pub fn serialize_structure_crate_input_create_configuration_input(
     input: &crate::input::CreateConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.description {
-        object.key("description").string(var_35);
+        object.key("description").string(var_35.as_str());
     }
     if let Some(var_36) = &input.kafka_versions {
         let mut array_37 = object.key("kafkaVersions").start_array();
         for item_38 in var_36 {
             {
-                array_37.value().string(item_38);
+                array_37.value().string(item_38.as_str());
             }
         }
         array_37.finish();
     }
     if let Some(var_39) = &input.name {
-        object.key("name").string(var_39);
+        object.key("name").string(var_39.as_str());
     }
     if let Some(var_40) = &input.server_properties {
         object
@@ -174,7 +174,7 @@ pub fn serialize_structure_crate_input_reboot_broker_input(
         let mut array_42 = object.key("brokerIds").start_array();
         for item_43 in var_41 {
             {
-                array_42.value().string(item_43);
+                array_42.value().string(item_43.as_str());
             }
         }
         array_42.finish();
@@ -190,7 +190,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_45 = object.key("tags").start_object();
         for (key_46, value_47) in var_44 {
             {
-                object_45.key(key_46).string(value_47);
+                object_45.key(key_46).string(value_47.as_str());
             }
         }
         object_45.finish();
@@ -203,7 +203,7 @@ pub fn serialize_structure_crate_input_update_broker_count_input(
     input: &crate::input::UpdateBrokerCountInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_48) = &input.current_version {
-        object.key("currentVersion").string(var_48);
+        object.key("currentVersion").string(var_48.as_str());
     }
     {
         object.key("targetNumberOfBrokerNodes").number(
@@ -219,7 +219,7 @@ pub fn serialize_structure_crate_input_update_broker_storage_input(
     input: &crate::input::UpdateBrokerStorageInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.current_version {
-        object.key("currentVersion").string(var_49);
+        object.key("currentVersion").string(var_49.as_str());
     }
     if let Some(var_50) = &input.target_broker_ebs_volume_info {
         let mut array_51 = object.key("targetBrokerEBSVolumeInfo").start_array();
@@ -243,10 +243,10 @@ pub fn serialize_structure_crate_input_update_broker_type_input(
     input: &crate::input::UpdateBrokerTypeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.current_version {
-        object.key("currentVersion").string(var_54);
+        object.key("currentVersion").string(var_54.as_str());
     }
     if let Some(var_55) = &input.target_instance_type {
-        object.key("targetInstanceType").string(var_55);
+        object.key("targetInstanceType").string(var_55.as_str());
     }
     Ok(())
 }
@@ -264,7 +264,7 @@ pub fn serialize_structure_crate_input_update_cluster_configuration_input(
         object_57.finish();
     }
     if let Some(var_58) = &input.current_version {
-        object.key("currentVersion").string(var_58);
+        object.key("currentVersion").string(var_58.as_str());
     }
     Ok(())
 }
@@ -282,10 +282,10 @@ pub fn serialize_structure_crate_input_update_cluster_kafka_version_input(
         object_60.finish();
     }
     if let Some(var_61) = &input.current_version {
-        object.key("currentVersion").string(var_61);
+        object.key("currentVersion").string(var_61.as_str());
     }
     if let Some(var_62) = &input.target_kafka_version {
-        object.key("targetKafkaVersion").string(var_62);
+        object.key("targetKafkaVersion").string(var_62.as_str());
     }
     Ok(())
 }
@@ -295,7 +295,7 @@ pub fn serialize_structure_crate_input_update_configuration_input(
     input: &crate::input::UpdateConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_63) = &input.description {
-        object.key("description").string(var_63);
+        object.key("description").string(var_63.as_str());
     }
     if let Some(var_64) = &input.server_properties {
         object
@@ -315,7 +315,7 @@ pub fn serialize_structure_crate_input_update_connectivity_input(
         object_66.finish();
     }
     if let Some(var_67) = &input.current_version {
-        object.key("currentVersion").string(var_67);
+        object.key("currentVersion").string(var_67.as_str());
     }
     Ok(())
 }
@@ -325,7 +325,7 @@ pub fn serialize_structure_crate_input_update_monitoring_input(
     input: &crate::input::UpdateMonitoringInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_68) = &input.current_version {
-        object.key("currentVersion").string(var_68);
+        object.key("currentVersion").string(var_68.as_str());
     }
     if let Some(var_69) = &input.enhanced_monitoring {
         object.key("enhancedMonitoring").string(var_69.as_str());
@@ -359,7 +359,7 @@ pub fn serialize_structure_crate_input_update_security_input(
         object_75.finish();
     }
     if let Some(var_76) = &input.current_version {
-        object.key("currentVersion").string(var_76);
+        object.key("currentVersion").string(var_76.as_str());
     }
     if let Some(var_77) = &input.encryption_info {
         let mut object_78 = object.key("encryptionInfo").start_object();
@@ -380,19 +380,19 @@ pub fn serialize_structure_crate_model_broker_node_group_info(
         let mut array_81 = object.key("clientSubnets").start_array();
         for item_82 in var_80 {
             {
-                array_81.value().string(item_82);
+                array_81.value().string(item_82.as_str());
             }
         }
         array_81.finish();
     }
     if let Some(var_83) = &input.instance_type {
-        object.key("instanceType").string(var_83);
+        object.key("instanceType").string(var_83.as_str());
     }
     if let Some(var_84) = &input.security_groups {
         let mut array_85 = object.key("securityGroups").start_array();
         for item_86 in var_84 {
             {
-                array_85.value().string(item_86);
+                array_85.value().string(item_86.as_str());
             }
         }
         array_85.finish();
@@ -437,7 +437,7 @@ pub fn serialize_structure_crate_model_configuration_info(
     input: &crate::model::ConfigurationInfo,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_97) = &input.arn {
-        object.key("arn").string(var_97);
+        object.key("arn").string(var_97.as_str());
     }
     {
         object.key("revision").number(
@@ -540,7 +540,7 @@ pub fn serialize_structure_crate_model_provisioned_request(
         object_116.finish();
     }
     if let Some(var_117) = &input.kafka_version {
-        object.key("kafkaVersion").string(var_117);
+        object.key("kafkaVersion").string(var_117.as_str());
     }
     if let Some(var_118) = &input.logging_info {
         let mut object_119 = object.key("loggingInfo").start_object();
@@ -590,7 +590,7 @@ pub fn serialize_structure_crate_model_broker_ebs_volume_info(
     input: &crate::model::BrokerEbsVolumeInfo,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_126) = &input.kafka_broker_node_id {
-        object.key("kafkaBrokerNodeId").string(var_126);
+        object.key("kafkaBrokerNodeId").string(var_126.as_str());
     }
     {
         object.key("volumeSizeGB").number(
@@ -653,7 +653,7 @@ pub fn serialize_structure_crate_model_tls(
         let mut array_136 = object.key("certificateAuthorityArnList").start_array();
         for item_137 in var_135 {
             {
-                array_136.value().string(item_137);
+                array_136.value().string(item_137.as_str());
             }
         }
         array_136.finish();
@@ -679,7 +679,7 @@ pub fn serialize_structure_crate_model_encryption_at_rest(
     input: &crate::model::EncryptionAtRest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_138) = &input.data_volume_kms_key_id {
-        object.key("dataVolumeKMSKeyId").string(var_138);
+        object.key("dataVolumeKMSKeyId").string(var_138.as_str());
     }
     Ok(())
 }
@@ -753,7 +753,7 @@ pub fn serialize_structure_crate_model_vpc_config(
         let mut array_151 = object.key("subnetIds").start_array();
         for item_152 in var_150 {
             {
-                array_151.value().string(item_152);
+                array_151.value().string(item_152.as_str());
             }
         }
         array_151.finish();
@@ -762,7 +762,7 @@ pub fn serialize_structure_crate_model_vpc_config(
         let mut array_154 = object.key("securityGroupIds").start_array();
         for item_155 in var_153 {
             {
-                array_154.value().string(item_155);
+                array_154.value().string(item_155.as_str());
             }
         }
         array_154.finish();
@@ -787,7 +787,7 @@ pub fn serialize_structure_crate_model_public_access(
     input: &crate::model::PublicAccess,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_158) = &input.r#type {
-        object.key("type").string(var_158);
+        object.key("type").string(var_158.as_str());
     }
     Ok(())
 }
@@ -833,7 +833,7 @@ pub fn serialize_structure_crate_model_cloud_watch_logs(
         object.key("enabled").boolean(input.enabled);
     }
     if let Some(var_159) = &input.log_group {
-        object.key("logGroup").string(var_159);
+        object.key("logGroup").string(var_159.as_str());
     }
     Ok(())
 }
@@ -843,7 +843,7 @@ pub fn serialize_structure_crate_model_firehose(
     input: &crate::model::Firehose,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_160) = &input.delivery_stream {
-        object.key("deliveryStream").string(var_160);
+        object.key("deliveryStream").string(var_160.as_str());
     }
     {
         object.key("enabled").boolean(input.enabled);
@@ -856,13 +856,13 @@ pub fn serialize_structure_crate_model_s3(
     input: &crate::model::S3,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_161) = &input.bucket {
-        object.key("bucket").string(var_161);
+        object.key("bucket").string(var_161.as_str());
     }
     {
         object.key("enabled").boolean(input.enabled);
     }
     if let Some(var_162) = &input.prefix {
-        object.key("prefix").string(var_162);
+        object.key("prefix").string(var_162.as_str());
     }
     Ok(())
 }

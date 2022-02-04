@@ -4,10 +4,10 @@ pub fn serialize_structure_crate_input_list_realtime_contact_analysis_segments_i
     input: &crate::input::ListRealtimeContactAnalysisSegmentsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.contact_id {
-        object.key("ContactId").string(var_1);
+        object.key("ContactId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.instance_id {
-        object.key("InstanceId").string(var_2);
+        object.key("InstanceId").string(var_2.as_str());
     }
     if input.max_results != 0 {
         object.key("MaxResults").number(
@@ -16,7 +16,7 @@ pub fn serialize_structure_crate_input_list_realtime_contact_analysis_segments_i
         );
     }
     if let Some(var_3) = &input.next_token {
-        object.key("NextToken").string(var_3);
+        object.key("NextToken").string(var_3.as_str());
     }
     Ok(())
 }

@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_cancel_resource_request_input(
     input: &crate::input::CancelResourceRequestInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.request_token {
-        object.key("RequestToken").string(var_1);
+        object.key("RequestToken").string(var_1.as_str());
     }
     Ok(())
 }
@@ -14,19 +14,19 @@ pub fn serialize_structure_crate_input_create_resource_input(
     input: &crate::input::CreateResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_2) = &input.type_name {
-        object.key("TypeName").string(var_2);
+        object.key("TypeName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.type_version_id {
-        object.key("TypeVersionId").string(var_3);
+        object.key("TypeVersionId").string(var_3.as_str());
     }
     if let Some(var_4) = &input.role_arn {
-        object.key("RoleArn").string(var_4);
+        object.key("RoleArn").string(var_4.as_str());
     }
     if let Some(var_5) = &input.client_token {
-        object.key("ClientToken").string(var_5);
+        object.key("ClientToken").string(var_5.as_str());
     }
     if let Some(var_6) = &input.desired_state {
-        object.key("DesiredState").string(var_6);
+        object.key("DesiredState").string(var_6.as_str());
     }
     Ok(())
 }
@@ -36,19 +36,19 @@ pub fn serialize_structure_crate_input_delete_resource_input(
     input: &crate::input::DeleteResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_7) = &input.type_name {
-        object.key("TypeName").string(var_7);
+        object.key("TypeName").string(var_7.as_str());
     }
     if let Some(var_8) = &input.type_version_id {
-        object.key("TypeVersionId").string(var_8);
+        object.key("TypeVersionId").string(var_8.as_str());
     }
     if let Some(var_9) = &input.role_arn {
-        object.key("RoleArn").string(var_9);
+        object.key("RoleArn").string(var_9.as_str());
     }
     if let Some(var_10) = &input.client_token {
-        object.key("ClientToken").string(var_10);
+        object.key("ClientToken").string(var_10.as_str());
     }
     if let Some(var_11) = &input.identifier {
-        object.key("Identifier").string(var_11);
+        object.key("Identifier").string(var_11.as_str());
     }
     Ok(())
 }
@@ -58,16 +58,16 @@ pub fn serialize_structure_crate_input_get_resource_input(
     input: &crate::input::GetResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_12) = &input.type_name {
-        object.key("TypeName").string(var_12);
+        object.key("TypeName").string(var_12.as_str());
     }
     if let Some(var_13) = &input.type_version_id {
-        object.key("TypeVersionId").string(var_13);
+        object.key("TypeVersionId").string(var_13.as_str());
     }
     if let Some(var_14) = &input.role_arn {
-        object.key("RoleArn").string(var_14);
+        object.key("RoleArn").string(var_14.as_str());
     }
     if let Some(var_15) = &input.identifier {
-        object.key("Identifier").string(var_15);
+        object.key("Identifier").string(var_15.as_str());
     }
     Ok(())
 }
@@ -77,7 +77,7 @@ pub fn serialize_structure_crate_input_get_resource_request_status_input(
     input: &crate::input::GetResourceRequestStatusInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.request_token {
-        object.key("RequestToken").string(var_16);
+        object.key("RequestToken").string(var_16.as_str());
     }
     Ok(())
 }
@@ -93,7 +93,7 @@ pub fn serialize_structure_crate_input_list_resource_requests_input(
         );
     }
     if let Some(var_18) = &input.next_token {
-        object.key("NextToken").string(var_18);
+        object.key("NextToken").string(var_18.as_str());
     }
     if let Some(var_19) = &input.resource_request_status_filter {
         let mut object_20 = object.key("ResourceRequestStatusFilter").start_object();
@@ -111,16 +111,16 @@ pub fn serialize_structure_crate_input_list_resources_input(
     input: &crate::input::ListResourcesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_21) = &input.type_name {
-        object.key("TypeName").string(var_21);
+        object.key("TypeName").string(var_21.as_str());
     }
     if let Some(var_22) = &input.type_version_id {
-        object.key("TypeVersionId").string(var_22);
+        object.key("TypeVersionId").string(var_22.as_str());
     }
     if let Some(var_23) = &input.role_arn {
-        object.key("RoleArn").string(var_23);
+        object.key("RoleArn").string(var_23.as_str());
     }
     if let Some(var_24) = &input.next_token {
-        object.key("NextToken").string(var_24);
+        object.key("NextToken").string(var_24.as_str());
     }
     if let Some(var_25) = &input.max_results {
         object.key("MaxResults").number(
@@ -129,7 +129,7 @@ pub fn serialize_structure_crate_input_list_resources_input(
         );
     }
     if let Some(var_26) = &input.resource_model {
-        object.key("ResourceModel").string(var_26);
+        object.key("ResourceModel").string(var_26.as_str());
     }
     Ok(())
 }
@@ -139,22 +139,22 @@ pub fn serialize_structure_crate_input_update_resource_input(
     input: &crate::input::UpdateResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_27) = &input.type_name {
-        object.key("TypeName").string(var_27);
+        object.key("TypeName").string(var_27.as_str());
     }
     if let Some(var_28) = &input.type_version_id {
-        object.key("TypeVersionId").string(var_28);
+        object.key("TypeVersionId").string(var_28.as_str());
     }
     if let Some(var_29) = &input.role_arn {
-        object.key("RoleArn").string(var_29);
+        object.key("RoleArn").string(var_29.as_str());
     }
     if let Some(var_30) = &input.client_token {
-        object.key("ClientToken").string(var_30);
+        object.key("ClientToken").string(var_30.as_str());
     }
     if let Some(var_31) = &input.identifier {
-        object.key("Identifier").string(var_31);
+        object.key("Identifier").string(var_31.as_str());
     }
     if let Some(var_32) = &input.patch_document {
-        object.key("PatchDocument").string(var_32);
+        object.key("PatchDocument").string(var_32.as_str());
     }
     Ok(())
 }

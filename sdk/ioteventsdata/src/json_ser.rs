@@ -148,16 +148,16 @@ pub fn serialize_structure_crate_model_acknowledge_alarm_action_request(
     input: &crate::model::AcknowledgeAlarmActionRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_29) = &input.request_id {
-        object.key("requestId").string(var_29);
+        object.key("requestId").string(var_29.as_str());
     }
     if let Some(var_30) = &input.alarm_model_name {
-        object.key("alarmModelName").string(var_30);
+        object.key("alarmModelName").string(var_30.as_str());
     }
     if let Some(var_31) = &input.key_value {
-        object.key("keyValue").string(var_31);
+        object.key("keyValue").string(var_31.as_str());
     }
     if let Some(var_32) = &input.note {
-        object.key("note").string(var_32);
+        object.key("note").string(var_32.as_str());
     }
     Ok(())
 }
@@ -167,16 +167,16 @@ pub fn serialize_structure_crate_model_disable_alarm_action_request(
     input: &crate::model::DisableAlarmActionRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.request_id {
-        object.key("requestId").string(var_33);
+        object.key("requestId").string(var_33.as_str());
     }
     if let Some(var_34) = &input.alarm_model_name {
-        object.key("alarmModelName").string(var_34);
+        object.key("alarmModelName").string(var_34.as_str());
     }
     if let Some(var_35) = &input.key_value {
-        object.key("keyValue").string(var_35);
+        object.key("keyValue").string(var_35.as_str());
     }
     if let Some(var_36) = &input.note {
-        object.key("note").string(var_36);
+        object.key("note").string(var_36.as_str());
     }
     Ok(())
 }
@@ -186,16 +186,16 @@ pub fn serialize_structure_crate_model_enable_alarm_action_request(
     input: &crate::model::EnableAlarmActionRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_37) = &input.request_id {
-        object.key("requestId").string(var_37);
+        object.key("requestId").string(var_37.as_str());
     }
     if let Some(var_38) = &input.alarm_model_name {
-        object.key("alarmModelName").string(var_38);
+        object.key("alarmModelName").string(var_38.as_str());
     }
     if let Some(var_39) = &input.key_value {
-        object.key("keyValue").string(var_39);
+        object.key("keyValue").string(var_39.as_str());
     }
     if let Some(var_40) = &input.note {
-        object.key("note").string(var_40);
+        object.key("note").string(var_40.as_str());
     }
     Ok(())
 }
@@ -205,10 +205,10 @@ pub fn serialize_structure_crate_model_message(
     input: &crate::model::Message,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.message_id {
-        object.key("messageId").string(var_41);
+        object.key("messageId").string(var_41.as_str());
     }
     if let Some(var_42) = &input.input_name {
-        object.key("inputName").string(var_42);
+        object.key("inputName").string(var_42.as_str());
     }
     if let Some(var_43) = &input.payload {
         object
@@ -228,16 +228,16 @@ pub fn serialize_structure_crate_model_reset_alarm_action_request(
     input: &crate::model::ResetAlarmActionRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_46) = &input.request_id {
-        object.key("requestId").string(var_46);
+        object.key("requestId").string(var_46.as_str());
     }
     if let Some(var_47) = &input.alarm_model_name {
-        object.key("alarmModelName").string(var_47);
+        object.key("alarmModelName").string(var_47.as_str());
     }
     if let Some(var_48) = &input.key_value {
-        object.key("keyValue").string(var_48);
+        object.key("keyValue").string(var_48.as_str());
     }
     if let Some(var_49) = &input.note {
-        object.key("note").string(var_49);
+        object.key("note").string(var_49.as_str());
     }
     Ok(())
 }
@@ -247,16 +247,16 @@ pub fn serialize_structure_crate_model_snooze_alarm_action_request(
     input: &crate::model::SnoozeAlarmActionRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.request_id {
-        object.key("requestId").string(var_50);
+        object.key("requestId").string(var_50.as_str());
     }
     if let Some(var_51) = &input.alarm_model_name {
-        object.key("alarmModelName").string(var_51);
+        object.key("alarmModelName").string(var_51.as_str());
     }
     if let Some(var_52) = &input.key_value {
-        object.key("keyValue").string(var_52);
+        object.key("keyValue").string(var_52.as_str());
     }
     if let Some(var_53) = &input.note {
-        object.key("note").string(var_53);
+        object.key("note").string(var_53.as_str());
     }
     if let Some(var_54) = &input.snooze_duration {
         object.key("snoozeDuration").number(
@@ -272,13 +272,13 @@ pub fn serialize_structure_crate_model_update_detector_request(
     input: &crate::model::UpdateDetectorRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_55) = &input.message_id {
-        object.key("messageId").string(var_55);
+        object.key("messageId").string(var_55.as_str());
     }
     if let Some(var_56) = &input.detector_model_name {
-        object.key("detectorModelName").string(var_56);
+        object.key("detectorModelName").string(var_56.as_str());
     }
     if let Some(var_57) = &input.key_value {
-        object.key("keyValue").string(var_57);
+        object.key("keyValue").string(var_57.as_str());
     }
     if let Some(var_58) = &input.state {
         let mut object_59 = object.key("state").start_object();
@@ -309,7 +309,7 @@ pub fn serialize_structure_crate_model_detector_state_definition(
     input: &crate::model::DetectorStateDefinition,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_61) = &input.state_name {
-        object.key("stateName").string(var_61);
+        object.key("stateName").string(var_61.as_str());
     }
     if let Some(var_62) = &input.variables {
         let mut array_63 = object.key("variables").start_array();
@@ -347,10 +347,10 @@ pub fn serialize_structure_crate_model_variable_definition(
     input: &crate::model::VariableDefinition,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.name {
-        object.key("name").string(var_70);
+        object.key("name").string(var_70.as_str());
     }
     if let Some(var_71) = &input.value {
-        object.key("value").string(var_71);
+        object.key("value").string(var_71.as_str());
     }
     Ok(())
 }
@@ -360,7 +360,7 @@ pub fn serialize_structure_crate_model_timer_definition(
     input: &crate::model::TimerDefinition,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_72) = &input.name {
-        object.key("name").string(var_72);
+        object.key("name").string(var_72.as_str());
     }
     if let Some(var_73) = &input.seconds {
         object.key("seconds").number(

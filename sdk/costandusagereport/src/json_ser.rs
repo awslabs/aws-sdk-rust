@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_delete_report_definition_input(
     input: &crate::input::DeleteReportDefinitionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.report_name {
-        object.key("ReportName").string(var_1);
+        object.key("ReportName").string(var_1.as_str());
     }
     Ok(())
 }
@@ -20,7 +20,7 @@ pub fn serialize_structure_crate_input_describe_report_definitions_input(
         );
     }
     if let Some(var_3) = &input.next_token {
-        object.key("NextToken").string(var_3);
+        object.key("NextToken").string(var_3.as_str());
     }
     Ok(())
 }
@@ -30,7 +30,7 @@ pub fn serialize_structure_crate_input_modify_report_definition_input(
     input: &crate::input::ModifyReportDefinitionInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_4) = &input.report_name {
-        object.key("ReportName").string(var_4);
+        object.key("ReportName").string(var_4.as_str());
     }
     if let Some(var_5) = &input.report_definition {
         let mut object_6 = object.key("ReportDefinition").start_object();
@@ -57,7 +57,7 @@ pub fn serialize_structure_crate_model_report_definition(
     input: &crate::model::ReportDefinition,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.report_name {
-        object.key("ReportName").string(var_9);
+        object.key("ReportName").string(var_9.as_str());
     }
     if let Some(var_10) = &input.time_unit {
         object.key("TimeUnit").string(var_10.as_str());
@@ -78,10 +78,10 @@ pub fn serialize_structure_crate_model_report_definition(
         array_14.finish();
     }
     if let Some(var_16) = &input.s3_bucket {
-        object.key("S3Bucket").string(var_16);
+        object.key("S3Bucket").string(var_16.as_str());
     }
     if let Some(var_17) = &input.s3_prefix {
-        object.key("S3Prefix").string(var_17);
+        object.key("S3Prefix").string(var_17.as_str());
     }
     if let Some(var_18) = &input.s3_region {
         object.key("S3Region").string(var_18.as_str());
@@ -102,7 +102,7 @@ pub fn serialize_structure_crate_model_report_definition(
         object.key("ReportVersioning").string(var_23.as_str());
     }
     if let Some(var_24) = &input.billing_view_arn {
-        object.key("BillingViewArn").string(var_24);
+        object.key("BillingViewArn").string(var_24.as_str());
     }
     Ok(())
 }

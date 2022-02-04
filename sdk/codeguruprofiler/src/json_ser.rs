@@ -43,13 +43,13 @@ pub fn serialize_structure_crate_input_configure_agent_input(
     input: &crate::input::ConfigureAgentInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.fleet_instance_id {
-        object.key("fleetInstanceId").string(var_9);
+        object.key("fleetInstanceId").string(var_9.as_str());
     }
     if let Some(var_10) = &input.metadata {
         let mut object_11 = object.key("metadata").start_object();
         for (key_12, value_13) in var_10 {
             {
-                object_11.key(key_12.as_str()).string(value_13);
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
         object_11.finish();
@@ -73,13 +73,13 @@ pub fn serialize_structure_crate_input_create_profiling_group_input(
         object.key("computePlatform").string(var_16.as_str());
     }
     if let Some(var_17) = &input.profiling_group_name {
-        object.key("profilingGroupName").string(var_17);
+        object.key("profilingGroupName").string(var_17.as_str());
     }
     if let Some(var_18) = &input.tags {
         let mut object_19 = object.key("tags").start_object();
         for (key_20, value_21) in var_18 {
             {
-                object_19.key(key_20).string(value_21);
+                object_19.key(key_20).string(value_21.as_str());
             }
         }
         object_19.finish();
@@ -95,13 +95,13 @@ pub fn serialize_structure_crate_input_put_permission_input(
         let mut array_23 = object.key("principals").start_array();
         for item_24 in var_22 {
             {
-                array_23.value().string(item_24);
+                array_23.value().string(item_24.as_str());
             }
         }
         array_23.finish();
     }
     if let Some(var_25) = &input.revision_id {
-        object.key("revisionId").string(var_25);
+        object.key("revisionId").string(var_25.as_str());
     }
     Ok(())
 }
@@ -111,7 +111,7 @@ pub fn serialize_structure_crate_input_submit_feedback_input(
     input: &crate::input::SubmitFeedbackInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_26) = &input.comment {
-        object.key("comment").string(var_26);
+        object.key("comment").string(var_26.as_str());
     }
     if let Some(var_27) = &input.r#type {
         object.key("type").string(var_27.as_str());
@@ -127,7 +127,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_29 = object.key("tags").start_object();
         for (key_30, value_31) in var_28 {
             {
-                object_29.key(key_30).string(value_31);
+                object_29.key(key_30).string(value_31.as_str());
             }
         }
         object_29.finish();
@@ -155,10 +155,10 @@ pub fn serialize_structure_crate_model_channel(
     input: &crate::model::Channel,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_34) = &input.id {
-        object.key("id").string(var_34);
+        object.key("id").string(var_34.as_str());
     }
     if let Some(var_35) = &input.uri {
-        object.key("uri").string(var_35);
+        object.key("uri").string(var_35.as_str());
     }
     if let Some(var_36) = &input.event_publishers {
         let mut array_37 = object.key("eventPublishers").start_array();
@@ -177,7 +177,7 @@ pub fn serialize_structure_crate_model_frame_metric(
     input: &crate::model::FrameMetric,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_39) = &input.frame_name {
-        object.key("frameName").string(var_39);
+        object.key("frameName").string(var_39.as_str());
     }
     if let Some(var_40) = &input.r#type {
         object.key("type").string(var_40.as_str());
@@ -186,7 +186,7 @@ pub fn serialize_structure_crate_model_frame_metric(
         let mut array_42 = object.key("threadStates").start_array();
         for item_43 in var_41 {
             {
-                array_42.value().string(item_43);
+                array_42.value().string(item_43.as_str());
             }
         }
         array_42.finish();

@@ -7,10 +7,10 @@ pub fn serialize_structure_crate_input_create_ledger_input(
         object.key("DeletionProtection").boolean(*var_1);
     }
     if let Some(var_2) = &input.kms_key {
-        object.key("KmsKey").string(var_2);
+        object.key("KmsKey").string(var_2.as_str());
     }
     if let Some(var_3) = &input.name {
-        object.key("Name").string(var_3);
+        object.key("Name").string(var_3.as_str());
     }
     if let Some(var_4) = &input.permissions_mode {
         object.key("PermissionsMode").string(var_4.as_str());
@@ -19,7 +19,7 @@ pub fn serialize_structure_crate_input_create_ledger_input(
         let mut object_6 = object.key("Tags").start_object();
         for (key_7, value_8) in var_5 {
             if let Some(var_9) = value_8 {
-                object_6.key(key_7).string(var_9);
+                object_6.key(key_7).string(var_9.as_str());
             } else {
                 object_6.key(key_7).null();
             }
@@ -47,7 +47,7 @@ pub fn serialize_structure_crate_input_export_journal_to_s3_input(
         object.key("OutputFormat").string(var_12.as_str());
     }
     if let Some(var_13) = &input.role_arn {
-        object.key("RoleArn").string(var_13);
+        object.key("RoleArn").string(var_13.as_str());
     }
     if let Some(var_14) = &input.s3_export_configuration {
         let mut object_15 = object.key("S3ExportConfiguration").start_object();
@@ -92,7 +92,7 @@ pub fn serialize_structure_crate_input_get_revision_input(
         object_23.finish();
     }
     if let Some(var_24) = &input.document_id {
-        object.key("DocumentId").string(var_24);
+        object.key("DocumentId").string(var_24.as_str());
     }
     Ok(())
 }
@@ -120,16 +120,16 @@ pub fn serialize_structure_crate_input_stream_journal_to_kinesis_input(
         object_28.finish();
     }
     if let Some(var_29) = &input.role_arn {
-        object.key("RoleArn").string(var_29);
+        object.key("RoleArn").string(var_29.as_str());
     }
     if let Some(var_30) = &input.stream_name {
-        object.key("StreamName").string(var_30);
+        object.key("StreamName").string(var_30.as_str());
     }
     if let Some(var_31) = &input.tags {
         let mut object_32 = object.key("Tags").start_object();
         for (key_33, value_34) in var_31 {
             if let Some(var_35) = value_34 {
-                object_32.key(key_33).string(var_35);
+                object_32.key(key_33).string(var_35.as_str());
             } else {
                 object_32.key(key_33).null();
             }
@@ -147,7 +147,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_37 = object.key("Tags").start_object();
         for (key_38, value_39) in var_36 {
             if let Some(var_40) = value_39 {
-                object_37.key(key_38).string(var_40);
+                object_37.key(key_38).string(var_40.as_str());
             } else {
                 object_37.key(key_38).null();
             }
@@ -165,7 +165,7 @@ pub fn serialize_structure_crate_input_update_ledger_input(
         object.key("DeletionProtection").boolean(*var_41);
     }
     if let Some(var_42) = &input.kms_key {
-        object.key("KmsKey").string(var_42);
+        object.key("KmsKey").string(var_42.as_str());
     }
     Ok(())
 }
@@ -185,10 +185,10 @@ pub fn serialize_structure_crate_model_s3_export_configuration(
     input: &crate::model::S3ExportConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_44) = &input.bucket {
-        object.key("Bucket").string(var_44);
+        object.key("Bucket").string(var_44.as_str());
     }
     if let Some(var_45) = &input.prefix {
-        object.key("Prefix").string(var_45);
+        object.key("Prefix").string(var_45.as_str());
     }
     if let Some(var_46) = &input.encryption_configuration {
         let mut object_47 = object.key("EncryptionConfiguration").start_object();
@@ -206,7 +206,7 @@ pub fn serialize_structure_crate_model_value_holder(
     input: &crate::model::ValueHolder,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_48) = &input.ion_text {
-        object.key("IonText").string(var_48);
+        object.key("IonText").string(var_48.as_str());
     }
     Ok(())
 }
@@ -216,7 +216,7 @@ pub fn serialize_structure_crate_model_kinesis_configuration(
     input: &crate::model::KinesisConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.stream_arn {
-        object.key("StreamArn").string(var_49);
+        object.key("StreamArn").string(var_49.as_str());
     }
     if let Some(var_50) = &input.aggregation_enabled {
         object.key("AggregationEnabled").boolean(*var_50);
@@ -232,7 +232,7 @@ pub fn serialize_structure_crate_model_s3_encryption_configuration(
         object.key("ObjectEncryptionType").string(var_51.as_str());
     }
     if let Some(var_52) = &input.kms_key_arn {
-        object.key("KmsKeyArn").string(var_52);
+        object.key("KmsKeyArn").string(var_52.as_str());
     }
     Ok(())
 }

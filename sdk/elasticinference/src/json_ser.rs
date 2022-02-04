@@ -7,7 +7,7 @@ pub fn serialize_structure_crate_input_describe_accelerator_offerings_input(
         let mut array_2 = object.key("acceleratorTypes").start_array();
         for item_3 in var_1 {
             {
-                array_2.value().string(item_3);
+                array_2.value().string(item_3.as_str());
             }
         }
         array_2.finish();
@@ -26,7 +26,7 @@ pub fn serialize_structure_crate_input_describe_accelerators_input(
         let mut array_6 = object.key("acceleratorIds").start_array();
         for item_7 in var_5 {
             {
-                array_6.value().string(item_7);
+                array_6.value().string(item_7.as_str());
             }
         }
         array_6.finish();
@@ -49,7 +49,7 @@ pub fn serialize_structure_crate_input_describe_accelerators_input(
         );
     }
     if let Some(var_12) = &input.next_token {
-        object.key("nextToken").string(var_12);
+        object.key("nextToken").string(var_12.as_str());
     }
     Ok(())
 }
@@ -62,7 +62,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_14 = object.key("tags").start_object();
         for (key_15, value_16) in var_13 {
             {
-                object_14.key(key_15).string(value_16);
+                object_14.key(key_15).string(value_16.as_str());
             }
         }
         object_14.finish();
@@ -75,13 +75,13 @@ pub fn serialize_structure_crate_model_filter(
     input: &crate::model::Filter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.name {
-        object.key("name").string(var_17);
+        object.key("name").string(var_17.as_str());
     }
     if let Some(var_18) = &input.values {
         let mut array_19 = object.key("values").start_array();
         for item_20 in var_18 {
             {
-                array_19.value().string(item_20);
+                array_19.value().string(item_20.as_str());
             }
         }
         array_19.finish();

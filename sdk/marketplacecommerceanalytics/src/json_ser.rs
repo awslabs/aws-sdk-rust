@@ -12,22 +12,22 @@ pub fn serialize_structure_crate_input_generate_data_set_input(
             .date_time(var_2, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_3) = &input.role_name_arn {
-        object.key("roleNameArn").string(var_3);
+        object.key("roleNameArn").string(var_3.as_str());
     }
     if let Some(var_4) = &input.destination_s3_bucket_name {
-        object.key("destinationS3BucketName").string(var_4);
+        object.key("destinationS3BucketName").string(var_4.as_str());
     }
     if let Some(var_5) = &input.destination_s3_prefix {
-        object.key("destinationS3Prefix").string(var_5);
+        object.key("destinationS3Prefix").string(var_5.as_str());
     }
     if let Some(var_6) = &input.sns_topic_arn {
-        object.key("snsTopicArn").string(var_6);
+        object.key("snsTopicArn").string(var_6.as_str());
     }
     if let Some(var_7) = &input.customer_defined_values {
         let mut object_8 = object.key("customerDefinedValues").start_object();
         for (key_9, value_10) in var_7 {
             {
-                object_8.key(key_9).string(value_10);
+                object_8.key(key_9).string(value_10.as_str());
             }
         }
         object_8.finish();
@@ -48,22 +48,24 @@ pub fn serialize_structure_crate_input_start_support_data_export_input(
             .date_time(var_12, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_13) = &input.role_name_arn {
-        object.key("roleNameArn").string(var_13);
+        object.key("roleNameArn").string(var_13.as_str());
     }
     if let Some(var_14) = &input.destination_s3_bucket_name {
-        object.key("destinationS3BucketName").string(var_14);
+        object
+            .key("destinationS3BucketName")
+            .string(var_14.as_str());
     }
     if let Some(var_15) = &input.destination_s3_prefix {
-        object.key("destinationS3Prefix").string(var_15);
+        object.key("destinationS3Prefix").string(var_15.as_str());
     }
     if let Some(var_16) = &input.sns_topic_arn {
-        object.key("snsTopicArn").string(var_16);
+        object.key("snsTopicArn").string(var_16.as_str());
     }
     if let Some(var_17) = &input.customer_defined_values {
         let mut object_18 = object.key("customerDefinedValues").start_object();
         for (key_19, value_20) in var_17 {
             {
-                object_18.key(key_19).string(value_20);
+                object_18.key(key_19).string(value_20.as_str());
             }
         }
         object_18.finish();

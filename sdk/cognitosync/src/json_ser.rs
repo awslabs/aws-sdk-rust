@@ -7,7 +7,7 @@ pub fn serialize_structure_crate_input_register_device_input(
         object.key("Platform").string(var_1.as_str());
     }
     if let Some(var_2) = &input.token {
-        object.key("Token").string(var_2);
+        object.key("Token").string(var_2.as_str());
     }
     Ok(())
 }
@@ -20,7 +20,7 @@ pub fn serialize_structure_crate_input_set_cognito_events_input(
         let mut object_4 = object.key("Events").start_object();
         for (key_5, value_6) in var_3 {
             {
-                object_4.key(key_5).string(value_6);
+                object_4.key(key_5).string(value_6.as_str());
             }
         }
         object_4.finish();
@@ -50,7 +50,7 @@ pub fn serialize_structure_crate_input_update_records_input(
     input: &crate::input::UpdateRecordsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_11) = &input.device_id {
-        object.key("DeviceId").string(var_11);
+        object.key("DeviceId").string(var_11.as_str());
     }
     if let Some(var_12) = &input.record_patches {
         let mut array_13 = object.key("RecordPatches").start_array();
@@ -67,7 +67,7 @@ pub fn serialize_structure_crate_input_update_records_input(
         array_13.finish();
     }
     if let Some(var_16) = &input.sync_session_token {
-        object.key("SyncSessionToken").string(var_16);
+        object.key("SyncSessionToken").string(var_16.as_str());
     }
     Ok(())
 }
@@ -77,10 +77,10 @@ pub fn serialize_structure_crate_model_cognito_streams(
     input: &crate::model::CognitoStreams,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.stream_name {
-        object.key("StreamName").string(var_17);
+        object.key("StreamName").string(var_17.as_str());
     }
     if let Some(var_18) = &input.role_arn {
-        object.key("RoleArn").string(var_18);
+        object.key("RoleArn").string(var_18.as_str());
     }
     if let Some(var_19) = &input.streaming_status {
         object.key("StreamingStatus").string(var_19.as_str());
@@ -96,13 +96,13 @@ pub fn serialize_structure_crate_model_push_sync(
         let mut array_21 = object.key("ApplicationArns").start_array();
         for item_22 in var_20 {
             {
-                array_21.value().string(item_22);
+                array_21.value().string(item_22.as_str());
             }
         }
         array_21.finish();
     }
     if let Some(var_23) = &input.role_arn {
-        object.key("RoleArn").string(var_23);
+        object.key("RoleArn").string(var_23.as_str());
     }
     Ok(())
 }
@@ -115,10 +115,10 @@ pub fn serialize_structure_crate_model_record_patch(
         object.key("Op").string(var_24.as_str());
     }
     if let Some(var_25) = &input.key {
-        object.key("Key").string(var_25);
+        object.key("Key").string(var_25.as_str());
     }
     if let Some(var_26) = &input.value {
-        object.key("Value").string(var_26);
+        object.key("Value").string(var_26.as_str());
     }
     if let Some(var_27) = &input.sync_count {
         object.key("SyncCount").number(

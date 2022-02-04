@@ -4,10 +4,10 @@ pub fn serialize_structure_crate_input_get_device_registration_input(
     input: &crate::input::GetDeviceRegistrationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.device_fleet_name {
-        object.key("DeviceFleetName").string(var_1);
+        object.key("DeviceFleetName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.device_name {
-        object.key("DeviceName").string(var_2);
+        object.key("DeviceName").string(var_2.as_str());
     }
     Ok(())
 }
@@ -31,13 +31,13 @@ pub fn serialize_structure_crate_input_send_heartbeat_input(
         array_4.finish();
     }
     if let Some(var_7) = &input.agent_version {
-        object.key("AgentVersion").string(var_7);
+        object.key("AgentVersion").string(var_7.as_str());
     }
     if let Some(var_8) = &input.device_fleet_name {
-        object.key("DeviceFleetName").string(var_8);
+        object.key("DeviceFleetName").string(var_8.as_str());
     }
     if let Some(var_9) = &input.device_name {
-        object.key("DeviceName").string(var_9);
+        object.key("DeviceName").string(var_9.as_str());
     }
     if let Some(var_10) = &input.models {
         let mut array_11 = object.key("Models").start_array();
@@ -58,10 +58,10 @@ pub fn serialize_structure_crate_model_edge_metric(
     input: &crate::model::EdgeMetric,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_14) = &input.dimension {
-        object.key("Dimension").string(var_14);
+        object.key("Dimension").string(var_14.as_str());
     }
     if let Some(var_15) = &input.metric_name {
-        object.key("MetricName").string(var_15);
+        object.key("MetricName").string(var_15.as_str());
     }
     if input.value != 0.0 {
         object.key("Value").number(
@@ -82,10 +82,10 @@ pub fn serialize_structure_crate_model_model(
     input: &crate::model::Model,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.model_name {
-        object.key("ModelName").string(var_17);
+        object.key("ModelName").string(var_17.as_str());
     }
     if let Some(var_18) = &input.model_version {
-        object.key("ModelVersion").string(var_18);
+        object.key("ModelVersion").string(var_18.as_str());
     }
     if let Some(var_19) = &input.latest_sample_time {
         object

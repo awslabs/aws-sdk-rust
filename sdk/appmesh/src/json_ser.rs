@@ -4,10 +4,10 @@ pub fn serialize_structure_crate_input_create_gateway_route_input(
     input: &crate::input::CreateGatewayRouteInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1);
+        object.key("clientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.gateway_route_name {
-        object.key("gatewayRouteName").string(var_2);
+        object.key("gatewayRouteName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.spec {
         let mut object_4 = object.key("spec").start_object();
@@ -33,10 +33,10 @@ pub fn serialize_structure_crate_input_create_mesh_input(
     input: &crate::input::CreateMeshInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.client_token {
-        object.key("clientToken").string(var_9);
+        object.key("clientToken").string(var_9.as_str());
     }
     if let Some(var_10) = &input.mesh_name {
-        object.key("meshName").string(var_10);
+        object.key("meshName").string(var_10.as_str());
     }
     if let Some(var_11) = &input.spec {
         let mut object_12 = object.key("spec").start_object();
@@ -62,10 +62,10 @@ pub fn serialize_structure_crate_input_create_route_input(
     input: &crate::input::CreateRouteInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.client_token {
-        object.key("clientToken").string(var_17);
+        object.key("clientToken").string(var_17.as_str());
     }
     if let Some(var_18) = &input.route_name {
-        object.key("routeName").string(var_18);
+        object.key("routeName").string(var_18.as_str());
     }
     if let Some(var_19) = &input.spec {
         let mut object_20 = object.key("spec").start_object();
@@ -91,7 +91,7 @@ pub fn serialize_structure_crate_input_create_virtual_gateway_input(
     input: &crate::input::CreateVirtualGatewayInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.client_token {
-        object.key("clientToken").string(var_25);
+        object.key("clientToken").string(var_25.as_str());
     }
     if let Some(var_26) = &input.spec {
         let mut object_27 = object.key("spec").start_object();
@@ -113,7 +113,7 @@ pub fn serialize_structure_crate_input_create_virtual_gateway_input(
         array_29.finish();
     }
     if let Some(var_32) = &input.virtual_gateway_name {
-        object.key("virtualGatewayName").string(var_32);
+        object.key("virtualGatewayName").string(var_32.as_str());
     }
     Ok(())
 }
@@ -123,7 +123,7 @@ pub fn serialize_structure_crate_input_create_virtual_node_input(
     input: &crate::input::CreateVirtualNodeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.client_token {
-        object.key("clientToken").string(var_33);
+        object.key("clientToken").string(var_33.as_str());
     }
     if let Some(var_34) = &input.spec {
         let mut object_35 = object.key("spec").start_object();
@@ -142,7 +142,7 @@ pub fn serialize_structure_crate_input_create_virtual_node_input(
         array_37.finish();
     }
     if let Some(var_40) = &input.virtual_node_name {
-        object.key("virtualNodeName").string(var_40);
+        object.key("virtualNodeName").string(var_40.as_str());
     }
     Ok(())
 }
@@ -152,7 +152,7 @@ pub fn serialize_structure_crate_input_create_virtual_router_input(
     input: &crate::input::CreateVirtualRouterInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_41) = &input.client_token {
-        object.key("clientToken").string(var_41);
+        object.key("clientToken").string(var_41.as_str());
     }
     if let Some(var_42) = &input.spec {
         let mut object_43 = object.key("spec").start_object();
@@ -174,7 +174,7 @@ pub fn serialize_structure_crate_input_create_virtual_router_input(
         array_45.finish();
     }
     if let Some(var_48) = &input.virtual_router_name {
-        object.key("virtualRouterName").string(var_48);
+        object.key("virtualRouterName").string(var_48.as_str());
     }
     Ok(())
 }
@@ -184,7 +184,7 @@ pub fn serialize_structure_crate_input_create_virtual_service_input(
     input: &crate::input::CreateVirtualServiceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_49) = &input.client_token {
-        object.key("clientToken").string(var_49);
+        object.key("clientToken").string(var_49.as_str());
     }
     if let Some(var_50) = &input.spec {
         let mut object_51 = object.key("spec").start_object();
@@ -206,7 +206,7 @@ pub fn serialize_structure_crate_input_create_virtual_service_input(
         array_53.finish();
     }
     if let Some(var_56) = &input.virtual_service_name {
-        object.key("virtualServiceName").string(var_56);
+        object.key("virtualServiceName").string(var_56.as_str());
     }
     Ok(())
 }
@@ -237,7 +237,7 @@ pub fn serialize_structure_crate_input_untag_resource_input(
         let mut array_62 = object.key("tagKeys").start_array();
         for item_63 in var_61 {
             {
-                array_62.value().string(item_63);
+                array_62.value().string(item_63.as_str());
             }
         }
         array_62.finish();
@@ -250,7 +250,7 @@ pub fn serialize_structure_crate_input_update_gateway_route_input(
     input: &crate::input::UpdateGatewayRouteInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_64) = &input.client_token {
-        object.key("clientToken").string(var_64);
+        object.key("clientToken").string(var_64.as_str());
     }
     if let Some(var_65) = &input.spec {
         let mut object_66 = object.key("spec").start_object();
@@ -268,7 +268,7 @@ pub fn serialize_structure_crate_input_update_mesh_input(
     input: &crate::input::UpdateMeshInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_67) = &input.client_token {
-        object.key("clientToken").string(var_67);
+        object.key("clientToken").string(var_67.as_str());
     }
     if let Some(var_68) = &input.spec {
         let mut object_69 = object.key("spec").start_object();
@@ -283,7 +283,7 @@ pub fn serialize_structure_crate_input_update_route_input(
     input: &crate::input::UpdateRouteInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.client_token {
-        object.key("clientToken").string(var_70);
+        object.key("clientToken").string(var_70.as_str());
     }
     if let Some(var_71) = &input.spec {
         let mut object_72 = object.key("spec").start_object();
@@ -298,7 +298,7 @@ pub fn serialize_structure_crate_input_update_virtual_gateway_input(
     input: &crate::input::UpdateVirtualGatewayInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_73) = &input.client_token {
-        object.key("clientToken").string(var_73);
+        object.key("clientToken").string(var_73.as_str());
     }
     if let Some(var_74) = &input.spec {
         let mut object_75 = object.key("spec").start_object();
@@ -316,7 +316,7 @@ pub fn serialize_structure_crate_input_update_virtual_node_input(
     input: &crate::input::UpdateVirtualNodeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_76) = &input.client_token {
-        object.key("clientToken").string(var_76);
+        object.key("clientToken").string(var_76.as_str());
     }
     if let Some(var_77) = &input.spec {
         let mut object_78 = object.key("spec").start_object();
@@ -331,7 +331,7 @@ pub fn serialize_structure_crate_input_update_virtual_router_input(
     input: &crate::input::UpdateVirtualRouterInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_79) = &input.client_token {
-        object.key("clientToken").string(var_79);
+        object.key("clientToken").string(var_79.as_str());
     }
     if let Some(var_80) = &input.spec {
         let mut object_81 = object.key("spec").start_object();
@@ -349,7 +349,7 @@ pub fn serialize_structure_crate_input_update_virtual_service_input(
     input: &crate::input::UpdateVirtualServiceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_82) = &input.client_token {
-        object.key("clientToken").string(var_82);
+        object.key("clientToken").string(var_82.as_str());
     }
     if let Some(var_83) = &input.spec {
         let mut object_84 = object.key("spec").start_object();
@@ -404,10 +404,10 @@ pub fn serialize_structure_crate_model_tag_ref(
     input: &crate::model::TagRef,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_92) = &input.key {
-        object.key("key").string(var_92);
+        object.key("key").string(var_92.as_str());
     }
     if let Some(var_93) = &input.value {
-        object.key("value").string(var_93);
+        object.key("value").string(var_93.as_str());
     }
     Ok(())
 }
@@ -966,7 +966,7 @@ pub fn serialize_structure_crate_model_http_gateway_route_match(
     input: &crate::model::HttpGatewayRouteMatch,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_197) = &input.prefix {
-        object.key("prefix").string(var_197);
+        object.key("prefix").string(var_197.as_str());
     }
     if let Some(var_198) = &input.path {
         let mut object_199 = object.key("path").start_object();
@@ -1043,7 +1043,7 @@ pub fn serialize_structure_crate_model_grpc_gateway_route_match(
     input: &crate::model::GrpcGatewayRouteMatch,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_215) = &input.service_name {
-        object.key("serviceName").string(var_215);
+        object.key("serviceName").string(var_215.as_str());
     }
     if let Some(var_216) = &input.hostname {
         let mut object_217 = object.key("hostname").start_object();
@@ -1098,7 +1098,7 @@ pub fn serialize_structure_crate_model_http_route_match(
     input: &crate::model::HttpRouteMatch,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_226) = &input.prefix {
-        object.key("prefix").string(var_226);
+        object.key("prefix").string(var_226.as_str());
     }
     if let Some(var_227) = &input.path {
         let mut object_228 = object.key("path").start_object();
@@ -1182,7 +1182,7 @@ pub fn serialize_structure_crate_model_http_retry_policy(
         let mut array_247 = object.key("httpRetryEvents").start_array();
         for item_248 in var_246 {
             {
-                array_247.value().string(item_248);
+                array_247.value().string(item_248.as_str());
             }
         }
         array_247.finish();
@@ -1275,10 +1275,10 @@ pub fn serialize_structure_crate_model_grpc_route_match(
     input: &crate::model::GrpcRouteMatch,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_266) = &input.service_name {
-        object.key("serviceName").string(var_266);
+        object.key("serviceName").string(var_266.as_str());
     }
     if let Some(var_267) = &input.method_name {
-        object.key("methodName").string(var_267);
+        object.key("methodName").string(var_267.as_str());
     }
     if let Some(var_268) = &input.metadata {
         let mut array_269 = object.key("metadata").start_array();
@@ -1316,7 +1316,7 @@ pub fn serialize_structure_crate_model_grpc_retry_policy(
         let mut array_276 = object.key("httpRetryEvents").start_array();
         for item_277 in var_275 {
             {
-                array_276.value().string(item_277);
+                array_276.value().string(item_277.as_str());
             }
         }
         array_276.finish();
@@ -1400,7 +1400,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_health_check_policy(
         );
     }
     if let Some(var_293) = &input.path {
-        object.key("path").string(var_293);
+        object.key("path").string(var_293.as_str());
     }
     {
         object.key("healthyThreshold").number(
@@ -1525,7 +1525,7 @@ pub fn serialize_structure_crate_model_dns_service_discovery(
     input: &crate::model::DnsServiceDiscovery,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_304) = &input.hostname {
-        object.key("hostname").string(var_304);
+        object.key("hostname").string(var_304.as_str());
     }
     if let Some(var_305) = &input.response_type {
         object.key("responseType").string(var_305.as_str());
@@ -1538,10 +1538,10 @@ pub fn serialize_structure_crate_model_aws_cloud_map_service_discovery(
     input: &crate::model::AwsCloudMapServiceDiscovery,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_306) = &input.namespace_name {
-        object.key("namespaceName").string(var_306);
+        object.key("namespaceName").string(var_306.as_str());
     }
     if let Some(var_307) = &input.service_name {
-        object.key("serviceName").string(var_307);
+        object.key("serviceName").string(var_307.as_str());
     }
     if let Some(var_308) = &input.attributes {
         let mut array_309 = object.key("attributes").start_array();
@@ -1628,7 +1628,7 @@ pub fn serialize_structure_crate_model_health_check_policy(
         );
     }
     if let Some(var_321) = &input.path {
-        object.key("path").string(var_321);
+        object.key("path").string(var_321.as_str());
     }
     {
         object.key("healthyThreshold").number(
@@ -1761,7 +1761,7 @@ pub fn serialize_structure_crate_model_virtual_service_backend(
     input: &crate::model::VirtualServiceBackend,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_336) = &input.virtual_service_name {
-        object.key("virtualServiceName").string(var_336);
+        object.key("virtualServiceName").string(var_336.as_str());
     }
     if let Some(var_337) = &input.client_policy {
         let mut object_338 = object.key("clientPolicy").start_object();
@@ -1813,7 +1813,7 @@ pub fn serialize_structure_crate_model_virtual_node_service_provider(
     input: &crate::model::VirtualNodeServiceProvider,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_342) = &input.virtual_node_name {
-        object.key("virtualNodeName").string(var_342);
+        object.key("virtualNodeName").string(var_342.as_str());
     }
     Ok(())
 }
@@ -1823,7 +1823,7 @@ pub fn serialize_structure_crate_model_virtual_router_service_provider(
     input: &crate::model::VirtualRouterServiceProvider,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_343) = &input.virtual_router_name {
-        object.key("virtualRouterName").string(var_343);
+        object.key("virtualRouterName").string(var_343.as_str());
     }
     Ok(())
 }
@@ -1833,10 +1833,10 @@ pub fn serialize_structure_crate_model_http_path_match(
     input: &crate::model::HttpPathMatch,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_344) = &input.exact {
-        object.key("exact").string(var_344);
+        object.key("exact").string(var_344.as_str());
     }
     if let Some(var_345) = &input.regex {
-        object.key("regex").string(var_345);
+        object.key("regex").string(var_345.as_str());
     }
     Ok(())
 }
@@ -1846,7 +1846,7 @@ pub fn serialize_structure_crate_model_http_query_parameter(
     input: &crate::model::HttpQueryParameter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_346) = &input.name {
-        object.key("name").string(var_346);
+        object.key("name").string(var_346.as_str());
     }
     if let Some(var_347) = &input.r#match {
         let mut object_348 = object.key("match").start_object();
@@ -1864,10 +1864,10 @@ pub fn serialize_structure_crate_model_gateway_route_hostname_match(
     input: &crate::model::GatewayRouteHostnameMatch,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_349) = &input.exact {
-        object.key("exact").string(var_349);
+        object.key("exact").string(var_349.as_str());
     }
     if let Some(var_350) = &input.suffix {
-        object.key("suffix").string(var_350);
+        object.key("suffix").string(var_350.as_str());
     }
     Ok(())
 }
@@ -1877,7 +1877,7 @@ pub fn serialize_structure_crate_model_http_gateway_route_header(
     input: &crate::model::HttpGatewayRouteHeader,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_351) = &input.name {
-        object.key("name").string(var_351);
+        object.key("name").string(var_351.as_str());
     }
     if let Some(var_352) = &input.invert {
         object.key("invert").boolean(*var_352);
@@ -1941,7 +1941,7 @@ pub fn serialize_structure_crate_model_grpc_gateway_route_metadata(
     input: &crate::model::GrpcGatewayRouteMetadata,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_363) = &input.name {
-        object.key("name").string(var_363);
+        object.key("name").string(var_363.as_str());
     }
     if let Some(var_364) = &input.invert {
         object.key("invert").boolean(*var_364);
@@ -1977,7 +1977,7 @@ pub fn serialize_structure_crate_model_http_route_header(
     input: &crate::model::HttpRouteHeader,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_369) = &input.name {
-        object.key("name").string(var_369);
+        object.key("name").string(var_369.as_str());
     }
     if let Some(var_370) = &input.invert {
         object.key("invert").boolean(*var_370);
@@ -1995,7 +1995,7 @@ pub fn serialize_structure_crate_model_weighted_target(
     input: &crate::model::WeightedTarget,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_373) = &input.virtual_node {
-        object.key("virtualNode").string(var_373);
+        object.key("virtualNode").string(var_373.as_str());
     }
     {
         object.key("weight").number(
@@ -2027,7 +2027,7 @@ pub fn serialize_structure_crate_model_grpc_route_metadata(
     input: &crate::model::GrpcRouteMetadata,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_376) = &input.name {
-        object.key("name").string(var_376);
+        object.key("name").string(var_376.as_str());
     }
     if let Some(var_377) = &input.invert {
         object.key("invert").boolean(*var_377);
@@ -2182,7 +2182,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_file_access_log(
     input: &crate::model::VirtualGatewayFileAccessLog,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_396) = &input.path {
-        object.key("path").string(var_396);
+        object.key("path").string(var_396.as_str());
     }
     Ok(())
 }
@@ -2192,10 +2192,10 @@ pub fn serialize_structure_crate_model_aws_cloud_map_instance_attribute(
     input: &crate::model::AwsCloudMapInstanceAttribute,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_397) = &input.key {
-        object.key("key").string(var_397);
+        object.key("key").string(var_397.as_str());
     }
     if let Some(var_398) = &input.value {
-        object.key("value").string(var_398);
+        object.key("value").string(var_398.as_str());
     }
     Ok(())
 }
@@ -2364,7 +2364,7 @@ pub fn serialize_structure_crate_model_file_access_log(
     input: &crate::model::FileAccessLog,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_415) = &input.path {
-        object.key("path").string(var_415);
+        object.key("path").string(var_415.as_str());
     }
     Ok(())
 }
@@ -2374,7 +2374,7 @@ pub fn serialize_structure_crate_model_query_parameter_match(
     input: &crate::model::QueryParameterMatch,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_416) = &input.exact {
-        object.key("exact").string(var_416);
+        object.key("exact").string(var_416.as_str());
     }
     Ok(())
 }
@@ -2385,10 +2385,10 @@ pub fn serialize_union_crate_model_header_match_method(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     match input {
         crate::model::HeaderMatchMethod::Exact(inner) => {
-            object_354.key("exact").string(inner);
+            object_354.key("exact").string(inner.as_str());
         }
         crate::model::HeaderMatchMethod::Regex(inner) => {
-            object_354.key("regex").string(inner);
+            object_354.key("regex").string(inner.as_str());
         }
         crate::model::HeaderMatchMethod::Range(inner) => {
             let mut object_417 = object_354.key("range").start_object();
@@ -2396,10 +2396,10 @@ pub fn serialize_union_crate_model_header_match_method(
             object_417.finish();
         }
         crate::model::HeaderMatchMethod::Prefix(inner) => {
-            object_354.key("prefix").string(inner);
+            object_354.key("prefix").string(inner.as_str());
         }
         crate::model::HeaderMatchMethod::Suffix(inner) => {
-            object_354.key("suffix").string(inner);
+            object_354.key("suffix").string(inner.as_str());
         }
         crate::model::HeaderMatchMethod::Unknown => {
             return Err(
@@ -2417,7 +2417,7 @@ pub fn serialize_structure_crate_model_gateway_route_virtual_service(
     input: &crate::model::GatewayRouteVirtualService,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_418) = &input.virtual_service_name {
-        object.key("virtualServiceName").string(var_418);
+        object.key("virtualServiceName").string(var_418.as_str());
     }
     Ok(())
 }
@@ -2430,7 +2430,7 @@ pub fn serialize_structure_crate_model_http_gateway_route_prefix_rewrite(
         object.key("defaultPrefix").string(var_419.as_str());
     }
     if let Some(var_420) = &input.value {
-        object.key("value").string(var_420);
+        object.key("value").string(var_420.as_str());
     }
     Ok(())
 }
@@ -2440,7 +2440,7 @@ pub fn serialize_structure_crate_model_http_gateway_route_path_rewrite(
     input: &crate::model::HttpGatewayRoutePathRewrite,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_421) = &input.exact {
-        object.key("exact").string(var_421);
+        object.key("exact").string(var_421.as_str());
     }
     Ok(())
 }
@@ -2461,10 +2461,10 @@ pub fn serialize_union_crate_model_grpc_metadata_match_method(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     match input {
         crate::model::GrpcMetadataMatchMethod::Exact(inner) => {
-            object_366.key("exact").string(inner);
+            object_366.key("exact").string(inner.as_str());
         }
         crate::model::GrpcMetadataMatchMethod::Regex(inner) => {
-            object_366.key("regex").string(inner);
+            object_366.key("regex").string(inner.as_str());
         }
         crate::model::GrpcMetadataMatchMethod::Range(inner) => {
             let mut object_423 = object_366.key("range").start_object();
@@ -2472,10 +2472,10 @@ pub fn serialize_union_crate_model_grpc_metadata_match_method(
             object_423.finish();
         }
         crate::model::GrpcMetadataMatchMethod::Prefix(inner) => {
-            object_366.key("prefix").string(inner);
+            object_366.key("prefix").string(inner.as_str());
         }
         crate::model::GrpcMetadataMatchMethod::Suffix(inner) => {
-            object_366.key("suffix").string(inner);
+            object_366.key("suffix").string(inner.as_str());
         }
         crate::model::GrpcMetadataMatchMethod::Unknown => {
             return Err(
@@ -2494,10 +2494,10 @@ pub fn serialize_union_crate_model_grpc_route_metadata_match_method(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     match input {
         crate::model::GrpcRouteMetadataMatchMethod::Exact(inner) => {
-            object_379.key("exact").string(inner);
+            object_379.key("exact").string(inner.as_str());
         }
         crate::model::GrpcRouteMetadataMatchMethod::Regex(inner) => {
-            object_379.key("regex").string(inner);
+            object_379.key("regex").string(inner.as_str());
         }
         crate::model::GrpcRouteMetadataMatchMethod::Range(inner) => {
             let mut object_424 = object_379.key("range").start_object();
@@ -2505,10 +2505,10 @@ pub fn serialize_union_crate_model_grpc_route_metadata_match_method(
             object_424.finish();
         }
         crate::model::GrpcRouteMetadataMatchMethod::Prefix(inner) => {
-            object_379.key("prefix").string(inner);
+            object_379.key("prefix").string(inner.as_str());
         }
         crate::model::GrpcRouteMetadataMatchMethod::Suffix(inner) => {
-            object_379.key("suffix").string(inner);
+            object_379.key("suffix").string(inner.as_str());
         }
         crate::model::GrpcRouteMetadataMatchMethod::Unknown => {
             return Err(
@@ -2616,7 +2616,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_listener_tls_acm_certific
     input: &crate::model::VirtualGatewayListenerTlsAcmCertificate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_435) = &input.certificate_arn {
-        object.key("certificateArn").string(var_435);
+        object.key("certificateArn").string(var_435.as_str());
     }
     Ok(())
 }
@@ -2626,10 +2626,10 @@ pub fn serialize_structure_crate_model_virtual_gateway_listener_tls_file_certifi
     input: &crate::model::VirtualGatewayListenerTlsFileCertificate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_436) = &input.certificate_chain {
-        object.key("certificateChain").string(var_436);
+        object.key("certificateChain").string(var_436.as_str());
     }
     if let Some(var_437) = &input.private_key {
-        object.key("privateKey").string(var_437);
+        object.key("privateKey").string(var_437.as_str());
     }
     Ok(())
 }
@@ -2639,7 +2639,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_listener_tls_sds_certific
     input: &crate::model::VirtualGatewayListenerTlsSdsCertificate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_438) = &input.secret_name {
-        object.key("secretName").string(var_438);
+        object.key("secretName").string(var_438.as_str());
     }
     Ok(())
 }
@@ -2649,7 +2649,7 @@ pub fn serialize_structure_crate_model_listener_tls_acm_certificate(
     input: &crate::model::ListenerTlsAcmCertificate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_439) = &input.certificate_arn {
-        object.key("certificateArn").string(var_439);
+        object.key("certificateArn").string(var_439.as_str());
     }
     Ok(())
 }
@@ -2659,10 +2659,10 @@ pub fn serialize_structure_crate_model_listener_tls_file_certificate(
     input: &crate::model::ListenerTlsFileCertificate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_440) = &input.certificate_chain {
-        object.key("certificateChain").string(var_440);
+        object.key("certificateChain").string(var_440.as_str());
     }
     if let Some(var_441) = &input.private_key {
-        object.key("privateKey").string(var_441);
+        object.key("privateKey").string(var_441.as_str());
     }
     Ok(())
 }
@@ -2672,7 +2672,7 @@ pub fn serialize_structure_crate_model_listener_tls_sds_certificate(
     input: &crate::model::ListenerTlsSdsCertificate,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_442) = &input.secret_name {
-        object.key("secretName").string(var_442);
+        object.key("secretName").string(var_442.as_str());
     }
     Ok(())
 }
@@ -2819,7 +2819,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_tls_validation_context_fi
     input: &crate::model::VirtualGatewayTlsValidationContextFileTrust,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_456) = &input.certificate_chain {
-        object.key("certificateChain").string(var_456);
+        object.key("certificateChain").string(var_456.as_str());
     }
     Ok(())
 }
@@ -2829,7 +2829,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_tls_validation_context_sd
     input: &crate::model::VirtualGatewayTlsValidationContextSdsTrust,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_457) = &input.secret_name {
-        object.key("secretName").string(var_457);
+        object.key("secretName").string(var_457.as_str());
     }
     Ok(())
 }
@@ -2842,7 +2842,7 @@ pub fn serialize_structure_crate_model_subject_alternative_name_matchers(
         let mut array_459 = object.key("exact").start_array();
         for item_460 in var_458 {
             {
-                array_459.value().string(item_460);
+                array_459.value().string(item_460.as_str());
             }
         }
         array_459.finish();
@@ -2855,7 +2855,7 @@ pub fn serialize_structure_crate_model_tls_validation_context_file_trust(
     input: &crate::model::TlsValidationContextFileTrust,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_461) = &input.certificate_chain {
-        object.key("certificateChain").string(var_461);
+        object.key("certificateChain").string(var_461.as_str());
     }
     Ok(())
 }
@@ -2865,7 +2865,7 @@ pub fn serialize_structure_crate_model_tls_validation_context_sds_trust(
     input: &crate::model::TlsValidationContextSdsTrust,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_462) = &input.secret_name {
-        object.key("secretName").string(var_462);
+        object.key("secretName").string(var_462.as_str());
     }
     Ok(())
 }
@@ -2918,7 +2918,7 @@ pub fn serialize_structure_crate_model_virtual_gateway_tls_validation_context_ac
         let mut array_467 = object.key("certificateAuthorityArns").start_array();
         for item_468 in var_466 {
             {
-                array_467.value().string(item_468);
+                array_467.value().string(item_468.as_str());
             }
         }
         array_467.finish();
@@ -2934,7 +2934,7 @@ pub fn serialize_structure_crate_model_tls_validation_context_acm_trust(
         let mut array_470 = object.key("certificateAuthorityArns").start_array();
         for item_471 in var_469 {
             {
-                array_470.value().string(item_471);
+                array_470.value().string(item_471.as_str());
             }
         }
         array_470.finish();

@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_send_command_input(
     input: &crate::input::SendCommandInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.session_token {
-        object.key("SessionToken").string(var_1);
+        object.key("SessionToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.start_session {
         let mut object_3 = object.key("StartSession").start_object();
@@ -67,7 +67,7 @@ pub fn serialize_structure_crate_model_start_session_request(
     input: &crate::model::StartSessionRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.ledger_name {
-        object.key("LedgerName").string(var_16);
+        object.key("LedgerName").string(var_16.as_str());
     }
     Ok(())
 }
@@ -93,7 +93,7 @@ pub fn serialize_structure_crate_model_commit_transaction_request(
     input: &crate::model::CommitTransactionRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.transaction_id {
-        object.key("TransactionId").string(var_17);
+        object.key("TransactionId").string(var_17.as_str());
     }
     if let Some(var_18) = &input.commit_digest {
         object
@@ -116,10 +116,10 @@ pub fn serialize_structure_crate_model_execute_statement_request(
     input: &crate::model::ExecuteStatementRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.transaction_id {
-        object.key("TransactionId").string(var_19);
+        object.key("TransactionId").string(var_19.as_str());
     }
     if let Some(var_20) = &input.statement {
-        object.key("Statement").string(var_20);
+        object.key("Statement").string(var_20.as_str());
     }
     if let Some(var_21) = &input.parameters {
         let mut array_22 = object.key("Parameters").start_array();
@@ -143,10 +143,10 @@ pub fn serialize_structure_crate_model_fetch_page_request(
     input: &crate::model::FetchPageRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_25) = &input.transaction_id {
-        object.key("TransactionId").string(var_25);
+        object.key("TransactionId").string(var_25.as_str());
     }
     if let Some(var_26) = &input.next_page_token {
-        object.key("NextPageToken").string(var_26);
+        object.key("NextPageToken").string(var_26.as_str());
     }
     Ok(())
 }
@@ -161,7 +161,7 @@ pub fn serialize_structure_crate_model_value_holder(
             .string_unchecked(&aws_smithy_types::base64::encode(var_27));
     }
     if let Some(var_28) = &input.ion_text {
-        object.key("IonText").string(var_28);
+        object.key("IonText").string(var_28.as_str());
     }
     Ok(())
 }

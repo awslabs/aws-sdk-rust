@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_create_broker_input(
             .boolean(input.auto_minor_version_upgrade);
     }
     if let Some(var_2) = &input.broker_name {
-        object.key("brokerName").string(var_2);
+        object.key("brokerName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.configuration {
         let mut object_4 = object.key("configuration").start_object();
@@ -20,7 +20,7 @@ pub fn serialize_structure_crate_input_create_broker_input(
         object_4.finish();
     }
     if let Some(var_5) = &input.creator_request_id {
-        object.key("creatorRequestId").string(var_5);
+        object.key("creatorRequestId").string(var_5.as_str());
     }
     if let Some(var_6) = &input.deployment_mode {
         object.key("deploymentMode").string(var_6.as_str());
@@ -34,10 +34,10 @@ pub fn serialize_structure_crate_input_create_broker_input(
         object.key("engineType").string(var_9.as_str());
     }
     if let Some(var_10) = &input.engine_version {
-        object.key("engineVersion").string(var_10);
+        object.key("engineVersion").string(var_10.as_str());
     }
     if let Some(var_11) = &input.host_instance_type {
-        object.key("hostInstanceType").string(var_11);
+        object.key("hostInstanceType").string(var_11.as_str());
     }
     if let Some(var_12) = &input.ldap_server_metadata {
         let mut object_13 = object.key("ldapServerMetadata").start_object();
@@ -66,7 +66,7 @@ pub fn serialize_structure_crate_input_create_broker_input(
         let mut array_19 = object.key("securityGroups").start_array();
         for item_20 in var_18 {
             {
-                array_19.value().string(item_20);
+                array_19.value().string(item_20.as_str());
             }
         }
         array_19.finish();
@@ -78,7 +78,7 @@ pub fn serialize_structure_crate_input_create_broker_input(
         let mut array_23 = object.key("subnetIds").start_array();
         for item_24 in var_22 {
             {
-                array_23.value().string(item_24);
+                array_23.value().string(item_24.as_str());
             }
         }
         array_23.finish();
@@ -87,7 +87,7 @@ pub fn serialize_structure_crate_input_create_broker_input(
         let mut object_26 = object.key("tags").start_object();
         for (key_27, value_28) in var_25 {
             {
-                object_26.key(key_27).string(value_28);
+                object_26.key(key_27).string(value_28.as_str());
             }
         }
         object_26.finish();
@@ -117,16 +117,16 @@ pub fn serialize_structure_crate_input_create_configuration_input(
         object.key("engineType").string(var_34.as_str());
     }
     if let Some(var_35) = &input.engine_version {
-        object.key("engineVersion").string(var_35);
+        object.key("engineVersion").string(var_35.as_str());
     }
     if let Some(var_36) = &input.name {
-        object.key("name").string(var_36);
+        object.key("name").string(var_36.as_str());
     }
     if let Some(var_37) = &input.tags {
         let mut object_38 = object.key("tags").start_object();
         for (key_39, value_40) in var_37 {
             {
-                object_38.key(key_39).string(value_40);
+                object_38.key(key_39).string(value_40.as_str());
             }
         }
         object_38.finish();
@@ -142,7 +142,7 @@ pub fn serialize_structure_crate_input_create_tags_input(
         let mut object_42 = object.key("tags").start_object();
         for (key_43, value_44) in var_41 {
             {
-                object_42.key(key_43).string(value_44);
+                object_42.key(key_43).string(value_44.as_str());
             }
         }
         object_42.finish();
@@ -161,13 +161,13 @@ pub fn serialize_structure_crate_input_create_user_input(
         let mut array_46 = object.key("groups").start_array();
         for item_47 in var_45 {
             {
-                array_46.value().string(item_47);
+                array_46.value().string(item_47.as_str());
             }
         }
         array_46.finish();
     }
     if let Some(var_48) = &input.password {
-        object.key("password").string(var_48);
+        object.key("password").string(var_48.as_str());
     }
     Ok(())
 }
@@ -190,10 +190,10 @@ pub fn serialize_structure_crate_input_update_broker_input(
         object_51.finish();
     }
     if let Some(var_52) = &input.engine_version {
-        object.key("engineVersion").string(var_52);
+        object.key("engineVersion").string(var_52.as_str());
     }
     if let Some(var_53) = &input.host_instance_type {
-        object.key("hostInstanceType").string(var_53);
+        object.key("hostInstanceType").string(var_53.as_str());
     }
     if let Some(var_54) = &input.ldap_server_metadata {
         let mut object_55 = object.key("ldapServerMetadata").start_object();
@@ -217,7 +217,7 @@ pub fn serialize_structure_crate_input_update_broker_input(
         let mut array_61 = object.key("securityGroups").start_array();
         for item_62 in var_60 {
             {
-                array_61.value().string(item_62);
+                array_61.value().string(item_62.as_str());
             }
         }
         array_61.finish();
@@ -230,10 +230,10 @@ pub fn serialize_structure_crate_input_update_configuration_input(
     input: &crate::input::UpdateConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_63) = &input.data {
-        object.key("data").string(var_63);
+        object.key("data").string(var_63.as_str());
     }
     if let Some(var_64) = &input.description {
-        object.key("description").string(var_64);
+        object.key("description").string(var_64.as_str());
     }
     Ok(())
 }
@@ -249,13 +249,13 @@ pub fn serialize_structure_crate_input_update_user_input(
         let mut array_66 = object.key("groups").start_array();
         for item_67 in var_65 {
             {
-                array_66.value().string(item_67);
+                array_66.value().string(item_67.as_str());
             }
         }
         array_66.finish();
     }
     if let Some(var_68) = &input.password {
-        object.key("password").string(var_68);
+        object.key("password").string(var_68.as_str());
     }
     Ok(())
 }
@@ -265,7 +265,7 @@ pub fn serialize_structure_crate_model_configuration_id(
     input: &crate::model::ConfigurationId,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_69) = &input.id {
-        object.key("id").string(var_69);
+        object.key("id").string(var_69.as_str());
     }
     if input.revision != 0 {
         object.key("revision").number(
@@ -281,7 +281,7 @@ pub fn serialize_structure_crate_model_encryption_options(
     input: &crate::model::EncryptionOptions,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_70) = &input.kms_key_id {
-        object.key("kmsKeyId").string(var_70);
+        object.key("kmsKeyId").string(var_70.as_str());
     }
     {
         object
@@ -299,19 +299,19 @@ pub fn serialize_structure_crate_model_ldap_server_metadata_input(
         let mut array_72 = object.key("hosts").start_array();
         for item_73 in var_71 {
             {
-                array_72.value().string(item_73);
+                array_72.value().string(item_73.as_str());
             }
         }
         array_72.finish();
     }
     if let Some(var_74) = &input.role_base {
-        object.key("roleBase").string(var_74);
+        object.key("roleBase").string(var_74.as_str());
     }
     if let Some(var_75) = &input.role_name {
-        object.key("roleName").string(var_75);
+        object.key("roleName").string(var_75.as_str());
     }
     if let Some(var_76) = &input.role_search_matching {
-        object.key("roleSearchMatching").string(var_76);
+        object.key("roleSearchMatching").string(var_76.as_str());
     }
     if input.role_search_subtree {
         object
@@ -319,19 +319,19 @@ pub fn serialize_structure_crate_model_ldap_server_metadata_input(
             .boolean(input.role_search_subtree);
     }
     if let Some(var_77) = &input.service_account_password {
-        object.key("serviceAccountPassword").string(var_77);
+        object.key("serviceAccountPassword").string(var_77.as_str());
     }
     if let Some(var_78) = &input.service_account_username {
-        object.key("serviceAccountUsername").string(var_78);
+        object.key("serviceAccountUsername").string(var_78.as_str());
     }
     if let Some(var_79) = &input.user_base {
-        object.key("userBase").string(var_79);
+        object.key("userBase").string(var_79.as_str());
     }
     if let Some(var_80) = &input.user_role_name {
-        object.key("userRoleName").string(var_80);
+        object.key("userRoleName").string(var_80.as_str());
     }
     if let Some(var_81) = &input.user_search_matching {
-        object.key("userSearchMatching").string(var_81);
+        object.key("userSearchMatching").string(var_81.as_str());
     }
     if input.user_search_subtree {
         object
@@ -362,10 +362,10 @@ pub fn serialize_structure_crate_model_weekly_start_time(
         object.key("dayOfWeek").string(var_82.as_str());
     }
     if let Some(var_83) = &input.time_of_day {
-        object.key("timeOfDay").string(var_83);
+        object.key("timeOfDay").string(var_83.as_str());
     }
     if let Some(var_84) = &input.time_zone {
-        object.key("timeZone").string(var_84);
+        object.key("timeZone").string(var_84.as_str());
     }
     Ok(())
 }
@@ -381,16 +381,16 @@ pub fn serialize_structure_crate_model_user(
         let mut array_86 = object.key("groups").start_array();
         for item_87 in var_85 {
             {
-                array_86.value().string(item_87);
+                array_86.value().string(item_87.as_str());
             }
         }
         array_86.finish();
     }
     if let Some(var_88) = &input.password {
-        object.key("password").string(var_88);
+        object.key("password").string(var_88.as_str());
     }
     if let Some(var_89) = &input.username {
-        object.key("username").string(var_89);
+        object.key("username").string(var_89.as_str());
     }
     Ok(())
 }

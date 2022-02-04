@@ -7,7 +7,7 @@ pub fn serialize_structure_crate_input_describe_dimension_keys_input(
         object.key("ServiceType").string(var_1.as_str());
     }
     if let Some(var_2) = &input.identifier {
-        object.key("Identifier").string(var_2);
+        object.key("Identifier").string(var_2.as_str());
     }
     if let Some(var_3) = &input.start_time {
         object
@@ -20,7 +20,7 @@ pub fn serialize_structure_crate_input_describe_dimension_keys_input(
             .date_time(var_4, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_5) = &input.metric {
-        object.key("Metric").string(var_5);
+        object.key("Metric").string(var_5.as_str());
     }
     if let Some(var_6) = &input.period_in_seconds {
         object.key("PeriodInSeconds").number(
@@ -37,7 +37,7 @@ pub fn serialize_structure_crate_input_describe_dimension_keys_input(
         let mut array_10 = object.key("AdditionalMetrics").start_array();
         for item_11 in var_9 {
             {
-                array_10.value().string(item_11);
+                array_10.value().string(item_11.as_str());
             }
         }
         array_10.finish();
@@ -51,7 +51,7 @@ pub fn serialize_structure_crate_input_describe_dimension_keys_input(
         let mut object_15 = object.key("Filter").start_object();
         for (key_16, value_17) in var_14 {
             {
-                object_15.key(key_16).string(value_17);
+                object_15.key(key_16).string(value_17.as_str());
             }
         }
         object_15.finish();
@@ -63,7 +63,7 @@ pub fn serialize_structure_crate_input_describe_dimension_keys_input(
         );
     }
     if let Some(var_19) = &input.next_token {
-        object.key("NextToken").string(var_19);
+        object.key("NextToken").string(var_19.as_str());
     }
     Ok(())
 }
@@ -76,19 +76,19 @@ pub fn serialize_structure_crate_input_get_dimension_key_details_input(
         object.key("ServiceType").string(var_20.as_str());
     }
     if let Some(var_21) = &input.identifier {
-        object.key("Identifier").string(var_21);
+        object.key("Identifier").string(var_21.as_str());
     }
     if let Some(var_22) = &input.group {
-        object.key("Group").string(var_22);
+        object.key("Group").string(var_22.as_str());
     }
     if let Some(var_23) = &input.group_identifier {
-        object.key("GroupIdentifier").string(var_23);
+        object.key("GroupIdentifier").string(var_23.as_str());
     }
     if let Some(var_24) = &input.requested_dimensions {
         let mut array_25 = object.key("RequestedDimensions").start_array();
         for item_26 in var_24 {
             {
-                array_25.value().string(item_26);
+                array_25.value().string(item_26.as_str());
             }
         }
         array_25.finish();
@@ -104,7 +104,7 @@ pub fn serialize_structure_crate_input_get_resource_metadata_input(
         object.key("ServiceType").string(var_27.as_str());
     }
     if let Some(var_28) = &input.identifier {
-        object.key("Identifier").string(var_28);
+        object.key("Identifier").string(var_28.as_str());
     }
     Ok(())
 }
@@ -117,7 +117,7 @@ pub fn serialize_structure_crate_input_get_resource_metrics_input(
         object.key("ServiceType").string(var_29.as_str());
     }
     if let Some(var_30) = &input.identifier {
-        object.key("Identifier").string(var_30);
+        object.key("Identifier").string(var_30.as_str());
     }
     if let Some(var_31) = &input.metric_queries {
         let mut array_32 = object.key("MetricQueries").start_array();
@@ -156,7 +156,7 @@ pub fn serialize_structure_crate_input_get_resource_metrics_input(
         );
     }
     if let Some(var_39) = &input.next_token {
-        object.key("NextToken").string(var_39);
+        object.key("NextToken").string(var_39.as_str());
     }
     Ok(())
 }
@@ -169,13 +169,13 @@ pub fn serialize_structure_crate_input_list_available_resource_dimensions_input(
         object.key("ServiceType").string(var_40.as_str());
     }
     if let Some(var_41) = &input.identifier {
-        object.key("Identifier").string(var_41);
+        object.key("Identifier").string(var_41.as_str());
     }
     if let Some(var_42) = &input.metrics {
         let mut array_43 = object.key("Metrics").start_array();
         for item_44 in var_42 {
             {
-                array_43.value().string(item_44);
+                array_43.value().string(item_44.as_str());
             }
         }
         array_43.finish();
@@ -187,7 +187,7 @@ pub fn serialize_structure_crate_input_list_available_resource_dimensions_input(
         );
     }
     if let Some(var_46) = &input.next_token {
-        object.key("NextToken").string(var_46);
+        object.key("NextToken").string(var_46.as_str());
     }
     Ok(())
 }
@@ -200,19 +200,19 @@ pub fn serialize_structure_crate_input_list_available_resource_metrics_input(
         object.key("ServiceType").string(var_47.as_str());
     }
     if let Some(var_48) = &input.identifier {
-        object.key("Identifier").string(var_48);
+        object.key("Identifier").string(var_48.as_str());
     }
     if let Some(var_49) = &input.metric_types {
         let mut array_50 = object.key("MetricTypes").start_array();
         for item_51 in var_49 {
             {
-                array_50.value().string(item_51);
+                array_50.value().string(item_51.as_str());
             }
         }
         array_50.finish();
     }
     if let Some(var_52) = &input.next_token {
-        object.key("NextToken").string(var_52);
+        object.key("NextToken").string(var_52.as_str());
     }
     if let Some(var_53) = &input.max_results {
         object.key("MaxResults").number(
@@ -228,13 +228,13 @@ pub fn serialize_structure_crate_model_dimension_group(
     input: &crate::model::DimensionGroup,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.group {
-        object.key("Group").string(var_54);
+        object.key("Group").string(var_54.as_str());
     }
     if let Some(var_55) = &input.dimensions {
         let mut array_56 = object.key("Dimensions").start_array();
         for item_57 in var_55 {
             {
-                array_56.value().string(item_57);
+                array_56.value().string(item_57.as_str());
             }
         }
         array_56.finish();
@@ -253,7 +253,7 @@ pub fn serialize_structure_crate_model_metric_query(
     input: &crate::model::MetricQuery,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_59) = &input.metric {
-        object.key("Metric").string(var_59);
+        object.key("Metric").string(var_59.as_str());
     }
     if let Some(var_60) = &input.group_by {
         let mut object_61 = object.key("GroupBy").start_object();
@@ -264,7 +264,7 @@ pub fn serialize_structure_crate_model_metric_query(
         let mut object_63 = object.key("Filter").start_object();
         for (key_64, value_65) in var_62 {
             {
-                object_63.key(key_64).string(value_65);
+                object_63.key(key_64).string(value_65.as_str());
             }
         }
         object_63.finish();

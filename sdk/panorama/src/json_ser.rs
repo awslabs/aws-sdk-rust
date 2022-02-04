@@ -4,13 +4,17 @@ pub fn serialize_structure_crate_input_create_application_instance_input(
     input: &crate::input::CreateApplicationInstanceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.application_instance_id_to_replace {
-        object.key("ApplicationInstanceIdToReplace").string(var_1);
+        object
+            .key("ApplicationInstanceIdToReplace")
+            .string(var_1.as_str());
     }
     if let Some(var_2) = &input.default_runtime_context_device {
-        object.key("DefaultRuntimeContextDevice").string(var_2);
+        object
+            .key("DefaultRuntimeContextDevice")
+            .string(var_2.as_str());
     }
     if let Some(var_3) = &input.description {
-        object.key("Description").string(var_3);
+        object.key("Description").string(var_3.as_str());
     }
     if let Some(var_4) = &input.manifest_overrides_payload {
         let mut object_5 = object.key("ManifestOverridesPayload").start_object();
@@ -26,16 +30,16 @@ pub fn serialize_structure_crate_input_create_application_instance_input(
         object_7.finish();
     }
     if let Some(var_8) = &input.name {
-        object.key("Name").string(var_8);
+        object.key("Name").string(var_8.as_str());
     }
     if let Some(var_9) = &input.runtime_role_arn {
-        object.key("RuntimeRoleArn").string(var_9);
+        object.key("RuntimeRoleArn").string(var_9.as_str());
     }
     if let Some(var_10) = &input.tags {
         let mut object_11 = object.key("Tags").start_object();
         for (key_12, value_13) in var_10 {
             {
-                object_11.key(key_12).string(value_13);
+                object_11.key(key_12).string(value_13.as_str());
             }
         }
         object_11.finish();
@@ -51,7 +55,7 @@ pub fn serialize_structure_crate_input_create_job_for_devices_input(
         let mut array_15 = object.key("DeviceIds").start_array();
         for item_16 in var_14 {
             {
-                array_15.value().string(item_16);
+                array_15.value().string(item_16.as_str());
             }
         }
         array_15.finish();
@@ -86,22 +90,22 @@ pub fn serialize_structure_crate_input_create_node_from_template_job_input(
         array_21.finish();
     }
     if let Some(var_24) = &input.node_description {
-        object.key("NodeDescription").string(var_24);
+        object.key("NodeDescription").string(var_24.as_str());
     }
     if let Some(var_25) = &input.node_name {
-        object.key("NodeName").string(var_25);
+        object.key("NodeName").string(var_25.as_str());
     }
     if let Some(var_26) = &input.output_package_name {
-        object.key("OutputPackageName").string(var_26);
+        object.key("OutputPackageName").string(var_26.as_str());
     }
     if let Some(var_27) = &input.output_package_version {
-        object.key("OutputPackageVersion").string(var_27);
+        object.key("OutputPackageVersion").string(var_27.as_str());
     }
     if let Some(var_28) = &input.template_parameters {
         let mut object_29 = object.key("TemplateParameters").start_object();
         for (key_30, value_31) in var_28 {
             {
-                object_29.key(key_30).string(value_31);
+                object_29.key(key_30).string(value_31.as_str());
             }
         }
         object_29.finish();
@@ -117,13 +121,13 @@ pub fn serialize_structure_crate_input_create_package_input(
     input: &crate::input::CreatePackageInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.package_name {
-        object.key("PackageName").string(var_33);
+        object.key("PackageName").string(var_33.as_str());
     }
     if let Some(var_34) = &input.tags {
         let mut object_35 = object.key("Tags").start_object();
         for (key_36, value_37) in var_34 {
             {
-                object_35.key(key_36).string(value_37);
+                object_35.key(key_36).string(value_37.as_str());
             }
         }
         object_35.finish();
@@ -136,7 +140,7 @@ pub fn serialize_structure_crate_input_create_package_import_job_input(
     input: &crate::input::CreatePackageImportJobInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_38) = &input.client_token {
-        object.key("ClientToken").string(var_38);
+        object.key("ClientToken").string(var_38.as_str());
     }
     if let Some(var_39) = &input.input_config {
         let mut object_40 = object.key("InputConfig").start_object();
@@ -179,10 +183,10 @@ pub fn serialize_structure_crate_input_provision_device_input(
     input: &crate::input::ProvisionDeviceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_48) = &input.description {
-        object.key("Description").string(var_48);
+        object.key("Description").string(var_48.as_str());
     }
     if let Some(var_49) = &input.name {
-        object.key("Name").string(var_49);
+        object.key("Name").string(var_49.as_str());
     }
     if let Some(var_50) = &input.networking_configuration {
         let mut object_51 = object.key("NetworkingConfiguration").start_object();
@@ -193,7 +197,7 @@ pub fn serialize_structure_crate_input_provision_device_input(
         let mut object_53 = object.key("Tags").start_object();
         for (key_54, value_55) in var_52 {
             {
-                object_53.key(key_54).string(value_55);
+                object_53.key(key_54).string(value_55.as_str());
             }
         }
         object_53.finish();
@@ -209,7 +213,7 @@ pub fn serialize_structure_crate_input_register_package_version_input(
         object.key("MarkLatest").boolean(*var_56);
     }
     if let Some(var_57) = &input.owner_account {
-        object.key("OwnerAccount").string(var_57);
+        object.key("OwnerAccount").string(var_57.as_str());
     }
     Ok(())
 }
@@ -222,7 +226,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_59 = object.key("Tags").start_object();
         for (key_60, value_61) in var_58 {
             {
-                object_59.key(key_60).string(value_61);
+                object_59.key(key_60).string(value_61.as_str());
             }
         }
         object_59.finish();
@@ -235,7 +239,7 @@ pub fn serialize_structure_crate_input_update_device_metadata_input(
     input: &crate::input::UpdateDeviceMetadataInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_62) = &input.description {
-        object.key("Description").string(var_62);
+        object.key("Description").string(var_62.as_str());
     }
     Ok(())
 }
@@ -246,7 +250,7 @@ pub fn serialize_union_crate_model_manifest_overrides_payload(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     match input {
         crate::model::ManifestOverridesPayload::PayloadData(inner) => {
-            object_5.key("PayloadData").string(inner);
+            object_5.key("PayloadData").string(inner.as_str());
         }
         crate::model::ManifestOverridesPayload::Unknown => {
             return Err(
@@ -265,7 +269,7 @@ pub fn serialize_union_crate_model_manifest_payload(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     match input {
         crate::model::ManifestPayload::PayloadData(inner) => {
-            object_7.key("PayloadData").string(inner);
+            object_7.key("PayloadData").string(inner.as_str());
         }
         crate::model::ManifestPayload::Unknown => {
             return Err(
@@ -299,7 +303,7 @@ pub fn serialize_structure_crate_model_job_resource_tags(
         let mut object_67 = object.key("Tags").start_object();
         for (key_68, value_69) in var_66 {
             {
-                object_67.key(key_68).string(value_69);
+                object_67.key(key_68).string(value_69.as_str());
             }
         }
         object_67.finish();
@@ -359,7 +363,7 @@ pub fn serialize_structure_crate_model_ota_job_config(
     input: &crate::model::OtaJobConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_78) = &input.image_version {
-        object.key("ImageVersion").string(var_78);
+        object.key("ImageVersion").string(var_78.as_str());
     }
     Ok(())
 }
@@ -381,10 +385,10 @@ pub fn serialize_structure_crate_model_package_version_output_config(
     input: &crate::model::PackageVersionOutputConfig,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_81) = &input.package_name {
-        object.key("PackageName").string(var_81);
+        object.key("PackageName").string(var_81.as_str());
     }
     if let Some(var_82) = &input.package_version {
-        object.key("PackageVersion").string(var_82);
+        object.key("PackageVersion").string(var_82.as_str());
     }
     if let Some(var_83) = &input.mark_latest {
         object.key("MarkLatest").boolean(*var_83);
@@ -415,13 +419,13 @@ pub fn serialize_structure_crate_model_s3_location(
     input: &crate::model::S3Location,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_87) = &input.region {
-        object.key("Region").string(var_87);
+        object.key("Region").string(var_87.as_str());
     }
     if let Some(var_88) = &input.bucket_name {
-        object.key("BucketName").string(var_88);
+        object.key("BucketName").string(var_88.as_str());
     }
     if let Some(var_89) = &input.object_key {
-        object.key("ObjectKey").string(var_89);
+        object.key("ObjectKey").string(var_89.as_str());
     }
     Ok(())
 }
@@ -431,22 +435,22 @@ pub fn serialize_structure_crate_model_static_ip_connection_info(
     input: &crate::model::StaticIpConnectionInfo,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_90) = &input.ip_address {
-        object.key("IpAddress").string(var_90);
+        object.key("IpAddress").string(var_90.as_str());
     }
     if let Some(var_91) = &input.mask {
-        object.key("Mask").string(var_91);
+        object.key("Mask").string(var_91.as_str());
     }
     if let Some(var_92) = &input.dns {
         let mut array_93 = object.key("Dns").start_array();
         for item_94 in var_92 {
             {
-                array_93.value().string(item_94);
+                array_93.value().string(item_94.as_str());
             }
         }
         array_93.finish();
     }
     if let Some(var_95) = &input.default_gateway {
-        object.key("DefaultGateway").string(var_95);
+        object.key("DefaultGateway").string(var_95.as_str());
     }
     Ok(())
 }

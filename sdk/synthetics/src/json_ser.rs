@@ -12,7 +12,7 @@ pub fn serialize_structure_crate_input_create_canary_input(
         object_2.finish();
     }
     if let Some(var_3) = &input.artifact_s3_location {
-        object.key("ArtifactS3Location").string(var_3);
+        object.key("ArtifactS3Location").string(var_3.as_str());
     }
     if let Some(var_4) = &input.code {
         let mut object_5 = object.key("Code").start_object();
@@ -20,7 +20,7 @@ pub fn serialize_structure_crate_input_create_canary_input(
         object_5.finish();
     }
     if let Some(var_6) = &input.execution_role_arn {
-        object.key("ExecutionRoleArn").string(var_6);
+        object.key("ExecutionRoleArn").string(var_6.as_str());
     }
     if let Some(var_7) = &input.failure_retention_period_in_days {
         object.key("FailureRetentionPeriodInDays").number(
@@ -29,7 +29,7 @@ pub fn serialize_structure_crate_input_create_canary_input(
         );
     }
     if let Some(var_8) = &input.name {
-        object.key("Name").string(var_8);
+        object.key("Name").string(var_8.as_str());
     }
     if let Some(var_9) = &input.run_config {
         let mut object_10 = object.key("RunConfig").start_object();
@@ -40,7 +40,7 @@ pub fn serialize_structure_crate_input_create_canary_input(
         object_10.finish();
     }
     if let Some(var_11) = &input.runtime_version {
-        object.key("RuntimeVersion").string(var_11);
+        object.key("RuntimeVersion").string(var_11.as_str());
     }
     if let Some(var_12) = &input.schedule {
         let mut object_13 = object.key("Schedule").start_object();
@@ -60,7 +60,7 @@ pub fn serialize_structure_crate_input_create_canary_input(
         let mut object_16 = object.key("Tags").start_object();
         for (key_17, value_18) in var_15 {
             {
-                object_16.key(key_17).string(value_18);
+                object_16.key(key_17).string(value_18.as_str());
             }
         }
         object_16.finish();
@@ -84,7 +84,7 @@ pub fn serialize_structure_crate_input_describe_canaries_input(
         );
     }
     if let Some(var_22) = &input.next_token {
-        object.key("NextToken").string(var_22);
+        object.key("NextToken").string(var_22.as_str());
     }
     Ok(())
 }
@@ -100,7 +100,7 @@ pub fn serialize_structure_crate_input_describe_canaries_last_run_input(
         );
     }
     if let Some(var_24) = &input.next_token {
-        object.key("NextToken").string(var_24);
+        object.key("NextToken").string(var_24.as_str());
     }
     Ok(())
 }
@@ -116,7 +116,7 @@ pub fn serialize_structure_crate_input_describe_runtime_versions_input(
         );
     }
     if let Some(var_26) = &input.next_token {
-        object.key("NextToken").string(var_26);
+        object.key("NextToken").string(var_26.as_str());
     }
     Ok(())
 }
@@ -132,7 +132,7 @@ pub fn serialize_structure_crate_input_get_canary_runs_input(
         );
     }
     if let Some(var_28) = &input.next_token {
-        object.key("NextToken").string(var_28);
+        object.key("NextToken").string(var_28.as_str());
     }
     Ok(())
 }
@@ -145,7 +145,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut object_30 = object.key("Tags").start_object();
         for (key_31, value_32) in var_29 {
             {
-                object_30.key(key_31).string(value_32);
+                object_30.key(key_31).string(value_32.as_str());
             }
         }
         object_30.finish();
@@ -166,7 +166,7 @@ pub fn serialize_structure_crate_input_update_canary_input(
         object_34.finish();
     }
     if let Some(var_35) = &input.artifact_s3_location {
-        object.key("ArtifactS3Location").string(var_35);
+        object.key("ArtifactS3Location").string(var_35.as_str());
     }
     if let Some(var_36) = &input.code {
         let mut object_37 = object.key("Code").start_object();
@@ -174,7 +174,7 @@ pub fn serialize_structure_crate_input_update_canary_input(
         object_37.finish();
     }
     if let Some(var_38) = &input.execution_role_arn {
-        object.key("ExecutionRoleArn").string(var_38);
+        object.key("ExecutionRoleArn").string(var_38.as_str());
     }
     if let Some(var_39) = &input.failure_retention_period_in_days {
         object.key("FailureRetentionPeriodInDays").number(
@@ -191,7 +191,7 @@ pub fn serialize_structure_crate_input_update_canary_input(
         object_41.finish();
     }
     if let Some(var_42) = &input.runtime_version {
-        object.key("RuntimeVersion").string(var_42);
+        object.key("RuntimeVersion").string(var_42.as_str());
     }
     if let Some(var_43) = &input.schedule {
         let mut object_44 = object.key("Schedule").start_object();
@@ -243,13 +243,13 @@ pub fn serialize_structure_crate_model_canary_code_input(
     input: &crate::model::CanaryCodeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_52) = &input.s3_bucket {
-        object.key("S3Bucket").string(var_52);
+        object.key("S3Bucket").string(var_52.as_str());
     }
     if let Some(var_53) = &input.s3_key {
-        object.key("S3Key").string(var_53);
+        object.key("S3Key").string(var_53.as_str());
     }
     if let Some(var_54) = &input.s3_version {
-        object.key("S3Version").string(var_54);
+        object.key("S3Version").string(var_54.as_str());
     }
     if let Some(var_55) = &input.zip_file {
         object
@@ -257,7 +257,7 @@ pub fn serialize_structure_crate_model_canary_code_input(
             .string_unchecked(&aws_smithy_types::base64::encode(var_55));
     }
     if let Some(var_56) = &input.handler {
-        object.key("Handler").string(var_56);
+        object.key("Handler").string(var_56.as_str());
     }
     Ok(())
 }
@@ -285,7 +285,7 @@ pub fn serialize_structure_crate_model_canary_run_config_input(
         let mut object_61 = object.key("EnvironmentVariables").start_object();
         for (key_62, value_63) in var_60 {
             {
-                object_61.key(key_62).string(value_63);
+                object_61.key(key_62).string(value_63.as_str());
             }
         }
         object_61.finish();
@@ -298,7 +298,7 @@ pub fn serialize_structure_crate_model_canary_schedule_input(
     input: &crate::model::CanaryScheduleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_64) = &input.expression {
-        object.key("Expression").string(var_64);
+        object.key("Expression").string(var_64.as_str());
     }
     if let Some(var_65) = &input.duration_in_seconds {
         object.key("DurationInSeconds").number(
@@ -317,7 +317,7 @@ pub fn serialize_structure_crate_model_vpc_config_input(
         let mut array_67 = object.key("SubnetIds").start_array();
         for item_68 in var_66 {
             {
-                array_67.value().string(item_68);
+                array_67.value().string(item_68.as_str());
             }
         }
         array_67.finish();
@@ -326,7 +326,7 @@ pub fn serialize_structure_crate_model_vpc_config_input(
         let mut array_70 = object.key("SecurityGroupIds").start_array();
         for item_71 in var_69 {
             {
-                array_70.value().string(item_71);
+                array_70.value().string(item_71.as_str());
             }
         }
         array_70.finish();
@@ -353,7 +353,7 @@ pub fn serialize_structure_crate_model_visual_reference_input(
         array_73.finish();
     }
     if let Some(var_76) = &input.base_canary_run_id {
-        object.key("BaseCanaryRunId").string(var_76);
+        object.key("BaseCanaryRunId").string(var_76.as_str());
     }
     Ok(())
 }
@@ -366,7 +366,7 @@ pub fn serialize_structure_crate_model_s3_encryption_config(
         object.key("EncryptionMode").string(var_77.as_str());
     }
     if let Some(var_78) = &input.kms_key_arn {
-        object.key("KmsKeyArn").string(var_78);
+        object.key("KmsKeyArn").string(var_78.as_str());
     }
     Ok(())
 }
@@ -376,13 +376,13 @@ pub fn serialize_structure_crate_model_base_screenshot(
     input: &crate::model::BaseScreenshot,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_79) = &input.screenshot_name {
-        object.key("ScreenshotName").string(var_79);
+        object.key("ScreenshotName").string(var_79.as_str());
     }
     if let Some(var_80) = &input.ignore_coordinates {
         let mut array_81 = object.key("IgnoreCoordinates").start_array();
         for item_82 in var_80 {
             {
-                array_81.value().string(item_82);
+                array_81.value().string(item_82.as_str());
             }
         }
         array_81.finish();

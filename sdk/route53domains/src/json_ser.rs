@@ -4,10 +4,10 @@ pub fn serialize_structure_crate_input_accept_domain_transfer_from_another_aws_a
     input: &crate::input::AcceptDomainTransferFromAnotherAwsAccountInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.domain_name {
-        object.key("DomainName").string(var_1);
+        object.key("DomainName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.password {
-        object.key("Password").string(var_2);
+        object.key("Password").string(var_2.as_str());
     }
     Ok(())
 }
@@ -17,7 +17,7 @@ pub fn serialize_structure_crate_input_cancel_domain_transfer_to_another_aws_acc
     input: &crate::input::CancelDomainTransferToAnotherAwsAccountInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_3) = &input.domain_name {
-        object.key("DomainName").string(var_3);
+        object.key("DomainName").string(var_3.as_str());
     }
     Ok(())
 }
@@ -27,10 +27,10 @@ pub fn serialize_structure_crate_input_check_domain_availability_input(
     input: &crate::input::CheckDomainAvailabilityInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_4) = &input.domain_name {
-        object.key("DomainName").string(var_4);
+        object.key("DomainName").string(var_4.as_str());
     }
     if let Some(var_5) = &input.idn_lang_code {
-        object.key("IdnLangCode").string(var_5);
+        object.key("IdnLangCode").string(var_5.as_str());
     }
     Ok(())
 }
@@ -40,10 +40,10 @@ pub fn serialize_structure_crate_input_check_domain_transferability_input(
     input: &crate::input::CheckDomainTransferabilityInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_6) = &input.domain_name {
-        object.key("DomainName").string(var_6);
+        object.key("DomainName").string(var_6.as_str());
     }
     if let Some(var_7) = &input.auth_code {
-        object.key("AuthCode").string(var_7);
+        object.key("AuthCode").string(var_7.as_str());
     }
     Ok(())
 }
@@ -53,7 +53,7 @@ pub fn serialize_structure_crate_input_delete_domain_input(
     input: &crate::input::DeleteDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_8) = &input.domain_name {
-        object.key("DomainName").string(var_8);
+        object.key("DomainName").string(var_8.as_str());
     }
     Ok(())
 }
@@ -63,13 +63,13 @@ pub fn serialize_structure_crate_input_delete_tags_for_domain_input(
     input: &crate::input::DeleteTagsForDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_9) = &input.domain_name {
-        object.key("DomainName").string(var_9);
+        object.key("DomainName").string(var_9.as_str());
     }
     if let Some(var_10) = &input.tags_to_delete {
         let mut array_11 = object.key("TagsToDelete").start_array();
         for item_12 in var_10 {
             {
-                array_11.value().string(item_12);
+                array_11.value().string(item_12.as_str());
             }
         }
         array_11.finish();
@@ -82,7 +82,7 @@ pub fn serialize_structure_crate_input_disable_domain_auto_renew_input(
     input: &crate::input::DisableDomainAutoRenewInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_13) = &input.domain_name {
-        object.key("DomainName").string(var_13);
+        object.key("DomainName").string(var_13.as_str());
     }
     Ok(())
 }
@@ -92,7 +92,7 @@ pub fn serialize_structure_crate_input_disable_domain_transfer_lock_input(
     input: &crate::input::DisableDomainTransferLockInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_14) = &input.domain_name {
-        object.key("DomainName").string(var_14);
+        object.key("DomainName").string(var_14.as_str());
     }
     Ok(())
 }
@@ -102,7 +102,7 @@ pub fn serialize_structure_crate_input_enable_domain_auto_renew_input(
     input: &crate::input::EnableDomainAutoRenewInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_15) = &input.domain_name {
-        object.key("DomainName").string(var_15);
+        object.key("DomainName").string(var_15.as_str());
     }
     Ok(())
 }
@@ -112,7 +112,7 @@ pub fn serialize_structure_crate_input_enable_domain_transfer_lock_input(
     input: &crate::input::EnableDomainTransferLockInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_16) = &input.domain_name {
-        object.key("DomainName").string(var_16);
+        object.key("DomainName").string(var_16.as_str());
     }
     Ok(())
 }
@@ -122,7 +122,7 @@ pub fn serialize_structure_crate_input_get_contact_reachability_status_input(
     input: &crate::input::GetContactReachabilityStatusInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.domain_name {
-        object.key("domainName").string(var_17);
+        object.key("domainName").string(var_17.as_str());
     }
     Ok(())
 }
@@ -132,7 +132,7 @@ pub fn serialize_structure_crate_input_get_domain_detail_input(
     input: &crate::input::GetDomainDetailInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_18) = &input.domain_name {
-        object.key("DomainName").string(var_18);
+        object.key("DomainName").string(var_18.as_str());
     }
     Ok(())
 }
@@ -142,7 +142,7 @@ pub fn serialize_structure_crate_input_get_domain_suggestions_input(
     input: &crate::input::GetDomainSuggestionsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.domain_name {
-        object.key("DomainName").string(var_19);
+        object.key("DomainName").string(var_19.as_str());
     }
     {
         object.key("SuggestionCount").number(
@@ -161,7 +161,7 @@ pub fn serialize_structure_crate_input_get_operation_detail_input(
     input: &crate::input::GetOperationDetailInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_21) = &input.operation_id {
-        object.key("OperationId").string(var_21);
+        object.key("OperationId").string(var_21.as_str());
     }
     Ok(())
 }
@@ -190,7 +190,7 @@ pub fn serialize_structure_crate_input_list_domains_input(
         object_27.finish();
     }
     if let Some(var_28) = &input.marker {
-        object.key("Marker").string(var_28);
+        object.key("Marker").string(var_28.as_str());
     }
     if let Some(var_29) = &input.max_items {
         object.key("MaxItems").number(
@@ -211,7 +211,7 @@ pub fn serialize_structure_crate_input_list_operations_input(
             .date_time(var_30, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_31) = &input.marker {
-        object.key("Marker").string(var_31);
+        object.key("Marker").string(var_31.as_str());
     }
     if let Some(var_32) = &input.max_items {
         object.key("MaxItems").number(
@@ -227,10 +227,10 @@ pub fn serialize_structure_crate_input_list_prices_input(
     input: &crate::input::ListPricesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_33) = &input.tld {
-        object.key("Tld").string(var_33);
+        object.key("Tld").string(var_33.as_str());
     }
     if let Some(var_34) = &input.marker {
-        object.key("Marker").string(var_34);
+        object.key("Marker").string(var_34.as_str());
     }
     if let Some(var_35) = &input.max_items {
         object.key("MaxItems").number(
@@ -246,7 +246,7 @@ pub fn serialize_structure_crate_input_list_tags_for_domain_input(
     input: &crate::input::ListTagsForDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_36) = &input.domain_name {
-        object.key("DomainName").string(var_36);
+        object.key("DomainName").string(var_36.as_str());
     }
     Ok(())
 }
@@ -256,10 +256,10 @@ pub fn serialize_structure_crate_input_register_domain_input(
     input: &crate::input::RegisterDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_37) = &input.domain_name {
-        object.key("DomainName").string(var_37);
+        object.key("DomainName").string(var_37.as_str());
     }
     if let Some(var_38) = &input.idn_lang_code {
-        object.key("IdnLangCode").string(var_38);
+        object.key("IdnLangCode").string(var_38.as_str());
     }
     if let Some(var_39) = &input.duration_in_years {
         object.key("DurationInYears").number(
@@ -304,7 +304,7 @@ pub fn serialize_structure_crate_input_reject_domain_transfer_from_another_aws_a
     input: &crate::input::RejectDomainTransferFromAnotherAwsAccountInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.domain_name {
-        object.key("DomainName").string(var_50);
+        object.key("DomainName").string(var_50.as_str());
     }
     Ok(())
 }
@@ -314,7 +314,7 @@ pub fn serialize_structure_crate_input_renew_domain_input(
     input: &crate::input::RenewDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_51) = &input.domain_name {
-        object.key("DomainName").string(var_51);
+        object.key("DomainName").string(var_51.as_str());
     }
     if let Some(var_52) = &input.duration_in_years {
         object.key("DurationInYears").number(
@@ -336,7 +336,7 @@ pub fn serialize_structure_crate_input_resend_contact_reachability_email_input(
     input: &crate::input::ResendContactReachabilityEmailInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_53) = &input.domain_name {
-        object.key("domainName").string(var_53);
+        object.key("domainName").string(var_53.as_str());
     }
     Ok(())
 }
@@ -346,7 +346,7 @@ pub fn serialize_structure_crate_input_retrieve_domain_auth_code_input(
     input: &crate::input::RetrieveDomainAuthCodeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.domain_name {
-        object.key("DomainName").string(var_54);
+        object.key("DomainName").string(var_54.as_str());
     }
     Ok(())
 }
@@ -356,10 +356,10 @@ pub fn serialize_structure_crate_input_transfer_domain_input(
     input: &crate::input::TransferDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_55) = &input.domain_name {
-        object.key("DomainName").string(var_55);
+        object.key("DomainName").string(var_55.as_str());
     }
     if let Some(var_56) = &input.idn_lang_code {
-        object.key("IdnLangCode").string(var_56);
+        object.key("IdnLangCode").string(var_56.as_str());
     }
     if let Some(var_57) = &input.duration_in_years {
         object.key("DurationInYears").number(
@@ -382,7 +382,7 @@ pub fn serialize_structure_crate_input_transfer_domain_input(
         array_59.finish();
     }
     if let Some(var_62) = &input.auth_code {
-        object.key("AuthCode").string(var_62);
+        object.key("AuthCode").string(var_62.as_str());
     }
     if let Some(var_63) = &input.auto_renew {
         object.key("AutoRenew").boolean(*var_63);
@@ -421,10 +421,10 @@ pub fn serialize_structure_crate_input_transfer_domain_to_another_aws_account_in
     input: &crate::input::TransferDomainToAnotherAwsAccountInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_73) = &input.domain_name {
-        object.key("DomainName").string(var_73);
+        object.key("DomainName").string(var_73.as_str());
     }
     if let Some(var_74) = &input.account_id {
-        object.key("AccountId").string(var_74);
+        object.key("AccountId").string(var_74.as_str());
     }
     Ok(())
 }
@@ -434,7 +434,7 @@ pub fn serialize_structure_crate_input_update_domain_contact_input(
     input: &crate::input::UpdateDomainContactInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_75) = &input.domain_name {
-        object.key("DomainName").string(var_75);
+        object.key("DomainName").string(var_75.as_str());
     }
     if let Some(var_76) = &input.admin_contact {
         let mut object_77 = object.key("AdminContact").start_object();
@@ -459,7 +459,7 @@ pub fn serialize_structure_crate_input_update_domain_contact_privacy_input(
     input: &crate::input::UpdateDomainContactPrivacyInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_82) = &input.domain_name {
-        object.key("DomainName").string(var_82);
+        object.key("DomainName").string(var_82.as_str());
     }
     if let Some(var_83) = &input.admin_privacy {
         object.key("AdminPrivacy").boolean(*var_83);
@@ -478,10 +478,10 @@ pub fn serialize_structure_crate_input_update_domain_nameservers_input(
     input: &crate::input::UpdateDomainNameserversInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_86) = &input.domain_name {
-        object.key("DomainName").string(var_86);
+        object.key("DomainName").string(var_86.as_str());
     }
     if let Some(var_87) = &input.fi_auth_key {
-        object.key("FIAuthKey").string(var_87);
+        object.key("FIAuthKey").string(var_87.as_str());
     }
     if let Some(var_88) = &input.nameservers {
         let mut array_89 = object.key("Nameservers").start_array();
@@ -505,7 +505,7 @@ pub fn serialize_structure_crate_input_update_tags_for_domain_input(
     input: &crate::input::UpdateTagsForDomainInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_92) = &input.domain_name {
-        object.key("DomainName").string(var_92);
+        object.key("DomainName").string(var_92.as_str());
     }
     if let Some(var_93) = &input.tags_to_update {
         let mut array_94 = object.key("TagsToUpdate").start_array();
@@ -536,7 +536,7 @@ pub fn serialize_structure_crate_input_view_billing_input(
             .date_time(var_98, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_99) = &input.marker {
-        object.key("Marker").string(var_99);
+        object.key("Marker").string(var_99.as_str());
     }
     if let Some(var_100) = &input.max_items {
         object.key("MaxItems").number(
@@ -561,7 +561,7 @@ pub fn serialize_structure_crate_model_filter_condition(
         let mut array_104 = object.key("Values").start_array();
         for item_105 in var_103 {
             {
-                array_104.value().string(item_105);
+                array_104.value().string(item_105.as_str());
             }
         }
         array_104.finish();
@@ -587,43 +587,43 @@ pub fn serialize_structure_crate_model_contact_detail(
     input: &crate::model::ContactDetail,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_108) = &input.first_name {
-        object.key("FirstName").string(var_108);
+        object.key("FirstName").string(var_108.as_str());
     }
     if let Some(var_109) = &input.last_name {
-        object.key("LastName").string(var_109);
+        object.key("LastName").string(var_109.as_str());
     }
     if let Some(var_110) = &input.contact_type {
         object.key("ContactType").string(var_110.as_str());
     }
     if let Some(var_111) = &input.organization_name {
-        object.key("OrganizationName").string(var_111);
+        object.key("OrganizationName").string(var_111.as_str());
     }
     if let Some(var_112) = &input.address_line1 {
-        object.key("AddressLine1").string(var_112);
+        object.key("AddressLine1").string(var_112.as_str());
     }
     if let Some(var_113) = &input.address_line2 {
-        object.key("AddressLine2").string(var_113);
+        object.key("AddressLine2").string(var_113.as_str());
     }
     if let Some(var_114) = &input.city {
-        object.key("City").string(var_114);
+        object.key("City").string(var_114.as_str());
     }
     if let Some(var_115) = &input.state {
-        object.key("State").string(var_115);
+        object.key("State").string(var_115.as_str());
     }
     if let Some(var_116) = &input.country_code {
         object.key("CountryCode").string(var_116.as_str());
     }
     if let Some(var_117) = &input.zip_code {
-        object.key("ZipCode").string(var_117);
+        object.key("ZipCode").string(var_117.as_str());
     }
     if let Some(var_118) = &input.phone_number {
-        object.key("PhoneNumber").string(var_118);
+        object.key("PhoneNumber").string(var_118.as_str());
     }
     if let Some(var_119) = &input.email {
-        object.key("Email").string(var_119);
+        object.key("Email").string(var_119.as_str());
     }
     if let Some(var_120) = &input.fax {
-        object.key("Fax").string(var_120);
+        object.key("Fax").string(var_120.as_str());
     }
     if let Some(var_121) = &input.extra_params {
         let mut array_122 = object.key("ExtraParams").start_array();
@@ -647,13 +647,13 @@ pub fn serialize_structure_crate_model_nameserver(
     input: &crate::model::Nameserver,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_125) = &input.name {
-        object.key("Name").string(var_125);
+        object.key("Name").string(var_125.as_str());
     }
     if let Some(var_126) = &input.glue_ips {
         let mut array_127 = object.key("GlueIps").start_array();
         for item_128 in var_126 {
             {
-                array_127.value().string(item_128);
+                array_127.value().string(item_128.as_str());
             }
         }
         array_127.finish();
@@ -666,10 +666,10 @@ pub fn serialize_structure_crate_model_tag(
     input: &crate::model::Tag,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_129) = &input.key {
-        object.key("Key").string(var_129);
+        object.key("Key").string(var_129.as_str());
     }
     if let Some(var_130) = &input.value {
-        object.key("Value").string(var_130);
+        object.key("Value").string(var_130.as_str());
     }
     Ok(())
 }
@@ -682,7 +682,7 @@ pub fn serialize_structure_crate_model_extra_param(
         object.key("Name").string(var_131.as_str());
     }
     if let Some(var_132) = &input.value {
-        object.key("Value").string(var_132);
+        object.key("Value").string(var_132.as_str());
     }
     Ok(())
 }

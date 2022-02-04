@@ -4,7 +4,7 @@ pub fn serialize_structure_crate_input_create_notification_rule_input(
     input: &crate::input::CreateNotificationRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_1) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_1);
+        object.key("ClientRequestToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.detail_type {
         object.key("DetailType").string(var_2.as_str());
@@ -13,16 +13,16 @@ pub fn serialize_structure_crate_input_create_notification_rule_input(
         let mut array_4 = object.key("EventTypeIds").start_array();
         for item_5 in var_3 {
             {
-                array_4.value().string(item_5);
+                array_4.value().string(item_5.as_str());
             }
         }
         array_4.finish();
     }
     if let Some(var_6) = &input.name {
-        object.key("Name").string(var_6);
+        object.key("Name").string(var_6.as_str());
     }
     if let Some(var_7) = &input.resource {
-        object.key("Resource").string(var_7);
+        object.key("Resource").string(var_7.as_str());
     }
     if let Some(var_8) = &input.status {
         object.key("Status").string(var_8.as_str());
@@ -31,7 +31,7 @@ pub fn serialize_structure_crate_input_create_notification_rule_input(
         let mut object_10 = object.key("Tags").start_object();
         for (key_11, value_12) in var_9 {
             {
-                object_10.key(key_11).string(value_12);
+                object_10.key(key_11).string(value_12.as_str());
             }
         }
         object_10.finish();
@@ -55,7 +55,7 @@ pub fn serialize_structure_crate_input_delete_notification_rule_input(
     input: &crate::input::DeleteNotificationRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_17) = &input.arn {
-        object.key("Arn").string(var_17);
+        object.key("Arn").string(var_17.as_str());
     }
     Ok(())
 }
@@ -70,7 +70,7 @@ pub fn serialize_structure_crate_input_delete_target_input(
             .boolean(input.force_unsubscribe_all);
     }
     if let Some(var_18) = &input.target_address {
-        object.key("TargetAddress").string(var_18);
+        object.key("TargetAddress").string(var_18.as_str());
     }
     Ok(())
 }
@@ -80,7 +80,7 @@ pub fn serialize_structure_crate_input_describe_notification_rule_input(
     input: &crate::input::DescribeNotificationRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_19) = &input.arn {
-        object.key("Arn").string(var_19);
+        object.key("Arn").string(var_19.as_str());
     }
     Ok(())
 }
@@ -110,7 +110,7 @@ pub fn serialize_structure_crate_input_list_event_types_input(
         );
     }
     if let Some(var_25) = &input.next_token {
-        object.key("NextToken").string(var_25);
+        object.key("NextToken").string(var_25.as_str());
     }
     Ok(())
 }
@@ -140,7 +140,7 @@ pub fn serialize_structure_crate_input_list_notification_rules_input(
         );
     }
     if let Some(var_31) = &input.next_token {
-        object.key("NextToken").string(var_31);
+        object.key("NextToken").string(var_31.as_str());
     }
     Ok(())
 }
@@ -150,7 +150,7 @@ pub fn serialize_structure_crate_input_list_tags_for_resource_input(
     input: &crate::input::ListTagsForResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_32) = &input.arn {
-        object.key("Arn").string(var_32);
+        object.key("Arn").string(var_32.as_str());
     }
     Ok(())
 }
@@ -180,7 +180,7 @@ pub fn serialize_structure_crate_input_list_targets_input(
         );
     }
     if let Some(var_38) = &input.next_token {
-        object.key("NextToken").string(var_38);
+        object.key("NextToken").string(var_38.as_str());
     }
     Ok(())
 }
@@ -190,10 +190,10 @@ pub fn serialize_structure_crate_input_subscribe_input(
     input: &crate::input::SubscribeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_39) = &input.arn {
-        object.key("Arn").string(var_39);
+        object.key("Arn").string(var_39.as_str());
     }
     if let Some(var_40) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_40);
+        object.key("ClientRequestToken").string(var_40.as_str());
     }
     if let Some(var_41) = &input.target {
         let mut object_42 = object.key("Target").start_object();
@@ -208,13 +208,13 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_43) = &input.arn {
-        object.key("Arn").string(var_43);
+        object.key("Arn").string(var_43.as_str());
     }
     if let Some(var_44) = &input.tags {
         let mut object_45 = object.key("Tags").start_object();
         for (key_46, value_47) in var_44 {
             {
-                object_45.key(key_46).string(value_47);
+                object_45.key(key_46).string(value_47.as_str());
             }
         }
         object_45.finish();
@@ -227,10 +227,10 @@ pub fn serialize_structure_crate_input_unsubscribe_input(
     input: &crate::input::UnsubscribeInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_48) = &input.arn {
-        object.key("Arn").string(var_48);
+        object.key("Arn").string(var_48.as_str());
     }
     if let Some(var_49) = &input.target_address {
-        object.key("TargetAddress").string(var_49);
+        object.key("TargetAddress").string(var_49.as_str());
     }
     Ok(())
 }
@@ -240,13 +240,13 @@ pub fn serialize_structure_crate_input_untag_resource_input(
     input: &crate::input::UntagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_50) = &input.arn {
-        object.key("Arn").string(var_50);
+        object.key("Arn").string(var_50.as_str());
     }
     if let Some(var_51) = &input.tag_keys {
         let mut array_52 = object.key("TagKeys").start_array();
         for item_53 in var_51 {
             {
-                array_52.value().string(item_53);
+                array_52.value().string(item_53.as_str());
             }
         }
         array_52.finish();
@@ -259,7 +259,7 @@ pub fn serialize_structure_crate_input_update_notification_rule_input(
     input: &crate::input::UpdateNotificationRuleInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_54) = &input.arn {
-        object.key("Arn").string(var_54);
+        object.key("Arn").string(var_54.as_str());
     }
     if let Some(var_55) = &input.detail_type {
         object.key("DetailType").string(var_55.as_str());
@@ -268,13 +268,13 @@ pub fn serialize_structure_crate_input_update_notification_rule_input(
         let mut array_57 = object.key("EventTypeIds").start_array();
         for item_58 in var_56 {
             {
-                array_57.value().string(item_58);
+                array_57.value().string(item_58.as_str());
             }
         }
         array_57.finish();
     }
     if let Some(var_59) = &input.name {
-        object.key("Name").string(var_59);
+        object.key("Name").string(var_59.as_str());
     }
     if let Some(var_60) = &input.status {
         object.key("Status").string(var_60.as_str());
@@ -298,10 +298,10 @@ pub fn serialize_structure_crate_model_target(
     input: &crate::model::Target,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_65) = &input.target_type {
-        object.key("TargetType").string(var_65);
+        object.key("TargetType").string(var_65.as_str());
     }
     if let Some(var_66) = &input.target_address {
-        object.key("TargetAddress").string(var_66);
+        object.key("TargetAddress").string(var_66.as_str());
     }
     Ok(())
 }
@@ -314,7 +314,7 @@ pub fn serialize_structure_crate_model_list_event_types_filter(
         object.key("Name").string(var_67.as_str());
     }
     if let Some(var_68) = &input.value {
-        object.key("Value").string(var_68);
+        object.key("Value").string(var_68.as_str());
     }
     Ok(())
 }
@@ -327,7 +327,7 @@ pub fn serialize_structure_crate_model_list_notification_rules_filter(
         object.key("Name").string(var_69.as_str());
     }
     if let Some(var_70) = &input.value {
-        object.key("Value").string(var_70);
+        object.key("Value").string(var_70.as_str());
     }
     Ok(())
 }
@@ -340,7 +340,7 @@ pub fn serialize_structure_crate_model_list_targets_filter(
         object.key("Name").string(var_71.as_str());
     }
     if let Some(var_72) = &input.value {
-        object.key("Value").string(var_72);
+        object.key("Value").string(var_72.as_str());
     }
     Ok(())
 }
